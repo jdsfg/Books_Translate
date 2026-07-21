@@ -24,6 +24,18 @@ myth | myth | 证据等级；亦作 myth versus record
 five grades | 五级判定 | 本书核心阅读透镜
 grading | 判定 | 动词 grade a claim → 给主张做判定
 
+
+## 复合证据等级（整段裁决中保留英文标签核）
+myth versus record | myth versus record | 五级之一的复合标签；勿译成「迷思对照实录」替代标签本身
+contested interpretation | contested interpretation | 复合标签
+mixed and contested | mixed and contested | 复合标签
+real but split and bounded | real but split and bounded | 旁观者效应等纹理化判定
+real but bounded | real but bounded | 纹理化判定核
+robust but culture- and era-variable | robust but culture- and era-variable | 从众效应纹理化判定
+robust effect, overstated framing | robust effect, overstated framing | 基本归因错误纹理化判定
+broadly supported, with conditions | broadly supported, with conditions | 接触假说等纹理化判定
+failed / false | failed / false | 与 failed 同族
+
 ## 偏见与群际（语气中立，不扩写立场）
 prejudice | 偏见 | 与日常认知 bias（偏差）区分；群体态度语境用「偏见」
 stereotype | 刻板印象 |
