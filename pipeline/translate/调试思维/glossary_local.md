@@ -2,12 +2,13 @@
 
 > 仅本书使用，补充共享库 glossary_cs.md。格式：英文 | 中文 | 备注
 > 命中共享库用共享译法；命中本地库用本地译法；两库都无再现译并回填本库。
+> ⚠️ 共享库已锁定的词条，本地库不得覆盖。
 
 ## 核心锁定（样张强制统一）
 debugging | 调试 | 全书统一；debugging thinking = 调试思维；勿译作「除错/排错」作书名核心词
 minimal reproducible example | 最小可复现示例 | 缩写可保留 MRE；勿译「最小可重现例子」
 observability | 可观测性 | 勿译「观察性」
-race condition | 竞态条件 | 共享库作「竞态」；本书统一全称「竞态条件」
+race condition | 竞态 | 服从共享 glossary_cs；首现可写「竞态（race condition）」；禁止用「竞态条件」覆盖共享译法
 
 ## 调试方法与循环
 scientific method | 科学方法 |
