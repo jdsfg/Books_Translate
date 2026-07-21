@@ -975,11 +975,11 @@
       "en_title": "Chapter 14: Capstone I — One Territory",
       "order": 75,
       "src_chars": 2680,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3a9830fd3195",
       "src": "### 14.4 The ladder, climbed\n\nCast your mind back over the fears this book set out to close, because they were never only this book's.\n\n\"Automation is for engineers.\" You put that down by Chapter 4, when the machinery resolved into small ordinary shapes. \"I'd probably break or leak something.\" That eased through Chapters 5 to 8, as refusals became signposts and keys became a thing you knew how to hold. \"I couldn't maintain it.\" That dissolved across Chapters 9 to 13, as you learned to survey, to choose, to bound, and to build pipes that tell you when they need tending. And now, at the top of the ladder, stands the thing those fears were guarding against all along: _I see the pipes, I can commission new ones, and I know what to check._\n\nBut notice the ladder was never only about APIs. Each rung leaned on the volumes before it. The confidence Mara has is the confidence of someone who can protect her work, run her own model, see what her agent sees, put something on the internet, and make it all run itself, five capabilities that were five separate climbs and are now one vantage. That is the ladder the whole tool arc climbed, and you are standing at the top of it. What remains is to gather the words that let you command this territory in plain language, one last time, which is the atlas of the final chapter.\n\n\n### 14.5 Exercises\n\nRead the answers.\n\n\n#### Trace the territory\n\n**Q1.** Take one part of Mara's pipe, the rush-commission doorbell that must catch an order the instant it lands. Name which of the five maps each of the following belongs to: (a) the shop reaching out to ring her; (b) the small machine that stays awake at 3 a.m. to receive the ring; (c) the recorded definition of what the doorbell does, kept so she can recover it; (d) the operating floor of files and processes the listener runs among.\n\n**Answer:** (a) is **Vol. V, the API map** : the ring is the shop's counter window reaching back to Mara, an API in its doorbell form. (b) is **Vol. IV, the server map** : receiving a ring at any hour needs an always-on presence at a fixed address, which is exactly a server. (c) is **Vol. I, the repo map** : the doorbell's definition lives in a version-controlled project so it can be evolved and recovered, with keys kept outside it. (d) is **Vol. III, the terminal's world** : the listener runs as a real task among files and processes on a real machine. (Vol. II, the private model, would join only if the doorbell's handling touched sensitive personal data it should keep in-house.) The exercise is the capstone in miniature: one small piece of one pipe, and four of the five maps are already present, each doing the one job only it can.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1019,
+      "out_sha": "2ce77ff59430",
       "note": ""
     },
     {
@@ -987,11 +987,11 @@
       "en_title": "Chapter 14: Capstone I — One Territory",
       "order": 76,
       "src_chars": 2540,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a982ddf0fa23",
       "src": "#### Judgment scenario\n\n**Q2.** A friend, inspired, says: \"I'm going to build one giant automation that runs my whole business, and switch it all on next week.\" Using everything from the book, what three cautions would you give, and which do you consider most important?\n\n**Answer:** Three cautions. First, _small before grand_ (Chapter 10): do not switch on a giant pipe all at once; build the smallest useful piece, watch it for a week until it earns trust, then add the next, because you maintain a big automation only by having grown it from small understood ones. Second, _mind the blast radius_ (Chapter 12): sort every action into reversible and irreversible, and keep a human hand, draft-don't-send, spending caps, on anything that sends, posts, pays, or deletes, running the 3 a.m. question on each. Third, _build to fail loudly_ (Chapter 13): assume services will change under the pipe, and make each part tell you when it breaks rather than run silently wrong. The most important is the first, because switching on a grand untested pipe violates the discipline that makes all the others possible; a pipe grown small-to-large is one you understand, and only a pipe you understand can be bounded and monitored well. The friend's instinct is right; the timing and the scale are the danger.\n\n\n#### Say this to your AI\n\nThis chapter's ask is a survey of your own territory, the one you now command, so that your next pipe is built as a citizen of a landscape rather than a lone gadget.\n\n> _\"I want to build a new automation. Before we start, walk the whole territory with me the way we would for a finished pipe: which services it will reach through their counter windows, where its definition should live so I can recover it, whether any part of it should use a private local model because it touches sensitive data, where each part will run, on my machine, on a schedule, or on something always on, and which of its actions are irreversible and need my hand. Then let's build the smallest useful piece first and watch it for a week.\"_\n\nThis ask is the five-map join turned into a commissioning ritual. It makes your assistant survey every layer, API reach, repo memory, private-model option, running home, and irreversible actions, before a line is built, so the new pipe takes its place in the territory you command rather than becoming an orphan gadget you will forget and fail to maintain. It is the acid test made into a habit: you can face a new automation and draw its whole map, across all five volumes, before you build it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 926,
+      "out_sha": "33b986726026",
       "note": ""
     },
     {
@@ -999,11 +999,11 @@
       "en_title": "Chapter 14: Capstone I — One Territory",
       "order": 77,
       "src_chars": 1763,
-      "status": "pending",
+      "status": "done",
       "src_sha": "adffc06a3cb1",
       "src": "### Chapter Summary\n\nStanding in Mara's studio one final Monday, we saw her chore replaced not by a single tool but by a small **territory** , and traced it through all five tool maps of the series as a working join rather than a highlight reel. Its **limbs are API calls** (Vol. V): everything it does to the world it does through counter windows, reading labeled boxes and minding honest \"no\"s, with its own **diary** recording each run. Its **recipe lives in a repo with history** (Vol. I), where it can be evolved and recovered and where keys must never go. A **private local model can be one of its workers** (Vol. II) for the parts that touch sensitive personal data. It **runs in the terminal's world** (Vol. III) of files, processes, and scheduled tasks. And its always-on parts, the rush-commission doorbell, **live on a server** (Vol. IV), awake at every hour to receive a ring. Take any one map away and a specific capability vanishes; the five are not skills side by side but one thing that works because all are present.\n\nThe join earns its place by making Mara _more capable_ , not more impressed: she can now survey any new service, decide whether to wire it in, place it, bound it, and fold it into the territory she already commands, because five maps have clicked into one and a landscape you can read is one you can extend. We named the **courage ladder climbed** across the whole tool arc, from \"automation is for engineers\" to \"I see the pipes, I can commission new ones, and I know what to check,\" a climb that leaned on every volume, not just this one. This gathered every thread of the book. One task remains: to collect, in plain language, the words that let you command this whole territory, which is the atlas of Chapter 15.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 710,
+      "out_sha": "3b2d3979e146",
       "note": ""
     },
     {
@@ -1011,11 +1011,11 @@
       "en_title": "Chapter 15: Capstone II — The Atlas",
       "order": 78,
       "src_chars": 2790,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8587b40e252c",
       "src": "You have commanded a territory. Now you need the words to command it out loud.\n\nAll through this book, each chapter ended with something you could _say to your assistant_ : a plain-language ask that turned an intention into an action, with a safety check built in. Those asks were never decoration. They are the actual interface between you and the whole territory, the way a person who cannot type a single line of the machinery still directs all of it, in their own words. This final chapter gathers them, and the asks from the four volumes before it, into one atlas, organized not by tool but by _intention_ , so that when you want to do a thing, you can find the words for it.\n\nTwo promises about this chapter. First, it _collects_ ; it does not re-teach. Each earlier volume gets a single line of reminder, no more, because you already hold those maps and re-explaining them would insult the work you did. Second, every ask comes paired with its judgment check, because an ask without its check is a manual in costume, and this book has been about judgment from the first page. The atlas is organized by five intentions, one for each tool map, and then we close.\n\n\n### 15.1 \"Protect my work\"\n\n_The map this draws on (one line): Volume I gave you version control, a memory of your work where every change is recorded and any past version can be recovered._\n\nTo keep your work safe, recoverable, and never lost to a bad afternoon, say something like:\n\n> _\"Keep this project under version control, and save a recorded checkpoint of my work with a clear note about what changed, so I can look back or recover any earlier version later.\"_\n\n> _\"Show me what has changed since my last checkpoint before we save it, so I know exactly what I'm recording.\"_\n\n**The judgment check** : never let a secret, a key, or a private credential get recorded into that memory, because the memory keeps history forever, so a secret saved once is a secret leaked. Keys live outside the recorded work.\n\n\n### 15.2 \"Give me my own AI\"\n\n_The map this draws on (one line): Volume II gave you the local model, your own AI running on your own machine, private by default because nothing leaves the room._\n\nThe moment a task touches information you would rather keep close, these are the words:\n\n> _\"For this task, which handles my private information, use a model that runs locally on my own machine, so the sensitive material never leaves here.\"_\n\n> _\"Tell me honestly whether this job needs a bigger, distant model, or whether my own local one is enough, so I can choose privacy when I can afford to.\"_\n\n**The judgment check** : match the model to the sensitivity of the work, not to habit; keep the private things in-house, and reach for a distant service only when the task genuinely needs what only it can do.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1030,
+      "out_sha": "219d344b7d87",
       "note": ""
     },
     {
@@ -1023,11 +1023,11 @@
       "en_title": "Chapter 15: Capstone II — The Atlas",
       "order": 79,
       "src_chars": 1789,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cc0657e17af3",
       "src": "### 15.3 \"See what my agent sees\"\n\n_The map this draws on (one line): Volume III gave you the terminal's world, the operating floor of files and processes where you can watch a task run step by step on your own machine, over its shoulder._\n\nWhen you would rather watch your assistant work on your own machine than trust a summary of it, these are the words:\n\n> _\"Run this where I can watch it happen step by step, and show me what streams past, so I can see what you're really doing rather than just hearing your summary of it.\"_\n\n> _\"Before you run something that changes files on my machine, show me exactly what it will touch, so nothing changes that I didn't expect.\"_\n\n**The judgment check** : keep a hand on anything that changes or deletes on your own machine; watching is cheap, and the point of watching is to catch the irreversible thing before it happens, not after.\n\n\n### 15.4 \"Put it on the internet\"\n\n_The map this draws on (one line): Volume IV gave you the server, a small always-on presence out on the internet, awake at every hour and reachable at a fixed address._\n\nWhen a thing of yours needs to be always awake, always reachable, or able to be rung, these are the words:\n\n> _\"This part needs to be running and reachable even when my own machine is off. Set it up on something that stays awake at a fixed address, and tell me plainly what that costs to keep running.\"_\n\n> _\"Something needs to be able to reach me the instant an event happens. Give it an always-on place to listen, since a closed laptop can't receive a ring.\"_\n\n**The judgment check** : reach for the always-on home only when a task genuinely must act while you are away, because it costs real setup and upkeep; a task that runs when you ask, or on a schedule when your machine is on, does not need it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 700,
+      "out_sha": "cdac91de005a",
       "note": ""
     },
     {
