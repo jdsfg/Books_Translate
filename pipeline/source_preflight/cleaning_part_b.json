@@ -1,7 +1,7 @@
 {
   "report": "cleaning_part_b",
-  "generated_at": "2026-07-21T16:35:04Z",
-  "control_review_ref": "https://github.com/jdsfg/Books_Translate/pull/19#issuecomment-5036521335",
+  "generated_at": "2026-07-21T22:36:59Z",
+  "control_review_ref": "https://github.com/jdsfg/Books_Translate/pull/19#issuecomment-5036606729",
   "remediation": {
     "ml_formula_rewrite": "fully_reverted_to_origin_main",
     "fake_h2_tables_column_fix": [
@@ -16,7 +16,16 @@
       "classical_scaffold_removal",
       "network_structural_fixes",
       "brahms_read_heading"
-    ]
+    ],
+    "round3_contingency_tables": {
+      "book": "被讲述的自己——自欺背后的脑科学",
+      "action": "Added blank row-label first header cell on L1850 and L1863 2x2 tables so header/sep/data are 3-col uniform",
+      "prior_honest_status_before_this_fix": {
+        "promotable": 7,
+        "pending_control": 2,
+        "BLOCK": 2
+      }
+    }
   },
   "scope_count": 11,
   "summary": {
@@ -103,12 +112,20 @@
         "duplicate_long_section (L5109–5129 / L5131–5151)"
       ],
       "issues_after": 0,
-      "bytes": 1098819,
+      "bytes": 1098825,
       "lines": 5282,
       "diff": {
-        "added": 1,
-        "deleted": 23,
+        "added": 3,
+        "deleted": 25,
         "hunk_ranges": [
+          {
+            "old": "L1850",
+            "new": "L1850"
+          },
+          {
+            "old": "L1863",
+            "new": "L1863"
+          },
           {
             "old": "L4878",
             "new": "L4878"
@@ -118,13 +135,18 @@
             "new": "L5109"
           }
         ],
-        "hunk_count": 2
+        "hunk_count": 4
       },
       "decisions": [
         {
           "kind": "table",
           "action": "Removed ## from application table header; added `#` first column so header/sep/data are 5-col uniform.",
           "lines": "L4878"
+        },
+        {
+          "kind": "table",
+          "action": "Added blank row-label first header cell on two Kahan 2×2 contingency tables so header/sep/data are 3-col uniform.",
+          "lines": "L1850–L1853, L1863–L1866"
         },
         {
           "kind": "duplicate",
@@ -135,29 +157,8 @@
       "remaining_issues": [],
       "rescan": {
         "fake_h2_table_headers": [],
-        "table_col_mismatches_count": 2,
-        "table_col_mismatches_sample": [
-          {
-            "start_line": 1850,
-            "colcounts": [
-              2,
-              3,
-              3,
-              3
-            ],
-            "header": "| Skin condition got better | Skin condition got worse  "
-          },
-          {
-            "start_line": 1863,
-            "colcounts": [
-              2,
-              3,
-              3,
-              3
-            ],
-            "header": "| Crime decreased | Crime increased  "
-          }
-        ],
+        "table_col_mismatches_count": 0,
+        "table_col_mismatches_sample": [],
         "residual_latex_outside_math": 0,
         "h2_count": 16,
         "final_horizontal_rule": true,

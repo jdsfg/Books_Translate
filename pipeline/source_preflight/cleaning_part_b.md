@@ -6,14 +6,14 @@
 
 ## 控制审校返修
 
-依据 [PR #19 控制评论](https://github.com/jdsfg/Books_Translate/pull/19#issuecomment-5036521335)：
+依据 [PR #19 第三轮复验](https://github.com/jdsfg/Books_Translate/pull/19#issuecomment-5036606729)（及前轮控制返修）：
 
-1. **完整撤销**《机器学习》本轮不安全公式批量改写，文件已与 `origin/main` 一致；登记为 `SOURCE_CONFLICT`/`BLOCK`，禁止继续批量正则清洗。
-2. **修复 4 本伪 H2 表列数**：为表头补 `#` 编号首列，使表头/分隔行/数据行列数一致。
+1. **完整撤销**《机器学习》不安全公式批量改写；登记 `SOURCE_CONFLICT`/`BLOCK`。
+2. **伪 H2 表**补 `#` 首列；**第三轮**另为《被讲述的自己》L1850/L1863 两张 2×2 表补空白行标签首列表头。
 3. **保留**已验证安全的重复段、目录与古典脚手架删除。
-4. 下表按返修后实测重写（控制评论当时对未修表格 PR 的中间态评估曾为：可晋升 4 / 待裁决 2 / BLOCK 5）。
+4. 第三轮复验前诚实中间态曾为：可晋升 7 / 待裁决 2 / BLOCK 2（机器学习、被讲述的自己）。下表为本次两表修复后的实测。
 
-## 汇总（返修后实测）
+## 汇总（第三轮修复后实测）
 
 - CLEAN_PASS / 可晋升：**8**
 - CLEAN_WITH_REMAINDERS / 待控制裁决：**2**（计算机网络、细听：勃拉姆斯）
@@ -28,7 +28,7 @@ BLOCK 书名：《机器学习：从数据到智能》
 | # | 书名 | 修复前问题数 | 修复后问题数 | 状态 | 晋升 | diff +/- |
 |---:|---|---:|---:|---|---|---|
 | 1 | 机器学习：从数据到智能 | 2 | 2 | **BLOCK** | blocked | +0/-0 |
-| 2 | 被讲述的自己——自欺背后的脑科学 | 2 | 0 | **CLEAN_PASS** | promotable | +1/-23 |
+| 2 | 被讲述的自己——自欺背后的脑科学 | 2 | 0 | **CLEAN_PASS** | promotable | +3/-25 |
 | 3 | 情绪的科学：识别、调节、不被绑架 | 1 | 0 | **CLEAN_PASS** | promotable | +3/-3 |
 | 4 | 压力的科学 | 2 | 0 | **CLEAN_PASS** | promotable | +5/-27 |
 | 5 | 说服性写作 | 2 | 0 | **CLEAN_PASS** | promotable | +3/-3 |
@@ -65,25 +65,29 @@ BLOCK 书名：《机器学习：从数据到智能》
 ### 被讲述的自己——自欺背后的脑科学 — CLEAN_PASS
 
 - 路径：`sources/pending/被讲述的自己——自欺背后的脑科学.md`
-- 字节/行数：1098819 / 5282
+- 字节/行数：1098825 / 5282
 - 晋升标记：`promotable`
 - 修复前问题数：2
   - table_header_misparsed_as_h2 (L4878)
   - duplicate_long_section (L5109–5129 / L5131–5151)
 - 修复后问题数：0
-- 相对 main 的 hunk 数：2
+- 相对 main 的 hunk 数：4
 - 主要 diff 行范围（旧→新）：
+  - L1850 → L1850
+  - L1863 → L1863
   - L4878 → L4878
   - L5110-L5131 → L5109
 - 处理决定：
-  - `table`：Removed ## from application table header; added `#` first column so header/sep/data are 5-col uniform.（L4878）
-  - `duplicate`：Deleted second identical closing observations+letter block; kept one * * * before Coda.（former L5131–5151）
+  - `table`：Removed ## from application table header; added `#` first column so header/sep/data are 5-col uniform。（L4878）
+  - `table`：Added blank row-label first header cell on two Kahan 2×2 contingency tables so header/sep/data are 3-col uniform。（L1850–L1853, L1863–L1866）
+  - `duplicate`：Deleted second identical closing observations+letter block; kept one * * * before Coda。（former L5131–5151）
 - 复扫：
   - 伪 H2 表头：无
-  - 列数不一致表数：2
+  - 列数不一致表数：0
   - 数学定界外残余 `\command` 行数：0
   - H2 数：16；最终 `---`：True；与 main 相同：False
 - 未解决问题：无
+
 
 ### 情绪的科学：识别、调节、不被绑架 — CLEAN_PASS
 
