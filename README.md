@@ -10,4 +10,4 @@ Private cloud-translation workspace. Canonical translation state is stored in `p
 4. Push small batches to the assigned branch. Never push directly to `main`.
 5. Run the book-specific verification command before opening a pull request.
 
-See `CLOUD_AGENT.md` and `STATUS.md` before translating.
+See `CLOUD_AGENT.md` and `STATUS.md` before translating. `sources/pending/` holds uploaded books that are not translation-ready; see `SOURCE_INTAKE.md` and complete source preflight before moving one into `sources/`.
