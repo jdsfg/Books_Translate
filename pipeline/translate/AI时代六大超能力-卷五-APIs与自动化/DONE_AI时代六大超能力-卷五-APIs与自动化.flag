@@ -9,3 +9,5 @@ Remaining WARN notes (false positives from shared glossary_cs.md):
 - ACID: English “acid”/figurative uses in narrative (not ACID transaction properties). Present in c15_b01, c15_b05, c16_b03, c16_b04, c16_b05.
 
 No structural ERROR. Sample PASS then full fine translation on same Draft PR #13.
+
+Also fixed idiom: “acid test” → 试金石 (was 酸性测试) in c15/c16.
