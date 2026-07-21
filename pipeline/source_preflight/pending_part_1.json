@@ -1,0 +1,1258 @@
+{
+  "report": "pending_part_1",
+  "generated_at": "2026-07-21T14:52:00Z",
+  "scope_count": 24,
+  "classification_definition": {
+    "PASS": "未发现阻断问题，可晋升。",
+    "PASS_WITH_WARNINGS": "可以晋升，但问题必须登记。",
+    "BLOCK": "初始化前必须修复或由控制模型裁决。"
+  },
+  "summary": {
+    "PASS": 10,
+    "PASS_WITH_WARNINGS": 4,
+    "BLOCK": 10
+  },
+  "books": [
+    {
+      "name": "AI 工程：用 LLM 构建生产系统",
+      "path": "sources/pending/AI 工程：用 LLM 构建生产系统.md",
+      "bytes": 1820312,
+      "lines": 19424,
+      "title_stats": {
+        "h1": 0,
+        "h2": 32,
+        "h3": 321,
+        "h4": 228,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999944,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Introduction、Chapter 1–25、Appendix A–D；末附录完整收束。",
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCKER",
+          "type": "duplicate_long_section",
+          "file": "sources/pending/AI 工程：用 LLM 构建生产系统.md",
+          "locations": [
+            {
+              "line_start": 18386,
+              "line_end": 18409,
+              "label": "first copy"
+            },
+            {
+              "line_start": 18411,
+              "line_end": 18434,
+              "label": "second copy"
+            }
+          ],
+          "evidence": "“Add the discipline to the team's recurring meeting agenda…”至“…years beyond this book's publication.”整段连续复现。",
+          "risk": "同一长段会被切块并重复翻译，形成实质内容重复。",
+          "recommendation": "初始化前删除第二份 L18411–L18434，并人工确认段落衔接。"
+        },
+        {
+          "severity": "BLOCKER",
+          "type": "table_header_misparsed_as_h2",
+          "file": "sources/pending/AI 工程：用 LLM 构建生产系统.md",
+          "locations": [
+            {
+              "line_start": 19285,
+              "line_end": 19293
+            }
+          ],
+          "evidence": "L19285 为“## | Anti-pattern | The kill criterion | Anchor failure | Chapter(s)”。",
+          "risk": "表头被写成 H2，初始化会把速查表误当成独立章节并污染标题锁。",
+          "recommendation": "初始化前删除表头前的“## ”，保留普通 Markdown 表格。"
+        },
+        {
+          "severity": "MEDIUM",
+          "type": "toc_duplicate_and_omission",
+          "file": "sources/pending/AI 工程：用 LLM 构建生产系统.md",
+          "locations": [
+            {
+              "line_start": 31,
+              "line_end": 34
+            }
+          ],
+          "evidence": "Chapter 25 后连续出现四行“- Introduction”，且目录未列 Appendix A–D。",
+          "risk": "目录与正文不对应，读者导航和后续目录审计会产生误报。",
+          "recommendation": "去除重复 Introduction；按正文补列 Appendix A–D，或登记为目录裁剪决定。"
+        }
+      ]
+    },
+    {
+      "name": "古老的认知疗法——斯多葛主义的现代诠释",
+      "path": "sources/pending/古老的认知疗法——斯多葛主义的现代诠释.md",
+      "bytes": 1199601,
+      "lines": 7008,
+      "title_stats": {
+        "h1": 0,
+        "h2": 17,
+        "h3": 137,
+        "h4": 305,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999473,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Chapter 1–14、Appendix A–G；正文与附录结尾完整。",
+      "status": "PASS_WITH_WARNINGS",
+      "issues": [
+        {
+          "severity": "MEDIUM",
+          "type": "toc_corruption",
+          "file": "sources/pending/古老的认知疗法——斯多葛主义的现代诠释.md",
+          "locations": [
+            {
+              "line_start": 20,
+              "line_end": 20
+            }
+          ],
+          "evidence": "目录末项为“- Appendix C: _prosochē_).”，正文实际包含 Appendix A–G。",
+          "risk": "目录条目明显残缺且不能代表正文附录结构。",
+          "recommendation": "更正附录目录为 A–G，或由控制模型登记目录不参与标题锁。"
+        }
+      ]
+    },
+    {
+      "name": "系统设计思维：大规模软件的架构之道",
+      "path": "sources/pending/系统设计思维：大规模软件的架构之道.md",
+      "bytes": 1161018,
+      "lines": 12263,
+      "title_stats": {
+        "h1": 0,
+        "h2": 29,
+        "h3": 268,
+        "h4": 445,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999942,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Chapter 1–28 连续；Chapter 28 有 Summary 和完整收束句。",
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCKER",
+          "type": "formula_multiple_renderings",
+          "file": "sources/pending/系统设计思维：大规模软件的架构之道.md",
+          "locations": [
+            {
+              "line_start": 684,
+              "line_end": 684
+            },
+            {
+              "line_start": 692,
+              "line_end": 692
+            },
+            {
+              "line_start": 694,
+              "line_end": 694
+            },
+            {
+              "line_start": 696,
+              "line_end": 696
+            },
+            {
+              "line_start": 1114,
+              "line_end": 1114
+            },
+            {
+              "line_start": 1116,
+              "line_end": 1116
+            },
+            {
+              "line_start": 1124,
+              "line_end": 1124
+            },
+            {
+              "line_start": 1128,
+              "line_end": 1128
+            },
+            {
+              "line_start": 1132,
+              "line_end": 1132
+            },
+            {
+              "line_start": 2711,
+              "line_end": 2711
+            },
+            {
+              "line_start": 3265,
+              "line_end": 3265
+            },
+            {
+              "line_start": 3269,
+              "line_end": 3269
+            },
+            {
+              "line_start": 3514,
+              "line_end": 3514
+            },
+            {
+              "line_start": 10383,
+              "line_end": 10383
+            },
+            {
+              "line_start": 10407,
+              "line_end": 10407
+            }
+          ],
+          "evidence": "L684：“Combined availability=…\\text{Combined availability} = …Combined availability=…”；L696：“99.95%99.95\\%99.95%”。",
+          "risk": "同一公式以 Unicode/LaTeX/纯文本二至三重粘连，共 15 行；会导致重复翻译和数字变形。",
+          "recommendation": "初始化前逐行归一为一种公式表示，并复核计算值。",
+          "affected_line_count": 15
+        }
+      ]
+    },
+    {
+      "name": "被讲述的自己——自欺背后的脑科学",
+      "path": "sources/pending/被讲述的自己——自欺背后的脑科学.md",
+      "bytes": 1104947,
+      "lines": 5304,
+      "title_stats": {
+        "h1": 0,
+        "h2": 17,
+        "h3": 110,
+        "h4": 117,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.99991,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Chapter 1–12、Coda、Further Reading；书目说明完整结束。",
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCKER",
+          "type": "table_header_misparsed_as_h2",
+          "file": "sources/pending/被讲述的自己——自欺背后的脑科学.md",
+          "locations": [
+            {
+              "line_start": 4878,
+              "line_end": 4893
+            }
+          ],
+          "evidence": "L4878 为“## | Action | Line 2 (inner reason) | …”。",
+          "risk": "应用题表格被识别为 H2 章节，污染切块和标题锁。",
+          "recommendation": "初始化前删除表头前的“## ”。"
+        },
+        {
+          "severity": "BLOCKER",
+          "type": "duplicate_long_section",
+          "file": "sources/pending/被讲述的自己——自欺背后的脑科学.md",
+          "locations": [
+            {
+              "line_start": 5109,
+              "line_end": 5129,
+              "label": "first copy"
+            },
+            {
+              "line_start": 5131,
+              "line_end": 5151,
+              "label": "second copy"
+            }
+          ],
+          "evidence": "“A third observation…”至“Tonight, before sleep, write the brief letter…”整块连续重复。",
+          "risk": "重复内容会进入两个翻译块并破坏章末到 Coda 的衔接。",
+          "recommendation": "删除第二份 L5131–L5151，并确认保留一次分隔线。"
+        }
+      ]
+    },
+    {
+      "name": "AI 科学 II：大语言模型",
+      "path": "sources/pending/AI 科学 II：大语言模型.md",
+      "bytes": 974314,
+      "lines": 10742,
+      "title_stats": {
+        "h1": 0,
+        "h2": 25,
+        "h3": 243,
+        "h4": 304,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.995826,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Chapter 1–24 连续；24.9 答案及末尾完整。",
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCKER",
+          "type": "systemic_formula_multiple_renderings",
+          "file": "sources/pending/AI 科学 II：大语言模型.md",
+          "locations": [
+            {
+              "line_start": 77,
+              "line_end": 77
+            },
+            {
+              "line_start": 222,
+              "line_end": 224
+            },
+            {
+              "line_start": 2008,
+              "line_end": 2012
+            },
+            {
+              "line_start": 2070,
+              "line_end": 2070
+            },
+            {
+              "line_start": 10612,
+              "line_end": 10612
+            }
+          ],
+          "evidence": "L77 将 underbrace 的可视式、LaTeX 和可视式粘为一行；L222–L224 出现“ELMo_k…ELMok”及“jjj/kkk”；L2070 出现“Y=AK…Y=AK”与“YYY/KKK/LLL”。",
+          "risk": "全书 602 行命中 LaTeX 命令与重复渲染特征，变量和上下标被重复，属于系统性源稿损坏。",
+          "recommendation": "禁止初始化；先全书清洗为单一公式形式，再由控制模型复核公式与变量。",
+          "affected_line_count": 602,
+          "affected_scope": {
+            "line_start": 77,
+            "line_end": 10612
+          }
+        },
+        {
+          "severity": "HIGH",
+          "type": "table_shape_inconsistent",
+          "file": "sources/pending/AI 科学 II：大语言模型.md",
+          "locations": [
+            {
+              "line_start": 2539,
+              "line_end": 2543
+            },
+            {
+              "line_start": 10486,
+              "line_end": 10503
+            }
+          ],
+          "evidence": "L2539 表头只有“Kaplan | Chinchilla”，数据行却有指标名 + 两值；L10489 起后续行省略 Category 列，列数少于四列表头。",
+          "risk": "表格列语义错位，转换或翻译时可能丢失首列归属。",
+          "recommendation": "补齐空白/指标表头并使每行列数一致。"
+        }
+      ]
+    },
+    {
+      "name": "情绪的科学：识别、调节、不被绑架",
+      "path": "sources/pending/情绪的科学：识别、调节、不被绑架.md",
+      "bytes": 938489,
+      "lines": 5792,
+      "title_stats": {
+        "h1": 0,
+        "h2": 28,
+        "h3": 228,
+        "h4": 129,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999894,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Chapter 1–18、Appendix A–F；最终附录完整收束。",
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCKER",
+          "type": "table_headers_misparsed_as_h2",
+          "file": "sources/pending/情绪的科学：识别、调节、不被绑架.md",
+          "locations": [
+            {
+              "line_start": 359,
+              "line_end": 366
+            },
+            {
+              "line_start": 5033,
+              "line_end": 5041
+            },
+            {
+              "line_start": 5047,
+              "line_end": 5060
+            }
+          ],
+          "evidence": "三处表头分别以“## | Move | …”和“## | Emotion | …”开头。",
+          "risk": "三张表会被初始化为伪章节，章节数和标题锁均被污染。",
+          "recommendation": "初始化前删除三处表头前的“## ”，并复核表格列数。"
+        }
+      ]
+    },
+    {
+      "name": "数据库系统",
+      "path": "sources/pending/数据库系统.md",
+      "bytes": 884261,
+      "lines": 12151,
+      "title_stats": {
+        "h1": 0,
+        "h2": 25,
+        "h3": 292,
+        "h4": 673,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999439,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Introduction、Chapter 1–23；末章总结完整，但末段重复。",
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCKER",
+          "type": "systemic_formula_multiple_renderings",
+          "file": "sources/pending/数据库系统.md",
+          "locations": [
+            {
+              "line_start": 286,
+              "line_end": 286
+            },
+            {
+              "line_start": 329,
+              "line_end": 329
+            },
+            {
+              "line_start": 2810,
+              "line_end": 2812
+            },
+            {
+              "line_start": 10525,
+              "line_end": 10527
+            }
+          ],
+          "evidence": "L286：“10−2/(3×10−10)…\\frac{10^{-2}}{3 \\times 10^{-10}}…10−2…”；L2810：“XXX…YYY…X→Y\\,X \\rightarrow Y\\,X→Y…RRR”。",
+          "risk": "195 行命中重复公式特征，函数依赖变量出现 XXX/YYY/RRR 三写，数学和关系代数内容不可直接入翻译流水线。",
+          "recommendation": "禁止初始化；全书归一公式并核对变量、上下标和运算符。",
+          "affected_line_count": 195,
+          "affected_scope": {
+            "line_start": 286,
+            "line_end": 10527
+          }
+        },
+        {
+          "severity": "BLOCKER",
+          "type": "duplicate_tail_section",
+          "file": "sources/pending/数据库系统.md",
+          "locations": [
+            {
+              "line_start": 12061,
+              "line_end": 12103,
+              "label": "first copy"
+            },
+            {
+              "line_start": 12105,
+              "line_end": 12147,
+              "label": "second copy"
+            }
+          ],
+          "evidence": "Think Deeper 15–20、Hints、Chapter Summary 和“That is what a database engineer does.”整体重复。",
+          "risk": "末章将产生重复问题、答案和总结。",
+          "recommendation": "删除第二份 L12105–L12147，保留单次总结与终分隔线。"
+        },
+        {
+          "severity": "HIGH",
+          "type": "table_header_missing_row_label",
+          "file": "sources/pending/数据库系统.md",
+          "locations": [
+            {
+              "line_start": 7616,
+              "line_end": 7622
+            }
+          ],
+          "evidence": "锁兼容矩阵表头为“| IS | IX | S | SIX | X”，正文行还含行标签 IS/IX/S/SIX/X。",
+          "risk": "表头比数据行少一列，首列行标签没有表头，渲染和语义映射可能错位。",
+          "recommendation": "在表头增加空白或“Lock type”首列，并统一列数。"
+        }
+      ]
+    },
+    {
+      "name": "压力的科学",
+      "path": "sources/pending/压力的科学.md",
+      "bytes": 833222,
+      "lines": 6111,
+      "title_stats": {
+        "h1": 0,
+        "h2": 15,
+        "h3": 108,
+        "h4": 55,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999928,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Introduction、Chapter 1–14；Chapter 11 正文存在但标题粘连，末章收束后重复。",
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCKER",
+          "type": "chapter_heading_glued_and_toc_gap",
+          "file": "sources/pending/压力的科学.md",
+          "locations": [
+            {
+              "line_start": 16,
+              "line_end": 16,
+              "label": "TOC gap"
+            },
+            {
+              "line_start": 4141,
+              "line_end": 4141,
+              "label": "glued Chapter 11 heading"
+            }
+          ],
+          "evidence": "目录由 Chapter 10 直接跳到 Chapter 12；L4141 在正文句末粘入“# Chapter 11: Childhood — ACEs and Biological Embedding”。",
+          "risk": "Chapter 11 正文存在但不是独立 H2，初始化会把整章并入 Chapter 10，且目录漏章。",
+          "recommendation": "在 L4141 前断行并改为“## Chapter 11: …”，同时补目录 Chapter 11。"
+        },
+        {
+          "severity": "BLOCKER",
+          "type": "duplicate_tail_section",
+          "file": "sources/pending/压力的科学.md",
+          "locations": [
+            {
+              "line_start": 6057,
+              "line_end": 6081,
+              "label": "first copy"
+            },
+            {
+              "line_start": 6083,
+              "line_end": 6107,
+              "label": "second copy"
+            }
+          ],
+          "evidence": "“Most readers cannot tell…”后的诊断段、Chapter Summary 和“The framework is yours now.”重复。",
+          "risk": "终章收束被整段复制，翻译后会出现双重结尾。",
+          "recommendation": "删除第二份 L6083–L6107，保留单次总结。"
+        }
+      ]
+    },
+    {
+      "name": "理性之外：行为经济学",
+      "path": "sources/pending/理性之外：行为经济学.md",
+      "bytes": 757814,
+      "lines": 5311,
+      "title_stats": {
+        "h1": 0,
+        "h2": 23,
+        "h3": 168,
+        "h4": 219,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999286,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Chapter 1–22 连续；末章练习、答案和总结完整。",
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCKER",
+          "type": "formula_multiple_renderings",
+          "file": "sources/pending/理性之外：行为经济学.md",
+          "locations": [
+            {
+              "line_start": 267,
+              "line_end": 467
+            },
+            {
+              "line_start": 529,
+              "line_end": 533
+            },
+            {
+              "line_start": 2164,
+              "line_end": 2165
+            },
+            {
+              "line_start": 2238,
+              "line_end": 2248
+            }
+          ],
+          "evidence": "L303–L317 出现“CECECE”“RP=…RP = …RP=…”；L529–L533 出现“xxx”“+x+x+x”和同一不等式三重表示。",
+          "risk": "56 行公式/变量重复，损坏集中在效用、前景理论等核心数学段，直接翻译会保留错误变量和多重公式。",
+          "recommendation": "初始化前将 56 个命中行归一为单一公式，复核变量 x、CE、RP、EU。",
+          "affected_line_count": 56,
+          "affected_scope": {
+            "line_start": 267,
+            "line_end": 2248
+          }
+        }
+      ]
+    },
+    {
+      "name": "细听：巴赫",
+      "path": "sources/pending/细听：巴赫.md",
+      "bytes": 755611,
+      "lines": 4259,
+      "title_stats": {
+        "h1": 0,
+        "h2": 24,
+        "h3": 163,
+        "h4": 262,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.998968,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Chapter 1–23 连续；Closing Handoff 和系列提示完整。",
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "name": "学术写作：从论文到研究计划",
+      "path": "sources/pending/学术写作：从论文到研究计划.md",
+      "bytes": 722745,
+      "lines": 5361,
+      "title_stats": {
+        "h1": 0,
+        "h2": 19,
+        "h3": 196,
+        "h4": 174,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999908,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Chapter 1–18 连续；末章总结和收束引语完整。",
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "name": "机器学习：从数据到智能",
+      "path": "sources/pending/机器学习：从数据到智能.md",
+      "bytes": 656016,
+      "lines": 7532,
+      "title_stats": {
+        "h1": 0,
+        "h2": 28,
+        "h3": 207,
+        "h4": 311,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.995924,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Introduction、Chapter 1–26、Epilogue；结尾“The search continues.”完整。",
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCKER",
+          "type": "systemic_formula_multiple_renderings",
+          "file": "sources/pending/机器学习：从数据到智能.md",
+          "locations": [
+            {
+              "line_start": 149,
+              "line_end": 154
+            },
+            {
+              "line_start": 341,
+              "line_end": 399
+            },
+            {
+              "line_start": 6977,
+              "line_end": 7051
+            },
+            {
+              "line_start": 7465,
+              "line_end": 7465
+            }
+          ],
+          "evidence": "L149：“xxx…yyy…fff…f(x)≈y\\,f(x) \\approx y\\,f(x)≈y”；L153 出现“y∈{0,1}”三重表示。",
+          "risk": "775 行命中重复公式特征，变量、集合、上下标和函数在全书范围内损坏。",
+          "recommendation": "禁止初始化；系统清洗后全量复扫公式和变量。",
+          "affected_line_count": 775,
+          "affected_scope": {
+            "line_start": 149,
+            "line_end": 7465
+          }
+        },
+        {
+          "severity": "BLOCKER",
+          "type": "table_cells_corrupted_by_dollar_math_parsing",
+          "file": "sources/pending/机器学习：从数据到智能.md",
+          "locations": [
+            {
+              "line_start": 2657,
+              "line_end": 2660
+            },
+            {
+              "line_start": 7505,
+              "line_end": 7511
+            }
+          ],
+          "evidence": "RMSE 值交替变成“(34,500”“)31,200”“(27,100”“)23,800”，原货币美元符号/定界被破坏。",
+          "risk": "两张模型比较表的数值含义和 Markdown 列内容已损坏。",
+          "recommendation": "从可信来源恢复金额/数值表示并统一转义美元符号。"
+        }
+      ]
+    },
+    {
+      "name": "社会学的想象力",
+      "path": "sources/pending/社会学的想象力.md",
+      "bytes": 623719,
+      "lines": 2819,
+      "title_stats": {
+        "h1": 0,
+        "h2": 23,
+        "h3": 148,
+        "h4": 114,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999884,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Introduction、Chapter 1–21；末章总结和收束完整。",
+      "status": "PASS_WITH_WARNINGS",
+      "issues": [
+        {
+          "severity": "LOW",
+          "type": "markdown_emphasis_corruption",
+          "file": "sources/pending/社会学的想象力.md",
+          "locations": [
+            {
+              "line_start": 2815,
+              "line_end": 2815
+            }
+          ],
+          "evidence": "“_This is the end of_ The Sociological Imagination*, the gateway volume of* The Sociological Eye*…means.*”",
+          "risk": "斜体起止混乱，结尾书名与句子会被错误渲染。",
+          "recommendation": "整理该行斜体边界；不影响章节完整性，可登记后晋升。"
+        }
+      ]
+    },
+    {
+      "name": "说服性写作",
+      "path": "sources/pending/说服性写作.md",
+      "bytes": 586617,
+      "lines": 5422,
+      "title_stats": {
+        "h1": 0,
+        "h2": 20,
+        "h3": 199,
+        "h4": 270,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999798,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Introduction、Chapter 1–17；结尾“Write that one.”完整。",
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCKER",
+          "type": "table_header_misparsed_as_h2",
+          "file": "sources/pending/说服性写作.md",
+          "locations": [
+            {
+              "line_start": 415,
+              "line_end": 422
+            }
+          ],
+          "evidence": "L415 为“## | Move | Diagnostic question”。",
+          "risk": "六步表被当成 H2，初始化会创建伪章节并污染锁定标题。",
+          "recommendation": "初始化前删除表头前的“## ”。"
+        },
+        {
+          "severity": "HIGH",
+          "type": "table_column_mismatch",
+          "file": "sources/pending/说服性写作.md",
+          "locations": [
+            {
+              "line_start": 4520,
+              "line_end": 4529
+            }
+          ],
+          "evidence": "四列表头“Layer | Tool | What it does | Where introduced”下，The Heart Test 与 The Restrained Connection 两行仅三列。",
+          "risk": "两行缺少 Layer 单元格，渲染后各列错位。",
+          "recommendation": "显式补空白 Layer 单元格或重复“Tests”，使每行保持四列。"
+        }
+      ]
+    },
+    {
+      "name": "细品大师：卡拉瓦乔",
+      "path": "sources/pending/细品大师：卡拉瓦乔.md",
+      "bytes": 576689,
+      "lines": 3438,
+      "title_stats": {
+        "h1": 0,
+        "h2": 27,
+        "h3": 199,
+        "h4": 225,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999879,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Introduction、Chapter 1–25；终章回收 six moves / three threads。",
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "name": "社会心理学",
+      "path": "sources/pending/社会心理学.md",
+      "bytes": 547841,
+      "lines": 2366,
+      "title_stats": {
+        "h1": 0,
+        "h2": 23,
+        "h3": 135,
+        "h4": 102,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999878,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Introduction、Chapter 1–21；Open Verdict 和 Summary 完整。",
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "name": "细读世界文学·卷一：史诗与悲剧",
+      "path": "sources/pending/细读世界文学·卷一：史诗与悲剧.md",
+      "bytes": 525389,
+      "lines": 2705,
+      "title_stats": {
+        "h1": 0,
+        "h2": 28,
+        "h3": 143,
+        "h4": 148,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999289,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Introduction、Chapter 1–26；明确声明 volume complete。",
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "name": "调试思维",
+      "path": "sources/pending/调试思维.md",
+      "bytes": 484366,
+      "lines": 5633,
+      "title_stats": {
+        "h1": 0,
+        "h2": 19,
+        "h3": 158,
+        "h4": 161,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999866,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Chapter 1–18；结尾“Happy debugging.”完整。",
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "name": "细品大师：伦勃朗",
+      "path": "sources/pending/细品大师：伦勃朗.md",
+      "bytes": 473204,
+      "lines": 2633,
+      "title_stats": {
+        "h1": 0,
+        "h2": 22,
+        "h3": 193,
+        "h4": 130,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999861,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "目录列 Introduction，正文前言无 H2；Chapter 1–22 连续，终章完整。",
+      "status": "PASS_WITH_WARNINGS",
+      "issues": [
+        {
+          "severity": "MEDIUM",
+          "type": "toc_heading_mismatch",
+          "file": "sources/pending/细品大师：伦勃朗.md",
+          "locations": [
+            {
+              "line_start": 5,
+              "line_end": 5,
+              "label": "TOC"
+            },
+            {
+              "line_start": 31,
+              "line_end": 53,
+              "label": "unheaded introduction"
+            }
+          ],
+          "evidence": "目录列“- Introduction”，但正文前言从“There is a particular kind of helplessness…”开始，直到 L55 才出现首个 H2 Chapter 1。",
+          "risk": "目录锚点与正文标题树不一致；当前解析器会把该段作为 intro，内容不会丢失。",
+          "recommendation": "补“## Introduction”，或删目录该项并明确保留无标题前言；可登记后晋升。"
+        }
+      ]
+    },
+    {
+      "name": "细品大师：莫奈",
+      "path": "sources/pending/细品大师：莫奈.md",
+      "bytes": 428905,
+      "lines": 2301,
+      "title_stats": {
+        "h1": 0,
+        "h2": 26,
+        "h3": 139,
+        "h4": 136,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999386,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Introduction、Chapter 1–24；终章 Orangerie 收束完整。",
+      "status": "PASS_WITH_WARNINGS",
+      "issues": [
+        {
+          "severity": "LOW",
+          "type": "heading_level_jump",
+          "file": "sources/pending/细品大师：莫奈.md",
+          "locations": [
+            {
+              "line_start": 50,
+              "line_end": 50
+            },
+            {
+              "line_start": 60,
+              "line_end": 60
+            }
+          ],
+          "evidence": "“## Introduction”后首个子标题直接为“#### How this book teaches”，跳过 H3。",
+          "risk": "标题层级不规范，但不影响章节连续性或正文完整性。",
+          "recommendation": "将 L60 改为 H3，或登记为前言体例后晋升。"
+        }
+      ]
+    },
+    {
+      "name": "细读世界文学·卷三：小说的艺术",
+      "path": "sources/pending/细读世界文学·卷三：小说的艺术.md",
+      "bytes": 408382,
+      "lines": 2755,
+      "title_stats": {
+        "h1": 0,
+        "h2": 26,
+        "h3": 136,
+        "h4": 147,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999687,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Introduction、Chapter 1–24；系列终卷声明完整。",
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "name": "AI时代六大超能力-卷一-Git与GitHub",
+      "path": "sources/pending/AI时代六大超能力-卷一-Git与GitHub.md",
+      "bytes": 356303,
+      "lines": 2415,
+      "title_stats": {
+        "h1": 0,
+        "h2": 18,
+        "h3": 103,
+        "h4": 95,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999477,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Introduction、Chapter 1–16；终章指向下一卷并完整收束。",
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "name": "细品大师：维米尔",
+      "path": "sources/pending/细品大师：维米尔.md",
+      "bytes": 262078,
+      "lines": 1623,
+      "title_stats": {
+        "h1": 0,
+        "h2": 26,
+        "h3": 143,
+        "h4": 72,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999431,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Introduction、Chapter 1–24；终章和系列声明完整。",
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "name": "AI时代六大超能力-卷六-你的第二大脑",
+      "path": "sources/pending/AI时代六大超能力-卷六-你的第二大脑.md",
+      "bytes": 195770,
+      "lines": 1358,
+      "title_stats": {
+        "h1": 0,
+        "h2": 16,
+        "h3": 81,
+        "h4": 57,
+        "h5": 0,
+        "h6": 0
+      },
+      "checks": {
+        "readable": true,
+        "utf8": true,
+        "english_dominant": true,
+        "latin_share_of_letters": 0.999701,
+        "latex_delimiters_balanced": true,
+        "code_fences_balanced": true,
+        "footnote_references_resolved": true,
+        "local_resource_references_resolved": true,
+        "opening_complete": true,
+        "ending_complete": true,
+        "final_horizontal_rule_present": true
+      },
+      "structure_note": "Introduction、Chapter 1–14；明确声明系列终卷并完整收束。",
+      "status": "PASS",
+      "issues": []
+    }
+  ]
+}
