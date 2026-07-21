@@ -1,0 +1,39 @@
+# DONE · 调试思维
+
+- book: 调试思维
+- branch: cursor/debugging-thinking-sample-dc05
+- PR: #16（同分支续翻，未新建 PR）
+- done/total: 183/183
+- verify: ERROR=0 WARN=8（`--force-arabic --glossary pipeline/translate/glossary_cs.md`）
+- sample review: PASS（head `24d37830`）；本轮自 checkpoint 3/183 精翻至全书完成
+
+## 术语锁定（执行标准）
+
+- debugging = 调试
+- minimal reproducible example / MRE = 最小可复现示例
+- observability = 可观测性
+- race condition = 竞态（服从共享 glossary_cs；首现可写「竞态（race condition）」；禁用「竞态条件」覆盖）
+
+## 剩余 WARN 逐条说明（共 8）
+
+| 块 | WARN | 裁决说明 |
+|---|---|---|
+| c04_b02 | 术语未采用约定译法: 索引 | 源为 `index.html:42` 文件名路径，标识符应保留英文，非 glossary「索引」 |
+| c04_b03 | latex_inline 奇数(1) | 源/译均含模板字面量 `${id}` 中的 `$`，与源一致，非未闭合公式 |
+| c06_b05 | 术语未采用约定译法: 索引 | 源为 array index 语境；译文保留代码标识/“数组下标”叙述，非子串误报类强制改写 |
+| c09_b02 | 术语未采用约定译法: 锁 | 源为 `package-lock.json` 文件名，必须保留英文 |
+| c09_b07 | 术语未采用约定译法: 锁 | 同上，`package-lock.json` |
+| c11_b04 | latex_inline 奇数(15) | 源/译示例金额 `$100/$50/$70/...` 的货币 `$`，与源一致 |
+| c11_b09 | latex_inline 奇数(3) | SQL 占位符 `$amount/$id`，与源一致 |
+| c12_b03 | 术语未采用约定译法: 锁 | 源为 lock file 文件语境，保留英文 |
+
+## 抽检
+
+- intro / c01：样张复验已 PASS（URL 编码根因、竞态、金额、病句）
+- c08 Ampersand Bug 解谜：根因表述为未正确 URL 编码导致 `&` 被当作分隔符截断
+- c14 Knight Capital / Therac-25：金额与竞态术语按当前标准
+
+## 交付
+
+- blocks + checkpoint 已齐；assemble 成功；未改共享脚本/glossary_cs/style
+- 交编排者做独立源译语义终审后合并
