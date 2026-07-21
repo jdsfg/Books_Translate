@@ -1,0 +1,45 @@
+# DONE: 进化心理学
+
+- Status: all blocks committed (`done == total == 184`)
+- Branch: `cursor/evolutionary-psychology-translate-4bb8`
+- Base: `translate/evolutionary-psychology`
+- Date: 2026-07-21
+
+## Verify
+
+- Shared glossary (`glossary_psychology.md`): **ERROR=0 WARN=0**
+- Local glossary (`进化心理学/glossary_local.md`): **ERROR=0 WARN=141**
+
+## Remaining WARN explanation (local glossary only)
+
+Local-glossary WARNs are **约定译法 phrasing mismatches**, not missing concepts. The book consistently uses readable forms established from early blocks; the local glossary entries include parenthetical/alternate phrasings that the checker treats as required strings:
+
+| Glossary entry (checker expects) | Book convention used | Reason |
+|---|---|---|
+| `演化而来的` | `进化而来的` | Matches prior chapters & style_psychology readability; titles also use 进化 |
+| `"天生如此"的故事` | `恰好如此故事` | Body convention from Ch.1–3; title uses 天生如此 but narrative uses 恰好如此 |
+| `适应（物）` | `适应` | Parenthetical glossary note; body uses 适应 |
+| `实然—应然（问题）` | `实然—应然鸿沟` / `实然`/`应然` | Full phrase with 问题 is glossary annotation; body uses 鸿沟 |
+| `WEIRD（西方、受教育、工业化、富裕、民主）` | `WEIRD` after first expanded mention | First-mention expansion present where introduced; later uses bare WEIRD |
+| `副产物` (title) vs body | `副产品` in body | Body convention from Ch.2–3 definitions; title uses 副产物 |
+
+These are **not** ERROR-level issues. Shared-glossary verify is clean. Changing either glossary was forbidden (shared/local glossaries not to be edited by translation agents).
+
+## Sample source/translation review
+
+Spot-checked:
+
+1. `c02_b03` — restored missing `### 1.2` (pre-existing ERROR fixed)
+2. `c13_b03`/`c13_b04` — equal steelman of evolutionary vs biosocial mate-preference accounts
+3. `c14_b04`/`c14_b05` — contested Cinderella effect with max dual firewall
+4. `c16_b05` — rejection of hierarchical group-difference leap with precision
+5. `c20_b11` — final reckoning closing
+
+Structure (headings, italics, separators) preserved; numbers/years intact; no moralization beyond author.
+
+## Notes
+
+- No `init` / `lock-titles` / rechunk
+- No shared scripts/styles/glossaries edited
+- No `.zh.md` or temp files committed
+- Assembled `sources/进化心理学.zh.md` is derived and git-ignored
