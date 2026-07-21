@@ -171,11 +171,11 @@
       "en_title": "Chapter 2: The Counter Window",
       "order": 8,
       "src_chars": 2259,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a7f002658ff6",
       "src": "Imagine Mara's pottery shop as a physical building.\n\nOut front, there is a door for people. Customers walk in, browse the shelves, ask Mara a question, pay at the register, and leave with a bowl wrapped in paper. That door is the shop's website: it is built for a human being, with pictures and buttons and a checkout, and it is patient and slow because humans are patient and slow.\n\nAround the side, less glamorous, there is a second door. It has no shelves and no pictures. It is a counter with a window, like the will-call window at a theater or the pharmacist's counter at the back of a drugstore. Nobody browses here. You walk up, you say exactly what you need in the exact form the clerk expects, and the clerk hands you exactly that, fast, and you leave. No small talk. No pictures. Just a request in an agreed shape and an answer in an agreed shape.\n\nThat second door is what this whole book has been promising you. It has a name, and now we can say it plainly.\n\n\n### 2.1 What an API actually is\n\n\n#### Definition: An API (the counter window)\n\nAn **API** is a service's counter window: a door built not for people but for other machines. Through it, a program asks the service for something in an agreed format, and the service answers in an agreed format, with no human on either side. The letters stand for \"application programming interface,\" but the letters do not matter and you may forget them. The picture matters. It is a counter, with a window, where machines do business.\n\nAlmost every service you use has one. Your bank has a counter window, which is how its phone app shows your balance without a human at the bank typing it to you. Your weather app has one, which is how it knew today's forecast. Mara's shop has one, though Mara has never seen it, because it came built into the shop software the way a house comes with pipes inside the walls.\n\nThe customers' door and the counter window lead to the same shop and the same stock of bowls. They are two ways in to one service. The difference is only _who they were built for_ and _what shape the conversation takes_. The front door expects a human who will browse and think. The counter window expects a machine that already knows exactly what it wants and will say so in the agreed way.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 725,
+      "out_sha": "63ff1071f7d9",
       "note": ""
     },
     {
@@ -183,11 +183,11 @@
       "en_title": "Chapter 2: The Counter Window",
       "order": 9,
       "src_chars": 2625,
-      "status": "pending",
+      "status": "done",
       "src_sha": "90d93ee0800c",
       "src": "### 2.2 \"In an agreed format\" is the whole trick\n\nWhy does the counter window need an agreed format at all? Why can't a machine just walk up and chat the way a customer does?\n\nBecause machines are terrible at chatting and wonderful at forms. A human clerk can handle \"um, I think I ordered a mug last week, or maybe it was a bowl, can you check?\" A counter window cannot. But a counter window can handle ten thousand requests a second if every one of them arrives on the same tidy form, with the same blanks filled in the same order. The agreed format is what trades away the warmth of conversation to buy speed and reliability and scale.\n\nThink of the counter window as having a stack of pre-printed forms. One form says \"look up an order,\" with a blank for the order number. Another says \"add a new item to inventory,\" with blanks for the name and the count. The service publishes which forms exist and what blanks each one has, and anyone approaching the counter fills out the right form and slides it through the window. In return, the answer comes back on a matching form, with the blanks filled in by the clerk.\n\nYou will never fill out these forms by hand. That is the point of having an assistant. But you should be able to _picture_ them, because that picture is what lets you ask sensible things and check sensible answers. When you tell your assistant \"get this week's orders from my shop,\" what your assistant does, under the hood, is walk up to the shop's counter window and fill out the \"look up recent orders\" form. You commissioned the errand. Your assistant knew which form to slide through the window.\n\n\n#### Common Misconception\n\n_\"An API is a website, or a kind of website.\"_\n\nThey can look similar from the outside, and they often live at similar-looking web addresses, so the confusion is natural. But they are built for opposite readers, and that changes everything about them.\n\nA website is dressed for a human: it has layout, color, fonts, and words arranged to be _read by eyes_. If you point a machine at a website, the machine sees a jumble of decoration and has to guess where the real information is hiding, like trying to read a receipt through frosted glass. A counter window is dressed for a machine: no decoration, no layout, just the plain labeled facts in the agreed format. When you have a choice between asking through the counter window and having your assistant \"read the website like a person would,\" the counter window is almost always the honest front door, and we will come back in Chapter 13 to _why_ going around it, scraping the human website, is the fragile and impolite path.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 739,
+      "out_sha": "3b7d711e39ba",
       "note": ""
     },
     {
@@ -195,11 +195,11 @@
       "en_title": "Chapter 2: The Counter Window",
       "order": 10,
       "src_chars": 3195,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f51907f0a648",
       "src": "### 2.3 The dignity shift\n\nHere is the thing that should make you sit up.\n\nThe counter window is not new. It has been there for years, on nearly every service you use, quietly serving other machines. What is new is that the counter is now open to _you_.\n\nFor most of the internet's history, the counter window was reachable only by people who could speak its exact language: programmers who knew how to fill out the forms in precise, unforgiving syntax. If you could not write that syntax, the counter window might as well not exist. You were stuck at the front door, browsing and copying like a customer, being the plumbing by hand.\n\nYou now have an assistant who speaks the counter window's language fluently. So the counter is open to you the way the pharmacist's counter is open to anyone who brings a valid prescription: you do not have to be a pharmacist, you have to know what you need and bring the right paper. Your assistant is the one who knows the exact syntax. Your job moved up a level, from _speaking the language_ to _deciding what to ask for and checking what comes back_. That is a promotion, not a demotion. The tedious part became someone else's job, and the judgment part, the part that was always the human's to keep, stayed yours.\n\n\n### 2.4 One service, many counter windows in the world\n\nStep back from Mara's single shop and picture the whole city.\n\nEvery service is a building with a counter window. The shop, the bank, the mailing list, the calendar, the weather service, the maps service, the photo storage. Thousands of buildings, each with its side door, each waiting for a machine to walk up with the right form. Until now, you walked between them on foot, carrying paper. What becomes possible, once you can commission an assistant to visit these counters, is that the buildings can effectively talk to _each other_ , through you as their director.\n\nThe shop's counter window can be asked \"what came in this weekend?\" The mailing list's counter window can be asked \"send this to everyone.\" And in between stands your assistant, able to carry the answer from the first window to the second, on your instruction, at the speed of a machine, without getting bored or making a typo on the four hundredth order. The plumbing you have been doing by hand is, at bottom, just a series of visits to counter windows. Once something else can make those visits, you are free.\n\nWe are not ready to connect two windows yet. First we have to be able to _read the answers_ that come back through the glass, because if you cannot read the answer, you cannot check your assistant's work, and an automation you cannot check is one you should not trust. The answers come back in a format called JSON, and it is far friendlier than its name. That is the next chapter.\n\nOne small pin for readers arriving from Volume IV: if you remember servers having numbered ports where different kinds of traffic line up, this counter-window idea is a distant cousin of that. Same family, different room. Here, \"counter window\" belongs to services and their APIs, and \"port\" belongs to servers; we will not blur the two.\n\n\n### 2.5 Exercises\n\nRead the answers. They are the lesson, not a hidden key.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 951,
+      "out_sha": "491fa3230b70",
       "note": ""
     },
     {
@@ -207,11 +207,11 @@
       "en_title": "Chapter 2: The Counter Window",
       "order": 11,
       "src_chars": 3050,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fbabc6932406",
       "src": "#### Predict the service\n\n**Q1.** You tell your assistant, \"Show me the balance on my checking account.\" Picture the counter window this visits. Is your assistant filling out a _reading_ form or a _changing_ form? And what is the one blank that form almost certainly needs filled in?\n\nHint\n\nAsk what the bank must know before it can answer, and whether anything about your money actually moved.\n\n**Answer:** This is a _reading_ form. Nothing about the account changed; you only asked the bank to tell you a number it already knows, and asking twice would do no harm. The blank the form needs filled in is _which account_ (and, invisibly but crucially, _proof that you are allowed to ask about it_ , which is the subject of Chapter 6). The lesson to carry: even the simplest ask has a shape, with specific blanks the service must have filled before it can answer. When your assistant \"just checks your balance,\" it is quietly filling out that form for you.\n\n\n#### Read the map\n\n**Q2.** Mara's shop has both a front door (the website customers buy from) and a counter window (the API). A friend tells her, \"Just have your assistant read your shop's website every Monday to get the orders, same as you do with your eyes.\" Why is the counter window the better path, in one sentence of your own, before you read the answer?\n\n**Answer:** The counter window is the better path because it hands over the orders as plain, labeled facts in an agreed format built for a machine, while the website hands over decoration a machine has to squint through and guess at, so reading the website is slower, more fragile, and more likely to grab the wrong thing. There is a deeper reason too, which we save for Chapter 13: the website is the front door for _humans_ , and quietly having a machine strain to read it is going around the service's intended path, where the counter window is the door the service actually built for this. The instinct to reach for the honest, machine-made door first is worth forming now.\n\n\n#### Say this to your AI\n\nLast chapter you surveyed which of your tools have counter windows. Now pick one of them, the one whose Monday-morning drudgery you would most like to lose, and go one step deeper. Still no changes; still just looking.\n\n> _\"Take [my shop / my calendar / my bank]. Through its counter window, what kinds of things can it be _asked to read_ for me, and what kinds of things can it be _asked to change_? List the reading powers and the changing powers separately, in plain words. Don't do any of them yet. I want to understand what this counter can and can't do before I ask it for anything.\"_\n\nThis ask builds directly on the last one. It uses only words this book has taught you so far (counter window, reading versus changing), it stays strictly at looking rather than doing, and it asks your assistant to sort the service's powers into the safe pile (reading) and the careful pile (changing). You are learning to read a service's shape before you trust it, which is exactly the habit Chapter 9 will turn into a superpower.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 927,
+      "out_sha": "b81db0e9d753",
       "note": ""
     },
     {
@@ -219,11 +219,11 @@
       "en_title": "Chapter 2: The Counter Window",
       "order": 12,
       "src_chars": 1333,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ad30e6442746",
       "src": "### Chapter Summary\n\nA service is a building with two doors. The front door is the website, built for humans, patient and decorated. The side door is the **counter window** , an **API** , built for machines: you approach, you slide a request through in an agreed format, and an answer slides back in an agreed format, with no human in the loop. Picture it as a stack of pre-printed forms, some for _reading_ and some for _changing_ , each with specific blanks the service must have filled before it can act. You will never fill these forms out by hand, but picturing them is what lets you ask your assistant for sensible things and check what comes back.\n\nThe counter window has always been there; what is new is that it is now open to _you_ , because your assistant speaks its language, so your job rose from typing the syntax to deciding what to ask and checking the answer. That is the dignity shift this series keeps returning to. We built directly on Chapter 1's reading-versus-sending distinction (here it became reading forms versus changing forms) and on the idea that you are the courier between counter windows. Next, in Chapter 3, we learn to read the answers that come back through the glass, in the friendly labeled-box format called JSON, because an answer you cannot read is an automation you cannot trust.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 408,
+      "out_sha": "ccc6aa15f467",
       "note": ""
     },
     {
