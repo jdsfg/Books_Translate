@@ -1187,11 +1187,11 @@
       "en_title": "Chapter 10: Regression to the Mean",
       "order": 89,
       "src_chars": 2682,
-      "status": "pending",
+      "status": "done",
       "src_sha": "67e88af5c1aa",
       "src": "Daniel Kahneman was once invited to speak to Israeli Air Force flight instructors about reinforcement theory in training. He explained that positive feedback tends to reinforce good behavior more effectively than punishment reinforces bad behavior. One instructor objected: \"With all due respect, I've seen the opposite. Every time I praise a cadet for an especially good landing, the next landing is worse. Every time I yell at a cadet for a bad landing, the next landing is better. So punishment works better than praise.\"\n\nThe instructor was observing a real pattern in the data — and drawing exactly the wrong conclusion from it. This is regression to the mean, and it may be the deepest statistical truth that most educated people have never internalized.\n\n\n### 10.1 The Statistical Inevitability of Regression\n\nRegression to the mean is a simple fact: if a variable is measured repeatedly and some trials are extreme (very high or very low) partly due to chance, then subsequent measurements will tend to be closer to the average — even with no intervention whatsoever.\n\nThe flight instructor's logic: praise follows exceptional performance → next performance is worse → praise caused the decline. But the exceptional performance was exceptional _partly because of luck_. The cadet had a genuinely good flight, but it was better than their true average partly due to a favorable gust of wind, high alertness that day, and random variation. The next flight would tend to be closer to their true average regardless of what the instructor said or did.\n\nThe same logic applies to punishment after a bad landing: the bad landing was bad partly due to bad luck. The next landing would tend to be better simply because extreme performances revert toward the mean — not because the punishment worked.\n\n\n#### Definition: Regression to the Mean\n\nRegression to the mean is the statistical phenomenon whereby extreme measurements in a sample tend to be followed by measurements closer to the average, when a subsequent measurement is taken.\n\nIn plain language: if someone scores extremely well on a test this week, they are likely to score somewhat less extremely well next week — not because they got worse, but because extreme performance is partly luck, and luck averages out.\n\nThe term \"regression\" was coined by Francis Galton in the 19th century when he observed that extremely tall fathers tend to have sons shorter than them (and extremely short fathers tend to have sons taller than them). Heights \"regress toward the mean\" of the population across generations. Galton briefly and wrongly speculated this was evidence of biological pull toward average — it is simply statistics.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 786,
+      "out_sha": "ca9d8e8e408d",
       "note": ""
     },
     {
@@ -1199,11 +1199,11 @@
       "en_title": "Chapter 10: Regression to the Mean",
       "order": 90,
       "src_chars": 3068,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c3041b74e44f",
       "src": "#### Definition: The Causal Attribution Error\n\nThe causal attribution error occurs when regression to the mean is misinterpreted as the effect of an intervention.\n\nIn plain language: we observe that performance improves after punishment and declines after praise, and we conclude that punishment causes improvement and praise causes decline — when in fact both observations would have occurred without any intervention.\n\nThis error is ubiquitous:\n\n* Students who perform extremely poorly on an exam improve on the next exam after tutoring. But they would have improved somewhat even without tutoring (regression to the mean). The tutoring's true effect requires a control group.\n* Companies in a period of poor financial performance bring in a new CEO, who presides over improvement. The improvement is partially attributed to the CEO. But the companies were extreme performers (in the bad direction) partly due to temporary bad luck, and would have improved somewhat under almost any leadership.\n* Athletes who have spectacular seasons are featured on Sports Illustrated covers and subsequently perform worse. This is not a curse — it's regression. The spectacular season was an extreme outcome partly due to luck; the following season regresses toward their true average.\n\n\n### 10.2 Regression Everywhere\n\nOnce you see regression to the mean, you see it everywhere — and you start to question causal claims that used to seem compelling.\n\n**Medical interventions:** People visit doctors when they feel terrible — an extreme low in their health. After treatment, they feel better. Some of the improvement is due to the treatment; some is regression to the mean (they would have recovered somewhat anyway). Without a control group — patients who received no treatment — it is impossible to separate the effect of treatment from regression. This is why randomized controlled trials are essential in medicine: they measure the treatment effect above and beyond the regression that occurs in both groups.\n\n**Educational interventions:** Students are placed in remedial programs when they score very low — an extreme negative performance. After the program, they score higher. Is this the program working, or regression? Very likely both — and a control group is needed to tell them apart.\n\n**Financial markets:** Funds that perform in the top 10% in one year very frequently perform worse in the next year. This is partly regression to the mean: exceptional one-year returns are partly skill, partly luck. The luck doesn't persist; the skill does. The question for identifying good fund managers is: after accounting for regression, is there still evidence of persistent skill? For most actively managed funds, the answer is no.\n\n**Corporate turnarounds:** Companies in distress (extreme low performance) often improve after management changes. Some of this improvement is the new management; some is regression. Companies in boom times (extreme high performance) often return to average — which can look like decline even without any deterioration in management quality.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 863,
+      "out_sha": "18694fba0097",
       "note": ""
     },
     {
@@ -1211,11 +1211,11 @@
       "en_title": "Chapter 10: Regression to the Mean",
       "order": 91,
       "src_chars": 2512,
-      "status": "pending",
+      "status": "done",
       "src_sha": "50ba6759d915",
       "src": "#### Common Misconception\n\n_\"Regression to the mean only matters for random processes. If there's skill involved, it doesn't apply.\"_\n\nRegression applies wherever performance is a combination of skill and luck — which is almost everywhere. The key insight: even in domains with genuine skill differences, single extreme measurements will include a luck component. The skill component is persistent; the luck component is not. So extreme performance tends not to persist simply because the luck component in the next measurement is drawn independently.\n\nThe more luck there is relative to skill in a domain (low \"signal-to-noise ratio\"), the stronger the regression to the mean. In coin flipping (all luck), regression is complete — an exceptional run gives zero information about the next outcome. In chess (high skill), a single exceptional tournament is more informative about true ability, and regression is less pronounced.\n\n\n### 10.3 Thread 2 — The Medical Diagnosis: Regression in Treatment Outcomes\n\nDr. Martinez is evaluating a treatment for the recurring condition in her patient. The patient had a terrible month — significant symptom flare. She started the patient on a new medication. Over the next month, symptoms improved substantially.\n\nIs the improvement evidence that the medication works?\n\nNot definitively. The patient's severe month was, by definition, at the extreme low of their symptom distribution. Even without medication, some improvement would be expected simply by regression to the mean. The question is whether the improvement _exceeds_ what regression alone would produce.\n\nTo answer this rigorously, Dr. Martinez needs a control group — patients with the same condition and similar symptom severity who did not receive the medication, and who she can observe over the same period. This is the logic of the randomized controlled trial: it separates treatment effects from regression.\n\nWithout a control group, the causal attribution error is almost guaranteed: doctors will attribute improvement to treatment, patients will believe treatment helped, and both may be correct — but they can't know by how much.\n\nThe practical implications for patients: be skeptical of testimonials (\"I started taking X and felt much better within a month\") precisely because people start treatments at their worst moments. Regression to the mean alone predicts improvement after starting any treatment. The testimonial cannot distinguish real treatment effects from regression.\n\n\n### 10.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 714,
+      "out_sha": "adb2697142c6",
       "note": ""
     },
     {
@@ -1223,11 +1223,11 @@
       "en_title": "Chapter 10: Regression to the Mean",
       "order": 92,
       "src_chars": 2880,
-      "status": "pending",
+      "status": "done",
       "src_sha": "eba181dd58ba",
       "src": "#### Concept Check\n\n**Q1.** Explain in your own words why extreme performance in one period tends to be followed by less extreme performance in the next period, even without any intervention.\n\n**Answer:** Extreme performance is typically a combination of true ability or underlying quality (the \"signal\") and temporary luck or random variation (the \"noise\"). The signal tends to be stable over short periods; the luck is drawn independently each time. When a performance is extreme — say, unusually high — it is extreme partly because the luck draw that period was unusually good, not just because the underlying ability was unusually high. In the next period, the underlying ability remains similar, but the luck draw is again random — and the probability of getting an equally extreme favorable luck draw is low. So the next period's performance will tend to be closer to the average of the signal, not to the extreme performance that included a very favorable noise component. This is regression to the mean: the signal persists, the noise averages out.\n\n* * *\n\n**Q2.** Francis Galton observed that very tall fathers tend to have sons shorter than themselves, and very short fathers tend to have sons taller than themselves. He initially interpreted this as biological \"reversion.\" What is the correct statistical explanation?\n\n**Answer:** Galton's initial \"reversion\" theory suggested a biological force pulling offspring toward the average. The correct statistical explanation: height is partly inherited from parents and partly determined by non-inherited factors (nutrition, random genetic variation, environment). A father who is extremely tall is extremely tall partly because of height-contributing genes he carries (heritable) and partly because of favorable non-inherited factors that happened in his development. His son inherits the genes but not the non-inherited factors — so the son's expected height is above average (due to the genes) but less extreme than the father's (because the non-inherited lucky factors are not transmitted). The result: very tall fathers have sons who are, on average, taller than average but shorter than the fathers — a statistical artifact of the fact that extreme measurements include both a permanent (heritable) and a transient (non-heritable) component. There is no biological force pulling heights toward average; it is simply that each generation's height is determined by the same statistical process.\n\n* * *\n\n**Q3.** A company has a terrible fiscal year — 40% decline in profits. They hire a new CEO. In the following year, profits recover by 30%. The board credits the new CEO with an exceptional turnaround. What considerations should temper this attribution?\n\nHint\n\nThink about where the company was in its performance distribution when the new CEO was hired, and what would have happened without any change in leadership.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 827,
+      "out_sha": "980862ed7261",
       "note": ""
     },
     {
@@ -1235,11 +1235,11 @@
       "en_title": "Chapter 10: Regression to the Mean",
       "order": 93,
       "src_chars": 2515,
-      "status": "pending",
+      "status": "done",
       "src_sha": "226da1cc05ae",
       "src": "**Answer:** Several considerations: (1) Regression to the mean: the company's 40% profit decline may have been partly due to temporary adverse conditions (macro recession, supply chain disruption, one-time events) that would reverse over time regardless of management. Companies are typically considered for leadership change when performance is at extreme lows — precisely when regression to the mean predicts improvement is coming. (2) Pre-existing initiatives: the recovery may reflect decisions and strategies put in place by the previous leadership that take time to show results. (3) Favorable external conditions: a recovering economy or improved market conditions could drive the same recovery regardless of who was leading. (4) Attribution vs. causation: even if the new CEO did contribute, isolating their specific contribution from regression and external factors requires comparing to a counterfactual (what would have happened without the change) — which is unknowable. The board's strong attribution error is understandable (a compelling narrative: new leader, turnaround) but is epistemically unjustified. The correct inference: the recovery is consistent with good leadership, but not strong evidence of it without controlling for other factors.\n\n* * *\n\n**Q4.** Why do randomized controlled trials (RCTs) control for regression to the mean? Why can't we just measure patients before and after treatment?\n\n**Answer:** Simply measuring patients before and after treatment cannot distinguish treatment effects from regression to the mean because: (1) Patients enter studies at extreme points: they are typically enrolled when their symptoms are severe enough to seek treatment — an extreme low in their symptom distribution. Regression predicts improvement in the next measurement regardless of treatment. (2) There is no way to know how much improvement is regression vs. treatment without a comparison group. If 50 untreated patients with similar initial severity improve by 15% on average, and 50 treated patients improve by 25%, the treatment effect is approximately 10% (25% - 15%), not 25%. The RCT control group experiences the same regression and external factors as the treated group, so comparing the two groups isolates the treatment-specific effect. Pre-post measurement without a control group conflates treatment effects, regression to the mean, natural disease course, placebo effects, and other confounders — making the measurement unreliable as evidence for treatment efficacy.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 725,
+      "out_sha": "7f83c9656e6a",
       "note": ""
     },
     {
@@ -1247,11 +1247,11 @@
       "en_title": "Chapter 10: Regression to the Mean",
       "order": 94,
       "src_chars": 3376,
-      "status": "pending",
+      "status": "done",
       "src_sha": "484b3e9ad578",
       "src": "#### Application Problems\n\n**Q1.** A school district implements a new reading program in the lowest-performing schools. One year later, test scores in those schools have improved by an average of 15 percentile points. The superintendent claims the program is a success. What alternative explanation should temper this claim, and how could the district design a more rigorous evaluation?\n\nHint\n\nThink about why the lowest-performing schools were chosen, and what that selection implies about their performance distribution.\n\n**Answer:** The alternative explanation: regression to the mean. Schools were selected for the program precisely because they were the lowest-performing — extreme low measurements on a distribution that includes both true underlying quality and random variation. Simply because of regression, these schools would be expected to show some improvement in the next measurement period regardless of the program. The 15 percentile-point improvement may include: (a) regression to the mean (improvement that would have occurred anyway), (b) the program's actual effect, and (c) possible other confounders (teacher turnover, demographic shifts, other simultaneously implemented programs). A more rigorous evaluation: (1) Random assignment — randomly select half the low-performing schools for the program, let the other half serve as control. Compare improvement in both groups; the difference is the program's effect. (2) Matching — if random assignment is impossible, identify comparison schools with similar initial characteristics that did not receive the program, and compare their trajectories. (3) Pre-trend analysis — compare multi-year trends (not just year-over-year) to assess whether the improvement is different from what these schools' historical patterns would predict. Without controlling for regression, the 15-point improvement is weak evidence of program efficacy.\n\n* * *\n\n**Q2.** You are a sports analyst. A basketball player scored 42 points in an exceptional game (their season average is 22 points). You are asked to predict their score in the next game. How should regression to the mean inform your prediction?\n\n**Answer:** The player's season average of 22 points represents their underlying ability level. The 42-point game was exceptional — approximately 20 points above average. This exceptional performance was partly due to the player's genuine high performance that day and partly due to favorable luck (favorable shot opportunities, opponent's defensive lapses, high shooting percentage from randomness). For the next game, the genuine ability level remains approximately the same (~22 points average), but the favorable luck is drawn independently — and is unlikely to be as extreme in the same direction. A regression-informed prediction: the player's next game score should be significantly closer to 22 than to 42. If we assume 50% of the 20-point excess is luck and 50% is predictive of temporarily elevated performance (hot streak), we'd predict approximately 22 + 0.5 × 10 = 27 points — somewhere between the season average and the exceptional game, but much closer to the average. This is why sports commentators who say \"he'll definitely score 40+ again tomorrow — he's in a zone\" are often wrong: they ignore the regression component and attribute the exceptional game entirely to persistent elevated ability.\n\n* * *",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 973,
+      "out_sha": "5f60f74e78a5",
       "note": ""
     },
     {
@@ -1259,11 +1259,11 @@
       "en_title": "Chapter 10: Regression to the Mean",
       "order": 95,
       "src_chars": 2174,
-      "status": "pending",
+      "status": "done",
       "src_sha": "389e88bf2a55",
       "src": "**Q3.** A company rolls out an expensive wellness program after noticing high employee absenteeism and healthcare costs. In the following year, both metrics improve substantially. The VP of HR wants to expand the program company-wide. Using regression to the mean, identify the potential problem with this plan and suggest how to evaluate the program properly.\n\n**Answer:** Potential regression problem: companies (or divisions within companies) typically implement wellness programs when absenteeism and healthcare costs have recently spiked — extreme values in the distribution that are partly due to temporary factors (an unusually bad flu season, a cluster of stress-related incidents, random variation in healthcare utilization). These extreme values would be expected to moderate somewhat in the following year even without intervention. The improvement observed may include regression to the mean, not just the program's effect. Proper evaluation: (1) Control group: identify a comparable group of employees or locations that did not receive the program during the same period and compare the trend in both groups. The program's effect is the improvement in the treated group minus the improvement in the control group. (2) Multi-year pre-trend analysis: examine whether the absenteeism spike was a one-time event (strongly suggesting regression) or part of a persistent elevated trend (reducing the regression explanation). (3) Dose-response analysis: if the program's effect is real, those with higher participation should show larger improvements than those with lower participation. Without these controls, the company risks expanding a program that provided marginal benefit relative to natural regression, while attributing the full improvement to the program.\n\n* * *\n\n**Q4.** Think about the field of management consulting: consultants are often hired when companies are at extreme performance lows. They implement recommendations, performance improves, and consultants claim credit. Using regression concepts, explain why this creates a systematic overestimation of consulting effectiveness, and how consulting effectiveness could be more accurately measured.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 561,
+      "out_sha": "5753fb150f8f",
       "note": ""
     },
     {
@@ -1271,11 +1271,11 @@
       "en_title": "Chapter 10: Regression to the Mean",
       "order": 96,
       "src_chars": 1601,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b31d7fa6522d",
       "src": "**Answer:** Systematic overestimation mechanism: consulting engagements are initiated at performance extremes (companies seek outside help precisely when things are going badly). Regression to the mean predicts that these extreme-low performers will show some improvement in the following period regardless of any intervention. Consultants then attribute this improvement (or at least a large portion of it) to their recommendations, rather than recognizing the regression component. This creates a pool of success stories (\"we turned around Company X, reducing costs by 20% within one year\") that systematically overstate the consulting effect, because the comparison is pre-engagement vs. post-engagement — without a control. Accurate measurement: (1) Compare performance trajectory of consulting-engaged companies vs. a matched control of similar companies in similar distress that did not hire consultants. (2) Examine whether consulting-improved companies show persistently better performance years later (persistent improvement would suggest genuine effect beyond regression). (3) Look for dose-response effects: do companies that implement more of the consulting recommendations show greater improvement? If consulting genuinely works, those who followed the advice more closely should show larger effects. The difficulty: such data is hard to obtain, and consulting firms have little incentive to subject their effectiveness to rigorous external evaluation. The self-reported case study model — the industry standard — is epistemically weak precisely because of the regression problem.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 414,
+      "out_sha": "1c6164d867ab",
       "note": ""
     },
     {
@@ -1283,11 +1283,11 @@
       "en_title": "Chapter 10: Regression to the Mean",
       "order": 97,
       "src_chars": 3443,
-      "status": "pending",
+      "status": "done",
       "src_sha": "023d90f22c37",
       "src": "#### Think Deeper\n\n**Q1.** Regression to the mean suggests that \"natural recovery\" accounts for part of any improvement observed after medical treatment. Yet medical trials often show large, consistent treatment effects. How should we think about the boundaries of regression's explanatory power in medicine?\n\n**Discussion:** Regression is a genuine concern for individual medical case reports and small before-after studies — especially when patients are enrolled at their symptom peak. However, randomized controlled trials control for regression by comparing treatment and control groups who both experience it. The large, consistent effects seen in well-designed RCTs — for example, vaccines preventing ~90% of infections, or antibiotics clearing bacterial infections in days while untreated cases persist for weeks — cannot be explained by regression. The treatment effect is the _difference_ between treatment and control groups; both groups regress to the mean by approximately the same amount, so the difference captures only the treatment effect. Where regression is most important in medicine: (1) Single case reports and testimonials; (2) Before-after studies without control groups; (3) Studies where enrollment criteria select extreme cases (those acutely ill), increasing the regression component; (4) Evaluating treatments for episodic conditions (migraine, depression flare-ups) where treatment is sought at the peak of an episode. The appropriate response: rely on RCTs for treatment evidence, and be specifically skeptical of before-after evidence for conditions that are episodic or variable in severity.\n\n* * *\n\n**Q2.** The financial advice industry often touts the record of top-performing funds to attract investors. Given regression to the mean, what should this record actually tell us, and what would be genuine evidence of skill in fund management?\n\n**Discussion:** Top-performing fund records are weak evidence of skill due to regression: any large set of fund managers will include some who perform in the top decile in any given year by chance. In the subsequent year, these will regress toward the average — and new top performers will emerge from those who were previously average. Studying top performers' subsequent performance is, by definition, a study of regression-affected measurements. Genuine evidence of skill in fund management would require: (1) Persistent alpha: excess return (above index, adjusted for risk) that persists across many years, across different market regimes, and substantially above what chance would predict given the total number of fund managers. Research consistently finds this is extremely rare for actively managed funds. (2) Predictive characteristics: if certain measurable characteristics of fund managers at time 0 (education, process, sector focus) predict above-average future performance at time 1, this suggests skill-based factors rather than luck. (3) Performance consistency across market regimes: a truly skillful manager should outperform in both bull and bear markets, or specifically the market conditions their strategy is designed for, not just during the specific regime in which they were selected. The industry's systematic marketing of recent top performers exploits the fact that most investors don't account for regression — they see top performance and extrapolate it forward, which is exactly what regression to the mean predicts they should not do.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 972,
+      "out_sha": "138f54ff24d4",
       "note": ""
     },
     {
@@ -1295,11 +1295,11 @@
       "en_title": "Chapter 10: Regression to the Mean",
       "order": 98,
       "src_chars": 1667,
-      "status": "pending",
+      "status": "done",
       "src_sha": "187e52b99333",
       "src": "### Chapter Summary\n\nRegression to the mean is one of the most powerful and most consistently misunderstood statistical facts: extreme measurements tend to be followed by less extreme measurements simply because extreme values are partly due to luck, and luck is drawn independently each period.\n\nThe causal attribution error — interpreting regression as the effect of an intervention — is ubiquitous. Flight instructors think punishment works better than praise. Boards think new CEOs caused turnarounds. Doctors attribute natural recovery to treatment.\n\nThread 2 showed Dr. Martinez's patient improving after starting medication — but the improvement cannot be attributed to the medication without a control group, because regression alone predicts improvement when treatment is started at a symptomatic low.\n\nThe core lesson: before attributing change to intervention, ask — where was the subject on its distribution when the intervention was made? If it was at an extreme, regression to the mean predicts improvement regardless of intervention.\n\nThis concludes Part II. We have built a powerful toolkit: probability (Chapter 6), Bayesian updating (Chapter 7), expected value (Chapter 8), acting under uncertainty (Chapter 9), and regression to the mean (Chapter 10). These tools will accompany us through the rest of the book.\n\nPart III turns to emotion — not as the enemy of rationality, but as a complex partner that sometimes enhances and often distorts our decisions. Chapter 11 opens with loss aversion: why losses hurt twice as much as gains feel good, and why this asymmetry shapes almost every important financial and personal decision you will make.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 513,
+      "out_sha": "d1fe2913f90d",
       "note": ""
     },
     {
