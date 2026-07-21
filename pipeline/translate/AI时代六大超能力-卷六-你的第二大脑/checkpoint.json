@@ -71,11 +71,11 @@
       "en_title": "导读",
       "order": 0,
       "src_chars": 2886,
-      "status": "pending",
+      "status": "done",
       "src_sha": "77b6465833f2",
       "src": "> 本导读整理自 Socratopia 网站本书介绍页：https://www.socratopia.app/library/map-second-brain-en\n\nYou have a folder you're afraid to open. A lifetime of your own work is scattered across drives, dead apps, screenshots, and three email accounts, and the one thing you know you wrote is always the one thing you can't find. This book starts inside that exact feeling, and then makes an argument most productivity books never do: the problem was never you, and it was never the app. It's the shape your knowledge is in.\n\nThe whole book turns on that one idea, shape, not software — the difference between a pile you drown in and a second brain you can stand on is four properties: whether your knowledge is readable (anything can open it), findable (future-you can retrieve it without remembering where it lives), linked (notes point at each other), and owned (the files are yours, and survive the app's death). Buying a new app changes none of them, which is why the last three apps didn't fix anything. What's new is that you now have an AI agent that could read all of your work, connect it, and hand the right piece back at the moment you need it — but only if it's in the right shape, because good shape for a future you and good shape for the agent turn out to be the same shape.\n\nDeliberately, this is a map, not a manual : it teaches zero app menus, because apps die and you've buried several already. Instead it teaches the durable shape any tool needs, plus a growing vocabulary of plain-language things you can say to any agent (\"read this folder and tell me what's actually in there — change nothing yet\"), and a three-question safety check before you let an agent touch the irreplaceable record of your life. Its acid test, stated in its own first chapter: it must still be true on the day every app named in it is dead. You follow one running character — Ruth, a teacher with thirty years of scattered lesson plans — from the folder she's afraid of to the weekend she finally rescues it, and then to the morning she uses it to write the book her files always contained.\n\nAs the finale of Six Superpowers of the AI Era , it closes the series by turning the map-making inward: five maps of external territory (your version history, your own AI, the command line, servers, automation), and now the sixth — your own knowledge, the mind that commands the rest. It works completely on its own, whether or not you've read the other five.\n\n**Target audience**：Ambitious general readers in the AI-agent era — writers, researchers, students, teachers, founders, and knowledge workers who already have an AI assistant and underuse it. No programming background is needed.\n\n**Prerequisites**：None. The book reads fully standalone; references to the other five volumes are one-line bonuses that cost a newcomer nothing.\n\n**Study hours**：~14–18 hours (14 chapters, each a single self-contained sitting).",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1135,
+      "out_sha": "7471ef3878f7",
       "note": ""
     },
     {
@@ -83,11 +83,11 @@
       "en_title": "Introduction",
       "order": 1,
       "src_chars": 3254,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cce923f1a2fe",
       "src": "You have a folder you're afraid to open.\n\nMaybe it's called \"New Folder (3).\" Maybe it's a drive in a drawer, an app you stopped using, an inbox you gave up on. Inside is a lifetime of your own work: things you made, learned, collected, and half-finished over years, scattered across tools that came and went. You know it's valuable. You just can't get to it, and every time you try to find the one thing you need, the sheer volume defeats you.\n\nSomething has changed that makes this the right moment to face that folder. You now have an AI agent that could read all of it, connect it, search it by meaning, and hand the right piece back to you exactly when you need it. The heroic month of manual filing, the thing you were never going to do, is no longer the price of admission. But there's a catch, and it's the reason this book exists: the agent that could use all of your work mostly _can't read it_ , because your work is in the wrong **shape**.\n\nThat word is the whole book. The difference between a pile you drown in and a second brain you can stand on is not which app you buy. It's _shape, not software_ : four properties (**readable, findable, linked, owned**) that make a lifetime of knowledge usable to a future you and to the agent at your side. This book is the map of that shape, plus the courage and judgment to get an old mess into it, in a weekend of _directing_ rather than a month of _filing_.\n\n**What this book is, and is not.** It is a map, not a manual. It will not teach you a note-taking app, because apps die and you've buried several already; it will teach you the shape that any tool, and any agent, present or future, needs. It teaches zero menus, zero setup tours, zero branded productivity systems. Instead it gives you the durable understanding that lets you walk into _any_ app that exists now or later, ask three questions, and know whether to trust it with your life's work. Here is its acid test, and the promise it stakes itself on: **this book must still be true on the day every app named in it is dead.** A reader who keeps the map has received its full value, whatever software they end up in.\n\n**Who it's for.** Anyone with a lifetime of scattered knowledge they can't quite use: writers, teachers, researchers, founders, students, parents, hobbyists, knowledge workers. No programming background is assumed or needed. Our running companion is Ruth, a teacher approaching retirement with thirty-one years of scattered lesson plans and the book she always meant to write; her mess is treated with dignity throughout, because your mess is not a character flaw, it's the human condition plus twenty years of software churn.\n\n**How to get the most from it.** This book is read by the Socratopia AI tutor, which teaches you through dialogue rather than lecture, so each chapter ends with **dialogue seeds** and a growing set of _\"Say this to your AI\"_ asks, plain-language things you can say to any agent, each one safe, each one building on the last. Work them out loud with your tutor; the reasoning is exposed on purpose. Read the chapters in order (each is one self-contained sitting), because the four properties build on each other and the second half puts the agent to work on the shape the first half taught.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1236,
+      "out_sha": "67a9af3dffe4",
       "note": ""
     },
     {
@@ -95,11 +95,11 @@
       "en_title": "Introduction",
       "order": 2,
       "src_chars": 767,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fc6d78806e93",
       "src": "**A word on the series.** This is the sixth and final volume of _Six Superpowers of the AI Era_ , and it may also be your first Socratopia book. It works perfectly as either. The five earlier volumes mapped external territory (protecting your work, running your own AI, the command level, servers, automation); this one turns the map-making inward, to the one territory that gives all the others their reason: your own knowledge. You need nothing from the other volumes to get the full value here. Where they're mentioned, it's a one-line bonus for the returning reader and a free invitation for everyone else, never homework.\n\nBy the last page, the folder you're afraid of will be a folder you know exactly what to do with. Let's begin where the fear is.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 269,
+      "out_sha": "32e22d417cb2",
       "note": ""
     },
     {
