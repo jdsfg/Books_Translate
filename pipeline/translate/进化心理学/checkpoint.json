@@ -1447,11 +1447,11 @@
       "en_title": "Chapter 13: Love and War in the Family",
       "order": 113,
       "src_chars": 3438,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c571f68eb03f",
       "src": "The family is where we first learn love, and it is also, strangely, where the logic of kinship predicts conflict. This sounds like a contradiction. If kin selection (Chapter 9) explains why relatives are devoted to one another, sharing copies of the same genes, why would the same logic predict that families are also arenas of struggle? The answer is one of the most counterintuitive and illuminating ideas in the field, and it rests on a subtle point we have not yet made: relatives share _some_ of their genes, not _all_ of them. A parent and child share, on average, half. And that gap, between \"half\" and \"all,\" turns out to predict a precise, lifelong pattern of love shot through with conflict, present in every family that has ever existed.\n\nThis chapter applies the kinship logic to the family it produces, and it asks us to hold two things that feel opposed: that families are bound by the deepest love we know, _and_ that the same evolutionary logic predicts genuine, structural conflict within them, not because anyone is bad but because the arithmetic of relatedness is not symmetric. We will look at the tug-of-war between parent and child, at the special role of grandparents, and then at the most morally delicate case in the entire book, the contested finding about differential risk in stepfamilies, where the firewall faces its hardest test of all. That case will test everything you have learned, because it is contested in its science, dangerous in its possible misuse, and surrounded by millions of loving stepfamilies who are its standing refutation. We will refuse, absolutely, to let a debated statistic become a slur.\n\n\n### 13.1 The tug-of-war that love is made of\n\nConsider a nursing mother and her infant. From the outside, pure harmony: the mother gives, the child receives, love flows one way. But look through the gene's-eye view and a tension appears. The mother is related to _this_ child by one-half, but she is _also_ related by one-half to the _future_ children she might have if she stops investing so heavily in this one and conserves resources for the next. From her genes' perspective, there is an optimal amount to invest in the current child, after which it pays to wean and save for future offspring. The child, however, does the arithmetic differently. The child is related to _itself_ by one (all its genes) and to its future siblings by only one-half. So the child \"values\" its own welfare more than it values those future siblings, and therefore \"wants\" _more_ investment, for _longer_ , than the mother's genes are selected to give.\n\nThe result is a genuine conflict of genetic interest, worked out by Trivers as **parent-offspring conflict** , and it predicts something you can observe in any family: weaning conflict (the child resists being weaned longer than the mother is inclined to nurse), and more broadly a lifelong, low-grade tug-of-war over how much the parent should give. The child is selected to extract a bit more than is optimal for the parent; the parent is selected to give a bit less than the child demands. Neither is malfunctioning, and neither is selfish in any blameworthy sense; both are simply running strategies tuned by an asymmetry in relatedness. The toddler's tantrum and the teenager's demands are not failures of love. They are the predictable friction of two parties who share half their genes and therefore _almost_ , but not quite, share their interests.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1022,
+      "out_sha": "08291b11e24c",
       "note": ""
     },
     {
@@ -1459,11 +1459,11 @@
       "en_title": "Chapter 13: Love and War in the Family",
       "order": 114,
       "src_chars": 1302,
-      "status": "pending",
+      "status": "done",
       "src_sha": "71ecb6510e6a",
       "src": "#### Definition: Parent-offspring conflict\n\nParent-offspring conflict is the evolutionary prediction that parents and their offspring will be selected to \"disagree\" over the amount of parental investment, because a parent is equally related to all its offspring (and so is selected to allocate investment evenly among current and future young) while each offspring values its own welfare more than that of its siblings, and so is selected to demand more than the parent is selected to give.\n\nIn plain language: because a child shares all its own genes but only half its siblings', it \"wants\" more from its parents than its parents are evolutionarily inclined to give, producing a built-in, blameless tension. Notice how this deepens the kin-selection story rather than contradicting it. Kin selection explains the love (the deep, real devotion between relatives); parent-offspring conflict explains why even that love comes with friction (the relatedness is high but not total). Both are true at once, and together they explain the family more honestly than either alone. A theory that predicted only harmony would be obviously false to anyone who has been in a family; the genius of the kinship logic is that it predicts _both_ the love and the conflict, from the same simple fact about shared genes.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 363,
+      "out_sha": "3f9e0b9ad934",
       "note": ""
     },
     {
@@ -1471,11 +1471,11 @@
       "en_title": "Chapter 13: Love and War in the Family",
       "order": 115,
       "src_chars": 3242,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a0e6fd960ab0",
       "src": "### 13.2 Grandmothers and the shape of kinship\n\nOne of the most charming confirmations of kinship logic concerns grandparents, and it makes a prediction so specific and so testable that it is worth walking through. Start with a puzzle: human females, unusually among animals, live for decades after they can no longer reproduce. Why would selection allow, even favor, a long post-reproductive life? One leading answer is the _grandmother hypothesis_ : a grandmother who can no longer have her own children can still propel copies of her genes into the future by helping her children raise _their_ children, and in ancestral conditions this help (food, care, knowledge) measurably improved grandchildren's survival. A long-lived, helpful grandmother left more descendants than one who died at the end of her fertility, so the genes for a long post-reproductive life spread. The love of grandparents for grandchildren, on this view, is kin selection reaching across a generation.\n\nBut the sharpest test comes from an asymmetry that kinship logic predicts and common sense does not. Consider the four grandparents of a child. A maternal grandmother is _certain_ the grandchild carries her genes (her daughter definitely bore the child, and she definitely bore her daughter). A paternal grandfather faces _two_ links of uncertainty (was his son really the father, and was he himself really his son's father). The other two grandparents fall in between, with one link of uncertainty each. Kin selection therefore predicts, coldly, that grandparental investment should follow this gradient of _certainty of relatedness_ : maternal grandmothers should tend to invest most, paternal grandfathers least, on average. And studies of grandparental care have, strikingly, tended to find roughly this pattern. It is an eerie confirmation, because no one _consciously_ reasons this way; the pattern emerges from evolved feelings tuned, over deep time, to cues that tracked relatedness. Here the gene's-eye view makes a prediction that would never occur to ordinary intuition, and the prediction holds. That is the toolkit's \"risky prediction\" criterion satisfied in the most vivid possible way. Honesty does require one caveat the discernment toolkit demands of us even here: the gradient could be confounded, because maternal grandmothers also tend, in many cultures, to have closer contact with grandchildren and to live nearer, and proximity alone could drive some of the difference, so the relatedness-certainty reading is well-supported but not the only candidate, and a careful version of the claim holds the _pattern_ firmly while keeping its _interpretation_ appropriately open.\n\nA necessary firewall note even here, in this gentlest case: this is a claim about _average statistical tendencies_ shaped by ancestral cues, and it says nothing about any particular grandparent, many of whom defy the average completely, nor anything about how grandparents _should_ behave. A devoted paternal grandfather is not violating his nature; he is an ordinary resident of the overlap, and the gradient is a faint average tilt, not a law. We state this not because the grandmother case is dangerous (it is not) but to keep the reflex sharp for the case that is.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 921,
+      "out_sha": "6e8fc0591f5a",
       "note": ""
     },
     {
@@ -1483,11 +1483,11 @@
       "en_title": "Chapter 13: Love and War in the Family",
       "order": 116,
       "src_chars": 2744,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0a3f93a2fd61",
       "src": "### 13.3 The hardest case: differential risk in stepfamilies\n\nNow we come to the most morally delicate finding in the book, and we are going to handle it with the maximum care the whole book has been training us for. Take this section a sentence at a time. The science is genuinely contested, the potential for harm is real, and getting both the facts and the firewall exactly right matters more here than anywhere else.\n\nThe hypothesis, associated with the researchers Martin Daly and Margo Wilson, runs as follows. Kin selection predicts that, on average, a parent's evolved investment is tuned toward their _own_ genetic offspring. A stepparent is raising a child to whom they are not genetically related, so the deep, evolved parental pull, the kin-selected devotion, may be, on average, less automatically engaged than it is for a genetic parent. From this they predicted that stepchildren might face, on average, a _statistically elevated risk_ of maltreatment compared to children living with two genetic parents, a pattern they called the \"Cinderella effect\" after the fairy-tale stepmother. Early studies reported a dramatically elevated risk, and the finding became one of the most cited, and most controversial, in the field.\n\nHere is where honest, current grading is essential, because the picture has changed and the popular version is out of date. The original, dramatic risk multipliers have been seriously challenged and substantially _reduced_. A careful body of work, notably a 2019 reanalysis by the researcher Christopher Nobes and colleagues, found a major flaw in the data underlying the strongest claims: in the official records, many perpetrators who did _not_ live with the child were nonetheless labeled \"stepfathers,\" and because they were compared against population data that excluded such non-cohabiting men, their inclusion _inflated_ the apparent risk. When that mislabeling was corrected, the elevated risk shrank dramatically, remaining real but much smaller for very young children and little or none for older ones. And, in a model of how science should work, Daly himself later _conceded_ the mislabeling point for the data in question, acknowledging the correction was valuable and correct. So the honest, as-of verdict is _not_ the dramatic original claim and _not_ a clean evolved-module proof; it is a _contested, much-reduced_ finding: some elevated risk for young stepchildren appears in some datasets, but its size is far smaller than first reported, serious confounds (the circumstances that lead to stepfamilies forming, the age of fathers, reporting and detection biases) remain incompletely resolved, and the interpretation is genuinely disputed. Contested and shrunken, not settled and dramatic.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 844,
+      "out_sha": "e8e17ff529ae",
       "note": ""
     },
     {
@@ -1495,11 +1495,11 @@
       "en_title": "Chapter 13: Love and War in the Family",
       "order": 117,
       "src_chars": 1753,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6ad810f6e7ed",
       "src": "Now the firewall, and here it must blaze hotter than anywhere in the book, because the stakes are human beings. First, against the naturalistic fallacy with maximum force: even if some elevated _average_ risk were firmly established, it would carry _no_ implication whatsoever that stepparents are bad, that stepfamilies are dangerous, or that anyone should be treated with suspicion. An average statistical tendency across a population says _nothing_ about any individual stepparent, the overwhelming majority of whom love and protect their stepchildren completely, often heroically, and who are the living, daily refutation of any attempt to turn this statistic into a slur. To move from \"a contested study reports a small average risk elevation\" to \"stepparents are a threat\" is not just a logical fallacy; it is a moral catastrophe that would stigmatize millions of loving families, and we refuse it absolutely and without qualification. The evolved tendency, _if_ it exists, describes a faint average pull that countless individuals override completely, exactly as Thread B insists evolved tendencies can be overridden. Second, against the moralistic fallacy: the fact that this finding _could_ be weaponized to stigmatize stepfamilies does not, by itself, make it scientifically false, and we must not pretend the question is settled in either direction for moral comfort. The honest scientific position is that the finding is _contested and much reduced_ , which is the truth, and the truth is also, as it happens, far less inflammatory than the original headline. We hold the contested _is_ and the absolute moral refusal of the stigmatizing _ought_ at the same time, which is the entire discipline of this book performed at its highest stakes.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 486,
+      "out_sha": "47918e0888fb",
       "note": ""
     },
     {
@@ -1507,11 +1507,11 @@
       "en_title": "Chapter 13: Love and War in the Family",
       "order": 118,
       "src_chars": 2001,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4d5b273a86e5",
       "src": "#### Common Misconception\n\n_\"The Cinderella effect proves stepparents are dangerous, since evolution didn't program them to love other people's kids.\"_\n\nThis sentence commits, in a single breath, nearly every error the book has warned against, and dismantling it is the chapter's central exercise. Factually, \"proves\" is flatly wrong: as 13.3 detailed, the original dramatic claim has been seriously challenged and substantially reduced (the mislabeling correction, conceded even by the original researcher), the confounds are unresolved, and the interpretation is contested, so the finding is _disputed and shrunken_ , not proven. The phrase \"evolution didn't program them to love other people's kids\" overstates and misreads: the hypothesis concerns a _faint average difference_ in an automatic pull, not an absence of love, and it is contradicted daily by the vast majority of stepparents who love their stepchildren wholly (evolved tendencies are overridden constantly, Thread B). And the leap to \"stepparents are dangerous\" is the naturalistic fallacy at its most harmful: it converts a contested, small, _average_ statistical tendency into a _categorical_ judgment about _individuals_ , erasing the overlap and slandering millions of devoted families. The correct statement could hardly be more different: \"a contested and much-reduced body of research suggests a possible small average elevation in risk for very young stepchildren in some datasets, with serious unresolved confounds; this says nothing about any individual stepparent, the overwhelming majority of whom are loving and protective, and it carries no moral implication about stepfamilies whatsoever.\" The distance between the cartoon and the truth is the distance this entire book exists to teach you to travel.\n\n\n### 13.X Exercises\n\nThese prompts work the chapter's hardest skill: applying kinship logic to the family while holding the firewall at maximum, especially around the contested and morally fraught stepfamily finding.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 581,
+      "out_sha": "83702056d328",
       "note": ""
     },
     {
@@ -1519,11 +1519,11 @@
       "en_title": "Chapter 13: Love and War in the Family",
       "order": 119,
       "src_chars": 2141,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5601573e38f8",
       "src": "#### Sort the Claim\n\n**Q1.** Sort each: (a) \"Parents and children are evolutionarily selected to disagree over how much the parent invests.\" (b) \"Maternal grandmothers tend, on average, to invest more in grandchildren than paternal grandfathers.\" (c) \"Stepchildren face dramatically higher rates of abuse, proving a Cinderella effect.\" Be precise about evidential status.\n\nHint\n\nOne is a robust theoretical prediction with broad support, one is a well-supported statistical pattern with a clear logic, and one requires the careful, updated grading from 13.3.\n\n**Discussion:** (a), parent-offspring conflict, is a _robust theoretical prediction_ with broad observational support: it follows rigorously from the asymmetry of relatedness, predicts observable phenomena like weaning conflict, and fits the family life everyone recognizes, so it sits in the well-supported core (as a theoretical framework, like parental investment). (b), the grandparental gradient, is a _well-supported statistical pattern_ with a clear and risky logic: kin selection predicts investment should track certainty of relatedness (maternal grandmother most certain, paternal grandfather least), the prediction is specific and counterintuitive, and studies have tended to confirm it, though we hold it as an _average tendency_ with large individual variation. (c) requires the careful updated grading: \"dramatically higher\" and \"proving\" are both wrong as of current evidence, because the dramatic original multipliers were substantially reduced after the perpetrator-mislabeling correction (conceded by the original researcher), the confounds are unresolved, and the interpretation is contested, so the honest verdict is \"a contested and much-reduced finding suggesting a possible small average risk elevation for young stepchildren in some datasets,\" never a proven dramatic effect. The exercise trains you to assign three genuinely different evidential statuses within a single domain, and especially to _update_ (c) away from the outdated dramatic headline toward the current, contested, shrunken truth, which is also, not coincidentally, far less stigmatizing.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 620,
+      "out_sha": "b4139ecf0d5b",
       "note": ""
     },
     {
@@ -1531,11 +1531,11 @@
       "en_title": "Chapter 13: Love and War in the Family",
       "order": 120,
       "src_chars": 2742,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e5d5fe665cc2",
       "src": "#### Spot the Fallacy\n\n**Q2.** A news commentator says: \"Studies prove stepparents are more likely to harm children. We can't ignore science just because it's uncomfortable. Single mothers should think twice before bringing a new man into the home.\" Identify every error, factual and moral, and be careful not to overcorrect into the moralistic fallacy yourself.\n\nHint\n\nThere's a factual overstatement, a misuse of the anti-moralistic-fallacy principle as cover, a naturalistic-fallacy leap to a prescription, and a slide from population average to individual judgment. But don't refute it by claiming the underlying science must be false.\n\n**Discussion:** This is a deliberately hard case because the commentator _weaponizes the anti-moralistic-fallacy principle itself_ as cover, so untangling it requires real precision. Begin with the factual overstatement: \"studies prove\" is wrong, since the finding is contested and much-reduced (the mislabeling correction, the unresolved confounds), so the commentator has inflated a disputed, shrunken statistic into proven fact. Next, the misuse of \"we can't ignore science just because it's uncomfortable\": this is a _correct principle_ (the warning against the moralistic fallacy) being _abused_ to launder an overstated claim and a prescription, which is a clever and common move, invoking intellectual courage to smuggle past you both a factual inflation and a moral leap. Then the naturalistic-fallacy leap: \"single mothers should think twice\" converts even the contested _is_ into a prescriptive _ought_ , telling individuals how to live on the supposed authority of a population average. And the population-to-individual slide: a small average tendency across a group says _nothing_ about any particular man, so advising blanket suspicion of all stepfathers is statistically illiterate as well as cruel, erasing the overwhelming majority who are loving and protective. Now the discipline the hint insists on: do _not_ refute the commentator by declaring the underlying science _false because his conclusion is odious_ , which would be you committing the moralistic fallacy in response. The correct refutation grants the real, contested, much-reduced _is_ (there may be a small average risk elevation for young children in some data), corrects its inflation (\"proves,\" \"dramatically\" are wrong), blocks the naturalistic leap (no _ought_ about how anyone should live follows), and refuses the population-to-individual slide (the average says nothing about any person). Grant the limited truth, correct its inflation, block the value-leap, and refuse the population-to-individual slide, all without flinching into denial: that fourfold discipline is what protects real families from real harm.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 826,
+      "out_sha": "c31ff1508906",
       "note": ""
     },
     {
@@ -1543,11 +1543,11 @@
       "en_title": "Chapter 13: Love and War in the Family",
       "order": 121,
       "src_chars": 2677,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a00cb7126b3f",
       "src": "#### Steelman Both Sides\n\n**Q3.** Steelman both: (a) researchers who argue the elevated-risk finding, even if reduced, is real and important and should be studied and stated plainly; (b) those who argue that publicizing it does foreseeable harm to stepfamilies that outweighs its scientific value. Where, exactly, do they disagree?\n\nHint\n\nBoth can accept the current contested-and-reduced state of the evidence. The disagreement is about communication and consequences, and there may be an empirical question hidden inside the ethical one (recall Chapter 4, Q3).\n\n**Discussion:** The strongest case for (a), state it plainly: if there is any real elevated risk to vulnerable young children, even a small one, understanding it could help protect children, and suppressing or soft-pedaling a true (if contested and reduced) finding because it is uncomfortable is exactly the moralistic-fallacy capitulation that corrodes science and, worse, hands the inflated version to bad-faith actors who will then pose as censored truth-tellers; the honest, _accurately-stated_ finding (small, contested, with the firewall attached) is also the best inoculation against the _dramatic_ misuse. The strongest case for (b), weigh the harm: findings do not enter a vacuum, the \"Cinderella effect\" has a documented history of being inflated and weaponized to stigmatize stepfamilies, the foreseeable harm of careless publicity (suspicion cast on millions of loving families) is real, and a responsible communicator must therefore attend not just to whether a claim is true but to how predictably it will be distorted. Now locate the precise disagreement, which is the exercise's payoff. Both sides can fully accept the _current state of the evidence_ (contested and much-reduced), so they do _not_ disagree about the _is_. And both want to _avoid harm to stepfamilies_ and _avoid corrupting science_ , so they share the relevant _values_. Their real disagreement is the empirical-inside-the-ethical question from Chapter 4: _which communication strategy actually produces less harm in the real world?_ Does plain statement plus a loud firewall inoculate the public against the inflated cartoon, or does any publicity, however careful, inevitably feed stigma faster than the caveats can restrain it? That is a question about how people actually receive and distort information, answerable in principle by evidence, not by which side feels more virtuous. Seeing that the dispute is _not_ about the facts and _not_ about the values but about a hidden empirical question of consequences is what lets reasonable people make progress here instead of trading accusations of either cowardice or cruelty.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 811,
+      "out_sha": "7b24a21e165a",
       "note": ""
     },
     {
@@ -1555,11 +1555,11 @@
       "en_title": "Chapter 13: Love and War in the Family",
       "order": 122,
       "src_chars": 2727,
-      "status": "pending",
+      "status": "done",
       "src_sha": "709285d82de4",
       "src": "### Chapter Summary\n\nWe applied the kinship logic of Chapter 9 to the family it builds, and found that the same shared genes which create the deepest love also predict genuine, blameless conflict. Because relatives share _some_ but not _all_ of their genes, _parent-offspring conflict_ is built into family life: a child, valuing its own welfare above its siblings', is selected to demand more investment than a parent, equally related to all its offspring, is selected to give, producing weaning conflict and the lifelong low-grade tug-of-war that the toddler's tantrum and the teenager's demands express, not failures of love but its predictable friction. We saw kinship logic make a charming and a chilling prediction: the _grandmother hypothesis_ for human post-reproductive longevity, and the eerie confirmation that grandparental investment tends to track _certainty of relatedness_ (maternal grandmother most, paternal grandfather least), a pattern no one consciously computes. And we faced the book's most morally delicate case, the contested finding of differential risk in stepfamilies, with maximum care: the original dramatic \"Cinderella effect\" has been _substantially reduced and is genuinely contested_ (the perpetrator-mislabeling correction, conceded even by the original researcher; unresolved confounds), so the honest verdict is small, disputed, and uncertain, not dramatic and proven. There the firewall blazed hottest: against the naturalistic fallacy, an average tendency, even if real, says nothing about any individual stepparent and carries no moral implication, and the overwhelming majority of loving stepfamilies are its living refutation, so we refused absolutely to let a contested statistic become a slur; against the moralistic fallacy, the finding's potential for misuse does not make it false, and we stated its true contested status rather than denying it for comfort.\n\nHolding a contested _is_ and an absolute moral refusal of the stigmatizing _ought_ at the same moment, around real and vulnerable human beings, is the entire discipline of this book performed at its highest stakes, and you have now done it. Part 6, which begins next, is where that discipline becomes the whole subject. Having met the misuse in passing, again and again, throughout the wonders, we now turn to face it directly: the fallacies deepened, the political weaponization from both directions, the most dangerous question of all, and the cautionary history. Chapter 14 opens the firewall Part by returning to the two fallacies of Chapter 4, no longer as abstract tools but as live political forces, and by engaging fairly with the fiercest modern argument about whether there is a human nature at all.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 779,
+      "out_sha": "e3a463ce9cd2",
       "note": ""
     },
     {
