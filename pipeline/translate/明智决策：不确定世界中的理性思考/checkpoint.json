@@ -539,11 +539,11 @@
       "en_title": "Chapter 4: Overconfidence",
       "order": 35,
       "src_chars": 2574,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e9122a5120f6",
       "src": "#### Concept Check\n\n**Q1.** Distinguish overprecision, overplacement, and overestimation. Give a concrete example of each that is different from those mentioned in the chapter.\n\n**Answer:** _Overprecision_ : A doctor states \"I'm 95% confident the patient has condition X\" when her actual diagnostic accuracy for this condition is around 70%. She is too certain about the accuracy of her own assessment. _Overplacement_ : In a survey of software engineers, 80% rate themselves as better-than-average coders. By definition, at most 50% can be above the median — most of the 80% are overplacing themselves. _Overestimation_ : A student estimates she can write a 10-page paper in 3 hours. She tracks her time carefully and finds it takes 7 hours. She overestimated her expected performance (how much she could accomplish in a given time). Note that all three can occur simultaneously: the same doctor might be overprecise in her diagnosis (too narrow confidence interval), overplace herself relative to peers (thinks she is a better diagnostician than she is), and overestimate her speed (underestimates how long a full examination will take).\n\n* * *\n\n**Q2.** What is the \"planning fallacy\" and why does explicitly knowing about it not protect you from it?\n\nHint\n\nThink about what information the planning fallacy involves ignoring, and whether knowing that you should use that information is the same as actually using it.\n\n**Answer:** The planning fallacy is the systematic tendency to underestimate how long tasks will take and how much they will cost, even when we have good information about how long similar tasks have taken in the past. Knowing about it doesn't protect you because the planning fallacy is driven by the \"inside view\" — you focus on the specific features of your project that feel unique and controllable, rather than on the base rate of similar projects (the \"outside view\"). When you plan your project, you naturally focus on your specific plan, your team, your approach — not on the statistical record of similar projects. Even when people are told \"projects like this typically take 2× as long as planned,\" they tend to think \"yes, but mine will be different\" — which is itself an overconfident belief. The only reliable protection is not knowing about the fallacy but systematically using reference class data from comparable past projects before making any time or cost estimate.\n\n* * *\n\n**Q3.** Philip Tetlock's research found that the experts who appear most on television are less accurate than quieter, more tentative experts. Why might this be?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 810,
+      "out_sha": "404305b8420d",
       "note": ""
     },
     {
@@ -551,11 +551,11 @@
       "en_title": "Chapter 4: Overconfidence",
       "order": 36,
       "src_chars": 2366,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e37a2b2501d4",
       "src": "**Answer:** The experts who appear most on television are selected for a trait that television values: confident, clear, definitive predictions. Producers and audiences want experts who say \"X will definitely happen,\" not \"there's a 40% chance of X, with significant uncertainty around the key variables.\" The confident, definitive experts are more entertaining and easier to book. However, confidence and accuracy are not the same thing — and in many domains, they are inversely correlated. The most confident predictor may be the one least troubled by uncertainty, least likely to update their model, and most committed to a single narrative. More tentative experts — who say \"I'm genuinely uncertain, but here are the key factors to watch\" — may be giving more accurate descriptions of a genuinely uncertain world, even if this makes for less compelling television. The practical implication: the certainty of an expert's tone is a poor guide to the quality of their analysis. Counterintuitively, experts who acknowledge more uncertainty may be the most trustworthy.\n\n* * *\n\n**Q4.** How does \"reference class forecasting\" help correct the planning fallacy? Give a step-by-step example.\n\n**Answer:** Reference class forecasting corrects the planning fallacy by replacing the \"inside view\" (planning from the specific features of your project) with the \"outside view\" (the statistical record of similar projects). Steps: (1) Identify the reference class: projects of similar type, scale, and complexity to yours. If you are planning a software feature, the reference class might be \"features of similar scope implemented by your team.\" (2) Find the base rate: how long did those projects actually take, on average? If your team's similar features typically take 6 weeks, that is your baseline estimate. (3) Identify specific features that make your project faster or slower than the average: if this feature involves a new framework you haven't used before, that may add time; if it builds on code you recently wrote, it may save time. (4) Adjust the base rate: if the average is 6 weeks and your specific factors suggest a modest speed advantage, revise to 5 weeks — but resist the urge to revise dramatically. (5) Commit to a range, not a point estimate: state a range (4-8 weeks) that reflects genuine uncertainty, not just your most optimistic scenario.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 729,
+      "out_sha": "934a0d885f89",
       "note": ""
     },
     {
@@ -563,11 +563,11 @@
       "en_title": "Chapter 4: Overconfidence",
       "order": 37,
       "src_chars": 3323,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fa1e3df1046f",
       "src": "#### Application Problems\n\n**Q1.** A startup founder tells investors: \"We'll be profitable within 18 months. Our projections show it clearly.\" The investors have seen hundreds of startups and know that fewer than 30% reach profitability within their first two years. Using overconfidence concepts, analyze what is happening and what the investors should do.\n\nHint\n\nThink about which view — inside or outside — each party is using, and what the correct reference class-based estimate would be.\n\n**Answer:** The founder is operating from the inside view: her own projections, her own team's capabilities, her own optimistic assumptions. This is the natural mode for founders — and it may even be necessary for motivation and investor pitching. But the investors have the outside view: the base rate of 30% reaching profitability within two years. The investors should: (1) not treat the founder's 18-month estimate as their own prior; (2) assess whether this specific startup has features that make it systematically different from the reference class (e.g., strong unit economics, a defensible niche) — not just take the founder's word that it does; (3) stress-test the financial model by asking what happens if revenue is 50% of projection and costs are 20% higher; (4) ask the founder directly: \"What percentage of startups in your sector reach profitability in 18 months?\" If the founder doesn't know, that itself is informative. The investors' job is not to be more pessimistic than the founder — it is to be more calibrated.\n\n* * *\n\n**Q2.** Your friend is planning a dinner party. She says \"it'll take about 2 hours to prepare everything.\" She has hosted 6 dinner parties in the past year; you have been present at 3 of them and noticed each one started about an hour behind schedule. Explain what is happening and what you might say to help her plan more accurately.\n\n**Answer:** Your friend is demonstrating the planning fallacy. Her inside view (\"my menu plan, my skills, this specific party\") tells her 2 hours. Her actual track record (reference class: her own previous dinner parties) shows a consistent 1-hour overrun — meaning the actual preparation typically takes 3 hours. The mismatch is classic: she focuses on the plan, not on the statistical pattern of how her plans have gone. What to say: \"I've noticed your parties tend to start about an hour later than planned — mine do too. What if we built in an extra hour as a buffer?\" This frames the reference class evidence gently, without criticizing her planning skills. A more systematic approach: ask her to plan for 3 hours and see what happens — if she finishes early, great; if the party starts on time, even better. The key insight to share: planning the specific steps of a dinner party (what you'll cook and when) doesn't protect against the unplanned events (the recipe takes longer than expected, guests arrive early, a dish fails and needs to be redone) that are the true source of delays.\n\n* * *\n\n**Q3.** In 2003, the Congressional Budget Office estimated that the Iraq War would cost 50–60 billion USD. It ultimately cost over 2 trillion USD (depending on how long-term veterans' costs are counted). Using the planning fallacy and reference class forecasting, analyze this error and explain how the estimate could have been made more accurately.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1095,
+      "out_sha": "1b38b962a3e0",
       "note": ""
     },
     {
@@ -575,11 +575,11 @@
       "en_title": "Chapter 4: Overconfidence",
       "order": 38,
       "src_chars": 2672,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0c4110d61c42",
       "src": "**Answer:** The 50–60 billion USD estimate was a classic inside-view projection: it was based on a specific war plan (quick military victory, rapid withdrawal, minimal occupation), not on the historical record of comparable wars. The reference class — major military interventions in the 20th century — would have provided a very different baseline. The average cost overrun for major government infrastructure projects is roughly 50-100%; for military interventions with significant occupation phases (Vietnam, Korea), the overruns are an order of magnitude larger. A reference class approach would have: (1) identified historical analogues: Korea, Vietnam, Gulf War I, and other major interventions; (2) noted that all of these exceeded initial cost estimates by large multiples; (3) provided a range estimate — perhaps 200 billion to 1 trillion USD — that reflected the distribution of outcomes for comparable historical interventions; (4) explicitly flagged the key uncertainty drivers: length of occupation, insurgency intensity, infrastructure rebuilding costs. The estimate failed because it assumed a best-case inside-view scenario rather than using the distribution of historical outcomes as a calibration baseline.\n\n* * *\n\n**Q4.** Design a simple calibration exercise that someone could use to measure and improve their own overconfidence. What would the exercise involve, and how would you interpret the results?\n\n**Answer:** Exercise: Trivia calibration test. (1) Take 20 general knowledge questions to which you don't know the answers with certainty — for example: \"What year was the Eiffel Tower built? Give a range you're 90% confident contains the true answer.\" (2) Record your stated confidence and your range for each question. (3) Look up the true answers. (4) Count how many true answers fell within your stated confidence intervals. If you stated 90% confidence for all 20 questions, you should expect 18 answers within your intervals. If only 10-12 fall within your intervals, you are overconfident (your 90% confidence intervals are too narrow). Interpretation: if true answers fall within your intervals less than your stated confidence rate, you are overconfident — your intervals are too narrow, your certainty is too high. If true answers fall within more often than stated, you are underconfident — your intervals are unnecessarily wide. Perfect calibration: the fraction of true answers within stated X% confidence intervals is approximately X%. Improvement: repeat the exercise regularly, deliberately widen your intervals until you are right at approximately the stated rate, and notice which domains produce the most overconfidence.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 813,
+      "out_sha": "f680350390b1",
       "note": ""
     },
     {
@@ -587,11 +587,11 @@
       "en_title": "Chapter 4: Overconfidence",
       "order": 39,
       "src_chars": 3480,
-      "status": "pending",
+      "status": "done",
       "src_sha": "11eeb854fcff",
       "src": "#### Think Deeper\n\n**Q1.** There is a cultural argument that overconfidence is adaptive for entrepreneurs, surgeons, and leaders — that without a degree of unrealistic optimism, no one would take necessary risks. Evaluate this argument carefully. Is overconfidence net-positive or net-negative for individuals and society?\n\n**Discussion:** The argument has genuine force: if entrepreneurs had perfectly calibrated beliefs about the base rate of startup failure (roughly 90% in most sectors), few would ever start companies, and the resulting innovations would never occur. The social return to entrepreneurship is high even if the individual return is often negative — so it is plausible that overconfidence serves a valuable social function by getting enough people to take the risks that produce economic growth. For surgeons, a degree of self-confidence may reduce hesitation under pressure and produce better outcomes than paralysis.\n\nHowever, the argument conflates _courage to act despite known risk_ with _miscalibration about actual risk_. A surgeon can be confident in her technical skills while maintaining an accurate model of surgical risks. An entrepreneur can make a calculated risk to start a company while understanding the base rate failure probability. The issue is not optimism but calibration: \"I know this is hard and I'm doing it anyway\" is very different from \"I believe this is easy when evidence says otherwise.\" The case against overconfidence: miscalibrated decision-makers cause significant collateral damage — the planning fallacy imposes costs on everyone who relies on their projections; overconfident financial decisions harm families and markets; overconfident military planning costs lives. The net verdict: bounded optimism (courage + realistic assessment of the risks) is probably better than either excessive pessimism or structural miscalibration.\n\n* * *\n\n**Q2.** Superforecasters — highly calibrated predictors identified by Tetlock's research — have specific habits that others don't. Could these habits be taught and institutionalized in organizations, and if so, what would that look like?\n\n**Discussion:** The habits of superforecasters can be taught and institutionalized, though with effort. Core habits: (1) Expressing beliefs as explicit probabilities, not directional opinions. Organizations could require that any prediction (\"we will launch in Q3\") include an explicit probability (\"we estimate 70% probability of Q3 launch\"). (2) Tracking predictions over time. Organizations could maintain \"prediction ledgers\" — records of specific probabilistic forecasts and their outcomes, used for regular calibration reviews. (3) Updating beliefs when evidence arrives. This requires explicit norms that updating is praiseworthy, not a sign of weakness. In cultures that treat opinion-changing as flip-flopping, calibration is hard. (4) Actively seeking disconfirming evidence. Organizations could institutionalize \"red team\" reviews that specifically aim to find reasons a plan will fail. (5) Using reference class forecasting for all project planning. This requires maintaining databases of past project outcomes and mandating their consultation before new estimates. The organizational challenge: many of these practices conflict with confidence-based leadership cultures, where expressing uncertainty is perceived as weakness. Making calibration a valued skill — rather than \"knowing the answer\" — requires cultural change at the top.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1067,
+      "out_sha": "e1a53fe243d8",
       "note": ""
     },
     {
@@ -599,11 +599,11 @@
       "en_title": "Chapter 4: Overconfidence",
       "order": 40,
       "src_chars": 1224,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1873007716fa",
       "src": "### Chapter Summary\n\nOverconfidence is the most pervasive decision-making bias: we are systematically more certain about our knowledge than our accuracy warrants (overprecision), we believe we perform better than our peers (overplacement), and we underestimate how long and costly our projects will be (overestimation and the planning fallacy). Expert status does not protect against overconfidence — in many domains, experts are the most overconfident of all, and the most publicly confident experts are often the least accurate.\n\nApollo 13's pre-flight planning vs. crisis management illustrated the contrast: overconfident pre-planning missed a critical failure mode, while humble, probabilistic crisis management saved three lives.\n\nThe path to better calibration is explicit: make probabilistic estimates, track your accuracy, use reference class data for planning, and actively seek disconfirming evidence. Overconfidence is not a fixed trait — it is a calibration error that deliberate practice can partially correct.\n\nIn Chapter 5, we examine the deepest and most human of all cognitive biases: the story trap — our tendency to impose narrative, causation, and meaning on patterns that are fundamentally random.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 376,
+      "out_sha": "65a5fb27ccad",
       "note": ""
     },
     {
