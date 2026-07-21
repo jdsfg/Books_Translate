@@ -21,7 +21,7 @@ acid test | 试金石 | 本书自定验收标准：书中点名的应用全死�
 durable | 经得起时间 / 持久 | 视上下文
 
 ## 知识与语料
-corpus | 知识库 | 个人知识的总体集合；⚠️ 非 ML「语料库」为主义；标题「为知识库安个家」
+corpus | 知识库 | 本书指个人知识的总体集合（笔记、文件、教案等）；勿按 ML 习惯译成「语料库」。锁定标题：「为知识库安个家」
 knowledge lifecycle | 知识生命周期 | 锁定标题一致
 capture | 捕捉 | Capture Fast…
 organize lazily | 从简整理 |
