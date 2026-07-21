@@ -5,7 +5,7 @@ DONE flag: AI时代的统计思维
 进度: done=380 / total=380
 assemble: OK (sources/AI时代的统计思维.zh.md 未提交)
 
-verify (glossary_ml_data.md): 汇总: ERROR=0 WARN=201
+verify (glossary_ml_data.md): 汇总: ERROR=0 WARN=200
 verify (glossary_local.md): 汇总: ERROR=0 WARN=386
 
 说明:
@@ -14,7 +14,7 @@ verify (glossary_local.md): 汇总: ERROR=0 WARN=386
   1) 阿拉伯数字缺失：源块 OCR/公式粘连产生畸形数字串（如 0.951、216、483 等），译文保留正确阿拉伯数字与公式，无法也不应机械回填畸形串。
   2) 术语库命中差异：共享库 inference→推理，而本书统计语境采用“推断”；部分普通用语会触发术语匹配。锁定术语在审校块中已采用本书术语库译法（如“原假设”“p 值操纵”）。以 glossary_local.md 与全书既有译法为准。
 
-剩余 WARN 清单（glossary_ml_data，共 201 条）:
+剩余 WARN 清单（glossary_ml_data，共 200 条）:
   [WARN] intro: 术语未采用约定译法(源含该词): ['样本']
   [WARN] c01_b01: 术语未采用约定译法(源含该词): ['样本']
   [WARN] c01_b02: 术语未采用约定译法(源含该词): ['推理', '推理']
