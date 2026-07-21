@@ -73,3 +73,9 @@ real options | 实物期权 |
 explore-exploit tradeoff | 探索-利用权衡 |
 multi-armed bandit | 多臂老虎机 |
 secretary problem | 秘书问题 |
+Type 1 decision | Type 1 决策 | 单向门/不可逆
+Type 2 decision | Type 2 决策 | 双向门/可逆
+one-way door | 单向门 |
+two-way door | 双向门 |
+minimum viable commitment | 最小可行承诺 |
+reversibility | 可逆性 |
