@@ -903,11 +903,11 @@
       "en_title": "Chapter 13: When the Pipes Break",
       "order": 69,
       "src_chars": 1962,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6c24b8ea5edf",
       "src": "#### Common Misconception\n\n_\"A good automation is one I build once and never think about again.\"_\n\nThat is a wish, not a description, and holding it is how people get burned. Automations live in a changing world and require occasional tending, so the good ones are not the untouched ones; they are the ones built to _tell you when they need tending_. Aiming for never-think-about-it-again leads you to build silent pipes and trust them blindly, which sets up the exact disaster this chapter warns about: a pipe that stopped working weeks ago and never said so. The realistic and better aim is a pipe that runs quietly when all is well and speaks up the moment it is not, so your attention is spent only when it is genuinely needed. Not \"set it and forget it,\" but \"set it and be told.\" That is the honest promise, and it is a better one.\n\n\n### 13.6 Exercises\n\nRead the answers.\n\n\n#### Judgment scenario\n\n**Q1.** Mara's shop changes its order format and her pipeline starts producing thank-you notes with blank names. She realizes it has been doing this silently for two weeks. What single design choice would have turned this two-week disaster into a ten-minute Monday fix, and what should she change now?\n\n**Answer:** The single choice is _failing loudly_ : had the pipe been built to check that each order's answer arrived in the expected shape, and to stop and alert her when the buyer's name was not where it expected, it would have caught the format change on the very first Monday and told her, instead of plowing ahead drafting blank-named notes for two weeks. What she should change now: rebuild the pipe to verify the shape of what it reads before acting on it, to stop on anything unexpected rather than continue, and to send her a simple \"something's off\" alert when it does, and get in the habit of glancing at its diary. The breakage itself was inevitable and fine; the _silence_ was the whole cost, and silence was a design choice she can reverse.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 692,
+      "out_sha": "a1d2efe124bf",
       "note": ""
     },
     {
@@ -915,11 +915,11 @@
       "en_title": "Chapter 13: When the Pipes Break",
       "order": 70,
       "src_chars": 2797,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bbfddabcc559",
       "src": "#### Judgment scenario\n\n**Q2.** Your assistant says: \"This service _does_ have a counter window, and I can get almost everything you want through it. But the one number you care about most isn't offered there, so for that one number I'd just scrape it off their public website each morning.\" Does \"only one number\" earn an exception to the front-door rule? What would you do?\n\n**Answer:** \"Only one number\" earns no exception; the same judgment applies to the last five percent as to the whole. The scraped part is still fragile (the website can move that number's spot any morning and break the pipe silently), still potentially against the service's terms (which usually govern the whole service, not just the corners without a counter window), and still going around a door the service built. So use the counter window for everything it _does_ offer, and for the missing number, first ask whether there is any official way to get it: a different counter, a report the service can send, a support request, or a value you can compute from what the counter _does_ give you. If the honest answer is \"there is no front-door way to get this number,\" treat that as the service saying \"not this number, not this way,\" and get it by hand rather than scraping it. A pipe that is ninety-five percent front-door and five percent window is still a pipe with a window in it, and the window is exactly where it will break and where it crosses the line. The gray area is tempting precisely because most of the pipe is honest; hold the line on the last five percent.\n\n\n#### Say this to your AI\n\nThis chapter's ask makes fragility a thing your assistant builds _for_ , not a thing that ambushes you later.\n\n> _\"When you build an automation for me, assume it will eventually break because a service changed something, and build it to fail loudly rather than quietly. Check that what it reads is in the shape you expect, stop if something's off instead of plowing ahead, and let me know when it needs attention. Don't try to make it run untouched forever; make it tell me when it needs tending. And never reach a service by scraping its human website behind its back; use the proper counter window it built for machines, and if there isn't one, tell me, so we either find another way or I do it by hand.\"_\n\nThis ask builds the whole chapter into how your pipes are made: the as-of acceptance that pipes break, the design choice to _fail loudly_ rather than silently, the honest aim of \"set it and be told\" over \"set it and forget it,\" and the ToS-honest instinct to use the front door and walk when there is none. It is the ask that keeps your automations both durable and decent, and it is the last safety habit you need before the two capstones assemble everything you have learned into one commanded territory.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 999,
+      "out_sha": "1859c43363b4",
       "note": ""
     },
     {
@@ -927,11 +927,11 @@
       "en_title": "Chapter 13: When the Pipes Break",
       "order": 71,
       "src_chars": 1899,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8657b2abcf84",
       "src": "### Chapter Summary\n\nNo honest map promises that automations run forever untouched. Pipes are **fragile** because they stand on ground you do not own: services change, keys expire, formats shift, free tiers shrink, and every running pipe is a frozen snapshot of how things worked the day you built it, an **as-of fact** that drifts. The mature question is not _will it break_ but _how will I know when it does?_ , which makes \"how will I know?\" a **design question** you answer while building. The single most valuable protection is to build a pipe to **fail loudly** , to check that answers arrive in the expected shape, stop rather than plow ahead, and alert you, because the real danger is never breakage itself but _silent_ breakage discovered weeks too late. We watched Mara's shop change its format and saw the same event be either a ten-minute Monday fix (loud failure, caught at once) or a two-week disaster of blank-named notes (silent failure), the difference being a design choice made in advance.\n\nTwo honesties close the chapter. Sometimes a **manual step is genuinely better** , when a task is so fragile or rare that keeping a pipe running costs more than the chore, and choosing it is judgment, not defeat. And **ToS-honesty** : use the counter window, the front door built for machines, and never scrape a service's human website behind its back, because doing so is fragile, often against the service's terms, and impolite; when there is no front door, walk. The better aim than \"set it and forget it\" is \"set it and be told.\" This built on Chapter 12's diary and Chapter 5's honest \"no\"s, and on Chapter 10's what-to-automate judgment, extended to what is worth _keeping running_. Now you hold every piece. Next, Chapter 14, the first capstone, assembles Mara's finished pipeline and traces it through all five tool maps of the series, one commanded territory at last.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 729,
+      "out_sha": "881ed62ca3de",
       "note": ""
     },
     {
@@ -939,11 +939,11 @@
       "en_title": "Chapter 14: Capstone I — One Territory",
       "order": 72,
       "src_chars": 2081,
-      "status": "pending",
+      "status": "done",
       "src_sha": "136da5324f8a",
       "src": "Let us go and stand in Mara's studio one more Monday, and this time look not at her chore but at what her chore became.\n\nShe makes tea. She does not open a spreadsheet. She opens her laptop, glances at a short list of finished drafts her assistant assembled overnight, reads each one in her own voice, releases the ones that are right, and gets to the wheel by the time the clay is warm. The Monday that opened this book, the hour of copying and pasting, is gone. Not because she stopped caring for her buyers, but because the caring got separated from the copying, and the copying now does itself.\n\nHere is the thing worth noticing, and the reason this is the capstone of five volumes and not just this one: Mara's finished automation is not a single tool. It is a small territory, and every tool the series taught is a part of it, doing a job only it can do. This chapter walks that territory layer by layer, not to congratulate you, but because seeing the five maps become one working thing is the moment they stop being five separate skills and become one command over a landscape. We are going to trace the actual plumbing, and at each layer you should feel not \"how nice\" but \"I can point to that part and say what it does and what to check.\" That is the acid test, passed at working scale.\n\n\n### 14.1 The territory, from the outside\n\nFirst, the whole pipe in one WHEN-THEN breath, so we know the ground we are about to survey.\n\n_When Monday morning arrives, then read the weekend's new orders from the shop, update the inventory sheet, and draft a thank-you note for each paid buyer, leaving the drafts for Mara to release; and, separately, when a rush commission lands at any hour, ring Mara at once so she can start it today._\n\nThat is the automation. Two triggers (a clock and a doorbell), a chain of reading and drafting actions, a human hand kept on everything that sends. You could have described it after Chapter 10. What you could not have done then is say _where every part lives and why_ , and that is what the five maps give you. Watch each one take up its post.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 765,
+      "out_sha": "7f7fec4ded28",
       "note": ""
     },
     {
@@ -951,11 +951,11 @@
       "en_title": "Chapter 14: Capstone I — One Territory",
       "order": 73,
       "src_chars": 3071,
-      "status": "pending",
+      "status": "done",
       "src_sha": "af10b685cd99",
       "src": "### 14.2 The five maps, doing their five jobs\n\n**Its limbs are API calls (this volume, Vol. V).** Everything the pipe actually _does_ to the outside world, it does through counter windows. Reading the orders is a reading request to the shop's orders counter. Reading the inventory sheet and writing back to it are requests to the sheet's counter. Drafting the thank-yous means asking the mail service's counter to prepare messages. The doorbell is the shop's counter window reaching back to ring Mara. Strip away everything else and the pipe is a set of visits to counter windows, asking in the agreed format, reading the labeled boxes that come back, minding the honest \"no\"s. These are the pipe's limbs, the parts that reach out and touch the services. And its **diary** , the running record of what it did each Monday, is this volume's own, the log Mara glances at to confirm it drafted twelve and skipped two.\n\n**Its recipe lives in a repo with history (Vol. I).** The pipe is not just its running; it is its _definition_ , the WHEN-THEN plan, the exact instructions, the prompts that tell the assistant how to write in Mara's voice. That definition is worth keeping the way you keep anything you have refined over months: in a version-controlled project, where every change is recorded and any past version can be recovered. When Mara improves the thank-you wording, the repo remembers the old version too, so she can compare or roll back. And the repo is exactly where her keys must _never_ go, because a repo remembers history, so the keys live outside it, in a private place the pipe reads from. The repo is the pipe's memory of itself.\n\n**A private model can be one of its workers (Vol. II).** One worker, the one that drafts from Mara's buyers' private details, can be a _local model_ , her own AI on her own always-on machine, so that sensitive handling never leaves the room. Not every pipe needs this; this one has the privacy-shaped reason we met in Chapter 11, and the map tells her exactly where such a worker slots in.\n\n**It runs in the terminal's world (Vol. III).** The pipe does not float in the abstract; it runs as a real task among files and processes on a real machine, the world of Volume III. Its scheduled Monday run is set by the tireless calendar-clerk, the scheduler that fires it on a clock. When Mara or her assistant needs to watch it work, to see it run step by step and read what streams past, that watching happens in the terminal's world, over the shoulder of the running task. This is the ground the pipe walks on, the operating floor beneath the limbs.\n\n**Its always-on parts live on a server (Vol. IV).** The weekly assembly can live on Mara's own machine, firing when she opens the lid Monday. But the rush-commission _doorbell_ cannot; it must be awake and listening at a fixed address at every hour, because a commission can land at 3 a.m. So that one piece lives on a small server, a presence out on the internet that never sleeps, ready to receive the shop's ring and pass it to Mara. The server is the pipe's always-open ear.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1158,
+      "out_sha": "ad0785269e51",
       "note": ""
     },
     {
@@ -963,11 +963,11 @@
       "en_title": "Chapter 14: Capstone I — One Territory",
       "order": 74,
       "src_chars": 2235,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b30bef332548",
       "src": "Five maps, five jobs: the API limbs that reach, the repo that remembers, the private model that can work in-house, the terminal's world it runs in, the server's always-open ear. Take any one away and a specific capability is gone: no repo and she cannot safely evolve or recover the pipe; no local-model option and the private drafting must leave the room; no terminal's world and she cannot watch it run or put it on a schedule; no server and she cannot be rung at 3 a.m.; no counter windows and there are no limbs at all. This is not five skills sitting side by side. It is one thing that works because all five are present, each irreplaceable.\n\n\n### 14.3 Why the join makes her more capable\n\nIt would be easy to end here with a flourish about how far Mara has come. Instead, let us ask the only question that actually measures a capstone: what can Mara _do_ now that she could not do before, precisely because these five maps have become one?\n\nShe can stand in front of a service she has never seen, her accountant's software, a new marketplace, a shipping provider, and know how to survey it (capability scanning), how to ask it things safely (counter windows, keys, scopes), how to decide whether it is worth wiring in (what deserves automating), where the wiring would live (the three homes), and how to keep a hand on anything irreversible (the safe-posture set). She can commission a new pipe in an afternoon, prove it in a sandbox, watch it for a week, and fold it into the territory she already commands. She can look at a pipe that broke and read the honest \"no,\" check the diary, and tend it in ten minutes. None of this is because she memorized a manual. All of it is because she holds five maps that have clicked into one, and a landscape she can read is a landscape she can extend.\n\nThat is the difference between this capstone and a recap. A recap would remind you what each volume said. This capstone hands you the _combined power_ , the specific new capability that only exists when repo, model, terminal, server, and API stop being five things you learned and become one territory you command. Mara is not more impressed than she was in Chapter 1. She is more _capable_ , and she can name exactly why, part by part.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 807,
+      "out_sha": "e0851e99bebb",
       "note": ""
     },
     {
