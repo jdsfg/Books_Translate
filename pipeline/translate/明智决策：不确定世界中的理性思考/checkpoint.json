@@ -1307,11 +1307,11 @@
       "en_title": "Chapter 11: Loss Aversion — Losses Hurt Twice as Much as Gains Feel Good",
       "order": 99,
       "src_chars": 3145,
-      "status": "pending",
+      "status": "done",
       "src_sha": "dd6fce578d3e",
       "src": "You have 1,000 USD in your pocket. Which would you prefer?\n\nOption A: A 50% chance of winning 1,000 USD more (leaving you with 2,000 USD) and a 50% chance of winning nothing additional (leaving you with 1,000 USD).\n\nOption B: A guaranteed 500 USD (leaving you with 1,500 USD).\n\nMost people choose Option B. Now, consider this scenario: you have 2,000 USD in your pocket.\n\nOption C: A 50% chance of losing 1,000 USD (leaving you with 1,000 USD) and a 50% chance of losing nothing (staying at 2,000 USD).\n\nOption D: A guaranteed loss of 500 USD (leaving you with 1,500 USD).\n\nMost people now choose Option C.\n\nNotice: Option B and Option D produce the same final outcome (1,500 USD), as do Options A and C. Yet most people prefer B over A and C over D. The description changed; the math did not. This is prospect theory — the psychological reality of how we actually evaluate gains and losses.\n\n\n### 11.1 Prospect Theory: How We Actually Evaluate Outcomes\n\nIn 1979, Daniel Kahneman and Amos Tversky published what would become the most-cited paper in the history of economics. Their \"Prospect Theory\" replaced the classical model of rational choice with a description of how people _actually_ evaluate uncertain outcomes.\n\n\n#### Definition: Prospect Theory\n\nProspect theory describes how people evaluate outcomes relative to a reference point, with three core features: (1) outcomes are evaluated as gains or losses from the reference point, not as final wealth levels; (2) the value function is concave for gains and convex for losses (diminishing sensitivity); and (3) losses loom larger than equivalent gains (loss aversion).\n\nIn plain language: people don't care about how much they have — they care about how much they have _relative to some reference point_ (usually the status quo). And losing feels about twice as bad as gaining the same amount feels good.\n\n\n#### Definition: Loss Aversion\n\nLoss aversion is the psychological phenomenon in which the pain of losing something is felt more intensely than the pleasure of gaining the same thing. Kahneman and Tversky estimated the loss aversion coefficient at approximately 2.0 — meaning that losses feel roughly twice as bad as equivalent gains feel good.\n\nIn plain language: losing 100 USD feels approximately as bad as gaining 200 USD feels good. This is not a choice or a preference — it is a consistent, measurable feature of human psychology.\n\n\n#### Common Misconception\n\n_\"Loss aversion is the same as risk aversion.\"_\n\nLoss aversion and risk aversion are related but distinct. Risk aversion is a preference for certainty over equivalent expected value — explained by diminishing marginal utility of wealth (an extra dollar adds less happiness when you already have many dollars). Loss aversion is specific to losses: the psychological impact of a loss is disproportionate to its objective size, relative to a gain of identical magnitude. You can be risk-averse without being loss-averse (by preferring certainty for diminishing utility reasons), and loss aversion creates specific patterns (like the preference reversal in the opening example) that pure risk aversion cannot explain.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1093,
+      "out_sha": "7e90ef90f0c5",
       "note": ""
     },
     {
@@ -1319,11 +1319,11 @@
       "en_title": "Chapter 11: Loss Aversion — Losses Hurt Twice as Much as Gains Feel Good",
       "order": 100,
       "src_chars": 1985,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ccc399142200",
       "src": "### 11.2 Thread 1 — The Startup Decision: Loss Aversion\n\nReturn to Sarah. She has been working on her startup planning for eight months now. During this time, she has contributed 15,000 USD of her savings and countless hours. She is at the point where she needs to decide whether to continue or stop.\n\nRecent evidence from her market research is ambiguous — slightly discouraging, but not definitive. The Bayesian update from this evidence reduces her success probability from 47% (after the LOIs in Chapter 7) to perhaps 30%.\n\nHere is the trap: Sarah's inner monologue sounds like this: \"I can't stop now. I've already put so much into this. And walking away would mean admitting failure — losing all that time and money.\" She is experiencing loss aversion in two ways:\n\n**Explicit loss aversion:** The prospect of losing the 15,000 USD she has invested weighs heavily on her decision. In absolute terms, 15,000 USD is not enormous — but as a _loss from where she was_ , it feels devastating. If she had started with nothing and someone offered her a 30% chance of making significant money, she might evaluate it differently. The fact that she has already spent 15,000 USD transforms this into \"30% chance of recovering my loss and more\" — which feels very different from a fresh evaluation.\n\n**Status quo loss aversion:** Stopping means giving up the identity of \"startup founder\" — a loss from her current reference point. Continuing maintains the current reference point. Even if quitting and returning to her job would be the rational choice, it _feels like_ a loss in a way that continuing does not.\n\nThe rational question she should be asking: \"Given my current evidence (30% probability of success), my current resources, and my opportunity cost, is continuing the best use of my next year?\" The loss aversion question she is actually asking: \"Can I bear to have all this effort come to nothing?\"\n\nThese are very different questions, and the second one leads to bad decisions.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 633,
+      "out_sha": "352ad0c73a3e",
       "note": ""
     },
     {
@@ -1331,11 +1331,11 @@
       "en_title": "Chapter 11: Loss Aversion — Losses Hurt Twice as Much as Gains Feel Good",
       "order": 101,
       "src_chars": 2863,
-      "status": "pending",
+      "status": "done",
       "src_sha": "93deee057f83",
       "src": "### 11.3 Framing Effects: The Same Choice, Described Differently\n\nLoss aversion is the engine that powers framing effects — the phenomenon (introduced at the very start of this book) in which logically identical choices produce different decisions depending on how they are described.\n\nWhen outcomes are framed as gains (Program A saves 200 lives), people prefer certainty. When the same outcomes are framed as losses (Program C results in 400 deaths), people prefer to gamble. This reversal occurs because the loss frame activates loss aversion, which makes the certain bad outcome feel especially repugnant — and thus the gamble feels preferable even though, probabilistically, the two are identical.\n\nFraming effects appear in:\n\n* **Medical decisions:** Patients prefer surgery when its success rate is described as \"90% survival\" rather than \"10% mortality\" — despite these being identical.\n* **Financial decisions:** People respond more to \"you'll lose 200 USD by not switching insurance providers\" than \"you'll save 200 USD by switching\" — even though both describe the same change.\n* **Consumer decisions:** \"95% fat-free\" sells better than \"5% fat\" — the gain frame is more attractive.\n* **Investment decisions:** People evaluate funds differently when past returns are described as annual gains vs. when they are described as losses relative to the market.\n\nThe practical defense against framing effects: deliberately reframe any important decision in both gain and loss terms before committing. If your evaluation changes based on framing alone, you are being influenced by something other than the underlying decision.\n\n\n### 11.4 The Disposition Effect: Loss Aversion in Investing\n\nLoss aversion produces one of the most well-documented — and costly — patterns in investor behavior: the disposition effect.\n\n\n#### Definition: The Disposition Effect\n\nThe disposition effect is the tendency of investors to sell assets that have increased in value (realizing gains) while holding assets that have decreased in value (avoiding the realization of losses).\n\nThe consequence: investors tend to hold losing investments far too long (\"it'll come back\") while selling winning investments too early (\"I should take profits while I can\"). Loss aversion makes the paper loss feel uncomfortable — realizing it makes it \"official\" and psychologically final. Holding the losing investment maintains the hope that the loss will be recovered and avoids the psychic pain of a confirmed loss.\n\nThe economically correct behavior is exactly the opposite: evaluate each investment on its forward-looking merits, not on where you bought it. If a stock has fallen 30% and there is no compelling reason to believe it will recover, selling it and reinvesting in a better prospect is the rational action — but loss aversion makes this very hard in practice.\n\n\n### 11.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 893,
+      "out_sha": "d8dfcc43cb0a",
       "note": ""
     },
     {
@@ -1343,11 +1343,11 @@
       "en_title": "Chapter 11: Loss Aversion — Losses Hurt Twice as Much as Gains Feel Good",
       "order": 102,
       "src_chars": 3158,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b8f27c461315",
       "src": "#### Concept Check\n\n**Q1.** In prospect theory, why do people evaluate outcomes relative to a reference point rather than in terms of absolute wealth? Give an example illustrating why this matters.\n\n**Answer:** People evaluate outcomes relative to a reference point because changes are psychologically more salient than absolute levels. The reference point is typically the status quo — what you currently have. A salary of 80,000 USD feels excellent if you were previously earning 50,000 USD (a gain) but disappointing if you were previously earning 100,000 USD (a loss), even though 80,000 USD is the same in both cases. This matters because it explains framing effects (the same final outcome can be described as a gain or a loss relative to different reference points) and reference point anchoring (what you've already earned, been offered, or expected strongly influences satisfaction with any given outcome). Absolute levels of wealth would predict that 80,000 USD feels the same regardless of prior income — clearly wrong.\n\n* * *\n\n**Q2.** What is the loss aversion coefficient, and what does it mean practically?\n\n**Answer:** The loss aversion coefficient (estimated by Kahneman and Tversky at approximately 2.0–2.5) means that losing a given amount feels approximately 2–2.5 times as painful as gaining the same amount feels pleasurable. Practically: (1) To make someone indifferent between a 50/50 gamble and a certain outcome, the potential gain must be roughly 2× the potential loss. A bet where you might lose 100 USD must offer at least ~200 USD in potential gain before most people feel comfortable accepting it. (2) People will irrationally avoid small negative expected value gambles even when accepting them would be in their long-run interest. (3) Marketing strategies exploit this by framing messages as loss-avoidance (\"don't miss out\") rather than gain (\"earn extra\"), which activates loss aversion and increases response rates.\n\n* * *\n\n**Q3.** Explain framing effects as a consequence of loss aversion. Why does the description of an outcome change the decision, even when the underlying options are identical?\n\n**Answer:** Framing effects follow directly from loss aversion because the same objective outcome can be described as a gain or a loss relative to different reference points. When framed as a gain, loss aversion is less activated — the decision is evaluated primarily on the probability and magnitude of possible gains, and certainty is moderately preferred. When the same outcome is framed as a loss, loss aversion is strongly activated — the certain bad outcome (definite loss) feels especially aversive, making the gamble relatively more attractive. The decision reverses because the emotional weight of the evaluation changes: identical probabilities and outcomes, but very different psychological cost assigned to each option depending on whether \"certain\" means \"certain gain\" or \"certain loss.\" This is why the vaccination example at the opening of Chapter 1 showed opposite preferences for logically identical options.\n\n* * *\n\n**Q4.** What is the disposition effect, and why is it economically costly for investors?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 983,
+      "out_sha": "82380f332656",
       "note": ""
     },
     {
@@ -1355,11 +1355,11 @@
       "en_title": "Chapter 11: Loss Aversion — Losses Hurt Twice as Much as Gains Feel Good",
       "order": 103,
       "src_chars": 989,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6e256249f5f3",
       "src": "**Answer:** The disposition effect is investors' tendency to sell winning investments too early (to realize gains) while holding losing investments too long (to avoid realizing losses). It is economically costly for several reasons: (1) Tax inefficiency: in most tax systems, realized losses can offset realized gains, and holding gains until death or gifting may avoid taxes entirely. By realizing gains early and losses late, investors create unnecessary tax liability. (2) Performance drag: if you sell winners and hold losers, your portfolio systematically shifts toward lower-quality holdings (the ones that have fallen), which tends to underperform. Research by Odean (1998) confirmed that the stocks investors sell go on to outperform the stocks they hold — meaning investors would be better off holding the winners and selling the losers. (3) Opportunity cost: holding a losing investment \"to recover\" prevents capital from being deployed in better-performing alternatives.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 298,
+      "out_sha": "8a0081d4f603",
       "note": ""
     },
     {
@@ -1367,11 +1367,11 @@
       "en_title": "Chapter 11: Loss Aversion — Losses Hurt Twice as Much as Gains Feel Good",
       "order": 104,
       "src_chars": 3375,
-      "status": "pending",
+      "status": "done",
       "src_sha": "53d25e327d69",
       "src": "#### Application Problems\n\n**Q1.** A real estate developer is trying to sell units in a new building. She can describe prices in two ways: (A) \"The market price is 500,000 USD; we're offering 30,000 USD off,\" or (B) \"Our standard price is 470,000 USD; we can offer an upgrade package worth 30,000 USD.\" Both represent the same financial outcome for the buyer. Using loss aversion and framing effects, which framing is more likely to close sales, and why?\n\n**Answer:** Framing A (describing a discount from a higher reference price) is typically more effective. In framing A, the buyer's reference point is established at 500,000 USD; the 30,000 USD reduction is experienced as a gain (you're saving 30,000 USD). This feels good. In framing B, the reference point is the 470,000 USD list price, and the \"upgrade package\" is experienced as a gain of uncertain value (what is an upgrade package actually worth?). Framing A uses the anchoring effect (Chapter 3) to establish a high reference price, then uses loss aversion (the buyer doesn't want to \"lose\" the opportunity for 30,000 USD off) to create urgency. The gain of 30,000 USD is concrete and easy to evaluate. In practice, most real estate pricing uses exactly this strategy: MSRP or \"market value\" is stated high, and the offering price represents a discount — exploiting both anchoring and the loss-avoidance motivation.\n\n* * *\n\n**Q2.** You are a doctor presenting treatment options to a patient with a serious diagnosis. One option is surgery (90% survival rate), another is medication (10% mortality rate). You know these are identical. Which framing should you use, and what are the ethical considerations?\n\n**Answer:** Research shows that \"90% survival rate\" is received more positively and generates more surgery acceptances than \"10% mortality rate\" — even though they are mathematically identical. From a pure effectiveness standpoint, the survival frame should generate better patient compliance. However, the ethical considerations are significant: (1) Informed consent requires honest, complete disclosure — not strategically framed disclosure. Choosing the frame that produces the outcome you prefer is a form of manipulation, even if the underlying information is accurate. (2) Patient autonomy: patients have the right to evaluate risk accurately, which requires access to both frames. A fully informed patient might respond differently to \"10% mortality\" because it correctly emphasizes the irreversibility and finality of the risk. (3) Professional responsibility: doctors should strive to ensure patients understand the actual probabilities, not just present information strategically. Best practice: present both frames explicitly — \"there is a 90% chance of surviving the surgery and a 10% chance of not surviving\" — and check that the patient understands these are the same probability stated differently.\n\n* * *\n\n**Q3.** An investor bought a stock at 100 USD per share. It has fallen to 60 USD. The investor reasons: \"I can't sell now — I'd be realizing a 40 USD loss. I'll hold until it gets back to 100 USD.\" Identify the psychological errors in this reasoning and explain what the investor should actually consider.\n\nHint\n\nThink about what information the purchase price of 100 USD provides about the stock's future performance, and whose reference point is relevant to the stock's actual value.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1086,
+      "out_sha": "42fb9901b54a",
       "note": ""
     },
     {
@@ -1379,11 +1379,11 @@
       "en_title": "Chapter 11: Loss Aversion — Losses Hurt Twice as Much as Gains Feel Good",
       "order": 105,
       "src_chars": 2777,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d9ecb82e2601",
       "src": "**Answer:** Two primary errors: (1) Loss aversion and sunk cost thinking: the 40 USD loss is real — it exists whether or not the investor sells. Selling doesn't cause the loss; the loss has already occurred. The question is what to do with 60 USD today, not how to recover money that is gone. The stock's current fair value (based on fundamentals, growth prospects, and alternatives) is the relevant question — not the purchase price. (2) The \"get back to 100 USD\" goal is arbitrary and economically meaningless: the stock has no obligation or incentive to return to 100 USD just because someone bought it at that price. The market does not know or care about the investor's cost basis. What the investor should actually consider: (a) If I had 60 USD cash today and no position in this stock, would I buy it? If yes, hold; if no, sell and deploy capital elsewhere. (b) What is the fundamental fair value of this stock based on current information? (c) What is the opportunity cost of holding this investment — what returns could 60 USD generate elsewhere? The purchase price of 100 USD is irrelevant to all three questions.\n\n* * *\n\n**Q4.** A hiring manager must decide whether to extend a job offer to a candidate. The candidate's final interview went poorly, but the manager thinks: \"We've already invested three rounds of interviews in this person — I'd hate to have wasted all that time.\" Analyze this reasoning using both sunk cost thinking and loss aversion.\n\n**Answer:** Two overlapping errors: (1) Sunk cost thinking: the three rounds of interviews are already completed — that time and effort is gone regardless of whether the offer is extended. The decision of whether to hire should be based entirely on forward-looking information: Is this candidate the best option for the role? Will they succeed in this position? Making the hire to \"justify\" past investment in the interview process is spending additional resources (the hire, the onboarding, potential performance issues, replacement costs) to \"honor\" an already-spent cost that cannot be recovered. (2) Loss aversion: the manager is framing the decision as \"should I take the loss of admitting this process produced the wrong outcome?\" rather than \"what is the best hiring decision?\" The loss of acknowledging a wrong decision feels worse than the prospective cost of a bad hire — but the bad hire is almost certainly a larger expected cost. Best practice: evaluate the candidate solely on the question \"do we want this person in this role, based on everything we now know?\" If the answer is no after three rounds of interviews, no offer — and treat the interview process cost as information gained (you now know more about the candidate and your selection criteria), not as a sunk cost to be justified.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 874,
+      "out_sha": "8b093a90e13a",
       "note": ""
     },
     {
@@ -1391,11 +1391,11 @@
       "en_title": "Chapter 11: Loss Aversion — Losses Hurt Twice as Much as Gains Feel Good",
       "order": 106,
       "src_chars": 3377,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4f8305bf9702",
       "src": "#### Think Deeper\n\n**Q1.** Some behavioral economists argue that loss aversion is not a bias but a rational response to genuine asymmetries: losing shelter, food, or social standing has asymmetric consequences compared to gaining more of these things. When might loss aversion be a well-calibrated response to real asymmetries, and when does it overshoot?\n\n**Discussion:** The argument for adaptive loss aversion: in the ancestral environment, losing essential resources — shelter, food security, social position — could be catastrophic or fatal, while gaining more of these things provided only incremental benefit. An asymmetric psychological response (losses are worse than equivalent gains) may have been well-calibrated to real asymmetric stakes. This argument has real force for large losses that threaten essential security: losing your home, your health, or your core social relationships does, in fact, have asymmetric negative consequences compared to gaining equivalent additional security. Loss aversion may correctly track real-world asymmetry here. Where loss aversion clearly overshoots: (1) Small financial losses with no security implications — losing 20 USD should not trigger the same psychological machinery as losing food security, but it often does. (2) Temporary losses that will reverse — market fluctuations that do not represent permanent wealth destruction. (3) Domain transfer — loss aversion evolved for physical and social resources but is applied to financial positions, career status symbols, and other proxies that don't have the same asymmetric real-world consequences. The calibrated version of loss aversion would be: apply high loss aversion to large, irreversible, essential-resource losses; apply low loss aversion to small, reversible, non-essential losses. Most people apply similar loss aversion across the full range, which is the bias.\n\n* * *\n\n**Q2.** Prospect theory describes how people evaluate outcomes, but is it a normative theory (how we should decide) or a descriptive theory (how we actually decide)? Should we try to eliminate loss aversion, or work with it?\n\n**Discussion:** Prospect theory is primarily descriptive — Kahneman and Tversky's claim was that this is how people actually evaluate outcomes, not how they should. The normative standard remains expected utility theory under most frameworks: you should evaluate outcomes based on their impact on your actual welfare, not based on their deviation from an arbitrary reference point. Under this view, loss aversion is a bias to be corrected, and rational decision making should aim at reference-point-independent evaluation. However, a minority view argues that some version of loss aversion is normatively justified: if actual welfare is genuinely asymmetric (as argued above), or if the disutility of losses represents genuine preferences that should be honored in decision theory, then some loss weighting is rational. The practical synthesis: trying to eliminate loss aversion completely is probably neither possible nor desirable (some version tracks real asymmetries). The goal is to be aware of it, especially in domains where it is likely to overshoot (small financial decisions, reversible losses, decisions about sunk costs), and to apply deliberate reframing to ensure the evaluation reflects actual welfare impact rather than reference-point deviation.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 980,
+      "out_sha": "cd9b0af25080",
       "note": ""
     },
     {
@@ -1403,11 +1403,11 @@
       "en_title": "Chapter 11: Loss Aversion — Losses Hurt Twice as Much as Gains Feel Good",
       "order": 107,
       "src_chars": 1022,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1e092f4cf02c",
       "src": "### Chapter Summary\n\nProspect theory and loss aversion reveal that people don't evaluate outcomes as final wealth states — they evaluate them as gains and losses relative to a reference point, with losses feeling approximately twice as painful as equivalent gains feel pleasant.\n\nThis asymmetry drives framing effects (identical choices produce different decisions when described as gains vs. losses), the disposition effect (holding losing investments too long, selling winners too early), and many of the most costly personal financial decisions people make.\n\nThread 1 showed Sarah trapped by loss aversion: the 15,000 USD already invested and the identity she's built as a \"startup founder\" feel like potential losses from her current reference point, making it psychologically harder to quit than the rational forward-looking analysis would warrant.\n\nIn Chapter 12, we examine the closely related sunk cost fallacy — when past investments become chains rather than foundations, and how to free yourself from them.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 312,
+      "out_sha": "99624aee01fe",
       "note": ""
     },
     {
