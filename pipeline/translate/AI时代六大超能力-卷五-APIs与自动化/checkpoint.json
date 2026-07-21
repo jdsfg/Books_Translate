@@ -531,11 +531,11 @@
       "en_title": "Chapter 7: Being a Good Citizen",
       "order": 38,
       "src_chars": 1486,
-      "status": "pending",
+      "status": "done",
       "src_sha": "511ea061de52",
       "src": "### Chapter Summary\n\nA counter window is a **shared** counter, and like any shared space it has etiquette about pace, enforced as a **rate limit** : a cap on how many times one visitor may ask in a given span. Hitting it produces the _slow down_ refusal from Chapter 5, and it is not a malfunction or a punishment but the system keeping the counter fair, affordable, and safe, the three honest reasons services throttle. Automations trip rate limits far more easily than humans do, because a machine can ask thousands of times a second, so being a good citizen is a thing you must build in, not assume. Two courtesies do almost all the work: when told to _slow down_ , **back off** and wait a little longer each time rather than hammering; and better still, **ask once and remember** , matching your asking rate to how often the answer actually changes instead of re-asking for something you already have.\n\nThe line to carry: hitting a limit occasionally is normal and fine; what marks a bad citizen is _ignoring_ the slow-down, and that is entirely within your control. This built directly on Chapter 5's _slow down_ verdict and on Chapter 6's sense that your identity is a thing to protect, since a hammering pipe can get your identity throttled or flagged. Next, in Chapter 8, we meet the opposite of asking over and over: the **doorbell** , a way to have the service ring _you_ the moment something happens, so your pipeline can stop knocking and simply wait to be told.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 537,
+      "out_sha": "d14b06ea2744",
       "note": ""
     },
     {
