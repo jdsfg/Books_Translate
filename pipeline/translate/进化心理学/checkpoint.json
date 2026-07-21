@@ -1183,11 +1183,11 @@
       "en_title": "Chapter 11: Parental Investment and the Asymmetry",
       "order": 91,
       "src_chars": 1731,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1949c7c9369d",
       "src": "In 1948, a geneticist named Angus Bateman ran an experiment with fruit flies that would shape how biologists thought about sex for the next sixty years. He let flies mate freely and tried to measure who had more offspring and why. His conclusion, roughly, was that males' reproductive success rose steeply with the number of mates they had, while females' did not: a male who mated with many females had many more offspring, but a female who mated with many males gained little. From this he drew a sweeping moral about the sexes: males are selected to be competitive and promiscuous, females to be choosy and coy. For decades, \"Bateman's principle\" was a foundation stone, cited as the hard empirical bedrock beneath the whole picture of eager males and selective females across the animal kingdom.\n\nHold onto that study, because we are going to watch what happened to it, and what happened to it is one of the most instructive stories in this book. But first we need the theory it was taken to support, because that theory, unlike Bateman's particular flies, is genuinely robust and genuinely important. This is Part 4, the most contested territory in all of psychology, where the tools you have been sharpening since Chapter 1 finally face their hardest test. We begin gently, with the framework underneath the whole debate, and with a single study whose fate, celebrated, then demolished, then partly resurrected, teaches the deepest lesson about how scientific verdicts actually move. By the end of this chapter you should understand the _logic_ of sex differences in mating; the next chapter takes up the far harder question of what that logic does and does not explain about human beings, and there the firewall will blaze.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 524,
+      "out_sha": "0ea9d75d9375",
       "note": ""
     },
     {
@@ -1195,11 +1195,11 @@
       "en_title": "Chapter 11: Parental Investment and the Asymmetry",
       "order": 92,
       "src_chars": 3296,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ef3fb78fb046",
       "src": "### 11.1 The asymmetry of investment\n\nStart with a fact of biology that is not in dispute and carries no politics: in our species, as in most mammals, the minimum biological investment required to produce a child is wildly unequal between the sexes. The minimum a male must contribute is, in principle, very small. The minimum a female must contribute is enormous: months of pregnancy, the risks of childbirth, and, ancestrally, years of nursing. This is not a claim about what men and women _should_ do, or about who _does_ the parenting in any actual human society (which varies enormously and is shaped overwhelmingly by culture). It is a narrow claim about the _minimum biological floor_ , and at that floor the asymmetry is simply a fact of mammalian reproduction.\n\nRobert Trivers, whom we met in the last chapter, saw in the 1970s that this asymmetry should have consequences for how selection shapes the two sexes, and he generalized it beyond humans into one of the most productive ideas in the field. The reasoning is clean. The sex that invests _more_ in each offspring has more to lose from a poor reproductive choice and a lower ceiling on how many offspring it can produce, so it should be selected, on average, to be _choosier_ about mates and to compete less by sheer mating quantity. The sex that invests _less_ has a higher potential ceiling and less to lose per encounter, so it should be selected, on average, toward greater competition for mating access and less choosiness. Crucially, the theory is _not_ fundamentally about male and female; it is about _investment_. The proof is the species where the asymmetry reverses: in some birds and fishes the male does the heavy parental work, and in exactly those species it is the _females_ who are larger, more competitive, and more ornamented, while the males are choosy. That reversal is the theory's triumph, because it shows the prediction tracks _investment_ , not sex, exactly as a good theory should.\n\n\n#### Definition: Parental investment theory\n\nParental investment theory holds that the sex which invests more in each offspring (in gametes, gestation, and care) tends to be selected toward choosiness in mating, while the sex that invests less tends to be selected toward greater competition for mates; the predicted pattern follows the _investment_ , not the label \"male\" or \"female,\" and reverses in species where males invest more.\n\nIn plain language: whoever has more at stake per offspring should shop more carefully, and whoever has less at stake should compete more to mate, whichever sex that happens to be. Run it through Chapter 3's toolkit and the _framework_ fares well: it makes a risky, falsifiable prediction (the sex-role reversal in role-reversed species), and that prediction is confirmed across many species, which is powerful evidence that the underlying logic is sound. This is why parental investment theory sits in the robust core _as a theoretical framework_. But notice the careful italics, because everything in the next chapter depends on them. A robust framework about the _logic of investment_ across the animal kingdom is not the same as a proven account of _how any particular human behaves_ , and the leap from the one to the other is exactly where the trouble, and the contest, begins.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 984,
+      "out_sha": "74d0adaa5d99",
       "note": ""
     },
     {
@@ -1207,11 +1207,11 @@
       "en_title": "Chapter 11: Parental Investment and the Asymmetry",
       "order": 93,
       "src_chars": 3255,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8efeedf711af",
       "src": "### 11.2 The fate of a famous study\n\nNow back to Bateman's flies, because their story is a gift: a single, vivid, self-contained lesson in scientific humility that you will carry into every contested claim for the rest of the book.\n\nFor sixty years, Bateman's 1948 study was the empirical crown jewel, the hard data beneath parental investment theory, cited endlessly as proof that even in the lab, males gain from extra mates and females do not. Then, in 2012, a team of researchers did something that should happen far more often than it does: they _repeated the original study_ as faithfully as they could. And it did not replicate. When they ran Bateman's own design carefully, they found that his conclusions did not hold up, and worse, they identified a serious flaw in his original method, a way of counting offspring that biased the results. A significant percentage of the fruit-fly offspring carried two genetic markers that were lethal in combination, so those offspring died and were never counted, distorting exactly the measurements Bateman's whole conclusion rested on. The crown jewel, examined under a modern lens, turned out to be cracked. For a while the story in many circles became: \"Bateman was wrong, the foundation of sexual-selection theory is debunked, the whole eager-male-choosy-female picture was built on bad data.\"\n\nBut the story did not end there, and this is the part that matters most. In 2023, another team revisited the question with an _improved_ method, correcting the flaws in the original design, and when they did, they _recovered_ the pattern: they found evidence for stronger sexual selection in males than in females. So the honest, as-of read, the one a careful person should actually hold, is a three-part story, and none of the parts can be dropped: Bateman's _original 1948 study was genuinely flawed_ and should not be cited as solid proof; the _failed 2012 replication_ was real and important and rightly punctured the crown jewel; _and_ a corrected 2023 study then recovered the underlying pattern, suggesting the principle survives even though Bateman's particular execution of it does not. Three movements, and the verdict moved across all three.\n\nWhat should you take from this? Not \"Bateman was right after all\" (too simple), and not \"Bateman was debunked\" (also too simple, and now outdated). The lesson is about _how verdicts move_. A finding can rise and fall and rise again in corrected form, and the intellectually honest position at each moment is to hold the _current_ weight of evidence _with_ an awareness that it might move again. Notice, too, a liberating fact that defuses some of the drama: the broad parental-investment logic from 11.1, grounded in the undisputed asymmetry of minimum investment and confirmed by the sex-role-reversal evidence across many species, _never depended on Bateman's flies in the first place_. The framework stands on much broader ground. Bateman's study was one prop, and props can fail without the building falling. So the collapse and partial recovery of one study is a lesson in humility about _specific findings_ , not a referendum on the whole theory. Carry both: the framework is robust; any single study, however celebrated, can move under your feet.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1010,
+      "out_sha": "545023e3e327",
       "note": ""
     },
     {
@@ -1219,11 +1219,11 @@
       "en_title": "Chapter 11: Parental Investment and the Asymmetry",
       "order": 94,
       "src_chars": 1671,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0d1055770052",
       "src": "#### Common Misconception\n\n_\"Parental investment theory proves that men are naturally promiscuous and women are naturally monogamous, so that's just how the sexes are.\"_\n\nThis compresses several errors into one sentence, and Part 4 will spend most of its energy unpacking them, but we can begin now. First, the theory is about _statistical tendencies shaped by selection pressures_ , not about how any individual must behave; even where an average difference exists, the _overlap_ between the sexes is typically enormous, so \"men are X and women are Y\" erases the vast number of individuals who do not fit (a point Chapter 12 will hammer). Second, the theory describes _selection pressures over evolutionary time_ , not a fixed script: human mating arrangements vary dramatically across cultures (from lifelong monogamy to polygamy to serial partnerships), which is impossible if biology dictated a single pattern, and which shows culture and individual choice doing massive work, exactly as Thread B insists. Third, and most importantly, the words \"naturally\" and \"just how the sexes are\" are doing illegitimate _moral_ work, sliding from a contested _is_ toward an _ought_ that excuses or prescribes behavior, which is the naturalistic fallacy we will see weaponized repeatedly in the chapters ahead. Even if some average tendency were real and evolved, it would tell us _nothing_ about how anyone _should_ behave, what arrangements are good, or who deserves what. The theory, properly understood, is a careful claim about average selection pressures on a deeply variable, culturally shaped, individually free species. The cartoon is a license dressed up as a finding.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 503,
+      "out_sha": "931d6bda5b55",
       "note": ""
     },
     {
@@ -1231,11 +1231,11 @@
       "en_title": "Chapter 11: Parental Investment and the Asymmetry",
       "order": 95,
       "src_chars": 2700,
-      "status": "pending",
+      "status": "done",
       "src_sha": "61943458a0d5",
       "src": "### 11.3 What the asymmetry does and does not license\n\nBefore we walk into the genuine debate of the next chapter, let us draw the lines clearly, while the temperature is still manageable, because in the heat of Chapter 12 it will help to have them already drawn.\n\nHere is what the asymmetry of parental investment _does_ legitimately support. As a _framework_ for understanding mating patterns across the animal kingdom, it is robust, predictive, and confirmed by the sex-role-reversal evidence. As applied to humans, it offers a reasonable _hypothesis_ that selection may have shaped some average, statistical differences in mating psychology, a hypothesis worth taking seriously and testing, not dismissing out of hand.\n\nAnd here is what it does _not_ license, no matter how often it is stretched to. It does not license claims about any _individual_ , since averages with large overlap say nothing about the person in front of you. It does not license treating human mating behavior as _fixed_ or _uncultured_ , since the cross-cultural variation is enormous and culture is doing visible, heavy work. It does not license the leap from \"selection may have shaped average tendencies\" to \"we know in detail what those tendencies are and that they are evolved rather than learned,\" which is precisely the contested question, not a settled premise. And above all it does not license any _moral_ conclusion whatsoever about how people should behave, what arrangements are right, or what anyone deserves, because no _is_ yields an _ought_.\n\nThat last set of distinctions is the firewall, pre-positioned. In the next chapter we examine the actual human data on what men and women say they want in a mate, and we will find something genuinely interesting and genuinely hard: a cross-cultural _pattern_ that is reasonably robust, sitting on top of an evolutionary _interpretation_ that is genuinely contested, with serious scientists offering a powerful alternative account. Holding the robust pattern and the contested interpretation apart, steelmanning both sides of the interpretation with equal force and equal vividness, and keeping the is-ought firewall blazing throughout, is the single hardest balancing act in this book. We have spent ten chapters preparing for it. The framework from this chapter is one of the things we will be balancing. Bateman's flies are the reminder, freshly in mind, that even our most confident findings can shift beneath us. Now we go in.\n\n\n### 11.X Exercises\n\nThese prompts work the chapter's core distinctions: separating a robust framework from any single study, holding the as-of provisionality of verdicts, and pre-positioning the firewall before the hard chapter.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 781,
+      "out_sha": "275fa61563a3",
       "note": ""
     },
     {
@@ -1243,11 +1243,11 @@
       "en_title": "Chapter 11: Parental Investment and the Asymmetry",
       "order": 96,
       "src_chars": 2091,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ce3695f50df4",
       "src": "#### Sort the Claim\n\n**Q1.** Sort each, distinguishing the framework, the specific study, and any moral leap: (a) \"Across many animal species, the sex that invests more in offspring is choosier about mates.\" (b) \"Bateman's 1948 fruit-fly experiment proved that males benefit from multiple mates and females don't.\" (c) \"Therefore men are designed to spread their seed widely.\"\n\nHint\n\nOne of these is a robust framework claim, one is a specific empirical claim with a complicated history, and one is a leap that fails on multiple grounds. Grade them separately.\n\n**Discussion:** Three very different verdicts, and keeping them separate is the whole point. (a) is a _robust framework claim_ : it states the parental-investment prediction at the level where it is strongest, across many species, framed around _investment_ rather than sex, and it is confirmed by the sex-role-reversal evidence, so it belongs in the well-supported core. (b) is a _specific empirical claim with a moving verdict_ : as 11.2 detailed, Bateman's original study was genuinely flawed and \"proved\" is the wrong word, the 2012 replication failed, and the 2023 corrected study recovered the pattern, so the honest statement is not \"proved\" but \"the original study was flawed, though the underlying pattern was later recovered with corrected methods, and in any case the framework never rested on it.\" (c) is a _triple failure_ : it leaps from animal-kingdom averages to a claim about human male \"design,\" ignores the enormous overlap and cultural variation, mistakes a statistical tendency for an individual imperative, and, in the word \"designed to,\" smuggles in a teleology and a quiet _ought_ (as if men are _supposed_ to behave this way), which is the naturalistic fallacy in embryo. So: (a) robust, (b) a cautionary tale about provisional verdicts, (c) an overreach that fails scientifically and morally at once. The exercise trains the reflex of refusing to let a sentence that _sounds_ like one continuous argument smuggle a robust premise, a contested premise, and an illegitimate conclusion past you as a unit.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 653,
+      "out_sha": "d9cb135926fa",
       "note": ""
     },
     {
@@ -1255,11 +1255,11 @@
       "en_title": "Chapter 11: Parental Investment and the Asymmetry",
       "order": 97,
       "src_chars": 2212,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4e3fe40e9fb9",
       "src": "#### Steelman Both Sides\n\n**Q2.** Steelman both readings of the Bateman saga: (a) \"This shows science is self-correcting and trustworthy: a flawed classic was caught and fixed.\" (b) \"This shows we should be deeply skeptical of evolutionary claims about sex, since even the bedrock study was wrong for sixty years.\" Which is the better lesson, or is there a third?\n\nHint\n\nBoth readings capture something true. What does each get right, and what might each overstate? Is there a reading that incorporates both without overcorrecting?\n\n**Discussion:** The strongest case for (a): the saga genuinely showcases science working as it should, since researchers _did_ eventually re-run the classic, _did_ catch a real flaw that had gone unnoticed for decades, and _did_ then refine the methods to test the question properly, which is exactly the self-correction that distinguishes science from dogma; nothing was swept under the rug. The strongest case for (b): the saga is also a sobering reminder that a flawed study can sit unquestioned at the foundation of an entire field for sixty years, cited as bedrock by people who never checked it, which should make us humble about how much confident \"evolution explains sex differences\" talk rests on similarly unexamined props. Each overstates if taken alone: (a) can become complacent (\"science always fixes itself,\" when in fact it took sixty years and the fix is recent and itself provisional), and (b) can become corrosive (\"therefore distrust all evolutionary claims about sex,\" which is the smug-dismissal overcorrection from Chapter 3, since one shaky prop does not condemn a framework that stands on much else). The better lesson is a third that incorporates both: science _is_ self-correcting, but slowly, imperfectly, and never finally, so the right posture is neither blind trust nor blanket skepticism but _calibrated provisionality_ , holding the current weight of evidence while genuinely expecting it to move, and grading the _framework_ and any _single study_ on separate scales. That posture, which is really just Thread A applied to the passage of time, is what lets you take the Bateman story as maturing rather than as either reassuring or devastating.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 719,
+      "out_sha": "aacbb5015809",
       "note": ""
     },
     {
@@ -1267,11 +1267,11 @@
       "en_title": "Chapter 11: Parental Investment and the Asymmetry",
       "order": 98,
       "src_chars": 2099,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d99aea69aaf0",
       "src": "#### Spot the Fallacy\n\n**Q3.** A dating coach tells clients: \"Evolution made women choosy and men pursuers. That's biology, you can't fight it, so men should accept they have to chase and women should accept they have to be selective.\" Identify the factual and moral problems.\n\nHint\n\n\"You can't fight it\" is a determinism claim; \"should accept\" is an ought claim. Are either licensed by parental investment theory, even granting its framework?\n\n**Discussion:** The coach commits the whole bundle of errors 11.3 was designed to block. Factually, \"evolution made women choosy and men pursuers\" overstates a contested human application of the framework as settled fact (Chapter 12 will show the human interpretation is genuinely disputed), and it erases the enormous overlap and cultural variation that make \"women are choosy, men pursue\" false as a description of actual, diverse human beings. \"You can't fight it\" is the determinism Thread B rejects: even granting an average evolved tendency, human courtship customs are wildly variable and individually flexible, so a tendency is not a cage. And \"should accept they have to\" is a flagrant naturalistic fallacy doubled: it slides from a contested _is_ to a prescriptive _ought_ (\"should accept,\" \"have to\"), telling people how to behave on the supposed authority of biology, when even a _confirmed_ average tendency would license no such prescription. Notice the practical harm, which is why this matters beyond logic: the coach is using inflated, determinism-flavored evolutionary language to _constrain_ people's choices, telling individuals they must conform to a statistical average that may not describe them and that, even if it did, would carry no obligation. This is the naturalistic fallacy not as an abstract error but as a tool for limiting human freedom, which is exactly the misuse Part 6 will examine at full scale. The framework, honestly stated, says selection may have shaped average tendencies in a variable, cultural, free species. The coach has turned that into a set of marching orders, which is precisely what it can never be.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 648,
+      "out_sha": "9c127b266f29",
       "note": ""
     },
     {
@@ -1279,11 +1279,11 @@
       "en_title": "Chapter 11: Parental Investment and the Asymmetry",
       "order": 99,
       "src_chars": 2400,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8e6008c7d515",
       "src": "### Chapter Summary\n\nWe opened Part 4, the most contested territory in psychology, with the framework underneath the whole debate and a study whose fate teaches humility. _Parental investment theory_ builds on an undisputed fact, the unequal minimum biological investment in offspring, and predicts that the sex investing more per offspring is selected toward choosiness while the sex investing less is selected toward competition, a prediction that tracks _investment_ rather than sex and is confirmed by the sex-role-reversal in species where males invest more. That confirmed reversal is why the _framework_ sits in the robust core. But we drew the careful italics: a robust framework about the logic of investment across the animal kingdom is not a proven account of how any human behaves. Then we followed _Bateman's principle_ through three movements, celebrated for sixty years, demolished by a failed 2012 replication that exposed a real methodological flaw, then partly recovered by a corrected 2023 study, and drew the deep lesson about how verdicts _move_ : hold the current weight of evidence while expecting it to shift, grade the framework and any single study on separate scales, and notice that the framework never rested on Bateman's flies anyway. Throughout, we pre-positioned the firewall, marking clearly what the asymmetry does license (a framework, a testable hypothesis about average human tendencies) and what it never licenses (claims about individuals, claims of fixity, the leap from \"selection shaped tendencies\" to \"we know them in detail,\" and any moral conclusion at all).\n\nWith the framework in hand and the firewall pre-positioned, we are ready for the hardest balancing act in the book. Chapter 12 takes up the actual human evidence: what men and women, on average and across cultures, say they want in a mate, and the great debate over whether that pattern reflects evolved psychology, social structure, or both. We will find a reasonably robust _pattern_ sitting atop a genuinely contested _interpretation_ , with serious scientists on more than one side, and we will steelman each with equal force and equal vividness while the is-ought firewall blazes. Everything you have practiced for eleven chapters converges there. Keep Bateman's flies in mind as you go: even now, even on the very questions we are about to examine, the verdicts can still move.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 745,
+      "out_sha": "dc4b1fdd65c4",
       "note": ""
     },
     {
