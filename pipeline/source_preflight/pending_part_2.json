@@ -1,0 +1,613 @@
+{
+  "report": "pending_part_2",
+  "scope": 24,
+  "summary": {
+    "PASS": 7,
+    "PASS_WITH_WARNINGS": 5,
+    "BLOCK": 12
+  },
+  "books": [
+    {
+      "name": "AI 科学 I：从神经网络到 Transformer",
+      "path": "sources/pending/AI 科学 I：从神经网络到 Transformer.md",
+      "bytes": 1248033,
+      "lines": 13373,
+      "title_stats": {"h1": 0, "h2": 27, "h3": 243, "h4": 527, "total": 797},
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCK",
+          "type": "formula_multi_render_and_adhesion",
+          "file": "AI 科学 I：从神经网络到 Transformer.md",
+          "lines": "systemic; representative lines 85, 915, 934-939, 1032-1036",
+          "evidence": "L85: AI⊃ML⊃DL⊃LLM\\text{AI} \\supset ...AI⊃ML⊃DL⊃LLM; L938: O(np)O(np)O(np); L1034: 0.10.10.1",
+          "risk": "Plain, LaTeX, and Unicode/KaTeX renderings are concatenated; variables and numeric values are tripled before initialization.",
+          "recommendation": "Keep one closed math representation throughout, remove render-derived fff/XXX/YYY artifacts, and verify glued numbers."
+        },
+        {
+          "severity": "WARNING",
+          "type": "table_column_mismatch",
+          "file": "AI 科学 I：从神经网络到 Transformer.md",
+          "lines": "2021-2026",
+          "evidence": "Header is `| Forward pass | Backward pass` while separator is `---|---|---`.",
+          "risk": "A strict Markdown renderer may interpret a different number of columns.",
+          "recommendation": "After formula cleanup, normalize this as a consistent two-column GFM table."
+        }
+      ]
+    },
+    {
+      "name": "记忆——术与道",
+      "path": "sources/pending/记忆——术与道.md",
+      "bytes": 1230490,
+      "lines": 5616,
+      "title_stats": {"h1": 0, "h2": 17, "h3": 124, "h4": 130, "total": 271},
+      "status": "PASS_WITH_WARNINGS",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "type": "consecutive_duplicate_paragraph",
+          "file": "记忆——术与道.md",
+          "lines": "2767 and 2769",
+          "evidence": "The full italic paragraph beginning `Place the central idea of this chapter — that retrieval...` is identical in both locations.",
+          "risk": "The Chapter 9 closing paragraph will be translated and published twice.",
+          "recommendation": "Delete one copy after confirmation, or explicitly register the intentional retention."
+        }
+      ]
+    },
+    {
+      "name": "计算机网络",
+      "path": "sources/pending/计算机网络.md",
+      "bytes": 1192314,
+      "lines": 11434,
+      "title_stats": {"h1": 0, "h2": 34, "h3": 297, "h4": 516, "total": 847},
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCK",
+          "type": "toc_corruption",
+          "file": "计算机网络.md",
+          "lines": "36; body heading at 10934",
+          "evidence": "TOC ends with `- Chapter 1: Annotated ping Trace`; body contains Appendix D but the TOC does not.",
+          "risk": "TOC and body do not correspond, which would corrupt title locking and navigation.",
+          "recommendation": "Remove the false Chapter 1 and add the actual Appendix D title."
+        },
+        {
+          "severity": "BLOCK",
+          "type": "duplicate_section",
+          "file": "计算机网络.md",
+          "lines": "9957-10033 and 10035-10111",
+          "evidence": "Chapter 27 closing material, exercises, and Chapter Summary repeat from `The third thing...operational discipline` onward.",
+          "risk": "A 77-line chapter ending would be translated twice.",
+          "recommendation": "Keep the contextually complete copy and remove the other before Appendix A."
+        },
+        {
+          "severity": "BLOCK",
+          "type": "heading_as_broken_table",
+          "file": "计算机网络.md",
+          "lines": "11411-11424",
+          "evidence": "`## | Workflow | Chapter` is followed by a three-column separator and three-column data.",
+          "risk": "Creates a false H2 and loses one table header field.",
+          "recommendation": "Use a normal three-column GFM header such as `| # | Workflow | Chapter |`."
+        },
+        {
+          "severity": "WARNING",
+          "type": "heading_level_skip",
+          "file": "计算机网络.md",
+          "lines": "58 to 66",
+          "evidence": "`## Introduction` is followed by `#### Who This Book Is For`.",
+          "risk": "The outline jumps directly from H2 to H4.",
+          "recommendation": "Promote the child heading to H3 or add an H3 parent."
+        },
+        {
+          "severity": "WARNING",
+          "type": "suspicious_placeholder",
+          "file": "计算机网络.md",
+          "lines": "1305",
+          "evidence": "`1.6 Tbps (planned) | ... | single-mode fiber | TBD`",
+          "risk": "TBD may be intentional uncertainty or an unfinished cell.",
+          "recommendation": "Confirm the intended meaning; replace with explicit prose or a value if unfinished."
+        }
+      ]
+    },
+    {
+      "name": "细听：古典音乐欣赏指南",
+      "path": "sources/pending/细听：古典音乐欣赏指南.md",
+      "bytes": 1124093,
+      "lines": 7360,
+      "title_stats": {"h1": 0, "h2": 30, "h3": 171, "h4": 477, "total": 678},
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCK",
+          "type": "duplicate_toc_entry",
+          "file": "细听：古典音乐欣赏指南.md",
+          "lines": "5-6",
+          "evidence": "`Chapter 1: Classical Music Is Not for Museums**` is immediately repeated without the stray `**`.",
+          "risk": "The TOC has 28 chapter entries for 27 chapters and contains an emphasis fragment.",
+          "recommendation": "Delete line 5 and retain the clean line 6 entry."
+        },
+        {
+          "severity": "BLOCK",
+          "type": "editorial_scaffolding_in_body",
+          "file": "细听：古典音乐欣赏指南.md",
+          "lines": "103-454",
+          "evidence": "`lang: en slug`, Book metadata, Chapter outline, Appendix candidates, Threading plan, Difficulty arc, and Estimated total word-count appear before Chapter 1.",
+          "risk": "Generation planning and unimplemented appendix candidates would be translated as reader-facing content.",
+          "recommendation": "Remove or relocate the scaffold and have the control model decide which front matter is publishable."
+        },
+        {
+          "severity": "BLOCK",
+          "type": "duplicate_ending_section",
+          "file": "细听：古典音乐欣赏指南.md",
+          "lines": "7252-7303 and 7305-7356",
+          "evidence": "Cousin-piece lists, 27.6 Exercises, Chapter Summary, and `_Go listen._` repeat.",
+          "risk": "The complete book ending would be published twice.",
+          "recommendation": "Keep one complete copy and one final separator."
+        },
+        {
+          "severity": "WARNING",
+          "type": "heading_level_skip",
+          "file": "细听：古典音乐欣赏指南.md",
+          "lines": "54 to 64",
+          "evidence": "`## Introduction` is followed by `#### What This Book Is For`.",
+          "risk": "The outline jumps directly from H2 to H4.",
+          "recommendation": "Promote to H3 or add a parent heading."
+        }
+      ]
+    },
+    {
+      "name": "分布式系统",
+      "path": "sources/pending/分布式系统.md",
+      "bytes": 988259,
+      "lines": 12195,
+      "title_stats": {"h1": 0, "h2": 33, "h3": 271, "h4": 285, "total": 589},
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCK",
+          "type": "ghost_toc_chapter",
+          "file": "分布式系统.md",
+          "lines": "34",
+          "evidence": "`- 第 30 章` appears after Chapter 29; no Chapter 30 exists in the body.",
+          "risk": "TOC/body mismatch and an unnamed Chinese chapter remain in an English source.",
+          "recommendation": "Delete the entry or restore a real, fully titled English Chapter 30."
+        },
+        {
+          "severity": "BLOCK",
+          "type": "formula_multi_render_and_variable_repetition",
+          "file": "分布式系统.md",
+          "lines": "systemic; representative lines 713-917, 1594-1601, 2572, 3303",
+          "evidence": "L913: `a→ba \\to ba→b`; L915: `P1P_1P1 ... x=5x = 5x=5`; L1594: `RRR`, `WWW`, `NNN`, and three copies of W+R>N.",
+          "risk": "Technical formulas are concatenated and variables resemble placeholders.",
+          "recommendation": "Collapse each formula to one closed representation and verify every variable."
+        },
+        {
+          "severity": "BLOCK",
+          "type": "duplicate_postscript_ending",
+          "file": "分布式系统.md",
+          "lines": "11636-11660 and 11664-11690",
+          "evidence": "Sections 29.4 and 29.5, including `Go build the systems...`, appear twice.",
+          "risk": "The postscript ending is duplicated and a polish note is glued to the replay.",
+          "recommendation": "Keep one 29.4/29.5 sequence and separately decide whether the polish note is reader-facing."
+        },
+        {
+          "severity": "BLOCK",
+          "type": "heading_as_table_header",
+          "file": "分布式系统.md",
+          "lines": "11277, 11844, 12130",
+          "evidence": "Three tables begin with `## | Workflow...`, `## | Lie...`, or `## | The misconception...`.",
+          "risk": "Each table creates a false H2 and omits its header from table rendering.",
+          "recommendation": "Remove `## ` and normalize each GFM table."
+        }
+      ]
+    },
+    {
+      "name": "习惯的科学",
+      "path": "sources/pending/习惯的科学.md",
+      "bytes": 940893,
+      "lines": 7168,
+      "title_stats": {"h1": 0, "h2": 18, "h3": 136, "h4": 76, "total": 230},
+      "status": "PASS_WITH_WARNINGS",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "type": "heading_level_skip",
+          "file": "习惯的科学.md",
+          "lines": "43 to 55",
+          "evidence": "`## Introduction` is followed by `#### What the book covers`.",
+          "risk": "The outline jumps directly from H2 to H4.",
+          "recommendation": "Promote to H3 or add an H3 parent."
+        }
+      ]
+    },
+    {
+      "name": "软件工程匠艺",
+      "path": "sources/pending/软件工程匠艺.md",
+      "bytes": 891922,
+      "lines": 10993,
+      "title_stats": {"h1": 0, "h2": 27, "h3": 227, "h4": 529, "total": 783},
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCK",
+          "type": "duplicate_toc_entry",
+          "file": "软件工程匠艺.md",
+          "lines": "5 and 29",
+          "evidence": "`- Introduction` occurs at both ends of the TOC.",
+          "risk": "TOC does not map one-to-one to the body.",
+          "recommendation": "Delete line 29."
+        },
+        {
+          "severity": "BLOCK",
+          "type": "heading_as_table_header",
+          "file": "软件工程匠艺.md",
+          "lines": "10606",
+          "evidence": "`## | Name | Signal | Mechanical move`",
+          "risk": "Appendix B's table header is parsed as a false H2.",
+          "recommendation": "Remove `## ` and normalize the table."
+        },
+        {
+          "severity": "WARNING",
+          "type": "excess_final_separators",
+          "file": "软件工程匠艺.md",
+          "lines": "10986-10993",
+          "evidence": "Four consecutive `* * *` rules precede the final `---`.",
+          "risk": "Likely merge residue and excessive rendered whitespace.",
+          "recommendation": "Keep one section close and one final rule."
+        }
+      ]
+    },
+    {
+      "name": "看见彼此——亲密关系的科学",
+      "path": "sources/pending/看见彼此——亲密关系的科学.md",
+      "bytes": 883357,
+      "lines": 3877,
+      "title_stats": {"h1": 0, "h2": 17, "h3": 163, "h4": 80, "total": 260},
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCK",
+          "type": "duplicate_chapter_ending",
+          "file": "看见彼此——亲密关系的科学.md",
+          "lines": "3719-3756 and 3758-3795",
+          "evidence": "Think Deeper, both discussions, Chapter Summary, `_Begin._`, and For deeper reading repeat in full.",
+          "risk": "Chapter 14's exercises, summary, and reading list would be published twice.",
+          "recommendation": "Delete the second sequence and verify the transition to Appendix A."
+        }
+      ]
+    },
+    {
+      "name": "睡眠的科学",
+      "path": "sources/pending/睡眠的科学.md",
+      "bytes": 800135,
+      "lines": 7130,
+      "title_stats": {"h1": 0, "h2": 16, "h3": 119, "h4": 102, "total": 237},
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCK",
+          "type": "duplicate_ending_section",
+          "file": "睡眠的科学.md",
+          "lines": "7050-7087 and 7089-7126",
+          "evidence": "The final philosophical argument, Chapter Summary, and Chapter 14 diary instruction repeat.",
+          "risk": "The final argument and reader action are duplicated.",
+          "recommendation": "Remove one full copy and retain one final separator."
+        },
+        {
+          "severity": "WARNING",
+          "type": "heading_level_skip",
+          "file": "睡眠的科学.md",
+          "lines": "41 to 55",
+          "evidence": "`## Introduction` is followed by `#### What This Book Is`.",
+          "risk": "The outline jumps from H2 to H4.",
+          "recommendation": "Promote to H3 or add a parent heading."
+        }
+      ]
+    },
+    {
+      "name": "操作系统",
+      "path": "sources/pending/操作系统.md",
+      "bytes": 755840,
+      "lines": 8812,
+      "title_stats": {"h1": 0, "h2": 28, "h3": 250, "h4": 388, "total": 666},
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCK",
+          "type": "toc_body_leak_and_missing_entries",
+          "file": "操作系统.md",
+          "lines": "14-31",
+          "evidence": "Repeated `Introduction` entries and body fragments appear as Chapter 9/11 titles; Chapter 10 and 12-26 are absent.",
+          "risk": "The TOC is unusable and includes unmatched emphasis/body text.",
+          "recommendation": "Rebuild the TOC from Introduction and body Chapter 1-26 H2 headings."
+        },
+        {
+          "severity": "BLOCK",
+          "type": "formula_triple_render",
+          "file": "操作系统.md",
+          "lines": "1615, 1625, 1645, 1669, 1696, 1788, 1796, 1823, 1842",
+          "evidence": "L1615: `(10+20+30)/3=20(10 + 20 + 30) / 3 = 20(10+20+30)/3=20 seconds.`",
+          "risk": "Nine scheduling calculations are concatenated three times.",
+          "recommendation": "Keep one expression per calculation with consistent math delimiters."
+        },
+        {
+          "severity": "WARNING",
+          "type": "heading_level_skip",
+          "file": "操作系统.md",
+          "lines": "53 to 61",
+          "evidence": "`## Introduction` is followed by `#### How the book is organized`.",
+          "risk": "The outline jumps from H2 to H4.",
+          "recommendation": "Promote to H3 or add a parent."
+        }
+      ]
+    },
+    {
+      "name": "细听：贝多芬",
+      "path": "sources/pending/细听：贝多芬.md",
+      "bytes": 743838,
+      "lines": 5758,
+      "title_stats": {"h1": 0, "h2": 27, "h3": 216, "h4": 323, "total": 566},
+      "status": "PASS_WITH_WARNINGS",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "type": "near_duplicate_section",
+          "file": "细听：贝多芬.md",
+          "lines": "120-139 and 229-247",
+          "evidence": "Introduction and section 1.5 repeat the same long `What You Will Know at the End` list.",
+          "risk": "Possibly intentional preview, but readers encounter near-identical long lists early in the book.",
+          "recommendation": "Confirm editorial intent; otherwise retain section 1.5 and shorten the introduction to a cross-reference."
+        },
+        {
+          "severity": "WARNING",
+          "type": "heading_level_skip",
+          "file": "细听：贝多芬.md",
+          "lines": "52 to 66",
+          "evidence": "`## Introduction` is followed by `#### How the Volume Is Organized`.",
+          "risk": "The outline jumps from H2 to H4.",
+          "recommendation": "Promote to H3 or add a parent."
+        }
+      ]
+    },
+    {
+      "name": "细听：莫扎特",
+      "path": "sources/pending/细听：莫扎特.md",
+      "bytes": 692337,
+      "lines": 4168,
+      "title_stats": {"h1": 0, "h2": 24, "h3": 197, "h4": 243, "total": 464},
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "name": "营养的逻辑",
+      "path": "sources/pending/营养的逻辑.md",
+      "bytes": 653587,
+      "lines": 4891,
+      "title_stats": {"h1": 0, "h2": 22, "h3": 176, "h4": 126, "total": 324},
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCK",
+          "type": "formula_triple_render_and_zero_width_space",
+          "file": "营养的逻辑.md",
+          "lines": "430, 434, 438",
+          "evidence": "Each glycemic-load formula is concatenated as plain text, LaTeX, and rendered Unicode; L430 begins `GL=GI×grams...100GL = \\frac...`.",
+          "risk": "Numerators/denominators appear reversed in the third render and U+200B remains.",
+          "recommendation": "Keep one closed formula at each line and strip zero-width characters."
+        },
+        {
+          "severity": "WARNING",
+          "type": "section_number_gap",
+          "file": "营养的逻辑.md",
+          "lines": "2732 to 2746",
+          "evidence": "`### 12.7 What This Means for Your Plate` is followed by `### 12.9 Exercises`.",
+          "risk": "May indicate a missing section or simple misnumbering.",
+          "recommendation": "Compare with the source page; restore 12.8 or renumber Exercises."
+        }
+      ]
+    },
+    {
+      "name": "不平等的形状",
+      "path": "sources/pending/不平等的形状.md",
+      "bytes": 603918,
+      "lines": 2691,
+      "title_stats": {"h1": 0, "h2": 24, "h3": 138, "h4": 125, "total": 287},
+      "status": "PASS_WITH_WARNINGS",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "type": "heading_level_skip",
+          "file": "不平等的形状.md",
+          "lines": "49 to 55",
+          "evidence": "`## Introduction` is followed by `#### What this book is, and is not`.",
+          "risk": "The outline jumps from H2 to H4.",
+          "recommendation": "Promote to H3 or add an H3 parent."
+        }
+      ]
+    },
+    {
+      "name": "细听：肖邦",
+      "path": "sources/pending/细听：肖邦.md",
+      "bytes": 581810,
+      "lines": 4273,
+      "title_stats": {"h1": 0, "h2": 22, "h3": 168, "h4": 244, "total": 434},
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "name": "自我的呈现：日常生活社会学",
+      "path": "sources/pending/自我的呈现：日常生活社会学.md",
+      "bytes": 566310,
+      "lines": 2670,
+      "title_stats": {"h1": 0, "h2": 25, "h3": 118, "h4": 141, "total": 284},
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "name": "细听：舒伯特",
+      "path": "sources/pending/细听：舒伯特.md",
+      "bytes": 543750,
+      "lines": 2856,
+      "title_stats": {"h1": 0, "h2": 23, "h3": 143, "h4": 237, "total": 403},
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "name": "钱为我用",
+      "path": "sources/pending/钱为我用.md",
+      "bytes": 507956,
+      "lines": 4501,
+      "title_stats": {"h1": 0, "h2": 22, "h3": 146, "h4": 135, "total": 303},
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCK",
+          "type": "formula_triple_render_and_numeric_repetition",
+          "file": "钱为我用.md",
+          "lines": "106, 126, 353, 370, 506, 2760, 3533, 3588",
+          "evidence": "L106 repeats the wealth equations three times; L370 contains `727272` and `69.369.369.3` after three ln(2) renderings.",
+          "risk": "Eight core financial formulas are damaged and Rule-of-72 values become incorrect.",
+          "recommendation": "Keep one closed formula at each location and verify every numeric result."
+        },
+        {
+          "severity": "BLOCK",
+          "type": "duplicate_and_glued_ending",
+          "file": "钱为我用.md",
+          "lines": "4461-4485 and 4479-4497",
+          "evidence": "The first Summary ends `Start today.` immediately followed by a repeated Q3, Discussion, and Chapter Summary.",
+          "risk": "Chapter 20 closes twice and contains a sentence-level splice.",
+          "recommendation": "Keep one Q3/Discussion/Summary sequence and repair the splice."
+        },
+        {
+          "severity": "WARNING",
+          "type": "heading_level_skip",
+          "file": "钱为我用.md",
+          "lines": "47 to 55",
+          "evidence": "`## Introduction` is followed by `#### What This Book Covers`.",
+          "risk": "The outline jumps from H2 to H4.",
+          "recommendation": "Promote to H3 or add a parent."
+        }
+      ]
+    },
+    {
+      "name": "细听：勃拉姆斯",
+      "path": "sources/pending/细听：勃拉姆斯.md",
+      "bytes": 480175,
+      "lines": 2815,
+      "title_stats": {"h1": 0, "h2": 24, "h3": 160, "h4": 211, "total": 395},
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCK",
+          "type": "body_paragraph_as_heading_at_end",
+          "file": "细听：勃拉姆斯.md",
+          "lines": "2807-2815",
+          "evidence": "Under `### Going Deeper`, Listen items are paragraphs but the final item is `### **Read** : from the reading list...`, followed directly by `---`.",
+          "risk": "A full reader paragraph becomes a locked H3 title and the final outline is corrupted.",
+          "recommendation": "Convert it to a normal `**Read**` paragraph and retain a normal final separator."
+        },
+        {
+          "severity": "WARNING",
+          "type": "opaque_cross_volume_reference",
+          "file": "细听：勃拉姆斯.md",
+          "lines": "43, 45",
+          "evidence": "`met Brahms in B159 Close Listening...` and `loop introduced in B159`",
+          "risk": "The internal identifier is not defined for readers.",
+          "recommendation": "Use the full volume title or define B159 at first use."
+        }
+      ]
+    },
+    {
+      "name": "细听：柴可夫斯基",
+      "path": "sources/pending/细听：柴可夫斯基.md",
+      "bytes": 459748,
+      "lines": 2838,
+      "title_stats": {"h1": 0, "h2": 24, "h3": 188, "h4": 205, "total": 417},
+      "status": "PASS_WITH_WARNINGS",
+      "issues": [
+        {
+          "severity": "WARNING",
+          "type": "opaque_cross_volume_reference",
+          "file": "细听：柴可夫斯基.md",
+          "lines": "49, 65, 73, 463, 1868, 1929, 1963",
+          "evidence": "References include `at the close of B159`, `from B159 Ch 20`, and `in B159, Chapter 20`.",
+          "risk": "An undefined internal catalog identifier makes cross-volume references unclear.",
+          "recommendation": "Use the full book title and chapter, or define B159 at first use."
+        }
+      ]
+    },
+    {
+      "name": "细品大师：北斋",
+      "path": "sources/pending/细品大师：北斋.md",
+      "bytes": 423912,
+      "lines": 2388,
+      "title_stats": {"h1": 0, "h2": 23, "h3": 159, "h4": 137, "total": 319},
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "name": "细品大师：梵高",
+      "path": "sources/pending/细品大师：梵高.md",
+      "bytes": 377108,
+      "lines": 1499,
+      "title_stats": {"h1": 0, "h2": 23, "h3": 182, "h4": 0, "total": 205},
+      "status": "PASS",
+      "issues": []
+    },
+    {
+      "name": "训练的科学·卷二：耐力与整体表现",
+      "path": "sources/pending/训练的科学·卷二：耐力与整体表现.md",
+      "bytes": 277254,
+      "lines": 1756,
+      "title_stats": {"h1": 0, "h2": 15, "h3": 79, "h4": 92, "total": 186},
+      "status": "BLOCK",
+      "issues": [
+        {
+          "severity": "BLOCK",
+          "type": "systemic_formula_multi_render_and_adhesion",
+          "file": "训练的科学·卷二：耐力与整体表现.md",
+          "lines": "about 100 lines; representative lines 184-186, 200, 590-605, 747-752, 1710-1744",
+          "evidence": "L184 repeats Q-dot = HR × SV three ways; L600 repeats each Karvonen calculation; L1722 glues `0.80×100=80` renderings into `=800.80`.",
+          "risk": "Training loads, heart-rate zones, and numeric results are ambiguous or wrong.",
+          "recommendation": "Keep one closed formula throughout, remove U+200B, and manually verify all results."
+        },
+        {
+          "severity": "BLOCK",
+          "type": "table_structure_mismatch",
+          "file": "训练的科学·卷二：耐力与整体表现.md",
+          "lines": "598-605, 737-745, 759-761, 1378-1386, 1625-1633, 1645-1650, 1660-1668",
+          "evidence": "At 759-761 the header has four named columns, the separator has five segments, and the data row has four columns.",
+          "risk": "At least one table has mismatched column counts; other formula-heavy tables are renderer-fragile.",
+          "recommendation": "After math cleanup, normalize every table's header, separator, row widths, and outer pipes."
+        },
+        {
+          "severity": "WARNING",
+          "type": "numbered_heading_level_mismatch",
+          "file": "训练的科学·卷二：耐力与整体表现.md",
+          "lines": "78, 102",
+          "evidence": "Sections 1.2 and 1.4 are H4 while 1.1, 1.3, and 1.5 are H3.",
+          "risk": "Sibling numbered sections appear at different outline levels.",
+          "recommendation": "Promote 1.2 and 1.4 to H3."
+        },
+        {
+          "severity": "WARNING",
+          "type": "flattened_numbered_list",
+          "file": "训练的科学·卷二：耐力与整体表现.md",
+          "lines": "180-186",
+          "evidence": "Items `4\\. The circulation` and `5\\. The mitochondria` are glued into item 3's paragraph.",
+          "risk": "The five-link oxygen cascade renders as only three list items.",
+          "recommendation": "Restore items 4 and 5 as separate ordered-list lines."
+        }
+      ]
+    },
+    {
+      "name": "AI时代六大超能力-卷五-APIs与自动化",
+      "path": "sources/pending/AI时代六大超能力-卷五-APIs与自动化.md",
+      "bytes": 212141,
+      "lines": 1525,
+      "title_stats": {"h1": 0, "h2": 17, "h3": 96, "h4": 70, "total": 183},
+      "status": "PASS",
+      "issues": []
+    }
+  ]
+}
