@@ -2615,11 +2615,11 @@
       "en_title": "Chapter 21: Making Decisions with AI",
       "order": 208,
       "src_chars": 3196,
-      "status": "pending",
+      "status": "done",
       "src_sha": "26a79b3f2bcf",
       "src": "In 2016, a machine learning system called AlphaGo defeated the world's best Go player, Lee Sedol, in four of five games. Go was considered the last strategic game where human intuition had an unassailable advantage over computers — the branching factor of possible moves is too large for brute-force search, and expert players described their decision-making as pattern recognition and \"reading\" the board intuitively.\n\nAlphaGo didn't just win. It made moves that human experts initially called \"mistakes\" — and then, after watching the games unfold, recognized as brilliant. In Game 2, AlphaGo played a move that a professional Go commentator described as \"a move I've never seen a human play\" before it turned out to be the decisive move of the game.\n\nThe story is not a story about machines replacing human judgment. It is a story about the different nature of human and machine intelligence — and the decision-making implications of that difference. Understanding those differences is now essential for anyone who makes decisions with, through, or in the presence of AI systems.\n\n\n### 21.1 What AI Does Well: Pattern Recognition at Scale\n\nThe class of AI systems that has most dramatically affected decision making — large language models, image classifiers, recommendation systems, and systems like AlphaGo — shares a common capability: pattern recognition at scale.\n\nThese systems learn from vast quantities of examples (text, images, game states, transaction histories) and develop the ability to classify, predict, and generate outputs that match patterns from that training. Their strengths are:\n\n**Volume:** An AI system can process millions of data points that no human could review. A radiologist reads thousands of scans over a career; an AI classifier can be trained on millions.\n\n**Consistency:** AI systems apply the same weights and rules to every input. A human radiologist reviewing their 40th scan of a long day is affected by fatigue, attention shifts, and the anchoring effect of recent cases. An AI system is not.\n\n**Speed:** Pattern-matching at the scale AI systems can perform it happens in milliseconds. Decisions that would take a human team days can be produced instantly.\n\n**Pattern detection in high-dimensional data:** Some patterns that AI systems detect are not visible to unaided human analysis — correlations in hundreds of variables simultaneously, in data sets too large for the human brain to hold in working memory.\n\n\n#### Common Misconception\n\n_\"AI is smarter than humans — if AI recommends X, that's probably the right answer.\"_\n\nAI systems do not reason. They interpolate from training data. This distinction matters enormously: an AI recommendation is only as good as (a) the quality and representativeness of its training data, (b) whether the current situation resembles situations in the training data, and (c) whether the question being asked is one the system was designed to answer. AI systems confidently produce incorrect outputs — \"hallucinations\" in language models, misclassifications in image systems, biased predictions in predictive systems. Treating AI output as authoritative without understanding its limitations is a systematic error.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1030,
+      "out_sha": "1f558ef0d8eb",
       "note": ""
     },
     {
@@ -2627,11 +2627,11 @@
       "en_title": "Chapter 21: Making Decisions with AI",
       "order": 209,
       "src_chars": 2069,
-      "status": "pending",
+      "status": "done",
       "src_sha": "930febb9d2c2",
       "src": "### 21.2 What AI Does Poorly: Novel Situations and Judgment\n\nThe same systems that excel at pattern recognition in well-defined domains with abundant training data exhibit specific, systematic failures:\n\n**Novel situations:** AI systems trained on historical data perform poorly when circumstances change meaningfully. An algorithm trained on pre-pandemic loan performance cannot reliably predict post-pandemic default risk. An image classifier trained on medical images from one hospital performs worse on images from a different hospital with different imaging equipment. The domain of applicability is bounded by the training distribution.\n\n**Causal reasoning:** Most current AI systems are sophisticated correlation-finders, not causal reasoners. They can identify that variable A predicts variable B, but they cannot reliably determine whether A causes B, whether B causes A, or whether a third variable C causes both. This matters for decisions: you generally want to act on causes, not correlations. An AI system that identifies that people who buy luxury car brands also buy expensive wines might recommend luxury wine ads to luxury car owners — but it cannot tell you whether changing wine preferences would influence car preferences.\n\n**Genuine uncertainty quantification:** AI systems often produce confident outputs when they should produce uncertain ones. A language model asked \"what is the population of this city?\" generates an answer even when its training data is ambiguous or outdated. Many AI systems do not have reliable mechanisms for communicating \"I don't know\" or \"my confidence here is low.\"\n\n**Value alignment and ethics:** AI systems optimize for the objective they are given, which is often a proxy for what humans actually want rather than the real goal. A content recommendation system optimizing for \"time on platform\" produces content that maximizes engagement — which may mean emotionally activating, divisive, or low-quality content, rather than content that leaves users better informed and satisfied. The objectives are misaligned.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 616,
+      "out_sha": "0df6a56f8ad7",
       "note": ""
     },
     {
@@ -2639,11 +2639,11 @@
       "en_title": "Chapter 21: Making Decisions with AI",
       "order": 210,
       "src_chars": 3247,
-      "status": "pending",
+      "status": "done",
       "src_sha": "38744c205d84",
       "src": "### 21.3 AI as Decision Support: The Appropriate Use Model\n\nThe appropriate use of AI in decision making is not \"use AI to make the decision\" or \"ignore AI and rely on human judgment.\" It is a structured collaboration that leverages the complementary strengths of each.\n\nThe appropriate use model:\n\n**Use AI for:** Initial pattern recognition in large datasets, generating options you might not have considered, consistency checking, rapid prototyping of scenarios, and surfacing anomalies or correlations in data.\n\n**Use human judgment for:** Final decision authority on consequential choices, evaluation of whether the situation resembles the AI's training domain, ethical weighing of competing values, causal reasoning about interventions, and assessment of model outputs for alignment with actual goals.\n\n**Questions to ask before accepting an AI recommendation:**\n\n  1. What was this AI system trained on, and does the current situation resemble its training distribution?\n  2. What was the AI optimizing for, and does that objective align with what I actually want?\n  3. How confident is the system, and is that confidence calibrated (i.e., does a \"90% confidence\" output actually materialize 90% of the time)?\n  4. What are the failure modes: what kinds of errors does this system make, and would I recognize those errors?\n  5. Has the AI's recommendation been evaluated by someone with domain expertise and knowledge of its limitations?\n\n\n### 21.4 Automation Bias: When AI Makes Us Worse Decision-Makers\n\nOne of the most consistent findings in human-AI collaboration research is automation bias: when an AI system is present, humans tend to over-rely on its outputs, reducing their independent critical evaluation.\n\n\n#### Definition: Automation Bias\n\nAutomation bias is the tendency for humans to over-rely on automated systems — accepting AI recommendations with insufficient scrutiny, or failing to detect AI errors that would have been visible with independent evaluation.\n\nAutomation bias appears across many domains:\n\n**Aviation:** Studies of cockpit automation have found that pilots sometimes fail to notice instrument failures or incorrect automated recommendations because they are monitoring the system rather than actively evaluating whether the system's outputs are correct.\n\n**Medical AI:** Radiologists viewing AI-highlighted scans sometimes anchor on the AI's highlighted areas and miss pathologies in areas the AI did not flag.\n\n**Credit scoring:** Loan officers relying on algorithmic credit scores sometimes approve or deny loans without applying independent contextual judgment that would identify cases where the score is poorly calibrated.\n\n**Hiring algorithms:** Hiring managers using AI resume screens sometimes fail to interview candidates the algorithm rejected, even when those candidates clearly warrant consideration.\n\nThe defense against automation bias is not to avoid AI systems — their benefits are real. It is to maintain deliberate independent evaluation. Specific techniques: form your own initial assessment before looking at the AI's recommendation; periodically audit AI recommendations against independent judgment; maintain familiarity with cases at the boundary of the AI's confidence calibration.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 998,
+      "out_sha": "2645791dec8a",
       "note": ""
     },
     {
@@ -2651,11 +2651,11 @@
       "en_title": "Chapter 21: Making Decisions with AI",
       "order": 211,
       "src_chars": 1468,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bcb2755be365",
       "src": "### 21.5 Using AI for Decision Analysis: Large Language Models\n\nLarge language models (LLMs) — the technology underlying tools like ChatGPT, Claude, and others — have capabilities specifically relevant to decision making:\n\n**Option generation:** LLMs can quickly generate a broad set of options you may not have considered. They have read widely enough to know alternatives that domain experts routinely miss because of their specialization.\n\n**Pre-mortem assistance:** You can ask an LLM to \"imagine this decision was made and failed — what went wrong?\" and receive a diversity of failure scenarios. This is not a replacement for a genuine team pre-mortem but can supplement it.\n\n**Argument steelmanning:** LLMs can generate the strongest version of an argument you disagree with — useful for testing the limits of your own position.\n\n**Framing restatement:** LLMs can restate a decision in multiple frames (gain frame vs. loss frame, different reference points), helping you check whether your evaluation is frame-dependent.\n\n**Sensitivity to LLM limitations:** LLMs hallucinate — they generate confident-sounding text that is factually incorrect. They are particularly unreliable on: specific numbers (populations, dates, statistics), recent events (training data has a cutoff), and narrow technical questions outside their training coverage. Use LLMs for thinking structure and option generation; verify specific factual claims independently.\n\n\n### 21.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 484,
+      "out_sha": "1a657dccbe0d",
       "note": ""
     },
     {
@@ -2663,11 +2663,11 @@
       "en_title": "Chapter 21: Making Decisions with AI",
       "order": 212,
       "src_chars": 3096,
-      "status": "pending",
+      "status": "done",
       "src_sha": "db65b8f1ba92",
       "src": "#### Concept Check\n\n**Q1.** What are the primary strengths of AI systems for decision support, and why do those strengths not translate to \"AI should make the final decision\"?\n\n**Answer:** AI systems' primary strengths for decision support: (1) Pattern recognition at scale — AI can identify correlations across millions of data points that no human could review; (2) Consistency — AI applies the same rules to each input without fatigue, mood effects, or anchoring to recent cases; (3) Speed — pattern matching happens in milliseconds; (4) Detection of high-dimensional correlations — AI finds patterns across hundreds of variables simultaneously. These strengths do not make AI the appropriate final decision-maker because: (1) AI systems are only as reliable as their training data — situations that differ from the training distribution produce unreliable outputs; (2) AI systems optimize for the objective they are given, which is often a proxy for what humans actually want (engagement vs. satisfaction; predicted creditworthiness vs. actual creditworthiness); (3) AI systems produce confident outputs even in situations of genuine uncertainty, without reliable calibration of that confidence; (4) AI systems cannot engage in genuine causal reasoning, value weighing, or ethical judgment — the capabilities most critical for consequential final decisions. The appropriate model: AI for pattern recognition and option generation; human judgment for final decision authority.\n\n* * *\n\n**Q2.** What is automation bias, and what makes it a systematic risk in human-AI collaboration?\n\n**Answer:** Automation bias is the tendency for humans to over-rely on automated system outputs — accepting AI recommendations with insufficient independent scrutiny or failing to detect AI errors that independent evaluation would have caught. It is systematic (not just occasional) because of several reinforcing mechanisms: (1) Cognitive ease: accepting an AI recommendation requires less mental effort than independently evaluating the underlying question. The path of least cognitive resistance is to defer. (2) Authority signaling: AI systems often present output with numerical confidence scores or professional framing that signals authority, triggering deference behavior similar to that studied in human authority relationships. (3) Accountability diffusion: when an AI makes the recommendation, the human decision-maker may feel less personally accountable for the outcome — which reduces the motivation to critically scrutinize it. (4) Attention reallocation: when monitoring an AI system, humans shift attention from the underlying decision to monitoring the system — they notice when the system does something unexpected, not when the system makes a quietly wrong recommendation. These mechanisms compound: each makes independent evaluation less likely, which means AI errors that would otherwise be detected are missed.\n\n* * *\n\n**Q3.** A language model is asked: \"Should I accept this job offer?\" It produces a confident, specific recommendation. What questions should you ask before acting on it?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 923,
+      "out_sha": "af5cacd9a81d",
       "note": ""
     },
     {
@@ -2675,11 +2675,11 @@
       "en_title": "Chapter 21: Making Decisions with AI",
       "order": 213,
       "src_chars": 3026,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a39e71c6ef15",
       "src": "**Answer:** The recommendation should be treated as a starting point for structured analysis, not a final answer. Key questions: (1) What information did the LLM actually have access to? LLMs can only use the information you provided in the prompt. A recommendation based on incomplete or one-sided information will be poorly calibrated. (2) Does the recommendation engage your actual values and priorities? LLMs don't know what you value — they infer it from your prompt and from patterns in training data. If your values are non-standard or your situation is unusual, the inference may be wrong. (3) Is the recommendation based on pattern matching from common situations, or genuine reasoning about your specific case? LLMs generate text that sounds like reasoning but may be sophisticated pattern matching. Ask: does the response engage the specific, unusual features of my situation, or does it give advice that could apply to almost anyone? (4) Where might the LLM be wrong? Specifically: does it cite any factual claims (statistics, market conditions, company information) that you should independently verify? (5) What would a person with deep domain expertise and knowledge of your specific situation say? The LLM's output is a useful perspective but not a substitute for expert judgment calibrated to your context.\n\n* * *\n\n**Q4.** What is the difference between correlation-based AI recommendations and causal reasoning, and why does it matter for decision making?\n\n**Answer:** Correlation-based AI: most AI systems identify statistical associations in training data — feature X is associated with outcome Y. They do not determine whether X causes Y, Y causes X, or a third factor Z causes both. Causal reasoning: identifies the mechanism by which one variable influences another, allowing prediction of what will happen if you _intervene_ to change a variable. The distinction matters for decisions because decisions are interventions. If you observe that wealthy neighborhoods have better school outcomes (correlation), and you conclude that wealth causes good schools, you might decide to attract wealthy residents to improve schools. But if the causal structure is: high parental education → both higher income and more school involvement → better school outcomes, then attracting wealthy residents without changing parental involvement doesn't address the actual cause. Example relevant to AI: a hiring algorithm trained on historical data may learn that certain educational credentials correlate with job performance at a specific company. But those credentials may correlate with the outcome through the mechanism \"people from specific educational backgrounds fit the existing culture\" — in which case the algorithm has captured a self-perpetuating bias, not a genuine causal predictor of performance at a different organization. Using the algorithm's recommendation without understanding this causal structure means making decisions based on a correlation that may not be robust to different contexts.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 868,
+      "out_sha": "46a7b381a4b9",
       "note": ""
     },
     {
@@ -2687,11 +2687,11 @@
       "en_title": "Chapter 21: Making Decisions with AI",
       "order": 214,
       "src_chars": 2785,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5ea5a3791c1d",
       "src": "#### Application Problems\n\n**Q1.** A hospital is considering deploying an AI system to help triage emergency patients. The system was trained on 10 years of data from three hospitals in the same urban health system. It achieves 92% accuracy in identifying high-risk patients during testing. What questions should the hospital ask before deploying it, and what monitoring should be put in place?\n\n**Answer:** Pre-deployment questions: (1) **Training data representativeness:** Does the training data represent the hospital's patient population well? If the training hospitals served primarily one demographic and this hospital serves a different one, performance may degrade. Were there demographic or insurance-based differences in who received certain tests or diagnoses, which could introduce bias into labels? (2) **Accuracy decomposition:** 92% overall accuracy can hide severe disparities — 98% accuracy for one subgroup and 70% for another. What is the system's performance broken down by age, gender, race, insurance status, and presenting condition? (3) **Failure mode analysis:** When the system is wrong, what kind of wrong? Does it false-negative (miss high-risk patients, who may be undertreated) or false-positive (overclassify low-risk patients, creating capacity problems)? The costs are different and the acceptable error rate depends on which failure mode is more costly. (4) **Distribution shift:** Emergency medicine practice has changed over 10 years. Are there presenting conditions, treatments, or patient presentations today that didn't exist in the training data? (5) **Integration with clinical workflow:** How will clinicians interact with the system? Will they see the recommendation before or after forming their own assessment? (This determines the automation bias risk.) Post-deployment monitoring: (a) Track outcomes of patients classified high-risk vs. low-risk by the system; (b) Conduct regular audits comparing system recommendations to clinician overrides and patient outcomes; (c) Monitor for demographic performance disparities quarterly; (d) Establish a protocol for human override that doesn't create documentation burden — overrides should be easy and non-stigmatized.\n\n* * *\n\n**Q2.** You are using a large language model to help prepare for a salary negotiation. You ask it: \"I'm a software engineer with 5 years of experience and currently earning 130,000 USD. I have a competing offer of 155,000 USD. My current employer is considering a counteroffer. What should I counteroffer?\" The LLM responds with a specific number and strategy. How should you evaluate and use this response?\n\nHint\n\nConsider what information the LLM actually has, what it's missing, and whether its recommendation reflects general patterns vs. your specific situation.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 837,
+      "out_sha": "e18af373dc0b",
       "note": ""
     },
     {
@@ -2699,11 +2699,11 @@
       "en_title": "Chapter 21: Making Decisions with AI",
       "order": 215,
       "src_chars": 2166,
-      "status": "pending",
+      "status": "done",
       "src_sha": "128b1b295463",
       "src": "**Answer:** Evaluation framework: (1) **What does the LLM actually know?** It knows what you told it (5 years experience, current salary, competing offer) and general patterns from negotiation advice in its training data. It does not know: your specific company's salary bands and typical counter ranges, your manager's negotiating style and authority, your leverage beyond the competing offer, your non-salary priorities (equity, title, flexibility), the job market in your specific technology stack and geography, or your risk tolerance for negotiation failure. (2) **What is the LLM likely doing?** Generating advice that matches common negotiation heuristics: \"ask for 10–15% above the competing offer,\" or \"anchor high,\" or \"don't reveal your bottom line.\" These heuristics may or may not apply to your specific situation. (3) **Where might it be wrong?** The competing offer context varies enormously: a competing offer from a FAANG company carries different signal than one from a startup. The LLM may not weight these differences appropriately. Salary bands and typical negotiation room vary by company size, industry, and geography. (4) **How to use it:** The LLM's response is useful as a starting framework and a source of options you might not have considered. Verify the general heuristics against recent, domain-specific sources (industry salary surveys, colleagues in similar roles). The specific number should be informed by your own research on your company's salary bands (Glassdoor, Levels.fyi) and conversations with people who've negotiated with this employer. Use the LLM to prepare your talking points and anticipate counterarguments — this is where LLMs add genuine value.\n\n* * *\n\n**Q3.** A consumer lending company uses an AI model to approve or deny loan applications. An auditor notices that applications from zip codes with historically low approval rates continue to be denied at high rates by the AI, even when controlling for credit score and income. The company argues: \"The model learned from historical data, and the data shows higher default rates in those areas.\" What is wrong with this reasoning, and what should the company do?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 672,
+      "out_sha": "6daca07a5fd2",
       "note": ""
     },
     {
@@ -2711,11 +2711,11 @@
       "en_title": "Chapter 21: Making Decisions with AI",
       "order": 216,
       "src_chars": 3362,
-      "status": "pending",
+      "status": "done",
       "src_sha": "59bb762cf807",
       "src": "**Answer:** The reasoning conflates correlation with causation in a way that perpetuates historical inequity. Problems: (1) **Historical data reflects historical bias:** If prior loan decisions were influenced by geographic discrimination (redlining, less favorable terms, fewer credit-building products), then default rates in those zip codes reflect the effect of those discriminatory practices, not inherent risk of the borrowers. The AI learns to reproduce the discriminatory outcome as if it were objective risk assessment. (2) **Self-fulfilling cycle:** If the AI systematically denies loans in certain areas, those residents cannot build credit through on-time loan payments — which maintains or worsens their creditworthiness, which the next AI model then learns from. The model's discrimination becomes a cause of the outcome it predicts. (3) **Zip code as a proxy variable:** Even if the company believes zip code is predictive, it functions as a proxy for race/ethnicity in many US contexts due to residential segregation — which may constitute illegal disparate impact discrimination under fair lending law, regardless of intent. What the company should do: (a) Conduct a proper disparate impact analysis — measure approval and default rates by protected class characteristics, not just zip code; (b) Remove or carefully evaluate the use of geographic features that may serve as proxies for protected characteristics; (c) Test whether a model trained without geographic proxies and with fairness constraints achieves acceptable business performance; (d) Consult legal counsel on fair lending obligations; (e) Consider whether model inputs that reflect historical discrimination should be de-weighted or corrected for.\n\n* * *\n\n**Q4.** You are making a major career decision and have decided to use a combination of structured decision tools. Describe how you would use: (1) a decision tree, (2) a pre-mortem, and (3) an AI assistant, in sequence, to improve your decision quality.\n\n**Answer:** Structured sequence:\n\n**Step 1: Decision tree (clarify structure and expected value).** Map the decision as a tree: the root is the choice (e.g., job A vs. job B vs. stay in current role). For each branch, identify the key chance nodes (uncertainty about whether you'll succeed in the new role, uncertainty about the company's trajectory). Assign rough probability estimates to each uncertain branch, and rough value estimates to each outcome (financial, career development, personal). Compute expected values by backward induction. Use sensitivity analysis: which probability or value estimate most changes the preferred option? This step clarifies the _structure_ of the decision and identifies the _crux_ — the key uncertainty that most drives the outcome.\n\n**Step 2: Pre-mortem (surface failure modes).** For the option the decision tree favors, conduct a personal pre-mortem: \"It is two years from now. I made this choice and it has failed significantly. What happened?\" Write down five specific failure narratives. Evaluate each: probability, severity, mitigability. Do any of the failure modes fundamentally change your assessment from step 1? If a failure mode surfaces that you hadn't modeled in the tree (a key assumption that was wrong, a risk you hadn't considered), update your tree. This step catches risks the expected value framework missed.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 989,
+      "out_sha": "fbabe67fab1b",
       "note": ""
     },
     {
@@ -2723,11 +2723,11 @@
       "en_title": "Chapter 21: Making Decisions with AI",
       "order": 217,
       "src_chars": 1004,
-      "status": "pending",
+      "status": "done",
       "src_sha": "193a03cf5a9d",
       "src": "**Step 3: AI assistant (generate alternatives and challenge your reasoning).** Share the decision framing with an LLM: \"Here is a career decision I'm making, the options I'm considering, and my current reasoning. What alternatives am I missing? What assumptions in my reasoning might be wrong? What are the strongest arguments against my current preferred option?\" Use the LLM's output to test whether you've considered the full option space and to steelman the case against your preferred choice. Do not treat the LLM's recommendation as decisive — it lacks knowledge of your specific situation. Use it to expand your thinking and identify blind spots.\n\n**Integration:** Revise your decision tree if step 3 surfaces new options or alternatives you hadn't considered. Make your final decision with explicit acknowledgment of the key remaining uncertainty and a defined monitoring plan (what signals will tell you whether the decision is working as expected, and at what point will you reassess?).\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 310,
+      "out_sha": "1f563fc7a896",
       "note": ""
     },
     {
@@ -2735,11 +2735,11 @@
       "en_title": "Chapter 21: Making Decisions with AI",
       "order": 218,
       "src_chars": 2121,
-      "status": "pending",
+      "status": "done",
       "src_sha": "eb81d4c8b99f",
       "src": "#### Think Deeper\n\n**Q1.** AlphaGo played moves that human experts initially called \"mistakes\" before recognizing them as brilliant. What does this suggest about the relationship between expertise and evaluating AI recommendations?\n\n**Discussion:** AlphaGo's \"novel\" moves reveal something fundamental: human expertise in Go had converged on a shared set of patterns and heuristics developed over centuries of human-to-human play. AlphaGo was not constrained by those heuristics — it was trained through self-play, developing strategies that were optimal rather than recognizable to human experts. The implication for evaluating AI recommendations: expert judgment is essential for evaluating whether an AI's recommendation makes sense in familiar territory, but it may be unreliable for evaluating AI recommendations in novel territory precisely because the AI may have found something that lies outside the human expert's pattern library. This creates a genuine challenge: (1) Human experts are needed to evaluate AI recommendations because they can detect when the AI is wrong in familiar ways. (2) But when the AI is right in unfamiliar ways, human experts may incorrectly reject those recommendations as errors. Resolution is not obvious. One approach: when an AI recommendation conflicts with expert intuition, investigate why before accepting or rejecting. \"I don't understand why this would work\" is useful information — it might mean the AI is wrong, or it might mean the AI has found something new. The investigation itself generates knowledge. Another approach: evaluate AI recommendations against outcomes rather than against expert intuition alone — track cases where the AI recommendation was followed vs. overridden and audit the outcomes over time. This builds empirical evidence about the AI's actual performance in your specific domain.\n\n* * *\n\n**Q2.** AI systems are increasingly used in consequential decisions — hiring, lending, criminal justice, medical diagnosis. What principles should govern when AI systems can make decisions autonomously versus when humans must retain final decision authority?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 641,
+      "out_sha": "b1b561ea5563",
       "note": ""
     },
     {
@@ -2747,11 +2747,11 @@
       "en_title": "Chapter 21: Making Decisions with AI",
       "order": 219,
       "src_chars": 3313,
-      "status": "pending",
+      "status": "done",
       "src_sha": "79e0b9eed63c",
       "src": "**Discussion:** Several principles emerge from both ethical reasoning and empirical evidence: (1) **Consequentiality:** Decisions with significant, hard-to-reverse consequences for individuals — criminal sentencing, medical diagnosis, termination of employment — warrant human final authority. The irreversibility argument from Chapter 18 applies: when errors cannot be corrected, the decision-maker who bears moral responsibility should be a person who can be held accountable. (2) **Transparency requirements:** If a person cannot understand or explain why a decision was made, they cannot meaningfully contest it. AI decisions that are genuinely opaque — where even the developers cannot explain the specific reasoning for a specific outcome — should not stand as final decisions affecting individuals who have a legitimate interest in understanding and contesting the outcome. (3) **Distribution of errors:** AI systems make errors in systematic patterns (biased training data produces biased decisions). A human who reviews AI recommendations and sometimes overrides them provides a check on systematic errors. Full automation removes this check. (4) **Consent and context:** The appropriate level of AI autonomy differs by domain and consent. A streaming service's autonomous content recommendation is different from a court system's autonomous risk assessment; users of streaming services consent to algorithmic curation in ways defendants in criminal proceedings do not. (5) **Accountability:** There must be a clear human or institution responsible for outcomes. When AI makes decisions autonomously, accountability diffuses in ways that undermine the practical recourse of those affected. Final principle: AI autonomy is appropriate when errors are low-consequence, reversible, and symmetrically distributed; human oversight is required when errors are consequential, irreversible, or systematically fall on specific groups.\n\n* * *\n\n\n### Chapter Summary\n\nAI systems represent a genuinely new kind of decision-support tool — powerful in specific ways, limited in specific ways, and systematically misunderstood in both directions.\n\nAI's strengths — pattern recognition at scale, consistency, speed, high-dimensional correlation detection — make it valuable for initial analysis, option generation, anomaly detection, and consistency checking. AI's weaknesses — inability to generalize beyond training distributions, correlation rather than causation, unreliable uncertainty quantification, objective misalignment — mean it is poorly suited for final decision authority on consequential, novel, or ethically complex choices.\n\nAutomation bias — the tendency to over-rely on automated system outputs — is a systematic risk in human-AI collaboration that reduces the independence of human evaluation precisely when independent evaluation is most needed.\n\nThe appropriate use model: AI for pattern recognition and structured analysis; human judgment for final authority, ethical weighing, and evaluation of whether the AI's capabilities match the current problem.\n\nIn Chapter 22, we apply the full decision-making toolkit to one of the most consequential domains of personal life: career decisions — how to choose paths, navigate transitions, and make choices under uncertainty about who you will become.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 926,
+      "out_sha": "fe4cfe6ac40d",
       "note": ""
     },
     {

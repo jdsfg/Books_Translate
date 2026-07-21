@@ -83,3 +83,6 @@ sensitivity analysis | 敏感性分析 |
 backward induction | 后向归纳 |
 prospective hindsight | 前瞻性后见之明 |
 red team | 红队 |
+automation bias | 自动化偏差 |
+hallucination | 幻觉 | LLM 生成虚假内容
+large language model | 大语言模型 | LLM
