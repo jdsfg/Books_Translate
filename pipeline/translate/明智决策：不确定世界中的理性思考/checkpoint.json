@@ -1523,11 +1523,11 @@
       "en_title": "Chapter 13: Status Quo Bias and Choice Overload",
       "order": 117,
       "src_chars": 2886,
-      "status": "pending",
+      "status": "done",
       "src_sha": "445941bfb2d3",
       "src": "In the 1990s, New Jersey and Pennsylvania both reformed their auto insurance laws. Both states offered drivers a new choice: you could keep the right to sue for pain and suffering (more protection, higher premiums) or trade it away for lower premiums.\n\nIn New Jersey, the default was the limited right to sue — you had to actively opt _in_ to full protection. In Pennsylvania, the default was the full right to sue — you had to actively opt _out_ to get the lower premium.\n\nThe rational choice — determined by your preferences and financial situation — should be the same regardless of which state you live in. Yet the results were dramatically different: in New Jersey, about 20% of drivers upgraded to full coverage. In Pennsylvania, about 75% of drivers kept full coverage.\n\nThe only thing that changed was the default. The default option attracted the vast majority of drivers in both states, regardless of which option it was. This is status quo bias — and it is one of the most powerful forces shaping human decisions.\n\n\n### 13.1 Why We Stick with Defaults\n\n\n#### Definition: Status Quo Bias\n\nStatus quo bias is the preference for the current state of affairs — the tendency to stick with existing arrangements, defaults, and the familiar, even when alternatives would produce better outcomes.\n\nIn plain language: we treat the current option as special. We require a stronger argument to move away from what we have than we would require to choose it from scratch.\n\nStatus quo bias is not irrational in all cases — there are genuine costs to changing (learning costs, coordination costs, uncertainty about the new option), and the current option has at least the virtue of having been tolerable so far. But status quo bias overreaches: it causes people to stick with defaults even when the switching costs are trivially low and the alternatives are clearly superior.\n\n\n#### The Mechanisms of Status Quo Bias\n\n**Loss aversion:** Changing from the status quo means giving up something certain (what you have) for something uncertain (the alternative). Loss aversion makes this feel more like a potential loss than a potential gain, even when the alternative is objectively better.\n\n**Decision avoidance:** Choosing is effortful. The status quo requires no decision — it continues by itself. When deciding is cognitively costly, the path of least resistance is inaction.\n\n**Omission bias:** We evaluate actions and inactions differently — actions that lead to bad outcomes feel worse than inactions that lead to equally bad outcomes. Keeping the status quo is an inaction; switching is an action. The asymmetry makes switching feel riskier.\n\n**Regret asymmetry:** If you switch and it goes wrong, you'll feel worse than if you stayed and it went wrong — because switching was a deliberate choice. This asymmetry makes staying feel safer, even when the expected outcomes are similar.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 862,
+      "out_sha": "2645f308431e",
       "note": ""
     },
     {
@@ -1535,11 +1535,11 @@
       "en_title": "Chapter 13: Status Quo Bias and Choice Overload",
       "order": 118,
       "src_chars": 2177,
-      "status": "pending",
+      "status": "done",
       "src_sha": "970ffb7562b8",
       "src": "#### Common Misconception\n\n_\"People stick with the status quo because they prefer it.\"_\n\nThis is circular: people often stick with the status quo not because they genuinely prefer it but because they haven't actively evaluated the alternatives. The auto insurance example shows that the \"preference\" for the status quo was manufactured by whichever option happened to be the default — the same population, given different defaults, produced dramatically different \"preferences.\" Genuine preferences should be the same regardless of which option is the default; status quo bias preferences are artifacts of the starting point.\n\n\n### 13.2 Defaults as Policy Tools\n\nThe flip side of status quo bias is that defaults are extraordinarily powerful policy tools. Whoever designs the default controls the behavior of the majority.\n\n**Organ donation:** Countries with opt-out organ donation systems (you are a donor by default, and must actively opt out) have dramatically higher donation rates than countries with opt-in systems (you must actively sign up). Germany (opt-in): ~12% donation registration. Austria (opt-out, same culture, similar country): ~99%. The actual donation rates show similar patterns. The biology of the citizens is the same; the default differs.\n\n**Retirement savings:** When companies automatically enroll employees in retirement savings programs (opt-out), participation rates are 85-95%. When employees must actively opt in, participation rates are 40-60%. Decades of retirement security — and significant differences in wealth — follow from this single design choice.\n\n**Clean energy:** Utilities that automatically enroll customers in green energy programs see dramatically higher participation than utilities that require active opt-in, even when the programs are identical and comparably priced.\n\nThe policy implication is profound: default design is more powerful than most laws and incentives. If you want more people to do something, make it the default.\n\n\n### 13.3 Choice Overload: When More Choices Produce Worse Decisions\n\nThe relationship between choice and satisfaction is not linear. At some point, more choices stop helping and start hurting.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 659,
+      "out_sha": "56c37daa6b53",
       "note": ""
     },
     {
@@ -1547,11 +1547,11 @@
       "en_title": "Chapter 13: Status Quo Bias and Choice Overload",
       "order": 119,
       "src_chars": 2309,
-      "status": "pending",
+      "status": "done",
       "src_sha": "eea258634a1b",
       "src": "#### Definition: Choice Overload\n\nChoice overload is the phenomenon in which having too many options makes decision making harder and can lead to worse outcomes, including no choice at all (decision paralysis) or lower satisfaction with the choice made.\n\nThe canonical demonstration: Sheena Iyengar and Mark Lepper set up two tasting tables in a grocery store. One offered 24 varieties of jam; the other offered 6 varieties. The 24-variety table attracted more initial attention. But customers who stopped at the 6-variety table were 10 times more likely to purchase jam. More choices generated more interest but less action.\n\nWhy does choice overload occur?\n\n  1. **Cognitive load:** Evaluating 24 options is more cognitively demanding than evaluating 6. When the evaluation becomes too effortful, avoidance (not buying) becomes the path of least resistance.\n\n  2. **Anticipated regret:** With 24 options, you can imagine that one of the 23 alternatives you didn't choose might have been better. With 6 options, the regret is bounded. More options amplify anticipated regret, which reduces satisfaction with any choice made.\n\n  3. **Higher expectations:** More options imply that a \"perfect\" choice should exist. When your choice turns out to be merely good (rather than perfect), the gap between expectation and reality is larger — reducing satisfaction.\n\n  4. **Comparison paralysis:** With many options, it becomes difficult to identify a clear \"best\" choice, especially when options differ on multiple dimensions. The inability to identify a dominant option leads to avoidance.\n\n\n#### Definition: Satisficing vs. Maximizing\n\n**Maximizers** try to make the objectively best choice — they evaluate all available options and select the optimal one. **Satisficers** try to make a \"good enough\" choice — they evaluate options until they find one that meets their criteria and then stop.\n\nDespite their seemingly superior strategy, maximizers consistently report lower satisfaction than satisficers. This is because maximizers, by definition, consider more alternatives and are therefore more exposed to anticipated regret and counterfactual thinking.\n\nThe paradox of maximizing: the strategy designed to produce the best outcome reliably produces less satisfaction than the \"settle for good enough\" strategy.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 756,
+      "out_sha": "f3e50af339d5",
       "note": ""
     },
     {
@@ -1559,11 +1559,11 @@
       "en_title": "Chapter 13: Status Quo Bias and Choice Overload",
       "order": 120,
       "src_chars": 1493,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a08707d57046",
       "src": "### 13.4 Choice Architecture: Designing Your Own Defaults\n\n**Nudge theory** — developed by Richard Thaler and Cass Sunstein — proposes that people can be helped to make better decisions by designing the choice environment (the \"choice architecture\") to steer them toward better options.\n\nKey principles of choice architecture:\n\n* **Set smart defaults:** Default to the option you would rationally want most people to choose.\n* **Simplify options:** Reduce the number of dimensions on which options differ to decrease cognitive load.\n* **Make good choices easy:** Reduce friction on the better option; add friction to the worse option.\n* **Expect inertia:** Design policies with the assumption that most people will take the path of least resistance.\n\nYou can apply these principles to your own decision making by designing your personal environment:\n\n* Want to eat healthier? Make healthy food the default by placing it at eye level in the refrigerator.\n* Want to save more? Automatic transfer to savings on payday, before spending begins.\n* Want to exercise more? Lay out workout clothes the night before (reduces friction on the good default).\n* Want to make fewer impulsive purchases? Add 48-hour waiting periods before non-essential purchases.\n\nYou are always operating within some choice architecture — designed by stores, apps, employers, governments. Making it explicit and designing it intentionally is one of the highest-leverage decision improvements available.\n\n\n### 13.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 500,
+      "out_sha": "c5eb196e0243",
       "note": ""
     },
     {
@@ -1571,11 +1571,11 @@
       "en_title": "Chapter 13: Status Quo Bias and Choice Overload",
       "order": 121,
       "src_chars": 3451,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1c58eb6e582e",
       "src": "#### Concept Check\n\n**Q1.** Define status quo bias and explain why the auto insurance example is particularly compelling evidence for it.\n\n**Answer:** Status quo bias is the preference for the current state of affairs — the tendency to stick with defaults and existing arrangements even when alternatives would be better. The auto insurance example is compelling because it isolates the effect of the default from any genuine preference difference: the same insurance options (full rights vs. limited rights) were offered to drivers in two adjacent states with similar demographics (New Jersey and Pennsylvania). The only thing that differed was which option was the default. In New Jersey (limited rights as default), most drivers stayed with limited rights. In Pennsylvania (full rights as default), most drivers stayed with full rights. If these were genuine preferences, the same population would make the same choice regardless of the default. Instead, the majority preference tracked the default — revealing that the \"preference\" was largely an artifact of the starting point, not a genuine underlying desire.\n\n* * *\n\n**Q2.** What are three mechanisms that drive status quo bias? Give an example of each.\n\n**Answer:** (1) Loss aversion: switching away from the status quo feels like giving up something certain for something uncertain. Example: a consumer with a familiar insurance company feels that switching providers might sacrifice something — the known quantity of the current relationship — even when the alternative is clearly cheaper and rated more highly. (2) Decision avoidance: choosing is effortful; not choosing is easy. The status quo continues by default without requiring a decision. Example: a person who has been meaning to update their retirement portfolio for years never gets around to it because doing so requires research, forms, and decisions — while doing nothing continues the current allocation effortlessly. (3) Regret asymmetry: if you switch and it goes wrong, you feel more responsible for the bad outcome than if you stayed and it went wrong. Example: an investor who sells a fund that then goes up feels more regret than one who holds a fund that goes down, even if the outcomes are equivalent — because switching was an active choice.\n\n* * *\n\n**Q3.** Explain the \"paradox of choice\": why do more options sometimes produce worse decisions and less satisfaction?\n\n**Answer:** The paradox of choice: as the number of options increases past some threshold, decision quality and satisfaction decrease. Multiple mechanisms: (1) Cognitive load: evaluating more options is more demanding; when evaluation becomes too effortful, people avoid deciding. (2) Anticipated regret: more options mean more unchosen alternatives to regret; with 24 jams, you can imagine 23 others you didn't try might have been better, generating more anticipated regret. (3) Higher expectations: more options imply a \"perfect\" choice exists; when your choice turns out to be merely good, the gap between expectation and reality is larger. (4) Maximizer trap: people with maximizing tendencies try to find the best choice among all options — which becomes increasingly demanding as the option set grows. The paradox: choice itself is valuable (having options is better than having none), but the marginal value of additional options diminishes and eventually becomes negative when cognitive load, regret, and unmet expectations dominate.\n\n* * *",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1001,
+      "out_sha": "320b6f43fd00",
       "note": ""
     },
     {
@@ -1583,11 +1583,11 @@
       "en_title": "Chapter 13: Status Quo Bias and Choice Overload",
       "order": 122,
       "src_chars": 1357,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0e50302c4fca",
       "src": "**Q4.** What is the difference between satisficing and maximizing? Which strategy tends to produce better subjective outcomes, and why?\n\n**Answer:** Satisficers set a threshold for an acceptable choice and stop evaluating once they find an option that meets it. Maximizers attempt to find the objectively best option by evaluating all (or many) alternatives. Satisficers typically report higher satisfaction, for several reasons: (1) Less exposure to counterfactuals: satisficers don't consider as many alternatives, so there's less material for \"I should have chosen X instead\" regret. (2) Lower expectations: satisficers are looking for \"good enough,\" which the chosen option typically meets; maximizers are looking for \"the best,\" which the chosen option may not be when compared to unexamined alternatives. (3) Less cognitive exhaustion: the process of maximizing is tiring; decision fatigue can reduce satisfaction with the eventual choice. (4) Less anticipated regret: satisficers don't agonize about unchosen alternatives; maximizers do. The important caveat: for certain high-stakes, one-time decisions (choosing a house, a surgery, a major career move), more thorough evaluation is genuinely valuable. The benefits of maximizing are greatest where the stakes are high, the options are evaluable on clear criteria, and the decision is final.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 398,
+      "out_sha": "178c9eda0c3d",
       "note": ""
     },
     {
@@ -1595,11 +1595,11 @@
       "en_title": "Chapter 13: Status Quo Bias and Choice Overload",
       "order": 123,
       "src_chars": 2035,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4b9f02f39dce",
       "src": "#### Application Problems\n\n**Q1.** A tech company wants to increase its employees' participation in the company 401(k) retirement plan. Currently, participation is at 38% — employees must actively opt in. The HR team proposes switching to automatic enrollment with opt-out. Analyze this change using status quo bias and default effects, and predict the likely outcome.\n\nHint\n\nThink about what the \"default\" behavior is in each system and how the majority of employees will respond to each default.\n\n**Answer:** Under the current opt-in system, the default is non-participation. Status quo bias predicts that most employees will stick with the default — they don't actively enroll, either because they don't get around to it, find the process confusing, or simply never engage with the decision. This explains the 38% participation rate. Under automatic enrollment (opt-out), the default becomes participation. Status quo bias now works in the opposite direction: most employees will stick with the default — which is now participation. Research on 401(k) automatic enrollment consistently shows that participation jumps to 85-95% after the switch, with little change in actual employee retirement preferences. Predicted outcome: participation will likely increase dramatically, potentially to 80-90%, from the same employee population. The employees haven't changed; the choice architecture has. Note: the company should also set a sensible default contribution rate and investment allocation (moderate diversified fund), since status quo bias will anchor most employees to whatever defaults are set.\n\n* * *\n\n**Q2.** An online retail platform is redesigning its checkout flow. Currently, customers can add optional product protection plans by checking a box. The conversion rate for protection plans is 8%. The product team proposes making the protection plan checked by default, with customers who don't want it having to uncheck the box. Using default effects, predict the impact on conversion and discuss the ethical considerations.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 584,
+      "out_sha": "ae5b15ea6687",
       "note": ""
     },
     {
@@ -1607,11 +1607,11 @@
       "en_title": "Chapter 13: Status Quo Bias and Choice Overload",
       "order": 124,
       "src_chars": 3339,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a79b4a4a7b80",
       "src": "**Answer:** Impact prediction: the conversion rate for protection plans will increase dramatically — likely to 50-70%, based on the consistent research on opt-out vs. opt-in default effects. Status quo bias will cause most customers to leave the pre-checked box unchecked (pun intended — they won't uncheck it). The protection plan, which 92% of customers actively decline to add, will be purchased by the majority of customers who passively allow the default to stand. Ethical considerations: (1) Transparency: if customers notice the pre-checked box and understand it's a choice, this is more acceptable. If the pre-checked box is small, visually unobtrusive, or positioned to be easily missed, this crosses into deceptive design (\"dark patterns\"). (2) Value to customers: does the protection plan provide genuine value to most customers? If it's reasonably priced and beneficial for most buyers, the pre-checked default could be seen as helpful guidance. If it's overpriced and rarely used, the default is exploiting status quo bias to extract money from customers who wouldn't have chosen it. (3) Consumer protection: many jurisdictions have laws against \"opt-out\" marketing of paid add-ons; the legality depends on how clearly the option is communicated. The ethical line: defaults that help consumers make decisions they would endorse upon reflection vs. defaults that extract money from consumers' inattention are meaningfully different, even if the psychological mechanism is the same.\n\n* * *\n\n**Q3.** You are helping a friend redesign her morning routine. She currently spends 40 minutes scrolling through her phone in bed before getting up, then feels rushed and often skips breakfast. She wants to exercise more and eat better but \"never has time.\" Apply choice architecture principles to redesign her morning environment.\n\n**Answer:** Apply the \"design defaults\" framework: (1) Make the bad default harder: place the phone charger outside the bedroom so it's not immediately accessible upon waking. This adds friction to the scrolling default. (2) Make the good default easier: place running shoes and workout clothes next to the bed, visible upon waking. This reduces friction on exercise — the default \"first activity\" becomes getting dressed to exercise. (3) Reduce the choice: instead of deciding each morning whether to exercise and what to eat, make one weekly decision about both and implement it as a fixed routine. \"Monday, Wednesday, Friday I run; Tuesday, Thursday I do yoga\" eliminates daily choice and reduces decision fatigue. (4) Set up food defaults: prepare overnight oats or another no-effort breakfast the night before. The default upon entering the kitchen is \"food ready to eat\" rather than \"I need to decide what to make.\" (5) Commitment device: tell someone the plan or schedule a morning run with a friend — making the routine a social commitment is a powerful default-setter.\n\n* * *\n\n**Q4.** A hospital is concerned that doctors are ordering too many diagnostic tests, driving up costs and patient radiation exposure without improving outcomes. Currently, any test can be ordered with a single click. The hospital proposes requiring doctors to type a reason before ordering a CT scan or MRI. Using default effects and friction, analyze whether this intervention will work and what its effects might be.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 971,
+      "out_sha": "a99b0cbb11b9",
       "note": ""
     },
     {
@@ -1619,11 +1619,11 @@
       "en_title": "Chapter 13: Status Quo Bias and Choice Overload",
       "order": 125,
       "src_chars": 1502,
-      "status": "pending",
+      "status": "done",
       "src_sha": "afd7d41a1feb",
       "src": "**Answer:** This intervention uses \"friction\" to reduce the rate of a common default behavior (clicking to order a test). Research on friction-based interventions in healthcare shows they are effective: requiring a reason, a second click, or a brief justification before ordering significantly reduces the rate of \"default\" orders, which are often ordered out of habit or defensiveness rather than genuine clinical necessity. Mechanism: the easy default (one click) activates automatic behavior; adding friction forces a momentary System 2 engagement — \"why am I ordering this test?\" — which often reveals that the test is not clearly indicated. Expected effects: (1) Reduction in unnecessary tests: orders for tests with weak clinical justification will decrease, as doctors realize they cannot easily articulate a reason. (2) Maintained necessary tests: tests with clear clinical justification will still be ordered (the friction is minor for a doctor who knows why they're ordering). (3) Possible resistance: some physicians may resent the process as paternalistic or time-consuming; implementation must address this through physician buy-in and education. (4) Documentation improvement: the typed reason creates a clinical record that can be used for quality review. Real-world evidence: a 2011 study in JAMA Internal Medicine found that requiring justification for certain antibiotic orders reduced inappropriate prescriptions by 50%, with no significant impact on appropriate prescribing.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 440,
+      "out_sha": "4c5be43850f0",
       "note": ""
     },
     {
@@ -1631,11 +1631,11 @@
       "en_title": "Chapter 13: Status Quo Bias and Choice Overload",
       "order": 126,
       "src_chars": 2185,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f1bfeaedafb6",
       "src": "#### Think Deeper\n\n**Q1.** Choice architecture and nudge theory can be used for beneficial ends (increasing retirement savings) or manipulative ones (getting customers to pay for things they don't want). Is there a principled ethical distinction between \"good\" and \"bad\" nudges? Who gets to decide which is which?\n\n**Discussion:** Thaler and Sunstein's original framing requires nudges to be \"libertarian paternalist\" — they steer behavior toward what people would choose for themselves if fully informed and with unlimited cognitive capacity, while preserving freedom of choice. Under this standard, the distinction is: a \"good\" nudge moves people toward their own authentic preferences (as revealed in considered moments, not in the default-following moment); a \"bad\" nudge exploits default effects to extract behavior that diverges from people's actual preferences. In practice, several complications: (1) Preferences are not stable: what people \"would choose when fully informed\" is itself a contested and often unanswerable question. (2) Who decides: in corporate contexts, the nudge architect has a financial interest that may conflict with consumer interests, making \"authentic preference\" claims suspect. (3) Manipulation vs. assistance: there is a spectrum from clearly helpful (401k enrollment that people would endorse) to clearly manipulative (hidden auto-renewing subscriptions). The principled distinction should involve: transparency (can the person see and understand the default?), reversibility (can they easily opt out?), and alignment (does the nudge serve the person's interests or only the architect's?). The hardest cases are where the nudge is transparent and reversible but clearly serves the architect's interests more than the individual's — such as pre-checked product protection plans that are genuinely overpriced but clearly labeled.\n\n* * *\n\n**Q2.** Some critics argue that \"satisficing\" is just rationalization for settling, and that we should strive for better outcomes by making the most informed choices possible. Others argue that satisficing is rational because the cost of maximizing (time, effort, regret) often exceeds the benefit. Who is right?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 642,
+      "out_sha": "1825a48f1397",
       "note": ""
     },
     {
@@ -1643,11 +1643,11 @@
       "en_title": "Chapter 13: Status Quo Bias and Choice Overload",
       "order": 127,
       "src_chars": 2808,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a0606e67d7fe",
       "src": "**Discussion:** Both are right, and the answer is domain-dependent. Critics of satisficing are correct that in some domains, the cost of thorough evaluation is genuinely worth paying: choosing a surgeon, selecting a college, deciding whether to buy a house — these are high-stakes, low-frequency decisions where the marginal value of careful evaluation is high relative to the cost of the effort. In these domains, satisficing risks locking in an outcome that could have been substantially better with modest additional research. Defenders of satisficing are correct that in most everyday decisions — which cereal to buy, which route to drive, which jacket to get — the expected improvement from extensive evaluation is trivially small, while the costs (time, cognitive load, regret) are real. Maximizing in these domains is genuinely irrational: the search cost exceeds the expected value of finding the marginally better option. The synthesis: calibrate the depth of evaluation to the stakes and irreversibility of the decision. Low stakes, high frequency, reversible decisions: satisfice confidently. High stakes, low frequency, irreversible decisions: invest more in maximizing, while remaining aware that perfect information doesn't exist. The meta-skill is judging which category any given decision falls into — which is itself a skill developed through experience and reflection on past decision outcomes.\n\n\n### Chapter Summary\n\nStatus quo bias causes us to prefer the current state of affairs and default options over alternatives, even when switching would clearly improve our situation. The auto insurance example showed that \"preferences\" can be manufactured by defaults — the same population makes dramatically different choices depending on which option is the starting point.\n\nChoice overload shows the dark side of more options: past some threshold, additional choices reduce decision quality and satisfaction. Satisficers are happier than maximizers precisely because they are less exposed to counterfactual regret and cognitive exhaustion.\n\nChoice architecture — the deliberate design of defaults and option presentation — is one of the highest-leverage tools available for improving decisions. You can apply it to your own life by designing environments that make good defaults easy and bad defaults hard.\n\nIn Chapter 14, we turn from individual traps to social ones: how groups amplify individual biases, generate decisions that no individual wanted, and create the conditions for some of history's most spectacular decision failures. The status quo bias examined here reappears in Chapter 16, where we ask a related question: when should you decide now versus deliberately wait — and how to recognize when the apparent comfort of \"doing nothing\" is actually a choice with real costs.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 773,
+      "out_sha": "b2630ac8455b",
       "note": ""
     },
     {
