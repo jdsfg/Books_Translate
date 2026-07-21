@@ -2891,11 +2891,11 @@
       "en_title": "Chapter 23: Financial Decisions",
       "order": 231,
       "src_chars": 2899,
-      "status": "pending",
+      "status": "done",
       "src_sha": "556ba76baddd",
       "src": "In 1994, a study by Terrance Odean examined the trading records of 10,000 individual brokerage accounts. His question: do ordinary investors buy and sell stocks skillfully?\n\nThe answer was devastating. Investors systematically sold their winning stocks and held their losing ones — the disposition effect from Chapter 11. They traded too frequently, generating transaction costs that ate into returns. They bought recent top performers and avoided recent underperformers — chasing returns at exactly the wrong time. After accounting for trading costs, the average investor's portfolio underperformed a simple buy-and-hold strategy by 2–3 percentage points per year.\n\nTwo to three percentage points doesn't sound catastrophic. But over 30 years, a 2-point annual return difference on a 100,000 USD portfolio means the difference between 574,000 USD (at 6% annual return) and 324,000 USD (at 4%). The investor who consistently underperforms by 2% annually ends up with 44% less wealth at retirement.\n\nFinancial decisions are among the most consequential applications of this book's frameworks — and among the domains where behavioral biases are most comprehensively documented and most costly.\n\n\n### 23.1 Why Financial Decisions Are Hard\n\nPersonal financial decisions involve precisely the features that make decisions hard:\n\n**Delayed consequences:** The consequences of financial decisions are often far in the future. Saving 500 USD this month and investing it for 30 years creates tens of thousands of dollars of future wealth — but the benefit is abstract and distant, and spending the 500 USD today is immediate and concrete. The human brain discounts future benefits heavily compared to present ones (hyperbolic discounting), which systematically biases financial decisions toward consumption over saving.\n\n**Complexity under uncertainty:** Financial markets are complex systems where outcomes depend on the interaction of millions of agents. No individual can reliably predict market movements over short horizons. The relevant signal for individual investors (expected long-run real returns by asset class) is swamped by short-term noise (daily or monthly market fluctuations) that feels like signal but isn't.\n\n**Emotional activation:** Financial gains and losses feel personal and visceral in ways that make objective analysis difficult. Seeing your portfolio fall 30% feels qualitatively different from being told intellectually that markets fall 30% sometimes. Loss aversion, which is measured in laboratory settings, is amplified when real money and real stakes are involved.\n\n**Social comparison:** Financial decisions are heavily influenced by what others appear to be doing — \"everyone is buying into this investment\" or \"my neighbor just made a killing in real estate.\" Social comparison activates FOMO (fear of missing out), which drives chasing-return behavior at the worst times.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 874,
+      "out_sha": "d6da0459e96e",
       "note": ""
     },
     {
@@ -2903,11 +2903,11 @@
       "en_title": "Chapter 23: Financial Decisions",
       "order": 232,
       "src_chars": 2817,
-      "status": "pending",
+      "status": "done",
       "src_sha": "465ee0f24bf0",
       "src": "#### Common Misconception\n\n_\"Successful investing requires superior stock-picking ability.\"_\n\nDecades of research in financial economics have produced one of the most robust findings in social science: the vast majority of professional fund managers, over time periods of 10+ years, fail to beat simple index funds after accounting for fees. If professional fund managers with teams of analysts, proprietary data, and full-time attention cannot reliably beat the market, it is implausible that individual part-time investors can. The relevant insight for personal finance is not \"how do I pick better stocks?\" but \"how do I implement a sound strategy and avoid the behavioral traps that cause underperformance?\"\n\n\n### 23.2 Behavioral Finance: The Main Traps\n\nThe behavioral biases from Parts I–III of this book manifest in financial decisions in specific, well-documented ways:\n\n**Availability and recency bias (Chapter 2):** Investors dramatically overweight recent market experience. After a long bull market, they believe markets always rise; after a crash, they believe further declines are inevitable. Both beliefs cause them to buy high (at the peak of optimism) and sell low (at the trough of fear) — the opposite of rational timing.\n\n**Overconfidence (Chapter 4):** Individual investors consistently overestimate their ability to predict market movements. Surveys show that the vast majority of individual investors believe they will beat the market — statistically impossible, since the average investor is the market. Overconfidence leads to excessive trading, concentrated positions, and under-diversification.\n\n**Loss aversion and the disposition effect (Chapter 11):** Investors hold losing positions to avoid \"realizing\" losses and sell winning positions to \"lock in\" gains. As Chapter 11 established, this is exactly backwards — the decision to hold or sell should be based on forward-looking expected value, not on the psychological need to avoid confirmed losses.\n\n**Sunk cost thinking (Chapter 12):** \"I can't sell this stock — I'm down 40% and I need to get back to even.\" The purchase price is irrelevant to the forward-looking question: what is the best use of the funds currently held in this position?\n\n**Status quo bias and inertia (Chapter 13):** Many people never review or rebalance their investment allocations. The default persists not because it is optimal but because changing requires effort and deliberate action. For retirement accounts, this means people remain in inappropriate allocations for decades.\n\n**Herding and social proof:** When markets are rising, investors want to buy (social proof that rising markets are good). When markets are falling, investors want to sell (social proof that falling markets are bad). Both behaviors are opposite to rational long-term investing.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 832,
+      "out_sha": "f4173e897007",
       "note": ""
     },
     {
@@ -2915,11 +2915,11 @@
       "en_title": "Chapter 23: Financial Decisions",
       "order": 233,
       "src_chars": 2504,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9cbea2733287",
       "src": "### 23.3 Sound Financial Decision Principles\n\nGiven the behavioral traps, what does rational financial decision making look like?\n\n**Principle 1: Time in market beats timing the market.** The evidence overwhelmingly shows that long-term buy-and-hold strategies outperform active trading for most investors. The key variable for wealth accumulation is how long money is invested, not when specific investments are made (within reasonable bounds). Investors who try to time the market consistently miss the market's best days — which often come clustered around periods of maximum fear.\n\n**Principle 2: Diversification is the only free lunch.** Modern portfolio theory (Markowitz, 1952) established mathematically that diversification reduces risk without reducing expected return. Holding a portfolio of uncorrelated assets produces the same expected return at lower variance than holding concentrated positions. This is the closest thing to a free lunch in investing — but overconfident investors consistently underutilize it, holding concentrated positions in stocks they \"know\" will outperform.\n\n**Principle 3: Costs compound over time.** Investment return of 7% per year with 1% annual cost = 6% net return. Investment return of 7% per year with 0.05% annual cost = 6.95% net return. Over 30 years on 100,000 USD: the low-cost option produces 734,000 USD; the high-cost option produces 574,000 USD. The 0.95% annual cost difference produces 160,000 USD in wealth difference. This is why low-cost index funds consistently outperform actively managed funds with similar gross returns — the cost advantage is not small.\n\n**Principle 4: Automate the high-stakes defaults.** Since status quo bias is real and inertia is powerful, put the most important financial behaviors on autopilot: automatic savings transfers, automatic contribution increases, automatic rebalancing. Rather than fighting against cognitive biases, use them — make the good behavior the default.\n\n**Principle 5: Separate the investment decision from the emotional response.** Market crashes feel catastrophic. The rational response — \"prices are lower, this is a buying opportunity for a long-term investor\" — is emotionally inaccessible in the moment. The practical solution: make investment decisions during calm periods, write down the strategy and the reasoning, and commit explicitly to following the strategy during market stress. A pre-committed strategy is more robust to emotional override than in-the-moment decision making.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 769,
+      "out_sha": "f620011db867",
       "note": ""
     },
     {
@@ -2927,11 +2927,11 @@
       "en_title": "Chapter 23: Financial Decisions",
       "order": 234,
       "src_chars": 1606,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0b46d2d1212f",
       "src": "### 23.4 Common Financial Decision Categories\n\n**Insurance:** Insurance is a rational purchase when: (a) the potential loss would be financially catastrophic relative to your wealth, and (b) the premium is not dramatically above the actuarially fair rate. Insuring against low-probability, high-severity events (house fire, disability, death of income-earner) is rational. Over-insuring low-severity events (extended warranties, collision insurance on older low-value cars) is typically a poor expected value trade that reflects loss aversion rather than rational risk management.\n\n**Home buying vs. renting:** The \"rent vs. buy\" decision is frequently framed as \"renting is throwing money away.\" This framing is incorrect. The true comparison: buying involves mortgage interest, property taxes, maintenance costs, opportunity cost of down payment, and transaction costs of buying and selling — not just equity building. In many markets and life circumstances, renting is financially equivalent to or superior to buying. The primary reason to buy is non-financial: stability, ability to modify the space, social embedding. These are real values — but they should be distinguished from the financial comparison.\n\n**Retirement saving:** The most consistently valuable financial decision most people can make is maximizing tax-advantaged retirement contributions early — 401(k) with employer match, Roth IRA, etc. The combination of tax benefits and compounding over long horizons produces results that are hard to replicate through any other financial strategy available to most people.\n\n\n### 23.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 458,
+      "out_sha": "8bb559038869",
       "note": ""
     },
     {
@@ -2939,11 +2939,11 @@
       "en_title": "Chapter 23: Financial Decisions",
       "order": 235,
       "src_chars": 3476,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fb6a2b1f2bba",
       "src": "#### Concept Check\n\n**Q1.** Why do the behavioral biases examined in Parts I–III of this book cause particularly large harm in financial decisions compared to other decision domains?\n\n**Answer:** Several features of financial decisions amplify the cost of behavioral biases: (1) **Compounding:** Financial outcomes compound over time. A 2% annual underperformance costs relatively little in year 1 but produces very large wealth differences over 30 years. Behavioral biases that cause consistent underperformance — not catastrophic one-time errors — are the primary source of the wealth gap, and compounding turns those small consistent errors into large outcomes. (2) **High decision frequency:** Investors who trade actively make their cognitive errors repeatedly. Each trading decision that is influenced by availability bias, overconfidence, or loss aversion is a small expected cost — but making thousands of such decisions over a career produces substantial cumulative harm. (3) **Emotional intensity:** Money is viscerally connected to security, status, and identity. Loss aversion is amplified when real losses affect real financial security. The emotional intensity makes it harder to apply rational analysis in the moment of market stress. (4) **Complexity and noise:** Financial markets produce enormous quantities of data and news, most of which is noise rather than signal. Availability bias (weighting recent dramatic events), pattern-seeking in random noise, and overconfidence about the ability to interpret market signals are all especially active in financial domains. (5) **Social feedback loops:** Herding behavior reinforces itself — when everyone is buying, prices rise, which \"confirms\" that buying was correct, which attracts more buyers. These feedback loops amplify the social proof effect far beyond what it produces in most other domains.\n\n* * *\n\n**Q2.** What is the efficient market hypothesis (EMH), and what are its implications for individual investors?\n\n**Answer:** The efficient market hypothesis (EMH) states that asset prices in financial markets reflect all available information at any given time. In its strong form: no investor can consistently beat the market because prices already incorporate all relevant information — including insider information. In its weak form: past price patterns cannot predict future prices. In its semi-strong form: publicly available information is already reflected in prices, so fundamental analysis cannot reliably generate excess returns. Empirical status: the strong form is generally rejected (insider trading does generate excess returns, which is why it's illegal). The semi-strong form is approximately true for large, liquid markets: professional analysts with full-time attention and sophisticated models rarely beat index funds consistently after fees. Implications for individual investors: (1) Trying to beat the market by picking stocks is, for most investors, a negative expected value activity after accounting for trading costs, taxes, and time spent. (2) Diversified, low-cost index funds capture the market return — which is positive in expectation over long horizons. (3) The return from investing comes from bearing risk (investing over time in productive enterprises) and from time in the market, not from superior information selection. Individual investor strategy should focus on savings rate, time horizon, cost minimization, and risk tolerance — not on stock selection.\n\n* * *",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1010,
+      "out_sha": "2944f0af644d",
       "note": ""
     },
     {
@@ -2951,11 +2951,11 @@
       "en_title": "Chapter 23: Financial Decisions",
       "order": 236,
       "src_chars": 2116,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5a70a74a9c59",
       "src": "**Q3.** Explain why \"time in market beats timing the market\" for most investors. What biases make market timing tempting, and why does it consistently fail?\n\n**Answer:** Time in market beats timing because: (1) Equity market returns are concentrated in a small number of the best days, which are unpredictable and often occur during periods of maximum fear. JP Morgan analysis found that missing just the 10 best trading days per decade produces dramatically worse long-term returns than buy-and-hold. An investor who is \"out of the market\" waiting for better conditions risks missing exactly those days. (2) The long-run expected return on diversified equity markets is positive — it reflects the real economic returns on productive enterprise. Investors who stay invested capture this expected return; investors who move to cash lose it during the periods they're out. (3) Transaction costs, taxes on realized gains, and bid-ask spreads accumulate with each in-and-out trade, creating a headwind that passive investors avoid. Biases that make timing tempting: (1) Availability bias — dramatic market drops feel like the beginning of a long decline; dramatic rises feel like the beginning of continued gains. Recent events dominate; long-run base rates are abstract. (2) Overconfidence — investors believe their read on market conditions is more accurate than the collective judgment embedded in current prices. (3) Loss aversion — the fear of further losses during a decline overwhelms the rational response (a declining market is a cheaper market for a long-term investor). Why timing fails: most timing decisions are made at the wrong time — selling at market bottoms (when fear is maximum) and buying at market peaks (when enthusiasm is maximum). This is not incompetence; it is the predictable result of emotional decision making in a domain where the rational response is counter-intuitive.\n\n* * *\n\n**Q4.** A friend says: \"I don't invest in index funds because my actively managed fund beat the market by 5% last year.\" What is the correct response, and what statistical issue does this reasoning demonstrate?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 627,
+      "out_sha": "2043cfac4f14",
       "note": ""
     },
     {
@@ -2963,11 +2963,11 @@
       "en_title": "Chapter 23: Financial Decisions",
       "order": 237,
       "src_chars": 1557,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fb9930168147",
       "src": "**Answer:** The correct response addresses survivorship bias and the distinction between skill and luck over short time periods: (1) **Survivorship bias:** The actively managed funds you can invest in today are survivors of a selection process that eliminates funds that underperformed and were closed. When you look at the performance record of surviving funds, you're looking at a biased sample — the funds that happened to do well. Among all actively managed funds that existed 10 years ago, a substantial fraction have been closed or merged because they underperformed. (2) **Luck vs. skill over one year:** A 5% outperformance over one year is not distinguishable from random variation. With hundreds of actively managed funds, some will beat the market by 5% in any given year purely by chance, just as some coin flippers will flip heads 7 times out of 10. To determine whether a fund manager is genuinely skilled, you need long time horizons (10+ years) and many independent performance periods. Research consistently shows that past outperformance of actively managed funds does not predict future outperformance — last year's winners are not more likely than chance to be next year's winners. (3) **The relevant comparison:** Compare not just returns but risk-adjusted returns after fees, taxes on higher turnover, and the full distribution of possible outcomes. A 5% outperformance one year with higher variance and 1.5% additional annual fees may be worse in expectation than an index fund's reliable tracking of the market at 0.05% cost.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 465,
+      "out_sha": "56f2906b9c19",
       "note": ""
     },
     {
@@ -2975,11 +2975,11 @@
       "en_title": "Chapter 23: Financial Decisions",
       "order": 238,
       "src_chars": 2138,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d9e214b0feb9",
       "src": "#### Application Problems\n\n**Q1.** An investor has a 500,000 USD portfolio. She is considering moving it from a low-cost index fund (0.05% annual expense ratio) to an actively managed fund (1.2% annual expense ratio) that generated 15% returns last year vs. 12% for the index. Assuming the index returns 8% per year going forward and the active fund returns 8% (same gross return) going forward, calculate the 20-year cost of switching. What probability of continued outperformance would she need to make switching worthwhile?\n\n**Answer:** Calculate 20-year outcomes:\n\n**Index fund:** 500,000 USD × (1 + 0.08 − 0.0005)^20 = 500,000 USD × (1.0795)^20 1.0795^20 ≈ 4.617 Index fund value = 500,000 USD × 4.617 = **2,308,500 USD**\n\n**Active fund (same gross return):** 500,000 USD × (1 + 0.08 − 0.012)^20 = 500,000 USD × (1.068)^20 1.068^20 ≈ 3.743 Active fund value = 500,000 USD × 3.743 = **1,871,500 USD**\n\n**Cost of switching:** 2,308,500 USD − 1,871,500 USD = **437,000 USD** over 20 years from the fee difference alone.\n\nTo break even: the active fund must generate sufficient annual outperformance to compensate for the 1.15% annual fee disadvantage. Required gross outperformance = approximately 1.15% per year consistently.\n\nResearch context: Approximately 20–25% of actively managed funds beat their benchmark in any given year after fees; approximately 5–10% sustain outperformance over 10+ year horizons. For the switch to be worthwhile in expectation, she would need to believe this specific fund has a high probability of sustained outperformance — a belief that is not supported by the evidence for most funds. The one-year 15% return (vs. 12% index) provides essentially no statistical evidence of skill vs. luck.\n\n* * *\n\n**Q2.** An investor holds two stocks: Stock A was bought at 100 USD, now trading at 140 USD (40% gain). Stock B was bought at 100 USD, now trading at 60 USD (40% loss). He needs to raise 5,000 USD in cash. Which should he sell, and why?\n\nHint\n\nThe disposition effect predicts he will sell Stock A. Apply forward-looking analysis: what information does the purchase price provide about future performance?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 932,
+      "out_sha": "edb10f5b6ad7",
       "note": ""
     },
     {
@@ -2987,11 +2987,11 @@
       "en_title": "Chapter 23: Financial Decisions",
       "order": 239,
       "src_chars": 3498,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ab3d6e6f69ab",
       "src": "**Answer:** The disposition effect predicts: sell Stock A (the winner, to \"lock in gains\") and hold Stock B (the loser, to \"avoid realizing\" the loss). This is psychologically compelling and financially irrational. Rational analysis: The purchase price of 100 USD for both stocks is irrelevant to the forward-looking decision. The correct question: which stock has the better expected future performance? If Stock A has better forward-looking expected return, sell Stock B. If Stock B has better forward-looking expected return, sell Stock A. If they're roughly equivalent in forward expectation, there's a second consideration: taxes. In most tax systems, realizing the 40 USD gain on Stock A creates a taxable event; selling Stock B at a 40 USD loss creates a tax loss that can offset other gains (reducing the tax liability). This tax loss harvesting consideration favors selling Stock B for an additional financial reason. The rational choice in most circumstances: sell Stock B. Reasons: (1) the 40 USD paper loss is already real — selling does not create the loss, it merely realizes it; (2) tax loss harvesting produces a real benefit; (3) if Stock B had genuinely better forward-looking prospects, it should be evaluated on those merits independently of the loss. The investor who refuses to sell Stock B because \"I need to get back to even\" is confusing sunk costs with forward-looking analysis.\n\n* * *\n\n**Q3.** A 35-year-old is deciding how much to contribute to her retirement account. Her employer matches 100% of contributions up to 6% of salary. Her salary is 80,000 USD. She currently contributes 3% and is considering increasing to 6%. She plans to retire at 65, and her portfolio earns an average of 7% per year. How much additional wealth does increasing from 3% to 6% generate at retirement?\n\n**Answer:** Current contributions: 3% of 80,000 USD = 2,400 USD/year from employee; employer match = 2,400 USD/year → total 4,800 USD/year\n\nProposed contributions: 6% of 80,000 USD = 4,800 USD/year from employee; employer match = 4,800 USD/year → total 9,600 USD/year\n\nAdditional annual contribution from increasing to 6%: 9,600 USD − 4,800 USD = 4,800 USD/year\n\nAt 7% annual return over 30 years, future value of 4,800 USD annual contributions: FV = 4,800 USD × [(1.07^30 − 1) / 0.07] = 4,800 USD × [(7.612 − 1) / 0.07] = 4,800 USD × 94.46 = **453,408 USD**\n\nNote: by not contributing 6%, she is leaving the employer match on the table. The first 3% she's not contributing costs her both the match and the tax-advantaged growth. The additional 4,800 USD/year contribution (employee + employer) generates approximately 453,000 USD in additional retirement wealth over 30 years at 7% annual return. This does not include the tax benefit: if in a traditional 401(k), the additional 2,400 USD in employee contributions reduces current taxable income, so the actual cost to her take-home pay is less than 2,400 USD (it's 2,400 USD × (1 − marginal tax rate)).\n\nConclusion: Increasing to 6% is one of the highest-return financial decisions available to her — she is effectively capturing a 100% immediate return on the additional contribution through the employer match, before accounting for investment growth.\n\n* * *\n\n**Q4.** A family is debating whether to pay off their 4% mortgage early (they have 40,000 USD extra savings) or invest it in a diversified equity index fund with expected 7% annual return. Using expected value and considering behavioral factors, what should they do?\n\nHint",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1291,
+      "out_sha": "c2c685d9e840",
       "note": ""
     },
     {
@@ -2999,11 +2999,11 @@
       "en_title": "Chapter 23: Financial Decisions",
       "order": 240,
       "src_chars": 2043,
-      "status": "pending",
+      "status": "done",
       "src_sha": "55bd69e21058",
       "src": "Compare the risk-adjusted return of debt payoff vs. investment, but also consider psychological factors: risk tolerance, sleep quality, and the value of guaranteed debt elimination.\n\n**Answer:** Pure financial analysis: Expected return of investing: 7% annually on 40,000 USD = 2,800 USD/year expected gross return. Guaranteed return of debt payoff: 4% annually on 40,000 USD = 1,600 USD/year in certain interest savings. Expected financial advantage of investing: 7% − 4% = 3% per year, or approximately 1,200 USD/year — approximately 40,000 USD in additional wealth over 20 years after compounding. However, risk-adjusted comparison: investing in equity markets produces an expected 7% but with substantial volatility (standard deviation of annual returns is approximately 15–20%). The 4% mortgage paydown is risk-free (guaranteed). The appropriate comparison is not 7% vs. 4% but rather 7% (with substantial risk) vs. 4% (risk-free). For risk-averse investors, the risk-adjusted advantage of investing narrows or reverses. Behavioral considerations: (1) Loss aversion: if the family would respond to a 30% portfolio decline with distress or panic selling, they may realize less than the expected 7% due to behavioral errors during downturns. (2) Psychological value of security: debt freedom has genuine psychological value — reduced stress, simplified household balance sheet, improved sleep quality — that is not captured in the financial comparison. (3) Opportunity cost awareness: at 4%, the mortgage is cheap debt. If interest rates are higher than 7% (currently relevant), the comparison flips. Recommendation: if the family has an emergency fund, employer match fully captured in retirement accounts, and high risk tolerance, investing the 40,000 USD has positive expected financial value. If the family is risk-averse, would panic-sell in a market downturn, or places high value on debt freedom, paying down the mortgage may be the better choice on a risk-adjusted basis — even if it's not the maximum expected value choice.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 639,
+      "out_sha": "00c0e1ef4d05",
       "note": ""
     },
     {
@@ -3011,11 +3011,11 @@
       "en_title": "Chapter 23: Financial Decisions",
       "order": 241,
       "src_chars": 2103,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ba3513786e19",
       "src": "#### Think Deeper\n\n**Q1.** \"Passive investing\" (index funds) works because most investors are active, doing the price discovery work that makes markets efficient. If everyone switched to passive investing, would markets become less efficient? How does this self-referential quality affect the case for index investing?\n\n**Discussion:** This is the \"paradox of passive investing\" — a genuine theoretical question in financial economics. The logic: if no one analyzes stocks, prices stop reflecting fundamental values, mispricings persist, and active investors can profit by exploiting them. This would attract active investors back, restoring price discovery. So the system has a self-correcting equilibrium: passive investing is only a dominant strategy as long as enough active investors exist to keep prices efficient. The empirical reality: active management currently manages a large fraction of total assets — far from the level where market efficiency would meaningfully degrade. Evidence for market efficiency is robust at current levels of passive investing. The threshold at which passive investing becomes self-undermining is unknown and may be far from current levels. Practical implication for individual investors: this argument does not change the individual's optimal strategy today. Even if the market became less efficient in some hypothetical future, the individual investor cannot exploit that inefficiency without developing genuine analytical capability that most individuals don't have. The case for index investing is partly that markets are efficient and partly that it is very hard for the average investor to do better than the market even if the market is imperfectly efficient. Both arguments apply to most individuals regardless of the aggregate level of passive investing.\n\n* * *\n\n**Q2.** Research consistently shows that individual investors underperform the market over time. Does this mean personal financial decisions are simply not important — just put money in index funds and forget it? Or is there a meaningful domain for individual financial decision-making skill?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 571,
+      "out_sha": "976c4e306140",
       "note": ""
     },
     {
@@ -3023,11 +3023,11 @@
       "en_title": "Chapter 23: Financial Decisions",
       "order": 242,
       "src_chars": 3291,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e54a58c61fa4",
       "src": "**Discussion:** The conclusion that index funds outperform active stock-picking does not mean financial decision-making skill is unimportant — it means it's important in different areas than most investors focus on. The domain where individual decision-making skill matters most: (1) **Savings rate:** The difference between someone who saves 5% of income and someone who saves 20% dwarfs any investment return difference. Savings rate is almost entirely within individual control and is a true financial skill domain — it requires decision-making about consumption, lifestyle, values, and deferred gratification. (2) **Tax efficiency:** Asset location (what to hold in tax-advantaged vs. taxable accounts), tax-loss harvesting, and Roth conversion decisions can add 0.5–1.5% per year in after-tax return — comparable to or larger than most investment strategy differences. This requires skill and attention. (3) **Insurance decisions:** Under- and over-insuring are both costly. Calibrated insurance coverage — protecting against genuinely catastrophic risks while avoiding unnecessary premiums — requires judgment. (4) **Major life financial decisions:** When to buy a home, how much debt to carry, whether to fund education with debt — these decisions have larger lifetime impact than stock selection. They require the frameworks of this entire book: expected value, option value, reversibility, pre-mortem. (5) **Behavioral management:** The biggest source of individual investor underperformance is behavioral — panic selling, return chasing, overtrading. The investor who successfully manages their own behavior during market crises outperforms not by picking better stocks but by avoiding the worst decisions at the worst times. This is a genuine and important skill.\n\n* * *\n\n\n### Chapter Summary\n\nFinancial decisions are among the most consequential applications of this book's frameworks — and among the domains where behavioral biases are most comprehensively documented and most costly.\n\nAvailability and recency bias cause investors to buy high and sell low. Overconfidence leads to excessive trading and concentrated positions. Loss aversion and the disposition effect produce the wrong sell/hold decisions. Sunk cost thinking anchors decisions to irrelevant purchase prices. Status quo inertia leaves retirement allocations unchanged for decades.\n\nThe evidence on active investing is clear: most professional fund managers fail to beat simple index funds over long horizons after fees. The individual investor's best strategy is not superior stock selection but disciplined implementation of sound principles: diversification, low costs, time in market, automated defaults, and behavioral management during market stress.\n\nThe domain where financial decision-making skill matters most is not investment selection but savings rate, tax efficiency, insurance calibration, major life financial decisions, and behavioral management — the areas where individual judgment, applied through the frameworks of this book, produces genuine variation in outcomes.\n\nIn Chapter 24, we apply these frameworks to health decisions — where the stakes are high, the uncertainty is profound, and the tools of rational decision making are underutilized in a domain that desperately needs them.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 934,
+      "out_sha": "dafe414ac988",
       "note": ""
     },
     {

@@ -88,3 +88,6 @@ hallucination | 幻觉 | LLM 生成虚假内容
 large language model | 大语言模型 | LLM
 affective forecasting | 情感预测 |
 regret minimization | 后悔最小化 |
+efficient market hypothesis | 有效市场假说 | EMH
+disposition effect | 处置效应 |
+FOMO | FOMO | 错失恐惧
