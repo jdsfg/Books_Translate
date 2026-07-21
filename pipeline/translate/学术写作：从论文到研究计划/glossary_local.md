@@ -7,7 +7,7 @@
 ## 核心锁定（样张强制统一）
 genre | 体裁 | ⚠️ 锁定；学术写作体裁意识语境，勿译「类型/风格」作术语
 hedging | 模糊限制 | ⚠️ 锁定；备选「审慎限定」；首次可写「模糊限制（hedging）」；勿简化为「委婉/含糊其辞」
-rhetorical move | 修辞语步 | ⚠️ 锁定；可简称「语步」；six moves = 六个语步
+rhetorical move | 修辞语步 | ⚠️ 锁定；可简称「语步」；six moves / Move 1–6 = 六个语步 / 语步 1–6；勿对普通动词 move 机械套用
 peer review | 同行评审 | 与共享库一致；peer-reviewed = 经同行评审的
 CARS | CARS（创建研究空间） | Create A Research Space；章节标题已锁定为「创建研究空间（CARS）」；模型名保留 CARS
 
@@ -25,7 +25,6 @@ poster | 学术海报 |
 introduction | 引言 |
 
 ## 修辞与论证
-move | 语步 | rhetorical move 的简称；Move 1–6 译作「语步 1–6」
 claim | 主张 | 与共享库一致；overclaim = 过度主张
 citation | 引用 | 作为修辞语步时强调其论证作用，非仅书目格式
 voice | 语气 | 学术写作惯例中的 voice；备选「声音」
