@@ -723,11 +723,11 @@
       "en_title": "Chapter 11: Where Automations Live",
       "order": 54,
       "src_chars": 1826,
-      "status": "pending",
+      "status": "done",
       "src_sha": "62154daf56f3",
       "src": "You have described a pipe: when this, then that. But a description is not a running thing. A WHEN-THEN plan has to _live_ somewhere, on some actual machine that is awake when the trigger fires and does the actions. So the practical question this chapter answers is deceptively simple and genuinely important: where does your automation run?\n\nThere are three homes, and choosing among them is not about which is best. It is about what your particular pipe needs. A pipe that runs when you say so needs one home. A pipe that runs on a schedule needs another. A pipe that must be reachable at any hour needs a third. Match the home to the need, and the choice makes itself. The whole chapter is learning to feel that match.\n\n\n### 11.1 The first home: your own machine, when you're there\n\nThe simplest home for an automation is the machine in front of you, right now, run when you ask.\n\nYou say to your assistant, \"gather this week's orders and draft the thank-yous,\" and it runs the pipe then and there, on your laptop, while you watch. This is the natural home for anything you _initiate_ , anything where you are present and want to be. It needs nothing special. It is where every automation should probably begin its life, because running a pipe while you watch is exactly the \"small before grand, watch it for a week\" discipline from Chapter 10, made literal.\n\nBut this home has one hard limit, and it defines everything else: **your machine is not always on.** When you close the laptop, the pipe stops existing. It cannot run at midnight if the lid is shut. It cannot receive a doorbell while you sleep. So the first home is perfect for \"run this now, while I'm here\" and useless for \"run this every night\" or \"be ready whenever an order lands.\" The moment a pipe needs to act when you are _not_ there, it has to move out.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 676,
+      "out_sha": "6aeb48658578",
       "note": ""
     },
     {
@@ -735,11 +735,11 @@
       "en_title": "Chapter 11: Where Automations Live",
       "order": 55,
       "src_chars": 3348,
-      "status": "pending",
+      "status": "done",
       "src_sha": "880640d59f0e",
       "src": "### 11.2 The second home: your machine, on a schedule\n\nThe next step up answers \"run this every night\" without asking you to be awake for it. You arrange for the pipe to run _on a schedule_ , at times you set in advance, so it fires whether or not you are paying attention, as long as the machine is on.\n\nThere is a decades-old tool for exactly this, and you met its world in Volume III: a scheduler, a kind of tireless calendar-clerk that sits quietly and, at the appointed time, sets a task running. You tell it \"every Monday at 8 a.m., run this pipe,\" and it does, faithfully, without being reminded. You do not have to know how to operate the clerk by hand; your assistant can set the schedule for you. What you need is the _concept_ : there is a way to have your machine run a pipe on a clock, unattended, and it is the right home for the recurring, scheduled tasks that make up so much of automation.\n\nThis home fits Mara's weekly assembly perfectly. Reading the weekend's orders is a \"when Monday comes\" task, a schedule, not a doorbell. If Mara's machine is on Monday morning (or if this scheduled pipe lives on something that is always on, which is the third home), the calendar-clerk fires it, the orders get read, the thank-yous get drafted, and Mara comes to a finished result rather than a chore. The scheduled home is where the clock-triggered half of Chapter 8 comes to rest.\n\nThere is a catch worth naming honestly: a schedule on _your_ machine only fires if your machine happens to be on and awake at that time. If your laptop is asleep at 8 a.m. Monday, the clerk cannot fire the task. For a weekly task that is often fine, you just run it when you next open the lid. But for anything that truly must happen on time regardless of you, the schedule itself needs a home that never sleeps, which brings us to the third.\n\n\n### 11.3 The third home: something always on\n\nSome pipes cannot live on a machine that sleeps. A doorbell, from Chapter 8, needs something awake and listening at a fixed address at every hour, because an order can land at 3 a.m. and the ring has to be received. A schedule that absolutely must fire on time, every time, needs the same. For these, the home is a small, always-on presence on the internet, which is exactly what Volume IV was about: a server, a machine that is not yours-in-front-of-you but yours-out-there, awake around the clock, reachable at a known address.\n\nYou do not have to build or master this to understand the map. What matters is recognizing _when a pipe needs it_. The test is simple: does this pipe have to act when I am definitely not there and my own machine is definitely off? If yes, it needs the always-on home. A doorbell needs it. A digest that must go out at exactly 6 a.m. whether or not you are awake needs it. A \"run this whenever I ask\" pipe does not, and a \"run this weekly, whenever my machine is next on\" pipe often does not either. The always-on home is more to set up and maintain, so you reach for it only when the pipe genuinely cannot live anywhere simpler.\n\nA small pin for readers of Volume II: privacy can also decide _where_ a piece of a pipe lives. The worker that drafts from sensitive material can be a _local model_ , your own private AI on your own always-on machine, keeping that work in-house, which is Volume II's world. The capstone returns to this.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1242,
+      "out_sha": "61d218dfc4ce",
       "note": ""
     },
     {
@@ -747,11 +747,11 @@
       "en_title": "Chapter 11: Where Automations Live",
       "order": 56,
       "src_chars": 2307,
-      "status": "pending",
+      "status": "done",
       "src_sha": "919d37e5e6e1",
       "src": "#### Common Misconception\n\n_\"Real automations run 'in the cloud'; running things on my own laptop is just playing around.\"_\n\nThis mixes up sophistication with suitability. Running a pipe on your own machine, while you watch, is not a toy stage you graduate out of; it is the correct and responsible home for a large class of automations, especially while you are learning one and watching it for a week. Plenty of genuinely useful pipes never need to leave your machine, because they run when you ask and you are there when they run. The always-on home is not a badge of seriousness; it is a specific answer to a specific need, \"this must act when I'm not here,\" and it carries real extra cost in setup and upkeep. Choosing your own machine when that is all a pipe needs is not playing around. It is matching the home to the need, which is the actual skill.\n\n\n### 11.4 Mara's two homes\n\nMara's finished setup uses two of the three homes, and seeing which goes where makes the whole choice concrete.\n\nHer **weekly assembly** , the order-reading, inventory-updating, thank-you-drafting pipe, is scheduled. It does not need to fire at a precise second, and it does not need to receive anything unprompted; it just needs to run each week. So it lives as a scheduled task, and whether that schedule sits on her own machine (firing when she opens the lid Monday) or on a small always-on machine (firing at 8 a.m. sharp regardless) is a choice she makes based on how much the exact timing matters to her. For a weekly draft she will review anyway, her own machine is honestly fine.\n\nHer **rush-commission doorbell** , the one that must catch an order the instant it lands so she can start the piece today, cannot live on a sleeping laptop. It needs the always-on home: a small presence out there, awake at every hour, listening at a fixed address for the shop to ring. This is the one piece of Mara's automation that genuinely reaches into Volume IV's world, and it does so for a clear reason she can name: immediacy that her craft actually needs.\n\nOne person, three homes available, two of them used, each chosen by asking what the pipe needs rather than which is fanciest. That is the chapter, and it is the whole discipline: the home is not a status symbol; it is a fit.\n\n\n### 11.5 Exercises\n\nRead the answers.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 855,
+      "out_sha": "ef96d68087e5",
       "note": ""
     },
     {
@@ -759,11 +759,11 @@
       "en_title": "Chapter 11: Where Automations Live",
       "order": 57,
       "src_chars": 3438,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2ff68538d384",
       "src": "#### Judgment scenario\n\n**Q1.** For each pipe, name the home it should live in (your machine when you're there; your machine on a schedule; something always on) and why: (a) \"Whenever I ask, summarize my new emails.\" (b) \"Every Monday, gather my orders and draft thank-yous; I'll review them when I sit down.\" (c) \"The instant a payment fails, alert me so I can fix it before the customer notices.\"\n\n**Answer:** (a) _Your machine, when you're there_ : you initiate it, you are present, it needs nothing always-on. This is the simplest home and exactly right for on-demand tasks. (b) _Your machine on a schedule_ is fine: it is a weekly, clock-triggered task you will review anyway, so it does not need precise timing or an always-on presence; the calendar-clerk fires it when your machine is on Monday. (If Mara wanted it done at 8 a.m. sharp regardless of her laptop, she would move just this schedule to an always-on home.) (c) _Something always on_ : \"the instant a payment fails\" is a doorbell needing immediacy at any hour, so it must be received by something awake and listening around the clock. The pattern: on-demand stays local, scheduled-and-flexible stays local or scheduled, and instant-at-any-hour needs the always-on home.\n\n\n#### Predict the need\n\n**Q2.** A friend says, \"I've built an automation on my laptop that's supposed to email me a summary every morning at 6 a.m., but half the time it doesn't arrive.\" Given this chapter, what is the most likely ordinary cause, and what is the fix?\n\n**Answer:** The most likely cause is that the friend's laptop is _asleep or off_ at 6 a.m. on the mornings the summary fails to arrive, so the calendar-clerk cannot fire the task; a schedule on your own machine only runs if the machine is awake at that time. The fix is to move this particular scheduled pipe to an always-on home, a small machine that never sleeps, so 6 a.m. always finds something awake to run it. This is the sleeping-laptop catch, met in the flesh: scheduling is only as reliable as the machine's wakefulness, and a task that must happen _on time regardless of you_ has outgrown the sleeping-laptop home. Note that the pipe itself is fine; only its home was wrong for the need.\n\n\n#### Say this to your AI\n\nThis chapter's ask makes your assistant reason about _where_ a pipe lives as a deliberate choice tied to need, and flag when a pipe has outgrown a simpler home.\n\n> _\"Whenever we set up an automation, help me decide where it should run. If it's something I kick off while I'm here, let's just run it on my own machine. If it needs to happen on a schedule, tell me plainly that it'll only fire when my machine is actually on, and ask me whether the exact timing matters enough to need something that's always on. And if it needs to react the instant something happens, or run at a precise time no matter what, tell me clearly that this one needs an always-on home, and why, before we build it, so I'm choosing that cost on purpose.\"_\n\nThis ask installs the three-homes judgment as a habit: local for on-demand, scheduled with its honest catch spelled out, and always-on reserved for genuine immediacy or must-fire timing, chosen deliberately because of its extra cost. It keeps you from both mistakes at once, running an always-on task on a sleeping laptop, and over-building an always-on home for a task your own machine would serve. The home is a fit, and this ask makes your assistant help you find it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1351,
+      "out_sha": "9386d663163d",
       "note": ""
     },
     {
@@ -771,11 +771,11 @@
       "en_title": "Chapter 11: Where Automations Live",
       "order": 58,
       "src_chars": 1798,
-      "status": "pending",
+      "status": "done",
       "src_sha": "29cac0d6f1ff",
       "src": "### Chapter Summary\n\nA WHEN-THEN plan has to _live_ on an actual machine that is awake when the trigger fires, and there are three homes, chosen by need rather than status. The first is **your own machine, when you're there** : perfect for on-demand pipes you initiate and watch, and the right place for every automation to begin its life, but useless the moment a pipe must act while you are away, because your machine is not always on. The second is **your machine on a schedule** , run by a tireless calendar-clerk (the scheduler from Volume III's world) that fires a pipe on a clock unattended, with one honest catch: it only fires if the machine is actually awake at that time. The third is **something always on** , a small presence out on the internet (Volume IV's server) that is awake at every hour and reachable at a fixed address, which is what a doorbell needs, and what a must-fire-on-time schedule needs, at the cost of more setup and upkeep.\n\nThe discipline is to match the home to the need: on-demand stays local, scheduled-and-flexible stays local or scheduled, and instant-at-any-hour earns the always-on home. Mara uses two homes, a scheduled weekly assembly and an always-on rush-commission doorbell, each chosen by asking what the pipe requires. We also pinned Volume II here: an always-on home can host a private local model as a pipe's worker when privacy should shape where the work happens. This built on Chapter 8's clock-versus-doorbell triggers and Chapter 10's small-before-grand discipline. Next, Chapter 12 crosses into the book's second heavyweight territory: the moment you let your assistant not just describe and build a pipe but _act_ through it, holding your keys, changing the world on your behalf, which is exactly why Chapter 6 mattered, squared.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 691,
+      "out_sha": "cfcc06716a2c",
       "note": ""
     },
     {
