@@ -79,3 +79,5 @@ one-way door | 单向门 |
 two-way door | 双向门 |
 minimum viable commitment | 最小可行承诺 |
 reversibility | 可逆性 |
+sensitivity analysis | 敏感性分析 |
+backward induction | 后向归纳 |
