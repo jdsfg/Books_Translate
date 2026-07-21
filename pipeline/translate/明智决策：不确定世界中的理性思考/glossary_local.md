@@ -95,3 +95,4 @@ absolute risk reduction | 绝对风险降低 | ARR
 relative risk reduction | 相对风险降低 | RRR
 number needed to treat | 需治疗人数 | NNT
 shared decision making | 共享决策制定 |
+strategic commitment | 战略承诺 |
