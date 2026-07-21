@@ -52,8 +52,9 @@ Kitty Genovese | 基蒂·吉诺维斯 | Genovese 故事在书中判为 myth
 
 ## 情境与自我
 power of the situation | 情境的力量 | 全书主线
-situation versus disposition | 情境对倾向 | thread A 脊柱问题
-disposition | 倾向 | 与 situation 对举
+situation versus disposition | 情境与个体倾向之争 | thread A 主线问题；勿译「情境对倾向/脊柱问题」
+spine question | 主线问题 | the spine question of … → ……这一主线问题
+disposition | 个体倾向 | 与 situation 对举；亦可简作「倾向」
 replication crisis | 可重复性危机 |
 WEIRD | WEIRD | Western, Educated, Industrialized, Rich, Democratic；保留缩写
 attitude | 态度 |
