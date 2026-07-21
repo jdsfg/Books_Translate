@@ -291,11 +291,11 @@
       "en_title": "Chapter 4: The Shape of Asking",
       "order": 18,
       "src_chars": 2664,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7811a37609db",
       "src": "We have been standing at the counter window watching answers come back. Now let us turn around and look at the question going in.\n\nEvery visit to a counter window is a small, complete conversation, and like any conversation it has two halves: the ask and the answer. Last chapter we learned to read the answer, the tray of labeled boxes. This chapter is about the ask: what shape it takes, what it must contain, and, most useful of all, how knowing the shape of the ask lets you _predict the answer before it arrives_. That prediction is the real test of whether you hold the map. A person who can guess what a counter window will say has understood it. A person who has memorized its buttons has not.\n\n\n### 4.1 Two things every ask must say\n\nWhen your assistant walks up to a counter window on your behalf, its request has to make two things clear before the service can do anything.\n\nFirst, **which counter, and what for**. There is not one universal window; a big service has many, one for looking up orders, one for reading a single customer, one for adding to inventory. The request has to name which one it means. Think of it as saying, at the pharmacy, \"I'm here for a prescription pickup,\" not \"I'm here.\" The service has to know which of its powers you are reaching for.\n\nSecond, **what kind of act this is: are you reading, or are you changing?** This is the distinction from Chapter 1 and Chapter 2, and it is so important that the counter window builds it right into the grammar of every request. Every ask is, at heart, one of two intents: _read me something_ (tell me the orders, show me the balance, what is the forecast) or _change something_ (add this item, cancel that order, send this message). The service treats these very differently, and so should you.\n\nWe are deliberately not going to list the exact technical words for these intents, the little verbs that ride at the front of a real request. You do not need them, your assistant handles them, and memorizing them is manual, not map. What you need is the instinct underneath: _is this ask going to leave the world exactly as it found it, or is it going to move something?_ Reading leaves the world as it found it. Changing does not.\n\n\n#### Definition: A request and its response\n\nA **request** is one ask sent to a counter window: it names which counter it wants, states its intent (read or change), and fills in whatever blanks that counter needs (an order number, an item name). The **response** is the service's single answer to that one request: the goods you asked for, if any, plus a short verdict saying how it went. One request, one response. A conversation of exactly two lines.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 896,
+      "out_sha": "a6f2c5bf6dc3",
       "note": ""
     },
     {
@@ -303,11 +303,11 @@
       "en_title": "Chapter 4: The Shape of Asking",
       "order": 19,
       "src_chars": 2899,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7ca3d4720f36",
       "src": "### 4.2 The answer has a shape too\n\nThe response that comes back always carries two things, and separating them in your mind will save you real confusion later.\n\nThere are **the goods** : the actual information or confirmation you wanted. The tray of orders. The account balance. A note saying \"item added.\" And there is **the verdict** : a short signal of whether the request succeeded at all. Did the counter understand you? Were you allowed? Did something break?\n\nMost of the time the verdict is a quiet \"all good,\" and you barely notice it because the goods are right there and obviously present. But when something goes wrong, the goods may be missing entirely and the verdict becomes the whole message. That is the subject of the next chapter, so hold the thought. For now, just register that every answer has these two layers: _how did it go_ and _here is what you asked for_. A well-behaved assistant reads both, and tells you both when it matters.\n\nHere is Mara's Monday ask, in plain terms, with its predicted answer laid beside it:\n\n* **The ask** : to the shop's orders counter, a _reading_ request, with one blank filled in: \"orders since last Monday.\"\n* **The predicted answer** : a verdict of \"all good,\" and the goods being a list of order boxes, each with a buyer, an item, and a `paid` fact, exactly the tray we read in Chapter 3.\n\nMara did not have to run anything to write that prediction. She knew the counter (orders), she knew the intent (reading), she knew roughly what an order box looks like, so she could say in advance what shape the answer would take. When her assistant comes back with exactly that, she is reassured. If it comes back with something wildly different, she knows to look closer.\n\n\n### 4.3 Predicting the reply is the test of the map\n\nThis is worth slowing down on, because it is the single skill that separates having a map from having a manual.\n\nYou do not truly understand a counter window until you can predict, roughly, what it will say to a given ask. Not the exact commas; the _shape_. If I ask the shop for one order by its number, I should get back one order box, not a list. If I ask for all of this month's orders, I should get a list, possibly a long one. If I ask to add an item to inventory, I should get back not a tray of goods but a short verdict, a confirmation that the change took. If I ask for an order that does not exist, I should get a verdict that says \"not found\" and no goods at all.\n\nTrain this and you gain two things at once. You gain the ability to _commission well_ , because you can imagine the answer and therefore phrase the ask to get it. And you gain the ability to _supervise_ , because when the real answer does not match your prediction, you feel the mismatch and go looking. An automation you can predict is one you can trust. An automation whose answers surprise you every time is one you are merely hoping about.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1030,
+      "out_sha": "0d44a9714a7c",
       "note": ""
     },
     {
@@ -315,11 +315,11 @@
       "en_title": "Chapter 4: The Shape of Asking",
       "order": 20,
       "src_chars": 2580,
-      "status": "pending",
+      "status": "done",
       "src_sha": "25c282ccd69a",
       "src": "#### Common Misconception\n\n_\"Reading and changing are basically the same; a request is a request.\"_\n\nThey could not be more different in their consequences, and blurring them is where careless automation gets dangerous. A reading request is a question. Ask it once, ask it a hundred times, and the world is unchanged; you have merely learned something, possibly the same thing repeatedly. A changing request is an _act_. Every time it runs, something moves: an item is added, an email is sent, a charge is made. Run a changing request a hundred times by accident and you may have sent a hundred emails or made a hundred charges.\n\nThis is why, all through this book, we will let an assistant read early and freely but make it slow down, draft, and wait before it changes anything that touches the world. It is also why, when you commission an automation, one of your first questions should be: does this pipe only _read_ , or does it _change_ something, and if it changes something, what exactly moves each time it runs? A pipe that only reads is a pipe you can let loose. A pipe that changes deserves the careful posture we build in Chapter 12.\n\n\n### 4.4 The courage this buys you\n\nNotice what has quietly happened over these four chapters. Something that looked like an engineer's private domain has resolved into a set of very ordinary shapes.\n\nA service is a building with a counter window. A request is a short ask that names a counter, states whether it reads or changes, and fills in a blank or two. A response is one answer, carrying a verdict and, usually, some labeled-box goods. That is genuinely most of it. The rest of this book adds judgment (whose identity does the ask carry? how often may you ask? what happens when the pipe acts on its own?), but the raw machinery of asking and answering is now in your hands, and it was not as forbidding as the wall made it look.\n\nSo here is the fear this chapter is meant to close. You may have believed that to work with APIs you would need to hold a hundred details in your head. You now know the opposite: you need to hold a _shape_ in your head, and the shape is small. You can look at a service you have never seen and say, with real confidence, \"it will have counters; some will read and some will change; the answers will come back as a verdict plus labeled boxes; and I can predict roughly what a given ask returns.\" That is not the confidence of someone who memorized a manual. That is the confidence of someone who can read a map. It travels to services that do not exist yet.\n\n\n### 4.5 Exercises\n\nRead the answers.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 892,
+      "out_sha": "8114a5944c85",
       "note": ""
     },
     {
@@ -327,11 +327,11 @@
       "en_title": "Chapter 4: The Shape of Asking",
       "order": 21,
       "src_chars": 3047,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4860e80da1c9",
       "src": "#### Predict the service\n\n**Q1.** Mara's assistant sends this ask to the shop's counter window: a request to the _orders_ counter, intent _read_ , blank filled in as \"order number CB-9999\" (a number no real order has). Predict the answer's two layers: what is the verdict, and what are the goods?\n\nHint\n\nSeparate \"how did it go\" from \"here is what you asked for.\" Can there be goods for an order that does not exist?\n\n**Answer:** The verdict will be some form of \"not found,\" and the goods will be _empty_ , because there is no order box to hand back. This is the pure case where the verdict is the whole message: nothing was wrong with Mara's ask (it was well-formed and she was allowed to look), the thing she asked about simply is not there. Predicting this correctly means you understood section 4.2: a response is a verdict plus goods, and either layer can carry the meaning depending on how things went. The next chapter is entirely about learning to read verdicts like this one as honest information rather than as failures.\n\n\n#### Read the shape\n\n**Q2.** Two asks: (a) \"add a new mug to inventory, count 12,\" and (b) \"how many mugs are in inventory?\" One is reading and one is changing. For each, say which it is, and predict whether the response's _goods_ will be a tray of information or just a short confirmation.\n\n**Answer:** Ask (a), adding a mug, is a _changing_ request; its response goods are essentially just a short confirmation that the change took (\"added; inventory updated\"), not a tray of data. Ask (b), counting the mugs, is a _reading_ request; its response goods are the actual information you wanted (a number, or a small box containing it). The deeper point: changing requests tend to answer with a verdict and little else, while reading requests answer with the goods. Knowing which you sent tells you what kind of answer to expect, and knowing that lets you catch the moment an answer arrives in the wrong shape. Also note that (a) is the ask you would never run a hundred times by accident, because you would have a hundred mugs you do not have.\n\n\n#### Say this to your AI\n\nYou have surveyed your tools, sorted their powers, and read a real answer's boxes. Now practice _predicting_ before you fetch, which is the habit that turns you from a passenger into a supervisor.\n\n> _\"I want to ask [my calendar / my shop's test data] for [some specific thing]. Before you actually do it, tell me: is this a reading request or a changing one? And predict for me, in plain words, what shape the answer will come back in, a verdict plus what kind of goods. Then go ahead and read it, and let's see if your prediction was right.\"_\n\nThis ask trains the core skill of the chapter. By making your assistant state the intent (read or change) and predict the answer's shape _before_ acting, you turn every small errand into a rehearsal of the map. Over time you will find you can make the prediction yourself, and the assistant's job becomes confirming what you already expected. That is what supervision feels like from the inside.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1100,
+      "out_sha": "98b8cfc30310",
       "note": ""
     },
     {
@@ -339,11 +339,11 @@
       "en_title": "Chapter 4: The Shape of Asking",
       "order": 22,
       "src_chars": 1494,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c49154dd54f5",
       "src": "### Chapter Summary\n\nEvery visit to a counter window is a two-line conversation: a **request** and its **response**. A request must say two things, which counter it wants and whether its intent is to _read_ or to _change_ , and then fill in whatever blanks that counter needs. A response carries two layers, a **verdict** (how did it go) and the **goods** (here is what you asked for), and depending on how things went, either layer can be the whole message. The most valuable skill in the chapter is _prediction_ : you understand a counter window when you can say, in advance and in rough shape, what a given ask will return, because that same prediction is what lets you both commission well and supervise well. An automation you can predict is one you can trust.\n\nThe deepest line to carry forward is the gulf between reading and changing. A reading request is a question that leaves the world untouched no matter how often you ask it; a changing request is an act that moves something in the world every single time it runs, which is why later chapters make an assistant slow down and wait before it changes anything. This built on Chapter 3's labeled boxes (the goods arrive as JSON) and Chapter 1's reading-versus-sending line (now sharpened into the grammar of every request). Next, in Chapter 5, we look closely at the verdict when it is not \"all good,\" and discover that a service saying \"no\" is not a failure but one of the most honest and useful things it can do for you.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 535,
+      "out_sha": "740d16b6f1b1",
       "note": ""
     },
     {
@@ -351,11 +351,11 @@
       "en_title": "Chapter 5: When the Answer Is \"No\"",
       "order": 23,
       "src_chars": 1807,
-      "status": "pending",
+      "status": "done",
       "src_sha": "76f116e973f6",
       "src": "The first time an automation tells you \"no,\" it feels like failure. A red word appears, a request comes back empty, and the instinct is to think _I broke it_.\n\nYou did not break it. The service answered you honestly. A counter window that says \"no\" and tells you _why_ is doing you a genuine service, the way a good pharmacist who says \"I can't fill this, the prescription expired last month\" is more useful than one who silently hands you the wrong pills. The \"no\" is information. It tells you exactly what the next move is. This chapter is about learning to hear a refusal not as a wall but as a signpost, because an automation that never surprised you with a \"no\" would be one you could not trust when it mattered.\n\n\n### 5.1 A refusal is a verdict, doing its job\n\nRecall from last chapter that every response has two layers: the verdict (how did it go) and the goods (here is what you asked for). When things go well, the verdict is a quiet \"all good\" and you barely notice it. When things go wrong, the verdict steps forward and becomes the whole message, and the goods are simply absent, because there is nothing to hand over.\n\nThat is all a \"no\" is. The counter clerk looked at your request, could not fulfill it, and instead of pretending, handed back a verdict that says _what stopped it_. This is the opposite of a system silently doing the wrong thing. Silence is the dangerous failure. A clear \"no, and here is why\" is the safe one, and services are built to give it.\n\nSo the goal is not to avoid ever getting a \"no.\" You will get them constantly, and many of them are routine and expected, part of the normal weather of asking. The goal is to read _which_ \"no\" you got, because there are only a handful of honest refusals a counter window can give, and each one points at a different next step.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 617,
+      "out_sha": "4845fe7cd7fb",
       "note": ""
     },
     {
@@ -363,11 +363,11 @@
       "en_title": "Chapter 5: When the Answer Is \"No\"",
       "order": 24,
       "src_chars": 2217,
-      "status": "pending",
+      "status": "done",
       "src_sha": "991aeefe577a",
       "src": "### 5.2 The four honest \"no\"s\n\nAlmost every refusal you will ever meet is one of four. You do not need their technical numbers; you need to recognize their faces.\n\n**\"I can't find that.\"** You asked about something that is not there. An order number that does not exist, a customer who was deleted, a page that moved. The service understood you perfectly and looked in good faith; there was simply nothing to hand back. The next move is usually to check what you asked _for_ : did you get the number right, is the thing really supposed to exist, did you perhaps ask the wrong counter?\n\n**\"I can't let you.\"** You asked for something real, but you are not allowed. Maybe you have not proved who you are, or you have proved it but this identity does not have permission for this particular thing. This is the \"no\" that leads straight into the next chapter, because it is entirely about _identity_ : who is asking, and what are they allowed to do. The next move is about credentials, not about the thing you asked for.\n\n**\"Slow down.\"** You asked too much, too fast. The service is not angry and nothing is broken; it is asking you to be patient, because a shared counter has to be fair to everyone in line. The next move is simply to wait a little and ask again more gently, and Chapter 7 is entirely about being the kind of visitor who does not get told this in the first place.\n\n**\"My side broke.\"** Something went wrong inside the service itself, through no fault of your ask. Their machinery hiccuped. This one is not about you at all, and the next move is usually to wait and try again shortly, because it often clears up on its own. If it persists, the problem is on their end, and the honest thing is to stop hammering and wait for them to fix it.\n\n\n#### Definition: Reading a refusal\n\nTo **read a refusal** is to identify which of the honest \"no\"s a counter window gave, so you can choose the right next move. The four are, in plain terms: _I can't find that_ (check what you asked for), _I can't let you_ (check who is asking and what they're allowed), _slow down_ (wait and be gentler), and _my side broke_ (wait; it may not be about you). The skill is not memorizing codes; it is hearing which \"no\" you got.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 781,
+      "out_sha": "a0e43d762b5b",
       "note": ""
     },
     {
@@ -375,11 +375,11 @@
       "en_title": "Chapter 5: When the Answer Is \"No\"",
       "order": 25,
       "src_chars": 2357,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c88ab3506944",
       "src": "### 5.3 Mara's expired key\n\nLet us make this concrete with a \"no\" Mara is very likely to meet.\n\nMonths from now, Mara's shop pipeline has been humming along, reading her orders every Monday. One Monday, the answer comes back not as a tray of orders but as a refusal: _I can't let you_. Nothing about her orders changed. The shop is running fine. What happened is that the key her assistant was using to prove \"this is Mara's automation, allowed to read Mara's orders\" has expired, the way a parking pass expires, and the counter window is now, correctly, refusing to hand private order data to someone who can no longer prove they are Mara.\n\nRead the refusal and the next move is obvious. This is the \"I can't let you\" face, which is about identity, so the fix is not to change what she asked for (the ask was fine) and not to wait (nothing is overloaded or broken). The fix is to renew the key. If Mara had misread this as \"I can't find that,\" she might have gone hunting for missing orders that were never missing. If she had misread it as \"my side broke,\" she might have waited days for a problem that would never clear on its own. Reading the _right_ \"no\" is what routes her to the right repair.\n\nNotice, too, how gentle this failure was. The pipeline did not send anything wrong. It did not corrupt Mara's inventory. It hit a locked door, was politely refused, and stopped. That is the reading-versus-changing distinction paying off: a pipeline built around reading fails _safely_ , by simply not getting an answer, which is exactly the kind of failure you want to have.\n\n\n#### Common Misconception\n\n_\"If my automation shows an error, I've done something wrong and probably damaged something.\"_\n\nAlmost never. Two comforting truths sit underneath most errors. First, a _reading_ request that fails changed nothing at all; it asked, was refused, and stopped, leaving the world exactly as it was. There is nothing to un-break. Second, the error message is not a scolding; it is the service telling you which of the four honest \"no\"s you hit, which is the single most useful thing it could hand you. The people who are comfortable with automation are not the ones who never see errors. They are the ones who read the error, recognize its face, and know the next move. You are learning to be one of them right now, and it is a smaller skill than it looks.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 845,
+      "out_sha": "25d00a3a916a",
       "note": ""
     },
     {
@@ -387,11 +387,11 @@
       "en_title": "Chapter 5: When the Answer Is \"No\"",
       "order": 26,
       "src_chars": 3277,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b8c399d4b0e7",
       "src": "### 5.4 Why this closes a fear\n\nThere is a specific fear this chapter is built to answer, and it is worth naming: _I'd probably break something_.\n\nHere is why that fear is smaller than it feels. The failures you are most likely to cause, especially early, when your pipes mostly read, are the safe kind: a request that gets politely refused and stops. The service is designed to say \"no\" clearly rather than to do something wrong silently. And every \"no\" comes with a readable face that points at its own repair. So the realistic worst case of an early, reading-heavy automation is not damage; it is a pipe that stops and shows you a signpost.\n\nThe genuinely careful territory, the changing requests that send and charge and delete, is real, and we treat it with full seriousness starting in Chapter 12. But even there, the safety comes largely from the same source: services refuse clearly, and you learn to read the refusal. Fear of breaking things keeps a lot of capable people at the front door forever, doing the plumbing by hand. You can put that fear down. The system is more honest with you than you expected, and the honesty is on your side.\n\n\n### 5.5 Exercises\n\nRead the answers.\n\n\n#### Predict the service\n\n**Q1.** Mara's assistant asks the shop, using last month's expired key, for the weekend's orders. Which of the four \"no\"s comes back, and what is the correct next move? Name one _wrong_ next move that a misreading would cause.\n\nHint\n\nDid the ask itself have anything wrong with it? Or is the problem about who is asking?\n\n**Answer:** The refusal is _I can't let you_ , because the ask was fine but the identity can no longer be proven; the key expired. The correct next move is to renew the key (an identity repair, the subject of Chapter 6), not to touch the ask itself. A wrong next move from misreading: if you heard it as _I can't find that_ , you would go searching for missing orders that were never missing, wasting time on a problem that does not exist. This is the whole reason reading the _right_ \"no\" matters: each face routes you to a different repair, and picking the wrong face sends you down a road with nothing at the end of it.\n\n\n#### Read the refusal\n\n**Q2.** For each situation, name which of the four honest \"no\"s you would expect, and the next move: (a) your assistant asks a weather service for the forecast three hundred times in one minute; (b) your assistant asks for a customer record using a correct, valid key, but the customer was deleted last year; (c) your assistant's request is perfect, but the service's own machinery is having a bad night.\n\n**Answer:** (a) is _slow down_ : three hundred asks in a minute is impolite to a shared counter, and the next move is to wait and ask far more gently (Chapter 7 makes you the kind of visitor who avoids this). (b) is _I can't find that_ : the ask and the identity are both fine, but the thing genuinely is not there anymore, so the next move is to accept that the record is gone, not to fiddle with keys or wait. (c) is _my side broke_ : nothing is wrong with your ask, so the next move is to wait a bit and try again, and if it persists, to stop hammering and let them fix their end. Three different faces, three different next moves, and reading them correctly is the entire skill.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1183,
+      "out_sha": "6d1f004a55f5",
       "note": ""
     },
     {
@@ -399,11 +399,11 @@
       "en_title": "Chapter 5: When the Answer Is \"No\"",
       "order": 27,
       "src_chars": 2626,
-      "status": "pending",
+      "status": "done",
       "src_sha": "985767105551",
       "src": "#### Say this to your AI\n\nYou have been reading answers; now prepare to read refusals, calmly and on purpose. This ask rehearses the recovery _before_ you need it, which is exactly when you want to have thought about it.\n\n> _\"When you run an automation for me and a service says no, I don't want you to just stop or quietly retry forever. I want you to tell me, in plain words, which kind of 'no' it was: was the thing not found, were we not allowed, were we asked to slow down, or did their side break? And based on which one it is, tell me what the sensible next move is before you do anything about it.\"_\n\nThis ask turns your assistant into a good reader of refusals on your behalf, and keeps you in the loop when one arrives. It names all four honest \"no\"s in your own words, forbids the two worst assistant habits (silently giving up, or hammering a broken service), and insists on a diagnosis before an action. When you eventually meet an expired key or an overloaded service for real, you will already have this conversation banked.\n\n\n### Chapter Summary\n\nA service saying \"no\" is not a failure; it is a **verdict doing its job** , handing you the single most useful thing it can when it cannot fulfill your ask: the reason. Almost every refusal is one of four honest \"no\"s: _I can't find that_ (check what you asked for), _I can't let you_ (check who is asking and what they're allowed), _slow down_ (wait and be gentler), and _my side broke_ (wait; it may not be about you). The skill is not memorizing codes but recognizing which face you got, because each one routes you to a different repair, and misreading a \"no\" sends you down a road to nowhere. We watched Mara meet an expired key, an _I can't let you_ , and saw how reading it correctly pointed straight at renewing the key rather than hunting for phantom missing orders.\n\nThis chapter was built to shrink a specific fear, _I'd probably break something_ : early automations mostly read, reading requests that fail change nothing and stop safely, and every \"no\" comes with a readable face that points at its own fix, so the realistic worst case is a stopped pipe with a signpost, not damage. It built directly on Chapter 4's verdict-plus-goods anatomy of a response. The most consequential \"no,\" _I can't let you_ , is entirely about identity, and identity is the great judgment lesson of this book. So next, in Chapter 6, we open the heaviest chapter of the first half: the key that proves who is asking, why it is not _like_ your identity but _is_ your identity in machine form, and how to hold something that dangerous with the care it deserves.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 973,
+      "out_sha": "117295698e03",
       "note": ""
     },
     {
