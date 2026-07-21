@@ -1,0 +1,11 @@
+# DONE: AI时代六大超能力-卷一-Git与GitHub
+
+- status: 138/138 done
+- branch: cursor/ai-superpowers-git-sample-906d
+- PR: https://github.com/jdsfg/Books_Translate/pull/15
+- verify: ERROR=0
+- remaining WARN (explained, not blocking):
+  1. c02_b03: glossary hit on ACID is a false positive for English "The acid test" (not database ACID).
+  2. c15_b07: same false positive — refers to Chapter 1 acid test.
+- locked terms: snapshot=快照, branch=分支, merge=合并, pull request=拉取请求
+- no init / lock-titles re-run
