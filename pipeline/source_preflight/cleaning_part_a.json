@@ -1,7 +1,7 @@
 {
   "report": "pipeline/source_preflight/cleaning_part_a.md",
-  "generated_at": "2026-07-21T16:36:30.102420+00:00",
-  "revision": "post-control-review-revert-formulas-structural-only",
+  "generated_at": "2026-07-21T22:36:49.990488+00:00",
+  "revision": "round3-distributed-three-tables-stub-col",
   "pr": 20,
   "scope": [
     "AI 科学 I：从神经网络到 Transformer",
@@ -104,10 +104,13 @@
       "structural_fixes": [
         "ghost_toc_removed",
         "postscript_dup_removed",
-        "fake_h2_tables_fixed"
+        "fake_h2_tables_fixed",
+        "round3_workflow_table_stub_col L11276-11289 (7 cols)",
+        "round3_lies_table_stub_col L11817-11824 (4 cols)",
+        "round3_misconceptions_table_stub_col L12103-12129 (4 cols)"
       ],
       "formula_decision": "reverted_unsafe_batch_peel; originals retained",
-      "changed_line_ranges_note": "TOC L34; ending; tables ~11277/11844/12130",
+      "changed_line_ranges_note": "TOC L34; ending; tables L11276+/L11817+/L12103+ (round3 stub #)",
       "unresolved": [
         "SOURCE_CONFLICT: formula/variable multi-render left unchanged"
       ],
@@ -210,5 +213,6 @@
       ],
       "promotable": false
     }
-  ]
+  ],
+  "round3_note": "Only fix 分布式系统 three tables: add # stub first column so header/sep/data column counts match."
 }
