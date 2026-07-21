@@ -791,11 +791,11 @@
       "en_title": "Chapter 5: The Methods Section",
       "order": 59,
       "src_chars": 2725,
-      "status": "pending",
+      "status": "done",
       "src_sha": "93ffe3606f6c",
       "src": "#### Structural conventions\n\nMethods sections typically use sub-headings to organize the work. Common patterns:\n\n* _Sample / Participants / Data sources_\n* _Materials / Instruments_\n* _Procedure_\n* _Analysis_\n\nFor mixed-methods or multi-study papers, the structure usually nests: _Study 1 — Sample, Procedure, Analysis. Study 2 — Sample, Procedure, Analysis._\n\nFor qualitative work, the structure often includes: _Setting, Participant selection, Data collection, Coding and analysis, Reflexivity statement._\n\nFor computational work, the structure typically includes: _Data, Code, Computational environment, Analysis pipeline, Reproducibility statement._\n\nThe structure should be discoverable on a skim. A reader should be able to scan your sub-headings and immediately answer the question: _what kind of study is this?_\n\n\n#### Definition: Replicability\n\nIn methods writing, **replicability** is the property that a competent researcher in the same field, reading only the methods section, could plan and execute a study following the same procedures and obtain analogous results, modulo the inherent variability of the phenomenon under study.\n\nIn plain language: replicability is not a guarantee that a replication will produce the same numerical result. It is a guarantee that a replication is _possible to attempt_ — that the methods section provides enough information to design the replication. The phrase \"modulo the inherent variability of the phenomenon\" matters: in many fields (psychology, social science, parts of biology), replications do not produce identical results, and this is consistent with replicable methods. Replicability is an _enabling_ property, not an outcome guarantee.\n\nThis distinction matters because the replication crisis has sometimes been read as \"if methods sections were better, all studies would replicate.\" That is wrong. Better methods sections enable replication attempts; whether replications succeed depends on the underlying science. But without replicable methods sections, the attempts can't happen, and the science can't self-correct.\n\n\n#### Common Misconception\n\nA common misconception is that a _brief_ methods section is a _sophisticated_ methods section — that experienced writers in the field can rely on shared assumptions to compress procedure into a few paragraphs. In practice, brevity in methods is much more often a sign of carelessness than sophistication. The senior reviewers who would understand a brief section are also the reviewers most likely to flag the brevity as inadequate, because they know what details are missing.\n\nThe fix: when in doubt, include the detail. Methods sections are not the place for stylistic compression. The genre rewards completeness.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 878,
+      "out_sha": "8ae7d97640f1",
       "note": ""
     },
     {
@@ -803,11 +803,11 @@
       "en_title": "Chapter 5: The Methods Section",
       "order": 60,
       "src_chars": 2641,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4b378f19cdde",
       "src": "### 5.4 The Six Moves Applied to Mira's Methods\n\nMira sits down with their advisor again to plan a methods rewrite.\n\n**Move 1 (genre/venue).** Same as Chapter 4: research article, public-administration journal. Methods sections in this venue typically run 1,200–2,000 words for mixed-methods comparative case studies, with sub-headings for case selection, data sources, and analysis.\n\n**Move 2 (structure).** They draft the structure first, before any prose: _5.1 Case selection rationale. 5.2 Data sources (5.2.1 Policy documents; 5.2.2 Interviews; 5.2.3 Budget data). 5.3 Analytic approach (5.3.1 Document coding; 5.3.2 Interview analysis; 5.3.3 Cross-case synthesis). 5.4 Limitations._\n\n**Move 3 (calibration).** Voice: third-person passive (\"documents were collected\") for the data-collection sub-sections, first-person plural active (\"we coded the documents thematically\") for the analytical sub-sections. Citation density: low; methods sections cite only specific instruments, prior protocols followed, or coding frameworks adopted. Hedging: minimal in describing what was done; appropriate in §5.4 limitations.\n\n**Move 4 (positioning).** Methods sections position the work indirectly. By naming the protocols followed (e.g., a published interview-coding scheme), the writer signals adherence to disciplinary best practice. By justifying case selection against alternatives, the writer signals awareness of the design space.\n\n**Move 5 (anticipated reviewer).** Predictable methods objections: _\"Why these three cities?\"_ (defended in §5.1 case selection); _\"How representative is your interview sample?\"_ (defended in §5.2.2, with explicit acknowledgment that it is not statistically representative but theoretically purposive); _\"Are your codes reliable?\"_ (defended in §5.3.1 with inter-coder reliability statistics from a double-coded subset); _\"Aren't budget data noisy across countries?\"_ (defended in §5.2.3 with notes on cross-country comparability adjustments and acknowledgment of residual noise in §5.4).\n\n**Move 6 (AI).** Mira uses AI to: draft methods boilerplate based on their bullet-point notes; flag passive/active voice mixing; check whether their description of an interview protocol is detailed enough to enable replication (\"Reading only this paragraph, what would you need to know to replicate the interview procedure?\"). They do _not_ use AI to invent procedures they did not perform.\n\nThe rewritten methods section is 1,650 words. It includes inter-coder reliability statistics, the full interview protocol in an appendix, the budget-comparability adjustment formula, and a clearly stated limitations paragraph.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 977,
+      "out_sha": "28642950f09c",
       "note": ""
     },
     {
@@ -815,11 +815,11 @@
       "en_title": "Chapter 5: The Methods Section",
       "order": 61,
       "src_chars": 2067,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bfd6fecf5601",
       "src": "### 5.5 Templates and Examples\n\nTemplates rarely transfer well across methods (a quantitative regression methods section looks nothing like a qualitative case-study methods section), but a few sentence-level patterns travel.\n\n**Sample/Participants:**\n\n> _\"The sample comprised [N] participants (M_age = [X], SD = [Y]; [demographic breakdown]). Participants were recruited from [source] using [method]. The sample size was determined by [power analysis / theoretical saturation / availability], yielding [N], which provides [adequate power for / theoretical saturation across / coverage of] the dimensions of interest.\"_\n\n**Procedure:**\n\n> _\"Each participant completed [tasks/interview/protocol] in a single [duration] session. The procedure was as follows. First, [step 1 with relevant detail]. Second, [step 2]. Third, [step 3]. The full protocol is available as supplementary material.\"_\n\n**Analysis (qualitative):**\n\n> _\"Documents were imported into [software]. Initial coding followed an inductive approach informed by [framework]. After [N] documents had been coded, the codebook was reviewed and refined; [N1] codes were merged, [N2] new codes were added, and the earlier coded material was re-coded against the revised codebook. Inter-coder reliability was assessed on a 20% double-coded subset, yielding [κ = X].\"_\n\n**Analysis (quantitative):**\n\n> _\"Statistical analyses were conducted in [software, version]. We modeled [outcome] using [model type] with [predictors] and [random effects / clustering structure]. Coefficients are reported with [95% confidence intervals / standard errors]. All tests are two-tailed with α = .05. Code and data for replication are available at [repository].\"_\n\n**Limitations within methods (vs. in discussion):**\n\n> _\"The methods we describe here have several limitations. First, [limitation 1, briefly stated]. Second, [limitation 2]. We address the implications of these limitations for our findings in §[discussion section number].\"_\n\nTemplates are starting points, not finished prose. The art is in the detail you fill in.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 792,
+      "out_sha": "b84be5f390eb",
       "note": ""
     },
     {
@@ -827,11 +827,11 @@
       "en_title": "Chapter 5: The Methods Section",
       "order": 62,
       "src_chars": 2406,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d4861a6d574e",
       "src": "#### A Lab-Science Worked Example\n\nMira's worked example is a qualitative-comparative study in policy. To make the contrast with a very different methodological tradition concrete, here is a brief sketch of what the same six-move planning produces for a transcriptomics study examining how mouse hippocampal neurons respond to chronic stress.\n\n**Move 1 (genre/venue).** A high-impact biology journal whose methods sections run 800–1,500 words, organized as continuous prose under sub-headings (no numbered sub-sections), with substantial detail on reagents, instruments, and analysis pipelines.\n\n**Move 2 (structure).** _Animals. Stress paradigm. Tissue collection. RNA extraction and quality control. Library preparation and sequencing. Read alignment and gene quantification. Differential expression analysis. Pathway enrichment. Statistical thresholds._\n\n**Move 3 (calibration).** Voice: third-person passive throughout (a near-universal convention in molecular biology). Hedging: minimal in describing what was done; reserved for limitations. Citation density: moderate, anchored to specific reagents (kit names with manufacturer and catalog) and analysis tools (with version numbers).\n\n**Move 4 (positioning).** Implicit. Citing the originating publication of the chronic-stress paradigm signals lineage; citing the established alignment software signals adherence to community-standard pipelines. Deviation from a standard pipeline is itself a positioning move that requires explicit defense.\n\n**Move 5 (anticipated reviewer).** Predictable methods objections: _\"Was the sample size adequate?\"_ (defended via a power calculation); _\"How were batch effects controlled?\"_ (defended via randomization across sequencing lanes and inclusion of batch as a covariate); _\"Were technical replicates pooled or treated independently?\"_ (specified explicitly).\n\n**Move 6 (AI).** AI is used to draft boilerplate around well-known kits and instruments (where the description follows manufacturer specs that the writer verifies), to flag passive/active voice drift, and to audit replicability (\"Reading only this paragraph, can a postdoc set up the sequencing run?\"). AI is _not_ used to generate the analysis pipeline or the parameter choices; those reflect writer judgment about the specific data.\n\nA short excerpt from the resulting methods (illustrative; details fictionalized to avoid implying any real study):",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 802,
+      "out_sha": "7a11de3629f7",
       "note": ""
     },
     {
@@ -839,11 +839,11 @@
       "en_title": "Chapter 5: The Methods Section",
       "order": 63,
       "src_chars": 2059,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6907f1b11619",
       "src": "> _Adult male C57BL/6J mice (n = 24, age 10–12 weeks) were obtained from a commercial supplier and acclimatized for 7 days under standard housing (12:12 light–dark cycle; food and water ad libitum). Mice were randomly assigned to chronic restraint stress (n = 12) or control (n = 12) groups. Restraint was administered for 2 h per day for 21 consecutive days, following the established paradigm cited above. Following the final session, mice were sacrificed by rapid decapitation, hippocampi were dissected on ice, and tissue was flash-frozen in liquid nitrogen and stored at −80 °C until RNA extraction. Total RNA was extracted using the RNeasy Mini Kit (Qiagen, cat. no. 74104) following the manufacturer's protocol; integrity was assessed on an Agilent Bioanalyzer with RIN ≥ 8.0 required for inclusion. Libraries were prepared with the TruSeq Stranded mRNA kit (Illumina) and sequenced on a NovaSeq 6000 (paired-end, 150 bp) to ~30 million read pairs per sample. Reads were aligned to the GRCm39 mouse reference genome with STAR (v2.7.10) at default parameters; gene-level counts were obtained with featureCounts (v2.0.3). Differential expression was tested in DESeq2 (v1.40) with treatment group as the predictor and sequencing batch as a covariate. Genes with adjusted p < 0.05 (Benjamini–Hochberg) and |log2 fold change| > 0.5 were considered differentially expressed._\n\nThree contrasts with Mira's qualitative methods are worth noticing. First, the _replication question_ applies in a different form: a lab scientist asks not \"could a colleague plan a replication?\" but \"could a competent postdoc rerun this in two weeks given the kit catalog and code?\" Second, the citation pattern is dense around _tools_ (kits, software, parameter defaults) rather than around _frameworks_. Third, limitations belong almost entirely in the discussion, not the methods; the methods section is closer to a recipe than to an argument.\n\nThe shared move-structure, however, is the same. The moves travel across methodological traditions; the surface conventions do not.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 810,
+      "out_sha": "628bede3e615",
       "note": ""
     },
     {
@@ -851,11 +851,11 @@
       "en_title": "Chapter 5: The Methods Section",
       "order": 64,
       "src_chars": 2065,
-      "status": "pending",
+      "status": "done",
       "src_sha": "80f5d5acb0ea",
       "src": "### 5.6 Common Pitfalls\n\n**The under-specified methods section.** The most common failure: too brief, too high-level, omits the small details that turn out to matter. Fix: ask yourself the replication question — _could a competent reader plan a replication from this alone?_ — and add detail until the answer is yes.\n\n**The wrong-detail methods section.** The section is long but spends its words on the wrong things — extensive justification for well-established choices, light treatment of the unusual choices that actually need defense. Fix: lavish detail on the design choices that are unusual, brief on the ones that are conventional.\n\n**The buried decision.** A consequential design choice (e.g., how outliers were handled) is buried in a sub-clause halfway through a paragraph. Reviewers can miss it; readers do miss it; the choice can later be challenged as \"not transparent.\" Fix: surface consequential decisions in their own sentences, often their own paragraphs.\n\n**The unjustified deviation.** The writer deviates from a standard procedure (e.g., uses a non-standard statistical test) without explaining why. Reviewers will assume the deviation was a mistake or convenience. Fix: justify any deviation explicitly, briefly, and with a citation when possible.\n\n**The voice mismatch.** Some paragraphs in passive voice, others in active, with no clear pattern. Fix: pick one voice (or one principled mixing scheme) and stay with it.\n\n**The limitations-as-decoration.** The section ends with three sentences of generic limitations (\"our sample is small; future research is needed\") that don't actually engage the specific limits of the design. Fix: name the specific limitations, not the generic ones; tie each to its implication.\n\n**The pre-registration mismatch.** In fields with pre-registration norms, the methods section quietly diverges from the pre-registered protocol without flagging the divergence. This is a serious integrity issue and reviewers in pre-registration-aware fields will catch it. Fix: flag any deviation explicitly, with reasoning.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 695,
+      "out_sha": "0ccb68c4ba48",
       "note": ""
     },
     {
@@ -863,11 +863,11 @@
       "en_title": "Chapter 5: The Methods Section",
       "order": 65,
       "src_chars": 2467,
-      "status": "pending",
+      "status": "done",
       "src_sha": "46829ea5bf4e",
       "src": "### 5.7 Scholar Profile: The Open Science Collaboration and the Methods-Replicability Diagnosis\n\nIn 2011, a small group of psychologists led by Brian Nosek launched what became the **Open Science Collaboration** — a multi-team, multi-institution effort to test how well published findings in psychology could be replicated. The headline result of their first major report (2015) — that only about 36% of 100 attempted replications produced clearly significant results in the same direction as the original — touched off the most consequential methodological debate in social science of the 21st century.\n\nA surprising fact, less reported but more relevant for methods writers: in the course of preparing replications, the project teams documented that **more than half of the original methods sections were judged insufficient to enable replication without further information from the original authors.** The diagnosis spanned much of the discipline: missing inclusion criteria, missing instrument wordings, missing analysis decisions, missing software details. The replication crisis was not only a crisis of findings; it was, partly, a crisis of _methods writing_.\n\nThe Open Science Collaboration's broader contribution has been to make methods writing one of the central pressure points of post-replication-crisis science. Pre-registration norms have spread (across psychology, large parts of medicine, parts of economics). Open data and open code requirements have spread. _Registered Reports_ , in which a journal accepts a paper based on its methods section _before_ the data are collected, have become a small but growing genre. All of these reforms put the methods section under tighter scrutiny than it was under in 2010.\n\nFor graduate students entering empirical fields in 2026, the implication is direct: methods writing is no longer a routine compression exercise. It is a high-scrutiny, integrity-relevant section of every paper. The Open Science Collaboration's quieter finding — that under-specified methods sections are pervasive — is the warning. Write methods sections that pass the replication test.\n\nA second surprising fact: replication rates vary substantially by sub-discipline within psychology, and one of the strongest predictors of higher replication rates is _fuller methods reporting in the original paper_. Methods writing isn't merely a record of what you did; it predicts whether your finding will survive the next decade's scrutiny.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 853,
+      "out_sha": "1767bbccf40c",
       "note": ""
     },
     {
@@ -875,11 +875,11 @@
       "en_title": "Chapter 5: The Methods Section",
       "order": 66,
       "src_chars": 1268,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0f639890d0e8",
       "src": "### 5.8 Reader's Manuscript Audit Prompt\n\nTake the methods section of your current manuscript. Identify a colleague — ideally someone in your subfield but not on your project — and run the following test:\n\n**The replication question.** Hand them only your methods section (no introduction, no discussion). Ask: _\"Could you, reading only this section, plan a replication of the study?\"_ Listen to their answer.\n\nIf they can plan a replication unambiguously, your methods section is doing its job.\n\nIf they have questions, list them. For each question, decide: should the answer be in the methods section, in supplementary material, or in an appendix? Add the missing information to the appropriate place.\n\nIf they cannot plan a replication, you have a substantial revision ahead. Begin with the most consequential gaps (the ones that would change a replication's results) and work outward.\n\nThis is your third manuscript revision. Save the colleague's question list as part of the portfolio.\n\n(If you don't have a colleague available, a useful substitute is to read your methods section _yourself_ with a six-month delay. If you cannot remember from the prose what software you used or how a coding decision was made, the prose hasn't recorded it.)\n\n\n### 5.9 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 444,
+      "out_sha": "d2bd748a1575",
       "note": ""
     },
     {
@@ -887,11 +887,11 @@
       "en_title": "Chapter 5: The Methods Section",
       "order": 67,
       "src_chars": 2326,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fcf3fa43e052",
       "src": "#### Concept Check\n\n**Q1.** What is _replicability_ , as the chapter has defined it, and how does it differ from \"guaranteed identical results\"?\n\nHint\n\nThe Definition box in §5.3 names replicability and the distinction.\n\n**Answer:** Replicability is the property that a competent researcher in the same field, reading only the methods section, could plan and execute a study following the same procedures and obtain analogous results, modulo the inherent variability of the phenomenon. It differs from \"guaranteed identical results\" because in many fields replications routinely produce different numerical outcomes — replicability is about _enabling the attempt_ , not guaranteeing the outcome.\n\n**Q2.** Name three details that, per the chapter's heuristic, _should always be specified_ in a methods section.\n\n**Answer:** Anything a competent reader could reasonably get wrong if not specified — examples include the version of statistical software, the random seed used for randomization, the exact wording of survey questions, the inclusion and exclusion criteria for samples, and the calibration of instruments. Any three of these are correct.\n\n**Q3.** What is the dominant voice convention in methods writing, and what is the now-accepted alternative?\n\n**Answer:** The dominant convention is third-person passive past tense (\"samples were prepared as follows\"). The now-accepted alternative is first-person plural active voice (\"we prepared samples as follows\"). Both are acceptable in most fields; the choice is venue-specific. What is _not_ acceptable is mixing voices arbitrarily within the methods section.\n\n**Q4.** What was the surprising methods-writing finding from the Open Science Collaboration's 2015 report, and why does it matter for graduate writers?\n\n**Answer:** That more than half of the original methods sections in the 100 papers being replicated were judged insufficient to enable replication without contacting the original authors. It matters because it shows that under-specified methods writing is pervasive in published work, that the field is now scrutinizing methods sections more closely than it once did (with pre-registration, open data, registered reports), and that graduate writers must aim higher than the historical norm — methods writing is integrity-relevant, not routine compression.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 785,
+      "out_sha": "524ecb6d7667",
       "note": ""
     },
     {
@@ -899,11 +899,11 @@
       "en_title": "Chapter 5: The Methods Section",
       "order": 68,
       "src_chars": 3317,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8c55f67af20f",
       "src": "#### Application Problems\n\n**Q1.** Take the methods section from a paper of your own. Identify three specific decisions that are _under-specified_ — places where a competent reader could not, from the prose alone, replicate the choice. For each, write the additional sentence(s) that would specify it.\n\nHint\n\nCommon under-specifications: software version, random seed, exact survey wording, inclusion/exclusion criteria, exact statistical model specification, exact interview protocol.\n\n**Answer:** _Answers will vary._ A successful response will (a) accurately identify three under-specifications and (b) supply the missing detail in convention-appropriate prose. The most common under-specifications, in my reading of graduate-student methods sections: random seed (omitted entirely); software version (e.g., \"in R\" without version); statistical model details (e.g., random effects structure not specified); inclusion/exclusion criteria (stated abstractly without operationalization). (Connection to the chapter's heuristic: when in doubt, include the detail.)\n\n**Sample Response (a hypothetical case modeled on Mira's draft):** _Three under-specified decisions: (1) \"Interviews were transcribed and coded thematically\" — the coding scheme is unspecified. Replacement: \"Interviews were transcribed verbatim and coded in NVivo 14 using an inductive thematic approach informed by Braun and Clarke (2006); the codebook was developed across the first six interviews and applied to the remaining eighteen, with inter-coder reliability assessed on a 20% double-coded subset (κ = 0.78).\" (2) \"Budget data were collected from municipal websites\" — the time period and the comparability adjustments are unspecified. Replacement: \"Annual operating and capital budget figures were collected from each municipality's published budget documents for fiscal years 2018–2023; figures were converted to 2023 USD using IMF PPP rates and adjusted for cross-country accounting differences as described in Appendix A.\" (3) \"Cases were selected for diversity\" — the selection criteria are unspecified. Replacement: \"Cases were selected using a purposive most-different design across three dimensions: regional context (Southeast Asia, Latin America, North Africa), fiscal regime (centralized vs. decentralized municipal finance), and adaptation history (early vs. recent adopter), per the typology in Hallegatte (2013).\"_\n\n**Q2.** Read the methods section of two papers in your field — one quantitative, one qualitative (or two of the same kind if your field is methodologically uniform). For each, list the section structure (sub-headings or implicit sub-sections). What do the structures share, and where do they differ? Write 200–300 words.\n\n**Answer:** _Answers will vary._ A typical successful response will note that quantitative methods sections cluster around _Sample / Materials / Procedure / Analysis_ , while qualitative methods sections include _Setting / Participant selection / Data collection / Coding / Reflexivity_. Both kinds typically begin with what was studied, move through how it was studied, and end with how it was analyzed — but the operationalization of each step is field-specific. The exercise teaches that methods structure is convention-driven, not natural; the structure you reach for is partly inherited.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1138,
+      "out_sha": "a7030338dcc2",
       "note": ""
     },
     {
@@ -911,11 +911,11 @@
       "en_title": "Chapter 5: The Methods Section",
       "order": 69,
       "src_chars": 2295,
-      "status": "pending",
+      "status": "done",
       "src_sha": "efc6f4c9a056",
       "src": "**Q3.** A methods section ends with the sentence: _\"The analysis was conducted using standard qualitative methods.\"_ Rewrite this so that a competent reader could plan a replication. Add 100–150 words of detail.\n\n**Answer:** A successful rewrite will specify: (a) the analytic approach (e.g., reflexive thematic analysis, framework analysis, grounded theory); (b) the software (e.g., NVivo 14, Atlas.ti 23, Dedoose); (c) the unit of analysis (e.g., individual transcripts, segmented utterances); (d) the coding protocol (inductive, deductive, mixed); (e) any inter-coder reliability or audit trail procedures; (f) how disagreements were resolved. Example: _\"Interview transcripts were imported into NVivo 14 and analyzed using reflexive thematic analysis (Braun & Clarke). Initial coding was inductive; after the first eight transcripts, the codebook was reviewed and refined, then reapplied to the earlier transcripts. The first author conducted all coding; the second and third authors independently coded a 20% sub-sample, yielding inter-coder reliability of κ = 0.81. Disagreements were resolved by discussion. Themes were generated through clustering of codes and reviewed against the full transcript corpus for confirming and disconfirming evidence.\"_\n\n**Q4.** Mira's six-moves methods plan in §5.4 anticipated four specific reviewer objections. For your own methods section, list the three objections you most expect a tough reviewer to raise, and for each draft a one-sentence answer. (Connection: this is Move 5 from Chapter 2 applied specifically to methods.)\n\n**Answer:** _Answers will vary._ Common methods objections across fields: _(a) Sample is too small / not representative._ Answer: defend the sampling logic (theoretical saturation; statistical power calculation; comparability across cases). _(b) Outcome measure is invalid or noisy._ Answer: cite validation studies for the measure or describe the validation work performed. _(c) Confounders are not addressed._ Answer: name the major confounders and how the design or analysis controls for them. _(d) The procedure deviates from a standard one._ Answer: justify the deviation explicitly. The exercise teaches you to surface these objections in the methods section itself rather than waiting for the reviewer to raise them.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 818,
+      "out_sha": "43a5ec983058",
       "note": ""
     },
     {
@@ -923,11 +923,11 @@
       "en_title": "Chapter 5: The Methods Section",
       "order": 70,
       "src_chars": 3375,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3f4fa66602fa",
       "src": "#### Think Deeper\n\n**Q1.** The replication crisis has put under-specified methods sections under new scrutiny. But some scholars argue that \"full\" methods specification is impossible — every procedure rests on tacit knowledge that cannot be fully verbalized (how exactly an interview was conducted; how the lab technician noticed when a sample was bad). Where does the line fall? Develop a position in 250–400 words.\n\n**Discussion:** This is a real philosophical question with practical consequences. The strong \"full specification is impossible\" position is partly right: every empirical procedure rests on tacit skills that cannot be fully written down (this is one of Michael Polanyi's famous insights). The strong \"everything must be in the methods section\" position is also partly wrong: methods sections that try to verbalize everything become unreadable. The working compromise: specify everything that is (a) consequential for the result and (b) non-trivial to figure out from training in the field. Tacit knowledge that any competent practitioner has can be omitted. Tacit knowledge that the writer's specific implementation depends on must be named — even if it cannot be fully specified, the writer can name _that there is_ tacit knowledge involved and direct the reader to additional resources (e.g., training videos, supplementary protocols, contact with the corresponding author). The question is not whether specification is complete; the question is whether a competent reader has enough to attempt a replication. (Connection to Chapter 1's foreign-language thesis: the conventions of \"what counts as enough\" are field-specific.)\n\n**Q2.** Pre-registration norms — in which a study's design and analysis plan are filed publicly _before_ data collection — are now widespread in psychology and parts of medicine and have begun to spread to economics and education research. How does pre-registration change methods writing? What new failure modes does it introduce? Sketch your view in 250 words.\n\n**Discussion:** Pre-registration shifts methods writing from a _retrospective_ genre (here is what we did) to a _prospective_ genre (here is what we will do) — at least for the pre-registered components. This makes deviations between plan and execution into rhetorical events that must be flagged. New failure modes: (a) writers under-specify the pre-registration to preserve flexibility, then must explain \"exploratory\" deviations; (b) writers over-specify and then face the awkwardness of \"we deviated because…\"; (c) some writers attempt to write a methods section that disguises post-hoc decisions as pre-registered ones (a form of fraud). The new convention being established: pre-registered procedures are reported as the primary analyses; deviations are explicitly flagged; exploratory analyses are clearly labeled. Methods writing in pre-registration-aware fields is now more demanding _and_ more honest than in the pre-pre-registration era. (Connection forward to Chapter 17: pre-registration is one of the structural reforms that the AI era complicates — AI-assisted analysis exploration can blur the prospective/retrospective line.)\n\n**Q3.** AI tools can now help write methods sections — translating bullet-point procedure notes into convention-appropriate prose. What are the risks? Where is this an acceptable use? Develop a position in 250–400 words.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1077,
+      "out_sha": "3c5d653f96a8",
       "note": ""
     },
     {
@@ -935,11 +935,11 @@
       "en_title": "Chapter 5: The Methods Section",
       "order": 71,
       "src_chars": 3033,
-      "status": "pending",
+      "status": "done",
       "src_sha": "000e36885e6b",
       "src": "**Discussion:** AI is genuinely useful for methods boilerplate. Methods writing has highly conventional registers (passive past, sub-headings, sentence templates) and AI handles these well. Risks: (a) AI may _invent_ procedural details that the writer did not perform (e.g., adding plausible-sounding inter-coder reliability statistics where none were computed); (b) AI may _omit_ specific consequential details from the writer's notes because it doesn't recognize their importance; (c) AI may smooth across deviations from convention that the writer needed to flag. Acceptable uses: (a) translating bullet-point notes into convention-appropriate prose, with the writer verifying every specific detail; (b) checking voice consistency; (c) acting as the \"replication test\" reader (read the prose, identify what additional information would be needed to replicate). Bright line: every specific factual claim in the methods section must be one the writer has verified against their own records. AI cannot generate methods specifications — it can only repackage them. (Connection forward to Chapter 14: this is one of the safer AI-assisted writing applications under most current journal policies, with disclosure.)\n\n\n### Chapter Summary\n\nThe methods section is where the introduction's promise must be made replicable. The genre's central demand is **replicability** — providing enough information that a competent reader could plan and execute a study following the same procedures. The Open Science Collaboration's 2015 finding that more than half of published methods sections in psychology were insufficient for replication put this demand under new pressure, and pre-registration, open-data, and registered-reports norms have continued to raise the bar.\n\nThis chapter laid out the conventions of methods writing — voice, tense, level of detail, structural sub-sections (§5.3) — and applied them to Mira's mixed-methods plan (§5.4). It offered templates for sample, procedure, analysis, and limitations sections (§5.5), seven common pitfalls (§5.6), and the contribution of the Open Science Collaboration to making methods writing a high-scrutiny, integrity-relevant section (§5.7). The manuscript audit prompt (§5.8) added a third revision to your portfolio: a colleague-administered replication test of your own methods section.\n\nThe methods section sits at the center of a chain of dependencies. The introduction (Chapter 4) promises a contribution; the methods deliver the means by which that contribution will be supported. The results (Chapter 6) are constrained by the methods. The discussion (Chapter 7) interprets the results within the limits the methods set.\n\nIn Chapter 6 we turn to the **results section** — where the data the methods generated are presented. Mira will write results next, and we will see whether their methods can carry the analytical weight the introduction asked them to.\n\n> _A methods section that cannot be replicated is not a methods section. It is a record of work that nobody else can do._\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1018,
+      "out_sha": "5bc57f2b2716",
       "note": ""
     },
     {
@@ -947,11 +947,11 @@
       "en_title": "Chapter 6: The Results Section",
       "order": 72,
       "src_chars": 1225,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7af6b138e6b5",
       "src": "It is the summer after Mira's second year. Their introduction is drafted (Chapter 4). Their methods section has passed the colleague replication test (Chapter 5). The data are in: 312 policy documents coded, 24 interviews transcribed and analyzed, three years of municipal budget data extracted for each of the three cities.\n\nMira drafts a results section that runs to 4,800 words. Each finding gets its own paragraph. Each paragraph carefully describes the numerical or thematic result. Where there are patterns across cities, those patterns are described in long, careful prose. There are no tables and no figures.\n\nTheir advisor reads the section and writes back: _\"Half of these paragraphs should be tables. The reader can't hold the comparison in their head when it's spread across four paragraphs.\"_\n\nThis is the deepest tension in results writing. Prose is good at narrative; data is bad at being narrated. The skilled results writer is constantly choosing — sentence by sentence — whether the next piece of evidence belongs in a table, a figure, or prose, and then writing prose that _guides the reader through_ the data rather than _replacing_ it.\n\nThis chapter is about that choice and the prose that surrounds it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 411,
+      "out_sha": "aefcd70244fa",
       "note": ""
     },
     {
@@ -959,11 +959,11 @@
       "en_title": "Chapter 6: The Results Section",
       "order": 73,
       "src_chars": 2346,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a87a57c0cc5f",
       "src": "### 6.1 Vignette: When Prose Should Have Been a Table\n\nHere is a paragraph from Mira's first-draft results section:\n\n> _In Da Nang, the budget for adaptation infrastructure rose from 2.3 million USD in 2019 to 6.7 million USD in 2022, an increase of 191%. Operating expenditure for adaptation programs rose from 1.1 million USD to 1.8 million USD in the same period, an increase of 64%. In Cartagena, infrastructure budgets rose from 1.7 million USD to 4.2 million USD, an increase of 147%, while operating expenditure rose from 0.8 million USD to 1.1 million USD, an increase of 38%. In Casablanca, infrastructure budgets rose from 4.1 million USD to 5.3 million USD, an increase of 29%, while operating expenditure rose from 2.4 million USD to 2.9 million USD, an increase of 21%._\n\nRead it once. Now try to answer: which city showed the largest growth in operating expenditure? You probably had to read it again. Try again: which city's adaptation infrastructure budget started the highest? You had to count or compare. The prose is accurate; it is also nearly unreadable as comparison. Worse, even after careful reading, the _pattern_ across cities is hard to see.\n\nHere is the same data as a table:\n\nCity | Infrastructure 2019 (M USD) | Infrastructure 2022 (M USD) | Growth | Operating 2019 (M USD) | Operating 2022 (M USD) | Growth  \n---|---|---|---|---|---|---  \nDa Nang | 2.3 | 6.7 | 191% | 1.1 | 1.8 | 64%  \nCartagena | 1.7 | 4.2 | 147% | 0.8 | 1.1 | 38%  \nCasablanca | 4.1 | 5.3 | 29% | 2.4 | 2.9 | 21%  \n  \nAnd here is the prose that should _accompany_ the table:\n\n> _Across all three cities, infrastructure budgets grew faster than operating expenditure (Table 1) — a pattern consistent with the sequencing logic we develop in §5. The rate of infrastructure growth varied substantially: Da Nang and Cartagena nearly tripled their infrastructure spend, while Casablanca, starting from the highest 2019 base, grew its infrastructure budget by less than 30%. The asymmetric growth in Casablanca turns out to be central to the case-comparison in §4.3._\n\nThe table carries the data. The prose carries the _interpretation_ — what the data shows, what's surprising, what's coming next. This is the basic division of labor in a well-written results section, and Mira's first draft violated it by trying to make prose carry both jobs at once.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 951,
+      "out_sha": "5382c80f9159",
       "note": ""
     },
     {
@@ -971,11 +971,11 @@
       "en_title": "Chapter 6: The Results Section",
       "order": 74,
       "src_chars": 3153,
-      "status": "pending",
+      "status": "done",
       "src_sha": "07cffce1ff98",
       "src": "### 6.2 What Reviewers Look For in a Results Section\n\n**Are the findings clearly presented?** Can the reader, on a careful first read, identify the key results? If the results are buried in prose, the answer is no.\n\n**Are tables and figures used appropriately?** Are tables doing data work? Are figures doing pattern work? Is prose interpreting rather than replicating?\n\n**Are claims appropriately calibrated to the data?** Hedging in results is generally light (the data are what they are) but interpretation language can creep in and overclaim. Reviewers will flag overclaims.\n\n**Is there discipline between results and discussion?** A results section that interprets too aggressively is reaching into discussion territory. Some fields tolerate this (combined Results-and-Discussion); others insist on separation. The convention is venue-specific.\n\n**Are statistical and methodological reporting standards met?** Different fields have specific norms — APA reporting standards, CONSORT for clinical trials, COREQ for qualitative reporting, PRISMA for systematic reviews. Reviewers in those fields expect compliance.\n\n**Are negative or null results reported honestly?** Selective reporting is one of the integrity bright lines, and reviewers in pre-registration-aware fields are alert to it.\n\nA results section that meets these expectations will not be the place a paper falls down. A results section that fails them will frustrate reviewers regardless of the strength of the underlying findings.\n\n\n### 6.3 The Three Channels: Tables, Figures, Prose\n\nA results section uses three channels to communicate. Each is good at a different kind of work, and the skilled writer assigns each piece of evidence to the channel where it works best.\n\n\n#### Tables\n\nTables are good at:\n\n* **Side-by-side comparison** of multiple values across categories (the Da Nang/Cartagena/Casablanca example)\n* **Precise values** that the reader may want to extract or verify\n* **Multiple variables** for the same set of cases (a regression coefficients table; a descriptive statistics table)\n* **Small numbers of comparisons** that benefit from precision\n\nTables are bad at:\n\n* Showing **trends** or **shapes** in data (a figure does this better)\n* Conveying **scale or magnitude** intuitively\n* Communicating to readers who skim\n\nA surprising fact, attributed to Edward Tufte: a single well-designed table can carry the work of three paragraphs. The corollary is that a poorly designed table can carry the work of zero paragraphs. The design rules for tables are easy to state and consistently violated:\n\n* Use horizontal rules to separate header from body and to signal sub-sections; minimize vertical rules.\n* Right-align numerical columns so that decimal points line up.\n* Round to the precision the data support; don't report 3 decimal places when 1 is honest.\n* Order rows by an analytical principle (size, alphabetical, comparison group), not by accident.\n* Keep tables on a single page; if a table spans pages, the design has failed.\n* Title tables informatively: not \"Table 1: Results\" but \"Table 1: Adaptation budget changes across three mid-sized cities, 2019–2022.\"\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1096,
+      "out_sha": "a538e8e01c25",
       "note": ""
     },
     {
@@ -983,11 +983,11 @@
       "en_title": "Chapter 6: The Results Section",
       "order": 75,
       "src_chars": 3245,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2559f7e799fd",
       "src": "#### Figures\n\nFigures are good at:\n\n* **Trends over time** (a line chart of budget growth, year by year)\n* **Distributions** (histograms, density plots)\n* **Comparisons of patterns** rather than precise values (bar charts with adequate spacing)\n* **Spatial relationships** (maps, network diagrams)\n* **Communicating to skim readers** (a well-designed figure can carry the headline finding even if the prose isn't read)\n\nFigures are bad at:\n\n* **Precise values** (a reader cannot extract \"6.7M USD\" from a bar chart)\n* **Many variables at once** (figures with too many lines, colors, or facets become noise)\n\nThe Tufte rules apply: maximize the data-ink ratio (every visual element should communicate data, not decorate); avoid 3D effects, rainbow palettes, and chartjunk; label directly rather than relying on legends where possible; and choose chart types that match the data structure.\n\nFor _this_ book the design of figures matters less than the _decision to use_ figures, because we are working in text-only Markdown and cannot include images. (A real paper version of this book would have many figures; the text edition relies on tables.) The principle that travels: when the finding is a _pattern_ — a trend, a distribution, a comparative shape — a figure communicates better than prose.\n\n\n#### Prose\n\nProse is good at:\n\n* **Interpretation** — what the data shows, what's surprising, what's important\n* **Connecting findings to the introduction's questions** — answering \"did we find what we set out to find?\"\n* **Framing what comes next** — pointing the reader toward the discussion\n* **Handling exceptions, qualifications, and edge cases** that don't fit neatly in tables or figures\n\nProse is bad at:\n\n* **Reporting many numbers in sequence** (the Mira example)\n* **Showing comparison structure** (the table does this better)\n* **Conveying patterns in distributions** (the figure does this better)\n\nThe prose in a results section should do interpretation, not data replication. A useful test: read each paragraph of your results section and ask, _\"If the table and figure references were removed, would this paragraph still make sense?\"_ If yes, your prose is doing prose work. If no — if the paragraph collapses without the table — your prose is _replicating_ table data and you should cut it.\n\n\n#### Definition: Showing Versus Telling in Academic Writing\n\nIn academic writing, **showing** means presenting evidence — data, examples, quotations — in a form that the reader can examine directly. **Telling** means stating a claim about that evidence in interpretive language. A well-written results section _shows_ primarily, with prose that _tells_ the reader what to look for in the showing.\n\nIn plain language: showing is the table, the figure, the quoted excerpt. Telling is the sentence that says _what the table demonstrates, what the figure reveals, what the excerpt illustrates._ New writers often _tell_ without _showing_ (assertions without evidence); experienced writers err in the opposite direction (showing without telling, leaving the reader to figure out the significance themselves). The right balance is to show liberally and tell precisely, with telling that points the reader at the part of the showing that matters.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1100,
+      "out_sha": "ecc271633098",
       "note": ""
     },
     {
@@ -995,11 +995,11 @@
       "en_title": "Chapter 6: The Results Section",
       "order": 76,
       "src_chars": 860,
-      "status": "pending",
+      "status": "done",
       "src_sha": "faba79c39ef1",
       "src": "#### Common Misconception\n\nA common misconception is that results sections should be neutral, uninterpreted, \"just the facts.\" This is partly right (results should not over-interpret; that's discussion territory) and partly wrong (a completely uninterpreted results section is unreadable). Reviewers expect _signposting interpretation_ — sentences that orient the reader to what each finding shows — without _theoretical interpretation_ (which belongs in discussion).\n\nThe line is subtle but learnable. _\"Across all three cities, infrastructure budgets grew faster than operating expenditure\"_ is signposting; it tells the reader what pattern is in the data. _\"This pattern reflects the dominance of fiscal sequencing logics in mid-sized cities\"_ is theoretical interpretation; it goes beyond what the data shows to claim a _why_. Save the why for discussion.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 270,
+      "out_sha": "463d618d9c05",
       "note": ""
     },
     {
@@ -1007,11 +1007,11 @@
       "en_title": "Chapter 6: The Results Section",
       "order": 77,
       "src_chars": 2684,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e7b96b5f8258",
       "src": "### 6.4 The Six Moves Applied to Mira's Results\n\n**Move 1 (genre/venue).** Same: research article, public-administration journal. Results sections in this venue typically run 1,500–2,500 words for mixed-methods comparative case studies, with substantial use of tables and figures. The three-paper read showed: 2–4 tables, 1–3 figures (where present), prose that signposts but does not interpret.\n\n**Move 2 (structure).** Mira drafts the results structure: _6.1 Adaptation strategies adopted (organized by strategy type, with cross-case comparison table). 6.2 Budget patterns (with the budget-changes table from §6.1 of this chapter). 6.3 Institutional factors (with a comparative table of institutional features). 6.4 Cross-case patterns (synthesis prose, no new data)._\n\n**Move 3 (calibration).** Voice: a mix of passive in describing data (\"interviews indicated\") and first-person plural in synthesis (\"we observe that\"). Hedging: minimal in describing what the data show; some in characterizing patterns (_\"a pattern consistent with…\"_ rather than _\"this proves…\"_). Citation density: low — results sections are mostly self-contained.\n\n**Move 4 (positioning).** Light positioning. Where Mira's findings echo or contradict prior work, this is _foreshadowed_ in results (_\"contrary to the megacity-focused literature, we observe…\"_) and _developed_ in discussion. The discipline between sections matters; reviewers in this venue dislike results sections that do extensive positioning.\n\n**Move 5 (anticipated reviewer).** Predictable results objections: _\"You're presenting the budget data without context — readers can't tell what those numbers mean against the cities' total budgets.\"_ Fix: add a column for adaptation budget as a percent of total municipal budget. _\"The comparison across cities elides differences in cost of living and currency.\"_ Fix: report figures in PPP-adjusted dollars and note this in a footnote. _\"You report the pattern but not the variance — how much does each city's adaptation strategy actually look like the cross-case pattern you're claiming?\"_ Fix: add disconfirming evidence and note its scope.\n\n**Move 6 (AI).** Mira uses AI to: identify paragraphs that should be tables (the colleague-as-AI test); flag prose that drifts into theoretical interpretation; suggest table designs that compress multi-paragraph comparison. They do _not_ use AI to generate findings. They check every number in every table against their source data.\n\nThe rewritten results section is 1,950 words, with three tables and a quotation block from interviews. The Da Nang/Cartagena/Casablanca budget paragraph from §6.1 of this chapter became a single sentence and a table.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 969,
+      "out_sha": "f28b148ec2ed",
       "note": ""
     },
     {
@@ -1019,11 +1019,11 @@
       "en_title": "Chapter 6: The Results Section",
       "order": 78,
       "src_chars": 2497,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cb9fac83e5aa",
       "src": "### 6.5 Templates and Examples\n\n**Opening a results section:**\n\n> _\"This section presents [findings] across [cases / conditions / time periods]. We organize the presentation around [organizing principle, often the research questions from §1]. Tables 1–[N] present [type of data]; Figures 1–[N] show [type of patterns]; the accompanying prose interprets the patterns and notes exceptions.\"_\n\nThis opener tells the reader the section's structure and the channel-assignment plan. It is short — three or four sentences — but it sets expectations.\n\n**Introducing a table:**\n\n> _\"Table 1 reports [content] across [units]. [One sentence naming the headline pattern visible in the table.]\"_\n\nThe table caption does the labeling work; the prose does the orienting work. Together they let the reader know what to look at and what they should see.\n\n**Introducing a figure:**\n\n> _\"Figure 1 shows [shape/pattern] over [variable]. [One sentence naming the pattern.] Several features of the figure are worth noting: [feature 1]; [feature 2]; [exception, if any].\"_\n\n**Reporting a quantitative result with hedge calibration:**\n\n> _\"In the [model name] regression (Table N), [predictor] was significantly associated with [outcome] (β = [X], 95% CI [a, b], p = [value]). The magnitude — [interpret in real-world terms] — is consistent with [prior finding / theoretical expectation], though we note [limitation that affects interpretation].\"_\n\n**Reporting a qualitative finding:**\n\n> _\"A consistent theme across interviews was [theme]. Officials in all three cities described [pattern], often in language that emphasized [aspect]. One Da Nang official, for instance, characterized the situation this way: [quotation, with attribution to participant code or role, not name]. Variations on this theme appeared in [N] of [N] interviews; the principal exception was [city/case], where [contrasting pattern].\"_\n\n**Reporting a null or negative result:**\n\n> _\"We found no significant association between [predictor] and [outcome] (β = [X], 95% CI [a, b], p = [value]). The null result is informative because [why it matters — perhaps it contradicts prior findings, perhaps it suggests boundary conditions]. We discuss the interpretive significance in §[discussion section].\"_\n\nNull results are notoriously under-reported in academic publishing — a well-documented bias known as the _file-drawer problem_. Writing them up clearly and treating them as informative is good practice and contributes to the field's calibration.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 943,
+      "out_sha": "b998d3262031",
       "note": ""
     },
     {
@@ -1031,11 +1031,11 @@
       "en_title": "Chapter 6: The Results Section",
       "order": 79,
       "src_chars": 1875,
-      "status": "pending",
+      "status": "done",
       "src_sha": "463d2f67ab61",
       "src": "### 6.6 Common Pitfalls\n\n**Prose-as-table.** The most common: paragraph after paragraph reporting numbers that should be tables. Fix: scan each results paragraph and ask, \"would this be clearer as a table?\" When yes, make it a table.\n\n**Table-as-prose.** The opposite: tables presented without orienting prose, leaving the reader to figure out what the table shows. Fix: every table needs a sentence telling the reader what to look at.\n\n**The interpretation creep.** Results paragraphs drift into discussion language (\"this finding suggests that the underlying mechanism is…\"). Fix: discipline the prose to _signpost_ the data without _theorizing_ about it.\n\n**The cherry-picked quotation.** A qualitative result is supported by a single vivid quote, with no indication of how representative the quote is. Fix: triangulate; report the prevalence of the theme; offer disconfirming examples where they exist.\n\n**The null-result omission.** A planned analysis returned a null result and was quietly dropped. Fix: report the null. Hiding it is, in pre-registered work, scientific misconduct; in non-pre-registered work, it skews the literature.\n\n**The under-reported variance.** Means are reported without distributions; central tendencies without spreads. Reviewers want to know not just _what_ the average was but _how much variation_ surrounded it. Fix: report SDs, ranges, IQRs, distributions, or — for qualitative work — the spread of perspectives.\n\n**The cluttered figure.** A figure with seven lines, four colors, and a legend the reader has to consult repeatedly. Fix: redesign for clarity. Often the right move is to split one cluttered figure into two clean ones.\n\n**The over-precise reporting.** Reporting four decimal places of precision when the underlying measurement supports two. Fix: round to the precision the data support; over-precision signals carelessness.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 661,
+      "out_sha": "d03eb6d18543",
       "note": ""
     },
     {
@@ -1043,11 +1043,11 @@
       "en_title": "Chapter 6: The Results Section",
       "order": 80,
       "src_chars": 2604,
-      "status": "pending",
+      "status": "done",
       "src_sha": "84b2ce68535c",
       "src": "### 6.7 Scholar Profile: Edward Tufte and the Visual Display of Information\n\nEdward Tufte (b. 1942) is a statistician, political scientist, and information designer whose 1983 book _The Visual Display of Quantitative Information_ is the foundational modern text on data visualization. Tufte's central argument was that most graphical displays of data violate basic design principles — they include \"chartjunk\" (decorative elements that don't communicate data), they distort scale, they bury information in clutter — and that better design can dramatically improve a graphic's analytical power.\n\nTufte's principles include:\n\n* **Maximize the data-ink ratio:** every drop of ink should communicate data, not decorate.\n* **Avoid chartjunk:** 3D effects, gradient fills, decorative backgrounds — all of these usually subtract.\n* **Show the data:** the reader's eye should be drawn to the data, not to the frame around it.\n* **Tell the truth:** scales should be honest, distortions should be flagged.\n* **Compare, compare, compare:** the most informative displays let the reader make explicit comparisons (small multiples, side-by-side panels).\n\nA surprising fact often attributed to Tufte: _a single well-designed table can carry the work of three paragraphs._ The corollary, less often quoted: a poorly designed graphic can do worse than no graphic at all, because it actively misleads. The implication for academic writers is that table and figure design is not decoration — it is part of the argument. Time spent improving a figure is time spent improving the paper's persuasiveness.\n\nA second surprising fact: Tufte's principles, developed long before the era of statistical software, anticipated many of the visualization choices that good packages now make by default. R's _ggplot2_ , Python's _matplotlib_ , and _seaborn_ all default to layouts that respect Tufte principles. The bad figures in published papers in 2026 are usually bad because the writer overrode the defaults.\n\nA third fact: Tufte's influence has reshaped not only academic figure design but also business intelligence dashboards, public health displays, and journalism. The COVID-19 era's case-rate trackers — the ones that worked, the ones we read every morning in 2020 — were direct descendants of Tufte's small-multiples and scatterplot approaches.\n\nFor graduate writers: every results section is a chance to apply Tufte's principles. Tables and figures that follow them will quietly increase a paper's clarity, citation rate, and influence. Tables and figures that violate them will quietly undermine an otherwise strong paper.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 932,
+      "out_sha": "d0a395754e9a",
       "note": ""
     },
     {
@@ -1055,11 +1055,11 @@
       "en_title": "Chapter 6: The Results Section",
       "order": 81,
       "src_chars": 1446,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9ad50b00cbf8",
       "src": "### 6.8 Reader's Manuscript Audit Prompt\n\nTake the results section of your current manuscript. Perform the following audit:\n\n**Find one paragraph that should be a table.** Read each paragraph and ask: _\"Would this be clearer as a table?\"_ When you find a paragraph where the answer is unambiguously yes (the Da Nang/Cartagena/Casablanca paragraph in §6.1 is a paradigm case), redesign it.\n\nThe redesign has three parts:\n\n  1. **Build the table.** Sketch the rows, columns, and cell values on paper or in your editor. Title it informatively. Round to honest precision. Order rows by an analytical principle.\n\n  2. **Compress the prose.** Replace the paragraph(s) with one or two sentences that _introduce_ the table and _signpost_ what the reader should see in it.\n\n  3. **Compare.** Place the original prose paragraph and the new table-plus-sentences side by side. The new version should be shorter, faster to read, and easier to extract values from.\n\nThis is your fourth manuscript revision. Save the redesign as part of the portfolio.\n\nA bonus: after the table-redesign, find one paragraph that does the _opposite_ — a place where the writer states a conclusion without showing the data that supports it. Add a sentence or two of evidence, or note where the supporting evidence appears in a table elsewhere in the paper. Both kinds of revision — too-much-prose and too-little-evidence — sharpen the showing/telling balance.\n\n\n### 6.9 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 541,
+      "out_sha": "d59fe9056d1f",
       "note": ""
     },
     {
@@ -1067,11 +1067,11 @@
       "en_title": "Chapter 6: The Results Section",
       "order": 82,
       "src_chars": 2389,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7b2f3d878ef6",
       "src": "#### Concept Check\n\n**Q1.** What do tables, figures, and prose each do well, and what do they each do badly? Give one example of each in 1–2 sentences.\n\nHint\n\nThe three channels are unpacked in §6.3.\n\n**Answer:** _Tables_ do well at side-by-side comparison and precise values (e.g., the budget growth table in §6.1) and badly at trends, scale, and skim-readers. _Figures_ do well at trends, distributions, comparisons of patterns, and skim-readers (e.g., a line chart of budget growth over time) and badly at precise values and many variables at once. _Prose_ does well at interpretation, connecting findings to introduction questions, and framing what comes next, and badly at reporting many numbers in sequence and showing comparison structure.\n\n**Q2.** What is the difference between _signposting interpretation_ and _theoretical interpretation_ in a results section?\n\n**Answer:** _Signposting interpretation_ tells the reader what pattern is visible in the data (_\"infrastructure budgets grew faster than operating expenditure\"_). _Theoretical interpretation_ claims a _why_ — the underlying mechanism, the broader meaning, the connection to theory. Signposting belongs in results; theoretical interpretation belongs in discussion. The line is subtle but learnable; reviewers will flag results sections that drift into theoretical interpretation.\n\n**Q3.** What is the _file-drawer problem_ , and how does responsible results-writing address it?\n\n**Answer:** The file-drawer problem is the under-reporting of null or negative results in published papers, which skews the literature toward positive findings (because null results are quietly dropped — left in the file drawer). Responsible results writing addresses it by reporting null and negative results clearly, with the same care as positive results, and treating them as informative — particularly when they contradict prior work or suggest boundary conditions on a finding.\n\n**Q4.** Name three Tufte design principles for tables and figures.\n\n**Answer:** From §6.7: (1) maximize the data-ink ratio (every visual element communicates data); (2) avoid chartjunk (3D effects, decorative gradients, etc.); (3) show the data (the reader's eye should be drawn to the data, not the frame); (4) tell the truth (scales should be honest); (5) compare, compare, compare (use small multiples and side-by-side panels). Any three are correct.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 830,
+      "out_sha": "3f701b50d9e1",
       "note": ""
     },
     {
@@ -1079,11 +1079,11 @@
       "en_title": "Chapter 6: The Results Section",
       "order": 83,
       "src_chars": 3413,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ea6ad6024aaf",
       "src": "#### Application Problems\n\n**Q1.** Take the Mira budget paragraph from §6.1 and redesign it. Build the table (you may use the one in §6.1 or design your own). Then write the prose that should accompany the table. The total word count of prose-plus-table should be substantially less than the original paragraph.\n\nHint\n\nThe §6.1 example shows one possible redesign. Try producing your own variant — different prose, perhaps a different ordering of table rows.\n\n**Answer:** A successful response will produce a table that compresses the data and a prose section of 1–3 sentences that introduces and signposts the table. The most common improvements over the §6.1 example: ordering rows by an analytical principle (largest growth first; or by region) rather than the original order; adding a column for adaptation budget as a percent of total municipal budget (which addresses the reviewer objection from §6.4); separating infrastructure and operating into two tables if the comparison would be clearer that way.\n\n**Q2.** Take a results section from a paper of your own. Find one paragraph that should be a table and redesign it. (This is the audit prompt from §6.8 applied to your own work.) Submit the original paragraph, the table, the new prose, and a 100-word reflection on what changed.\n\n**Answer:** _Answers will vary._ A successful response will (a) accurately identify a prose-as-table paragraph, (b) produce a clear, well-titled table with rows ordered by an analytical principle, (c) write 1–3 sentences of accompanying prose that introduces and signposts, and (d) reflect on the change. The most useful reflections often note that the redesign exposed a _weakness in the underlying analysis_ — e.g., that the writer realized one of the comparison categories was incoherent only when forced to align it as a table column.\n\n**Sample Response (a prose-as-table paragraph from Mira's earlier draft, redesigned):** _Original paragraph (95 words): \"Across the three cities, infrastructure budgets grew differently. In Da Nang the infrastructure budget rose from 12.4% of municipal expenditure in 2018 to 18.7% in 2023, while in Cartagena it grew from 9.8% to 14.2% over the same period, and in Casablanca it rose from 11.1% to 16.3%. Operating expenditure as a share of total budget fell from 64% to 58% in Da Nang, from 71% to 67% in Cartagena, and from 68% to 62% in Casablanca. The pattern is consistent across the three cases.\"_ _Redesign (52 words of prose plus a 4-row table):_\n\n> _Across all three cities, infrastructure spending grew faster than operating expenditure between 2018 and 2023 (Table 1). The pattern is consistent across regional contexts._\n> \n> _Table 1. Budget composition, 2018 → 2023._\n> \n> City | Infrastructure (% of budget) | Operating (% of budget)  \n> ---|---|---  \n> Da Nang | 12.4 → 18.7 | 64 → 58  \n> Cartagena | 9.8 → 14.2 | 71 → 67  \n> Casablanca | 11.1 → 16.3 | 68 → 62  \n  \n_Reflection: total word count drops from 95 to 52, but the more important change is _legibility_ — the reader can scan the table in three seconds and see the pattern, where the prose required reading three sentences and holding twelve numbers in working memory. The redesign also exposed an analytical weakness: the original paragraph implied uniformity (\"the pattern is consistent\") but the table makes visible that Cartagena's shift is smaller than the other two — a fact the prose smoothed away._",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1414,
+      "out_sha": "a91fa40e3027",
       "note": ""
     },
     {
@@ -1091,11 +1091,11 @@
       "en_title": "Chapter 6: The Results Section",
       "order": 84,
       "src_chars": 2112,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e712c9329486",
       "src": "**Q3.** Read the results section of two papers in your field — one heavily quantitative, one heavily qualitative. For each, characterize the channel-assignment: what does the writer use tables for, figures for, and prose for? Where does the assignment work? Where could it be improved? Write 250 words.\n\n**Answer:** _Answers will vary._ Typical findings: heavily quantitative papers often use tables for descriptive statistics and regression coefficients, figures for marginal effects or interaction patterns, and prose for interpretation. Heavily qualitative papers often use prose for theme presentation, with tables (when present) used for participant characteristics or theme prevalence, and figures (rare) used for conceptual diagrams. Common improvement opportunities: quantitative papers often have figures that should be tables (when precise values matter) or tables that should be figures (when the headline finding is a pattern); qualitative papers often have over-long quotation paragraphs that could be compressed by tabulating themes.\n\n**Q4.** Find a published null result in your field — ideally one that contradicts a previously published positive finding. How is the null result framed in the results section? Does the writer treat it as informative? Compare to a paper in your field that contains a positive result and consider: do the two results sections receive equal care? Write 250 words. (Connection to Chapter 5: pre-registration norms have begun to require null results to be reported as carefully as positive ones.)\n\n**Answer:** _Answers will vary._ A typical successful response notes that null results in well-pre-registered work are increasingly reported with care equal to positive results (this is one of the post-replication-crisis reforms working). In non-pre-registered fields the asymmetry remains: null results often appear briefly, in supplementary tables, or are folded into discussion as caveats. The exercise teaches that the file-drawer problem is partly a writing problem — the technology of equal-care reporting exists; whether writers use it is a discipline question.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 667,
+      "out_sha": "28c624fc8938",
       "note": ""
     },
     {
@@ -1103,11 +1103,11 @@
       "en_title": "Chapter 6: The Results Section",
       "order": 85,
       "src_chars": 2759,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1638ea90ef5c",
       "src": "#### Think Deeper\n\n**Q1.** The chapter argues that signposting interpretation belongs in results, theoretical interpretation in discussion. Some venues — notably _Nature_ , _Science_ , and high-impact disciplinary journals with combined Results-and-Discussion sections — collapse the distinction. Where is the discipline between sections valuable, and where is it bureaucratic? Develop a position in 250–400 words.\n\n**Discussion:** The discipline is valuable when it forces the writer to _show before telling_ — to present the evidence clearly before claiming what it means. It is bureaucratic when it forces artificial separation between findings that genuinely belong together (e.g., a result whose interpretation is part of how the result was generated). Combined Results-and-Discussion sections work best for short papers with single tightly integrated findings; they work less well for long mixed-methods papers where the reader needs to absorb the data before being asked to interpret it. The most useful diagnostic: even in combined sections, the _order_ matters — show first, interpret second, even within a paragraph. The discipline is partly about word order and partly about section labels; the word order matters more.\n\n**Q2.** Tufte's principles were developed for static print. AI-era tools now generate interactive visualizations, animated explanations, and figure variants on demand. How might Tufte's principles need to evolve? Sketch your view in 250 words.\n\n**Discussion:** Tufte's core principles (data-ink ratio, no chartjunk, comparison, honesty) translate well to interactive media. The principle of _small multiples_ — showing many panels of the same chart type for comparison — is enhanced by interactive media (the reader can flip through panels). The principle of _avoid chartjunk_ arguably tightens (interactive elements that don't communicate data are new chartjunk). New principles may emerge: _the static state must be informative_ (so that screenshots and prints carry the message); _interactivity must be discoverable_ (the reader shouldn't have to hunt for affordances); _animation must serve comparison_ (animated chart transitions can both clarify and confuse). The principles of clarity and honesty don't change; the surface area to apply them grows. (Connection forward to Chapter 14: AI-generated visualizations need the same Tufte audit as human-generated ones, often more.)\n\n**Q3.** The chapter says that \"the line between _signposting_ and _theoretical interpretation_ is subtle but learnable.\" Some critics argue this line is _artificial_ — that the choice of what to signpost is already an interpretive choice. How do you weigh the convention's value against the critic's point? Develop a position in 250–400 words.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 944,
+      "out_sha": "5891df7a9885",
       "note": ""
     },
     {
@@ -1115,11 +1115,11 @@
       "en_title": "Chapter 6: The Results Section",
       "order": 86,
       "src_chars": 3060,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b29845367d56",
       "src": "**Discussion:** Both views are right. The choice of what to signpost is interpretive (deciding to highlight the budget growth pattern over, say, the year-to-year variance is a choice that frames what the reader sees). But this kind of _low-level_ interpretation is unavoidable; even pure tables embed interpretive choices about what to include and how to organize. The convention is preserving a higher-level distinction: between _what the data shows_ (low-level interpretation that is also accountable to the data directly) and _what the data means_ (theoretical interpretation that requires the additional step of connecting findings to theory and prior work). The distinction is real, even if the line is fuzzy. Most reviewers can distinguish a results paragraph that drifts into discussion from one that doesn't, even if they can't articulate the exact rule. Skilled writers internalize the rule by reading a lot of well-written results sections in their venue and noticing where their drafts diverge. (Connection to Chapter 1's foreign-language thesis: the convention is one of the unwritten rules best learned by extensive reading.)\n\n\n### Chapter Summary\n\nThe results section uses three channels — tables, figures, and prose — to communicate findings. Each channel is good at different work, and the skilled writer assigns each piece of evidence to the channel where it works best: tables for side-by-side comparison and precise values, figures for patterns and trends and skim-readers, prose for interpretation and signposting. The most common failure is _prose-as-table_ — paragraphs that report multiple numbers in sequence when a table would communicate them better.\n\nThis chapter laid out the channel assignments (§6.3), applied the six moves to Mira's results (§6.4), offered templates for opening, table introduction, figure introduction, quantitative reporting, qualitative reporting, and null-result reporting (§6.5), eight common pitfalls (§6.6), and the contribution of Edward Tufte to the design of tables and figures (§6.7). The manuscript audit prompt (§6.8) added a fourth revision to your portfolio: a prose-to-table redesign.\n\nResults sit at the center of the empirical paper. The introduction (Chapter 4) promised a contribution; the methods (Chapter 5) made it replicable; the results show what was found; the discussion (Chapter 7) interprets what it means. The discipline of _signpost before interpret_ — showing what is in the data before claiming what it means — is the structural backbone of this chain.\n\nIn Chapter 7 we turn to the **discussion section** , where the interpretive work that results held back finally happens. Mira will write a discussion next, and we will see whether they can stay calibrated — neither overclaiming the meaning of their findings nor under-claiming what they have honestly shown.\n\n> _Show what is in the data. Tell the reader what to look at. Save the meaning for later. Results discipline is the difference between a paper that earns its discussion and a paper that has skipped its results._\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 974,
+      "out_sha": "17cdac54db3f",
       "note": ""
     },
     {
@@ -1127,11 +1127,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 87,
       "src_chars": 3087,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2da678884a9f",
       "src": "It is the fall of Mira's third year. The introduction (Chapter 4), methods (Chapter 5), and results (Chapter 6) are drafted and clean. Now Mira faces the section every experienced writer will tell them is the hardest in the paper.\n\nThe discussion.\n\nA draft results section can be checked against the data: did you report what you found, accurately? A draft methods section can be checked against the procedure: did you describe what you did, replicably? A draft introduction can be checked against the literature: did you locate a gap, fairly? But a discussion section is checked against something fuzzier — _did you say the right things about what your work means?_ — and that is a question with no objective answer.\n\nWhat makes the discussion hardest is that it is the section where reviewers exercise the most judgment. They expect interpretation, but they will mark you down for over-interpretation. They expect implications, but they will mark you down for over-reach. They expect engagement with prior work, but they will mark you down for failing to engage _the right_ prior work. The room for sophisticated work is large, and the room for self-inflicted wounds is also large. Mira's first draft will manage to step on several of these wounds before the chapter is over.\n\nThis chapter is about how to walk the discussion's narrow path. We will introduce the **hedging vocabulary matrix** that ESL writers especially benefit from, and we will meet Bruno Latour, the scholar who first wrote frankly about academic discussion sections as _negotiations_ rather than _summaries_.\n\n\n### 7.1 Vignette: The First Draft and Its Quiet Overclaim\n\nMira's first-draft discussion opens as follows:\n\n> _Our findings demonstrate that fiscal constraint is a fundamental driver of climate adaptation in mid-sized coastal cities. The results conclusively show that adaptation in such cities is structured by a sequencing logic in which short-term, visible interventions crowd out longer-horizon investments. This finding has profound implications for climate adaptation policy: international funding programs must shift from supporting megacities to supporting mid-sized cities, where the highest leverage exists._\n\nThree sentences. Each one a problem.\n\n_\"Demonstrate that fiscal constraint is a fundamental driver\"_ — Mira's data, recall, comes from three cities. Three. They have shown a pattern across three cases. Calling fiscal constraint _a fundamental driver_ generalizes far beyond what three cases can support.\n\n_\"Conclusively show\"_ — three case studies do not conclusively show anything. Even three hundred cases would not justify \"conclusively.\" The phrase signals overclaim.\n\n_\"Profound implications… international funding programs must shift\"_ — the policy claim outruns the evidence. The data may _suggest_ that mid-sized cities are understudied; they do not establish that international funding should change.\n\nWhen Mira's advisor reads this, the comment is gentler than it should be: _\"Calibrate.\"_ Mira spends a week trying to figure out what that means.\n\nThis chapter answers it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1015,
+      "out_sha": "6225a8aa76b3",
       "note": ""
     },
     {
@@ -1139,11 +1139,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 88,
       "src_chars": 3404,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5f9921b5c30f",
       "src": "### 7.2 What Reviewers Look For in a Discussion\n\n**Are the claims proportionate to the evidence?** This is the question reviewers ask most often, and the question discussions most often fail. Hedging is the answer.\n\n**Are limitations engaged honestly?** A discussion that pretends to have no limitations gets marked down. A discussion that engages limitations and shows their implications for interpretation gets marked up.\n\n**Are alternative explanations considered?** Is the writer interpretively monogamous (only their preferred interpretation is mentioned) or polygamous (alternatives are named and addressed)? Polygamy reads as scientific maturity.\n\n**Is prior work engaged?** Where does this work sit in the conversation? What does it confirm, complicate, or extend? A discussion without prior-work engagement reads as solipsistic.\n\n**Are implications calibrated?** Theoretical implications proportionate to the contribution; practical implications proportionate to the evidence. Not \"this changes everything\" but \"these findings suggest that the assumption common in prior work — that X — needs to be re-examined under conditions Y.\"\n\n**Is there an honest \"what we don't know\"?** Discussions that close with a future-work paragraph that names what _remains_ uncertain (rather than a triumphalist summary) read as more credible.\n\nA discussion that satisfies these six criteria is a discussion that survives review. A discussion that fails any of them — and especially the first, the proportionality of claim to evidence — is at risk.\n\n\n### 7.3 The Layers of a Discussion\n\nA well-built discussion has a layered structure. The layers do not need to map to subsections; they describe the _logical work_ the discussion does. The layers are:\n\n\n#### Layer 1 — Restate the contribution\n\nOpen with a brief restatement of the contribution claim. Not a summary of the results, but a statement of what the paper has shown. _\"This paper has shown that fiscal constraint shapes adaptation in mid-sized coastal cities through a sequencing logic in which short-term, visible interventions crowd out longer-horizon investments.\"_\n\nThis opener does several jobs at once. It tells the reader what the discussion will be about. It anchors the rest of the discussion to the specific claim of the paper. And it sets the calibration: a sentence here that overclaims will infect every claim that follows.\n\n\n#### Layer 2 — Engage prior work\n\nWhere do the findings sit relative to the prior literature? Confirming? Complicating? Extending? Contradicting? Each kind of engagement requires different language and different supporting moves.\n\n_Confirming:_ \"Our results are consistent with [prior work], which found [X]. We extend that finding to [new context/scale].\"\n\n_Complicating:_ \"Whereas prior work has emphasized [factor A], our findings suggest that [factor B] is also operative — and that the two factors interact in ways prior single-factor analyses could not detect.\"\n\n_Contradicting:_ \"Our findings are inconsistent with [prior work], which reported [X]. The discrepancy may reflect [methodological difference / scope difference / boundary condition].\"\n\nThe convention is to engage prior work specifically (named authors, named claims) rather than vaguely (_\"some scholars have argued\"_). The conversation metaphor matters here: in academic discussion sections, you are speaking _to_ people, not just about them.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1109,
+      "out_sha": "9618ad76dcf5",
       "note": ""
     },
     {
@@ -1151,11 +1151,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 89,
       "src_chars": 2438,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a833cfa4b050",
       "src": "#### Layer 3 — Address limitations\n\nEvery empirical paper has limitations. Discussion sections that pretend otherwise look amateur and trigger reviewer suspicion. The skilled limitations paragraph names the most consequential limits, says briefly how they affect interpretation, and indicates what kind of evidence would resolve them.\n\n_\"Our analysis is limited in three ways. First, the three cases were selected for diversity but cannot be claimed to be representative of mid-sized coastal cities globally; the sequencing logic we identify may operate differently in cities outside the regional contexts we examined. Second, our budget data span four years; longer time horizons would clarify whether sequencing patterns persist or attenuate. Third, our interview sample, while purposive, did not include private-sector actors who participate in adaptation financing in some of our cases. Each of these limits indicates a direction for future work.\"_\n\nNote what this paragraph does not do: it does not call the limitations _minor_ ; it does not promise that future work _will resolve_ them; it does not minimize. Honest limitations land harder than apologetic ones, because honest writers are easier to trust on the rest of the discussion.\n\n\n#### Layer 4 — Discuss alternative explanations\n\nWhat other explanations could account for the findings? Are they ruled out, or are they live? Naming alternatives — and engaging them seriously — is one of the highest-leverage moves in a discussion. It demonstrates that the writer has thought about counter-interpretations and chosen the preferred one for reasons.\n\n_\"An alternative interpretation of our findings is that the sequencing logic we observe reflects not fiscal constraint but local political dynamics — short-term interventions are visible to voters and serve electoral incentives. We considered this interpretation seriously and find it partly compatible with our data: in two of three cases, electoral pressure was indeed a contributing factor. However, the third case (Casablanca) shows the sequencing logic in the absence of electoral pressure, suggesting that fiscal constraint operates as an independent driver. The two factors likely interact, and disentangling them is a question for future work.\"_\n\nThis paragraph is doing serious analytical work. It names the alternative; engages it; shows where it has purchase and where it doesn't; concludes with calibrated language.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 821,
+      "out_sha": "9d333736c033",
       "note": ""
     },
     {
@@ -1163,11 +1163,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 90,
       "src_chars": 3455,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b34a6bdfe968",
       "src": "#### Layer 5 — Implications\n\nTheoretical, practical, policy. Calibrated to the evidence. Specific where possible.\n\n_Theoretical implications:_ what the findings mean for theory or for the analytical framework. _\"These findings extend the fiscal-constraint literature on developmental policy to the climate-adaptation domain and suggest that the sequencing dynamics that frame fiscal-constraint debates in other policy areas have analogues in adaptation.\"_\n\n_Practical implications:_ what the findings mean for practitioners, with care to scale claims to evidence. _\"For municipal officials in similarly constrained contexts, our findings suggest that the political pressure toward visible short-term interventions is real but that this pressure can be offset by...\"_\n\n_Policy implications:_ what the findings mean for the broader policy conversation. _\"For international funding agencies, our findings raise questions about the fit between megacity-targeted programs and mid-sized city needs — questions the present analysis cannot answer but can productively pose.\"_\n\nNote the calibration. _\"Suggest\"_ and _\"raise questions\"_ — not _\"prove\"_ and _\"require.\"_ Each implication paragraph is an opportunity to overclaim; each one should be drafted carefully, then read back skeptically.\n\n\n#### Layer 6 — Close with future work and what remains uncertain\n\nThe strongest discussions end not with a triumphalist summary but with a statement of what remains uncertain and what the next study would need to do. This convention has two functions: it lowers the reader's resistance (you have shown yourself to be calibrated) and it actively contributes to the field by pointing toward productive next steps.\n\n\n#### Definition: Hedging\n\nIn academic writing, **hedging** is the use of language that calibrates a claim to the strength of the evidence supporting it — typically by softening or qualifying assertions about causation, generality, or certainty.\n\nIn plain language: hedging is how you say \"I'm fairly sure\" instead of \"I'm sure,\" \"in this sample\" instead of \"in general,\" \"may suggest\" instead of \"proves.\" Hedging is not equivocation. It is precision about epistemic status. Skilled academic writers hedge constantly — and the strength of their hedging is finely calibrated to the strength of their evidence.\n\nTo readers outside the academy, hedged prose can sound timid. To readers inside the academy, _unhedged_ prose sounds amateurish and overconfident. The discussion section is the most hedging-intensive part of a paper because it is where claims about meaning are made — and meaning claims are the most epistemically vulnerable.\n\n\n#### Common Misconception\n\nA common misconception is that hedging is a stylistic flourish — that you can write a discussion in confident prose and then insert _\"may\"_ and _\"suggest\"_ before submission. In practice, hedging is structural. The right hedging is built into the _argumentative shape_ of the paragraph, not pasted on after. A paragraph that builds toward an overclaim and then softens the overclaim with _\"may\"_ still reads as overclaim. A paragraph whose structure inherently makes a calibrated claim reads as calibrated.\n\nThis is why the most-cited discussions in any field are written by senior scholars who have internalized the calibration so deeply that they don't notice they're doing it. The patterns are learnable, but they are learned by writing many discussions and being marked up many times.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1195,
+      "out_sha": "55ca5317e9ff",
       "note": ""
     },
     {
@@ -1175,11 +1175,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 91,
       "src_chars": 2648,
-      "status": "pending",
+      "status": "done",
       "src_sha": "24b27d596e92",
       "src": "### 7.4 The Hedging Vocabulary Matrix\n\nHere is a concrete matrix that ESL writers especially have found useful. The matrix maps confidence levels to the verbs and adverbs that fit them.\n\nConfidence Level | Hedging Verbs | Hedging Adverbs / Phrases | Use When  \n---|---|---|---  \n**Established (consensus)** | _demonstrate, show, establish, document_ | (none needed) | Findings have been replicated across many studies in the field  \n**Strong support (your study)** | _indicate, suggest, point to_ | _clearly, consistently_ | Your data robustly support the claim within scope  \n**Reasonable support** | _suggest, appear to, are consistent with, may suggest_ | _likely, in this context, in our sample_ | Your data lean this way but with caveats  \n**Speculative** | _could, might, may, is conceivable that_ | _tentatively, provisionally, in principle_ | Hypotheses, theoretical implications, future-work suggestions  \n**Reporting others' speculation** | _have proposed, argue for, hypothesize, contend_ | _(attribution to specific authors)_ | Other authors' contested or speculative claims  \n  \nPair this with the **what NOT to use** list:\n\n* _**prove, proves, proven**_ — almost never appropriate in empirical writing. Even in mathematics, the social-science register avoids it.\n* _**definitely, absolutely, clearly**_ (when used as standalone confidence markers) — read as overclaim.\n* _**most experts agree, it is well-known that**_ — vague gestures toward consensus that often signal weak evidence; cite specifically or omit.\n* _**revolutionary, paradigm-shifting, fundamental**_ — almost always reads as overclaim, regardless of how good the work is.\n\nESL writers often arrive at the discussion having been taught (correctly, for non-academic English) that confident, active, declarative writing is good. The matrix is a translation key: in academic English, confidence is not a stylistic virtue; _calibrated_ confidence is. Skilled academic writers use the entire matrix in the same paragraph, sometimes the same sentence: _\"Our results indicate that fiscal constraint may shape adaptation in mid-sized cities, although the magnitude of the effect could vary substantially across regional contexts.\"_ The verbs _indicate_ , _may shape_ , and _could vary_ span three confidence levels in one sentence.\n\nA drill: take a discussion paragraph from your work and underline every verb of claim. Map each verb to a row of the matrix. Are the verbs proportionate to the evidence behind them? Where one verb claims more than the evidence supports, swap for a verb one row down. Do the reverse where the discussion is too weak for the evidence behind it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1020,
+      "out_sha": "4561b189219e",
       "note": ""
     },
     {
@@ -1187,11 +1187,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 92,
       "src_chars": 3358,
-      "status": "pending",
+      "status": "done",
       "src_sha": "484684190797",
       "src": "#### Hedging in Interpretive Disciplines\n\nThe matrix above is calibrated to empirical writing — fields where claims are evaluated against evidence and the hedging language tracks the strength of the evidence-claim fit. In interpretive disciplines (philosophy, literary criticism, theoretical history, much of cultural anthropology, parts of theology, and large parts of legal scholarship), the matrix applies with adjustments.\n\nThe first adjustment: in interpretive writing, \"evidence\" often means _textual or conceptual support_ rather than empirical data. The verb _suggest_ hedges in roughly the same way as in empirical writing, but its referent is different — _\"the close reading suggests\"_ rather than _\"the regression suggests.\"_ Skilled interpretive writers calibrate their verbs to the strength of their textual or conceptual case, not to the strength of a statistical fit.\n\nThe second adjustment: interpretive writing makes _argumentative_ rather than _evidential_ claims, and the hedging vocabulary shifts accordingly. Verbs like _argue, contend, propose, maintain, hold_ are ordinary in philosophy and literary criticism, where they would read as overconfident in empirical writing. The reason is that interpretive writers are not making claims that data could falsify; they are making claims that other readings of the text or concept did not adequately develop. The standard for \"calibrated confidence\" is the strength of the argument's purchase on the textual or conceptual material, not the strength of its empirical support.\n\nThe third adjustment: hedges that read as appropriate in empirical writing can read as evasive in interpretive writing. Phrases like _\"may suggest that some readers might find that…\"_ — modeled on empirical hedging — read as ducking the interpretive commitment. Interpretive writers are expected to _make_ readings, not merely propose them. Skilled interpretive writers commit to readings while acknowledging the alternative readings they are arguing past.\n\nThe fourth adjustment: the _\"what NOT to use\"_ list shifts. _\"Prove\"_ is still inappropriate, but _\"demonstrate\"_ — in the sense of _demonstrate by argument_ — is acceptable in philosophy and parts of literary criticism. _\"Revolutionary\"_ and _\"paradigm-shifting\"_ still overclaim. _\"It is well known\"_ is still vague. But _\"clearly\"_ and _\"obviously\"_ — which empirical writing avoids as overclaim markers — sometimes appear in interpretive writing when the writer is signaling that the next claim follows transparently from the analysis.\n\nA practical heuristic for interpretive writers: read the matrix as _advice for empirical-style claims you may be making_ , even within an interpretive paper. When you cite an empirical fact inside a literary or philosophical article, the matrix's verbs apply. When you make an interpretive argument about how a text or concept functions, the matrix's verbs apply less directly — and reviewers from the interpretive tradition will calibrate to a different standard.\n\nThe deepest point: hedging is _calibration of claim to support_ , and what counts as support varies by discipline. The matrix is a tool, not a fixed grammar. ESL writers in interpretive disciplines benefit from the matrix's habit of paying attention to verb choice, even where the specific entries need adjustment for the tradition they write within.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1151,
+      "out_sha": "e31daeef861a",
       "note": ""
     },
     {
@@ -1199,11 +1199,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 93,
       "src_chars": 1983,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cffe82d6ad46",
       "src": "A brief illustration. Consider three sentences that could open a discussion section in three different traditions, all making the same general kind of claim — that a prior reading or model is incomplete:\n\n> _(Empirical, social science):_ \"Our results suggest that the megacity-focused literature has overestimated the generality of its findings; the magnitude of the divergence at mid-sized scales remains to be characterized.\"\n> \n> _(Literary criticism):_ \"I argue that prior readings of Sethe's question have not adequately attended to its grammatical strangeness; the slippage between tense and addressee, I contend, is doing analytical work the existing readings miss.\"\n> \n> _(Philosophy):_ \"I propose that the standard internalist account of justification cannot handle the testimony cases described in §3, and I maintain that an externalist supplementation is required to preserve the account's plausibility.\"\n\nAll three perform Move 5 of the six (anticipating the reviewer / interlocutor) by acknowledging that they are arguing past prior work. But the verbs differ in calibrated ways. The empirical sentence uses _suggest_ (one row down from _demonstrate_) and _remains to be characterized_ (deferring to future evidence). The literary sentence uses _argue_ and _contend_ (committal verbs that empirical writing would consider over-claim) because the standard for support in literary criticism is the strength of the close reading, and a hedged literary claim (\"Sethe's question may possibly suggest…\") would read as evasive. The philosophy sentence uses _propose_ (introducing a position) and _maintain_ (defending it) — both standard in philosophical writing, both stronger than empirical hedges, both calibrated to the genre's expectation that the writer commit to a position while acknowledging its argumentative status. Reviewers in each tradition calibrate to a different default; readers crossing traditions need to read for the calibration before mapping the matrix.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 664,
+      "out_sha": "0d67307b908b",
       "note": ""
     },
     {
@@ -1211,11 +1211,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 94,
       "src_chars": 2543,
-      "status": "pending",
+      "status": "done",
       "src_sha": "165645cec24a",
       "src": "### 7.5 The Six Moves Applied to Mira's Discussion\n\n**Move 1 (genre/venue).** Same. Discussion sections in this venue typically run 1,500–2,500 words, with substantial engagement of prior work, an explicit limitations subsection, and a closing future-work paragraph.\n\n**Move 2 (structure).** Mira drafts the discussion in five subsections matching the layers in §7.3: _7.1 Summary of contribution. 7.2 Relation to prior work. 7.3 Limitations. 7.4 Alternative explanations. 7.5 Implications and future work._ In their venue, this layered structure is conventional.\n\n**Move 3 (calibration).** This is where the discussion lives or dies. Mira applies the hedging matrix. The verb in their opening sentence shifts from _demonstrate_ to _suggest_. The phrase _conclusively show_ is deleted entirely. The policy claim _\"international funding programs must shift\"_ becomes _\"these findings raise questions about the fit between megacity-targeted programs and mid-sized city needs.\"_\n\n**Move 4 (positioning).** Mira engages prior work specifically. The Hallegatte (2013) and Tessler et al. (2015) work that anchored the introduction's territory is now revisited as work this paper _complicates_ — by showing that megacity findings may not transfer. The case-study work that anchored the introduction's other strand is revisited as work this paper _extends_ — to a comparative scale. Citations are rhetorical moves, not bibliography ornaments.\n\n**Move 5 (anticipated reviewer).** Predictable discussion objections: _\"You're generalizing from three cases; the limitations paragraph needs to engage this seriously.\"_ Mira's revised limitations paragraph names case-selection limits explicitly. _\"You haven't ruled out alternative explanations.\"_ Mira adds the political-dynamics alternative interpretation paragraph (§7.3 Layer 4). _\"Your policy implications outrun your data.\"_ Mira softens implications and adds the _\"raises questions\"_ hedging.\n\n**Move 6 (AI).** Mira uses AI to: identify every verb of claim and map it to the hedging matrix; flag implications that overrun the data; suggest alternative interpretations the writer hadn't considered. They do _not_ use AI to _make_ claims, only to audit them.\n\nThe rewritten discussion is 2,200 words. It opens with a calibrated contribution statement, engages prior work specifically across two subsections, contains a substantial limitations paragraph, takes seriously two alternative explanations, and closes with a future-work paragraph naming three uncertainties the present study cannot resolve.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 946,
+      "out_sha": "5e3277633303",
       "note": ""
     },
     {
@@ -1223,11 +1223,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 95,
       "src_chars": 2480,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9d423be6771e",
       "src": "### 7.6 Templates and Examples\n\n**Opening a discussion (Layer 1):**\n\n> _\"This paper has [argued / shown / examined] [contribution claim]. We now [discuss / develop] the implications of these findings for [theoretical question] and [practical question], engage their relation to prior work, and consider their limitations and the directions they suggest for future research.\"_\n\n**Engaging prior work (Layer 2 — confirming):**\n\n> _\"These findings are consistent with [prior work] (Citation), which reported [X] in [context]. The present study extends that finding to [new context/scale/method], lending additional support to the claim that [generalization].\"_\n\n**Engaging prior work (Layer 2 — complicating):**\n\n> _\"Whereas prior work has emphasized [Factor A] (Citations), our findings suggest that [Factor B] also plays a substantial role. The two factors are not independent — [Citations] have suggested possible interactions — but the present study is among the first to characterize the interaction at [scale / context].\"_\n\n**Limitations paragraph (Layer 3):**\n\n> _\"Several limitations of the present analysis should be noted. First, [limit, with implication for interpretation]. Second, [limit]. Third, [limit]. None of these limits, in our view, undermines the central finding that [contribution], but each indicates a direction for productive future work.\"_\n\n**Alternative-explanation paragraph (Layer 4):**\n\n> _\"An alternative interpretation of these findings is [alternative]. We considered this interpretation seriously. [Evidence consistent with alternative; evidence inconsistent.] On balance, our reading is that [preferred interpretation] is more strongly supported, although [alternative] likely contributes [in scope].\"_\n\n**Implications paragraph (Layer 5):**\n\n> _\"Theoretically, these findings [extend / refine / challenge] the [framework]. [Specific implication.] Practically, our results suggest [calibrated practical claim]. For [policy actor], the findings raise the question of [calibrated policy claim] — a question the present study cannot answer but can productively pose.\"_\n\n**Future work / what remains uncertain (Layer 6):**\n\n> _\"Several questions remain unresolved. [Question 1.] [Question 2.] [Question 3.] We hope the present analysis serves not as a closing of these questions but as a productive opening of them.\"_\n\nThese templates scaffold a layered discussion. Use them to structure a first draft; revise into your own voice in the second draft.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 963,
+      "out_sha": "532594dbab4c",
       "note": ""
     },
     {
@@ -1235,11 +1235,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 96,
       "src_chars": 1723,
-      "status": "pending",
+      "status": "done",
       "src_sha": "58c6ce584cea",
       "src": "### 7.7 Common Pitfalls\n\n**The summary discussion.** The discussion just restates the results section. No engagement with prior work, no limitations, no implications. Fix: each layer is a different kind of work; do them all.\n\n**The over-confident discussion.** Verbs of claim outrun evidence. _\"Demonstrate,\" \"establish,\" \"prove.\"_ Fix: apply the hedging matrix; downgrade verbs to fit evidence.\n\n**The interpretively monogamous discussion.** Only the preferred interpretation is named. Reviewers will ask _\"what about alternative X?\"_ and you should already have answered. Fix: name two alternatives; engage at least one seriously.\n\n**The decorative limitations.** _\"Our sample is small. Future research is needed.\"_ Generic, unactionable, self-protective. Fix: name limits specifically and tie each to its implication for interpretation.\n\n**The drift into Results 2.0.** The discussion reports findings that should have been in results. The reverse — interpreting in results — is also a common error (Chapter 6). Fix: discipline the section to interpret only; cite results sections by number rather than restating values.\n\n**The triumphalist close.** The discussion ends with _\"This study has fundamentally advanced understanding of X.\"_ Reviewers wince. Fix: close with future work and what remains uncertain.\n\n**The unmotivated implications.** Practical or policy implications that don't follow from the findings. Fix: each implication should be traceable to a specific finding or pattern.\n\n**The buried prior work.** Prior work is engaged briefly and superficially, with citations doing decoration rather than rhetorical work. Fix: spend at least one paragraph in serious engagement with the most relevant prior work.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 593,
+      "out_sha": "fb8debe22c3a",
       "note": ""
     },
     {
@@ -1247,11 +1247,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 97,
       "src_chars": 2892,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2e615099fd0f",
       "src": "### 7.8 Scholar Profile: Bruno Latour and Discussions as Negotiations\n\nBruno Latour (1947–2022) was a French sociologist and philosopher of science whose work on the rhetoric of scientific writing has shaped how generations of scholars understand academic discussions. His 1987 book _Science in Action_ opens with a question: how does a fact become a fact?\n\nLatour's answer, developed across hundreds of pages, is: through a long process of social and rhetorical work, much of which is visible in academic writing if you know how to read it. The discussion section is one of the most concentrated sites of this work. In a discussion, the writer is not merely reporting — they are _negotiating_. They are negotiating with prior literature (which findings to confirm, complicate, or contradict). They are negotiating with reviewers (which alternative explanations to take seriously, which to dismiss). They are negotiating with future readers (which interpretations to make available for citation, which to leave aside).\n\nA surprising fact, central to Latour's argument: discussions are _bargains over what counts as the contribution_. The writer offers a version of what their findings mean; reviewers and future citers will accept some version of that, modify others, and contest still others. The version that survives is not necessarily the version the writer intended. Skilled writers know this — they shape their discussions to make the survivable version of their contribution clear and defensible.\n\nA second surprising fact: the language of hedging is, on Latour's reading, _not_ an admission of uncertainty so much as a _strategic positioning move_. By hedging, the writer leaves room for the finding to be _modified_ by future work without being _refuted_. Strong unhedged claims invite refutation; calibrated claims invite extension. Skilled academic writers, Latour observed, are master hedgers — and the hedging is part of how they get cited.\n\nA third fact, perhaps the most important for graduate students: Latour's analysis can be unsettling because it shows academic writing as more political than the official rhetoric admits. But the analytical move is not cynical. It is realistic. Academic writing operates within a social system, and skilled participants understand the system without being captured by it. The book you are reading is partly Latour's intellectual descendant: the conventions exist for reasons, are partly performative, and are still worth learning to use well.\n\nFor graduate writers entering 2026, Latour's lesson is direct: your discussion is a negotiation, not a report. Treat it as such. Calibrate your claims, anticipate the alternatives, engage prior work specifically, and remember that what you write will be cited and modified by readers you do not yet know — and the version of your contribution that survives is the one your prose makes durable.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1026,
+      "out_sha": "8edb3d7376b5",
       "note": ""
     },
     {
