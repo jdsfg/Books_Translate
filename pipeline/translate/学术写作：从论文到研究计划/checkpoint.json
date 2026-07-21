@@ -1259,11 +1259,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 98,
       "src_chars": 1553,
-      "status": "pending",
+      "status": "done",
       "src_sha": "929fd6252240",
       "src": "### 7.9 Reader's Manuscript Audit Prompt\n\nTake the discussion section of your current manuscript. Perform the following audit:\n\n**Identify three places your discussion overclaims.** Read the discussion looking specifically for verbs of claim that outrun evidence and for implications that go beyond what your data support. The hedging matrix in §7.4 is your guide.\n\nFor each overclaim, write the corrected version. Not just a softer phrasing — a phrasing that is _calibrated_ to the actual evidence. Often the rewrite is one or two words (a verb swap, an added scope phrase). Sometimes the rewrite is structural (the paragraph's argumentative shape was leading toward overclaim, and only structural revision helps).\n\n**Identify one place your discussion underclaims.** Sometimes the opposite problem appears: the writer has hedged so far that the contribution sounds tentative beyond what the evidence justifies. If you find such a place, rewrite to be more direct.\n\n**Identify one alternative explanation you have not engaged.** What is an interpretation of your findings that someone in your field might offer that you have not addressed? Draft a paragraph that names this alternative, engages it, and concludes with calibrated language about why your preferred interpretation is supported.\n\nThis is your fifth manuscript revision. The portfolio is now: synthesis-vs-summary audit (Ch.3), CARS introduction rewrite (Ch.4), methods replication test (Ch.5), prose-to-table redesign (Ch.6), and now the discussion calibration audit.\n\n\n### 7.10 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 546,
+      "out_sha": "aaa6d3d1bc21",
       "note": ""
     },
     {
@@ -1271,11 +1271,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 99,
       "src_chars": 2301,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ff14add1c575",
       "src": "#### Concept Check\n\n**Q1.** Name the six layers of a well-built discussion section.\n\nHint\n\nThe layers are unpacked across §7.3.\n\n**Answer:** (1) Restate the contribution; (2) Engage prior work (confirming, complicating, contradicting); (3) Address limitations; (4) Discuss alternative explanations; (5) Implications (theoretical, practical, policy); (6) Close with future work and what remains uncertain.\n\n**Q2.** What is _hedging_ , as the chapter has defined it, and why does the chapter call it _structural_ rather than stylistic?\n\n**Answer:** Hedging is the use of language that calibrates a claim to the strength of the evidence supporting it — typically by softening or qualifying assertions about causation, generality, or certainty. The chapter calls it structural rather than stylistic because the right hedging is built into the _argumentative shape_ of a paragraph, not pasted on at the end. A paragraph that builds toward an overclaim and softens it with \"may\" still reads as overclaim; calibrated paragraphs make calibrated claims throughout their structure.\n\n**Q3.** Why does the chapter argue that engaging _alternative explanations_ is one of the highest-leverage moves in a discussion?\n\n**Answer:** Because naming alternatives — and engaging them seriously — demonstrates that the writer has thought about counter-interpretations and chosen the preferred one for reasons. Reviewers and future readers can spot interpretively monogamous discussions (where only the preferred interpretation is named) and discount them. Discussions that engage alternatives read as scientifically mature and increase the credibility of the preferred interpretation.\n\n**Q4.** What does Bruno Latour mean when he says discussions are \"negotiations rather than summaries\"?\n\n**Answer:** That a discussion is not a neutral report of what findings mean; it is an active negotiation with prior literature, reviewers, and future readers over what the findings will count as. The writer offers a version of the contribution; readers will accept some version, modify others, and contest still others. Skilled writers shape their discussions to make the _survivable version_ of their contribution clear and defensible — and hedging is part of how they leave room for findings to be extended without being refuted.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 792,
+      "out_sha": "48a9430dc2a7",
       "note": ""
     },
     {
@@ -1283,11 +1283,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 100,
       "src_chars": 3456,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b2f01fead79e",
       "src": "#### Application Problems\n\n**Q1.** Take Mira's first-draft discussion opening from §7.1 (the three-sentence overclaim). Rewrite each sentence so that the claims are calibrated to the evidence (three case studies). Use the hedging vocabulary matrix from §7.4.\n\nHint\n\nFor each sentence, ask: which row of the matrix does the evidence support? Then rewrite using verbs and phrases from that row.\n\n**Answer:** A successful rewrite might read: _\"Our findings suggest that fiscal constraint shapes climate adaptation in mid-sized coastal cities. Across our three cases, adaptation was structured by a sequencing logic in which short-term, visible interventions appeared to crowd out longer-horizon investments. These findings raise questions about the fit between megacity-targeted international funding programs and the needs of mid-sized cities, though the present analysis cannot directly evaluate funding policy.\"_ Changes: _demonstrate_ → _suggest_ ; _conclusively show_ → _appeared to_ with scope phrase _across our three cases_ ; _profound implications, must shift_ → _raise questions_ with explicit scope-limiting clause.\n\n**Q2.** Take a discussion section from a paper of your own. Apply the hedging-matrix audit: underline every verb of claim, map each to a row of the matrix, and identify three places where the verb is one row higher than the evidence supports. Rewrite those three places. Submit the original, the rewrites, and a 100-word reflection.\n\n**Answer:** _Answers will vary._ A successful response will (a) accurately identify three overclaiming verbs, (b) produce rewrites that swap to more proportionate language, and (c) reflect on the change. The most useful reflections often note that the rewrites _strengthen_ the discussion in a paradoxical way — calibrated claims are more credible than overclaims and more useful for future readers and citers (Latour's point in §7.8).\n\n**Sample Response (three overclaiming verbs from Mira's earlier discussion draft, with rewrites):** _(1) Original: \"Our findings prove that fiscal constraint determines adaptation choices.\" Diagnosis: \"prove\" claims certainty no empirical study can deliver; \"determines\" implies single-cause sufficiency that three cases cannot establish. Rewrite: \"Our findings suggest that fiscal constraint shapes adaptation choices through a sequencing logic, with the magnitude of the effect varying across cases.\" (2) Original: \"These results conclusively establish that megacity-focused programs fail in mid-sized contexts.\" Diagnosis: \"conclusively establish\" overclaims; \"fail\" is binary where the evidence supports a more graduated claim. Rewrite: \"These results indicate that megacity-focused programs transfer poorly to mid-sized contexts, though the boundary conditions of this finding warrant further investigation.\" (3) Original: \"International funding agencies must redirect resources toward mid-sized cities.\" Diagnosis: \"must\" carries policy authority the analysis cannot underwrite; the leap from finding to policy directive is unhedged. Rewrite: \"Our findings raise questions about the fit between megacity-targeted funding and mid-sized city needs — questions that the present analysis cannot resolve but can productively pose.\" Reflection: the rewrites are not weaker. The original (\"prove… determines… must\") would be cited skeptically; the rewrites would be cited as careful work. The discussion's authority comes from calibration, not from confidence._",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1185,
+      "out_sha": "ad0dfc13375e",
       "note": ""
     },
     {
@@ -1295,11 +1295,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 101,
       "src_chars": 1705,
-      "status": "pending",
+      "status": "done",
       "src_sha": "63d313a02ac7",
       "src": "**Q3.** Read the discussion section of a paper in your field and identify the _alternative explanations_ the writer engages. How are they engaged — seriously, briefly, or dismissively? What additional alternative could the writer have engaged? Write a 250-word commentary.\n\n**Answer:** _Answers will vary._ A typical successful response notes that strong discussions engage alternatives substantively — naming, evaluating, and concluding with calibration; weaker discussions name alternatives only to dismiss them in a sentence (\"we cannot, of course, rule out X\"). The exercise teaches the diagnostic eye: skilled engagement of alternatives is rare and signals careful authorship. (Connection to Chapter 4: the alternative engagement should be foreshadowed in the introduction's anticipated-reviewer move and developed in the discussion.)\n\n**Q4.** Pick a finding from your own research. Draft a discussion paragraph that performs _all six layers_ — restate, engage prior work, address limitations, engage one alternative, state implications, name what remains uncertain — in a single paragraph of 200–300 words. The exercise teaches compression of the layered structure.\n\n**Answer:** _Answers will vary._ A successful response will perform every layer in compressed form. Example structure: sentence 1 — restate contribution; sentence 2 — relation to prior work; sentence 3 — limitations; sentence 4 — alternative explanation engaged; sentence 5 — implication; sentence 6 — what remains uncertain. The exercise teaches that the layers are work that must be done; they don't necessarily require dedicated subsections. Many strong discussions are just six well-built paragraphs, each performing one layer.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 601,
+      "out_sha": "b58d4da1f292",
       "note": ""
     },
     {
@@ -1307,11 +1307,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 102,
       "src_chars": 3096,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6d43865832bd",
       "src": "#### Think Deeper\n\n**Q1.** The chapter argues that hedging is structural — built into the argumentative shape of a paragraph, not pasted on. Some critics argue that excessive hedging leads to academic writing that is dull, over-cautious, and resistant to bold claims. Where is the line between calibrated hedging and excessive hedging? Develop a position in 250–400 words.\n\n**Discussion:** Both positions have merit. Calibrated hedging is genuinely valuable: it allows future readers to extend findings rather than refute them; it protects readers from overclaim; it reflects honest uncertainty. Excessive hedging is also real: a discussion in which every claim is qualified into vagueness fails to make the contribution legible. The line: hedge the _claim about meaning_ , not the _claim about findings_. \"Our findings show X\" can be direct; \"X means Y for the field\" should be hedged. The other diagnostic: hedge what is genuinely uncertain; do not hedge what is clearly established. A good discussion paragraph often makes one direct claim (about findings) and several hedged claims (about meaning). The hedging matrix is the tool: use the entire matrix, including its _Established / Strong support_ rows, when the evidence justifies it. (Connection to Chapter 1's foreign-language thesis: this calibration is one of the conventions native speakers absorb by reading, and explicit teaching of the matrix accelerates it for everyone.)\n\n**Q2.** Latour's reading of academic writing as _negotiation_ — and discussions as _bargains over what counts as the contribution_ — can sound cynical. Some readers worry it implies academic writing is just rhetoric, not science. How should we hold Latour's analytical insight together with the genuine epistemic ambitions of academic writing? Develop a position in 250–400 words.\n\n**Discussion:** Latour's insight is descriptive, not prescriptive. He is observing that academic writing involves rhetorical work; he is not arguing that the rhetoric is divorced from epistemics. The most useful synthesis: academic writing is _both_ a record of empirical work and a negotiation over how that work will count. The rhetoric matters because the social system through which findings become consensus is rhetorical; the epistemics matter because the rhetoric is constrained by what the data can support and what reviewers will accept. Skilled academic writers do not see these as in tension — they see them as joint requirements. The cynical reading (\"it's all rhetoric\") and the naive reading (\"it's all epistemics\") are both incomplete. (Connection to Chapter 17: this synthesis becomes especially urgent in the AI era, where the rhetorical work can be automated but the epistemic work cannot.)\n\n**Q3.** AI tools can generate discussion sections at speed. They can match conventions of hedging, prior-work engagement, and limitations. But they cannot, by definition, _understand_ what a finding means or what alternatives are most live. Where does this leave AI-assisted discussion writing? What is safe, and what is dangerous? Sketch your view in 250–400 words.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1150,
+      "out_sha": "3143140bce17",
       "note": ""
     },
     {
@@ -1319,11 +1319,11 @@
       "en_title": "Chapter 7: The Discussion Section",
       "order": 103,
       "src_chars": 3111,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d5849b491f02",
       "src": "**Discussion:** AI is genuinely useful for discussion-section _audit_ — applying the hedging matrix, identifying overclaim, flagging missing layers, suggesting alternative interpretations the writer can then evaluate. AI is dangerous for discussion-section _generation_ — producing whole discussions whose claims, prior-work engagements, and alternative explanations are plausible-looking but not specifically verified. The gap is exactly the difference between _plausible_ and _specifically true_ in a paper's contribution. A discussion is the writer's strongest interpretive bet about what their findings mean; outsourcing that bet to a tool that does not understand the findings produces text that reads well and is hollow. Safe uses: hedge auditing, alternative-explanation brainstorming (as a check against the writer's own interpretive monogamy), structure checking. Dangerous uses: full generation; prior-work engagement (where AI hallucinates citations); implications writing (where AI produces generic-sounding claims that may not connect to the specific evidence). The bright line: the writer must own every claim about meaning. (Connection forward to Chapter 14 and Chapter 17: this is one of the highest-stakes places where AI use must be carefully bounded.)\n\n\n### Chapter Summary\n\nThe discussion section is the hardest section in an empirical paper, because it is judged on calibration rather than correctness. A well-built discussion performs six layers: restate the contribution, engage prior work, address limitations, engage alternative explanations, state implications, and close with future work and what remains uncertain. The single most consequential failure mode is **overclaim** — verbs and phrases that outrun the evidence — and the single most useful tool for fixing it is the **hedging vocabulary matrix** from §7.4.\n\nThis chapter laid out the layers (§7.3), the hedging matrix (§7.4), the application of the six moves to Mira's discussion (§7.5), templates for each layer (§7.6), eight common pitfalls (§7.7), and the contribution of Bruno Latour's analysis of academic writing as negotiation (§7.8). The manuscript audit prompt (§7.9) added a fifth revision to your portfolio: a discussion calibration audit.\n\nThe discussion sits at the end of the empirical-paper chain that Chapters 4–7 have walked through. The introduction promised a contribution; the methods made it replicable; the results showed what was found; the discussion interprets what it means. The discipline that runs across all four sections is **proportionality** — claims proportionate to evidence at every step.\n\nIn Chapter 8 we turn to the **abstract** , which is the most-read 200 words you will ever write. Mira will write an abstract next, and we will see whether they can compress all four prior sections — introduction, methods, results, discussion — into a tight, calibrated, hedge-matrix-honoring 200 words.\n\n> _Hedge the meaning. Engage the alternatives. Name the limits. The discussion is where you bargain with the future readers of your work — and the bargaining language is the hedging matrix._\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1052,
+      "out_sha": "fa64f75d91b8",
       "note": ""
     },
     {
@@ -1331,11 +1331,11 @@
       "en_title": "Chapter 8: The Abstract",
       "order": 104,
       "src_chars": 1671,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2eb277336a9a",
       "src": "It is the spring of Mira's third year. The full paper from Chapters 4 through 7 — introduction, methods, results, discussion — is drafted, calibrated, polished. Mira has spent four months on roughly 8,500 words of careful prose. Their advisor reads the paper, suggests minor revisions, and finally says: _\"Now do the abstract. Two hundred words. Submit by Friday.\"_\n\nMira sits down on Wednesday afternoon and tries to compress their paper into 200 words.\n\nIt is the hardest writing task they have ever attempted.\n\nThe first draft runs to 380 words. Cutting it to 320 takes an hour. Cutting from 320 to 250 takes another hour. Cutting from 250 to 200 takes the rest of the afternoon, the evening, and most of Thursday morning. By Thursday afternoon Mira has 198 words, and they are not sure the abstract is good. They are sure it is short.\n\nTheir advisor reads it Thursday evening: _\"Better. But the contribution is buried in sentence five. It needs to be in sentence two. And the methods sentence is too long. Try again.\"_\n\nMira does. By Friday morning they have an abstract that is 196 words and well-structured. They submit. The conference accepts the paper.\n\nA surprising fact, attributed to Helen Sword: a typical academic abstract is read approximately 100 times more often than the full paper it summarizes. The effort-per-reader ratio inverts dramatically — most readers will only ever see the abstract, and the abstract will determine whether they cite, share, or pursue the work. The abstract is not a summary; it is a _miniature paper_ that has to do all the work the full paper does, in 200–300 words.\n\nThis chapter is about how to write that miniature paper.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 621,
+      "out_sha": "bce018f1c2d3",
       "note": ""
     },
     {
@@ -1343,11 +1343,11 @@
       "en_title": "Chapter 8: The Abstract",
       "order": 105,
       "src_chars": 3472,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7548b232942f",
       "src": "### 8.1 Vignette: The Buried Contribution\n\nHere is Mira's first real try at the abstract — the one their advisor sent back as \"needs work\":\n\n> _\"This paper examines climate adaptation policy in mid-sized coastal cities. Climate change poses an increasing threat to coastal regions, and adaptation has become a central concern for policymakers worldwide. Most prior research has focused on either large global samples of megacities or on single-city case studies, leaving a substantial gap in our understanding of how mid-sized cities navigate adaptation. We address this gap through a comparative case study of three mid-sized coastal cities: Da Nang in Vietnam, Cartagena in Colombia, and Casablanca in Morocco. Drawing on policy document analysis, semi-structured interviews with 24 city officials, and four years of municipal budget data, we identify a pattern we term 'fiscal sequencing,' in which short-term, visible adaptation interventions consistently crowd out longer-horizon investments. The pattern was observed across all three cases despite substantial regional, political, and institutional differences. We discuss implications for adaptation theory and for international funding agencies that currently focus their attention disproportionately on megacities.\"_\n\nThis is 196 words. It performs all the necessary moves. It is also, as Mira's advisor observed, badly structured. Read it again, looking specifically for _the contribution_. The sentence that names the finding — \"fiscal sequencing\" — is sentence five of seven. By the time the reader reaches it, they have already absorbed a sentence on context, a sentence on prior work, a sentence on cases, a sentence on data, and only then the finding. Most readers won't make it to sentence five.\n\nHere is the rewritten abstract:\n\n> _\"Climate adaptation in mid-sized coastal cities is shaped by a sequencing logic in which short-term, visible interventions crowd out longer-horizon investments — a pattern we observe across three cases (Da Nang, Cartagena, Casablanca) despite substantial regional, political, and institutional variation. This finding extends prior work on megacity adaptation to a previously understudied population that houses 30% of the global coastal population. We draw on policy document analysis, semi-structured interviews with 24 city officials, and four years of municipal budget data. The sequencing logic operates through fiscal mechanisms identifiable in budget allocation patterns and corroborated by official testimony. We discuss implications for adaptation theory — including the limits of generalizing megacity findings — and for international funding agencies currently underweighting mid-sized cities. The findings raise questions about the scale at which adaptation policy is being designed; the present analysis cannot resolve those questions but can productively pose them.\"_\n\nThis is 174 words. The finding is in the first clause of the first sentence. The reader knows what they're being shown before they know anything else. The remaining sentences support, contextualize, and close.\n\nThe structural difference matters. The first version reads like a paper progressing chronologically: motivation, prior work, methods, finding, implications. The second version reads like a _paper viewed from above_ : contribution first, support second. Most senior abstract writers structure this way, and most graduate students learn to only after several rounds of being told.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1135,
+      "out_sha": "a80290b5ac16",
       "note": ""
     },
     {
@@ -1355,11 +1355,11 @@
       "en_title": "Chapter 8: The Abstract",
       "order": 106,
       "src_chars": 2946,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bf5194137d00",
       "src": "### 8.2 What Reviewers and Editors Look For in an Abstract\n\n**Is the contribution legible in the first 30 seconds?** Editors triage submissions partly by abstract. Reviewers decide whether to commit to a full read partly by abstract. Citers decide whether to read further partly by abstract. The contribution must be obvious immediately.\n\n**Is the abstract self-contained?** A reader who never reads the full paper should still understand the work. This means key terms must be defined (briefly), key findings must be stated (concretely), and the contribution must be specific.\n\n**Is it the right length?** Word limits vary by venue (typically 150–300 for journal articles, 100–200 for conferences). Going substantially over is a signal of inability to compress; going substantially under is a signal of insufficient content.\n\n**Is it appropriately calibrated?** The hedging matrix from Chapter 7 applies. Abstracts that overclaim invite reviewer suspicion before the paper is even read.\n\n**Does it match the paper?** A surprisingly common failure: the abstract claims findings the paper does not deliver, or omits findings the paper centers. Reviewers cross-check, and the mismatch is held against the paper.\n\n**Does it match the venue?** Some venues expect structured abstracts (Background / Methods / Results / Conclusions as labeled subsections). Others expect prose abstracts. Some venues require a \"significance statement\" alongside the abstract. The three-paper read tells you which conventions apply.\n\n\n### 8.3 The Conventions of Abstract Writing\n\n\n#### Length and structure\n\nMost empirical journals require abstracts of 150–250 words. Conferences run shorter (often 100–200). Some venues — particularly biomedical and clinical journals — require _structured abstracts_ with labeled sections. Some — particularly humanities journals — permit longer, more discursive abstracts.\n\nThe conventional structure of a prose abstract, regardless of length, is:\n\n* **Background / motivation** (1–2 sentences). What is the field, what is the question, why does it matter?\n* **Approach** (1–2 sentences). What did you do?\n* **Findings** (2–4 sentences). What did you find?\n* **Implications** (1–2 sentences). What does it mean?\n\nA common variation, recommended by many editors and used in the Mira example above, is to **lead with the finding**. The first sentence states the contribution; the remaining sentences support it. This is sometimes called _inverted-pyramid_ structure (borrowed from journalism), and it serves the editor-and-skim-reader audience well.\n\nA second variation, common in high-impact general-interest journals (_Nature_ , _Science_ , and their cousins), is the **two-paragraph structure** : a one-paragraph \"general audience\" abstract followed by a one-paragraph technical abstract. The general-audience version is the harder write — compressing a specialized contribution for a non-specialist reader without losing precision.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1093,
+      "out_sha": "98c951049cc5",
       "note": ""
     },
     {
@@ -1367,11 +1367,11 @@
       "en_title": "Chapter 8: The Abstract",
       "order": 107,
       "src_chars": 3201,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1c4e73f38c88",
       "src": "#### Voice and tense\n\nVoice in abstracts mirrors the paper. If the paper uses first-person plural (\"we examine\"), the abstract does too. If the paper uses third-person passive (\"samples were prepared\"), the abstract does too. Consistency matters because the abstract is read as a window onto the paper's voice.\n\nTense in abstracts is often mixed. Background and motivation are frequently in _present tense_ (\"climate adaptation in mid-sized cities is shaped by…\"). Methods and findings are typically in _past tense_ (\"we conducted… we found…\"). Implications can be either. The mixing is conventional and rarely causes confusion.\n\n\n#### Citation density\n\nAbstracts almost never cite specific works. The convention is to refer to prior work generically (\"prior research has focused on…\") rather than with explicit citations. The convention exists for word-economy reasons (citations consume words abstracts cannot afford) and because abstracts often appear in indexing systems where citations would not render correctly.\n\nThe exception is in fields where the methods or framework being applied has a single canonical reference (e.g., \"we use a CARS-based analysis\"); a brief citation may be permitted then. But the default is _no citations in the abstract_.\n\n\n#### Definition: The Inverted Pyramid Abstract\n\nAn **inverted pyramid abstract** is one structured so that the most important information — typically the contribution or main finding — appears in the first sentence, with supporting context, methods, and implications following in decreasing order of importance.\n\nIn plain language: the inverted pyramid puts the conclusion first. The structure mirrors how readers actually engage with abstracts: most readers decide within the first sentence or two whether to continue. If the contribution is in sentence one, those readers see it. If it's in sentence five, they don't.\n\nThe inverted pyramid is one of two dominant abstract structures (the other being the chronological background-methods-results-implications structure). Both are acceptable; the inverted pyramid is more reader-friendly for skim audiences and is increasingly favored by editors of high-volume journals.\n\n\n#### Common Misconception\n\nA common misconception is that the abstract should be the _first_ part of the paper you write — that you should outline an abstract and then expand it into a full paper. In practice, this almost never works. Abstracts written before the paper is drafted reflect the writer's hopes for what the paper will show; they rarely match the paper that actually emerges. The result is the _abstract-paper mismatch_ problem reviewers detect.\n\nThe convention among experienced writers is to write the abstract _last_ — sometimes the very last task, after the paper is otherwise complete. By then the writer knows what the paper actually says, and the abstract can be a faithful compression. Some writers draft a \"working abstract\" early to focus the project, but they rewrite it from scratch at the end.\n\nIf you have written abstract first and paper second, you are not alone — many graduate students do. But the rewrite at the end is essential. The abstract you submit must reflect the paper you wrote.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1062,
+      "out_sha": "b32a40a362e5",
       "note": ""
     },
     {
@@ -1379,11 +1379,11 @@
       "en_title": "Chapter 8: The Abstract",
       "order": 108,
       "src_chars": 2352,
-      "status": "pending",
+      "status": "done",
       "src_sha": "02000168a4cb",
       "src": "### 8.4 The Six Moves Applied to Mira's Abstract\n\n**Move 1 (genre/venue).** Mira is submitting to a public-administration journal whose word limit for abstracts is 200 words. The three-paper read shows that abstracts in this venue typically use prose structure (not labeled sections), favor the inverted pyramid (contribution first), and never include citations.\n\n**Move 2 (structure).** Mira drafts the abstract structure in advance: _Sentence 1 — finding (inverted pyramid). Sentence 2 — relation to prior work. Sentence 3 — methods. Sentence 4 — additional finding detail. Sentences 5–6 — implications. Sentence 7 — what remains uncertain (echoing the discussion's close)._\n\n**Move 3 (calibration).** The hedging matrix applies, in compressed form. The first sentence — _\"is shaped by\"_ — uses the _Strong support_ row; _\"crowd out\"_ is direct because the data robustly support it. Implications language uses the _Reasonable support_ row: _\"raise questions about the scale at which adaptation policy is being designed.\"_ Notice the phrase _\"the present analysis cannot resolve those questions but can productively pose them\"_ — borrowed from the discussion's closing convention.\n\n**Move 4 (positioning).** Light positioning. Generic reference to _prior work on megacity adaptation_ without naming specific authors. The positioning the paper does at length in the lit review and discussion is compressed to a clause.\n\n**Move 5 (anticipated reviewer).** The abstract's reviewer is two-tier: the editor (who will decide whether to send out for review based partly on the abstract) and the assigned reviewers (who will read the abstract before the paper). Mira's revised abstract anticipates both: it states the contribution clearly enough for the editor to triage favorably, and it states scope and methods specifically enough that reviewers can match the abstract to the paper.\n\n**Move 6 (AI).** Mira uses AI to: produce three alternative orderings of the abstract sentences (the writer evaluates which works best); count words and flag overlong sentences; suggest tighter phrasings of specific sentences. They do _not_ use AI to _draft_ the contribution sentence — that sentence is the paper's most important, and they want to write it themselves.\n\nThe submitted abstract is 174 words. It survives editorial triage. The paper is sent out for review.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 819,
+      "out_sha": "8e9d79445728",
       "note": ""
     },
     {
@@ -1391,11 +1391,11 @@
       "en_title": "Chapter 8: The Abstract",
       "order": 109,
       "src_chars": 2449,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a385916b0a74",
       "src": "### 8.5 Templates and Examples\n\n**Inverted pyramid prose abstract:**\n\n> _\"[Finding, stated directly in 1–2 sentences]. This finding [extends / refines / challenges] prior work on [topic] by [specific contribution]. We [methods, in 1 sentence]. [Additional finding detail or scope clarification, 1–2 sentences]. The findings have implications for [theoretical area] and [practical/policy area]. [What remains uncertain, 1 sentence].\"_\n\nThis template hits 6–8 sentences and 150–250 words depending on the verbosity of each component. It works for most empirical journal venues.\n\n**Structured abstract (biomedical / clinical convention):**\n\n> _\"**Background:** [1–2 sentences on the question and its importance]. **Methods:** [1–2 sentences on study design, sample, key procedures]. **Results:** [2–3 sentences on key findings with effect sizes / key statistics]. **Conclusions:** [1–2 sentences on interpretation and implications].\"_\n\nWord limits vary. Major medical journals (e.g., _NEJM_ , _Lancet_) often allow 250–350 words for structured abstracts because the labeled structure consumes words.\n\n**Two-paragraph high-impact-journal abstract:**\n\n> _\"Paragraph 1 (general audience): [Hook sentence that frames the question for non-specialists]. [Background, accessible]. [Finding, in non-technical language]. [Why it matters for a broad audience]. Paragraph 2 (technical audience): [Specific finding with technical language]. [Methods]. [Additional findings]. [Implications for the field].\"_\n\nUsed at _Nature_ , _Science_ , _Cell_ , _PNAS_ , and similar venues. Hard to write well. The general-audience paragraph is typically the harder of the two.\n\n**Conference abstract (often 100–150 words):**\n\n> _\"[Question or finding, 1 sentence]. [Method, 1 sentence]. [Key result, 1–2 sentences]. [Implication, 1 sentence].\"_\n\nConference abstracts compress further. The discipline is brutal: every word must earn its place.\n\n**Humanities abstract (often more discursive):**\n\n> _\"This [paper / chapter / essay] [argues / examines / develops] that [thesis]. Drawing on [archive / corpus / theoretical tradition], it [explores / shows / develops]. The central contribution is [specific contribution]. The argument has implications for [theoretical area].\"_\n\nHumanities abstracts often retain the more discursive academic voice and may run longer (250–400 words). The convention is more variable across humanities subfields than it is in the empirical sciences.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 984,
+      "out_sha": "4f0cb2200847",
       "note": ""
     },
     {
@@ -1403,11 +1403,11 @@
       "en_title": "Chapter 8: The Abstract",
       "order": 110,
       "src_chars": 1617,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c9488768b0ce",
       "src": "### 8.6 Common Pitfalls\n\n**The buried contribution.** The contribution appears in sentence five or later. Fix: lead with the contribution; restructure around it.\n\n**The mismatch with the paper.** The abstract claims findings the paper does not deliver, or vice versa. Fix: write the abstract last; cross-check against the paper before submission.\n\n**The over-padded background.** Three sentences on context before the contribution is named. Fix: compress background to one sentence; some abstracts do without it entirely.\n\n**The generic implications.** _\"This work has implications for theory and policy.\"_ Vague enough to fit any paper. Fix: name _which_ theoretical question and _which_ practical or policy decision.\n\n**The cited abstract.** Citations appear in the abstract where they should not. Fix: refer to prior work generically; save citations for the body.\n\n**The sentence-fragment abstract.** The writer compresses by deleting subjects, articles, and verbs. _\"Examines climate adaptation. Three mid-sized cities. Identifies sequencing logic. Implications for funding.\"_ Fix: compression by _cutting unnecessary sentences_ , not by mutilating the ones that remain. Abstracts read poorly when they sound like telegrams.\n\n**The hedge-paralyzed abstract.** Every claim is hedged so heavily that no contribution is legible. Fix: hedge _meaning_ claims; be more direct on _finding_ claims (per the matrix in Chapter 7).\n\n**The wrong-venue abstract.** A structured biomedical abstract submitted to a humanities journal; a discursive humanities abstract submitted to a clinical journal. Fix: the three-paper read.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 567,
+      "out_sha": "e6704b820cc0",
       "note": ""
     },
     {
@@ -1415,11 +1415,11 @@
       "en_title": "Chapter 8: The Abstract",
       "order": 111,
       "src_chars": 2466,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6b3a85c0da81",
       "src": "### 8.7 Scholar Profile: Helen Sword and the Stakes of the Abstract\n\nHelen Sword is a New Zealand-based writing scholar whose 2012 book _Stylish Academic Writing_ and 2017 book _Air & Light & Time & Space_ have shaped how thousands of academics think about their own writing process. Sword's contribution is partly diagnostic — she has analyzed thousands of academic articles for stylistic patterns — and partly therapeutic, helping writers see their own habits and improve them.\n\nA surprising fact, central to Sword's analysis: _the typical abstract is read approximately 100 times more often than the full paper it summarizes._ The effort-per-reader ratio inverts dramatically. A writer might spend hundreds of hours on a paper and twelve hours on an abstract, but the abstract will determine the paper's reception in the world. Most readers will only ever encounter the abstract — through search results, citation indexes, social media shares, conference programs, AI summarization layers. The full paper is for the few; the abstract is for the many.\n\nThe implication is direct: the abstract deserves disproportionate attention. The hours spent compressing a paper into 200 careful words may be, in expected-impact terms, the most valuable hours in the project.\n\nA second surprising fact: in Sword's surveys of academic writers, fewer than 20% reported writing the abstract last (the convention recommended by editors and the convention this chapter recommends). The plurality wrote the abstract first, before the paper was complete, and never substantially revised it. This is one of the largest places where best practice and actual practice diverge in academic writing — and it is one of the easiest to fix once a writer is told.\n\nA third fact: Sword's broader argument in _Stylish Academic Writing_ is that academic writing can be _both_ conventionally rigorous and stylistically distinctive — that the convention does not force prose to be dull. The discussion in Chapter 7 of academic writing as a foreign language pretending to be normal English is partly Sword's lineage: the conventions are real, they must be respected, and they leave room for voice.\n\nFor graduate writers in 2026, Sword's lesson is direct: spend more time on the abstract than your intuition tells you to. It is your paper's ambassador to the world; it does more reader-facing work than the rest of the paper combined; and it is the most-leveraged 200 words of writing in your career.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 855,
+      "out_sha": "886f7dae1cb5",
       "note": ""
     },
     {
@@ -1427,11 +1427,11 @@
       "en_title": "Chapter 8: The Abstract",
       "order": 112,
       "src_chars": 1329,
-      "status": "pending",
+      "status": "done",
       "src_sha": "61a334e21509",
       "src": "### 8.8 Reader's Manuscript Audit Prompt\n\nTake the abstract of your current manuscript. (If you don't have a current manuscript with an abstract, use a paper of your own that has one.) Perform the following audit:\n\n**Compress by 30%.** Whatever your current word count, write a version 30% shorter. If your abstract is 250 words, write a 175-word version. If it's 200 words, write a 140-word version.\n\nThe compression forces every sentence to justify its presence. Sentences that don't earn their words get cut. Sentences that do get tightened. The result is almost always sharper than the original — and almost always still complete.\n\nAfter compressing, ask:\n\n* Is the contribution still legible?\n* Are the methods still specified at the level the venue expects?\n* Are the implications still present?\n* Is the calibration still appropriate?\n\nIf the answer to all four is yes, the original was over-padded and the compressed version is your new draft. If the answer to any is no, restore selectively — but try to add back fewer words than you cut.\n\nThis is your sixth manuscript revision. The portfolio: synthesis-vs-summary audit (Ch.3), CARS introduction rewrite (Ch.4), methods replication test (Ch.5), prose-to-table redesign (Ch.6), discussion calibration audit (Ch.7), and now the abstract compression.\n\n\n### 8.9 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 514,
+      "out_sha": "54697ce3897e",
       "note": ""
     },
     {
@@ -1439,11 +1439,11 @@
       "en_title": "Chapter 8: The Abstract",
       "order": 113,
       "src_chars": 2178,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b529e4be8a12",
       "src": "#### Concept Check\n\n**Q1.** What is an _inverted pyramid abstract_ , and why does the chapter argue it serves skim readers better than a chronological abstract?\n\nHint\n\nThe Definition box in §8.3 names this structure.\n\n**Answer:** An inverted pyramid abstract is one structured so that the most important information — the contribution or main finding — appears in the first sentence, with supporting context, methods, and implications following. It serves skim readers better than a chronological (background-methods-results-implications) structure because most readers decide within the first sentence or two whether to continue; placing the contribution in sentence one ensures even the most cursory reader sees it, while a chronological structure may bury the contribution at sentence four or five.\n\n**Q2.** Why does the chapter recommend writing the abstract _last_ , after the paper is otherwise complete?\n\n**Answer:** Because abstracts written before the paper is drafted reflect the writer's hopes for what the paper will show; they rarely match the paper that actually emerges. The result is the _abstract-paper mismatch_ problem reviewers detect. Writing the abstract last ensures it faithfully compresses the paper that was actually written. (Helen Sword's surveys, in §8.7, show that this is one of the largest gaps between best practice and actual practice in academic writing.)\n\n**Q3.** What is the surprising fact, attributed to Helen Sword, about the effort-per-reader ratio of abstracts?\n\n**Answer:** That a typical abstract is read approximately 100 times more often than the full paper it summarizes. The effort-per-reader ratio inverts dramatically — a writer may spend hundreds of hours on a paper and twelve on the abstract, but the abstract will determine the paper's reception. Most readers will only ever encounter the abstract.\n\n**Q4.** Name three of the conventional components of a prose abstract, in their typical order.\n\n**Answer:** Background/motivation; approach (methods); findings; implications. (The chapter notes that the inverted pyramid variation leads with the findings/contribution and follows with motivation, methods, and implications.)\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 738,
+      "out_sha": "2bc8b64b38ef",
       "note": ""
     },
     {
@@ -1451,11 +1451,11 @@
       "en_title": "Chapter 8: The Abstract",
       "order": 114,
       "src_chars": 3162,
-      "status": "pending",
+      "status": "done",
       "src_sha": "87b46c8937e5",
       "src": "#### Application Problems\n\n**Q1.** Take Mira's first-draft abstract from §8.1 (the buried-contribution version). Restructure it as an inverted pyramid abstract — the contribution in sentence one, supporting context after. Aim for the same word count (~196 words). Submit the rewrite and a 100-word reflection on what changed structurally.\n\nHint\n\nThe §8.1 example shows one possible rewrite. Try producing your own version with different sentence ordering or different compression choices.\n\n**Answer:** A successful response will (a) produce an inverted-pyramid version that opens with the _fiscal sequencing_ finding, (b) preserve the substantive content (cases, methods, scope, implications), and (c) reflect on what the restructuring exposed. The most common observation in successful reflections: that the original buried the contribution under unnecessary background — the climate-change framing in sentence one was decoration, not necessary. Cutting it freed words for the contribution.\n\n**Q2.** Take an abstract of one of your own papers (or a paper you read recently and admire). Apply the 30% compression test from §8.8. Submit the original, the compressed version, and a 100-word reflection on what got cut and why.\n\n**Answer:** _Answers will vary._ A successful response will (a) produce a genuinely shorter version (not just rephrased), (b) preserve the substantive content, and (c) reflect on what was cut. The most useful reflections often note that the cuts were of _padding sentences_ (generic context, decorative claims, redundant phrasings) rather than substantive ones — and that the compressed version reads sharper. (Connection to Chapter 6: the prose-as-table problem and the abstract-padding problem are cousin failures; both put words in places where a different format or shorter prose would do better.)\n\n**Sample Response (Mira's abstract, original 248 words → compressed 174 words):** _Cuts identified in the original: (1) generic-context opening sentence (\"Climate change has emerged as one of the most significant policy challenges of our time…\") — 27 words deleted; replaced by a one-sentence finding-first opening (12 words). (2) redundant methods sentence (\"This study examines… in order to better understand…\") — 18 words deleted; the methods are named once, briefly. (3) decorative claim (\"our findings have important implications for both theory and practice\") — 11 words deleted; replaced by one specific implication clause. (4) sentence repeating the contribution in different wording — 18 words deleted. Total cuts: 74 words across four kinds of padding. Reflection: the cuts were almost entirely padding rather than substance. The compressed abstract reads sharper because the work each sentence does is now visible — every sentence carries a specific job (finding, prior-work positioning, methods, additional finding, implications, what remains uncertain). The original had two sentences carrying the same job (decoration), three sentences carrying half a job each (vague gestures), and one sentence carrying the actual contribution. The compressed abstract has one sentence per job, with the contribution in sentence one._",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1095,
+      "out_sha": "8bc5e0927ce2",
       "note": ""
     },
     {
@@ -1463,11 +1463,11 @@
       "en_title": "Chapter 8: The Abstract",
       "order": 115,
       "src_chars": 1630,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2949476397d5",
       "src": "**Q3.** Read three abstracts in your target venue (the same three-paper read from Chapter 2). For each, identify: structure (chronological / inverted pyramid / structured); voice (active / passive / mixed); calibration (over-claiming / calibrated / under-claiming); citation density (typically zero); and length. Write a 250-word commentary on what your venue rewards and where your own abstracts diverge.\n\n**Answer:** _Answers will vary._ A typical successful response notes that the venue's conventions are tighter than the writer assumed — that the inverted pyramid is more dominant than the writer realized, that calibration is more conservative than the writer's drafts have been, that length norms are stricter than the writer's submissions. The exercise sharpens the venue-specific eye that Move 1 (Chapter 2) named.\n\n**Q4.** Compose a 200-word inverted-pyramid abstract for a paper you are _not_ currently writing — a hypothetical paper in your field. The exercise teaches the structure at low stakes, before you apply it to a real submission. (Connection to Chapter 4's hypothetical-introduction exercise: same logic, different genre.)\n\n**Answer:** _Answers will vary._ A successful response will (a) lead with the contribution in sentence one, (b) include all conventional components (motivation, methods, findings, implications), (c) hit the word limit, and (d) calibrate per the matrix in Chapter 7. The most common failure modes for first attempts: the contribution is too generic; the implications are decorative; the abstract drifts over 200 words. Worth doing twice if the first attempt has any of these failures.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 586,
+      "out_sha": "c9f1c60d5623",
       "note": ""
     },
     {
@@ -1475,11 +1475,11 @@
       "en_title": "Chapter 8: The Abstract",
       "order": 116,
       "src_chars": 2921,
-      "status": "pending",
+      "status": "done",
       "src_sha": "32e6e5e8291f",
       "src": "#### Think Deeper\n\n**Q1.** The widely cited claim — discussed by Sword and others in the academic-writing literature — that abstracts are read many times more often than full papers (estimates of the ratio range across studies, but the order of magnitude is consistent: abstracts reach far more readers than papers do) raises a question: should academic writers spend more time on abstracts and less on full papers? What would the costs and benefits be? Develop a position in 250–400 words.\n\n**Discussion:** The naive answer (yes, allocate more time to abstracts) misses the structural point: an abstract that doesn't have a strong paper behind it is detected eventually. The papers that get cited heavily are usually papers whose abstracts and full text both deliver. The deeper answer: writers should allocate _more time to abstracts than they currently do_ , but not at the expense of the full paper — instead, by drafting the abstract last and giving it disproportionate attention in the final revision phase. The hours of abstract refinement are some of the highest-leverage hours in the project, and they are typically the hours most often skimped (a common pattern: the writer spends three months on a paper, then writes the abstract in two hours the night before submission). Sword's diagnosis is correct; the response is more careful abstract-writing, not paper-writing reallocation.\n\n**Q2.** Some venues (notably _PLOS One_ , _eLife_ , and others) now publish _plain-language summaries_ alongside technical abstracts — short, accessible versions for non-specialist readers. How is the writing problem different for plain-language summaries? Where does the skill transfer from regular abstract-writing, and where does it not? Sketch your view in 250 words.\n\n**Discussion:** Plain-language summaries push the abstract problem further: the contribution must be legible not only to specialist skim readers but to non-specialists who lack the field's vocabulary. The skills that transfer: inverted-pyramid structure (lead with the finding); compression discipline (every word earns its place); calibration (don't overclaim). The skills that don't transfer: comfort with technical vocabulary (must be replaced by analogies, examples, simpler synonyms); reliance on field-specific framing (must be re-grounded for a general audience). The writing problem is harder, and the failure mode is often _infantilizing_ the prose — explaining at the level of a child rather than a non-specialist adult. The best plain-language summaries respect the reader's intelligence while not assuming the reader's specialist training. (Connection to Chapter 13: cross-disciplinary writing requires similar moves.)\n\n**Q3.** AI tools can now generate abstracts at speed. Many writers paste their full paper into an AI and ask for a 200-word abstract. What are the risks? Where might this be acceptable? Develop a position in 250–400 words.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 967,
+      "out_sha": "0d7fb3f732c1",
       "note": ""
     },
     {
@@ -1487,11 +1487,11 @@
       "en_title": "Chapter 8: The Abstract",
       "order": 117,
       "src_chars": 3030,
-      "status": "pending",
+      "status": "done",
       "src_sha": "13e1351ebb41",
       "src": "**Discussion:** AI-generated abstracts are often plausible but flat. The risks: (a) the AI may emphasize the wrong contribution (whatever appeared most prominently in the paper, which is not always the most important); (b) the AI's calibration is generic, often overclaiming or under-claiming relative to what the writer would choose; (c) the AI may include details that aren't in the paper or omit details that are; (d) the abstract is the writer's most important 200 words, and outsourcing the writing of those 200 words deprives the writer of the opportunity to compress their own thinking. Acceptable uses: (a) using AI to suggest _alternative orderings_ of writer-drafted sentences; (b) using AI to flag overlong sentences or word-count overruns; (c) using AI to produce a _first_ compressed version that the writer then heavily revises. Bright line: the contribution sentence — the most important sentence — must be the writer's own. (Connection forward to Chapter 14: this is one of the many places where AI-assisted academic writing is widely used, partly accepted, and requires the writer to retain interpretive ownership.)\n\n\n### Chapter Summary\n\nThe abstract is the most-read 200 words a writer will ever produce. It is not a summary; it is a _miniature paper_ that must do all the work the full paper does, in a tight word limit. Helen Sword's finding that abstracts are read approximately 100 times more often than their parent papers makes abstract-writing one of the highest-leverage activities in academic writing, and one of the most consistently under-resourced.\n\nThis chapter laid out the conventions of abstract structure (inverted pyramid, chronological, structured, two-paragraph), voice, tense, citation density, and length (§8.3). It applied the six moves to Mira's abstract (§8.4), offered templates for five common structures (§8.5), eight common pitfalls (§8.6), and the contribution of Helen Sword to making the stakes of the abstract visible (§8.7). The manuscript audit prompt (§8.8) added a sixth revision to your portfolio: a 30% compression of your own abstract.\n\nThe abstract closes the empirical-paper sequence that Chapters 3 through 8 have walked through. The lit review located the gap; the introduction promised the contribution; the methods made it replicable; the results showed it; the discussion interpreted it; the abstract compresses all of them. A reader who absorbs the conventions of these six genres has internalized roughly half of what skilled academic writing requires.\n\nIn Chapter 9 we turn to the **research proposal** — a fundamentally different genre, because it sells _future_ findings rather than reporting _past_ ones. Mira will write a proposal next, for a dissertation grant, and we will see how the conventions invert when the writer must promise findings they have not yet generated.\n\n> _Two hundred words. Most readers will see only these. Spend more time on them than your intuition tells you to. They do more work for the paper than the paper does for itself._\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1011,
+      "out_sha": "ad7bcdf986d2",
       "note": ""
     },
     {
@@ -1499,11 +1499,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 118,
       "src_chars": 1425,
-      "status": "pending",
+      "status": "done",
       "src_sha": "991545d4f764",
       "src": "It is the fall of Mira's fourth year. The first solo paper from Chapters 4–8 has been published. Mira is now mid-way through their dissertation, and they need money to finish it — specifically, to expand the comparative study from three cities to twelve. Their advisor has identified an NSF dissertation improvement grant program with an October deadline.\n\nMira sits down to draft the proposal. Within an hour they realize that everything they have learned about academic writing for the last three years is about to be inverted.\n\nA research article reports findings that exist. The reviewer asks: _did you find what you say you found?_\n\nA research proposal sells findings that do not yet exist. The reviewer asks: _will you find anything worth funding the search for?_\n\nThe genres look superficially similar — both have introductions, methods, and budgets-or-results — but they do fundamentally different rhetorical work. A proposal must be confident about a future the writer cannot yet verify. It must be specific about findings the writer cannot yet name. It must be persuasive about importance the writer cannot yet demonstrate. The hedging matrix from Chapter 7, which served the discussion section so well, becomes only partly applicable: a proposal that hedges too much fails to motivate funding; a proposal that hedges too little promises what cannot be guaranteed.\n\nThis chapter is about navigating that inversion.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 469,
+      "out_sha": "081d2c19436e",
       "note": ""
     },
     {
@@ -1511,11 +1511,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 119,
       "src_chars": 2525,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4e57597bb76e",
       "src": "### 9.1 Vignette: Selling a Future You Cannot Promise\n\nMira's first attempt at a proposal opens like a research-article introduction:\n\n> _\"Climate adaptation in coastal cities is a topic of increasing scholarly attention. Most existing work has focused on either large global samples or single-city case studies, leaving a gap in our understanding of mid-sized cities. Building on prior work (Chapter 4 of this dissertation), this proposal extends a comparative case-study approach from three to twelve mid-sized coastal cities. We will use document analysis, semi-structured interviews, and budget data analysis to examine adaptation patterns across the expanded sample.\"_\n\nIt is competent. It is calibrated. It will not get funded.\n\nThe reason: it sounds like a paper, not a pitch. It tells the reviewer what the writer will _do_ , but not what the reviewer will _get_. It positions the work in the literature, but not in the funder's priorities. It promises methods, but not findings. It hedges where a proposal must commit.\n\nHere is the rewritten opening:\n\n> _\"Coastal adaptation funding currently flows disproportionately to megacities, in part because the policy literature has overwhelmingly studied them. Mid-sized coastal cities — home to 30% of the global coastal population — face distinctive constraints that megacity findings do not capture. This proposal will produce the first systematic comparative analysis of adaptation in mid-sized coastal cities, identifying patterns that will inform both adaptation theory and the international funding programs whose effectiveness depends on understanding the contexts they aim to support. We expect to identify three to five generalizable adaptation typologies and to test the fiscal-sequencing hypothesis (developed in our prior work on three cities) across a sample of twelve. The findings will fill a gap that current funding allocations cannot address without empirical guidance.\"_\n\nThe rewritten opening is more direct. It names the _importance_ (funding flows are misallocated). It names the _contribution_ (the first systematic comparative analysis). It names the _expected findings_ (three to five typologies; fiscal-sequencing hypothesis test). It names the _audience_ (adaptation theory and international funding programs). And it commits — _will produce, will inform, expect to identify_ — where the first version hedged.\n\nThe shift in voice is not aggression. It is the genre's demand. A proposal that does not commit cannot motivate the reader to commit.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 853,
+      "out_sha": "4dbefb6e1a7b",
       "note": ""
     },
     {
@@ -1523,11 +1523,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 120,
       "src_chars": 2726,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5500c8b966a6",
       "src": "### 9.2 What Reviewers Look For in a Proposal\n\n**Is the problem important?** Reviewers ask first whether the question is worth asking. A proposal that doesn't establish importance is in trouble before the methods are read.\n\n**Is the proposed work feasible?** Even if the question is important, can the writer actually do the work in the proposed time and budget? Reviewers triage on feasibility.\n\n**Is the writer credible?** Has the writer demonstrated the relevant skills — through prior publications, training, preliminary data? Proposals from new researchers must work harder to establish credibility.\n\n**Is the contribution proportionate?** Some proposals overpromise (small project, claims to revolutionize the field); some underpromise (modest project, doesn't articulate why it matters). Reviewers want proportionality.\n\n**Are the methods specific?** Vague methods (\"we will conduct interviews\") are weaker than specific methods (\"we will conduct 96 semi-structured interviews — 8 per city across 12 cities — using the protocol developed in our pilot study (attached)\"). Specificity signals readiness.\n\n**Are the budget and timeline realistic?** Reviewers check whether the proposed work can be done with the requested resources in the proposed time. Unrealistic budgets and timelines are red flags.\n\n**Does the proposal fit the funder?** Each funder has its own priorities, conventions, and review criteria. A proposal that doesn't match the funder's stated priorities will be triaged out, regardless of intellectual merit.\n\nA proposal that satisfies these seven criteria has a fighting chance. Funding is competitive — even strong proposals often fail — but proposals that fail any of these criteria rarely succeed.\n\n\n### 9.3 The Conventional Structure of a Proposal\n\nProposals vary by funder and by genre (NSF, NIH, ERC, Wellcome, foundation grants, dissertation improvement grants, internal university fellowships — each with different conventions). But a common structural template can be adapted to most:\n\n\n#### Section 1 — Significance and Background\n\nWhy does this work matter? What is the gap in the literature it addresses? This section is the proposal's CARS introduction (Chapter 4) — but pitched harder than a paper introduction, because the reviewer has not yet committed to reading the rest. The hook in sentence one matters disproportionately.\n\nThe significance argument operates at two levels: the scholarly significance (what the work contributes to theory or method) and the practical significance (what the work contributes to a problem outside the academy). Some funders emphasize one over the other; the three-funder read (the proposal-writing equivalent of the three-paper read) tells you which.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 948,
+      "out_sha": "cd442c2b6546",
       "note": ""
     },
     {
@@ -1535,11 +1535,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 121,
       "src_chars": 3454,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3cf88b3c0998",
       "src": "#### Section 2 — Specific Aims (or Research Questions)\n\nWhat, specifically, will the project do? Most successful proposals organize around 2–4 specific aims, each one a focused, achievable subgoal. Aims should be:\n\n* _Specific_ (not \"examine adaptation\" but \"characterize the pathways by which fiscal constraint shapes adaptation sequencing across 12 mid-sized coastal cities\")\n* _Measurable_ (you should be able to tell whether the aim has been achieved)\n* _Related but independent_ (no aim should be wholly contingent on another; if Aim 1 fails, Aim 2 should still be possible)\n* _Proportionate_ (the aims together should be doable in the proposed time and budget)\n\nAims structure the rest of the proposal. The methods section answers each aim; the timeline allocates time to each aim; the deliverables map to each aim.\n\n\n#### Section 3 — Approach (Methods)\n\nHow will you do the work? This section parallels a research-article methods section (Chapter 5) but with two differences: it is _prospective_ (you describe what you _will_ do, not what you _did_), and it must include _contingencies_ (what will you do if the data don't cooperate?).\n\nMethods sections in proposals must be specific enough to be evaluable as feasible, but not so detailed that they read as inflexible (reviewers know research evolves). The right level: enough specificity to demonstrate readiness, with brief acknowledgment of how you will adapt if circumstances change.\n\n\n#### Section 4 — Expected Outcomes and Significance\n\nWhat will the project produce? This section names the deliverables (papers, data, frameworks) and the contributions (theoretical, practical, policy). It also addresses _what if_ — what alternative outcomes are possible, and how would they still constitute valuable contributions?\n\nThis section is where the genre's central tension shows: you must commit to expected outcomes specifically, while acknowledging that the outcomes are not yet known.\n\n\n#### Section 5 — Timeline and Budget\n\nWhen and at what cost? Most funders provide templates; fill them precisely. The timeline should be realistic with reasonable buffer; the budget should be justified line-by-line.\n\n\n#### Section 6 — Investigator Qualifications\n\nWhy are you the right person to do this work? Prior publications, training, preliminary data, institutional context. Doctoral students proposing dissertation work lean heavily on advisor relationships and pilot work; postdocs and faculty lean on track record.\n\n\n#### Definition: The Specific Aim\n\nA **specific aim** in a research proposal is a focused, achievable subgoal of the proposed project, stated specifically enough to be evaluable for both feasibility and contribution.\n\nIn plain language: a specific aim is a piece of the project that you will plausibly do and that will produce a particular contribution. Most funded proposals organize around 2–4 specific aims; below 2 aims looks thin, above 5 aims looks scattered. The skill is to define aims that are _specific_ (the reviewer can tell what's being proposed), _related but independent_ (no single failure kills the project), and _proportionate_ (achievable in the proposed time and budget).\n\nThe specific aim is a unit of analysis distinctive to the proposal genre. Research articles do not have specific aims; their unit of analysis is the finding. Proposals are organized around aims because the genre is prospective: you cannot organize around findings that don't yet exist.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1204,
+      "out_sha": "38ba7575059e",
       "note": ""
     },
     {
@@ -1547,11 +1547,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 122,
       "src_chars": 2352,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0171117675ef",
       "src": "#### Common Misconception\n\nA common misconception is that proposals should hedge the same way discussions hedge. _\"We may find,\" \"it is conceivable that,\" \"the data could suggest.\"_ The hedging matrix from Chapter 7 partially applies here, but proposals demand more commitment than discussions. _\"We expect to find,\" \"this work will produce,\" \"the project will demonstrate\"_ — these are the proposal voice.\n\nThe reason: a discussion is about claims made on evidence already collected. A proposal is about claims a funder is being asked to underwrite. Excessive hedging in a proposal communicates that the writer is uncertain whether the project is worth funding — which is a self-defeating signal. The convention is to commit specifically while acknowledging risk in dedicated sections (the contingencies subsection, the limitations section if present).\n\nThe trick: hedge on _outcomes that depend on what nature does_ (the data may turn out differently than expected); commit on _outcomes you control_ (we will conduct the analysis; we will produce the deliverables).\n\n\n### 9.4 The Hook Test\n\nProposals live or die in the first paragraph — and often in the first sentence. The hook is the proposal's most important sentence; it determines whether the reviewer reads carefully or skims.\n\nA useful diagnostic is **the hook test** : read your proposal's first sentence aloud. Then ask:\n\n  1. _Does it state what is at stake?_\n  2. _Could it be the first sentence of any other proposal?_\n  3. _Would a busy reviewer want to read sentence two?_\n\nIf the answer to (1) is no, your hook fails. If the answer to (2) is yes — it could open any proposal — your hook is too generic. If the answer to (3) is no, your hook isn't earning its place.\n\nMira's first hook (_\"Climate adaptation in coastal cities is a topic of increasing scholarly attention\"_) fails all three. Their rewritten hook (_\"Coastal adaptation funding currently flows disproportionately to megacities, in part because the policy literature has overwhelmingly studied them\"_) passes all three: it names what is at stake (misallocated funding); it could not open any other proposal (it is specifically about a known asymmetry); and it makes the reviewer want to read sentence two (which presumably names the writer's contribution).\n\nThe hook test is brutal but useful. Apply it before submission.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 852,
+      "out_sha": "fbeccce96d3a",
       "note": ""
     },
     {
@@ -1559,11 +1559,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 123,
       "src_chars": 3287,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c13f54191933",
       "src": "### 9.5 The Six Moves Applied to Mira's Proposal\n\n**Move 1 (genre/venue).** NSF dissertation improvement grant — a specific funder with a specific page limit (10 pages of project description), specific review criteria (intellectual merit and broader impacts), and a specific reviewer pool (scholars in the writer's broad subfield, but not necessarily specialists). The three-funder read shows that successful proposals in this program tend to have a strong significance section, 2–3 specific aims, methods that demonstrate feasibility, a section addressing broader impacts (an NSF priority), and a clear timeline.\n\n**Move 2 (structure).** Mira drafts the proposal structure: _§1 Significance (1.5 pages) — including the rewritten hook from §9.1. §2 Specific Aims (0.5 page) — three aims. §3 Approach (3.5 pages) — methods organized by aim. §4 Expected Outcomes and Broader Impacts (1.5 pages). §5 Timeline (0.5 page). §6 Qualifications and Pilot Work (1 page). §7 Bibliography (separate, doesn't count toward page limit)._\n\n**Move 3 (calibration).** This is where proposal voice diverges from paper voice. Mira commits in the significance section (\"this proposal will produce\"); commits in the aims (\"Aim 1 will characterize…\"); commits in the methods (\"we will conduct\"); hedges on findings (\"we expect to identify three to five typologies; the specific number will depend on…\"); commits on deliverables (\"the project will produce two journal articles, a public dataset, and a policy brief\").\n\n**Move 4 (positioning).** The proposal positions the work both within the academic conversation (the gap from prior chapters) and within the funder's priorities (NSF's interest in adaptation policy and broader impacts). Citations appear in the significance and methods sections; the bibliography is separate.\n\n**Move 5 (anticipated reviewer).** Predictable proposal objections: _\"Is the sample of 12 cities feasible?\"_ — addressed in the methods section's case-selection rationale and timeline. _\"What if the fiscal-sequencing hypothesis doesn't replicate at 12 cities?\"_ — addressed in the contingencies subsection and reframed as itself a publishable finding. _\"What are the broader impacts beyond academia?\"_ — addressed in §4, with specific attention to the policy brief deliverable and a planned workshop with practitioners. _\"Why is this writer the right person?\"_ — addressed in §6, leveraging the prior published paper from Chapter 4 and the pilot interview protocols.\n\n**Move 6 (AI).** Mira uses AI to: audit the hook against the three hook-test questions; identify hedges that should be commitments and commitments that should be hedges; generate alternative orderings of the specific aims (the writer evaluates which sequence builds best); flag implausible budget items. They do _not_ use AI to draft the significance argument or the aims — these are the proposal's most important content.\n\nThe submitted proposal is 9.8 pages. It is not funded on the first round. Mira receives reviewer comments, revises, and resubmits the following spring. The resubmission is funded.\n\nFailure-then-resubmission is the modal experience for academic proposals. Successful researchers absorb this and treat first-round rejection as part of the process, not as evidence the work isn't worth doing.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1217,
+      "out_sha": "f11a6e3e7eaa",
       "note": ""
     },
     {
@@ -1571,11 +1571,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 124,
       "src_chars": 2436,
-      "status": "pending",
+      "status": "done",
       "src_sha": "00cd927af1e5",
       "src": "### 9.6 Templates and Examples\n\n**Hook (significance section opener):**\n\n> _\"[Specific problem with stakes named in concrete terms]. [Why current scholarship cannot address it.] This proposal will [specific contribution].\"_\n\n**Specific aim:**\n\n> _\"**Aim N: [Specific, measurable goal].** This aim will [verb] [object] using [methods]. Expected outcomes: [specific deliverables]. Significance: [brief sentence on contribution].\"_\n\nThree to four such aims, each on its own paragraph, structures the aims section.\n\n**Approach (methods) per-aim opener:**\n\n> _\"To accomplish Aim N, we will [methods, briefly]. Specifically, [step 1]; [step 2]; [step 3]. Analysis will follow [protocol], yielding [type of deliverable]. We will manage risk to this aim by [contingency plan].\"_\n\n**Expected outcomes:**\n\n> _\"The project will produce [deliverable 1, e.g., 'two peer-reviewed journal articles'], [deliverable 2, e.g., 'a publicly available dataset'], and [deliverable 3, e.g., 'a policy brief']. The expected contributions are: theoretically, [specific theoretical contribution]; methodologically, [specific methodological contribution]; practically, [specific practical contribution]. We discuss alternative scenarios in §[contingencies]: in particular, if [risk materializes], the project will instead deliver [alternative outcome] which would itself be a meaningful contribution.\"_\n\n**Broader impacts (NSF-specific but adaptable):**\n\n> _\"Beyond academic contributions, the project will engage [stakeholder community] through [specific mechanism, e.g., a workshop, an open dataset, a policy brief]. We have already established relationships with [partner organization or community] (see attached letter of support). The project will also [training/mentorship/diversity contribution].\"_\n\n**Timeline:**\n\n> _\"**Year 1, Months 1–6:** [activities]. Deliverable: [interim output]. **Year 1, Months 7–12:** [activities]. Deliverable: [interim output]. … **Year 2, Months 19–24:** [activities]. Deliverable: [final output].\"_\n\nA specific monthly or quarterly timeline signals readiness; a vague \"Year 1 / Year 2\" timeline signals planning gaps.\n\n**Investigator qualifications:**\n\n> _\"The PI brings [specific relevant skills], demonstrated through [prior publications]. Pilot work for this proposal (see attached preprint) established [specific pilot contribution] and developed [specific tools/protocols] that will be deployed in the funded project.\"_\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1000,
+      "out_sha": "8873171d7f9a",
       "note": ""
     },
     {
@@ -1583,11 +1583,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 125,
       "src_chars": 1885,
-      "status": "pending",
+      "status": "done",
       "src_sha": "edb5c3dc7678",
       "src": "### 9.7 Common Pitfalls\n\n**The paper-not-pitch proposal.** The writing reads like a research article introduction; it tells the reviewer what the writer will do but doesn't sell why it matters. Fix: rewrite the significance section with the hook test in mind.\n\n**The vague aims.** _\"Aim 1: Examine adaptation in mid-sized cities.\"_ Not specific enough to be evaluable. Fix: each aim should specify the action, the object, the method, and the expected contribution.\n\n**The over-aggregated aims.** _\"Aim 1: Develop a comprehensive theory of climate adaptation.\"_ Aims that are too large to be doable. Fix: scale aims to the time and budget; aggregation can come in the cumulative contribution.\n\n**The dependent aims.** Aim 2 cannot proceed if Aim 1 fails. Reviewers see this as project risk. Fix: aims should be related but independent; if one fails, the others should still be doable.\n\n**The unrealistic timeline.** A 24-month project that requires 36 months of work to deliver. Fix: honest scoping; better to propose less and deliver well than to overpromise.\n\n**The under-justified budget.** Line items without explanation; equipment costs that seem high. Fix: budget justification should be specific and defensible per line.\n\n**The misaligned funder.** A proposal pitched to a funder whose priorities don't match the work. Fix: read the funder's call for proposals carefully; align the significance section to the funder's stated priorities (without compromising intellectual honesty).\n\n**The buried broader impacts.** NSF and many other funders weight broader impacts substantially; a proposal that treats them as a brief afterthought loses points. Fix: dedicate appropriate space; specify mechanisms and partners.\n\n**The overconfident contingencies.** _\"Risks are minimal.\"_ Reviewers know risks are not minimal. Fix: name the actual risks, briefly, with how you will manage them.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 672,
+      "out_sha": "630d0aae8906",
       "note": ""
     },
     {
@@ -1595,11 +1595,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 126,
       "src_chars": 1940,
-      "status": "pending",
+      "status": "done",
       "src_sha": "79edf61c9a02",
       "src": "#### A Practical Note: Predatory Funders and Solicitation Schemes\n\nMost graduate students who fall into proposal trouble do so by submitting to legitimate funders and writing under-prepared proposals. A small minority fall into a different trouble: they submit to _predatory funders or solicitation schemes_ — organizations that solicit proposals or accept submissions for fees but provide little or no actual review, no genuine funding pipeline, or terms that expose the writer's intellectual property without protection. Predatory funders parallel predatory journals (Chapter 9 of the publishing-side concerns) and have grown alongside them.\n\nA few practical signals: legitimate funders rarely solicit unsolicited proposals from graduate students through cold email; legitimate funders publish their review process, panel composition, and prior awardees; legitimate funders do not charge a meaningful \"submission fee\" to applicants (administrative fees, where they exist, are nominal). Specific resources to consult before submitting: your institution's _Office of Sponsored Research_ (or the equivalent — every research university has one, and they keep watchlists internal to the institution), the _Committee on Publication Ethics_ (COPE) general guidance on integrity in research funding, professional-society discipline-specific guidance (e.g., the AAUP, the AAAS, and field-specific societies often publish or link such guidance), and — for cross-checking a specific funder — the _Pivot_ and _GrantForward_ databases, which legitimate university funding offices already license. When in doubt, ask before applying. Submitting to a predatory funder costs more than time: it can foreclose later submission of the same work to legitimate funders if the predatory entity claims publication rights or first-refusal terms. Treat the funder selection as a first move worthy of careful research, not as an afterthought to a strong proposal.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 650,
+      "out_sha": "21b126724cfc",
       "note": ""
     },
     {
@@ -1607,11 +1607,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 127,
       "src_chars": 3138,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cd951894d854",
       "src": "### 9.8 Scholar Profile: Przeworski, Salomon, and the Four Questions of a Proposal\n\nIn 1988 the Social Science Research Council asked **Adam Przeworski** (a political scientist at New York University) and **Frank Salomon** (an anthropologist and historian at the University of Wisconsin–Madison) to write a brief practical guide for SSRC fellowship applicants. The result — _On the Art of Writing Proposals_ — is a pamphlet of barely 7,000 words that has become one of the most circulated documents in social-science graduate training. It exists because SSRC program officers had noticed that the proposals they received clustered around a small number of recurring failure modes, and that a short, frank guide might do more pedagogical work than longer treatises.\n\nA surprising fact, central to Przeworski and Salomon's framework: **every proposal must answer four implicit questions, and reviewers triage on whether the answers can be located.** The four questions, in their formulation, are — _What is the intellectual problem? Why does it matter? How will the project address it? What outcomes will the project produce, and how will we recognize them?_ A proposal where any of these is missing or unanswerable is a proposal that fails, regardless of the underlying project's merit. The pamphlet's contribution is to make these implicit questions _explicit_ — and therefore answerable.\n\nThe deeper claim is that proposal writing is a _specific genre with its own rhetorical demands_ , distinct from the research article. A proposal must commit to outcomes that have not yet been generated. Research articles report past work; proposals sell future work. The asymmetry is uncomfortable but real: the writer must say what the methods will produce while honestly acknowledging that the precise findings depend on data not yet collected. Skilled proposal writers learn to commit on _what they will do_ (methods, deliverables, timeline) while hedging on _what nature will reveal_ (specific findings, effect sizes, theoretical conclusions). Calibrated commitment is the proposal's voice.\n\nA second surprising fact, recurrent in interviews with grant program officers across funders: **the most common cause of rejection is not weak ideas but poor proposal craft** — generic openings, vague aims, inadequately specified methods, unrealistic timelines, missed funder priorities. Intellectual merit and proposal craft are partly independent; strong projects with weak proposals routinely fail, and adequate projects with strong proposals routinely succeed. This is one of the most important — and one of the most uncomfortable — facts about academic funding.\n\nA third fact: success rates for many major grant programs in the 2020s are 10–25%. Multi-round revision is the norm, not the exception. Successful researchers absorb this and develop a _resubmission practice_ — treating the first submission as the start of a feedback loop rather than a one-shot bet. Przeworski and Salomon explicitly recommend the resubmission posture: the worst that can happen, on their telling, is that the writer will receive useful criticism for the next round.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1149,
+      "out_sha": "0d5db3625bb0",
       "note": ""
     },
     {
@@ -1619,11 +1619,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 128,
       "src_chars": 1862,
-      "status": "pending",
+      "status": "done",
       "src_sha": "49e9fee05098",
       "src": "For graduate writers entering 2026, the Przeworski–Salomon lesson is direct: proposal writing is a craft distinct from paper writing, with its own four-question architecture and its own rhetorical demands. Treat it as such. Commit where the genre demands commitment; hedge where it permits hedging; revise on rejection rather than abandon. The hardest part of grant writing is not finding the words; it is finding the words again, after rejection.\n\n\n### 9.9 Reader's Manuscript Audit Prompt\n\nIf you have a current proposal in progress (or a recent past proposal you can revise), apply the **proposal hook test** from §9.4:\n\n**Read the first sentence aloud.**\n\nThen answer:\n\n  1. Does it state what is at stake?\n  2. Could it be the first sentence of any other proposal?\n  3. Would a busy reviewer want to read sentence two?\n\nIf the answer to any is unsatisfactory, rewrite the first sentence. The rewrite often takes thirty minutes — and often improves the proposal more than thirty hours of methods refinement would.\n\n**Then audit your aims.** Read each specific aim. For each, ask:\n\n* Is it specific enough to be evaluated?\n* Is it independent enough that its failure wouldn't kill the project?\n* Is it proportionate to the time and budget?\n\nRewrite any aim that fails one of these tests.\n\nThis is your seventh manuscript revision. The portfolio: synthesis-vs-summary audit (Ch.3), CARS introduction rewrite (Ch.4), methods replication test (Ch.5), prose-to-table redesign (Ch.6), discussion calibration audit (Ch.7), abstract compression (Ch.8), and now the proposal hook + aims audit.\n\n(If you don't have a current proposal, take the first paragraph and aims from a published proposal you can find — many funded proposals are publicly archived — and apply the audit. The exercise teaches the diagnostic eye even without your own draft.)\n\n\n### 9.10 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 764,
+      "out_sha": "a4129664bd51",
       "note": ""
     },
     {
@@ -1631,11 +1631,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 129,
       "src_chars": 2235,
-      "status": "pending",
+      "status": "done",
       "src_sha": "30672ff58e65",
       "src": "#### Concept Check\n\n**Q1.** What is the core rhetorical inversion that distinguishes a proposal from a research article?\n\nHint\n\nThe opening of the chapter and the Przeworski–Salomon profile (§9.8) name this inversion directly.\n\n**Answer:** A research article reports findings that exist; the reviewer asks \"did you find what you say you found?\" A proposal sells findings that do not yet exist; the reviewer asks \"will you find anything worth funding the search for?\" The proposal must be specific about importance, methods, and expected outcomes for work that has not yet been done — committing where the genre demands commitment while acknowledging the unknowns where appropriate.\n\n**Q2.** Name and define the _specific aim_ as the chapter has used the term.\n\n**Answer:** A specific aim is a focused, achievable subgoal of the proposed project, stated specifically enough to be evaluable for both feasibility and contribution. Most funded proposals organize around 2–4 specific aims; aims should be specific (the reviewer can tell what's being proposed), related but independent (no single failure kills the project), and proportionate (achievable in the proposed time and budget).\n\n**Q3.** What is the _hook test_ , and what three questions does it ask?\n\n**Answer:** The hook test is a diagnostic for the proposal's first sentence. It asks: (1) Does it state what is at stake? (2) Could it be the first sentence of any other proposal? (3) Would a busy reviewer want to read sentence two? A failing hook usually requires rewriting; the rewrite is often the highest-leverage half-hour of work in the entire proposal.\n\n**Q4.** Why does the chapter argue that excessive hedging in a proposal is a mistake, even though it is virtuous in a discussion?\n\n**Answer:** Because a proposal asks a funder to underwrite future work; excessive hedging communicates that the writer is uncertain whether the project is worth funding, which is self-defeating. The convention is to commit specifically while acknowledging risk in dedicated sections (contingencies, alternative outcomes). Calibrated commitment — commit on what you will do (methods, deliverables, timeline); hedge on what nature will reveal (specific findings) — is the proposal voice.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 808,
+      "out_sha": "65d932a312d0",
       "note": ""
     },
     {
@@ -1643,11 +1643,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 130,
       "src_chars": 1988,
-      "status": "pending",
+      "status": "done",
       "src_sha": "225af471853e",
       "src": "#### Application Problems\n\n**Q1.** Take Mira's first-draft proposal opening from §9.1 (the paper-style opening) and rewrite it as a proposal hook that passes the hook test. Apply the three hook-test questions to your rewrite.\n\nHint\n\nThe §9.1 example shows one possible rewrite. Try producing your own version with a different stakes-naming approach (e.g., naming the policy stakes differently, or naming the theoretical stakes more prominently).\n\n**Answer:** A successful response will (a) produce a hook that names specific stakes (not just \"topic of growing attention\"), (b) be distinctive (could not open any other proposal), (c) make the reviewer want to read sentence two, and (d) explicitly evaluate the rewrite against the three hook-test questions. The most common improvement in successful rewrites is the move from _abstract topic identification_ (\"X is important\") to _specific stake naming_ (\"X is misallocated / unstudied / contested\").\n\n**Q2.** Take a current or recent proposal of your own and apply the audit from §9.9: hook test plus aims audit. Submit the original hook, the rewritten hook, the original aims, the rewritten aims (where any are revised), and a 200-word reflection on what changed. (If you don't have your own proposal, use a publicly archived funded proposal — many grant agencies post examples — and apply the audit.)\n\n**Answer:** _Answers will vary._ A successful response will (a) accurately identify weaknesses in the original hook, (b) produce a rewrite that passes the hook test, (c) audit the aims for specificity, independence, and proportionality, and (d) reflect on what changed. The most useful reflections often note that the proposal's apparent weakness was not the methods or the contribution but the _framing_ — the hook and aims weren't doing the persuasive work the genre demands. (Connection to Chapter 4: hooks for proposals are like CARS introductions but more aggressive; the moves are similar but the calibration is more committal.)",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 740,
+      "out_sha": "9e98925ec142",
       "note": ""
     },
     {
@@ -1655,11 +1655,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 131,
       "src_chars": 2959,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a044652bfe38",
       "src": "**Sample Response (Mira's NSF proposal hook + aims audit, abridged):** _Original hook: \"Climate change adaptation in coastal cities is increasingly important.\" Hook-test diagnosis: (1) Stakes? Generic, not specific. (2) Could open any other proposal? Yes. (3) Would a busy reviewer want sentence two? No. Failed all three. Rewrite: \"Approximately 30% of the global coastal population — over 250 million people — lives in mid-sized cities that fall below the data thresholds of the dominant climate-adaptation literatures, leaving their adaptation pathways largely undocumented.\" Hook-test diagnosis: (1) Stakes? Specific. (2) Distinctive? Yes. (3) Pulls reader forward? Yes. Pass. Aims audit (original): \"Aim 1: Study adaptation in mid-sized cities. Aim 2: Develop a framework. Aim 3: Engage policy.\" Diagnosis: all three are too vague (no specific actions/objects/methods); Aim 2 depends on Aim 1; Aim 3 is not an aim but an implication. Rewritten aims: \"Aim 1: Characterize adaptation sequencing in 12 mid-sized coastal cities through 96 semi-structured interviews and document analysis (Year 1). Aim 2: Test the sequencing hypothesis against the 12-city budget data and identify cross-case typologies (Year 2). Aim 3: Develop a fiscal-adaptation typology usable by international funders, with policy-brief deliverable and practitioner workshop (Year 3, building on Aims 1 and 2 but standing alone if either yields negative results).\" Reflection: the original aims would have triaged out of NSF review. The rewrites pass the specificity, independence, and proportionality tests. The change is not in what Mira plans to do but in how the proposal makes the plan legible._\n\n**Q3.** For a hypothetical project in your field, draft three specific aims that would structure a proposal. Each aim should be 2–4 sentences and should specify the action, object, method, and expected contribution. Then check: are the aims independent? Are they proportionate? (Connection to Chapter 2: the aims are the proposal's analog to the paper's contribution claim — Move 3 of CARS made operational at proposal scale.)\n\n**Answer:** _Answers will vary._ A successful response will produce three aims that are (a) specific (action, object, method, contribution all named), (b) independent (no aim wholly contingent on another), and (c) proportionate (together doable in the implied time and budget). Common failure modes for first attempts: aims too vague (\"Aim 1: Study X\"); aims dependent on each other (Aim 2 requires Aim 1's success); aims too aggregated (\"Aim 1: Develop a comprehensive theory\"). Worth doing twice if any of these failures appear.\n\n**Q4.** Find a publicly available funded grant proposal in your field. Read the significance section and the specific aims. Apply the audit: does the hook pass the hook test? Are the aims specific, independent, and proportionate? What is the proposal doing rhetorically that you could learn from? Write a 250-word commentary.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1140,
+      "out_sha": "3856bc1bca2f",
       "note": ""
     },
     {
@@ -1667,11 +1667,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 132,
       "src_chars": 542,
-      "status": "pending",
+      "status": "done",
       "src_sha": "08534e13b6ee",
       "src": "**Answer:** _Answers will vary._ A typical successful response will note specific moves the funded proposal makes that distinguish it from a typical paper introduction — e.g., explicit stakes-naming, commitment language (\"we will\" rather than \"we may\"), explicit deliverables, broader-impacts engagement. The exercise teaches that funded proposals are written deliberately to a different genre than research articles, and that the genre's conventions can be learned by reading widely in funded proposals rather than only in published papers.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 195,
+      "out_sha": "fe1ccae24a02",
       "note": ""
     },
     {
@@ -1679,11 +1679,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 133,
       "src_chars": 2969,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3b7a4fe1b490",
       "src": "#### Think Deeper\n\n**Q1.** The chapter argues that \"intellectual merit and proposal craft are partly independent\" — that strong projects with weak proposals routinely fail and adequate projects with strong proposals routinely succeed. Is this a defect of the funding system or a feature? Develop a position in 250–400 words.\n\n**Discussion:** Both, depending on the angle. As a defect: it skews funding toward writers (and institutions, and demographic groups) with strong proposal-writing training, regardless of underlying intellectual merit. As a feature: proposal craft signals readiness, communication ability, and the discipline to think a project through end-to-end before requesting resources — qualities that correlate (imperfectly) with project success. The reform challenge: how to make proposal craft _trainable_ rather than _inheritable_ through informal mentorship networks. This book is partly an attempt at that — explicit teaching of proposal conventions to writers who didn't get them by osmosis. It is also why some funders have moved toward shorter, idea-focused first-stage proposals (followed by full proposals only for shortlisted ideas), to partially decouple intellectual merit from proposal craft. (Connection to Chapter 1's foreign-language thesis: like all academic-writing conventions, proposal craft is learnable; the conventions aren't the problem, but the lack of explicit teaching is.)\n\n**Q2.** The proposal-genre framing — that proposals require \"selling future findings you cannot yet verify\" — has an uncomfortable implication: the writer must commit specifically to outcomes that may not materialize. Is this honest? When does committed proposal language cross from confidence into overpromise? Sketch your view in 250 words.\n\n**Discussion:** Honest committed proposal language commits to _what you will do_ (methods, deliverables, timeline) and to _what would constitute success_ (findings of any of several specified types) without committing to the specific direction of those findings. _\"We will conduct interviews and code them; we expect to identify three to five typologies; the typologies' specific characteristics will depend on the data\"_ is honest committed language. _\"We will demonstrate that mid-sized cities follow a sequencing logic\"_ — committing to a specific finding direction — crosses into overpromise unless the prior evidence is strong enough to justify near-certainty. The line is similar to the hedging matrix line for findings, but shifted toward more commitment by the genre's demands. The honest writer commits to what they control and hedges on what they don't.\n\n**Q3.** AI tools can now generate proposal drafts at speed. Some writers paste a research idea and generate a full proposal; some have AI write the significance section based on bullet points; some use AI to write the aims based on a project sketch. What are the integrity concerns? What is acceptable use? Sketch your view in 250–400 words.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1044,
+      "out_sha": "43a399eef0a8",
       "note": ""
     },
     {
@@ -1691,11 +1691,11 @@
       "en_title": "Chapter 9: The Research Proposal",
       "order": 134,
       "src_chars": 3247,
-      "status": "pending",
+      "status": "done",
       "src_sha": "55e14af58d17",
       "src": "**Discussion:** Proposals are funder-facing documents in which the writer is making a contractual-style commitment. Integrity concerns include: (a) AI-generated significance sections may overclaim importance in ways the writer cannot specifically defend; (b) AI-generated aims may be vague or misaligned with what the writer actually intends to do; (c) AI may invent or misattribute prior work in the literature engagement; (d) AI-generated proposals may pass funder triage on craft alone, decoupling funding decisions further from intellectual merit. Acceptable uses: (a) using AI to audit a writer-drafted hook against the hook test; (b) using AI to suggest alternative orderings or phrasings of writer-drafted aims; (c) using AI to flag specific weaknesses (vague language, dependent aims, unrealistic timelines); (d) using AI to format budget tables and timeline charts. Bright line: every commitment in the proposal must be a commitment the writer would defend to the funder in person. The writer must be able to say _\"I wrote this, I mean it, I will do it.\"_ AI can help draft; AI cannot make commitments on the writer's behalf. (Connection forward to Chapter 14: this is one of the AI-use spaces where disclosure norms in 2025 are most still-evolving — funder policies are mixed.)\n\n\n### Chapter Summary\n\nThe research proposal inverts the rhetorical task of the research article: it sells future findings the writer cannot yet verify, commits to outcomes the writer cannot yet name, and persuades funders to underwrite work the writer has not yet done. The genre's voice is therefore more committed than the discussion section's voice — commit on what you will do; hedge on what nature will reveal — and the genre's structure is organized around _specific aims_ : focused, evaluable, independent subgoals.\n\nThis chapter laid out the conventional structure of a proposal (significance, aims, approach, expected outcomes, timeline, qualifications) (§9.3); the hook test (§9.4); the application of the six moves to Mira's NSF proposal (§9.5); templates for hooks, aims, methods, expected outcomes, broader impacts, timeline, and qualifications (§9.6); nine common pitfalls (§9.7); and Przeworski and Salomon's four-question framework for the proposal as a genre (§9.8). The manuscript audit prompt (§9.9) added a seventh revision to your portfolio: a hook test plus aims audit on a current or recent proposal.\n\nProposals are also the genre most often _resubmitted_ — first-round rejection is the modal outcome, not a verdict. Successful researchers develop a resubmission practice that treats reviewer feedback as input, revises substantially, and resubmits without spiraling. Mira's proposal, in our running example, was funded on resubmission.\n\nIn Chapter 10 we turn to the **conference paper and poster** — a genre that compresses full-paper material into talk- and visual-friendly formats, with conventions that have shifted dramatically as the _better poster_ movement and remote conference formats have spread.\n\n> _Commit on what you will do. Hedge on what nature will reveal. Lead with stakes the funder cares about. Resubmit when rejected. The proposal is a craft, and the craft is the difference between funded and unfunded work._\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1174,
+      "out_sha": "d2ca67ddb7bb",
       "note": ""
     },
     {
@@ -1703,11 +1703,11 @@
       "en_title": "Chapter 10: The Conference Paper and Poster",
       "order": 135,
       "src_chars": 1456,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f15b4385b722",
       "src": "It is the spring of Mira's fourth year. The dissertation expansion is funded (Chapter 9). The original three-city paper has been cited a few times. And Mira has been accepted to present at a major international conference on climate adaptation policy.\n\nTwo formats are involved. Mira's full paper has been accepted for a 15-minute _talk_ in a panel session. Their preliminary findings on three additional cities — early data from the funded expansion — have been accepted as a _poster_ in the conference's evening poster session.\n\nMira opens their laptop on a Saturday morning and stares at two empty slide decks (one for the talk, one for the poster) and asks the question every conference newcomer asks: _what's the difference between a paper and a talk? What's the difference between a paper and a poster?_\n\nThe answers are not obvious. Many conference talks are simply read-aloud papers, and they are uniformly bad. Many conference posters are simply shrunk-down papers, and they are similarly bad. Both genres are _visual + verbal_ media that demand different rhetorical work than print prose, and both have distinct conventions that most graduate students absorb only through years of attending conferences and noticing what works.\n\nThis chapter compresses those years of absorbed convention into explicit rules. We will meet Mike Morrison, whose _better poster_ movement has dramatically shifted poster design conventions in the last several years.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 510,
+      "out_sha": "f684c758413f",
       "note": ""
     },
     {
@@ -1715,11 +1715,11 @@
       "en_title": "Chapter 10: The Conference Paper and Poster",
       "order": 136,
       "src_chars": 3319,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1657d723cdd3",
       "src": "### 10.1 Vignette: When a Conference Paper Should Not Be Read Aloud\n\nMira's first instinct for the talk is to write a 15-minute version of the paper. They open their published paper, count the words (about 8,500), divide by 150 words per minute (the typical conference speaking rate, since fast-talking loses listeners), and conclude that 15 minutes will accommodate about 2,250 words. They set out to compress the paper to 2,250 words and read it aloud.\n\nThis will be a bad talk. Listening to spoken academic prose is fundamentally different from reading written academic prose. Listeners cannot rewind. They cannot check the references. They cannot skim past dense passages. They cannot pause to think. Everything they receive must be processed in real time, in the order delivered, without external aids.\n\nThe implications for the writing — because a talk is a kind of writing — are large:\n\n* **Linear, not branching.** Written academic prose can branch (parenthetical asides, footnotes, qualifications). Spoken academic prose must move forward; every sentence depends on the listener having retained the previous one.\n* **Repetition is helpful, not redundant.** Written prose can state a key point once and trust the reader to remember; spoken prose must restate, reframe, and conclude with the same point that opened, because listeners' attention drifts.\n* **Visual support is structural, not decorative.** Slides do not just illustrate the talk; they carry the weight of detail that the listener cannot retain from speech alone. Tables, figures, key terms — these belong on slides.\n* **Conversational register, not paper register.** Spoken prose can use first person, contractions, occasional informality, rhetorical questions. Slavishly formal academic register sounds dead when spoken.\n\nMira's revised plan: write a _talk script_ of about 1,800 words (slightly under the time budget, leaving room for pauses and questions); design 12–15 slides that carry the weight of detail; rehearse three times before the conference. The talk will be related to the paper but is not the paper. It is a different genre.\n\n\n### 10.2 What Conference Audiences Look For\n\n**Can I follow along?** The single most important question. Audiences who lose the thread by minute three rarely catch up.\n\n**Why should I care?** The hook from the paper applies, but for a talk it must arrive even faster — usually in the first 60 seconds.\n\n**What's the headline finding?** Audiences want to know what you found before they hear how you did it. A talk that builds chronologically from background through methods to findings risks losing the audience before the findings arrive.\n\n**Can I see what you mean?** Visual support carries the comprehension load that written prose's careful structure carries. Bad slides — text-heavy, low-contrast, busy — actively undermine the talk.\n\n**Is this calibrated?** The hedging matrix from Chapter 7 still applies. Spoken overclaim is just as detectable as written overclaim, and Q&A audiences will probe.\n\n**Will I want to talk to you after?** Conference talks have a secondary purpose beyond the talk itself: to attract follow-up conversations, collaborations, citations. A talk that engages the audience invites these; a talk that bores them does not.\n\n\n### 10.3 The Conventions of the Conference Talk\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1140,
+      "out_sha": "ae46cdbba966",
       "note": ""
     },
     {
@@ -1727,11 +1727,11 @@
       "en_title": "Chapter 10: The Conference Paper and Poster",
       "order": 137,
       "src_chars": 3394,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f90379c74ee1",
       "src": "#### Length and pacing\n\nMost conference talks in the social sciences and humanities run 15–20 minutes (with 5–10 minutes for Q&A). STEM conferences sometimes have shorter slots (10–12 minutes) and sometimes longer. The first rule: _do not run over._ Running over signals disrespect for the audience and the chair, and chairs in well-run sessions will cut you off.\n\nA useful pacing guide: 100–150 words per slide of speech, and one slide per minute on average. A 15-minute talk corresponds to 12–15 slides and roughly 1,800 words of speech. This leaves room for pauses, transitions, and the occasional joke.\n\n\n#### Structure\n\nThe conventional structure of a conference talk inverts a paper's chronology in favor of a _contribution-first_ structure resembling the inverted-pyramid abstract:\n\n  1. **Hook (1 minute):** Why should the audience care? A specific stake, a vivid example, a counterintuitive finding.\n  2. **Headline finding (1 minute):** What did you find? State it in one sentence; gesture at the slide that summarizes it.\n  3. **Setup (2–3 minutes):** Brief background, brief gap, brief contribution claim.\n  4. **Approach (2–3 minutes):** What you did, in enough detail to make the findings credible. Not a methods section; just the headlines.\n  5. **Findings (4–6 minutes):** The substance. One slide per major finding. Tables and figures carry the data.\n  6. **Implications (1–2 minutes):** What does it mean? Brief. Theoretical and practical.\n  7. **Closing (30 seconds):** A memorable closing sentence that the audience will retain.\n\nVariations: research-in-progress talks emphasize methods and questions over findings; literature-review talks reorganize around the synthesis. The contribution-first opening, however, is widely beneficial.\n\n\n#### Slide design\n\nSlides are the visual companion to the talk. Bad slides — too much text, low contrast, bullet-point-heavy — actively damage the talk. Good slides:\n\n* **One key idea per slide.** If you have two ideas, make two slides.\n* **Minimal text.** Headlines and key terms only; the speech carries the prose.\n* **High contrast.** Dark text on light backgrounds (or vice versa); avoid low-contrast color combinations.\n* **Large fonts.** A back-row attendee should be able to read every word. Generally 24-point or larger.\n* **One figure or table at a time, large.** A small figure crammed into a slide alongside text is unreadable.\n* **No distracting transitions or animations.** Reveal-on-click is acceptable for staged builds; flying text is not.\n\nThe Tufte principles from Chapter 6 apply here even more strictly than in print: every visual element must communicate; chartjunk is even more damaging on a screen than on a page.\n\n\n#### Voice and register\n\nConference talks are spoken. Drop the third-person passive academic prose. Use first person (\"I argue,\" \"we found\"). Use contractions where natural. Ask occasional rhetorical questions (\"Why does this matter?\"). Pause for emphasis. The register is conversational-but-precise — the register of an excellent lecture, not a journal article.\n\nA common mistake: reading the talk verbatim from a script. Audiences detect this immediately and disengage. Better practice: rehearse from speaker notes that contain the structure and the key sentences (the hook, the headline finding, the closing) verbatim, but allow the connecting prose to be ad-libbed in conversational register.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1289,
+      "out_sha": "64476ad4639d",
       "note": ""
     },
     {
