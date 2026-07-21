@@ -859,11 +859,11 @@
       "en_title": "Chapter 8: The Smoke Detector in Your Head",
       "order": 64,
       "src_chars": 3202,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f6820cc48522",
       "src": "Your kitchen smoke detector is, by any strict measure, a terrible judge of fires. It shrieks when you make toast. It panics over a slightly overdone steak. The overwhelming majority of times it goes off, there is no fire at all, just a little smoke and a lot of false alarm. If you graded it as a fire-detector on accuracy, it would fail. And yet it is a brilliantly designed device, and you would be a fool to replace it with a \"smarter\" one that only sounded when it was _sure_. Why? Because the two mistakes it could make are not equal. A false alarm costs you a few seconds of annoyance and some waving of a dish towel. A missed alarm costs you your house and possibly your life. Faced with that brutal asymmetry, the rational design is exactly the one you have: hair-trigger, jumpy, willing to cry wolf a hundred times to avoid being silent the one time it matters.\n\nNow here is the idea that ties together everything in Part 2 and reaches forward into the most charged chapters of the book. Your mind is full of smoke detectors. The snake-flinch that fired before you could see (Chapter 5), the disgust that recoils from harmless things (Chapter 6), the anxiety that floods you before any real threat appears, all of these may be running the same ancient, sensible logic as the device on your kitchen ceiling. They are not malfunctions. They are not stupidity. They are the predictable output of a system that has been shaped, across deep time, to make the _cheaper_ mistake when it cannot be certain. Once you see this principle, a hundred puzzling features of the mind click into place, and you understand at last why a well-built mind should be systematically, intelligently _wrong_.\n\n\n### 8.1 The logic of asymmetric error\n\nWhenever you must judge an uncertain situation and act, you can be wrong in two opposite directions. Suppose you hear a rustle in the grass. You can believe it is a predator when it is really the wind (a _false alarm_), or believe it is the wind when it is really a predator (a _miss_). You cannot eliminate both kinds of error at once when the signal is ambiguous; tuning yourself to avoid one kind necessarily makes the other kind more likely. A jumpy, suspicious mind makes few misses but many false alarms. A calm, skeptical mind makes few false alarms but the occasional deadly miss. The question evolution \"asks,\" through the slow filter of who survived to reproduce, is: which kind of error is _cheaper_?\n\nAnd here is the crucial insight: the two errors are almost never equally costly. In the rustle-in-the-grass case, a false alarm costs you a wasted sprint and a racing heart, recovered in minutes. A miss costs you your life and every descendant you might have had. When the costs are that lopsided, the optimal strategy is _not_ to be accurate. It is to be _biased_ , deliberately tilted toward making the cheap error so as to almost never make the expensive one. A mind that flinched at a hundred sticks to avoid being killed by the one snake left more descendants than a mind that calmly assessed each shape and was occasionally right about a stick while being fatally wrong about a snake. The bias is not a flaw in the design. The bias _is_ the design.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 972,
+      "out_sha": "6c2cef63a083",
       "note": ""
     },
     {
@@ -871,11 +871,11 @@
       "en_title": "Chapter 8: The Smoke Detector in Your Head",
       "order": 65,
       "src_chars": 1246,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9c683a28467f",
       "src": "#### Definition: Error management theory\n\nError management theory holds that when judgments under uncertainty carry asymmetric costs (one kind of error being more damaging than the other), natural selection favors decision-making systems that are biased toward making the _less costly_ error, even at the price of being systematically inaccurate.\n\nIn plain language: when being wrong in one direction is much more dangerous than being wrong in the other, evolution builds a mind that leans toward the safe mistake rather than toward the truth. Notice how much this clarifies. It explains why your fastest fears over-fire (Chapter 5): missing a real snake was catastrophic, so the system is tuned to over-detect. It explains why disgust over-avoids (Chapter 6): eating a real toxin was deadly, so the system is tuned to over-reject. The \"false alarms\" we noticed in those chapters are not separate quirks; they are all instances of one principle. And the principle makes a _risky prediction_ , which is what lifts it above a just-so story: it predicts that biases should appear specifically where ancestral error costs were _asymmetric_ , and should point in the direction of the _cheaper_ error, a pattern that can be checked and could be wrong.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 376,
+      "out_sha": "e313d6bac34b",
       "note": ""
     },
     {
@@ -883,11 +883,11 @@
       "en_title": "Chapter 8: The Smoke Detector in Your Head",
       "order": 66,
       "src_chars": 2464,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c3758c6def62",
       "src": "### 8.2 Grading the principle and its predictions separately\n\nThis is a beautiful idea, and beauty is exactly when Thread A should make us most careful. So let us do something that distinguishes honest evaluation from cheerleading: grade the general principle and its specific applications _separately_ , because they do not all stand on the same ground.\n\nThe _general principle_ (that selection favors biased decision systems under asymmetric error costs) is robust and, frankly, almost has to be true. It follows from the basic logic of decision-making under uncertainty plus the basic logic of selection; the smoke detector shows the same logic governs any well-designed detector facing lopsided costs. It is confirmed across many systems in many species, and it coheres with everything we have seen. You can lean on the principle.\n\nThe _specific predictions_ , though, are a different matter, and some are much stronger than others. Consider one famous application: the proposal that men tend to over-perceive sexual interest from women (reading a friendly smile as flirtation) because, ancestrally, the cost of missing a real opportunity to reproduce outweighed the cost of a misread and a rebuff. The logic is clean and the prediction is real, and there is some evidence men do over-infer here. But the effect is debated: how large it is, whether it is better explained by men simply having higher baseline interest (so they project it), whether women correspondingly _under_ -perceive, and how much is laboratory artifact, are all genuinely contested. So the _principle_ behind the prediction is solid while _this particular prediction_ is only partly supported and still argued over. The honest move is to say exactly that, rather than letting the elegance of the principle lend borrowed certainty to every specific claim made in its name.\n\nThis separation, robust principle versus variably-supported predictions, is one of the most useful habits in the whole field, because it is how overreach happens. Someone establishes the lovely general logic of error management, and then smuggles in a dozen specific just-so applications under its credibility, as though proving the principle proved them all. It does not. Each specific application has to earn its own grade against Chapter 3's toolkit. The principle is a license to _hypothesize_ a bias where error costs were asymmetric; it is not a license to _believe_ every such hypothesis without testing it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 721,
+      "out_sha": "403c7ccd08e6",
       "note": ""
     },
     {
@@ -895,11 +895,11 @@
       "en_title": "Chapter 8: The Smoke Detector in Your Head",
       "order": 67,
       "src_chars": 1629,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f75852945aec",
       "src": "#### Common Misconception\n\n_\"Error management says our cognitive biases are actually optimal, so biases are good and we shouldn't try to correct them.\"_\n\nThis is the naturalistic fallacy in one of its most seductive modern disguises, and it is worth dismantling carefully because it sounds so sophisticated. The seductive part is real: error management genuinely shows that many biases are not random stupidity but the sensible output of a system minimizing ancestral costs, which is a profound and humbling correction to the lazy view that the mind is just buggy. But \"optimal\" here has a precise and limited meaning, and the fallacy comes from stretching it. The biases were optimal _for leaving descendants in the ancestral environment_ , given _ancestral_ error costs. That is the only thing \"optimal\" means here. It does not mean optimal for your happiness, your accuracy, your modern goals, or your moral life, and it certainly does not mean we _should not_ correct them. The same mismatch logic from Chapter 7 applies: a bias tuned to ancestral costs can be actively harmful when the costs have changed. Modern anxiety may be a smoke detector calibrated for a world of acute physical threats, firing uselessly at emails and traffic, in which case \"correcting\" it (through therapy, perspective, deliberate effort) is not fighting our optimal nature but adapting an outdated setting to a new world. Once again: the science tells us _why_ the bias exists and _what it was for_. Whether to keep it, fight it, or work around it is an _ought_ question, on the far side of the gap, and error management theory has no vote there.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 491,
+      "out_sha": "ddb2466c46ae",
       "note": ""
     },
     {
@@ -907,11 +907,11 @@
       "en_title": "Chapter 8: The Smoke Detector in Your Head",
       "order": 68,
       "src_chars": 3108,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e677ab943cb5",
       "src": "### 8.3 The same logic, everywhere you look\n\nThe reach of this one principle is what makes it the capstone of Part 2, so let us watch it illuminate several puzzles at once, while keeping the grading discipline from 8.2 firmly in hand.\n\nConsider **anxiety**. From the outside, an anxious mind looks broken: it worries about dangers that never materialize, runs catastrophic scenarios, stays vigilant when nothing is wrong. But through the smoke-detector lens, much of this is a threat-detection system doing its job, tuned to the ancestral truth that the cost of under-preparing for a real danger was far higher than the cost of over-preparing for a false one. This does not mean anxiety disorders are not real suffering, or that they should not be treated; it means the _underlying machinery_ is not a malfunction but an over-firing of a system that, dialed lower, served our ancestors well. That reframing is itself therapeutic for many people, and it is a genuine gift of the theory.\n\nConsider **superstition and over-detecting patterns**. Ancestrally, if the bushes rustled, the cheap error was to assume an agent (a predator, a person) was behind it, and the expensive error was to assume \"just the wind\" when something was in fact stalking you. A mind biased to over-detect agency and pattern, to see a face in the shadows and a cause behind the coincidence, makes many harmless false alarms and rarely the fatal miss. Our tendency toward superstition, toward seeing intention and meaning in random events, may be the residue of that sensible bias, firing now at lottery numbers and broken mirrors.\n\nAnd consider, looking ahead, **jealousy** , which we will meet properly in Chapter 12. The same logic suggests a mind tuned so that the cost of failing to detect a partner's real infidelity (with its ancestral reproductive consequences) may have outweighed the cost of a false suspicion, producing a jealousy system biased toward vigilance. We flag it here only to show the principle's reach, and to note in advance that this specific application, like the over-perception one, is contested in its details and must be graded on its own evidence when we get there, not waved through on the principle's authority.\n\nNotice what we have done. A single idea, the asymmetry of error costs, has connected fear, disgust, anxiety, superstition, and (provisionally) jealousy into one elegant logic, while we have repeatedly insisted that the _principle's_ robustness does not transfer automatically to each _application's_ certainty. That double move, embracing a powerful unifying idea _and_ refusing to let it license lazy specific claims, is exactly the discernment the whole book is building. The smoke detector in your head is real, and beautifully designed. What it is detecting, and whether you should trust it today, is a question you must still ask one case at a time.\n\n\n### 8.X Exercises\n\nThese prompts exercise the chapter's signature discipline: wielding a powerful general principle while grading each specific application on its own merits, and never letting \"it's adaptive\" slide into \"it's good.\"\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 936,
+      "out_sha": "ece955438724",
       "note": ""
     },
     {
@@ -919,11 +919,11 @@
       "en_title": "Chapter 8: The Smoke Detector in Your Head",
       "order": 69,
       "src_chars": 2080,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9fbae97da3f8",
       "src": "#### Sort the Claim\n\n**Q1.** Apply the principle and then grade honestly: \"People are biased to assume ambiguous noises at night are intruders rather than the house settling, because the cost of a missed real intruder outweighed the cost of a false alarm.\" Is the general logic sound? Is this specific claim well-supported, and how would you check?\n\nHint\n\nFirst check the asymmetry: were the two ancestral error costs really lopsided, and in which direction? Then ask whether the specific bias has been demonstrated or just predicted by the logic.\n\n**Discussion:** The general logic is sound and the asymmetry is plausible in the predicted direction: ancestrally, treating a real threat (a predator or hostile human approaching in the dark) as \"just the house settling\" could be fatal, while treating a harmless noise as a threat costs only a jolt of adrenaline and a few minutes of wasted vigilance, so error management predicts a bias toward the intruder interpretation. So far so good, and the claim is a _reasonable hypothesis_ generated by a _robust principle_. But notice the move the exercise is training you to resist: the soundness of the principle does not by itself establish that this specific bias _exists_ at the predicted strength. To grade the specific claim you would want actual evidence: do people, under controlled conditions, really interpret ambiguous nighttime sounds as threats more readily than the situation warrants, and more readily than they interpret ambiguous _daytime_ sounds (since darkness raised ancestral vulnerability)? Does the bias track the cues the theory predicts? Absent that evidence, the claim sits in \"well-motivated prediction,\" not \"demonstrated finding.\" The honest verdict: sound principle, plausible and probably-correct application, but its specific strength is an empirical matter to be checked, not assumed. This is the exact discipline from 8.2, and it is the difference between using error management as a flashlight (illuminating where to look) and abusing it as a rubber stamp (certifying whatever it can be made to fit).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 594,
+      "out_sha": "65663deb57ad",
       "note": ""
     },
     {
@@ -931,11 +931,11 @@
       "en_title": "Chapter 8: The Smoke Detector in Your Head",
       "order": 70,
       "src_chars": 2073,
-      "status": "pending",
+      "status": "done",
       "src_sha": "721763fb656d",
       "src": "#### Spot the Fallacy\n\n**Q2.** A self-help author writes: \"Your anxiety is your ancient survival system working perfectly. It's adaptive, it's natural, it kept your ancestors alive, so instead of fighting it, you should trust it and let it guide you.\" What's wrong, and how does the mismatch idea from Chapter 7 help you answer?\n\nHint\n\n\"Adaptive\" and \"kept your ancestors alive\" are _is_ claims about the ancestral environment. \"You should trust it and let it guide you\" is an _ought_ claim about your modern life. Is the bridge between them sound?\n\n**Discussion:** The author builds a naturalistic fallacy on a foundation that is half-true, exactly the most dangerous kind. The half-true part: yes, anxiety's underlying machinery is plausibly an adaptive threat-detection system, and reframing it as \"not a malfunction but an over-firing\" is genuinely helpful, as 8.3 noted. The errors begin at \"so instead of fighting it, you should trust it and let it guide you,\" which slides from _is_ (anxiety is an evolved smoke detector) to _ought_ (you should obey it). Mismatch from Chapter 7 is the precise tool that exposes the slide: the anxiety system was calibrated for ancestral error costs, where threats were often acute, physical, and real, but your modern environment presents different stimuli (deadlines, social media, traffic) that the system misreads, firing its ancient alarm at things that are not the dangers it was built for. So \"trust it and let it guide you\" is bad advice for the same reason \"listen to your sugar cravings\" was bad advice in Chapter 7: the signal is tracking a vanished world. The correct stance, which is also the more compassionate one, is to _understand_ the anxiety (which reduces self-blame: it is not weakness or brokenness) while _not_ simply obeying it (which would mean fearing the wrong things). The science explains the alarm; whether to heed any particular firing is a judgment your reason makes, not a command the alarm issues. The author has used a real and comforting insight as the launchpad for an _ought_ it cannot support.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 666,
+      "out_sha": "886c6fb79260",
       "note": ""
     },
     {
@@ -943,11 +943,11 @@
       "en_title": "Chapter 8: The Smoke Detector in Your Head",
       "order": 71,
       "src_chars": 2178,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f189699338b6",
       "src": "#### Steelman Both Sides\n\n**Q3.** Error management is sometimes praised as one of evolutionary psychology's best ideas and sometimes criticized as a framework so flexible it can \"explain\" any bias after the fact. Steelman both, and say how the 8.2 distinction (principle versus prediction) resolves the tension.\n\nHint\n\nThe praise targets the principle; the criticism targets loose application. Can both be right about different things?\n\n**Discussion:** The strongest case for the praise: error management takes a grab-bag of seemingly irrational human biases and reveals an underlying rationality, showing they are not bugs but the sensible output of cost-asymmetric decision-making, and it does so with a principle that follows from basic decision theory and selection logic, makes the risky prediction that biases should point toward the cheaper error, and has been confirmed across many systems. That is real explanatory power, not hand-waving. The strongest case for the criticism: precisely _because_ the principle is so general, it is easy to abuse, since after observing almost any bias one can construct a story about an ancestral asymmetry that would have favored it, and if the storytelling is unconstrained, the framework risks becoming an after-the-fact justification machine, the just-so story of Chapter 3 with extra math. Both are right, and the 8.2 distinction dissolves the apparent conflict exactly. The _principle_ deserves the praise: it is robust, well-founded, and genuinely illuminating. The _loose application_ deserves the criticism: any specific claim about a specific bias must earn its own grade through risky prediction and converging evidence, not coast on the principle's prestige. So the resolution is not \"error management is good\" or \"error management is bad\" but \"the principle is robust _and_ its applications vary from well-supported to speculative, and intellectual honesty means grading them one at a time.\" The praise and the criticism are aimed at two different things, and the mature position holds both. This is the same shape as every honest verdict in the book: a real core, a variable fringe, and the discipline to tell them apart.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 653,
+      "out_sha": "8bfb439ccde6",
       "note": ""
     },
     {
@@ -955,11 +955,11 @@
       "en_title": "Chapter 8: The Smoke Detector in Your Head",
       "order": 72,
       "src_chars": 2218,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e021e91dafe2",
       "src": "### Chapter Summary\n\nWe found the logic beneath all of Part 2's \"false alarms,\" and it turned out to be one idea: the asymmetry of error costs. When a judgment under uncertainty can be wrong in two directions whose costs are lopsided, the best-designed system is not the most _accurate_ one but the most _biased_ one, deliberately tilted toward the cheaper mistake. The smoke detector that shrieks at toast is not broken; it is brilliantly designed for a world where a missed fire is catastrophic and a false alarm is trivial. _Error management theory_ applies the same math to the mind, explaining at a stroke why fear over-fires (Chapter 5), why disgust over-avoids (Chapter 6), and why anxiety, superstition, and (provisionally) jealousy may all run the same ancient program. We were careful to grade the _principle_ and its _predictions_ separately: the general logic is robust and almost has to be true, while specific applications (like men's putative over-perception of sexual interest) range from well-supported to genuinely contested and must each earn their own grade rather than borrowing the principle's certainty. And we kept the firewall lit against the idea's most seductive abuse: that biases are \"optimal\" means only that they minimized _ancestral_ costs, not that they serve us now or that we _ought_ not correct them, since a smoke detector calibrated for the wrong world should be recalibrated, not obeyed.\n\nThis completes Part 2, the robust, low-controversy core where the science is strongest and the wonder purest, and where you have learned to enjoy genuine findings while grading honestly and keeping _is_ apart from _ought_. You are now fluent in the moves the hard chapters will demand. Part 3 turns from the individual body to the social world, taking up the deepest puzzle of all: how creatures shaped by a competitive process of differential reproduction became as _kind_ as we are. Chapter 9 begins with the logic of helping our relatives, where the gene's-eye view from Chapter 2 finally pays off its biggest debt, and where we will practice grading a genuinely _live_ scientific debate rather than a settled one. The wonders continue, and the stakes begin, gently, to rise.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 705,
+      "out_sha": "bd5ca9b54994",
       "note": ""
     },
     {
