@@ -75,11 +75,11 @@
       "en_title": "导读",
       "order": 0,
       "src_chars": 2718,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e9291bfe1621",
       "src": "> 本导读整理自 Socratopia 网站本书介绍页：https://www.socratopia.app/library/map-apis-automation-en\n\nEvery Monday morning, a potter named Mara becomes a machine. She copies each weekend order from her shop into a spreadsheet, writes each buyer a thank-you note, and posts her new pieces to her mailing list. None of it is hard; that is exactly the problem. She is the plumbing between tools that were built in separate rooms and never given a pipe. This book is about the pipe, and about the quiet fact that in the age of the AI assistant, you no longer have to be it.\n\nWhat makes this volume different from every \"learn APIs\" book is that it refuses to be a manual. It never gives you an endpoint to memorize, a status-code table, or a curl command, because your AI assistant handles all of that and it changes every month anyway. Instead it hands you a map : an API is a service's counter window , a side door built for machines; JSON is just labeled boxes you read to check your assistant's work; a key is not like your identity, it is your identity in machine form, so whoever holds it is you. Hold that map and you can walk up to a service you have never seen and know what to ask for. Memorize twenty endpoints and you have learned nothing.\n\nThe book is also unusually honest about judgment, which is the part no tool can supply. It teaches the difference between reading (cheap, reversible) and sending (irreversible, deserves a human hand), and it makes one question recur before every automation goes live: what is the worst this pipeline could do if it misfired at 3 a.m. while I'm asleep? By the end, Mara's whole Monday runs itself while she keeps a hand on everything that spends money or emails a customer — and, as the capstone of the series' five tool volumes, the book joins version control, your own local AI, the terminal, servers, and APIs into a single territory you can command, then hands you the skill to draw the map of any tool that doesn't exist yet.\n\nYou need no programming background. You need an AI assistant you suspect you're underusing, and one boring Monday you'd like to get back.\n\n**Target audience**：Ambitious general readers in the AI-agent era — writers, researchers, students, founders, knowledge workers — who already have an AI assistant and underuse it. No programming background assumed.\n\n**Prerequisites**：None technical. A willingness to direct an AI agent in plain language. Familiarity with Volumes I–IV of the series (Git & GitHub / Open-Source LLMs & Ollama / The Command Line / Servers & Deployment) enriches the capstone but is not required — every concept stands on its own.\n\n**Study hours**：12–16 hours of Socratic dialogue with the companion (roughly one session per chapter).",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1043,
+      "out_sha": "2be69e3490bd",
       "note": ""
     },
     {
@@ -87,11 +87,11 @@
       "en_title": "Introduction",
       "order": 1,
       "src_chars": 3472,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b1656e0dfbde",
       "src": "Every Monday morning, somewhere, a capable person becomes a machine for an hour.\n\nThey read numbers off one screen and type them into another. They copy an order into a spreadsheet, a date into a calendar, a name into a message. None of it is hard, and none of it is theirs to do, really; it is the dull connective work of carrying information between tools that were built in separate rooms and never given a pipe between them. This book is about that pipe, and about the quiet, era-defining fact that you no longer have to be it.\n\nFor most of the internet's life, connecting your tools together was an engineer's job, and honestly so. It meant learning each service's private language and writing careful instructions in unforgiving syntax. If you were not on that side of the wall, the wall was real. What changed is not that the work became easy. It is that you got a plumber: an AI assistant who can hear a plain-language wish and do the wiring, so that the scarce skill is no longer knowing the incantations. The scarce skill now is the **map** — knowing what services can be asked for, what deserves to be automated, and what to check before you hand an assistant the keys. That map is what this book gives you.\n\nThis is Volume V of _Six Superpowers of the AI Era_ , and it is the capstone of the series' five **tool** volumes. The earlier four taught you to protect your work with version control, to run your own AI privately on your own machine, to see what your agent sees in the terminal's world, and to put things on the internet with your own always-on server. This volume adds the connective tissue that makes those tools talk to each other and run themselves: the **counter windows** that services answer through, the **keys** that carry your identity, and the **WHEN-THEN plumbing** that turns a recurring chore into a pipe you can inspect. And because it is the last of the tool maps, it closes by joining all five into one territory you can command — a functional join, walked layer by layer, not a victory lap.\n\nA few things to know about how to read it. The book is deliberately a **map, not a manual** : it will not teach you the exact commands, because your assistant handles those and they change every month. It will teach you what these things _are_ , what they can be _asked_ , and how to tell a good idea for an automation from a dangerous one. Its running example is **Mara** , a fictional potter whose Monday ritual we automate, piece by careful piece, across the whole book. Every chapter ends with a section called **\"Say this to your AI\"** — plain-language things you can say to your own assistant right now, each with a safety check built in, accumulating into a personal atlas by the end. The book is read by the Socratopia AI tutor and taught through dialogue, so the exercise answers are written to be seen and worked through, not hidden.\n\nTwo habits run through everything, and they are worth carrying from the first page. The first is the difference between **reading and sending** : reading is cheap and reversible, so you can let an assistant do it freely, while sending, posting, paying, and deleting go out into the world and cannot be pulled back, so you keep a human hand on them. The second is the **3 a.m. question** : before you let any automation act on its own, ask what is the worst it could do if it misfired while you were asleep — not out of fear, but because the answer tells you exactly where to put your guardrails.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1148,
+      "out_sha": "8977904353dc",
       "note": ""
     },
     {
@@ -99,11 +99,11 @@
       "en_title": "Introduction",
       "order": 2,
       "src_chars": 508,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bf2013d5f37b",
       "src": "You do not need a programming background. You do not need to have read the earlier volumes, though the capstone is richer if you have. You need only a willingness to direct an assistant in plain language, and a boring Monday you would like to get back. By the last page, you should be able to stand in front of a tool that did not exist when this book was written and calmly draw its map yourself. That, and not any particular command, is the superpower.\n\nTurn the page, and let us find the pipe.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 156,
+      "out_sha": "d165226fc0eb",
       "note": ""
     },
     {
