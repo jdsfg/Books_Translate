@@ -1063,11 +1063,11 @@
       "en_title": "Chapter 10: I'll Scratch Your Back: Reciprocity, Fairness, and the Cheater Detector",
       "order": 81,
       "src_chars": 3145,
-      "status": "pending",
+      "status": "done",
       "src_sha": "808f356a85aa",
       "src": "A vampire bat that fails to find blood for two nights will starve. But vampire bats have a remarkable custom: a bat that fed well will regurgitate blood to a roost-mate that did not, even one it is not related to, keeping the hungry one alive. This looks like pure generosity to a stranger, the very thing kin selection from the last chapter cannot explain, since these bats are often not kin. So why does the well-fed bat give away its hard-won meal? The answer is that the bats remember. They track who shares and who does not, and they preferentially help those who have helped them before. The hungry bat you save tonight is the bat who may save you next week. This is not kindness to strangers in the abstract. It is an exchange across time, and it works only because the bats can keep score.\n\nHere is the puzzle this chapter solves. Kin selection explained why we help relatives. But humans are spectacularly cooperative with _non_ -relatives: we trade, share, keep promises, and help people we are not related to and may never see again. That cannot run on kin selection, so something else must be at work. And the something else turns out to require a whole hidden machinery: a way to extend help on credit, a way to remember who paid you back, and above all a way to catch the ever-present threat that makes cooperation among strangers so fragile, the _cheater_ who takes your help and gives nothing in return. Following that machinery will lead us to the evolutionary roots of fairness, guilt, and gratitude, the emotional accountants of social life. And it will surface, for the first time, the dark twin of our cooperative nature: the same logic that binds us to our allies can turn us against outsiders. We set that tension up carefully here, because Part 6's most dangerous material turns on it.\n\n\n### 10.1 Cooperation on credit\n\nThe vampire bat illustrates the second great root of altruism, and it has a name. **Reciprocal altruism** is helping another, at a cost to yourself, in the expectation (not conscious, but built into evolved feelings) that the help will be returned. It does not require relatedness. It requires something else: repeated interaction, so that today's giver can be tomorrow's receiver, and the memory and bookkeeping to make sure the exchange actually balances over time.\n\nThe biologist Robert Trivers worked out the logic in the early 1970s, and the conditions it requires are exactly the conditions of ancestral human life. Our ancestors lived in small, stable groups where the same individuals interacted again and again over years. In that setting, a tendency to help others _who would help you back_ could pay handsomely: you smooth over the bad days by drawing on credit you built on the good ones, and so does everyone else, and the whole group does better than a group of isolated hoarders. A lone act of generosity to a stranger you will never see again makes no evolutionary sense; but a _standing disposition_ to help within a web of repeated relationships makes excellent sense, because the help comes back. Reciprocal altruism is cooperation built not on shared genes but on shared _future_.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 967,
+      "out_sha": "f053c85f34e0",
       "note": ""
     },
     {
@@ -1075,11 +1075,11 @@
       "en_title": "Chapter 10: I'll Scratch Your Back: Reciprocity, Fairness, and the Cheater Detector",
       "order": 82,
       "src_chars": 1141,
-      "status": "pending",
+      "status": "done",
       "src_sha": "389cd12a5769",
       "src": "#### Definition: Reciprocal altruism\n\nReciprocal altruism is the evolution of helping behavior between non-relatives, sustained because the help is returned over repeated interactions, so that both parties do better in the long run than they would alone.\n\nIn plain language: I help you now because, in a world where we keep meeting, you will help me later, and we both come out ahead. But notice the fatal vulnerability built into this arrangement, the one that makes the whole thing far harder than it first appears. The system only works if help is actually _returned_. And that creates an irresistible temptation: take the help, enjoy the benefit, and then _not_ pay it back. Such a \"cheater\" or \"free rider\" gets all the gains of cooperation with none of the costs, and would out-reproduce the honest cooperators, spreading until cooperation collapsed entirely. Reciprocal altruism is therefore forever under threat from within. For it to survive at all, cooperators must have some way to detect cheaters and stop helping them. And that requirement, the need to catch the cheat, may have shaped the human mind in deep and specific ways.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 337,
+      "out_sha": "7eae9fb306d3",
       "note": ""
     },
     {
@@ -1087,11 +1087,11 @@
       "en_title": "Chapter 10: I'll Scratch Your Back: Reciprocity, Fairness, and the Cheater Detector",
       "order": 83,
       "src_chars": 2631,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5c4a329f587a",
       "src": "### 10.2 The cheater detector: a real effect and a contested interpretation\n\nIf catching cheaters was so important to ancestral cooperation, perhaps the human mind evolved special machinery for it: a kind of built-in fraud detector, tuned to notice when someone is taking a benefit without paying the required cost. This is one of the most famous hypotheses in evolutionary psychology, and it comes with one of the most striking pieces of evidence, so it makes a perfect case for our now-practiced skill of separating a _real effect_ from its _contested interpretation_.\n\nThe evidence comes from a logic puzzle called the Wason selection task. In its abstract form, people are notoriously bad at it: given a rule like \"if a card has a vowel on one side, it has an even number on the other,\" and four cards, most people fail to pick the right cards to check whether the rule is broken. The abstract logic defeats us. But here is the remarkable finding: take the _exact same logical structure_ and dress it as a rule about _social cheating_ , such as \"if you borrow the car, you must fill the tank,\" and suddenly people solve it easily and correctly. The identical logical problem goes from baffling to obvious the moment it is framed as catching someone who took a benefit without paying the cost. Something in us, the hypothesis goes, is specially tuned to detect cheaters, and that special tuning lights up when the problem is about social cheating and stays dark when it is about abstract logic.\n\nNow grade it, carefully, the way Chapter 9 taught. The _effect_ is real and robust: the dramatic improvement on the social-cheating version of the task replicates well and is not seriously in doubt. People genuinely are much better at this logic when it is framed as cheater-detection. That much you can lean on. But the _interpretation_ , that this proves a dedicated, specialized \"cheater-detection module\" in the mind, is genuinely contested. Critics offer alternative explanations that account for the same effect without a special module: perhaps we reason better about _any_ familiar, concrete, permission-or-obligation rule, not specifically about cheating; perhaps it is about how clearly the costs and benefits are laid out; perhaps more general systems for reasoning about social rules and relevance produce the effect. The data do not cleanly decide among these. So the honest verdict, once again, is split: _robust effect, contested interpretation_. People really are better at cheater-framed logic; whether that reflects a purpose-built cheater-detection module or a more general social-reasoning ability is unresolved.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 800,
+      "out_sha": "83ec95599419",
       "note": ""
     },
     {
@@ -1099,11 +1099,11 @@
       "en_title": "Chapter 10: I'll Scratch Your Back: Reciprocity, Fairness, and the Cheater Detector",
       "order": 84,
       "src_chars": 2676,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cafa95a95bf9",
       "src": "This same split sits at the heart of a larger debate you should know the name of. The cheater-detector was offered as a flagship example of _massive modularity_ , the bold claim that the mind is composed largely of many specialized, purpose-built modules, each evolved for a specific ancestral problem, rather than being a general-purpose thinking machine. The cheater-detection findings were Exhibit A. But since the specific interpretation is contested, so is the larger claim it was meant to support: how _modular_ the mind really is, how many special-purpose mechanisms versus general-purpose ones, remains one of the open structural questions in the field. We will not resolve it here; we will simply note that this is precisely the brain-architecture question that the study of the brain itself takes up from the other direction, and that the honest position is that the truth lies somewhere between \"one general-purpose computer\" and \"a thousand rigid modules,\" with the exact mixture still being worked out.\n\n\n#### Common Misconception\n\n_\"Reciprocal altruism means all human kindness is really just disguised self-interest, a calculated investment expecting repayment.\"_\n\nThis is the cynical misreading, and it makes the same mistake we disarmed with the \"selfish gene\" in Chapter 2, so it should feel familiar. The error is confusing the _evolutionary logic_ with the _psychological experience_ , and the gap between them is everything. Yes, the evolutionary reason a disposition to help non-kin could spread is that, on average, over ancestral time, the help came back. But that does _not_ mean the helper is consciously calculating a return, any more than the vampire bat is running a ledger or the parent loving a child is computing gene copies. What evolution installed is not a calculator but a set of _genuine feelings_ : real warmth toward those who treat us well, real gratitude when we are helped, real friendship that we experience as caring about the other person for their own sake, not as an investment. Those feelings are not a disguise over selfishness; they are the actual psychological machinery, and they are real. A friend who would help you with no thought of return is not failing to be a \"true\" reciprocal altruist; she is exactly what reciprocal altruism _builds_ , a person whose evolved emotions make her genuinely generous within trusted relationships. The cynic says \"it's all just self-interest underneath.\" But \"underneath,\" at the level of gene frequencies, is not where you live; you live at the level of the feelings, and the feelings are true. Evolution's reasons are not your reasons. The math is reciprocal; the friendship is real.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 758,
+      "out_sha": "37e20f1c58b2",
       "note": ""
     },
     {
@@ -1111,11 +1111,11 @@
       "en_title": "Chapter 10: I'll Scratch Your Back: Reciprocity, Fairness, and the Cheater Detector",
       "order": 85,
       "src_chars": 2267,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c2e8d594c406",
       "src": "### 10.3 The accountants of cooperation, and the line that divides us\n\nIf cooperation among non-kin requires keeping score and catching cheats, then we should expect minds equipped with the _emotions_ that do that scorekeeping, and we are. Look at the moral emotions through this lens and they reveal themselves as the accountants of social exchange.\n\n_Gratitude_ marks a debt and motivates repayment, binding you to those who have helped you. _Guilt_ fires when you have failed to reciprocate or have cheated someone, and it motivates you to make amends before you are caught and cast out, an internal enforcer of your own honesty. _Anger_ and the thirst for revenge punish those who cheat _you_ , making cheating costly and so deterring it. And _a sense of fairness_ , the sharp and early-developing human insistence on equitable shares, polices the balance of exchange and flares when it is violated. These are not arbitrary feelings layered on by culture; they are, on this account, the evolved emotional machinery that makes cooperation among non-kin stable, by rewarding the faithful and punishing the false. Fairness, guilt, gratitude, friendship: the warm heart of human decency, with a hidden logic of exchange beneath it. And once again the logic does not cheapen the decency. That guilt has a function does not make your guilt fake; it makes it _ancient_ , and load-bearing.\n\nBut here is where the chapter darkens, and we must follow it honestly, because the same machinery that makes us cooperative has a shadow. Cooperation among non-kin works by distinguishing those who are _in_ the web of reciprocity from those who are _outside_ it: my allies, whom I help and trust, versus strangers and rivals, whom I do not. A psychology built to cooperate intensely _within_ a group may, by almost the same stroke, be inclined to draw a line at the group's edge. And so the very emotions that bind us to our own can curdle, at that boundary, into suspicion, hostility, and the readiness to treat outsiders as not-quite-people. The human capacity for breathtaking cooperation and the human capacity for tribalism and cruelty toward out-groups may be two faces of a single evolved coin: we are loyal _because_ we are exclusive, and exclusive _because_ we are loyal.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 652,
+      "out_sha": "29d4d37a7cb8",
       "note": ""
     },
     {
@@ -1123,11 +1123,11 @@
       "en_title": "Chapter 10: I'll Scratch Your Back: Reciprocity, Fairness, and the Cheater Detector",
       "order": 86,
       "src_chars": 1795,
-      "status": "pending",
+      "status": "done",
       "src_sha": "75e1c81c0a36",
       "src": "This is one of the most important and most dangerous ideas in the book, so let us mark it with maximum care, lighting the firewall before we even reach the room where it matters most. As a claim about _is_ , there is real support for the idea that humans readily form in-groups and out-groups and shift their cooperative and hostile feelings along that line; the tendency appears easily, early, and across cultures, and connects to the study of how powerfully _situations_ and group membership shape behavior. But the _ought_ is a separate question entirely, and the two fallacies both lie in wait. The naturalistic fallacy whispers that because tribalism may be evolved, hostility to outsiders is natural and therefore acceptable or inevitable, which is false and dangerous: an evolved capacity for us-versus-them is precisely the kind of tendency we should recognize _in order to override it_ , and humans expand their circle of \"us\" all the time, from family to tribe to nation to, sometimes, all of humanity. The moralistic fallacy whispers from the other side that because the idea of evolved tribalism is so ugly and so exploitable, it must be scientifically false, which would blind us to a real feature of our psychology that we urgently need to understand in order to resist. Hold both. The capacity to divide the world into us and them may well be real; whether we act on it, and where we draw the line, is up to us. We are not done with this idea. It is the hinge of Part 6, and we have now oiled it.\n\n\n### 10.X Exercises\n\nThese prompts work the chapter's three skills at once: applying reciprocity without the cynical misreading, grading the cheater-detector's robust effect against its contested interpretation, and holding the firewall on the tribalism claim from both directions.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 552,
+      "out_sha": "36e9adb0ca41",
       "note": ""
     },
     {
@@ -1135,11 +1135,11 @@
       "en_title": "Chapter 10: I'll Scratch Your Back: Reciprocity, Fairness, and the Cheater Detector",
       "order": 87,
       "src_chars": 2198,
-      "status": "pending",
+      "status": "done",
       "src_sha": "86d8f1d363c9",
       "src": "#### Sort the Claim\n\n**Q1.** \"The human mind contains a specialized cheater-detection module, proven by the Wason selection task results.\" Sort this precisely. What part is well-supported, what part is contested, and what's the larger structural question at stake?\n\nHint\n\nSeparate the experimental effect from its interpretation, then connect the interpretation to the massive-modularity debate. Is \"proven\" the right word for any part of this?\n\n**Discussion:** Split it into its layers, because the single sentence smuggles a robust finding and a contested theory and an overconfident word into one claim. The _effect_ is well-supported: people really do solve the social-cheating version of the selection task far better than the abstract version, and this replicates reliably. So the empirical core is solid, and \"proven\" is fair for _that_ much. But the _interpretation_ , that this demonstrates a dedicated, specialized cheater-detection _module_ , is genuinely contested, because alternative explanations (better reasoning about familiar permission rules generally, clearer cost-benefit framing, general social-reasoning systems) can account for the same effect without positing a special-purpose module, and the evidence does not cleanly decide among them. So \"proven\" is _not_ fair for the module interpretation. The larger structural question is _massive modularity_ : whether the mind is mostly a collection of many specialized evolved modules or relies more on general-purpose mechanisms. The cheater-detector was a flagship argument for the strongly modular view, so its contested status leaves that larger claim contested too; the honest position places the truth somewhere between the extremes, with the mixture unresolved. The fully calibrated verdict: robust effect, contested module interpretation, and an open structural debate about mental architecture behind it. Notice that we have now hit the \"robust pattern, contested interpretation\" shape several times (the snake/threat attentional advantage, moral disgust, the error-management predictions), and it is no accident: it is the single most common honest verdict in this field, and getting fluent in it is most of the skill.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 630,
+      "out_sha": "83a3b40e30cc",
       "note": ""
     },
     {
@@ -1147,11 +1147,11 @@
       "en_title": "Chapter 10: I'll Scratch Your Back: Reciprocity, Fairness, and the Cheater Detector",
       "order": 88,
       "src_chars": 2668,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7a149d6ce2cd",
       "src": "#### Spot the Fallacy\n\n**Q2.** A political writer argues: \"Evolution made us tribal; in-group loyalty and suspicion of outsiders are written into our nature. So multicultural societies fight human nature and are bound to fail, and we shouldn't feel bad about preferring our own kind.\" Dismantle this on both factual and moral grounds, and watch that you don't overcorrect.\n\nHint\n\nThere's a naturalistic fallacy in the moral conclusion, an overstatement of the _is_ , and a hidden assumption that \"evolved\" means \"unchangeable.\" Address each, and avoid sliding into the moralistic fallacy yourself.\n\n**Discussion:** Attack it on every level while keeping your own footing, because this is a preview of Part 6's hardest work. First, the _is_ is overstated. The honest claim from 10.3 is that humans _readily form_ in-group/out-group distinctions and can shift cooperative and hostile feelings along them, a tendency that is real but _flexible_ in where the line falls; the writer has inflated \"we readily form groups\" into \"we are fixedly tribal against specific outsiders,\" which the evidence does not support, since the very same machinery lets humans expand \"us\" across former boundaries constantly (the line between in and out is notoriously movable, which is the opposite of fixed). Second, the smuggled assumption that \"evolved\" means \"unchangeable\" is exactly the determinism Thread B rejects: an evolved capacity is starting material, and the human record is full of widening circles of inclusion, so \"multicultural societies fight human nature\" mistakes a tendency for a destiny. Third, the moral conclusion, \"we shouldn't feel bad about preferring our own kind,\" is a flat naturalistic fallacy: even if tribalism were strongly evolved, nothing about whether we _should_ indulge it follows from that, and indeed recognizing the tendency is the first step to _overriding_ it. Now the discipline the hint warns about: do not overcorrect into the moralistic fallacy by declaring \"humans have no evolved tendency toward in-group bias\" _because_ the writer's politics are odious. That would be rejecting a real (if overstated) piece of science for moral comfort, and it is the wrong move, both because it is intellectually dishonest and because it hands the writer the gift of looking like a censored truth-teller. The correct refutation grants the real, limited _is_ (we do readily form groups), corrects its overstatement (the line is flexible, not fixed), and blocks the _ought_ (evolved is not justified), all without flinching from the science. That triple move, granting the real, correcting the inflation, blocking the value-leap, is the template for Part 6.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 820,
+      "out_sha": "1e63aa2b44ec",
       "note": ""
     },
     {
@@ -1159,11 +1159,11 @@
       "en_title": "Chapter 10: I'll Scratch Your Back: Reciprocity, Fairness, and the Cheater Detector",
       "order": 89,
       "src_chars": 2594,
-      "status": "pending",
+      "status": "done",
       "src_sha": "60949af2da13",
       "src": "#### Steelman Both Sides\n\n**Q3.** The moral emotions (guilt, gratitude, fairness, the urge to punish cheaters) are described here as evolved machinery for stabilizing cooperation. Steelman both: (a) the view that this evolutionary account illuminates morality deeply; (b) the view that reducing morality to cooperation-machinery misses or distorts what morality really is.\n\nHint\n\nWhat does the evolutionary account successfully explain? And what might it leave out, or get wrong, if treated as the _whole_ story of ethics? Consider the is-ought gap.\n\n**Discussion:** The strongest case for (a), illumination: the evolutionary account explains a startling amount, including why moral emotions are _universal_ (every culture has guilt, gratitude, fairness, and punishment of cheats), why they take the _specific shapes_ they do (guilt tracks our own defections, anger tracks others' cheating, fairness tracks the balance of exchange), why they _feel_ compelling rather than optional, and why they appear _early_ in children before much moral teaching; an account that predicts all that is doing serious explanatory work, and dismissing it because it sounds reductive would be the moralistic fallacy. The strongest case for (b), the limits: explaining the _origin and shape_ of moral _feelings_ is not the same as explaining what morality _is_ or what we _ought_ to do, and treating it as such commits a category error rooted in the is-ought gap. Even granting that our moral emotions evolved to stabilize cooperation, two things remain untouched: first, the _content_ of ethics may outrun its evolutionary scaffolding (we have used reason to extend moral concern far beyond the cooperative web that shaped the feelings, to strangers, distant peoples, animals, future generations, in ways the original machinery never \"intended\"); and second, the _justification_ of moral claims cannot be read off their evolutionary history, since \"this feeling evolved to stabilize exchange\" neither validates nor invalidates the moral judgment it underwrites. The honest resolution holds both: the evolutionary account is a genuine and deep explanation of _where our moral emotions came from and why they take their form_ , and it is _not_ , and cannot be, a complete account of _what morality is_ or a _justification_ of any moral claim, because that would cross the is-ought gap. Morality has an evolved foundation and a life beyond it. Seeing both is the mature view, and it is also a quiet preview of Chapter 19's reckoning with what the whole evolutionary picture can and cannot tell us about how to live.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 808,
+      "out_sha": "72324b176ecf",
       "note": ""
     },
     {
@@ -1171,11 +1171,11 @@
       "en_title": "Chapter 10: I'll Scratch Your Back: Reciprocity, Fairness, and the Cheater Detector",
       "order": 90,
       "src_chars": 2348,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ba25394ad3e3",
       "src": "### Chapter Summary\n\nWe solved the second puzzle of cooperation: how we came to help non-relatives, whom kin selection cannot explain. The answer is _reciprocal altruism_ , help extended on credit and sustained because, in the repeated interactions of ancestral group life, it came back, the vampire bat's shared meal and the human web of favors alike. But reciprocity carries a fatal vulnerability, the cheater who takes without repaying, and the need to catch cheats may have shaped the mind. We examined the famous evidence, the dramatic improvement on the Wason selection task when its logic is framed as catching a cheat, and graded it with now-familiar care: the _effect_ is robust, but the _interpretation_ (a dedicated cheater-detection module) is contested, leaving the larger question of how _modular_ the mind is genuinely open. We saw the moral emotions, gratitude, guilt, anger, and fairness, as the evolved accountants of cooperation, real feelings with a hidden logic of exchange, and insisted that the logic does not cheapen the decency. And we followed the idea into its shadow: the same machinery that makes us loyal within a group may make us hostile at its edge, so that cooperation and tribalism are two faces of one coin. We lit the firewall on that dangerous idea from both sides, granting the real but limited _is_ , correcting its overstatement, and blocking the leap to _ought_ , the exact triple move Part 6 will demand at its highest stakes.\n\nThis completes Part 3 and the wonder-first half of the book. You have met the robust core of the field, from evolved fears and disgust and appetite to the smoke-detector logic of bias and the twin roots of human kindness, and at every step you have practiced grading honestly and keeping _is_ apart from _ought_. The tools are sharp and the temperature, until the last few pages, has been low. That is about to change. Part 4 walks into the most contested territory in all of psychology: sex, attraction, and the great debate over differences between men and women. Chapter 11 opens it with the theory that underlies the whole discussion, parental investment, and with a single study whose fate, flawed, then refuted, then partly recovered, is the perfect lesson in how scientific verdicts actually move. The wonders have prepared us. Now the tools earn their keep.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 703,
+      "out_sha": "0760875d4be9",
       "note": ""
     },
     {
