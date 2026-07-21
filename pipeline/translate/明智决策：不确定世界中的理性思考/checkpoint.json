@@ -839,11 +839,11 @@
       "en_title": "Chapter 7: Bayes' Theorem — The Most Important Idea You've Never Heard Of",
       "order": 60,
       "src_chars": 2856,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1518fc349c6e",
       "src": "A test for a rare disease is 99% accurate. You take the test. The result is positive. What is the probability that you actually have the disease?\n\nIf you are like most people — including most doctors — your answer is approximately 99%. After all, the test is 99% accurate, and the test says you're positive.\n\nThe actual answer, depending on the prevalence of the disease, might be closer to 9%. Or 50%. Or 1%. In some cases, even a positive result on a highly accurate test is more likely to be a false alarm than a genuine detection.\n\nThis is not a paradox or a trick. It is one of the most important — and most consistently misunderstood — facts in probability. Understanding it requires Bayes' theorem: the rule for correctly updating probabilities when new evidence arrives.\n\n\n### 7.1 The Mechanics of Bayesian Thinking\n\nBefore the formula, the intuition.\n\nBayes' theorem says: **the probability you should assign to a hypothesis, given some evidence, depends on two things — how probable the hypothesis was before the evidence (the prior), and how strongly the evidence supports the hypothesis (the likelihood).**\n\nThis seems obvious. What's not obvious is how much the prior — the probability before the evidence — dominates your posterior belief, especially when the evidence is ambiguous.\n\nLet us build the intuition from a concrete example.\n\nImagine a medical condition that affects 1 in 1,000 people. You have a test that correctly identifies people with the condition 99% of the time (sensitivity = 99%) and correctly identifies people without the condition 99% of the time (specificity = 99%).\n\nA random person from the population takes the test and gets a positive result. What is the probability they have the condition?\n\nLet's think through 10,000 people:\n\n**Setting up the population:**\n\n* 10,000 people take the test\n* 10 of them actually have the condition (1 in 1,000)\n* 9,990 of them do not have the condition\n\n**What the test does:**\n\n* Of the 10 who have the condition: the test correctly identifies 99% = 9.9 ≈ 10. (Let's say 10, acknowledging the rounding is small.)\n* Of the 9,990 who do NOT have the condition: the test incorrectly says \"positive\" for 1% of them = 99.9 ≈ 100.\n\n**Results:**\n\n* True positives: ~10 (people with the condition who test positive)\n* False positives: ~100 (people without the condition who test positive)\n* Total positive tests: ~110\n\n**The key question:** Of the ~110 positive tests, how many represent people who actually have the condition?\n\nAnswer: 10 out of 110, which is approximately 9%.\n\nA 99% accurate test, when the condition is rare (1 in 1,000), produces roughly 10 times as many false positives as true positives. The test is not wrong — it is doing exactly what it was designed to do. But interpreting the result requires knowing the base rate — the prior probability — of the condition.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 977,
+      "out_sha": "1f1c0cb8df43",
       "note": ""
     },
     {
@@ -851,11 +851,11 @@
       "en_title": "Chapter 7: Bayes' Theorem — The Most Important Idea You've Never Heard Of",
       "order": 61,
       "src_chars": 1482,
-      "status": "pending",
+      "status": "done",
       "src_sha": "016b5a659e4e",
       "src": "#### Definition: Bayes' Theorem\n\nBayes' theorem states that the posterior probability of a hypothesis H given evidence E is:\n\nP(H∣E)=P(E∣H)⋅P(H)P(E)P(H|E) = \\frac{P(E|H) \\cdot P(H)}{P(E)}P(H∣E)=P(E)P(E∣H)⋅P(H)​\n\nWhere:\n\n* P(H)P(H)P(H) is the **prior probability** — how probable H was before seeing E\n* P(E∣H)P(E|H)P(E∣H) is the **likelihood** — how probable E is if H is true\n* P(E)P(E)P(E) is the **marginal probability** of the evidence\n* P(H∣E)P(H|E)P(H∣E) is the **posterior probability** — how probable H is after seeing E\n\nIn plain language: your updated belief equals your prior belief, multiplied by how strongly the evidence supports the hypothesis (the likelihood ratio), divided by the overall probability of seeing this evidence.\n\nThe formula looks intimidating, but the core idea is simple: **new evidence should update your prior beliefs in proportion to how much more likely the evidence is if your hypothesis is true rather than false.**\n\n\n#### Definition: Prior Probability\n\nThe prior probability is the probability you assign to a hypothesis before considering the current evidence — based on background knowledge, base rates, and previous experience.\n\nIn plain language: what you believed before you saw the latest piece of information.\n\n\n#### Definition: Posterior Probability\n\nThe posterior probability is the updated probability of a hypothesis after incorporating new evidence. Today's posterior becomes tomorrow's prior as new evidence continues to arrive.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 472,
+      "out_sha": "f62d4aa87acc",
       "note": ""
     },
     {
@@ -863,11 +863,11 @@
       "en_title": "Chapter 7: Bayes' Theorem — The Most Important Idea You've Never Heard Of",
       "order": 62,
       "src_chars": 2969,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8cb717f21585",
       "src": "### 7.2 Thread 2 — The Medical Diagnosis: The False Positive Paradox\n\nLet us revisit Dr. Martinez from Chapter 6, now with the full Bayesian analysis.\n\nHer patient is a 45-year-old male presenting with some non-specific symptoms. She is considering whether to test for a rare autoimmune condition that affects 0.5% of men in this age group (prior = 0.005 = 0.5%).\n\nThe test has:\n\n* Sensitivity: 95% (correctly identifies 95% of people who have the condition)\n* Specificity: 90% (correctly identifies 90% of people who don't)\n\nThe test comes back positive. What is the probability the patient has the condition?\n\nLet's work through 10,000 people with this profile:\n\n| Has Condition | Doesn't Have Condition | Total  \n---|---|---|---  \n**Test Positive** | 47.5 ≈ 48 | 997.5 ≈ 997 | ~1,045  \n**Test Negative** | 2.5 ≈ 3 | 8,952.5 ≈ 8,952 | ~8,955  \n**Total** | 50 (0.5%) | 9,950 (99.5%) | 10,000  \n  \nHow I calculated this:\n\n* 10,000 × 0.005 = 50 people have the condition\n* 10,000 × 0.995 = 9,950 people don't\n* True positives: 50 × 0.95 = 47.5\n* False positives: 9,950 × 0.10 = 995\n\nPosterior probability = True positives / All positives = 47.5 / (47.5 + 995) ≈ 47.5 / 1,042.5 ≈ 4.6%\n\nThe result: despite a positive test with 95% sensitivity and 90% specificity, the patient has only about a **4.6% probability** of actually having the condition.\n\nThis is shocking to most people — and to most doctors. A landmark 1978 study by Casscells, Schoenberger, and Graboys gave a similar problem to 60 physicians and students at Harvard Medical School: only 18% gave approximately the correct answer.\n\nWhat should Dr. Martinez do? She should not tell the patient \"you tested positive, so you almost certainly have the condition.\" She should say: \"The test came back positive. Given the rarity of this condition in people like you, this positive result still only gives us about a 5% probability that you have it. I want to run a confirmatory test before we consider treatment.\" The posterior (5%) becomes the new prior for the next piece of evidence.\n\nThis is Bayesian updating in medical practice — and getting it right vs. wrong has enormous consequences for patients.\n\n\n#### Common Misconception\n\n_\"If the test is X% accurate, a positive result means I have an X% chance of having the condition.\"_\n\nThis confuses the sensitivity of the test (P(positive test | condition present)) with the positive predictive value (P(condition present | positive test)). These are mathematically distinct quantities. The sensitivity tells you how good the test is at detecting the condition when it's there. The positive predictive value — which is what you actually want to know when you get a positive result — depends on the sensitivity, the specificity, AND the base rate of the condition. When the condition is rare, even very sensitive tests produce many false positives, because the large population of non-sick people generates many false alarms even with a low false positive rate.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1197,
+      "out_sha": "56c500178b16",
       "note": ""
     },
     {
@@ -875,11 +875,11 @@
       "en_title": "Chapter 7: Bayes' Theorem — The Most Important Idea You've Never Heard Of",
       "order": 63,
       "src_chars": 2076,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6b0a44e54087",
       "src": "### 7.3 Thread 1 — The Startup Decision: Bayesian Updating\n\nReturn to Sarah, our startup founder from Chapter 1. She has a prior belief that her startup will succeed. Let's say, based on base rates of climate tech startups and her honest assessment of her team and idea, she assigns a 20% prior probability of significant success (defined as reaching 1M USD revenue within 3 years).\n\nNow evidence arrives. She spends three months doing market research and gets 20 letters of intent from potential customers. What should happen to her prior?\n\nThis is Bayesian updating. The evidence (20 signed LOIs) is more likely to occur if her startup will succeed than if it won't. How much does it update her prior?\n\nShe needs to estimate: \"How likely would I have gotten 20 LOIs if my startup is going to succeed?\" Perhaps 70% — companies that succeed almost always have strong early customer interest. \"How likely would I have gotten 20 LOIs if my startup is NOT going to succeed?\" Perhaps 20% — false signals happen; customers sign LOIs they don't ultimately honor.\n\nApplying the likelihood ratio: the evidence is 70/20 = 3.5× more likely under the \"succeed\" hypothesis than the \"fail\" hypothesis.\n\nUpdated odds = Prior odds × Likelihood ratio\n\n* Prior odds = 0.20/0.80 = 0.25 (1:4 against success)\n* Updated odds = 0.25 × 3.5 = 0.875 (about 7:8 — nearly even)\n* Updated probability = 0.875 / (1 + 0.875) ≈ 47%\n\nTwenty genuine letters of intent, in this analysis, updates Sarah's success probability from 20% to approximately 47% — not certainty, but a dramatic improvement in the case for proceeding.\n\nEach new piece of evidence — a successful pilot, a failed sales call, a competitor's product launch, market feedback — should update the estimate. Bayesian updating is the formalization of learning from experience.\n\nNote what this framework does NOT say: it does not say Sarah should definitely proceed (47% is still less than 50-50 — and the stakes matter; see Chapter 8). It says she should update her prior based on evidence, and let the updated probability inform the decision.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 769,
+      "out_sha": "bbadda71095b",
       "note": ""
     },
     {
@@ -887,11 +887,11 @@
       "en_title": "Chapter 7: Bayes' Theorem — The Most Important Idea You've Never Heard Of",
       "order": 64,
       "src_chars": 1608,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7b4a330acee2",
       "src": "### 7.4 Bayesian Thinking in Everyday Life\n\nYou don't need to do numerical calculations to think Bayesianly. The qualitative structure of Bayesian reasoning can be applied whenever you encounter new evidence:\n\n  1. **What is my prior?** Before this evidence, what was my probability estimate?\n  2. **How much more likely is this evidence if my hypothesis is true vs. false?** (The likelihood ratio)\n  3. **Update:** High likelihood ratio = big update. Low likelihood ratio = small update.\n\n**Example:** You have a prior belief that a job candidate is competent (based on their impressive resume): 70% probability. During the interview, they stumble on a question about a skill listed as their core expertise. How does this update your assessment?\n\n* Prior: 70% competent\n* Likelihood ratio: If they are competent, how likely is stumbling on a core skill question? Low — say 10%. If they are not competent, how likely is stumbling? High — say 60%.\n* Likelihood ratio: 10%/60% = 0.167 (the evidence is 6x more likely if they're NOT competent)\n* Prior odds: 0.70/0.30 = 2.33\n* Updated odds: 2.33 × 0.167 = 0.39 (probability ≈ 28%)\n\nOne significant failure in their core skill should update your assessment from 70% competent to about 28% competent. This might seem harsh — but it reflects the fact that stumbling on a core skill is genuinely informative.\n\nThe key to qualitative Bayesian thinking: don't just ask \"is this evidence consistent with my hypothesis?\" Ask \"is this evidence _more_ likely if my hypothesis is true than if it's false?\" Only the latter triggers a meaningful update.\n\n\n### 7.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 619,
+      "out_sha": "9f430dca6c0c",
       "note": ""
     },
     {
@@ -899,11 +899,11 @@
       "en_title": "Chapter 7: Bayes' Theorem — The Most Important Idea You've Never Heard Of",
       "order": 65,
       "src_chars": 3382,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7a591714125f",
       "src": "#### Concept Check\n\n**Q1.** Explain in plain language why a positive result on a highly accurate test for a rare disease might still be more likely a false positive than a true positive.\n\nHint\n\nThink about how many people in the population have the disease vs. how many don't, and what the test's error rate means when applied to these two groups.\n\n**Answer:** The intuition: a \"highly accurate\" test still has some small false positive rate — say 1%. If the disease affects 1 in 1,000 people, then out of 1,000 people tested, about 1 truly has the disease (who will likely test positive) and 999 don't. Among the 999 who don't have the disease, the 1% false positive rate generates about 10 false positives (0.01 × 999 ≈ 10). So among positive tests, we have approximately 1 true positive and 10 false positives — the positive result is a false alarm about 91% of the time. The key insight: even a small false positive rate, when applied to the large population of people without the disease, generates many false alarms. The rarer the disease, the more false positives dominate. This is why prior probability (the base rate of the disease) is so critical to interpreting test results — a test cannot be evaluated in isolation from the population to which it is applied.\n\n* * *\n\n**Q2.** What is the prior probability in Bayesian reasoning, and why does it matter so much?\n\n**Answer:** The prior probability is the probability assigned to a hypothesis before observing the current piece of evidence — based on background knowledge, base rates, and previous experience. It matters so much because it is the starting point from which Bayes' theorem updates. When evidence arrives, it multiplies the prior by the likelihood ratio. If the prior is very low (the hypothesis is very unlikely to begin with), even strong evidence may not push the posterior above 50%. Conversely, a strong prior can be resistant to updating by weak evidence. In the medical example: if the disease affects 1 in 1,000,000 people (very low prior), a positive result on even a very accurate test may represent an overwhelming false positive. If the disease affects 1 in 2 people (high prior), a positive result is nearly certain to be a true positive. The evidence never speaks for itself — it always speaks in the context of what was already believed.\n\n* * *\n\n**Q3.** You believe, based on your research, that there's a 30% chance a particular policy will reduce crime (prior = 30%). A new study comes out showing a 15% crime reduction in pilot cities. You believe that, if the policy truly works, this kind of result is likely (say 80%), while if it doesn't work, this result is unlikely (say 10%). Update your prior.\n\n**Answer:** Using the odds-ratio form of Bayes' theorem:\n\n* Prior odds = 0.30 / 0.70 = 3/7 ≈ 0.429\n* Likelihood ratio = P(evidence | policy works) / P(evidence | policy doesn't work) = 0.80 / 0.10 = 8\n* Posterior odds = 0.429 × 8 = 3.43\n* Posterior probability = 3.43 / (1 + 3.43) = 3.43 / 4.43 ≈ 77%\n\nThe new study, if the likelihood ratio is correct (the result is 8× more likely if the policy works than if it doesn't), updates the prior from 30% to approximately 77%. This is a large update, reflecting the fact that an 8× likelihood ratio is strong evidence. The posterior (77%) is the new prior — if another study arrives, this becomes the starting point for the next update.\n\n* * *",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1168,
+      "out_sha": "6335596bf876",
       "note": ""
     },
     {
@@ -911,11 +911,11 @@
       "en_title": "Chapter 7: Bayes' Theorem — The Most Important Idea You've Never Heard Of",
       "order": 66,
       "src_chars": 1201,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9492544ec0f8",
       "src": "**Q4.** In your own words, explain what it means to \"think Bayesianly\" in everyday life, without doing any calculations.\n\n**Answer:** Thinking Bayesianly in everyday life means: (1) Start with an explicit prior — before receiving new information, ask yourself \"what did I believe about this before I saw this evidence?\" Don't let new information overwrite your prior without tracking the update. (2) Evaluate evidence by its likelihood ratio — when you receive new information, ask not just \"is this consistent with my belief?\" but \"how much more likely is this evidence if my belief is true than if it's false?\" Evidence that is equally likely regardless of the truth of your hypothesis is uninformative. (3) Update proportionally — if the evidence strongly favors your hypothesis, update a lot; if weakly, update a little. Don't update by the same amount for all evidence. (4) Treat today's posterior as tomorrow's prior — updating is ongoing. As new evidence arrives, your current belief becomes the starting point, not your original prior. (5) Be especially alert to base rate neglect — the most common Bayesian error is ignoring the prior and treating evidence as if it speaks for itself.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 385,
+      "out_sha": "101f706927a4",
       "note": ""
     },
     {
@@ -923,11 +923,11 @@
       "en_title": "Chapter 7: Bayes' Theorem — The Most Important Idea You've Never Heard Of",
       "order": 67,
       "src_chars": 3238,
-      "status": "pending",
+      "status": "done",
       "src_sha": "440fc30bab41",
       "src": "#### Application Problems\n\n**Q1.** A spam filter has a 98% sensitivity (correctly identifies 98% of spam as spam) and a 99.5% specificity (correctly identifies 99.5% of legitimate emails as legitimate). In your inbox, about 40% of emails are spam. If the filter flags an email as spam, what is the probability it actually is spam?\n\nHint\n\nUse the natural frequency approach: start with 10,000 emails and trace through the numbers for both the spam and non-spam groups.\n\n**Answer:** Start with 10,000 emails:\n\n* Spam: 10,000 × 0.40 = 4,000 emails\n* Legitimate: 10,000 × 0.60 = 6,000 emails\n\nThe filter's performance:\n\n* True positives: 4,000 × 0.98 = 3,920 spam emails correctly flagged\n* False positives: 6,000 × 0.005 = 30 legitimate emails incorrectly flagged\n\nTotal flagged as spam: 3,920 + 30 = 3,950\n\nProbability actually spam given flagged: 3,920 / 3,950 ≈ 99.2%\n\nWith 40% of emails being spam (a relatively high base rate), the filter is extremely reliable — a flagged email is 99.2% likely to actually be spam. Compare this to the medical test scenario: the same accuracy characteristics produce a very different positive predictive value depending on the base rate. Here, the high base rate (40% spam) means false positives are rare relative to true positives.\n\n* * *\n\n**Q2.** A hiring manager believes, based on past experience, that about 30% of candidates who pass the first-round interview are a good fit for the role (prior = 30%). She introduces a new assessment test. In a pilot study, she finds that 80% of candidates who were eventually identified as good fits passed the test, while only 25% of those who were not good fits passed it. A new candidate passes the test. Update the manager's prior.\n\n**Answer:** Prior odds = 0.30 / 0.70 = 3/7 ≈ 0.429\n\nLikelihood ratio = P(passes test | good fit) / P(passes test | not good fit) = 0.80 / 0.25 = 3.2\n\nPosterior odds = 0.429 × 3.2 = 1.371\n\nPosterior probability = 1.371 / (1 + 1.371) = 1.371 / 2.371 ≈ 57.8%\n\nThe assessment test, with this likelihood ratio, updates the prior from 30% to approximately 58%. The candidate is now slightly more likely than not to be a good fit. Note that the test provides real information but does not provide near-certainty — a 58% posterior means there's still a 42% chance of a poor hire. Whether that's acceptable depends on the cost of wrong decisions in each direction.\n\n* * *\n\n**Q3.** A detective has two suspects, A and B. She initially believes A is 60% likely to be the culprit and B is 40% likely (assuming one of them did it). She finds new evidence: fingerprints that match A's are found at the scene. Based on her forensic knowledge, she estimates: if A is the culprit, probability of finding A's fingerprints = 90%; if B is the culprit, probability of finding A's fingerprints = 15% (A might have been at the scene for other reasons). Update the detective's beliefs.\n\n**Answer:** We can treat this as a two-hypothesis problem: H_A (A is culprit, prior = 0.60) vs H_B (B is culprit, prior = 0.40).\n\nOdds ratio for H_A vs H_B:\n\n* Prior odds: 0.60/0.40 = 1.5\n* Likelihood ratio: P(evidence | H_A) / P(evidence | H_B) = 0.90/0.15 = 6\n* Posterior odds: 1.5 × 6 = 9 (i.e., 9:1 odds in favor of A)\n* P(H_A | evidence) = 9 / (9+1) = 90%",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1424,
+      "out_sha": "b4489938a190",
       "note": ""
     },
     {
@@ -935,11 +935,11 @@
       "en_title": "Chapter 7: Bayes' Theorem — The Most Important Idea You've Never Heard Of",
       "order": 68,
       "src_chars": 2170,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bdc4d3f078cf",
       "src": "After finding fingerprints that are 6× more likely under A's guilt than B's guilt, the probability updates from 60% to 90% that A is the culprit. This is a significant update, but not certainty — there is still a 10% chance B committed the crime (perhaps A's prints were there for innocent reasons). The detective should continue gathering evidence, starting from the 90% prior, before reaching a conclusion.\n\n* * *\n\n**Q4.** Sarah (our startup founder) initially assigns a 20% probability that her product will achieve product-market fit within 18 months (prior). She conducts a 30-day pilot with 50 users. The results are disappointing: only 5 of 50 users (10%) report that the product is \"must-have.\" She knows from startup research that if a product truly has strong PMF potential, about 40% of pilot users typically report it as must-have; if the product does not have strong PMF potential, about 8% report it as must-have. Update Sarah's prior.\n\n**Answer:** Prior odds = 0.20/0.80 = 0.25\n\nThe evidence is \"10% report must-have.\" We need to assess how likely this result is under each hypothesis:\n\n* P(~10% must-have | strong PMF potential): If 40% typically report must-have for strong PMF products, getting only 10% is relatively unlikely — below what is expected by a significant margin. Estimating the probability of this result at approximately 12% (plausible given sampling variation, but well below expectation).\n* P(~10% must-have | weak PMF potential): If 8% typically report must-have for weak PMF products, getting 10% is very close to the expected value. This result is fairly likely — approximately 40%.\n\nLikelihood ratio = 0.12 / 0.40 = 0.30\n\nPosterior odds = 0.25 × 0.30 = 0.075\n\nPosterior probability = 0.075 / (1 + 0.075) ≈ 7%\n\nThe disappointing pilot results update Sarah's probability of achieving PMF from 20% down to approximately 7%. This is a sobering but important result. Sarah should not give up immediately — 7% is not zero, and this is one pilot study — but she should take the signal seriously. The Bayesian update tells her that her current product approach is much less likely to be on the right track than she initially hoped.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 815,
+      "out_sha": "cb510036e189",
       "note": ""
     },
     {
@@ -947,11 +947,11 @@
       "en_title": "Chapter 7: Bayes' Theorem — The Most Important Idea You've Never Heard Of",
       "order": 69,
       "src_chars": 3403,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d754c64540e3",
       "src": "#### Think Deeper\n\n**Q1.** Courts in many countries exclude \"prior probability\" reasoning from evidence — jurors are instructed to decide based on evidence presented at trial, not on the defendant's prior record or base rates of crime. From a Bayesian perspective, is this the right policy? What are the arguments for and against using prior probabilities in legal judgments?\n\n**Discussion:** From a pure Bayesian standpoint, excluding prior probabilities produces incorrect probability estimates — the posterior belief in guilt cannot be accurately calculated without a prior. The mathematically correct answer is that evidence should update prior beliefs, not replace them. However, legal systems have compelling non-epistemic reasons for their approach: (1) Fairness: if defendants are judged partly on their prior record, people with records face systematically higher conviction probabilities for any given charge, regardless of their actual guilt in the current case. This creates incentives for prosecutorial discretion to compound early inequities. (2) Prejudice: jurors may weight prior records too heavily, beyond what Bayes would warrant — creating the risk of conviction-by-character rather than conviction-by-evidence. (3) The prior record conflates base rates (which would be legitimate Bayesian priors) with specific information about this defendant. Bayes' theorem does warrant prior updating — but the \"prior\" should ideally be the base rate for this type of crime given this type of defendant, not the individual's record, which introduces additional complications. The synthesis: pure Bayesian reasoning and legal fairness considerations are in genuine tension. The legal approach trades epistemic accuracy for procedural fairness — a deliberate trade-off that reflects the importance of institutional legitimacy and protection against systematic bias.\n\n* * *\n\n**Q2.** Confirmation bias is often described as \"looking for evidence that confirms what you already believe.\" How does this relate to Bayesian reasoning? Is confirmation bias always irrational?\n\n**Discussion:** Confirmation bias, strictly defined, is the tendency to selectively seek, interpret, and remember evidence that confirms prior beliefs while ignoring or discounting disconfirming evidence. From a Bayesian perspective, selectively attending to confirming evidence is rational only if confirming evidence is genuinely more informative — which it sometimes is. If your prior is very high and the confirming evidence has a high likelihood ratio, it is efficient to focus on evidence that can substantially move your beliefs. The irrational version of confirmation bias is when the selection is motivated by desire rather than information value: ignoring disconfirming evidence not because it's uninformative but because it's unwelcome. A key Bayesian norm is that both confirming and disconfirming evidence should update beliefs in proportion to their likelihood ratios. Disconfirming evidence with a high likelihood ratio should update beliefs more than confirming evidence with a low likelihood ratio, regardless of which direction is emotionally preferred. The \"consider the opposite\" debiasing technique works precisely because it forces active engagement with the likelihood of the evidence under the null hypothesis — the denominator in Bayes' theorem — which motivated reasoning systematically underweights.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 942,
+      "out_sha": "cd798cd4fb29",
       "note": ""
     },
     {
@@ -959,11 +959,11 @@
       "en_title": "Chapter 7: Bayes' Theorem — The Most Important Idea You've Never Heard Of",
       "order": 70,
       "src_chars": 1428,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0a86d482db39",
       "src": "### Chapter Summary\n\nBayes' theorem formalizes the correct way to update beliefs when evidence arrives: multiply your prior probability by the likelihood ratio (how much more probable the evidence is under your hypothesis than under the alternative), and renormalize. The result — the posterior probability — is the updated belief that incorporates both prior knowledge and new evidence.\n\nThe false positive paradox showed why even highly accurate tests can produce predominantly false positives when the condition being tested for is rare: the prior probability matters enormously, and ignoring it (base rate neglect) is the most common and consequential Bayesian error.\n\nThread 2 (the medical diagnosis) showed how Dr. Martinez should correctly interpret a positive test result — as updating a prior, not replacing it. Thread 1 (the startup decision) showed how Sarah's letter-of-intent evidence should update her success probability from 20% to approximately 47% — a substantial increase, but not certainty.\n\nThinking Bayesianly doesn't require calculations: it requires maintaining explicit priors, evaluating evidence by likelihood ratios, and updating proportionally.\n\nIn Chapter 8, we turn from beliefs to actions: given updated beliefs about probabilities, how should we decide what to do? The tool is expected value — and its surprising implications will change how you think about bets, job offers, and insurance.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 418,
+      "out_sha": "b528024e92a3",
       "note": ""
     },
     {
