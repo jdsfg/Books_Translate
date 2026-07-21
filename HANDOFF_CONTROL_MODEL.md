@@ -19,7 +19,7 @@
 - `pipeline/translate/verify_translation.py`：结构、数字和术语核验脚本。
 - `CLOUD_AGENT.md`、`STATUS.md`：云端执行合同与当前迁移状态。
 
-当前已初始化的 `sources/` 根目录包含以下六本完整英文书稿：信息论：从香农到 AI、复杂性科学入门、AI时代的统计思维、明智决策：不确定世界中的理性思考、进化心理学、身体这台机器：随身硬件巡礼。章节结构与结尾显示它们是完整书稿，不是节选。另有 48 份英语占主导的待入库书稿已上传至 `sources/pending/`；清单见 `SOURCE_INTAKE.md`。它们尚未预检、初始化、锁标题或分配分支，任何 Agent 不得直接翻译。
+`sources/` 根目录中的书稿均已由控制模型完成预检、初始化和标题锁定。除原有六本外，第二批已晋升 6 本：AI时代六大超能力卷一/卷五/卷六、调试思维、学术写作、社会心理学。`sources/pending/` 尚有 42 份待处理书稿；清单和预检决定见 `SOURCE_INTAKE.md`。任何 Agent 不得直接翻译 pending 文件。
 
 不要提交 `_tmp_*`、日志、缓存、调试脚本、根目录译文副本、临时 `.zh.md` 文件或无关项目文件。
 
@@ -33,8 +33,14 @@
 | 明智决策：不确定世界中的理性思考 | `translate/decision-making` | 30 / 285 | 可续翻 |
 | 进化心理学 | `translate/evolutionary-psychology` | 29 / 184 | 可续翻 |
 | 身体这台机器：随身硬件巡礼 | `translate/body-machine` | 8 / 151 | 可续翻 |
+| AI时代六大超能力-卷一-Git与GitHub | `translate/ai-superpowers-git`（待建） | 0 / 138 | 待样张 |
+| AI时代六大超能力-卷五-APIs与自动化 | `translate/ai-superpowers-apis`（待建） | 0 / 83 | 待样张 |
+| AI时代六大超能力-卷六-你的第二大脑 | `translate/ai-superpowers-second-brain`（待建） | 0 / 76 | 待样张 |
+| 调试思维 | `translate/debugging-thinking`（待建） | 0 / 183 | 待样张 |
+| 学术写作：从论文到研究计划 | `translate/academic-writing`（待建） | 0 / 278 | 待样张 |
+| 社会心理学 | `translate/social-psychology`（待建） | 0 / 222 | 待样张 |
 
-所有六本书**已经初始化且标题已锁定**。任何 Agent 均禁止执行 `init`、`lock-titles` 或重新切块。
+以上十二本书**已经初始化且标题已锁定**。任何 Agent 均禁止执行 `init`、`lock-titles` 或重新切块。
 
 ### 信息论风险
 

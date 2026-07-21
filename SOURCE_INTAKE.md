@@ -1,6 +1,6 @@
 # 待入库英文源稿
 
-`sources/pending/` 包含 48 份英语占主导的 Markdown 书稿。它们已上传供后续翻译，但尚未完成源稿预检、初始化、标题锁定或分支分配；任何 Agent 不得直接对这些文件执行翻译流水线。
+本批最初上传 48 份英语占主导的 Markdown 书稿。完成首批晋升后，`sources/pending/` 尚有 42 份；任何 Agent 不得绕过源稿预检直接对 pending 文件执行翻译流水线。
 
 ## 入库顺序
 
@@ -9,20 +9,31 @@
 3. 将通过预检的单书文件从 `sources/pending/` 移至 `sources/`。
 4. 仅对该书执行一次 `init` 与 `lock-titles`，再建立专属翻译分支并进行 2–3 块样张试译。
 
-## 已上传待预检书目
+## 已预检并晋升（2026-07-21）
+
+以下 6 本在 `pipeline/source_preflight/pending_part_*.md` 中判定为 PASS，已移至 `sources/`，完成唯一一次 `init` 与 `lock-titles`：
+
+| 书目 | 块数 | 风格 | 术语库 |
+|---|---:|---|---|
+| AI时代六大超能力-卷一-Git与GitHub | 138 | `style_cs_systems.md` | `glossary_cs.md` |
+| AI时代六大超能力-卷五-APIs与自动化 | 83 | `style_cs_systems.md` | `glossary_cs.md` |
+| AI时代六大超能力-卷六-你的第二大脑 | 76 | `style_psychology_selfhelp.md` | `glossary_psychology.md` |
+| 调试思维 | 183 | `style_cs_systems.md` | `glossary_cs.md` |
+| 学术写作：从论文到研究计划 | 278 | `style_academic_writing.md` | `glossary_academic.md` |
+| 社会心理学 | 222 | `style_social_science.md` | `glossary_social.md` |
+
+下一步是分别建立专属书目分支并完成 2–3 块样张；样张独立审校通过前不得批量翻译。
+
+## 仍在 pending 的书目
 
 - AI 工程：用 LLM 构建生产系统
 - AI 科学 I：从神经网络到 Transformer
 - AI 科学 II：大语言模型
-- AI时代六大超能力-卷一-Git与GitHub
-- AI时代六大超能力-卷五-APIs与自动化
-- AI时代六大超能力-卷六-你的第二大脑
 - 不平等的形状
 - 习惯的科学
 - 分布式系统
 - 压力的科学
 - 古老的认知疗法——斯多葛主义的现代诠释
-- 学术写作：从论文到研究计划
 - 情绪的科学：识别、调节、不被绑架
 - 操作系统
 - 数据库系统
@@ -31,7 +42,6 @@
 - 看见彼此——亲密关系的科学
 - 睡眠的科学
 - 社会学的想象力
-- 社会心理学
 - 系统设计思维：大规模软件的架构之道
 - 细听：勃拉姆斯
 - 细听：古典音乐欣赏指南
@@ -56,7 +66,6 @@
 - 训练的科学·卷二：耐力与整体表现
 - 记忆——术与道
 - 说服性写作
-- 调试思维
 - 软件工程匠艺
 - 钱为我用
 

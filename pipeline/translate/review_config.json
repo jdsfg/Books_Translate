@@ -52,6 +52,54 @@
         "pipeline/translate/glossary_biology.md"
       ],
       "force_arabic": true
+    },
+    "AI时代六大超能力-卷一-Git与GitHub": {
+      "source": "sources/AI时代六大超能力-卷一-Git与GitHub.md",
+      "style": "pipeline/translate/style_cs_systems.md",
+      "glossaries": [
+        "pipeline/translate/glossary_cs.md"
+      ],
+      "force_arabic": true
+    },
+    "AI时代六大超能力-卷五-APIs与自动化": {
+      "source": "sources/AI时代六大超能力-卷五-APIs与自动化.md",
+      "style": "pipeline/translate/style_cs_systems.md",
+      "glossaries": [
+        "pipeline/translate/glossary_cs.md"
+      ],
+      "force_arabic": true
+    },
+    "AI时代六大超能力-卷六-你的第二大脑": {
+      "source": "sources/AI时代六大超能力-卷六-你的第二大脑.md",
+      "style": "pipeline/translate/style_psychology_selfhelp.md",
+      "glossaries": [
+        "pipeline/translate/glossary_psychology.md"
+      ],
+      "force_arabic": false
+    },
+    "调试思维": {
+      "source": "sources/调试思维.md",
+      "style": "pipeline/translate/style_cs_systems.md",
+      "glossaries": [
+        "pipeline/translate/glossary_cs.md"
+      ],
+      "force_arabic": true
+    },
+    "学术写作：从论文到研究计划": {
+      "source": "sources/学术写作：从论文到研究计划.md",
+      "style": "pipeline/translate/style_academic_writing.md",
+      "glossaries": [
+        "pipeline/translate/glossary_academic.md"
+      ],
+      "force_arabic": false
+    },
+    "社会心理学": {
+      "source": "sources/社会心理学.md",
+      "style": "pipeline/translate/style_social_science.md",
+      "glossaries": [
+        "pipeline/translate/glossary_social.md"
+      ],
+      "force_arabic": false
     }
   }
 }
