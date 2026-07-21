@@ -643,11 +643,11 @@
       "en_title": "Chapter 6: Weaving Universes",
       "order": 47,
       "src_chars": 2647,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bb5ded9a5281",
       "src": "### Chapter Summary\n\nTheo's bold reorganization worked, and this chapter was about bringing it home: taking the experiment that proved itself in its own parallel universe and weaving it back into the main version everyone trusts, so that there is one book again instead of two.\n\nA **merge** is that weaving. It is not one version overwriting another, which is the single most common wrong picture. It _combines_ : material unchanged on both lines stays, changes the experiment made come in, changes the main line made are kept, and everyone's work survives. When the two lines changed different things, the weaving is automatic, and that is what \"**it merged cleanly** \" means: different edits, different places, no guessing required, which is the normal case precisely because collaboration usually divides the work into separate territories.\n\nThe judgment this chapter drills is the first pre-flight question, **what exactly will change?** , asked at the merge: before you approve a weave, you ask your agent to show you what it will bring in (what moves, what is new, whether anything is removed), and you say yes only after you have looked. A merge delivers a lot of change at once, which is exactly when an unintended edit hides best, so the looking is not optional.\n\nAnd there is one case the automatic weave cannot handle: when two lines edited the very same thing and disagree about it. There the tool refuses to guess, shows both versions, and asks a human to choose. That refusal is the tool at its most trustworthy, and it is where Chapter 7 begins — when two hands edit the same line, and the weaving needs a person.\n\n\n#### Say This to Your AI\n\nBy now you can ask for a snapshot, read your history, go back safely, and open a branch to try something bold. This chapter adds the move that brings it home:\n\n* **\"The reorder worked — weave it back into the main version, and tell me if anything collides.\"**\n* And the pre-flight habit, said _before_ you approve: **\"Before you merge, show me exactly what this will bring into the main version — what moves, what's new, and whether anything gets removed.\"**\n\nThe fear this chapter retires is _\"if I go off and experiment, I'll be stuck with two versions I have to reconcile by hand, and I'll get it wrong.\"_ You now know you will not. The experiment and the main line weave back together, automatically when your changes and everyone else's landed in different places, and with an honest human decision when they did not. You can start the bold branch and know there is a clean, calm way back. What you can now dare: finish an experiment and merge it home without holding your breath.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 950,
+      "out_sha": "29ce4cfb3324",
       "note": ""
     },
     {
@@ -655,11 +655,11 @@
       "en_title": "Chapter 7: When Two Hands Meet",
       "order": 48,
       "src_chars": 3139,
-      "status": "pending",
+      "status": "done",
       "src_sha": "77bbbfb64db4",
       "src": "In the last chapter, Theo's bold reorganization came home. He had spent a week rebuilding the guide by neighborhood instead of by weather, off in his own parallel version where nothing he did could touch the working book. When it was ready, the agent wove his week of work back into the main guide, and the astonishing thing about that afternoon was how little happened. No drama, no reconciling by hand, no two-broken-versions nightmare Theo had feared since Chapter 1. The agent read both lines of work, saw that they touched different parts of the book, and stitched them together into one. Weaving, when the two threads run through different places, is automatic. You barely notice it.\n\nThere is one case where it is not automatic. It is the case where two people, working in parallel, reach for the very same sentence. And it is the last piece of the branching story, the one that finally puts to rest the oldest fear in this book.\n\nMaya and Theo met it on a Tuesday, over the first line of the guide.\n\n\n### 7.1 The same sentence, two ways\n\nThe opening line of _Rainy-Day Lisbon_ had never been quite right, and both of them knew it. So both of them, without saying anything to the other, decided to fix it.\n\nMaya, on her branch, rewrote it to be warm and personal: _\"This is the Lisbon we walk when the sky turns grey.\"_ Theo, on his, rewrote the same line to be crisp and promising: _\"Forty small pleasures for a wet afternoon.\"_ Neither knew the other had touched it. Each thought they were improving a line nobody else was working on. Both were right about their own version. Both had made the book a little better in their own direction.\n\nThen they asked the agent to weave the two branches together.\n\nNow put yourself in the tool's position for a moment, because this is the whole chapter. Everywhere else in the book, the two sets of edits touched different sentences, so weaving them was obvious: take Maya's new café paragraph, take Theo's reordered chapters, keep both, done. But here, on this one line, there are two different rewrites of _the exact same words_. The tool cannot keep both, because a sentence cannot say two different things at once. And it has no way to know which one Maya and Theo would prefer. It does not know the book. It does not know that they had argued about tone for weeks. It knows only that where it expected one answer, it found two, and they disagree.\n\nSo it does the one honest thing available to it. **It stops, and it asks.**\n\nIt does not pick Maya's line because she edited more recently. It does not pick Theo's because his branch was bigger. It does not average them into some mush that is neither warm nor crisp. It does not quietly keep one and silently drop the other where nobody would notice until the book was printed. It refuses to guess. It presents both versions, side by side, marks the exact spot where they disagree, and hands the decision to a human, because the decision was never a mechanical one. It was a decision about what the book should _sound like_ , and only a person who knows what the book is for can make it.\n\nThis \"stop and ask\" behavior has a specific name.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1122,
+      "out_sha": "f02e6cb30b35",
       "note": ""
     },
     {
@@ -667,11 +667,11 @@
       "en_title": "Chapter 7: When Two Hands Meet",
       "order": 49,
       "src_chars": 1156,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9bc5e53a6387",
       "src": "#### Definition: Merge conflict\n\nA **merge conflict** is what happens when two lines of work have each changed the _same_ piece of a project in _different_ ways, and the tool weaving them together cannot tell which change should win. Rather than guess (and risk silently throwing away someone's work), it stops at exactly that spot, shows you both versions, and waits for a human (or a human-approved agent) to choose.\n\nRead that definition slowly, because every word of it is doing a job. _Same piece_ : conflicts happen only where two edits overlap; everything else weaves automatically, as it did all through Chapter 6. _Cannot tell which should win_ : the tool has no opinion about your book, and it knows it. _Rather than guess_ : this is the heart of it. _Shows you both versions_ : nothing is hidden, nothing is lost. _A human chooses_ : because the choice is a judgment, and judgment is yours.\n\nA conflict is not the tool failing to do its job. A conflict is the tool doing the single most valuable thing it will ever do for you: refusing to make a decision it is not qualified to make, and refusing to lose your work while pretending it made one.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 423,
+      "out_sha": "2ad470e0ccc4",
       "note": ""
     },
     {
@@ -679,11 +679,11 @@
       "en_title": "Chapter 7: When Two Hands Meet",
       "order": 50,
       "src_chars": 2381,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fc2f0eab6030",
       "src": "### 7.2 What Maya actually saw\n\nWhen Maya asked her agent to weave the branches together, it came back not with a finished book but with a small, calm report: _\"These wove together cleanly, except for one spot. You and Theo both rewrote the opening line, in different ways. I won't choose for you. Here they are.\"_\n\nAnd it showed her the two versions of that one line. Hers, welcoming. His, brisk. The rest of the book, hundreds of edits, his whole reorganization, her new paragraphs, had already been woven together without a hitch. The conflict was one sentence out of the entire guide.\n\nUnderneath, in the actual file, the tool marks the disputed spot with a bit of scaffolding: some symbols that fence off \"here is Maya's version\" from \"here is Theo's version,\" so the exact boundary of the disagreement is unmistakable. You do not need to memorize what those markers look like, and you will almost never type them yourself. What matters is the shape of the thing: the file, at the conflicted spot, temporarily holds _both_ candidate versions clearly separated, waiting for someone to keep one, keep the other, or write a third that draws from both. Your agent can show you this in plain language, the way Maya's did, so you rarely see the raw scaffolding at all. The scaffolding is the tool's way of saying _the two of you disagree, exactly here, and I've kept both so you can decide._\n\nMaya read both lines. Then she did something the tool could never have done: she thought about the book. Theo's line promised; hers welcomed. She decided the very first sentence should welcome and the _second_ should promise, and she decided on a resolution that opened with her warm line and let Theo's crisp one land right after it, as the follow-through. She told the agent, \"Keep both: mine first, then his, as the second sentence.\" The agent recorded that choice as a snapshot, with a note about why, and the conflict was over. The book now had an opening that was better than either of them had written alone.\n\nThat is what resolving a conflict is: a human reads the two versions and decides. Sometimes you keep yours. Sometimes theirs. Sometimes, as Maya did, you write something new that honors both. The tool's entire contribution was to make sure you got to make that choice with your eyes open, instead of discovering three weeks later that half of someone's work had vanished.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 896,
+      "out_sha": "221136ab63ab",
       "note": ""
     },
     {
@@ -691,11 +691,11 @@
       "en_title": "Chapter 7: When Two Hands Meet",
       "order": 51,
       "src_chars": 1771,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f9c695c3954b",
       "src": "#### Common Misconception\n\n**\"A conflict means I broke something.\"**\n\nThis is the fear almost everyone feels the first time a merge stops and announces a conflict. The word itself sounds like an alarm. The screen may show unfamiliar scaffolding around your text. Your instinct, trained by a lifetime of computers punishing you for small mistakes, is to assume you did something wrong and that the work is now in a fragile, damaged state you might make worse by touching.\n\nNone of that is true, and it is worth being emphatic about it. A conflict is not a break. It is not an error you caused. It is not the tool complaining. **A conflict is the tool catching a decision that only a human can make, and pausing so you can make it.** Both versions of your work are completely safe, and that is the entire point of the pause. Nothing has been lost, nothing has been chosen behind your back, and nothing is in danger. The tool has simply arrived at a fork it is not allowed to walk through alone, and it has stopped to let you point the way.\n\nThink about what the alternative would be. Imagine a tool that, faced with two rewrites of the same line, quietly kept one and deleted the other so it could give you a \"clean\" merge with no fuss. That tool would feel friendlier. It would also, one day, silently erase the better version of your opening line, and you would never know it had happened. The conflict is the tool protecting you from exactly that. The pause is a gift. The friendlier tool is the dangerous one.\n\nSo when a conflict appears, the correct feeling is not panic. It is a small, calm _ah — the two of us touched the same spot; time to choose._ You are not repairing damage. You are casting a vote the tool was careful enough to know it could not cast for you.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 597,
+      "out_sha": "90adaa74b53a",
       "note": ""
     },
     {
@@ -703,11 +703,11 @@
       "en_title": "Chapter 7: When Two Hands Meet",
       "order": 52,
       "src_chars": 1823,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d9595f4e6056",
       "src": "### 7.3 Why this closes the fear\n\nGo back to the very first page of this book. Theo had a bold idea, to reorganize the whole guide by neighborhood, and he did not attempt it, for weeks, because reorganizing a half-finished book by hand sounded like a way to end up with two broken versions and no finished one. That was the fear the whole branching arc set out to dissolve.\n\nLook at what the last three chapters did to it. Chapter 5 gave Theo a parallel version, so his bold idea cost nothing to try and touched nothing that worked. Chapter 6 wove that idea home the moment it succeeded, with no reconciling by hand. And Chapter 7, this one, closes the last trapdoor, the one that made collaboration itself feel dangerous: _what if, while I'm being bold in my version, someone else changes the same thing, and we clobber each other?_ The answer is now complete. You do not clobber each other. The tool will not let you. Where your work and someone else's touch the same spot, it stops and shows you both, and a human chooses, and nobody's afternoon disappears.\n\nThat is the death of \"trying bold things is dangerous.\" Boldness was only ever dangerous because the downside was silent and total: the overwritten draft of Chapter 1, gone with no trace and no warning. Every tool you have met since then has been chipping at that downside. Snapshots made the past recoverable. Branches made experiments free. Merging made success painless. And the conflict, the thing that _sounds_ most like danger, turns out to be the final piece of safety, the tool standing between you and the one way a merge could still have hurt you. There is no silent, total downside left. When two hands reach for the same sentence, the tool does not pick a loser. It calls a human.\n\nYou can be as bold as you like now. That is what this arc was for.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 666,
+      "out_sha": "c08ec3b79aae",
       "note": ""
     },
     {
@@ -715,11 +715,11 @@
       "en_title": "Chapter 7: When Two Hands Meet",
       "order": 53,
       "src_chars": 3244,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b61469a905c0",
       "src": "### 7.4 The same story, without a couple\n\nNothing here is about writing partners, or about a guide, or even about two people. A conflict is simply what happens whenever two independent changes reach for the same piece of anything a version tool is watching. It is worth seeing the shape somewhere far from Maya and Theo, so you trust that it is the shape and not the story.\n\nPicture two co-authors of a doctoral thesis; call them the student—Dr. Okonkwo, whose dissertation we'll spend real time with later—and her advisor. The advisor, reading on his own branch, rewrites the thesis's central claim to be more cautious. The student, on hers, rewrites the very same sentence to be more forceful, because new data came in. When their work is woven together, the tool finds two different rewrites of the one sentence that matters most in the whole document. It will not choose between \"cautious\" and \"forceful,\" because that is the entire intellectual question of the thesis, and the tool knows a boundary marker when it sees one. It stops, shows both, and makes the two humans talk. Which is exactly what should happen. The conflict did not obstruct their scholarship; it _forced the conversation their scholarship required._\n\nOr picture Rosa's bakery, where Rosa and her partner Ana both update the price list on the same afternoon: Rosa raising the sourdough by a euro, her partner changing the same line to add a bulk discount. Two edits, one price. The tool stops and asks. Better a ten-second question now than a printed menu that says something neither of them meant.\n\nIn every case the pattern is identical. Two changes, one spot, an honest halt, a human choice. The tool never decides what your work should say. It only guarantees that when two hands meet, a person gets to decide, and no one's hand is ever brushed silently away.\n\n\n### 7.5 Exercises\n\nThese questions ask you to predict how the tool behaves, and to reason about _why_ it behaves that way, before you ever touch it. Sit with each one, then read the discussion.\n\n\n#### Concept Check\n\n**Q1.** In your own words, why does a good version tool _stop_ at a conflict instead of just picking one version and moving on? What would you lose if it were \"smart\" enough to always choose for you?\n\nHint\n\nThink about what the tool knows and what it doesn't. It knows the two versions disagree. Does it know which one is _better for your project_? Who does know that?\n\n**Answer:** The tool stops because it has hit a question it is genuinely not equipped to answer: which of two conflicting changes is right _for your work_. It knows the text disagrees; it does not know your book, your argument, or your intent. If it were \"smart\" enough to always pick, it would have to guess, and every guess it got wrong would silently delete the version you actually wanted, with no warning and no trace. What you would lose is the one thing that matters most: the guarantee that no piece of anyone's work vanishes without a human seeing it first. A tool that never conflicts is not smarter; it is more dangerous, because it has quietly appointed itself the judge of decisions it cannot understand. The pause is not the tool being dumb. It is the tool being honest about the edge of its competence.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1168,
+      "out_sha": "bddb688a0118",
       "note": ""
     },
     {
@@ -727,11 +727,11 @@
       "en_title": "Chapter 7: When Two Hands Meet",
       "order": 54,
       "src_chars": 2588,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cd6966793baa",
       "src": "#### Application Problems\n\n**Q1.** You and a co-author both, without coordinating, renamed the same section of your shared document: you called it \"Getting Around,\" they called it \"Transport.\" Your agent goes to weave your two versions together. Predict, in plain words, what happens. What will the agent come back and tell you?\n\nHint\n\nTwo changes to the same spot, in different directions. Does anything about this differ from Maya and Theo's opening line?\n\n**Answer:** This is a conflict, and the agent will not choose. It will report that the rest wove together fine, but that this one section heading was renamed two different ways at once, and it will show you both, \"Getting Around\" and \"Transport,\" and wait. Nothing is broken; both names are safely held, and the file at that spot temporarily carries both, fenced off, until someone decides. You resolve it the way Maya did: pick one, or write a third (\"Getting Around Lisbon,\" maybe), and tell the agent which. The key prediction to get right is that the agent comes back _asking_ , not _announcing a mistake_ : it did not fail, and neither did you. It simply caught that the two of you disagreed about one heading, and it refuses to break the tie on its own. If you predicted \"the agent silently keeps one,\" reread 7.1: that silent keeping is precisely the disaster the conflict exists to prevent.\n\n**Q2.** Your agent finishes weaving two branches and reports: \"Everything merged cleanly, no conflicts.\" A friend, hearing this, says, \"See? Conflicts are just bugs; a well-behaved tool never has them.\" What is wrong with your friend's reasoning?\n\nHint\n\n\"No conflicts\" this time tells you something specific about _these particular edits_. Does it tell you anything about the tool's quality?\n\n**Answer:** \"No conflicts\" does not mean the tool is well-behaved; it means the two sets of edits happened not to touch the same spot, so weaving them was unambiguous. That is a fact about the _edits_ , not about the tool. The very same tool would raise a conflict the instant two changes did overlap, and that is exactly what you want it to do. Your friend has it backwards: a conflict is not a bug the tool sometimes suffers from, it is a safety feature the tool deploys precisely when it is needed. A tool that \"never has conflicts\" no matter what you throw at it would only achieve that by silently discarding one side of every overlap, which is the one behavior you should be terrified of. Clean merges and conflicts are two correct outcomes of the same honest machine: clean when nothing overlaps, a conflict when something does.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 999,
+      "out_sha": "db9dccebd004",
       "note": ""
     },
     {
@@ -739,11 +739,11 @@
       "en_title": "Chapter 7: When Two Hands Meet",
       "order": 55,
       "src_chars": 3243,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5e886fdfdfe5",
       "src": "#### Think Deeper\n\n**Q1.** A conflict forces a human to make a choice that the tool refused to make. But we spent Chapter 1 celebrating that your agent handles the mechanical work so you don't have to. Is there a tension here? Is the conflict \"leaking\" work back onto you that the tool should have absorbed? Where exactly is the line between what the agent should decide and what you must?\n\nHint\n\nSeparate two kinds of work: knowing _how_ to do something (the commands, the mechanics) and knowing _what_ the result should be (the judgment, the intent). Which kind is the conflict handing back to you?\n\n**Discussion:** There is no real tension, and finding out why sharpens the whole premise of the book. The agent absorbs the _mechanical_ work: running the commands, weaving the non-overlapping edits, fencing off the disputed spot, showing you both versions clearly. All of that, it did. What it hands back to you is not mechanical work at all; it is a _judgment about meaning_ : should the opening line be warm or crisp, should the claim be cautious or forceful, should the section be \"Transport\" or \"Getting Around.\" That was never the agent's to decide, and you would not want it to. The line between the two is exactly the line this book has drawn from its first pages: the agent has the vocabulary and the hands; you have the intent and the taste. A conflict is not work leaking back onto you; it is the tool correctly _routing_ a decision to the only party qualified to make it. Notice, too, that a human-approved agent can resolve conflicts on your behalf once you have told it your intent (\"if we ever clash on tone, always prefer the warmer version\"). Even then, the _judgment_ originated with you; the agent is executing a standing decision, not inventing one. The conflict does not violate the \"your hands are an agent\" model. It reveals the model's sharpest edge: the machine will do everything except decide what your work should mean, and it is careful enough to know the difference.\n\n\n#### Say This to Your AI\n\nBy now your agent knows how to snapshot, show history, go back, branch, and weave. Here is the ask this chapter adds, the plain-language request that turns a conflict from something frightening into something routine. It builds on everything before it; you are still not typing a single command.\n\n> \"We both edited the same line, so show me both versions side by side and let me choose.\"\n\nAnd, once you trust the pattern, its natural follow-on:\n\n> \"Weave these two versions together; if anything clashes, don't guess. Stop and show me both so I can decide.\"\n\nNotice what these have in common with every ask in the ledger so far: they describe an _outcome and a safety_ , never a mechanism. You are telling the agent what to do when it reaches a fork, not how to walk the road.\n\n**The fear this chapter retires:** _trying bold things is dangerous._ You now know the last trapdoor is nailed shut: even when two people reach for the very same sentence, the tool refuses to lose anyone's work and calls a human to choose. Nothing you attempt has a silent, total downside anymore. You can be as bold as your ideas are, alone or alongside someone else, and dare the restructuring you have been putting off since page one.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1188,
+      "out_sha": "3bdde1eb281c",
       "note": ""
     },
     {
@@ -751,11 +751,11 @@
       "en_title": "Chapter 7: When Two Hands Meet",
       "order": 56,
       "src_chars": 2130,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c4eee1bc179a",
       "src": "### Chapter Summary\n\nWeaving two lines of work together is usually automatic: when edits touch different parts of a project, the tool stitches them into one without ceremony, as Theo's whole reorganization came home in Chapter 6. The single exception is when two changes reach for the _same_ piece, in different ways: the same sentence, the same heading, the same price. There, the tool cannot honestly guess, so it does the most valuable thing it will ever do: it stops, shows you both versions, and hands the decision to a human. That halt is a **merge conflict.**\n\nA conflict is not something you broke and not an error you caused. It is the tool catching a decision only a person can make, and pausing so you can make it with both versions safely in front of you and nothing lost. The alternative, a tool \"friendly\" enough to silently keep one version and delete the other, is the genuinely dangerous one, because it would one day erase the better half of your work without a whisper. The pause is protection. When Maya and Theo both rewrote the guide's opening line, the tool refused to choose between warm and crisp; Maya read both, thought about the book, and wrote an opening better than either alone. The scaffolding the tool leaves in the file to fence off the two versions is just its way of marking _exactly here, you two disagree_ , and not something to memorize.\n\nThis closes the branching arc that ran through Chapters 5, 6, and 7, and with it the oldest fear in the book. Boldness was only ever dangerous because the downside could be silent and total. Snapshots, branches, clean merges, and now the conflict have removed every silent trapdoor, including the last one: the fear that collaborating means clobbering each other. You do not clobber each other. The tool will not permit it.\n\nNext, in Chapter 8, we let the work live in more than one place at once. So far everything has happened on a single laptop; we are about to give the guide a home beyond it, on Theo's machine across the room, and somewhere the two of them can meet, so that a lost laptop loses nothing, and two people can truly work as one.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 786,
+      "out_sha": "19815c1175ee",
       "note": ""
     },
     {
@@ -763,11 +763,11 @@
       "en_title": "Chapter 8: In More Than One Place",
       "order": 57,
       "src_chars": 2854,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3df6f7294dea",
       "src": "Theo spilled coffee on his laptop.\n\nNot a dramatic spill. A quarter of a mug, tipped by an elbow, into the keyboard of a five-year-old machine that had been threatening to die for a year. It made a small, final noise, and the screen went dark, and this time it did not come back. The repair shop said the drive might be recoverable, might not, come back Thursday.\n\nA year earlier, that sentence would have been a catastrophe. The guide lived on that laptop. Every snapshot they had taken, every branch, the whole album from the first nervous commit to last night's work, all of it, gone into a dead machine with a shrug from a stranger. Maya felt the old cold feeling arrive, the body understanding the loss before the mind agrees to it.\n\nExcept it didn't happen. Because the guide didn't only live on Theo's laptop. It also lived on Maya's, complete, and in a third place neither of them had a mug of coffee anywhere near. Theo bought a cheap replacement machine that evening. By the time they went to bed, the guide was on it: every snapshot, every branch, the whole history, exactly as it had been that morning. Nothing was lost. Not one photograph in the album.\n\nThis chapter is about how that is possible, and why it changes what you can dare. In Chapter 7 we handled the last hard thing about working together in one place: two edits to one sentence, resolved by a human choice. Now the work stops living in one place at all. And the moment it lives in more than one, two fears you have carried your whole life quietly retire.\n\n\n### 8.1 The album, in more than one place\n\nEverything you have learned so far has happened on a single machine. The snapshots (Chapter 2), the album that holds them (Chapter 3), the branches (Chapter 5), the merges and the one conflict: all of it lived in one folder on one laptop. Which means all of it shared that laptop's fate. A theft, a drop, a spilled mug, and the whole beautiful history goes dark with the drive.\n\nThe fix is not to make backups the way you always have: the frightened extra copy in a cloud folder, the whole project zipped up and emailed to yourself, the external drive you update when you remember, which is never. Those are copies of the _files_ , the way they are _right now_. They do not carry the album. They do not carry the history, the branches, the notes about why. If you restore from a zip, you get today's files and you have lost every snapshot behind them. You are back in the `FINAL_v2` world, just with a bigger folder.\n\nWhat Maya and Theo had instead was the whole album, living in more than one place at once. Not a flattened copy of the current files. The genuine thing, history and all, kept in sync across three locations, so that any one of them could vanish and the project would carry on, untouched, from either of the others.\n\nThe place that makes this work has a name.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1076,
+      "out_sha": "c54368f91e5d",
       "note": ""
     },
     {
@@ -775,11 +775,11 @@
       "en_title": "Chapter 8: In More Than One Place",
       "order": 58,
       "src_chars": 2736,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f1c8c89c39c4",
       "src": "#### Definition: Remote\n\nA **remote** is a copy of your project's album that lives somewhere other than your own machine: on another person's laptop, or more usually on a shared location you can both reach, like a workshop on the internet. It holds the same history your local album holds: the same snapshots, the same branches, the same notes. Your work now lives **in more than one place** , and the remote is the \"other place.\"\n\nTwo plain motions connect your machine to the remote, and they are exact mirrors of each other:\n\n* **Publish** your new snapshots to the remote, so the other place learns what you just did. (The tool's own word for this is _push_.)\n* **Fetch** the remote's new snapshots down to your machine, so you learn what the other place did. (The tool's own word is _pull_.)\n\nThat is the entire relationship. You take snapshots locally, the way you always have; then, when you are ready, you publish them to the shared copy. When your collaborator has published theirs, you fetch them down. Nobody's work overwrites anybody's. Publishing adds your snapshots to the shared album; fetching adds theirs to yours. Both albums grow; neither is clobbered.\n\nNotice what the remote is _not_. It is not a \"server\" you have to understand, not a special kind of file, not a live document you both type into at once. It is just another copy of the same album, kept somewhere safer than a single laptop, that both of you agree to keep in sync by publishing and fetching. The word _remote_ only means \"the album, elsewhere.\"\n\nYou will not run any of this yourself. You will say, in plain words, \"publish today's snapshots to our shared copy,\" and the agent knows the incantation. What you need is not the command. It is the picture: your album, now living in a second place, gaining your new snapshots when you publish and the other place's when you fetch.\n\n\n### 8.2 A lost laptop loses nothing\n\nHere is the promise that made Theo's spilled coffee a shrug instead of a disaster, stated plainly:\n\n**When your project lives in more than one place, losing any one place loses nothing.**\n\nThis is true because of something we have not fully spelled out yet. When Theo's new laptop pulled the guide down from the shared copy, it did not download the current files. It downloaded the whole album: every snapshot from the first to the last, every branch, every note about why. His new machine held a complete, independent copy of the entire history, indistinguishable from what the dead laptop had held that morning. He could browse last month's version, revisit the branch where they tried the neighborhood reorder, read the note on any commit. All of it, on a machine that had existed for four hours.\n\nThat full copy has a name too.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1046,
+      "out_sha": "e9d4a5064c38",
       "note": ""
     },
     {
@@ -787,11 +787,11 @@
       "en_title": "Chapter 8: In More Than One Place",
       "order": 59,
       "src_chars": 2225,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0f4e6bbd6878",
       "src": "#### Definition: Clone\n\nA **clone** is a complete copy of a project's album (the whole history, every snapshot, every branch, every note), not just the current files. When you clone a project, you are not downloading \"the latest version.\" You are taking the entire album, so that your machine now holds a full, standalone history you could work from even if every other copy vanished.\n\nThis is why a lost laptop loses nothing. Maya's laptop was a clone. The shared copy was, in effect, a clone. Theo's dead laptop had been a clone. Three complete albums, kept in sync. Kill any one and the project is fully present in the other two. There is no \"master original\" that, if lost, takes the history with it. Every copy is complete. That is the deep and slightly startling fact underneath all of this: in a properly distributed project, there is no single place whose death is fatal, because there is no single place that holds anything the others don't.\n\n\n#### Common Misconception\n\n_\"The copy on the shared workshop is just the latest version, a snapshot of the current files, uploaded. If I need the history, that lives on my laptop; the remote is more like a backup of today.\"_\n\nNo. The copy in the shared place is a **full clone** , the entire album, history and all, exactly like the copy on your own machine. It is not a flattened upload of today's files. It holds every snapshot you ever published, every branch, every note, in the same form your local album holds them. This is precisely why Theo's new laptop could pull the _whole_ project down and have all of it: because the remote wasn't storing \"today's files,\" it was storing the complete history, ready to hand a full clone to any machine that asks.\n\nThe old mental model, the one everyone arrives with, is _upload_ and _download_ : I upload my current files, I download the current files, the cloud holds the current files. Set it down. What travels between your machine and the remote is not files. It is snapshots, added to an album. What each place holds is not the current version. It is the whole history. Once you see the remote as \"another complete copy of the album\" rather than \"a folder in the cloud,\" the rest of collaboration stops being mysterious.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 830,
+      "out_sha": "cc238dcdce19",
       "note": ""
     },
     {
@@ -799,11 +799,11 @@
       "en_title": "Chapter 8: In More Than One Place",
       "order": 60,
       "src_chars": 1929,
-      "status": "pending",
+      "status": "done",
       "src_sha": "839875988f3a",
       "src": "### 8.3 What is, and isn't, a backup\n\nNow the honest boundary, and it is important enough that we are going to be blunt about it.\n\nHaving your project in a repository (an album, on your one machine) is _not a backup._ It never was. A repository protects you against the mistakes you make _inside_ your work: the bad edit, the regretted cut, the reorganization that failed. Those it handles beautifully. Chapter 4 was the whole demonstration. But it does nothing at all against the machine itself dying. If the drive fails and the album was only ever on that drive, the album dies with it, snapshots and all. The history is exactly as gone as Maya's three paragraphs in Chapter 1. A snapshot on a dead disk is a photograph in a burned house.\n\nSay it as a rule you can hold:\n\n> **A repository is not a backup until it lives in a second place.**\n\nThe magic of \"a lost laptop loses nothing\" is not magic in the repository. It is magic in the _second place_. One complete album on one machine is one spilled mug away from oblivion. Two complete albums on two machines, or one machine and one workshop on the internet, is a project that survives losing either. The number that matters is not how good your version control is. It is how many independent places hold a complete copy. One is not a backup. Two is the beginning of one.\n\nThis is why Chapter 3 quietly warned you that the album was \"not a backup yet,\" and pointed here. Now you can see the whole shape. Version control gives you a history. A remote gives that history a second home. Only the second home makes it a backup. Both halves are necessary; neither alone is enough.\n\nSo when you set up a project, the plain-language ask has two parts you should never separate: _keep a history_ (the album, from Chapter 2) and _keep it in more than one place_ (the remote, this chapter). A history in one place is precious and fragile. A history in two places is precious and safe.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 719,
+      "out_sha": "85c785dfa855",
       "note": ""
     },
     {
@@ -811,11 +811,11 @@
       "en_title": "Chapter 8: In More Than One Place",
       "order": 61,
       "src_chars": 2700,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f8fe6ee61fd6",
       "src": "### 8.4 Private, and public later\n\nThere is one more thing to decide when your work moves to a shared place on the internet, and it is a decision with a nervous edge to it: **who can see it?**\n\nFor most projects, the honest answer at the start is _nobody but us._ Maya and Theo were not ready to show the world a half-finished guide with placeholder captions and a café section they weren't sure about. They wanted the safety of the second place, the survives-a-dead-laptop calm, without the exposure of the open internet. And that is exactly a normal, supported thing.\n\nA shared workshop on the internet lets a repository be **private** (visible only to you and the specific people you invite) or **public** , visible to anyone. Private gives you every benefit of this chapter (the second home, the lost-laptop calm, the ability for you and Theo to sync across your two laptops) with none of the exposure. You can flip it to public later, when the work is ready to be seen, in one deliberate step.\n\nHere is a piece of practical, current fact, and because it is the kind of fact that changes, I am going to stamp it and point you onward rather than pretend it is eternal. **As of 2026, the major shared workshops let you keep private repositories at no cost, on their free tier.** Private is not a paid luxury; an ordinary person can keep a private project in a second place for free. I am not going to print a pricing table, because pricing tables go stale between the writing of a sentence and the reading of it, and a book that hands you a stale price has handed you a small lie. What is durable is the shape: private repositories exist, they are ordinarily available at no cost as of this writing, and the current details live in the workshop's own documentation, which is where you (or your agent) should check them when it matters. The map says _private is possible and normally free_ ; the manual, kept current by the people who run the workshop, says exactly what today's terms are.\n\nThe safety half of the plain-language ask, then, is not an afterthought. When you tell your agent to publish your work to a shared copy, you almost always want to add: _and don't make it public yet._ Getting the second home is the win. Deciding, separately and deliberately, when the world gets to look: that is yours to keep control of. We will walk through the moment they finally do publish it for the world, and what that opens up, in the next chapter.\n\n\n### 8.5 Exercises\n\nAs before, these are not drills. They ask you to predict what the tools do, to catch a wrong mental model before it costs you, and to practice turning what you want into something you can ask for. Sit with each before reading on.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 942,
+      "out_sha": "dd32517c4253",
       "note": ""
     },
     {
@@ -823,11 +823,11 @@
       "en_title": "Chapter 8: In More Than One Place",
       "order": 62,
       "src_chars": 2204,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4d0d9e63b177",
       "src": "#### Concept Check\n\n**Q1.** Theo's laptop dies with the guide on it. Maya's laptop has a clone; the shared workshop has a clone. What, exactly, has been lost, and how much of the history does Theo's brand-new replacement laptop get back?\n\nHint\n\nAsk what a clone actually contains. Is it \"the current files,\" or is it the whole album?\n\n**Answer:** Nothing has been lost. A clone is the _whole album_ (every snapshot from the first commit, every branch, every note), not just the current files. Maya's machine and the shared workshop each hold a complete, independent history. When Theo's new laptop clones the project down, it receives all of it: he can revisit last month's version, reopen the old branches, read the note on any commit. The dead laptop held nothing the other two copies didn't also hold. This is the whole point of \"a lost laptop loses nothing\": when every copy is complete, no single copy's death can take the history away.\n\n\n#### Application Problems\n\n**Q1.** Your friend says, \"I'm safe: my novel is in a repository, I take a snapshot every day, the history's all there.\" Their whole project, album and all, lives on one laptop and nowhere else. In one plain sentence, are they backed up? And what is the single question you would ask them?\n\nHint\n\nSeparate two different protections: protection against your own edits, and protection against the machine dying. Which one does a repository-on-one-machine give?\n\n**Answer:** They are _not_ backed up, and it is worth being kind but clear about it. A repository on one laptop protects them completely against their own mistakes, the bad edit, the regretted cut, because they can go back through the history. It protects them not at all against the laptop dying, because the whole album lives on that one drive and dies with it. A snapshot on a dead disk is gone as surely as a file that was never versioned. The single question to ask them is: **\"Does a complete copy of this project live anywhere other than that one laptop?\"** If the answer is no, the daily snapshots are precious and fragile, and the fix is one plain-language ask away: put the album in a second place. A repository is not a backup until it lives somewhere else too.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 844,
+      "out_sha": "83e22d33d9d7",
       "note": ""
     },
     {
@@ -835,11 +835,11 @@
       "en_title": "Chapter 8: In More Than One Place",
       "order": 63,
       "src_chars": 1974,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b7340dee2668",
       "src": "#### Think Deeper\n\n**Q1.** People say \"push my work to the cloud\" and \"download the latest version,\" and it sounds exactly like uploading a file to a shared folder and downloading it back. But a remote is not a shared folder, and publishing snapshots is not uploading files. Where does the folder-in-the-cloud mental model quietly mislead you, and what would go wrong if you actually believed it?\n\n**Discussion:** The folder model gets one thing right (the work ends up in a second place) and then two things wrong, and the wrong things are the ones that bite. First, a shared folder holds _today's files_ ; it flattens away the history. If you truly believed the remote was a folder in the cloud, you would expect that restoring from it gives you the current version and nothing behind it, and you would treat your local history as the only \"real\" copy of the past. But the remote holds a _full clone_ , the entire album, so the history is not something precariously kept on your machine alone; it lives, complete, in the second place too. That is exactly why a dead laptop loses nothing, and the folder model can't explain why. Second, a shared folder overwrites: newer file replaces older file, and if two people save at once, one save wins and the other is gone: the Chapter 1 disaster, back again. But publishing snapshots does not overwrite. It _adds_ your snapshots to the shared album alongside everyone else's; nothing is clobbered, and when two edits genuinely collide, you already know from Chapter 7 that the tool stops and asks a human rather than silently picking a winner. So the danger of the folder model is that it makes you fear the wrong thing (losing files to an overwrite, which won't happen) while blinding you to the real safety you have (a complete second copy of your whole history). Trade the model for the accurate one, _another complete copy of the album, kept in sync by publishing and fetching_ , and both the fear and the confusion dissolve.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 680,
+      "out_sha": "394e54ee3ae7",
       "note": ""
     },
     {
@@ -847,11 +847,11 @@
       "en_title": "Chapter 8: In More Than One Place",
       "order": 64,
       "src_chars": 2405,
-      "status": "pending",
+      "status": "done",
       "src_sha": "edc9b5481b9d",
       "src": "### Chapter Summary\n\nThe work stopped living in one place, and two old fears retired at once.\n\nA **remote** is your project's album kept somewhere other than your own machine: another laptop, or a shared workshop on the internet. You connect to it by two mirror-image motions: **publish** your new snapshots to it, and **fetch** its new snapshots down. Neither overwrites; publishing adds your snapshots to the shared album, fetching adds its snapshots to yours. A **clone** is what each place holds: not the current files, but the _whole album_ (every snapshot, every branch, every note). That is why a lost laptop loses nothing. When every copy is complete, no single copy's death can take the history away.\n\nFrom that comes the chapter's blunt, honest boundary: **a repository is not a backup until it lives in a second place.** A history on one machine is precious and one spilled mug from oblivion. The safety is never in the version control alone; it is in the _second home_. One complete album is not a backup. Two, in independent places, is the beginning of one. And that second home can be **private** : as of 2026 the major workshops offer private repositories on their free tier, though the current terms live in their own documentation, not in this book, so you get the survives-a-dead-laptop calm without showing the world a half-finished thing. The safety half of the ask matters: publish to the shared copy, _and don't make it public yet_. When to let the world look is a separate, deliberate decision, and it stays yours.\n\nTwo fears left the room in this chapter. \"I could lose everything to a dead laptop\" is retired: with the album in more than one place, a dead laptop is a shrug and a fresh clone. And the fear that made you hoard nervous copies of the whole project in cloud folders is retired too, because the real second home carries not a flattened snapshot of today but your entire history, safely. What you can now dare: to trust that your work will survive the machine it lives on, and to keep it safe in a second place long before you are ready to show anyone.\n\nNext, in Chapter 9, that second place stops being merely a safe copy and becomes something more interesting: the world's workshop, where a project has a public face, where a friend who spots a closed café can tell you in a structured way, and where the whole social machinery of improving each other's work begins.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 913,
+      "out_sha": "d2a9c2bb49d3",
       "note": ""
     },
     {
@@ -859,11 +859,11 @@
       "en_title": "Chapter 8: In More Than One Place",
       "order": 65,
       "src_chars": 1188,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d1d17a785fa3",
       "src": "#### Say This to Your AI\n\nEverything you could ask for through Chapter 7 still stands: snapshot before changing, show me the history, take me back without losing today, branch for a risky try, weave it back, show me both versions of a collided line and let me choose. Chapter 8 adds the move that gives all of it a second home, with its safety half attached:\n\n* **\"Publish today's snapshots to our shared copy — but don't make it public yet.\"**\n\nSay it in plain words; the agent knows the incantation. The two halves matter equally. The first half, _publish to our shared copy_ , is what retires \"I could lose everything to a dead laptop\": once a complete clone of the album lives in a second place, no single machine's death can take your history. The second half, _don't make it public yet_ , keeps the decision of when the world gets to look firmly in your hands, separate and deliberate, for the day you are actually ready. This is the chapter where the fear of losing your whole life's work to a dropped laptop stops being reasonable, and the courage it buys is quiet but large: you can now make things freely, for as long as you like, knowing the work will outlive the machine.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 439,
+      "out_sha": "ce8a855a88bb",
       "note": ""
     },
     {
@@ -871,11 +871,11 @@
       "en_title": "Chapter 9: The Workshop",
       "order": 66,
       "src_chars": 2839,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c2e978303639",
       "src": "By the end of the last chapter, the guide lived in more than one place. It was on Maya's laptop, on Theo's laptop, and in a third copy they had pushed to a shared home somewhere out on the internet. Three complete albums, every snapshot in each, kept in step by a plain request to the agent whenever either of them finished a stretch of work. A lost laptop would lose nothing. That was the calm they had bought.\n\nBut that third copy, the one on the internet, was doing something the other two could not. Maya's laptop is a place to work. The shared copy is something else. It has an address you could hand to another person. It has a face that a stranger could look at. And the moment a project has a face, it stops being a private thing you are keeping safe and becomes a place where other people can find you, read what you have made, and tell you something you did not know.\n\nThat third copy lives in what is, as of 2026, the largest such place humans have ever built. This chapter is about what it is, why it exists, and the small, ordinary event that changed everything for Maya and Theo: a friend read their guide and told them a café had closed.\n\n\n### 9.1 The world's workshop\n\nIn the last chapter we called that third copy \"the shared home\" and left it vague on purpose. Now we name it. The place where Maya and Theo pushed their guide is a **workshop** , and not just any workshop. It is the world's workshop, a single site where, as of 2026, something like 180 million developers keep their work, read each other's, and improve it together.\n\nPicture an enormous building full of workbenches. Each bench holds one project: its whole album, every snapshot, the full history. Most benches have a curtain you can draw, so that only the people you invite can see the work. Some benches are open to the room: anyone can walk up, read what is on them, and (this is the remarkable part) leave a note, or even propose a change. Maya and Theo have rented a bench and drawn the curtain. Their guide is there, complete and safe, but for now only the two of them can see it.\n\nThe workshop most people mean when they say this is **GitHub**. It is where Maya pushed the guide. But it helps, right at the start, to be precise about two things that are easy to blur.\n\nFirst, GitHub is one workshop, not the only one. Others exist and work on the same principles: **GitLab** and **Codeberg** are two you will hear named. The map you are learning in this book is not a map of one company's building; it is a map of how these workshops work, and it transfers. If you learn what an issue is and what a proposed change is here, you will recognize them anywhere. This book is not an advertisement for any of them. It is a map, and a good map does not sell you a destination.\n\nSecond, and this is the one people get wrong most often: GitHub is not Git.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1141,
+      "out_sha": "1f7b2b23359d",
       "note": ""
     },
     {
@@ -883,11 +883,11 @@
       "en_title": "Chapter 9: The Workshop",
       "order": 67,
       "src_chars": 1841,
-      "status": "pending",
+      "status": "done",
       "src_sha": "926ca9347dc6",
       "src": "#### Common Misconception\n\n**\"GitHub is Git. They're the same thing, or GitHub is just the website version of Git.\"**\n\nThey are not the same thing, and the difference is worth holding onto, because getting it straight is most of understanding what this whole chapter is about.\n\n**Git** is the tool. It is the thing that takes snapshots, keeps the album, branches into parallel universes, weaves them back together. It runs on your own machine and needs no internet at all. Everything in Chapters 2 through 7 was Git, and every bit of it worked on a laptop with the wifi off. Git is a skill and a tool; it belongs to no company.\n\n**GitHub** is a workshop built on top of Git. It is a place, a business, a website, a set of buildings full of servers, where people keep their Git albums _so that other people can see them and work on them together._ GitHub did not invent snapshots or branches; those are Git's. What GitHub added is the room full of benches: the address, the public face, the ability for a stranger to read your work and propose a change to it.\n\nHere is the test that keeps it clear. You can use Git for years and never touch GitHub; plenty of writers keep private albums that never leave their laptops. And GitHub without Git underneath would be an empty building: benches with nothing on them. The tool is the skill you have been learning. The workshop is one place to bring it. Confusing the two is like confusing _writing_ with _the library_ : one is what you can do, the other is a place that makes what you did findable and shareable.\n\nKeep that distinction and a great deal that is otherwise confusing becomes simple. When someone says \"put it on GitHub,\" they mean: take the album Git has been keeping and bring it to the workshop so others can reach it. The album was already yours. The workshop just gives it a door.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 739,
+      "out_sha": "463694ec27f4",
       "note": ""
     },
     {
@@ -895,11 +895,11 @@
       "en_title": "Chapter 9: The Workshop",
       "order": 68,
       "src_chars": 2626,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6b002e9f1e9f",
       "src": "### 9.2 Where the workshop came from\n\nIt is worth knowing, briefly, how this building came to exist, because the story explains why it works the way it does, and because two of its facts are so unlikely they are worth carrying around.\n\nThe tool underneath, Git, was written in 2005 by Linus Torvalds, the same person who had started the Linux operating system fourteen years earlier. He did not set out to build a tool that would run the world's software. He built it because his own project had a crisis. The Linux kernel had been managed with another version-control tool, and in 2005 the free arrangement for using that tool fell apart. Suddenly one of the largest collaborative projects on earth had no good way to track its own history.\n\nSo Torvalds wrote his own. The remarkable part is the timeline: the first working version came together in about ten days. Development began in early April 2005, and within days it was already tracking its own source code; the tool was managing the history of its own creation almost immediately. It was fast, it handled the album-and-branches model well, and it was free for anyone to use. It spread.\n\nBut Git alone is a tool on your own machine. What turned it into a place where the world collaborates came three years later. In 2008, three people (Tom Preston-Werner, Chris Wanstrath, and PJ Hyett) founded GitHub. Their idea was the room full of benches: take Git, which lets people keep albums, and build a website where those albums have addresses, faces, and a way for people to talk about each other's work. That combination, the tool plus the public workshop, is what most people now mean when they talk about \"putting something on GitHub.\"\n\nIt grew enormous. In 2018, Microsoft acquired GitHub for 7.5 billion USD; the deal was announced that June and closed that October. And as of 2026 it is, by a wide margin, the largest workshop of its kind: on the order of 180 million developers and hundreds of millions of projects, according to the platform's own yearly reports.\n\nNotice which of those facts are durable and which will drift. That Git was written in 2005, that GitHub was founded in 2008, that Microsoft bought it in 2018 for 7.5 billion USD: those happened, and they stay true. The scale numbers are different in kind. \"180 million\" is a snapshot of a moving thing; by the time you read this it will be larger, and if you want the current figure you look it up. This is a habit the whole book asks of you: state what is settled plainly, and treat what is still moving as something to check rather than memorize. The dates are history. The head-count is weather.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1032,
+      "out_sha": "ed38d0571eea",
       "note": ""
     },
     {
@@ -907,11 +907,11 @@
       "en_title": "Chapter 9: The Workshop",
       "order": 69,
       "src_chars": 2849,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6878c3e71d03",
       "src": "### 9.3 A repo's public face\n\nMaya opened the workshop in her browser and looked at their guide's bench for the first time as a _page_ rather than a folder. It was a strange feeling. The same files she had been editing for weeks were now arranged as something a visitor would see.\n\nI am going to describe what she saw only in general terms, and on purpose. Every workshop arranges its page a little differently, the arrangements change from year to year, and the exact placement of a button is precisely the kind of thing that belongs in a manual, not a map. So: generally.\n\nA project's page in the workshop shows its **public face**. Near the top, the project's name and a short description, the one-line answer to \"what is this?\" Below that, the files, browsable, so a visitor can click into them and read. Somewhere prominent, a longer welcome document that most projects put front and center — a page that says, in plain prose, what this project is, who it's for, and how to use or contribute to it. And, threaded through the page, a set of places for _conversation_ : a list of open questions and requests, a record of proposed changes, a history of who did what and when.\n\nThat last part is what makes a workshop a workshop and not just a hard drive on the internet. A folder on a shared drive holds your files. A bench in the workshop holds your files _and a structured place to talk about them_ : to raise a problem, propose a fix, argue about whether it's the right fix, and record what was decided. The files are the work. The conversation is how the work gets better with other people in it.\n\nMaya and Theo's guide, behind its drawn curtain, had all of this waiting and nobody yet to use it. Then they gave the address to one friend.\n\n\n### 9.4 The friend who noticed\n\nTheir friend Núria had lived in the city for a decade and had opinions about it the way natives do. Maya invited her to read the draft, added her to the private bench so she could see behind the curtain, mostly to hear whether the voice rang true.\n\nNúria read it on a Sunday. Most of it she loved. But she got to the entry for a small café in the Alfama, the steep old quarter, the one Maya had written up warmly as a rainy-afternoon refuge with good custard tarts and a cat, and Núria knew, because she had walked past it last Tuesday, that it had closed. Shuttered. Gone. The guide was recommending a door that no longer opened.\n\nIn the old world, Núria would have done what people do: sent a text. _\"Hey, that Alfama café closed, you should take it out.\"_ Maya would have seen it three days later, half-remembered it, meant to fix it, and maybe forgotten. The correction would have lived in a chat thread, detached from the guide, easy to lose.\n\nInstead, because the guide was in the workshop, Núria did something the workshop made possible. She opened an **issue**.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1045,
+      "out_sha": "2413f0838007",
       "note": ""
     },
     {
@@ -919,11 +919,11 @@
       "en_title": "Chapter 9: The Workshop",
       "order": 70,
       "src_chars": 2250,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a10654e2ba94",
       "src": "#### Definition: Issue\n\n**An issue is a single, tracked note attached to a project that says \"here is something to address\" (a bug, a question, a request, an idea), kept where the work lives, so it doesn't get lost.**\n\nAn issue is not a change to the project. It changes nothing in the files. It is a _conversation with a subject line and a home_. It has a title (\"Alfama café listing is out of date, the place has closed\"), a description where Núria explained what she saw and when, and, crucially, it sits _on the guide's own page_ , in a list of open issues, until someone marks it done. It does not depend on anyone remembering a text message. It is on the record, next to the work it concerns.\n\nThree things make an issue different from a text, and each one matters.\n\nIt is **attached to the work.** The note about the closed café lives on the guide's page, not in a chat app Maya might not open for a week. Anyone with access can see the open issues at a glance: here are the things this project still needs.\n\nIt is **structured.** An issue has a title, a body, an author, a date, and a status: open or resolved. You can have a conversation underneath it, comment by comment, and that whole conversation stays with the issue. Six months later, \"why did we drop the Alfama café?\" has an answer sitting right there.\n\nAnd it is **not the fix.** This is the subtle, important part. Núria's issue _reports_ the problem; it does not _solve_ it. Opening an issue is the act of saying \"someone should look at this,\" cleanly separated from the act of actually changing the guide. That separation is a feature. It means anyone can raise a concern without needing to know how to fix it; Núria didn't have to touch the guide's files to tell Maya something was wrong. She just had to describe what she'd seen. The work of fixing comes next, and it is a different kind of act.\n\nMaya, when she saw the issue appear on the guide's page, felt something small and new. A stranger to the project (well, a friend, but someone who wasn't writing it) had reached into the shared workshop and left a note exactly where it belonged, in a form she couldn't lose. The guide had gotten better by getting a reader. And it had happened through the workshop, not around it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 945,
+      "out_sha": "c21ef593f313",
       "note": ""
     },
     {
@@ -931,11 +931,11 @@
       "en_title": "Chapter 9: The Workshop",
       "order": 71,
       "src_chars": 3411,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f5dc18801324",
       "src": "#### Say This to Your AI\n\nYou now have the workshop's vocabulary, and the ledger grows by two. As before, these are things you say in plain words; the agent knows the moves.\n\n* (from Ch. 2) \"Before you change anything, make a snapshot I can come back to, and note what it's for.\"\n* (from Ch. 3) \"Show me the history of this project as a list, newest first, in plain words.\"\n* (from Ch. 4) \"Take me back to how the intro read last Tuesday — but don't throw away today's work.\"\n* (from Ch. 5) \"Start a separate branch so I can try a risky reorganization without touching the version that works.\"\n* (from Ch. 6) \"The reorder worked — weave it back into the main version, and tell me if anything collides.\"\n* (from Ch. 7) \"We both edited the same line; show me both versions side by side and let me choose.\"\n* (from Ch. 8) \"Publish today's snapshots to our shared copy — but don't make it public yet.\"\n* **(new this chapter)** \"Put this project in the workshop as private, and open an issue for the café that closed.\"\n\nThe fear this chapter retires is _\"the moment other people can see my work, I lose control of it.\"_ You don't. A private bench with a drawn curtain lets exactly the people you choose read your work, and an issue is a note _left for you_ , on your terms, that you decide what to do with. What you can now dare: to show your unfinished work to a reader you trust, and to treat their \"hey, this is wrong\" not as a threat but as a gift dropped in the right place. The workshop is where being told you're wrong becomes cheap and useful instead of scattered and lost.\n\n\n### 9.5 What comes next: from noticing to proposing\n\nThere is one more move, and it is the one that makes this whole family of tools matter to the wider world. It is the reason the workshop is not just a nicer bug-report inbox.\n\nNúria didn't only notice the café was closed. She knew the neighborhood, and she knew a _better_ café she loved — better tarts, still open. She didn't just want to report the problem. She wanted to fix it. And she could write the replacement paragraph herself.\n\nIn the old world, she'd have written it in a text or an email and hoped Maya pasted it in correctly. But the workshop offers her something stranger and far more powerful: she can make the change herself, in her own copy, and then _propose it back_ to Maya as a specific, reviewable, discussable thing. The exact new words, shown against the old, ready for Maya to read and accept with a nod or send back with a question.\n\nThat proposal has a name, and it may be the most quietly consequential invention in this entire book. It is the reason strangers on opposite sides of the earth can improve each other's work without ever meeting, without trust, without permission granted in advance. It turns \"someone should fix this\" into \"here is the fix, exactly, what do you think?\"\n\nIt is called a **pull request** , and the whole of Chapter 10 is about it: how Núria's better-café paragraph becomes a proposed change, why this one object reorganized how the world builds things together, and what it feels like to receive one. The issue said _there's a problem here._ The pull request says _and here's my proposed answer; you decide._ That decision, and the conversation around it, is where we go next.\n\n\n### 9.6 Exercises\n\nAs always, these are for thinking and predicting, not for computing. Read each one, sit with it, then read the discussion.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1336,
+      "out_sha": "afc2f5912fe8",
       "note": ""
     },
     {
@@ -943,11 +943,11 @@
       "en_title": "Chapter 9: The Workshop",
       "order": 72,
       "src_chars": 1183,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2256df6b6036",
       "src": "#### Concept Check\n\n**Q1.** A colleague tells you, \"I finally learned Git this weekend, I made a GitHub account.\" Based on this chapter, what has your colleague actually done, and what have they possibly _not_ yet done?\n\nHint\n\nSeparate the tool from the workshop. Which one is a skill you practice, and which one is a place you sign up for?\n\n**Answer:** Making a GitHub account is renting a bench in the workshop: it gives you a place to put projects and a public face for them. It is not the same as learning Git, which is the underlying skill of taking snapshots, branching, weaving, and reading history. Your colleague may have done both, but the account alone doesn't prove it; you can open a GitHub account in two minutes and still not know what a commit or a branch is _for_. The give-away phrase is \"learned Git\" being treated as identical to \"made a GitHub account.\" Git is the tool and the skill; GitHub is one workshop you can bring it to. It's entirely possible to know Git deeply and never make a GitHub account, and entirely possible to make an account and not know Git at all. Gently: they've rented the bench. Whether they've learned the craft is a separate question.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 496,
+      "out_sha": "d727d243b95b",
       "note": ""
     },
     {
@@ -955,11 +955,11 @@
       "en_title": "Chapter 9: The Workshop",
       "order": 73,
       "src_chars": 2744,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d1f059c7fd4b",
       "src": "#### Application Problems\n\n**Q1.** Your friend is running a book club and keeps the reading schedule in a shared document. A member notices next month's book is listed with the wrong author. Describe two ways this could be handled: the \"old world\" way, and the \"workshop with an issue\" way. What does the second one give you that the first doesn't?\n\nHint\n\nThink about where the correction _lives_ in each case, and whether it can get lost. Think about six months later.\n\n**Answer:** Old-world: the member messages the organizer with a text, an email, a comment in a group chat. The correction now lives in an inbox, detached from the schedule, and its fate depends on the organizer seeing it, remembering it, and acting before it scrolls away. Workshop way: the member opens an _issue_ on the schedule itself, titled \"Wrong author listed for next month's book,\" with the correct name in the body. Now the correction is attached to the work, visible in a list of open items, timestamped, and impossible to lose in a chat scroll. What the second gives you: the note lives _where the work lives_ , it has a status (open until someone fixes it), and it leaves a record. Six months later you can see that this was raised, by whom, and how it was resolved. The point of an issue isn't formality. It's that a problem, once raised, can't quietly evaporate.\n\n**Q2.** In this chapter, Núria could see two possible responses to the closed café: (a) open an issue, or (b) propose the actual replacement paragraph. This chapter only had her do (a). Why might it be _good practice_ to open an issue even when you could go straight to proposing the fix?\n\nHint\n\nWho owns the guide? Whose decision is it whether the café even gets replaced, and with which one?\n\n**Answer:** Because the issue and the fix are two different acts, and separating them respects whose project it is. The issue says \"there's a problem here\" and invites a conversation _before_ anyone spends effort on a solution. Maybe Maya already knows the café closed, maybe she wants to drop the listing entirely rather than replace it, maybe she has a different favorite café in mind. Opening the issue first lets the project's owner weigh in on _whether_ and _how_ to fix it before a specific fix is on the table. It's the difference between \"here's a problem, how do you want to handle it?\" and \"I've already rewritten your paragraph, take it or leave it.\" On your own project, you might skip straight to the fix. On someone else's, raising the issue first is both practical (you avoid wasted work on a fix they don't want) and courteous (it's their guide; the decision is theirs). This is a habit that matters much more in Chapters 12 and 13, when the person proposing a change is a stranger.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1037,
+      "out_sha": "398f310d03f6",
       "note": ""
     },
     {
@@ -967,11 +967,11 @@
       "en_title": "Chapter 9: The Workshop",
       "order": 74,
       "src_chars": 1978,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e5c24a998abb",
       "src": "#### Think Deeper\n\n**Q1.** This chapter insists that GitHub is not Git, and calls the confusion the most common one people make. Why do you think this particular confusion is so common, and what does clearing it up let you understand that you couldn't before?\n\nHint\n\nThink about how most people first _meet_ these things. Which one do they see, and which one is invisible?\n\n**Discussion:** The confusion is common because of the order in which people usually meet the two things. Most newcomers encounter GitHub first: it's a website with a face, something you can see and click and sign up for. Git, the tool underneath, is invisible: it runs quietly, has no logo on the screen, and does its work in the background. So people naturally attach the whole idea to the visible thing, the way you might think \"the library\" is where books _come from_ if you'd never watched anyone write one. The name doesn't help; \"GitHub\" contains \"Git,\" which suggests they're one product rather than a tool and a place built on it.\n\nClearing it up unlocks several things at once. First, it explains why you can work entirely offline: Git needs no workshop, so the album, the branches, the snapshots all work on a laptop with no internet, a fact that's baffling if you think GitHub _is_ the tool. Second, it explains why the map transfers: because the skill is Git and the workshops are interchangeable, learning the moves here means you can walk into GitLab or Codeberg and recognize everything, just arranged differently. Third, and most freeing: it separates the _skill you're building_ (which is yours, permanent, and belongs to no company) from the _place you happen to store things_ (which is a choice you can change). You are not learning \"how to use GitHub.\" You are learning Git, and choosing, for now, one workshop to keep it in. That distinction is what lets you feel like the one in charge rather than a tenant who depends on a landlord. The tool is yours. The workshop is a decision.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 760,
+      "out_sha": "db4bbbe111fd",
       "note": ""
     },
     {
