@@ -1787,11 +1787,11 @@
       "en_title": "Chapter 15: When Emotional Decisions Are Actually Good",
       "order": 139,
       "src_chars": 2756,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6aca4967da8e",
       "src": "Here is a puzzle. A doctor has spent four chapters learning about cognitive biases, irrational risk assessment, and systematic failures of human judgment. She now faces a patient with a pattern of symptoms she has seen dozens of times before. Her expert instinct fires immediately: \"This is sepsis. We need to act now.\"\n\nShould she stop and calculate probabilities? Should she demand that System 2 override System 1?\n\nNo. She should act on her instinct. And her patient will live.\n\nThis is not a contradiction of everything we've learned. It is an extension of it. Part III has cataloged the ways emotion and intuition mislead us — in contexts where they are poorly calibrated. But expert intuition, in the right domain, is a genuine cognitive achievement that outperforms deliberate calculation. Knowing when to trust your gut, when to override it, and why gut instincts are sometimes optimal is the final piece of the emotional decision puzzle.\n\n\n### 15.1 Ecological Rationality: The Right Tool for the Right Environment\n\nThe most important concept in this chapter is one we touched on in Chapter 1: ecological rationality. A decision strategy is ecologically rational if it is well-adapted to the environment in which it operates — even if it doesn't look like a \"rational\" calculation.\n\n\n#### Definition: Ecological Rationality\n\nA heuristic or decision strategy is ecologically rational if it exploits the structure of the environment in which it is applied, producing good outcomes reliably in that environment — even without explicitly calculating probabilities or optimizing expected values.\n\nIn plain language: the right strategy depends on the environment. A fast, frugal, intuitive decision that works brilliantly in a structured, familiar environment is more \"rational\" than a slow, deliberate calculation that fails to exploit available patterns.\n\nThe psychologist Gerd Gigerenzer spent decades documenting cases where simple heuristics — \"fast-and-frugal\" rules that use very little information — outperform complex optimization algorithms in real-world environments. This is not because the heuristics are smarter than optimization; it is because the environment contains structures that the heuristics exploit, and that complex optimizations sometimes miss.\n\n\n#### Definition: Fast-and-Frugal Heuristics\n\nFast-and-frugal heuristics are simple decision rules that use a small amount of information and minimal computation to reach good decisions in structured environments. They are \"fast\" because they require little deliberation and \"frugal\" because they rely on one or a few cues rather than exhaustive information. Their effectiveness depends on whether the environment has the structural properties the heuristic is designed to exploit.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 790,
+      "out_sha": "2d20d439ab27",
       "note": ""
     },
     {
@@ -1799,11 +1799,11 @@
       "en_title": "Chapter 15: When Emotional Decisions Are Actually Good",
       "order": 140,
       "src_chars": 2069,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d54fb569f103",
       "src": "#### Fast-and-Frugal Heuristics in Action\n\n**The gaze heuristic:** When a fielder tries to catch a baseball, they do not solve the differential equations describing the ball's trajectory. They use a heuristic: fix your gaze on the ball, and run in the direction that keeps the angle of the gaze constant. This simple rule produces accurate catching without any calculation. It exploits the physics of projectile motion.\n\n**Take-the-best heuristic:** When choosing between two options on multiple criteria, \"take-the-best\" selects based on the single most important criterion, ignoring all others. In environments where one criterion dominates (where one cue is much more predictive than others), this outperforms complex weighted summation models that try to consider everything.\n\n**Recognition heuristic:** \"If you recognize one option and not the other, choose the recognized one.\" In environments where recognition correlates with quality (e.g., recognized companies are more likely to be good investments, recognized cities are larger), this simple rule works well. German students outperformed American students in predicting which U.S. cities were larger — because they recognized fewer cities and used the recognition heuristic, while American students tried to use more detailed knowledge that actually introduced noise.\n\n\n#### Common Misconception\n\n_\"Using less information always leads to worse decisions.\"_\n\nThis is a central insight of Gigerenzer's work: in noisy, complex, uncertain real-world environments, using more information can actually _worsen_ decisions. This is because complex models that incorporate many variables can overfit to noise in the data — learning patterns that are statistical artifacts rather than genuine signals. Simple heuristics that focus on one or two strong cues are more robust because they don't pick up the noise. The medical expert who immediately recognizes sepsis has learned to focus on the two or three key indicators that genuinely discriminate; a novice who tries to incorporate every variable gets lost in noise.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 595,
+      "out_sha": "b717311f17fa",
       "note": ""
     },
     {
@@ -1811,11 +1811,11 @@
       "en_title": "Chapter 15: When Emotional Decisions Are Actually Good",
       "order": 141,
       "src_chars": 3484,
-      "status": "pending",
+      "status": "done",
       "src_sha": "570d195daf3c",
       "src": "### 15.2 When Expert Intuition Is Reliable\n\nNot all intuition is equally reliable. As we saw in Chapters 1 and 4, expert intuition developed in \"wicked\" learning environments (slow, ambiguous feedback) is often uncalibrated. The question is what conditions produce reliable intuitive expertise.\n\nKlein and Kahneman's research converges on two necessary conditions:\n\n**Condition 1: A sufficiently regular environment.** The domain must have stable patterns that link cues to outcomes. Chess has extremely regular patterns; long-term political forecasting does not. Expert intuition develops reliably in chess; it does not in political forecasting.\n\n**Condition 2: Adequate opportunity for feedback.** The expert must have encountered many similar situations and received clear, relatively prompt feedback about whether their judgment was correct. Experienced emergency room physicians have seen thousands of patients and received clear feedback (the patient improved or didn't); experienced strategic consultants have seen fewer comparable situations and received ambiguous feedback years later.\n\nThis produces a clear implication: trust expert intuition in regular, high-feedback domains (medicine, chess, sports, engineering, skilled crafts). Be skeptical of expert intuition in irregular, low-feedback domains (financial markets, political forecasting, social policy, human resources predictions).\n\nThe sepsis physician example meets both conditions: medicine has genuine regularities in symptom-disease relationships, and physicians receive clear feedback (patient outcomes) that calibrates their pattern recognition over time.\n\n\n### 15.3 Commitment as a Strategic Device\n\nPart III has emphasized how emotions lead us astray — loss aversion causes us to hold losing investments, sunk cost thinking causes us to persist in bad projects. But sometimes, emotional commitment produces better strategic outcomes.\n\n**Game-theoretic commitment:** In the economist Thomas Schelling's analysis of conflict and negotiation, voluntary commitment to a position — including emotional commitment that makes retreating impossible — can be strategically advantageous. If an opponent knows you genuinely cannot back down, they must accommodate your position; a perfectly rational, always-calculating opponent who will retreat for a good enough offer is in a weaker negotiating position.\n\nBurning your bridges — literally removing your own option to retreat — can be the rational strategic choice. Cortés burning his ships in the New World was not just dramatic; it was a commitment device that aligned his troops' incentives with the mission's demands by removing the fallback.\n\n**Fairness as a real constraint:** Classical economic models treat agents as purely self-interested. But human beings care about fairness — and they care about it enough to act against their material interest. In the Ultimatum Game, people regularly reject offers they consider unfair, even at a personal cost, rather than accepting anything positive. This apparent \"irrationality\" is actually an evolutionarily stable strategy: a community that punishes unfair behavior, even at personal cost, maintains cooperative norms that benefit everyone long-term.\n\nThe implication: pure rational self-interest is not always the best strategy. In repeated social interactions, agents who care about fairness and are known to care about it develop reputations that produce better long-run outcomes than pure self-interest would.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1046,
+      "out_sha": "255b50d95665",
       "note": ""
     },
     {
@@ -1823,11 +1823,11 @@
       "en_title": "Chapter 15: When Emotional Decisions Are Actually Good",
       "order": 142,
       "src_chars": 1536,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b77f10907148",
       "src": "### 15.4 The Limits of Pure Rationality\n\nThere is a growing body of research suggesting that in some domains, \"rational\" optimization actually produces worse outcomes than intuitive, satisficing, or emotion-incorporating strategies.\n\n**Thinking too much:** Timothy Wilson and Jonathan Schooler found that asking people to explicitly analyze their reasons for preferring something (a strawberry jam, a roommate, a poster) reduces the quality of their choices — as measured by later satisfaction and by expert rating. The deliberate analysis disrupts implicit expertise and causes people to overweight articulable factors while underweighting holistic impressions that they can feel but not explain.\n\n**Deliberating on complex choices:** Ap Dijksterhuis found in several studies that \"sleeping on\" a complex decision — allowing unconscious processing — sometimes produces better outcomes than extended deliberate deliberation, particularly when the decision involves many criteria that are difficult to weight explicitly. The mechanism: conscious deliberation can only handle 3-7 criteria at once; unconscious processing can integrate many more, drawing on the full range of available information.\n\nThe practical implications are limited but real: for simple, well-defined decisions with clear criteria, deliberate analysis is better. For highly complex, multi-criteria, qualitative decisions in domains where you have genuine experience, some weight to emotional impressions and \"sleeping on it\" may be appropriate.\n\n\n### 15.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 485,
+      "out_sha": "321a31ec778b",
       "note": ""
     },
     {
@@ -1835,11 +1835,11 @@
       "en_title": "Chapter 15: When Emotional Decisions Are Actually Good",
       "order": 143,
       "src_chars": 3420,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bebbf8cd86a4",
       "src": "#### Concept Check\n\n**Q1.** What is ecological rationality, and why does it matter for evaluating whether an intuitive decision is \"rational\"?\n\n**Answer:** Ecological rationality is the idea that a decision strategy should be evaluated relative to the environment in which it is used, not against an abstract standard of \"rationality\" that ignores environmental structure. A heuristic or strategy is ecologically rational if it produces good outcomes in its specific environment, even if it doesn't involve explicit probability calculation or optimization. This matters because the same heuristic can be ecologically rational in one environment (recognition heuristic for familiar domains with quality-recognition correlation) and ecologically irrational in another (recognition heuristic for obscure domains where fame is unrelated to quality). Evaluating whether an intuitive decision is \"rational\" requires asking: Does this environment have the stable, learnable patterns that this heuristic requires? Has the decision-maker had sufficient feedback to calibrate their intuition in this environment? If yes, the intuition may be ecologically rational even if it doesn't look like a \"calculation.\"\n\n* * *\n\n**Q2.** What two conditions are necessary for expert intuition to be reliable? Give one example where both are met and one where neither is.\n\n**Answer:** Two conditions: (1) A sufficiently regular environment — the domain must have stable patterns linking cues to outcomes. (2) Adequate opportunity for feedback — the expert must have received clear, relatively prompt feedback from many similar situations. Example where both are met: expert chess players. Chess is highly regular (the same positions lead to the same strategic consequences); players receive immediate, clear feedback (they win or lose) across many games. Expert chess intuition is highly reliable. Example where neither is met: expert predictions about individual stock performance. Financial markets are highly irregular (asset prices are influenced by countless unpredictable factors, and the market evolves in response to predictions themselves); feedback on specific stock picks comes years later and is contaminated by countless confounders. Expert stock-picking intuition is generally unreliable — about as good as chance.\n\n* * *\n\n**Q3.** Explain the Ultimatum Game and what it reveals about human decision making.\n\n**Answer:** The Ultimatum Game: Player A is given a sum of money (say, 100 USD) and must offer some portion of it to Player B. Player B can accept the offer (both players keep their amounts) or reject it (both players receive nothing). Classical economic theory predicts that Player B should accept any positive offer — since something is better than nothing. In reality, Player B consistently rejects offers below about 20-25% of the total (20–25 USD out of 100 USD), even though this means both players receive nothing. This reveals: (1) People have genuine preferences for fairness that override material self-interest. (2) The willingness to punish perceived unfairness, even at personal cost, is not irrational in evolutionary terms — communities that enforce fairness norms maintain cooperation that benefits everyone long-term. (3) Pure self-interest is not the only motivator for economically relevant decisions; social and moral considerations constrain behavior even in stripped-down laboratory settings.\n\n* * *",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1028,
+      "out_sha": "7ee45ca58245",
       "note": ""
     },
     {
@@ -1847,11 +1847,11 @@
       "en_title": "Chapter 15: When Emotional Decisions Are Actually Good",
       "order": 144,
       "src_chars": 1316,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0af949ca6053",
       "src": "**Q4.** Under what conditions does \"thinking too much\" lead to worse decisions? Give an example.\n\n**Answer:** Thinking too much degrades decision quality when: (1) the domain involves implicit expertise that cannot be fully articulated (holistic impressions encode information that explicit criteria don't); (2) the decision is complex, involving many criteria that interact in ways conscious deliberation cannot track; (3) deliberate analysis overweights articulable factors while underweighting harder-to-verbalize impressions. Example: wine expertise. An expert sommelier has developed holistic pattern recognition about wine quality that includes subtle sensory integrations. When asked to explicitly justify a quality judgment, they must translate their holistic impression into words, which forces them to focus on easily articulable features (color, acidity, obvious flavor notes) while losing the subtler integrations that make their expertise valuable. Studies have found that requiring explicit justification of wine preferences reduces the correlation between expert judgments and objective quality measures. This does not apply to beginners (who have no valuable implicit expertise to disrupt) or to decisions with clear, well-defined criteria (where deliberate analysis is unambiguously better).\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 380,
+      "out_sha": "7826b99d0c68",
       "note": ""
     },
     {
@@ -1859,11 +1859,11 @@
       "en_title": "Chapter 15: When Emotional Decisions Are Actually Good",
       "order": 145,
       "src_chars": 2215,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8c17b23e8f89",
       "src": "#### Application Problems\n\n**Q1.** A firefighter, arriving at a burning building, immediately orders the crew to evacuate when they are only halfway through clearing the building. Other crew members are confused — there is no obvious reason to leave. Later, the building collapses at exactly the spot where they had been working. The firefighter can't explain how he knew, but he \"just felt\" something was wrong. Using ecological rationality and expert intuition concepts, analyze what happened.\n\nHint\n\nThink about what kind of environment firefighting is, what feedback structure experienced firefighters have, and what cues might have triggered the expert's intuition.\n\n**Answer:** This describes an expert intuition case documented by Gary Klein in his research on naturalistic decision making. The firefighter's environment (building fires) is highly regular in relevant ways: structural patterns of fire behavior, heat distribution, smoke color and density, and sound patterns have learnable relationships to structural integrity. Experienced firefighters receive clear feedback — they see buildings collapse or not collapse, they feel heat change, they observe how fires evolve. Over many exposures, their pattern recognition calibrates to subtle cues that predict structural failure even when these cues are below the threshold of conscious articulation. The firefighter likely noticed a combination of cues — perhaps unusual heat patterns, quieter-than-expected fire sounds indicating it had moved behind the walls, the building's subtle settling — that his pattern-recognition system integrated into a \"something is wrong\" signal. His System 1 produced the recognition before System 2 could formulate an explicit argument. This is genuine expert intuition in an ecologically rational domain — not mystical, but the product of thousands of hours of calibrated pattern recognition in a domain with clear feedback.\n\n* * *\n\n**Q2.** A venture capital investor has been in the industry for 15 years and claims he can identify winning startups based on \"instinct — I just know when a founder is going to make it.\" Using the conditions for reliable expert intuition, evaluate how much weight to give his intuition.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 649,
+      "out_sha": "108fcacea00a",
       "note": ""
     },
     {
@@ -1871,11 +1871,11 @@
       "en_title": "Chapter 15: When Emotional Decisions Are Actually Good",
       "order": 146,
       "src_chars": 3430,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4303955f5b43",
       "src": "**Answer:** This claim deserves significant skepticism. Evaluate against the two conditions: Condition 1 (regular environment): Startup outcomes are highly irregular. A startup's success depends on execution quality, but also on market timing, competitor actions, economic conditions, luck, and macro factors that are largely unforeseeable. The patterns linking \"founder qualities I can observe\" to eventual startup outcomes are weak and noisy. Even strong founders with excellent companies fail for reasons unrelated to their qualities; weak founders sometimes succeed by luck or market tailwind. Condition 2 (adequate feedback): A VC making 2-3 investments per year over 15 years has perhaps 30-45 investments. Outcomes are observed 5-10 years later, making feedback slow. The outcomes are also ambiguous — did Company X succeed because of the founder's qualities, because of the market timing, because of the VC's own network support? Verdict: the conditions for reliable expert intuition are substantially unmet for startup evaluation. The investor's \"instinct\" may encode some genuine signal about founder characteristics, but it is also likely encoding idiosyncratic biases developed from a small, unrepresentative sample with slow, ambiguous feedback. Reasonable weight: treat it as one input, with significant uncertainty about its accuracy, rather than as the dominant signal.\n\n* * *\n\n**Q3.** A medical school is deciding whether to restructure its clinical training to give residents more structured \"reason through your diagnosis\" time before forming impressions, or whether to let clinical intuition develop through repeated exposure. Using the chapter's concepts, what do you recommend?\n\n**Answer:** Both are needed at different career stages and for different purposes. For early learners (medical students, early residents): structured deliberate reasoning is essential. They lack the calibrated pattern recognition that makes expert intuition reliable; without it, their \"gut feelings\" are noise, not signal. They need explicit frameworks (diagnostic algorithms, systematic history-taking, explicit reasoning chains) to build the case knowledge that will eventually support expert intuition. For experienced practitioners (senior residents, attending physicians): explicit deliberate reasoning should remain available for unusual cases (where pattern recognition may be misleading) while intuition is allowed to function as a primary tool in familiar presentations. The key mechanism: the structured reasoning of early training is what builds the pattern recognition that later intuition draws on. You cannot develop reliable intuition without extensive deliberate practice in the domain — but once that expertise is developed, excessive deliberate reasoning can disrupt holistic expert integration (as the \"thinking too much\" research shows). Recommendation: structure clinical training to move from explicit deliberate reasoning toward integrated expert intuition as experience accumulates, with explicit occasions for deliberate reflection preserved for complex, novel, or high-stakes presentations throughout a career.\n\n* * *\n\n**Q4.** The concept of \"strategic commitment\" suggests that genuine, visible emotional commitment to a position can be strategically advantageous in negotiation. A CEO is about to enter a high-stakes merger negotiation. How could she use strategic commitment, and what are the risks?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 979,
+      "out_sha": "f967235b6840",
       "note": ""
     },
     {
@@ -1883,11 +1883,11 @@
       "en_title": "Chapter 15: When Emotional Decisions Are Actually Good",
       "order": 147,
       "src_chars": 1547,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f5a58b1fd163",
       "src": "**Answer:** Strategic commitment opportunities: (1) Make a public statement of her bottom line before entering the room: a publicly stated position is more costly to retreat from (reputational damage), making the commitment more credible to the other party. This limits her flexibility but strengthens her negotiating position by making it clear she genuinely cannot accept less. (2) Involve non-negotiable stakeholders: \"Our board has given me a firm minimum threshold\" is more binding than \"I'd like X\" — the board is a commitment device that removes discretion. (3) Genuinely accept the possibility of no-deal: the most powerful commitment is genuine acceptance of a walk-away position. A negotiator who really will walk away is more credible than one who is bluffing. Risks: (1) Commitments lock in positions that may be suboptimal if information changes during negotiation — the other party may reveal information that legitimately changes the calculus. (2) Public commitments that are later violated (the negotiation circumstances force a retreat) damage credibility in all future negotiations. (3) Strategic commitment works only if the other party can see the commitment and believes it. If the commitment is not credible, it provides neither strategic benefit nor flexibility. Best use of strategic commitment: high-stakes negotiations where the CEO's position is genuinely firm and defensible, where the other party's perception of firmness will move outcomes in a beneficial direction, and where public commitment is achievable.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 419,
+      "out_sha": "e508276f6a4a",
       "note": ""
     },
     {
@@ -1895,11 +1895,11 @@
       "en_title": "Chapter 15: When Emotional Decisions Are Actually Good",
       "order": 148,
       "src_chars": 2161,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b8b62aff9d97",
       "src": "#### Think Deeper\n\n**Q1.** Gigerenzer argues that much of behavioral economics (Kahneman's work especially) has unfairly pathologized human cognition by comparing it to an impossible standard of \"perfect rationality.\" Do you agree? Is there a genuine tension between the two researchers' frameworks?\n\n**Discussion:** There is a genuine tension, but also significant potential for reconciliation. Gigerenzer's critique: Kahneman and Tversky's \"heuristics and biases\" program measures human judgment against the standard of formal statistical reasoning (Bayesian probability, expected utility) and finds it wanting. But this standard assumes infinite computing resources, perfect memory, and complete information — none of which humans have. In the real, uncertain, time-pressured environments where humans evolved and operate, fast-and-frugal heuristics may outperform formal optimization. Calling these heuristics \"biases\" implies they are errors; Gigerenzer argues they are adaptations. Kahneman's response: the heuristics produce systematic, predictable, costly errors in many real-world modern contexts (medical decisions, financial decisions, legal judgments). The fact that heuristics were adaptive in ancestral environments doesn't mean they are optimal in modern ones. Moreover, the stakes of some modern decisions (medical diagnosis, legal sentencing, financial regulation) are high enough that systematic errors impose significant social costs worth correcting. Reconciliation: both are right about different things. Gigerenzer is right that heuristics are often ecologically rational in their proper domain and should not be dismissed as mere errors. Kahneman is right that heuristics misfire badly in the novel, statistical, probabilistic domains that characterize important modern decisions. The synthesis from this book: know which domain you're in, and calibrate your trust in intuition accordingly.\n\n* * *\n\n**Q2.** The notion of \"trusting your gut\" has both champions (Gigerenzer, Gladwell's Blink) and critics (Kahneman, Ariely). How should a person synthesize these perspectives into a practical philosophy for when to trust intuitive judgment?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 644,
+      "out_sha": "0ce4ed0f71cf",
       "note": ""
     },
     {
@@ -1907,11 +1907,11 @@
       "en_title": "Chapter 15: When Emotional Decisions Are Actually Good",
       "order": 149,
       "src_chars": 2712,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2d1831b414d6",
       "src": "**Discussion:** A practical synthesis based on the research: Trust intuitive judgment when — (1) You have extensive relevant experience in this specific domain (the intuition is calibrated, not just confident). (2) The domain is regular enough for pattern recognition to have developed (chess, medicine, sports). (3) You have received clear, prompt feedback from similar situations many times. (4) The decision is one where speed matters and the cost of deliberation is high relative to the cost of intuitive error. (5) Deliberate analysis is introducing noise by overweighting articulable factors and underweighting holistic impressions (the \"thinking too much\" domain). Be skeptical of intuitive judgment when — (1) You lack substantial relevant experience (confident but uncalibrated intuition). (2) The domain is irregular — financial markets, political outcomes, hiring decisions — where pattern recognition misfires. (3) Strong emotions are involved that may be producing motivated reasoning rather than genuine pattern recognition. (4) The situation is novel — your intuition is drawing on patterns from a different environment. (5) Deliberate analysis is available, affordable, and adds genuine information. The meta-skill is not choosing between gut and deliberation but recognizing which regime you're in for any given decision — and this skill itself improves with experience and reflection.\n\n\n### Chapter Summary\n\nNot all intuitive or emotional decisions are bad. Expert intuition in regular, high-feedback domains — like experienced emergency physicians recognizing sepsis — is a genuine cognitive achievement that should be trusted. Fast-and-frugal heuristics, in their ecologically appropriate environments, can outperform elaborate optimization.\n\nCommitment — including emotional commitment — can be strategically rational in negotiation. And caring about fairness is not irrational; it is the mechanism that maintains cooperation in repeated social interactions.\n\nThe unified view: emotions and intuitions are decision tools that are well-suited to some environments and poorly suited to others. The judgment about which applies requires meta-cognitive awareness — knowing what kind of decision you're facing, whether your intuition is calibrated in this domain, and whether deliberate analysis is available and useful.\n\nThis closes Part III. We have examined cognitive biases (Part I), probability tools (Part II), and emotional dynamics (Part III). In Part IV, we turn to decision strategies — frameworks for making better choices about when, how, and how carefully to decide.\n\nChapter 16 opens Part IV with the most fundamental question: when should you decide, and when should you wait?\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 768,
+      "out_sha": "6c721a562f34",
       "note": ""
     },
     {
