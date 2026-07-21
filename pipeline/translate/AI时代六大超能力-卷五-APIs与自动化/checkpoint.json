@@ -231,11 +231,11 @@
       "en_title": "Chapter 3: JSON Without Fear",
       "order": 13,
       "src_chars": 2993,
-      "status": "pending",
+      "status": "done",
       "src_sha": "50a25f174dbc",
       "src": "The word looks like a name shouted across a room. JSON. People say it \"JAY-sun,\" and they say it constantly, and the first few times you hear it you assume it is something technical and closed, a thing for the people on the other side of the wall.\n\nIt is not. JSON is the format the counter window answers in, and once you see what it actually is, the fear evaporates, because it turns out to be one of the most human ideas in this whole book: a way of packing information into labeled boxes so that nothing gets lost and everything can be found again.\n\nYou are not going to write JSON. Let that land, because it removes most of what people dread. Writing JSON, filling out the forms in exact syntax, is your assistant's job. Your job is to _read_ it, the way you read a receipt or a shipping label: not to admire the formatting, but to check that the right things are in it. This chapter teaches you to read the label. That is all it is.\n\n\n### 3.1 Labeled boxes\n\nPicture a box with a label on the front.\n\nThe label says what is inside. The inside is the value. `name: Mara`. The label is `name`, the value is `Mara`. That pairing, a label and its value, is the entire atom of JSON. Everything else is just boxes holding more of these pairs, and boxes holding other boxes.\n\nHere is a single order from Mara's shop, as her shop's counter window would hand it back. The shop is a fictional service we will call Claybox, so nothing here is a claim about any real company; it is an honest picture of the _shape_ such an answer takes.\n    \n    \n    {\n      \"order_id\": \"CB-4471\",\n      \"buyer_name\": \"Tomas Weerasinghe\",\n      \"item\": \"wide olive dish, speckled\",\n      \"quantity\": 1,\n      \"paid\": true,\n      \"shipping\": {\n        \"city\": \"Porto\",\n        \"country\": \"Portugal\",\n        \"method\": \"standard\"\n      }\n    }\n    \n\nRead it the way you would read a parcel's label, not the way you would read code. The outer curly braces are just the walls of the box. Inside, each line is a labeled fact. `order_id` is `CB-4471`. `buyer_name` is `Tomas Weerasinghe`. `item` is a speckled olive dish. `quantity` is `1`. `paid` is `true`, which is JSON's tidy way of saying yes.\n\nAnd then something slightly deeper: `shipping` is a label whose value is _another box_. Inside that inner box are three more labeled facts: the city, the country, the method. A box inside a box. That is the only structural idea in JSON you truly need, and you already understand it, because you have packed a small box of gifts inside a bigger shipping carton your whole life.\n\n\n#### Definition: JSON\n\n**JSON** is a plain-text format for information, built entirely out of labeled values: a label, a colon, and a value, wrapped in boxes that can nest inside other boxes. Values can be words, numbers, a plain yes-or-no (`true` / `false`), a list of things, or another box. That is the whole grammar. Its name stands for \"JavaScript Object Notation,\" a piece of history we will honor in a moment and then never need again.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1285,
+      "out_sha": "1ce98f8609f4",
       "note": ""
     },
     {
@@ -243,11 +243,11 @@
       "en_title": "Chapter 3: JSON Without Fear",
       "order": 14,
       "src_chars": 2504,
-      "status": "pending",
+      "status": "done",
       "src_sha": "72dea3c49d75",
       "src": "### 3.2 Finding the one box you care about\n\nMost of the time, a counter window hands back much more than you asked about, and the skill is not reading all of it. The skill is finding the one box you came for.\n\nSuppose Mara asks her assistant, \"Where is order CB-4471 shipping to?\" The answer is sitting right there in the response above, but it is nested. It is not at the top level next to `order_id`. It is inside the `shipping` box. So the honest path to it is: open the order box, find the `shipping` label, open _that_ box, read the `city`. Porto.\n\nThis is exactly the kind of thing you will check your assistant on. It will say \"that order is shipping to Porto, Portugal, by standard method,\" and you will be able to glance at the labeled boxes and confirm it did not, say, read the buyer's name into the city by mistake. You are not writing anything. You are auditing a label, which you already know how to do.\n\nLists work the same friendly way. When Mara asks for _all_ the weekend's orders, the counter window does not send one box; it sends a list of them, like a tray of parcels:\n    \n    \n    {\n      \"orders\": [\n        { \"order_id\": \"CB-4471\", \"buyer_name\": \"Tomas Weerasinghe\", \"paid\": true },\n        { \"order_id\": \"CB-4472\", \"buyer_name\": \"Aditi Rao\", \"paid\": true },\n        { \"order_id\": \"CB-4473\", \"buyer_name\": \"Lena Fischer\", \"paid\": false }\n      ]\n    }\n    \n\nThe label `orders` holds a list, and each thing in the list is a little box of its own. Reading this, Mara can see at a glance that three orders came in, and that one of them, Lena Fischer's, has `paid` set to `false`. That single labeled fact might be the most important thing on the whole tray, because it tells Mara not to ship that piece yet. She found it by reading a label, not by knowing anything technical.\n\n\n#### Common Misconception\n\n_\"To use APIs, I need to learn to write JSON correctly, with all the commas and brackets in the right places.\"_\n\nYou do not, and believing you do is what keeps people at the front door. The commas and brackets are real, and they are strict, and getting one wrong does break things. But _placing_ them correctly is your assistant's job, the way a printing press, not you, gets the ink in the right places. What is yours is reading the result and checking it says what it should. If you spend your energy trying to memorize where every bracket goes, you have taken on the machine's job and left your own, the judgment, undone. Read the boxes. Let the assistant mind the commas.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1026,
+      "out_sha": "cd7cc865c92e",
       "note": ""
     },
     {
@@ -255,11 +255,11 @@
       "en_title": "Chapter 3: JSON Without Fear",
       "order": 15,
       "src_chars": 2519,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1d345a3b4e8f",
       "src": "### 3.3 Where this format came from\n\nA short, true piece of history, because it makes the format less intimidating to know it was invented by a person solving an ordinary problem.\n\nIn the early 2000s, a programmer named Douglas Crockford needed two programs to send each other little bundles of information over the web, and the existing ways were heavy and awkward. He noticed that a corner of an existing language, JavaScript, already had a clean, minimal way of writing labeled values, and he essentially said: let us just use that, on its own, as a way to pass information around. The first such message went out around 2001, and he put a description of the format online at a site called json.org, and the idea spread because it was so plain that anyone could read it. Years later it was written up as a formal standard (first as an internet document in 2006, then as an official specification in 2013), but the standard only confirmed what had already won on the strength of being simple. Crucially, although it was born from JavaScript, JSON belongs to no language; every kind of program can read and write it, which is exactly why it became the common tongue of counter windows everywhere.\n\nYou do not need those dates. You need the reassurance inside them: this format is popular _because_ it is simple enough for a human to read at a glance. It was never meant to be a wall.\n\n\n### 3.4 Reading is how you keep control\n\nLet us tie this back to why it matters, because it is easy to treat JSON as a technical detour when it is really about trust.\n\nEvery automation you ever commission will, at some point, hand you a JSON answer, or hand your assistant one that your assistant then summarizes for you. If you can read the labeled boxes, even slowly, even just enough to spot-check, then you can catch the moment when something is wrong: the field that came back empty, the `paid: false` that should have been `true`, the count that does not match. If you cannot read them at all, you are trusting your assistant's summary completely, with no way to look over its shoulder.\n\nThis book will keep insisting that you keep a hand on the wheel, and reading JSON is the most basic form of that. It is the difference between \"my assistant told me the order shipped\" and \"I saw the labeled box that says it shipped.\" The first is faith. The second is checking. You do not need to check every box every time; you need to be _able_ to, so that when something feels off, you can look.\n\n\n### 3.5 Exercises\n\nRead the answers.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 792,
+      "out_sha": "d84cc9816d05",
       "note": ""
     },
     {
@@ -267,11 +267,11 @@
       "en_title": "Chapter 3: JSON Without Fear",
       "order": 16,
       "src_chars": 3079,
-      "status": "pending",
+      "status": "done",
       "src_sha": "edbba7a8eb5f",
       "src": "#### Read the boxes\n\n**Q1.** Here is a response from a fictional weather service, handed back through its counter window:\n    \n    \n    {\n      \"location\": \"Porto\",\n      \"today\": { \"high_c\": 24, \"low_c\": 17, \"summary\": \"clear\" },\n      \"tomorrow\": { \"high_c\": 19, \"low_c\": 15, \"summary\": \"rain\" }\n    }\n    \n\nMara's assistant says: \"Tomorrow in Porto it'll rain, with a high of 19 degrees.\" Reading only the boxes, is the assistant right? Which labels did it have to open to answer?\n\nHint\n\nThere are two inner boxes. Make sure the assistant read from the right one.\n\n**Answer:** The assistant is right. To answer, it had to open the `tomorrow` box (not the `today` box, an easy mistake) and read two labels inside it: `summary`, which is `rain`, and `high_c`, which is `19`. Notice that checking this took you no technical skill at all; you opened the labeled box the claim was about and confirmed the two facts. That is the whole art of reading JSON, and it is also the whole art of supervising an assistant that reads it for you. If the assistant had said \"a high of 24,\" you would have caught it reading from the `today` box by mistake.\n\n\n#### Predict the service\n\n**Q2.** Look back at the tray of three orders in section 3.2. Mara tells her assistant, \"Email a thank-you note to everyone who bought something this weekend.\" If the assistant does exactly that, who gets an email who should _not_ , and which single labeled box would have prevented the mistake?\n\n**Answer:** Lena Fischer should not get a thank-you-for-your-purchase note yet, because her order shows `paid: false`; she has not actually completed the purchase. The single labeled fact that prevents the mistake is that `paid` box on each order. A careful ask would be \"email a thank-you note to everyone whose order shows paid is true,\" which uses the labeled box to filter. This is a small preview of a large theme: the safety of an automation often lives in one labeled fact that a hasty version would skip right over. Reading the boxes is not busywork; it is where the mistakes hide.\n\n\n#### Say this to your AI\n\nYou have now surveyed which tools have counter windows, and sorted their reading and changing powers. Take the next honest step: have your assistant actually fetch something and _show you the raw labeled boxes_ , so you can start reading real answers.\n\n> _\"Read [one harmless, low-stakes thing] from [my calendar / a public weather service / my shop's test data], and show me the actual response in its labeled-box form, not just your summary. Then walk me through it: which label holds the thing I care about, and what other labels came back that I should know exist? Only read; change nothing.\"_\n\nThis ask puts the whole chapter to work. It keeps you strictly in reading (safe, reversible), it asks to see the boxes and not just the assistant's gloss (so you keep a hand on the wheel), and it turns your assistant into a patient guide through its own labels. The more raw responses you read, the less any of this feels like a wall, and the better you get at spotting the one box that matters.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1168,
+      "out_sha": "626ad5266853",
       "note": ""
     },
     {
@@ -279,11 +279,11 @@
       "en_title": "Chapter 3: JSON Without Fear",
       "order": 17,
       "src_chars": 1371,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ed46e709d70a",
       "src": "### Chapter Summary\n\n**JSON** is the format the counter window answers in, and it is nothing more than labeled boxes: a label, a value, and boxes that can nest inside other boxes. You read it; you do not write it, because placing the exact commas and brackets is your assistant's job and reading the labeled facts is yours. We read a single order from Mara's fictional shop, found a nested fact (the shipping city, tucked inside the `shipping` box), and read a tray of orders as a list, where one small labeled fact (`paid: false`) turned out to carry the whole weight of a decision. We learned that JSON was invented in the early 2000s by one person, Douglas Crockford, precisely because it was simple enough to read at a glance, and that it belongs to no single language.\n\nThe reason this matters is trust: reading the boxes is the most basic way you keep a hand on an automation's wheel, the difference between being told the order shipped and seeing the labeled box that says so. This built on Chapter 2's counter window (JSON is what the window answers in) and on Chapter 1's reading-versus-sending line (reading a response is the safe, checkable act). Next, in Chapter 4, we turn from the _answer_ to the _ask_ : what shape a request takes on its way to the counter window, and how predicting the reply becomes the real test of whether you hold the map.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 471,
+      "out_sha": "38a4117334e4",
       "note": ""
     },
     {
