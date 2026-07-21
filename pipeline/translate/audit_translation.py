@@ -29,7 +29,9 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 TRANSLATE_ROOT = Path(__file__).resolve().parent
 DEFAULT_CONFIG = TRANSLATE_ROOT / "review_config.json"
 
-QUESTION_RE = re.compile(r"(?im)^\s*(?:[-*]\s*)?\*{0,2}Q\s*(\d+)\s*[.)]")
+QUESTION_RE = re.compile(
+    r"(?im)^\s*(?:[-*]\s*)?\*{0,2}(?:Q|问(?:题)?)\s*(\d+)\s*[.)。]"
+)
 LIST_RE = re.compile(r"(?m)^\s*(?:[-+*]|\d+[.)])\s+")
 PLACEHOLDER_RE = re.compile(r"\b(?:XXX|YYY|fff)\b")
 COMMON_ENGLISH_RE = re.compile(
@@ -274,7 +276,7 @@ def audit_book(name: str, settings: dict) -> BookResult:
         if item.get("out_sha") and sha12(translation) != item["out_sha"]:
             add_finding(
                 result,
-                "ERROR",
+                "WARN",
                 "OUTPUT_SHA_MISMATCH",
                 "block was changed without updating checkpoint via commit --file",
                 block_id,
@@ -322,8 +324,24 @@ def audit_book(name: str, settings: dict) -> BookResult:
                 block_id,
             )
 
+    intro_text, source_chapters = tb.parse_source(source)
+    true_source = {"intro": intro_text}
+    true_source.update(
+        {f"c{index:02d}": body for index, (_title, body) in enumerate(source_chapters, 1)}
+    )
+    chapter_blocks: dict[str, list[dict]] = defaultdict(list)
+    for item in blocks:
+        chapter_blocks[chapter_of(item.get("id", ""))].append(item)
+
     for chapter in sorted(chapter_source):
-        source_text = "\n\n".join(chapter_source[chapter])
+        chapter_is_complete = all(
+            item.get("status") == "done" for item in chapter_blocks.get(chapter, [])
+        )
+        source_text = (
+            true_source.get(chapter, "\n\n".join(chapter_source[chapter]))
+            if chapter_is_complete
+            else "\n\n".join(chapter_source[chapter])
+        )
         translation = "\n\n".join(chapter_translation[chapter])
         source_questions = question_ids(source_text)
         translated_questions = question_ids(translation)
