@@ -783,11 +783,11 @@
       "en_title": "Chapter 12: Handing the Agent the Keys",
       "order": 59,
       "src_chars": 2859,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a731dcd52432",
       "src": "Until now, your assistant has mostly been a reader and a builder. It reads services, drafts pipes, shows you answers. You have kept your hand on every action that touches the world. This chapter is about the moment you loosen that hand: when you let your assistant not just _describe_ an automation but _run_ it, holding your keys, acting on services on your behalf, changing things while you are not watching.\n\nThis is the second heavyweight chapter of the book, and it earns the weight, because this is where the stakes from Chapter 6 come fully due. A key was your identity in machine form. Now something is holding that identity and _acting_ with it, possibly at 3 a.m., possibly faster than you could ever stop it. That is not a reason to refuse. It is the whole promise of the book, the boring work finally doing itself. It is a reason to build a specific, calm set of habits so that when you hand over the keys, you hand them over _bounded_. This chapter is those habits. None of them is complicated. Together they are the difference between an automation that serves you and one that surprises you.\n\n\n### 12.1 Blast radius: the question before every go-live\n\nBefore you let a pipe act on its own, you ask one honest question, the one introduced with the key in Chapter 6, now given its full ceremony:\n\n_What is the worst this pipeline can do if it misfires at 3 a.m., while I am asleep and cannot stop it?_\n\nWe call the answer the pipe's **blast radius** : the full extent of what it could affect if it went wrong at the worst possible moment. The 3 a.m. framing is not drama; it is the honest test condition, because an automation runs unattended and if it fails it may well fail when no one is watching. So you imagine that moment and you answer plainly.\n\nA pipe that only _reads_ has a tiny blast radius. Misfiring at 3 a.m., the worst it does is read Mara's orders a few extra times, which harms nothing. You can let a reading pipe run with a light hand. A pipe that _sends emails_ has a much larger radius: misfiring, it could email hundreds of real customers something wrong, and that cannot be un-sent. A pipe that _spends money_ has a larger radius still: misfiring, it could run up charges with no natural limit, because a machine does not get tired of spending. A pipe that _deletes_ things has among the largest: misfiring, it could destroy records that do not come back.\n\nThe blast radius is not a reason to avoid these pipes. It is a _map of where to put your guardrails_. A large radius does not mean \"don't build it.\" It means \"build it with test mode, spending caps, draft-don't-send, and a human hand on the trigger,\" each of which we take in turn. You answer the 3 a.m. question first precisely so that the guardrails you add are the ones that actually match the danger, rather than a vague, anxious over-caution sprayed everywhere.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1020,
+      "out_sha": "8a34c5bb0ce8",
       "note": ""
     },
     {
@@ -795,11 +795,11 @@
       "en_title": "Chapter 12: Handing the Agent the Keys",
       "order": 60,
       "src_chars": 1170,
-      "status": "pending",
+      "status": "done",
       "src_sha": "43bb523da6b9",
       "src": "### 12.2 Reversible or not: the deepest cut\n\nUnderneath blast radius sits one distinction that decides more than any other: is the action _reversible_?\n\nReading is perfectly reversible; it changes nothing. Some changes are easily undone: add the wrong tag to a customer, remove the tag. But some actions cannot be taken back at all. An email, once sent, is in someone's inbox forever. A public post, once posted, was seen. A payment, once made, has moved real money. A hard deletion, once done, may be gone.\n\nSort every action a pipe can take into these two bins, because they deserve opposite postures. Reversible actions you can let an assistant do more freely, because a mistake is a cleanup, not a catastrophe. Irreversible actions, the ones that _send_ , _post_ , _pay_ , or _destroy_ , deserve a human \"yes\" before they happen, at least until the pipe has earned deep trust, because a mistake there is permanent. This is the Chapter 1 reading-versus-sending line, followed all the way down to its most serious form. The single most protective instinct in all of automation is this: _let the machine do the reversible things; keep a hand on the irreversible ones._\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 419,
+      "out_sha": "545388a3d31a",
       "note": ""
     },
     {
@@ -807,11 +807,11 @@
       "en_title": "Chapter 12: Handing the Agent the Keys",
       "order": 61,
       "src_chars": 3082,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a34f622607a8",
       "src": "### 12.3 The four calm guardrails\n\nHere are the specific habits that bound a pipe's blast radius. They are calm and concrete, and together they let you hand over the keys without holding your breath.\n\n**Test mode first.** Before a pipe touches anything real, run it in the sandbox from Chapter 9 (the service's own fake environment), entered with the test keys from Chapter 6 (a test identity, not your live one). The two work together: the sandbox is the _place_ where nothing is real, and the test key is _who you are_ while you are in it. Let it send fake emails and spend fake money and watch it behave across many runs. A pipe that has misbehaved a dozen times harmlessly in the sandbox is a pipe you understand before it ever meets a real customer. You do not earn trust in a money-touching pipe by arguing about it; you earn it by watching it be harmless, repeatedly, where being wrong costs nothing.\n\n**Dry runs: \"show me what you _would_ have done.\"** Even with a real pipe, you can ask it to go through all its motions and, at the final irreversible step, _stop and show you_ what it was about to do rather than doing it. Show me the emails you would have sent. Show me the charges you would have made. A dry run lets you inspect the pipe's intended action, in full, before a single irreversible thing happens. It is the single most useful posture for a nervous first real run.\n\n**Spending caps.** For anything that can cost money, set a hard ceiling, at the service, that the pipe cannot exceed no matter what. A cap is a wall that does not depend on the pipe behaving. Even if the automation loses its mind at 3 a.m., the cap stops the bleeding at a number you chose while calm. Many services let you set exactly this, and for any money-touching pipe it is not optional; it is the floor of responsibility.\n\n**Draft, don't send.** For messages that go out to real people, make the pipe's default _draft_ rather than _send_. Let it do all the tedious work, gathering the orders, writing each thank-you in your voice, assembling everything, and then leave the finished drafts for you to glance at and release. You keep the two seconds of human judgment that catch the wrong name, the half-written line, the note going to the buyer who has not actually paid. You lose almost none of the time saved, because the machine still did the drudgery. Draft-don't-send is how you automate a _sending_ task while keeping a hand on the _send_.\n\n\n#### Definition: The safe-posture set\n\nThe **safe-posture set** is the standing collection of guardrails you apply when an automation acts on the world: answer the **3 a.m. question** to map the blast radius; sort actions into **reversible** (freer) and **irreversible** (human \"yes\"); run in **test mode first** ; use **dry runs** to preview irreversible steps; set **spending caps** on anything that costs; and default to **draft, don't send** for messages to real people. You do not apply all of them to every pipe; you apply the ones the blast radius calls for. A reading pipe needs almost none. A money-and-email pipe needs them all.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1088,
+      "out_sha": "bbd1464a5a31",
       "note": ""
     },
     {
@@ -819,11 +819,11 @@
       "en_title": "Chapter 12: Handing the Agent the Keys",
       "order": 62,
       "src_chars": 2340,
-      "status": "pending",
+      "status": "done",
       "src_sha": "25d60d22824c",
       "src": "### 12.4 Reading the pipeline's diary\n\nOne more habit closes the loop, and it is the one that lets you sleep: a pipe that acts on its own should keep a **diary** , a running record of what it actually did each time it ran, so you can look back and check.\n\nThis diary (you may hear it called a log) is the gist-level idea that an automation writes down its own actions: on Monday at 8 a.m. it read fourteen orders, updated the sheet, drafted twelve thank-yous, skipped two unpaid. You do not have to watch a pipe run to trust it, if you can _read afterward_ what it did. The diary is how a pipe that acts while you sleep stays accountable to you: you wake up, you glance at the diary, you see it did exactly what it should have, and you carry on. And when something _does_ go wrong, the diary is where you find out what, because it recorded the action that misfired.\n\nSo when you commission an acting pipe, ask that it keep a plain, readable record of what it does, and get in the habit of glancing at it. A pipe you can read the diary of is a pipe you can trust to run unattended, because trust here does not mean \"never checking\"; it means \"able to check.\" This is the same instinct as reading JSON from Chapter 3, extended across time: not faith that the pipe behaved, but the ability to see that it did.\n\n\n#### Common Misconception\n\n_\"Letting an assistant act on its own means giving up control.\"_\n\nIt is the opposite, if you do it with the safe-posture set. Giving up control would be handing a pipe your master key, letting it send freely to real people with no cap and no draft step and no diary, and hoping. That is not what this chapter describes. What this chapter describes is handing over _bounded_ power: a narrowly scoped key, a spending cap the pipe cannot exceed, irreversible steps that draft rather than send or that pause for your \"yes,\" a sandbox where it proved itself first, and a diary you can read after. That is not less control than doing the task by hand; in some ways it is _more_ , because the guardrails are explicit and enforced by the services themselves, rather than depending on your own tired attention at row forty. You did not give up the wheel. You gave the pipe brakes, a speed limiter, and a dashcam of your own making, the scoped key, the spending cap, the readable diary, and then you let it drive.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 838,
+      "out_sha": "f7d5edf94e2c",
       "note": ""
     },
     {
@@ -831,11 +831,11 @@
       "en_title": "Chapter 12: Handing the Agent the Keys",
       "order": 63,
       "src_chars": 2807,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6b890e276f30",
       "src": "### 12.5 Mara hands over the thank-yous\n\nWatch Mara cross this line, because she does it exactly right, and her caution is a model rather than a fear.\n\nShe wants her assistant to handle the weekly thank-you notes, a _sending_ task, to real customers, irreversible. So she runs the 3 a.m. question: worst case, a misfire emails the wrong things to real buyers, which cannot be un-sent. Medium-large blast radius. That answer tells her which guardrails she needs.\n\nFirst she builds it in the sandbox, with a test key scoped only to send mail, and watches it draft and \"send\" to fake buyers across several weeks of test data until it never once addresses the wrong person or emails an unpaid order. Then she moves to real data but keeps the pipe on **draft, don't send** : every Monday it assembles twelve finished thank-yous in her voice, correctly skipping the unpaid orders using the `paid` box, and leaves them for her to glance at and release with two seconds of attention each. She reads the pipe's diary each week to confirm it drafted what it should have. And the one task she flatly refuses to automate, for now, is anything that _moves money_ , refunds especially, because that blast radius is the largest and she has decided the two minutes of doing a refund by hand is a fair price for keeping her own hand on it. She did not refuse the automation. She bounded it, exactly as far as its blast radius demanded, and no further.\n\n\n### 12.6 Exercises\n\nRead the answers.\n\n\n#### Judgment scenario\n\n**Q1.** Your assistant proposes: \"To save you time, I'll automatically issue refunds to any customer who emails asking for one, right away, no need for you to review.\" Run the 3 a.m. question on this, name the blast radius, and redesign the pipe with the safe-posture set so it is still useful but bounded.\n\n**Answer:** The 3 a.m. answer is alarming: misfiring, this pipe could issue unlimited refunds to anyone who sends a triggering email, including bad-faith or mistaken requests, with real money moving irreversibly and no natural limit, because a machine does not tire of refunding. That is a very large blast radius: irreversible _and_ money-touching _and_ triggerable by outsiders. Redesigned with the safe-posture set: build and prove it in the _sandbox_ first; give it a key scoped only to the refund power, nothing else; put a hard _spending cap_ at the service so total refunds can never exceed a number you chose while calm; and, most important, require your human \"yes\" before each payment (the irreversible-action gate), so it prepares a proposed refund for each request and leaves it for you to release rather than paying automatically. Now it saves Mara the drudgery of assembling each refund while keeping her hand on every irreversible payment. Useful, and bounded exactly to its danger.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 982,
+      "out_sha": "e7f18d8dd299",
       "note": ""
     },
     {
