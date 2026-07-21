@@ -1,0 +1,6 @@
+DONE: AI时代六大超能力-卷六-你的第二大脑
+status: 76/76
+verify(glossary_psychology.md): ERROR=0 WARN=0
+verify(glossary_local.md): ERROR=0 WARN=61
+WARN notes: local glossary slash-alternatives (e.g. 应用 / App, 一堆 / 堆积, 拯救 / 拯救行动) trigger false-positive "未采用约定译法" when translation correctly uses one variant; not content defects.
+sample review PASS on PR #14 head 0d913a0; full-book continuation on same branch/PR.
