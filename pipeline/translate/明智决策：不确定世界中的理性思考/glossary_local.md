@@ -86,3 +86,5 @@ red team | 红队 |
 automation bias | 自动化偏差 |
 hallucination | 幻觉 | LLM 生成虚假内容
 large language model | 大语言模型 | LLM
+affective forecasting | 情感预测 |
+regret minimization | 后悔最小化 |
