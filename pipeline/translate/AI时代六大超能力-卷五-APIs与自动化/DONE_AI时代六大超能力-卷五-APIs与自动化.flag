@@ -1,0 +1,11 @@
+book: AI时代六大超能力-卷五-APIs与自动化
+done: 83/83
+verify: ERROR=0 WARN=10
+force_arabic: true
+glossary: pipeline/translate/glossary_cs.md (+ glossary_local.md)
+
+Remaining WARN notes (false positives from shared glossary_cs.md):
+- CAP: English common noun “cap” in rate-limit prose (“a cap on how many…”) — not CAP theorem. Present in c08_b01, c08_b05, c13_b03, c13_b04, c13_b06, c16_b03.
+- ACID: English “acid”/figurative uses in narrative (not ACID transaction properties). Present in c15_b01, c15_b05, c16_b03, c16_b04, c16_b05.
+
+No structural ERROR. Sample PASS then full fine translation on same Draft PR #13.
