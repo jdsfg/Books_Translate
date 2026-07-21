@@ -1655,11 +1655,11 @@
       "en_title": "Chapter 14: Social Pressure and Groupthink",
       "order": 128,
       "src_chars": 3358,
-      "status": "pending",
+      "status": "done",
       "src_sha": "64ce4d4205c8",
       "src": "In 1974, management professor Jerry Harvey was driving with his family in the Texas heat when his father-in-law suggested they drive to Abilene — 53 miles away — for dinner. Harvey didn't particularly want to go; it was hot, the drive was long, and he was comfortable where he was. But he went along with it. Everyone in the car went along with it. They made the uncomfortable trip.\n\nOn the way back, the family discussed their experience. None of them had wanted to go. They had all assumed everyone else wanted to go. They all went, together, to a place none of them wanted to be.\n\nHarvey called this the Abilene Paradox: groups can take actions that no individual in the group actually wants, because each individual incorrectly assumes that others want the action and adjusts their own stated preference to match the assumed group consensus.\n\n\n### 14.1 Why Groups Make Bad Decisions\n\nIt seems like groups should make better decisions than individuals. They have more information, more perspectives, more error-correction potential. And sometimes they do — we'll get to that. But they also have failure modes that individuals don't, and these failure modes are responsible for some of the most costly decisions in history.\n\n\n#### Definition: Groupthink\n\nGroupthink is a mode of thinking that occurs within a cohesive in-group when the group's desire for harmony, consensus, and conformity overrides realistic appraisal of alternatives. The group prioritizes agreement over accuracy.\n\nGroupthink was coined by social psychologist Irving Janis in 1972, after studying several high-profile American foreign policy disasters. The conditions that produce groupthink:\n\n* **High cohesion:** Group members feel strong loyalty to the group and strong social pressure to maintain harmony\n* **Insulation:** The group is isolated from outside expertise and dissenting information\n* **Directive leadership:** A leader makes clear (explicitly or implicitly) what conclusion they want to reach\n* **High stress:** The group faces time pressure or a high-stakes situation that reduces careful deliberation\n\n\n#### Definition: Pluralistic Ignorance\n\nPluralistic ignorance is a situation in which a majority of individuals privately reject a norm or belief but incorrectly assume that most others accept it — and therefore go along with it publicly.\n\nIn plain language: everyone is pretending to agree because they think everyone else actually agrees, when in fact everyone is privately uncertain or skeptical. The Abilene Paradox is pluralistic ignorance about a dinner destination; pluralistic ignorance appears in classrooms (\"does anyone else not understand this?\"), boardrooms, and political movements.\n\n\n#### Common Misconception\n\n_\"Smart, experienced groups with diverse members are immune to groupthink.\"_\n\nResearch contradicts this. The Bay of Pigs planning group (discussed in §14.3) included extraordinarily brilliant people: McGeorge Bundy, Dean Rusk, Robert McNamara, and others. They were not naive; they were experienced. Yet groupthink operated. Janis documented that intelligence and experience do not protect against groupthink — the failure mode is structural, not intellectual. The protective factors are procedural: explicit devil's advocacy roles, structural separation of evaluation from consensus, and leader behavior that signals dissent is welcome.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1057,
+      "out_sha": "e81fdc109614",
       "note": ""
     },
     {
@@ -1667,11 +1667,11 @@
       "en_title": "Chapter 14: Social Pressure and Groupthink",
       "order": 129,
       "src_chars": 1937,
-      "status": "pending",
+      "status": "done",
       "src_sha": "25edd61993e4",
       "src": "### 14.2 Thread 2 — The Medical Diagnosis: Groupthink in Medical Teams\n\nDr. Martinez now faces a case involving a hospital multidisciplinary team. A patient with complex symptoms is being evaluated by a team of five specialists: a rheumatologist, an immunologist, a neurologist, a cardiologist, and an infectious disease specialist.\n\nThe rheumatologist — the most senior member and the one who organized the meeting — presents her preliminary diagnosis: systemic lupus. She does so with some confidence and implicit authority.\n\nDr. Martinez, attending as the patient's primary physician, has her own nagging concerns: the symptom pattern doesn't quite fit the lupus profile she knows. But in the meeting, she notices that other team members are largely agreeing with the rheumatologist. The immunologist raises a mild alternative concern, then quickly withdraws it when the rheumatologist elaborates on her reasoning.\n\nWhat has happened? The group's apparent consensus has formed around the authority figure's conclusion, not around the evidence. Team members with private doubts are suppressing them to maintain the social harmony of agreement. Dr. Martinez considers raising her concern — and then doesn't. \"Who am I to contradict the rheumatologist? Everyone else seems to agree.\"\n\nThe failure modes present:\n\n  1. **Illusion of consensus** : the agreement in the room is manufactured by mutual deference, not by independent assessment\n  2. **Self-censorship** : Dr. Martinez's concern is suppressed; the immunologist's concern was withdrawn\n  3. **Directive leadership** : the rheumatologist's seniority created an implicit pressure toward her conclusion\n\nThe structural fix: prior to any group diagnosis discussion, require each team member to write down their independent assessment and distribute it before anyone speaks. This breaks the cascade of social influence that allows the first authoritative voice to capture the group.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 588,
+      "out_sha": "38a7ab809261",
       "note": ""
     },
     {
@@ -1679,11 +1679,11 @@
       "en_title": "Chapter 14: Social Pressure and Groupthink",
       "order": 130,
       "src_chars": 2319,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d01d027e4ce1",
       "src": "### 14.3 Thread 3 — Historical Decision: The Bay of Pigs\n\nIn April 1961, the newly inaugurated Kennedy administration authorized an invasion of Cuba by CIA-trained Cuban exiles. The operation — the Bay of Pigs invasion — was catastrophic. The invading force was captured within 72 hours. The invasion failed to trigger the popular uprising that had been predicted. The entire operation was based on a plan that, in retrospect, contained obvious flaws that should have been caught in planning.\n\nWhat makes the Bay of Pigs a canonical case of groupthink:\n\n  1. **Illusion of invulnerability** : the Kennedy team entered with confidence in American power and the CIA's track record. They downplayed the difficulties.\n\n  2. **Collective rationalization** : concerns about the plan were not examined seriously. When CIA officials raised doubts, they were treated as excessively cautious rather than as raising important issues.\n\n  3. **Self-censorship** : Arthur Schlesinger Jr., Kennedy's historian, later admitted he had significant doubts about the plan but raised them only gently — a \"Abilene Paradox\" moment among the most powerful men in America.\n\n  4. **Illusion of unanimity** : those who did not speak against the plan in the room were counted as supporters, even when they privately had reservations.\n\n  5. **Mindguards** : CIA director Allen Dulles appeared to actively filter information reaching the group — presenting an overly optimistic picture of the invasion's prospects.\n\nKennedy himself later concluded that the disaster's root cause was a meeting structure that made dissent socially costly. After the Bay of Pigs, Kennedy restructured his advisory process: he frequently absented himself from early deliberations (so that his presence wouldn't suppress dissent), assigned Robert Kennedy to specifically argue against proposals, and brought in outside experts who were not embedded in the group's social dynamics.\n\nThis restructured process was a factor in the more successful decision-making during the Cuban Missile Crisis 18 months later — covered in Chapter 2 and directly applicable here.\n\n\n### 14.4 When Crowds Are Wiser Than Individuals\n\nGroupthink is a pathology — but groups are not always bad at decisions. In specific conditions, groups can dramatically outperform their individual members.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 713,
+      "out_sha": "eb8fc3854112",
       "note": ""
     },
     {
@@ -1691,11 +1691,11 @@
       "en_title": "Chapter 14: Social Pressure and Groupthink",
       "order": 131,
       "src_chars": 1630,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9eb99c36c4a5",
       "src": "#### Definition: Wisdom of Crowds\n\nThe wisdom of crowds describes the phenomenon in which the aggregated judgments of a large number of independent, diverse individuals frequently outperform the judgment of any single expert.\n\nThe classic demonstration: Sir Francis Galton observed a contest at a county fair in which 800 people guessed the weight of an ox. The average of their guesses was 1,207 pounds; the actual weight was 1,198 pounds — a 0.8% error. No individual's guess was as accurate as the aggregate.\n\nThe wisdom of crowds requires specific conditions:\n\n  1. **Independence:** Each individual must form their judgment independently, without being influenced by others' guesses\n  2. **Diversity:** The group must contain diverse perspectives and error patterns (diverse errors cancel out; correlated errors amplify)\n  3. **Decentralization:** Information should be dispersed rather than funneled through a single source\n  4. **Aggregation mechanism:** There must be a way to actually combine individual judgments\n\nGroupthink destroys condition 1 (independence) and 2 (diversity), which is why it produces the opposite of wisdom-of-crowds. When group members adjust their views toward each other's views rather than independently estimating, the errors correlate and the calibrating diversity is lost.\n\nThe practical takeaway: for estimation and forecasting tasks, collect independent judgments before any group discussion. After discussion, re-collect. The pre-discussion aggregate is often more accurate than the post-discussion consensus, because social influence has introduced correlated error.\n\n\n### 14.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 490,
+      "out_sha": "fb366267e9e8",
       "note": ""
     },
     {
@@ -1703,11 +1703,11 @@
       "en_title": "Chapter 14: Social Pressure and Groupthink",
       "order": 132,
       "src_chars": 3270,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2cd6804974e9",
       "src": "#### Concept Check\n\n**Q1.** What is the Abilene Paradox, and why is it a useful illustration of pluralistic ignorance?\n\n**Answer:** The Abilene Paradox describes a group making a collective decision to do something that no individual in the group actually wants, because each person falsely assumes that others want it and goes along to maintain group harmony. It illustrates pluralistic ignorance because the \"consensus\" for going to Abilene is entirely manufactured: each individual privately doubts the wisdom of the trip but interprets the apparent willingness of others as genuine enthusiasm. The paradox is self-sustaining: because everyone suppresses their own doubts and signals enthusiasm (or at least absence of objection), everyone else interprets the silence as agreement. The group's apparent consensus is an artifact of everyone's simultaneous and mutual misreading of each other's preferences. The lesson: silent non-objection is a very poor signal of genuine agreement.\n\n* * *\n\n**Q2.** Name four conditions that increase the risk of groupthink, and explain why each contributes to it.\n\n**Answer:** (1) High group cohesion: when group members feel strong social bonds, maintaining harmony becomes a priority that competes with accurate decision-making. Criticism feels like betrayal of the group rather than contribution to it. (2) Insulation from outside expertise: when a group is isolated from people who would challenge its assumptions, there is no external pressure to examine those assumptions. The group's internal biases compound without correction. (3) Directive leadership: when the leader signals (explicitly or implicitly) what conclusion they want to reach, members align with the leader's view rather than independently evaluating. The social cost of disagreeing with the leader is high. (4) High stress and time pressure: under stress, groups seek closure quickly. Careful deliberation feels like wasted time; the first coherent proposal gains traction because it provides immediate relief from the stress of uncertainty.\n\n* * *\n\n**Q3.** Explain the difference between groupthink and the wisdom of crowds. What conditions produce each?\n\n**Answer:** Groupthink occurs when a group's desire for harmony overrides accurate evaluation, producing convergent, often wrong decisions. Wisdom of crowds occurs when a group's aggregate judgment is more accurate than individual members' judgments. The conditions producing each are opposites: Groupthink requires correlated error (members adjust toward each other's views, producing similar errors that amplify), loss of independence (members adjust based on social influence), and homogeneity (diverse perspectives are suppressed). Wisdom of crowds requires independence (members form judgments without social influence), diversity (members bring genuinely different perspectives and error patterns), and aggregation (a mechanism to combine diverse judgments). The core distinction: wisdom of crowds aggregates independently formed errors that cancel out; groupthink aggregates socially influenced errors that amplify.\n\n* * *\n\n**Q4.** After the Bay of Pigs, Kennedy changed his decision-making process. What specific changes did he make, and how did they address the structural causes of groupthink?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 956,
+      "out_sha": "50a8d82f56c4",
       "note": ""
     },
     {
@@ -1715,11 +1715,11 @@
       "en_title": "Chapter 14: Social Pressure and Groupthink",
       "order": 133,
       "src_chars": 921,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e89c90513ed2",
       "src": "**Answer:** Kennedy made three key structural changes: (1) He frequently absented himself from early group deliberations. By removing the highest-status voice from early discussion, he reduced the directive leadership effect — members could form views without anchoring on his position. (2) He assigned Robert Kennedy to specifically argue against proposals — a structured \"devil's advocate\" role. This institutionalized dissent, making critical evaluation a role rather than a social risk. (3) He brought in outside experts who were not embedded in the group's social dynamics. These experts had no loyalty to the group consensus and could raise concerns without social cost. These changes directly address the structural causes: absence of directive leadership addresses condition 3; structured devil's advocacy provides independent critical evaluation; outside experts break insulation and introduce diversity.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 277,
+      "out_sha": "5dca40c95303",
       "note": ""
     },
     {
@@ -1727,11 +1727,11 @@
       "en_title": "Chapter 14: Social Pressure and Groupthink",
       "order": 134,
       "src_chars": 3439,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6fe7da3ac2ee",
       "src": "#### Application Problems\n\n**Q1.** You're part of a team tasked with evaluating whether to expand your company's product into a new market. The CEO is enthusiastic about the idea and mentions this at the start of the meeting. As the discussion unfolds, you notice everyone is finding reasons the expansion is a good idea. You have significant reservations. Using the concepts from this chapter, analyze what is happening and how you should respond.\n\nHint\n\nThink about the directive leadership effect, pluralistic ignorance, and specific strategies that help surface genuine dissent.\n\n**Answer:** What is happening: The CEO's expressed enthusiasm has created a directive leadership effect — team members are implicitly (or explicitly) signaling alignment with the CEO's view. Those with reservations are self-censoring to avoid being seen as obstacles to the leader's vision. The apparent consensus for expansion may be pluralistic ignorance: each individual privately has doubts but sees others agreeing and adjusts. How you should respond: (1) Ask for a structured pre-discussion polling: \"Before we continue, could everyone write down their three biggest concerns about this expansion on a card?\" This collects private views before social influence consolidates. (2) Name what you observe: \"I want to make sure we're not just agreeing because [CEO] is enthusiastic. Let me raise a few concerns I've been thinking about.\" This breaks the social cascade by naming the dynamic and models dissent. (3) Focus on evidence, not opinion: \"What does our data on similar market entry attempts show? What is the historical success rate for expansions like this?\" Evidence-based questions are harder to deflect than opinion-based ones. (4) If you sense others also have doubts, arrange a private conversation before the next meeting — pluralistic ignorance often dissolves when two people discover they share the same private doubt.\n\n* * *\n\n**Q2.** You are running a team that makes investment recommendations. You want to use the wisdom of crowds within your team. How would you structure your decision-making process to maximize the benefits of collective intelligence while avoiding groupthink?\n\n**Answer:** Structure for wisdom-of-crowds: (1) Independent prior assessment: require each team member to write a brief investment recommendation and probability estimate before any group discussion. Do not share these with others until everyone has submitted. This preserves the independence required for wisdom of crowds to work. (2) Aggregate the independent estimates: calculate the mean and distribution of the team's independent estimates. This gives you the group's pre-discussion collective judgment — often the best estimate available. (3) Discuss with dissent protected: share the full range of estimates (including disagreements) and structure the discussion to understand why estimates differ, rather than to reach consensus. Dissenting views should be heard fully rather than quickly overridden. (4) Post-discussion re-estimate: after discussion, have each person individually revise their estimate. The post-discussion aggregate now incorporates information sharing but (with the right norms) has not collapsed into pure social conformity. (5) Track predictions: maintain records of predictions and outcomes. This creates calibration feedback and demonstrates that the independent aggregate often outperforms the group consensus.\n\n* * *",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 969,
+      "out_sha": "45881faf1618",
       "note": ""
     },
     {
@@ -1739,11 +1739,11 @@
       "en_title": "Chapter 14: Social Pressure and Groupthink",
       "order": 135,
       "src_chars": 1873,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3a5714e6f11c",
       "src": "**Q3.** A medical school is reforming its case discussion process. Currently, the most senior attending physician presents their diagnosis first, then junior residents discuss. Residents almost always agree with the attending. Propose a structural reform that would improve diagnostic accuracy, using the principles from this chapter.\n\n**Answer:** The current process is a directive leadership trap: the senior attending's diagnosis is presented first, anchoring all subsequent discussion. Residents face social costs for contradicting a senior colleague. Reform proposal: (1) Sequential independent diagnosis: before any case presentation to the group, each resident submits an independent diagnosis in writing. These are collected before the attending presents their view. (2) Anonymous initial discussion: the independent diagnoses are presented anonymously to the full group (removing seniority effects), and the group discusses the full range of diagnostic hypotheses. (3) Attending's diagnosis revealed last: after the group has discussed the full range of diagnoses, the attending reveals their view. This prevents the anchor effect. (4) Designated contrarian: one resident is assigned the role of finding the strongest argument against the most popular diagnosis — institutionalizing the critical perspective. (5) Regular calibration: track which diagnostic approach (attending-first vs. independent-aggregate-first) produces better accuracy over time. This creates feedback that motivates sustained reform. This structure is used in some advanced training programs, and evidence suggests it improves diagnostic accuracy without reducing the educational value of experienced physician input.\n\n* * *\n\n**Q4.** Design an \"anti-groupthink\" protocol for a corporate board making a major acquisition decision. What specific structural elements would you include, and why?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 517,
+      "out_sha": "6854c3afd0bb",
       "note": ""
     },
     {
@@ -1751,11 +1751,11 @@
       "en_title": "Chapter 14: Social Pressure and Groupthink",
       "order": 136,
       "src_chars": 1637,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9eb8c4457552",
       "src": "**Answer:** Anti-groupthink acquisition protocol: (1) Pre-meeting independent assessment: before any board meeting discussing the acquisition, each director submits a written 1-page assessment covering: What is the strongest case for this acquisition? What is the strongest case against it? What are the two or three things that most need to be verified? Submissions are confidential until the meeting begins. (2) Anonymous aggregate distribution: compile the full set of pre-meeting assessments (anonymized) and distribute at the start of the meeting. This surfaces the range of independent views before social dynamics consolidate. (3) Rotating devil's advocate: assign a different board member each meeting to formally argue against the acquisition with their best effort. This role explicitly licenses critical analysis and prevents the self-censorship that makes criticism socially costly. (4) External due diligence panel: commission an independent due diligence team with no financial interest in the deal's completion (not the investment bankers advising on the deal) to report directly to the board. Their report is presented before management's recommendations, not after. (5) Red team session: conduct a 90-minute session specifically imagined as \"we've just completed this acquisition and it failed — what went wrong?\" (This is a pre-mortem, covered in Chapter 20.) Require five specific failure modes to be named. (6) Sequential voting: when the board votes, have each member submit their vote simultaneously in writing rather than sequentially — preventing the cascade of the first several votes anchoring the rest.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 469,
+      "out_sha": "728c147a0a00",
       "note": ""
     },
     {
@@ -1763,11 +1763,11 @@
       "en_title": "Chapter 14: Social Pressure and Groupthink",
       "order": 137,
       "src_chars": 2306,
-      "status": "pending",
+      "status": "done",
       "src_sha": "649cde965f0e",
       "src": "#### Think Deeper\n\n**Q1.** Social media creates new forms of group conformity: trending topics, viral posts, and algorithmic amplification of popular views. Do these create a form of \"digital groupthink,\" and if so, is it qualitatively different from small-group groupthink?\n\n**Discussion:** Digital groupthink shares structural features with small-group groupthink: conformity pressure (people adjust their expressed views toward the perceived consensus), loss of independence (algorithmically surfaced content creates correlated information environments), and suppression of dissent (social costs for holding views that conflict with trending opinion are real, if less intimate than in-person social costs). It also has important differences: (1) Scale: small-group groupthink involves a few dozen people; digital conformity can involve millions simultaneously. This means correlated errors can be much larger in scale. (2) Anonymity paradox: social media permits both anonymity (enabling expression of minority views) and public visibility (creating intense conformity pressure when content goes viral). The net effect appears to be a polarized bimodal distribution — some people express more extreme minority views online than they would in person, while many others self-censor to avoid viral negative attention. (3) Speed: digital conformity cascades can develop in hours rather than days, limiting the time for deliberative correction. (4) Feedback loops: algorithms that surface popular content create positive feedback loops that amplify already-popular views — a structural bias toward consensus that doesn't exist in small-group settings. (5) No designated devil's advocate mechanism: unlike Kennedy's reformed advisory process, no one has designed social media platforms to resist conformity cascades. The wisdom-of-crowds conditions (independence, diversity) are systematically undermined by engagement-maximizing algorithms.\n\n* * *\n\n**Q2.** Janis argued that the Bay of Pigs groupthink could have been avoided with better process, not better people. This implies that ordinary process improvements — devil's advocacy, outsider input — can prevent catastrophic decisions. Is he right? Or are there structural pressures in organizations that make good process impossible in high-stakes moments?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 670,
+      "out_sha": "b7b149e3fdf2",
       "note": ""
     },
     {
@@ -1775,11 +1775,11 @@
       "en_title": "Chapter 14: Social Pressure and Groupthink",
       "order": 138,
       "src_chars": 2679,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a37e54adce73",
       "src": "**Discussion:** Janis is largely right in principle and the Bay of Pigs specifically: Kennedy's post-Bay reform showed that structural changes produced meaningfully better deliberation. The Cuban Missile Crisis — high stakes, similar team, reformed process — produced much better decision quality despite arguably greater complexity. The structural pressures argument has force in certain contexts: (1) Political context: in democratic governments, the \"official position\" often must be formed quickly to avoid signaling uncertainty to allies, adversaries, and the public. This compresses deliberation time in ways that corporate decision-making does not face. (2) Leadership psychology: whether a leader genuinely wants dissent or merely performs receptivity to it determines whether devil's advocacy is treated as genuine input or ritual. If leaders penalize actual dissent while rewarding nominal devil's advocacy, the process changes without the substance. (3) Career incentives: in hierarchical organizations, middle managers who consistently dissent from leadership views face real career costs, regardless of the nominal openness of the process. Process changes that don't address these incentives are limited. The synthesis: good process helps significantly and should be implemented; but sustainable good process requires genuine leadership commitment to acting on dissent, not just hearing it. Structural process improvements are necessary but not sufficient — they must be backed by cultural and incentive changes.\n\n\n### Chapter Summary\n\nGroups fail spectacularly when groupthink takes hold: the desire for harmony suppresses dissent, correlated errors amplify, and the group makes decisions that no individual member would have made alone. The Abilene Paradox and the Bay of Pigs both illustrate how apparent consensus can be manufactured by mutual misreading of each other's private views.\n\nThread 2 showed Dr. Martinez's medical team converging on a diagnosis through social deference rather than independent evaluation — a structural failure that a simple protocol (written independent assessments before discussion) could address.\n\nThread 3 showed the Bay of Pigs: brilliant people making a catastrophic decision, followed by Kennedy's structural reforms that produced better decision quality in the Cuban Missile Crisis.\n\nWhen groups do work well — as in the wisdom of crowds — they require independence, diversity, and decentralization. These are precisely the conditions that groupthink destroys.\n\nIn Chapter 15, we close Part III with a surprising conclusion: not all emotional and intuitive decisions are bad. Sometimes, gut feelings are the right tool.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 754,
+      "out_sha": "75ae3d91117f",
       "note": ""
     },
     {
