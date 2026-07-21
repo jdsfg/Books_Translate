@@ -3,15 +3,27 @@
 - 书名：身体这台机器：随身硬件巡礼
 - 分支：cursor/body-machine-translate-7f64（base: translate/body-machine）
 - 总块 / done-total：151 / 151（100%）
-- verify：`python3 pipeline/translate_book.py verify "sources/身体这台机器：随身硬件巡礼.md" --glossary "pipeline/translate/glossary_biology.md"`
-- 结果：ERROR=0 WARN=41
-- 术语合规：剩余 WARN 均为术语库子串/别名匹配误报或惯例差异（见下），未为消 WARN 硬改科普文气译法
-- 抽样源译对照：intro / c01_b01 / c07_b04 / c12_b05 / c15_b02 / c17_b01 — 结构完整，无英文残留，隐喻（水泵/物流网络/常备军/脚手架/边界）与「你」人称一致
+- baseline verify：`python3 pipeline/translate_book.py verify "sources/身体这台机器：随身硬件巡礼.md" --glossary "pipeline/translate/glossary_biology.md"` → ERROR=0 WARN=41
+- force-arabic verify：`python3 pipeline/translate/verify_translation.py "sources/身体这台机器：随身硬件巡礼.md" --force-arabic --glossary "pipeline/translate/glossary_biology.md"` → ERROR=0 WARN=53（含阿拉伯数字约化类 WARN，如 c01_b07 的 100000、c15_b04 的 3）
+- 术语合规：剩余术语 WARN 多为术语库子串/别名匹配或首现后自然简称（见下），未为消 WARN 硬改科普文气
+- 抽样源译对照：intro / c01_b01 / c07_b04 / c12_b05 / c15_b02 / c17_b01 — 结构完整，隐喻（水泵/物流网络/常备军/脚手架/边界）与「你」人称一致
 - 文气自评：科普散文，机制准确，未增医学建议；标题/列表/练习/定义结构保留
+
+## 审校修复记录（英文残留等）
+
+独立审校后已修复并 `commit --file` 回写：
+
+1. **c01_b07**：`没有外部 crew 做这些` → `没有外部维修人员代劳`
+2. **c02_b01**：两处 `crew` → `外部维修人员`（统一中文，不保留普通英文）
+3. **全书检索**：普通小写英文残留仅上述 `crew`（3 处）；其余拉丁文为术语括注英文、专业缩写（SA/AV/pH 等）或专名（Jeffrey Iliff、Maiken Nedergaard、Helander、Fändriks、Purkinje 等），未误改
+4. **c16_b07**：整理拗口语序（对照锋利处 / 仍是墙时修自己的墙 / 摸按重量 / 从未一次为工作落下 等），不改含义
+5. **c16_b10**：相邻加粗 `**第1章****稳态**` → `**第1章**里**稳态**`
+
+此前 DONE 中“无英文残留”自述不准确，已撤销；以本次检索与修复为准。
 
 ## 剩余 WARN 逐条清单（交编排者裁决）
 
-说明：多数为术语库要求「中文（English）」首次全称或「起搏点 / 窦房结」双名，而正文在首现后或上下文中只用「起搏点」「SA 结」「心脏」等自然写法；另有「皮肤」等在隐喻/非器官义出现时的误报。
+说明：多数为术语库要求「中文（English）」首次全称或「起搏点 / 窦房结」双名，而正文在首现后或上下文中只用「起搏点」「SA 结」「心脏」等自然写法；另有「皮肤」等在隐喻/非器官义出现时的误报。force-arabic 额外数字 WARN 未并入下表，见上方 verify 结果。
 
 1. c01_b02: 心脏
 2. c01_b03: 自我修复

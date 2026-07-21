@@ -158,8 +158,8 @@
       "src_chars": 3318,
       "status": "done",
       "src_sha": "1dc58283b7ad",
-      "out_chars": 1067,
-      "out_sha": "a4fbdab304eb",
+      "out_chars": 1064,
+      "out_sha": "9fee9e7dd8fd",
       "note": ""
     },
     {
@@ -1610,8 +1610,8 @@
       "src_chars": 2904,
       "status": "done",
       "src_sha": "73e3a99dd932",
-      "out_chars": 823,
-      "out_sha": "8a3f700fa416",
+      "out_chars": 835,
+      "out_sha": "98962ad78433",
       "note": ""
     },
     {
@@ -1643,8 +1643,8 @@
       "src_chars": 3124,
       "status": "done",
       "src_sha": "3028b1de6c6a",
-      "out_chars": 918,
-      "out_sha": "fc5074746c20",
+      "out_chars": 919,
+      "out_sha": "f7c93e72940a",
       "note": ""
     },
     {
@@ -1732,8 +1732,8 @@
       "status": "done",
       "src_sha": "60b7f7e313c9",
       "src": "#### Think Deeper\n\n**Q1.** We said this machine was built to a specification of roughly eighty years of non-stop running, no spare parts delivered, no maintenance shop, must repair itself while running. Before we open any panels, predict: what _general design features_ would such a specification force on any machine, biological or not? Then, as you read the rest of the book, check your predictions.\n\n**Discussion:** This question rewards thinking like an engineer facing a brutal uptime requirement, and the point is to make your own predictions before the book confirms or complicates them. Strong answers tend to name several of these. First, _redundancy_ : no single copy of any critical part, because over a long enough time everything fails, so anything you cannot afford to lose should have a backup or a spare. Second, _self-repair while running_ : since there is no repair shop and no allowed shutdown, the machine must detect and patch its own damage on the fly, ideally without interrupting the main job. Third, _self-fuelling and self-cleaning_ : it has to gather and process its own energy and dispose of its own waste, since no external crew does this. Fourth, _graceful degradation rather than sudden total failure_ : a machine that must not stop should fail slowly and partially, buying time, rather than dropping dead at the first fault. Fifth, and most subtly, _maintenance folded into operation_ : if you truly cannot stop, you have to find windows within the running cycle to do upkeep, which is a strong hint about why an always-on machine would still shut much of itself down every night. As you read on, you will meet all of these: the backup pacemaker and the spare kidney (redundancy), the self-sealing blood and the regrowing liver (self-repair), the digestive and filtration plants (self-fuelling and self-cleaning), and sleep (maintenance folded into operation). Keep your list; the fun is in watching the body's specific answers arrive.\n\n### Chapter Summary\n\nWe opened the tour where you live: inside your own body, with two fingers on your wrist. The tap you feel there is not blood arriving but a _pressure wave_ , the heart's squeeze relayed down the elastic arteries far faster than the blood itself flows. That single correction is a taste of the whole book's method: open a panel, tear the mechanism down to first principles, and look at your own body again with new eyes.\n\nTwo lenses will travel with us the whole way. The first is **homeostasis** : the body is a vast array of control loops, each holding one variable steady (temperature, blood sugar, water, pressure, oxygen) so the whole can stay in balance while the world changes. We will name the variable each panel helps hold steady, and gather them all into one picture at the end. The second is the **eighty-year-uptime lens** : a machine built to run a lifetime with no spare parts and no shutdown would be forced to carry backups, self-repair, and maintenance folded into operation, and that is exactly what we will find on every panel. Where human infrastructure bolts these features on at great cost, the body wears them as its native design.\n\nNext, we open the first real panel and meet the part that made the tap: the heart, a pump that beats about 100,000 times a day for decades with no maintenance window and no spare, and that has to solve a strange problem before it can do anything else, namely how to feed itself.\n\n* * *\n\n---",
-      "out_chars": 1071,
-      "out_sha": "e2658803aa51",
+      "out_chars": 1068,
+      "out_sha": "52766deea8d4",
       "note": "补回当初漏 commit 的最后一块"
     }
   ],
