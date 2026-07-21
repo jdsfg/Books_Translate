@@ -33,6 +33,9 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Test quality-gate code
+        run: python -m unittest discover -s pipeline/translate/tests -v
+
       - name: Run deterministic translation audit
         id: audit
         env:

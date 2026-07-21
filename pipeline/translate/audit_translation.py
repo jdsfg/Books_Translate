@@ -111,7 +111,8 @@ def chapter_of(block_id: str) -> str:
 def strip_non_prose(text: str) -> str:
     text = FENCED_CODE_RE.sub("", text)
     text = INLINE_CODE_RE.sub("", text)
-    return URL_RE.sub("", text)
+    text = URL_RE.sub("", text)
+    return re.sub(r"(?m)^(?: {4,}|\t).*$", "", text)
 
 
 def normalized_paragraphs(text: str, minimum: int = 120) -> set[str]:
@@ -195,6 +196,41 @@ def audit_changed_paths(paths: Iterable[str]) -> list[Finding]:
             findings.append(
                 Finding("ERROR", "PROHIBITED_FILE", f"PR contains generated/temporary file: {path}")
             )
+    return findings
+
+
+def audit_book_registration(config: dict, paths: Iterable[str]) -> list[Finding]:
+    findings = []
+    registered_books = set(config["books"])
+    registered_sources = {settings["source"] for settings in config["books"].values()}
+    reported = set()
+    for path in paths:
+        parts = Path(path).parts
+        unknown = ""
+        if (
+            len(parts) >= 4
+            and parts[:2] == ("pipeline", "translate")
+            and parts[2] not in registered_books
+            and parts[2] != "tests"
+        ):
+            unknown = parts[2]
+        elif (
+            len(parts) == 2
+            and parts[0] == "sources"
+            and parts[1].endswith(".md")
+            and not parts[1].endswith(".zh.md")
+            and path not in registered_sources
+        ):
+            unknown = Path(parts[1]).stem
+        if unknown and unknown not in reported:
+            findings.append(
+                Finding(
+                    "ERROR",
+                    "BOOK_NOT_REGISTERED",
+                    f"add {unknown} to pipeline/translate/review_config.json",
+                )
+            )
+            reported.add(unknown)
     return findings
 
 
@@ -551,6 +587,7 @@ def main() -> int:
     if args.changed_since:
         changed = git_changed_paths(args.changed_since)
         global_findings.extend(audit_changed_paths(changed))
+        global_findings.extend(audit_book_registration(config, changed))
 
     if args.all:
         selected = sorted(config["books"])

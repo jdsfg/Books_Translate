@@ -51,6 +51,15 @@ class AuditHelpersTest(unittest.TestCase):
         findings = audit.audit_changed_paths(["sources/甲.zh.md", "notes.log", "README.md"])
         self.assertEqual([finding.code for finding in findings], ["PROHIBITED_FILE"] * 2)
 
+    def test_new_book_requires_review_registration(self):
+        config = {"books": {"甲": {"source": "sources/甲.md"}}}
+        findings = audit.audit_book_registration(
+            config,
+            ["sources/乙.md", "pipeline/translate/乙/checkpoint.json"],
+        )
+        self.assertEqual(len(findings), 1)
+        self.assertEqual(findings[0].code, "BOOK_NOT_REGISTERED")
+
     def test_source_placeholders_are_not_false_positives(self):
         self.assertFalse(audit.unexpected_placeholders("变量 XXX", "变量 XXX"))
         self.assertEqual(audit.unexpected_placeholders("变量", "变量 XXX"), {"XXX": 1})
