@@ -79,11 +79,11 @@
       "en_title": "导读",
       "order": 0,
       "src_chars": 2985,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9824f64cf9db",
       "src": "> 本导读整理自 Socratopia 网站本书介绍页：https://www.socratopia.app/library/map-git-github-en\n\nEveryone who makes things on a computer has the same folder: essay_v2 , essay_FINAL , essay_FINAL_v2_REALLY_final . We build it out of one reasonable fear — the fear of touching work that already works and losing it. This book is about the tool that dissolves that fear, and about why, for the first time, an ambitious person with no programming background can use it. The book opens not with a definition but inside a disaster: an afternoon's rewrite saved over and gone forever, the bold restructuring never attempted because it might wreck three weeks of work. Then it spends sixteen chapters taking that fear apart.\n\nIts governing move is that it is a map, not a manual . It refuses to teach you commands to memorize — your AI agent already knows those. Instead it teaches the territory : what a snapshot is and why fifty of them don't take fifty times the space; why a branch is a parallel universe you can open for free and never, ever a copy; why a merge conflict is the tool protecting you rather than a failure you caused; and why the pull request is quietly one of the great social inventions of the era — a way for a stranger to do the entire work of a fix and hand it to you finished, without ever getting the keys. Throughout, one couple's self-published city guide grows chapter by chapter, and the same moves get applied to a doctoral dissertation, a bakery's price list, a shared website — because the promise is version control of everything you make , and an agent is what finally makes that real for non-coders.\n\nTwo things accumulate as you read. First, a running vocabulary of plain-language things you can say to your AI (\"Before you change anything, make a snapshot I can come back to\"), which build into a single page you could tape above your desk. Second, three pre-flight questions that become a permanent habit of judgment: What exactly will change? Can we get back? Has this history already been shared? That judgment layer — knowing what to check before you say yes — is the skill the book argues is now scarce, and it is what the final chapters on danger moments (a force-push over shared history; a secret committed by accident, which deletion does not remove because history remembers) are built to install.\n\nThis is the anchor volume of a six-part series on the tools an ambitious person can now command through an AI agent. It asks for no terminal, no code, and no prior tools — only a project you care about and the willingness to stop being afraid of changing it.\n\n**Target audience**：ambitious general readers — writers, researchers, founders, students, knowledge workers — with no programming background, who probably already have an AI assistant and underuse it.\n\n**Prerequisites**：none. No terminal, no code, no prior tools assumed. Curiosity and a project you care about.\n\n**Study hours**：~14–18 hours (16 chapters, each a self-contained ~50–65 minute session).",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1113,
+      "out_sha": "c47d320d58a9",
       "note": ""
     },
     {
@@ -91,11 +91,11 @@
       "en_title": "Introduction",
       "order": 1,
       "src_chars": 3290,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f8511925fc1b",
       "src": "There is a folder on your computer, or something like it, and you already know what it holds: `essay_v2`, `essay_FINAL`, `essay_FINAL_v2_REALLY_final`. Nobody taught you to make it. You built it out of a single, reasonable fear, the fear of touching work that already works and losing it. This book is about the tool that dissolves that fear, and about why, for the first time, you can use that tool without becoming a specialist.\n\nThe tool is called Git, and the workshop built on top of it is called GitHub. For most of their history, they were the property of programmers, guarded by a wall of typed commands that took real effort to learn. That wall is what changed. You now have, or can have, an AI agent that knows the commands so you do not have to. You say what you want in plain language. It handles the incantations. Which means a way of working that used to be reserved for software teams is suddenly available to anyone who makes anything: a novel, a dissertation, a business's price list, a travel guide, a recipe collection, a website.\n\n**This is a map, not a manual.** That distinction is the spine of the whole book, so let me state the promise as sharply as I can, and invite you to hold me to it:\n\n> A reader who finishes this book having forgotten every command, but who can say what a snapshot is, what a branch is _for_ , and what to check before publishing a change, has received this book's full value. A reader who memorized twenty commands but cannot say what a branch is for has received nothing.\n\nYou will not find command sequences to type here. You will find the _territory_ : what each tool makes possible, what you can now dare to ask for, and, just as important, what to look at before you say yes. The commands were never the valuable part. They were only the expensive part, and now that an agent makes them cheap, we can finally see clearly what always mattered, which is judgment. Knowing what to ask for, and what to check, is the entire skill.\n\n**How the book is built.** One project runs through every chapter: Maya and Theo, a couple with no programming background, self-publishing a small city guide with an AI agent doing the mechanical work. You will watch their guide grow from a first snapshot, through a bold reorganization tried safely on a branch, through the day they both rewrite the same sentence, out into the world where a friend and then a stranger help improve it. Alongside them you will see the same moves applied to a doctoral thesis, a bakery's contracts, a shared website, because version control of _everything you make_ is the real promise, and an agent is what finally makes it true for non-programmers.\n\nThree things accumulate as you read. First, a running set of **plain-language things you can say to your agent** (\"Before you change anything, make a snapshot I can come back to\"), which build, chapter by chapter, into a single page of vocabulary you could tape above your desk. Second, three **pre-flight questions** that turn into a permanent habit of judgment: _What exactly will change? Can we get back? Has this history already been shared?_ Third, a **courage ladder** : each chapter retires one specific fear and names what you can now dare, until by the end the graveyard of bold-versions-never-attempted is empty.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1162,
+      "out_sha": "5837be0799a6",
       "note": ""
     },
     {
@@ -103,11 +103,11 @@
       "en_title": "Introduction",
       "order": 2,
       "src_chars": 1040,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e69cf6fc618e",
       "src": "**How to get the most from this book.** It is written to be read slowly, in conversation. Each chapter is a self-contained step, and the questions inside it are not tests but invitations to predict what a tool will do before you meet it, and to practice turning what you want into something you can ask for. Do not rush to \"use Git.\" Let the map form first. The doing, when it comes, will feel like asking for something you already understand, because it will be.\n\nThis is the first of six volumes. The others map the other tools an ambitious person can now command through an agent: open-source models you run yourself, the command line, servers and deployment, APIs and automation, and finally your own knowledge, made agent-ready. Each is a superpower that used to belong to specialists and no longer has to. We begin with Git, because before you can command any of it with confidence, you need to stop being afraid of changing your own work.\n\nTurn the page. It starts, as these things always do, with something already lost.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 363,
+      "out_sha": "27e8dae3ec7f",
       "note": ""
     },
     {
