@@ -86,6 +86,14 @@ python pipeline/translate/verify_translation.py "sources\<书名>.md" --glossary
   - 随机抽检至少一章，覆盖公式/数字/标题或专业术语
   - 已写入 `DONE_<书名>.flag`
 
+### 自动化审校
+
+- `.github/workflows/translation-quality-gate.yml` 在翻译 PR 更新时运行机械闸门，并将结果直接更新到 PR 评论。
+- `pipeline/translate/review_config.json` 是书目、风格、术语库与数字审计策略的统一配置；新增书目只需登记一次。
+- `.cursor/BUGBOT.md` 提供 PR 翻译审查规则；完整设置见 `pipeline/translate/AUTOMATED_REVIEW.md`。
+- 机械 `PASS` 不等于出版质量。最终合并仍必须有独立 Agent 的源译语义审校 `PASS`。
+- 控制模型直接读取和发布 PR 审校评论，不再要求用户在多个窗口之间复制报告。
+
 ## 7. 平台与模型调度
 
 CPU 不是本项目瓶颈。翻译、Markdown 处理和 Python 校验均为轻量工作；云端 VM 的价值是**会话隔离、稳定性、持久磁盘和 Git 分支协作**，不是算力。
