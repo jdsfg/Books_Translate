@@ -51,6 +51,26 @@ class AuditHelpersTest(unittest.TestCase):
         findings = audit.audit_changed_paths(["sources/甲.zh.md", "notes.log", "README.md"])
         self.assertEqual([finding.code for finding in findings], ["PROHIBITED_FILE"] * 2)
 
+    def test_source_placeholders_are_not_false_positives(self):
+        self.assertFalse(audit.unexpected_placeholders("变量 XXX", "变量 XXX"))
+        self.assertEqual(audit.unexpected_placeholders("变量", "变量 XXX"), {"XXX": 1})
+
+    def test_translation_only_duplicate_is_detected(self):
+        paragraph = "用于检测重复的完整长段落。" * 20
+        self.assertFalse(
+            audit.duplicated_paragraphs_beyond_source(
+                f"{paragraph}\n\n{paragraph}",
+                f"{paragraph}\n\n{paragraph}",
+            )
+        )
+        self.assertEqual(
+            audit.duplicated_paragraphs_beyond_source(
+                paragraph,
+                f"{paragraph}\n\n{paragraph}",
+            ),
+            [paragraph],
+        )
+
     def test_report_distinguishes_mechanical_pass(self):
         result = audit.BookResult(book="甲", done=1, total=2, assembled=True)
         report = audit.render_report([result], [], ["pipeline/translate/甲/checkpoint.json"])

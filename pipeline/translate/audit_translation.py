@@ -115,12 +115,32 @@ def strip_non_prose(text: str) -> str:
 
 
 def normalized_paragraphs(text: str, minimum: int = 120) -> set[str]:
-    paragraphs = set()
+    return set(long_paragraphs(text, minimum))
+
+
+def long_paragraphs(text: str, minimum: int = 120) -> list[str]:
+    paragraphs = []
     for paragraph in re.split(r"\n\s*\n", strip_non_prose(text)):
         normalized = re.sub(r"[\s*_`#>]+", "", paragraph)
         if len(normalized) >= minimum:
-            paragraphs.add(normalized)
+            paragraphs.append(normalized)
     return paragraphs
+
+
+def unexpected_placeholders(source: str, translation: str) -> Counter[str]:
+    return Counter(PLACEHOLDER_RE.findall(strip_non_prose(translation))) - Counter(
+        PLACEHOLDER_RE.findall(strip_non_prose(source))
+    )
+
+
+def duplicated_paragraphs_beyond_source(source: str, translation: str) -> list[str]:
+    source_counts = Counter(long_paragraphs(source))
+    translated_counts = Counter(long_paragraphs(translation))
+    return [
+        paragraph
+        for paragraph, count in translated_counts.items()
+        if count > 1 and count > source_counts[paragraph]
+    ]
 
 
 def question_ids(text: str) -> Counter[str]:
@@ -288,13 +308,13 @@ def audit_book(name: str, settings: dict) -> BookResult:
         translated.append((item, source_text, translation))
 
         prose = strip_non_prose(translation)
-        placeholders = sorted(set(PLACEHOLDER_RE.findall(prose)))
-        if placeholders:
+        placeholder_delta = unexpected_placeholders(source_text, translation)
+        if placeholder_delta:
             add_finding(
                 result,
                 "ERROR",
                 "PLACEHOLDER",
-                f"suspicious placeholders remain: {placeholders}",
+                f"translation adds suspicious placeholders: {dict(placeholder_delta)}",
                 block_id,
             )
         english = sorted(set(match.group(0) for match in COMMON_ENGLISH_RE.finditer(prose)))
@@ -309,12 +329,7 @@ def audit_book(name: str, settings: dict) -> BookResult:
                 block_id,
             )
 
-        paragraphs = [
-            re.sub(r"[\s*_`#>]+", "", p)
-            for p in re.split(r"\n\s*\n", prose)
-            if len(re.sub(r"[\s*_`#>]+", "", p)) >= 120
-        ]
-        duplicates = [p for p, count in Counter(paragraphs).items() if count > 1]
+        duplicates = duplicated_paragraphs_beyond_source(source_text, translation)
         if duplicates:
             add_finding(
                 result,
