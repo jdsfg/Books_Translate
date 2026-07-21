@@ -1415,11 +1415,11 @@
       "en_title": "Chapter 12: The Sunk Cost Fallacy",
       "order": 108,
       "src_chars": 3377,
-      "status": "pending",
+      "status": "done",
       "src_sha": "25b80d5859bf",
       "src": "During the 1960s, France and Britain jointly undertook the development of the Concorde supersonic passenger aircraft. Early in the program, engineers and economists realized the project would never be profitable — the development costs were too high, the market too small, and the operating economics fundamentally broken. This conclusion was reached repeatedly over the following decade as costs continued to escalate.\n\nYet the program continued. Governments continued pouring money into it. Planes were built and operated for decades, generating massive losses, because the political cost of admitting the money already spent had been wasted felt worse than continuing to waste more.\n\nThe Concorde flew its last commercial flight in 2003. The final tally: billions spent, limited passengers served, zero profit ever generated. And the decision to continue long past the point of rational justification has a name: the Concorde fallacy, a particularly spectacular example of the sunk cost fallacy.\n\n\n### 12.1 What Sunk Costs Are — and Why They Feel So Binding\n\n\n#### Definition: Sunk Cost\n\nA sunk cost is a past expenditure of money, time, or effort that cannot be recovered regardless of what decision is made in the future.\n\nIn plain language: sunk costs are gone. Spent. Done. They will not change depending on what you do next. The money you already paid for a concert ticket you no longer want to attend is a sunk cost — it exists whether or not you go to the concert.\n\n\n#### Definition: The Sunk Cost Fallacy\n\nThe sunk cost fallacy is the error of letting past, irrecoverable investments influence future decisions — continuing to invest in a course of action because of what has already been spent, rather than because of the forward-looking merits.\n\nIn plain language: the sunk cost fallacy is honoring the past instead of optimizing the future. It is letting \"how much I've already put into this\" determine \"whether I should continue,\" when only the latter question — evaluated on its own forward-looking merits — is relevant.\n\n\n#### Why Sunk Costs Feel Binding\n\nSunk costs feel binding for reasons rooted in loss aversion (Chapter 11) and the psychology of waste:\n\n  1. **Loss aversion:** Abandoning a course of action \"confirms\" the loss of what was already invested. Continuing feels like it keeps open the possibility of recovery. This is illusory — the investment is lost either way — but the psychology of not-yet-confirmed loss is very different from confirmed loss.\n\n  2. **Cognitive consistency:** We prefer to see our past actions as justified. Quitting signals that the original decision was wrong. Continuing allows the original decision to remain (possibly) correct.\n\n  3. **Social accountability:** If others know what we've invested, quitting means explaining ourselves. Continuing avoids this social cost, even at greater financial cost.\n\n\n#### Common Misconception\n\n_\"It's wasteful to quit something you've invested a lot in.\"_\n\nThis is precisely backward. The waste has already occurred. Continuing because of what you've spent is throwing good money (or time) after bad. The relevant question is never \"how much have I spent?\" but always \"what is the best use of my resources from this point forward?\" Continuing a bad investment to avoid \"wasting\" the past investment is simply wasting more.\n\nThe economic principle: **the past is not a reason**.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1060,
+      "out_sha": "3b12da862c01",
       "note": ""
     },
     {
@@ -1427,11 +1427,11 @@
       "en_title": "Chapter 12: The Sunk Cost Fallacy",
       "order": 109,
       "src_chars": 3349,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1c9467692806",
       "src": "### 12.2 Sunk Costs in Real Life\n\n**Sitting through a terrible movie:** You're 40 minutes into a film and it's dreadful. You paid 15 USD for the ticket. You consider leaving. The 15 USD is already spent — you don't get it back either way. The question is: \"Is the next 90 minutes of my time better spent watching this bad movie, or doing anything else?\" If you'd stay only because of the ticket cost, that's the sunk cost fallacy.\n\n**Staying in a bad relationship:** \"I've invested three years in this — I can't just walk away.\" The three years are gone either way. The question is: given where you are now, does this relationship serve your future? Past investment in a relationship is not a reason to continue it; it is, at best, evidence that you once thought it was promising.\n\n**The military commitment trap:** Wars are often prolonged because governments feel they can't abandon the positions for which soldiers have already died. \"They didn't die for nothing\" is a sincere sentiment — but the deaths already occurred. The question is whether further military commitment serves any achievable objective, not whether it honors past sacrifice.\n\n**Career trap:** \"I've spent ten years building expertise in this field — I can't switch now.\" The ten years of expertise are gone either way. The relevant question is: given your current skills and the current market, is staying in this field the best use of your next ten years?\n\n\n### 12.3 Thread 1 — The Startup Decision: The Sunk Cost Trap\n\nSarah has now been working on her startup for 18 months. She has spent 30,000 USD of her savings, left a comfortable job, and told everyone she knows about her vision for transforming climate technology. Her latest Bayesian update — from Chapter 11's discussion — puts her probability of significant success at approximately 20-25%.\n\nShe knows she should be running a forward-looking analysis. But her inner voice says: \"I've already given up so much. I've already sacrificed so much. I can't stop now — not when I'm this close.\"\n\nNotice the problem: \"I've already given up so much\" is a sunk cost argument. It doesn't tell her whether the next 18 months of continued effort is worth the expected return. \"I can't stop now — not when I'm this close\" is another sunk cost argument disguised as proximity to success: but closeness to success is not the same as likelihood of success.\n\nThe forward-looking question Sarah should be asking: \"Given my current probability of success (20-25%), my remaining runway (15,000 USD), and my best alternative (returning to marketing with a plausible salary offer), is continuing the best use of my next 12 months?\"\n\nThis is different from: \"Can I bear to quit after 18 months and 30,000 USD?\"\n\nThe liberating reframe: the 18 months and 30,000 USD are already spent. They are not at stake in today's decision. What is at stake is her next 12 months and 15,000 USD — and this smaller decision can be evaluated on its own merits.\n\nThere is also something genuinely informative in the sunk cost: the fact that she has invested 18 months and 30,000 USD without reaching the milestones she expected is itself Bayesian evidence that the startup is harder than anticipated. The sunk cost is irrelevant; the _information_ embedded in 18 months of evidence is very relevant — and it generally points in the direction of caution.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1148,
+      "out_sha": "7ccc86efe582",
       "note": ""
     },
     {
@@ -1439,11 +1439,11 @@
       "en_title": "Chapter 12: The Sunk Cost Fallacy",
       "order": 110,
       "src_chars": 1233,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f1f81eef1a20",
       "src": "### 12.4 The Concorde Fallacy and Institutional Sunk Costs\n\nThe sunk cost fallacy is especially devastating in institutional settings — government programs, corporate projects, and military campaigns — because the sunk cost is distributed across many decision-makers, none of whom bear the cost personally of continuing.\n\nSeveral features of institutional decision making amplify the sunk cost fallacy:\n\n* **Blame avoidance:** No individual wants to be the person who \"ended\" a program that cost billions. Continuing distributes the blame for the original bad decision.\n* **Career incentives:** Politicians and executives who champion a project are invested in its success narrative — discontinuation terminates the project and potentially their career connection to it.\n* **Reputational commitment:** Public commitment to a program makes abandonment a credibility issue, not just a financial one.\n\nThe antidote in institutional settings: separate the audit of past decisions (\"was this a good investment originally?\") from the prospective decision (\"given current information, should we continue?\"). These are different questions requiring different analyses — and conflating them produces the Concorde result.\n\n\n### 12.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 357,
+      "out_sha": "0040a3992c34",
       "note": ""
     },
     {
@@ -1451,11 +1451,11 @@
       "en_title": "Chapter 12: The Sunk Cost Fallacy",
       "order": 111,
       "src_chars": 3435,
-      "status": "pending",
+      "status": "done",
       "src_sha": "24420965a92a",
       "src": "#### Concept Check\n\n**Q1.** Define sunk cost and explain why it should be irrelevant to future decisions. Use an everyday example.\n\n**Answer:** A sunk cost is a past expenditure — money, time, or effort — that cannot be recovered and will remain spent regardless of what decision is made next. It should be irrelevant to future decisions because future decisions can only affect future outcomes. Consider: you've bought a 20 USD meal at a restaurant and it arrives and you find it mediocre. You consider eating all of it to \"get your money's worth.\" But the 20 USD is spent whether you eat all, some, or none of the meal. The relevant question is: \"Will continuing to eat this food produce more value than stopping?\" If eating more leaves you uncomfortable or simply doesn't provide pleasure, the rational action is to stop — the 20 USD is gone either way. Eating bad food to avoid \"wasting\" 20 USD doesn't recover the 20 USD; it just adds the cost of discomfort.\n\n* * *\n\n**Q2.** Explain why the sunk cost fallacy \"feels\" rational even though it isn't. What psychological mechanisms make sunk costs feel binding?\n\n**Answer:** Sunk costs feel binding due to several psychological mechanisms: (1) Loss aversion: abandoning an investment confirms a loss; continuing preserves the hope of recovery. Confirmation of loss feels worse than uncertainty about loss, even when both lead to the same financial outcome. (2) Cognitive consistency: past actions feel like commitments that should be honored. Admitting a mistake requires revising self-concept, while continuing maintains consistency with past decisions. (3) The \"waste\" heuristic: humans have a deep aversion to waste — we feel that not using something we paid for is wasteful, even when using it provides no benefit. This was adaptive in resource-scarce environments but misfires in modern economic decisions. (4) Commitment narrative: in social contexts, quitting a project you've invested in requires an explanation, while continuing is the default that requires no justification. These mechanisms are real and powerful — the sunk cost fallacy feels rational partly because it mimics the legitimate principle of commitment (which can be valuable in other contexts) and partly because the pain of confirmed loss is genuine, even if it's being used to justify an irrational decision.\n\n* * *\n\n**Q3.** How is the sunk cost fallacy related to loss aversion (Chapter 11)? Are they the same thing?\n\n**Answer:** The sunk cost fallacy is not identical to loss aversion but is partly driven by it. Loss aversion is the general principle that losses feel approximately twice as painful as equivalent gains. The sunk cost fallacy involves the specific application of loss aversion to past, irrecoverable costs: continuing an investment is motivated partly by the desire to avoid \"confirming\" the loss of the sunk cost by quitting. If you quit, the loss becomes real and psychological confirmed; if you continue, the loss remains in a state of potential recovery — which feels better even when the expected financial outcome is worse. The connection: loss aversion generates a desire to not confirm losses; sunk cost thinking is what this desire looks like when applied to past investments that are irrecoverable. But sunk cost thinking also involves additional factors (cognitive consistency, social accountability, narrative commitment) that are not purely reducible to loss aversion.\n\n* * *",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1040,
+      "out_sha": "fae17e82151e",
       "note": ""
     },
     {
@@ -1463,11 +1463,11 @@
       "en_title": "Chapter 12: The Sunk Cost Fallacy",
       "order": 112,
       "src_chars": 1154,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b7fd08c10e8a",
       "src": "**Q4.** A common defense of sunk cost thinking is: \"If I quit every time things get hard, I'll never finish anything.\" Is there any merit to this concern? How would you distinguish productive commitment from sunk cost fallacy?\n\n**Answer:** The concern has genuine merit — there is real value in persistence, and genuine sunk cost reasoning can be confused with appropriate commitment. The distinction: (1) Productive commitment is based on forward-looking reasoning: \"I should continue because the future expected value of completing this is positive.\" The past investment is not the reason; the future payoff is. (2) Sunk cost fallacy is based on backward-looking reasoning: \"I should continue because of what I've already invested.\" The relevant test: \"If I had not already invested in this and were choosing fresh, would I start now?\" If yes, continue for forward-looking reasons. If no, continuing because of what you've already spent is sunk cost fallacy. Another helpful question: \"Is my reluctance to quit based on genuine evidence that the project is worth completing, or based on the amount I've spent and the fear of confirming a loss?\"\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 353,
+      "out_sha": "75defd5982a2",
       "note": ""
     },
     {
@@ -1475,11 +1475,11 @@
       "en_title": "Chapter 12: The Sunk Cost Fallacy",
       "order": 113,
       "src_chars": 3424,
-      "status": "pending",
+      "status": "done",
       "src_sha": "772591888209",
       "src": "#### Application Problems\n\n**Q1.** You have been waiting in a line at a theme park for 90 minutes. You estimate you still have 30-45 minutes to wait. You're tired and not particularly enjoying yourself. Should you stay in line? How does sunk cost reasoning distort this decision, and what should you actually consider?\n\nHint\n\nWhat is the relevant comparison: 90 minutes already waited vs. 30-45 minutes remaining?\n\n**Answer:** The sunk cost distortion: you feel you should stay because of the 90 minutes already spent. But those 90 minutes are gone — they don't come back either way. The only relevant question is: \"Is spending the next 30-45 minutes waiting in this line, and then experiencing this ride, better than leaving and spending that time on something else?\" This is a genuinely personal preference question: How much do you want to ride this attraction? How tired are you? What else could you do with 40 minutes? If the ride is something you've looked forward to and 40 minutes of additional waiting is acceptable, stay — for forward-looking reasons. If you're tired, not enjoying the experience, and would rather leave, leave — the 90 minutes already spent is not a reason to stay. The correct decision is the one that maximizes your enjoyment of the next 40 minutes and beyond, entirely independently of what the last 90 minutes cost you.\n\n* * *\n\n**Q2.** A company has spent 15M USD developing a software product that is now ready for beta testing. The beta results are poor: the product has fundamental usability problems, and market research suggests it won't succeed without a near-complete redesign. Redesign would cost another 8M USD, and even then success is uncertain (40% probability of decent returns). Abandoning the project completely now costs 0 USD (they absorb the sunk 15M USD). Calculate whether continuing is rational (assume success generates 30M USD in net revenue, failure generates 2M USD), and explain how sunk cost reasoning distorts the decision.\n\n**Answer:** Forward-looking analysis (sunk cost correctly ignored):\n\nOption A — Abandon: 0 USD additional cost, 0 USD additional revenue = net forward-looking outcome: 0 USD\n\nOption B — Redesign and continue: 8M USD additional cost; 40% chance of 30M USD net revenue; 60% chance of 2M USD net revenue.\n\nEV(Option B) = 0.40 × 30M USD + 0.60 × 2M USD − 8M USD = 12M USD + 1.2M USD − 8M USD = 5.2M USD\n\nForward-looking EV of Option B is positive (+5.2M USD), so from a forward-looking perspective, continuing the redesign _is_ the rational choice in this case — but because of the future expected value, not because of the 15M USD already spent.\n\nSunk cost distortion: without careful forward-looking analysis, management might continue because \"we've already spent 15M USD\" — even if the EV of continuing were negative. The test is: would you start this project fresh if it cost 8M USD upfront and had a 40% chance of 30M USD return? EV of that fresh start = 0.40 × 30M USD + 0.60 × 2M USD − 8M USD = 5.2M USD — yes, you would. So continuing is rational — but for the right reasons.\n\n* * *\n\n**Q3.** A graduate student is two years into a PhD program she has come to hate. She originally planned to become an academic, but she now realizes she would be much happier and more fulfilled in the private sector. She stays because \"I've already put in two years — I might as well finish.\" Analyze this reasoning. What should she actually consider?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1312,
+      "out_sha": "bf5bbe0cd0d6",
       "note": ""
     },
     {
@@ -1487,11 +1487,11 @@
       "en_title": "Chapter 12: The Sunk Cost Fallacy",
       "order": 114,
       "src_chars": 3162,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8c6732b494b8",
       "src": "**Answer:** This is a textbook sunk cost argument. The two years are gone regardless of whether she finishes the PhD. The forward-looking questions: (1) What does completing the PhD enable that leaving now doesn't? If an academic job was the original goal and she no longer wants it, a PhD may not provide significant additional professional value over leaving now with a master's-equivalent credential. (2) What is the opportunity cost of the next 3-4 years? PhD programs typically take 4-6 years total; if she's 2 years in, completing requires 2-4 more years. What would those years look like in the private sector instead? (3) Is leaving \"easier\" or \"harder\" than she thinks? Many private sector roles value two years of graduate research experience; leaving now may not be the career setback it feels like. (4) Will she be glad to have finished in 5 years? This is a valid forward-looking question — if she genuinely believes the credential will matter to her long-term, that's a reason to continue. But \"I've already put in two years\" is not such a reason. The honest analysis might conclude she should finish — but for forward-looking reasons, not sunk cost ones.\n\n* * *\n\n**Q4.** Two countries are in a military conflict that has become very costly for both sides. Both sides recognize the objective originally sought is no longer attainable, and the best available outcome is a negotiated settlement. Yet both continue fighting, citing the lives already lost. Using sunk cost concepts and institutional decision-making, explain why this happens and what would be required to break the cycle.\n\n**Answer:** Classic institutional sunk cost dynamics: (1) The lives lost are sunk costs — they cannot be recovered. The question is only whether continuing the conflict produces forward-looking benefits that exceed continued costs. When the original objective is unattainable and the best outcome is a negotiated settlement, the forward-looking calculation clearly favors negotiation over continued fighting. (2) Why it continues: political leaders face the \"Concorde\" problem amplified — acknowledging that the lives lost were spent on an unachievable objective is politically catastrophic. No leader wants to be the one who \"admits\" those deaths were in vain; continuing distributes the responsibility and preserves the narrative of honor and purpose. (3) Loss aversion: negotiated settlement means confirming the loss — the objective wasn't achieved. Continuing maintains the hope (however diminishing) of changing this. (4) Commitment narrative: war goals stated publicly are commitments that create their own momentum; abandoning publicly stated objectives carries credibility costs beyond the war itself. Breaking the cycle requires: (a) leadership with enough political security to absorb the cost of the \"we're negotiating\" narrative; (b) back-channel diplomacy that reframes settlement as a \"deal\" rather than \"defeat\"; (c) third-party mediation that gives both sides a face-saving attribution for the settlement; (d) explicit forward-looking framing: \"further fighting costs more in lives and resources than any achievable objective justifies.\"\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 929,
+      "out_sha": "31930a7cd582",
       "note": ""
     },
     {
@@ -1499,11 +1499,11 @@
       "en_title": "Chapter 12: The Sunk Cost Fallacy",
       "order": 115,
       "src_chars": 3186,
-      "status": "pending",
+      "status": "done",
       "src_sha": "974676f67053",
       "src": "#### Think Deeper\n\n**Q1.** The \"endowment effect\" — discovered by Kahneman, Thaler, and others — shows that people demand more to give up something they already own than they would pay to acquire the same thing. How is this related to the sunk cost fallacy, and what does it reveal about the psychology of ownership?\n\n**Discussion:** The endowment effect and the sunk cost fallacy share a common psychological root: loss aversion applied to the current possession. In the endowment effect, owning something changes its reference point: the object becomes part of \"what I have,\" and any price that would transfer it away feels like a loss. Sellers demand more than buyers will pay for identical objects because sellers are experiencing loss aversion on the thing being given up, while buyers are experiencing only a potential gain. The sunk cost fallacy is the endowment effect applied to past investments: once you've invested time or money in something, it becomes part of \"what I've built,\" and abandoning it feels like a loss — even though the investment is already spent. Both phenomena reveal a fundamental feature of human psychology: value is not absolute but reference-point-relative, and possession or investment shifts the reference point such that any reversal is experienced as loss. The implication: we systematically overvalue what we already have (or have already built) and undervalue alternatives that are not yet ours.\n\n* * *\n\n**Q2.** The \"fail fast\" philosophy common in startup culture explicitly advocates for abandoning failing ideas quickly rather than persisting. Is this a good antidote to the sunk cost fallacy, or does it create its own risks?\n\n**Discussion:** \"Fail fast\" is a direct prescription against sunk cost thinking: don't let past investment in an idea prevent you from recognizing and acting on evidence that the idea isn't working. Its value: (1) It creates explicit permission to abandon what isn't working, countering the social pressure to persist. (2) It aligns with Bayesian thinking — update on evidence, don't persist based on prior commitments. (3) It reduces the total sunk cost by limiting investment before the failing decision is made. However, \"fail fast\" creates risks: (1) It can become an excuse for insufficient patience — some ideas take time to develop, and \"fail fast\" may lead to abandoning viable projects that just need more time. The distinction between \"failing because the idea is bad\" and \"failing because it's early\" requires judgment that \"fail fast\" doesn't provide. (2) It may create a culture of avoiding deep commitment entirely — which has its own costs. Some of the most valuable projects require long-term investment precisely because they are hard. (3) Survivorship bias operates here: the \"fail fast\" successes are the ones who pivoted to a better idea; the \"fail fast\" failures are the ones who abandoned a viable idea too early and never found the better one. The synthesis: \"fail fast\" is a valuable corrective to sunk cost thinking, but it should be paired with honest forward-looking evaluation (not just \"this isn't working yet\") and recognition that some valuable ventures require genuine persistence.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 953,
+      "out_sha": "97d2516bb77c",
       "note": ""
     },
     {
@@ -1511,11 +1511,11 @@
       "en_title": "Chapter 12: The Sunk Cost Fallacy",
       "order": 116,
       "src_chars": 1034,
-      "status": "pending",
+      "status": "done",
       "src_sha": "663c1c9b5d16",
       "src": "### Chapter Summary\n\nSunk costs are irrecoverable past expenditures — money, time, effort — that should have no bearing on future decisions. The sunk cost fallacy occurs when we let these irrecoverable costs influence forward-looking choices, driven by loss aversion, cognitive consistency, and social pressure.\n\nThe Concorde is the iconic institutional example: a program continued for decades past the point of rational justification because abandoning it would confirm that billions were wasted.\n\nThread 1 showed Sarah trapped by 18 months and 30,000 USD of past investment. The liberating reframe: those costs are gone. The question is whether the next 12 months and 15,000 USD are best spent continuing. The sunk cost is irrelevant; the information embedded in 18 months of evidence is not.\n\nThe core principle: the past is not a reason. Only the future is.\n\nIn Chapter 13, we examine status quo bias and choice overload — two inertia-based traps that keep us from making changes even when change is clearly in our interest.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 351,
+      "out_sha": "77fc1c64c12a",
       "note": ""
     },
     {
