@@ -119,11 +119,11 @@
       "en_title": "Chapter 1: Academic Writing Is a Foreign Language Pretending to Be English",
       "order": 3,
       "src_chars": 3035,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ceb2ab305892",
       "src": "### 1.1 The Myth of \"Just Write Clearly\"\n\nOpen any popular writing guide and you will find some version of the following advice: write clearly, prefer short words to long ones, prefer the active voice, omit needless words, and let your personality come through. This advice is, for casual writing, mostly correct. For email, blog posts, and most journalism, it is correct. For academic writing it is partly wrong, and the parts that are wrong are exactly the parts that get drafts rejected.\n\nConsider these two sentences, both about the same study:\n\n> **A:** Our study shows that mindfulness training cuts anxiety by half. The results are dramatic and clear.\n\n> **B:** These findings suggest that mindfulness training may be associated with reduced anxiety symptoms in this population, although effect sizes varied across the three measurement instruments and the eight-week follow-up cannot establish long-term efficacy.\n\nSentence A is clear, vivid, confident. Your high school English teacher would love it. A peer reviewer at a clinical psychology journal would reject it. They would not reject it because it is wrong; they would reject it because it sounds wrong, in the way an outsider sounds wrong when they don't know the dialect. The author is making claims the data cannot bear, and they are making them in a tone of voice that suggests they don't know that.\n\nSentence B is hedged, qualified, slightly tedious. It sounds like a scientist. It is — within its own conventions — also clear: it tells the trained reader exactly what was found, what was uncertain, and what remains untested. The clarity is just operating at a different layer. Conversational clarity says \"I'm sure\" or \"I'm not sure\" with conviction. Academic clarity tells you, with great precision, _the calibration of someone's uncertainty_.\n\nThis is the first thing to absorb: academic writing has its own kind of clarity, and it is not the kind taught in popular style books. We will spend much of this book unpacking what that clarity looks like across different forms.\n\n\n#### Definition: Genre\n\nIn the linguistic and rhetorical sense used throughout this book, a **genre** is a recurring kind of text recognized by both writers and readers, with conventions about structure, tone, evidence, and rhetorical moves.\n\nIn plain language, this means: a genre is a _contract_. When you sit down to write a research article, you are entering an agreement with your readers. They will read in a certain way; they expect certain sections in a certain order; they expect claims to be hedged a certain amount; they expect citations to do certain work. If you violate the contract — even by writing something objectively well — your work feels wrong, and trained readers reject it.\n\nGenre awareness is the master key to academic writing. Once you can name the genre you're writing in (a literature review, a methods section, a research proposal, a peer review response), you can ask: _What does this genre demand?_ That question, asked well, organizes most of the book.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 946,
+      "out_sha": "5e5fcf944e7c",
       "note": ""
     },
     {
@@ -131,11 +131,11 @@
       "en_title": "Chapter 1: Academic Writing Is a Foreign Language Pretending to Be English",
       "order": 4,
       "src_chars": 989,
-      "status": "pending",
+      "status": "done",
       "src_sha": "63c4e0a3e300",
       "src": "#### Common Misconception\n\nA common misconception is that academic writing is bad writing dressed up in jargon, and that \"real\" writers can blow through the conventions and produce something better. There is a version of this story in which a brilliant grad student writes a bold, plain-English paper, refuses to hedge, and gets celebrated. It is a fantasy. The peer review system rewards conventional writing for the same reason that air traffic controllers reward conventional speech patterns: when stakes are high and the channel is noisy, predictable form makes content legible.\n\nThis doesn't mean academic conventions are sacred. Plenty of them are dysfunctional, and we will discuss the dysfunctions honestly. But conventions you don't understand cannot be effectively broken. Almost every academic writer you admire — the lucid stylists, the famous popularizers, the ones whose papers feel like literature — first learned to write conventionally. Their freedoms came after fluency.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 302,
+      "out_sha": "528e821f5ac6",
       "note": ""
     },
     {
@@ -143,11 +143,11 @@
       "en_title": "Chapter 1: Academic Writing Is a Foreign Language Pretending to Be English",
       "order": 5,
       "src_chars": 2831,
-      "status": "pending",
+      "status": "done",
       "src_sha": "daa7c1330543",
       "src": "### 1.2 What Makes Academic Writing Distinct\n\nAcademic writing differs from other clear-prose genres along five axes. We will return to each of these throughout the book, so it is worth naming them now.\n\n**Structure.** Academic genres have prescribed shapes. A research article has an Introduction, Methods, Results, and Discussion (often abbreviated IMRaD). A literature review has its own four-move arc. A research proposal has a still different arc. These shapes are not arbitrary; they are protocols that allow readers to skim, locate information, and assess work efficiently. An academic paper without the expected shape feels broken even when its content is excellent.\n\n**Hedging.** In academic prose, claims must be calibrated to evidence. \"These results show X\" is a strong claim. \"These results suggest X\" is weaker. \"These results are consistent with X\" is weaker still. A skilled academic writer chooses the verb that matches the strength of the data. To overclaim is to look amateur; to under-claim is to fail to defend your contribution. The matrix is fine-grained, and Chapter 7 builds it explicitly.\n\n**Citation.** Citations are not bibliography decoration. They are _rhetorical moves_. A citation can claim an ally (\"Smith showed X, and we extend this to Y\"), establish a debate (\"Some argue X; others argue Y\"), define a tradition (\"Following the framework laid out by Smith…\"), or set up a gap (\"While prior work has examined X, the case of Y remains underexplored\"). Failing to grasp this is one of the deepest sources of confusion for new academic writers, and we devote much of Chapter 3 and Chapter 15 to it.\n\n**Voice.** Academic voice is impersonal in many traditional sciences (\"samples were prepared,\" \"the data were analyzed\") and personal in many humanities and recent social sciences (\"we argue,\" \"I demonstrate\"). The choice of voice is not a stylistic flourish; it is a signal of disciplinary alignment. A history paper written entirely in the passive voice will read as foreign to historians; a chemistry paper written entirely in the first person will read as foreign to chemists.\n\n**Politeness.** Academic writing has its own etiquette for engaging with prior work, especially work you disagree with. You do not write \"Smith was wrong\"; you write \"While Smith's analysis offers important insights, the present study suggests an alternative interpretation under conditions Z.\" The politeness is not optional decoration. It is a load-bearing part of how the discipline maintains its discourse, and violating it in print can damage a career.\n\nThese five axes — structure, hedging, citation, voice, politeness — show up in every genre we examine. By Chapter 14 you will be able to name how each of them shifts as you move from a methods section to a peer review response to an AI-disclosure statement.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 947,
+      "out_sha": "ea7fed98fb48",
       "note": ""
     },
     {
@@ -155,11 +155,11 @@
       "en_title": "Chapter 1: Academic Writing Is a Foreign Language Pretending to Be English",
       "order": 6,
       "src_chars": 2329,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8d60fbd085cc",
       "src": "### 1.3 Why \"Just Write Clearly\" Fails ESL Writers Especially\n\nThis book has many readers in mind, but among them are graduate students from China, Japan, Korea, and other contexts where academic English is a second (or third) language. To these readers I want to say something directly.\n\nYou may have spent years studying English grammar. You may know the difference between _which_ and _that_ better than most native speakers. And yet your papers come back covered in red ink, and your committee says your \"writing needs work.\" This is bewildering and demoralizing — and it is also predictable. The \"writing\" your committee is talking about is rarely your grammar. It is your _academic rhetoric_ : the moves, the hedging, the citation work, the voice. Native English speakers absorb these conventions through years of reading academic English at school, often without ever being told they are doing so. A native speaker who has read fifty published methods sections in their major has been receiving free training in methods-writing-conventions; an ESL writer who has read the same fifty papers but read them as _content_ rather than _form_ may have absorbed less of the rhetoric.\n\nThe advantage native speakers have is real, but it is largely a _cultural_ advantage, not a _linguistic_ one. The conventions are learnable. Most of this book is about making them learnable to anyone who reads it, regardless of their first language. If you are an ESL writer, you may need this book more than your native-speaker peers do, and you may also benefit from it more, because the explicit teaching the book offers compensates for the osmotic teaching they got for free.\n\nThere is a second thing worth saying: native English academic writing is one tradition among many. German, Japanese, French, Russian, and Chinese academic writing all have their own conventions. Some of those conventions reward indirection where Anglophone writing rewards directness; some hedge where Anglophone writing claims; some cite where Anglophone writing names. When you write an Anglophone academic paper, you are not learning _the_ universal academic conventions. You are learning _Anglophone_ academic conventions, which happen to dominate global publication. This book teaches them — but it teaches them as a particular dialect, not as a natural law.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 727,
+      "out_sha": "9990c874d734",
       "note": ""
     },
     {
@@ -167,11 +167,11 @@
       "en_title": "Chapter 1: Academic Writing Is a Foreign Language Pretending to Be English",
       "order": 7,
       "src_chars": 2015,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2a5bcedbbdae",
       "src": "### 1.4 Meet the Threads\n\nThis book has three running threads. Each will appear in most chapters. Knowing them now will help you read the rest.\n\n**Thread A: Mira.** You have already met them. Mira is a fictional doctoral student in environmental policy whose six years of PhD writing crises will appear throughout the book. (Six years is at the short end of typical PhD timelines — averages run 5–7 years in social sciences and 6–9 years in humanities; Mira's compressed timeline serves narrative pacing rather than typicality.) In each content chapter, Mira will be working on whatever genre that chapter discusses, and we will see how the conventions of that genre play out in the small drama of one student's draft. Mira is gender-neutral; their pronouns are _they/them_. They are not a hero. They are not a cautionary tale. They are an apprentice who sometimes gets it right and often gets it wrong, and they will get rejected, get furious, recover, and graduate.\n\n**Thread B: Your manuscript.** Each Part II chapter (Chapters 3 through 14) ends with an audit prompt — a specific exercise to apply to a paper you are currently writing. By Chapter 18, a reader who completes each prompt has revised twelve sections of an actual manuscript. This is the most important active component of the book. If you do not have a current paper, find a recent one you wrote (a class essay, a senior thesis chapter, a draft proposal) or a paper you read recently and reacted strongly to, and use it. The skill we are teaching is a craft; crafts are learned by doing.\n\n**Thread C: Twelve scholars.** Each of Chapters 3 through 14 introduces one writer or thinker who has shaped some aspect of academic writing — Swales, Tufte, Latour, Sword, Canagarajah, and others. These short profiles give you names to attach to ideas, and pointers to read further. They also introduce _surprising facts_ — small, sharp claims about how academic writing actually works that we hope will lodge in your memory long after the chapter is over.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 777,
+      "out_sha": "fbec0c7ea77b",
       "note": ""
     },
     {
@@ -179,11 +179,11 @@
       "en_title": "Chapter 1: Academic Writing Is a Foreign Language Pretending to Be English",
       "order": 8,
       "src_chars": 3383,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bd3aad0bb8ff",
       "src": "### 1.5 What This Book Will Not Do\n\nThree things this book is not, and a few things it deliberately avoids:\n\nIt is **not a grammar textbook.** If you want to know whether to use _who_ or _whom_ , get a grammar reference. We assume undergraduate-level English.\n\nIt is **not a discipline-specific manual.** Examples come from across the natural sciences, social sciences, and humanities. If you write only theoretical particle physics, parts of this book will feel less directly applicable; if you write only literary theory, other parts will. We tried to choose examples that illuminate cross-cutting principles, and you will need to translate to your specific genre conventions.\n\nIt is **not academic-publishing advocacy.** Predatory journals, open-access fights, the failures of the peer review system: these are real and important and this book is not the right place to argue about them. We mention them where they intersect with writing decisions; we do not campaign.\n\nIt is **not \"how to game peer review.\"** This book takes the conventions seriously because they exist for reasons, and skilled writers who understand them produce better science. Cynicism about the conventions is sometimes warranted but rarely useful in the act of writing.\n\nWe do try to be honest about the dysfunctions. Academic writing is bound up with academic publishing, and academic publishing has serious pathologies: a replication crisis that has shaken several fields, citation cartels, predatory journals, and a tenure system that warps incentives in ways that show up in prose. Where these pathologies affect the writing — for instance, by pushing authors to overclaim — we name them. We do not dwell.\n\n\n### 1.6 How to Read This Book\n\nThe book has four parts.\n\n**Part I (Chapters 1–2)** orients you to the genre and to the six moves that organize the rest of the book. Read these in order.\n\n**Part II (Chapters 3–14)** walks through twelve major academic writing forms, one chapter each. The chapters are largely self-contained: if you are writing a methods section right now, you can jump to Chapter 5. But Threads A, B, and C accumulate across chapters, and you will get the most out of them by reading sequentially. If you are studying the book in a writing seminar, the chapter-a-week pace is right.\n\n**Part III (Chapters 15–17)** pulls back to look at patterns across the twelve forms, the practice of self-review, and the particular challenges of writing in the AI era. These chapters are best read after most of Part II.\n\n**Part IV (Chapter 18)** closes Mira's story and invites you to take your seat at the table.\n\nFour appendices give you a 6 Moves + 12 Forms reference card, fifty templates, an annotated reading list, and AI policy and prompting templates.\n\nA note on the exercise format. Each chapter's _Application Problems_ close with two pieces: a short rubric (\"a successful response will…\") and, where useful, a _Sample Response_ that shows what a successful response actually looks like. The sample is illustrative rather than canonical; its length tracks the complexity of the problem (a CARS-rewrite sample is longer than a single-sentence-rewrite sample), not a target word count. Read the rubric first; attempt the problem; then compare against the sample. The sample's job is to make the rubric concrete enough to calibrate against, not to define the only acceptable answer.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1217,
+      "out_sha": "a569b33ca35d",
       "note": ""
     },
     {
@@ -191,11 +191,11 @@
       "en_title": "Chapter 1: Academic Writing Is a Foreign Language Pretending to Be English",
       "order": 9,
       "src_chars": 2983,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e52645745cac",
       "src": "### 1.7 The First Audit\n\nWe will not formally start the manuscript-in-progress thread until Chapter 3, but it is worth running a small diagnostic now. Take a piece of academic writing you produced recently — anything from a graded paper to a draft you have been avoiding — and read its first paragraph. Now ask yourself three questions:\n\n* Does it tell the reader _what conversation_ I am joining? (The territory.)\n* Does it tell the reader _what is missing_ in that conversation that my work addresses? (The gap.)\n* Does it tell the reader _how confident_ I am about my contribution? (The hedging.)\n\nIf you can answer all three with a clear yes, you are further along than most beginning graduate students. If you can answer none of them, do not be alarmed: most rejected drafts cannot answer any of them, which is part of why they are rejected. The point of this book is to make all three answerable, with deliberate craft, every time you sit down to write.\n\n\n### 1.8 Exercises\n\n\n#### Concept Check\n\n**Q1.** In one sentence each, define _genre_ and _academic clarity_ as the chapter has used these terms.\n\nHint\n\nBoth terms are defined in §1.1; _genre_ gets a Definition box, and _academic clarity_ is contrasted with _conversational clarity_ in the same section.\n\n**Answer:** A _genre_ is a recurring kind of text recognized by both writers and readers, with shared conventions about structure, tone, evidence, and rhetorical moves; in operational terms, it is a contract between writer and reader. _Academic clarity_ , distinct from conversational clarity, is the precise communication of _the calibration of one's uncertainty_ — telling the trained reader exactly what was found, what was uncertain, and what remains untested.\n\n**Q2.** Name the five axes along which the chapter said academic writing differs from other clear-prose genres.\n\n**Answer:** Structure (prescribed shapes such as IMRaD), hedging (claims calibrated to evidence), citation (citations as rhetorical moves), voice (impersonal versus personal as a disciplinary signal), and politeness (formal etiquette in disagreement).\n\n**Q3.** What does the chapter mean by \"the foreign-language thesis\"?\n\n**Answer:** That academic writing, despite using ordinary English vocabulary and grammar, has its own conventions of structure, tone, evidence, and politeness that must be learned explicitly — like a foreign language — and that most students learn these conventions by painful trial and error rather than direct instruction.\n\n**Q4.** Why does the chapter argue that \"just write clearly\" is partly bad advice for academic writing?\n\n**Answer:** Because conversational clarity (vivid, confident, short) and academic clarity (calibrated, hedged, structurally precise) are different _kinds_ of clarity. Following conversational-clarity advice in an academic genre often produces prose that sounds confident in places where the genre demands hedging, and short in places where the genre demands precision-through-detail.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1069,
+      "out_sha": "e65329ffd4d1",
       "note": ""
     },
     {
@@ -203,11 +203,11 @@
       "en_title": "Chapter 1: Academic Writing Is a Foreign Language Pretending to Be English",
       "order": 10,
       "src_chars": 2952,
-      "status": "pending",
+      "status": "done",
       "src_sha": "616f3a91e44e",
       "src": "#### Application Problems\n\n**Q1.** Take Sentence A from §1.1 (\"Our study shows that mindfulness training cuts anxiety by half. The results are dramatic and clear.\") and rewrite it so that it would not be flagged for overclaiming by a careful peer reviewer. Preserve the same factual content, but adjust the rhetoric. Briefly note what you changed and why.\n\nHint\n\nLook for verbs and adverbs that make claims stronger than the data can support. Replace \"shows\" with a hedged verb, replace \"cuts in half\" with something that names the effect more carefully, and remove evaluative adjectives like \"dramatic\" and \"clear.\"\n\n**Answer:** A revised version: _\"In the present sample, mindfulness training was associated with an approximately 50% reduction in self-reported anxiety scores; the magnitude and durability of this effect across populations and time frames remain to be established.\"_ Changes: \"shows\" became \"was associated with\" (causal claim weakened to associational); \"cuts\" became \"reduction\" (active causation softened to observed change); \"dramatic and clear\" was deleted (evaluative adjectives are not the writer's job; let readers evaluate); \"in the present sample\" was added (scope-limiting); a clause about external validity was added (anticipates the reviewer's question).\n\n**Q2.** Find a paragraph from a paper you have written. Identify three sentences in that paragraph and rewrite each one to make its hedging level explicit. For each sentence, note: was it overclaiming, under-claiming, or appropriately calibrated?\n\n**Answer:** _Answers will vary._ A successful response will (a) show the original sentence and its rewrite, (b) name the hedging shift (e.g., \"shows\" → \"suggests\"), and (c) diagnose the original sentence's calibration relative to the evidence. The exercise teaches you to _see_ the hedging level, which is the first step to controlling it.\n\n**Q3.** Read the opening paragraphs of two papers in your field — one you found compelling, one you found dull. Compare how they introduce _the territory_ , _the gap_ , and _the contribution_. Write a short comparison (200–300 words) noting how the two openings differ in handling these three elements.\n\nHint\n\nThis is a CARS-model diagnosis, performed informally before we name CARS in Chapter 4. Look at the first three to five sentences of each paper. The territory is usually claimed first; the gap usually comes second; the contribution usually comes third.\n\n**Answer:** _Answers will vary._ A typical successful response will note that the compelling paper makes the gap unusually concrete and specific (a particular phenomenon poorly understood, a particular dataset never analyzed) while the dull paper either fails to specify a gap or specifies one too generic to motivate the reader. This anticipates the _missing-Move-2_ problem we will name in Chapter 4 — and it is an exercise you can do for any paper, in any field, before you understand the CARS model formally.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1041,
+      "out_sha": "bff05149fe17",
       "note": ""
     },
     {
@@ -215,11 +215,11 @@
       "en_title": "Chapter 1: Academic Writing Is a Foreign Language Pretending to Be English",
       "order": 11,
       "src_chars": 2293,
-      "status": "pending",
+      "status": "done",
       "src_sha": "40186d290956",
       "src": "**Sample Response (Mira's diagnostic on two adaptation papers):** _Compelling paper (Hallegatte, 2013, opening): Territory is named by a specific, large-stakes statistic (\"more than 270 million people exposed to coastal flooding\"); the gap is named in two specific sentences (\"existing global assessments…understate exposure…because they treat flood frequency as exogenous\"); the contribution claim is concrete (\"we develop a method that endogenizes flood frequency and apply it to 136 cities\"). The reader is told within four sentences what the paper is about, what is missing in the field, and what specifically this paper adds. Dull paper (an under-specified review opening): Territory is generic (\"Climate change is one of the great challenges of our time\"); the gap is implicit (\"more research is needed on coastal cities\"); the contribution is vague (\"we discuss adaptation\"). The reader knows the topic exists but does not know what is at stake, what is missing, or why this paper merits attention. The compelling paper performs Move 2 (the gap, in Chapter 4's vocabulary) specifically and at sentence-level resolution; the dull paper does not. The diagnostic eye that this exercise builds is the eye Chapter 4 makes formal._\n\n**Q4.** Consider this passage from a fictional methods section:\n\n> _\"We collected the data really carefully and made sure to use the best statistical tests. Our analysis showed clear results that prove our hypothesis.\"_\n\nIdentify three places where the passage violates the conventions of academic writing as described in this chapter. For each, suggest a one-sentence fix.\n\n**Answer:** (1) \"really carefully\" — informal intensifier, replace with concrete description: _\"Data were collected following pre-registered protocols (see §3.2) with two independent coders and an inter-rater reliability of κ = 0.84.\"_ (2) \"best statistical tests\" — vague and self-praising; replace with specific named tests and justification: _\"We used multilevel logistic regression to account for nested observations within participants.\"_ (3) \"clear results that prove our hypothesis\" — overclaim; \"prove\" is almost never appropriate. Replace with hedged claim: _\"Results are consistent with the hypothesis, though we cannot rule out alternative explanations Y and Z (see §5).\"_\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 839,
+      "out_sha": "df690f4ef38b",
       "note": ""
     },
     {
@@ -227,11 +227,11 @@
       "en_title": "Chapter 1: Academic Writing Is a Foreign Language Pretending to Be English",
       "order": 12,
       "src_chars": 2935,
-      "status": "pending",
+      "status": "done",
       "src_sha": "46530999b6e1",
       "src": "#### Think Deeper\n\n**Q1.** The chapter argues that academic writing is a \"foreign language pretending to be normal English.\" Some critics push back: they say this framing is too generous to a genre that has become bloated, jargon-laden, and hostile to public engagement. How would you weigh the trade-off between _learning the conventions because they exist_ and _resisting them because they exclude_? Develop a position in 250–400 words.\n\n**Discussion:** This is a question with no single right answer, and well-reasoned positions can land on different sides. A defense of \"learn the conventions\" emphasizes that the conventions exist for reasons (they enable peer review, they signal calibration, they coordinate global discourse), and that resistance without fluency is usually just illegibility. A defense of \"resist the conventions\" emphasizes that academic writing's exclusionary effects are real (ESL writers face higher revision burdens; the public can't read papers about issues that affect their lives; bloated jargon often hides weak thinking), and that change requires writers willing to violate conventions productively. The most interesting answers acknowledge both: the conventions are partly load-bearing and partly performance, and skilled writers learn to distinguish which is which. Notice how this question itself follows academic conventions — it hedges (\"partly\"), it cites consensus (\"the conventions exist for reasons\"), and it positions multiple views as legitimate.\n\n**Q2.** Pick a writer in your field whose prose you admire. Read three paragraphs of their work closely. What conventions do they obey? What conventions do they violate? Can you tell whether their violations are deliberate craft or simply oversight? Write 200–300 words analyzing the case.\n\n**Discussion:** This exercise builds the diagnostic eye that the rest of the book sharpens. Skilled academic writers almost always obey the _load-bearing_ conventions (hedging, citation, structure) while taking liberties with the _cosmetic_ conventions (sentence length variety, voice, occasional metaphor). A common pattern: famous stylists in your field violate sentence-level conventions but obey paragraph-level conventions; they may write a vivid one-clause sentence in a paper, but the paper still has Introduction, Methods, Results, Discussion. The diagnostic is: are violations expanding what readers can do with the prose, or shrinking it? If they expand it, they're craft. If they shrink it, they're oversight.\n\n**Q3.** Imagine an academic publishing system that has fully integrated AI: AI summarizes papers, AI writes peer reviews, AI co-authors many papers. In such a system, which of the conventions described in this chapter would still matter, and which would change? Sketch your view in 250–400 words. (We will return to this question with more concreteness in Chapter 14 and Chapter 17, but starting to think about it now is useful.)",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1047,
+      "out_sha": "4ad8fc9926b1",
       "note": ""
     },
     {
@@ -239,11 +239,11 @@
       "en_title": "Chapter 1: Academic Writing Is a Foreign Language Pretending to Be English",
       "order": 13,
       "src_chars": 2663,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6312edf892c3",
       "src": "**Discussion:** Some conventions become _more_ important under AI: hedging matters more, because AI can produce unhedged confident-sounding prose at scale and the calibration signal becomes a marker of human judgment. Citation matters more, because AI is bad at citation and miscitation becomes a high-stakes signal of human verification. Other conventions may attenuate: the policing of voice may relax (everyone uses some AI assistance), and sentence-level prose conventions may matter less than paragraph-level argument conventions. The deeper question — which the book will keep returning to — is whether the _purpose_ of academic writing (a calibrated, citable, accountable record of what was done and what it suggests) is something AI can produce, or only something AI can imitate. Different disciplines, and different readers, will answer this differently for years to come.\n\n\n### Chapter Summary\n\nAcademic writing is a foreign language pretending to be normal English. It uses ordinary English vocabulary and grammar but obeys distinct conventions of structure, hedging, citation, voice, and politeness. These conventions are not arbitrary: they enable a global community of researchers to coordinate, calibrate, and disagree productively. They are also rarely taught explicitly, which is why even strong writers can hit a wall when they enter graduate school.\n\nThis chapter introduced the foreign-language thesis (§1.1), the five distinguishing axes of academic prose (§1.2), the particular challenges and advantages for ESL writers (§1.3), and the three running threads of the book — Mira, your manuscript-in-progress, and the twelve scholars (§1.4). It set expectations for what the book will and will not do (§1.5–§1.6), and offered a diagnostic preview of the territory–gap–contribution structure that Chapter 4 will name as the **CARS model**.\n\nThe five axes will recur throughout the book. Hedging gets its full treatment in Chapter 7, where we will build the hedging-language matrix. Citation as a rhetorical move is the centerpiece of Chapter 3 and reappears in Chapter 15. The cross-disciplinary variation in voice is the subject of Chapter 13. And the practice of writing with AI — the newest frontier of academic-writing convention — is the subject of Chapters 14 and 17.\n\nNext, in Chapter 2, we name the **six moves** that organize this book's approach to every academic genre. Once you can name the moves, you can apply them — and the rest of the book is one long demonstration of doing exactly that.\n\n> _You are not a bad writer. You are a fluent writer in one dialect who is being asked to write in another. The dialect is learnable._\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 966,
+      "out_sha": "73e952f790b5",
       "note": ""
     },
     {
@@ -251,11 +251,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 14,
       "src_chars": 3220,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d0a739a3f196",
       "src": "A semester later, Mira is sitting in the back of a research design seminar. The instructor has asked each student to present a research question they are considering for their first solo paper. Mira has been agonizing over theirs for three weeks.\n\nWhen their turn comes, they read out: _\"How do mid-sized coastal cities adapt to sea-level rise under fiscal constraints?\"_\n\nThe instructor nods. \"That's a good question. Now: what would you write about it?\"\n\nMira freezes. They have a question. They do not yet have a paper. The gap between _a question worth asking_ and _a paper worth publishing_ turns out to be enormous, and nobody has shown them how to cross it.\n\nThis chapter shows them — and you — how to cross it. We do it with **six moves** : a sequence of decisions that takes you from a research question to a draft you can defend. The six moves are the spine of this book. Every chapter in Part II is a deeper look at how the six moves play out in one specific genre. By the end of this chapter you should be able to name all six, recognize them in a published paper, and walk a question of your own through them.\n\n\n### 2.1 Why Six Moves and Not One Big Procedure\n\nIf you search for \"how to write a research paper,\" you will find dozens of guides, most of them organized as procedures: first do this, then do that, then revise, then submit. Procedures are useful but they have a limitation: they describe a path through a particular kind of paper, and break down when the paper is a different kind. A procedure for writing a quantitative experimental paper is largely useless for a humanities theory paper, and vice versa.\n\nMoves are more general. A _move_ is a rhetorical choice that any academic writer must make, regardless of genre. The choices may resolve very differently in different genres — but the choice itself is unavoidable. A literature review and a methods section both need to _position the work in the conversation_ ; they do it differently, but they both must do it. A grant proposal and a peer review response both need to _anticipate the reviewer_ ; they do it differently, but they both must do it.\n\nBy organizing the book around six moves rather than around procedures, we get a vocabulary that travels. Once you can name the moves, you can perform a triage of your own writing problems: _I have completed move 1, but move 4 is weak._ That triage is more useful than a hundred unspecified pieces of writing advice.\n\n\n#### Definition: A Rhetorical Move\n\nA **rhetorical move** is a deliberate communicative action a writer takes to accomplish a specific effect on the reader, recognizable as a unit by both writer and reader.\n\nIn plain language: a move is a thing you _do_ in writing, deliberately, that does a particular kind of work. \"Establishing a gap in the literature\" is a move. \"Hedging a causal claim\" is a move. \"Acknowledging a reviewer's concern before answering it\" is a move. Moves are the granular building blocks of genre.\n\nThe six moves we will use organize the major rhetorical decisions of academic writing into a sequence that mirrors how writers actually work, from upstream choices about audience and venue down through the more familiar tasks of structure and polish.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1119,
+      "out_sha": "cbf626aeb2b3",
       "note": ""
     },
     {
@@ -263,11 +263,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 15,
       "src_chars": 1671,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ec52d42e72ae",
       "src": "### 2.2 The Six Moves Named\n\nHere are the six moves. Each gets its own section.\n\n  1. **Identify the genre and venue.** What kind of document, for what kind of reader, in what kind of forum.\n  2. **Structure using genre conventions.** Arrange the document's bones according to what the genre demands.\n  3. **Calibrate the rhetoric.** Adjust hedging, voice, citation density, and tone to match the discipline and venue.\n  4. **Position in the conversation.** Place your work into the existing literature through deliberate citation choices.\n  5. **Anticipate the reviewer.** Imagine the most demanding reader your work will face, and address their objections before they raise them.\n  6. **Use AI without letting AI use you.** Treat AI as a tool for thinking, drafting, and revision, while protecting voice, originality, citations, and integrity.\n\nWe treat them in this order because each one constrains the ones below it. You can't structure a paper until you know the genre. You can't calibrate hedging until you know the venue. You can't anticipate a reviewer until you've positioned yourself in the conversation.\n\n\n#### Common Misconception\n\nA common misconception is that the six moves are a sequence you complete once and move on. In practice, the moves loop. You finish a draft, you read it as a hostile reviewer (move 5), you find that your hedging is off (move 3), and you rewrite. You realize that two of your citations don't actually do the work you claimed they did (move 4), and you change them. You decide your venue was wrong all along (move 1), and you re-aim. The moves are a _checklist of decisions every paper must make_ , not a once-through procedure.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 651,
+      "out_sha": "3eba254a6622",
       "note": ""
     },
     {
@@ -275,11 +275,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 16,
       "src_chars": 3082,
-      "status": "pending",
+      "status": "done",
       "src_sha": "924c75cde33c",
       "src": "### 2.3 Move 1 — Identify the Genre and Venue\n\nBefore you write a sentence, you must know what kind of document you are writing and where it will be published or read. This sounds obvious; it is in fact the most-skipped move in graduate-level writing. Many students sit down to \"write the paper\" without having clarified whether the paper is a research article, a review article, a theory paper, a brief communication, a working paper, a proposal, or a thesis chapter — and then wonder why their drafts feel formless.\n\nDifferent genres make different rhetorical demands.\n\nA **research article** reports new empirical work. It generally follows IMRaD or a close variant. It expects calibrated claims, full methods, and a clear contribution.\n\nA **review article** synthesizes existing literature. It expects extensive citation, taxonomic organization, and a stake in some debate within the field.\n\nA **theory paper** advances a conceptual argument. It expects engagement with prior theory, careful definition of terms, and demonstration that the new theory does work older theories cannot.\n\nA **brief communication** delivers a small, sharp finding quickly. It expects compressed methods, a single clear contribution, and minimal scope claims.\n\nA **research proposal** sells future work. It expects a problem, a plan, and a credibility argument — _and crucially_ it must promise findings without yet having them.\n\nA **thesis chapter** does work for a multi-chapter document. It expects integration with the surrounding chapters and a particular kind of completeness for committee review.\n\nMira's research question — _how mid-sized coastal cities adapt to sea-level rise under fiscal constraints_ — could become a research article (analyze data from twelve cities), a review article (synthesize the existing literature on coastal adaptation), a theory paper (develop a framework for fiscal constraint as a driver of adaptation), or a proposal (sketch a study you intend to do). Different genres yield very different papers. A graduate student who tries to write all four at once produces something that pleases no one.\n\nThe **venue** matters as much as the genre. A paper aimed at _Nature Climate Change_ will look different from a paper on the same topic aimed at _Public Administration Review_. The first expects a wider audience, more compressed methods, more accessible framing. The second expects deeper engagement with public-administration theory, longer methods, and a different kind of contribution. The same data can yield two different papers, and skilled writers know which version belongs at which venue before they start drafting.\n\nA useful exercise — and the one we recommend Mira performs — is the **three-paper read.** Pick three recent papers in your target venue. Read them with attention to: How long are they? How do they open? What does the abstract look like? How are methods structured? What does the discussion do? After three papers you will have a much clearer mental model of the venue's conventions than after any number of \"guidelines for authors\" pages.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1118,
+      "out_sha": "3f059e659193",
       "note": ""
     },
     {
@@ -287,11 +287,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 17,
       "src_chars": 3479,
-      "status": "pending",
+      "status": "done",
       "src_sha": "35b01ca0ade5",
       "src": "#### A Three-Paper Read in Practice\n\nThe next several pages model the three-paper read concretely. The model is detailed, intentionally — the exercise's value is in the _granularity_ of the comparison, and an abridged version would not show how the eight-row grid produces actionable implications. Readers who already do this exercise habitually can skim; readers performing it for the first time should expect the model to take a focused afternoon to imitate.\n\nBecause the three-paper read recurs throughout this book — in Chapters 4, 6, 8, 9, and 13, with a parallel _three-funder read_ in Chapter 9 — and because we have never modeled the exercise concretely, here is what Mira's three-paper read of their target public-administration journal actually looks like. (The journal here is fictional; the conventions described match real journals in the same neighborhood.)\n\nMira pulls the three most recent issues of the journal from the library website and picks three articles whose topic adjacency to their own work is high enough to be informative: one on local-government infrastructure spending, one on climate adaptation policy in Southeast Asian cities, one on participatory budgeting and equity. Mira reads each paper twice — once for content, once for _form_. The form-read takes about 45 minutes per paper; the form-pass on three papers takes a focused afternoon.\n\nMira keeps a running grid as they read. The grid has eight rows (length, abstract structure, introduction shape, methods organization, results presentation, discussion arc, citation density, voice and tense) and three columns (one per paper). After the third paper, patterns emerge.\n\n**Length.** Paper 1: 9,200 words main text, ~1,400 words of footnotes, 6,500 words of appendices. Paper 2: 8,100 words main text, lighter footnotes, 4,200 words of appendices. Paper 3: 8,800 words main, dense footnotes, 5,800 words of appendices. _Pattern:_ main text ~8,000–10,000 words; appendices substantial; footnotes used variably. _Implication for Mira:_ plan for a long main text and substantial appendices; do not fight the journal by submitting at 5,000 words.\n\n**Abstract structure.** All three abstracts are unstructured paragraphs of 200–230 words. None uses sub-headings. All three open with a one-sentence framing of stakes, move quickly through what was studied and how, name the contribution by sentence five or six, and close with implications. _Pattern:_ inverted pyramid, unstructured paragraph, ~225 words. _Implication:_ draft Mira's abstract in the same shape, not as a structured (Background/Methods/Results/Conclusions) block.\n\n**Introduction shape.** All three follow CARS (Chapter 4) recognizably, with Move 2 (the gap) running 1.5–2 paragraphs in each. Move 1 in two of three opens with a _specific statistic_ about the policy domain rather than a generic claim. Move 4 (the road map) is brief — three or four sentences. _Pattern:_ CARS, with disproportionate attention to Move 2. _Implication:_ Mira should not skimp on Move 2; the venue rewards specific gap-naming.\n\n**Methods organization.** Paper 1: case selection rationale, data sources by type, analytic approach, limitations — four sub-headings. Paper 2: same four sub-headings in the same order. Paper 3: case selection, methods, data, analysis, limitations — five sub-headings. _Pattern:_ four-to-five sub-headings; case selection nearly always first. _Implication:_ lead methods with case selection rationale, not data description.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1301,
+      "out_sha": "ddd895513879",
       "note": ""
     },
     {
@@ -299,11 +299,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 18,
       "src_chars": 2719,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ffc4c602a870",
       "src": "**Results presentation.** Paper 1: three tables, two figures, prose interleaved with quotation. Paper 2: two tables, one figure, prose with quotation blocks. Paper 3: four tables, no figures, prose with quotation. _Pattern:_ tables dominate over figures; quotations are integral; the prose orients to data, does not duplicate it. _Implication:_ design for table-heavy results; reserve interpretation for the discussion.\n\n**Discussion arc.** All three follow the layered shape we develop in Chapter 7: contribution restatement, prior-work engagement, limitations (substantial), alternative interpretations, implications, future work. Limitations average two paragraphs. _Pattern:_ layered discussion; substantial limitations; implications calibrated. _Implication:_ draft Mira's discussion using the layer structure; expect to write a meaty limitations section.\n\n**Citation density.** Introduction: 3–5 citations per page. Methods: 1–2 per page. Results: 0–1 per page. Discussion: 4–6 per page. _Pattern:_ dense at the framing ends, sparse in the empirical middle. _Implication:_ track citation density during drafting; if methods are getting heavily cited, that often signals positioning work that belongs in the discussion.\n\n**Voice and tense.** All three use third-person passive in methods (\"interviews were conducted\") and first-person plural in framing and discussion (\"we argue\", \"we observe\"). Tense is past in methods and results, present in framing and theoretical claims, future in proposed implications. _Pattern:_ mixed voice with clear allocation by section; conventional tense alternation. _Implication:_ draft Mira's paper with these voice rules from the start; don't impose a uniform first-person or uniform passive across the paper.\n\nThe three-paper read takes Mira a focused afternoon. The output is the eight-row grid, plus a half-page of _implications for my paper_ that Mira pins above their desk for the duration of the drafting. Without this exercise, Mira would have spent weeks discovering some of these conventions through rejected drafts; with it, the conventions enter the writing from sentence one.\n\nThe three-paper read is not optional in this book's view. Every Part II chapter assumes the writer has done it for whatever genre the chapter discusses. The same structure adapts to other forms — a _three-funder read_ before a proposal (Chapter 9), a three-talk or three-poster sample before a conference presentation (Chapter 10), three cross-disciplinary papers before a co-authored project (Chapter 13). In each case the structure is the same: three real exemplars, a form-read with a comparison grid, half a page of implications. The exercise is the basic literacy of academic writing.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 966,
+      "out_sha": "60c6e2474415",
       "note": ""
     },
     {
@@ -311,11 +311,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 19,
       "src_chars": 2105,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fdbb286fbc8f",
       "src": "### 2.4 Move 2 — Structure Using Genre Conventions\n\nOnce you know your genre and venue, you can give your draft its bones. **Structure** in academic writing is largely conventional. There are a small number of recognized scaffolds, and almost every paper uses one.\n\nThe dominant scaffold in the empirical sciences is **IMRaD** — Introduction, Methods, Results, Discussion. Variants exist (sometimes results and discussion are merged; sometimes a Conclusions section follows discussion), but the core arc — _here is the question, here is what we did, here is what we found, here is what it means_ — is remarkably stable across fields.\n\nOutside the empirical sciences, structure is more varied. A theoretical paper may have an introduction, a section laying out the existing framework, a section developing the new framework, a section showing the new framework's advantages, and a conclusion. A historical paper may have an introduction, a section establishing the archive, a series of analytical sections each focused on a specific argument, and a conclusion. A literature review has its own four-move arc, which we develop in Chapter 3.\n\nThe Swales **CARS model** — Create A Research Space, with its four sub-moves — governs _introductions_ across nearly every empirical genre. We give it a full chapter (Chapter 4), but the headline is: 90% or more of published academic introductions across disciplines follow roughly the same four moves: territory → gap → method → contribution. Once you see this, you cannot unsee it. The students whose introductions get rejected almost always skip a move, and almost always the second one.\n\nWhen you sit down to draft, you should be able to name your structure aloud before you write a sentence. _This is an empirical paper, IMRaD, with a CARS introduction, a methods section in two subsections, a results section organized by hypothesis, and a discussion in three layers — findings, limits, implications._ Saying this out loud is an enormous early-stage time-saver. It also reveals when your structure is undercooked: if you can't name it, you don't have one yet.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 758,
+      "out_sha": "b046d269567c",
       "note": ""
     },
     {
@@ -323,11 +323,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 20,
       "src_chars": 2460,
-      "status": "pending",
+      "status": "done",
       "src_sha": "82acb9483da8",
       "src": "### 2.5 Move 3 — Calibrate the Rhetoric\n\nCalibration is where ESL writers most often lose ground to native speakers — not because of grammar but because of the unwritten norms about how strongly to claim, how often to cite, how impersonal to sound, and how formal to be.\n\nThere are four main dials.\n\n**Hedging.** How strongly do you claim? _\"This proves X\"_ is too strong for almost any empirical paper. _\"These results suggest X under conditions Y\"_ is calibrated. _\"It is conceivable that X may sometimes occur\"_ may be too weak. The right calibration depends on the strength of the evidence, the disciplinary norms, and the venue. We build the hedging matrix in detail in Chapter 7, but the basic rule is: match your verb to your evidence.\n\n**Voice.** First person? Third person? Passive? Active? In the natural sciences, passive voice in methods (\"samples were prepared\") and first-person plural in results and discussion (\"we find that…\") is now the dominant blend, after a long period of all-passive convention. In the humanities, first-person singular (\"I argue…\") is widespread. In law, third-person impersonal predominates. The choice signals disciplinary belonging; an out-of-place voice reads as foreign.\n\n**Citation density.** Some fields cite heavily — every claim referenced, sometimes multiple sources per sentence. Some fields cite sparingly. A historical theory paper may have ten citations per page; a chemistry methods section may have one. Writing a chemistry paper with ten citations per page reads as anxious and over-padded. Writing a history paper with one citation per page reads as unsupported. The norms are local and often invisible.\n\n**Formality.** Academic prose is generally more formal than journalism but less formal than legal writing. Within academic prose, formality varies. An economics paper using game-theoretic notation is more formal than a sociology paper using ethnographic interview material. Some discipline conventions tolerate (or require) the occasional metaphor, joke, or first-person aside; others do not.\n\nCalibration is learned mostly by reading widely in your target venue. The three-paper exercise we mentioned in Move 1 also surfaces calibration norms. After reading three papers in a venue, you can usually answer: _Is hedging strong or moderate here? Is the voice mostly first-person plural or third-person impersonal? Is citation dense or sparse? How formal is the prose?_ Then write to those answers.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 972,
+      "out_sha": "503917bbf2fb",
       "note": ""
     },
     {
@@ -335,11 +335,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 21,
       "src_chars": 3287,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d32ac1d5c427",
       "src": "### 2.6 Move 4 — Position in the Conversation\n\nThis is the move most beginners underestimate.\n\nAcademic publishing is a conversation. Your paper is not a lone declaration. It is an utterance in a multi-decade, multi-author dialogue with rules about how speakers acknowledge each other, build on each other, and disagree with each other. **Citation is the language of that conversation.**\n\nCitations do at least four kinds of work.\n\n**Allies.** _\"Building on the framework developed by Smith (2018)…\"_ You claim a tradition; you signal that you are working within it.\n\n**Antagonists.** _\"In contrast to the assumption common in earlier work that…\"_ You signal a debate. You name what you are pushing against.\n\n**Definitions.** _\"Following the definition offered by Jones (2015), we use the term X to mean…\"_ You inherit a vocabulary; you are speaking the local language.\n\n**Gaps.** _\"While prior work has examined X (Smith 2018; Jones 2019), the case of Y remains underexplored.\"_ You set up your contribution by naming what is missing.\n\nA skilled academic writer is constantly making citation moves of these four kinds, and the moves do real rhetorical work. A lazy or undertrained writer treats citations as a bibliography requirement — ornaments at the ends of sentences proving that the writer has done the reading. This is a missed opportunity, and reviewers can feel the difference instantly.\n\nThere is a darker side to citation work that we will discuss honestly later in the book: citation can be used to claim allies who didn't agree to be claimed, to manufacture consensus, to erase intellectual ancestors, and to build cartels of mutual citation. Skilled readers can spot these maneuvers; skilled writers know how to avoid making them. For now, the goal is to _see_ citations as moves, not as decoration. Once you see them this way, you can never go back.\n\n\n### 2.7 Move 5 — Anticipate the Reviewer\n\nThe single most underrated skill in academic writing is the ability to read your own draft as the most demanding reader your field can produce. We will dedicate Chapter 16 to this skill — _the reviewer in your head_ — but we introduce the move now, because anticipating the reviewer reshapes how you draft.\n\nThe peer reviewer's questions are predictable. They will ask:\n\n* _Why does this matter?_ (The contribution.)\n* _Is this novel?_ (The gap.)\n* _Are the methods sound?_ (The replicability.)\n* _Are the conclusions warranted by the data?_ (The hedging.)\n* _Have you engaged the relevant prior work?_ (The positioning.)\n* _Are alternative explanations addressed?_ (The discussion.)\n\nEvery paper that succeeds in peer review has answered these questions before the reviewer asks them. The skill is to anticipate the questions, identify the weak points in your draft _before_ a hostile reader does, and shore them up. This is the move beginners most often skip and senior researchers most often perform automatically.\n\nA useful drill is to write the **anticipated objections list** before you draft. List the three or four objections you expect a tough reviewer to raise. For each, draft a one-sentence answer. Then, during drafting, ensure each objection is addressed somewhere in the paper. If you can't answer one of the objections, that's a sign the paper isn't yet ready.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1333,
+      "out_sha": "5f3a8f8d4ebd",
       "note": ""
     },
     {
@@ -347,11 +347,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 22,
       "src_chars": 1610,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6a33fc4f8727",
       "src": "### 2.8 Move 6 — Use AI Without Letting AI Use You\n\nAI in academic writing was a curiosity in 2022, a controversy in 2023, and by 2025 a pervasive presence — used by most active researchers, in most fields, with rapidly evolving disclosure norms. We will spend an entire chapter (Chapter 14) on the specifics of AI integration and another (Chapter 17) on the broader implications. We introduce the move now because no honest 2026 academic-writing book can pretend AI is optional.\n\nThe move has two halves.\n\n**Use AI.** As a brainstorming partner, an outliner, a first-draft generator for boilerplate sections (methods boilerplate, abstract drafts, response-letter scaffolding), a skeptical reader, and a polish stage. Skilled academic writers in 2025 routinely use AI for these purposes, and the writing is faster and often clearer.\n\n**Don't let AI use you.** Specifically: do not let AI generate citations (it hallucinates them), do not let AI flatten your voice into generic-academic-mush, do not let AI insert claims you have not verified, and do not let AI place you in violation of your venue's disclosure policy. The integrity bright lines are: every cited paper must be one you have read; every claim must be one you have checked; every word published under your name must be one you have endorsed.\n\nThe current consensus across major journals (as of late 2025) is that AI is a tool, not an author; that AI use should be disclosed; and that authors are fully responsible for the content they submit, regardless of AI involvement. The specifics evolve quickly, and we will give the latest in Chapter 14.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 629,
+      "out_sha": "96baf27f60e0",
       "note": ""
     },
     {
@@ -359,11 +359,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 23,
       "src_chars": 3196,
-      "status": "pending",
+      "status": "done",
       "src_sha": "45ad31598e3f",
       "src": "### 2.9 Walking a Research Question Through All Six Moves\n\nLet's see all six moves applied to one question. We use Mira's question: _how do mid-sized coastal cities adapt to sea-level rise under fiscal constraints?_\n\n**Move 1 — Genre and venue.** Mira and their advisor decide this is a research article, not a review or proposal. They pick a target venue: a public-administration journal that values comparative case-study methods and has an audience of policy scholars and practitioners. The three-paper read suggests articles in this journal run 8,000–10,000 words, with extensive engagement with policy literature, methods sections that explain case selection in detail, and discussions that draw out implications for practitioners.\n\n**Move 2 — Structure.** The paper will use IMRaD, lightly modified: Introduction (CARS), Background (a literature review section), Methods (case selection, data sources, analytic approach), Findings (organized by adaptation strategy), Discussion (implications for theory and practice), and Conclusion. Mira drafts a one-line description of each section before writing a sentence.\n\n**Move 3 — Calibration.** The journal's calibration: moderate hedging (claims like \"the evidence suggests\" rather than \"we prove\"), first-person plural voice (\"we examine\"), citation density of about 3–6 per page in the introduction and background, sparser in methods and findings, denser again in discussion. Formality: medium. Mira tunes their drafting voice to match.\n\n**Move 4 — Positioning.** Mira identifies the conversation. The conversation is _coastal climate adaptation policy_. Within that, there are two main strands: the _megacity-focused_ literature (large cities, rich data, often quantitative) and the _single-city case study_ literature (deep ethnographic detail, often hard to generalize). Mira will position the paper as filling a gap between these two strands: comparative analysis at the mid-sized scale. They draft an opening citation map: which authors are allies? Which are antagonists? Which establish the gap?\n\n**Move 5 — Anticipated reviewer.** Mira lists the predictable objections: _Why these twelve cities?_ (They will defend case selection in §3.2.) _Why this methodology?_ (They will defend it in §3.4.) _Aren't your fiscal-constraint variables crude?_ (They will acknowledge this in §6 and propose refinements for future work.) _Doesn't this restate findings already in Hallegatte (2013)?_ (They will distinguish their contribution explicitly in §1.3.) Each objection gets a section assignment.\n\n**Move 6 — AI.** Mira plans to use AI for: outline review, methods-section boilerplate, polish on the discussion, and a \"hostile reviewer\" pass. They will not use AI for citations (they will read every paper they cite), will not let AI generate the analytical paragraphs, and will disclose their AI use in the methods or acknowledgments per the journal's policy.\n\nThis is the planning that happens _before drafting begins_. It looks like a lot. In practice, after the first or second time you do it, it takes an experienced writer a focused afternoon. The drafting that follows is then much faster, because the upstream decisions are already made.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1118,
+      "out_sha": "03e8e7b18aca",
       "note": ""
     },
     {
@@ -371,11 +371,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 24,
       "src_chars": 1193,
-      "status": "pending",
+      "status": "done",
       "src_sha": "db3f0dd3581f",
       "src": "### 2.10 The Six Moves as a Diagnostic for Existing Drafts\n\nThe moves can also be used to diagnose a draft you have already written and feel uncertain about. Read your draft once with each move in mind:\n\n* **Move 1:** Is the genre clear? Is the venue right? If you can't answer, you may be writing two different papers stapled together.\n* **Move 2:** Does the structure match conventional expectations? If your structure is unconventional, can you defend the variation, or did it happen by accident?\n* **Move 3:** Is the hedging calibrated? Is the voice consistent? Does citation density match the venue?\n* **Move 4:** Are your citations doing rhetorical work, or sitting at sentence ends as decoration? Can you name what each citation _does_?\n* **Move 5:** Have you addressed the predictable reviewer objections? Where?\n* **Move 6:** If you used AI, have you protected voice, citations, and originality? Have you complied with disclosure policy?\n\nA draft that fails any one of these six checks can be saved with targeted revision. A draft that fails all six is not yet a paper; it is a candidate for a paper, and it needs to be re-planned before more drafting will help.\n\n\n### 2.11 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 479,
+      "out_sha": "3d8b4b013ed4",
       "note": ""
     },
     {
@@ -383,11 +383,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 25,
       "src_chars": 2357,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bd8dd48facab",
       "src": "#### Concept Check\n\n**Q1.** Name and briefly define the six moves.\n\nHint\n\nThe list appears in §2.2 and is unpacked in §2.3 through §2.8.\n\n**Answer:** (1) Identify the genre and venue — what kind of document, for what reader, in what forum. (2) Structure using genre conventions — give the document its conventional bones (e.g., IMRaD, CARS introduction). (3) Calibrate the rhetoric — adjust hedging, voice, citation density, and formality to match the field. (4) Position in the conversation — use citation deliberately to mark allies, antagonists, definitions, and gaps. (5) Anticipate the reviewer — read your draft as your most demanding reader and address objections preemptively. (6) Use AI without letting AI use you — leverage AI as a thinking and drafting tool while protecting voice, citations, and integrity.\n\n**Q2.** What is the difference between a _procedure_ and a _move_ , and why does this book use moves?\n\n**Answer:** A procedure describes a path through a particular kind of paper (e.g., \"first do this, then that\"). A move is a rhetorical choice every academic writer must make regardless of genre — though the choice may resolve very differently in different genres. The book uses moves because they generalize across genres: a literature review and a methods section both must position the work in the conversation, even though they do it differently. Moves give a vocabulary that travels.\n\n**Q3.** Why does the chapter argue that Move 1 (identify the genre and venue) is \"the most-skipped move in graduate-level writing\"?\n\n**Answer:** Because most students sit down to \"write the paper\" without clarifying whether it is a research article, review, theory paper, brief communication, proposal, or thesis chapter — and without specifying the venue. Different genres and venues make different rhetorical demands; without clarity on these, drafts feel formless and trying to satisfy multiple genres at once produces papers that please no one.\n\n**Q4.** Name the four kinds of rhetorical work that citations can do, according to Move 4.\n\n**Answer:** (1) Allies — claiming a tradition or framework you are working within. (2) Antagonists — naming a position you are pushing against. (3) Definitions — inheriting a vocabulary or definition from prior work. (4) Gaps — establishing what is missing in the conversation that your work addresses.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 886,
+      "out_sha": "445ecc8f8518",
       "note": ""
     },
     {
@@ -395,11 +395,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 26,
       "src_chars": 3299,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ef63271f2c37",
       "src": "#### Application Problems\n\n**Q1.** Take your own current research question (or, if you don't have one, use Mira's: _how do mid-sized coastal cities adapt to sea-level rise under fiscal constraints?_). Walk it through Move 1: identify the genre, the venue, and what a three-paper read in that venue would tell you. Write about 250 words. (This connects to the diagnostic preview from Chapter 1 — territory, gap, contribution.)\n\nHint\n\nDon't try to settle every question. The exercise is to name your provisional answers and articulate why. The genre and venue may change later; the point is to _have_ a position.\n\n**Answer:** _Answers will vary._ A successful response will (a) name the genre (research article, review, theory, brief communication, proposal, or thesis chapter) with a brief justification, (b) name a target venue with a brief justification, and (c) sketch what the writer expects to learn from a three-paper read of that venue (length, abstract conventions, methods structure, citation density). The exercise is a planning move, not a final commitment. Many strong writers cycle through three or four target venues before locking one in.\n\n**Sample Response (using Mira's question):** _Genre: research article. Mira has empirical data from three cities to report; this is not a review (no synthesis-only mandate), not a proposal (the work is done), not a theory paper (the contribution is empirical with theoretical extension). Venue: a public-administration journal that values comparative case-study methods and reaches both scholars and practitioners. Two candidates worth weighing — a flagship public-administration outlet (deeper engagement with public-administration theory; longer methods sections) and a regional climate-policy journal (more direct policy framing; shorter methods). The three-paper read in the chosen venue would tell Mira: typical main-text length (8,000–10,000 words in the flagship; 6,000–8,000 in the regional); abstract conventions (~200-word unstructured paragraph in both); methods conventions (case-selection rationale first in the flagship; problem statement first in the regional); citation density patterns (denser at framing ends; sparser in empirical middle). After the read, Mira can anchor drafting decisions to one specific venue rather than hedging across both._\n\n**Q2.** For the same research question, sketch the _citation map_ required for Move 4. List three categories — _allies, antagonists, gaps_ — and place at least two named authors or works under each. (You can use Mira's case if you don't have a research question of your own; see §2.9 for a partial example.)\n\n**Answer:** _Answers will vary._ A successful response will assign at least two specific works to each of the three categories. The exercise teaches the diagnostic eye: if you cannot name antagonists, your paper may be claiming a contribution where the field doesn't yet have a debate; if you cannot name a gap, you do not yet have a paper. (Connection to Chapter 1: this is the _gap_ component of the territory–gap–contribution diagnostic, made operational.)\n\n**Q3.** Write the **anticipated objections list** (Move 5) for your current research question. List three to four objections you expect a hostile reviewer to raise. For each, draft a one-sentence answer.\n\nHint",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1216,
+      "out_sha": "26bb9fbef676",
       "note": ""
     },
     {
