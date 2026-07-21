@@ -40,147 +40,147 @@
 
 ### 1. AI 科学 I：从神经网络到 Transformer — BLOCK
 
-1. **严重级别：BLOCK；类型：公式多重渲染与粘连；文件：`AI 科学 I：从神经网络到 Transformer.md`；行号：全书系统性出现，代表行 85、915、934–939、1032–1036。**  
-   原文证据：L85 `AI⊃ML⊃DL⊃LLM\text{AI} \supset ...AI⊃ML⊃DL⊃LLM`；L915 `w^=(X⊤X)−1X⊤y\hat{\mathbf{w}} = ...w^=(X⊤X)−1X⊤y`；L938 `O(np)O(np)O(np)`；L1034 `0.10.10.1`、`0.010.010.01`。  
-   风险：纯文本、LaTeX 与 Unicode/KaTeX 结果连续叠加，变量和数值也被三连，初始化后会把损坏内容固化进切块和译文。  
+1. **严重级别：BLOCK；类型：公式多重渲染与粘连；文件：`AI 科学 I：从神经网络到 Transformer.md`；行号：全书系统性出现，代表行 85、915、934–939、1032–1036。**
+   原文证据：L85 `AI⊃ML⊃DL⊃LLM\text{AI} \supset ...AI⊃ML⊃DL⊃LLM`；L915 `w^=(X⊤X)−1X⊤y\hat{\mathbf{w}} = ...w^=(X⊤X)−1X⊤y`；L938 `O(np)O(np)O(np)`；L1034 `0.10.10.1`、`0.010.010.01`。
+   风险：纯文本、LaTeX 与 Unicode/KaTeX 结果连续叠加，变量和数值也被三连，初始化后会把损坏内容固化进切块和译文。
    建议：初始化前全书只保留一种公式表示（优先闭合的 `$...$`/`$$...$$`），并逐项校正粘连数值和 `fff`/`XXX`/`YYY` 一类由变量三重渲染形成的伪占位符。
-2. **严重级别：WARNING；类型：表格规范性；文件同上；行号：2021–2026。**  
-   原文证据：表头为 `| Forward pass | Backward pass`，分隔行为 `---|---|---`，正文行还含连续三份公式。  
-   风险：表格本身为两列而分隔行呈三段，严格渲染器可能错列。  
+2. **严重级别：WARNING；类型：表格规范性；文件同上；行号：2021–2026。**
+   原文证据：表头为 `| Forward pass | Backward pass`，分隔行为 `---|---|---`，正文行还含连续三份公式。
+   风险：表格本身为两列而分隔行呈三段，严格渲染器可能错列。
    建议：公式去重后统一为两列、首尾管道符一致的 GFM 表格。
 
 ### 2. 记忆——术与道 — PASS_WITH_WARNINGS
 
-1. **严重级别：WARNING；类型：连续重复段落；文件：`记忆——术与道.md`；行号：2767 与 2769。**  
-   原文证据：两处均为 `_Place the central idea of this chapter — that retrieval, far more than encoding ... in the attic of your palace ... lasting._`。  
-   风险：相邻完全重复，会被重复翻译并出现在章节结尾。  
+1. **严重级别：WARNING；类型：连续重复段落；文件：`记忆——术与道.md`；行号：2767 与 2769。**
+   原文证据：两处均为 `_Place the central idea of this chapter — that retrieval, far more than encoding ... in the attic of your palace ... lasting._`。
+   风险：相邻完全重复，会被重复翻译并出现在章节结尾。
    建议：确认后删除一份，或由控制模型明确登记保留。
 
 ### 3. 计算机网络 — BLOCK
 
-1. **严重级别：BLOCK；类型：目录损坏；文件：`计算机网络.md`；行号：36，正文 10934。**  
-   原文证据：目录末项误写 `- Chapter 1: Annotated ping Trace`；正文实际存在 `## Appendix D: Wire-Level Artifact Catalog`，目录却未列 Appendix D。  
-   风险：目录与正文不对应，会污染标题锁定和导航。  
+1. **严重级别：BLOCK；类型：目录损坏；文件：`计算机网络.md`；行号：36，正文 10934。**
+   原文证据：目录末项误写 `- Chapter 1: Annotated ping Trace`；正文实际存在 `## Appendix D: Wire-Level Artifact Catalog`，目录却未列 Appendix D。
+   风险：目录与正文不对应，会污染标题锁定和导航。
    建议：删除伪 Chapter 1，补入正确 Appendix D 标题。
-2. **严重级别：BLOCK；类型：整段重复；文件同上；行号：9957–10033 与 10035–10111。**  
-   原文证据：从 `The third thing the book has been about is _operational discipline_` 到 Chapter 27 exercises、`### Chapter Summary` 和结语整块重复。  
-   风险：约 77 行章节收尾会被完整翻译两次。  
+2. **严重级别：BLOCK；类型：整段重复；文件同上；行号：9957–10033 与 10035–10111。**
+   原文证据：从 `The third thing the book has been about is _operational discipline_` 到 Chapter 27 exercises、`### Chapter Summary` 和结语整块重复。
+   风险：约 77 行章节收尾会被完整翻译两次。
    建议：保留语境完整的一份，删除另一份并复核与 Appendix A 的衔接。
-3. **严重级别：BLOCK；类型：表头误作标题/列数错误；文件同上；行号：11411–11424。**  
-   原文证据：`## | Workflow | Chapter` 后接 `---|---|---`，数据实际为三列。  
-   风险：产生伪 H2，且标题行只有两项，目录和表格均损坏。  
+3. **严重级别：BLOCK；类型：表头误作标题/列数错误；文件同上；行号：11411–11424。**
+   原文证据：`## | Workflow | Chapter` 后接 `---|---|---`，数据实际为三列。
+   风险：产生伪 H2，且标题行只有两项，目录和表格均损坏。
    建议：改为三列表头 `| # | Workflow | Chapter |`，去掉 `##`。
-4. **严重级别：WARNING；类型：标题层级跳级；文件同上；行号：58→66。**  
-   原文证据：`## Introduction` 后首个子标题为 `#### Who This Book Is For`。  
-   风险：H2 直接跳至 H4，目录树语义不完整。  
+4. **严重级别：WARNING；类型：标题层级跳级；文件同上；行号：58→66。**
+   原文证据：`## Introduction` 后首个子标题为 `#### Who This Book Is For`。
+   风险：H2 直接跳至 H4，目录树语义不完整。
    建议：提升为 H3 或补充 H3 父级。
-5. **严重级别：WARNING；类型：可疑占位符；文件同上；行号：1305。**  
-   原文证据：`1.6 Tbps (planned) | ... | single-mode fiber | TBD`。  
-   风险：虽可能表示标准尚未确定，但 `TBD` 也可能是未完成单元格。  
+5. **严重级别：WARNING；类型：可疑占位符；文件同上；行号：1305。**
+   原文证据：`1.6 Tbps (planned) | ... | single-mode fiber | TBD`。
+   风险：虽可能表示标准尚未确定，但 `TBD` 也可能是未完成单元格。
    建议：控制模型确认是有意的“待定”数据；否则补齐或改为明确说明。
 
 ### 4. 细听：古典音乐欣赏指南 — BLOCK
 
-1. **严重级别：BLOCK；类型：目录重复/残留标记；文件：`细听：古典音乐欣赏指南.md`；行号：5–6。**  
-   原文证据：`- Chapter 1: Classical Music Is Not for Museums**` 紧接同名正常条目。  
-   风险：目录章数由 27 变成 28，并带未配对强调残片。  
+1. **严重级别：BLOCK；类型：目录重复/残留标记；文件：`细听：古典音乐欣赏指南.md`；行号：5–6。**
+   原文证据：`- Chapter 1: Classical Music Is Not for Museums**` 紧接同名正常条目。
+   风险：目录章数由 27 变成 28，并带未配对强调残片。
    建议：删除 L5，保留 L6。
-2. **严重级别：BLOCK；类型：编辑脚手架混入正文；文件同上；行号：103–454。**  
-   原文证据：`### lang: en slug: ...`、`### Book metadata`、`### Chapter outline`、`#### Appendix candidates (developed alongside Phase 2 generation)`、`### Threading plan`、`### Estimated total word-count`。  
-   风险：约 350 行生成规划、元数据和未实现附录候选会被当成读者正文翻译。  
+2. **严重级别：BLOCK；类型：编辑脚手架混入正文；文件同上；行号：103–454。**
+   原文证据：`### lang: en slug: ...`、`### Book metadata`、`### Chapter outline`、`#### Appendix candidates (developed alongside Phase 2 generation)`、`### Threading plan`、`### Estimated total word-count`。
+   风险：约 350 行生成规划、元数据和未实现附录候选会被当成读者正文翻译。
    建议：初始化前移出源稿或删除，由控制模型确认哪些内容属于正式前言。
-3. **严重级别：BLOCK；类型：章节结尾整块重复；文件同上；行号：7252–7303 与 7305–7356。**  
-   原文证据：从 composer cousin-piece 列表至 `### 27.6 Exercises`、`### Chapter Summary`、`_Go listen._` 重复。  
-   风险：全书结尾被重复发布。  
+3. **严重级别：BLOCK；类型：章节结尾整块重复；文件同上；行号：7252–7303 与 7305–7356。**
+   原文证据：从 composer cousin-piece 列表至 `### 27.6 Exercises`、`### Chapter Summary`、`_Go listen._` 重复。
+   风险：全书结尾被重复发布。
    建议：保留完整的一份并只留一个最终分隔线。
-4. **严重级别：WARNING；类型：标题层级跳级；文件同上；行号：54→64。**  
-   原文证据：`## Introduction` 后为 `#### What This Book Is For`。  
-   风险：大纲语义跳级。  
+4. **严重级别：WARNING；类型：标题层级跳级；文件同上；行号：54→64。**
+   原文证据：`## Introduction` 后为 `#### What This Book Is For`。
+   风险：大纲语义跳级。
    建议：改为 H3 或补父标题。
 
 ### 5. 分布式系统 — BLOCK
 
-1. **严重级别：BLOCK；类型：目录幽灵章节；文件：`分布式系统.md`；行号：34。**  
-   原文证据：`- 第 30 章`，正文只有 Chapter 1–29。  
-   风险：目录与正文不一致且英语源稿中残留未命名中文条目。  
+1. **严重级别：BLOCK；类型：目录幽灵章节；文件：`分布式系统.md`；行号：34。**
+   原文证据：`- 第 30 章`，正文只有 Chapter 1–29。
+   风险：目录与正文不一致且英语源稿中残留未命名中文条目。
    建议：删除，或恢复确有正文的完整英文 Chapter 30。
-2. **严重级别：BLOCK；类型：公式多重渲染与变量重复；文件同上；行号：代表行 713–917、1594–1601、2572、3303（全书至少 90 余行同类）。**  
-   原文证据：L913 `a→ba \to ba→b`；L915 `P1P_1P1 ... x=5x = 5x=5`；L1594 `RRR`、`WWW`、`NNN` 与 `W+R>NW + R > NW+R>N`。  
-   风险：公式三份粘连，变量被误识别为占位符，技术含义不可靠。  
+2. **严重级别：BLOCK；类型：公式多重渲染与变量重复；文件同上；行号：代表行 713–917、1594–1601、2572、3303（全书至少 90 余行同类）。**
+   原文证据：L913 `a→ba \to ba→b`；L915 `P1P_1P1 ... x=5x = 5x=5`；L1594 `RRR`、`WWW`、`NNN` 与 `W+R>NW + R > NW+R>N`。
+   风险：公式三份粘连，变量被误识别为占位符，技术含义不可靠。
    建议：全书公式去重为单一、闭合的 LaTeX 表达并复核变量。
-3. **严重级别：BLOCK；类型：章节收尾重复；文件同上；行号：11636–11660 与 11664–11690。**  
-   原文证据：`### 29.4 What Could Surprise This Postscript` 的要点及 `### 29.5 Closing`、`Go build the systems...` 出现两次。  
-   风险：Postscript 结尾重复，且 polish 注释粘到第二份开头。  
+3. **严重级别：BLOCK；类型：章节收尾重复；文件同上；行号：11636–11660 与 11664–11690。**
+   原文证据：`### 29.4 What Could Surprise This Postscript` 的要点及 `### 29.5 Closing`、`Go build the systems...` 出现两次。
+   风险：Postscript 结尾重复，且 polish 注释粘到第二份开头。
    建议：保留一套 29.4/29.5，单独决定是否保留 polish 注释。
-4. **严重级别：BLOCK；类型：表头误作标题；文件同上；行号：11277、11844、12130。**  
-   原文证据：`## | Workflow | Chapter ...`、`## | Lie | Refuting chapters | Defense`、`## | The misconception | The reality | Chapter`。  
-   风险：三个表格各制造一个伪 H2，破坏大纲并使表格首行不参与渲染。  
+4. **严重级别：BLOCK；类型：表头误作标题；文件同上；行号：11277、11844、12130。**
+   原文证据：`## | Workflow | Chapter ...`、`## | Lie | Refuting chapters | Defense`、`## | The misconception | The reality | Chapter`。
+   风险：三个表格各制造一个伪 H2，破坏大纲并使表格首行不参与渲染。
    建议：三处删除 `## `，按各自分隔行补齐规范 GFM 表头。
 
 ### 6. 习惯的科学 — PASS_WITH_WARNINGS
 
-1. **严重级别：WARNING；类型：标题层级跳级；文件：`习惯的科学.md`；行号：43→55。**  
-   原文证据：`## Introduction` 后首个子标题为 `#### What the book covers`。  
-   风险：大纲从 H2 直接跳至 H4。  
+1. **严重级别：WARNING；类型：标题层级跳级；文件：`习惯的科学.md`；行号：43→55。**
+   原文证据：`## Introduction` 后首个子标题为 `#### What the book covers`。
+   风险：大纲从 H2 直接跳至 H4。
    建议：提升为 H3 或补 H3 父级。
 
 ### 7. 软件工程匠艺 — BLOCK
 
-1. **严重级别：BLOCK；类型：目录重复；文件：`软件工程匠艺.md`；行号：5、29。**  
-   原文证据：`- Introduction` 在目录首尾各出现一次。  
-   风险：目录与正文不一一对应。  
+1. **严重级别：BLOCK；类型：目录重复；文件：`软件工程匠艺.md`；行号：5、29。**
+   原文证据：`- Introduction` 在目录首尾各出现一次。
+   风险：目录与正文不一一对应。
    建议：删除 L29。
-2. **严重级别：BLOCK；类型：表头误作标题；文件同上；行号：10606。**  
-   原文证据：`## | Name | Signal | Mechanical move`。  
-   风险：Appendix B 表格首行成为伪 H2。  
+2. **严重级别：BLOCK；类型：表头误作标题；文件同上；行号：10606。**
+   原文证据：`## | Name | Signal | Mechanical move`。
+   风险：Appendix B 表格首行成为伪 H2。
    建议：删除 `## ` 并规范表格管道符。
-3. **严重级别：WARNING；类型：结尾分隔线重复；文件同上；行号：10986–10993。**  
-   原文证据：连续四个 `* * *` 后接 `---`。  
-   风险：显示多余空白分隔，疑似拼接残留。  
+3. **严重级别：WARNING；类型：结尾分隔线重复；文件同上；行号：10986–10993。**
+   原文证据：连续四个 `* * *` 后接 `---`。
+   风险：显示多余空白分隔，疑似拼接残留。
    建议：保留一个章节结束标记和一个最终分隔线。
 
 ### 8. 看见彼此——亲密关系的科学 — BLOCK
 
-1. **严重级别：BLOCK；类型：完整章节尾重复；文件：`看见彼此——亲密关系的科学.md`；行号：3719–3756 与 3758–3795。**  
-   原文证据：`#### Think Deeper` 两题及讨论、`### Chapter Summary`、`_Begin._`、`### For deeper reading` 四项书目全部重复。  
-   风险：Chapter 14 的练习、总结与阅读书目被完整发布两遍。  
+1. **严重级别：BLOCK；类型：完整章节尾重复；文件：`看见彼此——亲密关系的科学.md`；行号：3719–3756 与 3758–3795。**
+   原文证据：`#### Think Deeper` 两题及讨论、`### Chapter Summary`、`_Begin._`、`### For deeper reading` 四项书目全部重复。
+   风险：Chapter 14 的练习、总结与阅读书目被完整发布两遍。
    建议：删除第二套 L3758–3795，并复核最终分隔线与 Appendix A 的衔接。
 
 ### 9. 睡眠的科学 — BLOCK
 
-1. **严重级别：BLOCK；类型：结尾整块重复；文件：`睡眠的科学.md`；行号：7050–7087 与 7089–7126。**  
-   原文证据：从 `The skill is recognizing which kind of process...` 到 `### Chapter Summary` 和 `**Diary instruction for Chapter 14**` 两块相同。  
-   风险：全书最终论证、总结和行动指令被重复。  
+1. **严重级别：BLOCK；类型：结尾整块重复；文件：`睡眠的科学.md`；行号：7050–7087 与 7089–7126。**
+   原文证据：从 `The skill is recognizing which kind of process...` 到 `### Chapter Summary` 和 `**Diary instruction for Chapter 14**` 两块相同。
+   风险：全书最终论证、总结和行动指令被重复。
    建议：删除一份，保留单套总结及最终分隔线。
-2. **严重级别：WARNING；类型：标题层级跳级；文件同上；行号：41→55。**  
-   原文证据：`## Introduction` 后为 `#### What This Book Is`。  
-   风险：大纲语义跳级。  
+2. **严重级别：WARNING；类型：标题层级跳级；文件同上；行号：41→55。**
+   原文证据：`## Introduction` 后为 `#### What This Book Is`。
+   风险：大纲语义跳级。
    建议：改为 H3 或补父标题。
 
 ### 10. 操作系统 — BLOCK
 
-1. **严重级别：BLOCK；类型：目录正文泄漏/缺章；文件：`操作系统.md`；行号：14–31。**  
-   原文证据：多个 `- Introduction`；`- Chapter 9: * **Transparency.** ...`；`- Chapter 11: x86 calls it CR3) ...`；Chapter 10、12–26 未列。  
-   风险：正文片段进入目录，强调标记失配，后半目录基本丢失。  
+1. **严重级别：BLOCK；类型：目录正文泄漏/缺章；文件：`操作系统.md`；行号：14–31。**
+   原文证据：多个 `- Introduction`；`- Chapter 9: * **Transparency.** ...`；`- Chapter 11: x86 calls it CR3) ...`；Chapter 10、12–26 未列。
+   风险：正文片段进入目录，强调标记失配，后半目录基本丢失。
    建议：从正文 H2 重建 Introduction + Chapter 1–26 目录。
-2. **严重级别：BLOCK；类型：公式三重渲染；文件同上；行号：1615、1625、1645、1669、1696、1788、1796、1823、1842。**  
-   原文证据：L1615 `Average turnaround: (10+20+30)/3=20(10 + 20 + 30) / 3 = 20(10+20+30)/3=20 seconds.`。  
-   风险：九处调度计算粘成三份，数值表达不可直接使用。  
+2. **严重级别：BLOCK；类型：公式三重渲染；文件同上；行号：1615、1625、1645、1669、1696、1788、1796、1823、1842。**
+   原文证据：L1615 `Average turnaround: (10+20+30)/3=20(10 + 20 + 30) / 3 = 20(10+20+30)/3=20 seconds.`。
+   风险：九处调度计算粘成三份，数值表达不可直接使用。
    建议：每处只保留一份算式并用一致的公式定界。
-3. **严重级别：WARNING；类型：标题层级跳级；文件同上；行号：53→61。**  
-   原文证据：`## Introduction` 后为 `#### How the book is organized`。  
-   风险：大纲语义跳级。  
+3. **严重级别：WARNING；类型：标题层级跳级；文件同上；行号：53→61。**
+   原文证据：`## Introduction` 后为 `#### How the book is organized`。
+   风险：大纲语义跳级。
    建议：改为 H3 或补父标题。
 
 ### 11. 细听：贝多芬 — PASS_WITH_WARNINGS
 
-1. **严重级别：WARNING；类型：近重复章节；文件：`细听：贝多芬.md`；行号：120–139 与 229–247。**  
-   原文证据：Introduction 的 `#### What You Will Know at the End` 与 `### 1.5 What You Will Know at the End` 重复同一组“About fifty Beethoven works... / three-period framework... / an opinion”内容。  
-   风险：虽可能是有意预告，但两组长清单几乎相同，读者会连续遇到冗余内容。  
+1. **严重级别：WARNING；类型：近重复章节；文件：`细听：贝多芬.md`；行号：120–139 与 229–247。**
+   原文证据：Introduction 的 `#### What You Will Know at the End` 与 `### 1.5 What You Will Know at the End` 重复同一组“About fifty Beethoven works... / three-period framework... / an opinion”内容。
+   风险：虽可能是有意预告，但两组长清单几乎相同，读者会连续遇到冗余内容。
    建议：由编辑确认；若非有意，保留 Chapter 1 正式版本并将 Introduction 缩成回指。
-2. **严重级别：WARNING；类型：标题层级跳级；文件同上；行号：52→66。**  
-   原文证据：`## Introduction` 后为 `#### How the Volume Is Organized`。  
-   风险：大纲语义跳级。  
+2. **严重级别：WARNING；类型：标题层级跳级；文件同上；行号：52→66。**
+   原文证据：`## Introduction` 后为 `#### How the Volume Is Organized`。
+   风险：大纲语义跳级。
    建议：改为 H3 或补父标题。
 
 ### 12. 细听：莫扎特 — PASS
@@ -189,20 +189,20 @@
 
 ### 13. 营养的逻辑 — BLOCK
 
-1. **严重级别：BLOCK；类型：公式三重渲染与零宽字符；文件：`营养的逻辑.md`；行号：430、434、438。**  
-   原文证据：L430 `GL=GI×grams ...100GL = \frac{...}{100}GL=100GI×grams ...`；L434/L438 同样把示例算式连续渲染三次。  
-   风险：分子分母在第三份渲染中视觉颠倒，并混有 U+200B，营养计算不可靠。  
+1. **严重级别：BLOCK；类型：公式三重渲染与零宽字符；文件：`营养的逻辑.md`；行号：430、434、438。**
+   原文证据：L430 `GL=GI×grams ...100GL = \frac{...}{100}GL=100GI×grams ...`；L434/L438 同样把示例算式连续渲染三次。
+   风险：分子分母在第三份渲染中视觉颠倒，并混有 U+200B，营养计算不可靠。
    建议：三处各保留一份闭合公式并移除零宽字符。
-2. **严重级别：WARNING；类型：小节编号断档；文件同上；行号：2732→2746。**  
-   原文证据：`### 12.7 What This Means for Your Plate` 后直接为 `### 12.9 Exercises`，无 12.8。  
-   风险：可能是误编号，也可能有小节漏失。  
+2. **严重级别：WARNING；类型：小节编号断档；文件同上；行号：2732→2746。**
+   原文证据：`### 12.7 What This Means for Your Plate` 后直接为 `### 12.9 Exercises`，无 12.8。
+   风险：可能是误编号，也可能有小节漏失。
    建议：对照原页面确认；若无缺文，将 Exercises 改为 12.8。
 
 ### 14. 不平等的形状 — PASS_WITH_WARNINGS
 
-1. **严重级别：WARNING；类型：标题层级跳级；文件：`不平等的形状.md`；行号：49→55。**  
-   原文证据：`## Introduction` 后为 `#### What this book is, and is not`。  
-   风险：大纲从 H2 直接跳至 H4。  
+1. **严重级别：WARNING；类型：标题层级跳级；文件：`不平等的形状.md`；行号：49→55。**
+   原文证据：`## Introduction` 后为 `#### What this book is, and is not`。
+   风险：大纲从 H2 直接跳至 H4。
    建议：提升为 H3 或补 H3 父级。
 
 ### 15. 细听：肖邦 — PASS
@@ -219,35 +219,35 @@
 
 ### 18. 钱为我用 — BLOCK
 
-1. **严重级别：BLOCK；类型：公式三重渲染/变量数字重复；文件：`钱为我用.md`；行号：106、126、353、370、506、2760、3533、3588。**  
-   原文证据：L106 `Income−Spending=Savings\text{Income} ...Income−Spending=Savings`；L370 `ln(2)...` 后出现 `727272` 与 `69.369.369.3`。  
-   风险：八处核心财务公式损坏，倍增时间等数字产生错误。  
+1. **严重级别：BLOCK；类型：公式三重渲染/变量数字重复；文件：`钱为我用.md`；行号：106、126、353、370、506、2760、3533、3588。**
+   原文证据：L106 `Income−Spending=Savings\text{Income} ...Income−Spending=Savings`；L370 `ln(2)...` 后出现 `727272` 与 `69.369.369.3`。
+   风险：八处核心财务公式损坏，倍增时间等数字产生错误。
    建议：逐处只保留一份闭合公式，复核 72、69.3、储蓄率、租售比、runway 与退休金额。
-2. **严重级别：BLOCK；类型：结尾重复并粘连；文件同上；行号：4461–4485 与 4479–4497。**  
-   原文证据：第一份 Chapter Summary 末尾 `Start today.` 直接粘上第二份 `**Q3.** You've now read 20 chapters...`，随后 Discussion 和 Chapter Summary 再出现一次。  
-   风险：Chapter 20 结尾重复，且句间无分隔，无法直接进入翻译。  
+2. **严重级别：BLOCK；类型：结尾重复并粘连；文件同上；行号：4461–4485 与 4479–4497。**
+   原文证据：第一份 Chapter Summary 末尾 `Start today.` 直接粘上第二份 `**Q3.** You've now read 20 chapters...`，随后 Discussion 和 Chapter Summary 再出现一次。
+   风险：Chapter 20 结尾重复，且句间无分隔，无法直接进入翻译。
    建议：保留一套 Q3/Discussion/Summary，修复 `Start today.` 后的拼接。
-3. **严重级别：WARNING；类型：标题层级跳级；文件同上；行号：47→55。**  
-   原文证据：`## Introduction` 后为 `#### What This Book Covers`。  
-   风险：大纲语义跳级。  
+3. **严重级别：WARNING；类型：标题层级跳级；文件同上；行号：47→55。**
+   原文证据：`## Introduction` 后为 `#### What This Book Covers`。
+   风险：大纲语义跳级。
    建议：改为 H3 或补父标题。
 
 ### 19. 细听：勃拉姆斯 — BLOCK
 
-1. **严重级别：BLOCK；类型：正文误作标题/结尾结构异常；文件：`细听：勃拉姆斯.md`；行号：2807–2815。**  
-   原文证据：`### Going Deeper` 下的 Listen 项为普通粗体段落，但最后一项写成 `### **Read** : from the reading list...`，随后文件直接以 `---` 结束。  
-   风险：读者段落被锁成 H3 标题，最终大纲多出长标题，且结尾格式与同系列不一致。  
+1. **严重级别：BLOCK；类型：正文误作标题/结尾结构异常；文件：`细听：勃拉姆斯.md`；行号：2807–2815。**
+   原文证据：`### Going Deeper` 下的 Listen 项为普通粗体段落，但最后一项写成 `### **Read** : from the reading list...`，随后文件直接以 `---` 结束。
+   风险：读者段落被锁成 H3 标题，最终大纲多出长标题，且结尾格式与同系列不一致。
    建议：改为普通段落 `**Read** : ...`，并在内容后保留规范最终分隔线。
-2. **严重级别：WARNING；类型：不透明跨卷回指；文件同上；行号：43、45。**  
-   原文证据：`met Brahms in B159 Close Listening...`、`loop introduced in B159`。  
-   风险：`B159` 是未解释的内部编号，读者无法可靠定位。  
+2. **严重级别：WARNING；类型：不透明跨卷回指；文件同上；行号：43、45。**
+   原文证据：`met Brahms in B159 Close Listening...`、`loop introduced in B159`。
+   风险：`B159` 是未解释的内部编号，读者无法可靠定位。
    建议：替换为完整卷名或首次出现时解释编号。
 
 ### 20. 细听：柴可夫斯基 — PASS_WITH_WARNINGS
 
-1. **严重级别：WARNING；类型：不透明跨卷回指；文件：`细听：柴可夫斯基.md`；行号：49、65、73、463、1868、1929、1963。**  
-   原文证据：`at the close of B159`、`from B159 Ch 20`、`You met the Sixth's finale in B159, Chapter 20`。  
-   风险：内部目录号未定义，跨卷章节回指对读者不透明。  
+1. **严重级别：WARNING；类型：不透明跨卷回指；文件：`细听：柴可夫斯基.md`；行号：49、65、73、463、1868、1929、1963。**
+   原文证据：`at the close of B159`、`from B159 Ch 20`、`You met the Sixth's finale in B159, Chapter 20`。
+   风险：内部目录号未定义，跨卷章节回指对读者不透明。
    建议：改为完整书名（可附 Chapter 20），或首次出现时明确定义 B159。
 
 ### 21. 细品大师：北斋 — PASS
@@ -260,21 +260,21 @@
 
 ### 23. 训练的科学·卷二：耐力与整体表现 — BLOCK
 
-1. **严重级别：BLOCK；类型：系统性公式多重渲染/粘连；文件：`训练的科学·卷二：耐力与整体表现.md`；行号：全书约 100 行，代表行 184–186、200、590–605、747–752、1710–1744。**  
-   原文证据：L184 `Q˙=HR×SV \dot{Q} = ... Q˙=HR×SV`；L600 `132(0.50)+55=121` 连续三份；L1722 `0.80×100=800.80 \times 100 = 800.80×100=80 kg`。  
-   风险：训练剂量、心率区间和重量计算被三重拼接，甚至形成 `=800.80` 这类误读。  
+1. **严重级别：BLOCK；类型：系统性公式多重渲染/粘连；文件：`训练的科学·卷二：耐力与整体表现.md`；行号：全书约 100 行，代表行 184–186、200、590–605、747–752、1710–1744。**
+   原文证据：L184 `Q˙=HR×SV \dot{Q} = ... Q˙=HR×SV`；L600 `132(0.50)+55=121` 连续三份；L1722 `0.80×100=800.80 \times 100 = 800.80×100=80 kg`。
+   风险：训练剂量、心率区间和重量计算被三重拼接，甚至形成 `=800.80` 这类误读。
    建议：初始化前全书统一为单份闭合公式，移除 U+200B 并人工复核所有结果。
-2. **严重级别：BLOCK；类型：表格结构不一致；文件同上；行号：598–605、737–745、759–761、1378–1386、1625–1633、1645–1650、1660–1668。**  
-   原文证据：多表采用无首尾管道的表头；L759 表头以 `|` 开始，L760 分隔行有 5 段，而 L761 数据只有 4 列。  
-   风险：至少一表明确列数不一致，其余表与公式粘连后在严格渲染器中不稳定。  
+2. **严重级别：BLOCK；类型：表格结构不一致；文件同上；行号：598–605、737–745、759–761、1378–1386、1625–1633、1645–1650、1660–1668。**
+   原文证据：多表采用无首尾管道的表头；L759 表头以 `|` 开始，L760 分隔行有 5 段，而 L761 数据只有 4 列。
+   风险：至少一表明确列数不一致，其余表与公式粘连后在严格渲染器中不稳定。
    建议：公式去重后逐表统一列数、表头、分隔行和首尾管道符。
-3. **严重级别：WARNING；类型：编号标题层级错误；文件同上；行号：78、102。**  
-   原文证据：`#### 1.2 A one-paragraph recall...`、`#### 1.4 The formula predicts...`，而 1.1、1.3、1.5 均为 H3。  
-   风险：同级编号被拆成不同层级，导航错误。  
+3. **严重级别：WARNING；类型：编号标题层级错误；文件同上；行号：78、102。**
+   原文证据：`#### 1.2 A one-paragraph recall...`、`#### 1.4 The formula predicts...`，而 1.1、1.3、1.5 均为 H3。
+   风险：同级编号被拆成不同层级，导航错误。
    建议：两处提升为 H3。
-4. **严重级别：WARNING；类型：列表项粘入段落；文件同上；行号：180–186。**  
-   原文证据：第 3 项末尾连续出现 `4\. **The circulation...**` 和 `5\. **The mitochondria...**`，没有独立列表行。  
-   风险：氧输送五环节列表只渲染前三项，4、5 被吞入段落。  
+4. **严重级别：WARNING；类型：列表项粘入段落；文件同上；行号：180–186。**
+   原文证据：第 3 项末尾连续出现 `4\. **The circulation...**` 和 `5\. **The mitochondria...**`，没有独立列表行。
+   风险：氧输送五环节列表只渲染前三项，4、5 被吞入段落。
    建议：把第 4、5 项恢复成独立有序列表项。
 
 ### 24. AI时代六大超能力-卷五-APIs与自动化 — PASS
