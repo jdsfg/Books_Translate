@@ -115,11 +115,11 @@
       "en_title": "Chapter 1: The Overwritten Draft",
       "order": 3,
       "src_chars": 3081,
-      "status": "pending",
+      "status": "done",
       "src_sha": "041070b8cb74",
       "src": "Maya had spent the whole rainy Saturday on three paragraphs.\n\nThey were the opening of the guidebook she and Theo were writing together, a small self-published thing about their adopted city, and she had finally, after weeks of false starts, found the voice for it. Not a brochure voice. A friend's voice. The kind of paragraph you read on a train and think, _I want to go where this person has been._ She read it out loud twice, changed one word, and felt that rare quiet click of a thing being right.\n\nThen she opened the version Theo had emailed her that morning, to copy in a photo caption, and saved it over the file on her desktop. Same name. `rainy-day-lisbon.docx`. The little dialog box asked if she was sure. She was thinking about the photo. She clicked yes.\n\nThe three paragraphs were gone. Not in the trash, not in a backup, not anywhere. Theo's morning version did not have them, because she had written them after he sent it. They existed for six hours and now they existed nowhere, and no amount of clicking could bring them back. She sat very still for a moment, the way you do when your body understands the loss before your mind agrees to it.\n\nIf you have ever made anything on a computer, you know this feeling. And you know the folder it produces.\n\n\n### 1.1 The folder we all have\n\nLook at where you keep your important work and you will probably find it: the folder of nearly-identical files, each one a small monument to fear.\n    \n    \n    essay.docx\n    essay_v2.docx\n    essay_v2_edited.docx\n    essay_FINAL.docx\n    essay_FINAL_v2.docx\n    essay_FINAL_v2_REALLY_final.docx\n    essay_FINAL_use_this_one.docx\n    \n\nNobody taught us to do this. We invented it, all of us, independently, because we learned the same lesson Maya just relearned: the computer will let you destroy your own work, cheerfully, in a single click, and it will not ask a second time. So we hoard. We make a copy before every big change, because a copy is the only safety we know. And then we drown in the copies, and six months later we cannot remember which `FINAL` was actually final, and we are afraid to delete any of them in case one holds something we need.\n\nThis is not a personal failing. It is a missing tool. For most of computing history, the tool that solves this problem existed, but it lived behind a wall of arcane commands, and the price of admission was becoming the kind of person who is comfortable with those commands. Most people, sensibly, declined. They kept making copies.\n\nHere is what changed, and why this book exists now and could not have existed as usefully ten years ago: **the wall came down.** Not because the tool got simpler, but because you no longer have to operate it yourself. You have, or can have, an assistant that speaks both languages, the arcane one and yours. You say what you want in plain words. It handles the incantations.\n\nWhich means the thing that was expensive is now cheap, and a whole way of working that used to be reserved for programmers is suddenly available to anyone who makes anything. That is the subject of this book.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1242,
+      "out_sha": "c90b842bd5e1",
       "note": ""
     },
     {
@@ -127,11 +127,11 @@
       "en_title": "Chapter 1: The Overwritten Draft",
       "order": 4,
       "src_chars": 3457,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ab6566db3141",
       "src": "### 1.2 What you are actually afraid of\n\nLet us name the fear precisely, because we are going to spend the whole book dismantling it, and a fear you can name is already half gone.\n\nYou are not afraid of losing files, exactly. You back things up, more or less. What you are afraid of is **touching what works.**\n\nYou have a chapter that is good enough. You have an idea for a bolder version, a real restructuring, the kind that might make it much better or might wreck weeks of work. And you do not attempt it. You leave the good-enough version alone, because the downside feels total and irreversible, and so the better book never gets written. Every creative person carries a graveyard of the bold versions they were too sensible to try.\n\nTheo had one of these. He thought their guide should be organized by neighborhood, not by weather, and he was probably right, and he had never said so seriously because reorganizing a half-finished book by hand sounded like a way to end up with two broken versions and no finished one. So the safe structure stayed. Not because it was better. Because changing it was frightening.\n\nThat fear has a precise shape, and the tool we are about to meet has a precise answer for it. The answer is not \"be braver.\" The answer is to **make experiments cheap.** When trying the bold thing costs you nothing, because you can always return to exactly what you had, bravery stops being a personality trait and becomes a button. You will attempt things you would never have attempted, not because you changed, but because the price changed.\n\n\n### 1.3 Your hands are an agent\n\nBefore we go further, one idea that runs through this entire book, and through the five volumes after it.\n\nIn the old world, using a tool like the one we are about to meet meant learning its language: a vocabulary of typed commands, each with its own grammar and its own ways of going wrong. Learning that vocabulary was most of the work. Whole books, thick ones, were mostly vocabulary.\n\nYou are not going to learn that vocabulary, and you do not need to. Because in the world you actually live in, you have an **AI agent** : an assistant you can talk to in ordinary language, that knows the commands so you do not have to. When this book imagines you working, it imagines this:\n\n* **You decide.** \"I want to try reorganizing the guide by neighborhood, but I don't want to lose the version that works.\"\n* **The agent executes.** It knows which incantations make that happen, and it runs them.\n* **You review.** It shows you what it did, in plain words, and you say yes, or not yet, or undo that.\n\nNotice what is yours and what is the agent's. The agent has the vocabulary. You have something it does not and cannot have: you know what you are trying to make, and you can tell when something is wrong. That judgment is the whole game now. The commands were never the valuable part; they just used to be the _expensive_ part, and their expense hid how little they mattered. Now that they are cheap, we can see clearly what was always true. **Knowing what to ask for, and knowing what to check before you say yes, is the entire skill.**\n\nSo this book will rarely tell you which command does what. It will tell you what is _possible_ (what you can now dare to ask for) and, just as important, what to look at before you approve. Think of it as a map of a territory your agent already knows how to walk. You are learning to be the one who decides where to go.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1198,
+      "out_sha": "d7acc1276973",
       "note": ""
     },
     {
@@ -139,11 +139,11 @@
       "en_title": "Chapter 1: The Overwritten Draft",
       "order": 5,
       "src_chars": 3151,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a4d13e231f3c",
       "src": "#### The acid test\n\nHere is the promise of this book, stated as sharply as I can state it, so you can hold me to it:\n\n> A reader who finishes this book having forgotten every command, but who can say what a snapshot is, what a branch is for, and what to check before publishing a change, has received this book's full value. A reader who memorized twenty commands but cannot say what a branch is _for_ has received nothing.\n\nIf at any point a chapter starts to feel like something you could get from a tool's own manual, a list of commands to type, I have failed, and you should feel free to skim it. The map is the point. The manual is what the agent is for.\n\n\n### 1.4 What becomes possible\n\nLet me show you the shape of where we are going, so the early chapters have somewhere to land.\n\nImagine that every time you finished a meaningful stretch of work, you took a photograph of your whole project — not a copy in a cluttered folder, but a clean, dated snapshot with a note about what you had just done and why. Imagine you could line those photographs up and walk back through them, to any moment, and see exactly what the work looked like the day before you made that regrettable change. Imagine that going back cost nothing and lost nothing.\n\nNow imagine that when you wanted to try the bold restructuring, you could spin off a **parallel version** of the whole project, play in it freely, and, if it worked, weave your changes back into the main version, or, if it did not, simply walk away from it with the original untouched. Not a copy you have to reconcile by hand. A genuine parallel universe that costs nothing to open and nothing to close.\n\nNow imagine that Theo, on his own laptop across the room, could be working in the same project at the same time, and that when your edits and his edits touched the same sentence, the tool would not silently pick a winner and destroy the other. It would stop, show you both versions, and let a human choose.\n\nAnd now imagine that a friend who loves the city could read your guide, notice that a café you recommended has closed, and _propose the correction to you_ — not as an email you have to find and retype, but as a specific, reviewable change you can look at, discuss, and accept with a nod. Imagine strangers, anywhere, improving each other's work this way, millions of them, in the open.\n\nEvery one of those things is real, and ordinary, and used every day by people who are not smarter than you. The photographs are called snapshots. The parallel universes are called branches. The place where strangers improve each other's work is the largest such workshop humans have ever built. By the end of this book you will know what each of them is _for_ , and you will be able to ask your agent for all of it in plain words.\n\nMaya, by the way, got her three paragraphs back, not that Saturday, but a few weeks later, once she and Theo were working the way this book describes. When she cut a passage she was unsure about, it was not gone. It was one calm step behind her, waiting, in case she wanted it. She started cutting more bravely after that. The book got better. That is what this is for.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1117,
+      "out_sha": "38dc17f08a5a",
       "note": ""
     },
     {
@@ -151,11 +151,11 @@
       "en_title": "Chapter 1: The Overwritten Draft",
       "order": 6,
       "src_chars": 2550,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d2b4a8af2b4e",
       "src": "### 1.5 Exercises\n\nThe exercises in this book are not drills. There is nothing to compute and nothing to memorize. They are here to make you _predict_ what the tools will do before you have met them, and to practice the one skill that matters: turning what you want into something you can ask for, and knowing what to check. Read each question, sit with it for a moment, then read the discussion.\n\n\n#### Concept Check\n\n**Q1.** Look at your own most important project right now, wherever it lives. Do you have some version of the \"FINAL_v2_REALLY_final\" folder? Count the near-duplicate files. What, specifically, were you afraid of each time you made one of those copies?\n\nHint\n\nYou were not afraid of the same thing every time. Some copies were \"before a big change\"; some were \"before someone else touched it\"; some were \"I don't understand why this works and I don't want to break it.\" Sort yours.\n\n**Answer:** Almost everyone finds two distinct fears hiding in that folder. The first is _irreversibility_ : \"if this change is bad, I want to get back,\" which snapshots and going-back (Chapters 2 through 4) will answer completely. The second is _collision_ : \"if someone else edits this while I do, we'll clobber each other,\" which branching and the remote (Chapters 5 through 8) will answer. Naming which copies came from which fear is the first act of using the map: you will notice that the tool has a specific, separate solution for each, and that neither solution is \"make another copy.\"\n\n\n#### Application Problems\n\n**Q1.** Think of one bold change you have _not_ made to a project you care about (a restructuring, a rewrite, a risky experiment) specifically because it might wreck the version that currently works. Write down, in one plain sentence, what you would try if trying it were free and you could always return to exactly what you have now.\n\nHint\n\nDo not describe the commands (you do not know any, and that is fine). Describe the _outcome you want_ and the _safety you need_ : \"I want to try X without losing Y.\"\n\n**Answer:** The sentence you just wrote is, almost exactly, the plain-language request you will hand your agent in Chapter 5, something like \"start a separate version so I can try this reorganization without touching the one that works.\" Notice that it has two halves: what you want to attempt, and what you must not lose. Every safe request in this book has that shape. Holding the shape in mind now means the tool, when it arrives, will feel like it was built to answer a question you already had, because it was.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 936,
+      "out_sha": "e640c1824a25",
       "note": ""
     },
     {
@@ -163,11 +163,11 @@
       "en_title": "Chapter 1: The Overwritten Draft",
       "order": 7,
       "src_chars": 3017,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bc97e2ef223e",
       "src": "#### Think Deeper\n\n**Q1.** This book claims that the valuable skill is no longer knowing the commands, but knowing what to ask for and what to check. Is that too convenient? What is the strongest case _against_ it, and where do you think the claim actually holds?\n\n**Discussion:** Take the objection seriously, because a map that hides the swamps gets people lost. The strongest case against is that judgment without any grounding in how a tool works can be _confidently wrong_ : if you have no idea what a \"branch\" or a \"shared history\" is, you cannot tell when your agent is about to do something dangerous, and \"just approve what the assistant suggests\" is exactly how people delete things they cannot recover. That objection is correct, and it is why this book is not \"let the agent handle it.\" It is why every chapter teaches you the _concept_ well enough to judge (what a snapshot is, what it means for history to be shared, what a merge conflict actually is) so that when you review, you are reviewing with understanding rather than nodding along. The claim holds precisely at the line this book walks: you do not need the _commands_ , but you very much need the _map_. The map is what lets you say no at the right moment. Losing the commands costs you nothing; losing the map costs you your work. Chapter 15 is entirely about the moments where that distinction saves you.\n\n_(You will notice this chapter had no \"Say this to your AI\" list. That is deliberate: you have not met a tool yet, so there is nothing honest to ask for. Starting in the next chapter, every chapter ends with a short set of plain-language things you can now say to your agent, and they accumulate: by the last chapter they form a single page you could tape above your desk.)_\n\n\n### Chapter Summary\n\nWe began inside the disaster because you have lived it: the overwritten draft, the folder of `FINAL_v2_REALLY_final` copies, the bold version you never attempted because it might wreck the working one. Underneath all of it is a single fear, the fear of touching what works, and the reason we all carry it is that for most of computing history the tool that dissolves that fear was locked behind a language only specialists would learn.\n\nThat lock is what broke. Not the difficulty of the tool, but the requirement that _you_ be the one to operate it. With an AI agent as your hands, the arcane vocabulary becomes the agent's job, and your job becomes the one that was always the real one: deciding what to make and judging whether a change is right. This book is a map of what the tool makes possible, written for the person doing the deciding. Its promise is that if you keep the map and forget every command, you have lost nothing that matters.\n\nNext, in Chapter 2, we take the first and most important step out of the copy-hoarding world: instead of saving another nervous duplicate, you learn to take a _snapshot_ (a photograph of your whole project with a note about why) and you begin, for the first time, to work without fear.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1111,
+      "out_sha": "f3673fb37240",
       "note": ""
     },
     {
@@ -175,11 +175,11 @@
       "en_title": "Chapter 2: The Snapshot",
       "order": 8,
       "src_chars": 2534,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d88da2c28fd7",
       "src": "A few weeks after the lost Saturday, Maya sat down to open the guide and, out of pure habit, her hand moved to do the thing she always did first. Save a copy. Rename it. `rainy-day-lisbon_before_edits.docx`, so that whatever she wrecked in the next hour, the working version would still be sitting there, untouched, a small insurance policy against herself.\n\nAnd then she stopped, because Theo had shown her something the night before, and she wanted to try it his way.\n\nShe was not going to make a copy. She was going to take a snapshot instead. It sounds like the same thing wearing a different word, and for the first few minutes it feels like the same thing. It is not the same thing. It is the beginning of a completely different way of working, and by the end of this chapter you will feel the difference in your hands.\n\n\n### 2.1 A copy versus a photograph\n\nThink about what a copy in a folder actually is. It is a full second version of your file, sitting next to the first, taking up its own space, wearing a name you invented in a hurry (`before_edits`, `v2`, `use_this_one`) that will mean nothing to you in a month. It carries no note about _why_ you made it. It does not know it is related to the other files. It is just a lump of identical bytes with a nervous name, and its whole job is to exist in case of disaster.\n\nA snapshot is a different kind of object. When Maya takes a snapshot of the guide, she is not making a second guide. She is asking the tool to _remember the whole project exactly as it is at this moment_ — every chapter, every caption, every photo, the entire state of the work — and to file that memory away with two things attached: the exact time, and a short note in her own words about what this moment _is_. \"Finished the intro's new voice.\" \"Added the Alfama café, still need Theo's photo.\" \"Before I try cutting the museum section.\"\n\nThat note is not decoration. The note is the entire point, and it is the thing the copy-in-a-folder could never give her.\n\nHere is why. Six months from now, Maya's folder of copies would tell her nothing: seven files named `FINAL`, no idea which was which or what changed between them, afraid to delete any. But a chain of snapshots reads like a diary of the work: _Finished the intro. Added the café. Cut the museum section, then put it back the next day._ She can read the whole story of how the guide became the guide, in plain sentences she wrote to her future self, and land on any moment she wants. The copies were a pile. The snapshots are a narrative.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 950,
+      "out_sha": "4dca97f9c170",
       "note": ""
     },
     {
@@ -187,11 +187,11 @@
       "en_title": "Chapter 2: The Snapshot",
       "order": 9,
       "src_chars": 1930,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7acf70165c05",
       "src": "#### Definition: Commit (a snapshot)\n\nA **commit** is a snapshot: a complete, permanent record of the entire state of your project at one moment, saved together with a short note (called the _commit message_) describing what changed and why.\n\nIn plain language, this means: a commit is a photograph of your whole project, with a caption. Not a photograph of one file you happened to be editing, but of everything, all at once, as it stood when you pressed the shutter. And the caption, the note about _why_ , travels with the photograph forever. When people who work this way say \"I'll commit that,\" they mean \"I'll take a snapshot of the project as it is now, and write down what this moment is.\"\n\nThe word \"commit\" is a little unlovely, and you may quietly translate it to \"snapshot\" or \"photograph\" in your head for the entire book. Nothing is lost. Your agent knows the word \"commit\"; you only need to know the idea, and the idea is a photograph with a caption.\n\n\n#### Common Misconception\n\nThe most common wrong picture of a snapshot is this: _a commit saves the file I'm working on right now._ People imagine it like a super-charged \"Save\" button, one that saves the current document a little more permanently.\n\nIt does not save your one file. It records the whole project. If you have a guide made of twelve chapters, a folder of photos, and a title page, a single snapshot captures the state of _all_ of it together, as one coherent moment, even the parts you did not touch today. This matters more than it first appears. It is why, later, you will be able to return to \"how the entire project looked last Tuesday\" and find not just one file restored but every file exactly as it was that day, consistent with each other, the way a photograph of a room shows the whole room and not one object in it. A snapshot is of the _project_ , not the _file_. Hold onto that; almost everything good that comes later grows out of it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 714,
+      "out_sha": "9e2055dc5075",
       "note": ""
     },
     {
@@ -199,11 +199,11 @@
       "en_title": "Chapter 2: The Snapshot",
       "order": 10,
       "src_chars": 1646,
-      "status": "pending",
+      "status": "done",
       "src_sha": "615041370321",
       "src": "### 2.2 Nothing is wastefully copied\n\nThere is a worry that surfaces here, and it is worth answering plainly because it is the reason many people never trusted this way of working.\n\nIf every snapshot records the _whole_ project, and Maya takes a snapshot every hour, doesn't she end up with a hundred full copies of the entire guide, eating space, exactly the sprawling mess she was trying to escape? It would seem so. It is not so, and the reason is quietly elegant.\n\nThe tool is not stupid about what actually changed. When Maya takes a new snapshot after editing one paragraph, it does not solemnly re-copy every photo and every untouched chapter. It records the new state of the one thing that moved and, for everything else, simply _points back_ to the version it already has. A hundred snapshots of a project where you mostly edited the intro do not cost a hundred guides' worth of space; they cost roughly one guide, plus the small trail of what actually changed each time. You get the full, walk-anywhere history for almost nothing.\n\nYou do not need to know how it does this, and I am not going to pretend to a precision I would only be inventing. What you need is the intuition, and the intuition is solid: **taking snapshots often is cheap, and you are meant to do it often.** The old instinct, \"copies are expensive, so make one only before something scary,\" is exactly backwards here. Snapshots are cheap. Take one every time you finish a thought worth naming. The person who commits ten times a day is not being wasteful; they are being kind to their future self, leaving a well-labeled trail. Frequency is a virtue now, not a cost.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 584,
+      "out_sha": "193f327e18b3",
       "note": ""
     },
     {
@@ -211,11 +211,11 @@
       "en_title": "Chapter 2: The Snapshot",
       "order": 11,
       "src_chars": 2258,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a8264b363af0",
       "src": "### 2.3 Thinking in snapshots\n\nSo there is a small mental shift to make, and it is really the whole lesson of this chapter. You are learning to think in snapshots.\n\nA good snapshot has three qualities, and none of them is technical.\n\nIt is **small.** You take it when you have finished one coherent piece of work, not after a marathon in which you changed forty unrelated things. A snapshot that says \"finished the intro's new voice\" is a good snapshot. A snapshot that says \"did a bunch of stuff\" is a photograph of a blur. The discipline of small snapshots is the discipline of finishing one thought before starting the next, and it will make you a tidier worker even apart from the tool.\n\nIt is **purposeful.** You take it at a moment that means something: a thing is done, or you are about to try something risky and want a clean place to return to. Maya's most valuable snapshots, she will discover, are the ones she takes _right before_ a bold change, precisely so she has a marked doorway back.\n\nAnd it is **well-described.** The note is written for a stranger, and the stranger is you in six months, who will remember nothing. \"Fixed it\" is a note that helps no one. \"Corrected the tram number in the Belém walk; it's the 15, not the 25\" is a note that saves an afternoon. The best test: could someone read only your notes, never the work, and understand the story of what you built and why? If yes, you are snapshotting well.\n\nThis same discipline works on anything, not only a guidebook. Picture a graduate student, Dr. Okonkwo, writing a dissertation: instead of `thesis_ch3_v4_advisor_edits_FINAL.docx`, a clean chain of snapshots, each captioned \"reworked the methodology argument,\" \"added the objection Prof. Adeyemi raised,\" \"cut the long digression, saved it in case.\" Picture a two-person bakery, Rosa's, keeping a price list and a stack of supplier contracts: a snapshot every time a price changes, captioned with the date and the reason, so that when a customer disputes a charge, the whole history of that price is right there, honestly dated, nobody's word against anybody's. None of these people write code. All of them get the same gift: a labeled, walkable history of their own work, and the end of the folder full of nervous copies.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 903,
+      "out_sha": "49c506f5ef42",
       "note": ""
     },
     {
@@ -223,11 +223,11 @@
       "en_title": "Chapter 2: The Snapshot",
       "order": 12,
       "src_chars": 2838,
-      "status": "pending",
+      "status": "done",
       "src_sha": "77bf49619be4",
       "src": "### 2.4 What you actually ask for\n\nRemember from Chapter 1 that your hands are an agent. You are not going to operate this tool; you are going to decide and direct, and the agent will execute and show you what it did.\n\nSo the act of taking a snapshot, in your actual life, is a sentence. Maya does not type incantations. She says, in plain words, something close to: _\"Before I start editing, take a snapshot I can come back to, and note that it's the version with the finished intro.\"_ The agent does the mechanical work, the arcane vocabulary of it, and then reports back: it took the snapshot, here is the note it saved, here is the moment you can now return to. Maya reads that, nods, and starts editing, and for the first time she does it without the small background dread, because there is now a marked, dated doorway standing open behind her.\n\nThat is the whole move. The skill is not in the doing. The skill is in two things: knowing that this is a thing you can ask for, and writing a note worth reading later. Both of those are yours, and neither of them is technical.\n\nThere is one habit I want to plant now that will run through the rest of the book, because it is the difference between someone who uses this tool safely and someone who eventually hurts themselves with it. Before you direct any change worth thinking about, you pause and ask three small questions. This chapter earns you the first two; the third only gets its teeth later, but I'll name it now so the set is whole from the start.\n\n  1. **What exactly will change?** Before you say yes, you want to know, in plain words, what the agent is about to do. Taking a snapshot is the safest possible answer to this question, because a snapshot changes _nothing_ about your work; it only records what is already there. It is the one move that can never cost you anything.\n  2. **Can we get back?** The reason to take a snapshot at all is to guarantee the answer is yes. Every snapshot you take is a \"yes\" you are banking for later, a marked place you can return to.\n  3. **Has this history already been shared?** This one has no teeth yet, because so far your snapshots live only with you. It becomes the most important question in the book once other people are working alongside you, and we will give it real weight when we get there. For now, simply notice its shape: _am I about to change something only I have, or something others are relying on?_\n\nThese three questions are the judgment layer of everything that follows. You will see them again in every chapter where something is at stake, and by the end they will be automatic, the quiet checklist that runs in your head before you approve anything. Taking a snapshot is where you practice them for the first time, on the safest possible move, so that the habit is already worn smooth when the stakes rise.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1006,
+      "out_sha": "2731bb422667",
       "note": ""
     },
     {
@@ -235,11 +235,11 @@
       "en_title": "Chapter 2: The Snapshot",
       "order": 13,
       "src_chars": 2282,
-      "status": "pending",
+      "status": "done",
       "src_sha": "08a7a06cef70",
       "src": "#### Say This to Your AI\n\nHere is the first entry in a list that will grow, chapter by chapter, into a single page of plain-language things you can say to your agent. Each one is a _want_ , stated in ordinary words. None of them is a command to memorize. The agent knows the commands; your job is to know the want, and to check what came back.\n\n* _\"Before you change anything, make a snapshot I can come back to, and note what it's for.\"_\n\nThat is the sentence that retires the fear we named in Chapter 1: the fear of touching what works. You no longer need a folder of nervous copies, and you no longer need to leave the bold change unattempted. You can mark a clean place to stand, in plain words, and then move. What you can now dare is small but it is the hinge of everything: you can _begin an edit without first making a copy_ , because you have something better than a copy, and you know how to ask for it.\n\n\n### 2.5 Exercises\n\nAs in Chapter 1, nothing here is a drill. These questions ask you to predict what the tool will do, to read a situation in plain words, and to practice turning a want into an ask. Sit with each one before reading the discussion.\n\n\n#### Concept Check\n\n**Q1.** Maya takes a snapshot of the guide after finishing the introduction. An hour later she has rewritten the introduction completely and taken a second snapshot. Someone tells you: \"So now the first snapshot only remembers the introduction, and the second only remembers the new introduction.\" What, precisely, is wrong with that sentence?\n\nHint\n\nReread the definition. What does a snapshot photograph — the file you were editing, or something larger?\n\n**Answer:** The word \"only\" is the error, twice over. Each snapshot remembers the _entire project_ as it stood at that moment, not just the introduction Maya happened to be editing. The first snapshot holds the whole guide with the first version of the intro; the second holds the whole guide with the rewritten intro, including every chapter, caption, and photo she never touched. This is not a technicality. It is the reason she will later be able to return to \"the whole project as it was an hour ago\" and find everything consistent, not just one file restored in isolation. A snapshot is of the project, always, never of the one file.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 818,
+      "out_sha": "2e25e0e45b88",
       "note": ""
     },
     {
@@ -247,11 +247,11 @@
       "en_title": "Chapter 2: The Snapshot",
       "order": 14,
       "src_chars": 1325,
-      "status": "pending",
+      "status": "done",
       "src_sha": "dd191a4fb52d",
       "src": "#### Application Problems\n\n**Q1.** Here are two commit notes for the same moment of work. In plain language, say what makes one useful and one useless, and rewrite the bad one into a good one.\n\n* Note A: _\"changes\"_\n* Note B: _\"Cut the outdated 'Nightlife' section and moved its two still-open bars into the 'Evening walks' chapter; kept the old section as the previous snapshot in case we want it back.\"_\n\nHint\n\nImagine reading only these notes, six months from now, never seeing the actual work. Which one tells you the story? Which one could describe literally anything?\n\n**Answer:** Note A describes every commit ever taken; it carries no information at all, and six months from now it will be a blank stare. Note B tells the whole story: what was removed, where it went, and the reassurance that nothing was truly lost. A stranger, or future Maya, could read Note B and understand exactly what happened and why, without ever opening the file. That is the test of a good note: it stands alone as a sentence of history. A serviceable rewrite of Note A might be, \"Fixed the tram number in the Belém walk (it's the 15, not the 25) and corrected the café's opening hours.\" Notice it names _what_ and, where it isn't obvious, _why_. The note is written for someone who cannot see the work, because that someone is you, later.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 549,
+      "out_sha": "29d4cef2ad68",
       "note": ""
     },
     {
@@ -259,11 +259,11 @@
       "en_title": "Chapter 2: The Snapshot",
       "order": 15,
       "src_chars": 3153,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b6ff2a9e05e8",
       "src": "#### Think Deeper\n\n**Q1.** In the old copy-in-a-folder world, the sensible instinct was: copies are expensive and clutter up your life, so make one only when you are truly about to risk something. This chapter says that with snapshots the right instinct is the reverse: take them _often_ , even generously. Why does the advice flip? And is there any way to take snapshots _badly_ by taking too many?\n\nHint\n\nTwo separate things changed between the old world and this one: what a snapshot costs to store, and what makes a snapshot _useful to read later._ Consider each.\n\n**Discussion:** The advice flips because the thing that made copies expensive is gone. A folder copy was a full second lump of bytes with a useless name, so making a hundred of them was genuinely wasteful and genuinely confusing. A snapshot costs almost nothing to store, because unchanged material is not re-copied, only pointed back to; a hundred snapshots of a lightly-edited project cost roughly one project's worth of space. So the _storage_ argument against frequency simply evaporates, and frequent snapshots become a gift: a fine-grained, well-labeled trail you can walk back through step by step. But there is a way to snapshot badly, and it is not about number, it is about _coherence_. A snapshot that bundles forty unrelated changes under the note \"did stuff\" is a bad snapshot no matter how rarely you take it, because the note lies about a blur. The discipline is not \"few snapshots,\" it is \"each snapshot is one coherent, named thought.\" Take them as often as you finish a thought worth naming. If your notes read like an honest diary of the work, you are doing it right, whether that is three snapshots today or thirty.\n\n**Q2.** The first of the three pre-flight questions is \"What exactly will change?\" The chapter claims that taking a snapshot is the safest possible move because the honest answer is \"nothing.\" Explain, in your own words, why recording something changes nothing about it. Then think of a moment where you would _most_ want that guarantee.\n\nHint\n\nA photograph of a room does not move the furniture. What is the difference between _recording_ a state and _altering_ it?\n\n**Discussion:** A snapshot only reads and remembers; it does not touch. Taking a photograph of your project leaves the project exactly as it was, the same way photographing a room leaves the room untouched. So the answer to \"what exactly will change?\" is, truthfully, nothing about your current work, and that is what makes it the one move you can always make without a moment's hesitation. The moment you would want that guarantee most is precisely the moment before something risky: right before a bold reorganization, a big cut, an experiment that might not work. That is why the most valuable snapshots are the ones taken _just before_ danger, not after. They cost nothing, they change nothing, and they turn \"I might wreck this\" into \"I have a marked doorway back.\" You are, in effect, banking a \"yes\" to the second pre-flight question, \"can we get back?\", before you ever need it. That is the entire art: make the free, safe move first, so the risky move becomes safe too.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1128,
+      "out_sha": "28e4037dd7ba",
       "note": ""
     },
     {
@@ -271,11 +271,11 @@
       "en_title": "Chapter 2: The Snapshot",
       "order": 16,
       "src_chars": 1961,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e520c4509d71",
       "src": "### Chapter Summary\n\nThe step out of the copy-hoarding world is smaller than it looks and larger than it feels: instead of saving another nervous duplicate before you edit, you take a **snapshot**. A snapshot, properly called a _commit_ , is a photograph of your _whole project_ at one moment, filed with a short note in your own words about what this moment is. It is not a super-save of the one file you were editing; it records everything, all at once, consistent with itself, so that any moment you snapshot is a whole room you can walk back into later.\n\nSnapshots are cheap, because unchanged material is pointed back to rather than re-copied, which means the old instinct is exactly backwards: you are meant to take them _often_ , not sparingly. A good snapshot is small (one finished thought), purposeful (taken at a moment that means something, often right before a risk), and well-described (a note a stranger could read and understand). The same discipline serves a dissertation, a bakery's price list, or a recipe collection just as well as a guidebook; none of it is about code.\n\nIn practice you do not operate any of this. You say, in plain words, \"before you change anything, make a snapshot I can come back to, and note what it's for,\" and your agent does the mechanical work and reports back. And you begin to carry three small pre-flight questions into every change worth thinking about: _what exactly will change? can we get back? has this history already been shared?_ Taking a snapshot is where you first practice them, on the safest move there is.\n\nNext, in Chapter 3, those individual snapshots start to add up. One photograph is useful; a _chain_ of them, in order, with their notes, is something more: a readable history, a whole album of how the work became itself, that you can open and browse like a diary. We will meet the place that album lives, and learn to read the story of a project by walking back through its photographs.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 739,
+      "out_sha": "b877627ffb61",
       "note": ""
     },
     {
@@ -283,11 +283,11 @@
       "en_title": "Chapter 3: The Album",
       "order": 17,
       "src_chars": 1926,
-      "status": "pending",
+      "status": "done",
       "src_sha": "57f8c3f26d70",
       "src": "By the end of last chapter, Maya and Theo had exactly one snapshot.\n\nIt was a good one. A clean, dated photograph of the whole guide as it stood that evening, with a note in plain words: _first real draft of the intro, before we touch the café section._ They had taken it instead of making another nervous copy, and for the first time the guide had a past that could not be silently overwritten. One snapshot. A start.\n\nBut nobody works in single snapshots. A week later there were nine.\n\nThat is what snapshots do: they accumulate. Every time Maya finished a stretch of writing, or Theo dropped in a new photograph, or they argued about a heading and settled it, one of them asked the agent to take a snapshot with a note about what had just happened. _Rewrote the Alfama walk. Added Theo's rain photos. Cut the museum list down to the four that matter._ Nine small, honest photographs, each with its reason attached. And on a rainy Tuesday, sitting on the same couch where the whole thing started, Maya said something that would have been impossible three weeks earlier.\n\n\"Do you remember how the intro read _before_ I rewrote it Sunday? I think the old version's opening line was better.\"\n\nThree weeks earlier, that question would have been a tragedy. The old version was gone the moment she rewrote it, the way Maya's three paragraphs were gone in Chapter 1. Now it was just a question with an answer. \"Let's go look,\" Theo said. And they did. They opened the history of their own project and browsed backward through it, like flipping the pages of an album, until they were reading the guide exactly as it had been the previous Sunday afternoon.\n\nThey did not restore anything. They did not undo anything. They just _looked_ at the past, then came back to the present. That small, calm act, reading your own history, is what this chapter is about, and it is where the fear from Chapter 1 finally starts to lose its grip.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 714,
+      "out_sha": "32fc4496cd8f",
       "note": ""
     },
     {
@@ -295,11 +295,11 @@
       "en_title": "Chapter 3: The Album",
       "order": 18,
       "src_chars": 1998,
-      "status": "pending",
+      "status": "done",
       "src_sha": "17da82ea3c39",
       "src": "### 3.1 Snapshots become a chain\n\nA single snapshot is a photograph of one moment. But the moments are not scattered. Each snapshot knows the one that came before it.\n\nWhen Maya took the \"rewrote the Alfama walk\" snapshot, it was taken _on top of_ the previous one. It does not float free. It says, in effect, _I am the state of the project right after this change, and the thing I came right after was that other snapshot there._ And that one points back further, and that one further still, all the way to the very first snapshot of the guide. So what you actually build up, snapshot by snapshot, is not a pile. It is a **chain** : a single connected line running from the first photograph you ever took to the one you took five minutes ago.\n\nThat chain is the history of your project, and it is worth pausing on how different it is from the folder in Chapter 1.\n\nThe folder of `guide_FINAL_v2_REALLY_final.docx` files was a pile. The copies sat side by side with no relationship to each other. Nothing recorded which came before which, or why any of them existed, or what changed between one and the next. Six months later you stared at them and could not reconstruct the story. A pile has no order and no memory.\n\nA chain has both. Every link is dated, carries its note about why, and knows its exact place in the sequence. You can walk the chain from the beginning forward, or from now backward, and at every step you can read what changed and why. The pile was a graveyard of copies. The chain is a story of the work, told by the work itself.\n\nThis is the first big idea of the chapter, and it is durable enough to state flatly: **history is a chain of snapshots, and you can walk it.** Not a mess to be untangled. A path you can follow in either direction, at any time, without touching the present.\n\n\n### 3.2 Where the whole chain lives\n\nSo the snapshots form a chain. But a chain has to live somewhere. Where?\n\nIt lives in one place, alongside your actual work, and that place has a name.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 753,
+      "out_sha": "cdff8a7e0790",
       "note": ""
     },
     {
@@ -307,11 +307,11 @@
       "en_title": "Chapter 3: The Album",
       "order": 19,
       "src_chars": 1995,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7ef2d557edc3",
       "src": "#### Definition: Repository\n\nA **repository** is the place that holds a project together with the complete chain of every snapshot ever taken of it: the current state of your files _and_ their entire history, kept as one unit.\n\nIn plain language: the repository is the **album**. Not a single photograph, but the album that holds all of them, in order, forever. The first time Maya asked for a snapshot, the agent quietly turned their ordinary folder into a repository: an album that would, from then on, keep every snapshot they took and remember the order.\n\nA few things follow from this that are easy to miss, so let me draw them out.\n\nThe repository is not somewhere else. It is not a separate backup drive or a cloud account you log into. It sits right there with your files, as an ordinary part of the project folder, quietly keeping the album while you work. When Maya opens the guide to write, she is inside the repository. When she asks the agent to take a snapshot, the snapshot goes into the album that is already there. Working on the project and keeping its history are not two chores in two places. They are one place.\n\nAnd the repository holds _everything_ , not just the latest version. This is the part that still surprises people the first time. The album does not contain only today's guide; it contains today's guide _and_ last Sunday's, and the version from before Theo's photos, and the very first rough draft, all of them, all the way down. Your project folder looks, on the surface, like it holds one copy of your work. Underneath, in the repository, it holds the whole chain. When Maya \"went back to look at Sunday's version,\" she did not open some other file. She asked the album to show her a page from earlier in itself.\n\nSo when this book says \"the guide\" from now on, there is a fuller truth behind the phrase. The guide is not a file. The guide is a repository: the current draft plus its entire remembered past, living together as one thing you can walk through.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 795,
+      "out_sha": "4367ed892689",
       "note": ""
     },
     {
@@ -319,11 +319,11 @@
       "en_title": "Chapter 3: The Album",
       "order": 20,
       "src_chars": 2819,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3d04f941d5f7",
       "src": "#### Common Misconception\n\nThere is one objection almost everyone raises at exactly this point, and it deserves a straight answer.\n\n**\"If the album keeps every version forever, that must take an enormous amount of space. My guide is already big. Fifty snapshots of it must be fifty times as big. This can't be practical.\"**\n\nIt sounds airtight. It is also wrong, and understanding _why_ it is wrong tells you something true about how history is kept.\n\nThe hidden assumption is that each snapshot is a full, separate copy of the entire project: that snapshot number fifty is a complete duplicate of everything, stacked on top of forty-nine other complete duplicates. If that were how it worked, the objection would be correct, and keeping deep history really would be wasteful.\n\nBut that is not how snapshots relate to each other. Remember that each snapshot came right after the one before it, and usually changed only a little. Maya's \"rewrote the Alfama walk\" snapshot did not touch Theo's photos, or the intro, or the museum list, or ninety percent of the guide. All of that was _identical_ to the previous snapshot. So the history does not store ninety percent of the guide over again. Unchanged material is shared between snapshots rather than copied afresh. A snapshot, in practice, is mostly a set of pointers to material that already exists in the album, plus the small part that is genuinely new.\n\nThink of it the way a good photo album handles a family that owns one couch. Photo after photo shows the same couch, but the album does not contain fifty couches. It contains fifty photographs that happen to include the couch, and the couch itself is just... the couch, the one that keeps showing up. What makes each photo distinct is the small part that changed: who is sitting there, what they are wearing, the light. History works on the same instinct. What is stored between one snapshot and the next is mostly the _difference_ , the part that actually changed, while everything that stayed the same is shared, not re-hoarded.\n\nThe practical upshot is the one that matters to you: taking a snapshot after every meaningful stretch of work is cheap, and keeping a long, deep history is cheap. You do not have to ration your snapshots to save space. Take them freely, describe them well. The album was built to hold a great many of them, and it holds them lean.\n\nI am deliberately not going to tell you the exact machinery of how the sharing is arranged, because you do not need it and the details are the agent's concern, not yours. The concept is what you keep: **snapshots share what they have in common; only the changes cost anything.** That single idea dissolves the \"it must take huge space\" worry completely, and it is true whether your project is a guidebook, a dissertation, or a bakery's price list.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1006,
+      "out_sha": "2d3407eda097",
       "note": ""
     },
     {
@@ -331,11 +331,11 @@
       "en_title": "Chapter 3: The Album",
       "order": 21,
       "src_chars": 2814,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c6dd7f6370d7",
       "src": "### 3.3 Reading the history\n\nNow the payoff. You have an album full of snapshots in a chain. How do you actually _read_ it?\n\nThe most common and most useful way is the plainest: as a list, newest at the top, oldest at the bottom. One line per snapshot. Each line carries the note you wrote when you took it, and enough of a marker (a date, an identifier) to point at that exact moment.\n\nWhen Maya asked the agent to show her the guide's history on that rainy Tuesday, what came back looked, in spirit, like this:\n    \n    \n    (most recent)\n      Rewrote the intro — new opening line          Sunday evening\n      Added Theo's rain photos                       Saturday\n      Cut the museum list to the four that matter    Thursday\n      Rewrote the Alfama walk                         Wednesday\n      ...\n      First real draft of the intro                   (two weeks ago)\n    (oldest)\n    \n\nRead that top to bottom and you are reading the recent story of the project in reverse: here is the latest thing we did, and the thing before that, and the thing before that. This is why the notes you write when you take a snapshot matter so much. They are not paperwork. They are the sentences of this list. A snapshot noted _\"stuff\"_ or _\"changes\"_ becomes a line in the history that tells your future self nothing. A snapshot noted _\"rewrote the intro, new opening line\"_ becomes a line you can navigate by weeks later, exactly as Maya just did. The note is the point, and the history is where it pays off.\n\nNotice what Maya did _not_ have to do. She did not open old files. She did not compare copies by hand. She did not guess which `FINAL` was the right one. She asked, in plain words, to see the history newest-first, read down the list until she recognized the Sunday snapshot by its note, and looked at it. Finding the past became reading a table of contents.\n\nAnd this is a good moment for the honest boundary, because I do not want you to walk away believing more than is true.\n\n**The album is not yet a backup.** Everything in this chapter (the chain, the repository, the readable history) lives, so far, in one place: the folder on Maya's laptop. If that laptop is lost, dropped in the Tagus, or stolen, the guide and its entire beautiful history go with it. A deep, well-kept album on a single machine is a wonderful thing and a fragile one. History protects you from _yourself_ , from the overwrite, the regretted rewrite, the version you cannot find. It does not, on its own, protect you from a house fire. Making the album live in more than one place, so a lost laptop loses nothing, is a real and important step, and it has its own chapter: Chapter 8. Until then, hold both truths at once. You have gained a memory of your work that you never had before. You have not yet gained a second home for it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1182,
+      "out_sha": "0f7facb97ddb",
       "note": ""
     },
     {
@@ -343,11 +343,11 @@
       "en_title": "Chapter 3: The Album",
       "order": 22,
       "src_chars": 2878,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1883f25fe0b7",
       "src": "### 3.4 What you have actually gained\n\nStep back and look at what changed between Chapter 1 and now.\n\nIn Chapter 1, your work had no past. There was only the current file and a pile of frightened copies with no order and no memory. Touching what worked was dangerous because the previous good version could vanish in a single save, exactly as Maya's three paragraphs did.\n\nNow your work has a past, and the past is safe. Every meaningful state the project has ever been in is sitting in the album, in order, each with a note explaining itself, none of them at risk from your next edit. You can open the history like a list and read the story of the work newest-first. You can find last Sunday's intro in seconds, by its note, without disturbing a word of today's draft.\n\nYou have not yet learned to _use_ that past, to actually go back and pull a cut paragraph forward, or to return the project to an earlier state. So far you have only learned to _read_ it. That turns out to be exactly the right order, because the reading is what makes the going-back calm. When Maya walks back into last Sunday's version in the next chapter, she will do it knowing precisely what is there and precisely what she is reaching for, because she already knows how to read her own history. The album taught her the map of her own past. Now she gets to travel in it.\n\n\n### 3.5 Exercises\n\nAs before: nothing to compute, nothing to memorize. These questions ask you to predict how the album behaves and to practice turning what you want into something you can ask for. Read each one, sit with it, then read the discussion.\n\n\n#### Concept Check\n\n**Q1.** Someone tells you: \"I've been taking a snapshot of my novel every single day for a year. That's 365 complete copies of a 300-page book sitting on my disk. I'm going to run out of room.\" Based on this chapter, what is wrong with their arithmetic?\n\nHint\n\nAsk what actually changed between yesterday's snapshot and today's. Is a snapshot a fresh copy of all 300 pages, or something leaner?\n\n**Answer:** Their arithmetic assumes each daily snapshot is a full, independent copy of the whole 300-page book, so a year of them costs 365 books' worth of space. But on most days they changed a few paragraphs, not the entire manuscript. The 297 pages they left untouched are shared across snapshots, not re-stored each day; what a given day's snapshot actually adds is mostly the small difference, the part that genuinely changed. Three hundred and sixty-five snapshots of a novel that grew and got edited gradually cost dramatically less than 365 whole novels, because history stores changes, not endless duplicates. The correct instinct is the opposite of theirs: they can keep taking daily snapshots without worrying about space, and they should, because a year of well-noted history is exactly what lets them find any past state of the book in seconds.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1083,
+      "out_sha": "24dd83c019a6",
       "note": ""
     },
     {
