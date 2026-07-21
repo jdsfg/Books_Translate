@@ -479,11 +479,11 @@
       "en_title": "Chapter 3: The Anchoring Effect",
       "order": 30,
       "src_chars": 1295,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0451dcd43d35",
       "src": "### Chapter Summary\n\nAnchoring is one of the most economically consequential cognitive biases: the first number we encounter exerts a disproportionate gravitational pull on our subsequent estimates, even when that number is arbitrary, random, or intentionally manipulative. The mechanism — anchoring followed by insufficient adjustment — means we end up too close to the initial number, not where evidence alone would lead us.\n\nAnchoring affects salary negotiations, real estate transactions, legal settlements, medical decisions, and startup valuations. It works on experts as well as novices, making expertise an unreliable shield. The defenses — forming your own anchor before receiving external ones, consulting base rates, making the first offer, and actively considering opposite extremes — help, but require deliberate effort.\n\nWe revisited Sarah's startup decision: the first valuation number a VC mentions will anchor negotiations significantly, making it crucial that Sarah arrives with her own independent estimate and is prepared to anchor the conversation herself.\n\nIn Chapter 4, we turn to overconfidence — a bias that inflates our certainty about our own knowledge, predictions, and plans, with consequences that range from failed projects to catastrophic business decisions.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 382,
+      "out_sha": "d0ae008ce15d",
       "note": ""
     },
     {
@@ -491,11 +491,11 @@
       "en_title": "Chapter 4: Overconfidence",
       "order": 31,
       "src_chars": 2711,
-      "status": "pending",
+      "status": "done",
       "src_sha": "98bce21a8f6e",
       "src": "In 1977, psychologists Amos Tversky and Daniel Kahneman asked people to state 98% confidence intervals for various factual questions — ranges they were 98% confident contained the correct answer. For example: \"What is the length of the Nile River? Give a range such that you are 98% confident the true answer falls within it.\"\n\nIf people were perfectly calibrated, about 2% of answers would fall outside their stated intervals (that is what 98% confidence means). In reality, about 40% of the true answers fell outside people's stated 98% confidence intervals.\n\nPeople claimed to be 98% confident. They were right roughly 60% of the time.\n\nThis experiment has been replicated dozens of times, with financial analysts, physicians, engineers, lawyers, and MBA students. The results are stubbornly consistent: people's confidence in their knowledge dramatically exceeds the accuracy of that knowledge. This is overconfidence, and it is the most pervasive bias in the human mental toolkit.\n\n\n### 4.1 Three Faces of Overconfidence\n\nOverconfidence is not a single thing. It has three distinct expressions, each with its own consequences.\n\n\n#### Definition: Overprecision\n\nOverprecision is excessive confidence in the accuracy of one's knowledge — reflected in confidence intervals that are too narrow, certainty that is too high.\n\nThe Nile River experiment measured overprecision. You know roughly where the Nile is, roughly how long rivers are, and you might have some memory of the specific number. But when you translate this into a confidence interval, you make it too tight — too certain. The world is more uncertain than your internal sense of certainty suggests.\n\n\n#### Definition: Overplacement\n\nOverplacement is the tendency to believe one is better than average at most tasks. It is sometimes called the \"better-than-average\" effect.\n\nWhen people are asked \"Are you a better-than-average driver?\" about 80-90% say yes. By definition, fewer than 50% can be above average. This effect is most pronounced for easy tasks (where many people do well and most believe they do very well) and reverses somewhat for very difficult tasks (where people underestimate how badly they are doing relative to others).\n\nOverplacement is why so many people believe they can beat the stock market, outsell their competitors, or run a successful restaurant — despite clear evidence that the majority of people attempting these things fail.\n\n\n#### Definition: Overestimation\n\nOverestimation is the belief that one's actual performance, outcome, or achievement will be better than it actually turns out to be. This includes the tendency to underestimate how long a task will take (the planning fallacy) and how much it will cost.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 901,
+      "out_sha": "94cd3e7d386b",
       "note": ""
     },
     {
@@ -503,11 +503,11 @@
       "en_title": "Chapter 4: Overconfidence",
       "order": 32,
       "src_chars": 3432,
-      "status": "pending",
+      "status": "done",
       "src_sha": "66b0e390325f",
       "src": "#### Definition: The Planning Fallacy\n\nThe planning fallacy is the systematic tendency to underestimate the time, costs, and risks of future actions while overestimating the benefits — even when we are aware that similar projects have typically taken longer and cost more.\n\nIn plain language: projects always take longer than you think. Surgeries run over time. Software ships late. Buildings exceed budgets. Home renovations cost double the estimate. Construction projects — public and private — routinely run 50-200% over budget and far past schedule. The planning fallacy is one of the most economically costly manifestations of overconfidence.\n\nThe fascinating feature of the planning fallacy is that it persists even when people are explicitly told about it. \"My project will be different\" is itself an overconfident belief.\n\n\n### 4.2 Why We're All Overconfident — and Why Experts Aren't Much Better\n\nOverconfidence has a clear evolutionary story. In the ancestral environment, a decisive, confident leader who overestimated his own chances might take necessary risks that a perfectly calibrated leader would avoid. False confidence inspired followers. Excessive caution might have been as deadly as recklessness.\n\nMore importantly, overconfidence is generated by the very way we store and retrieve knowledge. When we try to assess \"how much do I know about X?\", we measure the fluency with which related information comes to mind. If we can easily generate related facts, we interpret that fluency as comprehensive knowledge — even though the facts we can easily generate are the common, central ones, not the edge cases that define the limits of our knowledge.\n\n**Expert overconfidence:** The 1984 study by Philip Tetlock, eventually published in his book _Expert Political Judgment_ (2005), is the most comprehensive assessment of expert prediction ever conducted. Tetlock tracked 284 experts making thousands of predictions about political and economic events over two decades. His finding: expert predictions were barely better than random chance for most outcomes, and significantly worse than simple actuarial models. Experts were also dramatically overconfident — they gave higher confidence ratings to their predictions than their accuracy warranted. Moreover, the most famous, most confident, most media-present experts — the people invited on television to give authoritative opinions — were _less_ accurate than the less prominent experts who offered more tentative, qualified predictions.\n\nThe lesson: the certainty with which an expert presents a prediction is typically a poor guide to that prediction's accuracy, and may be inversely related to it.\n\n\n#### Common Misconception\n\n_\"Overconfidence is a problem of arrogance. Humble people don't have it.\"_\n\nOverconfidence is not primarily about arrogance — it is about the fundamental difficulty of accurately assessing one's own knowledge. Studies of overconfidence show that it is present even in people who score low on measures of narcissism and self-aggrandizement. Moreover, overconfidence is domain-specific: a person can be well-calibrated about weather (because they get rapid feedback when they say \"30% chance of rain\" and it does or doesn't rain) while being massively overconfident about their ability to pick winning investments. Calibration is a learned skill that develops only with rapid, unambiguous feedback — and most domains don't provide it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1092,
+      "out_sha": "87396beaef95",
       "note": ""
     },
     {
@@ -515,11 +515,11 @@
       "en_title": "Chapter 4: Overconfidence",
       "order": 33,
       "src_chars": 2005,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1b2ee9fe28b8",
       "src": "### 4.3 Thread 3 — Historical Decision: Apollo 13 and Calibrated Confidence\n\nOn April 13, 1970, 200,000 miles from Earth, an oxygen tank aboard Apollo 13 exploded. The spacecraft was crippled. The mission to the Moon was instantly aborted. Three astronauts — Jim Lovell, Jack Swigert, and Fred Haise — faced a potentially unsurvivable situation.\n\nWhat followed was one of the most remarkable displays of improvised decision-making under uncertainty in the history of human spaceflight.\n\nBut the comparison that makes this chapter's point is _before_ the explosion. In the months of pre-flight planning, NASA engineers had run exhaustive simulations of failure modes. The oxygen tank problem — an internal wiring fault that had developed years earlier — was not on any checklist. The planning was extraordinarily thorough by any reasonable standard, yet overconfidence about the completeness of the simulation had left the crew without a usable solution for this specific failure mode.\n\nAfter the explosion, the story changes dramatically. Gene Kranz and the Mission Control team abandoned the overconfident pre-flight planning mentality and entered a state of almost pure probabilistic reasoning: \"What do we know? What are we uncertain about? What do we need to know most urgently? What is the safest next action given current uncertainty?\"\n\nThe crew survived. The \"successful failure\" — as it came to be called — was the result of decision-making that was:\n\n* **Explicitly uncertain** : the team regularly stated \"we don't know\" rather than assigning false confidence\n* **Sequentially updated** : each new piece of data changed the plan, rather than the plan being treated as fixed\n* **Robustly cautious** : decisions were evaluated for worst-case scenarios, not just expected outcomes\n\nThe pre-flight planning was brilliant but overconfident. The crisis management was humble and adaptive. The lesson: calibrated uncertainty is not weakness — it is a strategic asset that enables better improvisation.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 703,
+      "out_sha": "25757f6a4b94",
       "note": ""
     },
     {
@@ -527,11 +527,11 @@
       "en_title": "Chapter 4: Overconfidence",
       "order": 34,
       "src_chars": 1746,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ce32adf59a69",
       "src": "### 4.4 Becoming Calibrated: Training Yourself to Know What You Know\n\nCalibration is not a fixed trait — it is a skill. And like all skills, it can be developed with practice and the right kind of feedback.\n\n**Calibration training** involves:\n\n  1. Making explicit probability estimates for your beliefs (not just \"I think yes\" but \"I think there's a 75% chance of X\")\n  2. Recording these estimates\n  3. Tracking your accuracy over time\n  4. Adjusting your estimates when you notice systematic over- or under-confidence\n\nThe Good Judgment Project, run by Philip Tetlock and Barbara Mellers, identified a group of \"superforecasters\" — ordinary people without special expertise who became remarkably well-calibrated by practicing exactly this approach. The superforecasters shared several habits:\n\n* They expressed beliefs as explicit probabilities rather than directional opinions\n* They updated their beliefs when new evidence arrived\n* They actively sought out evidence that challenged their current view\n* They maintained a \"track record\" mentality — treating each prediction as a data point about their calibration\n\n**Reference class forecasting** is a specific technique for fighting the planning fallacy: instead of estimating how long _your_ project will take from the inside, ask how long _similar projects_ took on average (the \"outside view\"), and use that as your baseline estimate. Then adjust based on specific features of your project that you believe make it different.\n\nThe reference class almost always shows that past projects took longer than expected — which is itself evidence that your current project will too. Accepting this evidence requires a kind of epistemic humility that does not come naturally.\n\n\n### 4.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 608,
+      "out_sha": "3e63ec3b75a1",
       "note": ""
     },
     {
