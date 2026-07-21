@@ -1,0 +1,8 @@
+DONE: 社会心理学
+status: 222/222
+verify_local: ERROR=0 (WARN remaining: glossary exact-match noise on grade words used in non-label paraphrases; plus a few phrase variants)
+verify_shared: ERROR=0 (WARN: bias→偏差 vs book-local 偏见/内隐偏见 context — expected)
+notes:
+- Evidence-grade labels robust/failed/mixed/contested/myth preserved in English for verdict contexts.
+- Sample PASS on PR #18 authorized full-book continuation on same branch.
+- Remaining WARNs are non-blocking glossary exact-string mismatches, not structural errors.
