@@ -3359,11 +3359,11 @@
       "en_title": "Chapter 26: Navigating an Uncertain World",
       "order": 270,
       "src_chars": 1123,
-      "status": "pending",
+      "status": "done",
       "src_sha": "47002ceef780",
       "src": "In August 1914, Ernest Shackleton placed an advertisement in a London newspaper. The text, as legend has it: \"Men wanted for hazardous journey. Small wages, bitter cold, long months of complete darkness, constant danger, safe return doubtful. Honor and recognition in case of success.\"\n\nFour thousand people applied.\n\nHis expedition to the South Pole became the story examined in Chapter 9: the ship Endurance crushed by ice, the crew stranded for 22 months, the open-boat journey across 800 miles of the Southern Ocean, and the eventual rescue of all 27 men without a single loss of life. Shackleton had set out to cross Antarctica. He did not. He accomplished something arguably greater: he navigated catastrophic uncertainty without losing either his men or his capacity to lead.\n\nThis book has been about the tools of rational decision making under uncertainty. But Shackleton's story points to something that the tools alone cannot capture: the human qualities that allow someone to face genuine uncertainty — not managed risk, not quantifiable probability, but true not-knowing — and continue to make good decisions.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 371,
+      "out_sha": "7e25398f39c8",
       "note": ""
     },
     {
@@ -3371,11 +3371,11 @@
       "en_title": "Chapter 26: Navigating an Uncertain World",
       "order": 271,
       "src_chars": 3248,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5a16c445ef9f",
       "src": "### 26.1 What We Have Learned\n\nTwenty-six chapters have built a framework for thinking more clearly under uncertainty. Let us gather the core threads.\n\n**Part I: How Our Minds Mislead Us**\n\nThe brain is not a calculator. It is a pattern-recognition and prediction system, shaped by evolution to make fast decisions with incomplete information. System 1 thinking (fast, automatic, associative) is brilliant for most decisions in familiar environments. It is systematically wrong in specific, predictable ways when applied to novel, statistical, or complex situations.\n\nThe biases studied in Chapters 1–5 are not character flaws. They are the predictable output of cognitive machinery designed for a different environment: availability bias (Chapter 2) that weights vivid recent events over accurate base rates; anchoring (Chapter 3) that makes us insufficiently adjust from arbitrary starting points; overconfidence (Chapter 4) that produces calibration errors and planning fallacy; narrative reasoning (Chapter 5) that generates coherent stories where only noise exists.\n\n**Part II: The Mathematics of Uncertainty**\n\nProbability is not intuitive — it must be learned and practiced. Chapters 6–10 provided the core mathematical framework: what probability means (Chapter 6), how to update beliefs with evidence (Chapters 6–7), how to evaluate uncertain choices (Chapter 8), how to distinguish risk from uncertainty (Chapter 9), and how to avoid attributing cause to regression effects (Chapter 10).\n\nThe most important single insight from Part II: probability is a state of knowledge, not a property of the world. When you say \"there's a 30% chance of success,\" you are saying something about what you know, not something about a fundamental feature of reality. This means probability estimates must be updated as knowledge changes — and that the discipline of honest probability estimation, regularly updated with evidence, is the core practice of good decision making.\n\n**Part III: The Traps of Emotion**\n\nThe emotional machinery that makes us human also makes us poor decision makers in specific situations. Loss aversion (Chapter 11) distorts our evaluation of gains and losses around arbitrary reference points. Sunk cost thinking (Chapter 12) chains past decisions to future choices. Status quo bias (Chapter 13) makes existing states more durable than they deserve to be. Groupthink (Chapter 14) suppresses the individual dissent that organizations need. And Chapter 15 showed that these emotional systems are not always wrong — fast-and-frugal heuristics are genuinely optimal in some environments.\n\n**Part IV: Decision Strategies**\n\nThe strategies in Chapters 16–21 are the applied technology of decision science. The value of information (Chapter 16) asks whether to gather more before acting. Optimal stopping (Chapter 17) asks when to commit. Reversibility analysis (Chapter 18) asks how to weight the cost of foreclosing options. Decision trees and scenario planning (Chapter 19) provide structured tools for mapping consequences. Pre-mortems (Chapter 20) surface failure modes before committing. And AI (Chapter 21) offers powerful tools that require sophisticated understanding of their own limitations.\n\n**Part V: Life Applications**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1023,
+      "out_sha": "baa1632566a3",
       "note": ""
     },
     {
@@ -3383,11 +3383,11 @@
       "en_title": "Chapter 26: Navigating an Uncertain World",
       "order": 272,
       "src_chars": 3109,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1d60b701c1c2",
       "src": "The final chapters applied all of this to the domains where decisions matter most: careers (Chapter 22), finances (Chapter 23), health (Chapter 24), and relationships (Chapter 25). The common thread: the biases studied in Parts I–III appear in full force in these high-stakes domains, and the strategies of Part IV provide tools for improving decision quality in each.\n\n\n### 26.2 Thread 3 — Shackleton's Framework\n\nWhat made Shackleton an extraordinary decision-maker in catastrophic uncertainty?\n\nLooking at his choices through this book's framework:\n\n**He updated relentlessly.** When Endurance was beset in the ice, Shackleton's initial goal (crossing Antarctica) became irrelevant. He didn't mourn the lost goal or rationalize continuing toward it (sunk cost thinking). He updated his objective immediately: \"The goal is to get every man home alive.\" Every subsequent decision — abandoning Endurance, choosing the boat journey to South Georgia, selecting the three men to leave behind at Elephant Island — followed directly from this updated objective.\n\n**He used reference class forecasting, implicitly.** In planning the boat journey to South Georgia — 800 miles across the Drake Passage in a 22-foot lifeboat — Shackleton didn't assume he would be the exception to the base rates of such journeys. He planned for failure modes: what if they missed South Georgia? (He charted backup landfall options.) What if the weather was worse than expected? (He planned conservative routes.) His preparations acknowledged difficulty rather than assuming success.\n\n**He managed groupthink deliberately.** Shackleton knew that morale was both essential and dangerous. He maintained hope — without it, men would give up. But he also monitored for dangerous false consensus: the tendency of men in crisis to suppress private fear and publicly perform confidence they didn't feel. He sought out private counsel with key individuals specifically to get honest assessments without the social pressure of group settings.\n\n**He made irreversibility his guide.** When the decision was irreversible — abandoning Endurance, leaving six men on Elephant Island while he made the boat journey — Shackleton committed fully and stopped second-guessing. When the decision was reversible — the specific route across South Georgia on foot, the timing of rescue attempts — he remained flexible, adapting to conditions as they developed.\n\n**He preserved option value.** The decision to attempt the South Georgia voyage — rather than accepting certain eventual death on Elephant Island — was a bet on an option: the possibility of rescue. The option's value was positive even with substantial probability of the voyage failing, because the alternative was near-certain failure. Shackleton was not reckless; he was calculating the option value of action versus inaction.\n\nNo spreadsheet was involved. No formal decision tree was drawn. But the cognitive structure of his decision making — probability updating, reference class thinking, option value reasoning, irreversibility management — maps directly onto the frameworks of this book.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 952,
+      "out_sha": "0f461e201901",
       "note": ""
     },
     {
@@ -3395,11 +3395,11 @@
       "en_title": "Chapter 26: Navigating an Uncertain World",
       "order": 273,
       "src_chars": 2336,
-      "status": "pending",
+      "status": "done",
       "src_sha": "26c3fe726219",
       "src": "### 26.3 Thread 1 — Closing: Sarah's Framework\n\nSarah's startup journey is complete enough to draw the full framework map.\n\nShe began with a vague 20% probability estimate. Over 26 months, she updated it 6 times: upward when the LOIs arrived; downward when the market research was ambiguous; downward again when the partnership fell through; upward sharply when the simplified prototype succeeded. Her final estimate, when she signed the investment documents: approximately 45%.\n\nEach update followed the same structure: prior probability × likelihood ratio of new evidence = posterior probability. She was not always precise — she rarely had the numbers for a formal Bayesian calculation. But she understood the structure of evidence updating, she distinguished between strong evidence (the LOIs, the partnership decision) and weak evidence (general market commentary), and she updated proportionally.\n\nThe tools that mattered most in her journey:\n\n**Bayes' theorem (Chapter 7):** Not as a formula but as a habit — the discipline of asking \"how much does this evidence actually shift my estimate, and in which direction?\"\n\n**Value of information (Chapter 16):** The discipline of asking \"what would I need to learn before changing my decision?\" rather than simply asking \"should I continue?\"\n\n**Optimal stopping (Chapter 17):** Setting defined endpoints with defined success criteria, rather than committing indefinitely or searching forever.\n\n**Pre-mortem thinking (Chapter 20):** Before signing the investment documents, imagining specific failure scenarios, which surfaced the non-compete as a negotiating priority.\n\n**Option value (Chapters 16–18):** Negotiating the investment terms to preserve more optionality — the narrowed non-compete, the defined milestones — rather than accepting a standard template.\n\nSarah's story is not a success story yet. The company is operational with three pilot customers and a seed investment. Whether it succeeds will be determined by many things she cannot fully control. But the quality of her decision-making process — the rigor of her probability updating, the discipline of her sunk cost thinking, the structured information gathering, the defined stopping rules — is genuinely excellent. Good process does not guarantee good outcomes. It does give good outcomes the best chance they have.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 696,
+      "out_sha": "5564b44378fd",
       "note": ""
     },
     {
@@ -3407,11 +3407,11 @@
       "en_title": "Chapter 26: Navigating an Uncertain World",
       "order": 274,
       "src_chars": 2315,
-      "status": "pending",
+      "status": "done",
       "src_sha": "05a056bdd7a4",
       "src": "### 26.4 The Irreducible Uncertainty\n\nThis book has provided tools for thinking more clearly under uncertainty. It would be dishonest to pretend those tools eliminate uncertainty.\n\nThey do not.\n\nReal decisions are made with incomplete information, under time pressure, by people who are simultaneously subject to the biases this book has described. The tools of decision science improve expected outcomes — they do not guarantee them. A well-calibrated 30% probability estimate means failure happens 70% of the time. Even an excellent process produces bad outcomes when the dice come up wrong.\n\nSeveral things remain genuinely hard, even for people who have internalized this book's frameworks:\n\n**Knowing when to trust System 1.** The book's emphasis on the errors of fast, intuitive thinking should not produce blind distrust of intuition. Expert intuition, developed through thousands of hours of practice and feedback in a structured domain, is genuinely reliable — and sometimes faster and more accurate than explicit analysis. The skill is knowing which domain you're in.\n\n**Tolerating uncertainty while acting.** The cognitive dissonance of acting under genuine uncertainty — committing to a course of action while holding a probability estimate well below certainty — is emotionally difficult and not fully solved by any framework. Shackleton acted with confidence even when his uncertainty was enormous. This is a human capacity that tools can support but not create.\n\n**Accepting outcomes as information, not verdicts.** A bad outcome following a good decision process is painful and requires the discipline to not retroactively judge the process by the outcome. The reverse is also true: a good outcome following a poor process should not validate that process. Outcome quality and process quality are correlated but not identical, and learning requires distinguishing them.\n\n**The limits of rationality.** Some decisions genuinely exceed the reach of probability theory and expected value. Decisions about fundamental values — what you live for, what you would sacrifice for, what kind of person you are — are not reducible to expected utility maximization. This book's tools are for the domain of decisions under uncertainty with quantifiable outcomes. They are not a complete theory of the good life.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 656,
+      "out_sha": "59b91e0901d6",
       "note": ""
     },
     {
@@ -3419,11 +3419,11 @@
       "en_title": "Chapter 26: Navigating an Uncertain World",
       "order": 275,
       "src_chars": 3468,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fd6a477853cc",
       "src": "### 26.5 The Practice\n\nKnowing decision theory is not the same as practicing it. This book's frameworks are tools — they improve decision quality only when applied, and applying them requires the discipline to slow down when it matters, to engage System 2 when System 1 is driving, and to deliberately counteract the biases you know you have.\n\nSeveral practices consolidate what you have learned:\n\n**Keep a decision journal.** Record significant decisions when you make them: the options considered, your probability estimates, your reasoning, and the outcome. Review it periodically. The most powerful feedback is seeing where your actual probability estimates were overconfident, where you were loss averse, where sunk cost thinking drove a decision you later regretted. The journal converts the abstract knowledge of decision biases into personal, empirically grounded self-knowledge.\n\n**Use pre-commitment.** For decisions where you know your future emotional self will be worse at deciding than your current deliberative self (selling investments during market crashes, maintaining difficult conversations, following through on health behaviors), commit in advance. Write down what you will do and why. Make the commitment public if possible. Pre-commitment converts deliberative decisions into rules that your future emotional self is bound to follow.\n\n**Build deliberative speed selectively.** Most decisions should be fast — System 1 is adequate, and the cost of analysis exceeds the benefit. The skill is identifying the subset of decisions that warrant System 2 engagement: consequential, irreversible, complex, or in domains where your biases are known to be active. For those decisions, slow down deliberately.\n\n**Cultivate epistemic humility.** The consistent finding across all chapters of this book is that people know less than they think they know. This is not a counsel of despair — it is a call for genuine curiosity. Being wrong is how you learn; being uncertain is the condition for honest inquiry. The decision-maker who holds her probability estimates loosely and updates them readily does better, over time, than the decision-maker who has convictions.\n\n\n### 26.6 A Final Thought\n\nShackleton got his men home. He did not cross Antarctica. He revised his goal when circumstances required, applied the best judgment available with the information at hand, and kept moving.\n\nThe framework for navigating an uncertain world is not primarily about maximizing expected value. It is about maintaining the quality of the process — the honesty of the probability estimates, the rigor of the reasoning, the willingness to update when evidence requires it — regardless of the outcomes that process produces.\n\nThe world is genuinely uncertain. The future is not predictable. Decisions made with care and rigor will sometimes produce outcomes that are disappointing, random, or simply bad. That is the nature of uncertainty.\n\nWhat the tools of this book provide is not certainty. They provide the best possible approach to decisions that, despite your best efforts, remain genuinely uncertain. They help you be calibrated rather than overconfident, forward-looking rather than sunk-cost-bound, evidence-driven rather than narrative-driven, and humble about what you know rather than falsely certain about what you don't.\n\nIn a world where uncertainty is the permanent condition of any honest decision-maker, that is a substantial gift.\n\n\n### 26.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 960,
+      "out_sha": "bd0ccf1a1aa3",
       "note": ""
     },
     {
@@ -3431,11 +3431,11 @@
       "en_title": "Chapter 26: Navigating an Uncertain World",
       "order": 276,
       "src_chars": 2269,
-      "status": "pending",
+      "status": "done",
       "src_sha": "847d8ca5582d",
       "src": "#### Concept Check\n\n**Q1.** This book has argued that people can learn to make better decisions by understanding their cognitive biases. But if biases are deeply rooted in cognitive architecture, can they actually be changed? What is the realistic scope for improvement?\n\n**Answer:** The realistic scope for improvement is meaningful but limited, and the mechanism matters. Direct debiasing — telling people \"you suffer from anchoring; stop anchoring\" — has weak and unstable effects. Simply knowing about a bias does not reliably remove it because the bias operates at the System 1 level, and explicitly knowing about it at the System 2 level does not automatically neutralize the System 1 response. What does work: (1) **Structural interventions:** Changing the decision environment so that the bias is less likely to activate or less likely to matter. Automatic savings contributions work not by eliminating status quo bias but by making the good behavior the default. Numerical framing in natural frequencies reduces the false positive paradox error rate dramatically — not by eliminating base rate neglect but by using a format that doesn't trigger it. (2) **Deliberate process steps:** For high-stakes decisions, implementing specific steps (calculate base rates explicitly, reframe in both gain and loss terms, seek disconfirming evidence) can counteract biases even without eliminating them at the cognitive level. (3) **Practice and calibration:** Probability calibration exercises, prediction tracking, and deliberate practice improve accuracy over time. The improvement is real and transferable. (4) **Metacognitive awareness:** Knowing \"I tend to be overconfident about project timelines\" and specifically checking this in project planning does reduce overconfidence in that domain. The honest answer: biases cannot be eliminated, but they can be managed. Decision quality is improvable. The improvement is largest for high-stakes, deliberate decisions — and smallest for fast, automatic System 1 responses.\n\n* * *\n\n**Q2.** The book argues for \"good process\" over \"good outcomes\" as the evaluative standard for decision quality. But in practice, outcomes are what we can observe — how can someone actually evaluate the quality of their own decision process?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 659,
+      "out_sha": "9367d3d94e3d",
       "note": ""
     },
     {
@@ -3443,11 +3443,11 @@
       "en_title": "Chapter 26: Navigating an Uncertain World",
       "order": 277,
       "src_chars": 3243,
-      "status": "pending",
+      "status": "done",
       "src_sha": "48e6ffc25d6f",
       "src": "**Answer:** Evaluating process independently of outcome is genuinely difficult, because outcome information is far more available than process information. Several approaches: (1) **Decision journals:** Record decisions at the time they are made, including your reasoning, probability estimates, and the options you considered. Review them after outcomes are known. This creates a written record of your process independent of post-hoc rationalization. You can observe: were your probability estimates calibrated (did 70% confidence calls succeed about 70% of the time)? Did you consider the alternatives you actually had access to? Did you explicitly account for the biases relevant to this decision? (2) **Process checklists:** Define, in advance, what good process looks like for a category of decisions. Did you calculate base rates? Did you seek disconfirming evidence? Did you reframe in multiple ways? Checking these boxes is an observable process indicator independent of outcome. (3) **Peer review:** Having someone else evaluate your reasoning process (rather than your conclusion) before you act allows external process assessment. Did your reasoning address the relevant uncertainties? Did it engage counterarguments? (4) **Calibration tracking:** Track your probability estimates over many decisions and compute your actual calibration score. This converts the abstract claim \"I am well-calibrated\" into a testable, empirically evaluable claim. The goal: make process quality as observable and accountable as outcome quality — not to replace outcome evaluation, but to avoid the systematic error of retroactively judging process by outcomes.\n\n* * *\n\n**Q3.** Identify three decisions you face in the next year — at least one personal and one professional. For each, describe which framework from this book would be most useful to apply.\n\n**Answer:** [This is an open-ended personal reflection exercise; a sample model answer is provided below.]\n\nExample answers:\n\n_Decision 1: Career — whether to apply for a graduate program (personal/professional)._ Most useful framework: **Reference class forecasting (Chapter 4) + Value of information (Chapter 16).** The planning fallacy predicts I will underestimate time and cost of graduate school; base rate research on outcomes for graduates of similar programs (employment, salary, satisfaction) would provide a corrective anchor. The VOI framework helps me identify: what information would I need to change my decision? If I'm already certain I want to apply regardless, additional deliberation has low value. If I'm uncertain whether grad school is better than alternatives, identifying and gathering that specific information (talking to graduates, researching alternatives) is the priority.\n\n_Decision 2: Financial — whether to refinance my mortgage (professional)._ Most useful framework: **Decision tree with sensitivity analysis (Chapter 19).** Map the decision tree: current rate vs. new rate, upfront costs of refinancing, break-even horizon, probability that I move before the break-even point. Sensitivity analysis: how much does the conclusion change if I move in 3 years vs. 7 years? This converts a vague financial intuition into a tractable calculation with clear inputs.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 966,
+      "out_sha": "6d520db207c3",
       "note": ""
     },
     {
@@ -3455,11 +3455,11 @@
       "en_title": "Chapter 26: Navigating an Uncertain World",
       "order": 278,
       "src_chars": 2703,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ecb61ab0ecba",
       "src": "_Decision 3: Relationship — whether to have a difficult conversation with a family member about a long-standing conflict._ Most useful framework: **Loss aversion / status quo bias analysis (Chapters 11, 13) + Pre-mortem (Chapter 20).** The avoidance of the conversation is driven by loss aversion (fear of making things worse) and status quo bias (not having the conversation requires no effort). The pre-mortem: imagine it's 2 years from now and I did not have this conversation — what is the cost of that omission? What about the scenario where I had the conversation? Which failure mode do I anticipate regretting more?\n\n* * *\n\n**Q4.** What is epistemic humility, and why is it both the foundation of good decision making and the most psychologically difficult habit to maintain?\n\n**Answer:** Epistemic humility is the genuine recognition that your knowledge is incomplete, your probability estimates are uncertain, and your reasoning may be wrong — held as a working disposition rather than a theoretical admission. It is the foundation of good decision making because: (1) Updating on evidence requires acknowledging that your current belief may be wrong — without genuine epistemic humility, evidence that contradicts your view is dismissed rather than incorporated. (2) Calibrated probability estimates require recognizing the limits of your knowledge — overconfidence is the failure to maintain epistemic humility about your own uncertainty. (3) Seeking disconfirming evidence — the most powerful corrective to confirmation bias — requires being genuinely open to being wrong. Why it is psychologically difficult: (1) **Identity threat:** Beliefs, especially important beliefs, are often part of self-concept. \"Being wrong\" can feel like \"being bad\" or \"being stupid,\" triggering defensive reasoning rather than genuine updating. (2) **Social signaling:** Confidence is rewarded socially; uncertainty is punished. Saying \"I'm 60% sure\" is often perceived as weakness compared to saying \"I'm certain.\" This creates incentives to feign certainty. (3) **Action requirements:** Genuine uncertainty is uncomfortable and can feel like it prevents action. Maintaining genuine uncertainty while still acting decisively is a psychological challenge that requires practice. (4) **The Dunning-Kruger problem:** The less you know about a domain, the harder it is to know how much you don't know — genuine epistemic humility about a domain requires enough knowledge to know the domain's depth, which creates a bootstrapping problem. The practice: deliberately seek out cases where experts disagree, read primary sources rather than summaries, and track the accuracy of your own predictions over time.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 780,
+      "out_sha": "3d62e501d7be",
       "note": ""
     },
     {
@@ -3467,11 +3467,11 @@
       "en_title": "Chapter 26: Navigating an Uncertain World",
       "order": 279,
       "src_chars": 2327,
-      "status": "pending",
+      "status": "done",
       "src_sha": "24e5e4f5c5c5",
       "src": "#### Application Problems\n\n**Q1.** You are starting a new job in 6 weeks. Using pre-commitment and the concepts of this book, design a \"first 90 days decision framework\" — a set of commitments about how you will make decisions during the high-uncertainty period of starting a new role.\n\n**Answer:** First 90 days decision framework:\n\n**Pre-commitment 1: Calibration before action (Days 1–30).** I will not make significant recommendations or advocate strongly for changes during the first 30 days. This pre-commitment counteracts the overconfidence and premature pattern-recognition that new employees typically show — I will feel like I understand the environment before I actually do. I will spend this period asking questions and building a reference class: how does this organization actually make decisions? What have been the major failures and successes? What do experienced people here know that I don't?\n\n**Pre-commitment 2: Probability logging.** I will record my predictions (about projects, people, processes, outcomes) during the first 30 days, then review them at day 90. This forces explicit prediction-making and creates the feedback loop for calibration. If my predictions at day 30 are consistently wrong at day 90, I know my early model was incorrect.\n\n**Pre-commitment 3: Pre-mortem before first major decision.** Before making my first significant recommendation or decision, I will run a personal pre-mortem: \"It is one year from now and this recommendation has failed. What happened?\" I will write the answer before proceeding.\n\n**Pre-commitment 4: Distinguish reversible from irreversible.** For any significant decision in the first 90 days, I will explicitly classify it: is this reversible or irreversible? Reversible decisions I will make quickly. Irreversible decisions I will slow down and gather more information before proceeding.\n\n**Pre-commitment 5: Seek disconfirming views.** For each significant judgment I form in the first 30 days, I will identify one person with direct knowledge who might disagree, and ask them directly what I'm missing. This is the fastest debiasing tool available.\n\n* * *\n\n**Q2.** A friend says: \"I know all the decision-making biases, but I still make the same mistakes. What's the point of learning this stuff if it doesn't change behavior?\" How would you respond?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 724,
+      "out_sha": "eeb5ae0ac461",
       "note": ""
     },
     {
@@ -3479,11 +3479,11 @@
       "en_title": "Chapter 26: Navigating an Uncertain World",
       "order": 280,
       "src_chars": 2311,
-      "status": "pending",
+      "status": "done",
       "src_sha": "532dfe4ca0c5",
       "src": "**Answer:** This is a genuine and important challenge. The honest response has three parts: (1) **Knowing and doing are different skills.** Knowing that you're prone to anchoring does not automatically prevent anchoring — System 1 operates before System 2 can intervene. What knowledge does provide is the ability to design environments and processes that make the bias less likely to determine outcomes. The smoker who knows nicotine is addictive can't eliminate the addiction through knowledge, but they can structure their environment (not keeping cigarettes at home, avoiding high-risk social situations) to make the addictive behavior less likely. Similarly: knowing about loss aversion allows pre-commitment strategies, environmental design, and deliberate process steps that reduce its impact on high-stakes decisions. (2) **The improvement is probabilistic, not absolute.** Knowing the biases does not produce perfectly unbiased decisions. It produces decisions that are less biased in expectation — across many decisions over time. The person who has internalized these frameworks still makes anchoring errors sometimes; they make them less often and less severely on average. The benefit is visible in aggregate outcomes, not in any single decision. (3) **The biases that matter are specific and addressable.** Rather than trying to eliminate bias in general, focus on the specific biases that are most costly in your actual decision context. If overconfidence in project timelines is your main failure mode, calibration training and reference class forecasting for that specific domain is the intervention. The high-leverage application of decision science is not generic debiasing but specific countermeasures for your highest-stakes, most bias-prone decisions.\n\n* * *\n\n**Q3.** Think of a significant decision you have made in the past that you now consider a mistake. Using the process vs. outcome distinction from this chapter, assess whether it was a process failure, an outcome failure, or both. What would you do differently in the decision-making process?\n\nHint\n\nReconstruct what you knew at the time the decision was made — not what you know now. Evaluate the process using only information available then.\n\n**Answer:** [This is a reflective personal exercise. A model structure is provided.]",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 636,
+      "out_sha": "2c21574a602f",
       "note": ""
     },
     {
@@ -3491,11 +3491,11 @@
       "en_title": "Chapter 26: Navigating an Uncertain World",
       "order": 281,
       "src_chars": 1555,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cc8151ac501e",
       "src": "Structured analysis: (1) **Reconstruct the decision context at the time it was made.** What information did you have? What options were you considering? What probability estimates (even if implicit) did you hold? Be strict about not importing hindsight. (2) **Assess process quality at the time.** Did you consider multiple options, or commit to the first plausible choice? Did you seek disconfirming information, or primarily gather confirming evidence? Did you identify the key uncertainties, or treat the situation as more certain than it was? Did you consider reversibility — could you have made a more reversible initial commitment? (3) **Distinguish outcome failure from process failure.** A bad outcome can result from a good process (the 30% probability event happened). A bad outcome can result from a bad process (anchoring, confirmation bias, sunk cost thinking drove the decision). A good outcome can result from a bad process (lucky). Only the process evaluation is meaningful for improving future decisions. (4) **What would improved process look like?** If the process was flawed: which specific tool from this book would have caught the flaw? (A pre-mortem that surfaced the failure mode? A Bayesian update that would have shifted the probability estimate? An option value analysis that would have identified a more reversible path?) (5) **Apply forward, not backward.** The value of this exercise is not guilt about the past decision but identification of a specific process improvement for future decisions in similar situations.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 449,
+      "out_sha": "0e8d5c1a21c7",
       "note": ""
     },
     {
@@ -3503,11 +3503,11 @@
       "en_title": "Chapter 26: Navigating an Uncertain World",
       "order": 282,
       "src_chars": 2838,
-      "status": "pending",
+      "status": "done",
       "src_sha": "31313aa8f336",
       "src": "#### Think Deeper\n\n**Q1.** Throughout this book, the standard for good decisions has been rational choice: expected value maximization, calibrated probabilities, systematic analysis. But critics argue that this standard is culturally specific, individualistic, and may not be the right framework for decisions embedded in relationships, communities, and obligations. What are the limits of the rational choice framework as a guide to the good life?\n\n**Discussion:** The rational choice framework — expected utility maximization with calibrated probabilities — has genuine limits as a complete theory of good decision-making: (1) **Value incommensurability:** Some values cannot be reduced to a common utility scale without losing what makes them valuable. The value of a relationship, a commitment, or an identity cannot be fully converted into utility units for comparison with financial outcomes. Decisions that require this conversion often produce conclusions that feel wrong precisely because the conversion destroyed something real. (2) **Social and relational embeddedness:** Many important decisions are made within relationships, communities, and obligations that generate constraints that expected utility theory doesn't naturally capture. An obligation to a parent, a loyalty to a community, or a commitment to a principle may be more binding than the calculation of expected outcomes suggests — not irrationally, but because honoring those commitments is itself constitutive of who you are. (3) **The limits of prediction:** Expected value calculations require estimating future utilities and probabilities. For life decisions with long time horizons (career, relationships, community embeddedness), the uncertainty is so deep that formal calculations are more about revealing your current assumptions than about genuinely predicting outcomes. (4) **Meaning and narrative:** Lives have meaning partly through their narrative coherence — the sense that your choices express and develop a particular self. Purely outcome-optimal decisions may be inconsistent with living a meaningful life in the sense required by a coherent self-narrative. **The calibrated view:** The rational choice framework is an excellent tool for many decisions, a useful corrective against specific biases for almost all decisions, and an insufficient complete theory of the good life. It should inform decisions without claiming to determine them entirely. The frameworks of this book are tools, not a worldview.\n\n* * *\n\n**Q2.** This book treats uncertainty tolerance — the ability to act decisively while holding genuinely uncertain probability estimates — as a cognitive skill. Is it a skill that can be deliberately cultivated, or is it primarily a stable personality trait? What would a genuine training program for uncertainty tolerance look like?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 801,
+      "out_sha": "b1bac08d4042",
       "note": ""
     },
     {
@@ -3515,11 +3515,11 @@
       "en_title": "Chapter 26: Navigating an Uncertain World",
       "order": 283,
       "src_chars": 2201,
-      "status": "pending",
+      "status": "done",
       "src_sha": "39bdd908bc40",
       "src": "**Discussion:** The evidence suggests uncertainty tolerance has both trait and skill components. Trait component: people differ systematically in need for cognitive closure — the desire for definite answers over ambiguity — and this trait is relatively stable across contexts and time. High need-for-closure individuals tend to be less tolerant of uncertainty and more likely to lock in on early answers. Skill component: there is also evidence that uncertainty tolerance can be trained, and the training is specific. Three mechanisms that improve it: (1) **Calibration practice:** Tracking predictions over time and computing calibration scores teaches people to hold uncertain beliefs without the discomfort that comes from confusing \"I said 70%\" with \"I said 100%.\" Superforecasters, who demonstrate very high calibration, report that the practice of tracking their predictions fundamentally changed how they experience uncertainty — it became a normal condition rather than a failure state. (2) **Reference class exposure:** Seeing the base rates for many types of decisions — the historical failure rates of startups, the base rate of drug trial success, the actual variability of weather forecasts — builds a visceral sense that the world genuinely is uncertain, not just apparently uncertain. This normalizes uncertainty as a feature of reality rather than a deficiency in one's knowledge. (3) **Commitment while uncertain:** Practicing small decisions under uncertainty with defined processes (set a deadline, gather defined information, decide) builds the habit of concluding decisions without eliminating all uncertainty first. What a training program would look like: prediction tournaments for diverse topics; structured post-mortems that distinguish process quality from outcome quality; graduated exposure to commitment decisions in low-stakes domains; and cultivation of the specific language of calibrated uncertainty (\"I'm about 60% confident this will work\" vs. \"I think it'll work\"). The goal is not to eliminate the discomfort of uncertainty but to build a working relationship with it — comfortable enough to act, honest enough not to pretend certainty that doesn't exist.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 628,
+      "out_sha": "10d279a45dae",
       "note": ""
     },
     {
@@ -3527,11 +3527,11 @@
       "en_title": "Chapter 26: Navigating an Uncertain World",
       "order": 284,
       "src_chars": 1655,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bd860776b560",
       "src": "### Chapter Summary\n\nThe twenty-sixth chapter closes by gathering three things: the framework built across the book, the threads whose stories have illustrated it, and an honest accounting of what the tools can and cannot do.\n\nThe framework: systematic probability thinking (Parts I–II), awareness of emotional traps (Part III), and applied strategies (Part IV) combine to produce decision quality superior to unaided intuition — in expectation, over many decisions, for the specific decision types where these tools apply.\n\nThread 3 (Shackleton) showed how the framework's core elements — probability updating, reference class thinking, option value reasoning, irreversibility management — appear in the decisions of exceptional decision-makers even without formal training. The framework describes what good decision-making looks like; it does not create it from nothing.\n\nThread 1 (Sarah) showed the full sequence: 26 months of decisions, each applying a specific tool to a specific uncertainty, producing a decision quality that gives the venture its best chance — even though the outcome remains genuinely uncertain.\n\nThe honest limits: biases cannot be eliminated; process does not guarantee outcome; the rational choice framework is insufficient as a complete theory of the good life. What remains is the practice: keeping a decision journal, using pre-commitment, slowing down for high-stakes irreversible choices, and maintaining the epistemic humility to update when evidence requires it.\n\nIn a world of genuine, irreducible uncertainty — which is the only world any of us inhabit — that practice is what thinking clearly looks like.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 496,
+      "out_sha": "6c28c31959d0",
       "note": ""
     }
   ],

@@ -96,3 +96,11 @@ relative risk reduction | 相对风险降低 | RRR
 number needed to treat | 需治疗人数 | NNT
 shared decision making | 共享决策制定 |
 strategic commitment | 战略承诺 |
+epistemic humility | 认识谦逊 |
+irreducible uncertainty | 不可约的不确定性 |
+need for cognitive closure | 认知闭合需要 |
+reference class forecasting | 参照类预测 |
+decision journal | 决策日志 |
+pre-commitment | 预先承诺 |
+fast-and-frugal heuristics | 快速且节俭的启发式 |
+Dunning-Kruger | 邓宁-克鲁格 |
