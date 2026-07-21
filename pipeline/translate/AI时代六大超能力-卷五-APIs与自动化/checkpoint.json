@@ -663,11 +663,11 @@
       "en_title": "Chapter 10: What Deserves Automating",
       "order": 49,
       "src_chars": 2338,
-      "status": "pending",
+      "status": "done",
       "src_sha": "52c20924b080",
       "src": "Now that you can survey what any service is able to do, a seductive danger appears: the temptation to automate everything, just because you can.\n\nResist it. The most valuable skill on the automation map is not building pipes. It is judging _which_ pipes are worth building, because every automation is a small standing commitment, a thing that will run without you and, someday, break without you. An automation you should not have built is worse than the manual task it replaced, because now you have both the work _and_ a fragile machine to maintain. So before we talk about how automations run, we talk about which ones deserve to exist. This is a chapter of judgment, and judgment is the human's permanent job.\n\n\n### 10.1 The three things worth automating\n\nLook back at Mara's Monday and ask what makes those tasks good candidates. Three qualities recur, and they are the honest test for anything you consider handing off.\n\n**The recurring.** A task you do again and again, on a rhythm, is worth automating precisely because the effort of building the pipe is paid back every time it runs. Mara's order-reading happens every single week, forever. Building it once to run a hundred times is a good trade. A task you will do exactly once is almost never worth automating; you would spend longer building the pipe than doing the thing.\n\n**The error-prone.** A task where a human hand slips, where you transpose a number, skip a row, paste into the wrong cell, is worth handing to a machine that does not get tired or distracted. Mara copying order details into a spreadsheet by hand is exactly this: dull, repetitive, and quietly error-prone at row forty. A machine copies row forty as carefully as row one.\n\n**The boring.** A task that requires no judgment, no creativity, nothing that is distinctly yours, is a task you are wasting yourself on. The copying and pasting is boring. The paragraph about the new kiln pieces is not; it is Mara's voice, her craft, the part her buyers actually want from her. Automate the boring so you have more of yourself left for the parts that are not.\n\nNotice that Mara's Monday tasks are strong on all three: recurring, error-prone, boring. That is why they were such good candidates that we opened the whole book with them. The stronger a task is on these three, the more clearly it deserves a pipe.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 873,
+      "out_sha": "1e2f6478bf54",
       "note": ""
     },
     {
@@ -675,11 +675,11 @@
       "en_title": "Chapter 10: What Deserves Automating",
       "order": 50,
       "src_chars": 2478,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7cd81b63ba73",
       "src": "### 10.2 The things to leave alone\n\nJust as important, and more often ignored, is knowing what _not_ to automate. Three qualities mark a task as better left in human hands.\n\n**The rare.** If you do it once a year, or once ever, building an automation for it is effort you will never earn back, and you will have a fragile pipe sitting unused, quietly rotting, until the one day you need it and discover it broke months ago. Do the rare thing by hand.\n\n**The judgment-laden.** If doing the task _well_ requires taste, discretion, care, or a human reading of a situation, then automating it does not save you the hard part; it removes the hard part badly. Mara could technically automate the writing of her weekly newsletter paragraph, but the paragraph is the point; a machine-written version would be worse in exactly the way that matters. The judgment-laden task is where _you_ add the value. Keep it.\n\n**The two-minute task.** If a thing genuinely takes two minutes and you do it occasionally, the honest accounting often says: just do it. Building, testing, and maintaining an automation for a two-minute occasional task can cost more, in total, than years of just doing it. There is no shame in a manual step. Sometimes it is simply the right answer, and a mature map-reader knows this and is not embarrassed by it.\n\n\n#### Common Misconception\n\n_\"If a task can be automated, it should be.\"_\n\nThis is the error that turns a capable person into the exhausted keeper of a dozen brittle pipes. _Can_ and _should_ are different questions, and the gap between them is judgment. Every automation you build is a permanent tenant: it takes up space, it needs occasional maintenance, and it will eventually break at an inconvenient time and demand your attention. That rent is worth paying for a task that is recurring, error-prone, and boring, because the pipe saves you real and repeated effort. It is a bad trade for a task that is rare, judgment-laden, or trivially quick, because you pay the rent forever to avoid work that was small, or that only you could do well anyway. The mark of skill is not how much you automate. It is how well you choose. Automate the boring and the repeated; keep the rare, the delicate, and the tiny.\n\n\n### 10.3 The universal shape: WHEN this, THEN that\n\nOnce you have decided a task is worth automating, almost every automation you will ever describe takes the same, wonderfully simple shape. Learn it and you can describe any pipe you can imagine.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 917,
+      "out_sha": "d3da0ceab7e5",
       "note": ""
     },
     {
@@ -687,11 +687,11 @@
       "en_title": "Chapter 10: What Deserves Automating",
       "order": 51,
       "src_chars": 2936,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7759c6f1bf40",
       "src": "#### Definition: The WHEN-THEN pipeline\n\nAn automation is a piece of **WHEN-this-THEN-that** plumbing: _when_ some trigger happens, _then_ some action follows. The trigger is what sets it off (a schedule arrives, a doorbell rings, a condition becomes true). The action is what it does in response (read something, write something somewhere, send a message). Longer pipes are just chains of these: when this, then that, and then that, and then this other thing. Every automation, however grand, is built from this one modest sentence.\n\nWatch how Mara's whole Monday collapses into it. _When_ Monday morning arrives (the trigger, a schedule), _then_ read the weekend's new orders, _and then_ update the inventory sheet, _and then_ draft a thank-you note for each paid buyer. One trigger, a chain of actions. Her rush-commission alert is another: _when_ a commission order arrives (the trigger, a doorbell), _then_ alert Mara at once. The triggers differ (a clock versus a doorbell, exactly the Chapter 8 choice), but the shape is identical.\n\nThis shape is a gift, because it means you never have to imagine complex machinery to commission an automation. You only have to finish two sentences: \"when does this run?\" and \"what does it do when it runs?\" If you can answer those in plain words, you can commission the pipe, and your assistant can build it. The plumbing is real, but its blueprint is a single sentence you already know how to speak.\n\n\n### 10.4 Small before grand\n\nThere is one more piece of judgment, and it is the one that keeps automation from turning into heartbreak: start small, and watch.\n\nThe temptation, once you can build pipes, is to design a magnificent one: a great interconnected system that handles your entire Monday, all four tasks, in one grand automated flow, switched on all at once. Do not. Build the smallest useful pipe first, the single most boring task, and then _watch it for a week_. Watch what it does. Watch how it fails. Watch the ways the real world surprises it, the order with a missing field, the buyer with an odd name, the week the service is slow. Only when that one small pipe has earned your trust do you add the next.\n\nThe reason is not timidity. It is that automations meet the real world, and the real world is messy in ways no plan anticipates, and a small pipe teaches you those ways cheaply while a grand pipe hides them until they fail all at once and you cannot tell which part broke. A pipe you watched for a week is a pipe you understand. A grand system switched on all at once is a mystery you have to debug under pressure. This is also the beginning of the answer to a fear you may be carrying, _I couldn't maintain it_ : you maintain a big automation by having built it as a series of small, understood ones, each of which you watched until you trusted it. Nobody maintains a mystery. Everybody can maintain a thing they watched grow.\n\n\n### 10.5 Exercises\n\nRead the answers.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1055,
+      "out_sha": "715ec8c548db",
       "note": ""
     },
     {
@@ -699,11 +699,11 @@
       "en_title": "Chapter 10: What Deserves Automating",
       "order": 52,
       "src_chars": 2304,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2b0687c8cb02",
       "src": "#### Judgment scenario\n\n**Q1.** For each task, decide whether Mara should automate it or keep it by hand, and name which qualities from this chapter drive your answer: (a) copying each week's paid orders into her inventory sheet; (b) writing the warm paragraph about her new kiln pieces; (c) filing her annual business taxes; (d) sending each paid buyer a thank-you-and-shipping note.\n\n**Answer:** (a) _Automate_ : it is recurring (weekly), error-prone (hand-copying rows), and boring (no judgment), strong on all three, an ideal candidate. (b) _Keep by hand_ : it is judgment-laden and creative; the paragraph is Mara's voice and craft, exactly the part that must not be automated away. (c) _Keep by hand_ (or use a human professional): it is rare (once a year) and judgment-laden, so building a pipe would be effort never earned back for a task that needs human care anyway. (d) _Automate, but carefully_ : it is recurring and boring, so it deserves a pipe, but it _sends_ something into the world to a real customer, and that (not any error-proneness) is what puts it in the careful territory (draft-don't-send, per Chapter 12). The pattern: automate the recurring-boring-repetitive, keep the rare-and-delicate, and flag anything that _sends_ for extra care.\n\n\n#### Predict the shape\n\n**Q2.** Rewrite this wish as a WHEN-THEN pipeline, naming the trigger and the chain of actions: \"Every Monday, I want my orders gathered, my inventory updated, and a thank-you drafted for each paid buyer.\"\n\n**Answer:** _Trigger (WHEN):_ Monday morning arrives, a schedule. _Actions (THEN, in a chain):_ read the weekend's new orders; then update the inventory sheet from those orders; then, for each order whose `paid` box is true, draft a thank-you-and-shipping note. In one sentence: _when Monday comes, then read the orders, and then update inventory, and then draft the paid-buyers' thank-yous._ Notice three things this exercise reveals: the trigger is a clock (so this wants a scheduled knock, not a doorbell); the chain reuses the labeled-box reading from Chapter 3 (the `paid` fact is one such box, read to decide who gets a note); and the final action is _draft_ , not _send_ , keeping a human hand on the part that goes out into the world. The whole of Mara's Monday, and it fit in one WHEN-THEN sentence.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 917,
+      "out_sha": "0b08b98ba282",
       "note": ""
     },
     {
@@ -711,11 +711,11 @@
       "en_title": "Chapter 10: What Deserves Automating",
       "order": 53,
       "src_chars": 2938,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c364ce85dba0",
       "src": "#### Say this to your AI\n\nThis chapter's ask makes your assistant a partner in _judgment_ , not just a builder, so it helps you choose well before it helps you build.\n\n> _\"When I bring you an idea for automating something, don't just build it. First help me judge whether it's worth it: is this task recurring, error-prone, and boring enough to deserve a pipe, or is it rare, judgment-heavy, or so quick I should just keep doing it by hand? If it's worth automating, help me describe it as a simple 'when this happens, then do that' plan, and let's start with the smallest useful version and watch it for a week before we add anything. And always flag for me if any step actually sends something out into the world, so we can be extra careful with those.\"_\n\nThis ask installs the whole chapter as a working habit: the can-versus-should judgment (the three qualities each way), the WHEN-THEN blueprint, the small-before-grand discipline of watching one pipe for a week, and a standing flag on any _sending_ step. It turns your assistant from an eager builder into a thoughtful collaborator who helps you avoid the fate that misconception leads to. Choosing well is the skill; this ask keeps the choosing in the conversation.\n\n\n### Chapter Summary\n\nThe most valuable skill of the automation half is not building pipes but judging which deserve to exist, because every automation is a permanent tenant that runs without you and eventually breaks without you. Automate the **recurring** , the **error-prone** , and the **boring** , where the pipe pays back its cost every run and frees you for the parts that are actually yours. Leave alone the **rare** (never earns its cost back), the **judgment-laden** (where you add the value), and the **two-minute task** (where doing it by hand is simply cheaper), because _can_ and _should_ are different questions and the gap between them is judgment. Once a task passes the test, almost every automation takes one shape: **WHEN this, THEN that** , a trigger followed by a chain of actions, so commissioning a pipe is just finishing two sentences, \"when does it run?\" and \"what does it do?\" And you build safely by going **small before grand** : the smallest useful pipe first, watched for a week until it earns trust, because you maintain big automations by having grown them from small, understood ones.\n\nThis chapter began to answer the fear _I couldn't maintain it_ : nobody maintains a mystery, but anyone can maintain a thing they watched grow. It built on Chapter 9's capability scanning (you judge what to automate only after surveying what is possible), Chapter 8's clock-versus-doorbell triggers, and Chapter 3's labeled-box filtering (the `paid` fact as a safety check). Next, Chapter 11 answers the practical question the WHEN-THEN shape raises: once you have described a pipe, _where does it actually live and run_ , on your machine, on a schedule, or on something always on?\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1145,
+      "out_sha": "eb3fa97aa60e",
       "note": ""
     },
     {
