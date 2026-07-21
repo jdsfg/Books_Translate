@@ -1,0 +1,25 @@
+# DONE: AI时代六大超能力-卷一-Git与GitHub
+
+- status: 138/138 done
+- branch: cursor/ai-superpowers-git-sample-906d
+- PR: https://github.com/jdsfg/Books_Translate/pull/15
+- location: pipeline/translate/AI时代六大超能力-卷一-Git与GitHub/DONE.flag（已从仓库根目录移入本书目录）
+- review_config: glossaries = glossary_cs.md + glossary_local.md；force_arabic=true
+
+## 终审清理（PR #15 BLOCK → fixed）
+- plain language：普通话/普通语言 → 白话
+- acid test：酸性测试 → 试金石
+- guide（城市指南）：向导 → 指南（保留「街头向导」）
+- Chapter/Chapters/Hint/Answer/Discussion/Chapter Summary → 中文章名与练习标签
+- 金额与规模：USD / billion / million → 美元 / 亿美元 / 百万（保留阿拉伯数字）
+- repository：正文统一「仓库」；定义处「仓库（repository）」
+- pre-flight：统一「起飞前检查问题」
+- 清除行尾空白；git diff --check 通过
+
+## verify
+- shared glossary_cs.md --force-arabic：ERROR=0；WARN=2（c02_b03 / c15_b07）
+  - 二者均为英文 acid test 子串误触共享库 ACID（译已用「试金石」，非数据库 ACID）
+- local glossary_local.md：ERROR=0；其余 WARN 为可选术语在个别块未字面命中，已人工核对非终审所列系统残留
+
+## locked terms
+snapshot=快照, branch=分支, merge=合并, pull request=拉取请求

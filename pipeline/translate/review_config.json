@@ -57,7 +57,8 @@
       "source": "sources/AI时代六大超能力-卷一-Git与GitHub.md",
       "style": "pipeline/translate/style_cs_systems.md",
       "glossaries": [
-        "pipeline/translate/glossary_cs.md"
+        "pipeline/translate/glossary_cs.md",
+        "pipeline/translate/AI时代六大超能力-卷一-Git与GitHub/glossary_local.md"
       ],
       "force_arabic": true
     },
