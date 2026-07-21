@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "books": {
+    "信息论：从香农到 AI": {
+      "source": "sources/信息论：从香农到 AI.md",
+      "style": "pipeline/translate/style_ml_data_complexity.md",
+      "glossaries": [
+        "pipeline/translate/glossary_ml_data.md",
+        "pipeline/translate/信息论：从香农到 AI/glossary_local.md"
+      ],
+      "force_arabic": true
+    },
+    "复杂性科学入门": {
+      "source": "sources/复杂性科学入门.md",
+      "style": "pipeline/translate/style_ml_data_complexity.md",
+      "glossaries": [
+        "pipeline/translate/glossary_ml_data.md"
+      ],
+      "force_arabic": true
+    },
+    "AI时代的统计思维": {
+      "source": "sources/AI时代的统计思维.md",
+      "style": "pipeline/translate/style_ml_data_complexity.md",
+      "glossaries": [
+        "pipeline/translate/glossary_ml_data.md",
+        "pipeline/translate/AI时代的统计思维/glossary_local.md"
+      ],
+      "force_arabic": true
+    },
+    "明智决策：不确定世界中的理性思考": {
+      "source": "sources/明智决策：不确定世界中的理性思考.md",
+      "style": "pipeline/translate/style_social_science.md",
+      "glossaries": [
+        "pipeline/translate/glossary_social.md",
+        "pipeline/translate/明智决策：不确定世界中的理性思考/glossary_local.md"
+      ],
+      "force_arabic": false
+    },
+    "进化心理学": {
+      "source": "sources/进化心理学.md",
+      "style": "pipeline/translate/style_psychology_selfhelp.md",
+      "glossaries": [
+        "pipeline/translate/glossary_psychology.md",
+        "pipeline/translate/进化心理学/glossary_local.md"
+      ],
+      "force_arabic": false
+    },
+    "身体这台机器：随身硬件巡礼": {
+      "source": "sources/身体这台机器：随身硬件巡礼.md",
+      "style": "pipeline/translate/style_science_popular.md",
+      "glossaries": [
+        "pipeline/translate/glossary_biology.md"
+      ],
+      "force_arabic": true
+    }
+  }
+}
