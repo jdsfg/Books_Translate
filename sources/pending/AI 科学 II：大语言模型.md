@@ -74,7 +74,7 @@ The inefficiency of this approach is obvious. Consider: if every time you wrote 
 
 **Transfer learning** broke this impasse. The core idea:
 
-$$\underbrace{\text{Massive unlabeled text}}_{\text{Pretraining}} \;\longrightarrow\; \underbrace{\text{Small labeled dataset}}_{\text{Fine-tuning}}$$
+Massive unlabeled text⏟Pretraining ⟶ Small labeled dataset⏟Fine-tuning\underbrace{\text{Massive unlabeled text}}_{\text{Pretraining}} \;\longrightarrow\; \underbrace{\text{Small labeled dataset}}_{\text{Fine-tuning}}PretrainingMassive unlabeled text​​⟶Fine-tuningSmall labeled dataset​​
 
 First, train a model on billions of words of unlabeled text to learn the general structure of language (pretraining). Then, adapt this model to a specific task using a small amount of labeled data (fine-tuning). The pretraining phase learns syntax, semantics, world knowledge, and reasoning patterns; the fine-tuning phase specializes this general knowledge to the task at hand.
 
@@ -112,13 +112,13 @@ The critical design choice in pretraining is the **pretraining objective** — t
 
 MLM is BERT's core pretraining objective. The idea resembles a cloze test (fill-in-the-blank): randomly mask some tokens in the input and ask the model to predict them from context.
 
-Input: I went to the [MASK] to deposit my [MASK]$\text{Input: } \text{I went to the } [\text{MASK}] \text{ to deposit my } [\text{MASK}]Input: I went to the [MASK] to deposit my [MASK] Target: predict [MASK]="bank", [MASK]="check"\text{Target: predict } [\text{MASK}] = \text{"bank"}, \; [\text{MASK}] = \text{"check"}Target: predict [MASK]="bank",[MASK]="check"$
+Input: I went to the [MASK] to deposit my [MASK]\text{Input: } \text{I went to the } [\text{MASK}] \text{ to deposit my } [\text{MASK}]Input: I went to the [MASK] to deposit my [MASK] Target: predict [MASK]="bank", [MASK]="check"\text{Target: predict } [\text{MASK}] = \text{"bank"}, \; [\text{MASK}] = \text{"check"}Target: predict [MASK]="bank",[MASK]="check"
 
-Formally, given input sequence $\mathbf{x} = (x_1, x_2, \ldots, x_n)$, MLM randomly selects a subset M$\mathcal{M} \subset \\{1, 2, \ldots, n\\}M$ (approximately 15% of positions) and minimizes:
+Formally, given input sequence x=(x1,x2,…,xn)\mathbf{x} = (x_1, x_2, \ldots, x_n)x=(x1​,x2​,…,xn​), MLM randomly selects a subset M⊂{1,2,…,n}\mathcal{M} \subset \\{1, 2, \ldots, n\\}M⊂{1,2,…,n} (approximately 15% of positions) and minimizes:
 
-$$\text{MLM}} = -\sum_{t \in \mathcal{M}} \log P_\theta(x_t \mid \mathbf{x}_{\setminus \mathcal{M}})$$
+LMLM=−∑t∈Mlog⁡Pθ(xt∣x∖M)\mathcal{L}_{\text{MLM}} = -\sum_{t \in \mathcal{M}} \log P_\theta(x_t \mid \mathbf{x}_{\setminus \mathcal{M}})LMLM​=−t∈M∑​logPθ​(xt​∣x∖M​)
 
-where x∖M$\mathbf{x}_{\setminus \mathcal{M}}x$∖M denotes the sequence with masked positions replaced by the [MASK] token.
+where x∖M\mathbf{x}_{\setminus \mathcal{M}}x∖M​ denotes the sequence with masked positions replaced by the [MASK] token.
 
 **The key advantage of MLM is bidirectionality.** The model can simultaneously use the context to the left _and_ to the right of the masked position. In the example above, the model sees both "went to the" and "to deposit my" when predicting the first mask — both directions provide crucial information.
 
@@ -126,11 +126,11 @@ where x∖M$\mathbf{x}_{\setminus \mathcal{M}}x$∖M denotes the sequence with m
 
 Autoregressive LM is the GPT series' pretraining objective: given all preceding tokens, predict the next token.
 
-$$\prod_{t=1}^{n} P(w_t \mid w_1, w_2, \ldots, w_{t-1})P(w1,w2,$$
+P(w1,w2,…,wn)=∏t=1nP(wt∣w1,w2,…,wt−1)P(w_1, w_2, \ldots, w_n) = \prod_{t=1}^{n} P(w_t \mid w_1, w_2, \ldots, w_{t-1})P(w1​,w2​,…,wn​)=t=1∏n​P(wt​∣w1​,w2​,…,wt−1​)
 
 The training loss is the negative log-likelihood summed over all positions:
 
-$$\text{LM}} = -\sum_{t=1}^{T} \log P_\theta(w_t \mid w_{<t})$$
+LLM=−∑t=1Tlog⁡Pθ(wt∣w<t)\mathcal{L}_{\text{LM}} = -\sum_{t=1}^{T} \log P_\theta(w_t \mid w_{<t})LLM​=−t=1∑T​logPθ​(wt​∣w<t​)
 
 This is **unidirectional** — the model can only see the left context, never the right. This constraint seems like a weakness, but it grants a capability that MLM lacks: **natural text generation.** Since the training objective is "predict the next token," inference simply repeats this operation to generate text one token at a time.
 
@@ -151,13 +151,13 @@ Core capability | Understanding context | Generating text | Inter-sentence relat
 Signal density | ~15% of positions contribute to loss | 100% of positions contribute to loss | One binary signal per sentence pair  
 Mathematical form | −∑t∈Mlog⁡P(xt∣x∖M)-\sum_{t \in \mathcal{M}} \log P(x_t \mid \mathbf{x}_{\setminus \mathcal{M}})−∑t∈M​logP(xt​∣x∖M​) | −∑tlog⁡P(wt∣w<t)-\sum_t \log P(w_t \mid w_{<t})−∑t​logP(wt​∣w<t​) | −log⁡P(IsNext∣A,B)-\log P(\text{IsNext} \mid A, B)−logP(IsNext∣A,B)  
   
-The signal density difference is consequential: autoregressive LM extracts a training signal from every token position, while MLM extracts a signal from only ~15%. This means autoregressive LM is approximately 1/0.15≈6.7×1/0.15 \approx 6.7$\times1/0.15$≈6.7× more sample-efficient per forward pass — a difference that compounds at scale and is one reason the GPT lineage ultimately dominated.
+The signal density difference is consequential: autoregressive LM extracts a training signal from every token position, while MLM extracts a signal from only ~15%. This means autoregressive LM is approximately 1/0.15≈6.7×1/0.15 \approx 6.7\times1/0.15≈6.7× more sample-efficient per forward pass — a difference that compounds at scale and is one reason the GPT lineage ultimately dominated.
 
 > **Cross-Disciplinary Connection**
 > 
 > _Experimental design (statistics)_ : The choice of pretraining objective is analogous to designing an experiment that maximizes the information gained per observation. MLM's 15% masking rate is a compromise — like choosing the optimal sample size in a clinical trial: too few masked positions yield insufficient signal; too many destroy the context needed for prediction. The 15% rate sits near the peak of this tradeoff, analogous to the point where the Fisher information per observation is maximized.
 > 
-> _Psycholinguistics — incremental processing_ : The autoregressive language model's left-to-right prediction mirrors how humans process language. Surprisal theory (Hale, 2001; Levy, 2008) posits that the cognitive processing difficulty at word ttt is proportional to −log⁡P(wt∣w<t)-$\log P(w_t \mid w_{<t})$−logP(wt∣w<t) — exactly the quantity language models minimize. The parallel is not metaphorical: neural language model surprisal correlates with human reading times measured by eye-tracking and EEG, suggesting that both biological and artificial language processors implement variants of the same incremental prediction objective.
+> _Psycholinguistics — incremental processing_ : The autoregressive language model's left-to-right prediction mirrors how humans process language. Surprisal theory (Hale, 2001; Levy, 2008) posits that the cognitive processing difficulty at word ttt is proportional to −log⁡P(wt∣w<t)-\log P(w_t \mid w_{<t})−logP(wt​∣w<t​) — exactly the quantity language models minimize. The parallel is not metaphorical: neural language model surprisal correlates with human reading times measured by eye-tracking and EEG, suggesting that both biological and artificial language processors implement variants of the same incremental prediction objective.
 
 * * *
 
@@ -193,11 +193,11 @@ This is the power of **self-supervised learning** : the labels are embedded in t
 
 #### The Information-Theoretic Perspective
 
-From information theory, pretraining can be understood as **density estimation** on the text distribution PdataP_{\text{data}}Pdata. The cross-entropy loss decomposes as:
+From information theory, pretraining can be understood as **density estimation** on the text distribution PdataP_{\text{data}}Pdata​. The cross-entropy loss decomposes as:
 
-$\mathcal{L}_{\text{CE}}(\theta) = H(P_{\text{data}}) + D_{\text{KL}}(P_{\text{data}} \| P_\theta)$
+LCE(θ)=H(Pdata)+DKL(Pdata∥Pθ)\mathcal{L}_{\text{CE}}(\theta) = H(P_{\text{data}}) + D_{\text{KL}}(P_{\text{data}} \| P_\theta)LCE​(θ)=H(Pdata​)+DKL​(Pdata​∥Pθ​)
 
-where $\text{data}})H(Pdata) is the intrinsic entropy of natural language (a constant independent of the model) and DKLD_{\text{KL}}DKL is the KL divergence between the data distribution and the model distribution.$
+where H(Pdata)H(P_{\text{data}})H(Pdata​) is the intrinsic entropy of natural language (a constant independent of the model) and DKLD_{\text{KL}}DKL​ is the KL divergence between the data distribution and the model distribution.
 
 As we derived in Vol I, Chapter 26 (Section 26.2), minimizing cross-entropy is equivalent to minimizing KL divergence — making the model's distribution as close as possible to the true data distribution. Every gradient step reduces DKL(Pdata∥Pθ)D_{\text{KL}}(P_{\text{data}} \| P_\theta)DKL​(Pdata​∥Pθ​). The theoretical minimum of the loss is H(Pdata)H(P_{\text{data}})H(Pdata​) — reached only when the model perfectly replicates the statistical structure of natural language.
 
@@ -219,9 +219,9 @@ Mikolov et al.'s Word2Vec (the subject of Vol I, Chapter 14) was an early embodi
 
 Peters et al.'s ELMo (Embeddings from Language Models) took the critical step of generating **context-dependent word representations.** ELMo trained separate forward and backward LSTMs, then concatenated their hidden states at each layer:
 
-$$\text{ELMo}_k = \gamma \sum_{j=0}^{L} s_j \cdot [\overrightarrow{h}_{k,j}; \overleftarrow{h}_{k,j}]$$
+ELMok=γ∑j=0Lsj⋅[h→k,j;h←k,j]\text{ELMo}_k = \gamma \sum_{j=0}^{L} s_j \cdot [\overrightarrow{h}_{k,j}; \overleftarrow{h}_{k,j}]ELMok​=γj=0∑L​sj​⋅[hk,j​;hk,j​]
 
-where $\overrightarrow{h}_{k,j}$ and $\overleftarrow{h}_{k,j}$ are the forward and backward LSTM hidden states at layer $j$, position $k$, with learnable layer weights $s_j$ and scaling $\gamma$.
+where h→k,j\overrightarrow{h}_{k,j}hk,j​ and h←k,j\overleftarrow{h}_{k,j}hk,j​ are the forward and backward LSTM hidden states at layer jjj, position kkk, with learnable layer weights sjs_jsj​ and scaling factor γ\gammaγ.
 
 **Limitation:** The two directions are **trained independently** — the forward LSTM at position ttt has no knowledge of what the backward LSTM computed at position ttt. Information fusion occurs only at the final concatenation step — a shallow combination, not a deep interaction.
 
@@ -290,11 +290,11 @@ But pretraining alone produces capability without alignment: a model that mirror
 
 Answer
 
-ELMo trains two independent LSTMs — one forward (left-to-right) and one backward (right-to-left). At each position, the hidden states from both directions are concatenated: ht=[h→t;h←t]h_t = [$\overrightarrow{h}_t ; \overleftarrow{h}_t]ht=[ht;ht]. The critical limitation is that these two directions **never interact during computation**. The forward LSTM at position ttt has no knowledge of what the backward LSTM computed at position ttt. Information fusion occurs only at the final concatenation$ — a **shallow fusion**.
+ELMo trains two independent LSTMs — one forward (left-to-right) and one backward (right-to-left). At each position, the hidden states from both directions are concatenated: ht=[h→t;h←t]h_t = [\overrightarrow{h}_t ; \overleftarrow{h}_t]ht​=[ht​;ht​]. The critical limitation is that these two directions **never interact during computation**. The forward LSTM at position ttt has no knowledge of what the backward LSTM computed at position ttt. Information fusion occurs only at the final concatenation — a **shallow fusion**.
 
-BERT uses a Transformer encoder with full bidirectional self-attention. At every layer, every position attends to every other position (including both left and right context). The representation at position ttt in layer ℓ$\ell$ℓ is:
+BERT uses a Transformer encoder with full bidirectional self-attention. At every layer, every position attends to every other position (including both left and right context). The representation at position ttt in layer ℓ\ellℓ is:
 
-$$\sum_{j=1}^{n} \alpha_{tj}^{(\ell)} V_j^{(\ell)}ht($$
+ht(ℓ)=∑j=1nαtj(ℓ)Vj(ℓ)h_t^{(\ell)} = \sum_{j=1}^{n} \alpha_{tj}^{(\ell)} V_j^{(\ell)}ht(ℓ)​=j=1∑n​αtj(ℓ)​Vj(ℓ)​
 
 This means left and right context interact deeply at every layer — a **deep fusion**. The difference is analogous to two analysts reading the first and second halves of a report independently and then stapling their notes together (ELMo) versus two analysts sitting together, discussing every paragraph in real time (BERT).
 
@@ -304,7 +304,7 @@ BERT's approach produces richer representations because understanding a word oft
 
 Answer
 
-The raw numbers suggest a 6.7× efficiency advantage (1/0.15≈6.71/0.15 $\approx 6.71/0.15$≈6.7), but two factors complicate the comparison:
+The raw numbers suggest a 6.7× efficiency advantage (1/0.15≈6.71/0.15 \approx 6.71/0.15≈6.7), but two factors complicate the comparison:
 
 **Factor 1 — Information per prediction differs.** Each MLM prediction conditions on both left _and_ right context, which reduces ambiguity and makes each prediction "easier" (lower conditional entropy). Each autoregressive prediction conditions on left context only, retaining more ambiguity. A single MLM prediction at a masked position therefore carries less information (in the Shannon sense) than a single autoregressive prediction. The true efficiency gap is smaller than 6.7×.
 
@@ -342,23 +342,23 @@ A pretrained model has already learned (1)–(3) from billions of tokens of pret
 
 For the biomedical scenario, a conservative estimate is a 20–100× equivalent data advantage: fine-tuning a pretrained model on 500 examples should perform comparably to training from scratch on 10,000–50,000 examples. The exact multiplier depends on the domain overlap between pretraining data and the target domain — biomedical text is well-represented in large pretraining corpora (PubMed, Wikipedia medical articles), so the transfer should be effective.
 
-**The Bayesian interpretation:** Pretraining provides a strong, informative prior P(θ)P(\theta)P(θ) concentrated in a region of parameter space that represents good language models. Fine-tuning is maximum a posteriori (MAP) estimation: θ∗=arg⁡max⁡θ[P(data∣θ)⋅P(θ)]\theta^* = \arg\max_\theta [P($\text{data}$ | \theta) \cdot P(\theta)]θ∗=argmaxθ[P(data∣θ)⋅P(θ)]. With 500 examples, the likelihood P(data∣θ)P($\text{data}$ | \theta)P(data∣θ) is weak, so the prior dominates — the model stays close to the pretrained initialization, which already encodes useful language knowledge. Without pretraining, the prior is uninformative (uniform or random), and 500 examples of likelihood provide almost no constraint on ∼108\sim 10^8∼108 parameters.
+**The Bayesian interpretation:** Pretraining provides a strong, informative prior P(θ)P(\theta)P(θ) concentrated in a region of parameter space that represents good language models. Fine-tuning is maximum a posteriori (MAP) estimation: θ∗=arg⁡max⁡θ[P(data∣θ)⋅P(θ)]\theta^* = \arg\max_\theta [P(\text{data} | \theta) \cdot P(\theta)]θ∗=argmaxθ​[P(data∣θ)⋅P(θ)]. With 500 examples, the likelihood P(data∣θ)P(\text{data} | \theta)P(data∣θ) is weak, so the prior dominates — the model stays close to the pretrained initialization, which already encodes useful language knowledge. Without pretraining, the prior is uninformative (uniform or random), and 500 examples of likelihood provide almost no constraint on ∼108\sim 10^8∼108 parameters.
 
 **1.5.** The autoregressive language model's training signal density is 100%, while MLM's is approximately 15%. Suppose both models process a corpus of DDD tokens with identical architecture and compute budget. Derive an expression for the effective number of gradient-contributing tokens seen by each model after one epoch, and compute the ratio.
 
 Answer
 
-**Autoregressive LM:** Every token position t∈{1,2,…,T}t $\in \\{1, 2, \ldots, T\\}t$∈{1,2,…,T} in every sequence contributes to the loss. After one epoch over a corpus of DDD tokens, the number of gradient-contributing tokens is:
+**Autoregressive LM:** Every token position t∈{1,2,…,T}t \in \\{1, 2, \ldots, T\\}t∈{1,2,…,T} in every sequence contributes to the loss. After one epoch over a corpus of DDD tokens, the number of gradient-contributing tokens is:
 
-$N_{\text{AR}} = D$
+NAR=DN_{\text{AR}} = DNAR​=D
 
 **MLM:** Approximately 15% of token positions are masked and contribute to the loss. After one epoch:
 
-$N_{\text{MLM}} = 0.15 \times D$
+NMLM=0.15×DN_{\text{MLM}} = 0.15 \times DNMLM​=0.15×D
 
 **Ratio:**
 
-$$\frac{N_{\text{AR}}}{N_{\text{MLM}}} = \frac{D}{0.15 D} = \frac{1}{0.15} \approx 6.67$$
+NARNMLM=D0.15D=10.15≈6.67\frac{N_{\text{AR}}}{N_{\text{MLM}}} = \frac{D}{0.15 D} = \frac{1}{0.15} \approx 6.67NMLM​NAR​​=0.15DD​=0.151​≈6.67
 
 After one epoch, the autoregressive model has seen approximately 6.67× more gradient-contributing tokens than the MLM model.
 
@@ -434,7 +434,7 @@ The narrative arc is: **capability is necessary but not sufficient.** Pretrainin
 
 Answer
 
-This is an important objection. The lookup table achieves perfect compression on training data (LCE=0\mathcal{L}_{$\text{CE}} = 0$LCE=0 on the training set) without any generalization ability — it "understands" nothing and simply memorizes.
+This is an important objection. The lookup table achieves perfect compression on training data (LCE=0\mathcal{L}_{\text{CE}} = 0LCE​=0 on the training set) without any generalization ability — it "understands" nothing and simply memorizes.
 
 **The resolution lies in the distinction between training loss and test loss (generalization).**
 
@@ -493,7 +493,7 @@ Before BERT, pretraining for NLP faced a fundamental dilemma.
 
 BERT's answer: **Masked Language Modeling.** By replacing the tokens to be predicted with a [MASK] symbol, the original tokens are hidden from the attention mechanism. The model must reconstruct them from the surrounding context — which now legitimately includes both left and right sides. Information leakage is eliminated because the target tokens are absent from the input.
 
-Standard LM: P(wt∣w1,…,wt−1)(left context only)$\text{Standard LM: } P(w_t \mid w_1, \ldots, w_{t-1}) \quad \text{(left context only)}Standard LM: P(wt$∣w1,…,wt−1)(left context only) ELMo: P(wt∣w<t→)⊕P(wt∣w>t←)(two directions, independent)$\text{ELMo: } P(w_t \mid \overrightarrow{w_{<t}}) \oplus P(w_t \mid \overleftarrow{w_{>t}}) \quad \text{(two directions, independent)}ELMo: P(wt$∣w<t)⊕P(wt∣w>t)(two directions, independent) BERT MLM: P(wt∣w1,…,wt−1,wt+1,…,wn)(true bidirectional)$\text{BERT MLM: } P(w_t \mid w_1, \ldots, w_{t-1}, w_{t+1}, \ldots, w_n) \quad \text{(true bidirectional)}BERT MLM: P(wt$∣w1,…,wt−1,wt+1,…,wn)(true bidirectional)
+Standard LM: P(wt∣w1,…,wt−1)(left context only)\text{Standard LM: } P(w_t \mid w_1, \ldots, w_{t-1}) \quad \text{(left context only)}Standard LM: P(wt​∣w1​,…,wt−1​)(left context only) ELMo: P(wt∣w<t→)⊕P(wt∣w>t←)(two directions, independent)\text{ELMo: } P(w_t \mid \overrightarrow{w_{<t}}) \oplus P(w_t \mid \overleftarrow{w_{>t}}) \quad \text{(two directions, independent)}ELMo: P(wt​∣w<t​​)⊕P(wt​∣w>t​​)(two directions, independent) BERT MLM: P(wt∣w1,…,wt−1,wt+1,…,wn)(true bidirectional)\text{BERT MLM: } P(w_t \mid w_1, \ldots, w_{t-1}, w_{t+1}, \ldots, w_n) \quad \text{(true bidirectional)}BERT MLM: P(wt​∣w1​,…,wt−1​,wt+1​,…,wn​)(true bidirectional)
 
 > **Cross-Disciplinary Connection**
 > 
@@ -525,11 +525,11 @@ Keep unchanged | 10% | "The dog is cute" | Bridges the gap between pretraining a
   
 **Why not 100% [MASK]?** This would create a **pre-train/fine-tune distribution mismatch:** during pretraining, the input contains [MASK] tokens; during fine-tuning and inference, it does not. The model might learn representations that are optimized for inputs containing [MASK] but suboptimal for real text.
 
-Mathematically, for a selected position ttt, the input token x~t\tilde{x}_tx~t follows:
+Mathematically, for a selected position ttt, the input token x~t\tilde{x}_tx~t​ follows:
 
-x~t={[MASK]with probability 0.80xrandom∼Uniform(V)with probability 0.10xt (original)with probability 0.10\tilde{x}_t = \begin{cases} [$\text{MASK}] & \text{with probability } 0.80 \\\ x_{\text{random}} \sim \text{Uniform}(V) & \text{with probability } 0.10 \\\ x_t \text{ (original)} & \text{with probability } 0.10 \end{cases}x~$t=⎩⎨⎧[MASK]xrandom∼Uniform(V)xt (original)with probability 0.80with probability 0.10with probability 0.10
+x~t={[MASK]with probability 0.80xrandom∼Uniform(V)with probability 0.10xt (original)with probability 0.10\tilde{x}_t = \begin{cases} [\text{MASK}] & \text{with probability } 0.80 \\\ x_{\text{random}} \sim \text{Uniform}(V) & \text{with probability } 0.10 \\\ x_t \text{ (original)} & \text{with probability } 0.10 \end{cases}x~t​=⎩⎨⎧​[MASK]xrandom​∼Uniform(V)xt​ (original)​with probability 0.80with probability 0.10with probability 0.10​
 
-Regardless of which replacement is applied, the training target is always the original token xtx_txt.
+Regardless of which replacement is applied, the training target is always the original token xtx_txt​.
 
 The 10% random replacement serves a subtle purpose: it prevents the model from learning a "lazy strategy" where it only activates its prediction capabilities upon detecting a [MASK] token. With random replacements, any token might be incorrect, forcing the model to maintain accurate contextual representations at _every_ position.
 
@@ -546,9 +546,9 @@ BERT was released in two sizes:
 Parameter | BERT-Base | BERT-Large  
 ---|---|---  
 Transformer layers LLL | 12 | 24  
-Hidden dimension dmodeld_{$\text{model}}dmodel$ | 768 | 1024  
+Hidden dimension dmodeld_{\text{model}}dmodel​ | 768 | 1024  
 Attention heads hhh | 12 | 16  
-FFN inner dimension dffd_{$\text{ff}}dff$ | 3072 | 4096  
+FFN inner dimension dffd_{\text{ff}}dff​ | 3072 | 4096  
 Total parameters | 110M | 340M  
 Maximum sequence length | 512 | 512  
   
@@ -556,30 +556,30 @@ BERT-Base was deliberately sized to match GPT-1 (117M parameters), enabling fair
 
 **Per-layer Transformer encoder parameters:**
 
-* Multi-Head Self-Attention: 4×dmodel2=4×7682≈2.36M4 $\times d_{\text{model}}^2 = 4 \times 768^2 \approx 2.36\text{M}4$×dmodel2=4×7682≈2.36M
-* Feed-Forward Network: 2×dmodel×dff+dmodel+dff≈4.72M2 $\times d_{\text{model}} \times d_{\text{ff}} + d_{\text{model}} + d_{\text{ff}} \approx 4.72\text{M}2$×dmodel×dff+dmodel+dff≈4.72M
-* Layer Normalization (2 per layer): 4×dmodel≈0.003M4 $\times d_{\text{model}} \approx 0.003\text{M}4$×dmodel≈0.003M
-* Per-layer total: ≈7.08M\approx 7.08$\text{M}$≈7.08M
+* Multi-Head Self-Attention: 4×dmodel2=4×7682≈2.36M4 \times d_{\text{model}}^2 = 4 \times 768^2 \approx 2.36\text{M}4×dmodel2​=4×7682≈2.36M
+* Feed-Forward Network: 2×dmodel×dff+dmodel+dff≈4.72M2 \times d_{\text{model}} \times d_{\text{ff}} + d_{\text{model}} + d_{\text{ff}} \approx 4.72\text{M}2×dmodel​×dff​+dmodel​+dff​≈4.72M
+* Layer Normalization (2 per layer): 4×dmodel≈0.003M4 \times d_{\text{model}} \approx 0.003\text{M}4×dmodel​≈0.003M
+* Per-layer total: ≈7.08M\approx 7.08\text{M}≈7.08M
 
 **Total model parameters:**
 
-$\times 7.08\text{M} \approx 85\text{M}12$
-* Token Embedding: ∣V∣×dmodel=30,522×768≈23.4M|V| $\times d_{\text{model}} = 30{,}522 \times 768 \approx 23.4\text{M}$
-* Segment Embedding: 2×768≈0.002M2 \times 768 \approx 0.002$\text{M}2$×768≈0.002M
-* Position Embedding: 512×768≈0.39M512 \times 768 \approx 0.39$\text{M}512$×768≈0.39M
-* **Total: ≈109M\approx 109$\text{M}$≈109M** (consistent with the reported 110M)
+* 12 encoder layers: 12×7.08M≈85M12 \times 7.08\text{M} \approx 85\text{M}12×7.08M≈85M
+* Token Embedding: ∣V∣×dmodel=30,522×768≈23.4M|V| \times d_{\text{model}} = 30{,}522 \times 768 \approx 23.4\text{M}∣V∣×dmodel​=30,522×768≈23.4M
+* Segment Embedding: 2×768≈0.002M2 \times 768 \approx 0.002\text{M}2×768≈0.002M
+* Position Embedding: 512×768≈0.39M512 \times 768 \approx 0.39\text{M}512×768≈0.39M
+* **Total: ≈109M\approx 109\text{M}≈109M** (consistent with the reported 110M)
 
 #### Input Representation: Three Embeddings Summed
 
 BERT's input representation is the element-wise sum of three embedding vectors:
 
-$\text{Input}(x_i) = \text{TokenEmb}(x_i) + \text{SegmentEmb}(x_i) + \text{PositionEmb}(i)$
+Input(xi)=TokenEmb(xi)+SegmentEmb(xi)+PositionEmb(i)\text{Input}(x_i) = \text{TokenEmb}(x_i) + \text{SegmentEmb}(x_i) + \text{PositionEmb}(i)Input(xi​)=TokenEmb(xi​)+SegmentEmb(xi​)+PositionEmb(i)
 
-**Token Embedding:** Maps each token to a dmodeld_{\text{model}}dmodel-dimensional vector. BERT uses the WordPiece tokenizer with a vocabulary of 30,522 tokens.
+**Token Embedding:** Maps each token to a dmodeld_{\text{model}}dmodel​-dimensional vector. BERT uses the WordPiece tokenizer with a vocabulary of 30,522 tokens.
 
-**Segment Embedding:** Distinguishes the two sentences in a sentence pair. All tokens in sentence A use embedding EAE_AEA; all tokens in sentence B use EBE_BEB. Only 2 learnable vectors.
+**Segment Embedding:** Distinguishes the two sentences in a sentence pair. All tokens in sentence A use embedding EAE_AEA​; all tokens in sentence B use EBE_BEB​. Only 2 learnable vectors.
 
-**Position Embedding:** Encodes token position in the sequence. Unlike the original Transformer's fixed sinusoidal encoding (Vol I, Chapter 22), BERT uses **learned position embeddings** — each position i∈{0,1,…,511}i $\in \\{0, 1, \ldots, 511\\}i$∈{0,1,…,511} has an independently learned vector. This is more flexible but cannot generalize to sequence lengths beyond 512.
+**Position Embedding:** Encodes token position in the sequence. Unlike the original Transformer's fixed sinusoidal encoding (Vol I, Chapter 22), BERT uses **learned position embeddings** — each position i∈{0,1,…,511}i \in \\{0, 1, \ldots, 511\\}i∈{0,1,…,511} has an independently learned vector. This is more flexible but cannot generalize to sequence lengths beyond 512.
 
 **Special tokens:**
 
@@ -607,9 +607,9 @@ Total: approximately 3.3 billion words — about 4× the data used by GPT-1 (Boo
 
 The total pretraining loss is the sum of MLM and NSP losses:
 
-$\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{MLM}} + \mathcal{L}_{\text{NSP}}$
+Ltotal=LMLM+LNSP\mathcal{L}_{\text{total}} = \mathcal{L}_{\text{MLM}} + \mathcal{L}_{\text{NSP}}Ltotal​=LMLM​+LNSP​
 
-Training configuration: BERT-Base used 4 Cloud TPUs for 4 days; BERT-Large used 16 Cloud TPUs for 4 days. Batch size: 256 sequences. Optimizer: Adam with learning rate 1×10−41 $\times 10^{-4}1$×10−4 and 10,000 warmup steps.
+Training configuration: BERT-Base used 4 Cloud TPUs for 4 days; BERT-Large used 16 Cloud TPUs for 4 days. Batch size: 256 sequences. Optimizer: Adam with learning rate 1×10−41 \times 10^{-4}1×10−4 and 10,000 warmup steps.
 
 * * *
 
@@ -627,9 +627,9 @@ One of BERT's most celebrated design features is the extreme simplicity of fine-
 
 Input: `[CLS] sentence [SEP]`
 
-Take the [CLS] output vector h[CLS]∈Rdmodelh_{[$\text{CLS}]} \in \mathbb{R}^{d_{\text{model}}}h[CLS]$∈Rdmodel and apply a linear classifier:
+Take the [CLS] output vector h[CLS]∈Rdmodelh_{[\text{CLS}]} \in \mathbb{R}^{d_{\text{model}}}h[CLS]​∈Rdmodel​ and apply a linear classifier:
 
-$P(y \mid x) = \text{softmax}(W \cdot h_{[\text{CLS}]} + b), \quad W \in \mathbb{R}^{K \times d_{\text{model}}}$
+P(y∣x)=softmax(W⋅h[CLS]+b),W∈RK×dmodelP(y \mid x) = \text{softmax}(W \cdot h_{[\text{CLS}]} + b), \quad W \in \mathbb{R}^{K \times d_{\text{model}}}P(y∣x)=softmax(W⋅h[CLS]​+b),W∈RK×dmodel​
 
 **Sentence-pair classification** (e.g., natural language inference):
 
@@ -643,7 +643,7 @@ Input: `[CLS] token_1 token_2 ... token_n [SEP]`
 
 Apply a classifier to each token position:
 
-$P(y_t \mid x) = \text{softmax}(W \cdot h_t + b) \quad \text{for each position } t$
+P(yt∣x)=softmax(W⋅ht+b)for each position tP(y_t \mid x) = \text{softmax}(W \cdot h_t + b) \quad \text{for each position } tP(yt​∣x)=softmax(W⋅ht​+b)for each position t
 
 **Extractive question answering** (e.g., SQuAD):
 
@@ -651,9 +651,9 @@ Input: `[CLS] question [SEP] passage [SEP]`
 
 Learn two vectors SSS (start) and EEE (end). For each passage position iii, compute:
 
-P(start=i)=exp⁡(S⋅hi)∑jexp⁡(S⋅hj),P(end=i)=exp⁡(E⋅hi)∑jexp⁡(E⋅hj)P(\text{start} = i) = \frac{\exp(S \cdot h_i)}{\sum_j \exp(S \cdot h_j)}, \qquad P(\text{end} = i) = \frac{\exp(E \cdot h_i)}{\sum_j \exp(E \cdot h_j)}P(start=i)=∑jexp(S⋅hj)exp(S⋅hi),P(end=i)=∑jexp(E⋅hj)exp(E⋅hi)
+P(start=i)=exp⁡(S⋅hi)∑jexp⁡(S⋅hj),P(end=i)=exp⁡(E⋅hi)∑jexp⁡(E⋅hj)P(\text{start} = i) = \frac{\exp(S \cdot h_i)}{\sum_j \exp(S \cdot h_j)}, \qquad P(\text{end} = i) = \frac{\exp(E \cdot h_i)}{\sum_j \exp(E \cdot h_j)}P(start=i)=∑j​exp(S⋅hj​)exp(S⋅hi​)​,P(end=i)=∑j​exp(E⋅hj​)exp(E⋅hi​)​
 
-The answer span score is S⋅hi+E⋅hjS $\cdot h_i + E \cdot h_jS$⋅hi+E⋅hj (constrained to j≥ij $\geq ij$≥i).
+The answer span score is S⋅hi+E⋅hjS \cdot h_i + E \cdot h_jS⋅hi​+E⋅hj​ (constrained to j≥ij \geq ij≥i).
 
 #### Fine-Tuning Hyperparameters
 
@@ -760,15 +760,15 @@ Answer
 
 With MLM at 15% masking rate on a 512-token sequence:
 
-$N_{\text{MLM}} = 0.15 \times 512 \approx 77 \text{ positions}$
+NMLM=0.15×512≈77 positionsN_{\text{MLM}} = 0.15 \times 512 \approx 77 \text{ positions}NMLM​=0.15×512≈77 positions
 
 With an autoregressive objective, every position (except possibly the first, which has no left context) contributes:
 
-$N_{\text{AR}} = 512 \text{ positions (or 511 if we exclude position 1)}$
+NAR=512 positions (or 511 if we exclude position 1)N_{\text{AR}} = 512 \text{ positions (or 511 if we exclude position 1)}NAR​=512 positions (or 511 if we exclude position 1)
 
 Ratio:
 
-$$\frac{N_{\text{AR}}}{N_{\text{MLM}}} = \frac{512}{77} \approx 6.65$$
+NARNMLM=51277≈6.65\frac{N_{\text{AR}}}{N_{\text{MLM}}} = \frac{512}{77} \approx 6.65NMLM​NAR​​=77512​≈6.65
 
 The autoregressive model extracts approximately 6.65× more training signal per forward pass. This efficiency gap is one reason the GPT lineage ultimately outscaled the BERT lineage — every forward pass during pretraining provides more gradient information, compounding over billions of training steps.
 
@@ -818,9 +818,9 @@ Each word is tokenized via WordPiece. For words split into subwords (e.g., "pres
 
 A linear classification layer applied to each token position:
 
-$P(y_t \mid x) = \text{softmax}(W_{\text{NER}} \cdot h_t + b_{\text{NER}})$
+P(yt∣x)=softmax(WNER⋅ht+bNER)P(y_t \mid x) = \text{softmax}(W_{\text{NER}} \cdot h_t + b_{\text{NER}})P(yt​∣x)=softmax(WNER​⋅ht​+bNER​)
 
-where ht∈R768h_t $\in \mathbb{R}^{768}ht$∈R768 is BERT's output at position ttt, WNER∈RK×768W_{$\text{NER}} \in \mathbb{R}^{K \times 768}WNER$∈RK×768, and KKK is the number of NER tags (e.g., B-Disease, I-Disease, B-Drug, I-Drug, B-Procedure, I-Procedure, O).
+where ht∈R768h_t \in \mathbb{R}^{768}ht​∈R768 is BERT's output at position ttt, WNER∈RK×768W_{\text{NER}} \in \mathbb{R}^{K \times 768}WNER​∈RK×768, and KKK is the number of NER tags (e.g., B-Disease, I-Disease, B-Drug, I-Drug, B-Procedure, I-Procedure, O).
 
 Optionally, a CRF (Conditional Random Field) layer can be added on top to model label dependencies (e.g., I-Disease should not follow B-Drug).
 
@@ -846,17 +846,17 @@ Using the framework from Chapter 1, pretraining provides an "informative prior" 
 
 Empirically, BERT-based NER on biomedical text with limited labeled data outperforms models trained from scratch by 10-20 F1 points, consistent with the 20-100× equivalent data advantage discussed in Chapter 1, Exercise 1.4.
 
-**2.5.** BERT-Base has 110M parameters, of which ~23.4M come from the Token Embedding layer (30,522×76830{,}522 $\times 76830,522$×768). Suppose a team decides to double the vocabulary size to 60,000 to better handle multilingual text. (a) Compute the new total parameter count. (b) What percentage of parameters are now in the embedding layer? (c) Discuss the tradeoffs of this change for multilingual performance.
+**2.5.** BERT-Base has 110M parameters, of which ~23.4M come from the Token Embedding layer (30,522×76830{,}522 \times 76830,522×768). Suppose a team decides to double the vocabulary size to 60,000 to better handle multilingual text. (a) Compute the new total parameter count. (b) What percentage of parameters are now in the embedding layer? (c) Discuss the tradeoffs of this change for multilingual performance.
 
 Answer
 
 **(a) New parameter count:**
 
-New Token Embedding: 60,000×768=46.08M60{,}000 \times 768 = 46.08$\text{M}60,000$×768=46.08M (increase of 46.08−23.4=22.68M46.08 - 23.4 = 22.68$\text{M}46.08−23.4=22.68M)$
+New Token Embedding: 60,000×768=46.08M60{,}000 \times 768 = 46.08\text{M}60,000×768=46.08M (increase of 46.08−23.4=22.68M46.08 - 23.4 = 22.68\text{M}46.08−23.4=22.68M)
 
-Other parameters unchanged: 110−23.4=86.6M110 - 23.4 = 86.6$\text{M}110−23.4=86.6M$
+Other parameters unchanged: 110−23.4=86.6M110 - 23.4 = 86.6\text{M}110−23.4=86.6M
 
-$\text{M}86.6+46.08=132.68M (increase of ~20.6%)$
+New total: 86.6+46.08=132.68M86.6 + 46.08 = 132.68\text{M}86.6+46.08=132.68M (increase of ~20.6%)
 
 **(b) Embedding layer percentage:**
 
@@ -912,15 +912,15 @@ Answer
 
 **Alternative 1: Mean pooling** — Average all token representations:
 
-$$\text{mean}} = \frac{1}{n} \sum_{$$
+hmean=1n∑t=1nhth_{\text{mean}} = \frac{1}{n} \sum_{t=1}^{n} h_thmean​=n1​t=1∑n​ht​
 
 **When preferable:** For semantic similarity tasks (e.g., STS-B, sentence embedding), mean pooling often outperforms [CLS] because it aggregates information from all positions equally, producing a more "democratic" representation. Sentence-BERT (Reimers & Gurevych, 2019) demonstrated that mean pooling produces better sentence embeddings for similarity search. The [CLS] token's representation may overfit to the NSP task and not optimally represent the full sentence meaning.
 
 **Alternative 2: Attention pooling** — Learn a weighted combination of token representations:
 
-αt=exp⁡(wTht)∑jexp⁡(wThj),hattn=∑tαtht\alpha_$$t = \frac{\exp(w^T h_t)}{\sum_{j} \exp(w^T h_j)}, \qquad h_{\text{attn}} = \sum_{t} \alpha_t h_t$$αt=∑jexp(wThj)exp(wTht),hattn=t∑αtht
+αt=exp⁡(wTht)∑jexp⁡(wThj),hattn=∑tαtht\alpha_t = \frac{\exp(w^T h_t)}{\sum_{j} \exp(w^T h_j)}, \qquad h_{\text{attn}} = \sum_{t} \alpha_t h_tαt​=∑j​exp(wThj​)exp(wTht​)​,hattn​=t∑​αt​ht​
 
-where w∈Rdmodelw \in \mathbb{R}^{d_{$\text{model}}}w$∈Rdmodel is a learned query vector (as in the attention mechanism from Vol I, Chapter 19).
+where w∈Rdmodelw \in \mathbb{R}^{d_{\text{model}}}w∈Rdmodel​ is a learned query vector (as in the attention mechanism from Vol I, Chapter 19).
 
 **When preferable:** For tasks where certain positions carry disproportionate importance (e.g., in sentiment analysis, the sentiment-bearing words matter most; in NER-aggregation tasks, entity positions matter most). Attention pooling can learn to focus on the most relevant positions, potentially capturing task-relevant information better than either [CLS] or mean pooling.
 
@@ -938,7 +938,7 @@ Answer
 
 **Rank 3: Training signal efficiency and scaling behavior.** As analyzed in Section 2.1 of this chapter (and Section 1.3 of Chapter 1), autoregressive LM provides ~6.7× higher training signal density than MLM. At the massive scale of modern pretraining (trillions of tokens), this efficiency gap translates to substantial cost savings or equivalently better models for the same compute budget. Furthermore, Kaplan et al.'s scaling laws (Chapter 5) were primarily validated on decoder-only models, giving practitioners reliable guidance for scaling decisions — a practical advantage that reinforced the architectural convergence.
 
-**Honorable mention: KV cache efficiency.** During autoregressive generation, decoder-only models can cache previously computed key-value pairs, making each additional token generation O(d)O(d)O(d) instead of O(t⋅d)O(t $\cdot d)O(t$⋅d). This practical efficiency advantage was crucial for deploying models at scale (serving millions of users), though it was not the primary driver of the architectural convergence in research.
+**Honorable mention: KV cache efficiency.** During autoregressive generation, decoder-only models can cache previously computed key-value pairs, making each additional token generation O(d)O(d)O(d) instead of O(t⋅d)O(t \cdot d)O(t⋅d). This practical efficiency advantage was crucial for deploying models at scale (serving millions of users), though it was not the primary driver of the architectural convergence in research.
 
 **2.9.** BERT processes a maximum of 512 tokens. Consider a legal document that is 10,000 tokens long. Propose a strategy for using BERT to classify this document's overall topic, and analyze the information loss relative to a hypothetical model that could process all 10,000 tokens at once. (This limitation motivates the long-context capabilities developed in later architectures.)
 
@@ -946,15 +946,15 @@ Answer
 
 **Strategy: Sliding window with aggregation.**
 
-  1. **Segment the document** into overlapping chunks of 512 tokens, with an overlap of ~128 tokens between consecutive chunks. A 10,000-token document produces approximately ⌈(10000−128)/(512−128)⌉+1≈26$\lceil (10000 - 128) / (512 - 128) \rceil + 1 \approx 26$⌈(10000−128)/(512−128)⌉+1≈26 chunks.
+  1. **Segment the document** into overlapping chunks of 512 tokens, with an overlap of ~128 tokens between consecutive chunks. A 10,000-token document produces approximately ⌈(10000−128)/(512−128)⌉+1≈26\lceil (10000 - 128) / (512 - 128) \rceil + 1 \approx 26⌈(10000−128)/(512−128)⌉+1≈26 chunks.
 
-  2. **Encode each chunk** through BERT independently, obtaining a [CLS] representation hi∈R768h_i $\in \mathbb{R}^{768}hi$∈R768 for each chunk iii.
+  2. **Encode each chunk** through BERT independently, obtaining a [CLS] representation hi∈R768h_i \in \mathbb{R}^{768}hi​∈R768 for each chunk iii.
 
   3. **Aggregate chunk representations** to form a document-level representation. Options include:
 
-     * Mean pooling: hdoc=1N∑i=1Nhih_{\text{doc}} = \frac{1}{N} \sum_{i=1}^{N} h_ihdoc=N1∑i=1Nhi
-     * Max pooling: hdoc=max⁡ihih_{$\text{doc}} = \max_i h_$ihdoc=maxihi (element-wise)
-     * Attention pooling: learn weights $\alpha_i$ over chunks
+     * Mean pooling: hdoc=1N∑i=1Nhih_{\text{doc}} = \frac{1}{N} \sum_{i=1}^{N} h_ihdoc​=N1​∑i=1N​hi​
+     * Max pooling: hdoc=max⁡ihih_{\text{doc}} = \max_i h_ihdoc​=maxi​hi​ (element-wise)
+     * Attention pooling: learn weights αi\alpha_iαi​ over chunks
      * Hierarchical Transformer: feed chunk representations into a second, smaller Transformer
   4. **Classify** using the document-level representation.
 
@@ -968,11 +968,11 @@ The fundamental information loss is the inability to capture **cross-chunk depen
 
 * **Long-range dependencies** (2,000–10,000 tokens): Completely lost. The overall argument structure of the document, conditional clauses that span sections, and cross-references between distant sections cannot be captured.
 
-**Quantifying the loss:** If we model dependencies between positions iii and jjj as having relevance proportional to 1/∣i−j∣γ1/|i-j| ^$\gamma1/$∣i−j∣γ (a power-law decay, which is the typical structure of attention weights), then the fraction of total dependency mass captured by a 512-window is: 
+**Quantifying the loss:** If we model dependencies between positions iii and jjj as having relevance proportional to 1/∣i−j∣γ1/|i-j|^\gamma1/∣i−j∣γ (a power-law decay, which is the typical structure of attention weights), then the fraction of total dependency mass captured by a 512-window is:
 
- $$\text{Captured fraction} \approx \frac{\sum_{$$ |i-j| \leq 512} |i-j| $$\sum_{$$ |i-j| \leq 10000} |i-j| $\gamma}}Captured fraction$ 
+Captured fraction≈∑∣i−j∣≤512∣i−j∣−γ∑∣i−j∣≤10000∣i−j∣−γ\text{Captured fraction} \approx \frac{\sum_{|i-j| \leq 512} |i-j|^{-\gamma}}{\sum_{|i-j| \leq 10000} |i-j|^{-\gamma}}Captured fraction≈∑∣i−j∣≤10000​∣i−j∣−γ∑∣i−j∣≤512​∣i−j∣−γ​
 
-For typical values ($\gamma \approx 1.0$), this is approximately 70–80% — significant but not complete. The 20–30% of dependency mass in long-range interactions is what modern long-context architectures (GPT-4 with 128K context, Claude with 200K context) can capture but BERT cannot.
+For typical values (γ≈1.0\gamma \approx 1.0γ≈1.0), this is approximately 70–80% — significant but not complete. The 20–30% of dependency mass in long-range interactions is what modern long-context architectures (GPT-4 with 128K context, Claude with 200K context) can capture but BERT cannot.
 
 This limitation was a key motivation for developing models with longer context windows, ultimately leading to the long-context revolution (RoPE position encodings, Flash Attention) that characterizes modern LLMs.
 
@@ -1025,11 +1025,11 @@ This question was less obvious than it sounds. In 2018, the prevailing view was 
 
 #### Stage 1: Unsupervised Pretraining
 
-GPT-1 trains a standard autoregressive language model on a large corpus of unlabeled text. Given a sequence of tokens {u1,u2,…,un}\\{u_1, u_2, $\ldots, u_n\\}{u1,u2,$…,un}, the model maximizes:
+GPT-1 trains a standard autoregressive language model on a large corpus of unlabeled text. Given a sequence of tokens {u1,u2,…,un}\\{u_1, u_2, \ldots, u_n\\}{u1​,u2​,…,un​}, the model maximizes:
 
-L1(U)=∑ilog⁡P(ui∣ui−k,…,ui−1;Θ)\mathcal{L}_1(\mathcal{U}) = $$\sum_{i} \log P(u_i \mid u_{i-k}, \ldots, u_{i-1}; \Theta)L1(U)=i$$∑logP(ui∣ui−k,…,ui−1;Θ)
+L1(U)=∑ilog⁡P(ui∣ui−k,…,ui−1;Θ)\mathcal{L}_1(\mathcal{U}) = \sum_{i} \log P(u_i \mid u_{i-k}, \ldots, u_{i-1}; \Theta)L1​(U)=i∑​logP(ui​∣ui−k​,…,ui−1​;Θ)
 
-where kkk is the context window size and $\Theta$ represents model parameters. The architecture is a Transformer decoder — the same decoder-only design analyzed in Vol I, Chapter 26 (Section 26.5).
+where kkk is the context window size and Θ\ThetaΘ represents model parameters. The architecture is a Transformer decoder — the same decoder-only design analyzed in Vol I, Chapter 26 (Section 26.5).
 
 **The architecture:** GPT-1 uses a 12-layer Transformer decoder with hidden dimension 768, 12 attention heads, and feed-forward inner dimension 3072 — totaling 117M parameters. This is a deliberately chosen match to BERT-Base (110M parameters) for fair comparison. GPT-1 uses learned positional embeddings (not the sinusoidal encodings of the original Transformer), a design choice retained by all subsequent GPT models.
 
@@ -1037,7 +1037,7 @@ The key simplification relative to the original Transformer (Vaswani et al., 201
 
 Each layer computes:
 
-hl=LayerNorm(hl−1+MaskedMultiHeadAttn(hl−1))h_$l = \text{LayerNorm}(h_{l-1} + \text{MaskedMultiHeadAttn}(h_{l-1}))$$\text{LayerNorm}(h_l + \text{FFN}(h_l))hl$
+hl=LayerNorm(hl−1+MaskedMultiHeadAttn(hl−1))h_l = \text{LayerNorm}(h_{l-1} + \text{MaskedMultiHeadAttn}(h_{l-1}))hl​=LayerNorm(hl−1​+MaskedMultiHeadAttn(hl−1​)) hl′=LayerNorm(hl+FFN(hl))h_l' = \text{LayerNorm}(h_l + \text{FFN}(h_l))hl′​=LayerNorm(hl​+FFN(hl​))
 
 The **masked self-attention** uses a causal mask (lower-triangular matrix) ensuring that position ttt attends only to positions {1,2,…,t}\\{1, 2, \ldots, t\\}{1,2,…,t}. As derived in Vol I, Chapter 21, this constraint is mathematically equivalent to setting the upper-triangular entries of the attention score matrix to −∞-\infty−∞ before softmax, forcing those attention weights to zero.
 
@@ -1049,17 +1049,17 @@ This is notably less data than BERT's 3.3B words (BooksCorpus + Wikipedia). The 
 
 #### Stage 2: Supervised Fine-Tuning
 
-Given a labeled dataset C$\mathcal{C}C with inputs x1,$…,xmx_1, $\ldots, x_mx1,$…,xm and label yyy, GPT-1 passes the input through the pretrained Transformer and takes the final token's hidden state as the sequence representation:
+Given a labeled dataset C\mathcal{C}C with inputs x1,…,xmx_1, \ldots, x_mx1​,…,xm​ and label yyy, GPT-1 passes the input through the pretrained Transformer and takes the final token's hidden state as the sequence representation:
 
-$P(y \mid x_1, \ldots, x_m) = \text{softmax}(h_m^L \cdot W_y)$
+P(y∣x1,…,xm)=softmax(hmL⋅Wy)P(y \mid x_1, \ldots, x_m) = \text{softmax}(h_m^L \cdot W_y)P(y∣x1​,…,xm​)=softmax(hmL​⋅Wy​)
 
-where hmLh_m^LhmL is the last layer's output at the final token position.
+where hmLh_m^LhmL​ is the last layer's output at the final token position.
 
 **The auxiliary language model loss:** GPT-1's distinctive fine-tuning choice: it does not optimize only the task-specific loss. Instead, it jointly optimizes:
 
-$\mathcal{L}_3(\mathcal{C}) = \mathcal{L}_2(\mathcal{C}) + \lambda \cdot \mathcal{L}_1(\mathcal{C})$
+L3(C)=L2(C)+λ⋅L1(C)\mathcal{L}_3(\mathcal{C}) = \mathcal{L}_2(\mathcal{C}) + \lambda \cdot \mathcal{L}_1(\mathcal{C})L3​(C)=L2​(C)+λ⋅L1​(C)
 
-where L2$\mathcal{L}_2L2 is the classification loss and L1\mathcal{L}_1L1 is the language modeling loss computed on the fine-tuning data. The weight$ $\lambda$ controls the balance.
+where L2\mathcal{L}_2L2​ is the classification loss and L1\mathcal{L}_1L1​ is the language modeling loss computed on the fine-tuning data. The weight λ\lambdaλ controls the balance.
 
 **Why keep the LM loss during fine-tuning?** Without it, fine-tuning on a small dataset can cause **catastrophic forgetting** — the gradient updates for the classification task may overwrite the general language knowledge learned during pretraining. The auxiliary LM loss acts as an anchor: it constrains the model to maintain its language modeling capability while adapting to the new task.
 
@@ -1067,7 +1067,7 @@ This is a form of **functional regularization** : rather than penalizing paramet
 
 > **Cross-Disciplinary Connection**
 > 
-> _Control theory — reference tracking with disturbance rejection_ : In control engineering, a system must track a reference signal (the classification task) while rejecting disturbances (catastrophic forgetting). The auxiliary LM loss acts as a feedback controller that "rejects" parameter drift away from the pretrained behavior. The weight $\lambda$ is the controller gain — too large, and the system cannot track the reference (task performance suffers); too small, and disturbances dominate (forgetting occurs).
+> _Control theory — reference tracking with disturbance rejection_ : In control engineering, a system must track a reference signal (the classification task) while rejecting disturbances (catastrophic forgetting). The auxiliary LM loss acts as a feedback controller that "rejects" parameter drift away from the pretrained behavior. The weight λ\lambdaλ is the controller gain — too large, and the system cannot track the reference (task performance suffers); too small, and disturbances dominate (forgetting occurs).
 > 
 > _Ecology — keystone species conservation_ : When managing an ecosystem for a specific outcome (e.g., timber production), ecologists know that eliminating "non-productive" species can collapse the ecosystem. The auxiliary LM loss preserves the "ecosystem" of language knowledge — general capabilities that are not directly measured by the task loss but that support the task indirectly.
 
@@ -1081,19 +1081,19 @@ Rather than designing different architectures for different tasks, GPT-1 rearran
 
 #### Classification
 
-[Start] text [Extract][$\text{Start}] \; \text{text} \; [\text{Extract}][Start]text[Extract]$
+[Start] text [Extract][\text{Start}] \; \text{text} \; [\text{Extract}][Start]text[Extract]
 
 The hidden state at the [Extract] position feeds a linear classifier. [Start] and [Extract] are special tokens added to the vocabulary.
 
 #### Entailment (Natural Language Inference)
 
-[Start] premise [Delim] hypothesis [Extract][$\text{Start}] \; \text{premise} \; [\text{Delim}] \; \text{hypothesis} \; [\text{Extract}][Start]premise[Delim]hypothesis[Extract]$
+[Start] premise [Delim] hypothesis [Extract][\text{Start}] \; \text{premise} \; [\text{Delim}] \; \text{hypothesis} \; [\text{Extract}][Start]premise[Delim]hypothesis[Extract]
 
 The [Delim] token separates premise and hypothesis. The model uses its self-attention to learn the relationship between the two segments.
 
 #### Similarity
 
-[Start] text1 [Delim] text2 [Extract][$\text{Start}] \; \text{text}_1 \; [\text{Delim}] \; \text{text}_2 \; [\text{Extract}][Start]text1[Delim]text2[Extract] [Start] text2 [Delim] text1 [Extract][\text{Start}] \; \text{text}_2 \; [\text{Delim}] \; \text{text}_1 \; [\text{Extract}][Start]text2[Delim]text1[Extract]$
+[Start] text1 [Delim] text2 [Extract][\text{Start}] \; \text{text}_1 \; [\text{Delim}] \; \text{text}_2 \; [\text{Extract}][Start]text1​[Delim]text2​[Extract] [Start] text2 [Delim] text1 [Extract][\text{Start}] \; \text{text}_2 \; [\text{Delim}] \; \text{text}_1 \; [\text{Extract}][Start]text2​[Delim]text1​[Extract]
 
 **Both orderings** are processed, and their [Extract] representations are added element-wise before classification. This is necessary because GPT-1's causal mask creates an asymmetry: in the first ordering, text₂ can attend to text₁, but text₁ cannot attend to text₂. Processing both orderings and combining their representations restores the symmetry that semantic similarity requires.
 
@@ -1101,9 +1101,9 @@ By contrast, BERT's bidirectional attention is inherently symmetric — both seg
 
 #### Multiple Choice
 
-For each candidate answer aka_kak:
+For each candidate answer aka_kak​:
 
-[Start] context [Delim] ak [Extract][$\text{Start}] \; \text{context} \; [\text{Delim}] \; a_k \; [\text{Extract}][Start]context[Delim]ak[Extract]$
+[Start] context [Delim] ak [Extract][\text{Start}] \; \text{context} \; [\text{Delim}] \; a_k \; [\text{Extract}][Start]context[Delim]ak​[Extract]
 
 All candidates are scored independently, and softmax selects the highest-scoring one.
 
@@ -1155,7 +1155,7 @@ This observation planted the seed for GPT-2's central claim ("language models ar
 > 
 > _Developmental psychology — cognitive milestones_ : Children acquiring language pass through developmental milestones (babbling → single words → two-word combinations → full sentences) that emerge gradually during maturation. GPT-1's zero-shot performance curves are analogous: task capabilities (sentiment understanding → question answering → reasoning) emerge gradually during "maturation" (pretraining). In both cases, the capabilities are not explicitly taught — they emerge from exposure to structured data (language input for children; text corpora for GPT).
 > 
-> _Thermodynamics — spontaneous symmetry breaking_ : In physics, a system cooled below a critical temperature spontaneously develops order (e.g., ferromagnetic alignment of spins). GPT-1's zero-shot capabilities "spontaneously emerge" as the model's loss decreases below certain thresholds during training — order (task capability) emerges from the training process without being explicitly imposed. The "temperature" metaphor is particularly apt given that the temperature parameter $\tau$ in language model sampling (Vol I, Chapter 26, Section 26.7) literally controls the disorder of the output distribution.
+> _Thermodynamics — spontaneous symmetry breaking_ : In physics, a system cooled below a critical temperature spontaneously develops order (e.g., ferromagnetic alignment of spins). GPT-1's zero-shot capabilities "spontaneously emerge" as the model's loss decreases below certain thresholds during training — order (task capability) emerges from the training process without being explicitly imposed. The "temperature" metaphor is particularly apt given that the temperature parameter τ\tauτ in language model sampling (Vol I, Chapter 26, Section 26.7) literally controls the disorder of the output distribution.
 
 * * *
 
@@ -1219,23 +1219,23 @@ Answer
 
 This means the representation of text₁ is computed without any knowledge of text₂, while the representation of text₂ incorporates information from text₁. The final [Extract] representation is therefore asymmetric — it captures "text₂ given text₁" more than "text₁ given text₂."
 
-Semantic similarity is a **symmetric relation** : sim(text1,text2)=sim(text2,text1)$\text{sim}(\text{text}_1, \text{text}_2) = \text{sim}(\text{text}_2, \text{text}_1)sim(text1,text2)=sim(text2,text1). To recover this symmetry, GPT-1 processes both orderings and combines (element-wise addition) their [Extract] representations.$
+Semantic similarity is a **symmetric relation** : sim(text1,text2)=sim(text2,text1)\text{sim}(\text{text}_1, \text{text}_2) = \text{sim}(\text{text}_2, \text{text}_1)sim(text1​,text2​)=sim(text2​,text1​). To recover this symmetry, GPT-1 processes both orderings and combines (element-wise addition) their [Extract] representations.
 
 **BERT doesn't need this** because its bidirectional self-attention has no causal mask. Every position attends to every other position regardless of order. In BERT's processing of [CLS] text₁ [SEP] text₂ [SEP], both text₁ and text₂ can fully attend to each other. The representation is inherently symmetric — swapping text₁ and text₂ would produce the same attention patterns (up to segment embedding differences), so a single pass suffices.
 
 This is one concrete example of the representational cost of causal masking: GPT-1 must use computational workarounds to handle symmetric tasks that BERT handles naturally. At scale, however, this cost proved minor — the benefits of causal masking (generation capability, training efficiency, in-context learning) far outweighed the cost of occasionally needing both orderings.
 
-**3.3.** GPT-1's auxiliary LM loss during fine-tuning is L3=L2+$\mathcal{L}_3 = \mathcal{L}_2 + \lambda \cdot \mathcal{L}_1L3=L2+$. Explain what happens in the two extreme cases: (a) $\lambda = 0$ and (b) λ→∞\lambda \to $\infty$λ→∞.
+**3.3.** GPT-1's auxiliary LM loss during fine-tuning is L3=L2+λ⋅L1\mathcal{L}_3 = \mathcal{L}_2 + \lambda \cdot \mathcal{L}_1L3​=L2​+λ⋅L1​. Explain what happens in the two extreme cases: (a) λ=0\lambda = 0λ=0 and (b) λ→∞\lambda \to \inftyλ→∞.
 
 Answer
 
-**(a) $\lambda = 0$:** The model optimizes only the task-specific classification loss L2$\mathcal{L}_2L2. There is no constraint preventing the model from drifting away from its pretrained state. On small datasets, this risks **catastrophic forgetting**$ — the fine-tuning gradients may overwrite the general language knowledge encoded during pretraining, causing the model to lose its ability to model language coherently. On large datasets, the risk is lower because the data itself provides sufficient regularization.
+**(a) λ=0\lambda = 0λ=0:** The model optimizes only the task-specific classification loss L2\mathcal{L}_2L2​. There is no constraint preventing the model from drifting away from its pretrained state. On small datasets, this risks **catastrophic forgetting** — the fine-tuning gradients may overwrite the general language knowledge encoded during pretraining, causing the model to lose its ability to model language coherently. On large datasets, the risk is lower because the data itself provides sufficient regularization.
 
-**(b) λ→∞\lambda \to $\infty$λ→∞:** The LM loss L1$\mathcal{L}_1L1 completely dominates. The model is effectively forced to remain a language model and cannot adapt to the classification task at all. Fine-tuning produces no alignment improvement$ — the model behaves as if it were never fine-tuned, defaulting to its pretrained behavior. This is **over-regularization** : the anchor is so strong that no learning occurs.
+**(b) λ→∞\lambda \to \inftyλ→∞:** The LM loss L1\mathcal{L}_1L1​ completely dominates. The model is effectively forced to remain a language model and cannot adapt to the classification task at all. Fine-tuning produces no alignment improvement — the model behaves as if it were never fine-tuned, defaulting to its pretrained behavior. This is **over-regularization** : the anchor is so strong that no learning occurs.
 
-**The optimal $\lambda$** lies between these extremes: large enough to prevent catastrophic forgetting, small enough to allow task adaptation. The optimal value depends on the dataset size — small datasets require larger $\lambda$ (more regularization), large datasets tolerate smaller $\lambda$. GPT-1's paper found that λ\lambdaλ in the range of 0.5 provided good results across most tasks.
+**The optimal λ\lambdaλ** lies between these extremes: large enough to prevent catastrophic forgetting, small enough to allow task adaptation. The optimal value depends on the dataset size — small datasets require larger λ\lambdaλ (more regularization), large datasets tolerate smaller λ\lambdaλ. GPT-1's paper found that λ\lambdaλ in the range of 0.5 provided good results across most tasks.
 
-This tradeoff is structurally identical to the bias-variance tradeoff in regularized regression: $\lambda = 0$ gives an unbiased but high-variance estimator (overfits); λ→∞\lambda \to $\infty$λ→∞ gives a biased but low-variance estimator (underfits). The optimal $\lambda$ balances these two errors, which is the same principle underlying Ridge regression's tuning parameter.
+This tradeoff is structurally identical to the bias-variance tradeoff in regularized regression: λ=0\lambda = 0λ=0 gives an unbiased but high-variance estimator (overfits); λ→∞\lambda \to \inftyλ→∞ gives a biased but low-variance estimator (underfits). The optimal λ\lambdaλ balances these two errors, which is the same principle underlying Ridge regression's tuning parameter.
 
 #### Application Problems
 
@@ -1259,7 +1259,7 @@ Answer
 
 The [Extract] position's hidden state feeds a 3-way linear classifier (supports / refutes / neutral). The model uses its self-attention to compare the evidence against the claim, leveraging the same inter-segment reasoning that NLI requires.
 
-**(b) Multiple-choice reading comprehension** — For each of the four answer options a1,a2,a3,a4a_1, a_2, a_3, a_4a1,a2,a3,a4:
+**(b) Multiple-choice reading comprehension** — For each of the four answer options a1,a2,a3,a4a_1, a_2, a_3, a_4a1​,a2​,a3​,a4​:
     
     
     [Start] passage [Delim] question [Delim] a_1 [Extract]
@@ -1270,7 +1270,7 @@ The [Extract] position's hidden state feeds a 3-way linear classifier (supports 
 
 Each sequence is processed independently through the Transformer. The [Extract] hidden states from all four sequences are passed through a shared linear projection to scalar scores, and softmax selects the highest-scoring option:
 
-P(ak)=exp⁡(wThk[Extract])∑j=14exp⁡(wThj[Extract])P(a_k) = $$\frac{\exp(w^T h_k^{[\text{Extract}]})}{\sum_{j=1}^{4} \exp(w^T h_j^{[\text{Extract}]})}P(ak)=$$∑j=14exp(wThj[Extract])exp(wThk[Extract])
+P(ak)=exp⁡(wThk[Extract])∑j=14exp⁡(wThj[Extract])P(a_k) = \frac{\exp(w^T h_k^{[\text{Extract}]})}{\sum_{j=1}^{4} \exp(w^T h_j^{[\text{Extract}]})}P(ak​)=∑j=14​exp(wThj[Extract]​)exp(wThk[Extract]​)​
 
 Note that the passage and question are repeated in every sequence — this is computationally wasteful (4× the tokens processed), but architecturally simple. Later models (GPT-2, GPT-3) eliminated this redundancy by using in-context learning: provide the passage and question once, then generate the answer directly.
 
@@ -1280,11 +1280,11 @@ Answer
 
 **Advantage 1: Parallelization during training.**
 
-The LSTM processes tokens sequentially — hidden state hth_tht depends on ht−1h_{t-1}ht−1, which depends on ht−2h_{t-2}ht−2, etc. This creates an O(n) sequential dependency that cannot be parallelized along the sequence dimension. The Transformer computes self-attention over all positions simultaneously via matrix multiplication QKTQK^TQKT — the entire attention matrix is computed in one operation. For a 512-token sequence, the LSTM requires 512 sequential steps; the Transformer requires O(1) sequential steps (all parallelized across positions). This parallelization advantage is critical for large-scale pretraining: it enables training on billions of tokens within reasonable wall-clock time.
+The LSTM processes tokens sequentially — hidden state hth_tht​ depends on ht−1h_{t-1}ht−1​, which depends on ht−2h_{t-2}ht−2​, etc. This creates an O(n)O(n)O(n) sequential dependency that cannot be parallelized along the sequence dimension. The Transformer computes self-attention over all positions simultaneously via matrix multiplication QKTQK^TQKT — the entire attention matrix is computed in one operation. For a 512-token sequence, the LSTM requires 512 sequential steps; the Transformer requires O(1)O(1)O(1) sequential steps (all parallelized across positions). This parallelization advantage is critical for large-scale pretraining: it enables training on billions of tokens within reasonable wall-clock time.
 
 **Advantage 2: Constant-length information path.**
 
-In an LSTM, information from position 1 reaches position nnn only after passing through n−1n-1n−1 intermediate states, each applying a nonlinear transformation. As analyzed in Vol I, Chapter 11, this creates vanishing gradient problems: the gradient signal attenuates exponentially with distance, even with gating. In the Transformer, any two positions interact directly through a single attention operation — the maximum path length is O(1) regardless of sequence length. This means the Transformer can capture long-range dependencies (e.g., subject-verb agreement across a long clause) that the LSTM struggles to learn.
+In an LSTM, information from position 1 reaches position nnn only after passing through n−1n-1n−1 intermediate states, each applying a nonlinear transformation. As analyzed in Vol I, Chapter 11, this creates vanishing gradient problems: the gradient signal attenuates exponentially with distance, even with gating. In the Transformer, any two positions interact directly through a single attention operation — the maximum path length is O(1)O(1)O(1) regardless of sequence length. This means the Transformer can capture long-range dependencies (e.g., subject-verb agreement across a long clause) that the LSTM struggles to learn.
 
 **Advantage 3: Multi-head attention captures diverse relationships.**
 
@@ -1292,17 +1292,17 @@ Each attention head in the Transformer can specialize to capture different types
 
 **Combined effect on pretraining:** These three advantages compound during large-scale pretraining. The parallelization advantage reduces training time from weeks to days. The constant-length path enables learning long-range patterns from the data. The multi-head attention architecture uses the learned representations more efficiently. Together, they explain the ~5-point performance gap between Transformer and LSTM pretraining.
 
-**3.6.** GPT-1 uses ~800M words of pretraining data (BooksCorpus), while BERT uses ~3.3B words (BooksCorpus + Wikipedia). Using the scaling law framework from the source material (which will be formally introduced in Chapter 5), estimate how much of the GPT-1 vs. BERT-Base performance gap is attributable to the data quantity difference alone. Assume $\alpha_D \approx 0.095$ (Kaplan et al.'s data scaling exponent).
+**3.6.** GPT-1 uses ~800M words of pretraining data (BooksCorpus), while BERT uses ~3.3B words (BooksCorpus + Wikipedia). Using the scaling law framework from the source material (which will be formally introduced in Chapter 5), estimate how much of the GPT-1 vs. BERT-Base performance gap is attributable to the data quantity difference alone. Assume αD≈0.095\alpha_D \approx 0.095αD​≈0.095 (Kaplan et al.'s data scaling exponent).
 
 Answer
 
-From the scaling law L(D)∝D−αDL(D) $\propto D^{-\alpha_D}L(D)$∝D−αD, the loss ratio for two models with different data quantities but identical architecture is:
+From the scaling law L(D)∝D−αDL(D) \propto D^{-\alpha_D}L(D)∝D−αD​, the loss ratio for two models with different data quantities but identical architecture is:
 
-L(DGPT-1)L(DBERT)=(DBERTDGPT-1)αD=(3.3B0.8B)0.095=4.1250.095$$\frac{L(D_{\text{GPT-1}})}{L(D_{\text{BERT}})} = \left(\frac{D_{\text{BERT}}}{D_{\text{GPT-1}}}\right)^{\alpha_D} = \left(\frac{3.3\text{B}}{0.8\text{B}}\right)^{0.095} = 4.125^{0.095}L(DBERT)L(DGPT-1)=(DGPT-1DBERT)$$αD=(0.8B3.3B)0.095=4.1250.095
+L(DGPT-1)L(DBERT)=(DBERTDGPT-1)αD=(3.3B0.8B)0.095=4.1250.095\frac{L(D_{\text{GPT-1}})}{L(D_{\text{BERT}})} = \left(\frac{D_{\text{BERT}}}{D_{\text{GPT-1}}}\right)^{\alpha_D} = \left(\frac{3.3\text{B}}{0.8\text{B}}\right)^{0.095} = 4.125^{0.095}L(DBERT​)L(DGPT-1​)​=(DGPT-1​DBERT​​)αD​=(0.8B3.3B​)0.095=4.1250.095
 
 Computing:
 
-$.1250.095=e0.095×ln⁡4.125=e0.095×1.417=e0.1346≈1.1444.125^{0.095} = e^{0.095 \times \ln 4.125} = e^{0.095 \times 1.417} = e^{0.1346} \approx 1.1444.1250.095=e0.095×ln4.125=e0.095×1.417=e0.1346≈1.14$
+4.1250.095=e0.095×ln⁡4.125=e0.095×1.417=e0.1346≈1.1444.125^{0.095} = e^{0.095 \times \ln 4.125} = e^{0.095 \times 1.417} = e^{0.1346} \approx 1.1444.1250.095=e0.095×ln4.125=e0.095×1.417=e0.1346≈1.144
 
 This means BERT's additional data reduces the loss by approximately 14.4% relative to GPT-1's loss, purely from the data quantity advantage.
 
@@ -1312,7 +1312,7 @@ However, the data quantity effect cannot explain the _entire_ gap because:
 
   1. BERT's bidirectionality provides an additional advantage for understanding tasks.
   2. The BERT training procedure (larger batch size, more training steps) may also contribute.
-  3. The scaling law exponent $\alpha_D \approx 0.095$ was measured on autoregressive models; MLM's data efficiency may differ.
+  3. The scaling law exponent αD≈0.095\alpha_D \approx 0.095αD​≈0.095 was measured on autoregressive models; MLM's data efficiency may differ.
 
 **Rough estimate:** Data quantity accounts for approximately 40–60% of the GPT-1 vs. BERT-Base performance gap. The remainder is attributable to bidirectionality and training procedure differences. This is consistent with RoBERTa's later finding that much of BERT's advantage came from training with more data, not from architectural superiority.
 
@@ -1326,9 +1326,9 @@ Answer
 
 The language modeling objective minimizes LCE=H(Pdata)+DKL(Pdata∥Pθ)\mathcal{L}_{\text{CE}} = H(P_{\text{data}}) + D_{\text{KL}}(P_{\text{data}} \| P_\theta)LCE​=H(Pdata​)+DKL​(Pdata​∥Pθ​). As training progresses, DKLD_{\text{KL}}DKL​ decreases — the model's distribution PθP_\thetaPθ​ converges toward the true data distribution PdataP_{\text{data}}Pdata​.
 
-A model that accurately approximates PdataP_{$\text{data}}Pdata has implicitly encoded the regularities that generate text$ — including syntax, semantics, world knowledge, and reasoning patterns. These regularities are the _same_ knowledge needed for downstream tasks. Sentiment analysis requires knowing which words carry positive/negative connotations; question answering requires factual knowledge; grammaticality judgment requires syntactic rules. All of these are subset of "what you need to predict the next token accurately."
+A model that accurately approximates PdataP_{\text{data}}Pdata​ has implicitly encoded the regularities that generate text — including syntax, semantics, world knowledge, and reasoning patterns. These regularities are the _same_ knowledge needed for downstream tasks. Sentiment analysis requires knowing which words carry positive/negative connotations; question answering requires factual knowledge; grammaticality judgment requires syntactic rules. All of these are subset of "what you need to predict the next token accurately."
 
-As the model's approximation of PdataP_{\text{data}}Pdata improves, it captures more of these regularities, and its zero-shot task performance improves as a direct consequence.
+As the model's approximation of PdataP_{\text{data}}Pdata​ improves, it captures more of these regularities, and its zero-shot task performance improves as a direct consequence.
 
 **Is there a theoretical limit?**
 
@@ -1419,9 +1419,9 @@ After BERT and GPT-1, the landscape of Transformer-based models split into three
 
 #### Encoder-Only (BERT Family)
 
-**Attention pattern:** Fully bidirectional — no masking. Every token attends to every other token. The attention mask matrix is a full n×nn $\times nn$×n matrix of ones:
+**Attention pattern:** Fully bidirectional — no masking. Every token attends to every other token. The attention mask matrix is a full n×nn \times nn×n matrix of ones:
 
-$\text{enc}} = \begin{pmatrix} 1 & 1 & \cdots & 1 \\\ 1 & 1 & \cdots & 1 \\\ \vdots & & \ddots & \vdots \\\ 1 & 1 & \cdots & 1 \end{pmatrix}$
+Menc=(11⋯111⋯1⋮⋱⋮11⋯1)M_{\text{enc}} = \begin{pmatrix} 1 & 1 & \cdots & 1 \\\ 1 & 1 & \cdots & 1 \\\ \vdots & & \ddots & \vdots \\\ 1 & 1 & \cdots & 1 \end{pmatrix}Menc​=​11⋮1​111​⋯⋯⋱⋯​11⋮1​​
 
 **Pretraining objective:** MLM (plus optional NSP).
 
@@ -1435,9 +1435,9 @@ $\text{enc}} = \begin{pmatrix} 1 & 1 & \cdots & 1 \\\ 1 & 1 & \cdots & 1 \\\ \vd
 
 #### Decoder-Only (GPT Family)
 
-**Attention pattern:** Causal lower-triangular mask. Position ttt attends only to positions {1,2,…,t}\\{1, 2, $\ldots, t\\}{1,2,$…,t}:
+**Attention pattern:** Causal lower-triangular mask. Position ttt attends only to positions {1,2,…,t}\\{1, 2, \ldots, t\\}{1,2,…,t}:
 
-$\text{dec}} = \begin{pmatrix} 1 & 0 & \cdots & 0 \\\ 1 & 1 & \cdots & 0 \\\ \vdots & & \ddots & \vdots \\\ 1 & 1 & \cdots & 1 \end{pmatrix}$
+Mdec=(10⋯011⋯0⋮⋱⋮11⋯1)M_{\text{dec}} = \begin{pmatrix} 1 & 0 & \cdots & 0 \\\ 1 & 1 & \cdots & 0 \\\ \vdots & & \ddots & \vdots \\\ 1 & 1 & \cdots & 1 \end{pmatrix}Mdec​=​11⋮1​011​⋯⋯⋱⋯​00⋮1​​
 
 **Pretraining objective:** Autoregressive language modeling.
 
@@ -1451,9 +1451,9 @@ $\text{dec}} = \begin{pmatrix} 1 & 0 & \cdots & 0 \\\ 1 & 1 & \cdots & 0 \\\ \vd
 
 **Attention pattern:** Three distinct attention types within each decoder layer:
 
-  1. **Encoder self-attention:** Full nenc×nencn_{$\text{enc}} \times n_{\text{enc}}nenc$×nenc bidirectional matrix (same as encoder-only).
-  2. **Decoder self-attention:** Lower-triangular ndec×ndecn_{$\text{dec}} \times n_{\text{dec}}ndec$×ndec causal mask (same as decoder-only).
-  3. **Cross-attention:** Full ndec×nencn_{$\text{dec}} \times n_{\text{enc}}ndec$×nenc matrix — decoder queries attend to all encoder positions.
+  1. **Encoder self-attention:** Full nenc×nencn_{\text{enc}} \times n_{\text{enc}}nenc​×nenc​ bidirectional matrix (same as encoder-only).
+  2. **Decoder self-attention:** Lower-triangular ndec×ndecn_{\text{dec}} \times n_{\text{dec}}ndec​×ndec​ causal mask (same as decoder-only).
+  3. **Cross-attention:** Full ndec×nencn_{\text{dec}} \times n_{\text{enc}}ndec​×nenc​ matrix — decoder queries attend to all encoder positions.
 
 **Pretraining objectives:** T5 uses span corruption (mask consecutive spans, predict them); BART uses denoising (delete, shuffle, or infill spans).
 
@@ -1492,7 +1492,7 @@ As analyzed in Vol I, Chapter 26 (Section 26.6), by 2023 every frontier large la
 
 **Factor 2 — In-context learning.** When a decoder-only model is large enough, it learns to recognize patterns in the prompt and generalize them — performing new tasks from a few examples without gradient updates (Chapter 8). This capability is structurally tied to the autoregressive objective.
 
-**Factor 3 — KV cache inference efficiency.** During generation, previously computed Key and Value vectors can be cached and reused. Generating token ttt requires computing only the new token's Q, K, V and attending against the cached KV from positions 111 through t−1t-1t−1 — a factor-t speedup over recomputation.
+**Factor 3 — KV cache inference efficiency.** During generation, previously computed Key and Value vectors can be cached and reused. Generating token ttt requires computing only the new token's Q, K, V and attending against the cached KV from positions 111 through t−1t-1t−1 — a factor-ttt speedup over recomputation.
 
 **Factor 4 — Scaling simplicity.** The decoder-only architecture has a single repeated module (masked self-attention + FFN), with no design decisions about encoder/decoder parameter ratios. At 70B+ parameters, this uniformity improves training stability.
 
@@ -1512,7 +1512,7 @@ As analyzed in Vol I, Chapter 26 (Section 26.6), by 2023 every frontier large la
 
 Language models do not process character strings — they process sequences of discrete **tokens.** The mapping from raw text to tokens is called **tokenization** , and it is a foundational design decision with far-reaching consequences:
 
-* **Vocabulary size** determines the embedding layer's parameter count (∣V∣×dmodel|V| $\text{model}}$
+* **Vocabulary size** determines the embedding layer's parameter count (∣V∣×dmodel|V| \times d_{\text{model}}∣V∣×dmodel​).
 * **Sequence length** for the same text varies with tokenization — affecting the O(n2)O(n^2)O(n2) attention cost.
 * **Out-of-vocabulary handling** determines whether unseen words can be represented.
 * **Cognitive granularity** sets the level at which the model "thinks" — characters, subwords, or words.
@@ -1600,14 +1600,14 @@ BERT's tokenization algorithm. The core difference from BPE: **the merge criteri
 
 For candidate merge (a,b)(a, b)(a,b), WordPiece computes:
 
-score(a,b)=freq(ab)freq(a)×freq(b)\text{score}(a, b) = \frac{\text{freq}(ab)}{\text{freq}(a) \times \text{freq}(b)}score(a,b)=freq(a)×freq(b)freq(ab)
+score(a,b)=freq(ab)freq(a)×freq(b)\text{score}(a, b) = \frac{\text{freq}(ab)}{\text{freq}(a) \times \text{freq}(b)}score(a,b)=freq(a)×freq(b)freq(ab)​
 
-This is the PMI in un-logged form: it measures how much more often aaa and b co-occur than expected under independence. A pair with high PMI (like "q" and "u" in English) is merged even if its absolute frequency is moderate.
+This is the PMI in un-logged form: it measures how much more often aaa and bbb co-occur than expected under independence. A pair with high PMI (like "q" and "u" in English) is merged even if its absolute frequency is moderate.
 
 **BPE vs. WordPiece on a concrete example:** Suppose "t" appears 10,000 times, "h" 8,000 times, "th" 5,000 times; "q" appears 100 times, "u" 200 times, "qu" 95 times.
 
 * BPE score("th") = 5,000; BPE score("qu") = 95 → **BPE merges "th"**
-* WordPiece score("th") = 5,000/(10,000×8,000)=6.25×10−55{,}000 / (10{,}000 $\times 8{,}000) = 6.25 \times 10^{-5}5,000/(10,000$×8,000)=6.25×10−5; WordPiece score("qu") = 95/(100×200)=4.75×10−395 / (100 $\times 200) = 4.75 \times 10^{-3}95/(100$×200)=4.75×10−3 → **WordPiece merges "qu"**
+* WordPiece score("th") = 5,000/(10,000×8,000)=6.25×10−55{,}000 / (10{,}000 \times 8{,}000) = 6.25 \times 10^{-5}5,000/(10,000×8,000)=6.25×10−5; WordPiece score("qu") = 95/(100×200)=4.75×10−395 / (100 \times 200) = 4.75 \times 10^{-3}95/(100×200)=4.75×10−3 → **WordPiece merges "qu"**
 
 WordPiece recognizes that "qu" is an almost obligatory unit in English (q appears without u only in loanwords), while "th" is merely frequent. In practice, BERT marks continuation sub-tokens with `##`: "unhappiness" → ["un", "##happi", "##ness"].
 
@@ -1649,26 +1649,26 @@ This section consolidates and deepens the mathematical framework introduced in V
 
 An autoregressive language model defines a probability distribution over text sequences:
 
-$$\mathbf{w}) = \prod_{t=1}^{T} P_\theta(w_t \mid w_{<t})P$$
+Pθ(w)=∏t=1TPθ(wt∣w<t)P_\theta(\mathbf{w}) = \prod_{t=1}^{T} P_\theta(w_t \mid w_{<t})Pθ​(w)=t=1∏T​Pθ​(wt​∣w<t​)
 
 This is a **density estimator** : it assigns a probability to any text sequence. Training minimizes the cross-entropy loss, which (as derived in Vol I, Chapter 26, Section 26.2) is equivalent to minimizing the KL divergence from the data distribution:
 
-$\mathcal{L}_{\text{CE}}(\theta) = H(P_{\text{data}}) + D_{\text{KL}}(P_{\text{data}} \| P_\theta)$
+LCE(θ)=H(Pdata)+DKL(Pdata∥Pθ)\mathcal{L}_{\text{CE}}(\theta) = H(P_{\text{data}}) + D_{\text{KL}}(P_{\text{data}} \| P_\theta)LCE​(θ)=H(Pdata​)+DKL​(Pdata​∥Pθ​)
 
 #### The Profound Implication: Any Task Is Text Completion
 
-If a language model perfectly models PdataP_{\text{data}}Pdata, it implicitly knows the conditional distribution for any task that can be expressed in text:
+If a language model perfectly models PdataP_{\text{data}}Pdata​, it implicitly knows the conditional distribution for any task that can be expressed in text:
 
-P(answer∣question)=P(question,answer)P(question)=Pθ(question⊕answer)∑a′Pθ(question⊕a′)P($$\text{answer} \mid \text{question}) = \frac{P(\text{question}, \text{answer})}{P(\text{question})} = \frac{P_\theta(\text{question} \oplus \text{answer})}{\sum_{\text{a}'} P_\theta(\text{question} \oplus \text{a}')}P(answer$$∣question)=P(question)P(question,answer)=∑a′Pθ(question⊕a′)Pθ(question⊕answer)
+P(answer∣question)=P(question,answer)P(question)=Pθ(question⊕answer)∑a′Pθ(question⊕a′)P(\text{answer} \mid \text{question}) = \frac{P(\text{question}, \text{answer})}{P(\text{question})} = \frac{P_\theta(\text{question} \oplus \text{answer})}{\sum_{\text{a}'} P_\theta(\text{question} \oplus \text{a}')}P(answer∣question)=P(question)P(question,answer)​=∑a′​Pθ​(question⊕a′)Pθ​(question⊕answer)​
 
-where $\oplus$
+where ⊕\oplus⊕ denotes concatenation.
 
 This means:
 
-* **Sentiment analysis** = P("positive"∣review text)P($\text{"positive"} \mid \text{review text})P("positive"$∣review text)
-* **Translation** = P(French sentence∣"Translate to French:"⊕English sentence)P($\text{French sentence} \mid \text{"Translate to French:"} \oplus \text{English sentence})P(French sentence$∣"Translate to French:"⊕English sentence)
-* **Question answering** = P(answer∣context⊕question)P($\text{answer} \mid \text{context} \oplus \text{question})P(answer$∣context⊕question)
-* **Mathematical reasoning** = P(solution∣problem statement)P($\text{solution} \mid \text{problem statement})P(solution$∣problem statement)
+* **Sentiment analysis** = P("positive"∣review text)P(\text{"positive"} \mid \text{review text})P("positive"∣review text)
+* **Translation** = P(French sentence∣"Translate to French:"⊕English sentence)P(\text{French sentence} \mid \text{"Translate to French:"} \oplus \text{English sentence})P(French sentence∣"Translate to French:"⊕English sentence)
+* **Question answering** = P(answer∣context⊕question)P(\text{answer} \mid \text{context} \oplus \text{question})P(answer∣context⊕question)
+* **Mathematical reasoning** = P(solution∣problem statement)P(\text{solution} \mid \text{problem statement})P(solution∣problem statement)
 
 A sufficiently good language model is, in principle, a universal task solver — any task expressible as a conditional distribution over text falls within its scope. This insight is the theoretical foundation for GPT-2's claim (Chapter 7) that "language models are unsupervised multitask learners" and for GPT-3's demonstration (Chapters 8–9) that in-context learning works.
 
@@ -1676,13 +1676,13 @@ A sufficiently good language model is, in principle, a universal task solver —
 
 As derived in Vol I, Chapter 26 (Section 26.3), perplexity is:
 
-$$\text{PPL} = \exp\left(-\frac{1}{T}\sum_{t=1}^{T} \log P_\theta(w_t \mid w_{<t})\right)$$
+PPL=exp⁡(−1T∑t=1Tlog⁡Pθ(wt∣w<t))\text{PPL} = \exp\left(-\frac{1}{T}\sum_{t=1}^{T} \log P_\theta(w_t \mid w_{<t})\right)PPL=exp(−T1​t=1∑T​logPθ​(wt​∣w<t​))
 
 Three equivalent interpretations:
 
-  1. **Exponential of cross-entropy:** PPL = exp⁡(LCE)\exp(\mathcal{L}_{$\text{CE}})exp(LCE)$
-  2. **Geometric mean of inverse probabilities:** PPL = [$$\left[\prod_t 1/P_\theta(w_t \mid w_{<t})\right]^{1/T}[$$
-  3. **Effective branching factor:** A model with PPL = B behaves as if choosing uniformly among BBB candidates at each step
+  1. **Exponential of cross-entropy:** PPL = exp⁡(LCE)\exp(\mathcal{L}_{\text{CE}})exp(LCE​)
+  2. **Geometric mean of inverse probabilities:** PPL = [∏t1/Pθ(wt∣w<t)]1/T\left[\prod_t 1/P_\theta(w_t \mid w_{<t})\right]^{1/T}[∏t​1/Pθ​(wt​∣w<t​)]1/T
+  3. **Effective branching factor:** A model with PPL = BBB behaves as if choosing uniformly among BBB candidates at each step
 
 The connection to this chapter's "any task is text completion" perspective: lower perplexity means the model captures more of the statistical structure of language, which means it can implicitly perform more tasks via text completion. This is why perplexity reduction during pretraining correlates with improved downstream task performance — the connection is not coincidental but mathematically necessary.
 
@@ -1714,13 +1714,13 @@ This chapter completes Part I. Let us take stock of the territory covered:
 
 #### Concept Check
 
-**4.1.** A researcher shows you a Transformer model whose attention mask is a full n×nn $\times nn$×n matrix (no masking) during both training and inference. Which architecture family does this model belong to? Can this model generate text autoregressively? Why or why not?
+**4.1.** A researcher shows you a Transformer model whose attention mask is a full n×nn \times nn×n matrix (no masking) during both training and inference. Which architecture family does this model belong to? Can this model generate text autoregressively? Why or why not?
 
 Answer
 
 This is an **encoder-only** model (BERT family). The full attention matrix means every position attends to every other position — bidirectional attention with no causal constraint.
 
-This model **cannot generate text autoregressively** in a straightforward way. Autoregressive generation requires the model to compute P(wt∣w<t)P(w_t $\mid w_{<t})P(wt$∣w<t) — the probability of the next token given only the preceding tokens. With full bidirectional attention, the model computes P(wt∣w1,…,wt−1,wt+1,…,wn)P(w_t $\mid w_1, \ldots, w_{t-1}, w_{t+1}, \ldots, w_n)P(wt$∣w1,…,wt−1,wt+1,…,wn) — conditioning on _all_ positions, including future ones.
+This model **cannot generate text autoregressively** in a straightforward way. Autoregressive generation requires the model to compute P(wt∣w<t)P(w_t \mid w_{<t})P(wt​∣w<t​) — the probability of the next token given only the preceding tokens. With full bidirectional attention, the model computes P(wt∣w1,…,wt−1,wt+1,…,wn)P(w_t \mid w_1, \ldots, w_{t-1}, w_{t+1}, \ldots, w_n)P(wt​∣w1​,…,wt−1​,wt+1​,…,wn​) — conditioning on _all_ positions, including future ones.
 
 During generation, future tokens do not yet exist. The model would need to either (1) predict with missing future context (degraded performance, since it was trained with full context) or (2) use iterative decoding heuristics (mask a position, predict, unmask, repeat) that are slow and produce lower-quality output than true autoregressive generation.
 
@@ -1742,13 +1742,13 @@ This is information-theoretically efficient: it is a form of **variable-length c
 
 Answer
 
-WordPiece computes score(a,b)=freq(ab)/(freq(a)$\text{score}(a, b) = \text{freq}(ab) / (\text{freq}(a) \times \text{freq}(b))score(a,b)=freq(ab)/(freq(a)$.
+WordPiece computes score(a,b)=freq(ab)/(freq(a)×freq(b))\text{score}(a, b) = \text{freq}(ab) / (\text{freq}(a) \times \text{freq}(b))score(a,b)=freq(ab)/(freq(a)×freq(b)).
 
-For "th": score = 5,000/(10,000×8,000)=6.25×10−55{,}000 / (10{,}000 $\times 8{,}000) = 6.25 \times 10^{-5}5,000/(10,000$$\times 200) = 4.75 \times 10^{-3}95/(100$
+For "th": score = 5,000/(10,000×8,000)=6.25×10−55{,}000 / (10{,}000 \times 8{,}000) = 6.25 \times 10^{-5}5,000/(10,000×8,000)=6.25×10−5 For "qu": score = 95/(100×200)=4.75×10−395 / (100 \times 200) = 4.75 \times 10^{-3}95/(100×200)=4.75×10−3
 
 "qu" scores 76× higher than "th" despite having 53× fewer occurrences.
 
-The reason: **"th" is frequent, but "t" and "h" are also individually frequent.** The co-occurrence of "th" is expected given the high individual frequencies — it does not represent a particularly strong association. In contrast, **"q" and "u" are individually rare, but they almost always co-occur.** The ratio freq(qu)/(freq(q)×freq(u))=95/20,000=0.00475$\text{freq}(qu) / (\text{freq}(q) \times \text{freq}(u)) = 95/20{,}000 = 0.00475freq(qu)/(freq(q)$×freq(u))=95/20,000=0.00475 is high because the observed co-occurrence far exceeds what independence would predict.
+The reason: **"th" is frequent, but "t" and "h" are also individually frequent.** The co-occurrence of "th" is expected given the high individual frequencies — it does not represent a particularly strong association. In contrast, **"q" and "u" are individually rare, but they almost always co-occur.** The ratio freq(qu)/(freq(q)×freq(u))=95/20,000=0.00475\text{freq}(qu) / (\text{freq}(q) \times \text{freq}(u)) = 95/20{,}000 = 0.00475freq(qu)/(freq(q)×freq(u))=95/20,000=0.00475 is high because the observed co-occurrence far exceeds what independence would predict.
 
 This reveals the fundamental difference between **frequency** and **mutual information** : frequency measures how often something occurs; mutual information measures how much more often two things co-occur than expected under independence. In English, "q" followed by "u" is almost obligatory (PMI is very high), while "t" followed by "h" is merely common (PMI is moderate).
 
@@ -1833,7 +1833,7 @@ Models like Qwen, ChatGLM, or Yi use tokenizers specifically trained on large Ch
 * Encode common Chinese character sequences as single tokens (e.g., "经济" as one token instead of two)
 * Achieve ~1.1–1.3× token ratio (vs. English) instead of ~1.8×
 
-**Expected savings:** Reducing the ratio from 1.8× to 1.2× reduces token count by (1.8−1.2)/1.8=33%(1.8 - 1.2) / 1.8 = 33\%(1.8−1.2)/1.8=33%. Since costs are 80% higher due to the 1.8× ratio (i.e., cost = base × 1.8/1.0), switching to a 1.2× ratio gives cost = base × 1.2/1.0, saving (1.8−1.2)/1.8=33%(1.8 - 1.2) / 1.8 = 33\%(1.8−1.2)/1.8=33% of the total cost. This eliminates roughly 33/80×80%=3333/80 $\times 80\% = 3333/80$×80%=33 percentage points of the 80% premium, reducing the premium from 80% to ~20%.
+**Expected savings:** Reducing the ratio from 1.8× to 1.2× reduces token count by (1.8−1.2)/1.8=33%(1.8 - 1.2) / 1.8 = 33\%(1.8−1.2)/1.8=33%. Since costs are 80% higher due to the 1.8× ratio (i.e., cost = base × 1.8/1.0), switching to a 1.2× ratio gives cost = base × 1.2/1.0, saving (1.8−1.2)/1.8=33%(1.8 - 1.2) / 1.8 = 33\%(1.8−1.2)/1.8=33% of the total cost. This eliminates roughly 33/80×80%=3333/80 \times 80\% = 3333/80×80%=33 percentage points of the 80% premium, reducing the premium from 80% to ~20%.
 
 **Strategy 2: Structured preprocessing to reduce input volume.**
 
@@ -1885,7 +1885,7 @@ Answer
 
 **Yes, theorem proving is expressible as a conditional distribution over text** — at least in a formal sense. A proof is a sequence of logical steps, each expressible as text. The conditional distribution is:
 
-$P(\text{proof} \mid \text{theorem statement})$
+P(proof∣theorem statement)P(\text{proof} \mid \text{theorem statement})P(proof∣theorem statement)
 
 The training data for learning this distribution exists: mathematical textbooks, published papers, and formal proof databases (Lean, Coq, Isabelle) contain millions of (theorem, proof) pairs. A sufficiently good language model trained on this data would assign high probability to correct proofs and low probability to incorrect ones.
 
@@ -1967,10 +1967,10 @@ More promisingly, yes. An adaptive tokenizer trained on multilingual data would 
 
 By the end of this chapter, you will be able to:
 
-  1. State the three power-law scaling relationships discovered by Kaplan et al. and interpret their exponents ($\alpha_N \approx 0.076$$\alpha_D \approx 0.095$ $\alpha_C \approx 0.050$) in terms of diminishing returns.
-  2. Derive the compute-optimal allocation formula N∗(C)∝CαD/(αN+αD)N^*(C) $\propto C^{\alpha_D/(\alpha_N + \alpha_D)}N$∗(C)∝CαD/(αN+αD) from the Lagrangian optimization of the joint scaling law under the constraint C=6NDC = 6NDC=6ND.
+  1. State the three power-law scaling relationships discovered by Kaplan et al. and interpret their exponents (αN≈0.076\alpha_N \approx 0.076αN​≈0.076, αD≈0.095\alpha_D \approx 0.095αD​≈0.095, αC≈0.050\alpha_C \approx 0.050αC​≈0.050) in terms of diminishing returns.
+  2. Derive the compute-optimal allocation formula N∗(C)∝CαD/(αN+αD)N^*(C) \propto C^{\alpha_D/(\alpha_N + \alpha_D)}N∗(C)∝CαD​/(αN​+αD​) from the Lagrangian optimization of the joint scaling law under the constraint C=6NDC = 6NDC=6ND.
   3. Explain why architectural hyperparameters (depth/width ratio, head count) have minimal effect on performance at fixed parameter count, and why this finding is surprising.
-  4. Construct a theoretical derivation linking Zipf-distributed feature importance to power-law scaling, showing that $\alpha = \gamma - 1$ where $\gamma$ is the Zipf exponent.
+  4. Construct a theoretical derivation linking Zipf-distributed feature importance to power-law scaling, showing that α=γ−1\alpha = \gamma - 1α=γ−1 where γ\gammaγ is the Zipf exponent.
   5. Compute the predicted loss reduction from a given increase in model size or data, and interpret the result in terms of the investment required for a given capability improvement.
 
 * * *
@@ -2006,38 +2006,38 @@ Does language model performance follow a predictable, quantifiable relationship 
 
 The central empirical discovery: test loss LLL follows a power law in each of the three scaling variables:
 
-L(N)≈(NcN)αN,αN≈0.076L(N) $$\approx \left(\frac{N_c}{N}\right)^{\alpha_N}, \quad \alpha_N \approx 0.076L(N)$$≈(NNc)αN,αN≈0.076 L(D)≈(DcD)αD,αD≈0.095L(D) $$\approx \left(\frac{D_c}{D}\right)^{\alpha_D}, \quad \alpha_D \approx 0.095L(D)$$$$\approx \left(\frac{C_c}{C}\right)^{\alpha_C}, \quad \alpha_C \approx 0.050L(C)$$
+L(N)≈(NcN)αN,αN≈0.076L(N) \approx \left(\frac{N_c}{N}\right)^{\alpha_N}, \quad \alpha_N \approx 0.076L(N)≈(NNc​​)αN​,αN​≈0.076 L(D)≈(DcD)αD,αD≈0.095L(D) \approx \left(\frac{D_c}{D}\right)^{\alpha_D}, \quad \alpha_D \approx 0.095L(D)≈(DDc​​)αD​,αD​≈0.095 L(C)≈(CcC)αC,αC≈0.050L(C) \approx \left(\frac{C_c}{C}\right)^{\alpha_C}, \quad \alpha_C \approx 0.050L(C)≈(CCc​​)αC​,αC​≈0.050
 
 On log-log coordinates, each of these is a straight line:
 
-log⁡L(X)=−αXlog⁡X+αXlog⁡Xc$\log L(X) = -\alpha_X \log X + \alpha_X \log X_clogL(X)=$−αXlogX+αXlogXc
+log⁡L(X)=−αXlog⁡X+αXlog⁡Xc\log L(X) = -\alpha_X \log X + \alpha_X \log X_clogL(X)=−αX​logX+αX​logXc​
 
 This finding is remarkable for its **universality** — the same functional form holds across three fundamentally different variables, spanning seven orders of magnitude. In physics, power laws typically signal deep **scale invariance** or **critical phenomena**.
 
-**What the exponents mean:** $\alpha_N \approx 0.076$ means that every 10× increase in parameters reduces loss to approximately 10−0.076≈0.8410^{-0.076} $\approx 0.8410$−0.076≈0.84 of its previous value — about a 16% reduction. The returns are strictly diminishing but always positive:
+**What the exponents mean:** αN≈0.076\alpha_N \approx 0.076αN​≈0.076 means that every 10× increase in parameters reduces loss to approximately 10−0.076≈0.8410^{-0.076} \approx 0.8410−0.076≈0.84 of its previous value — about a 16% reduction. The returns are strictly diminishing but always positive:
 
 Parameter Increase | Loss Reduction | Perplexity Reduction  
 ---|---|---  
-$\times 10$ | ~16% | ~15%  
-$\times 100$ | ~30% | ~28%  
-$\times 1{,}000$ | ~41% | ~39%  
-$\times 10{,}000$ | ~51% | ~48%  
+×10\times 10×10 | ~16% | ~15%  
+×100\times 100×100 | ~30% | ~28%  
+×1,000\times 1{,}000×1,000 | ~41% | ~39%  
+×10,000\times 10{,}000×10,000 | ~51% | ~48%  
   
 **The harsh implication:** To halve the loss, you need to increase parameters by approximately 10,000×. This is why the jump from GPT-2 (1.5B) to GPT-3 (175B) — a 117× increase — produced impressive qualitative changes but only a "steady improvement" in loss numbers.
 
 #### Finding 2: Architectural Hyperparameters Are (Mostly) Irrelevant
 
-Kaplan et al. systematically varied depth (nlayern_{$\text{layer}}nlayer), width (dmodeld_{\text{model}}dmodel), head count (nheadsn_{\text{heads}}nheads), and feed-forward dimension (dffd_{\text{ff}}dff) while keeping total parameter count NNN fixed. The result: these hyperparameters have **minimal effect on performance.**$
+Kaplan et al. systematically varied depth (nlayern_{\text{layer}}nlayer​), width (dmodeld_{\text{model}}dmodel​), head count (nheadsn_{\text{heads}}nheads​), and feed-forward dimension (dffd_{\text{ff}}dff​) while keeping total parameter count NNN fixed. The result: these hyperparameters have **minimal effect on performance.**
 
-**What matters is the total scale of parameters, not how they are arranged.** With one important caveat: the depth/width ratio cannot be too extreme. Very shallow-but-wide or very deep-but-narrow models perform noticeably worse. The paper suggests dmodel/nlayerd_{$\text{model}} / n_{\text{layer}}dmodel/nlayer should stay roughly in the range 50$–200.
+**What matters is the total scale of parameters, not how they are arranged.** With one important caveat: the depth/width ratio cannot be too extreme. Very shallow-but-wide or very deep-but-narrow models perform noticeably worse. The paper suggests dmodel/nlayerd_{\text{model}} / n_{\text{layer}}dmodel​/nlayer​ should stay roughly in the range 50–200.
 
 #### Finding 3: Independent Power Laws in Three Variables
 
 Each of the three variables NNN, DDD, CCC independently follows a power law with loss. The exponents are:
 
-$\alpha_N \approx 0.076$
-$\alpha_D \approx 0.095$
-$\alpha_C \approx 0.050$
+* αN≈0.076\alpha_N \approx 0.076αN​≈0.076: model size
+* αD≈0.095\alpha_D \approx 0.095αD​≈0.095: dataset size
+* αC≈0.050\alpha_C \approx 0.050αC​≈0.050: total compute
 
 All exponents are much less than 1, indicating **strongly diminishing returns** — but the marginal product is always positive. Adding more of any resource always helps, but the benefit per additional unit shrinks.
 
@@ -2045,7 +2045,7 @@ All exponents are much less than 1, indicating **strongly diminishing returns** 
 
 Whether a model overfits depends on the ratio of parameters to data. The joint scaling law:
 
-$$\left[\left(\frac{N_c}{N}\right)^{\alpha_N / \alpha_D} + \frac{D_c}{D}\right]^{\alpha_D}L(N,D)=[(NNc)$$
+L(N,D)=[(NcN)αN/αD+DcD]αDL(N, D) = \left[\left(\frac{N_c}{N}\right)^{\alpha_N / \alpha_D} + \frac{D_c}{D}\right]^{\alpha_D}L(N,D)=[(NNc​​)αN​/αD​+DDc​​]αD​
 
 When DDD is large relative to NNN, performance is model-limited (adding parameters helps most). When NNN is large relative to DDD, performance is data-limited (adding data helps most).
 
@@ -2057,7 +2057,7 @@ Models achieve near-optimal performance well before full convergence. Training l
 
 Given a fixed compute budget CCC, there exists an optimal (N∗,D∗)(N^*, D^*)(N∗,D∗) that minimizes loss. Kaplan et al. found:
 
-$N^*(C) \propto C^{0.73}, \quad D^*(C) \propto C^{0.27}$
+N∗(C)∝C0.73,D∗(C)∝C0.27N^*(C) \propto C^{0.73}, \quad D^*(C) \propto C^{0.27}N∗(C)∝C0.73,D∗(C)∝C0.27
 
 This means: when compute increases 10×, the optimal strategy is to increase parameters by ~5.4× and data by only ~1.9×. **Most of the additional compute should go to a larger model, not more data.**
 
@@ -2065,9 +2065,9 @@ This means: when compute increases 10×, the optimal strategy is to increase par
 
 > **Cross-Disciplinary Connection**
 > 
-> _Allometric scaling in biology_ : The power-law relationship between an organism's metabolic rate and its body mass — Kleiber's Law: metabolic rate$\text{metabolic rate} \propto M^{0.75}metabolic rate$ — is structurally identical to neural scaling laws. In both cases, a power law with exponent less than 1 describes how a system's "performance" (metabolic efficiency, language modeling quality) scales with its "size" (body mass, parameter count). The universality of power laws across such different domains (biology, physics, AI) suggests that they arise from general mathematical principles — specifically, from hierarchical systems with self-similar structure at multiple scales.
+> _Allometric scaling in biology_ : The power-law relationship between an organism's metabolic rate and its body mass — Kleiber's Law: metabolic rate∝M0.75\text{metabolic rate} \propto M^{0.75}metabolic rate∝M0.75 — is structurally identical to neural scaling laws. In both cases, a power law with exponent less than 1 describes how a system's "performance" (metabolic efficiency, language modeling quality) scales with its "size" (body mass, parameter count). The universality of power laws across such different domains (biology, physics, AI) suggests that they arise from general mathematical principles — specifically, from hierarchical systems with self-similar structure at multiple scales.
 > 
-> _Production functions in economics_ : The Cobb-Douglas production function Y=AKαLβY = A K^$\alpha L^\betaY=AK$αLβ relates output YYY to capital KKK and labor LLL. The AI scaling law L(N,D)≈AN−αND−αDL(N, D) $\approx A N^{-\alpha_N} D^{-\alpha_D}L(N,D)$≈AN−αND−αD has a parallel structure, with model parameters playing the role of capital and training data playing the role of labor. The sum $\alpha_N + \alpha_D \approx 0.17 \ll 1$ corresponds to strongly diminishing returns to scale — far more diminishing than the typical Cobb-Douglas $\alpha + \beta \approx 1.0$. This means AI training exhibits much steeper diminishing returns than physical production.
+> _Production functions in economics_ : The Cobb-Douglas production function Y=AKαLβY = A K^\alpha L^\betaY=AKαLβ relates output YYY to capital KKK and labor LLL. The AI scaling law L(N,D)≈AN−αND−αDL(N, D) \approx A N^{-\alpha_N} D^{-\alpha_D}L(N,D)≈AN−αN​D−αD​ has a parallel structure, with model parameters playing the role of capital and training data playing the role of labor. The sum αN+αD≈0.17≪1\alpha_N + \alpha_D \approx 0.17 \ll 1αN​+αD​≈0.17≪1 corresponds to strongly diminishing returns to scale — far more diminishing than the typical Cobb-Douglas α+β≈1.0\alpha + \beta \approx 1.0α+β≈1.0. This means AI training exhibits much steeper diminishing returns than physical production.
 
 * * *
 
@@ -2079,139 +2079,139 @@ The most practically important result in the paper is the compute-optimal alloca
 
 The simplified loss function (ignoring the irreducible loss EEE):
 
-$L(N, D) = A \cdot N^{-\alpha_N} + B \cdot D^{-\alpha_D}$
+L(N,D)=A⋅N−αN+B⋅D−αDL(N, D) = A \cdot N^{-\alpha_N} + B \cdot D^{-\alpha_D}L(N,D)=A⋅N−αN​+B⋅D−αD​
 
-where $\alpha_N}A=Nc$
+where A=NcαNA = N_c^{\alpha_N}A=NcαN​​ and B=DcαDB = D_c^{\alpha_D}B=DcαD​​.
 
 The compute constraint (each token requires approximately 6 FLOPs per parameter):
 
-$C=6ND$
+C=6NDC = 6NDC=6ND
 
 The optimization problem:
 
-min⁡N,DL(N,D)=A⋅N−αN+B⋅D−αDs.t.6ND=C\boxed{\min_{N, D} \quad L(N, D) = A $\cdot N^{-\alpha_N} + B \cdot D^{-\alpha_D} \quad \text{s.t.} \quad 6$ND = C}N,DminL(N,D)=A⋅N−αN+B⋅D−αDs.t.6ND=C
+min⁡N,DL(N,D)=A⋅N−αN+B⋅D−αDs.t.6ND=C\boxed{\min_{N, D} \quad L(N, D) = A \cdot N^{-\alpha_N} + B \cdot D^{-\alpha_D} \quad \text{s.t.} \quad 6ND = C}N,Dmin​L(N,D)=A⋅N−αN​+B⋅D−αD​s.t.6ND=C​
 
 #### Lagrangian and First-Order Conditions
 
 Construct the Lagrangian:
 
-$\mathcal{L}(N, D, \lambda) = A \cdot N^{-\alpha_N} + B \cdot D^{-\alpha_D} + \lambda(6ND - C)$
+L(N,D,λ)=A⋅N−αN+B⋅D−αD+λ(6ND−C)\mathcal{L}(N, D, \lambda) = A \cdot N^{-\alpha_N} + B \cdot D^{-\alpha_D} + \lambda(6ND - C)L(N,D,λ)=A⋅N−αN​+B⋅D−αD​+λ(6ND−C)
 
 First-order conditions (setting partial derivatives to zero):
 
 **With respect to NNN:**
 
-∂L∂N=−αNAN−αN−1+6λD=0$$\frac{\partial \mathcal{L}}{\partial N} = -\alpha_N A N^{-\alpha_N - 1} + 6\lambda$$$\cdots (1)$
+∂L∂N=−αNAN−αN−1+6λD=0\frac{\partial \mathcal{L}}{\partial N} = -\alpha_N A N^{-\alpha_N - 1} + 6\lambda D = 0∂N∂L​=−αN​AN−αN​−1+6λD=0 ⇒αNAN−αN−1=6λD⋯(1)\Rightarrow \quad \alpha_N A N^{-\alpha_N - 1} = 6\lambda D \quad \cdots (1)⇒αN​AN−αN​−1=6λD⋯(1)
 
 **With respect to DDD:**
 
-∂L∂D=−αDBD−αD−1+6λN=0$$\frac{\partial \mathcal{L}}{\partial D} = -\alpha_D B D^{-\alpha_D - 1} + 6\lambda$$$\cdots (2)$
+∂L∂D=−αDBD−αD−1+6λN=0\frac{\partial \mathcal{L}}{\partial D} = -\alpha_D B D^{-\alpha_D - 1} + 6\lambda N = 0∂D∂L​=−αD​BD−αD​−1+6λN=0 ⇒αDBD−αD−1=6λN⋯(2)\Rightarrow \quad \alpha_D B D^{-\alpha_D - 1} = 6\lambda N \quad \cdots (2)⇒αD​BD−αD​−1=6λN⋯(2)
 
-**With respect to $\lambda$:**
+**With respect to λ\lambdaλ:**
 
-$6ND = C \quad \cdots (3)$
+6ND=C⋯(3)6ND = C \quad \cdots (3)6ND=C⋯(3)
 
-#### Eliminating $\lambda$
+#### Eliminating λ\lambdaλ
 
 Dividing equation (1) by equation (2):
 
-$$\frac{\alpha_N A N^{-\alpha_N - 1}}{\alpha_D B D^{-\alpha_D - 1}} = \frac{D}{N}$$
+αNAN−αN−1αDBD−αD−1=DN\frac{\alpha_N A N^{-\alpha_N - 1}}{\alpha_D B D^{-\alpha_D - 1}} = \frac{D}{N}αD​BD−αD​−1αN​AN−αN​−1​=ND​
 
 Simplifying:
 
-$$AαDB⋅DαD+1NαN+1=DN\frac{\alpha_N A}{\alpha_D B} \cdot \frac{D^{\alpha_D + 1}}{N^{\alpha_N + 1}} = \frac{D}{N}αDBαNA⋅NαN+1DαD+1=ND αNAαDB⋅DαD=NαN\frac{\alpha_N A}{\alpha_D B} \cdot D^{\alpha_D} = N^{\alpha_N}αDBαNA⋅DαD=N$$
+αNAαDB⋅DαD+1NαN+1=DN\frac{\alpha_N A}{\alpha_D B} \cdot \frac{D^{\alpha_D + 1}}{N^{\alpha_N + 1}} = \frac{D}{N}αD​BαN​A​⋅NαN​+1DαD​+1​=ND​ αNAαDB⋅DαD=NαN\frac{\alpha_N A}{\alpha_D B} \cdot D^{\alpha_D} = N^{\alpha_N}αD​BαN​A​⋅DαD​=NαN​
 
 This gives the **optimal ratio** between DDD and NNN:
 
-$$\frac{\alpha_D B}{\alpha_N A} \cdot N^{\alpha_N} \quad \cdots (4)D$$
+DαD=αDBαNA⋅NαN⋯(4)D^{\alpha_D} = \frac{\alpha_D B}{\alpha_N A} \cdot N^{\alpha_N} \quad \cdots (4)DαD​=αN​AαD​B​⋅NαN​⋯(4)
 
 #### Solving for N∗N^*N∗ and D∗D^*D∗
 
 Substituting D=C/(6N)D = C/(6N)D=C/(6N) from constraint (3) into equation (4):
 
-(C6N)αD=αDBαNA⋅NαN$$\left(\frac{C}{6N}\right)^{\alpha_D} = \frac{\alpha_D B}{\alpha_N A} \cdot N^{\alpha_N}(6NC)$$$$αD=αNAαDB⋅NαN CαD=αDBαNA⋅6αD⋅NαN+αDC^{\alpha_D} = \frac{\alpha_D B}{\alpha_N A} \cdot 6^{\alpha_D} \cdot N^{\alpha_N + \alpha_D}CαD=αNAαDB⋅6αD⋅NαN+$$
+(C6N)αD=αDBαNA⋅NαN\left(\frac{C}{6N}\right)^{\alpha_D} = \frac{\alpha_D B}{\alpha_N A} \cdot N^{\alpha_N}(6NC​)αD​=αN​AαD​B​⋅NαN​ CαD=αDBαNA⋅6αD⋅NαN+αDC^{\alpha_D} = \frac{\alpha_D B}{\alpha_N A} \cdot 6^{\alpha_D} \cdot N^{\alpha_N + \alpha_D}CαD​=αN​AαD​B​⋅6αD​⋅NαN​+αD​
 
 Solving for NNN:
 
-$$\cdot C^{\frac{\alpha_D}{\alpha_N + \alpha_D}}}N$$
+N∗(C)=KN⋅CαDαN+αD\boxed{N^*(C) = K_N \cdot C^{\frac{\alpha_D}{\alpha_N + \alpha_D}}}N∗(C)=KN​⋅CαN​+αD​αD​​​
 
-where $$N = \left[\frac{\alpha_N A}{\alpha_D B \cdot 6^{\alpha_D}}\right]^{1/(\alpha_N + \alpha_D)}$$
+where KN=[αNAαDB⋅6αD]1/(αN+αD)K_N = \left[\frac{\alpha_N A}{\alpha_D B \cdot 6^{\alpha_D}}\right]^{1/(\alpha_N + \alpha_D)}KN​=[αD​B⋅6αD​αN​A​]1/(αN​+αD​).
 
 Similarly:
 
-$$\cdot C^{\frac{\alpha_N}{\alpha_N + \alpha_D}}}D$$
+D∗(C)=KD⋅CαNαN+αD\boxed{D^*(C) = K_D \cdot C^{\frac{\alpha_N}{\alpha_N + \alpha_D}}}D∗(C)=KD​⋅CαN​+αD​αN​​​
 
-**Verification:** αDαN+αD+αNαN+αD=1$$\frac{\alpha_D}{\alpha_N + \alpha_D} + \frac{\alpha_N}{\alpha_N + \alpha_D} = 1$$αN+αDαD+αN+αDαN=1, so N∗⋅D∗∝C1=CN^* $\cdot D^* \propto C^1 = CN$∗⋅D∗∝C1=C, consistent with C=6NDC = 6NDC=6ND. ✓
+**Verification:** αDαN+αD+αNαN+αD=1\frac{\alpha_D}{\alpha_N + \alpha_D} + \frac{\alpha_N}{\alpha_N + \alpha_D} = 1αN​+αD​αD​​+αN​+αD​αN​​=1, so N∗⋅D∗∝C1=CN^* \cdot D^* \propto C^1 = CN∗⋅D∗∝C1=C, consistent with C=6NDC = 6NDC=6ND. ✓
 
 #### Interpreting the Exponents
 
-**Kaplan's estimates** ($\alpha_N \approx 0.076$$\alpha_D \approx 0.095$
+**Kaplan's estimates** (αN≈0.076\alpha_N \approx 0.076αN​≈0.076, αD≈0.095\alpha_D \approx 0.095αD​≈0.095):
 
-βN=0.0950.076+0.095=0.0950.171≈0.56(paper reports 0.73)\beta_N = \frac{0.095}{0.076 + 0.095} = \frac{0.095}{0.171} \approx 0.56 \quad (\text{paper reports } 0.73)βN=0.076+0.0950.095=0.1710.095≈0.56(paper reports 0.73) βD=0.0760.171≈0.44(paper reports 0.27)\beta_D = \frac{0.076}{0.171} \approx 0.44 \quad (\text{paper reports } 0.27)βD=0.1710.076≈0.44(paper reports 0.27)
+βN=0.0950.076+0.095=0.0950.171≈0.56(paper reports 0.73)\beta_N = \frac{0.095}{0.076 + 0.095} = \frac{0.095}{0.171} \approx 0.56 \quad (\text{paper reports } 0.73)βN​=0.076+0.0950.095​=0.1710.095​≈0.56(paper reports 0.73) βD=0.0760.171≈0.44(paper reports 0.27)\beta_D = \frac{0.076}{0.171} \approx 0.44 \quad (\text{paper reports } 0.27)βD​=0.1710.076​≈0.44(paper reports 0.27)
 
-The discrepancy between the formula's prediction (0.56/0.44) and the paper's reported values (0.73/0.27) arises from two methodological differences: (1) Kaplan et al. used IsoFLOP analysis (fitting across models trained with the same compute budget) rather than the direct parametric regression used in our derivation; and (2) their experimental range included smaller models where the power-law fit may be less stable. The Chinchilla paper (Chapter 6) later resolved this by using three independent estimation methods and finding $\beta_N \approx 0.50$, closer to our derived value. Regardless of the exact exponents, the qualitative conclusion is the same: Kaplan found that **compute should be allocated disproportionately to model size.**
+The discrepancy between the formula's prediction (0.56/0.44) and the paper's reported values (0.73/0.27) arises from two methodological differences: (1) Kaplan et al. used IsoFLOP analysis (fitting across models trained with the same compute budget) rather than the direct parametric regression used in our derivation; and (2) their experimental range included smaller models where the power-law fit may be less stable. The Chinchilla paper (Chapter 6) later resolved this by using three independent estimation methods and finding βN≈0.50\beta_N \approx 0.50βN​≈0.50, closer to our derived value. Regardless of the exact exponents, the qualitative conclusion is the same: Kaplan found that **compute should be allocated disproportionately to model size.**
 
-**Chinchilla's corrected estimates** ($\alpha_N \approx 0.34$$\alpha_D \approx 0.28$
+**Chinchilla's corrected estimates** (αN≈0.34\alpha_N \approx 0.34αN​≈0.34, αD≈0.28\alpha_D \approx 0.28αD​≈0.28):
 
-βN=0.280.34+0.28=0.280.62≈0.45≈0.50\beta_$$N = \frac{0.28}{0.34 + 0.28} = \frac{0.28}{0.62} \approx 0.45 \approx 0.50$$$$D = \frac{0.34}{0.62} \approx 0.55 \approx 0.50$$
+βN=0.280.34+0.28=0.280.62≈0.45≈0.50\beta_N = \frac{0.28}{0.34 + 0.28} = \frac{0.28}{0.62} \approx 0.45 \approx 0.50βN​=0.34+0.280.28​=0.620.28​≈0.45≈0.50 βD=0.340.62≈0.55≈0.50\beta_D = \frac{0.34}{0.62} \approx 0.55 \approx 0.50βD​=0.620.34​≈0.55≈0.50
 
-Chinchilla's conclusion: N∗∝C0.5N^* $\propto C^{0.5}N$∗∝C0.5, D∗∝C0.5D^* $\propto C^{0.5}D$∗∝C0.5 — **parameters and data should grow at equal rates.** This is the subject of Chapter 6.
+Chinchilla's conclusion: N∗∝C0.5N^* \propto C^{0.5}N∗∝C0.5, D∗∝C0.5D^* \propto C^{0.5}D∗∝C0.5 — **parameters and data should grow at equal rates.** This is the subject of Chapter 6.
 
-#### The Shadow Price $\lambda$
+#### The Shadow Price λ\lambdaλ
 
-The Lagrange multiplier $\lambda$ has a direct interpretation: **it measures how much the loss would decrease if the compute budget increased by one unit.** At the optimum, λ∗$\lambda^*$λ∗ decreases as CCC increases — reflecting diminishing returns. In practical terms, λ∗$\lambda^*$λ∗ answers the question: "Is it worth buying one more GPU?"
+The Lagrange multiplier λ\lambdaλ has a direct interpretation: **it measures how much the loss would decrease if the compute budget increased by one unit.** At the optimum, λ∗\lambda^*λ∗ decreases as CCC increases — reflecting diminishing returns. In practical terms, λ∗\lambda^*λ∗ answers the question: "Is it worth buying one more GPU?"
 
 * * *
 
 ### 5.5 Why Power Laws? A Theoretical Derivation
 
-The power-law relationship L(N)∝N−αL(N) $\propto N^{-\alpha}L(N)$∝N−α is an empirical finding. But why should scaling follow a power law? This section provides a theoretical derivation from first principles.
+The power-law relationship L(N)∝N−αL(N) \propto N^{-\alpha}L(N)∝N−α is an empirical finding. But why should scaling follow a power law? This section provides a theoretical derivation from first principles.
 
 #### The Feature Importance Hypothesis
 
 Assume language has a hierarchical structure where different "features" (syntactic rules, semantic patterns, world knowledge facts) have different importance for prediction. Rank features by importance: feature kkk has importance (contribution to loss if missing):
 
-$\Delta L_k = A \cdot k^{-\gamma}$
+ΔLk=A⋅k−γ\Delta L_k = A \cdot k^{-\gamma}ΔLk​=A⋅k−γ
 
-where $\gamma > 0$ is the Zipf exponent. This power-law decay in feature importance is empirically justified: high-frequency words and simple grammar rules contribute enormously to prediction accuracy; rare words and obscure facts contribute little.
+where γ>0\gamma > 0γ>0 is the Zipf exponent. This power-law decay in feature importance is empirically justified: high-frequency words and simple grammar rules contribute enormously to prediction accuracy; rare words and obscure facts contribute little.
 
 #### The Model Capacity Assumption
 
-A model with NNN parameters can learn approximately the first M(N)∝NM(N) $\propto NM(N)$∝N features (the most important ones). Features beyond M(N)M(N)M(N) remain unlearned, contributing to the residual loss.
+A model with NNN parameters can learn approximately the first M(N)∝NM(N) \propto NM(N)∝N features (the most important ones). Features beyond M(N)M(N)M(N) remain unlearned, contributing to the residual loss.
 
 #### Deriving the Power Law
 
 The residual loss from unlearned features:
 
-$$\infty = \sum_{k=N+1}^{\infty} \Delta L_k \approx A \int_{N}^{\infty} k^{-\gamma} dkL(N)−L$$
+L(N)−L∞=∑k=N+1∞ΔLk≈A∫N∞k−γdkL(N) - L_\infty = \sum_{k=N+1}^{\infty} \Delta L_k \approx A \int_{N}^{\infty} k^{-\gamma} dkL(N)−L∞​=k=N+1∑∞​ΔLk​≈A∫N∞​k−γdk
 
-For $\gamma > 1$ (features decay fast enough for the integral to converge):
+For γ>1\gamma > 1γ>1 (features decay fast enough for the integral to converge):
 
-$$\int_{N}^{\infty} k^{-\gamma} dk = \frac{N^{1-\gamma}}{\gamma - 1}$$
+∫N∞k−γdk=N1−γγ−1\int_{N}^{\infty} k^{-\gamma} dk = \frac{N^{1-\gamma}}{\gamma - 1}∫N∞​k−γdk=γ−1N1−γ​
 
 Therefore:
 
-$$\infty = \frac{A}{\gamma - 1} \cdot N^{-({\gamma - 1})}L(N)−L$$
+L(N)−L∞=Aγ−1⋅N−(γ−1)L(N) - L_\infty = \frac{A}{\gamma - 1} \cdot N^{-({\gamma - 1})}L(N)−L∞​=γ−1A​⋅N−(γ−1)
 
-$\alpha = \gamma - 1$
+Setting α=γ−1\alpha = \gamma - 1α=γ−1:
 
-$\boxed{L(N) - L_\infty \propto N^{-\alpha}, \quad \text{where } \alpha = \gamma - 1}$
+L(N)−L∞∝N−α,where α=γ−1\boxed{L(N) - L_\infty \propto N^{-\alpha}, \quad \text{where } \alpha = \gamma - 1}L(N)−L∞​∝N−α,where α=γ−1​
 
-**This is the power-law scaling law.** The scaling exponent $\alpha$ is determined by the Zipf exponent $\gamma$ of the feature importance distribution.
+**This is the power-law scaling law.** The scaling exponent α\alphaα is determined by the Zipf exponent γ\gammaγ of the feature importance distribution.
 
-For Kaplan's measured $\alpha_N \approx 0.076$, the implied Zipf exponent is $\gamma = 1 + 0.076 = 1.076$ — meaning feature importance decays only slightly faster than 1/k1/k1/k. This very slow decay explains why the returns to scale are strongly diminishing but never zero: there is always another feature to learn, but each successive feature contributes less.
+For Kaplan's measured αN≈0.076\alpha_N \approx 0.076αN​≈0.076, the implied Zipf exponent is γ=1+0.076=1.076\gamma = 1 + 0.076 = 1.076γ=1+0.076=1.076 — meaning feature importance decays only slightly faster than 1/k1/k1/k. This very slow decay explains why the returns to scale are strongly diminishing but never zero: there is always another feature to learn, but each successive feature contributes less.
 
 > **Cross-Disciplinary Connection**
 > 
 > _Statistical physics — critical phenomena_ : Near a critical point (e.g., the Curie temperature in a ferromagnet), physical quantities follow power laws with universal exponents determined by the system's symmetry class, not its microscopic details. The universality of neural scaling laws — the same exponents applying across different architectures and datasets — suggests an analogous phenomenon: the exponents may be determined by fundamental properties of natural language (its Zipfian structure, hierarchical compositionality) rather than model-specific details.
 > 
-> _Urban economics — Zipf's law for cities_ : The population of the k-th largest city in a country follows pop(k)$\text{pop}(k) \propto k^{-\gamma}pop(k)$ with $\gamma \approx 1$ (Zipf's law). This same distribution governs word frequencies in natural language (the most famous instance of Zipf's law). The scaling law derivation above shows that if the features a language model must learn follow a Zipf-like distribution — which they do, because language itself is Zipfian — then performance must follow a power law in model size. The neural scaling law is, in this sense, a _consequence_ of Zipf's law applied to the learning process.
+> _Urban economics — Zipf's law for cities_ : The population of the kkk-th largest city in a country follows pop(k)∝k−γ\text{pop}(k) \propto k^{-\gamma}pop(k)∝k−γ with γ≈1\gamma \approx 1γ≈1 (Zipf's law). This same distribution governs word frequencies in natural language (the most famous instance of Zipf's law). The scaling law derivation above shows that if the features a language model must learn follow a Zipf-like distribution — which they do, because language itself is Zipfian — then performance must follow a power law in model size. The neural scaling law is, in this sense, a _consequence_ of Zipf's law applied to the learning process.
 
 * * *
 
 ### 5.6 What the Paper Left Unresolved
 
-The paper's compute-optimal allocation (N∗∝C0.73N^* $\propto C^{0.73}N$∗∝C0.73, heavily favoring model size) directly influenced the design of GPT-3 (175B parameters, 300B tokens — a D/ND/ND/N ratio of only 1.7). But was this allocation correct?
+The paper's compute-optimal allocation (N∗∝C0.73N^* \propto C^{0.73}N∗∝C0.73, heavily favoring model size) directly influenced the design of GPT-3 (175B parameters, 300B tokens — a D/ND/ND/N ratio of only 1.7). But was this allocation correct?
 
 Hoffmann et al. (2022) would show it was not. The next chapter reads the Chinchilla paper, which overturned Kaplan's allocation advice and demonstrated that GPT-3 was dramatically undertrained — it should have been a ~70B model trained on ~1.4T tokens, not a 175B model trained on 300B tokens.
 
@@ -2221,7 +2221,7 @@ Hoffmann et al. (2022) would show it was not. The next chapter reads the Chinchi
 
 This chapter marks the transition from Part I's qualitative understanding of pretraining to Part II's quantitative science of scaling. Kaplan et al.'s central contribution was showing that language model performance follows smooth power laws in model size, data, and compute over seven orders of magnitude — transforming resource allocation from guesswork into constrained optimization.
 
-The Lagrangian derivation provides the machinery: given a compute budget, the optimal split between parameters and data follows directly from the scaling exponents. The Zipf-based theoretical derivation grounds these empirical power laws in the hierarchical structure of language itself. But the chapter ends on a cliffhanger: Kaplan's prescription (N∗∝C0.73N^* $\propto C^{0.73}N$∗∝C0.73) guided GPT-3's design toward a dramatically undertrained configuration. Chapter 6 reads the Chinchilla paper that corrected this allocation, showing that parameters and data should grow at equal rates — a correction with consequences for every model trained since.
+The Lagrangian derivation provides the machinery: given a compute budget, the optimal split between parameters and data follows directly from the scaling exponents. The Zipf-based theoretical derivation grounds these empirical power laws in the hierarchical structure of language itself. But the chapter ends on a cliffhanger: Kaplan's prescription (N∗∝C0.73N^* \propto C^{0.73}N∗∝C0.73) guided GPT-3's design toward a dramatically undertrained configuration. Chapter 6 reads the Chinchilla paper that corrected this allocation, showing that parameters and data should grow at equal rates — a correction with consequences for every model trained since.
 
 * * *
 
@@ -2229,19 +2229,19 @@ The Lagrangian derivation provides the machinery: given a compute budget, the op
 
 #### Concept Check
 
-**5.1.** The scaling law exponent $\alpha_N \approx 0.076$ means that a 10× increase in parameters reduces loss by approximately 16%. Compute the parameter increase needed to reduce loss by 50% (assuming L∞≈0L_$\infty \approx 0L$∞≈0).
+**5.1.** The scaling law exponent αN≈0.076\alpha_N \approx 0.076αN​≈0.076 means that a 10× increase in parameters reduces loss by approximately 16%. Compute the parameter increase needed to reduce loss by 50% (assuming L∞≈0L_\infty \approx 0L∞​≈0).
 
 Answer
 
-From the power law L(N)∝N−αNL(N) $\propto N^{-\alpha_N}L(N)$∝N−αN, if we want L(N2)/L(N1)=0.5L(N_2) / L(N_1) = 0.5L(N2)/L(N1)=0.5:
+From the power law L(N)∝N−αNL(N) \propto N^{-\alpha_N}L(N)∝N−αN​, if we want L(N2)/L(N1)=0.5L(N_2) / L(N_1) = 0.5L(N2​)/L(N1​)=0.5:
 
-(N1N2)$$\left(\frac{N_1}{N_2}\right)^{\alpha_N} = 0.5(N2N1)$$$$\frac{N_2}{N_1} = 0.5^{-1/\alpha_N} = 0.5^{-1/0.076} = 0.5^{-13.16}$$
+(N1N2)αN=0.5\left(\frac{N_1}{N_2}\right)^{\alpha_N} = 0.5(N2​N1​​)αN​=0.5 N2N1=0.5−1/αN=0.5−1/0.076=0.5−13.16\frac{N_2}{N_1} = 0.5^{-1/\alpha_N} = 0.5^{-1/0.076} = 0.5^{-13.16}N1​N2​​=0.5−1/αN​=0.5−1/0.076=0.5−13.16
 
-$\ln 2} = e^{9.12} \approx 9{,}1200.5−13.16=213.16=e13.16$
+Computing: 0.5−13.16=213.16=e13.16ln⁡2=e9.12≈9,1200.5^{-13.16} = 2^{13.16} = e^{13.16 \ln 2} = e^{9.12} \approx 9{,}1200.5−13.16=213.16=e13.16ln2=e9.12≈9,120
 
 **To halve the loss, you need approximately 9,100× more parameters.** This illustrates the extreme diminishing returns: each halving of loss requires roughly four orders of magnitude more parameters than the previous halving.
 
-For context: GPT-3 (175B) represents about a 1,500× increase over GPT-1 (117M). By the scaling law, this would reduce loss by approximately 15000.076=e0.076×ln⁡1500=e0.076×7.31=e0.556≈1.741500^{0.076} = e^{0.076 $\times \ln 1500} = e^{0.076 \times 7.31} = e^{0.556} \approx 1.7415000.076=e0.076$×ln1500=e0.076×7.31=e0.556≈1.74, meaning about a 43% loss reduction — impressive but nowhere near 50%.
+For context: GPT-3 (175B) represents about a 1,500× increase over GPT-1 (117M). By the scaling law, this would reduce loss by approximately 15000.076=e0.076×ln⁡1500=e0.076×7.31=e0.556≈1.741500^{0.076} = e^{0.076 \times \ln 1500} = e^{0.076 \times 7.31} = e^{0.556} \approx 1.7415000.076=e0.076×ln1500=e0.076×7.31=e0.556≈1.74, meaning about a 43% loss reduction — impressive but nowhere near 50%.
 
 **5.2.** Explain in one sentence why Finding 2 (architectural hyperparameter insensitivity) is surprising. What did researchers expect before this finding?
 
@@ -2251,17 +2251,17 @@ Before this finding, researchers expected that **the specific arrangement of par
 
 The surprising finding is that, at fixed parameter count, performance depends almost entirely on the _total number_ of parameters, not on how they are distributed across depth, width, and heads — suggesting that the Transformer is flexible enough to use parameters effectively regardless of their arrangement, at least within the range of reasonable configurations.
 
-**5.3.** In the Lagrangian derivation, the shadow price λ∗$\lambda^*$λ∗ decreases as CCC increases. What is the economic interpretation of this? Under what condition would it be "not worth" buying one more GPU?
+**5.3.** In the Lagrangian derivation, the shadow price λ∗\lambda^*λ∗ decreases as CCC increases. What is the economic interpretation of this? Under what condition would it be "not worth" buying one more GPU?
 
 Answer
 
-The shadow price λ∗$\lambda^*$λ∗ measures the **marginal value of compute** — how much the loss decreases per additional unit of compute at the optimal allocation. Its decrease with CCC reflects diminishing marginal returns: the first compute unit provides a large loss reduction; each subsequent unit provides less.
+The shadow price λ∗\lambda^*λ∗ measures the **marginal value of compute** — how much the loss decreases per additional unit of compute at the optimal allocation. Its decrease with CCC reflects diminishing marginal returns: the first compute unit provides a large loss reduction; each subsequent unit provides less.
 
-It would "not be worth" buying one more GPU when the marginal loss reduction ($\lambda^* \times \Delta C$) is less than the marginal cost of the GPU. Formally, if the monetary cost of $\Delta C$ additional compute is ppp, and the value of loss reduction is measured by some utility function U(L)U(L)U(L), the investment is worthwhile if and only if:
+It would "not be worth" buying one more GPU when the marginal loss reduction (λ∗×ΔC\lambda^* \times \Delta Cλ∗×ΔC) is less than the marginal cost of the GPU. Formally, if the monetary cost of ΔC\Delta CΔC additional compute is ppp, and the value of loss reduction is measured by some utility function U(L)U(L)U(L), the investment is worthwhile if and only if:
 
-$U(L(C)) - U(L(C + \Delta C)) > p$
+U(L(C))−U(L(C+ΔC))>pU(L(C)) - U(L(C + \Delta C)) > pU(L(C))−U(L(C+ΔC))>p
 
-Since λ∗$\lambda^*$λ∗ decreases with CCC, there is always a compute budget beyond which additional investment yields diminishing returns that are not worth the cost. This is the AI equivalent of the standard microeconomic result: invest until the marginal benefit equals the marginal cost.
+Since λ∗\lambda^*λ∗ decreases with CCC, there is always a compute budget beyond which additional investment yields diminishing returns that are not worth the cost. This is the AI equivalent of the standard microeconomic result: invest until the marginal benefit equals the marginal cost.
 
 In practice, this explains the "compute efficiency frontier": at some point, investing in algorithmic improvements (better architecture, better training recipes, better data quality) becomes more cost-effective than simply adding more compute. The Chinchilla paper (Chapter 6) is precisely such an algorithmic improvement — it showed how to get more performance from the same compute budget by reallocating between model size and data.
 
@@ -2271,97 +2271,97 @@ In practice, this explains the "compute efficiency frontier": at some point, inv
 
 Hint
 
-Use N∗∝CβNN^* $\propto C^{\beta_N}N$∗∝CβN and D∗=C/(6N∗)D^* = C / (6N^*)D∗=C/(6N∗). For Kaplan, $\beta_N \approx 0.73$$\beta_N \approx 0.50$
+Use N∗∝CβNN^* \propto C^{\beta_N}N∗∝CβN​ and D∗=C/(6N∗)D^* = C / (6N^*)D∗=C/(6N∗). For Kaplan, βN≈0.73\beta_N \approx 0.73βN​≈0.73. For Chinchilla, βN≈0.50\beta_N \approx 0.50βN​≈0.50.
 
 Answer
 
-**Kaplan allocation** ($\beta_N = 0.73$$\beta_D = 0.27$
+**Kaplan allocation** (βN=0.73\beta_N = 0.73βN​=0.73, βD=0.27\beta_D = 0.27βD​=0.27):
 
-We need to determine the proportionality constants. Using GPT-3 as a calibration point: N=175BN = 175$\text{B}$$\text{B}$$\approx 6 \times 175\text{B} \times 300\text{B} = 3.15 \times 10^{23}C$≈6×175B×300B=3.15×1023 FLOPs.
+We need to determine the proportionality constants. Using GPT-3 as a calibration point: N=175BN = 175\text{B}N=175B, D=300BD = 300\text{B}D=300B, C≈6×175B×300B=3.15×1023C \approx 6 \times 175\text{B} \times 300\text{B} = 3.15 \times 10^{23}C≈6×175B×300B=3.15×1023 FLOPs.
 
 For our budget C=1021C = 10^{21}C=1021:
 
-$$\frac{N^*}{175\text{B}} = \left(\frac{10^{21}}{3.15 \times 10^{23}}\right)^{0.73} = (3.17 \times 10^{-3})^{0.73}175BN$$
+N∗175B=(10213.15×1023)0.73=(3.17×10−3)0.73\frac{N^*}{175\text{B}} = \left(\frac{10^{21}}{3.15 \times 10^{23}}\right)^{0.73} = (3.17 \times 10^{-3})^{0.73}175BN∗​=(3.15×10231021​)0.73=(3.17×10−3)0.73
 
-$\times \ln(3.17 \times 10^{-3})} = e^{0.73 \times (-5.75)} = e^{-4.20} \approx 0.015=e0.73$
+=e0.73×ln⁡(3.17×10−3)=e0.73×(−5.75)=e−4.20≈0.015= e^{0.73 \times \ln(3.17 \times 10^{-3})} = e^{0.73 \times (-5.75)} = e^{-4.20} \approx 0.015=e0.73×ln(3.17×10−3)=e0.73×(−5.75)=e−4.20≈0.015
 
-NKaplan∗≈0.015×175B≈2.6B parametersN^*_{$\text{Kaplan}} \approx 0.015 \times 175\text{B} \approx 2.6\text{B parameters}NKaplan$∗≈0.015×175B≈2.6B parameters DKaplan∗=C6N∗=10216×2.6×109≈64B tokensD^*_{$$\text{Kaplan}} = \frac{C}{6N^*} = \frac{10^{21}}{6 \times 2.6 \times 10^9} \approx 64\text{B tokens}DKaplan$$∗=6N∗C=6×2.6×1091021≈64B tokens
+NKaplan∗≈0.015×175B≈2.6B parametersN^*_{\text{Kaplan}} \approx 0.015 \times 175\text{B} \approx 2.6\text{B parameters}NKaplan∗​≈0.015×175B≈2.6B parameters DKaplan∗=C6N∗=10216×2.6×109≈64B tokensD^*_{\text{Kaplan}} = \frac{C}{6N^*} = \frac{10^{21}}{6 \times 2.6 \times 10^9} \approx 64\text{B tokens}DKaplan∗​=6N∗C​=6×2.6×1091021​≈64B tokens
 
-$\text{B} / 2.6\text{B} \approx 2564B/2.6B$
+D/ND/ND/N ratio: 64B/2.6B≈2564\text{B} / 2.6\text{B} \approx 2564B/2.6B≈25
 
-**Chinchilla allocation** (using N∗=C/120N^* = $\sqrt{C/120}N$∗=C/120):
+**Chinchilla allocation** (using N∗=C/120N^* = \sqrt{C/120}N∗=C/120​):
 
 From C=6NDC = 6NDC=6ND and D=20ND = 20ND=20N:
 
-C=6N×20N=120N2C = 6N $\times 20N = 120N^2C=6N$×20N=120N2 N∗=C/120=1021/120=8.33×1018≈2.9×109≈2.9BN^* = \sqrt{C/120} = \sqrt{10^{21}/120} = \sqrt{8.33 $\times 10^{18}} \approx 2.9 \times 10^9 \approx 2.9\text{B}N$$\text{B} = 58\text{B tokens}D$
+C=6N×20N=120N2C = 6N \times 20N = 120N^2C=6N×20N=120N2 N∗=C/120=1021/120=8.33×1018≈2.9×109≈2.9BN^* = \sqrt{C/120} = \sqrt{10^{21}/120} = \sqrt{8.33 \times 10^{18}} \approx 2.9 \times 10^9 \approx 2.9\text{B}N∗=C/120​=1021/120​=8.33×1018​≈2.9×109≈2.9B D∗=20×2.9B=58B tokensD^* = 20 \times 2.9\text{B} = 58\text{B tokens}D∗=20×2.9B=58B tokens
 
-$\text{B} / 2.9\text{B} = 2058B/2.9$
+D/ND/ND/N ratio: 58B/2.9B=2058\text{B} / 2.9\text{B} = 2058B/2.9B=20
 
 At this budget (C=1021C = 10^{21}C=1021), both laws agree on model size (~2.6–2.9B) but differ on the training data ratio (Kaplan: D/N ≈ 25 vs. Chinchilla: D/N = 20). To see the allocation difference more dramatically, consider GPT-3's compute budget C=1023C = 10^{23}C=1023:
 
 For C=1023C = 10^{23}C=1023 (GPT-3 scale):
 
-Kaplan: N∗≈175BN^* \approx 175$\text{B}N$$\text{B}D$
+Kaplan: N∗≈175BN^* \approx 175\text{B}N∗≈175B, D∗≈300BD^* \approx 300\text{B}D∗≈300B, D/N≈1.7D/N \approx 1.7D/N≈1.7
 
-Chinchilla: N∗=1023/120≈8.3×1020≈29BN^* = \sqrt{10^{23}/120} $\approx \sqrt{8.3 \times 10^{20}} \approx 29\text{B}N$$\text{B} = 580\text{B}D$
+Chinchilla: N∗=1023/120≈8.3×1020≈29BN^* = \sqrt{10^{23}/120} \approx \sqrt{8.3 \times 10^{20}} \approx 29\text{B}N∗=1023/120​≈8.3×1020​≈29B, D∗=20×29B=580BD^* = 20 \times 29\text{B} = 580\text{B}D∗=20×29B=580B
 
 **At GPT-3's compute budget, Chinchilla would allocate to a 29B model trained on 580B tokens (D/N ≈ 20), versus Kaplan's 175B model on 300B tokens (D/N ≈ 1.7).**
 
 The Chinchilla allocation produces a better model because Kaplan's model is dramatically undertrained — 175B parameters trained on only 300B tokens means each parameter "sees" fewer than 2 tokens on average, insufficient for the parameters to converge. Chinchilla's smaller model trained on more data achieves lower loss at the same compute cost.
 
-**5.5.** Starting from the Zipf-based derivation in Section 5.5, derive the scaling law for _data_ (rather than model size). Specifically, if increasing data DDD allows the model to estimate each feature's distribution more accurately, and the estimation error for feature kkk scales as k−δ/Dk^{-$\delta} / \sqrt{D}k$−δ/D, what is the form of L(D)L(D)L(D)?
+**5.5.** Starting from the Zipf-based derivation in Section 5.5, derive the scaling law for _data_ (rather than model size). Specifically, if increasing data DDD allows the model to estimate each feature's distribution more accurately, and the estimation error for feature kkk scales as k−δ/Dk^{-\delta} / \sqrt{D}k−δ/D​, what is the form of L(D)L(D)L(D)?
 
 Answer
 
 Following the same logic as the model-size derivation, but now the residual loss comes from estimation error (not missing features). If the model can represent all features but estimates each one imperfectly:
 
-The estimation error for feature kkk with DDD training tokens is approximately k−δ/Dk^{-$\delta} / \sqrt{D}k$−δ/D, where k−δk^{-$\delta}k$−δ reflects that higher-ranked (more important) features have larger estimation errors (they involve more complex distributions).
+The estimation error for feature kkk with DDD training tokens is approximately k−δ/Dk^{-\delta} / \sqrt{D}k−δ/D​, where k−δk^{-\delta}k−δ reflects that higher-ranked (more important) features have larger estimation errors (they involve more complex distributions).
 
 Total estimation error (residual loss):
 
-$$\infty \approx \sum_{k=1}^{M} \frac{k^{-\delta}}{\sqrt{D}} \approx \frac{1}{\sqrt{D}} \int_1^M k^{-\delta} dkL(D)−L$$
+L(D)−L∞≈∑k=1Mk−δD≈1D∫1Mk−δdkL(D) - L_\infty \approx \sum_{k=1}^{M} \frac{k^{-\delta}}{\sqrt{D}} \approx \frac{1}{\sqrt{D}} \int_1^M k^{-\delta} dkL(D)−L∞​≈k=1∑M​D​k−δ​≈D​1​∫1M​k−δdk
 
-For $\delta < 1$ (estimation errors decay slowly with rank):
+For δ<1\delta < 1δ<1 (estimation errors decay slowly with rank):
 
-$$\int_1^M k^{-\delta} dk \approx \frac{M^{1-\delta}}{1-\delta}$$
+∫1Mk−δdk≈M1−δ1−δ\int_1^M k^{-\delta} dk \approx \frac{M^{1-\delta}}{1-\delta}∫1M​k−δdk≈1−δM1−δ​
 
 If MMM is fixed (model capacity is not the bottleneck), this gives:
 
-$L(D) - L_\infty \propto D^{-1/2}$
+L(D)−L∞∝D−1/2L(D) - L_\infty \propto D^{-1/2}L(D)−L∞​∝D−1/2
 
-But this would give $\alpha_D = 0.5$, which is much larger than the observed $\alpha_D \approx 0.095$.
+But this would give αD=0.5\alpha_D = 0.5αD​=0.5, which is much larger than the observed αD≈0.095\alpha_D \approx 0.095αD​≈0.095.
 
-The discrepancy suggests that the simple 1/D1/\sqrt{D}1/D convergence rate is too optimistic. In practice, the effective convergence rate is slower because:
+The discrepancy suggests that the simple 1/D1/\sqrt{D}1/D​ convergence rate is too optimistic. In practice, the effective convergence rate is slower because:
 
-  1. **Feature interactions:** Estimating feature kkk's contribution depends on correctly estimating features 1,…,k−11, $\ldots, k-11,$…,k−1, creating cascading dependencies.
+  1. **Feature interactions:** Estimating feature kkk's contribution depends on correctly estimating features 1,…,k−11, \ldots, k-11,…,k−1, creating cascading dependencies.
   2. **Non-i.i.d. data:** Language data has long-range correlations, reducing the effective sample size below DDD.
   3. **Optimization landscape:** Gradient descent may not find the global optimum for all features simultaneously.
 
-A more realistic model gives L(D)−L∞∝D−αDL(D) - L_$\infty \propto D^{-\alpha_D}L(D)−L$∞∝D−αD with $\alpha_D$ depending on the data's statistical structure. The empirical value $\alpha_D \approx 0.095$ indicates very slow convergence — consistent with the high complexity and long-range correlations of natural language.
+A more realistic model gives L(D)−L∞∝D−αDL(D) - L_\infty \propto D^{-\alpha_D}L(D)−L∞​∝D−αD​ with αD\alpha_DαD​ depending on the data's statistical structure. The empirical value αD≈0.095\alpha_D \approx 0.095αD​≈0.095 indicates very slow convergence — consistent with the high complexity and long-range correlations of natural language.
 
-**5.6.** A researcher argues: "Since $\alpha_N + \alpha_D \approx 0.17 \ll 1$, AI training has strongly diminishing returns to scale. This means there is a natural ceiling to how much performance can improve." Evaluate this argument. Is the conclusion correct? What does the researcher's argument miss?
+**5.6.** A researcher argues: "Since αN+αD≈0.17≪1\alpha_N + \alpha_D \approx 0.17 \ll 1αN​+αD​≈0.17≪1, AI training has strongly diminishing returns to scale. This means there is a natural ceiling to how much performance can improve." Evaluate this argument. Is the conclusion correct? What does the researcher's argument miss?
 
 Answer
 
 **The observation is correct but the conclusion is flawed.**
 
-The researcher correctly notes that $\alpha_N + \alpha_D \approx 0.17 \ll 1$ indicates strongly diminishing returns. In a Cobb-Douglas framework, this corresponds to severe decreasing returns to scale — doubling both inputs increases "output" (loss reduction) by only 20.17≈1.132^{0.17} $\approx 1.1320.17$≈1.13, or 13%.
+The researcher correctly notes that αN+αD≈0.17≪1\alpha_N + \alpha_D \approx 0.17 \ll 1αN​+αD​≈0.17≪1 indicates strongly diminishing returns. In a Cobb-Douglas framework, this corresponds to severe decreasing returns to scale — doubling both inputs increases "output" (loss reduction) by only 20.17≈1.132^{0.17} \approx 1.1320.17≈1.13, or 13%.
 
 **What the argument misses:**
 
-  1. **Diminishing returns ≠ ceiling.** The marginal product of scale is always positive ($\partial L / \partial N < 0$, $\partial L / \partial D < 0$). There is no parameter count or data quantity beyond which additional scale stops helping. The returns diminish but never reach zero. This is exactly like the Solow growth model's prediction: capital accumulation faces diminishing returns, but the economy can still grow indefinitely through capital deepening — just at an ever-slower rate.
+  1. **Diminishing returns ≠ ceiling.** The marginal product of scale is always positive (∂L/∂N<0\partial L / \partial N < 0∂L/∂N<0, ∂L/∂D<0\partial L / \partial D < 0∂L/∂D<0). There is no parameter count or data quantity beyond which additional scale stops helping. The returns diminish but never reach zero. This is exactly like the Solow growth model's prediction: capital accumulation faces diminishing returns, but the economy can still grow indefinitely through capital deepening — just at an ever-slower rate.
 
-  2. **TFP improvements reset the curve.** The scaling law L=AN−αN+BD−αDL = A N^{-$\alpha_N} + B D^{-\alpha_D}L=AN$−αN+BD−αD has a "TFP" component — the constants AAA and BBB (and the implicit architecture efficiency). Algorithmic improvements (better architectures, better training recipes, better data quality) effectively increase TFP, providing performance gains independent of scale. The Chinchilla paper is an example: by improving the compute allocation (algorithmic improvement, not scale increase), the same compute budget yielded a better model. RLHF (Chapter 16) is another: InstructGPT at 1.3B outperformed raw GPT-3 at 175B through methodology improvement, not scale.
+  2. **TFP improvements reset the curve.** The scaling law L=AN−αN+BD−αDL = A N^{-\alpha_N} + B D^{-\alpha_D}L=AN−αN​+BD−αD​ has a "TFP" component — the constants AAA and BBB (and the implicit architecture efficiency). Algorithmic improvements (better architectures, better training recipes, better data quality) effectively increase TFP, providing performance gains independent of scale. The Chinchilla paper is an example: by improving the compute allocation (algorithmic improvement, not scale increase), the same compute budget yielded a better model. RLHF (Chapter 16) is another: InstructGPT at 1.3B outperformed raw GPT-3 at 175B through methodology improvement, not scale.
 
   3. **Qualitative transitions.** The scaling law describes _average loss_ — a continuous, quantitative measure. But capability improvements can be _discontinuous_ : in-context learning appears above ~1B parameters; chain-of-thought reasoning appears above ~100B parameters (Chapter 10). These qualitative transitions are not captured by the smooth power law but represent practically important capability gains.
 
-  4. **The irreducible loss L∞L_$\inftyL$∞ is the true ceiling.** The power law converges to L∞=H(Pdata)L_\infty = H(P_{$\text{data}})L$∞=H(Pdata) — the entropy of natural language. This is the only genuine ceiling, and it represents the _intrinsic randomness_ of language, not a failure of the model.
+  4. **The irreducible loss L∞L_\inftyL∞​ is the true ceiling.** The power law converges to L∞=H(Pdata)L_\infty = H(P_{\text{data}})L∞​=H(Pdata​) — the entropy of natural language. This is the only genuine ceiling, and it represents the _intrinsic randomness_ of language, not a failure of the model.
 
 **Corrected conclusion:** AI training has strongly diminishing returns to _scale alone_ , but performance improvements are not bounded by scaling alone. Algorithmic improvements, data quality improvements, and capability-specific innovations (like RLHF and chain-of-thought) provide additional avenues for progress. The practical ceiling is determined not by scaling law exponents but by the combination of scale, algorithms, and the irreducible entropy of language.
 
 #### Think Deeper
 
-**5.7.** The Lagrangian derivation in Section 5.4 yields the first-order condition $\text{MRTS} = \text{factor price ratio}$ — the marginal rate of technical substitution between parameters and data must equal their relative costs. This is identical to the cost minimization condition in microeconomic production theory. Discuss: in what ways is the analogy between AI training and economic production _exact_ , and in what ways does it break down?
+**5.7.** The Lagrangian derivation in Section 5.4 yields the first-order condition MRTS=factor price ratio\text{MRTS} = \text{factor price ratio}MRTS=factor price ratio — the marginal rate of technical substitution between parameters and data must equal their relative costs. This is identical to the cost minimization condition in microeconomic production theory. Discuss: in what ways is the analogy between AI training and economic production _exact_ , and in what ways does it break down?
 
 Answer
 
@@ -2373,7 +2373,7 @@ Answer
 
   3. **Substitutability:** Parameters and data are partial substitutes — you can compensate for less data with more parameters (to a point), just as you can compensate for less labor with more capital.
 
-  4. **The shadow price interpretation:** $\lambda$ in both settings measures the marginal value of relaxing the budget constraint.
+  4. **The shadow price interpretation:** λ\lambdaλ in both settings measures the marginal value of relaxing the budget constraint.
 
 **Where the analogy breaks down:**
 
@@ -2385,35 +2385,35 @@ Answer
 
   4. **Discrete jumps in capability.** Economic production is continuous — twice the capital produces roughly 1.5× the output. AI capability exhibits discrete jumps: models below 100B parameters cannot do chain-of-thought reasoning; above 100B, they can. These phase transitions have no analog in smooth production functions.
 
-  5. **The role of data quality.** In the Cobb-Douglas analogy, "data" DDD is treated as a homogeneous input measured by quantity. In practice, data quality matters enormously — 1T tokens of curated textbook data may be worth 10T tokens of scraped web text. The production function should really be L(N,Deff)L(N, D_{$\text{eff}})L(N,Deff) where DeffD_{\text{eff}}Deff is an effective data measure that accounts for quality.$
+  5. **The role of data quality.** In the Cobb-Douglas analogy, "data" DDD is treated as a homogeneous input measured by quantity. In practice, data quality matters enormously — 1T tokens of curated textbook data may be worth 10T tokens of scraped web text. The production function should really be L(N,Deff)L(N, D_{\text{eff}})L(N,Deff​) where DeffD_{\text{eff}}Deff​ is an effective data measure that accounts for quality.
 
-**5.8.** The theoretical derivation in Section 5.5 assumes that feature importance follows a Zipf distribution ($\Delta L_k \propto k^{-\gamma}$). This assumption is crucial — if features had exponentially decaying importance ($\Delta L_k \propto e^{-\beta k}$), the scaling law would not be a power law. Derive what form L(N)L(N)L(N) would take under exponential decay and explain why this would be qualitatively different from power-law scaling.
+**5.8.** The theoretical derivation in Section 5.5 assumes that feature importance follows a Zipf distribution (ΔLk∝k−γ\Delta L_k \propto k^{-\gamma}ΔLk​∝k−γ). This assumption is crucial — if features had exponentially decaying importance (ΔLk∝e−βk\Delta L_k \propto e^{-\beta k}ΔLk​∝e−βk), the scaling law would not be a power law. Derive what form L(N)L(N)L(N) would take under exponential decay and explain why this would be qualitatively different from power-law scaling.
 
 Answer
 
 Under exponential decay of feature importance:
 
-$\Delta L_k = A \cdot e^{-\beta k}$
+ΔLk=A⋅e−βk\Delta L_k = A \cdot e^{-\beta k}ΔLk​=A⋅e−βk
 
 The residual loss from unlearned features (assuming the model learns the first NNN features):
 
-$$\infty = \sum_{k=N+1}^{\infty} A e^{-\beta k} = A e^{-\beta(N+1)} \cdot \frac{1}{1 - e^{-\beta}} = \frac{A}{e^{\beta} - 1} \cdot e^{-\beta N}L(N)−L$$
+L(N)−L∞=∑k=N+1∞Ae−βk=Ae−β(N+1)⋅11−e−β=Aeβ−1⋅e−βNL(N) - L_\infty = \sum_{k=N+1}^{\infty} A e^{-\beta k} = A e^{-\beta(N+1)} \cdot \frac{1}{1 - e^{-\beta}} = \frac{A}{e^{\beta} - 1} \cdot e^{-\beta N}L(N)−L∞​=k=N+1∑∞​Ae−βk=Ae−β(N+1)⋅1−e−β1​=eβ−1A​⋅e−βN
 
 Therefore:
 
-$\boxed{L(N) - L_\infty \propto e^{-\beta N}}$
+L(N)−L∞∝e−βN\boxed{L(N) - L_\infty \propto e^{-\beta N}}L(N)−L∞​∝e−βN​
 
 This is **exponential decay** in NNN, not power-law decay.
 
 **Qualitative difference from power-law scaling:**
 
-  1. **Much faster convergence:** Exponential decay is dramatically faster than power-law decay. Under exponential scaling, doubling NNN would square the reduction factor (e−2βN=(e−βN)2e^{-2$\beta N} = (e^{-\beta N})^2e$−2βN=(e−βN)2). Under power-law scaling, doubling NNN reduces loss by only a factor of 20.076≈1.0542^{0.076} $\approx 1.05420.076$≈1.054. If features had exponential importance decay, a relatively small model would capture nearly all predictable variation in language.
+  1. **Much faster convergence:** Exponential decay is dramatically faster than power-law decay. Under exponential scaling, doubling NNN would square the reduction factor (e−2βN=(e−βN)2e^{-2\beta N} = (e^{-\beta N})^2e−2βN=(e−βN)2). Under power-law scaling, doubling NNN reduces loss by only a factor of 20.076≈1.0542^{0.076} \approx 1.05420.076≈1.054. If features had exponential importance decay, a relatively small model would capture nearly all predictable variation in language.
 
-  2. **A "practical ceiling" would exist:** Under exponential decay, L(N)L(N)L(N) converges to L∞L_$\inftyL$∞ extremely quickly. Beyond a modest NNN, additional parameters would provide negligible benefit. This would mean there is a "right size" for a language model beyond which scaling is wasteful — a prediction that is clearly contradicted by empirical evidence (GPT-4, with hundreds of billions of parameters, significantly outperforms GPT-3).
+  2. **A "practical ceiling" would exist:** Under exponential decay, L(N)L(N)L(N) converges to L∞L_\inftyL∞​ extremely quickly. Beyond a modest NNN, additional parameters would provide negligible benefit. This would mean there is a "right size" for a language model beyond which scaling is wasteful — a prediction that is clearly contradicted by empirical evidence (GPT-4, with hundreds of billions of parameters, significantly outperforms GPT-3).
 
   3. **No log-log linearity:** On a log-log plot, exponential decay curves downward (concave), while power-law decay is a straight line. Kaplan et al.'s data shows log-log linearity over 7 orders of magnitude, conclusively ruling out exponential decay.
 
-**Why Zipf (not exponential) is the right assumption:** Natural language has a hierarchical, compositional structure. The number of linguistic features at complexity level ℓ$\ell$ℓ grows combinatorially (roughly exponentially) with ℓ$\ell$ℓ, while each individual feature's probability (and thus its contribution to loss) decreases as a power law of its rank. This Zipfian structure — combinatorial growth of features with power-law importance decay — is a fundamental property of natural language that generates the power-law scaling we observe. An exponential importance decay would imply a finite number of "important" features, which contradicts the open-ended, compositional nature of language.
+**Why Zipf (not exponential) is the right assumption:** Natural language has a hierarchical, compositional structure. The number of linguistic features at complexity level ℓ\ellℓ grows combinatorially (roughly exponentially) with ℓ\ellℓ, while each individual feature's probability (and thus its contribution to loss) decreases as a power law of its rank. This Zipfian structure — combinatorial growth of features with power-law importance decay — is a fundamental property of natural language that generates the power-law scaling we observe. An exponential importance decay would imply a finite number of "important" features, which contradicts the open-ended, compositional nature of language.
 
 **5.9.** Scaling laws predict performance as a function of compute, parameters, and data — but they say nothing about _what_ the model can do at a given performance level. A model with PPL = 15 might excel at translation but fail at arithmetic. Discuss the limitations of using a single scalar (loss or perplexity) to predict model _capabilities_ , and propose a framework for "capability scaling laws" that would be more informative.
 
@@ -2431,15 +2431,15 @@ Answer
 
 Instead of a single L(N,D,C)L(N, D, C)L(N,D,C), track a vector of capability scores:
 
-$\mathbf{C}(N) = (c_1(N), c_2(N), \ldots, c_K(N))$
+C(N)=(c1(N),c2(N),…,cK(N))\mathbf{C}(N) = (c_1(N), c_2(N), \ldots, c_K(N))C(N)=(c1​(N),c2​(N),…,cK​(N))
 
-where ck(N)c_k(N)ck(N) measures performance on capability kkk (arithmetic accuracy, logical deduction accuracy, translation BLEU, instruction-following score, etc.).
+where ck(N)c_k(N)ck​(N) measures performance on capability kkk (arithmetic accuracy, logical deduction accuracy, translation BLEU, instruction-following score, etc.).
 
 For each capability, fit a separate scaling law:
 
-$c_k(N) = f_k(N; \theta_k)$
+ck(N)=fk(N;θk)c_k(N) = f_k(N; \theta_k)ck​(N)=fk​(N;θk​)
 
-where fkf_kfk might be a sigmoid (for capabilities that emerge above a threshold):
+where fkf_kfk​ might be a sigmoid (for capabilities that emerge above a threshold):
 
 ck(N)=Ak1+exp⁡(−βk(log⁡N−log⁡Nk,0))c_k(N) = \frac{A_k}{1 + \exp(-\beta_k (\log N - \log N_{k,0}))}ck​(N)=1+exp(−βk​(logN−logNk,0​))Ak​​
 
@@ -2455,7 +2455,7 @@ This framework would allow predictions like: "At 100B parameters, arithmetic acc
 
 By the end of this chapter, you will be able to:
 
-  1. State the Chinchilla finding that overturned Kaplan's compute-optimal allocation: parameters and data should scale equally (N∗∝C0.5N^* $\propto C^{0.5}N$∗∝C0.5, D∗∝C0.5D^* $\propto C^{0.5}D$∗∝C0.5), with an optimal ratio of approximately 20 tokens per parameter.
+  1. State the Chinchilla finding that overturned Kaplan's compute-optimal allocation: parameters and data should scale equally (N∗∝C0.5N^* \propto C^{0.5}N∗∝C0.5, D∗∝C0.5D^* \propto C^{0.5}D∗∝C0.5), with an optimal ratio of approximately 20 tokens per parameter.
   2. Describe the three independent estimation methods used by Hoffmann et al. and explain why methodological triangulation strengthens the conclusion.
   3. Identify the specific methodological flaw in Kaplan et al.'s analysis (failure to adjust learning rate schedules for different training durations) and explain how it biased their compute-optimal allocation toward larger models.
   4. Compute the Chinchilla-optimal model size and data quantity for a given compute budget and compare it to the Kaplan-optimal allocation.
@@ -2482,7 +2482,7 @@ MT-NLG (2021) | 530B | 270B | 0.5
   
 Notice the D/ND/ND/N ratios: all below 2. These models had far more parameters than training tokens — each parameter "saw" fewer than 2 tokens on average during training.
 
-Kaplan's scaling advice (N∗∝C0.73N^* $\propto C^{0.73}N$∗∝C0.73) said this was optimal: when compute increases, invest most of it in a bigger model, and only a little in more data. But Hoffmann et al. at DeepMind suspected something was wrong.
+Kaplan's scaling advice (N∗∝C0.73N^* \propto C^{0.73}N∗∝C0.73) said this was optimal: when compute increases, invest most of it in a bigger model, and only a little in more data. But Hoffmann et al. at DeepMind suspected something was wrong.
 
 **The paper:** Hoffmann, J., Borgeaud, S., Mensch, A., et al. (2022). "Training Compute-Optimal Large Language Models." arXiv:2203.15556.
 
@@ -2506,35 +2506,35 @@ For each fixed model size (from 70M to 16B parameters), train with different num
 
 #### Method 2: Fixed Compute, Varying Model Size
 
-For each fixed FLOP budget (from 6×10186 $\times 10^{18}6$×1018 to 3×10213 $\times 10^{21}3$×1021), train different-sized models, each using its full budget. For each budget level, find the optimal N∗N^*N∗ — the model size that achieves the lowest loss.
+For each fixed FLOP budget (from 6×10186 \times 10^{18}6×1018 to 3×10213 \times 10^{21}3×1021), train different-sized models, each using its full budget. For each budget level, find the optimal N∗N^*N∗ — the model size that achieves the lowest loss.
 
 #### Method 3: Parametric Fitting
 
 Assume the loss function has the form:
 
-$$\frac{A}{N^{\alpha}} + \frac{B}{D^{\beta}}L(N,D)=E+N$$
+L(N,D)=E+ANα+BDβL(N, D) = E + \frac{A}{N^{\alpha}} + \frac{B}{D^{\beta}}L(N,D)=E+NαA​+DβB​
 
-where EEE is the irreducible loss (the intrinsic entropy of language), A/NαA/N^{$\alpha}A/N$α is the model-limited component, and B/DβB/D^{$\beta}B/D$β is the data-limited component. Fit all five parameters (E,A,α,B,βE, A, $\alpha, B, \betaE,A,$α,B,β) to approximately 400 training runs using nonlinear least squares.
+where EEE is the irreducible loss (the intrinsic entropy of language), A/NαA/N^{\alpha}A/Nα is the model-limited component, and B/DβB/D^{\beta}B/Dβ is the data-limited component. Fit all five parameters (E,A,α,B,βE, A, \alpha, B, \betaE,A,α,B,β) to approximately 400 training runs using nonlinear least squares.
 
 #### The Convergent Result
 
 All three methods converged on the same conclusion:
 
-$\boxed{N^*(C) \propto C^{0.50}, \quad D^*(C) \propto C^{0.50}}$
+N∗(C)∝C0.50,D∗(C)∝C0.50\boxed{N^*(C) \propto C^{0.50}, \quad D^*(C) \propto C^{0.50}}N∗(C)∝C0.50,D∗(C)∝C0.50​
 
 **Parameters and data should grow at equal rates.** The optimal tokens-per-parameter ratio is approximately **20:1** — each parameter should see about 20 training tokens.
 
 The fitted scaling law parameters:
 
-$$\frac{406.4}{N^{0.34}} + \frac{410.7}{D^{0.28}}L(N,D)=1.69+N0.34406.4+D0.28410.7$$
+L(N,D)=1.69+406.4N0.34+410.7D0.28L(N, D) = 1.69 + \frac{406.4}{N^{0.34}} + \frac{410.7}{D^{0.28}}L(N,D)=1.69+N0.34406.4​+D0.28410.7​
 
 From the Lagrangian derivation in Chapter 5:
 
-βN=αDαN+αD=0.280.34+0.28=0.280.62≈0.45≈0.50\beta_$$N = \frac{\alpha_D}{\alpha_N + \alpha_D} = \frac{0.28}{0.34 + 0.28} = \frac{0.28}{0.62} \approx 0.45 \approx 0.50$$$$D = \frac{\alpha_N}{\alpha_N + \alpha_D} = \frac{0.34}{0.62} \approx 0.55 \approx 0.50$$
+βN=αDαN+αD=0.280.34+0.28=0.280.62≈0.45≈0.50\beta_N = \frac{\alpha_D}{\alpha_N + \alpha_D} = \frac{0.28}{0.34 + 0.28} = \frac{0.28}{0.62} \approx 0.45 \approx 0.50βN​=αN​+αD​αD​​=0.34+0.280.28​=0.620.28​≈0.45≈0.50 βD=αNαN+αD=0.340.62≈0.55≈0.50\beta_D = \frac{\alpha_N}{\alpha_N + \alpha_D} = \frac{0.34}{0.62} \approx 0.55 \approx 0.50βD​=αN​+αD​αN​​=0.620.34​≈0.55≈0.50
 
-Note that the exact Chinchilla fit gives $\beta_N \approx 0.45$, slightly favoring data over parameters. The commonly cited "equal growth" summary ($\beta_N = \beta_D = 0.50$) is a convenient approximation that slightly overstates the symmetry.
+Note that the exact Chinchilla fit gives βN≈0.45\beta_N \approx 0.45βN​≈0.45, slightly favoring data over parameters. The commonly cited "equal growth" summary (βN=βD=0.50\beta_N = \beta_D = 0.50βN​=βD​=0.50) is a convenient approximation that slightly overstates the symmetry.
 
-The near-equality of $\alpha_N$ and $\alpha_D$ (0.34 vs. 0.28) drives the near-equal allocation. When compute increases 10×:
+The near-equality of αN\alpha_NαN​ and αD\alpha_DαD​ (0.34 vs. 0.28) drives the near-equal allocation. When compute increases 10×:
 
 | Metric | Kaplan | Chinchilla |
 | --- | --- | --- |
@@ -2566,9 +2566,9 @@ Hoffmann et al. corrected this by using **cosine learning rate decay** for every
 
 #### The Range of Model Sizes
 
-Kaplan et al. trained models up to ~1.5B parameters. Hoffmann et al. trained models up to 16B parameters. The larger range of model sizes allowed Hoffmann to better estimate the scaling exponents, particularly $\alpha_N$ (which Kaplan estimated at 0.076 but Hoffmann estimated at 0.34 — a dramatically different value).
+Kaplan et al. trained models up to ~1.5B parameters. Hoffmann et al. trained models up to 16B parameters. The larger range of model sizes allowed Hoffmann to better estimate the scaling exponents, particularly αN\alpha_NαN​ (which Kaplan estimated at 0.076 but Hoffmann estimated at 0.34 — a dramatically different value).
 
-The larger $\alpha_N$ in Chinchilla's fit means that model size has a stronger effect on loss than Kaplan estimated — which, counterintuitively, means you need a _smaller_ optimal model (because you can get the same loss reduction with fewer parameters if each parameter is better trained with more data).
+The larger αN\alpha_NαN​ in Chinchilla's fit means that model size has a stronger effect on loss than Kaplan estimated — which, counterintuitively, means you need a _smaller_ optimal model (because you can get the same loss reduction with fewer parameters if each parameter is better trained with more data).
 
 * * *
 
@@ -2581,7 +2581,7 @@ Property | Gopher | Chinchilla
 Parameters | 280B | 70B  
 Training tokens | 300B | 1.4T  
 D/ND/ND/N ratio | 1.1 | 20.0  
-Compute (FLOPs) | $\times 10^{23}5$ | $\times 10^{23}5$ 
+Compute (FLOPs) | ~5×10235 \times 10^{23}5×1023 | ~5×10235 \times 10^{23}5×1023  
   
 **Same compute budget. Chinchilla used 4× fewer parameters but 4.7× more data.**
 
@@ -2605,11 +2605,11 @@ The Chinchilla correction thus had both a scientific impact (correct the scaling
 
 The Chinchilla paper distills to a simple rule of thumb:
 
-$\boxed{D^* \approx 20 \times N^*}$
+D∗≈20×N∗\boxed{D^* \approx 20 \times N^*}D∗≈20×N∗​
 
 Given a compute budget CCC:
 
-$\quad \Rightarrow \quad C = 6N \times 20N = 120N^2C=6ND$$$\frac{C}{120}}, \quad D^* = 20N^*}N$$∗=120C,D∗=20N∗
+C=6ND⇒C=6N×20N=120N2C = 6ND \quad \Rightarrow \quad C = 6N \times 20N = 120N^2C=6ND⇒C=6N×20N=120N2 N∗=C120,D∗=20N∗\boxed{N^* = \sqrt{\frac{C}{120}}, \quad D^* = 20N^*}N∗=120C​​,D∗=20N∗​
 
 **Example calculations:**
 
@@ -2621,7 +2621,7 @@ Compute Budget CCC | Optimal N∗N^*N∗ | Optimal D∗D^*D∗
 102310^{23}1023 FLOPs | ~29B | ~580B tokens  
 102410^{24}1024 FLOPs | ~91B | ~1.8T tokens  
   
-For reference, GPT-3 used C≈3×1023C $\approx 3 \times 10^{23}C$≈3×1023 FLOPs. By the Chinchilla recipe: N∗≈50BN^* \approx 50$\text{B}N$∗≈50B, D∗≈1TD^* \approx 1$\text{T}D$∗≈1T tokens — not the 175B parameters and 300B tokens actually used. GPT-3 was roughly 3.5× larger and trained on roughly 3.3× fewer tokens than optimal.
+For reference, GPT-3 used C≈3×1023C \approx 3 \times 10^{23}C≈3×1023 FLOPs. By the Chinchilla recipe: N∗≈50BN^* \approx 50\text{B}N∗≈50B, D∗≈1TD^* \approx 1\text{T}D∗≈1T tokens — not the 175B parameters and 300B tokens actually used. GPT-3 was roughly 3.5× larger and trained on roughly 3.3× fewer tokens than optimal.
 
 * * *
 
@@ -2660,11 +2660,11 @@ How should a reader evaluate competing empirical claims? Key principles:
 
 This chapter performed a close read of the Chinchilla paper — the most practically consequential scaling law correction in the history of large language model research.
 
-**The central finding.** Parameters and data should scale at equal rates: N∗∝C0.5N^* $\propto C^{0.5}N$∗∝C0.5, D∗∝C0.5D^* $\propto C^{0.5}D$∗∝C0.5, with an optimal ratio of approximately 20 tokens per parameter. The Chinchilla recipe: N∗=C/120N^* = $\sqrt{C/120}N$∗=C/120, D∗=20N∗D^* = 20N^*D∗=20N∗. GPT-3 (175B parameters, 300B tokens, D/N ≈ 1.7) was approximately 3.5× overparameterized and 3.3× undertrained.
+**The central finding.** Parameters and data should scale at equal rates: N∗∝C0.5N^* \propto C^{0.5}N∗∝C0.5, D∗∝C0.5D^* \propto C^{0.5}D∗∝C0.5, with an optimal ratio of approximately 20 tokens per parameter. The Chinchilla recipe: N∗=C/120N^* = \sqrt{C/120}N∗=C/120​, D∗=20N∗D^* = 20N^*D∗=20N∗. GPT-3 (175B parameters, 300B tokens, D/N ≈ 1.7) was approximately 3.5× overparameterized and 3.3× undertrained.
 
 **Three-method triangulation.** Hoffmann et al. used three independent estimation methods (fixed model / varying data; fixed compute / varying model; parametric fitting with five parameters) that converged on the same answer. This methodological rigor is the gold standard for empirical AI research.
 
-**Why Kaplan was wrong.** The same learning rate schedule was used regardless of training duration — a methodological flaw that underestimated the value of additional data. Chinchilla corrected this with cosine learning rate decay matched to each run's planned duration. Expanding the experimental range (up to 16B vs. Kaplan's 1.5B) also allowed better estimation of the scaling exponents ($\alpha_N = 0.34$ vs. Kaplan's 0.076).
+**Why Kaplan was wrong.** The same learning rate schedule was used regardless of training duration — a methodological flaw that underestimated the value of additional data. Chinchilla corrected this with cosine learning rate decay matched to each run's planned duration. Expanding the experimental range (up to 16B vs. Kaplan's 1.5B) also allowed better estimation of the scaling exponents (αN=0.34\alpha_N = 0.34αN​=0.34 vs. Kaplan's 0.076).
 
 **Practical impact.** Chinchilla (70B, 1.4T tokens) outperformed Gopher (280B, 300B tokens) at identical compute cost, while providing ~4× lower inference cost. The Chinchilla correction shifted the entire field toward smaller, better-trained models — enabling LLaMA, Mistral, and the open-source model ecosystem.
 
@@ -2676,11 +2676,11 @@ This chapter performed a close read of the Chinchilla paper — the most practic
 
 #### Concept Check
 
-**6.1.** The Chinchilla rule of thumb is D∗≈20N∗D^* $\approx 20N^*D$∗≈20N∗. For a 7B parameter model, how many training tokens does this recommend? How does this compare to LLaMA's actual training setup (7B model trained on 1T tokens)?
+**6.1.** The Chinchilla rule of thumb is D∗≈20N∗D^* \approx 20N^*D∗≈20N∗. For a 7B parameter model, how many training tokens does this recommend? How does this compare to LLaMA's actual training setup (7B model trained on 1T tokens)?
 
 Answer
 
-Chinchilla recommendation: D∗=20×7B=140B tokensD^* = 20 \times 7$\text{B} = 140\text{B tokens}D$∗=20×7B=140B tokens.
+Chinchilla recommendation: D∗=20×7B=140B tokensD^* = 20 \times 7\text{B} = 140\text{B tokens}D∗=20×7B=140B tokens.
 
 LLaMA (7B) was trained on 1T (1,000B) tokens — approximately **7× more** than the Chinchilla recommendation.
 
@@ -2696,9 +2696,9 @@ Answer
 
 Kaplan et al. used the **same learning rate schedule** for all training durations. Specifically, when comparing models trained for different numbers of tokens, they did not adjust the learning rate decay to match the planned training duration.
 
-A cosine learning rate schedule that decays to near-zero at step TmaxT_{$\text{max}}Tmax is optimal for a training run of TmaxT_{\text{max}}Tmax steps. If you use a schedule designed for 100K steps but stop at 10K steps, you are still in the high-learning-rate phase$ — the model has not benefited from the lower learning rate that would refine the parameters in the final phase. Conversely, if you run for 200K steps with a schedule designed for 100K steps, the learning rate has been near-zero for the second half of training, wasting compute.
+A cosine learning rate schedule that decays to near-zero at step TmaxT_{\text{max}}Tmax​ is optimal for a training run of TmaxT_{\text{max}}Tmax​ steps. If you use a schedule designed for 100K steps but stop at 10K steps, you are still in the high-learning-rate phase — the model has not benefited from the lower learning rate that would refine the parameters in the final phase. Conversely, if you run for 200K steps with a schedule designed for 100K steps, the learning rate has been near-zero for the second half of training, wasting compute.
 
-**The bias mechanism:** Models trained for more tokens (larger DDD) appeared to gain less than they actually would have with a properly matched schedule. This made data _look less valuable than it really is._ Since the optimization trades off data against model size, undervaluing data leads to overvaluing model size — producing the biased conclusion N∗∝C0.73N^* $\propto C^{0.73}N$∗∝C0.73 (heavily favoring parameters) instead of the correct N∗∝C0.50N^* $\propto C^{0.50}N$∗∝C0.50 (balanced allocation).
+**The bias mechanism:** Models trained for more tokens (larger DDD) appeared to gain less than they actually would have with a properly matched schedule. This made data _look less valuable than it really is._ Since the optimization trades off data against model size, undervaluing data leads to overvaluing model size — producing the biased conclusion N∗∝C0.73N^* \propto C^{0.73}N∗∝C0.73 (heavily favoring parameters) instead of the correct N∗∝C0.50N^* \propto C^{0.50}N∗∝C0.50 (balanced allocation).
 
 Hoffmann et al. fixed this by using cosine decay matched to each training run's planned duration, allowing longer training to achieve its full potential. This revealed that data is roughly as valuable as parameters, correcting the allocation to equal growth rates.
 
@@ -2708,11 +2708,11 @@ Answer
 
 The irreducible loss E=1.69E = 1.69E=1.69 represents the **intrinsic entropy of natural language** — the fundamental uncertainty in predicting the next token that remains even with perfect knowledge of all linguistic patterns, world knowledge, and reasoning.
 
-It corresponds to a perplexity of exp⁡(1.69)$\exp(1.69) \approx 5.4exp(1.69)$. This means that even a hypothetically perfect language model would "hesitate" among approximately 5.4 equally plausible candidates at each token position — reflecting the genuine randomness of language (word choice in creative writing, unpredictable proper nouns, synonymous phrasings, etc.).
+It corresponds to a perplexity of exp⁡(1.69)≈5.4\exp(1.69) \approx 5.4exp(1.69)≈5.4. This means that even a hypothetically perfect language model would "hesitate" among approximately 5.4 equally plausible candidates at each token position — reflecting the genuine randomness of language (word choice in creative writing, unpredictable proper nouns, synonymous phrasings, etc.).
 
 No model can achieve L<EL < EL<E because:
 
-  1. **Information-theoretically:** E=H(Pdata)E = H(P_{$\text{data}})$E=H(Pdata), the entropy of the true data distribution. As derived in Vol I, Chapter 26, the cross-entropy loss decomposes as LCE=H(Pdata)+DKL(Pdata∥Pθ)\mathcal{L}_{$\text{CE}} = H(P_{\text{data}}) + D_{\text{KL}}(P_{\text{data}} \| P_\theta)$$\text{CE}} \geq H(P_{\text{data}}) = ELCE$
+  1. **Information-theoretically:** E=H(Pdata)E = H(P_{\text{data}})E=H(Pdata​), the entropy of the true data distribution. As derived in Vol I, Chapter 26, the cross-entropy loss decomposes as LCE=H(Pdata)+DKL(Pdata∥Pθ)\mathcal{L}_{\text{CE}} = H(P_{\text{data}}) + D_{\text{KL}}(P_{\text{data}} \| P_\theta)LCE​=H(Pdata​)+DKL​(Pdata​∥Pθ​). Since DKL≥0D_{\text{KL}} \geq 0DKL​≥0, we always have LCE≥H(Pdata)=E\mathcal{L}_{\text{CE}} \geq H(P_{\text{data}}) = ELCE​≥H(Pdata​)=E.
 
   2. **Intuitively:** Language has genuine randomness. When a person writes "I went to the ___", multiple completions ("store", "park", "gym", "dentist") are genuinely possible. A perfect model would assign non-zero probability to all plausible completions, resulting in non-zero entropy at that position. The irreducible loss aggregates these uncertainties across all positions.
 
@@ -2720,21 +2720,21 @@ No model can achieve L<EL < EL<E because:
 
 #### Application Problems
 
-**6.4.** Your organization has a compute budget of 102310^{23}1023 FLOPs. Using the Chinchilla recipe (N∗=C/120N^* = $\sqrt{C/120}N$∗=C/120, D∗=20N∗D^* = 20N^*D∗=20N∗), compute the optimal model configuration. Then compute the Kaplan-optimal configuration (N∗∝C0.73N^* $\propto C^{0.73}N$∗∝C0.73) using GPT-3 as a calibration point. How much inference cost savings does the Chinchilla allocation provide, assuming inference cost scales linearly with NNN?
+**6.4.** Your organization has a compute budget of 102310^{23}1023 FLOPs. Using the Chinchilla recipe (N∗=C/120N^* = \sqrt{C/120}N∗=C/120​, D∗=20N∗D^* = 20N^*D∗=20N∗), compute the optimal model configuration. Then compute the Kaplan-optimal configuration (N∗∝C0.73N^* \propto C^{0.73}N∗∝C0.73) using GPT-3 as a calibration point. How much inference cost savings does the Chinchilla allocation provide, assuming inference cost scales linearly with NNN?
 
 Hint
 
-For the Kaplan allocation, use GPT-3 (N=175BN = 175$\text{B}$N=175B, C≈3×1023C $\approx 3 \times 10^{23}C$≈3×1023) as a reference point and scale NNN with C0.73C^{0.73}C0.73.
+For the Kaplan allocation, use GPT-3 (N=175BN = 175\text{B}N=175B, C≈3×1023C \approx 3 \times 10^{23}C≈3×1023) as a reference point and scale NNN with C0.73C^{0.73}C0.73.
 
 Answer
 
 **Chinchilla allocation:**
 
-N∗=1023120=8.33×1020≈28.9B≈29BN^* = \sqrt{$$\frac{10^{23}}{120}} = \sqrt{8.33 \times 10^{20}} \approx 28.9\text{B} \approx 29\text{B}N$$$\text{B} = 580\text{B tokens}D$
+N∗=1023120=8.33×1020≈28.9B≈29BN^* = \sqrt{\frac{10^{23}}{120}} = \sqrt{8.33 \times 10^{20}} \approx 28.9\text{B} \approx 29\text{B}N∗=1201023​​=8.33×1020​≈28.9B≈29B D∗=20×29B=580B tokensD^* = 20 \times 29\text{B} = 580\text{B tokens}D∗=20×29B=580B tokens
 
-**Kaplan allocation** (using GPT-3 as calibration: N=175BN = 175$\text{B}$$\times 10^{23}C=3$
+**Kaplan allocation** (using GPT-3 as calibration: N=175BN = 175\text{B}N=175B at C=3×1023C = 3 \times 10^{23}C=3×1023):
 
-NKaplan∗=175B×(10233×1023)0.73=175B×(0.333)0.73N^*_{$$\text{Kaplan}} = 175\text{B} \times \left(\frac{10^{23}}{3 \times 10^{23}}\right)^{0.73} = 175\text{B} \times (0.333)^{0.73}NKaplan$$∗=175B×(3×10231023)0.73=175B×(0.333)0.73 (0.333)0.73=e0.73×ln⁡(0.333)=e0.73×(−1.10)=e−0.803≈0.448(0.333)^{0.73} = e^{0.73 \times \ln(0.333)} = e^{0.73 \times (-1.10)} = e^{-0.803} \approx 0.448(0.333)0.73=e0.73×ln(0.333)=e0.73×(−1.10)=e−0.803≈0.448 NKaplan∗≈175B×0.448≈78BN^*_{$\text{Kaplan}} \approx 175\text{B} \times 0.448 \approx 78\text{B}NKaplan$∗≈175B×0.448≈78B DKaplan∗=C6N∗=10236×78×109≈214B tokensD^*_{$$\text{Kaplan}} = \frac{C}{6N^*} = \frac{10^{23}}{6 \times 78 \times 10^9} \approx 214\text{B tokens}DKaplan$$∗=6N∗C=6×78×1091023≈214B tokens
+NKaplan∗=175B×(10233×1023)0.73=175B×(0.333)0.73N^*_{\text{Kaplan}} = 175\text{B} \times \left(\frac{10^{23}}{3 \times 10^{23}}\right)^{0.73} = 175\text{B} \times (0.333)^{0.73}NKaplan∗​=175B×(3×10231023​)0.73=175B×(0.333)0.73 (0.333)0.73=e0.73×ln⁡(0.333)=e0.73×(−1.10)=e−0.803≈0.448(0.333)^{0.73} = e^{0.73 \times \ln(0.333)} = e^{0.73 \times (-1.10)} = e^{-0.803} \approx 0.448(0.333)0.73=e0.73×ln(0.333)=e0.73×(−1.10)=e−0.803≈0.448 NKaplan∗≈175B×0.448≈78BN^*_{\text{Kaplan}} \approx 175\text{B} \times 0.448 \approx 78\text{B}NKaplan∗​≈175B×0.448≈78B DKaplan∗=C6N∗=10236×78×109≈214B tokensD^*_{\text{Kaplan}} = \frac{C}{6N^*} = \frac{10^{23}}{6 \times 78 \times 10^9} \approx 214\text{B tokens}DKaplan∗​=6N∗C​=6×78×1091023​≈214B tokens
 
 **Comparison:**
 
@@ -2746,7 +2746,7 @@ D/ND/ND/N ratio | 20 | 2.7 | —
   
 **Inference cost savings:** If inference cost scales linearly with NNN (a reasonable approximation for autoregressive generation, since each token requires a forward pass through all parameters):
 
-$$\text{Inference cost ratio} = \frac{N_{\text{Kaplan}}}{N_{\text{Chinchilla}}} = \frac{78\text{B}}{29\text{B}} \approx 2.7\timesInference cost$$
+Inference cost ratio=NKaplanNChinchilla=78B29B≈2.7×\text{Inference cost ratio} = \frac{N_{\text{Kaplan}}}{N_{\text{Chinchilla}}} = \frac{78\text{B}}{29\text{B}} \approx 2.7\timesInference cost ratio=NChinchilla​NKaplan​​=29B78B​≈2.7×
 
 The Chinchilla model costs approximately **2.7× less per inference query** while achieving equal or better performance. For an API serving billions of queries per year, this translates to tens of millions of dollars in annual compute savings.
 
@@ -2756,7 +2756,7 @@ Answer
 
 **Chinchilla-optimal configuration for C=1022C = 10^{22}C=1022:**
 
-N∗=1022/120=8.33×1019≈9.1BN^* = \sqrt{10^{22}/120} = \sqrt{8.33 \times 10^{19}} \approx 9.1$\text{B}N$∗=1022/120=8.33×1019≈9.1B D∗=20×9.1B=182B tokensD^* = 20 $\times 9.1\text{B} = 182\text{B tokens}D$∗=20×9.1B=182B tokens
+N∗=1022/120=8.33×1019≈9.1BN^* = \sqrt{10^{22}/120} = \sqrt{8.33 \times 10^{19}} \approx 9.1\text{B}N∗=1022/120​=8.33×1019​≈9.1B D∗=20×9.1B=182B tokensD^* = 20 \times 9.1\text{B} = 182\text{B tokens}D∗=20×9.1B=182B tokens
 
 The Chinchilla recipe recommends a 9.1B model trained on 182B tokens — using only 36% of the available 500B tokens.
 
@@ -2766,7 +2766,7 @@ The Chinchilla recipe recommends a 9.1B model trained on 182B tokens — using o
 
 **(b) If the goal is the best model at a fixed parameter count (for deployment):** Deviate from Chinchilla. If deployment constraints require a model smaller than 9.1B (e.g., 3B for mobile deployment), then train the 3B model on as many of the 500B tokens as the compute budget allows:
 
-$$tokensD = \frac{C}{6N} = \frac{10^{22}}{6 \times 3 \times 10^9} \approx 556\text{B tokens}$$
+D=C6N=10226×3×109≈556B tokensD = \frac{C}{6N} = \frac{10^{22}}{6 \times 3 \times 10^9} \approx 556\text{B tokens}D=6NC​=6×3×1091022​≈556B tokens
 
 This exceeds their data (500B), so they would train on all 500B tokens (possibly with some repetition).
 
@@ -2774,43 +2774,43 @@ This exceeds their data (500B), so they would train on all 500B tokens (possibly
 
 For this startup's specific situation (code generation, limited domain data), an additional consideration: 500B tokens of _high-quality code_ may be more valuable per token than the general web text used to calibrate the Chinchilla ratio. The effective D/ND/ND/N for code data may be lower than 20, meaning they should use a larger model trained on fewer tokens.
 
-**Recommendation:** Train a 9B model on all 500B tokens (compute permitting). This slightly exceeds the Chinchilla budget (C=6×9×109×500×109=2.7×1022C = 6 $\times 9 \times 10^9 \times 500 \times 10^9 = 2.7 \times 10^{22}$C=6×9×109×500×109=2.7×1022, about 2.7× the budget). If the budget is strictly 102210^{22}1022, train a ~6B model on all 500B tokens (C=6×6×109×500×109=1.8×1022C = 6 $\times 6 \times 10^9 \times 500 \times 10^9 = 1.8 \times 10^{22}$C=6×6×109×500×109=1.8×1022), or a 9B model on 182B tokens (Chinchilla-optimal). The choice depends on whether inference cost or training cost is the binding constraint.
+**Recommendation:** Train a 9B model on all 500B tokens (compute permitting). This slightly exceeds the Chinchilla budget (C=6×9×109×500×109=2.7×1022C = 6 \times 9 \times 10^9 \times 500 \times 10^9 = 2.7 \times 10^{22}C=6×9×109×500×109=2.7×1022, about 2.7× the budget). If the budget is strictly 102210^{22}1022, train a ~6B model on all 500B tokens (C=6×6×109×500×109=1.8×1022C = 6 \times 6 \times 10^9 \times 500 \times 10^9 = 1.8 \times 10^{22}C=6×6×109×500×109=1.8×1022), or a 9B model on 182B tokens (Chinchilla-optimal). The choice depends on whether inference cost or training cost is the binding constraint.
 
-**6.6.** Reproduce the Chinchilla-optimal derivation for the case where data has a per-token cost (e.g., data licensing fees). Specifically, if the total cost is Ccompute+p⋅DC_{$\text{compute}} + p \cdot DCcompute+p$⋅D where ppp is the cost per token, how does the optimal D/ND/ND/N ratio change? Does expensive data shift the allocation toward more parameters or more data?
+**6.6.** Reproduce the Chinchilla-optimal derivation for the case where data has a per-token cost (e.g., data licensing fees). Specifically, if the total cost is Ccompute+p⋅DC_{\text{compute}} + p \cdot DCcompute​+p⋅D where ppp is the cost per token, how does the optimal D/ND/ND/N ratio change? Does expensive data shift the allocation toward more parameters or more data?
 
 Answer
 
 **Modified optimization problem:**
 
-$\min_{N, D} \quad L(N, D) = A N^{-\alpha} + B D^{-\beta}N,DminL(N,D)=AN$$\text{s.t.} \quad 6ND + pD = C_{\text{total}}s.t.6ND+$
+min⁡N,DL(N,D)=AN−α+BD−β\min_{N, D} \quad L(N, D) = A N^{-\alpha} + B D^{-\beta}N,Dmin​L(N,D)=AN−α+BD−β s.t.6ND+pD=Ctotal\text{s.t.} \quad 6ND + pD = C_{\text{total}}s.t.6ND+pD=Ctotal​
 
-The constraint can be rewritten as D(6N+p)=CtotalD(6N + p) = C_{$\text{total}}D(6N+p)=Ctotal, so$$\text{total}} / (6N + p)$
+The constraint can be rewritten as D(6N+p)=CtotalD(6N + p) = C_{\text{total}}D(6N+p)=Ctotal​, so D=Ctotal/(6N+p)D = C_{\text{total}} / (6N + p)D=Ctotal​/(6N+p).
 
 **Lagrangian:**
 
-$\mathcal{L} = A N^{-\alpha} + B D^{-\beta} + \lambda(6ND + pD - C_{\text{total}})$
+L=AN−α+BD−β+λ(6ND+pD−Ctotal)\mathcal{L} = A N^{-\alpha} + B D^{-\beta} + \lambda(6ND + pD - C_{\text{total}})L=AN−α+BD−β+λ(6ND+pD−Ctotal​)
 
 **FOC with respect to NNN:**
 
-$-\alpha A N^{-\alpha-1} + 6\lambda D = 0 \quad \Rightarrow \quad \alpha A N^{-\alpha-1} = 6\lambda D$
+−αAN−α−1+6λD=0⇒αAN−α−1=6λD-\alpha A N^{-\alpha-1} + 6\lambda D = 0 \quad \Rightarrow \quad \alpha A N^{-\alpha-1} = 6\lambda D−αAN−α−1+6λD=0⇒αAN−α−1=6λD
 
 **FOC with respect to DDD:**
 
-$-\beta B D^{-\beta-1} + \lambda(6N + p) = 0 \quad \Rightarrow \quad \beta B D^{-\beta-1} = \lambda(6N + p)$
+−βBD−β−1+λ(6N+p)=0⇒βBD−β−1=λ(6N+p)-\beta B D^{-\beta-1} + \lambda(6N + p) = 0 \quad \Rightarrow \quad \beta B D^{-\beta-1} = \lambda(6N + p)−βBD−β−1+λ(6N+p)=0⇒βBD−β−1=λ(6N+p)
 
 **Dividing:**
 
-$$\frac{\alpha A N^{-\alpha-1}}{\beta B D^{-\beta-1}} = \frac{6D}{6N + p}$$
+αAN−α−1βBD−β−1=6D6N+p\frac{\alpha A N^{-\alpha-1}}{\beta B D^{-\beta-1}} = \frac{6D}{6N + p}βBD−β−1αAN−α−1​=6N+p6D​
 
 Compare to the original (no data cost, p=0p = 0p=0):
 
-$$\frac{\alpha A N^{-\alpha-1}}{\beta B D^{-\beta-1}} = \frac{D}{N}$$
+αAN−α−1βBD−β−1=DN\frac{\alpha A N^{-\alpha-1}}{\beta B D^{-\beta-1}} = \frac{D}{N}βBD−β−1αAN−α−1​=ND​
 
 The right-hand side has changed from D/ND/ND/N to 6D/(6N+p)6D/(6N + p)6D/(6N+p). Since 6D/(6N+p)<D/N6D/(6N + p) < D/N6D/(6N+p)<D/N for p>0p > 0p>0, the equation requires a smaller DDD relative to NNN to balance.
 
 **Conclusion:** When data has a per-token cost p>0p > 0p>0, the optimal allocation shifts toward **more parameters and less data** relative to the p=0p = 0p=0 case. Expensive data makes data the "pricier input," so the optimization substitutes toward the cheaper input (parameters/compute).
 
-**Practical relevance:** This explains why organizations with access to cheap data (e.g., Common Crawl, public domain text) follow the Chinchilla recipe (D/N≈20D/N $\approx 20D/N$≈20), while organizations with expensive proprietary data (e.g., licensed medical text, legal corpora) might rationally choose larger models trained on fewer tokens — their "effective ppp" is higher, shifting the optimal allocation toward parameters.
+**Practical relevance:** This explains why organizations with access to cheap data (e.g., Common Crawl, public domain text) follow the Chinchilla recipe (D/N≈20D/N \approx 20D/N≈20), while organizations with expensive proprietary data (e.g., licensed medical text, legal corpora) might rationally choose larger models trained on fewer tokens — their "effective ppp" is higher, shifting the optimal allocation toward parameters.
 
 #### Think Deeper
 
@@ -2826,17 +2826,17 @@ Chinchilla's scaling law treats DDD as a homogeneous quantity — 1T tokens of c
 * Repetitive or near-duplicate data provides diminishing returns.
 * Data from the target domain (e.g., code for a coding model) is more valuable than out-of-domain data.
 
-If we replace DDD with Deff=f(D,quality)D_{$\text{eff}} = f(D, \text{quality})$Deff=f(D,quality) where fff grows sublinearly in DDD (due to diminishing returns from lower-quality data at the margin), the optimal D/ND/ND/N ratio would be lower — you should invest more in parameters and less in raw data volume. Recent work on data curation (e.g., Dolma, FineWeb) suggests that data quality can substitute for data quantity, potentially shifting optimal D/ND/ND/N below 20.
+If we replace DDD with Deff=f(D,quality)D_{\text{eff}} = f(D, \text{quality})Deff​=f(D,quality) where fff grows sublinearly in DDD (due to diminishing returns from lower-quality data at the margin), the optimal D/ND/ND/N ratio would be lower — you should invest more in parameters and less in raw data volume. Recent work on data curation (e.g., Dolma, FineWeb) suggests that data quality can substitute for data quantity, potentially shifting optimal D/ND/ND/N below 20.
 
 **Assumption 2: The compute constraint is C=6NDC = 6NDC=6ND.**
 
 This formula assumes standard dense attention with no compute-saving techniques. Modern innovations change this:
 
 * **Flash Attention** reduces the constant factor in attention computation.
-* **Mixture of Experts (MoE)** activates only a fraction of parameters per token, effectively giving C=6NactiveDC = 6 N_{$\text{active}}$ DC=6NactiveD where Nactive≪NtotalN_{$\text{active}} \ll N_{\text{total}}Nactive$≪Ntotal. This allows much larger total parameter counts at the same compute budget, potentially shifting the optimal total-N / D ratio.
+* **Mixture of Experts (MoE)** activates only a fraction of parameters per token, effectively giving C=6NactiveDC = 6 N_{\text{active}} DC=6Nactive​D where Nactive≪NtotalN_{\text{active}} \ll N_{\text{total}}Nactive​≪Ntotal​. This allows much larger total parameter counts at the same compute budget, potentially shifting the optimal total-NNN / DDD ratio.
 * **Data repetition** : training on the same data multiple times (multiple epochs) breaks the assumption that each token is unique. With repetition, the effective DDD is less than the raw token count.
 
-**Assumption 3 (bonus): The parametric form L=E+A/Nα+B/DβL = E + A/N^$\alpha + B/D^\betaL=E+A/N$α+B/Dβ is correct.**
+**Assumption 3 (bonus): The parametric form L=E+A/Nα+B/DβL = E + A/N^\alpha + B/D^\betaL=E+A/Nα+B/Dβ is correct.**
 
 The additive separable form assumes that the model-limited and data-limited components are independent. In reality, there may be interaction effects: the benefit of more data may depend on model size (larger models may extract more value per token), and vice versa. A more general form L(N,D)=E+f(N,D)L(N, D) = E + f(N, D)L(N,D)=E+f(N,D) where fff is not additively separable might yield different optimal allocations.
 
@@ -2854,26 +2854,26 @@ LLaMA-style models optimize: "Given a fixed parameter count (determined by deplo
 
 These are fundamentally different objectives:
 
-**Compute-optimal (Chinchilla):** Both NNN and DDD are free variables. The constraint is total compute C=6NDC = 6NDC=6ND. The solution balances NNN and DDD at D/N≈20D/N $\approx 20D/N$≈20.
+**Compute-optimal (Chinchilla):** Both NNN and DDD are free variables. The constraint is total compute C=6NDC = 6NDC=6ND. The solution balances NNN and DDD at D/N≈20D/N \approx 20D/N≈20.
 
 **Inference-optimal (LLaMA):** NNN is fixed by deployment requirements (e.g., 7B to fit on a single GPU, 13B for a specific latency target). DDD is the only free variable. The optimization is:
 
-min⁡DL(Nfixed,D)=E+ANfixedα+BDβ\min_{D} L(N_{$$\text{fixed}}, D) = E + \frac{A}{N_{\text{fixed}}^{\alpha}} + \frac{B}{D^{\beta}}DminL(Nfixed,D)=E+Nfixed$$αA+DβB
+min⁡DL(Nfixed,D)=E+ANfixedα+BDβ\min_{D} L(N_{\text{fixed}}, D) = E + \frac{A}{N_{\text{fixed}}^{\alpha}} + \frac{B}{D^{\beta}}Dmin​L(Nfixed​,D)=E+Nfixedα​A​+DβB​
 
 The first two terms are constants (since NNN is fixed). Minimizing the third term means maximizing DDD — **train on as much data as your compute budget allows.** There is no "optimal DDD" in the Chinchilla sense; more data is always better.
 
-**Why inference-optimal training uses D/N≫20D/N $\gg 20D/N$≫20:**
+**Why inference-optimal training uses D/N≫20D/N \gg 20D/N≫20:**
 
 The total cost of a model over its lifetime is:
 
-$C_{\text{total}} = C_{\text{train}} + C_{\text{inference}} \times Q$
+Ctotal=Ctrain+Cinference×QC_{\text{total}} = C_{\text{train}} + C_{\text{inference}} \times QCtotal​=Ctrain​+Cinference​×Q
 
 where QQQ is the number of inference queries over the model's lifetime. For a widely deployed model, QQQ can be billions. Each inference query costs proportional to NNN. A smaller NNN with a higher training cost (more tokens) saves money overall:
 
-* Chinchilla-optimal 29B model: training costs CCC, each inference costs ∝29B\propto 29$\text{B}$∝29B
-* LLaMA-style 7B model: training costs 4C4C4C (more tokens), each inference costs ∝7B\propto 7$\text{B}$∝7B
+* Chinchilla-optimal 29B model: training costs CCC, each inference costs ∝29B\propto 29\text{B}∝29B
+* LLaMA-style 7B model: training costs 4C4C4C (more tokens), each inference costs ∝7B\propto 7\text{B}∝7B
 
-If Q>4C/(29−7)BQ > 4C / (29 - 7)$\text{B}Q>4C/(29$−7)B, the smaller model has lower total lifetime cost despite higher training cost.
+If Q>4C/(29−7)BQ > 4C / (29 - 7)\text{B}Q>4C/(29−7)B, the smaller model has lower total lifetime cost despite higher training cost.
 
 **Conclusion:** Chinchilla's D/N=20D/N = 20D/N=20 is correct for one-shot training optimization. For models that will serve billions of inference queries, the optimal strategy is a smaller model trained on far more data (D/N=100D/N = 100D/N=100–300300300) — a finding that LLaMA, Mistral, and subsequent open-source models have validated empirically.
 
@@ -2954,11 +2954,11 @@ This title directly challenged the dominant "pretrain + fine-tune" paradigm. The
 
 GPT-2's core observation: **any supervised task can be expressed as a conditional language model.**
 
-A translation task P(French∣English)P($\text{French} \mid \text{English})P(French$∣English) is a special case of P(continuation∣context)P($\text{continuation} \mid \text{context})P(continuation$∣context) — if the context is "Translate English to French: [English sentence] =", then the natural continuation is the French translation.
+A translation task P(French∣English)P(\text{French} \mid \text{English})P(French∣English) is a special case of P(continuation∣context)P(\text{continuation} \mid \text{context})P(continuation∣context) — if the context is "Translate English to French: [English sentence] =", then the natural continuation is the French translation.
 
 Formally:
 
-$P(y \mid x, \text{task}) = P(\text{output} \mid \text{prompt containing task description and input})$
+P(y∣x,task)=P(output∣prompt containing task description and input)P(y \mid x, \text{task}) = P(\text{output} \mid \text{prompt containing task description and input})P(y∣x,task)=P(output∣prompt containing task description and input)
 
 This means that if a language model has seen enough text that implicitly demonstrates various tasks — translation pairs on bilingual websites, question-answer pairs on forums, article-summary pairs in news digests — it can learn to recognize and replicate these task patterns during inference.
 
@@ -3001,7 +3001,7 @@ GPT-2's training data, WebText, was constructed through a clever heuristic:
 
 GPT-2 was released in four sizes:
 
-Variant | Parameters | Layers | $d_{\text{model}}$ | Heads | Context  
+Variant | Parameters | Layers | dmodeld_{\text{model}}dmodel​ | Heads | Context  
 ---|---|---|---|---|---  
 Small | 117M | 12 | 768 | 12 | 1024  
 Medium | 345M | 24 | 1024 | 16 | 1024  
@@ -3010,9 +3010,9 @@ XL | 1.5B | 48 | 1600 | 25 | 1024
   
 Notable architectural improvements over GPT-1:
 
-**Pre-norm layer normalization:** LayerNorm is moved from _after_ each sublayer to _before_ it. In the original (post-norm) placement: output=LayerNorm(x+Sublayer(x))$\text{output} = \text{LayerNorm}(x + \text{Sublayer}(x))$output=LayerNorm(x+Sublayer(x)). In GPT-2's pre-norm: output=x+Sublayer(LayerNorm(x))$\text{output} = x + \text{Sublayer}(\text{LayerNorm}(x))$output=x+Sublayer(LayerNorm(x)). Pre-norm improves gradient flow in deep networks by ensuring that the residual pathway carries unnormalized signals, stabilizing training at greater depths.
+**Pre-norm layer normalization:** LayerNorm is moved from _after_ each sublayer to _before_ it. In the original (post-norm) placement: output=LayerNorm(x+Sublayer(x))\text{output} = \text{LayerNorm}(x + \text{Sublayer}(x))output=LayerNorm(x+Sublayer(x)). In GPT-2's pre-norm: output=x+Sublayer(LayerNorm(x))\text{output} = x + \text{Sublayer}(\text{LayerNorm}(x))output=x+Sublayer(LayerNorm(x)). Pre-norm improves gradient flow in deep networks by ensuring that the residual pathway carries unnormalized signals, stabilizing training at greater depths.
 
-**Residual scaling:** Residual connection weights are initialized with a scale factor of 1/Nlayers1/\sqrt{N_{\text{layers}}}1/Nlayers, preventing variance accumulation through the residual stream in very deep networks (48 layers for GPT-2 XL).
+**Residual scaling:** Residual connection weights are initialized with a scale factor of 1/Nlayers1/\sqrt{N_{\text{layers}}}1/Nlayers​​, preventing variance accumulation through the residual stream in very deep networks (48 layers for GPT-2 XL).
 
 **Extended context:** 1024 tokens (doubled from GPT-1's 512), allowing the model to condition on longer passages.
 
@@ -3089,7 +3089,7 @@ The logical chain: if zero-shot performance improves with scale (GPT-2's key emp
 
 GPT-2 occupies a pivotal position in this volume's narrative: it is the bridge between GPT-1's fine-tuning paradigm (Chapter 3) and GPT-3's in-context learning paradigm (Chapters 8–9). The paper's core contribution was not any single benchmark result but a conceptual reframing — demonstrating that scale transforms a language model from a feature extractor that needs downstream adaptation into a multitask system that already contains task-solving capability.
 
-**The core takeaway.** Any supervised task can be expressed as conditional text generation P(y∣x,task)P(y \mid x, $\text{task})P(y$∣x,task). If a language model's training data implicitly demonstrates enough tasks — translation pairs on bilingual pages, Q&A on forums, summaries in news digests — then the model learns these conditional distributions as a byproduct of density estimation (connecting back to Chapter 4, Section 4.6). GPT-2 proved this was not merely theoretical: zero-shot performance emerged at 1.5B parameters and improved monotonically with scale, establishing the empirical trend that GPT-3 would extrapolate.
+**The core takeaway.** Any supervised task can be expressed as conditional text generation P(y∣x,task)P(y \mid x, \text{task})P(y∣x,task). If a language model's training data implicitly demonstrates enough tasks — translation pairs on bilingual pages, Q&A on forums, summaries in news digests — then the model learns these conditional distributions as a byproduct of density estimation (connecting back to Chapter 4, Section 4.6). GPT-2 proved this was not merely theoretical: zero-shot performance emerged at 1.5B parameters and improved monotonically with scale, establishing the empirical trend that GPT-3 would extrapolate.
 
 **What GPT-2 proved and what it left open.** Zero-shot worked for tasks structurally close to language modeling (Winograd: 70.7%, exceeding supervised SOTA) but failed on tasks requiring specialized knowledge or formatting (translation: 5.0 BLEU). The verdict: proof of concept, not product. The critical open question — whether providing a few examples in the prompt could close the remaining gap — is answered in Chapter 8, where GPT-3's in-context learning makes the zero-shot-to-few-shot leap.
 
@@ -3135,13 +3135,13 @@ This insight motivated GPT-3's training on a much larger, more diverse corpus �
 
 Answer
 
-In **post-norm** (original Transformer, GPT-1): output=LayerNorm(x+Sublayer(x))$\text{output} = \text{LayerNorm}(x + \text{Sublayer}(x))$output=LayerNorm(x+Sublayer(x)). The residual connection adds xxx and the sublayer output _before_ normalization. During backpropagation, the gradient must flow through LayerNorm, which can attenuate or amplify gradients depending on the activation statistics.
+In **post-norm** (original Transformer, GPT-1): output=LayerNorm(x+Sublayer(x))\text{output} = \text{LayerNorm}(x + \text{Sublayer}(x))output=LayerNorm(x+Sublayer(x)). The residual connection adds xxx and the sublayer output _before_ normalization. During backpropagation, the gradient must flow through LayerNorm, which can attenuate or amplify gradients depending on the activation statistics.
 
-In **pre-norm** (GPT-2): output=x+Sublayer(LayerNorm(x))$\text{output} = x + \text{Sublayer}(\text{LayerNorm}(x))$output=x+Sublayer(LayerNorm(x)). LayerNorm is applied _inside_ the sublayer, while the residual pathway is clean — the gradient can flow directly through the addition without passing through any normalization.
+In **pre-norm** (GPT-2): output=x+Sublayer(LayerNorm(x))\text{output} = x + \text{Sublayer}(\text{LayerNorm}(x))output=x+Sublayer(LayerNorm(x)). LayerNorm is applied _inside_ the sublayer, while the residual pathway is clean — the gradient can flow directly through the addition without passing through any normalization.
 
-**Why this helps in deep networks:** As analyzed in Vol I, Chapter 7, gradient flow through a depth-L network involves a product of LLL Jacobian matrices. In post-norm, each Jacobian includes the LayerNorm transformation, which can introduce additional gradient scaling issues. In pre-norm, the residual pathway provides a **gradient superhighway** : the gradient of the loss with respect to the input of layer ℓ$\ell$ℓ always includes a direct, unmodified term from the identity path x→xx $\to xx$→x, regardless of what happens in the sublayer. This ensures that gradients can flow from the output to the earliest layers without attenuation, even in very deep networks (48 layers for GPT-2 XL).
+**Why this helps in deep networks:** As analyzed in Vol I, Chapter 7, gradient flow through a depth-LLL network involves a product of LLL Jacobian matrices. In post-norm, each Jacobian includes the LayerNorm transformation, which can introduce additional gradient scaling issues. In pre-norm, the residual pathway provides a **gradient superhighway** : the gradient of the loss with respect to the input of layer ℓ\ellℓ always includes a direct, unmodified term from the identity path x→xx \to xx→x, regardless of what happens in the sublayer. This ensures that gradients can flow from the output to the earliest layers without attenuation, even in very deep networks (48 layers for GPT-2 XL).
 
-The residual scaling 1/Nlayers1/\sqrt{N_{\text{layers}}}1/Nlayers complements pre-norm: it prevents the variance of the residual stream from growing with depth (each layer adds a small contribution), further stabilizing training.
+The residual scaling 1/Nlayers1/\sqrt{N_{\text{layers}}}1/Nlayers​​ complements pre-norm: it prevents the variance of the residual stream from growing with depth (each layer adds a small contribution), further stabilizing training.
 
 This combination (pre-norm + residual scaling) is what allowed GPT-2 to scale to 48 layers without training instability — and it became the standard for all subsequent GPT-family models.
 
@@ -3175,23 +3175,23 @@ However, for a 2019-era 1.5B model, this prompt has weaknesses:
 
 **Key limitation:** Zero-shot prompting with GPT-2 is unreliable for structured outputs (single-word labels, specific formats). The model generates whatever continuation is most probable, which may or may not match the desired format. This limitation is partially addressed by few-shot prompting (GPT-3, Chapter 8) and fully addressed by instruction tuning (InstructGPT, Chapter 16).
 
-**7.5.** GPT-2 XL has 1.5B parameters and was trained on ~10B tokens (D/N≈6.7D/N $\approx 6.7D/N$≈6.7). Using the Chinchilla framework from Chapter 6, evaluate whether GPT-2 was compute-optimally trained. If not, what would the Chinchilla-optimal configuration look like for the same compute budget?
+**7.5.** GPT-2 XL has 1.5B parameters and was trained on ~10B tokens (D/N≈6.7D/N \approx 6.7D/N≈6.7). Using the Chinchilla framework from Chapter 6, evaluate whether GPT-2 was compute-optimally trained. If not, what would the Chinchilla-optimal configuration look like for the same compute budget?
 
 Answer
 
 **GPT-2 XL's compute budget:**
 
-$C \approx 6 \times N \times D = 6 \times 1.5 \times 10^9 \times 10 \times 10^9 = 9 \times 10^{19} \text{ FLOPs}$
+C≈6×N×D=6×1.5×109×10×109=9×1019 FLOPsC \approx 6 \times N \times D = 6 \times 1.5 \times 10^9 \times 10 \times 10^9 = 9 \times 10^{19} \text{ FLOPs}C≈6×N×D=6×1.5×109×10×109=9×1019 FLOPs
 
 **Was GPT-2 compute-optimal?**
 
-Chinchilla recommends D/N≈20D/N $\approx 20D/N$≈20. GPT-2 XL has D/N≈6.7D/N $\approx 6.7D/N$≈6.7 — it was trained on approximately **3× fewer tokens** than the Chinchilla recommendation.
+Chinchilla recommends D/N≈20D/N \approx 20D/N≈20. GPT-2 XL has D/N≈6.7D/N \approx 6.7D/N≈6.7 — it was trained on approximately **3× fewer tokens** than the Chinchilla recommendation.
 
 By Chinchilla standards, GPT-2 XL was **overparameterized and undertrained** — the same pattern that Chinchilla identified in GPT-3 and Gopher.
 
-**Chinchilla-optimal configuration for C=9×1019C = 9 $\times 10^{19}C=9$×1019:**
+**Chinchilla-optimal configuration for C=9×1019C = 9 \times 10^{19}C=9×1019:**
 
-N∗=C120=9×1019120=7.5×1017≈866M≈0.87BN^* = \sqrt{$$\frac{C}{120}} = \sqrt{\frac{9 \times 10^{19}}{120}} = \sqrt{7.5 \times 10^{17}} \approx 866\text{M} \approx 0.87\text{B}N$$$\times 0.87\text{B} \approx 17.3\text{B tokens}D$
+N∗=C120=9×1019120=7.5×1017≈866M≈0.87BN^* = \sqrt{\frac{C}{120}} = \sqrt{\frac{9 \times 10^{19}}{120}} = \sqrt{7.5 \times 10^{17}} \approx 866\text{M} \approx 0.87\text{B}N∗=120C​​=1209×1019​​=7.5×1017​≈866M≈0.87B D∗=20×0.87B≈17.3B tokensD^* = 20 \times 0.87\text{B} \approx 17.3\text{B tokens}D∗=20×0.87B≈17.3B tokens
 
 **Comparison:**
 
@@ -3313,7 +3313,7 @@ By the end of this chapter, you will be able to:
 
   1. Distinguish among three evaluation paradigms — zero-shot, one-shot, and few-shot — and explain why few-shot in-context learning represents a fundamentally new capability that does not require gradient updates.
   2. Describe GPT-3's architecture (175B parameters, 96 layers, 12,288 hidden dimension) and verify that the 117× parameter increase from GPT-2 XL comes primarily from increased width, not depth.
-  3. Formalize in-context learning as y^q=arg⁡max⁡yPθ(y∣P)$\hat{y}_q = \arg\max_y P_\theta(y \mid \mathcal{P})y^$q=argmaxyPθ(y∣P) where P$\mathcal{P}P includes task description and examples, and explain why parameters$ $\theta$ remain fixed throughout.
+  3. Formalize in-context learning as y^q=arg⁡max⁡yPθ(y∣P)\hat{y}_q = \arg\max_y P_\theta(y \mid \mathcal{P})y^​q​=argmaxy​Pθ​(y∣P) where P\mathcal{P}P includes task description and examples, and explain why parameters θ\thetaθ remain fixed throughout.
   4. Analyze GPT-3's evaluation across 42 tasks, identifying the pattern of which task types benefit most from few-shot examples and which still require fine-tuning.
   5. Explain why GPT-3 was dramatically undertrained by Chinchilla standards and what this implies about the relationship between the model's demonstrated and potential capabilities.
 
@@ -3393,11 +3393,11 @@ Analogy | Going to school (changes your knowledge) | Reading instructions (uses 
   
 #### Mathematical Formalization
 
-Let the prompt be P=[instruction,(x1,y1),(x2,y2),…,(xk,yk),xq]\mathcal{P} = [$\text{instruction}, (x_1, y_1), (x_2, y_2), \ldots, (x_k, y_k), x_q]$P=[instruction,(x1,y1),(x2,y2),…,(xk,yk),xq], where (xi,yi)(x_i, y_i)(xi,yi) are demonstration examples and xqx_qxq is the query. GPT-3's prediction:
+Let the prompt be P=[instruction,(x1,y1),(x2,y2),…,(xk,yk),xq]\mathcal{P} = [\text{instruction}, (x_1, y_1), (x_2, y_2), \ldots, (x_k, y_k), x_q]P=[instruction,(x1​,y1​),(x2​,y2​),…,(xk​,yk​),xq​], where (xi,yi)(x_i, y_i)(xi​,yi​) are demonstration examples and xqx_qxq​ is the query. GPT-3's prediction:
 
-$\hat{y}_q = \arg\max_{y} P_\theta(y \mid \mathcal{P})y^$
+y^q=arg⁡max⁡yPθ(y∣P)\hat{y}_q = \arg\max_{y} P_\theta(y \mid \mathcal{P})y^​q​=argymax​Pθ​(y∣P)
 
-The crucial point: **$\theta$is the fixed pretrained weight vector.** It does not change with the prompt. The model "learns" the task pattern by processing the demonstration examples through its attention mechanism in a single forward pass — and applies that pattern to the query.
+The crucial point: **θ \thetaθ is the fixed pretrained weight vector.** It does not change with the prompt. The model "learns" the task pattern by processing the demonstration examples through its attention mechanism in a single forward pass — and applies that pattern to the query.
 
 How does this work mechanistically? The attention mechanism (Vol I, Chapters 19–22) allows the query tokens to attend to the demonstration examples. If the demonstrations establish a pattern (e.g., "English word → French word"), the attention weights at the query position learn to extract the relevant transformation and apply it. The model has seen millions of "pattern → instance" examples during pretraining and has developed a general "pattern recognition and application" capability.
 
@@ -3443,7 +3443,7 @@ Wikipedia | 3B | 3%
 
 Total unique tokens: ~499B. But due to the weighting (some datasets are sampled more frequently than others), the effective training set is ~300B tokens.
 
-**By Chinchilla standards (Chapter 6), GPT-3 was dramatically undertrained.** With 175B parameters, the Chinchilla-optimal training set would be 20×175B=3.5T tokens20 $\times 175\text{B} = 3.5\text{T tokens}20$×175B=3.5T tokens — about 12× more than the 300B tokens GPT-3 actually saw. GPT-3's compute budget ($\sim 3.15 \times 10^{23}$ FLOPs) would have been better spent on a ~50B parameter model trained on ~1T tokens. The fact that GPT-3 was nevertheless groundbreaking demonstrates how much capability remained untapped by suboptimal compute allocation.
+**By Chinchilla standards (Chapter 6), GPT-3 was dramatically undertrained.** With 175B parameters, the Chinchilla-optimal training set would be 20×175B=3.5T tokens20 \times 175\text{B} = 3.5\text{T tokens}20×175B=3.5T tokens — about 12× more than the 300B tokens GPT-3 actually saw. GPT-3's compute budget (∼3.15×1023\sim 3.15 \times 10^{23}∼3.15×1023 FLOPs) would have been better spent on a ~50B parameter model trained on ~1T tokens. The fact that GPT-3 was nevertheless groundbreaking demonstrates how much capability remained untapped by suboptimal compute allocation.
 
 #### Training Cost
 
@@ -3503,7 +3503,7 @@ GPT-3's demonstration of in-context learning had far-reaching implications:
 
 This chapter marks the moment in the volume's arc where language models cross from "research curiosity" to "general-purpose tool." GPT-2 (Chapter 7) proved that zero-shot task performance exists and scales; this chapter shows that at 175B parameters, a qualitatively new capability appears — in-context learning — that changes the human-AI interaction paradigm from "train a model" to "write a prompt."
 
-**The paradigm shift.** ICL (y^q=arg⁡max⁡yPθ(y∣P)$\hat{y}_q = \arg\max_y P_\theta(y \mid \mathcal{P})y^$q=argmaxyPθ(y∣P), $\theta$ fixed) means task adaptation happens entirely in the forward pass. No gradient updates, no labeled datasets, no GPU hours per task. The practical implication: anyone who can describe a task in natural language can now use AI, shifting the bottleneck from ML engineering to prompt design.
+**The paradigm shift.** ICL (y^q=arg⁡max⁡yPθ(y∣P)\hat{y}_q = \arg\max_y P_\theta(y \mid \mathcal{P})y^​q​=argmaxy​Pθ​(y∣P), θ\thetaθ fixed) means task adaptation happens entirely in the forward pass. No gradient updates, no labeled datasets, no GPU hours per task. The practical implication: anyone who can describe a task in natural language can now use AI, shifting the bottleneck from ML engineering to prompt design.
 
 **Scale allocation and its lessons.** GPT-3's 117x parameter increase over GPT-2 came primarily from width (hidden dimension x7.7), not depth (layers x2). Yet by Chinchilla standards (Chapter 6), GPT-3 was overparameterized by ~3.4x and undertrained by the same factor — its 300B tokens should have been ~1T. That an undertrained model still produced groundbreaking results reveals how much capability remained untapped, and previews why later compute-optimal models (Chinchilla, LLaMA) would achieve more with less.
 
@@ -3537,11 +3537,11 @@ Answer
 
 GPT-3's compute budget:
 
-$C = 6 \times N \times D = 6 \times 175 \times 10^9 \times 300 \times 10^9 = 3.15 \times 10^{23} \text{ FLOPs}$
+C=6×N×D=6×175×109×300×109=3.15×1023 FLOPsC = 6 \times N \times D = 6 \times 175 \times 10^9 \times 300 \times 10^9 = 3.15 \times 10^{23} \text{ FLOPs}C=6×N×D=6×175×109×300×109=3.15×1023 FLOPs
 
-Chinchilla-optimal allocation (N∗=C/120N^* = $\sqrt{C/120}N$∗=C/120):
+Chinchilla-optimal allocation (N∗=C/120N^* = \sqrt{C/120}N∗=C/120​):
 
-N∗=3.15×1023120=2.625×1021≈51.2×109≈51BN^* = \sqrt{$$\frac{3.15 \times 10^{23}}{120}} = \sqrt{2.625 \times 10^{21}} \approx 51.2 \times 10^9 \approx 51\text{B}N$$$\times 51\text{B} = 1.02\text{T tokens}D$
+N∗=3.15×1023120=2.625×1021≈51.2×109≈51BN^* = \sqrt{\frac{3.15 \times 10^{23}}{120}} = \sqrt{2.625 \times 10^{21}} \approx 51.2 \times 10^9 \approx 51\text{B}N∗=1203.15×1023​​=2.625×1021​≈51.2×109≈51B D∗=20×51B=1.02T tokensD^* = 20 \times 51\text{B} = 1.02\text{T tokens}D∗=20×51B=1.02T tokens
 
 **Comparison:**
 
@@ -3551,7 +3551,7 @@ Parameters | 175B | 51B
 Training tokens | 300B | 1,020B  
 D/ND/ND/N ratio | 1.7 | 20  
   
-GPT-3 was **overparameterized by a factor of 175/51≈3.4×175/51 \approx 3.4$\times175/51$≈3.4×** and **undertrained by a factor of 1020/300≈3.4×1020/300 \approx 3.4$\times1020/300$≈3.4×.**
+GPT-3 was **overparameterized by a factor of 175/51≈3.4×175/51 \approx 3.4\times175/51≈3.4×** and **undertrained by a factor of 1020/300≈3.4×1020/300 \approx 3.4\times1020/300≈3.4×.**
 
 A 51B model trained on 1T tokens at the same compute budget would likely achieve lower perplexity and better downstream performance — as the Chinchilla model (70B, 1.4T tokens) later demonstrated. The fact that GPT-3 was nevertheless a breakthrough shows how much raw capability even a suboptimally allocated 175B model possesses — and how much more capability was left on the table by the Kaplan-guided allocation.
 
@@ -3634,40 +3634,40 @@ Answer
 
 Answer
 
-**Reference point:** GPT-3: N=175BN = 175$\text{B}$$\text{B}$
+**Reference point:** GPT-3: N=175BN = 175\text{B}N=175B, D=300BD = 300\text{B}D=300B, C=3.15×1023C = 3.15 \times 10^{23}C=3.15×1023 FLOPs, cost = 4.6M USD.
 
-Cost per FLOP: 4.6×106/3.15×1023≈1.46×10−174.6 $\times 10^6 / 3.15 \times 10^{23} \approx 1.46 \times 10^{-17}4.6$×106/3.15×1023≈1.46×10−17 dollars/FLOP.
+Cost per FLOP: 4.6×106/3.15×1023≈1.46×10−174.6 \times 10^6 / 3.15 \times 10^{23} \approx 1.46 \times 10^{-17}4.6×106/3.15×1023≈1.46×10−17 dollars/FLOP.
 
 **(a) Kaplan-optimal for 1.75T parameters:**
 
-Kaplan allocation favors large models with less data. At 1.75T parameters, data would scale as D∝N0.37D $\propto N^{0.37}D$∝N0.37 (This exponent follows from Kaplan's compute-optimal allocation: since N* ∝$\propto$∝ C^{0.73} and D* ∝$\propto$∝ C^{0.27}, we have D* ∝\propto∝ (N*)^{0.27/0.73} ≈\approx≈ (N*)^{0.37}.)
+Kaplan allocation favors large models with less data. At 1.75T parameters, data would scale as D∝N0.37D \propto N^{0.37}D∝N0.37 (This exponent follows from Kaplan's compute-optimal allocation: since N* ∝\propto∝ C^{0.73} and D* ∝\propto∝ C^{0.27}, we have D* ∝\propto∝ (N*)^{0.27/0.73} ≈\approx≈ (N*)^{0.37}.)
 
-D=300B×(1.75T/175B)0.37=300B×100.37=300B×2.34≈703B tokensD = 300$\text{B} \times (1.75\text{T}/175\text{B})^{0.37} = 300\text{B} \times 10^{0.37} = 300\text{B} \times 2.34 \approx 703\text{B tokens}$$\times 1.75 \times 10^{12} \times 703 \times 10^9 = 7.38 \times 10^{24} \text{ FLOPs}$
+D=300B×(1.75T/175B)0.37=300B×100.37=300B×2.34≈703B tokensD = 300\text{B} \times (1.75\text{T}/175\text{B})^{0.37} = 300\text{B} \times 10^{0.37} = 300\text{B} \times 2.34 \approx 703\text{B tokens}D=300B×(1.75T/175B)0.37=300B×100.37=300B×2.34≈703B tokens C=6×1.75×1012×703×109=7.38×1024 FLOPsC = 6 \times 1.75 \times 10^{12} \times 703 \times 10^9 = 7.38 \times 10^{24} \text{ FLOPs}C=6×1.75×1012×703×109=7.38×1024 FLOPs
 
-$\times 10^{24} \times 1.46 \times 10^{-17} \approx 1.08 \times 10^{8}7.38$
+Cost: 7.38×1024×1.46×10−17≈1.08×1087.38 \times 10^{24} \times 1.46 \times 10^{-17} \approx 1.08 \times 10^{8}7.38×1024×1.46×10−17≈1.08×108 (approximately 108M USD)
 
 **(b) Chinchilla-optimal for the same compute budget:**
 
-If we spend the same C=7.38×1024C = 7.38 $\times 10^{24}C=7.38$×1024 FLOPs optimally:
+If we spend the same C=7.38×1024C = 7.38 \times 10^{24}C=7.38×1024 FLOPs optimally:
 
-N∗=C/120=6.15×1022≈248BN^* = \sqrt{C/120} = \sqrt{6.15 \times 10^{22}} \approx 248$\text{B}N$∗=C/120=6.15×1022≈248B D∗=20×248B=4.96T tokensD^* = 20 $\times 248\text{B} = 4.96\text{T tokens}D$∗=20×248B=4.96T tokens
+N∗=C/120=6.15×1022≈248BN^* = \sqrt{C/120} = \sqrt{6.15 \times 10^{22}} \approx 248\text{B}N∗=C/120​=6.15×1022​≈248B D∗=20×248B=4.96T tokensD^* = 20 \times 248\text{B} = 4.96\text{T tokens}D∗=20×248B=4.96T tokens
 
 Same cost: **~108M USD** , but now for a 248B model (not 1.75T) trained on ~5T tokens.
 
 **(c) Chinchilla-optimal to actually train 1.75T parameters:**
 
-$\text{T} = 35\text{T tokens}$$\times 1.75 \times 10^{12} \times 35 \times 10^{12} = 3.675 \times 10^{26} \text{ FLOPs}$C=6×1.75×1012×35×1012=3.675×1026 FLOPs
+D=20×1.75T=35T tokensD = 20 \times 1.75\text{T} = 35\text{T tokens}D=20×1.75T=35T tokens C=6×1.75×1012×35×1012=3.675×1026 FLOPsC = 6 \times 1.75 \times 10^{12} \times 35 \times 10^{12} = 3.675 \times 10^{26} \text{ FLOPs}C=6×1.75×1012×35×1012=3.675×1026 FLOPs
 
-$\times 10^{26} \times 1.46 \times 10^{-17} \approx 5.4 \times 10^{9}3.675$
+Cost: 3.675×1026×1.46×10−17≈5.4×1093.675 \times 10^{26} \times 1.46 \times 10^{-17} \approx 5.4 \times 10^{9}3.675×1026×1.46×10−17≈5.4×109 (approximately 5.4B USD)
 
 **Summary:**
 
 Strategy | Parameters | Tokens | Compute | Cost  
 ---|---|---|---|---  
-GPT-3 (reference) | 175B | 300B | $3.15 \times 10^{23}$ | 4.6M USD  
-Kaplan-optimal 10× | 1.75T | 703B | $7.38 \times 10^{24}$ | ~108M USD  
-Chinchilla-optimal (same compute) | 248B | 5.0T | $7.38 \times 10^{24}$ | ~108M USD  
-Chinchilla-optimal (at 1.75T params) | 1.75T | 35T | $3.68 \times 10^{26}$ | ~5.4B USD  
+GPT-3 (reference) | 175B | 300B | 3.15×10233.15 \times 10^{23}3.15×1023 | 4.6M USD  
+Kaplan-optimal 10× | 1.75T | 703B | 7.38×10247.38 \times 10^{24}7.38×1024 | ~108M USD  
+Chinchilla-optimal (same compute) | 248B | 5.0T | 7.38×10247.38 \times 10^{24}7.38×1024 | ~108M USD  
+Chinchilla-optimal (at 1.75T params) | 1.75T | 35T | 3.68×10263.68 \times 10^{26}3.68×1026 | ~5.4B USD  
   
 The Chinchilla-optimal approach to training a 1.75T model would cost approximately **5.4 billion USD** — explaining why no public model at this dense scale exists. The economics favor smaller, better-trained models (like the 248B Chinchilla-optimal model) over massive undertrained ones.
 
@@ -3677,7 +3677,7 @@ Answer
 
 **Why weighted sampling makes sense:**
 
-Not all tokens are equally valuable for language model training. The cross-entropy loss LCE=−1T∑tlog⁡Pθ(wt∣w<t)\mathcal{L}_{\text{CE}} = -\frac{1}{T}\sum_t \log P_\theta(w_t \mid w_{<t})LCE=−T1∑tlogPθ(wt∣w<t) weights all tokens equally. But from a quality perspective:
+Not all tokens are equally valuable for language model training. The cross-entropy loss LCE=−1T∑tlog⁡Pθ(wt∣w<t)\mathcal{L}_{\text{CE}} = -\frac{1}{T}\sum_t \log P_\theta(w_t \mid w_{<t})LCE​=−T1​∑t​logPθ​(wt​∣w<t​) weights all tokens equally. But from a quality perspective:
 
   1. **Common Crawl** is noisy — it contains spam, boilerplate, garbled text, and low-quality content alongside valuable text. Each Common Crawl token provides less "information per token" on average.
 
@@ -3695,11 +3695,11 @@ The optimal weight for each dataset balances two considerations:
 
   2. **Diversity:** Oversampling a small, high-quality dataset leads to repetition, which provides diminishing returns (seeing the same token twice provides less information than seeing it once). The optimal weight decreases as a dataset is repeated.
 
-Formally, the optimal weight wiw_iwi for dataset iii satisfies:
+Formally, the optimal weight wiw_iwi​ for dataset iii satisfies:
 
-$w_i \propto \text{quality}_i \times \text{diversity}_i(r_i)$
+wi∝qualityi×diversityi(ri)w_i \propto \text{quality}_i \times \text{diversity}_i(r_i)wi​∝qualityi​×diversityi​(ri​)
 
-where rir_iri is the number of times dataset iii is repeated and diversityi(ri)\text{diversity}_i(r_i)diversityi(ri) decreases with repetition (diminishing returns from repeated data).
+where rir_iri​ is the number of times dataset iii is repeated and diversityi(ri)\text{diversity}_i(r_i)diversityi​(ri​) decreases with repetition (diminishing returns from repeated data).
 
 GPT-3's weights (e.g., Wikipedia at 3% weight but high repeat rate) reflect this tradeoff: Wikipedia is very high quality, so it is sampled at a rate much higher than its 0.6% share of total data — but not so high as to cause excessive repetition.
 
@@ -3772,19 +3772,19 @@ Answer
 
 **Proposed few-shot scaling law:**
 
-$$\text{Accuracy}(N, k) = A\left(1 - \frac{B}{N^{\alpha_N}}\right)\left(1 - \frac{C}{k^{\alpha_k}}\right)Accuracy(N,k)=A(1−N$$
+Accuracy(N,k)=A(1−BNαN)(1−Ckαk)\text{Accuracy}(N, k) = A\left(1 - \frac{B}{N^{\alpha_N}}\right)\left(1 - \frac{C}{k^{\alpha_k}}\right)Accuracy(N,k)=A(1−NαN​B​)(1−kαk​C​)
 
 Or equivalently, for the error rate:
 
-Error(N,k)≈ENNαN+Ekkαk+ENkNαNkαk$$\text{Error}(N, k) \approx \frac{E_N}{N^{\alpha_N}} + \frac{E_k}{k^{\alpha_k}} + \frac{E_{Nk}}{N^{\alpha_N} k^{\alpha_k}}Error(N,k)$$≈NαNEN+kαkEk+NαNkαkENk
+Error(N,k)≈ENNαN+Ekkαk+ENkNαNkαk\text{Error}(N, k) \approx \frac{E_N}{N^{\alpha_N}} + \frac{E_k}{k^{\alpha_k}} + \frac{E_{Nk}}{N^{\alpha_N} k^{\alpha_k}}Error(N,k)≈NαN​EN​​+kαk​Ek​​+NαN​kαk​ENk​​
 
 **Expected functional form and justification:**
 
-  1. **Model size dimension:** From the standard scaling laws (Chapter 5), performance improves as a power law in NNN. The same should hold for few-shot performance: error$\text{error} \propto N^{-\alpha_N}error$ with $\alpha_N$ possibly different from the perplexity scaling exponent (since few-shot accuracy and perplexity are different metrics).
+  1. **Model size dimension:** From the standard scaling laws (Chapter 5), performance improves as a power law in NNN. The same should hold for few-shot performance: error∝N−αN\text{error} \propto N^{-\alpha_N}error∝N−αN​ with αN\alpha_NαN​ possibly different from the perplexity scaling exponent (since few-shot accuracy and perplexity are different metrics).
 
-  2. **Number of examples dimension:** Each additional example provides information about the task. By analogy to statistical learning theory, the error from finite examples should decay as a power law k−αkk^{-$\alpha_k}k$−αk, where $\alpha_k$ reflects the "learning rate" from examples. For simple tasks (linear classification), $\alpha_k = 0.5$ (the standard 1/n1/\sqrt{n}1/n convergence). For more complex tasks, αk\alpha_kαk might be smaller (slower convergence).
+  2. **Number of examples dimension:** Each additional example provides information about the task. By analogy to statistical learning theory, the error from finite examples should decay as a power law k−αkk^{-\alpha_k}k−αk​, where αk\alpha_kαk​ reflects the "learning rate" from examples. For simple tasks (linear classification), αk=0.5\alpha_k = 0.5αk​=0.5 (the standard 1/n1/\sqrt{n}1/n​ convergence). For more complex tasks, αk\alpha_kαk​ might be smaller (slower convergence).
 
-  3. **Interaction term:** Model size and example count likely interact: larger models extract more information per example (because they have richer internal representations to compare examples against). The interaction term ENk/(NαNkαk)E_{Nk}/(N^{$\alpha_N} k^{\alpha_k})ENk/(N$αNkαk) captures this — larger models with more examples achieve disproportionately better performance than either alone would predict.
+  3. **Interaction term:** Model size and example count likely interact: larger models extract more information per example (because they have richer internal representations to compare examples against). The interaction term ENk/(NαNkαk)E_{Nk}/(N^{\alpha_N} k^{\alpha_k})ENk​/(NαN​kαk​) captures this — larger models with more examples achieve disproportionately better performance than either alone would predict.
 
   4. **Saturation:** Both dimensions have diminishing returns. Adding more examples to a small model does not help much (the model lacks capacity to use them). Adding more parameters with zero examples does not help much either (the model has no task specification). Performance is jointly determined by both.
 
@@ -3995,7 +3995,7 @@ Answer
 
 **Why it happens:** GPT-3's output is the result of a high-dimensional probability distribution conditioned on the input. Small changes to the input (a newline, a rephrased instruction, reordered examples) shift the input's position in the token embedding space, which propagates through 96 layers of attention and feed-forward transformations, potentially shifting the output distribution significantly.
 
-Formally, the conditional distribution Pθ(y∣prompt1)P_\theta(y \mid $\text{prompt}_1)P$θ(y∣prompt1) and Pθ(y∣prompt2)P_\theta(y \mid $\text{prompt}_2)P$θ(y∣prompt2) can differ substantially even when prompt1$\text{prompt}_1prompt1 and prompt2\text{prompt}_2prompt2 differ by only a few tokens. The model has no built-in notion that these prompts are "semantically equivalent"$ — it treats them as different inputs that may warrant different outputs.
+Formally, the conditional distribution Pθ(y∣prompt1)P_\theta(y \mid \text{prompt}_1)Pθ​(y∣prompt1​) and Pθ(y∣prompt2)P_\theta(y \mid \text{prompt}_2)Pθ​(y∣prompt2​) can differ substantially even when prompt1\text{prompt}_1prompt1​ and prompt2\text{prompt}_2prompt2​ differ by only a few tokens. The model has no built-in notion that these prompts are "semantically equivalent" — it treats them as different inputs that may warrant different outputs.
 
 **Why this is more fundamental than it appears:**
 
@@ -4054,13 +4054,13 @@ where [profession] = nurse, engineer, teacher, CEO, etc.
 
   3. **Count pronoun usage:** For each profession, compute:
 
-Gender bias(p)=count("she")−count("he")count("she")+count("he") $$\text{Gender bias}(p) = \frac{\text{count}(\text{"she"}) - \text{count}(\text{"he"})}{\text{count}(\text{"she"}) + \text{count}(\text{"he"})} Gender bias(p)=count("she")+count("he")count("she")−count("he")$$
+Gender bias(p)=count("she")−count("he")count("she")+count("he") \text{Gender bias}(p) = \frac{\text{count}(\text{"she"}) - \text{count}(\text{"he"})}{\text{count}(\text{"she"}) + \text{count}(\text{"he"})} Gender bias(p)=count("she")+count("he")count("she")−count("he")​
 
 Values range from -1 (always "he") to +1 (always "she").
 
   4. **Compare against reality:** Compute the actual gender ratio in each profession from labor statistics. The bias metric is:
 
-Excess bias(p)=∣Gender bias(p)−Actual gender ratio(p)∣ $\text{Excess bias}(p) =$ | \text{Gender bias}(p) - $\text{Actual gender ratio}(p)$ | Excess bias(p)=∣Gender bias(p)−Actual gender ratio(p)∣
+Excess bias(p)=∣Gender bias(p)−Actual gender ratio(p)∣ \text{Excess bias}(p) = |\text{Gender bias}(p) - \text{Actual gender ratio}(p)| Excess bias(p)=∣Gender bias(p)−Actual gender ratio(p)∣
 
 A model with zero excess bias would match real-world gender distributions.
 
@@ -4111,7 +4111,7 @@ Medical diagnosis requires factual accuracy (hallucinations can be deadly), up-t
 
 Answer
 
-**The counter-argument stated formally:** If a model perfectly captures the distribution of human text PdataP_{$\text{data}}Pdata, it has implicitly learned human values, norms, and expectations$ — because these are reflected in how humans write. A perfect language model would therefore "know" what helpful, harmless, honest behavior looks like and would produce it spontaneously.
+**The counter-argument stated formally:** If a model perfectly captures the distribution of human text PdataP_{\text{data}}Pdata​, it has implicitly learned human values, norms, and expectations — because these are reflected in how humans write. A perfect language model would therefore "know" what helpful, harmless, honest behavior looks like and would produce it spontaneously.
 
 **Evidence against this argument from GPT-3:**
 
@@ -4224,7 +4224,7 @@ Three canonical examples:
 
 #### Why Emergence Is Surprising
 
-Emergence is surprising because the scaling laws (Chapters 5–6) predict smooth, continuous improvement. Test loss decreases as a power law — L(N)∝N−αL(N) $\propto N^{-\alpha}L(N)$∝N−α — with no phase transitions. If loss improves smoothly, why do specific capabilities appear suddenly?
+Emergence is surprising because the scaling laws (Chapters 5–6) predict smooth, continuous improvement. Test loss decreases as a power law — L(N)∝N−αL(N) \propto N^{-\alpha}L(N)∝N−α — with no phase transitions. If loss improves smoothly, why do specific capabilities appear suddenly?
 
 Two possible explanations:
 
@@ -4292,13 +4292,13 @@ In-context learning (Chapter 8) is one of the most remarkable capabilities of la
 
 **The idea:** The pretrained model maintains an implicit prior distribution over possible tasks. Each demonstration example in the prompt updates this prior, concentrating the posterior on the specific task being demonstrated. The model's prediction is the posterior predictive distribution.
 
-Formally, let $\tau$ denote a task. The model implicitly computes:
+Formally, let τ\tauτ denote a task. The model implicitly computes:
 
-P(τ∣(x1,y1),…,(xk,yk))∝P(τ)∏i=1kP(yi∣xi,τ)P(\tau \mid (x_1, y_1), \ldots, (x_k, y_k)) \propto P(\tau) $$\prod_{i=1}^{k} P(y_i \mid x_i, \tau)P($$τ∣(x1,y1),…,(xk,yk))∝P(τ)i=1∏kP(yi∣xi,τ)
+P(τ∣(x1,y1),…,(xk,yk))∝P(τ)∏i=1kP(yi∣xi,τ)P(\tau \mid (x_1, y_1), \ldots, (x_k, y_k)) \propto P(\tau) \prod_{i=1}^{k} P(y_i \mid x_i, \tau)P(τ∣(x1​,y1​),…,(xk​,yk​))∝P(τ)i=1∏k​P(yi​∣xi​,τ)
 
-Then the prediction for query xqx_qxq is:
+Then the prediction for query xqx_qxq​ is:
 
-P(y∣xq,examples)=∑τP(y∣xq,τ)P(τ∣examples)P(y \mid x_q, $$\text{examples}) = \sum_{\tau} P(y \mid x_q, \tau) P(\tau \mid \text{examples})P(y$$∣xq,examples)=τ∑P(y∣xq,τ)P(τ∣examples)
+P(y∣xq,examples)=∑τP(y∣xq,τ)P(τ∣examples)P(y \mid x_q, \text{examples}) = \sum_{\tau} P(y \mid x_q, \tau) P(\tau \mid \text{examples})P(y∣xq​,examples)=τ∑​P(y∣xq​,τ)P(τ∣examples)
 
 **Evidence for this view:**
 
@@ -4317,11 +4317,11 @@ P(y∣xq,examples)=∑τP(y∣xq,τ)P(τ∣examples)P(y \mid x_q, $$\text{exampl
 
 Akyürek et al. (2023) and von Oswald et al. (2023) showed that for certain simple function classes (linear regression), Transformers trained on ICL tasks learn weights that are mathematically equivalent to performing gradient descent on the in-context examples.
 
-Specifically, the key-value attention update at layer ℓ$\ell$ℓ can be written as:
+Specifically, the key-value attention update at layer ℓ\ellℓ can be written as:
 
-hquery(ℓ+1)=hquery(ℓ)+∑i=1kαi⋅vih_{$$\text{query}}^{(\ell+1)} = h_{\text{query}}^{(\ell)} + \sum_{i=1}^{k} \alpha_i \cdot v_ihquery($$ℓ+1)=hquery(ℓ)+i=1∑kαi⋅vi
+hquery(ℓ+1)=hquery(ℓ)+∑i=1kαi⋅vih_{\text{query}}^{(\ell+1)} = h_{\text{query}}^{(\ell)} + \sum_{i=1}^{k} \alpha_i \cdot v_ihquery(ℓ+1)​=hquery(ℓ)​+i=1∑k​αi​⋅vi​
 
-This is structurally similar to a gradient step: the "gradient" is ∑iαivi$$\sum_i \alpha_i v_i$$∑iαivi, computed from the examples via attention, and the "learning rate" is implicit in the attention weights.
+This is structurally similar to a gradient step: the "gradient" is ∑iαivi\sum_i \alpha_i v_i∑i​αi​vi​, computed from the examples via attention, and the "learning rate" is implicit in the attention weights.
 
 **Evidence for this view:**
 
@@ -4391,7 +4391,7 @@ Answer
 
 **Distinguishing evaluation:**
 
-  1. **Use log-probability instead of exact-match.** For each 3-digit addition problem, compute −log⁡Pθ(correct answer∣problem)-\log P_\theta($\text{correct answer} \mid \text{problem})−logP$θ(correct answer∣problem). Plot this against model size on a log scale.
+  1. **Use log-probability instead of exact-match.** For each 3-digit addition problem, compute −log⁡Pθ(correct answer∣problem)-\log P_\theta(\text{correct answer} \mid \text{problem})−logPθ​(correct answer∣problem). Plot this against model size on a log scale.
 
   2. **If genuine phase transition:** The log-probability should show a sharp improvement (rapid decrease) above a threshold — the probability undergoes an actual rapid increase, not just a metric artifact.
 
@@ -4468,23 +4468,23 @@ Answer
 
 **Why 8 > 2 examples:**
 
-In the Bayesian framework, the model maintains an implicit prior P(τ)P($\tau)P($τ) over tasks. With 2 examples, the posterior P(τ∣2 examples)P(\tau \mid $\text{2 examples})P($τ∣2 examples) is updated but still relatively diffuse — many tasks are consistent with only 2 data points. For example, 2 English→French translation pairs might also be consistent with "translate and add a greeting," "paraphrase in French," or other tasks.
+In the Bayesian framework, the model maintains an implicit prior P(τ)P(\tau)P(τ) over tasks. With 2 examples, the posterior P(τ∣2 examples)P(\tau \mid \text{2 examples})P(τ∣2 examples) is updated but still relatively diffuse — many tasks are consistent with only 2 data points. For example, 2 English→French translation pairs might also be consistent with "translate and add a greeting," "paraphrase in French," or other tasks.
 
 With 8 examples, the posterior is much more concentrated:
 
-P(τ∣8 examples)∝P(τ)∏i=18P(yi∣xi,τ)P(\tau \mid $$\text{8 examples}) \propto P(\tau) \prod_{i=1}^{8} P(y_i \mid x_i, \tau)P($$τ∣8 examples)∝P(τ)i=1∏8P(yi∣xi,τ)
+P(τ∣8 examples)∝P(τ)∏i=18P(yi∣xi,τ)P(\tau \mid \text{8 examples}) \propto P(\tau) \prod_{i=1}^{8} P(y_i \mid x_i, \tau)P(τ∣8 examples)∝P(τ)i=1∏8​P(yi​∣xi​,τ)
 
 Each additional example multiplicatively narrows the posterior. By 8 examples, the posterior is sufficiently concentrated on "English→French translation" that the model's predictions are accurate.
 
 **Why 100 ≈ 8 examples (diminishing returns):**
 
-The posterior P(τ∣examples)P(\tau \mid $\text{examples})P($τ∣examples) converges quickly for well-defined tasks. After ~8 translation examples, the posterior is already tightly concentrated on the correct task. Additional examples provide diminishing information:
+The posterior P(τ∣examples)P(\tau \mid \text{examples})P(τ∣examples) converges quickly for well-defined tasks. After ~8 translation examples, the posterior is already tightly concentrated on the correct task. Additional examples provide diminishing information:
 
 Formally, the Kullback-Leibler divergence between the posterior with kkk and k+1k+1k+1 examples:
 
-$D_{\text{KL}}(P(\tau \mid k+1) \| P(\tau \mid k)) \to 0 \text{ as } k \to \infty$
+DKL(P(τ∣k+1)∥P(τ∣k))→0 as k→∞D_{\text{KL}}(P(\tau \mid k+1) \| P(\tau \mid k)) \to 0 \text{ as } k \to \inftyDKL​(P(τ∣k+1)∥P(τ∣k))→0 as k→∞
 
-After the task is "identified" (posterior is concentrated), more examples provide redundant confirmation rather than new information. The marginal value of the k-th example decreases approximately as 1/k1/k1/k.
+After the task is "identified" (posterior is concentrated), more examples provide redundant confirmation rather than new information. The marginal value of the kkk-th example decreases approximately as 1/k1/k1/k.
 
 **Practical implication:** The optimal number of few-shot examples balances information gain (more is better) against context window consumption (more examples leave less room for the actual query). For most tasks, 4-16 examples is the sweet spot — enough to identify the task, not so many as to waste context.
 
@@ -4503,7 +4503,7 @@ This pattern is what we would expect if:
   1. Each additional digit adds a fixed amount of difficulty (roughly halving the probability of getting the entire answer right)
   2. The model handles simpler subproblems well but compounds errors across steps
 
-The pattern would be consistent with P(correct)≈pdP($\text{correct}) \approx p^dP(correct)$≈pd where ppp is the per-digit accuracy and ddd is the number of digits. From the data: p≈0.902≈0.95p $\approx \sqrt[2]{0.90} \approx 0.95p$≈20.90≈0.95 per digit gives: 2-digit: 0.952=0.900.95^2 = 0.900.952=0.90, 3-digit: 0.953=0.860.95^3 = 0.860.953=0.86 (overestimates), 4-digit: 0.954=0.810.95^4 = 0.810.954=0.81 (overestimates). The faster actual decay suggests that multi-digit computation compounds errors worse than the simple model predicts — likely due to carry propagation and tokenization effects.
+The pattern would be consistent with P(correct)≈pdP(\text{correct}) \approx p^dP(correct)≈pd where ppp is the per-digit accuracy and ddd is the number of digits. From the data: p≈0.902≈0.95p \approx \sqrt[2]{0.90} \approx 0.95p≈20.90​≈0.95 per digit gives: 2-digit: 0.952=0.900.95^2 = 0.900.952=0.90, 3-digit: 0.953=0.860.95^3 = 0.860.953=0.86 (overestimates), 4-digit: 0.954=0.810.95^4 = 0.810.954=0.81 (overestimates). The faster actual decay suggests that multi-digit computation compounds errors worse than the simple model predicts — likely due to carry propagation and tokenization effects.
 
 **Additional information needed:**
 
@@ -4701,13 +4701,13 @@ SentencePiece supports two algorithms: BPE and Unigram Language Model. The Unigr
 
 The "usefulness" of a token is measured by its impact on the overall likelihood: removing token ttt from the vocabulary means all occurrences of ttt must be segmented using remaining tokens, which increases the total negative log-likelihood of the corpus. Tokens whose removal causes the smallest likelihood decrease are removed first.
 
-Formally, the Unigram model defines the probability of a segmentation $\mathbf{s} = (s_1, s_2, \ldots, s_k)$ of a sentence as:
+Formally, the Unigram model defines the probability of a segmentation s=(s1,s2,…,sk)\mathbf{s} = (s_1, s_2, \ldots, s_k)s=(s1​,s2​,…,sk​) of a sentence as:
 
-$$\mathbf{s}) = \prod_{i=1}^{k} P(s_i)P(s)=$$
+P(s)=∏i=1kP(si)P(\mathbf{s}) = \prod_{i=1}^{k} P(s_i)P(s)=i=1∏k​P(si​)
 
-where P(si)P(s_i)P(si) is the unigram probability of token sis_isi. The optimal segmentation maximizes this probability:
+where P(si)P(s_i)P(si​) is the unigram probability of token sis_isi​. The optimal segmentation maximizes this probability:
 
-$$\mathbf{s}^* = \arg\max_{\mathbf{s}} \prod_{i=1}^{k} P(s_i)s$$
+s∗=arg⁡max⁡s∏i=1kP(si)\mathbf{s}^* = \arg\max_{\mathbf{s}} \prod_{i=1}^{k} P(s_i)s∗=argsmax​i=1∏k​P(si​)
 
 This can be solved efficiently using the Viterbi algorithm (dynamic programming over the possible segmentations).
 
@@ -4793,7 +4793,7 @@ This chapter completes Part II. Let us summarize the arc:
 
 **Chapter 5 (Scaling Laws):** Performance improves as a power law in model size, data, and compute — with strongly diminishing but always positive returns.
 
-**Chapter 6 (Chinchilla):** The correct compute-optimal strategy allocates equally between parameters and data (D/N≈20D/N $\approx 20D/N$≈20), not disproportionately to parameters as originally thought.
+**Chapter 6 (Chinchilla):** The correct compute-optimal strategy allocates equally between parameters and data (D/N≈20D/N \approx 20D/N≈20), not disproportionately to parameters as originally thought.
 
 **Chapter 7 (GPT-2):** Scale from 117M to 1.5B produces zero-shot multitask capability — the model "knows" how to perform tasks it was never taught.
 
@@ -4837,19 +4837,19 @@ Answer
 
 The Unigram Language Model defines the probability of a tokenized corpus as:
 
- $$\mathcal{L} = \sum_{s \in \text{corpus}} \log P(\mathbf{s}^*(s)) = \sum_{s \in \text{corpus}} \sum_{i=1}^{$$ |s| } $\log P(s_i)L=s$∈corpus∑logP(s∗(s))=s∈corpus∑i=1∑∣s∣logP(si) 
+L=∑s∈corpuslog⁡P(s∗(s))=∑s∈corpus∑i=1∣s∣log⁡P(si)\mathcal{L} = \sum_{s \in \text{corpus}} \log P(\mathbf{s}^*(s)) = \sum_{s \in \text{corpus}} \sum_{i=1}^{|s|} \log P(s_i)L=s∈corpus∑​logP(s∗(s))=s∈corpus∑​i=1∑∣s∣​logP(si​)
 
-where s$\mathbf{s}^*(s)s$ is the optimal segmentation of sentence sss under the current vocabulary, and P(si)P(s_i)P(si) is the unigram probability of token sis_isi.
+where s∗(s)\mathbf{s}^*(s)s∗(s) is the optimal segmentation of sentence sss under the current vocabulary, and P(si)P(s_i)P(si​) is the unigram probability of token sis_isi​.
 
-A token ttt is "least useful" if **removing it from the vocabulary causes the smallest decrease in $\mathcal{L}$.** Formally:
+A token ttt is "least useful" if **removing it from the vocabulary causes the smallest decrease in L\mathcal{L}L.** Formally:
 
-$\Delta\mathcal{L}(t) = \mathcal{L}_{\text{without } t} - \mathcal{L}_{\text{with } t}$
+ΔL(t)=Lwithout t−Lwith t\Delta\mathcal{L}(t) = \mathcal{L}_{\text{without } t} - \mathcal{L}_{\text{with } t}ΔL(t)=Lwithout t​−Lwith t​
 
 When token ttt is removed, every occurrence of ttt in every sentence must be re-segmented using the remaining tokens. This typically increases the total token count (longer segmentations) and decreases the total log-likelihood (more frequent tokens used as substitutes tend to be shorter and less specific).
 
-Tokens with small $\Delta\mathcal{L}(t)$ are those that can be "easily replaced" by combinations of other tokens — they are redundant. Tokens with large $\Delta\mathcal{L}(t)$ are those that represent common patterns not well-covered by other tokens — they are essential.
+Tokens with small ΔL(t)\Delta\mathcal{L}(t)ΔL(t) are those that can be "easily replaced" by combinations of other tokens — they are redundant. Tokens with large ΔL(t)\Delta\mathcal{L}(t)ΔL(t) are those that represent common patterns not well-covered by other tokens — they are essential.
 
-The pruning process removes the bottom 10-20% of tokens by $\Delta\mathcal{L}$ at each iteration, re-estimates probabilities, re-computes optimal segmentations (via Viterbi), and repeats until the target vocabulary size is reached.
+The pruning process removes the bottom 10-20% of tokens by ΔL\Delta\mathcal{L}ΔL at each iteration, re-estimates probabilities, re-computes optimal segmentations (via Viterbi), and repeats until the target vocabulary size is reached.
 
 **11.3.** Why does the SentencePiece metaspace character `▁` appear at the **beginning** of tokens (e.g., `▁Hello`) rather than at the end? What information does this encoding preserve that would be lost without it?
 
@@ -4899,7 +4899,7 @@ Arabic queries cost 2.3× more than English queries for the same semantic conten
 
 With a balanced tokenizer, Chinese tokenization efficiency typically improves from ~2× English to ~1.2-1.4× English:
 
-Current: 24 tokens Expected after modifications: 12×1.3≈1612 $\times 1.3 \approx 1612$×1.3≈16 tokens
+Current: 24 tokens Expected after modifications: 12×1.3≈1612 \times 1.3 \approx 1612×1.3≈16 tokens
 
 This represents a **33% reduction** in Chinese token count, translating directly to a 33% cost reduction for Chinese queries and a 33% increase in usable context window for Chinese users.
 
@@ -5049,33 +5049,33 @@ The model can process these words but at a cost:
 
 The fundamental tension: a fixed tokenizer provides training stability and efficiency but cannot adapt to a changing world. A dynamic tokenizer provides adaptability but complicates training and may destabilize learned representations. Current practice (periodic full retraining with updated tokenizers) is the pragmatic middle ground.
 
-**11.9.** This chapter concludes Part II. Reflect on the connection between tokenization (this chapter) and scaling laws (Chapters 5–6). Specifically: if tokenization determines how much "information" the model sees per token, does the Chinchilla ratio (D/N≈20D/N $\approx 20D/N$≈20 tokens per parameter) need to be adjusted for different tokenizers? Propose a modified scaling law that accounts for tokenization efficiency.
+**11.9.** This chapter concludes Part II. Reflect on the connection between tokenization (this chapter) and scaling laws (Chapters 5–6). Specifically: if tokenization determines how much "information" the model sees per token, does the Chinchilla ratio (D/N≈20D/N \approx 20D/N≈20 tokens per parameter) need to be adjusted for different tokenizers? Propose a modified scaling law that accounts for tokenization efficiency.
 
 Answer
 
-**The connection:** The Chinchilla ratio D/N≈20D/N $\approx 20D/N$≈20 is defined in _tokens_ , but the information content per token varies with the tokenizer. A tokenizer that produces 2× more tokens for the same text effectively halves the information per token. If the scaling law's "D" should really measure _information seen_ , not _tokens processed_ , then the ratio needs adjustment.
+**The connection:** The Chinchilla ratio D/N≈20D/N \approx 20D/N≈20 is defined in _tokens_ , but the information content per token varies with the tokenizer. A tokenizer that produces 2× more tokens for the same text effectively halves the information per token. If the scaling law's "D" should really measure _information seen_ , not _tokens processed_ , then the ratio needs adjustment.
 
 **Modified scaling law:**
 
-Define **effective tokens** DeffD_{\text{eff}}Deff as the information-adjusted token count:
+Define **effective tokens** DeffD_{\text{eff}}Deff​ as the information-adjusted token count:
 
-$D_{\text{eff}} = D_{\text{raw}} \times \eta_{\text{tokenizer}}$
+Deff=Draw×ηtokenizerD_{\text{eff}} = D_{\text{raw}} \times \eta_{\text{tokenizer}}Deff​=Draw​×ηtokenizer​
 
-where ηtokenizer∈(0,1]\eta_{$\text{tokenizer}} \in (0, 1]$ηtokenizer∈(0,1] is the tokenizer's **information efficiency** — the fraction of a token's capacity that carries actual information (vs. encoding overhead).
+where ηtokenizer∈(0,1]\eta_{\text{tokenizer}} \in (0, 1]ηtokenizer​∈(0,1] is the tokenizer's **information efficiency** — the fraction of a token's capacity that carries actual information (vs. encoding overhead).
 
-A more formal definition: η=1/average tokens per semantic unit\eta = 1 / $\text{average tokens per semantic unit}$η=1/average tokens per semantic unit, normalized so that the "best" tokenizer has $\eta = 1$.
+A more formal definition: η=1/average tokens per semantic unit\eta = 1 / \text{average tokens per semantic unit}η=1/average tokens per semantic unit, normalized so that the "best" tokenizer has η=1\eta = 1η=1.
 
 The modified scaling law:
 
-$$\text{eff}}) = E + \frac{A}{N^{\alpha_N}} + \frac{B}{D_{\text{eff}}^{\alpha_D}}L(N,Deff)=E+N$$
+L(N,Deff)=E+ANαN+BDeffαDL(N, D_{\text{eff}}) = E + \frac{A}{N^{\alpha_N}} + \frac{B}{D_{\text{eff}}^{\alpha_D}}L(N,Deff​)=E+NαN​A​+DeffαD​​B​
 
 The Chinchilla-optimal allocation becomes:
 
-Deff∗=20N∗⇒Draw∗=20N∗ηtokenizerD_{$$\text{eff}}^* = 20N^* \quad \Rightarrow \quad D_{\text{raw}}^* = \frac{20N^*}{\eta_{\text{tokenizer}}}Deff$$∗=20N∗⇒Draw∗=ηtokenizer20N∗
+Deff∗=20N∗⇒Draw∗=20N∗ηtokenizerD_{\text{eff}}^* = 20N^* \quad \Rightarrow \quad D_{\text{raw}}^* = \frac{20N^*}{\eta_{\text{tokenizer}}}Deff∗​=20N∗⇒Draw∗​=ηtokenizer​20N∗​
 
-**Implication:** A tokenizer with $\eta = 0.5$ (e.g., a poor multilingual tokenizer on Chinese text) requires Draw=40ND_{$\text{raw}} = 40$NDraw=40N raw tokens to achieve the same effective training — **twice the raw data** as a tokenizer with $\eta = 1.0$.
+**Implication:** A tokenizer with η=0.5\eta = 0.5η=0.5 (e.g., a poor multilingual tokenizer on Chinese text) requires Draw=40ND_{\text{raw}} = 40NDraw​=40N raw tokens to achieve the same effective training — **twice the raw data** as a tokenizer with η=1.0\eta = 1.0η=1.0.
 
-**This explains observed practice:** Models like LLaMA that use efficient SentencePiece tokenizers can achieve strong performance with D/N≈20D/N $\approx 20D/N$≈20. Models with less efficient tokenizers (or models trained on multilingual data where tokenization efficiency varies across languages) may need D/N>20D/N > 20D/N>20 to compensate.
+**This explains observed practice:** Models like LLaMA that use efficient SentencePiece tokenizers can achieve strong performance with D/N≈20D/N \approx 20D/N≈20. Models with less efficient tokenizers (or models trained on multilingual data where tokenization efficiency varies across languages) may need D/N>20D/N > 20D/N>20 to compensate.
 
 **Practical recommendation:** When comparing scaling law predictions across models with different tokenizers, normalize to "information units" (bits, semantic units, or characters) rather than raw tokens. The scaling law itself is likely invariant under this normalization — the power-law relationship holds in information space — but the specific ratio D/ND/ND/N depends on the tokenizer's efficiency.
 
@@ -5127,33 +5127,33 @@ The solution framework is **reinforcement learning from human feedback (RLHF):**
 
 #### The Five Components
 
-A **Markov Decision Process (MDP)** is defined by the tuple (S,A,P,R,γ)($\mathcal{S}, \mathcal{A}, P, R, \gamma)(S,A,P,R,$γ):
+A **Markov Decision Process (MDP)** is defined by the tuple (S,A,P,R,γ)(\mathcal{S}, \mathcal{A}, P, R, \gamma)(S,A,P,R,γ):
 
-**State s∈Ss $\in \mathcal{S}s$∈S:** The complete description of the environment at a given time. In language model alignment, the state at time ttt is the concatenation of the prompt and all tokens generated so far: st=(x,y1,y2,…,yt−1)s_t = (x, y_1, y_2, $\ldots, y_{t-1})st=(x,y1,y2,$…,yt−1).
+**State s∈Ss \in \mathcal{S}s∈S:** The complete description of the environment at a given time. In language model alignment, the state at time ttt is the concatenation of the prompt and all tokens generated so far: st=(x,y1,y2,…,yt−1)s_t = (x, y_1, y_2, \ldots, y_{t-1})st​=(x,y1​,y2​,…,yt−1​).
 
-**Action a∈Aa $\in \mathcal{A}a$∈A:** The decision made at each step. In language model alignment, the action is the choice of the next token from the vocabulary: at=yt∈Va_t = y_t $\in Vat=yt$∈V.
+**Action a∈Aa \in \mathcal{A}a∈A:** The decision made at each step. In language model alignment, the action is the choice of the next token from the vocabulary: at=yt∈Va_t = y_t \in Vat​=yt​∈V.
 
-**Transition function P(s′∣s,a)P(s' $\mid s, a)P(s$′∣s,a):** The probability of reaching state s′s's′ given state sss and action aaa. In language model generation, transitions are **deterministic** : appending token yty_tyt to state sts_tst produces st+1=(x,y1,…,yt)s_{t+1} = (x, y_1, $\ldots, y_t)st+1=(x,y1,$…,yt) with probability 1.
+**Transition function P(s′∣s,a)P(s' \mid s, a)P(s′∣s,a):** The probability of reaching state s′s's′ given state sss and action aaa. In language model generation, transitions are **deterministic** : appending token yty_tyt​ to state sts_tst​ produces st+1=(x,y1,…,yt)s_{t+1} = (x, y_1, \ldots, y_t)st+1​=(x,y1​,…,yt​) with probability 1.
 
-**Reward R(s,a)R(s, a)R(s,a):** The scalar feedback signal. In RLHF, the reward is provided by a learned reward model Rϕ(x,y)R_$\phi(x, y)R$ϕ(x,y), which scores the complete response yyy given prompt xxx. Typically, the reward is given only at the end of the episode (when the full response is generated), with zero reward at intermediate steps. This terminal-reward formulation is a simplification — modern RLHF implementations sometimes include per-token KL penalties that function as intermediate reward signals (see Section 15.4). However, the terminal-reward case captures the essential structure and simplifies the exposition.
+**Reward R(s,a)R(s, a)R(s,a):** The scalar feedback signal. In RLHF, the reward is provided by a learned reward model Rϕ(x,y)R_\phi(x, y)Rϕ​(x,y), which scores the complete response yyy given prompt xxx. Typically, the reward is given only at the end of the episode (when the full response is generated), with zero reward at intermediate steps. This terminal-reward formulation is a simplification — modern RLHF implementations sometimes include per-token KL penalties that function as intermediate reward signals (see Section 15.4). However, the terminal-reward case captures the essential structure and simplifies the exposition.
 
-**Discount factor $\gamma \in [0, 1]$:** Controls the tradeoff between immediate and future rewards. When $\gamma < 1$, future rewards are exponentially discounted; when $\gamma = 1$ (undiscounted), all time steps are weighted equally. In language generation, γ\gammaγ is set to 1.0 in most RLHF implementations (since responses are short and we want to weight all tokens equally).
+**Discount factor γ∈[0,1]\gamma \in [0, 1]γ∈[0,1]:** Controls the tradeoff between immediate and future rewards. When γ<1\gamma < 1γ<1, future rewards are exponentially discounted; when γ=1\gamma = 1γ=1 (undiscounted), all time steps are weighted equally. In language generation, γ\gammaγ is set to 1.0 in most RLHF implementations (since responses are short and we want to weight all tokens equally).
 
 #### Policy, Value Function, Q-Function
 
-**Policy $\pi(a \mid s)$:** A function that maps states to probability distributions over actions. In the language model setting, the policy _is_ the language model — $\pi_\theta(y_t \mid x, y_{<t})$ gives the probability of generating token yty_tyt given the context.
+**Policy π(a∣s)\pi(a \mid s)π(a∣s):** A function that maps states to probability distributions over actions. In the language model setting, the policy _is_ the language model — πθ(yt∣x,y<t)\pi_\theta(y_t \mid x, y_{<t})πθ​(yt​∣x,y<t​) gives the probability of generating token yty_tyt​ given the context.
 
-**Value function Vπ(s)V^$\pi(s)V$π(s):** The expected cumulative reward from state sss under policy $\pi$:
+**Value function Vπ(s)V^\pi(s)Vπ(s):** The expected cumulative reward from state sss under policy π\piπ:
 
-Vπ(s)=Eπ[∑t=0TγtR(st,at) | $$\left[\sum_{t=0}^{T} \gamma^t R(s_t, a_t) \;\middle$$| $\right]V$ 
+Vπ(s)=Eπ[∑t=0TγtR(st,at) | s0=s]V^\pi(s) = \mathbb{E}_\pi\left[\sum_{t=0}^{T} \gamma^t R(s_t, a_t) \;\middle|\; s_0 = s\right]Vπ(s)=Eπ​[t=0∑T​γtR(st​,at​)​s0​=s]
 
-**Q-function Qπ(s,a)Q^$\pi(s, a)Q$π(s,a):** The expected cumulative reward from taking action aaa in state sss and then following policy $\pi$:
+**Q-function Qπ(s,a)Q^\pi(s, a)Qπ(s,a):** The expected cumulative reward from taking action aaa in state sss and then following policy π\piπ:
 
-$Q^\pi(s, a) = R(s, a) + \gamma \mathbb{E}_{s' \sim P(\cdot | s, a)}\left[V^\pi(s')\right]$
+Qπ(s,a)=R(s,a)+γEs′∼P(⋅∣s,a)[Vπ(s′)]Q^\pi(s, a) = R(s, a) + \gamma \mathbb{E}_{s' \sim P(\cdot | s, a)}\left[V^\pi(s')\right]Qπ(s,a)=R(s,a)+γEs′∼P(⋅∣s,a)​[Vπ(s′)]
 
-**Advantage function Aπ(s,a)A^$\pi(s, a)A$π(s,a):** The advantage of action aaa over the average action under policy $\pi$:
+**Advantage function Aπ(s,a)A^\pi(s, a)Aπ(s,a):** The advantage of action aaa over the average action under policy π\piπ:
 
-$A^\pi(s, a) = Q^\pi(s, a) - V^\pi(s)$
+Aπ(s,a)=Qπ(s,a)−Vπ(s)A^\pi(s, a) = Q^\pi(s, a) - V^\pi(s)Aπ(s,a)=Qπ(s,a)−Vπ(s)
 
 The advantage is positive for actions better than average, negative for worse. It is central to PPO (Chapter 13).
 
@@ -5161,19 +5161,19 @@ The advantage is positive for actions better than average, negative for worse. I
 
 Consider a model generating a 3-token response to the prompt "Is 2+2=4?" The state at each step is the tokens generated so far.
 
-* State s0s_0s0: '[prompt]' (no tokens generated yet)
-* Actions at s0s_0s0: 'Yes' (leads to s1as_1^as1a), 'No' (leads to s1bs_1^bs1b), 'Maybe' (leads to s1cs_1^cs1c)
+* State s0s_0s0​: '[prompt]' (no tokens generated yet)
+* Actions at s0s_0s0​: 'Yes' (leads to s1as_1^as1a​), 'No' (leads to s1bs_1^bs1b​), 'Maybe' (leads to s1cs_1^cs1c​)
 * Intermediate reward: 0 (reward only at terminal step)
 
 Suppose the reward model gives: R('Yes, correct.')=+1.0, R('Yes, indeed.')=+0.8, R('No, incorrect.')=-1.0, R('Maybe so.')=-0.2.
 
-Then Vπ(s0)=Eπ[Rϕ(x,y)∣s0]V^$\pi(s_0) = \mathbb{E}_\pi[R_\phi(x,y) | s_0]V$π(s0)=Eπ[Rϕ(x,y)∣s0] — the expected reward over all possible completions. Suppose the policy has already learned to avoid incorrect responses, assigning negligible probability to the 'No' and 'Maybe' paths. Of the remaining probability mass, the policy assigns 60% to the path ending in 'Yes, correct.' (+1.0) and 40% to 'Yes, indeed.' (+0.8):
+Then Vπ(s0)=Eπ[Rϕ(x,y)∣s0]V^\pi(s_0) = \mathbb{E}_\pi[R_\phi(x,y) | s_0]Vπ(s0​)=Eπ​[Rϕ​(x,y)∣s0​] — the expected reward over all possible completions. Suppose the policy has already learned to avoid incorrect responses, assigning negligible probability to the 'No' and 'Maybe' paths. Of the remaining probability mass, the policy assigns 60% to the path ending in 'Yes, correct.' (+1.0) and 40% to 'Yes, indeed.' (+0.8):
 
-$V^\pi(s_0) = 0.6 \times 1.0 + 0.4 \times 0.8 = 0.92$
+Vπ(s0)=0.6×1.0+0.4×0.8=0.92V^\pi(s_0) = 0.6 \times 1.0 + 0.4 \times 0.8 = 0.92Vπ(s0​)=0.6×1.0+0.4×0.8=0.92
 
-After generating 'Yes' (entering s1as_1^as1a), the remaining uncertainty is only over the continuation:
+After generating 'Yes' (entering s1as_1^as1a​), the remaining uncertainty is only over the continuation:
 
-$V^\pi(s_1^a) = P(\text{'correct.'}) \times 1.0 + P(\text{'indeed.'}) \times 0.8$
+Vπ(s1a)=P(’correct.’)×1.0+P(’indeed.’)×0.8V^\pi(s_1^a) = P(\text{'correct.'}) \times 1.0 + P(\text{'indeed.'}) \times 0.8Vπ(s1a​)=P(’correct.’)×1.0+P(’indeed.’)×0.8
 
 This toy example illustrates the core Bellman recursion: the value of the current state is the expected reward over all future actions, which telescopes backward from the terminal reward.
 
@@ -5189,25 +5189,25 @@ The **Bellman equation** is the recursive relationship that the value function m
 
 Starting from the definition of the value function:
 
-Vπ(s)=Eπ[∑t=0TγtR(st,at) | $$\left[\sum_{t=0}^{T} \gamma^t R(s_t, a_t) \;\middle$$| $\right]V$ 
+Vπ(s)=Eπ[∑t=0TγtR(st,at) | s0=s]V^\pi(s) = \mathbb{E}_\pi\left[\sum_{t=0}^{T} \gamma^t R(s_t, a_t) \;\middle|\; s_0 = s\right]Vπ(s)=Eπ​[t=0∑T​γtR(st​,at​)​s0​=s]
 
 Separate the first-step reward from future rewards:
 
-Vπ(s)=Ea∼π(⋅∣s)[R(s,a)+γEs′∼P(⋅∣s,a)[∑t=1Tγt−1R(st,at) | s1=s′]]V^\pi(s) = \mathbb{E}_{a \sim \pi(\cdot| $\left[R(s, a) + \gamma \mathbb{E}_{s' \sim P(\cdot$ | $$\left[\sum_{t=1}^{T} \gamma^{t-1} R(s_t, a_t) \;\middle$$ | $\right]\right]V$ 
+Vπ(s)=Ea∼π(⋅∣s)[R(s,a)+γEs′∼P(⋅∣s,a)[∑t=1Tγt−1R(st,at) | s1=s′]]V^\pi(s) = \mathbb{E}_{a \sim \pi(\cdot|s)}\left[R(s, a) + \gamma \mathbb{E}_{s' \sim P(\cdot|s,a)}\left[\sum_{t=1}^{T} \gamma^{t-1} R(s_t, a_t) \;\middle|\; s_1 = s'\right]\right]Vπ(s)=Ea∼π(⋅∣s)​[R(s,a)+γEs′∼P(⋅∣s,a)​[t=1∑T​γt−1R(st​,at​)​s1​=s′]]
 
-Recognize that the inner expectation is Vπ(s′)V^$\pi(s')V$π(s′):
+Recognize that the inner expectation is Vπ(s′)V^\pi(s')Vπ(s′):
 
-Vπ(s)=Ea∼π(⋅∣s)[R(s,a)+γEs′∼P(⋅∣s,a)[Vπ(s′)]]\boxed{V^\pi(s) = \mathbb{E}_{a \sim \pi(\cdot| $\left[R(s, a) + \gamma \mathbb{E}_{s' \sim P(\cdot$ | $\left[V^\pi(s')\right]\right]}V$ 
+Vπ(s)=Ea∼π(⋅∣s)[R(s,a)+γEs′∼P(⋅∣s,a)[Vπ(s′)]]\boxed{V^\pi(s) = \mathbb{E}_{a \sim \pi(\cdot|s)}\left[R(s, a) + \gamma \mathbb{E}_{s' \sim P(\cdot|s,a)}\left[V^\pi(s')\right]\right]}Vπ(s)=Ea∼π(⋅∣s)​[R(s,a)+γEs′∼P(⋅∣s,a)​[Vπ(s′)]]​
 
 This is the **Bellman expectation equation** : the value of a state equals the expected immediate reward plus the discounted value of the expected next state.
 
-For the **optimal** policy π∗$\pi^*$π∗, the Bellman optimality equation replaces the expectation over actions with a maximum:
+For the **optimal** policy π∗\pi^*π∗, the Bellman optimality equation replaces the expectation over actions with a maximum:
 
-$\left[R(s, a) + \gamma \mathbb{E}_{s'}\left[V^*(s')\right]\right]V$
+V∗(s)=max⁡a[R(s,a)+γEs′[V∗(s′)]]V^*(s) = \max_{a} \left[R(s, a) + \gamma \mathbb{E}_{s'}\left[V^*(s')\right]\right]V∗(s)=amax​[R(s,a)+γEs′​[V∗(s′)]]
 
 > **Cross-Disciplinary Connection**
 > 
-> _Optimal control theory — Hamilton-Jacobi-Bellman (HJB)_ : The discrete-time Bellman equation is a special case of the continuous-time HJB equation from optimal control: ∂V∂t+max⁡u[f(x,u)⋅∇xV+L(x,u)]=0$$\frac{\partial V}{\partial t} + \max_u \left[f(x, u) \cdot \nabla_x V + L(x, u)\right] = 0$$∂t∂V+maxu[f(x,u)⋅∇xV+L(x,u)]=0. In engineering, HJB governs spacecraft trajectory optimization, robotic arm control, and chemical process optimization. The language model alignment problem is, in this sense, a discrete-time optimal control problem: choose a sequence of actions (tokens) to maximize a cumulative objective (human satisfaction).
+> _Optimal control theory — Hamilton-Jacobi-Bellman (HJB)_ : The discrete-time Bellman equation is a special case of the continuous-time HJB equation from optimal control: ∂V∂t+max⁡u[f(x,u)⋅∇xV+L(x,u)]=0\frac{\partial V}{\partial t} + \max_u \left[f(x, u) \cdot \nabla_x V + L(x, u)\right] = 0∂t∂V​+maxu​[f(x,u)⋅∇x​V+L(x,u)]=0. In engineering, HJB governs spacecraft trajectory optimization, robotic arm control, and chemical process optimization. The language model alignment problem is, in this sense, a discrete-time optimal control problem: choose a sequence of actions (tokens) to maximize a cumulative objective (human satisfaction).
 > 
 > _Operations research — dynamic programming_ : Bellman (1957) developed dynamic programming for sequential decision-making in logistics, inventory management, and resource allocation. The backward induction algorithm — computing optimal decisions from the terminal state backward to the initial state — is the same computational principle used in value iteration for RL. The same mathematical framework that optimizes supply chains now trains language models to be helpful.
 
@@ -5217,60 +5217,60 @@ $\left[R(s, a) + \gamma \mathbb{E}_{s'}\left[V^*(s')\right]\right]V$
 
 #### Policy Gradient Theorem
 
-The objective of RL is to find a policy $\pi_\theta$ that maximizes the expected cumulative reward:
+The objective of RL is to find a policy πθ\pi_\thetaπθ​ that maximizes the expected cumulative reward:
 
-J(θ)=Eτ∼πθ[∑t=0TγtR(st,at)]J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}$$\left[\sum_{t=0}^{T} \gamma^t R(s_t, a_t)\right]J($$θ)=Eτ∼πθ[t=0∑TγtR(st,at)]
+J(θ)=Eτ∼πθ[∑t=0TγtR(st,at)]J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}\left[\sum_{t=0}^{T} \gamma^t R(s_t, a_t)\right]J(θ)=Eτ∼πθ​​[t=0∑T​γtR(st​,at​)]
 
-where $\tau = (s_0, a_0, s_1, a_1, \ldots)$ is a trajectory sampled from the policy.
+where τ=(s0,a0,s1,a1,…)\tau = (s_0, a_0, s_1, a_1, \ldots)τ=(s0​,a0​,s1​,a1​,…) is a trajectory sampled from the policy.
 
-The **policy gradient theorem** (Sutton et al., 1999) provides the gradient of J(θ)J($\theta)J($θ):
+The **policy gradient theorem** (Sutton et al., 1999) provides the gradient of J(θ)J(\theta)J(θ):
 
-∇θJ(θ)=Eτ∼πθ[∑t=0T∇θlog⁡πθ(at∣st)⋅Gt]\nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}$$\left[\sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot G_t\right]$$∇θJ(θ)=Eτ∼πθ[t=0∑T∇θlogπθ(at∣st)⋅Gt]
+∇θJ(θ)=Eτ∼πθ[∑t=0T∇θlog⁡πθ(at∣st)⋅Gt]\nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}\left[\sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot G_t\right]∇θ​J(θ)=Eτ∼πθ​​[t=0∑T​∇θ​logπθ​(at​∣st​)⋅Gt​]
 
-where Gt=∑t′=tTγt′−tR(st′,at′)G_t = \sum_{t'=t}^{T} \gamma^{t'-t} R(s_{t'}, a_{t'})Gt=∑t′=tTγt′−tR(st′,at′) is the **return** from time ttt.
+where Gt=∑t′=tTγt′−tR(st′,at′)G_t = \sum_{t'=t}^{T} \gamma^{t'-t} R(s_{t'}, a_{t'})Gt​=∑t′=tT​γt′−tR(st′​,at′​) is the **return** from time ttt.
 
 **Proof sketch:**
 
-The key step uses the **log-derivative trick** : ∇θπθ=πθ∇θlog⁡πθ$\nabla_\theta \pi_\theta = \pi_\theta \nabla_\theta \log \pi_\theta$∇θπθ=πθ∇θlogπθ.
+The key step uses the **log-derivative trick** : ∇θπθ=πθ∇θlog⁡πθ\nabla_\theta \pi_\theta = \pi_\theta \nabla_\theta \log \pi_\theta∇θ​πθ​=πθ​∇θ​logπθ​.
 
 The probability of a trajectory is:
 
-P(τ∣θ)=∏t=0Tπθ(at∣st)⋅P(st+1∣st,at)P(\tau \mid \theta) = $$\prod_{t=0}^{T} \pi_\theta(a_t \mid s_t) \cdot P(s_{t+1} \mid s_t, a_t)P($$τ∣θ)=t=0∏Tπθ(at∣st)⋅P(st+1∣st,at)
+P(τ∣θ)=∏t=0Tπθ(at∣st)⋅P(st+1∣st,at)P(\tau \mid \theta) = \prod_{t=0}^{T} \pi_\theta(a_t \mid s_t) \cdot P(s_{t+1} \mid s_t, a_t)P(τ∣θ)=t=0∏T​πθ​(at​∣st​)⋅P(st+1​∣st​,at​)
 
-Taking the log and the gradient with respect to $\theta$ (the transition probabilities PPP do not depend on $\theta$):
+Taking the log and the gradient with respect to θ\thetaθ (the transition probabilities PPP do not depend on θ\thetaθ):
 
-∇θlog⁡P(τ∣θ)=∑t=0T∇θlog⁡πθ(at∣st)\nabla_\theta \log P(\tau \mid \theta) = $$\sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t \mid s_t)$$∇θlogP(τ∣θ)=t=0∑T∇θlogπθ(at∣st)
+∇θlog⁡P(τ∣θ)=∑t=0T∇θlog⁡πθ(at∣st)\nabla_\theta \log P(\tau \mid \theta) = \sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t \mid s_t)∇θ​logP(τ∣θ)=t=0∑T​∇θ​logπθ​(at​∣st​)
 
 The gradient of the objective:
 
-∇θJ(θ)=∇θEτ[R(τ)]=Eτ[R(τ)⋅∇θlog⁡P(τ∣θ)]\nabla_\theta J(\theta) = \nabla_\theta \mathbb{E}_{\tau}[R(\tau)] = \mathbb{E}_{\tau}$\left[R(\tau) \cdot \nabla_\theta \log P(\tau \mid \theta)\right]$∇θJ(θ)=∇θEτ[R(τ)]=Eτ[R(τ)⋅∇θlogP(τ∣θ)] =Eτ[(∑t=0TR(st,at))⋅(∑t=0T∇θlog⁡πθ(at∣st))]= \mathbb{E}_{\tau}$$\left[\left(\sum_{t=0}^{T} R(s_t, a_t)\right) \cdot \left(\sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t \mid s_t)\right)\right]=E$$τ[(t=0∑TR(st,at))⋅(t=0∑T∇θlogπθ(at∣st))]
+∇θJ(θ)=∇θEτ[R(τ)]=Eτ[R(τ)⋅∇θlog⁡P(τ∣θ)]\nabla_\theta J(\theta) = \nabla_\theta \mathbb{E}_{\tau}[R(\tau)] = \mathbb{E}_{\tau}\left[R(\tau) \cdot \nabla_\theta \log P(\tau \mid \theta)\right]∇θ​J(θ)=∇θ​Eτ​[R(τ)]=Eτ​[R(τ)⋅∇θ​logP(τ∣θ)] =Eτ[(∑t=0TR(st,at))⋅(∑t=0T∇θlog⁡πθ(at∣st))]= \mathbb{E}_{\tau}\left[\left(\sum_{t=0}^{T} R(s_t, a_t)\right) \cdot \left(\sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t \mid s_t)\right)\right]=Eτ​[(t=0∑T​R(st​,at​))⋅(t=0∑T​∇θ​logπθ​(at​∣st​))]
 
 Applying the causality constraint (actions at time ttt cannot affect rewards at times t′<tt' < tt′<t):
 
-∇θJ(θ)=Eτ[∑t=0T∇θlog⁡πθ(at∣st)⋅Gt]\boxed{\nabla_\theta J(\theta) = \mathbb{E}_{\tau}$$\left[\sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot G_t\right]}$$∇θJ(θ)=Eτ[t=0∑T∇θlogπθ(at∣st)⋅Gt]
+∇θJ(θ)=Eτ[∑t=0T∇θlog⁡πθ(at∣st)⋅Gt]\boxed{\nabla_\theta J(\theta) = \mathbb{E}_{\tau}\left[\sum_{t=0}^{T} \nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot G_t\right]}∇θ​J(θ)=Eτ​[t=0∑T​∇θ​logπθ​(at​∣st​)⋅Gt​]​
 
 #### The REINFORCE Algorithm
 
 **REINFORCE** (Williams, 1992) uses the policy gradient theorem directly:
 
-  1. Sample a trajectory $\tau$ from the current policy $\pi_\theta$.
-  2. Compute returns GtG_tGt for each time step.
-  3. Update parameters: θ←θ+α∑t∇θlog⁡πθ(at∣st)⋅Gt\theta $$\leftarrow \theta + \alpha \sum_t \nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot G_t$$θ←θ+α∑t∇θlogπθ(at∣st)⋅Gt.
+  1. Sample a trajectory τ\tauτ from the current policy πθ\pi_\thetaπθ​.
+  2. Compute returns GtG_tGt​ for each time step.
+  3. Update parameters: θ←θ+α∑t∇θlog⁡πθ(at∣st)⋅Gt\theta \leftarrow \theta + \alpha \sum_t \nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot G_tθ←θ+α∑t​∇θ​logπθ​(at​∣st​)⋅Gt​.
   4. Repeat.
 
-**REINFORCE is unbiased** — the expected gradient equals the true policy gradient. But it has **extremely high variance** — the return GtG_tGt can fluctuate wildly between trajectories, causing noisy gradient estimates.
+**REINFORCE is unbiased** — the expected gradient equals the true policy gradient. But it has **extremely high variance** — the return GtG_tGt​ can fluctuate wildly between trajectories, causing noisy gradient estimates.
 
 #### Variance Reduction via Baseline Subtraction
 
-A **baseline** b(st)b(s_t)b(st) can be subtracted from the return without introducing bias:
+A **baseline** b(st)b(s_t)b(st​) can be subtracted from the return without introducing bias:
 
-∇θJ(θ)=Eτ[∑t∇θlog⁡πθ(at∣st)⋅(Gt−b(st))]\nabla_\theta J(\theta) = \mathbb{E}_{\tau}$$\left[\sum_t \nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot (G_t - b(s_t))\right]$$∇θJ(θ)=Eτ[t∑∇θlogπθ(at∣st)⋅(Gt−b(st))]
+∇θJ(θ)=Eτ[∑t∇θlog⁡πθ(at∣st)⋅(Gt−b(st))]\nabla_\theta J(\theta) = \mathbb{E}_{\tau}\left[\sum_t \nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot (G_t - b(s_t))\right]∇θ​J(θ)=Eτ​[t∑​∇θ​logπθ​(at​∣st​)⋅(Gt​−b(st​))]
 
-**Why this is still unbiased:** Ea∼πθ[∇θlog⁡πθ(a∣s)⋅b(s)]=b(s)⋅Ea[∇θlog⁡πθ(a∣s)]=b(s)⋅∇θ∑aπθ(a∣s)=b(s)⋅∇θ1=0\mathbb{E}_{a \sim \pi_\theta}[\nabla_\theta \log \pi_\theta(a \mid s) $$\cdot b(s)] = b(s) \cdot \mathbb{E}_{a}[\nabla_\theta \log \pi_\theta(a \mid s)] = b(s) \cdot \nabla_\theta \sum_a \pi_\theta(a \mid s) = b(s) \cdot \nabla_\theta 1 = 0Ea$$∼πθ[∇θlogπθ(a∣s)⋅b(s)]=b(s)⋅Ea[∇θlogπθ(a∣s)]=b(s)⋅∇θ∑aπθ(a∣s)=b(s)⋅∇θ1=0.
+**Why this is still unbiased:** Ea∼πθ[∇θlog⁡πθ(a∣s)⋅b(s)]=b(s)⋅Ea[∇θlog⁡πθ(a∣s)]=b(s)⋅∇θ∑aπθ(a∣s)=b(s)⋅∇θ1=0\mathbb{E}_{a \sim \pi_\theta}[\nabla_\theta \log \pi_\theta(a \mid s) \cdot b(s)] = b(s) \cdot \mathbb{E}_{a}[\nabla_\theta \log \pi_\theta(a \mid s)] = b(s) \cdot \nabla_\theta \sum_a \pi_\theta(a \mid s) = b(s) \cdot \nabla_\theta 1 = 0Ea∼πθ​​[∇θ​logπθ​(a∣s)⋅b(s)]=b(s)⋅Ea​[∇θ​logπθ​(a∣s)]=b(s)⋅∇θ​∑a​πθ​(a∣s)=b(s)⋅∇θ​1=0.
 
-The optimal baseline (minimizing variance) is approximately Vπ(st)V^$\pi(s_t)V$π(st), giving the **advantage estimator** :
+The optimal baseline (minimizing variance) is approximately Vπ(st)V^\pi(s_t)Vπ(st​), giving the **advantage estimator** :
 
-$\hat{A}_t = G_t - V^\pi(s_t) \approx Q^\pi(s_t, a_t) - V^\pi(s_t)$
+A^t=Gt−Vπ(st)≈Qπ(st,at)−Vπ(st)\hat{A}_t = G_t - V^\pi(s_t) \approx Q^\pi(s_t, a_t) - V^\pi(s_t)A^t​=Gt​−Vπ(st​)≈Qπ(st​,at​)−Vπ(st​)
 
 Using the advantage instead of the raw return centers the gradient signal: actions better than average get positive updates, worse-than-average actions get negative updates.
 
@@ -5282,13 +5282,13 @@ A remarkable connection between supervised learning and RL: **the standard cross
 
 The supervised learning gradient (for next-token prediction) is:
 
-∇θLCE=−∇θ∑tlog⁡πθ(yt∗∣y<t∗)\nabla_\theta \mathcal{L}_{$$\text{CE}} = -\nabla_\theta \sum_t \log \pi_\theta(y_t^* \mid y_{<t}^*)$$∇θLCE=−∇θt∑logπθ(yt∗∣y<t∗)
+∇θLCE=−∇θ∑tlog⁡πθ(yt∗∣y<t∗)\nabla_\theta \mathcal{L}_{\text{CE}} = -\nabla_\theta \sum_t \log \pi_\theta(y_t^* \mid y_{<t}^*)∇θ​LCE​=−∇θ​t∑​logπθ​(yt∗​∣y<t∗​)
 
-where yt∗y_t^*yt∗ is the ground-truth token.
+where yt∗y_t^*yt∗​ is the ground-truth token.
 
 Compare to the REINFORCE gradient:
 
-∇θJ=Eτ∼πθ[∑t∇θlog⁡πθ(at∣st)⋅R]\nabla_\theta J = \mathbb{E}_{\tau \sim \pi_\theta}$$\left[\sum_t \nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot R\right]$$∇θJ=Eτ∼πθ[t∑∇θlogπθ(at∣st)⋅R]
+∇θJ=Eτ∼πθ[∑t∇θlog⁡πθ(at∣st)⋅R]\nabla_\theta J = \mathbb{E}_{\tau \sim \pi_\theta}\left[\sum_t \nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot R\right]∇θ​J=Eτ∼πθ​​[t∑​∇θ​logπθ​(at​∣st​)⋅R]
 
 If we set:
 
@@ -5298,7 +5298,7 @@ If we set:
 
 Then the REINFORCE gradient becomes the supervised learning gradient:
 
-∇θJ=∇θ∑tlog⁡πθ(yt∗∣y<t∗)\nabla_\theta J = \nabla_\theta $$\sum_t \log \pi_\theta(y_t^* \mid y_{<t}^*)$$∇θJ=∇θt∑logπθ(yt∗∣y<t∗)
+∇θJ=∇θ∑tlog⁡πθ(yt∗∣y<t∗)\nabla_\theta J = \nabla_\theta \sum_t \log \pi_\theta(y_t^* \mid y_{<t}^*)∇θ​J=∇θ​t∑​logπθ​(yt∗​∣y<t∗​)
 
 **Interpretation:** Supervised fine-tuning (SFT) is equivalent to REINFORCE with a binary reward: the ground-truth response gets reward 1; all other responses get reward 0. This is an extremely coarse reward signal — it provides no gradient information about responses that are "close to correct" or "partially helpful." RLHF improves on this by using a continuous reward model that provides nuanced feedback for any response.
 
@@ -5308,19 +5308,19 @@ Then the REINFORCE gradient becomes the supervised learning gradient:
 
 **Importance sampling** allows us to reuse trajectories collected from an old policy πθold\pi_{\theta_{\text{old}}}πθold​​ when updating a new policy πθ\pi_\thetaπθ​:
 
-Ea∼πθ[f(a)]=Ea∼πθold[πθ(a∣s)πθold(a∣s)f(a)]\mathbb{E}_{a \sim \pi_\theta}[f(a)] = \mathbb{E}_{a \sim \pi_{\theta_{$$\text{old}}}}\left[\frac{\pi_\theta(a \mid s)}{\pi_{\theta_{\text{old}}}(a \mid s)} f(a)\right]Ea$$∼πθ[f(a)]=Ea∼πθold[πθold(a∣s)πθ(a∣s)f(a)]
+Ea∼πθ[f(a)]=Ea∼πθold[πθ(a∣s)πθold(a∣s)f(a)]\mathbb{E}_{a \sim \pi_\theta}[f(a)] = \mathbb{E}_{a \sim \pi_{\theta_{\text{old}}}}\left[\frac{\pi_\theta(a \mid s)}{\pi_{\theta_{\text{old}}}(a \mid s)} f(a)\right]Ea∼πθ​​[f(a)]=Ea∼πθold​​​[πθold​​(a∣s)πθ​(a∣s)​f(a)]
 
-The ratio rt(θ)=πθ(at∣st)/πθold(at∣st)r_t(\theta) = \pi_\theta(a_t \mid s_t) / \pi_{\theta_{$\text{old}}}(a_t \mid s_t)rt($θ)=πθ(at∣st)/πθold(at∣st) is the **importance sampling ratio.**
+The ratio rt(θ)=πθ(at∣st)/πθold(at∣st)r_t(\theta) = \pi_\theta(a_t \mid s_t) / \pi_{\theta_{\text{old}}}(a_t \mid s_t)rt​(θ)=πθ​(at​∣st​)/πθold​​(at​∣st​) is the **importance sampling ratio.**
 
-**The problem:** When $\pi_\theta$ and πθold\pi_{\theta_{$\text{old}}}$πθold diverge significantly, rt(θ)r_t($\theta)rt($θ) can become very large or very small, causing the variance of the gradient estimate to explode. This motivates **trust region methods** — constraining how much πθ\pi_\thetaπθ can differ from πθold\pi_{\theta_{$\text{old}}}$πθold at each update.
+**The problem:** When πθ\pi_\thetaπθ​ and πθold\pi_{\theta_{\text{old}}}πθold​​ diverge significantly, rt(θ)r_t(\theta)rt​(θ) can become very large or very small, causing the variance of the gradient estimate to explode. This motivates **trust region methods** — constraining how much πθ\pi_\thetaπθ​ can differ from πθold\pi_{\theta_{\text{old}}}πθold​​ at each update.
 
 This constraint is exactly what PPO implements through its clipping mechanism (Chapter 13).
 
 > **Cross-Disciplinary Connection**
 > 
-> _Econometrics — instrumental variables and sample selection_ : Importance sampling in RL has a direct analog in econometrics: when estimating treatment effects, data collected under one "policy" (treatment assignment mechanism) must be reweighted to estimate the effect under a different policy. The inverse probability weighting (IPW) estimator in causal inference is mathematically identical to importance sampling in RL: τ^IPW=1n∑iYiTie(Xi)$$\hat{\tau}_{\text{IPW}} = \frac{1}{n}\sum_i \frac{Y_i T_i}{e(X_i)}$$τ^IPW=n1∑ie(Xi)YiTi, where e(Xi)e(X_i)e(Xi) is the propensity score (the probability of treatment under the observed policy). The propensity score plays exactly the role of πθold(a∣s)\pi_{\theta_{$\text{old}}}(a \mid s)$πθold(a∣s) in RL.
+> _Econometrics — instrumental variables and sample selection_ : Importance sampling in RL has a direct analog in econometrics: when estimating treatment effects, data collected under one "policy" (treatment assignment mechanism) must be reweighted to estimate the effect under a different policy. The inverse probability weighting (IPW) estimator in causal inference is mathematically identical to importance sampling in RL: τ^IPW=1n∑iYiTie(Xi)\hat{\tau}_{\text{IPW}} = \frac{1}{n}\sum_i \frac{Y_i T_i}{e(X_i)}τ^IPW​=n1​∑i​e(Xi​)Yi​Ti​​, where e(Xi)e(X_i)e(Xi​) is the propensity score (the probability of treatment under the observed policy). The propensity score plays exactly the role of πθold(a∣s)\pi_{\theta_{\text{old}}}(a \mid s)πθold​​(a∣s) in RL.
 > 
-> _Statistical mechanics — free energy perturbation_ : In computational chemistry, the free energy difference between two states is computed using importance sampling: ΔF=−kTlog⁡⟨e−βΔU⟩0$\Delta F = -kT \log \langle e^{-\beta \Delta U} \rangle_0$ΔF=−kTlog⟨e−βΔU⟩0, where the average is taken over configurations sampled from state 0 but evaluated at state 1. When the two states are very different, this estimate has high variance — the same problem as in RL when old and new policies diverge. The solution in chemistry (thermodynamic integration, multi-step perturbation) is analogous to the trust region approach in RL (constrain the policy change at each step).
+> _Statistical mechanics — free energy perturbation_ : In computational chemistry, the free energy difference between two states is computed using importance sampling: ΔF=−kTlog⁡⟨e−βΔU⟩0\Delta F = -kT \log \langle e^{-\beta \Delta U} \rangle_0ΔF=−kTlog⟨e−βΔU⟩0​, where the average is taken over configurations sampled from state 0 but evaluated at state 1. When the two states are very different, this estimate has high variance — the same problem as in RL when old and new policies diverge. The solution in chemistry (thermodynamic integration, multi-step perturbation) is analogous to the trust region approach in RL (constrain the policy change at each step).
 
 * * *
 
@@ -5345,7 +5345,7 @@ This chapter marks the volume's transition from "what can scale produce?" (Parts
 
 **The key structural insight.** Pretraining optimizes for plausibility (matching the distribution of internet text); alignment requires optimizing for helpfulness (a human-derived reward signal). These are different objectives, and no amount of scaling on the first objective produces convergence to the second — which is why Chapter 9's "capability-usefulness gap" exists and why Part III is necessary.
 
-**The mathematical toolkit, in sequence.** (1) MDPs formalize language generation as sequential decision-making: state = prompt + tokens so far, action = next token, transitions deterministic, terminal reward from the reward model, $\gamma = 1$. (2) The Bellman equation provides the recursive structure: the value of a partial response is the expected final reward over all completions. (3) REINFORCE gives a simple but high-variance policy gradient. (4) Baseline subtraction reduces variance without introducing bias, yielding the advantage estimator. (5) The MLE-REINFORCE connection reveals that supervised fine-tuning is RL with a binary reward — explaining why SFT cannot express "partially correct." (6) Importance sampling enables data reuse across policy updates but introduces variance when policies diverge — directly motivating PPO's clipping mechanism (Chapter 13).
+**The mathematical toolkit, in sequence.** (1) MDPs formalize language generation as sequential decision-making: state = prompt + tokens so far, action = next token, transitions deterministic, terminal reward from the reward model, γ=1\gamma = 1γ=1. (2) The Bellman equation provides the recursive structure: the value of a partial response is the expected final reward over all completions. (3) REINFORCE gives a simple but high-variance policy gradient. (4) Baseline subtraction reduces variance without introducing bias, yielding the advantage estimator. (5) The MLE-REINFORCE connection reveals that supervised fine-tuning is RL with a binary reward — explaining why SFT cannot express "partially correct." (6) Importance sampling enables data reuse across policy updates but introduces variance when policies diverge — directly motivating PPO's clipping mechanism (Chapter 13).
 
 **The road ahead.** Each component introduced here reappears in a specific later chapter: the Bellman equation in PPO's value function (Chapter 13), the advantage in GAE (Chapter 13), importance sampling in the clipped objective (Chapter 14), and the MLE-REINFORCE bridge in DPO's derivation (Chapter 17). This chapter is the foundation; the next five build the structure.
 
@@ -5353,43 +5353,43 @@ This chapter marks the volume's transition from "what can scale produce?" (Parts
 
 #### Concept Check
 
-**12.1.** Map each component of the MDP tuple (S,A,P,R,γ)($\mathcal{S}, \mathcal{A}, P, R, \gamma)(S,A,P,R,$γ) to the specific corresponding element in the language model RLHF setting. Be precise — what exactly is the "state" when the model has generated 5 tokens of a response?
+**12.1.** Map each component of the MDP tuple (S,A,P,R,γ)(\mathcal{S}, \mathcal{A}, P, R, \gamma)(S,A,P,R,γ) to the specific corresponding element in the language model RLHF setting. Be precise — what exactly is the "state" when the model has generated 5 tokens of a response?
 
 Answer MDP Component | Language Model RLHF Setting  
 ---|---  
-State sts_tst | The concatenation of the prompt xxx and all tokens generated so far: st=(x,y1,y2,…,yt−1)s_t = (x, y_1, y_2, $\ldots, y_{t-1})st=(x,y1,y2,$…,yt−1). After generating 5 tokens, the state is the 5-token partial response appended to the full prompt.
-Action ata_tat | The next token yty_tyt chosen from the vocabulary VVV (typically |V| = 32K–128K).  
-Transition P(st+1∣st,at)P(s_{t+1} $\mid s_t, a_t)P(st+1$∣st,at) | **Deterministic:** st+1=(st,yt)s_{t+1} = (s_t, y_t)st+1=(st,yt) with probability 1. The state simply grows by one token.
-Reward R(st,at)R(s_t, a_t)R(st,at) | Typically **zero at all intermediate steps** and a single scalar reward Rϕ(x,y)R_$\phi(x, y)R$ϕ(x,y) from the reward model at the terminal step (when generation ends). R(st,at)=0R(s_t, a_t) = 0R(st,at)=0 for t<Tt < Tt<T; R(sT,aT)=Rϕ(x,y1…yT)R(s_T, a_T) = R_$\phi(x, y_1 \ldots y_T)R(sT,aT)=R$ϕ(x,y1…yT).
-Discount $\gamma$ | Set to 1.0 in most RLHF implementations, since responses are short and we want to weight all tokens equally.
+State sts_tst​ | The concatenation of the prompt xxx and all tokens generated so far: st=(x,y1,y2,…,yt−1)s_t = (x, y_1, y_2, \ldots, y_{t-1})st​=(x,y1​,y2​,…,yt−1​). After generating 5 tokens, the state is the 5-token partial response appended to the full prompt.  
+Action ata_tat​ | The next token yty_tyt​ chosen from the vocabulary VVV (typically |V| = 32K–128K).  
+Transition P(st+1∣st,at)P(s_{t+1} \mid s_t, a_t)P(st+1​∣st​,at​) | **Deterministic:** st+1=(st,yt)s_{t+1} = (s_t, y_t)st+1​=(st​,yt​) with probability 1. The state simply grows by one token.  
+Reward R(st,at)R(s_t, a_t)R(st​,at​) | Typically **zero at all intermediate steps** and a single scalar reward Rϕ(x,y)R_\phi(x, y)Rϕ​(x,y) from the reward model at the terminal step (when generation ends). R(st,at)=0R(s_t, a_t) = 0R(st​,at​)=0 for t<Tt < Tt<T; R(sT,aT)=Rϕ(x,y1…yT)R(s_T, a_T) = R_\phi(x, y_1 \ldots y_T)R(sT​,aT​)=Rϕ​(x,y1​…yT​).  
+Discount γ\gammaγ | Set to 1.0 in most RLHF implementations, since responses are short and we want to weight all tokens equally.  
   
-**Specific detail for the "5 tokens generated" case:** If the prompt is "What is the capital of France?" (say, 8 tokens) and the model has generated "The capital of France is" (5 tokens), the state s5s_5s5 is the 13-token sequence ["What", "is", "the", "capital", "of", "France", "?", "The", "capital", "of", "France", "is"]. The action space is the full vocabulary — the model's next choice determines y6y_6y6.
+**Specific detail for the "5 tokens generated" case:** If the prompt is "What is the capital of France?" (say, 8 tokens) and the model has generated "The capital of France is" (5 tokens), the state s5s_5s5​ is the 13-token sequence ["What", "is", "the", "capital", "of", "France", "?", "The", "capital", "of", "France", "is"]. The action space is the full vocabulary — the model's next choice determines y6y_6y6​.
 
-**12.2.** Prove that subtracting a state-dependent baseline b(st)b(s_t)b(st) from the return GtG_tGt in the REINFORCE gradient does not introduce bias. Write out the proof in full.
+**12.2.** Prove that subtracting a state-dependent baseline b(st)b(s_t)b(st​) from the return GtG_tGt​ in the REINFORCE gradient does not introduce bias. Write out the proof in full.
 
 Answer
 
 We need to show that:
 
-Eat∼πθ(⋅∣st)[∇θlog⁡πθ(at∣st)⋅b(st)]=0\mathbb{E}_{a_t \sim \pi_\theta($\cdot | s_t)}\left[\nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot b(s_t)\right] = 0Eat$∼πθ(⋅∣st)[∇θlogπθ(at∣st)⋅b(st)]=0
+Eat∼πθ(⋅∣st)[∇θlog⁡πθ(at∣st)⋅b(st)]=0\mathbb{E}_{a_t \sim \pi_\theta(\cdot | s_t)}\left[\nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot b(s_t)\right] = 0Eat​∼πθ​(⋅∣st​)​[∇θ​logπθ​(at​∣st​)⋅b(st​)]=0
 
-for any function b(st)b(s_t)b(st) that depends only on the state sts_tst (not on the action ata_tat).
+for any function b(st)b(s_t)b(st​) that depends only on the state sts_tst​ (not on the action ata_tat​).
 
 **Proof:**
 
-Since b(st)b(s_t)b(st) does not depend on ata_tat, it can be pulled outside the expectation over actions:
+Since b(st)b(s_t)b(st​) does not depend on ata_tat​, it can be pulled outside the expectation over actions:
 
-Eat[∇θlog⁡πθ(at∣st)⋅b(st)]=b(st)⋅Eat[∇θlog⁡πθ(at∣st)]\mathbb{E}_{a_t}$\left[\nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot b(s_t)\right] = b(s_t) \cdot \mathbb{E}_{a_t}\left[\nabla_\theta \log \pi_\theta(a_t \mid s_t)\right]Eat[$∇θlogπθ(at∣st)⋅b(st)]=b(st)⋅Eat[∇θlogπθ(at∣st)]
+Eat[∇θlog⁡πθ(at∣st)⋅b(st)]=b(st)⋅Eat[∇θlog⁡πθ(at∣st)]\mathbb{E}_{a_t}\left[\nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot b(s_t)\right] = b(s_t) \cdot \mathbb{E}_{a_t}\left[\nabla_\theta \log \pi_\theta(a_t \mid s_t)\right]Eat​​[∇θ​logπθ​(at​∣st​)⋅b(st​)]=b(st​)⋅Eat​​[∇θ​logπθ​(at​∣st​)]
 
 Now compute the inner expectation using the log-derivative trick in reverse:
 
-Eat[∇θlog⁡πθ(at∣st)]=∑atπθ(at∣st)⋅∇θπθ(at∣st)πθ(at∣st)\mathbb{E}_{a_t}$$\left[\nabla_\theta \log \pi_\theta(a_t \mid s_t)\right] = \sum_{a_t} \pi_\theta(a_t \mid s_t) \cdot \frac{\nabla_\theta \pi_\theta(a_t \mid s_t)}{\pi_\theta(a_t \mid s_t)}Eat[$$∇θlogπθ(at∣st)]=at∑πθ(at∣st)⋅πθ(at∣st)∇θπθ(at∣st) =∑at∇θπθ(at∣st)= $$\sum_{a_t} \nabla_\theta \pi_\theta(a_t \mid s_t)=at$$$$\sum_{a_t} \pi_\theta(a_t \mid s_t)=$$
+Eat[∇θlog⁡πθ(at∣st)]=∑atπθ(at∣st)⋅∇θπθ(at∣st)πθ(at∣st)\mathbb{E}_{a_t}\left[\nabla_\theta \log \pi_\theta(a_t \mid s_t)\right] = \sum_{a_t} \pi_\theta(a_t \mid s_t) \cdot \frac{\nabla_\theta \pi_\theta(a_t \mid s_t)}{\pi_\theta(a_t \mid s_t)}Eat​​[∇θ​logπθ​(at​∣st​)]=at​∑​πθ​(at​∣st​)⋅πθ​(at​∣st​)∇θ​πθ​(at​∣st​)​ =∑at∇θπθ(at∣st)= \sum_{a_t} \nabla_\theta \pi_\theta(a_t \mid s_t)=at​∑​∇θ​πθ​(at​∣st​) =∇θ∑atπθ(at∣st)= \nabla_\theta \sum_{a_t} \pi_\theta(a_t \mid s_t)=∇θ​at​∑​πθ​(at​∣st​) =∇θ 1=0= \nabla_\theta \, 1 = 0=∇θ​1=0
 
-The last step uses the fact that $$\sum_{a_t} \pi_\theta(a_t \mid s_t) = 1$$ for any $\theta$ (probabilities sum to 1), so the gradient of this constant is zero.
+The last step uses the fact that ∑atπθ(at∣st)=1\sum_{a_t} \pi_\theta(a_t \mid s_t) = 1∑at​​πθ​(at​∣st​)=1 for any θ\thetaθ (probabilities sum to 1), so the gradient of this constant is zero.
 
 Therefore:
 
-$b(s_t) \cdot 0 = 0 \quad \blacksquare$
+b(st)⋅0=0■b(s_t) \cdot 0 = 0 \quad \blacksquareb(st​)⋅0=0■
 
 **Intuition:** The baseline shifts the scale of the reward signal without changing its direction. Actions that are better than the baseline get positive gradients; actions that are worse get negative gradients. The relative ordering of actions is preserved, but the absolute magnitude of the gradient signal is reduced — which is exactly what reduces variance.
 
@@ -5397,7 +5397,7 @@ $b(s_t) \cdot 0 = 0 \quad \blacksquare$
 
 Answer
 
-**The connection:** Supervised fine-tuning (SFT) with cross-entropy loss is equivalent to REINFORCE with a binary reward function: the ground-truth response receives reward 1, all other responses receive reward 0. The SFT gradient ∇θ∑tlog⁡πθ(yt∗∣y<t∗)\nabla_\theta $$\sum_t \log \pi_\theta(y_t^* \mid y_{<t}^*)$$∇θ∑tlogπθ(yt∗∣y<t∗) has exactly the same form as the REINFORCE gradient ∑t∇θlog⁡πθ(at∣st)⋅R$$\sum_t \nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot R$$∑t∇θlogπθ(at∣st)⋅R when R=1R = 1R=1 and the "trajectory" is the ground-truth sequence.
+**The connection:** Supervised fine-tuning (SFT) with cross-entropy loss is equivalent to REINFORCE with a binary reward function: the ground-truth response receives reward 1, all other responses receive reward 0. The SFT gradient ∇θ∑tlog⁡πθ(yt∗∣y<t∗)\nabla_\theta \sum_t \log \pi_\theta(y_t^* \mid y_{<t}^*)∇θ​∑t​logπθ​(yt∗​∣y<t∗​) has exactly the same form as the REINFORCE gradient ∑t∇θlog⁡πθ(at∣st)⋅R\sum_t \nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot R∑t​∇θ​logπθ​(at​∣st​)⋅R when R=1R = 1R=1 and the "trajectory" is the ground-truth sequence.
 
 **The limitation:** SFT's binary reward provides no information about the _quality_ of non-ground-truth responses. A response that is 95% as good as the ground truth receives the same reward (0) as a response that is harmful, incoherent, or completely wrong. This means SFT has no mechanism for:
 
@@ -5405,11 +5405,11 @@ Answer
   2. **Partial credit:** A response that correctly answers the question but uses informal tone gets the same penalty as a completely wrong response.
   3. **Learning from negative examples:** SFT only reinforces the ground truth; it does not explicitly penalize bad responses.
 
-RLHF addresses these limitations by using a **continuous reward model** Rϕ(x,y)∈RR_$\phi(x, y) \in \mathbb{R}R$ϕ(x,y)∈R that assigns a nuanced score to any response. A helpful but slightly verbose response might receive reward 0.8; a harmful response might receive -0.5; the optimal response might receive 1.0. This continuous reward signal provides much richer gradient information, enabling the model to learn not just "what to say" but "how to say it well."
+RLHF addresses these limitations by using a **continuous reward model** Rϕ(x,y)∈RR_\phi(x, y) \in \mathbb{R}Rϕ​(x,y)∈R that assigns a nuanced score to any response. A helpful but slightly verbose response might receive reward 0.8; a harmful response might receive -0.5; the optimal response might receive 1.0. This continuous reward signal provides much richer gradient information, enabling the model to learn not just "what to say" but "how to say it well."
 
 #### Application Problems
 
-**12.4.** Derive the Bellman equation for the language model RLHF setting, where the reward is given only at the terminal step. Specifically, show that Vπ(st)=Eπ[Rϕ(x,y)∣st]V^$\pi(s_t) = \mathbb{E}_\pi[R_\phi(x, y) \mid s_t]V$π(st)=Eπ[Rϕ(x,y)∣st] when $\gamma = 1$ and R(st,at)=0R(s_t, a_t) = 0R(st,at)=0 for non-terminal steps.
+**12.4.** Derive the Bellman equation for the language model RLHF setting, where the reward is given only at the terminal step. Specifically, show that Vπ(st)=Eπ[Rϕ(x,y)∣st]V^\pi(s_t) = \mathbb{E}_\pi[R_\phi(x, y) \mid s_t]Vπ(st​)=Eπ​[Rϕ​(x,y)∣st​] when γ=1\gamma = 1γ=1 and R(st,at)=0R(s_t, a_t) = 0R(st​,at​)=0 for non-terminal steps.
 
 Hint
 
@@ -5419,34 +5419,34 @@ Answer
 
 The Bellman expectation equation (from Section 12.3):
 
-$V^\pi(s_t) = \mathbb{E}_{a_t \sim \pi}\left[R(s_t, a_t) + \gamma \mathbb{E}_{s_{t+1}}\left[V^\pi(s_{t+1})\right]\right]$
+Vπ(st)=Eat∼π[R(st,at)+γEst+1[Vπ(st+1)]]V^\pi(s_t) = \mathbb{E}_{a_t \sim \pi}\left[R(s_t, a_t) + \gamma \mathbb{E}_{s_{t+1}}\left[V^\pi(s_{t+1})\right]\right]Vπ(st​)=Eat​∼π​[R(st​,at​)+γEst+1​​[Vπ(st+1​)]]
 
 In the language model RLHF setting:
 
-* R(st,at)=0R(s_t, a_t) = 0R(st,at)=0 for all non-terminal steps (t<Tt < Tt<T)
-* R(sT,aT)=Rϕ(x,y)R(s_T, a_T) = R_$\phi(x, y)R(sT,aT)=R$ϕ(x,y) at the terminal step
-$\gamma = 1$
-* Transitions are deterministic: st+1=(st,at)s_{t+1} = (s_t, a_t)st+1=(st,at)
+* R(st,at)=0R(s_t, a_t) = 0R(st​,at​)=0 for all non-terminal steps (t<Tt < Tt<T)
+* R(sT,aT)=Rϕ(x,y)R(s_T, a_T) = R_\phi(x, y)R(sT​,aT​)=Rϕ​(x,y) at the terminal step
+* γ=1\gamma = 1γ=1
+* Transitions are deterministic: st+1=(st,at)s_{t+1} = (s_t, a_t)st+1​=(st​,at​)
 
 For non-terminal steps (t<Tt < Tt<T):
 
-$V^\pi(s_t) = \mathbb{E}_{a_t \sim \pi}\left[0 + 1 \cdot V^\pi(s_{t+1})\right] = \mathbb{E}_{a_t \sim \pi}\left[V^\pi(s_t, a_t)\right]$
+Vπ(st)=Eat∼π[0+1⋅Vπ(st+1)]=Eat∼π[Vπ(st,at)]V^\pi(s_t) = \mathbb{E}_{a_t \sim \pi}\left[0 + 1 \cdot V^\pi(s_{t+1})\right] = \mathbb{E}_{a_t \sim \pi}\left[V^\pi(s_t, a_t)\right]Vπ(st​)=Eat​∼π​[0+1⋅Vπ(st+1​)]=Eat​∼π​[Vπ(st​,at​)]
 
 Expanding recursively:
 
-$V^\pi(s_t) = \mathbb{E}_{a_t, a_{t+1}, \ldots, a_T \sim \pi}\left[V^\pi(s_T, a_T)\right]$
+Vπ(st)=Eat,at+1,…,aT∼π[Vπ(sT,aT)]V^\pi(s_t) = \mathbb{E}_{a_t, a_{t+1}, \ldots, a_T \sim \pi}\left[V^\pi(s_T, a_T)\right]Vπ(st​)=Eat​,at+1​,…,aT​∼π​[Vπ(sT​,aT​)]
 
 At the terminal step:
 
-$V^\pi(s_T) = \mathbb{E}_{a_T \sim \pi}\left[R(s_T, a_T)\right] = \mathbb{E}_{a_T \sim \pi}\left[R_\phi(x, (y_1, \ldots, y_T))\right]$
+Vπ(sT)=EaT∼π[R(sT,aT)]=EaT∼π[Rϕ(x,(y1,…,yT))]V^\pi(s_T) = \mathbb{E}_{a_T \sim \pi}\left[R(s_T, a_T)\right] = \mathbb{E}_{a_T \sim \pi}\left[R_\phi(x, (y_1, \ldots, y_T))\right]Vπ(sT​)=EaT​∼π​[R(sT​,aT​)]=EaT​∼π​[Rϕ​(x,(y1​,…,yT​))]
 
-But wait — RϕR_$\phiR$ϕ is a function of the complete response, which is determined by all tokens y1,…,yTy_1, $\ldots, y_Ty1,$…,yT. So:
+But wait — RϕR_\phiRϕ​ is a function of the complete response, which is determined by all tokens y1,…,yTy_1, \ldots, y_Ty1​,…,yT​. So:
 
-Vπ(st)=Eyt,yt+1,…,yT∼π[Rϕ(x,y1,…,yT) | y1,…,yt−1 already generated]V^\pi(s_t) = \mathbb{E}_{y_t, y_{t+1}, \ldots, y_T \sim \pi}$\left[R_\phi(x, y_1, \ldots, y_T) \;\middle$|\; y_1, \ldots, y_{t-1} $\text{ already generated}\right]V$π(st)=Eyt,yt+1,…,yT∼π[Rϕ(x,y1,…,yT)∣y1,…,yt−1 already generated] Vπ(st)=Eπ[Rϕ(x,y) | $\left[R_\phi(x, y) \;\middle$| $\right]}V$ 
+Vπ(st)=Eyt,yt+1,…,yT∼π[Rϕ(x,y1,…,yT) | y1,…,yt−1 already generated]V^\pi(s_t) = \mathbb{E}_{y_t, y_{t+1}, \ldots, y_T \sim \pi}\left[R_\phi(x, y_1, \ldots, y_T) \;\middle|\; y_1, \ldots, y_{t-1} \text{ already generated}\right]Vπ(st​)=Eyt​,yt+1​,…,yT​∼π​[Rϕ​(x,y1​,…,yT​)∣y1​,…,yt−1​ already generated] Vπ(st)=Eπ[Rϕ(x,y) | st]\boxed{V^\pi(s_t) = \mathbb{E}_\pi\left[R_\phi(x, y) \;\middle|\; s_t\right]}Vπ(st​)=Eπ​[Rϕ​(x,y)∣st​]​
 
 The value of a partial response is the expected final reward, averaging over all possible completions under the current policy.
 
-**Intuition:** The value of having written "The capital of France is" (state after 5 tokens) is the average reward you expect to receive when the full response is complete, given that you will continue generating according to policy $\pi$. If $\pi$ is likely to complete this with "Paris." (high reward), the value is high. If $\pi$ might complete with "London." (factually wrong, low reward), the value is lower.
+**Intuition:** The value of having written "The capital of France is" (state after 5 tokens) is the average reward you expect to receive when the full response is complete, given that you will continue generating according to policy π\piπ. If π\piπ is likely to complete this with "Paris." (high reward), the value is high. If π\piπ might complete with "London." (factually wrong, low reward), the value is lower.
 
 **12.5.** A researcher proposes using REINFORCE directly (without PPO) to train a 7B language model with RLHF. Using concepts from this chapter, identify three specific failure modes they are likely to encounter and explain why PPO addresses each one.
 
@@ -5454,9 +5454,9 @@ Answer
 
 **Failure mode 1: High gradient variance → unstable training.**
 
-REINFORCE uses the raw return GtG_tGt to weight the gradient. In RLHF, the reward comes from a reward model that may give scores ranging from -2.0 to +2.0. Two sampled responses to the same prompt might receive rewards of +1.5 and -0.5, producing gradient signals that vary by a factor of 3×. Across thousands of prompts, this variance is compounded.
+REINFORCE uses the raw return GtG_tGt​ to weight the gradient. In RLHF, the reward comes from a reward model that may give scores ranging from -2.0 to +2.0. Two sampled responses to the same prompt might receive rewards of +1.5 and -0.5, producing gradient signals that vary by a factor of 3×. Across thousands of prompts, this variance is compounded.
 
-_PPO's solution:_ PPO uses the **advantage** A^t=R−V(st)$\hat{A}_$t = R - V(s_t)A^t=R−V(st) instead of the raw return. The value function baseline V(st)V(s_t)V(st) subtracts the expected reward, centering the gradient signal around zero. This dramatically reduces variance because the advantage measures _relative_ quality rather than _absolute_ reward.
+_PPO's solution:_ PPO uses the **advantage** A^t=R−V(st)\hat{A}_t = R - V(s_t)A^t​=R−V(st​) instead of the raw return. The value function baseline V(st)V(s_t)V(st​) subtracts the expected reward, centering the gradient signal around zero. This dramatically reduces variance because the advantage measures _relative_ quality rather than _absolute_ reward.
 
 Additionally, PPO uses **Generalized Advantage Estimation (GAE)** , which further reduces variance through a weighted average of multi-step returns (Chapter 13).
 
@@ -5464,7 +5464,7 @@ Additionally, PPO uses **Generalized Advantage Estimation (GAE)** , which furthe
 
 A single batch of high-reward responses can cause a large gradient step that dramatically changes the policy. The new policy may be entirely different from the one that generated the training data, invalidating all cached rewards. Subsequent batches are generated from the broken policy, producing garbage responses, and training spirals into failure.
 
-_PPO's solution:_ The **clipping mechanism** constrains the importance sampling ratio rt(θ)=πθ/πθoldr_t(\theta) = \pi_\theta / \pi_{\theta_{$\text{old}}}rt($θ)=πθ/πθold to [1−ϵ,1+ϵ][1-$\epsilon, 1+\epsilon][1$−ϵ,1+ϵ]. This prevents any single update from changing the policy by more than ϵ$\epsilon$ϵ (typically 0.2) in any direction. Even if the reward signal is extreme, the update is bounded.
+_PPO's solution:_ The **clipping mechanism** constrains the importance sampling ratio rt(θ)=πθ/πθoldr_t(\theta) = \pi_\theta / \pi_{\theta_{\text{old}}}rt​(θ)=πθ​/πθold​​ to [1−ϵ,1+ϵ][1-\epsilon, 1+\epsilon][1−ϵ,1+ϵ]. This prevents any single update from changing the policy by more than ϵ\epsilonϵ (typically 0.2) in any direction. Even if the reward signal is extreme, the update is bounded.
 
 **Failure mode 3: Sample inefficiency → prohibitive compute cost.**
 
@@ -5472,29 +5472,29 @@ REINFORCE is **on-policy** : it can only use data generated by the current polic
 
 _PPO's solution:_ Through importance sampling with the clipped objective, PPO can reuse data from the old policy for **multiple gradient steps** (typically 4 epochs per batch). This multiplies the effective data efficiency by 4×, reducing the total compute required for RLHF training.
 
-**12.6.** The REINFORCE gradient is ∇θJ=E[∑t∇θlog⁡πθ(at∣st)⋅Gt]\nabla_\theta J = \mathbb{E}[$$\sum_t \nabla_\theta \log \pi_\theta(a_t$$ | s_t) $\cdot G_t]$∇θJ=E[∑t∇θlogπθ(at∣st)⋅Gt]. In the language model setting where the policy is a Transformer, πθ(at∣st)=softmax(Whead⋅htL)\pi_\theta(a_t | s_t) = $\text{softmax}(W_{\text{head}} \cdot h_t^L)$πθ(at∣st)=softmax(Whead⋅htL). Show that ∇θlog⁡πθ(at∣st)\nabla_\theta \log \pi_\theta(a_t | s_t)∇θlogπθ(at∣st) involves backpropagation through the entire Transformer, just as in standard supervised training.
+**12.6.** The REINFORCE gradient is ∇θJ=E[∑t∇θlog⁡πθ(at∣st)⋅Gt]\nabla_\theta J = \mathbb{E}[\sum_t \nabla_\theta \log \pi_\theta(a_t | s_t) \cdot G_t]∇θ​J=E[∑t​∇θ​logπθ​(at​∣st​)⋅Gt​]. In the language model setting where the policy is a Transformer, πθ(at∣st)=softmax(Whead⋅htL)\pi_\theta(a_t | s_t) = \text{softmax}(W_{\text{head}} \cdot h_t^L)πθ​(at​∣st​)=softmax(Whead​⋅htL​). Show that ∇θlog⁡πθ(at∣st)\nabla_\theta \log \pi_\theta(a_t | s_t)∇θ​logπθ​(at​∣st​) involves backpropagation through the entire Transformer, just as in standard supervised training.
 
 Answer
 
 The policy is:
 
-πθ(at=v∣st)=exp⁡(zv)∑v′exp⁡(zv′)\pi_\theta(a_t = v \mid s_t) = $$\frac{\exp(z_v)}{\sum_{v'} \exp(z_{v'})}$$πθ(at=v∣st)=∑v′exp(zv′)exp(zv)
+πθ(at=v∣st)=exp⁡(zv)∑v′exp⁡(zv′)\pi_\theta(a_t = v \mid s_t) = \frac{\exp(z_v)}{\sum_{v'} \exp(z_{v'})}πθ​(at​=v∣st​)=∑v′​exp(zv′​)exp(zv​)​
 
-where zv=(Whead⋅htL+b)vz_v = (W_{$\text{head}} \cdot h_t^L + b)_$vzv=(Whead⋅htL+b)v is the logit for vocabulary item vvv, and htL=fθ(st)h_t^L = f_$\theta(s_t)htL=f$θ(st) is the output of the last Transformer layer — a function of all model parameters $\theta$ (attention weights, feed-forward weights, embeddings, etc.).
+where zv=(Whead⋅htL+b)vz_v = (W_{\text{head}} \cdot h_t^L + b)_vzv​=(Whead​⋅htL​+b)v​ is the logit for vocabulary item vvv, and htL=fθ(st)h_t^L = f_\theta(s_t)htL​=fθ​(st​) is the output of the last Transformer layer — a function of all model parameters θ\thetaθ (attention weights, feed-forward weights, embeddings, etc.).
 
 The log-probability:
 
-log⁡πθ(at=v∣st)=zv−log⁡∑v′exp⁡(zv′)\log \pi_\theta(a_t = v \mid s_t) = z_v - \log $$\sum_{v'} \exp(z_{v'})log$$πθ(at=v∣st)=zv−logv′∑exp(zv′)
+log⁡πθ(at=v∣st)=zv−log⁡∑v′exp⁡(zv′)\log \pi_\theta(a_t = v \mid s_t) = z_v - \log \sum_{v'} \exp(z_{v'})logπθ​(at​=v∣st​)=zv​−logv′∑​exp(zv′​)
 
-Taking the gradient with respect to $\theta$:
+Taking the gradient with respect to θ\thetaθ:
 
-∇θlog⁡πθ(at∣st)=∇θzat−∑v′πθ(v′∣st)∇θzv′\nabla_\theta \log \pi_\theta(a_t \mid s_t) = \nabla_\theta z_{a_t} - $$\sum_{v'} \pi_\theta(v' \mid s_t) \nabla_\theta z_{v'}$$∇θlogπθ(at∣st)=∇θzat−v′∑πθ(v′∣st)∇θzv′
+∇θlog⁡πθ(at∣st)=∇θzat−∑v′πθ(v′∣st)∇θzv′\nabla_\theta \log \pi_\theta(a_t \mid s_t) = \nabla_\theta z_{a_t} - \sum_{v'} \pi_\theta(v' \mid s_t) \nabla_\theta z_{v'}∇θ​logπθ​(at​∣st​)=∇θ​zat​​−v′∑​πθ​(v′∣st​)∇θ​zv′​
 
-Each ∇θzv$\nabla_\theta z_v$∇θzv requires computing:
+Each ∇θzv\nabla_\theta z_v∇θ​zv​ requires computing:
 
-$\nabla_\theta z_v = \nabla_\theta (W_{\text{head}} \cdot h_t^L + b)_v = W_{\text{head}}[v, :] \cdot \nabla_\theta h_t^L + \text{(gradient of } W_{\text{head}} \text{ itself)}$
+∇θzv=∇θ(Whead⋅htL+b)v=Whead[v,:]⋅∇θhtL+(gradient of Whead itself)\nabla_\theta z_v = \nabla_\theta (W_{\text{head}} \cdot h_t^L + b)_v = W_{\text{head}}[v, :] \cdot \nabla_\theta h_t^L + \text{(gradient of } W_{\text{head}} \text{ itself)}∇θ​zv​=∇θ​(Whead​⋅htL​+b)v​=Whead​[v,:]⋅∇θ​htL​+(gradient of Whead​ itself)
 
-Computing ∇θhtL$\nabla_\theta h_t^L$∇θhtL requires backpropagating through all LLL Transformer layers — the same computation as standard supervised training backpropagation. The chain rule passes the gradient through:
+Computing ∇θhtL\nabla_\theta h_t^L∇θ​htL​ requires backpropagating through all LLL Transformer layers — the same computation as standard supervised training backpropagation. The chain rule passes the gradient through:
 
 * Layer LLL: attention weights, FFN weights, layer norm parameters
 * Layer L−1L-1L−1: same
@@ -5502,7 +5502,7 @@ Computing ∇θhtL$\nabla_\theta h_t^L$∇θhtL requires backpropagating through
 * Layer 1: same
 * Embedding layer: token and position embeddings
 
-**Conclusion:** ∇θlog⁡πθ(at∣st)$\nabla_\theta \log \pi_\theta(a_t \mid s_t)$∇θlogπθ(at∣st) is computed by the **same backpropagation algorithm** used in supervised training. The only difference is what multiplies this gradient: in supervised training, it is multiplied by 1 (or -1 for cross-entropy loss); in REINFORCE, it is multiplied by the return GtG_tGt. The computational cost per gradient step is identical.
+**Conclusion:** ∇θlog⁡πθ(at∣st)\nabla_\theta \log \pi_\theta(a_t \mid s_t)∇θ​logπθ​(at​∣st​) is computed by the **same backpropagation algorithm** used in supervised training. The only difference is what multiplies this gradient: in supervised training, it is multiplied by 1 (or -1 for cross-entropy loss); in REINFORCE, it is multiplied by the return GtG_tGt​. The computational cost per gradient step is identical.
 
 This is why RLHF training has the same per-step compute cost as SFT — the expensive part (backpropagation through the Transformer) is the same in both cases. The difference is in the number of steps required and the complexity of the data pipeline (generating responses and computing rewards adds overhead).
 
@@ -5514,7 +5514,7 @@ Answer
 
 **How RLHF handles the objection:**
 
-RLHF does not claim to define universal "helpfulness." Instead, it **operationalizes** helpfulness through the preferences of a specific group of human evaluators. The reward model Rϕ(x,y)R_$\phi(x, y)R$ϕ(x,y) is trained on pairwise comparisons made by a team of ~40 labelers (in InstructGPT's case), reflecting their collective judgment of what constitutes a "better" response.
+RLHF does not claim to define universal "helpfulness." Instead, it **operationalizes** helpfulness through the preferences of a specific group of human evaluators. The reward model Rϕ(x,y)R_\phi(x, y)Rϕ​(x,y) is trained on pairwise comparisons made by a team of ~40 labelers (in InstructGPT's case), reflecting their collective judgment of what constitutes a "better" response.
 
 This approach has several virtues:
 
@@ -5569,9 +5569,9 @@ Answer
 Instead of binary reward (ground truth = 1, everything else = 0), rank multiple candidate responses by quality and assign linearly interpolated rewards:
 
   1. For each prompt, generate KKK candidate responses from the model.
-  2. Have a human (or simple heuristic) rank them: y1≻y2≻…≻yKy_1 $\succ y_2 \succ \ldots \succ y_Ky1$≻y2≻…≻yK.
-  3. Assign rewards: R(yi)=1−(i−1)/(K−1)R(y_i) = 1 - (i-1)/(K-1)R(yi)=1−(i−1)/(K−1) (linearly from 1.0 for the best to 0.0 for the worst).
-  4. Train using a weighted cross-entropy loss: L=−∑iR(yi)∑tlog⁡πθ(yi,t∣yi,<t)\mathcal{L} = -\sum_i R(y_i) \sum_t \log \pi_\theta(y_{i,t} \mid y_{i,<t})L=−∑iR(yi)∑tlogπθ(yi,t∣yi,<t).
+  2. Have a human (or simple heuristic) rank them: y1≻y2≻…≻yKy_1 \succ y_2 \succ \ldots \succ y_Ky1​≻y2​≻…≻yK​.
+  3. Assign rewards: R(yi)=1−(i−1)/(K−1)R(y_i) = 1 - (i-1)/(K-1)R(yi​)=1−(i−1)/(K−1) (linearly from 1.0 for the best to 0.0 for the worst).
+  4. Train using a weighted cross-entropy loss: L=−∑iR(yi)∑tlog⁡πθ(yi,t∣yi,<t)\mathcal{L} = -\sum_i R(y_i) \sum_t \log \pi_\theta(y_{i,t} \mid y_{i,<t})L=−∑i​R(yi​)∑t​logπθ​(yi,t​∣yi,<t​).
 
 **What this achieves:**
 
@@ -5600,7 +5600,7 @@ By the end of this chapter, you will be able to:
 
   1. Identify the three problems with naive policy gradient (REINFORCE) — high variance, sample inefficiency, step size sensitivity — and explain how each is addressed by PPO.
   2. Derive the PPO clipped surrogate objective from the importance sampling ratio and explain why clipping prevents large policy updates without requiring expensive constraint optimization.
-  3. Derive Generalized Advantage Estimation (GAE) as the $\lambda$-weighted average of multi-step advantage estimates, showing how $\lambda$ trades off bias and variance.
+  3. Derive Generalized Advantage Estimation (GAE) as the λ\lambdaλ-weighted average of multi-step advantage estimates, showing how λ\lambdaλ trades off bias and variance.
   4. Compute the clipped objective for a specific numerical example, showing how the clip prevents both excessively large and small policy updates.
   5. Explain why PPO became the dominant RL algorithm for language model training — not because it is theoretically optimal, but because it works reliably in practice.
 
@@ -5615,25 +5615,25 @@ By the end of this chapter, you will be able to:
 
 ### 13.1 The Three Problems with REINFORCE
 
-Chapter 12 derived the REINFORCE algorithm: θ←θ+α∑t∇θlog⁡πθ(at∣st)⋅Gt\theta $$\leftarrow \theta + \alpha \sum_t \nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot G_t$$θ←θ+α∑t∇θlogπθ(at∣st)⋅Gt. While mathematically elegant and unbiased, REINFORCE suffers from three practical problems that make it unsuitable for training large language models.
+Chapter 12 derived the REINFORCE algorithm: θ←θ+α∑t∇θlog⁡πθ(at∣st)⋅Gt\theta \leftarrow \theta + \alpha \sum_t \nabla_\theta \log \pi_\theta(a_t \mid s_t) \cdot G_tθ←θ+α∑t​∇θ​logπθ​(at​∣st​)⋅Gt​. While mathematically elegant and unbiased, REINFORCE suffers from three practical problems that make it unsuitable for training large language models.
 
 #### Problem 1: High Variance
 
-The return Gt=∑t′=tTγt′−tR(st′,at′)G_t = \sum_{t'=t}^{T} \gamma^{t'-t} R(s_{t'}, a_{t'})Gt=∑t′=tTγt′−tR(st′,at′) fluctuates wildly across trajectories. For language model RLHF: two responses to the same prompt might receive reward model scores of +1.5 and -0.3 — a spread of 1.8 units. Across thousands of prompts, this variance in the reward signal compounds. The gradient signal is dominated by this noise, requiring many samples to converge.
+The return Gt=∑t′=tTγt′−tR(st′,at′)G_t = \sum_{t'=t}^{T} \gamma^{t'-t} R(s_{t'}, a_{t'})Gt​=∑t′=tT​γt′−tR(st′​,at′​) fluctuates wildly across trajectories. For language model RLHF: two responses to the same prompt might receive reward model scores of +1.5 and -0.3 — a spread of 1.8 units. Across thousands of prompts, this variance in the reward signal compounds. The gradient signal is dominated by this noise, requiring many samples to converge.
 
-**Solution: Baseline subtraction and GAE.** Subtracting the value function baseline Vπ(st)V^$\pi(s_t)V$π(st) replaces GtG_tGt with the advantage A^t=Gt−Vπ(st)$\hat{A}_$t = G_t - V^$\pi(s_t)A^t=Gt$−Vπ(st), centering the signal around zero. GAE (Section 13.3) further reduces variance through multi-step averaging.
+**Solution: Baseline subtraction and GAE.** Subtracting the value function baseline Vπ(st)V^\pi(s_t)Vπ(st​) replaces GtG_tGt​ with the advantage A^t=Gt−Vπ(st)\hat{A}_t = G_t - V^\pi(s_t)A^t​=Gt​−Vπ(st​), centering the signal around zero. GAE (Section 13.3) further reduces variance through multi-step averaging.
 
 #### Problem 2: Sample Inefficiency
 
 REINFORCE is on-policy: data collected by πθold\pi_{\theta_{\text{old}}}πθold​​ cannot be reused after updating θ\thetaθ. For a 7B parameter language model, generating one response requires a full forward pass (seconds of GPU time). Discarding all generated data after a single gradient step is enormously wasteful.
 
-**Solution: Importance sampling.** The importance sampling ratio rt(θ)=πθ(at∣st)/πθold(at∣st)r_t(\theta) = \pi_\theta(a_t | $\text{old}}}(a_t$ | s_t)rt(θ)=πθ(at∣st)/πθold(at∣st) allows reusing old data for multiple gradient steps. PPO typically performs 4 gradient epochs per batch of generated responses.
+**Solution: Importance sampling.** The importance sampling ratio rt(θ)=πθ(at∣st)/πθold(at∣st)r_t(\theta) = \pi_\theta(a_t | s_t) / \pi_{\theta_{\text{old}}}(a_t | s_t)rt​(θ)=πθ​(at​∣st​)/πθold​​(at​∣st​) allows reusing old data for multiple gradient steps. PPO typically performs 4 gradient epochs per batch of generated responses.
 
 #### Problem 3: Step Size Sensitivity
 
-Large gradient steps can catastrophically change the policy. If a batch happens to contain several high-reward responses, the large GtG_tGt values produce large parameter updates that may destabilize the model — destroying previously learned good behavior.
+Large gradient steps can catastrophically change the policy. If a batch happens to contain several high-reward responses, the large GtG_tGt​ values produce large parameter updates that may destabilize the model — destroying previously learned good behavior.
 
-**Solution: The clipping mechanism.** PPO constrains the importance sampling ratio to [1−ϵ,1+ϵ][1-$\epsilon, 1+\epsilon][1$−ϵ,1+ϵ], bounding the maximum policy change per update regardless of the gradient magnitude.
+**Solution: The clipping mechanism.** PPO constrains the importance sampling ratio to [1−ϵ,1+ϵ][1-\epsilon, 1+\epsilon][1−ϵ,1+ϵ], bounding the maximum policy change per update regardless of the gradient magnitude.
 
 * * *
 
@@ -5643,7 +5643,7 @@ Large gradient steps can catastrophically change the policy. If a batch happens 
 
 **TRPO** (Schulman et al., 2015) formally constrains the KL divergence between old and new policies:
 
-max⁡θ Et[rt(θ)A^t]s.t.Et[DKL(πθold∥πθ)]≤δ\max_\theta \; \mathbb{E}_t$\left[r_t(\theta) \hat{A}_t\right] \quad \text{s.t.} \quad \mathbb{E}_t\left[D_{\text{KL}}(\pi_{\theta_{\text{old}}} \| \pi_\theta)\right] \leq \delta$θmaxEt[rt(θ)A^t]s.t.Et[DKL(πθold∥πθ)]≤δ
+max⁡θ Et[rt(θ)A^t]s.t.Et[DKL(πθold∥πθ)]≤δ\max_\theta \; \mathbb{E}_t\left[r_t(\theta) \hat{A}_t\right] \quad \text{s.t.} \quad \mathbb{E}_t\left[D_{\text{KL}}(\pi_{\theta_{\text{old}}} \| \pi_\theta)\right] \leq \deltaθmax​Et​[rt​(θ)A^t​]s.t.Et​[DKL​(πθold​​∥πθ​)]≤δ
 
 TRPO provides theoretical guarantees (monotonic improvement) but requires computing the Fisher information matrix and solving a constrained optimization problem — computationally expensive for models with billions of parameters.
 
@@ -5653,71 +5653,71 @@ TRPO provides theoretical guarantees (monotonic improvement) but requires comput
 
 Define the importance sampling ratio:
 
-$$\frac{\pi_\theta(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(a_t \mid s_t)}rt($$
+rt(θ)=πθ(at∣st)πθold(at∣st)r_t(\theta) = \frac{\pi_\theta(a_t \mid s_t)}{\pi_{\theta_{\text{old}}}(a_t \mid s_t)}rt​(θ)=πθold​​(at​∣st​)πθ​(at​∣st​)​
 
-Note that rt(θold)=1r_t(\theta_{$\text{old}}) = 1rt($θold)=1 (the ratio is 1 when the new and old policies are identical).
+Note that rt(θold)=1r_t(\theta_{\text{old}}) = 1rt​(θold​)=1 (the ratio is 1 when the new and old policies are identical).
 
 The PPO clipped objective:
 
-LCLIP(θ)=Et[min⁡(rt(θ)A^t, clip(rt(θ),1−ϵ,1+ϵ)A^t)]\boxed{L^{$\text{CLIP}}(\theta) = \mathbb{E}_t\left[\min\left(r_t(\theta) \hat{A}_t, \; \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon) \hat{A}_t\right)\right]}LCLIP($θ)=Et[min(rt(θ)A^t,clip(rt(θ),1−ϵ,1+ϵ)A^t)]
+LCLIP(θ)=Et[min⁡(rt(θ)A^t, clip(rt(θ),1−ϵ,1+ϵ)A^t)]\boxed{L^{\text{CLIP}}(\theta) = \mathbb{E}_t\left[\min\left(r_t(\theta) \hat{A}_t, \; \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon) \hat{A}_t\right)\right]}LCLIP(θ)=Et​[min(rt​(θ)A^t​,clip(rt​(θ),1−ϵ,1+ϵ)A^t​)]​
 
-where clip(x,a,b)=max⁡(a,min⁡(x,b))$\text{clip}(x, a, b) = \max(a, \min(x, b))clip(x,a,b)=max(a,min(x,b)) constrains xxx to [a,b][a, b][a,b], and$$\epsilon$
+where clip(x,a,b)=max⁡(a,min⁡(x,b))\text{clip}(x, a, b) = \max(a, \min(x, b))clip(x,a,b)=max(a,min(x,b)) constrains xxx to [a,b][a, b][a,b], and ϵ\epsilonϵ is typically 0.2.
 
 #### How Clipping Works: Case Analysis
 
-The behavior depends on the sign of the advantage A^t$\hat{A}_tA^t:$
+The behavior depends on the sign of the advantage A^t\hat{A}_tA^t​:
 
-**Case 1: A^t>0\hat{A}_t > 0A^t>0 (the action was better than average).**
+**Case 1: A^t>0\hat{A}_t > 0A^t​>0 (the action was better than average).**
 
 We want to increase πθ(at∣st)\pi_\theta(a_t | s_t)πθ​(at​∣st​), which increases rt(θ)r_t(\theta)rt​(θ). The unclipped objective rtA^tr_t \hat{A}_trt​A^t​ grows linearly with rtr_trt​. But the clipped term clip(rt,1−ϵ,1+ϵ)A^t\text{clip}(r_t, 1-\epsilon, 1+\epsilon) \hat{A}_tclip(rt​,1−ϵ,1+ϵ)A^t​ caps at (1+ϵ)A^t(1+\epsilon) \hat{A}_t(1+ϵ)A^t​.
 
-The $\min$ of the two terms:
+The min⁡\minmin of the two terms:
 
-* When rt≤1+ϵr_t $\leq 1 + \epsilonrt$≤1+ϵ: both terms are equal, so the gradient encourages increasing rtr_trt.
-* When rt>1+ϵr_t > 1 + $\epsilonrt>1+$ϵ: the clipped term is smaller and dominates the min⁡$\minmin, producing zero gradient. **The update stops** once the policy has changed by a factor of 1+$$\epsilon1+$
+* When rt≤1+ϵr_t \leq 1 + \epsilonrt​≤1+ϵ: both terms are equal, so the gradient encourages increasing rtr_trt​.
+* When rt>1+ϵr_t > 1 + \epsilonrt​>1+ϵ: the clipped term is smaller and dominates the min⁡\minmin, producing zero gradient. **The update stops** once the policy has changed by a factor of 1+ϵ1 + \epsilon1+ϵ.
 
-**Case 2: A^t<0\hat{A}_t < 0A^t<0 (the action was worse than average).**
+**Case 2: A^t<0\hat{A}_t < 0A^t​<0 (the action was worse than average).**
 
 We want to decrease πθ(at∣st)\pi_\theta(a_t | s_t)πθ​(at​∣st​), which decreases rt(θ)r_t(\theta)rt​(θ). The unclipped objective rtA^tr_t \hat{A}_trt​A^t​ becomes more negative as rtr_trt​ decreases. The clipped term caps at (1−ϵ)A^t(1-\epsilon) \hat{A}_t(1−ϵ)A^t​.
 
-The $\min$ of the two terms:
+The min⁡\minmin of the two terms:
 
-* When rt≥1−ϵr_t $\geq 1 - \epsilonrt$≥1−ϵ: the unclipped term is smaller (more negative), so the gradient encourages decreasing rtr_trt.
-* When rt<1−ϵr_t < 1 - $\epsilonrt<1$−ϵ: the unclipped term becomes even more negative, but the clipped term (less negative) dominates the $\min$, producing zero gradient. **The update stops.**
+* When rt≥1−ϵr_t \geq 1 - \epsilonrt​≥1−ϵ: the unclipped term is smaller (more negative), so the gradient encourages decreasing rtr_trt​.
+* When rt<1−ϵr_t < 1 - \epsilonrt​<1−ϵ: the unclipped term becomes even more negative, but the clipped term (less negative) dominates the min⁡\minmin, producing zero gradient. **The update stops.**
 
 #### Summary Table
 
-$\hat{A}_t$ | Desired direction | Without clip | With clip  
+A^t\hat{A}_tA^t​ | Desired direction | Without clip | With clip  
 ---|---|---|---  
-> 0 (good action) | $\pi_\theta(a_t)$ | Unlimited increase | $\epsilonrt=1+$ 
-< 0 (bad action) | $\pi_\theta(a_t)$ | Unlimited decrease | $\epsilonrt=1$ 
+> 0 (good action) | Increase πθ(at)\pi_\theta(a_t)πθ​(at​) | Unlimited increase | Stops at rt=1+ϵr_t = 1 + \epsilonrt​=1+ϵ  
+< 0 (bad action) | Decrease πθ(at)\pi_\theta(a_t)πθ​(at​) | Unlimited decrease | Stops at rt=1−ϵr_t = 1 - \epsilonrt​=1−ϵ  
   
 **The clipping mechanism acts as a "safety valve":** it allows the policy to improve (move in the direction indicated by the advantage) but prevents it from changing too much in a single update. This achieves the stability benefit of TRPO's trust region without the computational cost of explicit KL constraint enforcement.
 
 #### Numerical Example
 
-Suppose $\epsilon = 0.2$ and we have a token position where:
+Suppose ϵ=0.2\epsilon = 0.2ϵ=0.2 and we have a token position where:
 
-* πθold(at∣st)=0.10\pi_{\theta_{$\text{old}}}(a_t | s_t) = 0.10$πθold(at∣st)=0.10 (10% probability under old policy)
-* A^t=2.0$\hat{A}_$t = 2.0A^t=2.0 (this action was much better than average)
+* πθold(at∣st)=0.10\pi_{\theta_{\text{old}}}(a_t | s_t) = 0.10πθold​​(at​∣st​)=0.10 (10% probability under old policy)
+* A^t=2.0\hat{A}_t = 2.0A^t​=2.0 (this action was much better than average)
 
-After one gradient step, suppose $\pi_\theta(a_t | s_t) = 0.15$:
+After one gradient step, suppose πθ(at∣st)=0.15\pi_\theta(a_t | s_t) = 0.15πθ​(at​∣st​)=0.15:
 
-$rt=0.15/0.10=1.5$
+rt=0.15/0.10=1.5r_t = 0.15 / 0.10 = 1.5rt​=0.15/0.10=1.5
 
-$\times 2.0 = 3.01.5$
+Unclipped objective: 1.5×2.0=3.01.5 \times 2.0 = 3.01.5×2.0=3.0
 
-Clipped objective: clip(1.5,0.8,1.2)$\text{clip}(1.5, 0.8, 1.2) \times 2.0 = 1.2 \times 2.0 = 2.4clip(1.5,0.8,1.2)$
+Clipped objective: clip(1.5,0.8,1.2)×2.0=1.2×2.0=2.4\text{clip}(1.5, 0.8, 1.2) \times 2.0 = 1.2 \times 2.0 = 2.4clip(1.5,0.8,1.2)×2.0=1.2×2.0=2.4
 
-min⁡(3.0,2.4)=2.4$\min(3.0, 2.4) = 2.4min(3.0,2.4)=2.4$ — the clipped term dominates, and the gradient with respect to $\theta$ at this point is **zero** (the clipped function is flat for rt>1.2r_t > 1.2rt>1.2).
+min⁡(3.0,2.4)=2.4\min(3.0, 2.4) = 2.4min(3.0,2.4)=2.4 — the clipped term dominates, and the gradient with respect to θ\thetaθ at this point is **zero** (the clipped function is flat for rt>1.2r_t > 1.2rt​>1.2).
 
-The message: "This action was good (A^t>0$\hat{A}_t > 0A^t>0), and you have already increased its probability from 10% to 15%$ — an increase of 50%, exceeding the $\epsilon = 20\%$ threshold. Stop increasing it further in this update."
+The message: "This action was good (A^t>0\hat{A}_t > 0A^t​>0), and you have already increased its probability from 10% to 15% — an increase of 50%, exceeding the ϵ=20%\epsilon = 20\%ϵ=20% threshold. Stop increasing it further in this update."
 
 > **Cross-Disciplinary Connection**
 > 
 > _Control engineering — saturation and anti-windup_ : In control theory, actuator saturation occurs when the control signal exceeds the physical limits of the actuator (e.g., a valve can only open 100%). Anti-windup mechanisms prevent the controller from continuing to increase the control signal beyond the saturation point. PPO's clipping is the RL equivalent of anti-windup: it prevents the "controller" (gradient update) from continuing to push the "actuator" (policy) beyond its safe operating range.
 > 
-> _Finance — stop-loss orders_ : A stop-loss order automatically sells a stock when it drops below a specified price, limiting the downside. PPO's clip is a "stop-gain" and "stop-loss" on policy changes: it caps both the maximum increase (stop-gain at 1+ϵ1+$\epsilon1+$ϵ) and maximum decrease (stop-loss at 1−ϵ1-$\epsilon1$−ϵ) in action probabilities per update step.
+> _Finance — stop-loss orders_ : A stop-loss order automatically sells a stock when it drops below a specified price, limiting the downside. PPO's clip is a "stop-gain" and "stop-loss" on policy changes: it caps both the maximum increase (stop-gain at 1+ϵ1+\epsilon1+ϵ) and maximum decrease (stop-loss at 1−ϵ1-\epsilon1−ϵ) in action probabilities per update step.
 
 * * *
 
@@ -5725,48 +5725,48 @@ The message: "This action was good (A^t>0$\hat{A}_t > 0A^t>0), and you have alre
 
 #### The Bias-Variance Tradeoff in Advantage Estimation
 
-The advantage A^$\hat{A}_t = Q^\pi(s_t, a_t) - V^\pi(s_t)A^$ can be estimated in multiple ways:
+The advantage A^t=Qπ(st,at)−Vπ(st)\hat{A}_t = Q^\pi(s_t, a_t) - V^\pi(s_t)A^t​=Qπ(st​,at​)−Vπ(st​) can be estimated in multiple ways:
 
 **1-step TD estimate (high bias, low variance):**
 
-$\hat{A}_t^{(1)} = R_t + \gamma V(s_{t+1}) - V(s_t) = \delta_t$
+A^t(1)=Rt+γV(st+1)−V(st)=δt\hat{A}_t^{(1)} = R_t + \gamma V(s_{t+1}) - V(s_t) = \delta_tA^t(1)​=Rt​+γV(st+1​)−V(st​)=δt​
 
-where $\delta_t$ is the **TD error.** This uses the value function estimate V(st+1)V(s_{t+1})V(st+1) as a bootstrap, introducing bias if VVV is inaccurate but keeping variance low (only one step of randomness).
+where δt\delta_tδt​ is the **TD error.** This uses the value function estimate V(st+1)V(s_{t+1})V(st+1​) as a bootstrap, introducing bias if VVV is inaccurate but keeping variance low (only one step of randomness).
 
 **Monte Carlo estimate (no bias, high variance):**
 
-$$\hat{A}_t^{(\infty)} = \sum_{t'=t}^{T} \gamma^{t'-t} R_{t'} - V(s_t)A^t($$
+A^t(∞)=∑t′=tTγt′−tRt′−V(st)\hat{A}_t^{(\infty)} = \sum_{t'=t}^{T} \gamma^{t'-t} R_{t'} - V(s_t)A^t(∞)​=t′=t∑T​γt′−tRt′​−V(st​)
 
 This uses the actual returns instead of bootstrapping, eliminating bias but including all the randomness of the entire future trajectory.
 
 #### The GAE Formula
 
-GAE interpolates between these extremes using a parameter $\lambda \in [0, 1]$:
+GAE interpolates between these extremes using a parameter λ∈[0,1]\lambda \in [0, 1]λ∈[0,1]:
 
-$$\hat{A}_t^{\text{GAE}(\gamma, \lambda)} = \sum_{l=0}^{T-t} (\gamma \lambda)^l \delta_{t+l}}A^tGAE($$
+A^tGAE(γ,λ)=∑l=0T−t(γλ)lδt+l\boxed{\hat{A}_t^{\text{GAE}(\gamma, \lambda)} = \sum_{l=0}^{T-t} (\gamma \lambda)^l \delta_{t+l}}A^tGAE(γ,λ)​=l=0∑T−t​(γλ)lδt+l​​
 
-where $\delta_t = R_t + \gamma V(s_{t+1}) - V(s_t)$
+where δt=Rt+γV(st+1)−V(st)\delta_t = R_t + \gamma V(s_{t+1}) - V(s_t)δt​=Rt​+γV(st+1​)−V(st​) is the TD error.
 
 **Extreme cases:**
 
-* $\lambda = 0$: GAE reduces to the 1-step TD advantage A^$\hat{A}_t = \delta_tA^$ (high bias, low variance)
-* $\lambda = 1$: GAE reduces to the Monte Carlo advantage (no bias, high variance)
+* λ=0\lambda = 0λ=0: GAE reduces to the 1-step TD advantage A^t=δt\hat{A}_t = \delta_tA^t​=δt​ (high bias, low variance)
+* λ=1\lambda = 1λ=1: GAE reduces to the Monte Carlo advantage (no bias, high variance)
 
-**Typical choice:** $\lambda = 0.95$ provides a good balance — most of the variance reduction from bootstrapping, with only mild bias.
+**Typical choice:** λ=0.95\lambda = 0.95λ=0.95 provides a good balance — most of the variance reduction from bootstrapping, with only mild bias.
 
-**Derivation:** GAE can be understood as a geometric weighted average of k-step advantage estimates A^t(k)\hat{A}_t^{(k)}A^t(k). The k-step advantage is defined as:
+**Derivation:** GAE can be understood as a geometric weighted average of kkk-step advantage estimates A^t(k)\hat{A}_t^{(k)}A^t(k)​. The kkk-step advantage is defined as:
 
-$\hat{A}_t^{(k)} = -V(s_t) + R_t + \gamma R_{t+1} + \ldots + \gamma^{k-1} R_{t+k-1} + \gamma^k V(s_{t+k})$
+A^t(k)=−V(st)+Rt+γRt+1+…+γk−1Rt+k−1+γkV(st+k)\hat{A}_t^{(k)} = -V(s_t) + R_t + \gamma R_{t+1} + \ldots + \gamma^{k-1} R_{t+k-1} + \gamma^k V(s_{t+k})A^t(k)​=−V(st​)+Rt​+γRt+1​+…+γk−1Rt+k−1​+γkV(st+k​)
 
 By the telescoping property of TD errors, this simplifies to:
 
-$$\hat{A}_t^{(k)} = \sum_{l=0}^{k-1} \gamma^l \delta_{t+l}A^t(k)=$$
+A^t(k)=∑l=0k−1γlδt+l\hat{A}_t^{(k)} = \sum_{l=0}^{k-1} \gamma^l \delta_{t+l}A^t(k)​=l=0∑k−1​γlδt+l​
 
 Then:
 
-$$\hat{A}_t^{\text{GAE}} = (1-\lambda)\left[\hat{A}_t^{(1)} + \lambda \hat{A}_t^{(2)} + \lambda^2 \hat{A}_t^{(3)} + \ldots\right] = \sum_{l=0}^{\infty} (\gamma\lambda)^l \delta_{t+l}A^$$
+A^tGAE=(1−λ)[A^t(1)+λA^t(2)+λ2A^t(3)+…]=∑l=0∞(γλ)lδt+l\hat{A}_t^{\text{GAE}} = (1-\lambda)\left[\hat{A}_t^{(1)} + \lambda \hat{A}_t^{(2)} + \lambda^2 \hat{A}_t^{(3)} + \ldots\right] = \sum_{l=0}^{\infty} (\gamma\lambda)^l \delta_{t+l}A^tGAE​=(1−λ)[A^t(1)​+λA^t(2)​+λ2A^t(3)​+…]=l=0∑∞​(γλ)lδt+l​
 
-This is an exponentially-weighted average of TD errors, with the decay rate controlled by $\lambda$.
+This is an exponentially-weighted average of TD errors, with the decay rate controlled by λ\lambdaλ.
 
 * * *
 
@@ -5774,34 +5774,34 @@ This is an exponentially-weighted average of TD errors, with the decay rate cont
 
 Putting it all together, PPO for language model RLHF:
 
-**Input:** Pretrained language model $\pi_{\theta_0}$, reward model RϕR_$\phiR$ϕ, prompt dataset D\mathcal{D}D
+**Input:** Pretrained language model πθ0\pi_{\theta_0}πθ0​​, reward model RϕR_\phiRϕ​, prompt dataset D\mathcal{D}D
 
 **For each iteration:**
 
-  1. **Generate responses:** For each prompt x∼Dx $\sim \mathcal{D}x$∼D, generate response y∼πθold(⋅∣x)y \sim \pi_{\theta_{$\text{old}}}(\cdot | x)y$∼πθold(⋅∣x).
+  1. **Generate responses:** For each prompt x∼Dx \sim \mathcal{D}x∼D, generate response y∼πθold(⋅∣x)y \sim \pi_{\theta_{\text{old}}}(\cdot | x)y∼πθold​​(⋅∣x).
 
-  2. **Compute rewards:** For each (x,y)(x, y)(x,y) pair, compute Rϕ(x,y)R_$\phi(x, y)R$ϕ(x,y).
+  2. **Compute rewards:** For each (x,y)(x, y)(x,y) pair, compute Rϕ(x,y)R_\phi(x, y)Rϕ​(x,y).
 
-  3. **Compute advantages:** Using GAE with $\lambda = 0.95$, compute A^t\hat{A}_tA^t for each token position.
+  3. **Compute advantages:** Using GAE with λ=0.95\lambda = 0.95λ=0.95, compute A^t\hat{A}_tA^t​ for each token position.
 
   4. **For KKK epochs** (typically K=4K = 4K=4):
 
-a. Compute importance ratios: rt(θ)=πθ(yt∣x,y<t)/πθold(yt∣x,y<t)r_t(\theta) = \pi_\theta(y_t | $\text{old}}}(y_t$ | x, y_{<t})rt(θ)=πθ(yt∣x,y<t)/πθold(yt∣x,y<t)
+a. Compute importance ratios: rt(θ)=πθ(yt∣x,y<t)/πθold(yt∣x,y<t)r_t(\theta) = \pi_\theta(y_t | x, y_{<t}) / \pi_{\theta_{\text{old}}}(y_t | x, y_{<t})rt​(θ)=πθ​(yt​∣x,y<t​)/πθold​​(yt​∣x,y<t​)
 
 b. Compute clipped objective:
 
-$\text{CLIP}} = \mathbb{E}_t\left[\min(r_t \hat{A}_t, \; \text{clip}(r_t, 1-\epsilon, 1+\epsilon) \hat{A}_t)\right]$
+LCLIP=Et[min⁡(rtA^t, clip(rt,1−ϵ,1+ϵ)A^t)] L^{\text{CLIP}} = \mathbb{E}_t\left[\min(r_t \hat{A}_t, \; \text{clip}(r_t, 1-\epsilon, 1+\epsilon) \hat{A}_t)\right] LCLIP=Et​[min(rt​A^t​,clip(rt​,1−ϵ,1+ϵ)A^t​)]
 
-c. Update $\theta$ by gradient ascent on LCLIPL^{$\text{CLIP}}LCLIP.$
+c. Update θ\thetaθ by gradient ascent on LCLIPL^{\text{CLIP}}LCLIP.
 
-  5. Set θold←θ\theta_{$\text{old}} \leftarrow \theta$θold←θ. Repeat.
+  5. Set θold←θ\theta_{\text{old}} \leftarrow \thetaθold​←θ. Repeat.
 
 **Key hyperparameters:**
 
-$\epsilon$
-$\lambda$
+* Clipping parameter ϵ\epsilonϵ: typically 0.2
+* GAE parameter λ\lambdaλ: typically 0.95
 * Number of PPO epochs per batch KKK: typically 4
-* Learning rate: very small ($\sim 10^{-5}$$\sim 10^{-6}$
+* Learning rate: very small (∼10−5\sim 10^{-5}∼10−5 to ∼10−6\sim 10^{-6}∼10−6)
 * Minibatch size: 64–256
 
 * * *
@@ -5820,71 +5820,71 @@ PPO became the de facto RL algorithm for LLM alignment (InstructGPT, ChatGPT, Cl
 
 ### Chapter Summary
 
-PPO succeeds not by solving any single problem elegantly but by offering a package of pragmatic solutions whose combined effect is robust training at scale. The clipped surrogate objective trades theoretical optimality for implementation simplicity: one hyperparameter ϵ$\epsilon$ϵ replaces TRPO's entire constrained-optimization apparatus while providing a hard bound on per-step policy change. GAE complements clipping by controlling a second source of instability — the bias-variance tradeoff in advantage estimation — through the single parameter $\lambda$. Together, clipping and GAE transform the noisy, sample-hungry REINFORCE algorithm into a pipeline that can refine a billion-parameter SFT model using only a few thousand reward-labeled responses per iteration. The numerical example (Section 13.2) makes the mechanism concrete: once the importance ratio exceeds 1+ϵ1+$\epsilon1+$ϵ, the gradient vanishes and the update self-terminates — an automatic "safety valve" that requires no monitoring. This combination of simplicity, stability, and data efficiency explains why PPO became the default RL backend for RLHF, a role it will retain until methods like DPO (Chapter 17) demonstrate that the RL loop can be bypassed entirely.
+PPO succeeds not by solving any single problem elegantly but by offering a package of pragmatic solutions whose combined effect is robust training at scale. The clipped surrogate objective trades theoretical optimality for implementation simplicity: one hyperparameter ϵ\epsilonϵ replaces TRPO's entire constrained-optimization apparatus while providing a hard bound on per-step policy change. GAE complements clipping by controlling a second source of instability — the bias-variance tradeoff in advantage estimation — through the single parameter λ\lambdaλ. Together, clipping and GAE transform the noisy, sample-hungry REINFORCE algorithm into a pipeline that can refine a billion-parameter SFT model using only a few thousand reward-labeled responses per iteration. The numerical example (Section 13.2) makes the mechanism concrete: once the importance ratio exceeds 1+ϵ1+\epsilon1+ϵ, the gradient vanishes and the update self-terminates — an automatic "safety valve" that requires no monitoring. This combination of simplicity, stability, and data efficiency explains why PPO became the default RL backend for RLHF, a role it will retain until methods like DPO (Chapter 17) demonstrate that the RL loop can be bypassed entirely.
 
 ### Exercises
 
 #### Concept Check
 
-**13.1.** For the PPO clipped objective with $\epsilon = 0.2$, what is the maximum factor by which the probability of any single action can increase in one update step? What about decrease?
+**13.1.** For the PPO clipped objective with ϵ=0.2\epsilon = 0.2ϵ=0.2, what is the maximum factor by which the probability of any single action can increase in one update step? What about decrease?
 
 Answer
 
-The clipping constrains the importance sampling ratio rt(θ)=πθ(at∣st)/πθold(at∣st)r_t(\theta) = \pi_\theta(a_t | $\text{old}}}(a_t$ | s_t)rt(θ)=πθ(at∣st)/πθold(at∣st) to the range [1−ϵ,1+ϵ]=[0.8,1.2][1-$\epsilon, 1+\epsilon] = [0.8, 1.2][1$−ϵ,1+ϵ]=[0.8,1.2].
+The clipping constrains the importance sampling ratio rt(θ)=πθ(at∣st)/πθold(at∣st)r_t(\theta) = \pi_\theta(a_t | s_t) / \pi_{\theta_{\text{old}}}(a_t | s_t)rt​(θ)=πθ​(at​∣st​)/πθold​​(at​∣st​) to the range [1−ϵ,1+ϵ]=[0.8,1.2][1-\epsilon, 1+\epsilon] = [0.8, 1.2][1−ϵ,1+ϵ]=[0.8,1.2].
 
-**Maximum increase factor:** rt≤1.2r_t $\leq 1.2rt$≤1.2, so πθ(at∣st)≤1.2×πθold(at∣st)\pi_\theta(a_t | $\leq 1.2 \times \pi_{\theta_{\text{old}}}(a_t$ | s_t)πθ(at∣st)≤1.2×πθold(at∣st). The probability can increase by at most **20%** (factor of 1.2×) per update step.
+**Maximum increase factor:** rt≤1.2r_t \leq 1.2rt​≤1.2, so πθ(at∣st)≤1.2×πθold(at∣st)\pi_\theta(a_t | s_t) \leq 1.2 \times \pi_{\theta_{\text{old}}}(a_t | s_t)πθ​(at​∣st​)≤1.2×πθold​​(at​∣st​). The probability can increase by at most **20%** (factor of 1.2×) per update step.
 
-**Maximum decrease factor:** rt≥0.8r_t $\geq 0.8rt$≥0.8, so πθ(at∣st)≥0.8×πθold(at∣st)\pi_\theta(a_t | $\geq 0.8 \times \pi_{\theta_{\text{old}}}(a_t$ | s_t)πθ(at∣st)≥0.8×πθold(at∣st). The probability can decrease by at most **20%** (factor of 0.8×) per update step.
+**Maximum decrease factor:** rt≥0.8r_t \geq 0.8rt​≥0.8, so πθ(at∣st)≥0.8×πθold(at∣st)\pi_\theta(a_t | s_t) \geq 0.8 \times \pi_{\theta_{\text{old}}}(a_t | s_t)πθ​(at​∣st​)≥0.8×πθold​​(at​∣st​). The probability can decrease by at most **20%** (factor of 0.8×) per update step.
 
-**Important caveat:** This constraint applies per update step, not cumulatively. Over multiple update steps, the policy can change substantially — it just changes gradually, in increments bounded by ϵ$\epsilon$ϵ. After 10 update steps, an action's probability could theoretically increase by a factor of 1.210≈6.2×1.2^{10} \approx 6.2$\times1.210$≈6.2× — but each step is individually stable.
+**Important caveat:** This constraint applies per update step, not cumulatively. Over multiple update steps, the policy can change substantially — it just changes gradually, in increments bounded by ϵ\epsilonϵ. After 10 update steps, an action's probability could theoretically increase by a factor of 1.210≈6.2×1.2^{10} \approx 6.2\times1.210≈6.2× — but each step is individually stable.
 
 This is analogous to a speed limit on a highway: each moment, your speed is bounded; over time, you can still cover a large distance. The speed limit prevents dangerous sudden accelerations, not travel itself.
 
-**13.2.** Explain the role of the min⁡$\minmin operation in the PPO objective. What would happen if we used max$$\maxmax instead, or if we removed the min$
+**13.2.** Explain the role of the min⁡\minmin operation in the PPO objective. What would happen if we used max⁡\maxmax instead, or if we removed the min⁡\minmin entirely?
 
 Answer
 
-The $\min$ operation selects the **more conservative** (lower) of the two terms: the unclipped objective rtA^tr_t \hat{A}_trt​A^t​ and the clipped objective clip(rt,1−ϵ,1+ϵ)A^t\text{clip}(r_t, 1-\epsilon, 1+\epsilon) \hat{A}_tclip(rt​,1−ϵ,1+ϵ)A^t​.
+The min⁡\minmin operation selects the **more conservative** (lower) of the two terms: the unclipped objective rtA^tr_t \hat{A}_trt​A^t​ and the clipped objective clip(rt,1−ϵ,1+ϵ)A^t\text{clip}(r_t, 1-\epsilon, 1+\epsilon) \hat{A}_tclip(rt​,1−ϵ,1+ϵ)A^t​.
 
-**If we used max⁡$\maxmax instead:** We would always select the _less conservative_ (higher) term. When A^t>0\hat{A}_t > 0A^t>0 and rt>1+$ϵr_t > 1+$\epsilonrt>1+$ϵ, the unclipped term rtA^tr_t $\hat{A}_trtA^t exceeds the clipped term, so max$⁡\maxmax would select the unclipped term — removing the constraint entirely. The policy could change without bound, defeating the purpose of clipping. Similarly for A^t<0\hat{A}_t < 0A^t<0: the policy could decrease its probability of bad actions without limit. Using max⁡\maxmax provides no constraint and is equivalent to standard importance-sampled policy gradient.
+**If we used max⁡\maxmax instead:** We would always select the _less conservative_ (higher) term. When A^t>0\hat{A}_t > 0A^t​>0 and rt>1+ϵr_t > 1+\epsilonrt​>1+ϵ, the unclipped term rtA^tr_t \hat{A}_trt​A^t​ exceeds the clipped term, so max⁡\maxmax would select the unclipped term — removing the constraint entirely. The policy could change without bound, defeating the purpose of clipping. Similarly for A^t<0\hat{A}_t < 0A^t​<0: the policy could decrease its probability of bad actions without limit. Using max⁡\maxmax provides no constraint and is equivalent to standard importance-sampled policy gradient.
 
-**If we removed the min⁡$\minmin entirely** (using only the unclipped term): Same problem$ — no constraint on the magnitude of policy changes. This is standard importance-sampled policy gradient (REINFORCE with importance sampling), which suffers from the step-size sensitivity problem that PPO was designed to solve.
+**If we removed the min⁡\minmin entirely** (using only the unclipped term): Same problem — no constraint on the magnitude of policy changes. This is standard importance-sampled policy gradient (REINFORCE with importance sampling), which suffers from the step-size sensitivity problem that PPO was designed to solve.
 
-**The $\min$ is the key to PPO's stability.** It acts as a "pessimistic" operator: it takes the scenario that provides the smallest improvement, ensuring that the update never "overshoots" the trust region boundary. This pessimism is the price of stability — the update may be smaller than optimal, but it is guaranteed to be safe.
+**The min⁡\minmin is the key to PPO's stability.** It acts as a "pessimistic" operator: it takes the scenario that provides the smallest improvement, ensuring that the update never "overshoots" the trust region boundary. This pessimism is the price of stability — the update may be smaller than optimal, but it is guaranteed to be safe.
 
-**13.3.** GAE with $\lambda = 0$ gives the 1-step TD advantage; $\lambda = 1$ gives the Monte Carlo advantage. Why is $\lambda = 0.95$ a common choice, and in what situations might you prefer λ=0.5\lambda = 0.5λ=0.5 or λ=1.0\lambda = 1.0λ=1.0?
+**13.3.** GAE with λ=0\lambda = 0λ=0 gives the 1-step TD advantage; λ=1\lambda = 1λ=1 gives the Monte Carlo advantage. Why is λ=0.95\lambda = 0.95λ=0.95 a common choice, and in what situations might you prefer λ=0.5\lambda = 0.5λ=0.5 or λ=1.0\lambda = 1.0λ=1.0?
 
 Answer
 
-**λ =0.95$\lambda = 0.95$λ=0.95 (standard choice):** This gives heavy weight to nearby TD errors (reducing variance) while still incorporating long-horizon returns (reducing bias). The exponential decay (γλ)l($\gamma\lambda)^l($γλ)l means that the TD error at step t+lt+lt+l receives weight proportional to 0.95l0.95^l0.95l: the error 10 steps ahead has weight 0.9510≈0.600.95^{10} $\approx 0.600.9510$≈0.60; 20 steps ahead has weight 0.9520≈0.360.95^{20} \approx 0.360.9520≈0.36. Most of the advantage estimate comes from the next 10-20 steps, with some contribution from the full trajectory.
+**λ =0.95\lambda = 0.95λ=0.95 (standard choice):** This gives heavy weight to nearby TD errors (reducing variance) while still incorporating long-horizon returns (reducing bias). The exponential decay (γλ)l(\gamma\lambda)^l(γλ)l means that the TD error at step t+lt+lt+l receives weight proportional to 0.95l0.95^l0.95l: the error 10 steps ahead has weight 0.9510≈0.600.95^{10} \approx 0.600.9510≈0.60; 20 steps ahead has weight 0.9520≈0.360.95^{20} \approx 0.360.9520≈0.36. Most of the advantage estimate comes from the next 10-20 steps, with some contribution from the full trajectory.
 
-**When to use $\lambda = 0.5$ (more biased, lower variance):** When the value function estimate V(s)V(s)V(s) is very accurate (e.g., early in training when the policy has not changed much from the SFT model, and the value function is easy to learn). With an accurate VVV, bootstrapping (low $\lambda$) introduces little bias, and the variance reduction is valuable.
+**When to use λ=0.5\lambda = 0.5λ=0.5 (more biased, lower variance):** When the value function estimate V(s)V(s)V(s) is very accurate (e.g., early in training when the policy has not changed much from the SFT model, and the value function is easy to learn). With an accurate VVV, bootstrapping (low λ\lambdaλ) introduces little bias, and the variance reduction is valuable.
 
-Also useful when the reward is noisy (e.g., the reward model's predictions are unreliable). High $\lambda$ propagates noise from distant reward model predictions; low $\lambda$ relies more on the value function, which averages over many rewards during its training.
+Also useful when the reward is noisy (e.g., the reward model's predictions are unreliable). High λ\lambdaλ propagates noise from distant reward model predictions; low λ\lambdaλ relies more on the value function, which averages over many rewards during its training.
 
-**When to use $\lambda = 1.0$ (unbiased, highest variance):** When the value function estimate is poor (e.g., early in RL training when the value network has not converged) or when the reward structure is sparse (reward only at the end of the episode). With a poor VVV, bootstrapping introduces significant bias that can mislead training. Using the full Monte Carlo return avoids this bias at the cost of higher variance.
+**When to use λ=1.0\lambda = 1.0λ=1.0 (unbiased, highest variance):** When the value function estimate is poor (e.g., early in RL training when the value network has not converged) or when the reward structure is sparse (reward only at the end of the episode). With a poor VVV, bootstrapping introduces significant bias that can mislead training. Using the full Monte Carlo return avoids this bias at the cost of higher variance.
 
-In RLHF for language models, the reward is typically given only at the end of the episode (after the full response is generated), making the value function harder to learn for intermediate states. This favors higher $\lambda$ (closer to 1.0), consistent with the standard choice of 0.95.
+In RLHF for language models, the reward is typically given only at the end of the episode (after the full response is generated), making the value function harder to learn for intermediate states. This favors higher λ\lambdaλ (closer to 1.0), consistent with the standard choice of 0.95.
 
 #### Application Problems
 
-**13.4.** Consider a language model generating a 50-token response. At token position t=25t = 25t=25, the model has two candidate next tokens: "however" with advantage A^=0.5$\hat{A} = 0.5A^=0.5 and "therefore" with advantage A^=−0.3\hat{A} = -0.3A^=−0.3. Under the old policy,$ πθold("however")=0.08\pi_{\theta_{$\text{old}}}(\text{"however"}) = 0.08$πθold("however")=0.08 and πθold("therefore")=0.12\pi_{\theta_{$\text{old}}}(\text{"therefore"}) = 0.12$πθold("therefore")=0.12. After one PPO update with $\epsilon = 0.2$, what is the maximum new probability for "however" and the minimum new probability for "therefore"?
+**13.4.** Consider a language model generating a 50-token response. At token position t=25t = 25t=25, the model has two candidate next tokens: "however" with advantage A^=0.5\hat{A} = 0.5A^=0.5 and "therefore" with advantage A^=−0.3\hat{A} = -0.3A^=−0.3. Under the old policy, πθold("however")=0.08\pi_{\theta_{\text{old}}}(\text{"however"}) = 0.08πθold​​("however")=0.08 and πθold("therefore")=0.12\pi_{\theta_{\text{old}}}(\text{"therefore"}) = 0.12πθold​​("therefore")=0.12. After one PPO update with ϵ=0.2\epsilon = 0.2ϵ=0.2, what is the maximum new probability for "however" and the minimum new probability for "therefore"?
 
 Answer
 
-**For "however" ( A^=0.5>0$\hat{A} = 0.5 > 0A^=0.5>0):**$
+**For "however" ( A^=0.5>0\hat{A} = 0.5 > 0A^=0.5>0):**
 
-The clipping constraint limits rt≤1+ϵ=1.2r_t $\leq 1 + \$epsilon = 1.2rt≤1+ϵ=1.2:
+The clipping constraint limits rt≤1+ϵ=1.2r_t \leq 1 + \epsilon = 1.2rt​≤1+ϵ=1.2:
 
-$\pi_\theta(\text{"however"}) \leq 1.2 \times \pi_{\theta_{\text{old}}}(\text{"however"}) = 1.2 \times 0.08 = 0.096$
+πθ("however")≤1.2×πθold("however")=1.2×0.08=0.096\pi_\theta(\text{"however"}) \leq 1.2 \times \pi_{\theta_{\text{old}}}(\text{"however"}) = 1.2 \times 0.08 = 0.096πθ​("however")≤1.2×πθold​​("however")=1.2×0.08=0.096
 
 Maximum new probability: **0.096** (9.6%), up from 8.0%.
 
-**For "therefore" ( A^=−0.3<0$\hat{A} = -0.3 < 0A^=−0.3<0):**$
+**For "therefore" ( A^=−0.3<0\hat{A} = -0.3 < 0A^=−0.3<0):**
 
-The clipping constraint limits rt≥1−ϵ=0.8r_t $\geq 1 - \$epsilon = 0.8rt≥1−ϵ=0.8:
+The clipping constraint limits rt≥1−ϵ=0.8r_t \geq 1 - \epsilon = 0.8rt​≥1−ϵ=0.8:
 
-$\pi_\theta(\text{"therefore"}) \geq 0.8 \times \pi_{\theta_{\text{old}}}(\text{"therefore"}) = 0.8 \times 0.12 = 0.096$
+πθ("therefore")≥0.8×πθold("therefore")=0.8×0.12=0.096\pi_\theta(\text{"therefore"}) \geq 0.8 \times \pi_{\theta_{\text{old}}}(\text{"therefore"}) = 0.8 \times 0.12 = 0.096πθ​("therefore")≥0.8×πθold​​("therefore")=0.8×0.12=0.096
 
 Minimum new probability: **0.096** (9.6%), down from 12.0%.
 
@@ -5916,39 +5916,39 @@ In later epochs (3–4), many ratios have drifted outside the clip range. These 
 
 Some implementations monitor the fraction of clipped ratios per epoch; if it exceeds a threshold (e.g., 50%), remaining epochs are skipped.
 
-**13.6.** Derive the GAE estimate A^tGAE$\hat{A}_t^{\text{GAE}}A^tGAE for a 3-token response where$ $\gamma = 1$$\lambda = 0.9$ and the TD errors are δ0=0.5\delta_0 = 0.5δ0=0.5, δ1=−0.2\delta_1 = -0.2δ1=−0.2, δ2=0.8\delta_2 = 0.8δ2=0.8.
+**13.6.** Derive the GAE estimate A^tGAE\hat{A}_t^{\text{GAE}}A^tGAE​ for a 3-token response where γ=1\gamma = 1γ=1, λ=0.9\lambda = 0.9λ=0.9, and the TD errors are δ0=0.5\delta_0 = 0.5δ0​=0.5, δ1=−0.2\delta_1 = -0.2δ1​=−0.2, δ2=0.8\delta_2 = 0.8δ2​=0.8.
 
 Answer
 
-Using the GAE formula A^$$\hat{A}_t^{\text{GAE}} = \sum_{l=0}^{T-t} (\gamma\lambda)^l \delta_{t+l}A^$$$\gamma\lambda = 1 \times 0.9 = 0.9$
+Using the GAE formula A^tGAE=∑l=0T−t(γλ)lδt+l\hat{A}_t^{\text{GAE}} = \sum_{l=0}^{T-t} (\gamma\lambda)^l \delta_{t+l}A^tGAE​=∑l=0T−t​(γλ)lδt+l​ with γλ=1×0.9=0.9\gamma\lambda = 1 \times 0.9 = 0.9γλ=1×0.9=0.9:
 
 **For t=0t = 0t=0:**
 
-$\hat{A}_0 = \delta_0 + 0.9 \delta_1 + 0.9^2 \delta_2 = 0.5 + 0.9(-0.2) + 0.81(0.8)A^0=$
+A^0=δ0+0.9δ1+0.92δ2=0.5+0.9(−0.2)+0.81(0.8)\hat{A}_0 = \delta_0 + 0.9 \delta_1 + 0.9^2 \delta_2 = 0.5 + 0.9(-0.2) + 0.81(0.8)A^0​=δ0​+0.9δ1​+0.92δ2​=0.5+0.9(−0.2)+0.81(0.8) =0.5−0.18+0.648=0.968= 0.5 - 0.18 + 0.648 = 0.968=0.5−0.18+0.648=0.968
 
 **For t=1t = 1t=1:**
 
-$\hat{A}_1 = \delta_1 + 0.9 \delta_2 = -0.2 + 0.9(0.8) = -0.2 + 0.72 = 0.52$
+A^1=δ1+0.9δ2=−0.2+0.9(0.8)=−0.2+0.72=0.52\hat{A}_1 = \delta_1 + 0.9 \delta_2 = -0.2 + 0.9(0.8) = -0.2 + 0.72 = 0.52A^1​=δ1​+0.9δ2​=−0.2+0.9(0.8)=−0.2+0.72=0.52
 
 **For t=2t = 2t=2:**
 
-$\hat{A}_2 = \delta_2 = 0.8$
+A^2=δ2=0.8\hat{A}_2 = \delta_2 = 0.8A^2​=δ2​=0.8
 
 **Interpretation:**
 
 * Token 0 has the highest advantage (0.968) because it benefits from the positive TD errors at steps 0 and 2, with the negative TD error at step 1 partially offset.
-* Token 1 has a moderate advantage (0.52) despite its own negative TD error (-0.2), because the subsequent positive TD error (0.8) contributes through $\lambda$ weighting.
+* Token 1 has a moderate advantage (0.52) despite its own negative TD error (-0.2), because the subsequent positive TD error (0.8) contributes through λ\lambdaλ weighting.
 * Token 2 has a high advantage (0.8) — it is the terminal step with a positive reward signal.
 
-**Comparison with pure Monte Carlo ( $\lambda = 1$):**
+**Comparison with pure Monte Carlo ( λ=1\lambda = 1λ=1):**
 
-$\hat{A}_0^{\text{MC}} = 0.5 + (-0.2) + 0.8 = 1.1A^0$
+A^0MC=0.5+(−0.2)+0.8=1.1\hat{A}_0^{\text{MC}} = 0.5 + (-0.2) + 0.8 = 1.1A^0MC​=0.5+(−0.2)+0.8=1.1 (higher, because all TD errors weighted equally)
 
-**Comparison with 1-step TD ( $\lambda = 0$):**
+**Comparison with 1-step TD ( λ=0\lambda = 0λ=0):**
 
-$\hat{A}_0^{\text{TD}} = 0.5A^0$
+A^0TD=0.5\hat{A}_0^{\text{TD}} = 0.5A^0TD​=0.5 (only the immediate TD error)
 
-GAE at $\lambda = 0.9$ gives 0.968 — between the 1-step (0.5) and Monte Carlo (1.1) estimates, closer to Monte Carlo because $\lambda$ is high.
+GAE at λ=0.9\lambda = 0.9λ=0.9 gives 0.968 — between the 1-step (0.5) and Monte Carlo (1.1) estimates, closer to Monte Carlo because λ\lambdaλ is high.
 
 #### Think Deeper
 
@@ -5958,29 +5958,29 @@ Answer
 
 **Proposed modification: Confidence-Adaptive Clipping (CAC)**
 
-Replace the fixed ϵ$\epsilon$ϵ with a position-dependent ϵt$\epsilon_t$ϵt that scales with the confidence of the advantage estimate:
+Replace the fixed ϵ\epsilonϵ with a position-dependent ϵt\epsilon_tϵt​ that scales with the confidence of the advantage estimate:
 
-$\epsilon_t = \epsilon_{\text{base}} \times (1 + \alpha \cdot \text{certainty}_t)$
+ϵt=ϵbase×(1+α⋅certaintyt)\epsilon_t = \epsilon_{\text{base}} \times (1 + \alpha \cdot \text{certainty}_t)ϵt​=ϵbase​×(1+α⋅certaintyt​)
 
-where $\text{certainty}_tcertaintyt measures how confident we are in A^t\hat{A}_tA^t. A simple certainty measure: the ratio of the advantage magnitude to its estimated standard deviation:$
+where certaintyt\text{certainty}_tcertaintyt​ measures how confident we are in A^t\hat{A}_tA^t​. A simple certainty measure: the ratio of the advantage magnitude to its estimated standard deviation:
 
- $$\text{certainty}_t = \frac{$$ |\hat{A}_t| $\hat{\sigma}(\hat{A}_t)}$ 
+certaintyt=∣A^t∣σ^(A^t)\text{certainty}_t = \frac{|\hat{A}_t|}{\hat{\sigma}(\hat{A}_t)}certaintyt​=σ^(A^t​)∣A^t​∣​
 
-When the advantage is large relative to its uncertainty (high certainty), ϵt$\epsilon_t$ϵt is larger, allowing bigger updates. When the advantage is small relative to its uncertainty (low certainty), ϵt$\epsilon_t$ϵt remains at the base value, keeping updates conservative.
+When the advantage is large relative to its uncertainty (high certainty), ϵt\epsilon_tϵt​ is larger, allowing bigger updates. When the advantage is small relative to its uncertainty (low certainty), ϵt\epsilon_tϵt​ remains at the base value, keeping updates conservative.
 
 **Tradeoffs:**
 
 _Pro:_ When the model encounters a clear example (e.g., a response that is obviously harmful and receives a very negative reward), it can update more aggressively — learning faster from clear signals.
 
-_Con 1: Overconfidence risk._ If the certainty estimate is miscalibrated (the model is "certain" about a noisy advantage), the larger ϵ$\epsilon$ϵ allows destabilizing updates. This is the RL equivalent of the Dunning-Kruger effect — the model confidently makes a large update based on a noisy signal.
+_Con 1: Overconfidence risk._ If the certainty estimate is miscalibrated (the model is "certain" about a noisy advantage), the larger ϵ\epsilonϵ allows destabilizing updates. This is the RL equivalent of the Dunning-Kruger effect — the model confidently makes a large update based on a noisy signal.
 
-_Con 2: Implementation complexity._ Computing $\hat{\sigma}(\hat{A}_t)$ requires maintaining a running estimate of advantage variance, adding computational overhead.
+_Con 2: Implementation complexity._ Computing σ^(A^t)\hat{\sigma}(\hat{A}_t)σ^(A^t​) requires maintaining a running estimate of advantage variance, adding computational overhead.
 
-_Con 3: Loss of simplicity._ PPO's greatest virtue is its simplicity — one hyperparameter ϵ$\epsilon$ϵ controls everything. Adding adaptive ϵ$\epsilon$ϵ introduces more tuning (the scaling parameter $\alpha$, the certainty measure, etc.).
+_Con 3: Loss of simplicity._ PPO's greatest virtue is its simplicity — one hyperparameter ϵ\epsilonϵ controls everything. Adding adaptive ϵ\epsilonϵ introduces more tuning (the scaling parameter α\alphaα, the certainty measure, etc.).
 
-**Assessment:** This modification trades simplicity and robustness for potential speed improvements. In practice, the fixed-ϵ$\epsilon$ϵ PPO is already reliable enough for most applications, and the marginal speed improvement from adaptive clipping may not justify the added complexity. However, in settings where training compute is very expensive (e.g., RLHF on 100B+ parameter models), even a 20% speedup from adaptive clipping could save millions of dollars — making the engineering investment worthwhile.
+**Assessment:** This modification trades simplicity and robustness for potential speed improvements. In practice, the fixed-ϵ\epsilonϵ PPO is already reliable enough for most applications, and the marginal speed improvement from adaptive clipping may not justify the added complexity. However, in settings where training compute is very expensive (e.g., RLHF on 100B+ parameter models), even a 20% speedup from adaptive clipping could save millions of dollars — making the engineering investment worthwhile.
 
-A simpler variant: use a **warmup schedule** for ϵ$\epsilon$ϵ — start with a large ϵ$\epsilon$ϵ (allowing rapid initial alignment) and gradually decrease it (becoming more conservative as the model approaches the desired behavior). This captures some of the benefit without requiring per-position adaptation.
+A simpler variant: use a **warmup schedule** for ϵ\epsilonϵ — start with a large ϵ\epsilonϵ (allowing rapid initial alignment) and gradually decrease it (becoming more conservative as the model approaches the desired behavior). This captures some of the benefit without requiring per-position adaptation.
 
 **13.8.** PPO is a general-purpose RL algorithm, originally designed for robotics and game-playing. Why did it transfer so well to language model alignment? Identify the specific properties of the LLM alignment problem that make PPO particularly well-suited, and identify one property that makes it less than ideal.
 
@@ -5998,11 +5998,11 @@ Answer
 
 **One property that makes PPO less than ideal:**
 
-**Terminal-only reward.** In standard RLHF, the reward is given only at the end of the episode (for the complete response). This means that intermediate tokens receive no direct reward signal — the advantage for early tokens must be estimated entirely through bootstrapping (V(st)V(s_t)V(st)) and credit assignment. PPO handles this through GAE, but the credit assignment problem remains challenging: if a response is rated poorly, which specific tokens were responsible? PPO assigns credit through the TD error propagation, which may not accurately attribute the reward to the correct tokens.
+**Terminal-only reward.** In standard RLHF, the reward is given only at the end of the episode (for the complete response). This means that intermediate tokens receive no direct reward signal — the advantage for early tokens must be estimated entirely through bootstrapping (V(st)V(s_t)V(st​)) and credit assignment. PPO handles this through GAE, but the credit assignment problem remains challenging: if a response is rated poorly, which specific tokens were responsible? PPO assigns credit through the TD error propagation, which may not accurately attribute the reward to the correct tokens.
 
 **DPO (Chapter 17) addresses this limitation** by eliminating the RL loop entirely, directly optimizing preferences without per-token credit assignment. This is one reason DPO has become an increasingly popular alternative to PPO for alignment.
 
-**13.9.** Consider the following thought experiment: what if, instead of clipping, PPO used a **reward penalty** proportional to the KL divergence from the old policy? Specifically: L(θ)=E[rtA^t]−βDKL(πθ∥πθold)L(\theta) = \mathbb{E}[r_t $\hat{A}_t] - \beta D_{\text{KL}}(\pi_\theta \| \pi_{\theta_{\text{old}}})L($θ)=E[rtA^t]−βDKL(πθ∥πθold). Compare this "PPO-KL" to "PPO-Clip" and to TRPO. Which is simplest to implement? Which provides the strongest theoretical guarantees?
+**13.9.** Consider the following thought experiment: what if, instead of clipping, PPO used a **reward penalty** proportional to the KL divergence from the old policy? Specifically: L(θ)=E[rtA^t]−βDKL(πθ∥πθold)L(\theta) = \mathbb{E}[r_t \hat{A}_t] - \beta D_{\text{KL}}(\pi_\theta \| \pi_{\theta_{\text{old}}})L(θ)=E[rt​A^t​]−βDKL​(πθ​∥πθold​​). Compare this "PPO-KL" to "PPO-Clip" and to TRPO. Which is simplest to implement? Which provides the strongest theoretical guarantees?
 
 Answer
 
@@ -6012,9 +6012,9 @@ PPO-KL is not a thought experiment — it is one of the two variants actually pr
 
 Property | PPO-Clip | PPO-KL | TRPO  
 ---|---|---|---  
-Mechanism | Hard clip on rtr_trt | Soft KL penalty | Hard KL constraint  
-Implementation | Simple (just a clip operation) | Moderate (compute KL + tune $\beta$) | Complex (Fisher matrix + conjugate gradient)  
-Hyperparameters | $\epsilon$ | $\beta$ | $\delta$ (trust region radius) 
+Mechanism | Hard clip on rtr_trt​ | Soft KL penalty | Hard KL constraint  
+Implementation | Simple (just a clip operation) | Moderate (compute KL + tune β\betaβ) | Complex (Fisher matrix + conjugate gradient)  
+Hyperparameters | ϵ\epsilonϵ (fixed) | β\betaβ (often adaptive) | δ\deltaδ (trust region radius)  
 Theoretical guarantees | Weak (no monotonic improvement proof) | Moderate (reduces to regularized optimization) | Strong (monotonic improvement theorem)  
 Practical performance | Best | Comparable | Comparable but slower  
 Compute cost | Low | Moderate | High  
@@ -6023,7 +6023,7 @@ Compute cost | Low | Moderate | High
 
 PPO-KL adds −βDKL(πθ∥πθold)-\beta D_{\text{KL}}(\pi_\theta \| \pi_{\theta_{\text{old}}})−βDKL​(πθ​∥πθold​​) to the objective. This provides a "soft" constraint — large KL divergences are penalized but not prevented. The challenge: β\betaβ must be tuned, and the optimal β\betaβ changes during training (early on, large β\betaβ is needed; later, smaller β\betaβ suffices). Schulman proposes adaptive β\betaβ: increase β\betaβ if KL is too large, decrease if too small.
 
-PPO-Clip provides a "hard" constraint — the ratio is physically bounded to [1−ϵ,1+ϵ][1-$\epsilon, 1+\epsilon][1$−ϵ,1+ϵ]. No KL computation needed, no $\beta$ tuning. The clipping is simpler and more robust.
+PPO-Clip provides a "hard" constraint — the ratio is physically bounded to [1−ϵ,1+ϵ][1-\epsilon, 1+\epsilon][1−ϵ,1+ϵ]. No KL computation needed, no β\betaβ tuning. The clipping is simpler and more robust.
 
 **TRPO vs. PPO:**
 
@@ -6081,29 +6081,29 @@ TRPO (Schulman et al., 2015) had addressed the stability problem theoretically �
 
 As derived in Chapter 13, the clipped objective is:
 
-LCLIP(θ)=Et[min⁡(rt(θ)A^t, clip(rt(θ),1−ϵ,1+ϵ)A^t)]L^{$\text{CLIP}}(\theta) = \mathbb{E}_t\left[\min\left(r_t(\theta) \hat{A}_t, \; \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon) \hat{A}_t\right)\right]LCLIP($θ)=Et[min(rt(θ)A^t,clip(rt(θ),1−ϵ,1+ϵ)A^t)]
+LCLIP(θ)=Et[min⁡(rt(θ)A^t, clip(rt(θ),1−ϵ,1+ϵ)A^t)]L^{\text{CLIP}}(\theta) = \mathbb{E}_t\left[\min\left(r_t(\theta) \hat{A}_t, \; \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon) \hat{A}_t\right)\right]LCLIP(θ)=Et​[min(rt​(θ)A^t​,clip(rt​(θ),1−ϵ,1+ϵ)A^t​)]
 
-This is the variant that became dominant. Its appeal: no second-order optimization, no KL computation, a single hyperparameter ϵ$\epsilon$ϵ.
+This is the variant that became dominant. Its appeal: no second-order optimization, no KL computation, a single hyperparameter ϵ\epsilonϵ.
 
 #### PPO-KL: The Adaptive KL Penalty
 
 The alternative variant adds a KL penalty to the objective:
 
-LKL(θ)=Et[rt(θ)A^t−β⋅DKL(πθold(⋅∣st)∥πθ(⋅∣st))]L^{$\text{KL}}(\theta) = \mathbb{E}_t\left[r_t(\theta) \hat{A}_t - \beta \cdot D_{\text{KL}}(\pi_{\theta_{\text{old}}}(\cdot$ | s_t) \| \pi_\theta(\cdot | $\right]LKL($
+LKL(θ)=Et[rt(θ)A^t−β⋅DKL(πθold(⋅∣st)∥πθ(⋅∣st))]L^{\text{KL}}(\theta) = \mathbb{E}_t\left[r_t(\theta) \hat{A}_t - \beta \cdot D_{\text{KL}}(\pi_{\theta_{\text{old}}}(\cdot | s_t) \| \pi_\theta(\cdot | s_t))\right]LKL(θ)=Et​[rt​(θ)A^t​−β⋅DKL​(πθold​​(⋅∣st​)∥πθ​(⋅∣st​))]
 
-The coefficient $\beta$ is adapted dynamically:
+The coefficient β\betaβ is adapted dynamically:
 
 * If DKL>1.5⋅dtargetD_{\text{KL}} > 1.5 \cdot d_{\text{target}}DKL​>1.5⋅dtarget​: increase β\betaβ by a factor of 2 (policy changed too much — penalize more)
 * If DKL<dtarget/1.5D_{\text{KL}} < d_{\text{target}} / 1.5DKL​<dtarget​/1.5: decrease β\betaβ by a factor of 2 (policy changed too little — penalize less)
 
-This adaptive scheme automatically adjusts the constraint strength, but requires computing KL divergence and maintaining the $\beta$ schedule.
+This adaptive scheme automatically adjusts the constraint strength, but requires computing KL divergence and maintaining the β\betaβ schedule.
 
 #### Which Won?
 
 In the paper's experiments on MuJoCo continuous control tasks, PPO-Clip and PPO-KL performed comparably. But PPO-Clip became the community standard because:
 
   1. **Simpler implementation:** One line of code for the clip; no KL computation needed.
-  2. **Fewer hyperparameters:** Only ϵ$\epsilon$ϵ vs. $\beta$, dtargetd_{\text{target}}dtarget, and the adaptive schedule.
+  2. **Fewer hyperparameters:** Only ϵ\epsilonϵ vs. β\betaβ, dtargetd_{\text{target}}dtarget​, and the adaptive schedule.
   3. **More predictable behavior:** The hard clip provides a strict guarantee on the magnitude of policy changes; the soft KL penalty does not.
 
 > **Cross-Disciplinary Connection**
@@ -6136,7 +6136,7 @@ The ablation study in the paper systematically isolated the contributions of dif
 
   1. **Clipping vs. no clipping:** Removing the clip significantly reduced training stability, especially on harder tasks.
   2. **Multiple epochs vs. single epoch:** Using K>1K > 1K>1 epochs per batch significantly improved sample efficiency without hurting stability (the clip prevents overfitting to old data).
-  3. **GAE vs. simple advantage:** GAE with $\lambda = 0.95$ consistently outperformed both 1-step TD ($\lambda = 0$) and Monte Carlo ($\lambda = 1$) advantage estimates.
+  3. **GAE vs. simple advantage:** GAE with λ=0.95\lambda = 0.95λ=0.95 consistently outperformed both 1-step TD (λ=0\lambda = 0λ=0) and Monte Carlo (λ=1\lambda = 1λ=1) advantage estimates.
   4. **Shared vs. separate value networks:** Sharing parameters between the policy network and value network (with separate heads) performed as well as separate networks, while being more parameter-efficient.
 
 * * *
@@ -6149,7 +6149,7 @@ The four architectural reasons PPO transfers to language models were analyzed in
 
 **Action-space agnosticism demonstrated.** The paper's ablations span both continuous control (MuJoCo) and discrete actions (Atari) with no architectural change. The importance sampling ratio rt(θ)r_t(\theta)rt​(θ) and its clipping at [1−ϵ,1+ϵ][1-\epsilon, 1+\epsilon][1−ϵ,1+ϵ] are defined identically in both cases. For a 50,000-token vocabulary, this means no single token's probability can shift by more than 20% per update — the same guarantee the paper validated on 18-dimensional continuous joints.
 
-**GAE under sparse rewards.** Several Atari environments in the paper provide rewards only at episode boundaries (score changes). The paper shows that GAE with $\lambda = 0.95$ propagates these sparse signals backward effectively — precisely the situation in RLHF, where the reward model scores only the completed response.
+**GAE under sparse rewards.** Several Atari environments in the paper provide rewards only at episode boundaries (score changes). The paper shows that GAE with λ=0.95\lambda = 0.95λ=0.95 propagates these sparse signals backward effectively — precisely the situation in RLHF, where the reward model scores only the completed response.
 
 **Conservative refinement.** The paper's learning curves show that PPO preserves initial policy quality while improving it: performance never drops below the starting level for more than a few iterations. In RLHF, the starting policy (SFT model) already generates coherent, instruction-following text. PPO's empirically demonstrated monotonic-improvement tendency is what makes it suitable for _refining_ an already-good policy rather than learning from scratch.
 
@@ -6161,8 +6161,8 @@ The four architectural reasons PPO transfers to language models were analyzed in
 
 PPO has fewer hyperparameters than TRPO or standard REINFORCE, but its performance still depends on careful tuning of:
 
-* ϵ$\epsilon$ϵ (clip range): Too small → training is too slow; too large → training is unstable.
-* Learning rate: Must be very small for large models ($\sim 10^{-5}$$\sim 10^{-6}$
+* ϵ\epsilonϵ (clip range): Too small → training is too slow; too large → training is unstable.
+* Learning rate: Must be very small for large models (∼10−5\sim 10^{-5}∼10−5 to ∼10−6\sim 10^{-6}∼10−6).
 * Number of PPO epochs KKK: 4 is standard but not always optimal.
 * Batch size: Larger batches reduce gradient variance but increase memory requirements.
 
@@ -6216,9 +6216,9 @@ Answer
 
 In MuJoCo tasks (locomotion), the agent receives a reward at every time step — typically a combination of forward velocity and a penalty for energy use. In Atari games, rewards are frequent (points scored, enemies defeated). These **dense rewards** provide rich, per-step feedback about which actions are good.
 
-In language model RLHF, the reward is given only once — at the end of the complete response — by the learned reward model Rϕ(x,y)R_$\phi(x, y)R$ϕ(x,y). This **sparse, terminal-only reward** creates a much harder credit assignment problem: if a 100-token response receives a low reward, which of the 100 tokens was responsible? PPO's GAE uses the learned value function to estimate per-token advantages, but this estimate may be poor, especially for early tokens whose contribution to the final reward is indirect and delayed.
+In language model RLHF, the reward is given only once — at the end of the complete response — by the learned reward model Rϕ(x,y)R_\phi(x, y)Rϕ​(x,y). This **sparse, terminal-only reward** creates a much harder credit assignment problem: if a 100-token response receives a low reward, which of the 100 tokens was responsible? PPO's GAE uses the learned value function to estimate per-token advantages, but this estimate may be poor, especially for early tokens whose contribution to the final reward is indirect and delayed.
 
-This difference means PPO in RLHF requires a good value function estimator (well-trained Vϕ(st)V_$\phi(s_t)V$ϕ(st)) to perform well — and the quality of the value function is a bottleneck on alignment quality. This is why RLHF training often includes a separate "value head" on the model, trained alongside the policy, and why careful initialization of this value head from the reward model matters for training success.
+This difference means PPO in RLHF requires a good value function estimator (well-trained Vϕ(st)V_\phi(s_t)Vϕ​(st​)) to perform well — and the quality of the value function is a bottleneck on alignment quality. This is why RLHF training often includes a separate "value head" on the model, trained alongside the policy, and why careful initialization of this value head from the reward model matters for training success.
 
 Methods that avoid per-token credit assignment (like DPO, Chapter 17) sidestep this limitation entirely.
 
@@ -6228,15 +6228,15 @@ Methods that avoid per-token credit assignment (like DPO, Chapter 17) sidestep t
 
 Hint
 
-Consider: (a) the clip parameter ϵ$\epsilon$ϵ, (b) the learning rate, (c) the batch size, and (d) the value function quality.
+Consider: (a) the clip parameter ϵ\epsilonϵ, (b) the learning rate, (c) the batch size, and (d) the value function quality.
 
 Answer
 
-**Cause 1: ϵ$\epsilon$ϵ too large (e.g., $\epsilon = 0.3$).**
+**Cause 1: ϵ\epsilonϵ too large (e.g., ϵ=0.3\epsilon = 0.3ϵ=0.3).**
 
-With $\epsilon = 0.3$, each PPO update can change any token's probability by ±30%. Over 4 epochs, this compounds to potentially 1.34≈2.86×1.3^4 \approx 2.86$\times1.34$≈2.86× — nearly tripling or halving any token's probability. This is too aggressive for a model that starts from a good SFT policy.
+With ϵ=0.3\epsilon = 0.3ϵ=0.3, each PPO update can change any token's probability by ±30%. Over 4 epochs, this compounds to potentially 1.34≈2.86×1.3^4 \approx 2.86\times1.34≈2.86× — nearly tripling or halving any token's probability. This is too aggressive for a model that starts from a good SFT policy.
 
-_Fix:_ Reduce ϵ$\epsilon$ϵ to 0.1 or 0.15. The standard $\epsilon = 0.2$ may be too large for a 13B model where even small distributional shifts can dramatically change output quality.
+_Fix:_ Reduce ϵ\epsilonϵ to 0.1 or 0.15. The standard ϵ=0.2\epsilon = 0.2ϵ=0.2 may be too large for a 13B model where even small distributional shifts can dramatically change output quality.
 
 **Cause 2: Learning rate too high.**
 
@@ -6246,15 +6246,15 @@ _Fix:_ Reduce the learning rate by 5-10×. Use a warmup period (linearly increas
 
 **Cause 3: Poor value function estimates.**
 
-If the value network Vϕ(st)V_$\phi(s_t)V$ϕ(st) is poorly trained, the advantage estimates A^t=Gt−Vϕ(st)$\hat{A}_$t = G_t - V_$\phi(s_t)A^t=Gt$−Vϕ(st) will be noisy. Noisy advantages lead to noisy gradient updates — the model receives incorrect signals about which responses are good.
+If the value network Vϕ(st)V_\phi(s_t)Vϕ​(st​) is poorly trained, the advantage estimates A^t=Gt−Vϕ(st)\hat{A}_t = G_t - V_\phi(s_t)A^t​=Gt​−Vϕ​(st​) will be noisy. Noisy advantages lead to noisy gradient updates — the model receives incorrect signals about which responses are good.
 
-_Fix:_ (a) Initialize the value head from the reward model (which has already learned to predict response quality). (b) Use a larger value loss coefficient (e.g., cvalue=0.5c_{$\text{value}} = 0.5$cvalue=0.5) to ensure the value function is well-trained. (c) Use more GAE steps ($\lambda = 0.95$ or higher) to reduce dependence on the potentially inaccurate value function.
+_Fix:_ (a) Initialize the value head from the reward model (which has already learned to predict response quality). (b) Use a larger value loss coefficient (e.g., cvalue=0.5c_{\text{value}} = 0.5cvalue​=0.5) to ensure the value function is well-trained. (c) Use more GAE steps (λ=0.95\lambda = 0.95λ=0.95 or higher) to reduce dependence on the potentially inaccurate value function.
 
 **Bonus — Cause 4: Reward model overoptimization (Goodhart's Law).**
 
-The reward model RϕR_$\phiR$ϕ is imperfect. As the policy optimizes against RϕR_$\phiR$ϕ, it may discover responses that score highly on RϕR_$\phiR$ϕ but are actually low quality (reward hacking). This appears as oscillation: the model finds a "hack," its responses look good by the reward model but bad to humans, and subsequent training data reflects this degraded behavior.
+The reward model RϕR_\phiRϕ​ is imperfect. As the policy optimizes against RϕR_\phiRϕ​, it may discover responses that score highly on RϕR_\phiRϕ​ but are actually low quality (reward hacking). This appears as oscillation: the model finds a "hack," its responses look good by the reward model but bad to humans, and subsequent training data reflects this degraded behavior.
 
-_Fix:_ Add a KL penalty: reward=Rϕ(x,y)−βDKL(πθ∥πSFT)$\text{reward} = R_\phi(x, y) - \beta D_{\text{KL}}(\pi_\theta \| \pi_{\text{SFT}})$reward=Rϕ(x,y)−βDKL(πθ∥πSFT). This constrains the policy from drifting too far from the SFT model, limiting the scope for reward hacking. This is exactly what InstructGPT does (Chapter 16).
+_Fix:_ Add a KL penalty: reward=Rϕ(x,y)−βDKL(πθ∥πSFT)\text{reward} = R_\phi(x, y) - \beta D_{\text{KL}}(\pi_\theta \| \pi_{\text{SFT}})reward=Rϕ​(x,y)−βDKL​(πθ​∥πSFT​). This constrains the policy from drifting too far from the SFT model, limiting the scope for reward hacking. This is exactly what InstructGPT does (Chapter 16).
 
 **14.5.** The PPO paper ablates the number of gradient epochs KKK. Reproduce this analysis conceptually: predict how training reward, KL divergence from the old policy, and fraction of clipped ratios change as KKK increases from 1 to 10. Sketch the expected curves.
 
@@ -6306,10 +6306,10 @@ Answer
 
 **DPO per-step cost:**
 
-DPO requires computing log-probabilities for preference pairs (yw,yl)(y_w, y_l)(yw,yl) under both the current policy $\pi_\theta$ and the reference policy πref\pi_{$\text{ref}}$πref. This requires:
+DPO requires computing log-probabilities for preference pairs (yw,yl)(y_w, y_l)(yw​,yl​) under both the current policy πθ\pi_\thetaπθ​ and the reference policy πref\pi_{\text{ref}}πref​. This requires:
 
-* 2 forward passes through $\pi_\theta$ (one per response in the pair)
-* 2 forward passes through πref\pi_{$\text{ref}}$πref (cached or computed once)
+* 2 forward passes through πθ\pi_\thetaπθ​ (one per response in the pair)
+* 2 forward passes through πref\pi_{\text{ref}}πref​ (cached or computed once)
 * 1 backward pass for the gradient
 
 Total: ~**5-7 forward-pass equivalents per batch** (the reference model computation can be precomputed and cached).
@@ -6378,19 +6378,19 @@ Answer
 
 **Modification 1: Token-level reward shaping.**
 
-Standard RLHF gives reward only at the episode end. But we can use the reward model to provide **dense, per-token feedback** by scoring partial responses: Rshaped(st)=Rϕ(x,y1:t)−Rϕ(x,y1:t−1)R_{$\text{shaped}}(s_t) = R_\phi(x, y_{1:t}) - R_\phi(x, y_{1:t-1})Rshaped(st)=R$ϕ(x,y1:t)−Rϕ(x,y1:t−1). This decomposes the terminal reward into per-token contributions, providing much richer gradient signal and reducing the credit assignment problem. The challenge: this requires running the reward model at every token position, increasing compute cost.
+Standard RLHF gives reward only at the episode end. But we can use the reward model to provide **dense, per-token feedback** by scoring partial responses: Rshaped(st)=Rϕ(x,y1:t)−Rϕ(x,y1:t−1)R_{\text{shaped}}(s_t) = R_\phi(x, y_{1:t}) - R_\phi(x, y_{1:t-1})Rshaped​(st​)=Rϕ​(x,y1:t​)−Rϕ​(x,y1:t−1​). This decomposes the terminal reward into per-token contributions, providing much richer gradient signal and reducing the credit assignment problem. The challenge: this requires running the reward model at every token position, increasing compute cost.
 
 **Modification 2: Adaptive KL penalty with curriculum.**
 
-Instead of a fixed KL penalty coefficient $\beta$, use a **curriculum** : start with a large $\beta$ (stay close to SFT, learn basic alignment) and gradually decrease it (allow more policy deviation as the model becomes better aligned). This mimics the fine-tuning schedule used in supervised learning (start conservative, become more aggressive) and reduces the risk of early-stage reward hacking.
+Instead of a fixed KL penalty coefficient β\betaβ, use a **curriculum** : start with a large β\betaβ (stay close to SFT, learn basic alignment) and gradually decrease it (allow more policy deviation as the model becomes better aligned). This mimics the fine-tuning schedule used in supervised learning (start conservative, become more aggressive) and reduces the risk of early-stage reward hacking.
 
 **Modification 3: Vocabulary-aware clipping.**
 
-Standard PPO clips the importance ratio uniformly across all tokens. But in language generation, some token choices matter more than others: content words (nouns, verbs) are more important than function words (articles, prepositions). Modify the clip range to be proportional to the token's importance: ϵt=ϵbase×w(yt)\epsilon_t = \epsilon_{$\text{base}} \times w(y_t)$ϵt=ϵbase×w(yt), where w(yt)w(y_t)w(yt) is higher for content words. This allows more conservative updates for consequential choices and more aggressive updates for formatting choices.
+Standard PPO clips the importance ratio uniformly across all tokens. But in language generation, some token choices matter more than others: content words (nouns, verbs) are more important than function words (articles, prepositions). Modify the clip range to be proportional to the token's importance: ϵt=ϵbase×w(yt)\epsilon_t = \epsilon_{\text{base}} \times w(y_t)ϵt​=ϵbase​×w(yt​), where w(yt)w(y_t)w(yt​) is higher for content words. This allows more conservative updates for consequential choices and more aggressive updates for formatting choices.
 
 **Modification 4: Direct anti-Goodhart mechanism.**
 
-Add an explicit "reward model uncertainty" penalty: if the reward model is uncertain about a response's quality (e.g., the response falls outside the reward model's training distribution), reduce the reward. Formally: Rsafe(x,y)=Rϕ(x,y)−α⋅uncertaintyϕ(x,y)R_{$\text{safe}}(x, y) = R_\phi(x, y) - \alpha \cdot \text{uncertainty}_\phi(x, y)Rsafe(x,y)=R$ϕ(x,y)−α⋅uncertaintyϕ(x,y). This directly addresses the Goodhart's Law risk by penalizing responses that exploit reward model blind spots.
+Add an explicit "reward model uncertainty" penalty: if the reward model is uncertain about a response's quality (e.g., the response falls outside the reward model's training distribution), reduce the reward. Formally: Rsafe(x,y)=Rϕ(x,y)−α⋅uncertaintyϕ(x,y)R_{\text{safe}}(x, y) = R_\phi(x, y) - \alpha \cdot \text{uncertainty}_\phi(x, y)Rsafe​(x,y)=Rϕ​(x,y)−α⋅uncertaintyϕ​(x,y). This directly addresses the Goodhart's Law risk by penalizing responses that exploit reward model blind spots.
 
 **Tradeoffs:** Each modification adds complexity and hyperparameters. The beauty of standard PPO is its simplicity — one clip parameter, one GAE parameter, one learning rate. Each modification improves a specific aspect but makes the system harder to implement, debug, and maintain. The practical question: is the improvement worth the complexity? For frontier models where each training run costs millions of dollars, even small improvements may justify significant engineering investment.
 
@@ -6425,9 +6425,9 @@ Chapters 1--11 told a story of astonishing capability: pretrained language model
 
 A model trained solely to predict the next token will generate text that is **statistically plausible** , not text that is **helpful, harmless, or honest**. The pretraining objective and the alignment objective are fundamentally different:
 
-Pretraining:θ∗=arg⁡max⁡θ Ex∼Dweb[log⁡Pθ(x)]$\text{Pretraining:} \quad \theta^* = \arg\max_\theta \; \mathbb{E}_{x \sim \mathcal{D}_{\text{web}}}[\log P_\theta(x)]Pretraining:$θ∗=argθmaxEx∼Dweb[logPθ(x)] Alignment:θ∗=arg⁡max⁡θ Ex∼Dprompts[Uhuman(x,πθ(x))]$\text{Alignment:} \quad \theta^* = \arg\max_\theta \; \mathbb{E}_{x \sim \mathcal{D}_{\text{prompts}}}[U_{\text{human}}(x, \pi_\theta(x))]Alignment:$θ∗=argθmaxEx∼Dprompts[Uhuman(x,πθ(x))]
+Pretraining:θ∗=arg⁡max⁡θ Ex∼Dweb[log⁡Pθ(x)]\text{Pretraining:} \quad \theta^* = \arg\max_\theta \; \mathbb{E}_{x \sim \mathcal{D}_{\text{web}}}[\log P_\theta(x)]Pretraining:θ∗=argθmax​Ex∼Dweb​​[logPθ​(x)] Alignment:θ∗=arg⁡max⁡θ Ex∼Dprompts[Uhuman(x,πθ(x))]\text{Alignment:} \quad \theta^* = \arg\max_\theta \; \mathbb{E}_{x \sim \mathcal{D}_{\text{prompts}}}[U_{\text{human}}(x, \pi_\theta(x))]Alignment:θ∗=argθmax​Ex∼Dprompts​​[Uhuman​(x,πθ​(x))]
 
-where $\text{human}}Uhuman is the human utility function -- a measure of how satisfied a user is with the model's response. The problem: UhumanU_{\text{human}}Uhuman is unknown, difficult to formalize, and varies across individuals and contexts.$
+where UhumanU_{\text{human}}Uhuman​ is the human utility function -- a measure of how satisfied a user is with the model's response. The problem: UhumanU_{\text{human}}Uhuman​ is unknown, difficult to formalize, and varies across individuals and contexts.
 
 This misalignment has three concrete manifestations:
 
@@ -6449,15 +6449,15 @@ SFT accomplishes three things:
 
   1. **Format alignment:** The model learns to respond in a conversational format rather than continuing web text.
   2. **Initial quality lift:** The model begins to mimic the style and helpfulness of human demonstrators.
-  3. **A good starting point for RL:** The SFT model serves as the initial policy πSFT\pi_{$\text{SFT}}$πSFT and the reference policy πref\pi_{$\text{ref}}$πref for subsequent PPO training.
+  3. **A good starting point for RL:** The SFT model serves as the initial policy πSFT\pi_{\text{SFT}}πSFT​ and the reference policy πref\pi_{\text{ref}}πref​ for subsequent PPO training.
 
 **The limitation of SFT:** Imitation learning is inherently limited. The model copies the surface form of good responses without learning _why_ some responses are better than others. A model that has memorized 13,000 ideal responses does not generalize to the infinite space of possible prompts. Moving beyond imitation requires a reward signal -- which is what Stages 2 and 3 provide.
 
 #### Stage 2: Reward Model Training
 
-The goal of Stage 2 is to train a function Rϕ(x,y)R_$\phi(x, y)R$ϕ(x,y) that, given a prompt xxx and a response yyy, outputs a scalar score reflecting response quality.
+The goal of Stage 2 is to train a function Rϕ(x,y)R_\phi(x, y)Rϕ​(x,y) that, given a prompt xxx and a response yyy, outputs a scalar score reflecting response quality.
 
-**Data collection:** For each prompt xxx, the SFT model generates multiple candidate responses y1,y2,…,yKy_1, y_2, $\ldots, y_Ky1,y2,$…,yK. Human evaluators then compare these responses pairwise, indicating which response is better: yi≻yjy_i $\succ y_jyi$≻yj (response iii is preferred to response jjj).
+**Data collection:** For each prompt xxx, the SFT model generates multiple candidate responses y1,y2,…,yKy_1, y_2, \ldots, y_Ky1​,y2​,…,yK​. Human evaluators then compare these responses pairwise, indicating which response is better: yi≻yjy_i \succ y_jyi​≻yj​ (response iii is preferred to response jjj).
 
 **Why pairwise comparisons rather than absolute scores?** This is a critical design choice. Empirically, human evaluators are far more consistent at relative judgments ("Which of these two responses is better?") than at absolute judgments ("Rate this response on a 1--10 scale"). Absolute ratings suffer from:
 
@@ -6469,23 +6469,23 @@ Pairwise comparisons require only ordinal information -- which response is bette
 
 #### The Bradley-Terry Model
 
-The Bradley-Terry model (1952) provides the mathematical bridge from pairwise comparisons to a trainable reward function. It assumes that the probability of preferring response yiy_iyi over yjy_jyj is determined by the difference in their reward scores:
+The Bradley-Terry model (1952) provides the mathematical bridge from pairwise comparisons to a trainable reward function. It assumes that the probability of preferring response yiy_iyi​ over yjy_jyj​ is determined by the difference in their reward scores:
 
-$P(y_i \succ y_j \mid x) = \sigma(R_\phi(x, y_i) - R_\phi(x, y_j))$
+P(yi≻yj∣x)=σ(Rϕ(x,yi)−Rϕ(x,yj))P(y_i \succ y_j \mid x) = \sigma(R_\phi(x, y_i) - R_\phi(x, y_j))P(yi​≻yj​∣x)=σ(Rϕ​(x,yi​)−Rϕ​(x,yj​))
 
-where $\sigma(z) = 1/(1 + e^{-z})$ is the logistic sigmoid function.
+where σ(z)=1/(1+e−z)\sigma(z) = 1/(1 + e^{-z})σ(z)=1/(1+e−z) is the logistic sigmoid function.
 
-**Derivation:** Assume each response yyy has an underlying quality score R(x,y)R(x, y)R(x,y), and human preference is a noisy observation of this quality. Specifically, assume the human perceives the quality of response yiy_iyi as R(x,yi)+ϵiR(x, y_i) + $\epsilon_iR(x,yi)+$ϵi, where ϵi$\epsilon_i$ϵi are independent Gumbel-distributed noise terms. Then the probability that the perceived quality of yiy_iyi exceeds that of yjy_jyj is:
+**Derivation:** Assume each response yyy has an underlying quality score R(x,y)R(x, y)R(x,y), and human preference is a noisy observation of this quality. Specifically, assume the human perceives the quality of response yiy_iyi​ as R(x,yi)+ϵiR(x, y_i) + \epsilon_iR(x,yi​)+ϵi​, where ϵi\epsilon_iϵi​ are independent Gumbel-distributed noise terms. Then the probability that the perceived quality of yiy_iyi​ exceeds that of yjy_jyj​ is:
 
-P(R(x,yi)+ϵi>R(x,yj)+ϵj)=exp⁡(R(x,yi))exp⁡(R(x,yi))+exp⁡(R(x,yj))=σ(R(x,yi)−R(x,yj))P(R(x, y_i) + \epsilon_i > R(x, y_j) + \epsilon_j) = $$\frac{\exp(R(x, y_i))}{\exp(R(x, y_i)) + \exp(R(x, y_j))} = \sigma(R(x, y_i) - R(x, y_j))P(R(x,yi)+$$ϵi>R(x,yj)+ϵj)=exp(R(x,yi))+exp(R(x,yj))exp(R(x,yi))=σ(R(x,yi)−R(x,yj))
+P(R(x,yi)+ϵi>R(x,yj)+ϵj)=exp⁡(R(x,yi))exp⁡(R(x,yi))+exp⁡(R(x,yj))=σ(R(x,yi)−R(x,yj))P(R(x, y_i) + \epsilon_i > R(x, y_j) + \epsilon_j) = \frac{\exp(R(x, y_i))}{\exp(R(x, y_i)) + \exp(R(x, y_j))} = \sigma(R(x, y_i) - R(x, y_j))P(R(x,yi​)+ϵi​>R(x,yj​)+ϵj​)=exp(R(x,yi​))+exp(R(x,yj​))exp(R(x,yi​))​=σ(R(x,yi​)−R(x,yj​))
 
 This is the standard result from random utility theory: Gumbel-distributed noise yields the logistic choice probability.
 
 **The reward model training loss** is the negative log-likelihood of the observed preferences:
 
-LRM(ϕ)=−E(x,yw,yl)∼D[log⁡σ(Rϕ(x,yw)−Rϕ(x,yl))]\mathcal{L}_{$\text{RM}}(\phi) = -\mathbb{E}_{(x, y_w, y_l) \sim \mathcal{D}}\left[\log \sigma(R_\phi(x, y_w) - R_\phi(x, y_l))\right]LRM($ϕ)=−E(x,yw,yl)∼D[logσ(Rϕ(x,yw)−Rϕ(x,yl))]
+LRM(ϕ)=−E(x,yw,yl)∼D[log⁡σ(Rϕ(x,yw)−Rϕ(x,yl))]\mathcal{L}_{\text{RM}}(\phi) = -\mathbb{E}_{(x, y_w, y_l) \sim \mathcal{D}}\left[\log \sigma(R_\phi(x, y_w) - R_\phi(x, y_l))\right]LRM​(ϕ)=−E(x,yw​,yl​)∼D​[logσ(Rϕ​(x,yw​)−Rϕ​(x,yl​))]
 
-where ywy_wyw is the preferred (winning) response and yly_lyl is the dispreferred (losing) response. This loss encourages the reward model to assign higher scores to preferred responses.
+where ywy_wyw​ is the preferred (winning) response and yly_lyl​ is the dispreferred (losing) response. This loss encourages the reward model to assign higher scores to preferred responses.
 
 > **Cross-Disciplinary Connection**
 > 
@@ -6495,13 +6495,13 @@ where ywy_wyw is the preferred (winning) response and yly_lyl is the dispreferre
 
 #### Stage 3: PPO Optimization with KL Penalty
 
-With a trained reward model RϕR_$\phiR$ϕ, Stage 3 uses PPO (Chapter 13--14) to optimize the language model policy $\pi_\theta$ to generate responses that score highly on RϕR_$\phiR$ϕ. The objective is:
+With a trained reward model RϕR_\phiRϕ​, Stage 3 uses PPO (Chapter 13--14) to optimize the language model policy πθ\pi_\thetaπθ​ to generate responses that score highly on RϕR_\phiRϕ​. The objective is:
 
- objective(θ)=Ex∼D, y∼πθ(⋅∣x)[Rϕ(x,y)−β DKL(πθ(⋅∣x)∥πSFT(⋅∣x))]$\text{objective}(\theta) = \mathbb{E}_{x \sim \mathcal{D},\; y \sim \pi_\theta(\cdot$ | $\left[R_\phi(x, y) - \beta \, D_{\text{KL}}\left(\pi_\theta(\cdot$ |x) \| $\text{SFT}}(\cdot$| $\right)\right]objective($ 
+objective(θ)=Ex∼D, y∼πθ(⋅∣x)[Rϕ(x,y)−β DKL(πθ(⋅∣x)∥πSFT(⋅∣x))]\text{objective}(\theta) = \mathbb{E}_{x \sim \mathcal{D},\; y \sim \pi_\theta(\cdot|x)}\left[R_\phi(x, y) - \beta \, D_{\text{KL}}\left(\pi_\theta(\cdot|x) \| \pi_{\text{SFT}}(\cdot|x)\right)\right]objective(θ)=Ex∼D,y∼πθ​(⋅∣x)​[Rϕ​(x,y)−βDKL​(πθ​(⋅∣x)∥πSFT​(⋅∣x))]
 
 The first term encourages the model to generate high-reward responses. The second term -- the KL penalty -- constrains the model from deviating too far from the SFT policy.
 
-**Why is the KL penalty necessary?** Without it, the model will exploit imperfections in the reward model. The reward model RϕR_$\phiR$ϕ is an imperfect proxy for true human preferences -- it was trained on a finite dataset and has blind spots. If the policy is allowed to optimize RϕR_$\phiR$ϕ without constraint, it will discover responses that score highly on RϕR_$\phiR$ϕ but are actually low quality -- a phenomenon known as **reward hacking** or **reward model overoptimization**.
+**Why is the KL penalty necessary?** Without it, the model will exploit imperfections in the reward model. The reward model RϕR_\phiRϕ​ is an imperfect proxy for true human preferences -- it was trained on a finite dataset and has blind spots. If the policy is allowed to optimize RϕR_\phiRϕ​ without constraint, it will discover responses that score highly on RϕR_\phiRϕ​ but are actually low quality -- a phenomenon known as **reward hacking** or **reward model overoptimization**.
 
 This is Goodhart's Law in action: "When a measure becomes a target, it ceases to be a good measure." The reward model is a good _measure_ of response quality within the distribution of normal responses. But when the policy actively optimizes against it, the reward model becomes a _target_ , and the policy discovers adversarial inputs that exploit the measure's imperfections.
 
@@ -6534,18 +6534,18 @@ The paper modifies the standard RL setup in one critical way: the agent cannot o
 
 Formally:
 
-* The agent acts in the environment, producing trajectory segments $\sigma^1$$\sigma^2$
-* A human evaluator watches both clips and indicates a preference: $\sigma^1 \succ \sigma^2$$\sigma^2 \succ \sigma^1$
-* A reward model r^$\hat{r}_\phi(s, a)r^$ is trained from these preferences using the Bradley-Terry model.
+* The agent acts in the environment, producing trajectory segments σ1\sigma^1σ1 and σ2\sigma^2σ2.
+* A human evaluator watches both clips and indicates a preference: σ1≻σ2\sigma^1 \succ \sigma^2σ1≻σ2 or σ2≻σ1\sigma^2 \succ \sigma^1σ2≻σ1.
+* A reward model r^ϕ(s,a)\hat{r}_\phi(s, a)r^ϕ​(s,a) is trained from these preferences using the Bradley-Terry model.
 * A standard RL algorithm (A2C or TRPO in the paper; later work uses PPO) optimizes the policy against the learned reward model.
 
 #### Alternating Training
 
 The training process alternates between two loops:
 
-**Loop A (Policy training):** Use the current reward estimate r^ϕ$\hat{r}_\phir^$ϕ to define the MDP reward. Train the policy $\pi_\theta$ with RL. Sample new trajectories from $\pi_\theta$.
+**Loop A (Policy training):** Use the current reward estimate r^ϕ\hat{r}_\phir^ϕ​ to define the MDP reward. Train the policy πθ\pi_\thetaπθ​ with RL. Sample new trajectories from πθ\pi_\thetaπθ​.
 
-**Loop B (Reward model training):** Select pairs of trajectory clips from sampled data. Send them to human evaluators for preference labeling. Update the reward model r^ϕ$\hat{r}_\phir^$ϕ with the new preference data.
+**Loop B (Reward model training):** Select pairs of trajectory clips from sampled data. Send them to human evaluators for preference labeling. Update the reward model r^ϕ\hat{r}_\phir^ϕ​ with the new preference data.
 
 The two loops run asynchronously. Human evaluators do not need to provide feedback continuously -- occasional comparisons suffice.
 
@@ -6562,7 +6562,7 @@ Christiano et al. demonstrated their framework on two domains:
   1. **Feasibility:** Learning from human preferences is practical -- a few thousand comparisons suffice for simple tasks.
   2. **The pairwise comparison interface:** Humans provide more consistent feedback through comparisons than through ratings.
   3. **The reward model as bridge:** The Bradley-Terry model effectively converts ordinal human preferences into cardinal reward signals that RL algorithms can optimize.
-  4. **Scalability question:** The paper operated at the scale of $\sim 10^4$ parameters. Whether RLHF could work at 101010^{10}1010 parameters -- the scale of GPT-3 -- was an open question that InstructGPT (Chapter 16) would answer.
+  4. **Scalability question:** The paper operated at the scale of ∼104\sim 10^4∼104 parameters. Whether RLHF could work at 101010^{10}1010 parameters -- the scale of GPT-3 -- was an open question that InstructGPT (Chapter 16) would answer.
 
 * * *
 
@@ -6570,17 +6570,17 @@ Christiano et al. demonstrated their framework on two domains:
 
 Putting it all together, the RLHF pipeline optimizes:
 
-max⁡θ Ex∼D, y∼πθ(⋅∣x)[Rϕ(x,y)]−β DKL[πθ∥πSFT]\max_\theta \; \mathbb{E}_{x \sim \mathcal{D},\; y \sim \pi_\theta(\cdot| $\left[R_\phi(x, y)\right] - \beta \, D_{\text{KL}}\left[\pi_\theta \$ | \pi_{$\text{SFT}}\right]$θmaxEx∼D,y∼πθ(⋅∣x)[Rϕ(x,y)]−βDKL[πθ∥πSFT]
+max⁡θ Ex∼D, y∼πθ(⋅∣x)[Rϕ(x,y)]−β DKL[πθ∥πSFT]\max_\theta \; \mathbb{E}_{x \sim \mathcal{D},\; y \sim \pi_\theta(\cdot|x)}\left[R_\phi(x, y)\right] - \beta \, D_{\text{KL}}\left[\pi_\theta \| \pi_{\text{SFT}}\right]θmax​Ex∼D,y∼πθ​(⋅∣x)​[Rϕ​(x,y)]−βDKL​[πθ​∥πSFT​]
 
 This can be rewritten by expanding the KL divergence:
 
- max⁡θ Ex,y[Rϕ(x,y)−βlog⁡πθ(y∣x)πSFT(y∣x)]\max_\theta \; \mathbb{E}_{x, y}$$\left[R_\phi(x, y) - \beta \log \frac{\pi_\theta(y$$ | $\text{SFT}}(y$ | x)}$\right]$θmaxEx,y[Rϕ(x,y)−βlogπSFT(y∣x)πθ(y∣x)] 
+max⁡θ Ex,y[Rϕ(x,y)−βlog⁡πθ(y∣x)πSFT(y∣x)]\max_\theta \; \mathbb{E}_{x, y}\left[R_\phi(x, y) - \beta \log \frac{\pi_\theta(y|x)}{\pi_{\text{SFT}}(y|x)}\right]θmax​Ex,y​[Rϕ​(x,y)−βlogπSFT​(y∣x)πθ​(y∣x)​]
 
 The optimal policy for this objective has a closed-form solution (which will become critical in Chapter 17's derivation of DPO):
 
-π∗(y∣x)=1Z(x)πSFT(y∣x)exp⁡(Rϕ(x,y)β)\pi^*(y| $$\frac{1}{Z(x)} \pi_{\text{SFT}}(y$$ | $$\left(\frac{R_\phi(x, y)}{\beta}\right)$$ 
+π∗(y∣x)=1Z(x)πSFT(y∣x)exp⁡(Rϕ(x,y)β)\pi^*(y|x) = \frac{1}{Z(x)} \pi_{\text{SFT}}(y|x) \exp\left(\frac{R_\phi(x, y)}{\beta}\right)π∗(y∣x)=Z(x)1​πSFT​(y∣x)exp(βRϕ​(x,y)​)
 
-where Z(x)=∑yπSFT(y∣x)exp⁡(Rϕ(x,y)/β)Z(x) = $$\sum_y \pi_{\text{SFT}}(y|x) \exp(R_\phi(x, y)/\beta)Z(x)=$$∑yπSFT(y∣x)exp(Rϕ(x,y)/β) is the partition function. This says: the optimal aligned policy is the SFT policy reweighted by the exponentiated reward. Responses that the reward model scores highly get upweighted; responses that score poorly get downweighted. The temperature $\beta$ controls the strength of this reweighting -- small $\beta$ means aggressive optimization (sharp reweighting), large β\betaβ means conservative optimization (mild reweighting).
+where Z(x)=∑yπSFT(y∣x)exp⁡(Rϕ(x,y)/β)Z(x) = \sum_y \pi_{\text{SFT}}(y|x) \exp(R_\phi(x, y)/\beta)Z(x)=∑y​πSFT​(y∣x)exp(Rϕ​(x,y)/β) is the partition function. This says: the optimal aligned policy is the SFT policy reweighted by the exponentiated reward. Responses that the reward model scores highly get upweighted; responses that score poorly get downweighted. The temperature β\betaβ controls the strength of this reweighting -- small β\betaβ means aggressive optimization (sharp reweighting), large β\betaβ means conservative optimization (mild reweighting).
 
 We will return to this closed-form solution in Chapter 17, where DPO uses it to eliminate the reward model entirely.
 
@@ -6588,13 +6588,13 @@ We will return to this closed-form solution in Chapter 17, where DPO uses it to 
 
 ### 15.5 Known Limitations
 
-  1. **Reward model imperfection.** The reward model is trained on finite human preference data and inevitably has blind spots. Any policy that optimizes too aggressively against RϕR_$\phiR$ϕ will discover and exploit these blind spots.
+  1. **Reward model imperfection.** The reward model is trained on finite human preference data and inevitably has blind spots. Any policy that optimizes too aggressively against RϕR_\phiRϕ​ will discover and exploit these blind spots.
 
   2. **Human labeler limitations.** Labelers may disagree, be inconsistent, or have biases. The resulting reward model reflects these imperfections.
 
   3. **Computational cost.** The three-stage pipeline is expensive: SFT requires fine-tuning, reward model training requires a separate model, and PPO requires online generation and multiple gradient epochs (Chapter 14).
 
-  4. **The KL penalty is a band-aid.** The KL penalty prevents reward hacking but also limits the degree to which the model can improve beyond the SFT baseline. Finding the right $\beta$ is a delicate balance.
+  4. **The KL penalty is a band-aid.** The KL penalty prevents reward hacking but also limits the degree to which the model can improve beyond the SFT baseline. Finding the right β\betaβ is a delicate balance.
 
 These limitations motivate DPO (Chapter 17), which eliminates Stage 2 and Stage 3 entirely.
 
@@ -6604,9 +6604,9 @@ These limitations motivate DPO (Chapter 17), which eliminates Stage 2 and Stage 
 
 The RLHF pipeline solves a problem that pretraining cannot: converting raw capability into behavior that humans actually want. The three stages form a logical chain — SFT provides format and a starting policy, the Bradley-Terry reward model converts ordinal human judgments into a differentiable training signal, and PPO optimizes that signal while the KL penalty prevents the policy from straying into regions where the reward model's predictions are unreliable. Each stage addresses a specific limitation of the previous one: SFT alone cannot generalize beyond its demonstrations; a reward model alone has no mechanism to improve the policy; PPO alone would overoptimize an imperfect reward signal without the KL constraint.
 
-The mathematical through-line that matters most for Part III's arc is the closed-form optimal policy: π∗(y∣x)∝πSFT(y∣x)exp⁡(Rϕ(x,y)/β)\pi^*(y| $\text{SFT}(y$ | x)\exp(R_\phi(x,y)/\beta)π∗(y∣x)∝πSFT(y∣x)exp(Rϕ(x,y)/β). Rearranging this expression reveals that the reward is fully determined by the log-ratio βlog⁡[π∗/πSFT]+βlog⁡Z(x)\beta\log[\pi^*/\pi_$\text{SFT}] + \beta\log Z(x)$βlog[π∗/πSFT]+βlogZ(x). When substituted into the Bradley-Terry model, the intractable partition function Z(x)Z(x)Z(x) cancels — because preferences depend only on reward differences. This cancellation is the mathematical seed of DPO (Chapter 17), which will eliminate both the reward model and the RL loop. 
+The mathematical through-line that matters most for Part III's arc is the closed-form optimal policy: π∗(y∣x)∝πSFT(y∣x)exp⁡(Rϕ(x,y)/β)\pi^*(y|x) \propto \pi_\text{SFT}(y|x)\exp(R_\phi(x,y)/\beta)π∗(y∣x)∝πSFT​(y∣x)exp(Rϕ​(x,y)/β). Rearranging this expression reveals that the reward is fully determined by the log-ratio βlog⁡[π∗/πSFT]+βlog⁡Z(x)\beta\log[\pi^*/\pi_\text{SFT}] + \beta\log Z(x)βlog[π∗/πSFT​]+βlogZ(x). When substituted into the Bradley-Terry model, the intractable partition function Z(x)Z(x)Z(x) cancels — because preferences depend only on reward differences. This cancellation is the mathematical seed of DPO (Chapter 17), which will eliminate both the reward model and the RL loop.
 
-Christiano et al. (2017) demonstrated this entire framework at $\sim 10^4$-parameter scale with just 5,500 comparisons. Whether the approach could survive a seven-order-of-magnitude leap to GPT-3 scale was the open question that InstructGPT (Chapter 16) would answer.
+Christiano et al. (2017) demonstrated this entire framework at ∼104\sim 10^4∼104-parameter scale with just 5,500 comparisons. Whether the approach could survive a seven-order-of-magnitude leap to GPT-3 scale was the open question that InstructGPT (Chapter 16) would answer.
 
 ### Exercises
 
@@ -6619,37 +6619,37 @@ Answer
 **Stage 1 -- Supervised Fine-Tuning (SFT):**
 
 * _Input:_ A pretrained language model and a dataset of high-quality (prompt, response) pairs written by human demonstrators.
-* _Output:_ An SFT model that responds in conversational format and serves as the initial policy πSFT\pi_{$\text{SFT}}$πSFT for subsequent stages.
+* _Output:_ An SFT model that responds in conversational format and serves as the initial policy πSFT\pi_{\text{SFT}}πSFT​ for subsequent stages.
 
 **Stage 2 -- Reward Model Training:**
 
-* _Input:_ The SFT model (to generate candidate responses) and human pairwise preference labels (yw≻yly_w $\succ y_lyw$≻yl for each prompt).
-* _Output:_ A reward model Rϕ(x,y)R_$\phi(x, y)R$ϕ(x,y) that assigns a scalar quality score to any (prompt, response) pair.
+* _Input:_ The SFT model (to generate candidate responses) and human pairwise preference labels (yw≻yly_w \succ y_lyw​≻yl​ for each prompt).
+* _Output:_ A reward model Rϕ(x,y)R_\phi(x, y)Rϕ​(x,y) that assigns a scalar quality score to any (prompt, response) pair.
 
 **Stage 3 -- PPO Optimization:**
 
-* _Input:_ The SFT model (as initial policy), the reward model RϕR_$\phiR$ϕ, and a dataset of prompts.
-* _Output:_ An aligned model $\pi_\theta$ that maximizes reward while staying close to the SFT policy via KL penalty.
+* _Input:_ The SFT model (as initial policy), the reward model RϕR_\phiRϕ​, and a dataset of prompts.
+* _Output:_ An aligned model πθ\pi_\thetaπθ​ that maximizes reward while staying close to the SFT policy via KL penalty.
 
-**15.2.** The Bradley-Terry model assumes that the probability of preferring response yiy_iyi over yjy_jyj is $\sigma(R(x, y_i) - R(x, y_j))$. What assumption about human perception does this model encode? How does this assumption relate to the derivation in Chapter 12 connecting MLE to cross-entropy?
+**15.2.** The Bradley-Terry model assumes that the probability of preferring response yiy_iyi​ over yjy_jyj​ is σ(R(x,yi)−R(x,yj))\sigma(R(x, y_i) - R(x, y_j))σ(R(x,yi​)−R(x,yj​)). What assumption about human perception does this model encode? How does this assumption relate to the derivation in Chapter 12 connecting MLE to cross-entropy?
 
 Answer
 
-The Bradley-Terry model assumes that human evaluators perceive response quality as the true quality plus independent Gumbel-distributed noise: perceived quality of yi=R(x,yi)+ϵ$\text{perceived quality of } y_$ = R(x, y_i) + $\epsilon_iperceived quality of yi=R(x,yi)+$ϵi, where ϵi∼Gumbel(0,1)\epsilon_i \sim $\text{Gumbel}(0, 1)$ϵi∼Gumbel(0,1). The preference is determined by which perceived quality is higher.
+The Bradley-Terry model assumes that human evaluators perceive response quality as the true quality plus independent Gumbel-distributed noise: perceived quality of yi=R(x,yi)+ϵi\text{perceived quality of } y_i = R(x, y_i) + \epsilon_iperceived quality of yi​=R(x,yi​)+ϵi​, where ϵi∼Gumbel(0,1)\epsilon_i \sim \text{Gumbel}(0, 1)ϵi​∼Gumbel(0,1). The preference is determined by which perceived quality is higher.
 
 This Gumbel noise assumption yields the logistic (sigmoid) choice probability -- exactly the same functional form as the logistic regression model. The connection to Chapter 12: the cross-entropy loss used in the reward model training is the negative log-likelihood of the Bradley-Terry model, just as the cross-entropy loss in supervised learning is the negative log-likelihood of the softmax model. In both cases, we are fitting a model to observed categorical outcomes (preferred/not preferred, or correct token/incorrect token) by maximizing log-likelihood, which is equivalent to minimizing cross-entropy (as derived in Chapter 12).
 
 The key assumption is that human noise is independent across comparisons and identically distributed. In practice, human evaluators may exhibit correlated noise (e.g., fatigue affecting multiple sequential comparisons), which violates this assumption.
 
-**15.3.** Explain Goodhart's Law in the context of RLHF. Give a concrete example of what could go wrong if the KL penalty $\beta$ were set to zero.
+**15.3.** Explain Goodhart's Law in the context of RLHF. Give a concrete example of what could go wrong if the KL penalty β\betaβ were set to zero.
 
 Answer
 
-**Goodhart's Law** states: "When a measure becomes a target, it ceases to be a good measure." In RLHF, the reward model RϕR_$\phiR$ϕ is a measure of response quality -- it approximates human preferences based on a finite training dataset. When the policy $\pi_\theta$ optimizes directly against RϕR_$\phiR$ϕ (making the measure a target), the policy may discover responses that score highly on RϕR_\phiRϕ but are actually low quality.
+**Goodhart's Law** states: "When a measure becomes a target, it ceases to be a good measure." In RLHF, the reward model RϕR_\phiRϕ​ is a measure of response quality -- it approximates human preferences based on a finite training dataset. When the policy πθ\pi_\thetaπθ​ optimizes directly against RϕR_\phiRϕ​ (making the measure a target), the policy may discover responses that score highly on RϕR_\phiRϕ​ but are actually low quality.
 
-**Concrete example with $\beta = 0$:** Without the KL penalty, the model is free to deviate arbitrarily from the SFT distribution. It might discover that the reward model assigns high scores to responses that (a) are extremely verbose (the reward model was trained on data where longer responses tended to be more helpful, so it learned a spurious length-quality correlation), (b) contain excessive hedging phrases ("I think," "It's important to note that"), or (c) repeat the user's question back in the response (which the reward model interprets as "engagement"). The resulting model produces bloated, repetitive responses that score highly on RϕR_$\phiR$ϕ but are less useful than the original SFT model.
+**Concrete example with β=0\beta = 0β=0:** Without the KL penalty, the model is free to deviate arbitrarily from the SFT distribution. It might discover that the reward model assigns high scores to responses that (a) are extremely verbose (the reward model was trained on data where longer responses tended to be more helpful, so it learned a spurious length-quality correlation), (b) contain excessive hedging phrases ("I think," "It's important to note that"), or (c) repeat the user's question back in the response (which the reward model interprets as "engagement"). The resulting model produces bloated, repetitive responses that score highly on RϕR_\phiRϕ​ but are less useful than the original SFT model.
 
-The KL penalty prevents this by constraining $\pi_\theta$ to stay close to πSFT\pi_{$\text{SFT}}$πSFT, keeping the policy within the distribution where RϕR_$\phiR$ϕ's predictions are reliable.
+The KL penalty prevents this by constraining πθ\pi_\thetaπθ​ to stay close to πSFT\pi_{\text{SFT}}πSFT​, keeping the policy within the distribution where RϕR_\phiRϕ​'s predictions are reliable.
 
 #### Application Problems
 
@@ -6657,41 +6657,41 @@ The KL penalty prevents this by constraining $\pi_\theta$ to stay close to πSFT
 
 Answer
 
-**The tradeoff:** With KKK responses per prompt, ranking produces (K2)\binom{K}{2}(2K) pairwise comparisons. With a fixed budget of 10,000 comparisons:
+**The tradeoff:** With KKK responses per prompt, ranking produces (K2)\binom{K}{2}(2K​) pairwise comparisons. With a fixed budget of 10,000 comparisons:
 
-* **K =2K = 2K=2:** Each prompt yields (22)=1\binom{2}{2} = 1(22)=1 comparison. Budget covers 10,000 prompts. Maximum prompt diversity, but each prompt has only one comparison.
+* **K =2K = 2K=2:** Each prompt yields (22)=1\binom{2}{2} = 1(22​)=1 comparison. Budget covers 10,000 prompts. Maximum prompt diversity, but each prompt has only one comparison.
 
-* **K =4K = 4K=4:** Each prompt yields (42)=6$\binom{4}{2} = 6(24)=6 comparisons. Budget covers 10,000/6$≈1,66710{,}000 / 6 $\approx 1{,}66710,000/6$≈1,667 prompts. Less prompt diversity, but richer preference signal per prompt.
+* **K =4K = 4K=4:** Each prompt yields (42)=6\binom{4}{2} = 6(24​)=6 comparisons. Budget covers 10,000/6≈1,66710{,}000 / 6 \approx 1{,}66710,000/6≈1,667 prompts. Less prompt diversity, but richer preference signal per prompt.
 
-* **K =9K = 9K=9:** Each prompt yields (92)=36$\binom{9}{2} = 36(29)=36 comparisons. Budget covers 10,000/36$≈27810{,}000 / 36 $\approx 27810,000/36$≈278 prompts. Very rich per-prompt signal, but very few prompts.
+* **K =9K = 9K=9:** Each prompt yields (92)=36\binom{9}{2} = 36(29​)=36 comparisons. Budget covers 10,000/36≈27810{,}000 / 36 \approx 27810,000/36≈278 prompts. Very rich per-prompt signal, but very few prompts.
 
 **The optimal choice depends on the variance structure.** If the main source of variance is across prompts (different prompts require different skills), then K=2K = 2K=2 is better -- maximize prompt coverage. If the main source of variance is across responses for the same prompt (the model generates responses of widely varying quality), then higher KKK is better -- the ranking provides a more complete picture of the quality landscape for each prompt.
 
-**InstructGPT's choice (Chapter 16) was K=4K = 4K=4 to K=9K = 9K=9.** Their reasoning: ranking KKK responses is only slightly more expensive than comparing 2 (the labeler reads all responses anyway), but yields (K2)\binom{K}{2}(2K) training examples instead of 1. The marginal cost of additional comparisons from the same prompt is low because the cognitive overhead is in reading the responses, not in making the comparison.
+**InstructGPT's choice (Chapter 16) was K=4K = 4K=4 to K=9K = 9K=9.** Their reasoning: ranking KKK responses is only slightly more expensive than comparing 2 (the labeler reads all responses anyway), but yields (K2)\binom{K}{2}(2K​) training examples instead of 1. The marginal cost of additional comparisons from the same prompt is low because the cognitive overhead is in reading the responses, not in making the comparison.
 
-**Recommendation for 7B model:** Use K=4K = 4K=4, yielding 6 comparisons from $\sim 1{,}667$ prompts. This balances prompt diversity (1,667 is sufficient for a 7B model) with per-prompt signal richness (6 comparisons per prompt provides a clear quality ordering).
+**Recommendation for 7B model:** Use K=4K = 4K=4, yielding 6 comparisons from ∼1,667\sim 1{,}667∼1,667 prompts. This balances prompt diversity (1,667 is sufficient for a 7B model) with per-prompt signal richness (6 comparisons per prompt provides a clear quality ordering).
 
-**15.5.** The closed-form optimal policy is π∗(y∣x)∝πSFT(y∣x)exp⁡(Rϕ(x,y)/β)\pi^*(y| $\text{SFT}}(y$ | x) \exp(R_\phi(x, y)/\beta)π∗(y∣x)∝πSFT(y∣x)exp(Rϕ(x,y)/β). Consider two extreme cases: β→0\beta \to 0β→0 and β→∞\beta \to $\infty$β→∞. What does the optimal policy converge to in each case? Connect this to the bias-variance tradeoff from Chapter 13. 
+**15.5.** The closed-form optimal policy is π∗(y∣x)∝πSFT(y∣x)exp⁡(Rϕ(x,y)/β)\pi^*(y|x) \propto \pi_{\text{SFT}}(y|x) \exp(R_\phi(x, y)/\beta)π∗(y∣x)∝πSFT​(y∣x)exp(Rϕ​(x,y)/β). Consider two extreme cases: β→0\beta \to 0β→0 and β→∞\beta \to \inftyβ→∞. What does the optimal policy converge to in each case? Connect this to the bias-variance tradeoff from Chapter 13.
 
 Answer
 
-**Case 1: $\beta \to 0$ (no KL penalty)**
+**Case 1: β→0\beta \to 0β→0 (no KL penalty)**
 
-As $\beta \to 0$, the exponential term exp⁡(R$\exp(R_\phi(x, y)/\beta)exp(R$ becomes sharply peaked at the response y∗y^*y∗ with the highest reward score. The optimal policy converges to a point mass:
+As β→0\beta \to 0β→0, the exponential term exp⁡(Rϕ(x,y)/β)\exp(R_\phi(x, y)/\beta)exp(Rϕ​(x,y)/β) becomes sharply peaked at the response y∗y^*y∗ with the highest reward score. The optimal policy converges to a point mass:
 
-π∗(y∣x)→{1if y=arg⁡max⁡yRϕ(x,y)0otherwise\pi^*(y|x) $\to \begin{cases} 1 & \text{if } y = \arg\max_y R_\phi(x, y) \\\ 0 & \text{otherwise} \end{cases}$π∗(y∣x)→{10if y=argmaxyRϕ(x,y)otherwise
+π∗(y∣x)→{1if y=arg⁡max⁡yRϕ(x,y)0otherwise\pi^*(y|x) \to \begin{cases} 1 & \text{if } y = \arg\max_y R_\phi(x, y) \\\ 0 & \text{otherwise} \end{cases}π∗(y∣x)→{10​if y=argmaxy​Rϕ​(x,y)otherwise​
 
 This is **pure reward maximization** \-- the policy always produces the single response that maximizes the reward model. If the reward model is perfect, this is ideal. If the reward model has blind spots (it always does), the policy exploits them aggressively.
 
-**Case 2: β→∞\beta \to $\infty$β→∞ (infinite KL penalty)**
+**Case 2: β→∞\beta \to \inftyβ→∞ (infinite KL penalty)**
 
-As β→∞\beta \to $\infty$β→∞, the exponential term exp⁡(R$\exp(R_\phi(x, y)/\beta) \to 1exp(R$ for all yyy. The optimal policy converges to:
+As β→∞\beta \to \inftyβ→∞, the exponential term exp⁡(Rϕ(x,y)/β)→1\exp(R_\phi(x, y)/\beta) \to 1exp(Rϕ​(x,y)/β)→1 for all yyy. The optimal policy converges to:
 
-π∗(y∣x)→πSFT(y∣x)\pi^*(y| $\text{SFT}}(y$ | $x)$ 
+π∗(y∣x)→πSFT(y∣x)\pi^*(y|x) \to \pi_{\text{SFT}}(y|x)π∗(y∣x)→πSFT​(y∣x)
 
 The model ignores the reward model entirely and reverts to the SFT policy. No alignment improvement occurs, but no reward hacking occurs either.
 
-**Connection to bias-variance:** From Chapter 13's discussion of the GAE parameter $\lambda$: small $\beta$ is analogous to $\lambda = 0$ (high bias due to reward model imperfection, low variance because the policy is deterministic); large β\betaβ is analogous to λ=1\lambda = 1λ=1 (low bias because the SFT policy is known to be reasonable, high variance because no reward signal is used). The optimal β\betaβ balances reward model imperfection (the "bias" from trusting an imperfect proxy) against reward model exploitation (the "variance" from aggressive optimization).
+**Connection to bias-variance:** From Chapter 13's discussion of the GAE parameter λ\lambdaλ: small β\betaβ is analogous to λ=0\lambda = 0λ=0 (high bias due to reward model imperfection, low variance because the policy is deterministic); large β\betaβ is analogous to λ=1\lambda = 1λ=1 (low bias because the SFT policy is known to be reasonable, high variance because no reward signal is used). The optimal β\betaβ balances reward model imperfection (the "bias" from trusting an imperfect proxy) against reward model exploitation (the "variance" from aggressive optimization).
 
 **15.6.** Christiano et al. used approximately 5,500 preference queries (about 2 hours of human labeling) to train an Atari-playing agent from preferences alone. Estimate the number of preference queries needed to align a 7B language model, and explain why the number is much larger. Reference the scaling discussion from Chapters 5--6.
 
@@ -6711,7 +6711,7 @@ Answer
 
   3. **Distribution breadth:** An Atari agent plays one game; a language model must handle every possible prompt -- coding, math, creative writing, medical advice, legal questions. The prompt distribution is incomparably broader.
 
-  4. **Scaling laws (Chapters 5--6):** The Kaplan and Chinchilla scaling laws suggest that model capability scales as a power law with data. By analogy, reward model quality likely scales as a power law with the number of preference comparisons -- meaning diminishing but continued returns to more data. A 7B model has $\sim 10^3 \times$ more parameters than the Christiano et al. policy network, suggesting a substantial increase in preference data is needed to provide a sufficiently rich training signal.
+  4. **Scaling laws (Chapters 5--6):** The Kaplan and Chinchilla scaling laws suggest that model capability scales as a power law with data. By analogy, reward model quality likely scales as a power law with the number of preference comparisons -- meaning diminishing but continued returns to more data. A 7B model has ∼103×\sim 10^3 \times∼103× more parameters than the Christiano et al. policy network, suggesting a substantial increase in preference data is needed to provide a sufficiently rich training signal.
 
 **Estimate:** For a 7B model, 30,000--100,000 comparisons is a reasonable range, consistent with InstructGPT's reported numbers scaled by the task complexity.
 
@@ -6723,7 +6723,7 @@ Answer
 
 **Failure 1: Non-transitive preferences.**
 
-The Bradley-Terry model assumes transitivity: if y1≻y2y_1 $\succ y_2y1$≻y2 and y2≻y3y_2 $\succ y_3y2$≻y3, then y1≻y3y_1 $\succ y_3y1$≻y3. This is equivalent to assuming that preferences can be represented by a single scalar score. But human preferences can be non-transitive -- a labeler might prefer response A over B (because A is more concise), B over C (because B is more accurate), and C over A (because C is more creative). Non-transitive preferences cannot be represented by any scalar reward function.
+The Bradley-Terry model assumes transitivity: if y1≻y2y_1 \succ y_2y1​≻y2​ and y2≻y3y_2 \succ y_3y2​≻y3​, then y1≻y3y_1 \succ y_3y1​≻y3​. This is equivalent to assuming that preferences can be represented by a single scalar score. But human preferences can be non-transitive -- a labeler might prefer response A over B (because A is more concise), B over C (because B is more accurate), and C over A (because C is more creative). Non-transitive preferences cannot be represented by any scalar reward function.
 
 **Consequence:** The reward model will fit an inconsistent training signal, resulting in arbitrary tie-breaking between responses that differ along different quality dimensions. The aligned model may optimize for whichever dimension the reward model happens to prioritize, neglecting others.
 
@@ -6745,9 +6745,9 @@ Answer
 
 **The key technical challenge: scale.**
 
-Christiano et al. operated at $\sim 10^4$ parameters. InstructGPT operated at 10910^9109 to 101110^{11}1011 parameters -- a gap of five to seven orders of magnitude. This scale difference creates several concrete challenges:
+Christiano et al. operated at ∼104\sim 10^4∼104 parameters. InstructGPT operated at 10910^9109 to 101110^{11}1011 parameters -- a gap of five to seven orders of magnitude. This scale difference creates several concrete challenges:
 
-  1. **Memory:** The RLHF pipeline requires maintaining multiple models simultaneously -- the policy $\pi_\theta$, the reference policy πSFT\pi_{$\text{SFT}}$πSFT, the reward model RϕR_$\phiR$ϕ, and the value function VϕV_$\phiV$ϕ. At GPT-3 scale, each model consumes hundreds of gigabytes, requiring sophisticated model parallelism.
+  1. **Memory:** The RLHF pipeline requires maintaining multiple models simultaneously -- the policy πθ\pi_\thetaπθ​, the reference policy πSFT\pi_{\text{SFT}}πSFT​, the reward model RϕR_\phiRϕ​, and the value function VϕV_\phiVϕ​. At GPT-3 scale, each model consumes hundreds of gigabytes, requiring sophisticated model parallelism.
 
   2. **Generation cost:** Each PPO iteration requires generating complete responses from the current policy. At 175B parameters, generating a single response takes seconds -- and thousands of responses are needed per PPO batch. This is the dominant cost of RLHF training (as analyzed in Chapter 14, Exercise 14.6).
 
@@ -6759,7 +6759,7 @@ PPO (Chapter 14) was uniquely suited for this scale transition because:
 
   1. **First-order optimization:** PPO uses only gradients, compatible with the distributed training infrastructure (data parallelism, gradient accumulation, mixed precision) already developed for pretraining. TRPO's second-order methods would be prohibitively expensive at GPT-3 scale.
 
-  2. **Clipping provides scale-independent stability.** The clip at [1−ϵ,1+ϵ][1-$\epsilon, 1+\epsilon][1$−ϵ,1+ϵ] bounds the relative change in any token's probability, regardless of model size. This means the same $\epsilon = 0.2$ that stabilized training for a 10K-parameter robotics agent also stabilizes training for a 175B-parameter language model.
+  2. **Clipping provides scale-independent stability.** The clip at [1−ϵ,1+ϵ][1-\epsilon, 1+\epsilon][1−ϵ,1+ϵ] bounds the relative change in any token's probability, regardless of model size. This means the same ϵ=0.2\epsilon = 0.2ϵ=0.2 that stabilized training for a 10K-parameter robotics agent also stabilizes training for a 175B-parameter language model.
 
   3. **GAE handles terminal rewards.** In RLHF, the reward comes only after the complete response (as discussed in Chapter 14). PPO's GAE mechanism propagates this terminal reward backward to provide per-token advantage estimates -- essential for credit assignment in long responses.
 
@@ -6771,25 +6771,25 @@ Answer
 
 **The key mathematical property:** The RLHF objective with a KL penalty has a **closed-form optimal policy** :
 
-π∗(y∣x)=1Z(x)πSFT(y∣x)exp⁡(Rϕ(x,y)β)\pi^*(y| $$\frac{1}{Z(x)} \pi_{\text{SFT}}(y$$ | $$\left(\frac{R_\phi(x, y)}{\beta}\right)$$ 
+π∗(y∣x)=1Z(x)πSFT(y∣x)exp⁡(Rϕ(x,y)β)\pi^*(y|x) = \frac{1}{Z(x)} \pi_{\text{SFT}}(y|x) \exp\left(\frac{R_\phi(x, y)}{\beta}\right)π∗(y∣x)=Z(x)1​πSFT​(y∣x)exp(βRϕ​(x,y)​)
 
 This can be rearranged to express the reward as a function of the policy:
 
- Rϕ(x,y)=βlog⁡π∗(y∣x)πSFT(y∣x)+βlog⁡Z(x)R_\phi(x, y) = \beta \log $$\frac{\pi^*(y$$ | $\text{SFT}}(y$ | $} + \beta \log Z(x)Rϕ(x,y)=βlogπSFT(y∣x)π∗(y∣x)+βlogZ($ 
+Rϕ(x,y)=βlog⁡π∗(y∣x)πSFT(y∣x)+βlog⁡Z(x)R_\phi(x, y) = \beta \log \frac{\pi^*(y|x)}{\pi_{\text{SFT}}(y|x)} + \beta \log Z(x)Rϕ​(x,y)=βlogπSFT​(y∣x)π∗(y∣x)​+βlogZ(x)
 
 This is the crucial insight: **the reward is fully determined by the ratio of the optimal policy to the reference policy.** If we substitute this expression for the reward back into the Bradley-Terry preference model:
 
- P(yw≻yl)=σ(βlog⁡π∗(yw∣x)πSFT(yw∣x)−βlog⁡π∗(yl∣x)πSFT(yl∣x))P(y_w \succ y_l) = \sigma$$\left(\beta \log \frac{\pi^*(y_w$$ | $\text{SFT}}(y_w$ | $$\frac{\pi^*(y_l$$ | $\text{SFT}}(y_l$ | x)}$\right)P(yw$≻yl)=σ(βlogπSFT(yw∣x)π∗(yw∣x)−βlogπSFT(yl∣x)π∗(yl∣x)) 
+P(yw≻yl)=σ(βlog⁡π∗(yw∣x)πSFT(yw∣x)−βlog⁡π∗(yl∣x)πSFT(yl∣x))P(y_w \succ y_l) = \sigma\left(\beta \log \frac{\pi^*(y_w|x)}{\pi_{\text{SFT}}(y_w|x)} - \beta \log \frac{\pi^*(y_l|x)}{\pi_{\text{SFT}}(y_l|x)}\right)P(yw​≻yl​)=σ(βlogπSFT​(yw​∣x)π∗(yw​∣x)​−βlogπSFT​(yl​∣x)π∗(yl​∣x)​)
 
-The partition function Z(x)Z(x)Z(x) cancels (it appears in both the ywy_wyw and yly_lyl terms). What remains is a loss function that depends only on the policy $\pi_\theta$ and the reference policy πSFT\pi_{$\text{SFT}}$πSFT \-- **no reward model needed.**
+The partition function Z(x)Z(x)Z(x) cancels (it appears in both the ywy_wyw​ and yly_lyl​ terms). What remains is a loss function that depends only on the policy πθ\pi_\thetaπθ​ and the reference policy πSFT\pi_{\text{SFT}}πSFT​ \-- **no reward model needed.**
 
 This is exactly what DPO does: it replaces the three-stage pipeline (SFT + Reward Model + PPO) with a single supervised learning objective that directly optimizes preferences. The mathematical insight that makes this possible is the closed-form relationship between the optimal policy and the reward under the KL-constrained objective.
 
 The reader should verify in Chapter 17 that the DPO loss is indeed:
 
- LDPO(θ)=−E[log⁡σ(βlog⁡πθ(yw∣x)πref(yw∣x)−βlog⁡πθ(yl∣x)πref(yl∣x))]\mathcal{L}_{$$\text{DPO}}(\theta) = -\mathbb{E}\left[\log \sigma\left(\beta \log \frac{\pi_\theta(y_w$$ | $\text{ref}}(y_w$ | $$\frac{\pi_\theta(y_l$$ | $\text{ref}}(y_l$ | x)}$\right)\right]LDPO($θ)=−E[logσ(βlogπref(yw∣x)πθ(yw∣x)−βlogπref(yl∣x)πθ(yl∣x))] 
+LDPO(θ)=−E[log⁡σ(βlog⁡πθ(yw∣x)πref(yw∣x)−βlog⁡πθ(yl∣x)πref(yl∣x))]\mathcal{L}_{\text{DPO}}(\theta) = -\mathbb{E}\left[\log \sigma\left(\beta \log \frac{\pi_\theta(y_w|x)}{\pi_{\text{ref}}(y_w|x)} - \beta \log \frac{\pi_\theta(y_l|x)}{\pi_{\text{ref}}(y_l|x)}\right)\right]LDPO​(θ)=−E[logσ(βlogπref​(yw​∣x)πθ​(yw​∣x)​−βlogπref​(yl​∣x)πθ​(yl​∣x)​)]
 
-which is exactly the expression derived above with π∗$\pi^*$π∗ replaced by the trainable $\pi_\theta$.
+which is exactly the expression derived above with π∗\pi^*π∗ replaced by the trainable πθ\pi_\thetaπθ​.
 
 ---
 
@@ -6818,7 +6818,7 @@ By the end of this chapter, you will be able to:
 
 **The paper:** Ouyang, L., Wu, J., Jiang, X., et al. (2022). "Training Language Models to Follow Instructions with Human Feedback." NeurIPS 2022.
 
-Chapter 15 introduced the Christiano et al. (2017) framework for learning from human preferences in Atari games and simulated robotics. The policy networks in those experiments had approximately 10410^4104 parameters. InstructGPT applied the same framework to GPT-3 -- a model with 1.75×10111.75 $\times 10^{11}1.75$×1011 parameters.
+Chapter 15 introduced the Christiano et al. (2017) framework for learning from human preferences in Atari games and simulated robotics. The policy networks in those experiments had approximately 10410^4104 parameters. InstructGPT applied the same framework to GPT-3 -- a model with 1.75×10111.75 \times 10^{11}1.75×1011 parameters.
 
 This is a leap of **seven orders of magnitude**. Whether RLHF could work at this scale was genuinely uncertain. The InstructGPT paper's central contribution is the empirical demonstration that it does -- and that the results have direct product value. InstructGPT is the direct predecessor of ChatGPT; ChatGPT is essentially InstructGPT at larger scale with additional engineering refinements.
 
@@ -6826,7 +6826,7 @@ This is a leap of **seven orders of magnitude**. Whether RLHF could work at this
 
 ### 16.2 The Three-Stage Pipeline at GPT-3 Scale
 
-InstructGPT follows the SFT $\to$ Reward Model $\to$ PPO pipeline from Chapter 15, but every stage contains critical engineering details.
+InstructGPT follows the SFT →\to→ Reward Model →\to→ PPO pipeline from Chapter 15, but every stage contains critical engineering details.
 
 #### Stage 1: Supervised Fine-Tuning
 
@@ -6851,15 +6851,15 @@ The remarkable fact: 13,000 demonstrations -- compared to GPT-3's pretraining on
 
 #### Stage 2: Reward Model Training
 
-**Data collection:** For each prompt, the SFT model and early PPO checkpoints generated K=4K = 4K=4 to K=9K = 9K=9 candidate responses. Labelers then **ranked** all responses for each prompt, producing a complete ordering y1≻y2≻⋯≻yKy_1 \succ y_2 \succ $\cdots \succ y_Ky1$≻y2≻⋯≻yK.
+**Data collection:** For each prompt, the SFT model and early PPO checkpoints generated K=4K = 4K=4 to K=9K = 9K=9 candidate responses. Labelers then **ranked** all responses for each prompt, producing a complete ordering y1≻y2≻⋯≻yKy_1 \succ y_2 \succ \cdots \succ y_Ky1​≻y2​≻⋯≻yK​.
 
-**Why ranking instead of pairwise comparison?** From a single ranking of KKK responses, (K2)\binom{K}{2}(2K) pairwise comparisons can be extracted. For K=9K = 9K=9, one ranking yields (92)=36\binom{9}{2} = 36(29)=36 training pairs. The cognitive overhead for the labeler is only marginally higher than comparing two responses (since the labeler reads all responses regardless), but the data yield is dramatically higher.
+**Why ranking instead of pairwise comparison?** From a single ranking of KKK responses, (K2)\binom{K}{2}(2K​) pairwise comparisons can be extracted. For K=9K = 9K=9, one ranking yields (92)=36\binom{9}{2} = 36(29​)=36 training pairs. The cognitive overhead for the labeler is only marginally higher than comparing two responses (since the labeler reads all responses regardless), but the data yield is dramatically higher.
 
 **Reward model architecture:** A 6B parameter GPT-3 model with the final unembedding layer replaced by a scalar projection head. The paper found that 6B was sufficient -- the 175B reward model did not significantly outperform the 6B version, likely because reward modeling is a simpler task than generation.
 
-**Training loss:** The Bradley-Terry loss from Chapter 15, applied to all (K2)\binom{K}{2}(2K) pairs from each ranking:
+**Training loss:** The Bradley-Terry loss from Chapter 15, applied to all (K2)\binom{K}{2}(2K​) pairs from each ranking:
 
-LRM(ϕ)=−1(K2)Ex,{yk}[∑(i,j):yi≻yjlog⁡σ(Rϕ(x,yi)−Rϕ(x,yj))]\mathcal{L}_{$$\text{RM}}(\phi) = -\frac{1}{\binom{K}{2}} \mathbb{E}_{x, \\{y_k\\}} \left[\sum_{(i,j): y_i \succ y_j} \log \sigma\left(R_\phi(x, y_i) - R_\phi(x, y_j)\right)\right]LRM($$ϕ)=−(2K)1Ex,{yk}(i,j):yi≻yj∑logσ(Rϕ(x,yi)−Rϕ(x,yj))
+LRM(ϕ)=−1(K2)Ex,{yk}[∑(i,j):yi≻yjlog⁡σ(Rϕ(x,yi)−Rϕ(x,yj))]\mathcal{L}_{\text{RM}}(\phi) = -\frac{1}{\binom{K}{2}} \mathbb{E}_{x, \\{y_k\\}} \left[\sum_{(i,j): y_i \succ y_j} \log \sigma\left(R_\phi(x, y_i) - R_\phi(x, y_j)\right)\right]LRM​(ϕ)=−(2K​)1​Ex,{yk​}​​(i,j):yi​≻yj​∑​logσ(Rϕ​(x,yi​)−Rϕ​(x,yj​))​
 
 **Critical engineering detail:** All comparison pairs from the same prompt were placed in the same minibatch. Scattering them across minibatches would allow the model to overfit to specific prompts by seeing repeated comparisons from the same prompt across multiple gradient steps.
 
@@ -6867,21 +6867,21 @@ LRM(ϕ)=−1(K2)Ex,{yk}[∑(i,j):yi≻yjlog⁡σ(Rϕ(x,yi)−Rϕ(x,yj))]\mathcal
 
 The PPO objective included three terms:
 
- objective(θ)=Ex∼D, y∼πθ(⋅∣x)[Rϕ(x,y)−βlog⁡πθ(y∣x)πSFT(y∣x)]+γEx∼Dpretrain[log⁡πθ(x)]$\text{objective}(\theta) = \mathbb{E}_{x \sim \mathcal{D},\; y \sim \pi_\theta(\cdot$ | $$\left[R_\phi(x, y) - \beta \log \frac{\pi_\theta(y$$ | $\text{SFT}}(y$ | x)}\right] + \gamma \mathbb{E}_{x \sim \mathcal{D}_{$\text{pretrain}}}\left[\log \pi_\theta(x)\right]objective($θ)=Ex∼D,y∼πθ(⋅∣x)[Rϕ(x,y)−βlogπSFT(y∣x)πθ(y∣x)]+γEx∼Dpretrain[logπθ(x)] 
+objective(θ)=Ex∼D, y∼πθ(⋅∣x)[Rϕ(x,y)−βlog⁡πθ(y∣x)πSFT(y∣x)]+γEx∼Dpretrain[log⁡πθ(x)]\text{objective}(\theta) = \mathbb{E}_{x \sim \mathcal{D},\; y \sim \pi_\theta(\cdot|x)}\left[R_\phi(x, y) - \beta \log \frac{\pi_\theta(y|x)}{\pi_{\text{SFT}}(y|x)}\right] + \gamma \mathbb{E}_{x \sim \mathcal{D}_{\text{pretrain}}}\left[\log \pi_\theta(x)\right]objective(θ)=Ex∼D,y∼πθ​(⋅∣x)​[Rϕ​(x,y)−βlogπSFT​(y∣x)πθ​(y∣x)​]+γEx∼Dpretrain​​[logπθ​(x)]
 
-The first two terms are the standard RLHF objective from Chapter 15. The third term -- **pretraining loss mixing** \-- is InstructGPT's engineering innovation: during RL training, a fraction of each batch consists of standard pretraining data (predict the next token on internet text), with a mixing coefficient $\gamma$.
+The first two terms are the standard RLHF objective from Chapter 15. The third term -- **pretraining loss mixing** \-- is InstructGPT's engineering innovation: during RL training, a fraction of each batch consists of standard pretraining data (predict the next token on internet text), with a mixing coefficient γ\gammaγ.
 
 **Why pretraining loss mixing?** Without it, RL training gradually degrades the model's general language capabilities. The model becomes very good at producing responses that score highly on the reward model but loses its ability to perform other tasks (translation, summarization, coding). This degradation on traditional NLP benchmarks is called the **alignment tax** \-- the cost of being helpful.
 
 Pretraining loss mixing acts as a regularizer: it maintains the model's general language capabilities by requiring it to continue performing well on standard language modeling, even as it optimizes for alignment.
 
-**Training hyperparameters:** KL penalty coefficient $\beta = 0.02$, PPO epochs K=4K = 4K=4, minibatch size 64, learning rate 1.41×10−51.41 $\times 10^{-5}1.41$×10−5.
+**Training hyperparameters:** KL penalty coefficient β=0.02\beta = 0.02β=0.02, PPO epochs K=4K = 4K=4, minibatch size 64, learning rate 1.41×10−51.41 \times 10^{-5}1.41×10−5.
 
 > **Cross-Disciplinary Connection**
 > 
 > _Multitask learning in neural networks_ : Pretraining loss mixing is a form of **multitask learning** (Caruana, 1997) -- training the model on multiple objectives simultaneously. The alignment objective is the primary task; the pretraining objective is an auxiliary task that provides a regularization effect. In multi-task learning, auxiliary tasks prevent overfitting to the primary task by maintaining diverse gradient signals. This is the same principle behind auxiliary losses in computer vision (e.g., intermediate classifiers in GoogLeNet/Inception) and multi-task RL (e.g., training an agent to play multiple games simultaneously to prevent overfitting to one game's reward structure).
 > 
-> _Economics -- hedging_ : Pretraining loss mixing is economically analogous to **hedging** \-- maintaining a diversified portfolio of objectives to protect against the risk that optimizing a single objective (alignment) degrades other valuable capabilities (general language ability). The mixing coefficient $\gamma$ controls the hedge ratio: too small and the model's general capabilities degrade; too large and alignment improvement is diluted.
+> _Economics -- hedging_ : Pretraining loss mixing is economically analogous to **hedging** \-- maintaining a diversified portfolio of objectives to protect against the risk that optimizing a single objective (alignment) degrades other valuable capabilities (general language ability). The mixing coefficient γ\gammaγ controls the hedge ratio: too small and the model's general capabilities degrade; too large and alignment improvement is diluted.
 
 * * *
 
@@ -6891,7 +6891,7 @@ The most striking finding in the InstructGPT paper:
 
 > **1.3B parameter InstructGPT is preferred over 175B parameter GPT-3 by human evaluators in 85% of comparisons.**
 
-This means that RLHF alignment delivered an improvement equivalent to scaling the model by more than 100x. In terms of the scaling laws from Chapters 5--6: the alignment gain from $\sim 10^4$ human preference labels exceeded the capability gain from $\sim 10^{11}$ additional parameters.
+This means that RLHF alignment delivered an improvement equivalent to scaling the model by more than 100x. In terms of the scaling laws from Chapters 5--6: the alignment gain from ∼104\sim 10^4∼104 human preference labels exceeded the capability gain from ∼1011\sim 10^{11}∼1011 additional parameters.
 
 The result is reported across three model sizes:
 
@@ -6943,8 +6943,8 @@ The 27% disagreement reflects genuine diversity in human preferences, not labele
 
 As described in Stage 2, InstructGPT used **ranking** (complete ordering of KKK responses) rather than simple pairwise comparison. The ranking approach has two advantages:
 
-  1. **Efficiency:** One ranking of KKK responses yields (K2)\binom{K}{2}(2K) comparison pairs, dramatically increasing data yield per labeling effort.
-  2. **Transitivity enforcement:** A ranking enforces transitive preferences by construction -- if y1y_1y1 is ranked above y2y_2y2 and y2y_2y2 above y3y_3y3, then y1y_1y1 is above y3y_3y3. This is consistent with the Bradley-Terry model's transitivity assumption (Chapter 15).
+  1. **Efficiency:** One ranking of KKK responses yields (K2)\binom{K}{2}(2K​) comparison pairs, dramatically increasing data yield per labeling effort.
+  2. **Transitivity enforcement:** A ranking enforces transitive preferences by construction -- if y1y_1y1​ is ranked above y2y_2y2​ and y2y_2y2​ above y3y_3y3​, then y1y_1y1​ is above y3y_3y3​. This is consistent with the Bradley-Terry model's transitivity assumption (Chapter 15).
 
 The disadvantage: ranking is slightly more cognitively demanding than pairwise comparison, especially for large KKK. Labelers must simultaneously compare all KKK responses and produce a complete ordering. For K>9K > 9K>9, this becomes impractical.
 
@@ -6966,14 +6966,14 @@ The pretraining loss mixing term (Section 16.2) mitigates the alignment tax but 
 
 InstructGPT provided the first large-scale empirical evidence of reward model overoptimization (Goodhart's Law, Chapter 15) in language models.
 
-The paper observed that as PPO training progressed, the reward model score continued to increase, but human evaluation scores plateaued and eventually decreased. The model was learning to exploit the reward model's blind spots -- generating responses that scored highly on RϕR_$\phiR$ϕ but were judged by humans as less helpful.
+The paper observed that as PPO training progressed, the reward model score continued to increase, but human evaluation scores plateaued and eventually decreased. The model was learning to exploit the reward model's blind spots -- generating responses that scored highly on RϕR_\phiRϕ​ but were judged by humans as less helpful.
 
 Specific patterns of reward hacking observed:
 
 * **Length exploitation:** The reward model learned a spurious correlation between response length and quality (longer responses in the training data tended to be more thorough). The policy learned to generate unnecessarily verbose responses.
 * **Hedging exploitation:** The reward model rewarded responses that acknowledged uncertainty. The policy learned to insert excessive hedging phrases ("It's important to note that...," "However, it should be mentioned that...") that diluted the response's actual content.
 
-The KL penalty $\beta$ controlled the severity of these effects: larger $\beta$ reduced overoptimization but also limited alignment improvement. The optimal $\beta$ was found by monitoring human evaluation scores during training and stopping when human scores began to decline -- an expensive process requiring ongoing human evaluation.
+The KL penalty β\betaβ controlled the severity of these effects: larger β\betaβ reduced overoptimization but also limited alignment improvement. The optimal β\betaβ was found by monitoring human evaluation scores during training and stopping when human scores began to decline -- an expensive process requiring ongoing human evaluation.
 
 **Sycophancy.** A related failure mode that has become increasingly recognized: RLHF-trained models tend to agree with the user even when the user is wrong. Because human evaluators prefer responses that validate their views, the reward model learns to assign higher scores to agreeable responses. The result is a model that produces confident, user-pleasing responses rather than accurate ones -- a subtle form of reward hacking where the model optimizes for evaluator satisfaction rather than truthfulness. Sycophancy is particularly dangerous because it is invisible to the user: the model appears helpful precisely when it is being least honest. Addressing sycophancy requires either diverse evaluator pools (reducing the correlation between evaluator preference and user agreement) or explicit anti-sycophancy objectives in the reward model.
 
@@ -6993,7 +6993,7 @@ The KL penalty $\beta$ controlled the severity of these effects: larger $\beta$ 
 
 ### Chapter Summary
 
-InstructGPT's significance is twofold: it proved that RLHF survives a seven-order-of-magnitude scale leap (from Christiano et al.'s 10410^4104-parameter agents to 1.75×10111.75$\times 10^{11}1.75$×1011-parameter GPT-3), and it demonstrated that alignment training can be more cost-effective than scaling — the 1.3B aligned model was preferred over the 175B unaligned model in 85% of comparisons, an effective capability multiplier exceeding 100x for instruction-following tasks. This result is task-specific: on tasks requiring raw knowledge, scale still wins. The best configuration is both aligned and large.
+InstructGPT's significance is twofold: it proved that RLHF survives a seven-order-of-magnitude scale leap (from Christiano et al.'s 10410^4104-parameter agents to 1.75×10111.75\times 10^{11}1.75×1011-parameter GPT-3), and it demonstrated that alignment training can be more cost-effective than scaling — the 1.3B aligned model was preferred over the 175B unaligned model in 85% of comparisons, an effective capability multiplier exceeding 100x for instruction-following tasks. This result is task-specific: on tasks requiring raw knowledge, scale still wins. The best configuration is both aligned and large.
 
 The engineering choices that made this work are as instructive as the headline result. SFT on just 13K demonstrations redirected GPT-3's capabilities into assistant format (validation loss rose after epoch 1, but RL initialization improved — the objective was behavioral redirection, not loss minimization). A 6B reward model sufficed for a 175B policy because reward modeling is a simpler task than generation. Pretraining loss mixing prevented the alignment tax by maintaining general language capabilities as an auxiliary objective during PPO.
 
@@ -7027,9 +7027,9 @@ The **alignment tax** is the slight degradation in performance on traditional NL
 
 **Pretraining loss mixing** mitigates this by adding a standard language modeling objective to the RL training:
 
-objective(θ)=E[Rϕ(x,y)−βDKL]⏟alignment+γE[log⁡πθ(x)]⏟pretraining$\text{objective}(\theta) = \underbrace{\mathbb{E}\left[R_\phi(x, y) - \beta D_{\text{KL}}\right]}_{\text{alignment}} + \gamma \underbrace{\mathbb{E}\left[\log \pi_\theta(x)\right]}_{\text{pretraining}}objective($θ)=alignmentE[Rϕ(x,y)−βDKL]+γpretrainingE[logπθ(x)]
+objective(θ)=E[Rϕ(x,y)−βDKL]⏟alignment+γE[log⁡πθ(x)]⏟pretraining\text{objective}(\theta) = \underbrace{\mathbb{E}\left[R_\phi(x, y) - \beta D_{\text{KL}}\right]}_{\text{alignment}} + \gamma \underbrace{\mathbb{E}\left[\log \pi_\theta(x)\right]}_{\text{pretraining}}objective(θ)=alignmentE[Rϕ​(x,y)−βDKL​]​​+γpretrainingE[logπθ​(x)]​​
 
-The pretraining term acts as a regularizer that maintains the model's general language capabilities while the alignment term improves instruction-following. This is multitask learning (Caruana, 1997): the pretraining objective is an auxiliary task whose gradient signal prevents the model from overfitting to the alignment objective. The mixing coefficient $\gamma$ controls the tradeoff: larger $\gamma$ reduces the alignment tax but dilutes the alignment benefit.
+The pretraining term acts as a regularizer that maintains the model's general language capabilities while the alignment term improves instruction-following. This is multitask learning (Caruana, 1997): the pretraining objective is an auxiliary task whose gradient signal prevents the model from overfitting to the alignment objective. The mixing coefficient γ\gammaγ controls the tradeoff: larger γ\gammaγ reduces the alignment tax but dilutes the alignment benefit.
 
 **16.3.** InstructGPT's inter-rater agreement was approximately 73%. If inter-rater agreement were 100%, would the resulting aligned model necessarily be better? Explain.
 
@@ -7069,14 +7069,14 @@ Answer
 **SFT demonstrations:**
 
 * 13,000 demonstrations at 10 minutes each = 130,000 minutes = 2,167 hours
-* At 15 USD/hour: 2,167 $\times$ 15 USD = **32,500 USD**
+* At 15 USD/hour: 2,167 ×\times× 15 USD = **32,500 USD**
 
 **Comparison rankings:**
 
-* The paper collected rankings, not raw pairwise comparisons. With K=4K = 4K=4 responses per prompt, each ranking yields (42)=6\binom{4}{2} = 6(24)=6 comparison pairs.
+* The paper collected rankings, not raw pairwise comparisons. With K=4K = 4K=4 responses per prompt, each ranking yields (42)=6\binom{4}{2} = 6(24​)=6 comparison pairs.
 * To produce ~33,000 comparison pairs: 33,000 / 6 = 5,500 ranking tasks
-* At 5 minutes per ranking: 5,500 $\times$ 5 = 27,500 minutes = 458 hours
-* At 15 USD/hour: 458 $\times$ 15 USD = **6,875 USD**
+* At 5 minutes per ranking: 5,500 ×\times× 5 = 27,500 minutes = 458 hours
+* At 15 USD/hour: 458 ×\times× 15 USD = **6,875 USD**
 
 **Total data collection cost: ~39,375 USD**
 
@@ -7171,7 +7171,7 @@ _Advantage:_ Computationally cheap -- KL is already computed for the PPO objecti
 
 Train multiple reward models (e.g., 3--5) on different subsets of the preference data. During PPO training, evaluate each generated response on all reward models. If the reward models agree (low variance across models), the reward signal is reliable. If they disagree (high variance), the response may be in a region where the reward model is unreliable -- potential overoptimization territory.
 
-_Formally:_ Flag overoptimization when Vark[R$\text{Var}_{k}[R_{\phi_k}(x, y)] > \tauVark[R$ for responses yyy that have high mean reward.
+_Formally:_ Flag overoptimization when Vark[Rϕk(x,y)]>τ\text{Var}_{k}[R_{\phi_k}(x, y)] > \tauVark​[Rϕk​​(x,y)]>τ for responses yyy that have high mean reward.
 
 _Advantage:_ Directly measures reward model uncertainty, which is the root cause of overoptimization. _Limitation:_ Requires training multiple reward models, increasing cost by 3--5x.
 
@@ -7216,7 +7216,7 @@ The RLHF pipeline from Chapters 15--16 works. InstructGPT proved that. But the p
   2. **Reward model training** requires a separate model, preference data, and careful batching.
   3. **PPO** requires online generation, advantage estimation (GAE), clipping, KL penalties, and extensive hyperparameter tuning (Chapter 14).
 
-The PPO stage is particularly expensive: as analyzed in Chapter 14 (Exercise 14.6), each PPO step requires ~214 forward-pass equivalents, dominated by autoregressive generation. And PPO training is fragile -- small changes to the learning rate, clip parameter ϵ$\epsilon$ϵ, or KL coefficient $\beta$ can destabilize training.
+The PPO stage is particularly expensive: as analyzed in Chapter 14 (Exercise 14.6), each PPO step requires ~214 forward-pass equivalents, dominated by autoregressive generation. And PPO training is fragile -- small changes to the learning rate, clip parameter ϵ\epsilonϵ, or KL coefficient β\betaβ can destabilize training.
 
 DPO's central question: **Can we achieve the same alignment quality without the reward model and without reinforcement learning?**
 
@@ -7230,19 +7230,19 @@ The answer is yes -- under specific assumptions. The key insight: under the Brad
 
 From Chapter 15, the RLHF objective with KL penalty is:
 
-max⁡θ Ex∼D, y∼πθ(⋅∣x)[Rϕ(x,y)]−β DKL[πθ(⋅∣x)∥πref(⋅∣x)]\max_\theta \; \mathbb{E}_{x \sim \mathcal{D},\; y \sim \pi_\theta(\cdot| $\left[R_\phi(x, y)\right] - \beta \, D_{\text{KL}}\left[\pi_\theta(\cdot$ |x) \| $\text{ref}}(\cdot$| x)$\right]$θmaxEx∼D,y∼πθ(⋅∣x)[Rϕ(x,y)]−βDKL[πθ(⋅∣x)∥πref(⋅∣x)] 
+max⁡θ Ex∼D, y∼πθ(⋅∣x)[Rϕ(x,y)]−β DKL[πθ(⋅∣x)∥πref(⋅∣x)]\max_\theta \; \mathbb{E}_{x \sim \mathcal{D},\; y \sim \pi_\theta(\cdot|x)}\left[R_\phi(x, y)\right] - \beta \, D_{\text{KL}}\left[\pi_\theta(\cdot|x) \| \pi_{\text{ref}}(\cdot|x)\right]θmax​Ex∼D,y∼πθ​(⋅∣x)​[Rϕ​(x,y)]−βDKL​[πθ​(⋅∣x)∥πref​(⋅∣x)]
 
-where πref\pi_{$\text{ref}}$πref is the reference policy (typically the SFT model).
+where πref\pi_{\text{ref}}πref​ is the reference policy (typically the SFT model).
 
 #### Step 2: The Closed-Form Optimal Policy
 
 As derived in Chapter 15 (Section 15.4), the optimal policy for this objective satisfies:
 
-π∗(y∣x)=1Z(x)πref(y∣x)exp⁡(R(x,y)β)\pi^*(y| $$\frac{1}{Z(x)} \pi_{\text{ref}}(y$$ | $$\left(\frac{R(x, y)}{\beta}\right)$$ 
+π∗(y∣x)=1Z(x)πref(y∣x)exp⁡(R(x,y)β)\pi^*(y|x) = \frac{1}{Z(x)} \pi_{\text{ref}}(y|x) \exp\left(\frac{R(x, y)}{\beta}\right)π∗(y∣x)=Z(x)1​πref​(y∣x)exp(βR(x,y)​)
 
 where the partition function is:
 
-$$\sum_y \pi_{\text{ref}}(y|x) \exp\left(\frac{R(x, y)}{\beta}\right)Z(x)=y$$
+Z(x)=∑yπref(y∣x)exp⁡(R(x,y)β)Z(x) = \sum_y \pi_{\text{ref}}(y|x) \exp\left(\frac{R(x, y)}{\beta}\right)Z(x)=y∑​πref​(y∣x)exp(βR(x,y)​)
 
 This follows from the calculus of variations: the KL-constrained optimization has a Gibbs distribution as its solution, with the reference policy as the base measure and the reward as the energy function.
 
@@ -7250,53 +7250,53 @@ This follows from the calculus of variations: the KL-constrained optimization ha
 
 Rearrange the optimal policy equation to express the reward as a function of the policy:
 
-π∗(y∣x)=1Z(x)πref(y∣x)exp⁡(R(x,y)β)\pi^*(y| $$\frac{1}{Z(x)} \pi_{\text{ref}}(y$$ | x) \exp$$\left(\frac{R(x, y)}{\beta}\right)$$π∗(y∣x)=Z(x)1πref(y∣x)exp(βR(x,y)) π∗(y∣x)πref(y∣x)=1Z(x)exp⁡(R(x,y)β)\frac{\pi^*(y | $\text{ref}}(y$ | $$\frac{1}{Z(x)} \exp\left(\frac{R(x, y)}{\beta}\right)$$ 
+π∗(y∣x)=1Z(x)πref(y∣x)exp⁡(R(x,y)β)\pi^*(y|x) = \frac{1}{Z(x)} \pi_{\text{ref}}(y|x) \exp\left(\frac{R(x, y)}{\beta}\right)π∗(y∣x)=Z(x)1​πref​(y∣x)exp(βR(x,y)​) π∗(y∣x)πref(y∣x)=1Z(x)exp⁡(R(x,y)β)\frac{\pi^*(y|x)}{\pi_{\text{ref}}(y|x)} = \frac{1}{Z(x)} \exp\left(\frac{R(x, y)}{\beta}\right)πref​(y∣x)π∗(y∣x)​=Z(x)1​exp(βR(x,y)​)
 
 Taking logarithms:
 
- log⁡π∗(y∣x)πref(y∣x)=R(x,y)β−log⁡Z(x)\log $$\frac{\pi^*(y$$ | $\text{ref}}(y$ | $$} = \frac{R(x, y)}{\beta} - \log Z(x)logπref(y∣x)π∗(y∣x)=βR(x,y)−logZ($$ 
+log⁡π∗(y∣x)πref(y∣x)=R(x,y)β−log⁡Z(x)\log \frac{\pi^*(y|x)}{\pi_{\text{ref}}(y|x)} = \frac{R(x, y)}{\beta} - \log Z(x)logπref​(y∣x)π∗(y∣x)​=βR(x,y)​−logZ(x)
 
 Solving for the reward:
 
- R(x,y)=βlog⁡π∗(y∣x)πref(y∣x)+βlog⁡Z(x)R(x, y) = \beta \log $$\frac{\pi^*(y$$ | $\text{ref}}(y$ | $} + \beta \log Z(x)R(x,y)=βlogπref(y∣x)π∗(y∣x)+βlogZ($ 
+R(x,y)=βlog⁡π∗(y∣x)πref(y∣x)+βlog⁡Z(x)R(x, y) = \beta \log \frac{\pi^*(y|x)}{\pi_{\text{ref}}(y|x)} + \beta \log Z(x)R(x,y)=βlogπref​(y∣x)π∗(y∣x)​+βlogZ(x)
 
-This is the crucial re-parameterization: **the reward is fully determined by the log-ratio of the optimal policy to the reference policy** , plus a prompt-dependent constant βlog⁡Z(x)$\beta \log Z(x)$βlogZ(x).
+This is the crucial re-parameterization: **the reward is fully determined by the log-ratio of the optimal policy to the reference policy** , plus a prompt-dependent constant βlog⁡Z(x)\beta \log Z(x)βlogZ(x).
 
 #### Step 4: Substitute into the Bradley-Terry Model
 
 The Bradley-Terry preference model (Chapter 15) gives:
 
-$P(y_w \succ y_l | x) = \sigma(R(x, y_w) - R(x, y_l))$
+P(yw≻yl∣x)=σ(R(x,yw)−R(x,yl))P(y_w \succ y_l | x) = \sigma(R(x, y_w) - R(x, y_l))P(yw​≻yl​∣x)=σ(R(x,yw​)−R(x,yl​))
 
 Substituting the re-parameterized reward:
 
-P(yw≻yl∣x)=σ(βlog⁡π∗(yw∣x)πref(yw∣x)+βlog⁡Z(x)−βlog⁡π∗(yl∣x)πref(yl∣x)−βlog⁡Z(x))P(y_w \succ y_l | $$\left(\beta \log \frac{\pi^*(y_w$$| $\text{ref}}(y_w$ | x)} + \beta \log Z(x) - \beta \log $$\frac{\pi^*(y_l$$ | $\text{ref}}(y_l$ | x)} - $\beta \log Z(x)\right)P(yw$≻yl∣x)=σ(βlogπref(yw∣x)π∗(yw∣x)+βlogZ(x)−βlogπref(yl∣x)π∗(yl∣x)−βlogZ(x)) 
+P(yw≻yl∣x)=σ(βlog⁡π∗(yw∣x)πref(yw∣x)+βlog⁡Z(x)−βlog⁡π∗(yl∣x)πref(yl∣x)−βlog⁡Z(x))P(y_w \succ y_l | x) = \sigma\left(\beta \log \frac{\pi^*(y_w|x)}{\pi_{\text{ref}}(y_w|x)} + \beta \log Z(x) - \beta \log \frac{\pi^*(y_l|x)}{\pi_{\text{ref}}(y_l|x)} - \beta \log Z(x)\right)P(yw​≻yl​∣x)=σ(βlogπref​(yw​∣x)π∗(yw​∣x)​+βlogZ(x)−βlogπref​(yl​∣x)π∗(yl​∣x)​−βlogZ(x))
 
 **The partition function cancels:**
 
-P(yw≻yl∣x)=σ(βlog⁡π∗(yw∣x)πref(yw∣x)−βlog⁡π∗(yl∣x)πref(yl∣x))P(y_w \succ y_l | $$\left(\beta \log \frac{\pi^*(y_w$$| $\text{ref}}(y_w$ | $$\frac{\pi^*(y_l$$ | $\text{ref}}(y_l$ | x)}$\right)P(yw$≻yl∣x)=σ(βlogπref(yw∣x)π∗(yw∣x)−βlogπref(yl∣x)π∗(yl∣x)) 
+P(yw≻yl∣x)=σ(βlog⁡π∗(yw∣x)πref(yw∣x)−βlog⁡π∗(yl∣x)πref(yl∣x))P(y_w \succ y_l | x) = \sigma\left(\beta \log \frac{\pi^*(y_w|x)}{\pi_{\text{ref}}(y_w|x)} - \beta \log \frac{\pi^*(y_l|x)}{\pi_{\text{ref}}(y_l|x)}\right)P(yw​≻yl​∣x)=σ(βlogπref​(yw​∣x)π∗(yw​∣x)​−βlogπref​(yl​∣x)π∗(yl​∣x)​)
 
-This cancellation is the mathematical heart of DPO. The partition function Z(x)Z(x)Z(x) \-- which is intractable to compute (it requires summing over all possible responses) -- appears with the same sign in both the ywy_wyw and yly_lyl terms and cancels exactly. This cancellation is possible because the Bradley-Terry model depends only on **reward differences** , not absolute rewards. Any additive constant (including βlog⁡Z(x)$\beta \log Z(x)$βlogZ(x)) cancels in the difference.
+This cancellation is the mathematical heart of DPO. The partition function Z(x)Z(x)Z(x) \-- which is intractable to compute (it requires summing over all possible responses) -- appears with the same sign in both the ywy_wyw​ and yly_lyl​ terms and cancels exactly. This cancellation is possible because the Bradley-Terry model depends only on **reward differences** , not absolute rewards. Any additive constant (including βlog⁡Z(x)\beta \log Z(x)βlogZ(x)) cancels in the difference.
 
 #### Step 5: The DPO Loss
 
-Replace the optimal policy π∗$\pi^*$π∗ with the trainable policy $\pi_\theta$ and take the negative log-likelihood:
+Replace the optimal policy π∗\pi^*π∗ with the trainable policy πθ\pi_\thetaπθ​ and take the negative log-likelihood:
 
- LDPO(θ)=−E(x,yw,yl)∼D[log⁡σ(βlog⁡πθ(yw∣x)πref(yw∣x)−βlog⁡πθ(yl∣x)πref(yl∣x))]\mathcal{L}_{$$\text{DPO}}(\theta) = -\mathbb{E}_{(x, y_w, y_l) \sim \mathcal{D}}\left[\log \sigma\left(\beta \log \frac{\pi_\theta(y_w$$ | $\text{ref}}(y_w$ | $$\frac{\pi_\theta(y_l$$ | $\text{ref}}(y_l$ | x)}$\right)\right]LDPO($θ)=−E(x,yw,yl)∼D[logσ(βlogπref(yw∣x)πθ(yw∣x)−βlogπref(yl∣x)πθ(yl∣x))] 
+LDPO(θ)=−E(x,yw,yl)∼D[log⁡σ(βlog⁡πθ(yw∣x)πref(yw∣x)−βlog⁡πθ(yl∣x)πref(yl∣x))]\mathcal{L}_{\text{DPO}}(\theta) = -\mathbb{E}_{(x, y_w, y_l) \sim \mathcal{D}}\left[\log \sigma\left(\beta \log \frac{\pi_\theta(y_w|x)}{\pi_{\text{ref}}(y_w|x)} - \beta \log \frac{\pi_\theta(y_l|x)}{\pi_{\text{ref}}(y_l|x)}\right)\right]LDPO​(θ)=−E(x,yw​,yl​)∼D​[logσ(βlogπref​(yw​∣x)πθ​(yw​∣x)​−βlogπref​(yl​∣x)πθ​(yl​∣x)​)]
 
-This substitution is an approximation: it assumes that the parametric family $\pi_\theta$ is expressive enough to represent (or closely approximate) the true optimal policy π∗$\pi^*$π∗. If the model is too small to represent π∗$\pi^*$π∗, DPO will find the best approximation within the family — but the gap between this approximation and the true optimum may cause DPO to underperform relative to RLHF, which can partially compensate through online exploration. This expressiveness assumption is formalized as one of the three equivalence conditions in Section 17.4.
+This substitution is an approximation: it assumes that the parametric family πθ\pi_\thetaπθ​ is expressive enough to represent (or closely approximate) the true optimal policy π∗\pi^*π∗. If the model is too small to represent π∗\pi^*π∗, DPO will find the best approximation within the family — but the gap between this approximation and the true optimum may cause DPO to underperform relative to RLHF, which can partially compensate through online exploration. This expressiveness assumption is formalized as one of the three equivalence conditions in Section 17.4.
 
 This is the **DPO loss function**. It requires only:
 
-  1. The current policy $\pi_\theta$ (the model being trained)
-  2. The reference policy πref\pi_{$\text{ref}}$πref (the SFT model, frozen)
-  3. Preference pairs (x,yw,yl)(x, y_w, y_l)(x,yw,yl) from the dataset
+  1. The current policy πθ\pi_\thetaπθ​ (the model being trained)
+  2. The reference policy πref\pi_{\text{ref}}πref​ (the SFT model, frozen)
+  3. Preference pairs (x,yw,yl)(x, y_w, y_l)(x,yw​,yl​) from the dataset
 
 No reward model. No PPO. No online generation. No advantage estimation. No clipping.
 
 > **Cross-Disciplinary Connection**
 > 
-> _Statistical physics -- free energy_ : The DPO derivation mirrors the relationship between the canonical ensemble and the free energy in statistical physics. The partition function Z(x)Z(x)Z(x) is the analog of the partition function in thermodynamics: it normalizes the Boltzmann distribution (the optimal policy), is intractable to compute directly, but cancels when computing observable quantities (preference probabilities). The "free energy" F=−βlog⁡ZF = -$\beta \log ZF=$−βlogZ contains all thermodynamic information, just as the implicit reward in DPO contains all preference information. The cancellation of ZZZ in the DPO derivation is analogous to the cancellation of the partition function when computing energy differences between two microstates -- a standard technique in computational physics (e.g., the Metropolis algorithm in Monte Carlo simulation).
+> _Statistical physics -- free energy_ : The DPO derivation mirrors the relationship between the canonical ensemble and the free energy in statistical physics. The partition function Z(x)Z(x)Z(x) is the analog of the partition function in thermodynamics: it normalizes the Boltzmann distribution (the optimal policy), is intractable to compute directly, but cancels when computing observable quantities (preference probabilities). The "free energy" F=−βlog⁡ZF = -\beta \log ZF=−βlogZ contains all thermodynamic information, just as the implicit reward in DPO contains all preference information. The cancellation of ZZZ in the DPO derivation is analogous to the cancellation of the partition function when computing energy differences between two microstates -- a standard technique in computational physics (e.g., the Metropolis algorithm in Monte Carlo simulation).
 > 
 > _Economics -- willingness-to-pay differences_ : In discrete choice econometrics (McFadden, 1974), the absolute utility of an option is unidentifiable -- only utility differences affect choice probabilities (Chapter 15). The partition function in DPO plays the same role as the outside option normalization in multinomial logit: it is a level constant that cancels in the choice probability and therefore need not be estimated. DPO exploits this identification result to eliminate the reward model, just as economists exploit it to estimate demand without knowing consumers' absolute utility levels.
 
@@ -7306,21 +7306,21 @@ No reward model. No PPO. No online generation. No advantage estimation. No clipp
 
 The DPO loss can be rewritten to reveal its intuition. Define the **implicit reward** of a response under the current policy:
 
- $$\hat{R}_\theta(x, y) = \beta \log \frac{\pi_\theta(y$$ | $\text{ref}}(y$ | $x)$ 
+R^θ(x,y)=βlog⁡πθ(y∣x)πref(y∣x)\hat{R}_\theta(x, y) = \beta \log \frac{\pi_\theta(y|x)}{\pi_{\text{ref}}(y|x)}R^θ​(x,y)=βlogπref​(y∣x)πθ​(y∣x)​
 
-This is the log-probability ratio scaled by $\beta$. A response that the current policy assigns much higher probability than the reference policy has a high implicit reward; a response that is downweighted relative to the reference has a low implicit reward.
+This is the log-probability ratio scaled by β\betaβ. A response that the current policy assigns much higher probability than the reference policy has a high implicit reward; a response that is downweighted relative to the reference has a low implicit reward.
 
 The DPO loss becomes:
 
-LDPO(θ)=−E[log⁡σ(R^θ(x,yw)−R^θ(x,yl))]\mathcal{L}_{$\text{DPO}}(\theta) = -\mathbb{E}\left[\log \sigma\left(\hat{R}_\theta(x, y_w) - \hat{R}_\theta(x, y_l)\right)\right]LDPO($θ)=−E[logσ(R^θ(x,yw)−R^θ(x,yl))]
+LDPO(θ)=−E[log⁡σ(R^θ(x,yw)−R^θ(x,yl))]\mathcal{L}_{\text{DPO}}(\theta) = -\mathbb{E}\left[\log \sigma\left(\hat{R}_\theta(x, y_w) - \hat{R}_\theta(x, y_l)\right)\right]LDPO​(θ)=−E[logσ(R^θ​(x,yw​)−R^θ​(x,yl​))]
 
 This says: **train the policy so that the implicit reward of the preferred response exceeds the implicit reward of the dispreferred response.** In other words, the policy should assign relatively higher probability (compared to the reference) to preferred responses than to dispreferred responses.
 
 The gradient of the DPO loss has a revealing form:
 
- ∇θLDPO∝−σ(−R^θ(x,yw)+R^θ(x,yl))⏟weighting[∇θlog⁡πθ(yw∣x)−∇θlog⁡πθ(yl∣x)]\nabla_\theta \mathcal{L}_{$\text{DPO}} \propto -\underbrace{\sigma(-\hat{R}_\theta(x, y_w) + \hat{R}_\theta(x, y_l))}_{\text{weighting}} \left[\nabla_\theta \log \pi_\theta(y_w$ |x) - \nabla_\theta \log \pi_\theta(y_l| x)$\right]$∇θLDPO∝−weightingσ(−R^θ(x,yw)+R^θ(x,yl))[∇θlogπθ(yw∣x)−∇θlogπθ(yl∣x)] 
+∇θLDPO∝−σ(−R^θ(x,yw)+R^θ(x,yl))⏟weighting[∇θlog⁡πθ(yw∣x)−∇θlog⁡πθ(yl∣x)]\nabla_\theta \mathcal{L}_{\text{DPO}} \propto -\underbrace{\sigma(-\hat{R}_\theta(x, y_w) + \hat{R}_\theta(x, y_l))}_{\text{weighting}} \left[\nabla_\theta \log \pi_\theta(y_w|x) - \nabla_\theta \log \pi_\theta(y_l|x)\right]∇θ​LDPO​∝−weightingσ(−R^θ​(x,yw​)+R^θ​(x,yl​))​​[∇θ​logπθ​(yw​∣x)−∇θ​logπθ​(yl​∣x)]
 
-The gradient increases the log-probability of ywy_wyw and decreases the log-probability of yly_lyl, weighted by how "wrong" the current policy is (if the policy already strongly prefers ywy_wyw, the sigmoid weight is small and the gradient is weak). This automatic weighting provides an implicit curriculum: the model focuses on preference pairs where it is currently most wrong.
+The gradient increases the log-probability of ywy_wyw​ and decreases the log-probability of yly_lyl​, weighted by how "wrong" the current policy is (if the policy already strongly prefers ywy_wyw​, the sigmoid weight is small and the gradient is weak). This automatic weighting provides an implicit curriculum: the model focuses on preference pairs where it is currently most wrong.
 
 * * *
 
@@ -7332,7 +7332,7 @@ Dimension | RLHF (PPO) | DPO
 **Models required** | Policy + Reference + Reward + Value | Policy + Reference  
 **Online generation** | Yes (every PPO step) | No (uses pre-collected data)  
 **Computational cost** | ~35x higher per step (Ch. 14) | Comparable to supervised fine-tuning  
-**Hyperparameters** | $\epsilon$, β\betaβ, learning rate, GAE λ\lambdaλ, KKK epochs | $\beta$ 
+**Hyperparameters** | ϵ\epsilonϵ, β\betaβ, learning rate, GAE λ\lambdaλ, KKK epochs | β\betaβ, learning rate  
 **Training stability** | Sensitive to hyperparameters | More stable (supervised objective)  
 **Assumptions** | Bradley-Terry preferences | Bradley-Terry preferences + KL-constrained optimality  
 **Data requirements** | Online (generated during training) | Offline (pre-collected preference pairs)  
@@ -7342,9 +7342,9 @@ Dimension | RLHF (PPO) | DPO
 
 DPO is equivalent to RLHF **under specific assumptions** :
 
-  1. **The Bradley-Terry model is correct.** Human preferences are well-modeled by P(yw≻yl)=σ(R(yw)−R(yl))P(y_w $\succ y_l) = \sigma(R(y_w) - R(y_l))P(yw$≻yl)=σ(R(yw)−R(yl)) for some scalar reward RRR.
+  1. **The Bradley-Terry model is correct.** Human preferences are well-modeled by P(yw≻yl)=σ(R(yw)−R(yl))P(y_w \succ y_l) = \sigma(R(y_w) - R(y_l))P(yw​≻yl​)=σ(R(yw​)−R(yl​)) for some scalar reward RRR.
   2. **The KL-constrained optimal policy is the target.** The desired alignment outcome is exactly the policy that maximizes reward subject to a KL constraint.
-  3. **The policy class is rich enough.** The parametric family $\pi_\theta$ can represent the true optimal policy.
+  3. **The policy class is rich enough.** The parametric family πθ\pi_\thetaπθ​ can represent the true optimal policy.
 
 When these assumptions hold, DPO and RLHF converge to the same solution. When they do not, the methods may differ -- and neither is guaranteed to be superior.
 
@@ -7430,7 +7430,7 @@ These questions define the frontier of alignment research. This volume does not 
 
 ### Chapter Summary
 
-DPO's contribution is not a new training algorithm but a mathematical observation: the reward model was never a separate entity — it was always implicit in the policy. The five-step derivation makes this precise. The KL-constrained RLHF objective has a closed-form Gibbs solution; rearranging that solution expresses the reward as a function of the policy-to-reference log-ratio plus an intractable partition function Z(x)Z(x)Z(x); substituting into Bradley-Terry causes Z(x)Z(x)Z(x) to cancel (because preferences depend only on reward differences); and replacing the theoretical optimum π∗$\pi^*$π∗ with the trainable $\pi_\theta$ yields a supervised loss that requires no reward model, no RL loop, and no online generation. The result is ~35x cheaper than PPO, with two hyperparameters instead of five-plus.
+DPO's contribution is not a new training algorithm but a mathematical observation: the reward model was never a separate entity — it was always implicit in the policy. The five-step derivation makes this precise. The KL-constrained RLHF objective has a closed-form Gibbs solution; rearranging that solution expresses the reward as a function of the policy-to-reference log-ratio plus an intractable partition function Z(x)Z(x)Z(x); substituting into Bradley-Terry causes Z(x)Z(x)Z(x) to cancel (because preferences depend only on reward differences); and replacing the theoretical optimum π∗\pi^*π∗ with the trainable πθ\pi_\thetaπθ​ yields a supervised loss that requires no reward model, no RL loop, and no online generation. The result is ~35x cheaper than PPO, with two hyperparameters instead of five-plus.
 
 The equivalence between DPO and RLHF holds under three conditions: the Bradley-Terry model accurately captures preferences, the KL-constrained optimum is the true alignment target, and the policy class is expressive enough to represent the optimal policy. When any condition fails — non-transitive preferences, hard safety constraints, or an undersized model — the methods diverge, and neither is guaranteed superior. DPO's principal vulnerability is its reliance on offline data: it cannot explore beyond the pre-collected preference pairs, so stale or unrepresentative data limits its effectiveness.
 
@@ -7444,19 +7444,19 @@ Beyond RLHF and DPO, the chapter surveyed three alignment frontiers. Constitutio
 
 Answer
 
-The partition function Z(x)Z(x)Z(x) cancels because the Bradley-Terry preference model depends only on **reward differences** between the preferred and dispreferred responses, and βlog⁡Z(x)$\beta \log Z(x)$βlogZ(x) is an additive constant that appears identically in both rewards and therefore cancels in the difference.
+The partition function Z(x)Z(x)Z(x) cancels because the Bradley-Terry preference model depends only on **reward differences** between the preferred and dispreferred responses, and βlog⁡Z(x)\beta \log Z(x)βlogZ(x) is an additive constant that appears identically in both rewards and therefore cancels in the difference.
 
-This cancellation is essential because Z(x)=∑yπref(y∣x)exp⁡(R(x,y)/β)Z(x) = $$\sum_y \pi_{\text{ref}}(y|x) \exp(R(x,y)/\beta)Z(x)=$$∑yπref(y∣x)exp(R(x,y)/β) requires summing over all possible responses y \-- an intractable computation for any real language model (the sum is over $\sim 50{,}000^{200}$ possible 200-token responses). If Z(x)Z(x)Z(x) did not cancel, DPO would require computing this intractable sum, making it no simpler than RLHF.
+This cancellation is essential because Z(x)=∑yπref(y∣x)exp⁡(R(x,y)/β)Z(x) = \sum_y \pi_{\text{ref}}(y|x) \exp(R(x,y)/\beta)Z(x)=∑y​πref​(y∣x)exp(R(x,y)/β) requires summing over all possible responses yyy \-- an intractable computation for any real language model (the sum is over ∼50,000200\sim 50{,}000^{200}∼50,000200 possible 200-token responses). If Z(x)Z(x)Z(x) did not cancel, DPO would require computing this intractable sum, making it no simpler than RLHF.
 
 **17.2.** The DPO loss increases the probability of preferred responses and decreases the probability of dispreferred responses, relative to the reference policy. Explain how the sigmoid weighting factor in the gradient provides an implicit curriculum. Reference the concept of importance sampling from Chapter 12.
 
 Answer
 
-The gradient of the DPO loss is weighted by σ(−R^θ(x,yw)+R^θ(x,yl))\sigma(-$\hat{R}_\theta(x, y_w) + \hat{R}_\theta(x, y_l))$σ(−R^θ(x,yw)+R^θ(x,yl)), which is large when the current policy assigns a higher implicit reward to the dispreferred response than to the preferred response (the policy is "wrong"), and small when the policy already correctly prefers ywy_wyw (the policy is "right").
+The gradient of the DPO loss is weighted by σ(−R^θ(x,yw)+R^θ(x,yl))\sigma(-\hat{R}_\theta(x, y_w) + \hat{R}_\theta(x, y_l))σ(−R^θ​(x,yw​)+R^θ​(x,yl​)), which is large when the current policy assigns a higher implicit reward to the dispreferred response than to the preferred response (the policy is "wrong"), and small when the policy already correctly prefers ywy_wyw​ (the policy is "right").
 
 This provides an **implicit curriculum** : early in training, most preference pairs are "wrong" (the untrained policy has no preference), so all pairs contribute roughly equally. As training progresses, the policy learns to correctly order most pairs, and the sigmoid weighting concentrates the gradient on the remaining "hard" pairs -- those where the policy still disagrees with the human preference.
 
-**Connection to importance sampling (Chapter 12):** In importance sampling, the ratio rt(θ)=πθ/πoldr_t(\theta) = \pi_\theta / \pi_{$\text{old}}rt($θ)=πθ/πold reweights samples from the old policy to estimate the gradient of the new policy. The sigmoid weighting in DPO serves a similar reweighting function: it adjusts the contribution of each preference pair based on how "surprising" the pair is to the current policy. Pairs that the policy already handles correctly (unsurprising) get downweighted; pairs that the policy handles incorrectly (surprising) get upweighted. This is related to the general principle that learning is most efficient when focused on the boundary of the model's current knowledge.
+**Connection to importance sampling (Chapter 12):** In importance sampling, the ratio rt(θ)=πθ/πoldr_t(\theta) = \pi_\theta / \pi_{\text{old}}rt​(θ)=πθ​/πold​ reweights samples from the old policy to estimate the gradient of the new policy. The sigmoid weighting in DPO serves a similar reweighting function: it adjusts the contribution of each preference pair based on how "surprising" the pair is to the current policy. Pairs that the policy already handles correctly (unsurprising) get downweighted; pairs that the policy handles incorrectly (surprising) get upweighted. This is related to the general principle that learning is most efficient when focused on the boundary of the model's current knowledge.
 
 **17.3.** Under what conditions is DPO equivalent to RLHF? State each assumption and give a concrete example of how violating it could cause the two methods to diverge.
 
@@ -7464,15 +7464,15 @@ Answer
 
 DPO is equivalent to RLHF under three assumptions:
 
-  1. **Bradley-Terry preferences.** Human preferences are well-modeled by P(yw≻yl)=σ(R(yw)−R(yl))P(y_w $\succ y_l) = \sigma(R(y_w) - R(y_l))P(yw$≻yl)=σ(R(yw)−R(yl)) for a scalar reward RRR.
+  1. **Bradley-Terry preferences.** Human preferences are well-modeled by P(yw≻yl)=σ(R(yw)−R(yl))P(y_w \succ y_l) = \sigma(R(y_w) - R(y_l))P(yw​≻yl​)=σ(R(yw​)−R(yl​)) for a scalar reward RRR.
 
 _Violation example:_ If human preferences are non-transitive (A > B, B > C, but C > A) -- as can happen when different labelers value different quality dimensions -- no scalar reward function can represent them, and the Bradley-Terry model is misspecified. DPO inherits this misspecification directly, while RLHF's reward model may partially smooth over it through its training.
 
-  2. **The optimal policy is the KL-constrained solution.** The desired alignment outcome is exactly the policy π∗∝πrefexp⁡(R/β)\pi^* \propto \pi_{$\text{ref}} \exp(R/\beta)$π∗∝πrefexp(R/β).
+  2. **The optimal policy is the KL-constrained solution.** The desired alignment outcome is exactly the policy π∗∝πrefexp⁡(R/β)\pi^* \propto \pi_{\text{ref}} \exp(R/\beta)π∗∝πref​exp(R/β).
 
 _Violation example:_ If the desired alignment requires hard constraints (never produce toxic content, regardless of the reward), the KL-constrained soft optimum may not satisfy these constraints. RLHF with additional safety filters can enforce hard constraints; DPO cannot.
 
-  3. **Sufficient policy class expressiveness.** The parametric family $\pi_\theta$ can represent the optimal policy.
+  3. **Sufficient policy class expressiveness.** The parametric family πθ\pi_\thetaπθ​ can represent the optimal policy.
 
 _Violation example:_ If the model is too small to represent the optimal policy (e.g., a 1B model trying to match the optimal policy of a 175B model), both methods underperform, but they may underperform differently -- RLHF's online exploration may find better approximations than DPO's offline optimization.
 
@@ -7485,9 +7485,9 @@ Answer
 **Cost analysis from Chapter 14:**
 
 * PPO: ~214 forward-pass equivalents per batch (dominated by autoregressive generation).
-* DPO: ~5--7 forward-pass equivalents per batch (2 forward passes through $\pi_\theta$ for ywy_wyw and yly_lyl, 2 through πref\pi_{$\text{ref}}$πref, plus 1 backward pass).
+* DPO: ~5--7 forward-pass equivalents per batch (2 forward passes through πθ\pi_\thetaπθ​ for ywy_wyw​ and yly_lyl​, 2 through πref\pi_{\text{ref}}πref​, plus 1 backward pass).
 
-**Training time ratio:** DPO / PPO $\approx$ 6 / 214 $\approx$ 1/35. **DPO is approximately 35x faster per training step.**
+**Training time ratio:** DPO / PPO ≈\approx≈ 6 / 214 ≈\approx≈ 1/35. **DPO is approximately 35x faster per training step.**
 
 **Additional considerations:**
 
@@ -7501,41 +7501,41 @@ Answer
 
 **Caveat:** If the 50,000 preference pairs were generated by a much weaker model than the 13B target, DPO may suffer from distribution mismatch. In this case, consider generating new preference pairs using the SFT version of the 13B model before running DPO.
 
- **17.5.** Derive the gradient of the DPO loss with respect to $\theta$. Show that it increases log⁡πθ(yw∣x)\log \pi_\theta(y_w |x)logπθ(yw∣x) and decreases log⁡πθ(yl∣x)\log \pi_\theta(y_l|x)logπθ(yl∣x), weighted by the model's current "error" on each preference pair.
+**17.5.** Derive the gradient of the DPO loss with respect to θ\thetaθ. Show that it increases log⁡πθ(yw∣x)\log \pi_\theta(y_w|x)logπθ​(yw​∣x) and decreases log⁡πθ(yl∣x)\log \pi_\theta(y_l|x)logπθ​(yl​∣x), weighted by the model's current "error" on each preference pair.
 
 Answer
 
 Starting from the DPO loss for a single preference pair:
 
- ℓ(θ)=−log⁡σ(βlog⁡πθ(yw∣x)πref(yw∣x)−βlog⁡πθ(yl∣x)πref(yl∣x))\ell(\theta) = -\log \sigma$$\left(\beta \log \frac{\pi_\theta(y_w$$ | $\text{ref}}(y_w$ | $$\frac{\pi_\theta(y_l$$ | $\text{ref}}(y_l$ | x)}$\right)$ℓ(θ)=−logσ(βlogπref(yw∣x)πθ(yw∣x)−βlogπref(yl∣x)πθ(yl∣x)) 
+ℓ(θ)=−log⁡σ(βlog⁡πθ(yw∣x)πref(yw∣x)−βlog⁡πθ(yl∣x)πref(yl∣x))\ell(\theta) = -\log \sigma\left(\beta \log \frac{\pi_\theta(y_w|x)}{\pi_{\text{ref}}(y_w|x)} - \beta \log \frac{\pi_\theta(y_l|x)}{\pi_{\text{ref}}(y_l|x)}\right)ℓ(θ)=−logσ(βlogπref​(yw​∣x)πθ​(yw​∣x)​−βlogπref​(yl​∣x)πθ​(yl​∣x)​)
 
 Define the margin:
 
- m(θ)=βlog⁡πθ(yw∣x)πref(yw∣x)−βlog⁡πθ(yl∣x)πref(yl∣x)m(\theta) = \beta \log $$\frac{\pi_\theta(y_w$$ | $\text{ref}}(y_w$ | $$\frac{\pi_\theta(y_l$$ | $\text{ref}}(y_l$ | $x)$ 
+m(θ)=βlog⁡πθ(yw∣x)πref(yw∣x)−βlog⁡πθ(yl∣x)πref(yl∣x)m(\theta) = \beta \log \frac{\pi_\theta(y_w|x)}{\pi_{\text{ref}}(y_w|x)} - \beta \log \frac{\pi_\theta(y_l|x)}{\pi_{\text{ref}}(y_l|x)}m(θ)=βlogπref​(yw​∣x)πθ​(yw​∣x)​−βlogπref​(yl​∣x)πθ​(yl​∣x)​
 
-$\ell(\theta) = -\log \sigma(m(\theta))$
+Then ℓ(θ)=−log⁡σ(m(θ))\ell(\theta) = -\log \sigma(m(\theta))ℓ(θ)=−logσ(m(θ)) and:
 
-∇θℓ=−σ′(m)σ(m)∇θm=−σ(m)(1−σ(m))σ(m)∇θm=−(1−σ(m))∇θm\nabla_\theta \ell = -$$\frac{\sigma'(m)}{\sigma(m)} \nabla_\theta m = -\frac{\sigma(m)(1 - \sigma(m))}{\sigma(m)} \nabla_\theta m = -(1 - \sigma(m)) \nabla_\theta m$$∇θℓ=−σ(m)σ′(m)∇θm=−σ(m)σ(m)(1−σ(m))∇θm=−(1−σ(m))∇θm
+∇θℓ=−σ′(m)σ(m)∇θm=−σ(m)(1−σ(m))σ(m)∇θm=−(1−σ(m))∇θm\nabla_\theta \ell = -\frac{\sigma'(m)}{\sigma(m)} \nabla_\theta m = -\frac{\sigma(m)(1 - \sigma(m))}{\sigma(m)} \nabla_\theta m = -(1 - \sigma(m)) \nabla_\theta m∇θ​ℓ=−σ(m)σ′(m)​∇θ​m=−σ(m)σ(m)(1−σ(m))​∇θ​m=−(1−σ(m))∇θ​m
 
-$\sigma(-m) = 1 - \sigma(m)$
+Since σ(−m)=1−σ(m)\sigma(-m) = 1 - \sigma(m)σ(−m)=1−σ(m):
 
-$\nabla_\theta \ell = -\sigma(-m(\theta)) \nabla_\theta m(\theta)$
+∇θℓ=−σ(−m(θ))∇θm(θ)\nabla_\theta \ell = -\sigma(-m(\theta)) \nabla_\theta m(\theta)∇θ​ℓ=−σ(−m(θ))∇θ​m(θ)
 
-$\nabla_\theta m$$\text{ref}}$πref does not depend on $\theta$:
+Now compute ∇θm\nabla_\theta m∇θ​m. Since πref\pi_{\text{ref}}πref​ does not depend on θ\thetaθ:
 
- ∇θm=β[∇θlog⁡πθ(yw∣x)−∇θlog⁡πθ(yl∣x)]\nabla_\theta m = \beta $\left[\nabla_\theta \log \pi_\theta(y_w$ |x) - \nabla_\theta \log \pi_\theta(y_l| $\right]$ 
+∇θm=β[∇θlog⁡πθ(yw∣x)−∇θlog⁡πθ(yl∣x)]\nabla_\theta m = \beta \left[\nabla_\theta \log \pi_\theta(y_w|x) - \nabla_\theta \log \pi_\theta(y_l|x)\right]∇θ​m=β[∇θ​logπθ​(yw​∣x)−∇θ​logπθ​(yl​∣x)]
 
 Therefore:
 
- ∇θℓ=−β σ(−m(θ))[∇θlog⁡πθ(yw∣x)−∇θlog⁡πθ(yl∣x)]\nabla_\theta \ell = -\beta \, \sigma(-m(\theta)) $\left[\nabla_\theta \log \pi_\theta(y_w$ |x) - \nabla_\theta \log \pi_\theta(y_l| $\right]$ 
+∇θℓ=−β σ(−m(θ))[∇θlog⁡πθ(yw∣x)−∇θlog⁡πθ(yl∣x)]\nabla_\theta \ell = -\beta \, \sigma(-m(\theta)) \left[\nabla_\theta \log \pi_\theta(y_w|x) - \nabla_\theta \log \pi_\theta(y_l|x)\right]∇θ​ℓ=−βσ(−m(θ))[∇θ​logπθ​(yw​∣x)−∇θ​logπθ​(yl​∣x)]
 
 **Interpretation:** The gradient has two components:
 
-  1. +β σ(−m) ∇θlog⁡πθ(yw∣x)+\beta \, \sigma(-m) \, \nabla_\theta \log \pi_\theta(y_w|x)+βσ(−m)∇θlogπθ(yw∣x): **increases** the log-probability of the preferred response (gradient descent on the loss is gradient ascent on log⁡πθ(yw∣x)\log \pi_\theta(y_w|x)logπθ(yw∣x)).
+  1. +β σ(−m) ∇θlog⁡πθ(yw∣x)+\beta \, \sigma(-m) \, \nabla_\theta \log \pi_\theta(y_w|x)+βσ(−m)∇θ​logπθ​(yw​∣x): **increases** the log-probability of the preferred response (gradient descent on the loss is gradient ascent on log⁡πθ(yw∣x)\log \pi_\theta(y_w|x)logπθ​(yw​∣x)).
 
-  2. −β σ(−m) ∇θlog⁡πθ(yl∣x)-$\beta \, \sigma(-m) \, \nabla_\theta \log \pi_\theta(y_l|x)$−βσ(−m)∇θlogπθ(yl∣x): **decreases** the log-probability of the dispreferred response.
+  2. −β σ(−m) ∇θlog⁡πθ(yl∣x)-\beta \, \sigma(-m) \, \nabla_\theta \log \pi_\theta(y_l|x)−βσ(−m)∇θ​logπθ​(yl​∣x): **decreases** the log-probability of the dispreferred response.
 
-Both are weighted by $\sigma(-m(\theta))$, which is large when m(θ)<0m($\theta) < 0m($θ)<0 (the policy currently assigns higher implicit reward to the dispreferred response -- the policy is "wrong") and small when m(θ)>0m($\theta) > 0m($θ)>0 (the policy is already "right"). This confirms the implicit curriculum described in Exercise 17.2.
+Both are weighted by σ(−m(θ))\sigma(-m(\theta))σ(−m(θ)), which is large when m(θ)<0m(\theta) < 0m(θ)<0 (the policy currently assigns higher implicit reward to the dispreferred response -- the policy is "wrong") and small when m(θ)>0m(\theta) > 0m(θ)>0 (the policy is already "right"). This confirms the implicit curriculum described in Exercise 17.2.
 
 **17.6.** Constitutional AI uses the model itself to critique and revise its outputs. Identify the circular reasoning risk in this approach and propose a mitigation strategy. Reference the reward hacking discussion from Chapter 16.
 
@@ -7569,17 +7569,17 @@ Answer
 
 **The precise sense:** Under the DPO framework, the implicit reward of a response yyy given prompt xxx is:
 
- $$\hat{R}(x, y) = \beta \log \frac{\pi_\theta(y$$ | $\text{ref}}(y$ | $x)$ 
+R^(x,y)=βlog⁡πθ(y∣x)πref(y∣x)\hat{R}(x, y) = \beta \log \frac{\pi_\theta(y|x)}{\pi_{\text{ref}}(y|x)}R^(x,y)=βlogπref​(y∣x)πθ​(y∣x)​
 
-This is the log-ratio of the aligned policy's probability to the reference policy's probability, scaled by $\beta$. The language model _is_ the reward model in the sense that this log-ratio contains all the information needed to rank responses -- no separate reward model is required.
+This is the log-ratio of the aligned policy's probability to the reference policy's probability, scaled by β\betaβ. The language model _is_ the reward model in the sense that this log-ratio contains all the information needed to rank responses -- no separate reward model is required.
 
-**What the log-ratio computes:** The ratio πθ(y∣x)/πref(y∣x)\pi_\theta(y| $\text{ref}}(y$ |x)πθ(y∣x)/πref(y∣x) measures how much the alignment training has changed the model's probability of generating response yyy. A ratio greater than 1 means alignment training upweighted this response; a ratio less than 1 means it was downweighted.
+**What the log-ratio computes:** The ratio πθ(y∣x)/πref(y∣x)\pi_\theta(y|x) / \pi_{\text{ref}}(y|x)πθ​(y∣x)/πref​(y∣x) measures how much the alignment training has changed the model's probability of generating response yyy. A ratio greater than 1 means alignment training upweighted this response; a ratio less than 1 means it was downweighted.
 
 The log-ratio can be interpreted as:
 
 * **The alignment signal.** Positive values indicate responses the model "learned" are good during alignment; negative values indicate responses it learned are bad.
 * **The reward model's "opinion."** In RLHF, the reward model outputs a scalar score for each response. In DPO, the log-ratio serves the same function -- it is a scalar score derived from the policy itself.
-* **A likelihood ratio test.** Statisticians would recognize this as a log-likelihood ratio: how much more likely is this response under the "aligned" hypothesis ($\pi_\theta$) vs. the "unaligned" hypothesis (πref\pi_{$\text{ref}}$πref)? This is the most powerful test statistic for distinguishing between two probability distributions (Neyman-Pearson lemma).
+* **A likelihood ratio test.** Statisticians would recognize this as a log-likelihood ratio: how much more likely is this response under the "aligned" hypothesis (πθ\pi_\thetaπθ​) vs. the "unaligned" hypothesis (πref\pi_{\text{ref}}πref​)? This is the most powerful test statistic for distinguishing between two probability distributions (Neyman-Pearson lemma).
 
 **The deeper insight:** The title's claim is not just a metaphor. It is a mathematical identity. Under the assumptions of DPO, the reward function is not a separate entity that must be learned -- it is a deterministic function of the policy. The reward model was never a separate model; it was always embedded in the policy, and DPO makes this embedding explicit.
 
@@ -7591,21 +7591,21 @@ Answer
 
 Define a context variable ccc that captures the user's characteristics (expertise level, cultural background, communication preferences). The preference model becomes:
 
-$P(y_w \succ y_l | x, c) = \sigma(R(x, y_w, c) - R(x, y_l, c))$
+P(yw≻yl∣x,c)=σ(R(x,yw,c)−R(x,yl,c))P(y_w \succ y_l | x, c) = \sigma(R(x, y_w, c) - R(x, y_l, c))P(yw​≻yl​∣x,c)=σ(R(x,yw​,c)−R(x,yl​,c))
 
 The RLHF objective becomes context-dependent:
 
- max⁡θ Ex,c[Ey∼πθ(⋅∣x,c)[R(x,y,c)]−βDKL[πθ(⋅∣x,c)∥πref(⋅∣x)]]\max_\theta \; \mathbb{E}_{x, c}$\left[\mathbb{E}_{y \sim \pi_\theta(\cdot$ | $\text{KL}}[\pi_\theta(\cdot$ |x, c) \| $\text{ref}}(\cdot$| x)]$\right]$θmaxEx,c[Ey∼πθ(⋅∣x,c)[R(x,y,c)]−βDKL[πθ(⋅∣x,c)∥πref(⋅∣x)]] 
+max⁡θ Ex,c[Ey∼πθ(⋅∣x,c)[R(x,y,c)]−βDKL[πθ(⋅∣x,c)∥πref(⋅∣x)]]\max_\theta \; \mathbb{E}_{x, c}\left[\mathbb{E}_{y \sim \pi_\theta(\cdot|x, c)}[R(x, y, c)] - \beta D_{\text{KL}}[\pi_\theta(\cdot|x, c) \| \pi_{\text{ref}}(\cdot|x)]\right]θmax​Ex,c​[Ey∼πθ​(⋅∣x,c)​[R(x,y,c)]−βDKL​[πθ​(⋅∣x,c)∥πref​(⋅∣x)]]
 
 The optimal policy is now context-dependent:
 
-π∗(y∣x,c)=1Z(x,c)πref(y∣x)exp⁡(R(x,y,c)β)\pi^*(y| $$\frac{1}{Z(x, c)} \pi_{\text{ref}}(y$$ | $$\left(\frac{R(x, y, c)}{\beta}\right)$$ 
+π∗(y∣x,c)=1Z(x,c)πref(y∣x)exp⁡(R(x,y,c)β)\pi^*(y|x, c) = \frac{1}{Z(x, c)} \pi_{\text{ref}}(y|x) \exp\left(\frac{R(x, y, c)}{\beta}\right)π∗(y∣x,c)=Z(x,c)1​πref​(y∣x)exp(βR(x,y,c)​)
 
-The DPO derivation proceeds identically: re-parameterize the reward, substitute into Bradley-Terry, and the partition function Z(x,c)Z(x, c)Z(x,c) cancels (it depends on ccc but still appears in both the ywy_wyw and yly_lyl terms). The C-DPO loss becomes:
+The DPO derivation proceeds identically: re-parameterize the reward, substitute into Bradley-Terry, and the partition function Z(x,c)Z(x, c)Z(x,c) cancels (it depends on ccc but still appears in both the ywy_wyw​ and yly_lyl​ terms). The C-DPO loss becomes:
 
- LC-DPO(θ)=−E(x,c,yw,yl)[log⁡σ(βlog⁡πθ(yw∣x,c)πref(yw∣x)−βlog⁡πθ(yl∣x,c)πref(yl∣x))]\mathcal{L}_{$$\text{C-DPO}}(\theta) = -\mathbb{E}_{(x, c, y_w, y_l)}\left[\log \sigma\left(\beta \log \frac{\pi_\theta(y_w$$ | $\text{ref}}(y_w$ | $$\frac{\pi_\theta(y_l$$ | $\text{ref}}(y_l$ | x)}$\right)\right]LC-DPO($θ)=−E(x,c,yw,yl)[logσ(βlogπref(yw∣x)πθ(yw∣x,c)−βlogπref(yl∣x)πθ(yl∣x,c))] 
+LC-DPO(θ)=−E(x,c,yw,yl)[log⁡σ(βlog⁡πθ(yw∣x,c)πref(yw∣x)−βlog⁡πθ(yl∣x,c)πref(yl∣x))]\mathcal{L}_{\text{C-DPO}}(\theta) = -\mathbb{E}_{(x, c, y_w, y_l)}\left[\log \sigma\left(\beta \log \frac{\pi_\theta(y_w|x, c)}{\pi_{\text{ref}}(y_w|x)} - \beta \log \frac{\pi_\theta(y_l|x, c)}{\pi_{\text{ref}}(y_l|x)}\right)\right]LC-DPO​(θ)=−E(x,c,yw​,yl​)​[logσ(βlogπref​(yw​∣x)πθ​(yw​∣x,c)​−βlogπref​(yl​∣x)πθ​(yl​∣x,c)​)]
 
-**What changes:** The policy $\pi_\theta$ now takes context ccc as an additional input. In practice, ccc could be incorporated into the system prompt. The training data must include context labels (e.g., "this preference was expressed by a beginner" vs. "by an expert"). The partition function still cancels, so the derivation's tractability is preserved.
+**What changes:** The policy πθ\pi_\thetaπθ​ now takes context ccc as an additional input. In practice, ccc could be incorporated into the system prompt. The training data must include context labels (e.g., "this preference was expressed by a beginner" vs. "by an expert"). The partition function still cancels, so the derivation's tractability is preserved.
 
 **Challenge:** Collecting context-labeled preference data is more expensive than standard preference data. Each comparison must be annotated with the context in which the preference was expressed. This is feasible for coarse context variables (beginner/expert, formal/casual) but impractical for fine-grained personalization.
 
@@ -7615,7 +7615,7 @@ Answer
 
 **Prediction: Eliminate the preference data collection stage.**
 
-DPO eliminated the reward model and PPO but still requires human preference data (yw≻yly_w $\succ y_lyw$≻yl pairs). The next simplification would eliminate the need for any human feedback -- the model would align itself using only pre-existing text data or self-generated critiques.
+DPO eliminated the reward model and PPO but still requires human preference data (yw≻yly_w \succ y_lyw​≻yl​ pairs). The next simplification would eliminate the need for any human feedback -- the model would align itself using only pre-existing text data or self-generated critiques.
 
 **Several approaches are converging on this:**
 
@@ -7660,15 +7660,15 @@ By the end of this chapter, you will be able to:
 
 Parts I--III told the story of how models are built: pretraining gives them knowledge (Chapters 1--11), alignment makes them helpful (Chapters 12--17). Part IV asks: given a capable, aligned model, what can it do? The answer depends dramatically on **how you ask**.
 
-A language model is a conditional probability distribution. Given a prompt $\mathbf{x} = (x_1, x_2, \ldots, x_m)$, the model generates output tokens autoregressively:
+A language model is a conditional probability distribution. Given a prompt x=(x1,x2,…,xm)\mathbf{x} = (x_1, x_2, \ldots, x_m)x=(x1​,x2​,…,xm​), the model generates output tokens autoregressively:
 
-$\mathbf{y}$ | $$\prod_{t=1}^{T} P(y_t$$ | $\mathbf{x})P(y$
+P(y∣x)=∏t=1TP(yt∣y1,…,yt−1,x)P(\mathbf{y} | \mathbf{x}) = \prod_{t=1}^{T} P(y_t | y_1, \ldots, y_{t-1}, \mathbf{x})P(y∣x)=t=1∏T​P(yt​∣y1​,…,yt−1​,x)
 
-The prompt x$\mathbf{x}x is the conditioning variable. Different prompts produce different conditional distributions -- and therefore different outputs. Prompt engineering is the practice of finding the prompt x$∗$\mathbf{x}^*x$∗ that concentrates P(y∣x∗)P($\mathbf{y} | \mathbf{x}^*)P(y$∣x∗) on the highest-quality outputs:
+The prompt x\mathbf{x}x is the conditioning variable. Different prompts produce different conditional distributions -- and therefore different outputs. Prompt engineering is the practice of finding the prompt x∗\mathbf{x}^*x∗ that concentrates P(y∣x∗)P(\mathbf{y} | \mathbf{x}^*)P(y∣x∗) on the highest-quality outputs:
 
-$\mathbf{x}^* = \arg\max_{\mathbf{x} \in \mathcal{X}} \; \mathbb{E}_{\mathbf{y} \sim P(\cdot | \mathbf{x})}[Q(\mathbf{y})]x$
+x∗=arg⁡max⁡x∈X Ey∼P(⋅∣x)[Q(y)]\mathbf{x}^* = \arg\max_{\mathbf{x} \in \mathcal{X}} \; \mathbb{E}_{\mathbf{y} \sim P(\cdot | \mathbf{x})}[Q(\mathbf{y})]x∗=argx∈Xmax​Ey∼P(⋅∣x)​[Q(y)]
 
-where $\mathbf{y})Q(y) is a quality measure and X\mathcal{X}X is the space of natural language prompts. This optimization problem is intractable in general (the search space is discrete, high-dimensional, and semantically constrained), so prompt engineering relies on principled heuristics rather than exact optimization.$
+where Q(y)Q(\mathbf{y})Q(y) is a quality measure and X\mathcal{X}X is the space of natural language prompts. This optimization problem is intractable in general (the search space is discrete, high-dimensional, and semantically constrained), so prompt engineering relies on principled heuristics rather than exact optimization.
 
 **Why do small wording changes produce large output differences?** Consider a concrete example. The prompt "What is inflation?" produces a brief dictionary-style definition. The prompt "As a macroeconomist, explain inflation to a graduate student, citing empirical evidence and discussing measurement challenges" produces a detailed, nuanced analysis. The model's output differs dramatically because the two prompts navigate to different regions of the training data distribution:
 
@@ -7807,7 +7807,7 @@ This chapter establishes prompt engineering as a principled discipline, not a co
 
 But there is a limit to what conditioning alone can achieve. For tasks requiring multi-step reasoning -- mathematical proofs, logical deductions, complex problem-solving -- standard prompts (zero-shot, few-shot, instruction) are insufficient. The model must not only produce the right answer but also produce the reasoning steps that lead to it.
 
-The conditional distribution framework explains _why_ this limitation exists and _how_ it can be overcome. Consider the prompt "What is 17 times 24?" The conditional distribution P(y∣x)P($\mathbf{y} | \mathbf{x})P(y$∣x) places most of its mass on short, direct answers -- because the training data contains many instances of questions followed immediately by answers. But the model's probability of producing the _correct_ answer in a single step is low for non-trivial arithmetic, because the training data also contains many incorrect answers to similar questions.
+The conditional distribution framework explains _why_ this limitation exists and _how_ it can be overcome. Consider the prompt "What is 17 times 24?" The conditional distribution P(y∣x)P(\mathbf{y} | \mathbf{x})P(y∣x) places most of its mass on short, direct answers -- because the training data contains many instances of questions followed immediately by answers. But the model's probability of producing the _correct_ answer in a single step is low for non-trivial arithmetic, because the training data also contains many incorrect answers to similar questions.
 
 Now consider the prompt "What is 17 times 24? Let's think step by step." The phrase "Let's think step by step" navigates to a different region of the output distribution -- one dominated by tutorial-style text, textbook solutions, and worked examples where intermediate reasoning steps are explicit. In this region, the model generates text like "17 times 20 is 340, and 17 times 4 is 68, so 17 times 24 is 408." The key insight is that the intermediate tokens ("17 times 20 is 340") serve as _additional conditioning_ for subsequent tokens: once the partial product is in the context, the model's probability of producing the correct final answer increases dramatically. Each reasoning step narrows the conditional distribution for the next step.
 
@@ -7819,7 +7819,7 @@ This is the core mechanism behind chain-of-thought prompting: the prompt steers 
 
 This chapter opened Part IV by establishing prompt engineering as a principled discipline grounded in probability theory rather than ad hoc intuition.
 
- **The conditional distribution view.** A language model is the conditional distribution P(y∣x)=∏P(yt∣y<t,x)P($\mathbf{y}$ | $$\prod P(y_t$$ | y_{<t}, \mathbf{x})P(y∣x)=∏P(yt∣y<t,x). The prompt x\mathbf{x}x is the conditioning variable; different prompts navigate to different regions of the training data distribution, producing qualitatively different outputs. Prompt engineering is the practice of finding x∗=arg⁡max⁡E[Q(y)]$\mathbf{x}^* = \arg\max \mathbb{E}[Q(\mathbf{y})]x$∗=argmaxE[Q(y)], optimization over the discrete, high-dimensional space of natural language — intractable exactly, approximated by principled heuristics. 
+**The conditional distribution view.** A language model is the conditional distribution P(y∣x)=∏P(yt∣y<t,x)P(\mathbf{y}|\mathbf{x}) = \prod P(y_t|y_{<t}, \mathbf{x})P(y∣x)=∏P(yt​∣y<t​,x). The prompt x\mathbf{x}x is the conditioning variable; different prompts navigate to different regions of the training data distribution, producing qualitatively different outputs. Prompt engineering is the practice of finding x∗=arg⁡max⁡E[Q(y)]\mathbf{x}^* = \arg\max \mathbb{E}[Q(\mathbf{y})]x∗=argmaxE[Q(y)], optimization over the discrete, high-dimensional space of natural language — intractable exactly, approximated by principled heuristics.
 
 **The three-role framework.** RLHF-trained chat models introduce a three-part prompt structure: (1) system prompt (persistent context, persona, behavioral constraints), (2) user turn (task), (3) assistant turn (response). The model learns during RLHF to treat system-prompt instructions as high-priority behavioral constraints—qualitatively different from base model behavior, which conditions equally on all tokens. This structural asymmetry is the main reason chat models respond differently than completion models to the same surface text.
 
@@ -7841,9 +7841,9 @@ Answer
 
 Both prompts condition the same model, but on different regions of the training data distribution.
 
-The first prompt -- "Explain quantum entanglement" -- matches a broad range of training data: Wikipedia articles, popular science blogs, casual Q&A forums, children's science websites, and academic papers. The conditional distribution P(y∣"Explain quantum entanglement")P($\mathbf{y} | \text{"Explain quantum entanglement"})P(y$∣"Explain quantum entanglement") has high entropy: probability mass is spread across many quality levels and styles. The model is equally likely to generate a Wikipedia-level explanation or a casual blog post.
+The first prompt -- "Explain quantum entanglement" -- matches a broad range of training data: Wikipedia articles, popular science blogs, casual Q&A forums, children's science websites, and academic papers. The conditional distribution P(y∣"Explain quantum entanglement")P(\mathbf{y} | \text{"Explain quantum entanglement"})P(y∣"Explain quantum entanglement") has high entropy: probability mass is spread across many quality levels and styles. The model is equally likely to generate a Wikipedia-level explanation or a casual blog post.
 
-The second prompt -- "As a physics professor writing for Physical Review Letters..." -- narrows the conditioning to a much more specific region: academic physics papers, graduate-level textbooks, and technical explanations. The conditional distribution P(y∣"As a physics professor...")P($\mathbf{y} | \text{"As a physics professor..."})P(y$∣"As a physics professor...") has lower entropy: probability mass is concentrated on formal, mathematically rigorous outputs.
+The second prompt -- "As a physics professor writing for Physical Review Letters..." -- narrows the conditioning to a much more specific region: academic physics papers, graduate-level textbooks, and technical explanations. The conditional distribution P(y∣"As a physics professor...")P(\mathbf{y} | \text{"As a physics professor..."})P(y∣"As a physics professor...") has lower entropy: probability mass is concentrated on formal, mathematically rigorous outputs.
 
 The role assignment ("physics professor"), the venue specification ("Physical Review Letters"), and the quality modifier ("mathematical rigor") all serve to shift the distribution toward the high-quality tail of the training data. Each additional conditioning element further narrows the distribution, increasing the expected quality of the output.
 
@@ -8005,10 +8005,10 @@ Answer
 
 **The case for "fundamentally the same":**
 
-Both alignment and prompting modify the model's output distribution to produce more desirable outputs. Alignment modifies the parameters $\theta$ to change the distribution Pθ(y∣x)P_\theta($\mathbf{y} | \mathbf{x})P$θ(y∣x) globally (for all prompts). Prompting modifies the conditioning input x\mathbf{x}x to change the distribution locally (for a specific interaction). Mathematically:
+Both alignment and prompting modify the model's output distribution to produce more desirable outputs. Alignment modifies the parameters θ\thetaθ to change the distribution Pθ(y∣x)P_\theta(\mathbf{y} | \mathbf{x})Pθ​(y∣x) globally (for all prompts). Prompting modifies the conditioning input x\mathbf{x}x to change the distribution locally (for a specific interaction). Mathematically:
 
-$\theta \to P_{\theta'}P$
-* Prompting: Pθ(⋅∣x)→Pθ(⋅∣x′)P_\theta(\cdot | \mathbf{x}) \to P_\theta(\cdot | $\mathbf{x}')P$
+* Alignment: Pθ→Pθ′P_\theta \to P_{\theta'}Pθ​→Pθ′​ (new parameters)
+* Prompting: Pθ(⋅∣x)→Pθ(⋅∣x′)P_\theta(\cdot | \mathbf{x}) \to P_\theta(\cdot | \mathbf{x}')Pθ​(⋅∣x)→Pθ​(⋅∣x′) (new conditioning)
 
 Both operations shift probability mass from undesirable outputs to desirable ones. They operate on different "axes" of the same conditional distribution.
 
@@ -8127,9 +8127,9 @@ Include intermediate reasoning steps in the few-shot examples:
 
 The model sees examples of step-by-step reasoning and generates its own reasoning chain for the new problem. The critical difference: the model now writes out intermediate computations as text, which it can attend to in subsequent generation steps.
 
-Formally, standard prompting learns the mapping input$\text{input} \to \text{output}input$, while CoT prompting learns input$\text{input} \to \text{reasoning chain} \to \text{output}input$. The reasoning chain r$\mathbf{r}r is a latent variable made explicit:$
+Formally, standard prompting learns the mapping input→output\text{input} \to \text{output}input→output, while CoT prompting learns input→reasoning chain→output\text{input} \to \text{reasoning chain} \to \text{output}input→reasoning chain→output. The reasoning chain r\mathbf{r}r is a latent variable made explicit:
 
-P(answer∣question)=∑rP(answer∣r,question)⋅P(r∣question)P($\text{answer}$ | $$\sum_{\mathbf{r}} P(\text{answer}$$ | $, \text{question}) \cdot P($ | $\text{question})P(answer$∣question)=r∑P(answer∣r,question)⋅P(r∣question)
+P(answer∣question)=∑rP(answer∣r,question)⋅P(r∣question)P(\text{answer} | \text{question}) = \sum_{\mathbf{r}} P(\text{answer} | \mathbf{r}, \text{question}) \cdot P(\mathbf{r} | \text{question})P(answer∣question)=r∑​P(answer∣r,question)⋅P(r∣question)
 
 CoT prompting biases the model toward generating high-quality reasoning chains by providing demonstrations of such chains.
 
@@ -8160,7 +8160,7 @@ Wei et al. conducted a systematic evaluation across three reasoning domains usin
 
 #### Models
 
-Five model families at multiple scales: GPT-3 (from 350M to 175B), LaMDA (from 422M to 137B), PaLM (from 8B to 540B), UL2 (20B), and Codex (175B). The range from $\sim 10^8$ to $\sim 5.4 \times 10^{11}$ parameters enabled systematic study of the scale-CoT interaction.
+Five model families at multiple scales: GPT-3 (from 350M to 175B), LaMDA (from 422M to 137B), PaLM (from 8B to 540B), UL2 (20B), and Codex (175B). The range from ∼108\sim 10^8∼108 to ∼5.4×1011\sim 5.4 \times 10^{11}∼5.4×1011 parameters enabled systematic study of the scale-CoT interaction.
 
 * * *
 
@@ -8200,7 +8200,7 @@ This is a canonical example of **emergent behavior** (Chapter 10): a capability 
 
 Human working memory is limited (Miller's "7 plus or minus 2" items). When solving complex problems, humans write down intermediate results -- using paper as external working memory. CoT provides the same function for language models: intermediate results written as text become part of the context that the model attends to.
 
-Without CoT, the model must compute 2×3=62 $\times 3 = 62$×3=6 and 5+6=115 + 6 = 115+6=11 entirely within its forward pass -- using only the "working memory" of its residual stream (Chapter 4 of Vol I). With CoT, the model writes "2 * 3 = 6" as output text, which then appears in the context for the next computation. The model effectively augments its limited internal memory with an external scratchpad.
+Without CoT, the model must compute 2×3=62 \times 3 = 62×3=6 and 5+6=115 + 6 = 115+6=11 entirely within its forward pass -- using only the "working memory" of its residual stream (Chapter 4 of Vol I). With CoT, the model writes "2 * 3 = 6" as output text, which then appears in the context for the next computation. The model effectively augments its limited internal memory with an external scratchpad.
 
 **Evidence for:** CoT's benefit increases with problem complexity (more reasoning steps = larger working memory requirement). Simple one-step problems show little CoT benefit.
 
@@ -8210,7 +8210,7 @@ Without CoT, the model must compute 2×3=62 $\times 3 = 62$×3=6 and 5+6=115 + 6
 
 Complex problems can be decomposed into simpler sub-problems. CoT guides the model to decompose the problem step by step, solving each sub-problem before proceeding to the next.
 
-In the tennis ball example: "How many balls in total?" decomposes into "How many new balls?" (2 cans $\times$ 3 balls = 6) followed by "How many total?" (5 + 6 = 11). Each sub-problem is simple enough for the model to solve reliably; the chain of solutions yields the correct final answer.
+In the tennis ball example: "How many balls in total?" decomposes into "How many new balls?" (2 cans ×\times× 3 balls = 6) followed by "How many total?" (5 + 6 = 11). Each sub-problem is simple enough for the model to solve reliably; the chain of solutions yields the correct final answer.
 
 **Evidence for:** CoT's benefit is concentrated on multi-step problems where decomposition reduces each step to a single operation. On single-step problems, CoT adds overhead without benefit.
 
@@ -8302,7 +8302,7 @@ Answer
 
 When a small model generates a reasoning chain, it produces text that **looks like** reasoning but does not faithfully execute the reasoning steps. Specifically:
 
-  1. **Error accumulation.** Each step in the chain introduces errors -- arithmetic mistakes, logical non sequiturs, irrelevant tangents. In a large model, each step is executed with high accuracy, so errors are rare. In a small model, each step has a significant error probability. Over a 5-step chain, even a 20% per-step error rate produces a 0.85≈33%0.8^5 $\approx 33\%0.85$≈33% probability of an error-free chain -- meaning ~67% of chains contain at least one error.
+  1. **Error accumulation.** Each step in the chain introduces errors -- arithmetic mistakes, logical non sequiturs, irrelevant tangents. In a large model, each step is executed with high accuracy, so errors are rare. In a small model, each step has a significant error probability. Over a 5-step chain, even a 20% per-step error rate produces a 0.85≈33%0.8^5 \approx 33\%0.85≈33% probability of an error-free chain -- meaning ~67% of chains contain at least one error.
 
   2. **Incoherent chains.** Small models lack the capacity to maintain coherent multi-step reasoning. The chain may start well but drift into irrelevant content, repeat earlier steps, or contradict itself. The final "answer" extracted from such a chain is often worse than a direct prediction.
 
@@ -8314,7 +8314,7 @@ When a small model generates a reasoning chain, it produces text that **looks li
 
 Answer
 
-From Chapter 18's framework, the model generates text by sampling from P(y∣x)P($\mathbf{y} | \mathbf{x})P(y$∣x). The phrase "Let's think step by step" is a conditioning variable that shifts the output distribution toward text that contains explicit reasoning steps.
+From Chapter 18's framework, the model generates text by sampling from P(y∣x)P(\mathbf{y} | \mathbf{x})P(y∣x). The phrase "Let's think step by step" is a conditioning variable that shifts the output distribution toward text that contains explicit reasoning steps.
 
 **Why this specific phrase works:** During pretraining, the model encountered millions of instances where phrases like "Let's think step by step," "First, we need to...," or "To solve this, we start by..." were followed by detailed, step-by-step solutions. The phrase is statistically associated with high-quality reasoning text in the training data. By conditioning on this phrase, the model's output distribution shifts from the "direct answer" mode (which covers casual Q&A, encyclopedia entries, etc.) to the "detailed solution" mode (which covers textbooks, tutorials, and worked examples).
 
@@ -8371,7 +8371,7 @@ Answer
     A: Let me think step by step.
     
 
-**Expected model output:** The model should enumerate values of one variable, check divisibility for the other, and count valid combinations. The correct answer: solutions to 2a+3o=172a + 3o = 172a+3o=17 with a,o≥1a, o $\geq 1a,o$≥1. Checking o=1,2,3,4,5o = 1, 2, 3, 4, 5o=1,2,3,4,5: o=1:a=7o=1: a=7o=1:a=7 (yes), o=3:a=4o=3: a=4o=3:a=4 (yes), o=5:a=1o=5: a=1o=5:a=1 (yes). Answer: 3 combinations.
+**Expected model output:** The model should enumerate values of one variable, check divisibility for the other, and count valid combinations. The correct answer: solutions to 2a+3o=172a + 3o = 172a+3o=17 with a,o≥1a, o \geq 1a,o≥1. Checking o=1,2,3,4,5o = 1, 2, 3, 4, 5o=1,2,3,4,5: o=1:a=7o=1: a=7o=1:a=7 (yes), o=3:a=4o=3: a=4o=3:a=4 (yes), o=5:a=1o=5: a=1o=5:a=1 (yes). Answer: 3 combinations.
 
 **Design choices:**
 
@@ -8400,17 +8400,17 @@ Answer
 
 **FLOPs per token:** For a Transformer with NNN parameters, each forward pass requires approximately 2N2N2N FLOPs (matrix multiplications dominate). For PaLM 540B:
 
-$\text{FLOPs per token} \approx 2 \times 540 \times 10^9 = 1.08 \times 10^{12} \text{ FLOPs}$
+FLOPs per token≈2×540×109=1.08×1012 FLOPs\text{FLOPs per token} \approx 2 \times 540 \times 10^9 = 1.08 \times 10^{12} \text{ FLOPs}FLOPs per token≈2×540×109=1.08×1012 FLOPs
 
-**Direct answer (1 token):** 1.08×10121.08 $\times 10^{12}1.08$×1012 FLOPs.
+**Direct answer (1 token):** 1.08×10121.08 \times 10^{12}1.08×1012 FLOPs.
 
-**CoT response (50 tokens + 1 answer token):** 51×1.08×1012=5.51×101351 $\times 1.08 \times 10^{12} = 5.51 \times 10^{13}51$×1.08×1012=5.51×1013 FLOPs.
+**CoT response (50 tokens + 1 answer token):** 51×1.08×1012=5.51×101351 \times 1.08 \times 10^{12} = 5.51 \times 10^{13}51×1.08×1012=5.51×1013 FLOPs.
 
 **Ratio:** CoT applies ~51x more computation than a direct answer.
 
 **Comparison to model scaling:** From the scaling laws (Chapter 5), a 10x increase in model size (from 540B to 5.4T) would roughly double the per-token compute. To match the 51x compute increase of CoT through model scaling alone, you would need a model of approximately:
 
-$N_{\text{equivalent}} = 540\text{B} \times 51 = 27.5\text{T parameters}$
+Nequivalent=540B×51=27.5T parametersN_{\text{equivalent}} = 540\text{B} \times 51 = 27.5\text{T parameters}Nequivalent​=540B×51=27.5T parameters
 
 This is far beyond any existing model. The CoT technique provides the compute equivalent of a 27.5T parameter model's single forward pass by running a 540B model for 51 forward passes.
 
@@ -8527,10 +8527,10 @@ Wang et al. (2022) proposed an elegant solution: **sample multiple independent r
 #### The Algorithm
 
   1. Given a prompt, generate NNN independent reasoning chains using CoT prompting with temperature T>0T > 0T>0 (typically T=0.7T = 0.7T=0.7).
-  2. Extract the final answer aia_iai from each chain iii.
+  2. Extract the final answer aia_iai​ from each chain iii.
   3. Return the answer that appears most frequently:
 
-$$\hat{a} = \arg\max_{a} \sum_{i=1}^{N} \mathbf{1}[a_$$
+a^=arg⁡max⁡a∑i=1N1[ai=a]\hat{a} = \arg\max_{a} \sum_{i=1}^{N} \mathbf{1}[a_i = a]a^=argamax​i=1∑N​1[ai​=a]
 
 That is the complete algorithm: sample, extract, vote.
 
@@ -8538,9 +8538,9 @@ That is the complete algorithm: sample, extract, vote.
 
 The mathematical foundation of self-consistency is the **Condorcet jury theorem** (1785). If each "voter" (reasoning chain) independently reaches the correct answer with probability p>0.5p > 0.5p>0.5, then the probability that the majority vote is correct is:
 
-$$\text{majority correct}) = \sum_{k = \lceil N/2 \rceil}^{N} \binom{N}{k} p^k (1-p)^{N-k}P(majority correct)=$$
+P(majority correct)=∑k=⌈N/2⌉N(Nk)pk(1−p)N−kP(\text{majority correct}) = \sum_{k = \lceil N/2 \rceil}^{N} \binom{N}{k} p^k (1-p)^{N-k}P(majority correct)=k=⌈N/2⌉∑N​(kN​)pk(1−p)N−k
 
-As N→∞N \to $\inftyN$→∞, this probability approaches 1. For p=0.6p = 0.6p=0.6 and N=40N = 40N=40, the majority vote accuracy exceeds 95%.
+As N→∞N \to \inftyN→∞, this probability approaches 1. For p=0.6p = 0.6p=0.6 and N=40N = 40N=40, the majority vote accuracy exceeds 95%.
 
 The key intuition: **correct reasoning chains tend to converge on the same answer through different paths, while incorrect chains err in diverse ways.** The correct answer accumulates votes; incorrect answers are scattered.
 
@@ -8566,9 +8566,9 @@ The improvement from CoT to self-consistency (+17.5 points) is substantial, thou
 
 An important ablation: accuracy as a function of NNN:
 
-* N=1→5N = 1 $\to 5N=1$→5: Large improvement (the first few additional chains are very informative)
-$\to 20N=5$
-$\to 40N=20$
+* N=1→5N = 1 \to 5N=1→5: Large improvement (the first few additional chains are very informative)
+* N=5→20N = 5 \to 20N=5→20: Moderate improvement
+* N=20→40N = 20 \to 40N=20→40: Small improvement
 * N>40N > 40N>40: Negligible improvement
 
 This diminishing return follows from the Condorcet theorem: the majority vote accuracy converges exponentially to 1 as NNN increases, so most of the benefit is captured by small NNN. In practice, N=10N = 10N=10\--20 captures the large majority of the improvement, and N>40N > 40N>40 is rarely worth the additional compute cost.
@@ -8665,15 +8665,15 @@ Each step up the prompting hierarchy increases inference cost. The practical que
 
 Define:
 
-* cic_ici = inference cost of technique iii (in FLOPs or API cost)
-* aia_iai = accuracy of technique iii on the target task
-* v = value of a correct answer (application-dependent)
+* cic_ici​ = inference cost of technique iii (in FLOPs or API cost)
+* aia_iai​ = accuracy of technique iii on the target task
+* vvv = value of a correct answer (application-dependent)
 
 The expected value of technique iii is:
 
-$\text{EV}_i = a_i \cdot v - c_i$
+EVi=ai⋅v−ci\text{EV}_i = a_i \cdot v - c_iEVi​=ai​⋅v−ci​
 
-The optimal technique maximizes EVi\text{EV}_iEVi. For most applications:
+The optimal technique maximizes EVi\text{EV}_iEVi​. For most applications:
 
 * **Low-stakes tasks** (chatbot conversations, content suggestions): vvv is small, so the cheapest technique with acceptable accuracy (zero-shot or few-shot) is optimal.
 * **Medium-stakes tasks** (homework help, research assistance): CoT or self-consistency (moderate cost, significantly higher accuracy).
@@ -8731,17 +8731,17 @@ Answer
 
 **Key assumption: Independence.** The theorem requires the voters (reasoning chains) to be independent. In the LLM setting, all chains are generated by the **same model** with the **same weights** and the **same prompt.** They differ only because of stochastic sampling (temperature T>0T > 0T>0). This introduces positive correlation between chains -- they tend to make the same systematic errors. For example, if the model has a systematic bias toward a particular incorrect approach, many chains will follow that approach, and the majority vote may converge on the wrong answer.
 
-The consequence: self-consistency's improvement is smaller than the Condorcet theorem predicts for independent voters. The effective number of independent "votes" is less than NNN due to inter-chain correlation. This is why the empirical gains diminish quickly beyond N≈20N $\approx 20N$≈20: the incremental chains are increasingly redundant due to correlation.
+The consequence: self-consistency's improvement is smaller than the Condorcet theorem predicts for independent voters. The effective number of independent "votes" is less than NNN due to inter-chain correlation. This is why the empirical gains diminish quickly beyond N≈20N \approx 20N≈20: the incremental chains are increasingly redundant due to correlation.
 
 **20.2.** Compare self-consistency and Tree of Thoughts along three dimensions: when each helps, the computational cost, and the type of problems where each is superior. Give a concrete example problem for each.
 
 Answer Dimension | Self-Consistency | Tree of Thoughts  
 ---|---|---  
 **When it helps** | Tasks with verifiable answers where different reasoning paths converge | Tasks requiring exploration, backtracking, and evaluation of partial solutions  
-**Computational cost** | N×N $\timesN$× single CoT cost (~10--40x) | Much higher: branching $\times$ depth ×\times× evaluation (~50--200x) 
+**Computational cost** | N×N \timesN× single CoT cost (~10--40x) | Much higher: branching ×\times× depth ×\times× evaluation (~50--200x)  
 **Superior for** | Problems with a unique correct answer reachable via multiple methods | Problems with a vast search space requiring systematic exploration  
   
-**Example for self-consistency:** "What is 17 $\times$ 23?" Multiple reasoning chains might use different multiplication strategies (standard algorithm, decomposition into 17×20+17×317 $\times 20 + 17 \times 317$×20+17×3, estimation and verification). Most chains reach the correct answer (391); occasional arithmetic errors produce different wrong answers that cancel out in the vote.
+**Example for self-consistency:** "What is 17 ×\times× 23?" Multiple reasoning chains might use different multiplication strategies (standard algorithm, decomposition into 17×20+17×317 \times 20 + 17 \times 317×20+17×3, estimation and verification). Most chains reach the correct answer (391); occasional arithmetic errors produce different wrong answers that cancel out in the vote.
 
 **Example for Tree of Thoughts:** "Use the numbers 1, 5, 6, 7 with basic arithmetic to make 24." This requires systematic exploration: try different operation orderings, evaluate partial results, backtrack when a combination cannot reach 24. Self-consistency would waste compute generating complete (and often incorrect) solutions; ToT can prune unpromising branches early.
 
@@ -8771,19 +8771,19 @@ The complete picture: scaling provides raw capability, alignment makes it access
 
 Answer
 
-**Stage 1: Add few-shot examples (zero additional cost for generation; small context cost).** Include 3--5 representative customer questions with ideal answers in the prompt. Expected improvement: 70% $\to$ 78% (few-shot examples reduce ambiguity about the expected response format and content).
+**Stage 1: Add few-shot examples (zero additional cost for generation; small context cost).** Include 3--5 representative customer questions with ideal answers in the prompt. Expected improvement: 70% →\to→ 78% (few-shot examples reduce ambiguity about the expected response format and content).
 
 Cost increase: ~1.1x (additional context tokens).
 
 **Stage 2: Add chain-of-thought reasoning (moderate cost increase).** Include reasoning steps in few-shot examples: "The customer is asking about X. Based on our policy Y, the answer is Z because..." This activates the model's reasoning capabilities for complex questions.
 
-Expected improvement: 78% $\to$ 85%. Cost increase: ~1.5x (more output tokens per response).
+Expected improvement: 78% →\to→ 85%. Cost increase: ~1.5x (more output tokens per response).
 
 **Stage 3: Self-consistency for critical questions ( N=5N = 5N=5 chains).** For questions identified as high-risk or complex (detected by keyword matching or model confidence), generate 5 independent reasoning chains and take the majority vote.
 
-Expected improvement: 85% $\to$ 90% (on the subset of complex questions). Cost increase: ~5x for complex questions, ~1x for simple questions. Average: ~2x overall (assuming 20% of questions are complex).
+Expected improvement: 85% →\to→ 90% (on the subset of complex questions). Cost increase: ~5x for complex questions, ~1x for simple questions. Average: ~2x overall (assuming 20% of questions are complex).
 
-**Total cost:** ~2x average inference cost for a 70% $\to$ 90% accuracy improvement.
+**Total cost:** ~2x average inference cost for a 70% →\to→ 90% accuracy improvement.
 
 **Comparison to alternatives:**
 
@@ -8830,8 +8830,8 @@ Answer
 **Confidence score interpretation:**
 
 * confidence>0.8\text{confidence} > 0.8confidence>0.8: High confidence. Most chains agree. Return the answer directly.
-* 0.5<confidence≤0.80.5 < $\text{confidence} \leq 0.80.5<confidence$≤0.8: Moderate confidence. The answer is likely correct but not certain. Flag for automated verification (e.g., substitute the answer back into the problem).
-* confidence$\text{confidence} \leq 0.5confidence$: Low confidence. No answer received a majority. Route to a human expert.
+* 0.5<confidence≤0.80.5 < \text{confidence} \leq 0.80.5<confidence≤0.8: Moderate confidence. The answer is likely correct but not certain. Flag for automated verification (e.g., substitute the answer back into the problem).
+* confidence≤0.5\text{confidence} \leq 0.5confidence≤0.5: Low confidence. No answer received a majority. Route to a human expert.
 
 **Routing strategy:** The confidence score enables a **tiered support system** :
 
@@ -8886,17 +8886,17 @@ Answer
 
 **Weighted voting scheme:**
 
-Instead of uniform weights wi=1/Nw_i = 1/Nwi=1/N, assign each chain iii a weight wiw_iwi reflecting its estimated reliability:
+Instead of uniform weights wi=1/Nw_i = 1/Nwi​=1/N, assign each chain iii a weight wiw_iwi​ reflecting its estimated reliability:
 
-a^=arg⁡max⁡a∑i=1Nwi⋅1[ai=a]\hat{a} = \arg\max_a \sum_{i=1}^{N} w_i \cdot \mathbf{1}[a_i = a]a^=argamaxi=1∑Nwi⋅1[ai=a]
+a^=arg⁡max⁡a∑i=1Nwi⋅1[ai=a]\hat{a} = \arg\max_a \sum_{i=1}^{N} w_i \cdot \mathbf{1}[a_i = a]a^=argamax​i=1∑N​wi​⋅1[ai​=a]
 
 **Estimating chain reliability -- three approaches:**
 
- 1. **Log-probability weighting.** Use the model's average log-probability of the reasoning chain as a confidence score: wi=exp⁡(1∣ri∣∑tlog⁡P(ri,t∣ri,<t,x))w_i = \exp($$\frac{1}{$$|r_i|$$\sum_t \log P(r_{i,t}$$ | r_{i,<t}, x))wi=exp(∣ri∣1∑tlogP(ri,t∣ri,<t,x)). Chains that the model is "more confident" about (higher log-probability) receive higher weight. _Limitation:_ The model may be confidently wrong -- high probability does not guarantee correctness.
+  1. **Log-probability weighting.** Use the model's average log-probability of the reasoning chain as a confidence score: wi=exp⁡(1∣ri∣∑tlog⁡P(ri,t∣ri,<t,x))w_i = \exp(\frac{1}{|r_i|}\sum_t \log P(r_{i,t} | r_{i,<t}, x))wi​=exp(∣ri​∣1​∑t​logP(ri,t​∣ri,<t​,x)). Chains that the model is "more confident" about (higher log-probability) receive higher weight. _Limitation:_ The model may be confidently wrong -- high probability does not guarantee correctness.
 
   2. **Internal consistency weighting.** Check whether the chain's intermediate steps are self-consistent (e.g., does the arithmetic check out? Does each step follow from the previous?). Chains with detectable errors receive lower weight. _Limitation:_ This requires a separate verification mechanism, which may itself be unreliable.
 
-  3. **Agreement weighting.** Chains whose final answer agrees with many other chains receive higher weight (since agreement with the majority is evidence of correctness by the Condorcet argument). wi=∣{j:aj=ai}∣/Nw_i = |\\{j : a_j = a_i\\}| / Nwi=∣{j:aj=ai}∣/N. _Limitation:_ This is circular -- it reinforces the majority opinion, potentially amplifying systematic errors.
+  3. **Agreement weighting.** Chains whose final answer agrees with many other chains receive higher weight (since agreement with the majority is evidence of correctness by the Condorcet argument). wi=∣{j:aj=ai}∣/Nw_i = |\\{j : a_j = a_i\\}| / Nwi​=∣{j:aj​=ai​}∣/N. _Limitation:_ This is circular -- it reinforces the majority opinion, potentially amplifying systematic errors.
 
 **Risks of weighted voting:**
 
@@ -8916,19 +8916,19 @@ Answer
 
 Both training-time and inference-time scaling improve model performance by applying more computation. The scaling laws from Chapters 5--6 can be written as:
 
-$L(C_{\text{train}}) \propto C_{\text{train}}^{-\alpha}$
+L(Ctrain)∝Ctrain−αL(C_{\text{train}}) \propto C_{\text{train}}^{-\alpha}L(Ctrain​)∝Ctrain−α​
 
 By analogy, inference-time scaling might follow:
 
-A(Cinfer)=A0+γlog⁡CinferA(C_{$\text{infer}}) = A_0 + \gamma \log C_{\text{infer}}A(Cinfer)=A0+$γlogCinfer
+A(Cinfer)=A0+γlog⁡CinferA(C_{\text{infer}}) = A_0 + \gamma \log C_{\text{infer}}A(Cinfer​)=A0​+γlogCinfer​
 
-where AAA is accuracy, CinferC_{$\text{infer}}Cinfer is inference compute (proportional to the number of chains or tree branches), and$ $\gamma$ is a task-dependent scaling constant. The logarithmic form reflects the empirical diminishing returns of self-consistency (accuracy improves rapidly at first, then plateaus).
+where AAA is accuracy, CinferC_{\text{infer}}Cinfer​ is inference compute (proportional to the number of chains or tree branches), and γ\gammaγ is a task-dependent scaling constant. The logarithmic form reflects the empirical diminishing returns of self-consistency (accuracy improves rapidly at first, then plateaus).
 
 A unified law might take the form:
 
-$\text{Performance} = f(C_{\text{train}}, C_{\text{infer}})$
+Performance=f(Ctrain,Cinfer)\text{Performance} = f(C_{\text{train}}, C_{\text{infer}})Performance=f(Ctrain​,Cinfer​)
 
-where $\text{train}}Ctrain and CinferC_{\text{infer}}Cinfer are partially substitutable: you can achieve the same performance with a smaller model and more inference compute, or a larger model and less inference compute.$
+where CtrainC_{\text{train}}Ctrain​ and CinferC_{\text{infer}}Cinfer​ are partially substitutable: you can achieve the same performance with a smaller model and more inference compute, or a larger model and less inference compute.
 
 **The case for fundamental differences:**
 
@@ -8950,13 +8950,13 @@ A **router model** takes the user's query and selects the optimal prompting tech
 
 **Features determining the technique:**
 
-  1. **Task complexity.** Single-step factual questions $\to$ zero-shot. Multi-step reasoning $\to$ CoT. Problems requiring search/backtracking $\to$ ToT.
+  1. **Task complexity.** Single-step factual questions →\to→ zero-shot. Multi-step reasoning →\to→ CoT. Problems requiring search/backtracking →\to→ ToT.
 
   2. **Answer verifiability.** Tasks with a single correct answer (math, coding, factual recall) benefit most from self-consistency (majority vote is meaningful). Open-ended tasks (creative writing, opinions) benefit least.
 
-  3. **Expected difficulty.** Easy questions (the model is likely to answer correctly with any technique) $\to$ zero-shot (minimize cost). Hard questions $\to$ self-consistency or ToT (maximize accuracy).
+  3. **Expected difficulty.** Easy questions (the model is likely to answer correctly with any technique) →\to→ zero-shot (minimize cost). Hard questions →\to→ self-consistency or ToT (maximize accuracy).
 
-  4. **Latency constraints.** Real-time applications $\to$ zero-shot or CoT (low latency). Batch processing $\to$ self-consistency or ToT (latency is less important).
+  4. **Latency constraints.** Real-time applications →\to→ zero-shot or CoT (low latency). Batch processing →\to→ self-consistency or ToT (latency is less important).
 
 **Training approach:**
 
@@ -9023,7 +9023,7 @@ Bender et al. (2021), in "On the Dangers of Stochastic Parrots: Can Language Mod
 
 The LLM training objective is next-token prediction:
 
-L(θ)=−∑tlog⁡Pθ(xt∣x<t)\mathcal{L}(\theta) = -$$\sum_t \log P_\theta(x_t | x_{<t})L($$θ)=−t∑logPθ(xt∣x<t)
+L(θ)=−∑tlog⁡Pθ(xt∣x<t)\mathcal{L}(\theta) = -\sum_t \log P_\theta(x_t | x_{<t})L(θ)=−t∑​logPθ​(xt​∣x<t​)
 
 This objective rewards predicting the next token accurately. It does not explicitly reward logical consistency, causal reasoning, or truth. The model learns co-occurrence statistics -- which tokens tend to follow which other tokens -- not the underlying rules that govern the domain.
 
@@ -9396,11 +9396,11 @@ LLaMA's central proposition: **train smaller models on more data.**
 
 The Chinchilla scaling law (Chapter 6) showed that the compute-optimal allocation is:
 
-$N^* \propto C^{0.5}, \quad D^* \propto C^{0.5}$
+N∗∝C0.5,D∗∝C0.5N^* \propto C^{0.5}, \quad D^* \propto C^{0.5}N∗∝C0.5,D∗∝C0.5
 
-where NNN is model parameters and DDD is training tokens. The optimal ratio is approximately D≈20ND $\approx 20ND$≈20N.
+where NNN is model parameters and DDD is training tokens. The optimal ratio is approximately D≈20ND \approx 20ND≈20N.
 
-By the Chinchilla analysis published two years later, GPT-3's allocation was wildly suboptimal: N=175BN = 175$\text{B}$N=175B, D=300BD = 300$\text{B}$D=300B, giving D/N≈1.7D/N $\approx 1.7D/N$≈1.7 \-- far below the optimal ratio of ~20. (At the time of GPT-3's training in 2020, the Kaplan scaling laws actually recommended this parameter-heavy allocation; the "suboptimality" was recognized only in retrospect.) GPT-3 was severely **undertrained** for its size.
+By the Chinchilla analysis published two years later, GPT-3's allocation was wildly suboptimal: N=175BN = 175\text{B}N=175B, D=300BD = 300\text{B}D=300B, giving D/N≈1.7D/N \approx 1.7D/N≈1.7 \-- far below the optimal ratio of ~20. (At the time of GPT-3's training in 2020, the Kaplan scaling laws actually recommended this parameter-heavy allocation; the "suboptimality" was recognized only in retrospect.) GPT-3 was severely **undertrained** for its size.
 
 LLaMA corrected this:
 
@@ -9452,9 +9452,9 @@ Standard Transformers use Post-LayerNorm (normalize after the residual connectio
 
 **RMSNorm** (Zhang & Sennrich, 2019) replaces Layer Normalization by normalizing using only the root mean square, omitting the mean subtraction:
 
-$$\text{RMSNorm}(\mathbf{x}) = \frac{\mathbf{x}}{\sqrt{\frac{1}{d}\sum_{i=1}^{d} x_i^2 + \epsilon}} \odot \boldsymbol{\gamma}RMSNorm(x)=d1$$
+RMSNorm(x)=x1d∑i=1dxi2+ϵ⊙γ\text{RMSNorm}(\mathbf{x}) = \frac{\mathbf{x}}{\sqrt{\frac{1}{d}\sum_{i=1}^{d} x_i^2 + \epsilon}} \odot \boldsymbol{\gamma}RMSNorm(x)=d1​∑i=1d​xi2​+ϵ​x​⊙γ
 
-where $\boldsymbol{\gamma}$ is a learnable scaling vector. RMSNorm is simpler and faster than LayerNorm (it avoids computing the mean), and empirically produces comparable results.
+where γ\boldsymbol{\gamma}γ is a learnable scaling vector. RMSNorm is simpler and faster than LayerNorm (it avoids computing the mean), and empirically produces comparable results.
 
 Pre-normalization (normalizing before the attention/FFN sub-layer rather than after) improves training stability for large models by ensuring that the inputs to each sub-layer have consistent scale, regardless of the residual stream magnitude.
 
@@ -9462,9 +9462,9 @@ Pre-normalization (normalizing before the attention/FFN sub-layer rather than af
 
 LLaMA replaces the standard FFN activation (ReLU or GELU) with **SwiGLU** (Shazeer, 2020):
 
-$\text{SwiGLU}(\mathbf{x}) = \text{Swish}(\mathbf{x} W_1) \odot (\mathbf{x} W_2)$
+SwiGLU(x)=Swish(xW1)⊙(xW2)\text{SwiGLU}(\mathbf{x}) = \text{Swish}(\mathbf{x} W_1) \odot (\mathbf{x} W_2)SwiGLU(x)=Swish(xW1​)⊙(xW2​)
 
-where Swish is the smooth approximation to ReLU: Swish(x)=x$\text{Swish}(x) = x \cdot \sigma(x)Swish(x)=x$, and ⊙$\odot$⊙ is element-wise multiplication. The gating mechanism (xW2\mathbf{x} W_2xW2) allows the network to selectively pass information, improving expressiveness.
+where Swish is the smooth approximation to ReLU: Swish(x)=x⋅σ(x)\text{Swish}(x) = x \cdot \sigma(x)Swish(x)=x⋅σ(x), and ⊙\odot⊙ is element-wise multiplication. The gating mechanism (xW2\mathbf{x} W_2xW2​) allows the network to selectively pass information, improving expressiveness.
 
 SwiGLU requires three weight matrices per FFN layer (instead of two for standard FFN), but empirical results show that SwiGLU produces better performance per parameter than ReLU or GELU activations.
 
@@ -9472,11 +9472,11 @@ SwiGLU requires three weight matrices per FFN layer (instead of two for standard
 
 LLaMA uses **RoPE** (Su et al., 2021) instead of learned or sinusoidal position embeddings. RoPE encodes position information by rotating query and key vectors in the attention mechanism:
 
-$\text{RoPE}(\mathbf{q}_m, \mathbf{k}_n) = \mathbf{q}_m^T R_{\theta}^{m-n} \mathbf{k}_n$
+RoPE(qm,kn)=qmTRθm−nkn\text{RoPE}(\mathbf{q}_m, \mathbf{k}_n) = \mathbf{q}_m^T R_{\theta}^{m-n} \mathbf{k}_nRoPE(qm​,kn​)=qmT​Rθm−n​kn​
 
-where Rθm−nR_$\theta^{m-n}R$θm−n is a rotation matrix that depends only on the relative position m−nm - nm−n. This naturally captures relative positional relationships and enables better extrapolation to sequence lengths longer than those seen during training.
+where Rθm−nR_\theta^{m-n}Rθm−n​ is a rotation matrix that depends only on the relative position m−nm - nm−n. This naturally captures relative positional relationships and enables better extrapolation to sequence lengths longer than those seen during training.
 
-The key insight is that RoPE encodes position through rotation: the query and key vectors at position mmm are rotated by an angle proportional to mmm, with different frequencies for different dimensions (analogous to the original Transformer's sinusoidal encodings, but applied multiplicatively through rotation matrices rather than additively). This means that the dot product between query and key depends only on the relative position difference — the rotations compose such that ⟨qm,kn⟩$\langle q_m, k_n \rangle$⟨qm,kn⟩ is a function of m−nm-nm−n alone.
+The key insight is that RoPE encodes position through rotation: the query and key vectors at position mmm are rotated by an angle proportional to mmm, with different frequencies for different dimensions (analogous to the original Transformer's sinusoidal encodings, but applied multiplicatively through rotation matrices rather than additively). This means that the dot product between query and key depends only on the relative position difference — the rotations compose such that ⟨qm,kn⟩\langle q_m, k_n \rangle⟨qm​,kn​⟩ is a function of m−nm-nm−n alone.
 
 * * *
 
@@ -9488,27 +9488,27 @@ LoRA addresses a practical challenge: fine-tuning a 65B parameter model requires
 
 #### The Key Insight: Fine-Tuning Is Low-Rank
 
-During fine-tuning, the weight updates ΔW=Wfine-tuned−Wpretrained\Delta W = W_{$\text{fine-tuned}} - W_{\text{pretrained}}$ΔW=Wfine-tuned−Wpretrained occupy a **low-dimensional subspace** of the full parameter space. Most of the learning happens along a small number of directions; the remaining directions change negligibly.
+During fine-tuning, the weight updates ΔW=Wfine-tuned−Wpretrained\Delta W = W_{\text{fine-tuned}} - W_{\text{pretrained}}ΔW=Wfine-tuned​−Wpretrained​ occupy a **low-dimensional subspace** of the full parameter space. Most of the learning happens along a small number of directions; the remaining directions change negligibly.
 
-Mathematically, the rank of $\Delta W$ is much smaller than the rank of WWW itself. This low-rank hypothesis is supported by empirical evidence: Aghajanyan et al. (2020) showed that pre-trained models have a low "intrinsic dimensionality" — fine-tuning to 90% of full performance requires updating only a small fraction of the total parameter space, typically a subspace of dimension 100-1000 regardless of the model's full dimensionality. LoRA directly exploits this property by constraining $\Delta W$ to a rank-rrr subspace. This means $\Delta W$ can be approximated by a low-rank factorization:
+Mathematically, the rank of ΔW\Delta WΔW is much smaller than the rank of WWW itself. This low-rank hypothesis is supported by empirical evidence: Aghajanyan et al. (2020) showed that pre-trained models have a low "intrinsic dimensionality" — fine-tuning to 90% of full performance requires updating only a small fraction of the total parameter space, typically a subspace of dimension 100-1000 regardless of the model's full dimensionality. LoRA directly exploits this property by constraining ΔW\Delta WΔW to a rank-rrr subspace. This means ΔW\Delta WΔW can be approximated by a low-rank factorization:
 
-$\Delta W \approx B A$
+ΔW≈BA\Delta W \approx B AΔW≈BA
 
-where B∈Rd×rB $\in \mathbb{R}^{d \times r}B$∈Rd×r and A∈Rr×dA $\in \mathbb{R}^{r \times d}A$∈Rr×d, with r≪dr $\ll dr$≪d. Instead of training d×dd \times dd×d parameters (the full weight matrix), LoRA trains only 2×d×r2 \times d \times r2×d×r parameters (the factors AAA and BBB).
+where B∈Rd×rB \in \mathbb{R}^{d \times r}B∈Rd×r and A∈Rr×dA \in \mathbb{R}^{r \times d}A∈Rr×d, with r≪dr \ll dr≪d. Instead of training d×dd \times dd×d parameters (the full weight matrix), LoRA trains only 2×d×r2 \times d \times r2×d×r parameters (the factors AAA and BBB).
 
 #### The LoRA Procedure
 
   1. **Freeze** all pretrained weights WWW.
   2. For each weight matrix to be adapted, add a trainable low-rank decomposition: W′=W+BAW' = W + BAW′=W+BA.
-  3. Initialize B=0B = 0B=0 and AAA randomly, so that $\Delta W = BA = 0$ at the start (the model begins at the pretrained weights).
+  3. Initialize B=0B = 0B=0 and AAA randomly, so that ΔW=BA=0\Delta W = BA = 0ΔW=BA=0 at the start (the model begins at the pretrained weights).
   4. During fine-tuning, update only AAA and BBB via backpropagation. The frozen WWW requires no gradient storage.
 
 #### Parameter Savings
 
-For a weight matrix of size d×dd $\times dd$×d with d=4096d = 4096d=4096 and rank r=8r = 8r=8:
+For a weight matrix of size d×dd \times dd×d with d=4096d = 4096d=4096 and rank r=8r = 8r=8:
 
-* Full fine-tuning: 4096×4096=16.8M4096 \times 4096 = 16.8$\text{M}4096$×4096=16.8M trainable parameters per matrix.
-* LoRA: 4096×8+8×4096=65.5K4096 $\times 8 + 8 \times 4096 = 65.5\text{K}4096$×8+8×4096=65.5K trainable parameters per matrix.
+* Full fine-tuning: 4096×4096=16.8M4096 \times 4096 = 16.8\text{M}4096×4096=16.8M trainable parameters per matrix.
+* LoRA: 4096×8+8×4096=65.5K4096 \times 8 + 8 \times 4096 = 65.5\text{K}4096×8+8×4096=65.5K trainable parameters per matrix.
 
 This is a **256x reduction** in trainable parameters. For a 7B model, LoRA typically adds only 4--20 million trainable parameters (0.06--0.3% of total parameters), making fine-tuning feasible on a single consumer GPU with 24GB of memory.
 
@@ -9606,11 +9606,11 @@ This chapter performed the close read of the LLaMA paper (Touvron et al., 2023) 
 
 Answer
 
-The Chinchilla scaling law states that for a fixed compute budget, the optimal allocation is roughly D≈20ND $\approx 20ND$≈20N \-- training tokens should be about 20x the model parameter count.
+The Chinchilla scaling law states that for a fixed compute budget, the optimal allocation is roughly D≈20ND \approx 20ND≈20N \-- training tokens should be about 20x the model parameter count.
 
-**GPT-3:** N=175BN = 175$\text{B}$N=175B, D=300BD = 300$\text{B}$D=300B, so D/N=1.7D/N = 1.7D/N=1.7. This is far below the optimal ratio of 20. GPT-3 was allocated far too many parameters relative to its training data. Using the Chinchilla framework, GPT-3's compute budget would have been better spent on a ~30B model trained on ~1.5T tokens.
+**GPT-3:** N=175BN = 175\text{B}N=175B, D=300BD = 300\text{B}D=300B, so D/N=1.7D/N = 1.7D/N=1.7. This is far below the optimal ratio of 20. GPT-3 was allocated far too many parameters relative to its training data. Using the Chinchilla framework, GPT-3's compute budget would have been better spent on a ~30B model trained on ~1.5T tokens.
 
-**LLaMA-13B:** N=13BN = 13$\text{B}$N=13B, D=1TD = 1$\text{T}$D=1T, so D/N=77D/N = 77D/N=77. This exceeds the optimal ratio (the model is trained on more data than the Chinchilla optimum suggests), but the excess data does not harm -- it ensures the model has extracted maximum information from the available training set.
+**LLaMA-13B:** N=13BN = 13\text{B}N=13B, D=1TD = 1\text{T}D=1T, so D/N=77D/N = 77D/N=77. This exceeds the optimal ratio (the model is trained on more data than the Chinchilla optimum suggests), but the excess data does not harm -- it ensures the model has extracted maximum information from the available training set.
 
 The result: LLaMA-13B uses its compute budget far more efficiently than GPT-3. Each of its 13B parameters has been trained on ~77x more data per parameter than GPT-3's 175B parameters (1.7 tokens per parameter). This more thorough training produces better-calibrated representations, compensating for the smaller model size.
 
@@ -9620,9 +9620,9 @@ The broader lesson from Chapter 6: model size and training data are complements,
 
 Answer
 
-LoRA adds a trainable low-rank decomposition BA to each frozen weight matrix, so the adapted weight is W′=W+BAW' = W + BAW′=W+BA where B∈Rd×rB $\in \mathbb{R}^{d \times r}B$∈Rd×r, A∈Rr×dA $\in \mathbb{R}^{r \times d}A$∈Rr×d, and r≪dr $\ll dr$≪d. Only AAA and BBB are trained; the pretrained weights WWW remain frozen, dramatically reducing memory and compute requirements. This enables fine-tuning a 7B model on a single consumer GPU.
+LoRA adds a trainable low-rank decomposition BABABA to each frozen weight matrix, so the adapted weight is W′=W+BAW' = W + BAW′=W+BA where B∈Rd×rB \in \mathbb{R}^{d \times r}B∈Rd×r, A∈Rr×dA \in \mathbb{R}^{r \times d}A∈Rr×d, and r≪dr \ll dr≪d. Only AAA and BBB are trained; the pretrained weights WWW remain frozen, dramatically reducing memory and compute requirements. This enables fine-tuning a 7B model on a single consumer GPU.
 
-The low-rank assumption is justified because fine-tuning for a specific task does not require changing the model's general language capabilities -- it only needs to adjust the model's behavior along a few task-relevant directions. Empirically, the weight changes during fine-tuning have low effective rank: most of the "signal" in $\Delta W$ is captured by the first few singular values. This is consistent with the finding (Chapters 1--4) that task-specific knowledge is a small modification to the general representations learned during pretraining.
+The low-rank assumption is justified because fine-tuning for a specific task does not require changing the model's general language capabilities -- it only needs to adjust the model's behavior along a few task-relevant directions. Empirically, the weight changes during fine-tuning have low effective rank: most of the "signal" in ΔW\Delta WΔW is captured by the first few singular values. This is consistent with the finding (Chapters 1--4) that task-specific knowledge is a small modification to the general representations learned during pretraining.
 
 **22.3.** Alpaca was created by fine-tuning LLaMA-7B on 52,000 instruction-response pairs generated by text-davinci-003, at a total cost of under 600 USD. Compare this to InstructGPT's approach (Chapter 16). What does Alpaca sacrifice to achieve this cost reduction?
 
@@ -9665,7 +9665,7 @@ Answer
 **(a) Full fine-tuning:**
 
 * Model weights: 26GB
-* Optimizer states (AdamW): 2 copies of parameters at FP32 = 2 $\times$ 52GB = 104GB
+* Optimizer states (AdamW): 2 copies of parameters at FP32 = 2 ×\times× 52GB = 104GB
 * Gradients: 26GB
 * **Total: ~156GB** \-- does not fit on an 80GB A100.
 * Workaround: Gradient checkpointing and CPU offloading could reduce memory to ~100GB, but with significant slowdown.
@@ -9674,7 +9674,7 @@ Answer
 **(b) LoRA with r=16r = 16r=16:**
 
 * Frozen model weights: 26GB (loaded but not updated)
-* LoRA parameters: For each adapted matrix of size d=5120d = 5120d=5120 (LLaMA-13B's hidden dimension), LoRA adds 2×5120×16=163,8402 $\times 5120 \times 16 = 163,8402$×5120×16=163,840 parameters. Applied to attention Q, K, V, and output projections across 40 layers: ~40 $\times$$\times$
+* LoRA parameters: For each adapted matrix of size d=5120d = 5120d=5120 (LLaMA-13B's hidden dimension), LoRA adds 2×5120×16=163,8402 \times 5120 \times 16 = 163,8402×5120×16=163,840 parameters. Applied to attention Q, K, V, and output projections across 40 layers: ~40 ×\times× 4 ×\times× 163,840 = ~26M trainable parameters. At FP16: ~52MB.
 * Optimizer states for LoRA parameters only: ~200MB
 * Gradients for LoRA parameters only: ~52MB
 * **Total: ~27GB** \-- fits easily on an 80GB A100, with room for large batch sizes.
@@ -9686,21 +9686,21 @@ Answer
 
 Answer
 
-**Sliding Window Attention (SWA):** Each token attends only to the WWW tokens immediately preceding it (plus itself). This reduces the attention computation from O(n2)O(n^2)O(n2) to O(nW), where nnn is the sequence length.
+**Sliding Window Attention (SWA):** Each token attends only to the WWW tokens immediately preceding it (plus itself). This reduces the attention computation from O(n2)O(n^2)O(n2) to O(nW)O(nW)O(nW), where nnn is the sequence length.
 
-**Information propagation across layers:** In layer 1, token ttt can attend to tokens t−W,…,tt-W, $\ldots, tt$−W,…,t. In layer 2, token ttt can attend to positions that, in layer 1, attended to tokens t−2W,…,tt-2W, $\ldots, tt$−2W,…,t. After LLL layers, token ttt has an effective receptive field of:
+**Information propagation across layers:** In layer 1, token ttt can attend to tokens t−W,…,tt-W, \ldots, tt−W,…,t. In layer 2, token ttt can attend to positions that, in layer 1, attended to tokens t−2W,…,tt-2W, \ldots, tt−2W,…,t. After LLL layers, token ttt has an effective receptive field of:
 
-$\text{receptive field} = L \times W$
+receptive field=L×W\text{receptive field} = L \times Wreceptive field=L×W
 
 For Mistral 7B with L=32L = 32L=32 layers and W=4096W = 4096W=4096:
 
-$\text{receptive field} = 32 \times 4096 = 131{,}072 \text{ tokens}$
+receptive field=32×4096=131,072 tokens\text{receptive field} = 32 \times 4096 = 131{,}072 \text{ tokens}receptive field=32×4096=131,072 tokens
 
 This exceeds the typical context window length, meaning that by the final layer, each token has (indirect) access to information from the entire sequence.
 
 **The tradeoff:**
 
-* **Smaller WWW:** Lower computational cost, smaller KV cache, faster inference. But shorter direct attention span per layer, requiring more layers for information to propagate. If L×W<nL $\times W < nL$×W<n, some tokens cannot influence each other at all.
+* **Smaller WWW:** Lower computational cost, smaller KV cache, faster inference. But shorter direct attention span per layer, requiring more layers for information to propagate. If L×W<nL \times W < nL×W<n, some tokens cannot influence each other at all.
 * **Larger WWW:** Higher computational cost, larger KV cache. But each layer captures longer-range dependencies directly, potentially improving quality on tasks that require long-range attention.
 
 **Connection to Vol I:** In Vol I's discussion of self-attention, the key insight was that attention enables tokens to interact regardless of their distance in the sequence. SWA sacrifices this property in a single layer but recovers it across layers through multi-hop propagation. This is a tradeoff between the theoretical power of full attention (any-to-any interaction) and the practical constraint of quadratic scaling.
@@ -9731,9 +9731,9 @@ Answer
 
 **The competitive logic:** Each release follows the scaling laws more aggressively:
 
-$\approx 21D/N$
-* LLaMA 2 (70B): D/N≈29D/N $\approx 29D/N$≈29 (slightly beyond Chinchilla optimal)
-* LLaMA 3 (405B): D/N≈37D/N $\approx 37D/N$≈37 (well beyond Chinchilla optimal)
+* LLaMA 1: D/N≈21D/N \approx 21D/N≈21 (Chinchilla optimal)
+* LLaMA 2 (70B): D/N≈29D/N \approx 29D/N≈29 (slightly beyond Chinchilla optimal)
+* LLaMA 3 (405B): D/N≈37D/N \approx 37D/N≈37 (well beyond Chinchilla optimal)
 
 The progression beyond Chinchilla optimal reflects a strategic insight: for inference-cost-sensitive deployment, it is worth spending extra training compute to produce a smaller model that performs as well as a larger, Chinchilla-optimal one. A model trained 2x beyond Chinchilla optimal is not wasting compute; it is trading training-time compute for inference-time savings -- amortized over millions of user queries.
 
@@ -9921,13 +9921,13 @@ Vol III | CLIP, ViT | Multimodal, cross-domain
 
 Volume | Development | Paradigm  
 ---|---|---  
-Vol I, Ch 1--4 (SGD, backprop, loss functions) | Supervised learning | Labeled data $\to$ task-specific model 
-Vol I, Ch 25--26 (transfer learning, unsupervised pretraining) | Pretraining concept | $\to$ 
-Vol II, Ch 1--4 | Pretraining + fine-tuning | $\to$ 
-Vol II, Ch 12--14 | Reinforcement learning | $\to$ 
-Vol II, Ch 15--16 | RLHF | $\to$ 
-Vol II, Ch 17 | DPO | $\to$ 
-Vol III | Self-supervised generation | $\to$ 
+Vol I, Ch 1--4 (SGD, backprop, loss functions) | Supervised learning | Labeled data →\to→ task-specific model  
+Vol I, Ch 25--26 (transfer learning, unsupervised pretraining) | Pretraining concept | Unlabeled data →\to→ general model  
+Vol II, Ch 1--4 | Pretraining + fine-tuning | Massive unlabeled →\to→ small labeled  
+Vol II, Ch 12--14 | Reinforcement learning | Reward signal →\to→ policy optimization  
+Vol II, Ch 15--16 | RLHF | Human preferences →\to→ aligned model  
+Vol II, Ch 17 | DPO | Preferences →\to→ aligned model (no RL)  
+Vol III | Self-supervised generation | Generate →\to→ evaluate →\to→ improve  
   
 **The pattern:** Each paradigm change reduced the dependence on labeled data. Supervised learning requires labels for every example. Pretraining + fine-tuning requires labels only for the target task. RLHF requires only pairwise comparisons. DPO requires the same comparisons but with a simpler training procedure. The trend is toward self-supervised methods that require minimal human input.
 
@@ -9944,7 +9944,7 @@ Vol III | Self-supervised generation | $\to$
 Volume | Development | Key Finding  
 ---|---|---  
 Vol II, Ch 5 | Kaplan scaling laws | Loss follows power laws in N, D, C  
-Vol II, Ch 6 | Chinchilla correction | $\propto C^{0.5}N$ 
+Vol II, Ch 6 | Chinchilla correction | Optimal allocation: N∝C0.5N \propto C^{0.5}N∝C0.5  
 Vol II, Ch 7--9 | GPT-2, GPT-3 | Zero-shot, few-shot, in-context learning emerge  
 Vol II, Ch 10 | Emergence debate | Capabilities appear at scale thresholds  
 Vol II, Ch 19 | CoT emergence | Reasoning emerges above ~100B parameters  
@@ -9966,7 +9966,7 @@ Vol II, Ch 22 | LLaMA/open models | Chinchilla-optimal training in practice
 
 Volume | Development | Approach  
 ---|---|---  
-Vol II, Ch 3--4 | Autoregressive generation | Sample one token at a time from P(xt∥x<t)P(x_t\|x_{<t})P(xt∥x<t)  
+Vol II, Ch 3--4 | Autoregressive generation | Sample one token at a time from P(xt∥x<t)P(x_t\|x_{<t})P(xt​∥x<t​)  
 Vol III | VAE | Encode to latent space, decode to data space  
 Vol III | GAN | Adversarial training: generator vs. discriminator  
 Vol III | Diffusion | Iteratively denoise from noise to data  
@@ -10185,10 +10185,10 @@ Answer
 
 The training paradigm has evolved through four stages:
 
-  1. Supervised learning (labeled data $\to$ task-specific model)
-  2. Pretraining + fine-tuning (unlabeled data $\to$$\to$
-  3. RLHF (human preferences $\to$ aligned model via reward model + PPO)
-  4. DPO (human preferences $\to$ aligned model via supervised learning)
+  1. Supervised learning (labeled data →\to→ task-specific model)
+  2. Pretraining + fine-tuning (unlabeled data →\to→ general model →\to→ task adaptation)
+  3. RLHF (human preferences →\to→ aligned model via reward model + PPO)
+  4. DPO (human preferences →\to→ aligned model via supervised learning)
 
 Each stage reduced the dependence on labeled data. The current frontier is DPO/RLHF-based alignment, which requires only pairwise preference data. The key result: alignment training produces a multiplier of >100x on effective model capability (InstructGPT, Chapter 16).
 
@@ -10365,7 +10365,7 @@ Large models can learn new tasks from a few examples placed in the prompt, witho
 
 With chain-of-thought prompting (Chapter 19), large models solve multi-step arithmetic, logical, and commonsense reasoning problems. Self-consistency (Chapter 20) further improves accuracy through majority voting.
 
-**Evidence:** PaLM 540B on GSM8K: 18% $\to$ 57% (CoT) $\to$ 74% (self-consistency). Comparable improvements across multiple reasoning benchmarks.
+**Evidence:** PaLM 540B on GSM8K: 18% →\to→ 57% (CoT) →\to→ 74% (self-consistency). Comparable improvements across multiple reasoning benchmarks.
 
 **Caveat:** This capability is emergent (only above ~100B parameters) and fragile (sensitive to problem framing, as discussed in Chapter 21).
 
@@ -10609,7 +10609,7 @@ Answer
 
 The relationship between capability and accessibility is **multiplicative, not additive.** A model's effective capability is:
 
-$\text{Effective capability} = \text{Raw capability} \times \text{Alignment multiplier} \times \text{Prompting multiplier}$
+Effective capability=Raw capability×Alignment multiplier×Prompting multiplier\text{Effective capability} = \text{Raw capability} \times \text{Alignment multiplier} \times \text{Prompting multiplier}Effective capability=Raw capability×Alignment multiplier×Prompting multiplier
 
 Raw capability (from pretraining and scale) provides the base. Alignment amplifies it for instruction-following tasks. Prompting amplifies it further for specific task types. Neglecting either multiplier leaves most of the model's potential inaccessible.
 

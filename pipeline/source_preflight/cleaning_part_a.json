@@ -1,6 +1,8 @@
 {
   "report": "pipeline/source_preflight/cleaning_part_a.md",
-  "generated_at": "2026-07-21T16:07:31.936199+00:00",
+  "generated_at": "2026-07-21T16:36:30.102420+00:00",
+  "revision": "post-control-review-revert-formulas-structural-only",
+  "pr": 20,
   "scope": [
     "AI 科学 I：从神经网络到 Transformer",
     "AI 科学 II：大语言模型",
@@ -15,9 +17,14 @@
     "训练的科学·卷二：耐力与整体表现"
   ],
   "summary": {
-    "CLEAN_PASS": 3,
-    "CLEAN_WITH_REMAINDERS": 8,
-    "BLOCK": 0
+    "CLEAN_PASS": 0,
+    "CLEAN_WITH_REMAINDERS": 0,
+    "BLOCK": 11
+  },
+  "policy": {
+    "no_blind_formula_regex": true,
+    "CLEAN_WITH_REMAINDERS_not_promotable": true,
+    "unclear_formulas": "SOURCE_CONFLICT + keep original"
   },
   "books": [
     {
@@ -25,1284 +32,183 @@
       "path": "sources/pending/AI 科学 I：从神经网络到 Transformer.md",
       "preflight_source": "pending_part_2",
       "before_status": "BLOCK",
-      "before_issue_count_estimate": 685,
-      "after_issue_count_estimate": 406,
-      "lines_before": 13373,
-      "lines_after": 13373,
-      "changed_line_count": 2656,
-      "changed_line_ranges": [
-        [
-          85,
-          85
-        ],
-        [
-          107,
-          107
-        ],
-        [
-          117,
-          117
-        ],
-        [
-          121,
-          123
-        ],
-        [
-          258,
-          258
-        ],
-        [
-          268,
-          270
-        ],
-        [
-          326,
-          328
-        ],
-        [
-          332,
-          333
-        ],
-        [
-          445,
-          445
-        ],
-        [
-          521,
-          527
-        ],
-        [
-          549,
-          549
-        ],
-        [
-          553,
-          553
-        ],
-        [
-          557,
-          559
-        ],
-        [
-          577,
-          581
-        ],
-        [
-          585,
-          585
-        ],
-        [
-          589,
-          593
-        ],
-        [
-          597,
-          603
-        ],
-        [
-          607,
-          607
-        ],
-        [
-          611,
-          613
-        ],
-        [
-          619,
-          619
-        ],
-        [
-          623,
-          623
-        ],
-        [
-          635,
-          643
-        ],
-        [
-          647,
-          653
-        ],
-        [
-          659,
-          663
-        ],
-        [
-          667,
-          667
-        ],
-        [
-          673,
-          677
-        ],
-        [
-          685,
-          685
-        ],
-        [
-          699,
-          704
-        ],
-        [
-          708,
-          708
-        ],
-        [
-          712,
-          712
-        ],
-        [
-          716,
-          729
-        ],
-        [
-          737,
-          737
-        ],
-        [
-          779,
-          783
-        ],
-        [
-          787,
-          787
-        ],
-        [
-          791,
-          795
-        ],
-        [
-          803,
-          805
-        ],
-        [
-          815,
-          819
-        ],
-        [
-          847,
-          847
-        ],
-        [
-          851,
-          853
-        ],
-        [
-          859,
-          859
-        ],
-        [
-          863,
-          867
-        ],
-        [
-          879,
-          879
-        ],
-        [
-          913,
-          915
-        ],
-        [
-          921,
-          921
-        ],
-        [
-          925,
-          927
-        ],
-        [
-          937,
-          939
-        ],
-        [
-          947,
-          951
-        ],
-        [
-          957,
-          963
-        ],
-        [
-          971,
-          971
-        ],
-        [
-          975,
-          975
-        ]
+      "status": "BLOCK",
+      "structural_fixes": [
+        "table_stub_header L2021-2026"
       ],
-      "decisions": {
-        "formula": "Prefer closed LaTeX via ABA/island peel; ZWSP stripped; unsafe peels reverted. Spot-checked early/mid/late.",
-        "duplicate": "n/a",
-        "toc": "n/a",
-        "table": "Forward/Backward pass → 3-col GFM with stub first header cell."
-      },
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "约 L2021-2026",
       "unresolved": [
-        "~406 heuristic residual multi-render hits remain after safe cleaning."
+        "SOURCE_CONFLICT: systemic formula multi-render left unchanged after reverting unsafe batch peel"
       ],
-      "status": "CLEAN_WITH_REMAINDERS"
+      "promotable": false
     },
     {
       "name": "AI 科学 II：大语言模型",
       "path": "sources/pending/AI 科学 II：大语言模型.md",
       "preflight_source": "pending_part_1",
       "before_status": "BLOCK",
-      "before_issue_count_estimate": 163,
-      "after_issue_count_estimate": 103,
-      "lines_before": 10742,
-      "lines_after": 10742,
-      "changed_line_count": 906,
-      "changed_line_ranges": [
-        [
-          77,
-          77
-        ],
-        [
-          115,
-          121
-        ],
-        [
-          129,
-          129
-        ],
-        [
-          133,
-          133
-        ],
-        [
-          154,
-          154
-        ],
-        [
-          160,
-          160
-        ],
-        [
-          196,
-          200
-        ],
-        [
-          222,
-          224
-        ],
-        [
-          293,
-          297
-        ],
-        [
-          307,
-          307
-        ],
-        [
-          345,
-          345
-        ],
-        [
-          351,
-          353
-        ],
-        [
-          357,
-          357
-        ],
-        [
-          361,
-          361
-        ],
-        [
-          437,
-          437
-        ],
-        [
-          496,
-          496
-        ],
-        [
-          528,
-          532
-        ],
-        [
-          549,
-          551
-        ],
-        [
-          559,
-          562
-        ],
-        [
-          566,
-          570
-        ],
-        [
-          576,
-          582
-        ],
-        [
-          610,
-          612
-        ],
-        [
-          630,
-          632
-        ],
-        [
-          646,
-          646
-        ],
-        [
-          654,
-          656
-        ],
-        [
-          763,
-          763
-        ],
-        [
-          767,
-          767
-        ],
-        [
-          771,
-          771
-        ],
-        [
-          821,
-          823
-        ],
-        [
-          849,
-          849
-        ],
-        [
-          855,
-          859
-        ],
-        [
-          915,
-          915
-        ],
-        [
-          921,
-          923
-        ],
-        [
-          941,
-          941
-        ],
-        [
-          949,
-          951
-        ],
-        [
-          955,
-          957
-        ],
-        [
-          971,
-          975
-        ],
-        [
-          1028,
-          1032
-        ],
-        [
-          1040,
-          1040
-        ],
-        [
-          1052,
-          1056
-        ],
-        [
-          1060,
-          1062
-        ],
-        [
-          1070,
-          1070
-        ],
-        [
-          1084,
-          1084
-        ],
-        [
-          1090,
-          1090
-        ],
-        [
-          1096,
-          1096
-        ],
-        [
-          1104,
-          1106
-        ],
-        [
-          1158,
-          1158
-        ],
-        [
-          1222,
-          1222
-        ],
-        [
-          1228,
-          1228
-        ],
-        [
-          1232,
-          1238
-        ]
+      "status": "BLOCK",
+      "structural_fixes": [
+        "kaplan_metric_column",
+        "assessment_category_fill L10486-10502"
       ],
-      "decisions": {
-        "formula": "Systemic peel + manual underbrace/ELMo; unsafe PPO peels restored from backup.",
-        "duplicate": "n/a",
-        "toc": "n/a",
-        "table": "Added Metric col to Kaplan/Chinchilla; filled Category on assessment table."
-      },
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "约 L2539-2543; L10486-10502",
       "unresolved": [
-        "~103 heuristic residual multi-render hits remain after safe cleaning.",
-        "SOURCE_CONFLICT avoided: unclear PPO/π_θ inline peels left as backup text rather than guessed."
+        "SOURCE_CONFLICT: systemic formula multi-render left unchanged"
       ],
-      "status": "CLEAN_WITH_REMAINDERS"
+      "promotable": false
     },
     {
       "name": "AI 工程：用 LLM 构建生产系统",
       "path": "sources/pending/AI 工程：用 LLM 构建生产系统.md",
       "preflight_source": "pending_part_1",
       "before_status": "BLOCK",
-      "before_issue_count_estimate": 46,
-      "after_issue_count_estimate": 45,
-      "lines_before": 19424,
-      "lines_after": 19400,
-      "changed_line_count": 566,
-      "changed_line_ranges": [
-        {
-          "lines_before": 19424,
-          "lines_after": 19400
-        },
-        [
-          31,
-          34
-        ],
-        [
-          18411,
-          19400
-        ]
+      "status": "BLOCK",
+      "structural_fixes": [
+        "toc_appendices",
+        "duplicate_discipline_block_removed",
+        "fake_h2_table_to_5_cols"
       ],
-      "decisions": {
-        "formula": "n/a",
-        "duplicate": "Removed duplicate Weeks 12–13 discipline block (kept one).",
-        "toc": "Removed duplicate Introduction; listed Appendix A–D.",
-        "table": "Removed ## from Anti-pattern cheat-sheet header; normalized GFM."
-      },
-      "unresolved": [],
-      "status": "CLEAN_PASS"
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "TOC L31-34; dup ~L18411-18434; table ~L19261+",
+      "unresolved": [
+        "SOURCE_CONFLICT: L6559 RRF triple-render left unchanged"
+      ],
+      "promotable": false
     },
     {
       "name": "数据库系统",
       "path": "sources/pending/数据库系统.md",
       "preflight_source": "pending_part_1",
       "before_status": "BLOCK",
-      "before_issue_count_estimate": 86,
-      "after_issue_count_estimate": 36,
-      "lines_before": 12151,
-      "lines_after": 12108,
-      "changed_line_count": 318,
-      "changed_line_ranges": [
-        {
-          "lines_before": 12151,
-          "lines_after": 12108
-        },
-        [
-          286,
-          286
-        ],
-        [
-          329,
-          329
-        ],
-        [
-          2810,
-          2812
-        ],
-        [
-          2822,
-          2825
-        ],
-        [
-          2829,
-          2831
-        ],
-        [
-          2835,
-          2837
-        ],
-        [
-          2845,
-          2849
-        ],
-        [
-          2853,
-          2855
-        ],
-        [
-          2867,
-          2867
-        ],
-        [
-          2885,
-          2887
-        ],
-        [
-          2891,
-          2891
-        ],
-        [
-          2900,
-          2900
-        ],
-        [
-          2904,
-          2904
-        ],
-        [
-          2908,
-          2912
-        ],
-        [
-          2920,
-          2920
-        ],
-        [
-          2924,
-          2929
-        ],
-        [
-          2940,
-          2944
-        ],
-        [
-          2948,
-          2953
-        ],
-        [
-          2990,
-          2992
-        ],
-        [
-          3008,
-          3008
-        ],
-        [
-          3026,
-          3029
-        ],
-        [
-          3045,
-          3046
-        ],
-        [
-          3052,
-          3052
-        ],
-        [
-          3070,
-          3075
-        ],
-        [
-          3086,
-          3086
-        ],
-        [
-          3107,
-          3107
-        ],
-        [
-          3111,
-          3111
-        ],
-        [
-          3136,
-          3137
-        ],
-        [
-          3141,
-          3143
-        ],
-        [
-          3147,
-          3149
-        ],
-        [
-          3230,
-          3230
-        ],
-        [
-          3234,
-          3236
-        ],
-        [
-          3245,
-          3248
-        ],
-        [
-          3252,
-          3254
-        ],
-        [
-          3260,
-          3262
-        ],
-        [
-          3277,
-          3280
-        ],
-        [
-          3290,
-          3298
-        ],
-        [
-          3308,
-          3308
-        ],
-        [
-          3313,
-          3313
-        ],
-        [
-          3318,
-          3318
-        ],
-        [
-          3330,
-          3333
-        ],
-        [
-          3339,
-          3342
-        ],
-        [
-          3355,
-          3358
-        ],
-        [
-          3366,
-          3366
-        ],
-        [
-          3388,
-          3388
-        ],
-        [
-          3396,
-          3396
-        ],
-        [
-          3400,
-          3403
-        ],
-        [
-          3407,
-          3415
-        ],
-        [
-          3455,
-          3455
-        ]
+      "status": "BLOCK",
+      "structural_fixes": [
+        "lock_matrix_header_col",
+        "duplicate_tail_removed"
       ],
-      "decisions": {
-        "formula": "Safe multi-render peel; clear FD X→Y examples normalized.",
-        "duplicate": "Deleted second Think Deeper 15–20 / Summary tail.",
-        "toc": "n/a",
-        "table": "Lock matrix: added Lock type header column."
-      },
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "L7616-7622; tail dup removed",
       "unresolved": [
-        "~36 heuristic residual multi-render hits remain after safe cleaning."
+        "SOURCE_CONFLICT: systemic formula multi-render left unchanged"
       ],
-      "status": "CLEAN_WITH_REMAINDERS"
+      "promotable": false
     },
     {
       "name": "分布式系统",
       "path": "sources/pending/分布式系统.md",
       "preflight_source": "pending_part_2",
       "before_status": "BLOCK",
-      "before_issue_count_estimate": 44,
-      "after_issue_count_estimate": 13,
-      "lines_before": 12195,
-      "lines_after": 12168,
-      "changed_line_count": 12090,
-      "changed_line_ranges": [
-        {
-          "lines_before": 12195,
-          "lines_after": 12168
-        },
-        [
-          34,
-          12168
-        ]
+      "status": "BLOCK",
+      "structural_fixes": [
+        "ghost_toc_removed",
+        "postscript_dup_removed",
+        "fake_h2_tables_fixed"
       ],
-      "decisions": {
-        "formula": "Arrow/parallel and ABA peels; some aaa/bbb prose triples remain.",
-        "duplicate": "One 29.4/29.5 + one polish note; removed replay.",
-        "toc": "Deleted ghost「第 30 章」.",
-        "table": "Removed ## from three tables; GFM normalized."
-      },
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "TOC L34; ending; tables ~11277/11844/12130",
       "unresolved": [
-        "~13 heuristic residual multi-render hits remain after safe cleaning."
+        "SOURCE_CONFLICT: formula/variable multi-render left unchanged"
       ],
-      "status": "CLEAN_WITH_REMAINDERS"
+      "promotable": false
     },
     {
       "name": "操作系统",
       "path": "sources/pending/操作系统.md",
       "preflight_source": "pending_part_2",
       "before_status": "BLOCK",
-      "before_issue_count_estimate": 15,
-      "after_issue_count_estimate": 13,
-      "lines_before": 8812,
-      "lines_after": 8812,
-      "changed_line_count": 41,
-      "changed_line_ranges": [
-        [
-          14,
-          31
-        ],
-        [
-          61,
-          61
-        ],
-        [
-          73,
-          73
-        ],
-        [
-          1483,
-          1483
-        ],
-        [
-          1577,
-          1577
-        ],
-        [
-          1581,
-          1581
-        ],
-        [
-          1615,
-          1615
-        ],
-        [
-          1625,
-          1625
-        ],
-        [
-          1645,
-          1645
-        ],
-        [
-          1669,
-          1669
-        ],
-        [
-          1759,
-          1759
-        ],
-        [
-          1763,
-          1763
-        ],
-        [
-          1860,
-          1860
-        ],
-        [
-          1876,
-          1878
-        ],
-        [
-          2301,
-          2301
-        ],
-        [
-          2323,
-          2323
-        ],
-        [
-          2335,
-          2335
-        ],
-        [
-          2347,
-          2347
-        ],
-        [
-          2373,
-          2373
-        ],
-        [
-          2413,
-          2413
-        ],
-        [
-          2429,
-          2429
-        ],
-        [
-          2437,
-          2437
-        ],
-        [
-          4848,
-          4848
-        ]
+      "status": "BLOCK",
+      "structural_fixes": [
+        "toc_rebuilt_from_h2",
+        "intro_heading_####_to_###"
       ],
-      "decisions": {
-        "formula": "Ch5 Average turnaround triples → single $...$ each.",
-        "duplicate": "n/a",
-        "toc": "Rebuilt from H2 Introduction + Chapters 1–26.",
-        "table": "n/a",
-        "heading": "Introduction children #### → ###."
-      },
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "TOC L3-33; intro subheads",
       "unresolved": [
-        "~13 heuristic residual multi-render hits remain after safe cleaning."
+        "SOURCE_CONFLICT: Ch5 scheduling arithmetic triple-render left unchanged"
       ],
-      "status": "CLEAN_WITH_REMAINDERS"
+      "promotable": false
     },
     {
       "name": "系统设计思维：大规模软件的架构之道",
       "path": "sources/pending/系统设计思维：大规模软件的架构之道.md",
       "preflight_source": "pending_part_1",
       "before_status": "BLOCK",
-      "before_issue_count_estimate": 7,
-      "after_issue_count_estimate": 2,
-      "lines_before": 12263,
-      "lines_after": 12271,
-      "changed_line_count": 7511,
-      "changed_line_ranges": [
-        {
-          "lines_before": 12263,
-          "lines_after": 12271
-        },
-        [
-          684,
-          684
-        ],
-        [
-          692,
-          696
-        ],
-        [
-          1114,
-          1803
-        ],
-        [
-          1807,
-          10493
-        ],
-        [
-          10497,
-          10501
-        ],
-        [
-          10505,
-          10799
-        ],
-        [
-          10803,
-          10807
-        ],
-        [
-          10811,
-          11109
-        ],
-        [
-          11113,
-          11117
-        ],
-        [
-          11121,
-          11404
-        ],
-        [
-          11408,
-          11412
-        ],
-        [
-          11416,
-          11730
-        ],
-        [
-          11734,
-          11738
-        ],
-        [
-          11742,
-          12021
-        ],
-        [
-          12025,
-          12219
-        ],
-        [
-          12223,
-          12227
-        ],
-        [
-          12231,
-          12263
-        ]
-      ],
-      "decisions": {
-        "formula": "Availability/QPS/HitRatio/PageRank → closed LaTeX; arithmetic checked.",
-        "duplicate": "n/a",
-        "toc": "n/a",
-        "table": "n/a"
-      },
+      "status": "BLOCK",
+      "structural_fixes": [],
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "无",
       "unresolved": [
-        "~2 heuristic residual multi-render hits remain."
+        "SOURCE_CONFLICT: formula multi-render left unchanged (no structural BLOCK)"
       ],
-      "status": "CLEAN_WITH_REMAINDERS"
+      "promotable": false
     },
     {
       "name": "理性之外：行为经济学",
       "path": "sources/pending/理性之外：行为经济学.md",
       "preflight_source": "pending_part_1",
       "before_status": "BLOCK",
-      "before_issue_count_estimate": 17,
-      "after_issue_count_estimate": 9,
-      "lines_before": 5311,
-      "lines_after": 5311,
-      "changed_line_count": 119,
-      "changed_line_ranges": [
-        [
-          267,
-          267
-        ],
-        [
-          277,
-          279
-        ],
-        [
-          293,
-          293
-        ],
-        [
-          303,
-          303
-        ],
-        [
-          307,
-          307
-        ],
-        [
-          311,
-          317
-        ],
-        [
-          347,
-          349
-        ],
-        [
-          361,
-          361
-        ],
-        [
-          371,
-          371
-        ],
-        [
-          405,
-          411
-        ],
-        [
-          431,
-          431
-        ],
-        [
-          439,
-          439
-        ],
-        [
-          443,
-          445
-        ],
-        [
-          455,
-          455
-        ],
-        [
-          459,
-          459
-        ],
-        [
-          463,
-          467
-        ],
-        [
-          475,
-          477
-        ],
-        [
-          555,
-          555
-        ],
-        [
-          559,
-          563
-        ],
-        [
-          567,
-          571
-        ],
-        [
-          618,
-          622
-        ],
-        [
-          626,
-          628
-        ],
-        [
-          675,
-          675
-        ],
-        [
-          705,
-          707
-        ],
-        [
-          881,
-          883
-        ],
-        [
-          1048,
-          1048
-        ],
-        [
-          1054,
-          1054
-        ],
-        [
-          1108,
-          1108
-        ],
-        [
-          1418,
-          1418
-        ],
-        [
-          1609,
-          1609
-        ],
-        [
-          1613,
-          1613
-        ],
-        [
-          1617,
-          1617
-        ],
-        [
-          1623,
-          1625
-        ],
-        [
-          1641,
-          1641
-        ],
-        [
-          1649,
-          1649
-        ],
-        [
-          1664,
-          1678
-        ],
-        [
-          1682,
-          1687
-        ],
-        [
-          1693,
-          1693
-        ],
-        [
-          1718,
-          1721
-        ],
-        [
-          1727,
-          1727
-        ],
-        [
-          1745,
-          1749
-        ],
-        [
-          1759,
-          1761
-        ],
-        [
-          1765,
-          1769
-        ],
-        [
-          1779,
-          1779
-        ],
-        [
-          1789,
-          1789
-        ],
-        [
-          1797,
-          1797
-        ],
-        [
-          1805,
-          1805
-        ],
-        [
-          1809,
-          1809
-        ],
-        [
-          1813,
-          1813
-        ],
-        [
-          1817,
-          1817
-        ]
-      ],
-      "decisions": {
-        "formula": "CE/RP/β peels where safe; CE=25 example verified.",
-        "duplicate": "n/a",
-        "toc": "n/a",
-        "table": "n/a"
-      },
+      "status": "BLOCK",
+      "structural_fixes": [],
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "无",
       "unresolved": [
-        "~9 heuristic residual multi-render hits remain after safe cleaning."
+        "SOURCE_CONFLICT: CE/RP/x multi-render left unchanged"
       ],
-      "status": "CLEAN_WITH_REMAINDERS"
+      "promotable": false
     },
     {
       "name": "营养的逻辑",
       "path": "sources/pending/营养的逻辑.md",
       "preflight_source": "pending_part_2",
       "before_status": "BLOCK",
-      "before_issue_count_estimate": 0,
-      "after_issue_count_estimate": 0,
-      "lines_before": 4891,
-      "lines_after": 4891,
-      "changed_line_count": 4,
-      "changed_line_ranges": [
-        [
-          430,
-          430
-        ],
-        [
-          434,
-          434
-        ],
-        [
-          438,
-          438
-        ],
-        [
-          2746,
-          2746
-        ]
+      "status": "BLOCK",
+      "structural_fixes": [
+        "section_12_9_renumbered_to_12_8"
       ],
-      "decisions": {
-        "formula": "GL → closed $$\\frac...$$; ZWSP removed; reversed unicode flank discarded.",
-        "duplicate": "n/a",
-        "toc": "n/a",
-        "table": "n/a",
-        "heading": "12.9 Exercises → 12.8 (no missing body for 12.8)."
-      },
-      "unresolved": [],
-      "status": "CLEAN_PASS"
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "L2746",
+      "unresolved": [
+        "SOURCE_CONFLICT: GL formula triple-render + ZWSP left unchanged"
+      ],
+      "promotable": false
     },
     {
       "name": "钱为我用",
       "path": "sources/pending/钱为我用.md",
       "preflight_source": "pending_part_2",
       "before_status": "BLOCK",
-      "before_issue_count_estimate": 2,
-      "after_issue_count_estimate": 0,
-      "lines_before": 4501,
-      "lines_after": 4484,
-      "changed_line_count": 2538,
-      "changed_line_ranges": [
-        {
-          "lines_before": 4501,
-          "lines_after": 4484
-        },
-        [
-          55,
-          55
-        ],
-        [
-          67,
-          67
-        ],
-        [
-          106,
-          4484
-        ]
+      "status": "BLOCK",
+      "structural_fixes": [
+        "intro_heading_####_to_###",
+        "ending_duplicate_removed",
+        "discussion_body_preserved"
       ],
-      "decisions": {
-        "formula": "Wealth/savings-rate/Rule-of-72/runway/P/R closed LaTeX; (1.07)^{10} de-tripled.",
-        "duplicate": "Removed glued Q3/Summary replay after Start today.",
-        "toc": "n/a",
-        "table": "n/a",
-        "heading": "Intro #### → ###."
-      },
-      "unresolved": [],
-      "status": "CLEAN_PASS"
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "L55/L67; ending ~L4479+",
+      "unresolved": [
+        "SOURCE_CONFLICT: wealth/Rule-of-72 formula multi-render left unchanged"
+      ],
+      "promotable": false
     },
     {
       "name": "训练的科学·卷二：耐力与整体表现",
       "path": "sources/pending/训练的科学·卷二：耐力与整体表现.md",
       "preflight_source": "pending_part_2",
       "before_status": "BLOCK",
-      "before_issue_count_estimate": 14,
-      "after_issue_count_estimate": 5,
-      "lines_before": 1756,
-      "lines_after": 1759,
-      "changed_line_count": 1571,
-      "changed_line_ranges": [
-        {
-          "lines_before": 1756,
-          "lines_after": 1759
-        },
-        [
-          78,
-          78
-        ],
-        [
-          102,
-          102
-        ],
-        [
-          184,
-          1756
-        ]
+      "status": "BLOCK",
+      "structural_fixes": [
+        "heading_1_2_1_4_to_h3",
+        "list_items_4_5_restored",
+        "table_pipes_column_align"
       ],
-      "decisions": {
-        "formula": "Q̇ + Karvonen → closed math; ZWSP stripped.",
-        "duplicate": "n/a",
-        "toc": "n/a",
-        "table": "Zone/Session outer pipes; cell formulas deduped.",
-        "heading": "1.2/1.4 H4→H3; list items 4–5 restored."
-      },
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "L78/102; L186-189; tables ~598-761",
       "unresolved": [
-        "~5 heuristic residual multi-render hits remain."
+        "SOURCE_CONFLICT: Karvonen/Q-dot multi-render in cells left unchanged (no blind formula wash)"
       ],
-      "status": "CLEAN_WITH_REMAINDERS"
+      "promotable": false
     }
   ]
 }

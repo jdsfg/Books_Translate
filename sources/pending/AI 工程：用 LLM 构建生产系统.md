@@ -19258,15 +19258,15 @@ The cheat sheet is intentionally denser than the chapter. The chapter argues the
 
 ### Quick reference
 
-| Anti-pattern | The kill criterion | Anchor failure | Chapter(s) |
-| --- | --- | --- | --- |
-1 | Shipping without evals | If you can't articulate measurable success, the feature shouldn't ship. | Air Canada (Thread B Failure 1) | Ch 4  
-2 | Over-engineering with frameworks | If the framework abstracts something you need direct control over, don't use the framework for that layer. | (no canonical — death by a thousand cuts) | Ch 15, Ch 16  
-3 | Treating LLM outputs as deterministic | If your code can't handle an unexpected response, it isn't production-ready. | Google AI Overviews (Failure 2) | Ch 2, Ch 7  
-4 | Ignoring the cost dimension | If you can't say what a feature costs per active user per day, you don't have cost discipline. | Fine-tune deprecation cascade (Failure 4, anchored Ch 22) | Ch 17, Ch 18 (discipline); Ch 22 (anchor)  
-5 | Trusting LLM-as-judge without validation | If your judge hasn't been calibrated against humans at κ ≥ 0.6 on ≥ 50 cases, the eval isn't production-grade. | (no canonical — correlated-family bias) | Ch 4, Ch 11  
-6 | Building agents when workflows suffice | If you can specify the task as deterministic steps with at most one LLM call per step, don't agent-ify it. | 52K USD overnight agent (Failure 5); 2026 agentic recursion (Failure 6) | Ch 14, Ch 15  
-7 | Shipping without safety architecture | If you have a multi-tenant or RAG system without the four-layer defense (§23.3), you have a known unaddressed threat. | 2025 prompt-injection-in-production incident (Failure 3) | Ch 23  
+| # | Anti-pattern | The kill criterion | Anchor failure | Chapter(s) |
+| --- | --- | --- | --- | --- |
+| 1 | Shipping without evals | If you can't articulate measurable success, the feature shouldn't ship. | Air Canada (Thread B Failure 1) | Ch 4 |
+| 2 | Over-engineering with frameworks | If the framework abstracts something you need direct control over, don't use the framework for that layer. | (no canonical — death by a thousand cuts) | Ch 15, Ch 16 |
+| 3 | Treating LLM outputs as deterministic | If your code can't handle an unexpected response, it isn't production-ready. | Google AI Overviews (Failure 2) | Ch 2, Ch 7 |
+| 4 | Ignoring the cost dimension | If you can't say what a feature costs per active user per day, you don't have cost discipline. | Fine-tune deprecation cascade (Failure 4, anchored Ch 22) | Ch 17, Ch 18 (discipline); Ch 22 (anchor) |
+| 5 | Trusting LLM-as-judge without validation | If your judge hasn't been calibrated against humans at κ ≥ 0.6 on ≥ 50 cases, the eval isn't production-grade. | (no canonical — correlated-family bias) | Ch 4, Ch 11 |
+| 6 | Building agents when workflows suffice | If you can specify the task as deterministic steps with at most one LLM call per step, don't agent-ify it. | 52K USD overnight agent (Failure 5); 2026 agentic recursion (Failure 6) | Ch 14, Ch 15 |
+| 7 | Shipping without safety architecture | If you have a multi-tenant or RAG system without the four-layer defense (§23.3), you have a known unaddressed threat. | 2025 prompt-injection-in-production incident (Failure 3) | Ch 23 |
   
 ### The seven anti-patterns in detail
 

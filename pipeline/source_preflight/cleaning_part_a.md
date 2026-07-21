@@ -1,174 +1,127 @@
-# Source Cleaning Part A
-- Generated: 2026-07-21T16:07:31.934723+00:00
-- Scope: 11 pending manuscripts listed below.
-- Summary: **CLEAN_PASS 3**; **CLEAN_WITH_REMAINDERS 8**; **BLOCK 0**.
-- Method: per-book structural repairs + formula multi-render peel preferring closed LaTeX; no global blind regex deletes; unsafe peels reverted; ZWSP stripped.
+# Source Cleaning Part A（复验返修）
+
+- Generated: 2026-07-21T16:40:00Z
+- Scope: 11 pending manuscripts（同 PR #20）
+- Trigger: 控制审校评论要求撤销不安全公式批量改写，仅保留可验证结构修复。
+
+## 返修原则（已执行）
+
+1. **从 `origin/main` 全量恢复** 11 份源稿，丢弃本轮不安全的公式批量剥皮/改写。
+2. **仅重做可逐项验证的结构修复**：精确重复段、目录、伪 H2 表头、表格列数/空白首列、可核对的标题层级与列表拆分。
+3. **公式多重渲染**：凡无法从当前源稿唯一恢复的，**保持原文**，登记 `SOURCE_CONFLICT`；状态记为 **BLOCK**（不得用 CLEAN_WITH_REMAINDERS 粉饰为可晋升）。
+4. 未修改 `SOURCE_INTAKE.md`、其他书稿、流水线脚本；未移动文件、未 init/lock-titles/翻译。
 
 ## 汇总
 
-| # | 书名 | 修复前估点 | 修复后估点 | 行数变化 | 状态 |
-|---|------|-----------|-----------|----------|------|
-| 1 | AI 科学 I：从神经网络到 Transformer | 685 | 406 | 13373→13373 | CLEAN_WITH_REMAINDERS |
-| 2 | AI 科学 II：大语言模型 | 163 | 103 | 10742→10742 | CLEAN_WITH_REMAINDERS |
-| 3 | AI 工程：用 LLM 构建生产系统 | 46 | 45 | 19424→19400 | CLEAN_PASS |
-| 4 | 数据库系统 | 86 | 36 | 12151→12108 | CLEAN_WITH_REMAINDERS |
-| 5 | 分布式系统 | 44 | 13 | 12195→12168 | CLEAN_WITH_REMAINDERS |
-| 6 | 操作系统 | 15 | 13 | 8812→8812 | CLEAN_WITH_REMAINDERS |
-| 7 | 系统设计思维：大规模软件的架构之道 | 7 | 2 | 12263→12271 | CLEAN_WITH_REMAINDERS |
-| 8 | 理性之外：行为经济学 | 17 | 9 | 5311→5311 | CLEAN_WITH_REMAINDERS |
-| 9 | 营养的逻辑 | 0 | 0 | 4891→4891 | CLEAN_PASS |
-| 10 | 钱为我用 | 2 | 0 | 4501→4484 | CLEAN_PASS |
-| 11 | 训练的科学·卷二：耐力与整体表现 | 14 | 5 | 1756→1759 | CLEAN_WITH_REMAINDERS |
+| # | 书名 | 结构修复 | 公式处理 | 状态 |
+|---|------|----------|----------|------|
+| 1 | AI 科学 I：从神经网络到 Transformer | 表头 stub 列 | 已撤销批量改写，原文保留 | BLOCK |
+| 2 | AI 科学 II：大语言模型 | Kaplan Metric 列；评估表 Category 填列 | 已撤销批量改写，原文保留 | BLOCK |
+| 3 | AI 工程：用 LLM 构建生产系统 | TOC/重复段/伪H2→5列表 | L6559 RRF 三重渲染保留 | BLOCK |
+| 4 | 数据库系统 | 锁矩阵首列；尾部重复删除 | 已撤销批量改写，原文保留 | BLOCK |
+| 5 | 分布式系统 | 幽灵目录；收尾重复；3处伪H2 | 已撤销批量改写，原文保留 | BLOCK |
+| 6 | 操作系统 | TOC 重建；Intro ####→### | 调度公式三重渲染保留 | BLOCK |
+| 7 | 系统设计思维：大规模软件的架构之道 | 无（原 BLOCK 仅为公式） | 原文保留 | BLOCK |
+| 8 | 理性之外：行为经济学 | 无（原 BLOCK 仅为公式） | 原文保留 | BLOCK |
+| 9 | 营养的逻辑 | 12.9→12.8 重编号 | GL 三重渲染保留 | BLOCK |
+| 10 | 钱为我用 | 结尾重复删除；Intro ####→###；**未删 Discussion 正文** | 公式原文保留 | BLOCK |
+| 11 | 训练的科学·卷二：耐力与整体表现 | 1.2/1.4 层级；列表 4/5；表管道符/列对齐 | 单元格公式未盲洗 | BLOCK |
+
+**状态汇总：BLOCK 11；CLEAN_PASS 0；CLEAN_WITH_REMAINDERS 0。**
 
 ## 逐书
 
-### AI 科学 I：从神经网络到 Transformer — CLEAN_WITH_REMAINDERS
+### 1. AI 科学 I：从神经网络到 Transformer — BLOCK
 
-- 预检来源: `pending_part_2`（原状态 BLOCK）
-- 问题计数（启发式）: 685 → 406
-- 行数: 13373 → 13373; 变更行约 2656
-- 主要变更行范围: `[[85, 85], [107, 107], [117, 117], [121, 123], [258, 258], [268, 270], [326, 328], [332, 333], [445, 445], [521, 527], [549, 549], [553, 553]]`
-- 公式: Prefer closed LaTeX via ABA/island peel; ZWSP stripped; unsafe peels reverted. Spot-checked early/mid/late.
-- 重复: n/a
-- 目录: n/a
-- 表格: Forward/Backward pass → 3-col GFM with stub first header cell.
-- 未解决:
-  - ~406 heuristic residual multi-render hits remain after safe cleaning.
+- 修复前问题：系统性公式多重渲染 + Forward/Backward 表列数不一致（预检 Part 2）。
+- 本轮结构：`| | Forward pass | Backward pass |` 与三列分隔行；数据行外管道规范化。
+- 公式：抽样 L85/915/938/1034/7504/12688/13364 与 `main` **逐字一致**（批量改写已撤销）。
+- 未解决：`SOURCE_CONFLICT` — 全书系统性 plain+LaTeX+unicode 粘连；需独立、可逐项核验的公式清洗轮，禁止正则盲洗。
+- 修改行范围：约 L2021–2026（表）。
 
-### AI 科学 II：大语言模型 — CLEAN_WITH_REMAINDERS
+### 2. AI 科学 II：大语言模型 — BLOCK
 
-- 预检来源: `pending_part_1`（原状态 BLOCK）
-- 问题计数（启发式）: 163 → 103
-- 行数: 10742 → 10742; 变更行约 906
-- 主要变更行范围: `[[77, 77], [115, 121], [129, 129], [133, 133], [154, 154], [160, 160], [196, 200], [222, 224], [293, 297], [307, 307], [345, 345], [351, 353]]`
-- 公式: Systemic peel + manual underbrace/ELMo; unsafe PPO peels restored from backup.
-- 重复: n/a
-- 目录: n/a
-- 表格: Added Metric col to Kaplan/Chinchilla; filled Category on assessment table.
-- 未解决:
-  - ~103 heuristic residual multi-render hits remain after safe cleaning.
-  - SOURCE_CONFLICT avoided: unclear PPO/π_θ inline peels left as backup text rather than guessed.
+- 结构：Kaplan/Chinchilla 增 `Metric` 列；评估表为省略 Category 的行回填当前类别。
+- 公式：抽样 L77/129/222/5801/8571 与 `main` 一致。
+- 未解决：`SOURCE_CONFLICT` — 系统性公式多重渲染（含 underbrace/ELMo/PPO 等）。
+- 修改行范围：约 L2539–2543；L10486–10502。
 
-### AI 工程：用 LLM 构建生产系统 — CLEAN_PASS
+### 3. AI 工程：用 LLM 构建生产系统 — BLOCK
 
-- 预检来源: `pending_part_1`（原状态 BLOCK）
-- 问题计数（启发式）: 46 → 45
-- 行数: 19424 → 19400; 变更行约 566
-- 主要变更行范围: `[{"lines_before": 19424, "lines_after": 19400}, [31, 34], [18411, 19400]]`
-- 公式: n/a
-- 重复: Removed duplicate Weeks 12–13 discipline block (kept one).
-- 目录: Removed duplicate Introduction; listed Appendix A–D.
-- 表格: Removed ## from Anti-pattern cheat-sheet header; normalized GFM.
-- 未解决: 无
+- 结构：
+  - TOC：删 Chapter 25 后重复 Introduction；补 Appendix A–D。
+  - 删除第二份 discipline 长段（保留一份）。
+  - 伪 H2 表改为 5 列：`| # | Anti-pattern | The kill criterion | Anchor failure | Chapter(s) |`（与数据列数一致）。
+- 公式：L6559 RRF `1/(k+rank…)` 三重渲染 **未改**（无法唯一还原为单一形式时不猜测）。
+- 未解决：`SOURCE_CONFLICT` — RRF 等多处公式粘连。
+- 修改行范围：TOC L31–34；重复段约 L18411–18434；表约 L19261+。
 
-### 数据库系统 — CLEAN_WITH_REMAINDERS
+### 4. 数据库系统 — BLOCK
 
-- 预检来源: `pending_part_1`（原状态 BLOCK）
-- 问题计数（启发式）: 86 → 36
-- 行数: 12151 → 12108; 变更行约 318
-- 主要变更行范围: `[{"lines_before": 12151, "lines_after": 12108}, [286, 286], [329, 329], [2810, 2812], [2822, 2825], [2829, 2831], [2835, 2837], [2845, 2849], [2853, 2855], [2867, 2867], [2885, 2887], [2891, 2891]]`
-- 公式: Safe multi-render peel; clear FD X→Y examples normalized.
-- 重复: Deleted second Think Deeper 15–20 / Summary tail.
-- 目录: n/a
-- 表格: Lock matrix: added Lock type header column.
-- 未解决:
-  - ~36 heuristic residual multi-render hits remain after safe cleaning.
+- 结构：锁兼容矩阵表头补 `Lock type`；删除文末第二份 Think Deeper 15–20/Summary。
+- 公式：与 `main` 一致（批量改写已撤销）。
+- 未解决：`SOURCE_CONFLICT` — 系统性公式多重渲染。
+- 修改行范围：约 L7616–7622；尾部约原 L12105–12147。
 
-### 分布式系统 — CLEAN_WITH_REMAINDERS
+### 5. 分布式系统 — BLOCK
 
-- 预检来源: `pending_part_2`（原状态 BLOCK）
-- 问题计数（启发式）: 44 → 13
-- 行数: 12195 → 12168; 变更行约 12090
-- 主要变更行范围: `[{"lines_before": 12195, "lines_after": 12168}, [34, 12168]]`
-- 公式: Arrow/parallel and ABA peels; some aaa/bbb prose triples remain.
-- 重复: One 29.4/29.5 + one polish note; removed replay.
-- 目录: Deleted ghost「第 30 章」.
-- 表格: Removed ## from three tables; GFM normalized.
-- 未解决:
-  - ~13 heuristic residual multi-render hits remain after safe cleaning.
+- 结构：删幽灵 `- 第 30 章`；保留一份 29.4/29.5 + 单条 polish note；三处 `## |` 表头去伪 H2。
+- 公式：原文保留（L715/913 等内容仍在文件中，仅因上方删行导致行号偏移）。
+- 未解决：`SOURCE_CONFLICT` — 公式/变量三重渲染。
+- 修改行范围：TOC L34；收尾约原 L11664–11690；表 L11277/11844/12130 一带。
 
-### 操作系统 — CLEAN_WITH_REMAINDERS
+### 6. 操作系统 — BLOCK
 
-- 预检来源: `pending_part_2`（原状态 BLOCK）
-- 问题计数（启发式）: 15 → 13
-- 行数: 8812 → 8812; 变更行约 41
-- 主要变更行范围: `[[14, 31], [61, 61], [73, 73], [1483, 1483], [1577, 1577], [1581, 1581], [1615, 1615], [1625, 1625], [1645, 1645], [1669, 1669], [1759, 1759], [1763, 1763]]`
-- 公式: Ch5 Average turnaround triples → single $...$ each.
-- 重复: n/a
-- 目录: Rebuilt from H2 Introduction + Chapters 1–26.
-- 表格: n/a
-- 标题层级: Introduction children #### → ###.
-- 未解决:
-  - ~13 heuristic residual multi-render hits remain after safe cleaning.
+- 结构：按正文 H2 重建 Introduction+Ch1–26 目录；`#### How the book is organized` / `Three threading plans` → `###`。
+- 公式：Ch5 Average turnaround 等三重渲染 **未改**。
+- 未解决：`SOURCE_CONFLICT` — 调度算术三重渲染。
+- 修改行范围：TOC L3–33；Intro 子标题。
 
-### 系统设计思维：大规模软件的架构之道 — CLEAN_WITH_REMAINDERS
+### 7. 系统设计思维：大规模软件的架构之道 — BLOCK
 
-- 预检来源: `pending_part_1`（原状态 BLOCK）
-- 问题计数（启发式）: 7 → 2
-- 行数: 12263 → 12271; 变更行约 7511
-- 主要变更行范围: `[{"lines_before": 12263, "lines_after": 12271}, [684, 684], [692, 696], [1114, 1803], [1807, 10493], [10497, 10501], [10505, 10799], [10803, 10807], [10811, 11109], [11113, 11117], [11121, 11404], [11408, 11412]]`
-- 公式: Availability/QPS/HitRatio/PageRank → closed LaTeX; arithmetic checked.
-- 重复: n/a
-- 目录: n/a
-- 表格: n/a
-- 未解决:
-  - ~2 heuristic residual multi-render hits remain.
+- 结构：无（预检 BLOCK 均为公式）。
+- 公式：全文与 `main` 一致（未再改写）。
+- 未解决：`SOURCE_CONFLICT` — Combined availability / Hit Ratio 等多重渲染。
+- 修改行范围：无。
 
-### 理性之外：行为经济学 — CLEAN_WITH_REMAINDERS
+### 8. 理性之外：行为经济学 — BLOCK
 
-- 预检来源: `pending_part_1`（原状态 BLOCK）
-- 问题计数（启发式）: 17 → 9
-- 行数: 5311 → 5311; 变更行约 119
-- 主要变更行范围: `[[267, 267], [277, 279], [293, 293], [303, 303], [307, 307], [311, 317], [347, 349], [361, 361], [371, 371], [405, 411], [431, 431], [439, 439]]`
-- 公式: CE/RP/β peels where safe; CE=25 example verified.
-- 重复: n/a
-- 目录: n/a
-- 表格: n/a
-- 未解决:
-  - ~9 heuristic residual multi-render hits remain after safe cleaning.
+- 结构：无。
+- 公式：与 `main` 一致。
+- 未解决：`SOURCE_CONFLICT` — CE/RP/x 等多重渲染。
+- 修改行范围：无。
 
-### 营养的逻辑 — CLEAN_PASS
+### 9. 营养的逻辑 — BLOCK
 
-- 预检来源: `pending_part_2`（原状态 BLOCK）
-- 问题计数（启发式）: 0 → 0
-- 行数: 4891 → 4891; 变更行约 4
-- 主要变更行范围: `[[430, 430], [434, 434], [438, 438], [2746, 2746]]`
-- 公式: GL → closed $$\frac...$$; ZWSP removed; reversed unicode flank discarded.
-- 重复: n/a
-- 目录: n/a
-- 表格: n/a
-- 标题层级: 12.9 Exercises → 12.8 (no missing body for 12.8).
-- 未解决: 无
+- 结构：`### 12.9 Exercises` → `### 12.8 Exercises`（12.7 后直接接习题，无缺失正文可恢复为 12.8）。
+- 公式：L430/434/438 GL 三重渲染 + ZWSP **未改**。
+- 未解决：`SOURCE_CONFLICT` — GL 公式多重渲染。
+- 修改行范围：L2746。
 
-### 钱为我用 — CLEAN_PASS
+### 10. 钱为我用 — BLOCK
 
-- 预检来源: `pending_part_2`（原状态 BLOCK）
-- 问题计数（启发式）: 2 → 0
-- 行数: 4501 → 4484; 变更行约 2538
-- 主要变更行范围: `[{"lines_before": 4501, "lines_after": 4484}, [55, 55], [67, 67], [106, 4484]]`
-- 公式: Wealth/savings-rate/Rule-of-72/runway/P/R closed LaTeX; (1.07)^{10} de-tripled.
-- 重复: Removed glued Q3/Summary replay after Start today.
-- 目录: n/a
-- 表格: n/a
-- 标题层级: Intro #### → ###.
-- 未解决: 无
+- 结构：Intro `####`→`###`；删除 Summary 后粘连/重复的 Discussion+Summary；**保留** L506 Rule-of-72 Discussion 全文（约 114 词，含高利率讨论上下文；Q2 题干含 50%/100%）。
+- 公式：未做批量改写；定界符/粘连数字保持源稿原样。
+- 未解决：`SOURCE_CONFLICT` — 财富方程/Rule-of-72 等三重渲染。
+- 修改行范围：L55/L67；结尾约 L4479–4497→单份收尾。
 
-### 训练的科学·卷二：耐力与整体表现 — CLEAN_WITH_REMAINDERS
+### 11. 训练的科学·卷二：耐力与整体表现 — BLOCK
 
-- 预检来源: `pending_part_2`（原状态 BLOCK）
-- 问题计数（启发式）: 14 → 5
-- 行数: 1756 → 1759; 变更行约 1571
-- 主要变更行范围: `[{"lines_before": 1756, "lines_after": 1759}, [78, 78], [102, 102], [184, 1756]]`
-- 公式: Q̇ + Karvonen → closed math; ZWSP stripped.
-- 重复: n/a
-- 目录: n/a
-- 表格: Zone/Session outer pipes; cell formulas deduped.
-- 标题层级: 1.2/1.4 H4→H3; list items 4–5 restored.
-- 未解决:
-  - ~5 heuristic residual multi-render hits remain.
+- 结构：`#### 1.2/1.4`→`###`；氧级联第 4/5 项拆回独立列表行；Zone/Session/灰区表外管道与列数对齐（灰区表补空白首列表头以匹配 `Weekly total | …` 五行）。
+- 公式：**未**对 Karvonen 单元格做盲洗；单元格内三重算式仍在。
+- 未解决：`SOURCE_CONFLICT` — 公式多重渲染与部分表内粘连算式。
+- 修改行范围：L78/102；L186–189；表 L598–605 / 737–745 / 759–761 一带。
 
-## 约束遵循
+## 审校点对账
 
-- 仅修改上述 11 份 `sources/pending/` 源稿 + 本报告文件。
-- 未修改 `SOURCE_INTAKE.md`、其他书稿、流水线脚本；未移动文件、未 init/lock-titles/翻译。
-- 无法确定的公式未猜测；损坏剥皮不安全处回退原文。
+| 审校证据 | 处理 |
+|----------|------|
+| AI工程 4列表头/5列数据 | 改为 5 列表头（含 `#`） |
+| AI工程 L6559 RRF | 保留原文 + SOURCE_CONFLICT |
+| 钱为我用 Discussion 误删 | 已从 main 恢复后仅做结构删重；L506 仍为 114 词 |
+| AI科学I/II 公式截断/误删 | 已撤销；抽样与 main 一致 |
+| 操作系统/分布式/训练公式或表 | 结构已修；公式未盲洗 |
+
+## 结论
+
+本轮 **11/11 BLOCK**。结构类 BLOCK 项已尽量落地；公式类问题显式降级为等待可核验的专用清洗，禁止再次批量正则改写。
