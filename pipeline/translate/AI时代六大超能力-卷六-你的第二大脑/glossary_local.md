@@ -23,6 +23,9 @@ durable | 经得起时间 / 持久 | 视上下文
 ## 知识与语料
 corpus | 知识库 | 本书指个人知识的总体集合（笔记、文件、教案等）；勿按 ML 习惯译成「语料库」。锁定标题：「为知识库安个家」
 knowledge lifecycle | 知识生命周期 | 锁定标题一致
+retrieve | 取回 | 生命周期四动词之一（capture→connect→retrieve→create）；阶段名统一「取回」，勿与「检索」混用
+connect | 连接 | 生命周期动词
+create | 创造 | 生命周期终点动词
 capture | 捕捉 | Capture Fast…
 organize lazily | 从简整理 |
 distill on use | 用时提炼 |
