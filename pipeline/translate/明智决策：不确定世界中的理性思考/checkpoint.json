@@ -1919,11 +1919,11 @@
       "en_title": "Chapter 16: When to Decide and When to Wait",
       "order": 150,
       "src_chars": 2854,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a04315c01f1e",
       "src": "A general in Napoleon's army was once asked his philosophy for winning battles. His answer: \"On s'engage, et puis on voit.\" You engage, and then you see.\n\nIt is a philosophy with real power — action reveals information that planning cannot. But it is also a philosophy that costs dearly when the engagement is irreversible and the information could have been obtained first at lower cost.\n\nThe question of _when_ to decide — whether to commit now or wait for more information — is one of the most underappreciated dimensions of decision making. Most of what we have covered so far asks: _given_ what you know, _what_ should you decide? This chapter asks a prior question: _given_ what you could learn, _should_ you decide yet?\n\n\n### 16.1 The Value of Information\n\nBefore deciding, it is worth asking: is there information that, if I had it, would change my decision? If the answer is yes, that information has value — and the question becomes whether it is worth acquiring.\n\n\n#### Definition: Value of Information\n\nThe value of information (VOI) is the maximum amount a rational decision-maker should be willing to pay to obtain additional information before making a decision. It equals the expected improvement in decision quality that the information would provide.\n\nIn plain language: information that would change your decision is worth something. Information that wouldn't change your decision is worth nothing — you'd make the same choice regardless. The VOI framework asks you to calculate the expected benefit of learning before deciding, and compare that to the cost of learning.\n\nTwo variants are standard:\n\n**Expected value of perfect information (EVPI):** What would you pay to know the outcome with certainty before deciding? This is a theoretical upper bound — perfect information rarely exists — but it establishes what information is worth in the best case.\n\n**Expected value of sample information (EVSI):** What is a particular piece of imperfect information worth? A market research study, a pilot, a second opinion — these are imperfect but real. EVSI is usually lower than EVPI because the information is noisy.\n\n\n#### Common Misconception\n\n_\"Waiting for more information is always safer.\"_\n\nWaiting has costs. The cost of delay might include: missed opportunities that others capture, competitors acting while you gather data, relationships that decay without commitment, or the psychological and strategic cost of prolonged indecision. Waiting is itself a decision, with its own costs and opportunity costs. The question is not \"should I decide or wait?\" but \"what is the expected value of deciding now versus waiting for specific information?\"\n\n\n### 16.2 Option Value and Real Options\n\nFlexibility has value. When you can preserve a choice for later — rather than committing irrevocably now — that flexibility is worth something.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 909,
+      "out_sha": "909c969048e3",
       "note": ""
     },
     {
@@ -1931,11 +1931,11 @@
       "en_title": "Chapter 16: When to Decide and When to Wait",
       "order": 151,
       "src_chars": 1583,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3dca8bcaf27a",
       "src": "#### Definition: Option Value\n\nOption value is the value of preserving the ability to make a decision in the future. It is the difference between: (a) the expected value of committing now, and (b) the expected value of keeping the option open and committing later when you have more information.\n\nThe term comes from financial options: a stock option gives you the right (but not the obligation) to buy a share at a fixed price in the future. This right has value because it lets you wait and see. If the stock rises, you exercise the option and capture the upside. If it falls, you let the option expire and lose only the option price.\n\nThis logic applies far beyond finance.\n\n\n#### Definition: Real Options\n\nReal options are the option values embedded in non-financial decisions: the option to expand a project if it succeeds, the option to abandon if it fails, the option to wait for better market conditions, or the option to switch strategies if circumstances change.\n\nA pharmaceutical company running a Phase 1 drug trial is not just testing safety — it is purchasing the option to run Phase 2 if results warrant. A startup launching an MVP is not just generating revenue — it is purchasing information that determines whether to scale or pivot. Real options thinking asks: what flexibility does this investment preserve, and what is that flexibility worth?\n\nDecisions that preserve future options have value beyond their direct expected payoff. Decisions that foreclose future options — irreversible commitments — require higher expected returns to justify their option cost.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 457,
+      "out_sha": "d6f0c6ef3c4e",
       "note": ""
     },
     {
@@ -1943,11 +1943,11 @@
       "en_title": "Chapter 16: When to Decide and When to Wait",
       "order": 152,
       "src_chars": 2857,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4d5195682d8d",
       "src": "### 16.3 Thread 1 — The Startup Decision: Value of Information\n\nSarah is now twenty-two months into her journey. Her probability of success has been revised downward from 47% (after the LOIs in Chapter 7) to around 20–25% (after ambiguous market research in Chapter 11 and the emotional reframing of Chapters 12 and 15).\n\nShe faces a decision: quit now, continue, or do something else.\n\nHere is where the value-of-information framework changes the shape of her problem. Sarah has been treating this as a binary choice: continue or quit. But there is a third option — a _structured information-gathering phase_ with a defined endpoint.\n\nShe sketches out what she calls the \"decision fork map\": what are the remaining key unknowns, and which of them, if resolved, would change her decision?\n\n**Unknown 1: Whether a specific enterprise partnership will materialize.** She has been in talks with a mid-size logistics company that could serve as her first paying customer. If they say yes, her commercial viability proof is largely established. If they say no, she has strong evidence the market is harder than she thought. She expects to know within six weeks.\n\n**Unknown 2: Whether a planned regulatory change will affect her market.** A new carbon accounting standard is under public comment. If it passes as proposed, it substantially expands her addressable market. She can read the draft; informed observers give it 60% odds of passing within four months.\n\nSarah runs a rough VOI analysis:\n\n* If she quits now, she captures the value of her next-best alternative (return to her marketing job, or another employer) and stops accumulating losses.\n* If she continues six weeks to learn the partnership outcome, she acquires high-quality signal about commercial viability — information that would shift her probability estimate substantially in either direction.\n* If she continues four months to learn the regulatory outcome, she acquires a second signal — but four months of runway costs approximately 24,000 USD, and the regulatory outcome is less directly decisive.\n\nHer analysis: the six-week wait for the partnership signal has high VOI and low cost relative to the information's value. It is worth the delay. The four-month regulatory wait is a closer call — the information is valuable but the cost is high and the signal is indirect.\n\nThis is the practical structure of a VOI decision: not \"commit now or quit now,\" but \"what specific information, obtainable within what time and cost, would shift my probability estimate enough to justify the delay?\"\n\nSarah decides to wait six weeks for the partnership answer, then make a final commitment decision.\n\n\n### 16.4 The Explore-Exploit Tradeoff\n\nIn many sequential decisions, you face a fundamental tension: should you _exploit_ your best current option, or _explore_ other options that might be better?\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 908,
+      "out_sha": "0551c520a15c",
       "note": ""
     },
     {
@@ -1955,11 +1955,11 @@
       "en_title": "Chapter 16: When to Decide and When to Wait",
       "order": 153,
       "src_chars": 2474,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3186eedca6a2",
       "src": "#### Definition: The Explore-Exploit Tradeoff\n\nThe explore-exploit tradeoff is the tension between using your best known option (exploiting) and trying alternatives that might reveal better options (exploring). Exploiting maximizes returns from current knowledge; exploring acquires new knowledge that may improve future returns. The tradeoff is about how to allocate resources between the two.\n\nExploitation wins in the short run: your best known option is, by definition, currently your best. But exploration can win in the long run if there are better options to be found. The right balance depends on how long you expect to make the decision, how uncertain your estimates are, and how costly exploration is.\n\n\n#### Definition: The Multi-Armed Bandit Problem\n\nThe multi-armed bandit is the classic mathematical formulation of the explore-exploit problem. Imagine a row of slot machines (one-armed bandits), each with an unknown payout probability. You have a fixed number of pulls to allocate. Pull the same machine repeatedly to exploit your best estimate, or try unfamiliar machines to refine your estimates?\n\nThe optimal strategy (under certain conditions) is not to explore only at the start and exploit thereafter. It is to continue exploring at a _decreasing rate_ throughout — because even a well-established estimate could be wrong, and a machine you've written off might be better than you think.\n\nPractical applications of the explore-exploit insight:\n\n* **Job search:** When is it better to take the best current offer versus continuing to interview? The answer depends on how much better options might realistically be, and how much search costs.\n* **Research:** Spending all resources on your best-performing hypothesis (exploit) versus continuing to test alternatives (explore). Premature exploitation of one hypothesis can miss the better one.\n* **Relationships:** Committing to a known quantity versus remaining open to better matches. Neither pure exploiting (settling immediately) nor pure exploring (never committing) is optimal.\n* **Marketing:** Running the best-performing ad campaign (exploit) versus testing new variants that might outperform it (explore).\n\nThe multi-armed bandit framing captures something important that intuition often misses: the value of exploration is not zero just because your current best option is good. It is a function of how much better alternatives might be and how much time remains to benefit from the improvement.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 727,
+      "out_sha": "0e132314541f",
       "note": ""
     },
     {
@@ -1967,11 +1967,11 @@
       "en_title": "Chapter 16: When to Decide and When to Wait",
       "order": 154,
       "src_chars": 1386,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5232659a5ab3",
       "src": "### 16.5 The Stopping Problem: When Is Enough Information Enough?\n\nRelated to explore-exploit is the question of stopping: when have you gathered enough information to decide?\n\nMore information is usually better — up to a point. But collecting information has three costs: direct cost (time, money, effort), opportunity cost (delay in acting), and psychological cost (prolonged uncertainty is itself a burden). At some point, additional information adds less expected value than it costs.\n\nTwo practical heuristics for the stopping decision:\n\n**Threshold setting:** Define, in advance, what evidence would change your mind. If no realistic amount of new evidence would change your decision, stop gathering — you are in the zone of \"already know enough.\" If you can specify what evidence _would_ change your decision, focus on getting exactly that evidence and no more.\n\n**The 10/10/10 test (applied to information):** In ten minutes, ten months, and ten years, will you wish you had waited for more information? If the answer is no across all three, decide now. If the answer is yes, identify specifically what information you wish you had, and evaluate whether it's obtainable.\n\nThe key insight: the question is not \"do I have all possible information?\" — you never will. The question is \"would more information, at this cost, change my decision?\" If not, decide.\n\n\n### 16.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 464,
+      "out_sha": "9191b6cab5e7",
       "note": ""
     },
     {
@@ -1979,11 +1979,11 @@
       "en_title": "Chapter 16: When to Decide and When to Wait",
       "order": 155,
       "src_chars": 3195,
-      "status": "pending",
+      "status": "done",
       "src_sha": "93b8a345878e",
       "src": "#### Concept Check\n\n**Q1.** What is the value of information (VOI), and under what conditions is information worth acquiring before making a decision?\n\n**Answer:** The value of information is the maximum amount a rational decision-maker should pay to obtain additional information before deciding — equivalently, it is the expected improvement in decision quality the information provides. Information is worth acquiring when: (1) it would change your decision (information that leaves your choice unchanged has zero value regardless of cost); (2) the expected improvement in outcomes from making a better decision exceeds the cost of acquiring the information; and (3) the information can be obtained before the decision must be made. Practically: first ask \"would this information change what I do?\" If yes, calculate (or estimate) how much better the resulting decision would be, and compare that to the cost of acquiring the information.\n\n* * *\n\n**Q2.** What is option value, and why do decisions that preserve future options require lower immediate expected returns than decisions that foreclose them?\n\n**Answer:** Option value is the value of preserving the ability to make a decision later — the value of flexibility. When a decision preserves future options (you can expand, abandon, or pivot), it retains upside while limiting downside: if conditions improve, you can act; if they deteriorate, you can stop. This is genuinely valuable, and it adds to the decision's total value beyond its direct expected payoff. Decisions that foreclose options — irreversible commitments — eliminate this flexibility. Because you cannot withdraw if things go wrong, you bear the full downside risk. To compensate for this loss of flexibility, the direct expected return must be higher. This is why, all else equal, reversible decisions are preferable to irreversible ones, and why investments that \"keep options open\" are worth making even at a seemingly lower direct return.\n\n* * *\n\n**Q3.** Explain the explore-exploit tradeoff in your own words. Why is \"exploit always\" not an optimal strategy even when you have a clear current best option?\n\n**Answer:** The explore-exploit tradeoff is the tension between using your best known option (exploit) and trying alternatives that might be better (explore). \"Exploit always\" is suboptimal because your current best option is only the best _you know of_ — there may be better options you haven't tried. If you never explore, you'll never discover them. The expected cost of remaining in ignorance accumulates over time: if there's a 20% chance a better option exists and you make this decision 100 times, you leave many expected gains on the table. Optimal strategies continue exploring at a _decreasing rate_ even after finding a good option, because estimates are uncertain and better alternatives might exist. \"Exploit always\" is the rational choice only when: (a) you have made exhaustive comparisons, (b) the time horizon is very short (no future benefit from new information), or (c) exploration costs are extremely high relative to potential gains.\n\n* * *\n\n**Q4.** What is the multi-armed bandit problem, and what real-world decisions does it model?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 965,
+      "out_sha": "bc4531478a24",
       "note": ""
     },
     {
@@ -1991,11 +1991,11 @@
       "en_title": "Chapter 16: When to Decide and When to Wait",
       "order": 156,
       "src_chars": 954,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8933e5e9dc45",
       "src": "**Answer:** The multi-armed bandit problem imagines a row of slot machines with unknown payout probabilities and a fixed number of pulls to allocate. The challenge is to maximize total payoff by balancing pulls on known good machines (exploitation) with pulls on untested machines (exploration). The name comes from \"one-armed bandits\" — old slot machines. Real-world decisions it models: (1) clinical trials — allocate patients between proven and experimental treatments; (2) online advertising — show proven ads (exploit) or test new variants (explore); (3) job search — accept the current best offer (exploit) or continue interviewing (explore); (4) research portfolio management — fund proven research lines or invest in exploratory directions; (5) restaurant choice — return to a known good restaurant or try somewhere new. The key insight it formalizes: the exploration-exploitation balance should be dynamic, not a one-time early decision.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 296,
+      "out_sha": "c62716995091",
       "note": ""
     },
     {
@@ -2003,11 +2003,11 @@
       "en_title": "Chapter 16: When to Decide and When to Wait",
       "order": 157,
       "src_chars": 3498,
-      "status": "pending",
+      "status": "done",
       "src_sha": "35f72f4c853f",
       "src": "#### Application Problems\n\n**Q1.** A product manager is deciding whether to launch a new app feature immediately or first run a 2-week A/B test. The A/B test costs 8,000 USD and will reveal whether the feature increases or decreases retention. Current best estimate: 60% chance the feature improves retention by 5%, 40% chance it reduces retention by 3%. A 5% retention improvement is worth 50,000 USD/year; a 3% reduction costs 30,000 USD/year. Should she run the test?\n\n**Answer:** Calculate expected value with and without the test. Without the test (launch immediately): EV = 0.6 × 50,000 USD + 0.4 × (−30,000 USD) = 30,000 USD − 12,000 USD = 18,000 USD/year. With the test: if the test reveals it improves retention (60% chance), launch and gain 50,000 USD/year. If it reveals it reduces retention (40% chance), don't launch and gain 0 USD (no harm done). Expected value with test information = 0.6 × 50,000 USD + 0.4 × 0 USD = 30,000 USD/year. Improvement from testing: 30,000 USD − 18,000 USD = 12,000 USD/year. The test costs 8,000 USD, and it saves 12,000 USD/year of expected outcomes — even in the first year alone, the test has positive return. But note the timing: the test costs 8,000 USD now; the retention benefit accrues over time. If we compare first-year net: without test, EV = 18,000 USD; with test, EV = 30,000 USD − 8,000 USD = 22,000 USD. Run the test — it has clear positive expected value even in the first year, and the information prevents locking in a potentially harmful feature.\n\n* * *\n\n**Q2.** An investor holds a stock worth 80 USD (she bought at 100 USD). She can: (A) sell now and redeploy the 80 USD, (B) hold for 6 more months and then sell, or (C) buy a put option for 5 USD that guarantees she can sell at 80 USD anytime in the next 6 months. What does option C provide that A and B do not, and when would it be the right choice?\n\n**Answer:** Option C provides _downside protection while preserving upside_ — it is a real option. With A (sell now), she locks in the 80 USD with certainty but forgoes any potential recovery. With B (hold), she retains upside if the stock recovers, but also bears full downside if it falls further. With C (buy the put option), she retains the upside if the stock recovers above 80 USD while guaranteeing she can exit at 80 USD regardless of how far it falls. The flexibility to act on new information — choosing to exercise or not exercise — is the option value. The right choice for C: when (a) her uncertainty about the stock's direction is high, (b) the downside scenario is worse than the 5 USD cost of the put, and (c) she believes there is meaningful upside to preserve. Calculation: if she thinks there's a 50% chance of rising to 95 USD and 50% chance of falling to 60 USD, then B gives EV = 0.5 × 95 USD + 0.5 × 60 USD = 77.50 USD. C gives EV = 0.5 × 95 USD + 0.5 × 80 USD − 5 USD = 82.50 USD. Option C dominates B when downside risk is large relative to option cost.\n\n* * *\n\n**Q3.** A medical team must decide whether to recommend an aggressive treatment for a patient based on current test results. The results are 70% reliable. A confirmatory test, available in 3 days, is 95% reliable and costs 800 USD. The treatment costs 15,000 USD and causes significant side effects. If the diagnosis is correct, the treatment is essential; if incorrect, the treatment causes harm with no benefit. Based on current results, the patient has a 70% probability of the condition. Should they wait for the confirmatory test?\n\nHint",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1438,
+      "out_sha": "42eb307a8292",
       "note": ""
     },
     {
@@ -2015,11 +2015,11 @@
       "en_title": "Chapter 16: When to Decide and When to Wait",
       "order": 158,
       "src_chars": 2227,
-      "status": "pending",
+      "status": "done",
       "src_sha": "51e2182709cd",
       "src": "Calculate the expected harm from acting on a 70% signal versus a 95% signal. Consider both the cost of misdiagnosis (treating a patient who doesn't have the condition) and the cost of delay (not treating a patient who does).\n\n**Answer:** Key numbers: P(condition | positive result, 70% test) = 70%; P(condition | positive result, 95% test) ≈ 95% (approximately — depending on base rate, but using the given figures). Current situation: if they treat now based on 70% probability, there's a 30% chance of treating someone without the condition (harmful side effects, 15,000 USD wasted). With confirmatory test: the 95% reliable test reduces misdiagnosis risk from 30% to ~5%. Expected cost of misdiagnosis now: 0.30 × (harm + 15,000 USD). Expected cost of misdiagnosis after confirmatory test: 0.05 × (harm + 15,000 USD) + 800 USD test cost. If we model \"harm from unnecessary treatment\" as X USD, the confirmatory test saves (0.30 − 0.05) × (15,000 USD + X) = 0.25 × (15,000 USD + X) in expected misdiagnosis costs, at a cost of 800 USD. This is worth it as long as 0.25 × (15,000 USD + X) > 800 USD, i.e., the total misdiagnosis cost exceeds 3,200 USD — easily met given 15,000 USD in wasted treatment alone. The countervailing factor: a 3-day delay costs the 70% of patients who have the condition some delay in treatment. Whether this delay causes harm depends on condition urgency. For non-emergency conditions, wait for the confirmatory test. For acute emergencies where 3 days changes outcomes dramatically, treat now and the VOI of the confirmatory test falls.\n\n* * *\n\n**Q4.** A recent graduate is deciding between taking a job offer now (65,000 USD salary) or continuing to interview for four more weeks to explore better opportunities. She estimates: 40% chance of finding a job offer ≥ 80,000 USD through further search, 60% chance of finding only offers ≤ 65,000 USD (or none). The current offer expires in one week, and the company won't extend it. How should she frame this as an explore-exploit decision, and what additional information would help her decide?\n\nHint\n\nCalculate the expected value of each path. Consider what \"additional information\" could reduce uncertainty about the probability of better offers.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 852,
+      "out_sha": "25b815d31e47",
       "note": ""
     },
     {
@@ -2027,11 +2027,11 @@
       "en_title": "Chapter 16: When to Decide and When to Wait",
       "order": 159,
       "src_chars": 1403,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3c7303a5ce4b",
       "src": "**Answer:** Exploit path (take the offer now): guaranteed 65,000 USD. Explore path (decline and continue searching): EV = 0.4 × 80,000 USD + 0.6 × 65,000 USD (assuming worst case she finds a comparable offer) = 32,000 USD + 39,000 USD = 71,000 USD — or if the 60% scenario means no offer or lower offers, potentially much less. The explore path has higher expected salary but real risk of ending worse. The key variables that would inform the decision: (1) How reliable is the 40% estimate? Is it based on actual conversations with employers, or a vague sense? Better estimates make the decision clearer. (2) What is her financial runway — can she afford 4+ weeks of continued search without income? If not, the cost of exploring is higher. (3) Is the 65,000 USD offer truly \"take it or leave it this week\" — or is there any negotiation room on the timeline? (4) What is her fallback if she finds nothing? If she has other offers at 60,000 USD, the risk of exploring is lower. (5) Is the 80,000 USD figure a realistic market expectation or optimistic? Most importantly: she should reframe from \"should I take this offer?\" to \"what is my best estimate of the probability of substantially better offers, and does the expected salary improvement justify the risk and cost of continued search?\" The answer depends heavily on her current financial position and the reliability of her market estimate.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 503,
+      "out_sha": "12ef6cb8d1b3",
       "note": ""
     },
     {
@@ -2039,11 +2039,11 @@
       "en_title": "Chapter 16: When to Decide and When to Wait",
       "order": 160,
       "src_chars": 3455,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bd4bc98b2df4",
       "src": "#### Think Deeper\n\n**Q1.** The value of information framework suggests you should only gather information that would change your decision. But in practice, people often gather information that confirms what they've already decided. Why does this happen, and what does it cost?\n\n**Discussion:** People gather confirming information for several reasons that interact with concepts throughout this book: (1) Confirmation bias (introduced in Chapter 5's discussion of narrative): we preferentially seek and weight evidence consistent with our existing belief. Information search is not neutral — we look for information that validates our current inclination, not information that would falsify it. (2) Loss aversion and identity: gathering information that might change our decision requires being open to the possibility that our current inclination is wrong. If we've already emotionally committed to a choice, contradictory information feels threatening rather than valuable. (3) Preference for comfort: confirming information is pleasant; disconfirming information is uncomfortable. We choose pleasure. The cost is precisely what the VOI framework highlights: information that wouldn't change your decision has zero value. If you search for confirmation, you spend real resources (time, money, attention) on information that tells you nothing useful. Worse: you may become _more_ confident in a wrong decision, compounding the error. The correct approach: before gathering information, explicitly state \"what would have to be true for this information to change my decision?\" Then go looking for that specific evidence — not for confirmation of what you already believe.\n\n* * *\n\n**Q2.** Real options thinking suggests that preserving flexibility has value and that irreversible decisions require higher expected returns to compensate for the loss of option value. Can this logic be taken too far? When does preserving optionality become a rationalization for indecisiveness?\n\n**Discussion:** Real options thinking can be taken too far in several ways: (1) Perpetual exploration: if the value of future options is always invoked to justify not committing, you never exploit your best current knowledge. The multi-armed bandit analysis shows that optimal strategies exploit increasingly as time passes — the value of exploration decreases as the horizon shortens. Infinite optionality preservation is only rational if the horizon is infinite, which it never is. (2) Option value as vagueness cover: \"keeping options open\" can be a way to avoid the discomfort of hard choices. The discipline of real options thinking requires actually calculating (or estimating) the value of the option and comparing it to the cost of maintaining it. Vague appeals to flexibility without this comparison are post-hoc justifications. (3) The cost of not deciding: relationships, organizations, and markets often require commitment to function. A leader who \"preserves optionality\" indefinitely on a strategic direction provides no direction. Real options thinking applies to individual, bounded decisions — not as a general life philosophy of non-commitment. The useful test: can you specify exactly what information you're waiting for, when you expect to have it, and what decision you'll make then? If yes, you're doing real options thinking correctly. If \"waiting for more information\" is perpetual and unspecified, it's indecision wearing a quantitative costume.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 969,
+      "out_sha": "2f44bd1f5061",
       "note": ""
     },
     {
@@ -2051,11 +2051,11 @@
       "en_title": "Chapter 16: When to Decide and When to Wait",
       "order": 161,
       "src_chars": 1702,
-      "status": "pending",
+      "status": "done",
       "src_sha": "59d8b5447959",
       "src": "### Chapter Summary\n\nThe question of _when_ to decide is as important as the question of _what_ to decide.\n\nThe value of information framework asks, before any decision: is there information that would change my choice? If yes, that information has value, and the question becomes whether the expected benefit of learning it exceeds its cost. The expected value of perfect information (EVPI) sets a theoretical ceiling; the expected value of sample information (EVSI) applies to real, imperfect information sources.\n\nOption value captures the fact that flexibility is worth something: decisions that preserve future options require lower direct returns than irreversible commitments, which foreclose the ability to adapt. Real options thinking applies this logic to product launches, research investments, career moves, and any other decision where \"the right to act later\" has value.\n\nThe explore-exploit tradeoff formalizes the tension between using your best current option and searching for better ones. The multi-armed bandit problem shows that pure exploitation is suboptimal whenever better options might exist — optimal strategies explore at a decreasing rate throughout the decision horizon, not just at the start.\n\nThread 1 showed Sarah reframing her startup decision as a structured information-gathering problem: rather than \"continue or quit,\" she identified the specific information — the partnership decision in six weeks — that would meaningfully update her probability estimates. This is the practical heart of VOI thinking.\n\nIn Chapter 17, we examine the optimal stopping problem: given that exploration has diminishing returns, when exactly should you stop searching and commit?\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 480,
+      "out_sha": "00443ab41df6",
       "note": ""
     },
     {
@@ -2063,11 +2063,11 @@
       "en_title": "Chapter 17: The Optimal Stopping Problem",
       "order": 162,
       "src_chars": 3018,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9b2041f200d3",
       "src": "You are hiring for a critical role. You will interview candidates one at a time, in random order. After each interview, you must either offer the job immediately or pass — once you pass, you cannot go back. You will see exactly 100 candidates. How many should you interview before making an offer?\n\nThe intuitive answers are both wrong. \"Keep interviewing until you find someone great\" fails because you might pass great candidates while searching. \"Make an early offer when you find someone good\" fails because your early comparison set is too small to know what \"good\" means.\n\nThe mathematically correct answer is known, and it is elegant: interview and reject the first 37% of candidates — 37 people — purely to calibrate your sense of quality. Then offer the job to the next candidate who is better than everyone you've seen so far. This strategy gives you approximately a 37% chance of selecting the best overall candidate — the theoretical maximum achievable under these constraints.\n\nThis is the optimal stopping problem. Knowing when to stop gathering information and commit is one of the most precise questions in decision mathematics.\n\n\n### 17.1 Secretary Problem: The Mathematics of Optimal Stopping\n\nThe hiring scenario above is the classical version of what mathematicians call the secretary problem (historically named for the role typically being hired). Its formal structure:\n\n* You observe candidates sequentially, in random order\n* After observing each candidate, you must immediately accept or permanently reject them\n* You want to maximize the probability of selecting the best overall candidate\n* You know the total number of candidates in advance (N)\n\nThe optimal strategy is the **37% rule** (more precisely, 1/e ≈ 36.8%):\n\n  1. **Observe and reject** the first N/e candidates — this is the pure learning phase\n  2. **From candidate N/e + 1 onward** , select the first candidate who is better than all previously seen candidates\n\nWhy 37%? It is derived from calculus — specifically, finding the exploration fraction that maximizes the probability of selecting the best candidate. The answer, 1/e, appears as the solution: setting the derivative of the success probability to zero yields a critical point whose solution involves 1/e (approximately 0.368), the reciprocal of the natural logarithm's base.\n\n\n#### Definition: The 37% Rule (Optimal Stopping)\n\nThe 37% rule states that in a sequential selection problem where you must decide immediately whether to accept each option and cannot return to rejected options, the optimal strategy is to observe and reject the first 37% of options (the \"exploration phase\"), then select the first subsequent option that exceeds all previously observed options.\n\nThis rule is not just a mathematical curiosity. It captures a deep insight: some exploration is _required_ before exploitation is meaningful, because you need a reference pool to calibrate what \"good\" means. But too much exploration means you've already seen — and rejected — the best option.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 934,
+      "out_sha": "89ff81fe2109",
       "note": ""
     },
     {
@@ -2075,11 +2075,11 @@
       "en_title": "Chapter 17: The Optimal Stopping Problem",
       "order": 163,
       "src_chars": 2811,
-      "status": "pending",
+      "status": "done",
       "src_sha": "aed3cab509ed",
       "src": "#### Common Misconception\n\n_\"The 37% rule is only relevant in toy mathematical problems.\"_\n\nThe rule's assumptions are strict: fixed N, random ordering, immediate accept/reject decision, no possibility of recall, goal of selecting the best (not just a good one). Real decisions rarely fit all these assumptions perfectly. But the structure — observe some options before committing, use the observation phase to set a threshold, then commit when the threshold is exceeded — generalizes broadly. The 37% rule is a clean theoretical case of a principle that applies in messier real settings: structured exploration before commitment produces better outcomes than either hasty commitment or endless search.\n\n\n### 17.2 Stopping Problems in Real Life\n\nThe secretary problem's clean structure is rare, but stopping problems are everywhere. Most real stopping decisions have looser constraints: you can sometimes recall options, you don't know N in advance, and you're often not seeking the single best outcome — \"good enough\" is acceptable. How does optimal stopping theory adapt?\n\n**House hunting:** You visit houses until you buy one. You can make an offer immediately or move on, but popular houses can be taken. You don't know how many houses you'll see. The 37% rule gives a useful heuristic: spend the first several weeks purely gathering information, calibrate your sense of the market, then offer on the next house that exceeds your calibrated standard. Buyers who offer too early overpay or buy the wrong house; buyers who search too long lose good opportunities to faster buyers.\n\n**Job searching:** You receive offers serially and must accept or continue. In practice, you can sometimes revisit options (not all employers withdraw offers immediately), and \"second-best\" outcomes are acceptable. The optimal strategy involves a calibration phase followed by a threshold strategy — but the threshold should be lower than \"best I've seen\" if you're willing to accept a good-rather-than-best outcome.\n\n**Dating:** The stopping problem applied to long-term partnerships. No recall (in most cases), uncertain N, sequential observation. The 37% rule suggests spending the first 37% of your relationship-seeking years (say, ages 18–37 for a ~50-year window) in pure learning mode — not searching for a partner but calibrating what matters to you — then committing to the next person who exceeds your calibrated standard. This is a mathematical ideal, not a social prescription. But it captures something real: premature commitment (insufficient exploration) and over-searching (insufficient commitment) are both costly.\n\n**Medical screening protocols:** When should a screening sequence stop and a diagnosis be made? Sequential testing with cost-per-test and cutoff criteria follows the stopping problem structure.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 840,
+      "out_sha": "04356f1f437c",
       "note": ""
     },
     {
@@ -2087,11 +2087,11 @@
       "en_title": "Chapter 17: The Optimal Stopping Problem",
       "order": 164,
       "src_chars": 2277,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b164e330ddcc",
       "src": "### 17.3 Thread 1 — The Startup Decision: When to Stop Exploring\n\nSarah set a structured information-gathering phase in Chapter 16: wait six weeks for the partnership decision, then decide. The six-week horizon is now past.\n\nThe outcome: the logistics company passed. Their reason was not price — it was implementation complexity. They wanted a simpler integration than Sarah's product currently offers.\n\nSarah now has two new data points she didn't have before: (1) her product's current form is too complex for her target customer; (2) the feedback is about feature scope, not concept validity — they liked the idea, they couldn't absorb the implementation cost.\n\nHow does optimal stopping theory illuminate what she should do?\n\nShe is not in a classic secretary problem — her \"candidates\" are not job applicants but possible pivots and developments of her startup. But the structure applies. She has been in an exploration phase for twenty-two months, seeing various signals, calibrating her estimate of the opportunity. The signals are now clearer than they were at the start.\n\nThe stopping question is: has she accumulated enough calibration to know what \"a good outcome\" looks like, and has she seen enough signal to know whether this opportunity exceeds that threshold?\n\nHer honest assessment:\n\n* **What she's learned:** The concept has genuine interest but her execution is overbuilt for the market segment she targeted. A simpler MVP addressing a narrower use case might achieve commercial success.\n* **What she hasn't seen:** Whether a simpler version would actually close customers. This is the critical remaining unknown.\n\nShe faces the classic stopping dilemma in its applied form: the information she has is informative but not decisive. A few more weeks of exploration (building a simplified prototype) would generate the missing signal. But at some point, the cost of additional exploration exceeds its expected value.\n\nHer optimal stopping decision: one more structured exploration — a 90-day simplified prototype test with defined success/failure criteria — and then a final, non-negotiable decision point. She is not extending the search indefinitely; she is making a final calibrated bet on a specific remaining unknown, with a hard stopping rule built in.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 676,
+      "out_sha": "6bda3c1329c0",
       "note": ""
     },
     {
@@ -2099,11 +2099,11 @@
       "en_title": "Chapter 17: The Optimal Stopping Problem",
       "order": 165,
       "src_chars": 3261,
-      "status": "pending",
+      "status": "done",
       "src_sha": "78ec88acf4b4",
       "src": "### 17.4 The Cost of Stopping Too Early and Too Late\n\nOptimal stopping theory helps us see that the two errors — stopping too early and stopping too late — are not symmetric, and their relative costs depend on the problem.\n\n**Stopping too early:**\n\n* You commit before you have enough information to identify the best option\n* You may achieve a good outcome, but you have a high probability of missing better alternatives\n* The cost is the expected difference between your selection and the best available option\n\n**Stopping too late:**\n\n* You pass the best option while searching for something better\n* In problems with no recall, you may end up with nothing (or the last candidate)\n* The cost accumulates with time: opportunity cost of continued search, competitive risk that others claim the option, direct cost of ongoing search\n\nWhich error costs more depends entirely on the problem:\n\n* In hiring, stopping too late (rejecting good candidates while searching) has high cost because competitive candidates receive other offers\n* In real estate, stopping too early has high financial cost because you overpay or select poorly in an expensive market\n* In medical decisions, the cost asymmetry determines whether to biopsy now or monitor — missing a curable cancer has much higher cost than unnecessary biopsy\n\nThe practical implication: calibrate your stopping threshold to the cost asymmetry. If stopping too early is very costly, extend your exploration phase. If stopping too late is very costly (options are scarce and disappear), commit earlier. The 37% rule assumes symmetric costs and random ordering — when those assumptions fail, the optimal threshold shifts accordingly.\n\n\n### 17.5 Practical Stopping Rules\n\nIn real decisions with messy constraints, several practical stopping rules capture the spirit of optimal stopping:\n\n**Define success criteria before you start:** Before beginning a search — for a house, job, partner, or employee — write down the minimum criteria that would make the option acceptable, and separately, what would make it excellent. This replaces vague judgment with a threshold you can apply consistently. It prevents post-hoc rationalization (\"maybe my standards are too high?\") from extending search indefinitely.\n\n**Set a hard deadline:** For sequential decisions, a deadline forces commitment. The deadline should be based on the realistic cost of further delay — not arbitrary, but not infinitely extendable. \"I will make a decision by March 31\" transforms a potentially infinite search into a bounded one.\n\n**The two-by-two stopping test:** (a) Is this option better than what I'll likely find with further search? (b) Is further search possible at acceptable cost? If (a) is yes and (b) is no, stop. If (a) is yes and (b) is yes, the stopping question is open — calculate whether further search expected improvement exceeds its cost. If (a) is no, continue searching.\n\n**Use the learning phase explicitly:** Before the first decision point, invest deliberately in calibration: talk to people, see comparable options, read reviews. When your evaluation of new options has stabilized — when you can say \"I know what good looks like in this domain\" — transition from exploration to commitment mode.\n\n\n### 17.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1006,
+      "out_sha": "b6a3ccfc63b6",
       "note": ""
     },
     {
@@ -2111,11 +2111,11 @@
       "en_title": "Chapter 17: The Optimal Stopping Problem",
       "order": 166,
       "src_chars": 2504,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2026e51413b3",
       "src": "#### Concept Check\n\n**Q1.** Explain the 37% rule for optimal stopping. Why is 37% (not 50% or 10%) the optimal exploration fraction?\n\n**Answer:** The 37% rule states that in a sequential selection problem where you must decide immediately after each observation and cannot return to rejected options, the optimal strategy is to observe and reject the first 37% (1/e ≈ 36.8%) of options, then select the first subsequent option better than all previously seen. The reason 37% is optimal comes from calculus: the optimization problem — what exploration fraction maximizes the probability of selecting the best candidate? — yields the answer 1/e when solved exactly. Intuitively: with fewer than 37% in the exploration phase, you've seen too few options to know what \"best\" looks like, so your threshold is poorly calibrated and you're likely to accept a mediocre option early. With more than 37% in the exploration phase, you've probably already seen — and rejected — the best candidate, leaving you with only the remaining pool to choose from. 37% balances these two error types optimally, giving approximately a 37% chance of selecting the best overall candidate.\n\n* * *\n\n**Q2.** What are the assumptions underlying the secretary problem, and why do they limit the rule's direct applicability to real decisions?\n\n**Answer:** The secretary problem assumes: (1) candidates arrive in random order (real candidate pools are not randomly ordered — networks, timing, and reputation concentrate quality nonrandomly); (2) you must decide immediately after each observation with no recall (real decisions often allow some recall — job offers can sometimes be reopened; options sometimes remain available); (3) N (total number of candidates) is known in advance (in reality, you rarely know how many options you'll eventually see); (4) your only goal is selecting the absolute best candidate (in reality, second-best is often acceptable; a \"good enough\" threshold is appropriate); (5) you can perfectly rank candidates after observing them (in reality, your assessments are noisy). These violations mean the 37% rule cannot be directly applied as stated. However, the underlying principle — explore to calibrate, then commit when the threshold is exceeded — remains valid and useful, even if the specific 37% threshold requires adjustment to fit the real problem's constraints.\n\n* * *\n\n**Q3.** What is the difference between stopping too early and stopping too late, and what determines which error is more costly?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 773,
+      "out_sha": "6c2b83aa4392",
       "note": ""
     },
     {
@@ -2123,11 +2123,11 @@
       "en_title": "Chapter 17: The Optimal Stopping Problem",
       "order": 167,
       "src_chars": 2360,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e856a0f0ac9c",
       "src": "**Answer:** Stopping too early means committing before you have enough calibration to recognize a superior option. The cost is the expected difference between the option you selected and the best option available — you get something good but miss something better. Stopping too late means searching past the best option, either rejecting it during search (if you couldn't recognize it at the time) or having it become unavailable (competitive markets). The cost is ending with a worse-than-best option or no option at all. Which error costs more depends on: (1) availability — are good options becoming unavailable as you search? If so, stopping too late has high opportunity cost (competitive job markets, hot real estate markets). (2) reversibility — can you recall a rejected option? If yes, stopping too late is less costly. (3) asymmetry of outcomes — if the worst-case outcome of choosing wrong (buying the wrong house, hiring the wrong person) is much worse than continued search costs, stopping too early is more costly. Optimal stopping calibrates the exploration fraction to these asymmetries.\n\n* * *\n\n**Q4.** How does knowing your \"success criteria\" before starting a search improve stopping decisions?\n\n**Answer:** Pre-defined success criteria transform a vague judgment (\"is this one good enough?\") into a threshold evaluation (\"does this one meet my criteria?\"). This improves stopping decisions in three ways: (1) Prevents shifting standards: without pre-defined criteria, people tend to shift their standards as they search — either raising the bar if they've seen good options (and missing a great early option they retrospectively undervalued) or lowering the bar if they're tired of searching. Pre-defined criteria resist this drift. (2) Reduces confirmation bias in evaluation: a specific checklist is harder to rationalize around than a vague positive feeling; you either meet the criteria or you don't. (3) Creates a stopping signal: when an option meets your criteria, you have a defined signal to stop. Without criteria, stopping is always a judgment call, which invites indefinite search (\"maybe something better is out there\"). Practically: define \"minimum acceptable\" criteria (must-haves) and \"excellent\" criteria (nice-to-haves) before any search begins, not after you've already seen options that anchor your expectations.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 690,
+      "out_sha": "de396240dd4c",
       "note": ""
     },
     {
@@ -2135,11 +2135,11 @@
       "en_title": "Chapter 17: The Optimal Stopping Problem",
       "order": 168,
       "src_chars": 3162,
-      "status": "pending",
+      "status": "done",
       "src_sha": "33252cecfcc7",
       "src": "#### Application Problems\n\n**Q1.** You are searching for an apartment in a city where the rental market moves quickly — good apartments typically receive applications within 48 hours. You expect to look at approximately 20 apartments over 4 weeks. How would you apply optimal stopping theory to this search?\n\n**Answer:** Applying the 37% rule: explore and reject the first 37% of apartments = 37% × 20 = ~7 apartments. During the first 7 viewings, do not apply — just observe and calibrate. After viewing 7 apartments, you have a reference pool: you know the price range, condition tradeoffs, and location quality for your budget. From apartment 8 onward, apply immediately to the first apartment that is better than all 7 you've seen. In practice, you would: (1) Spend the first 1–2 weeks attending viewings without intent to apply, building a calibrated sense of the market. (2) Define your criteria explicitly after the calibration phase: what does \"better than all I've seen\" mean concretely? (3) From week 3 onward, apply immediately when an apartment clears your calibrated threshold. Practical adjustment for the competitive market: since good apartments disappear in 48 hours, the cost of hesitation is high. This means the optimal exploration fraction might be lower than 37% — perhaps 25–30% — to reduce the risk of missing strong options during the commitment phase because you waited too long.\n\n* * *\n\n**Q2.** A venture capital firm is evaluating 50 startup pitches over a 6-month period and will invest in 3 companies. The best deals go quickly — founders want to close rounds fast. Using optimal stopping logic, how should the firm structure its evaluation process?\n\nHint\n\nThe firm needs to invest in multiple options (3 of 50), not just one. Consider how this changes the exploration-commitment threshold.\n\n**Answer:** Key complication: the firm needs to select 3 of 50, not 1. With multiple selections, the optimal exploration fraction decreases — you need less calibration because the bar is lower (selecting the top 6%, not the top 2%). A reasonable adaptation: explore the first 15–20% of pitches (8–10 companies) without investment intent, purely to calibrate quality thresholds. Then, from pitch 11 onward, invest in any company that clears the \"top-3-of-50\" quality bar as calibrated from the exploration phase. Additional complications specific to VC: (1) deal availability — good founders close quickly, so the firm must be prepared to commit during the commitment phase without delay; (2) uncertainty in assessment — early-stage companies are hard to rank; calibration is noisy, so the threshold should be set conservatively; (3) portfolio construction — the 3 investments may need to be diversified across sectors or stages, which adds constraints that pure stopping theory doesn't model. Structural recommendation: months 1–2 = calibration phase (pitch meetings only, no term sheets); months 3–6 = commitment phase (term sheet offered to the next company that exceeds the calibrated quality standard). The firm should also track its own rejection decisions to post-hoc evaluate whether its calibration phase was well-calibrated.\n\n* * *",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 989,
+      "out_sha": "430b70fd9a0d",
       "note": ""
     },
     {
@@ -2147,11 +2147,11 @@
       "en_title": "Chapter 17: The Optimal Stopping Problem",
       "order": 169,
       "src_chars": 2695,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0b6eb136433d",
       "src": "**Q3.** A researcher has been conducting a clinical trial and must decide when to stop recruiting patients and publish results. After 80 patients, her results show p = 0.06 (marginally non-significant under α = 0.05). She estimates that 20 more patients would give her roughly 70% power to achieve significance if the true effect exists. Should she continue recruiting, and what stopping considerations are relevant?\n\nHint\n\nConsider not just statistical power but also the costs of continued recruiting, the risk of p-hacking, and the information value of a larger sample.\n\n**Answer:** The stopping problem here is genuinely complex because it mixes scientific, ethical, and statistical considerations. Arguments for stopping now: (1) p = 0.06 with n = 80 is already meaningful evidence — if the true effect is there, it's likely small, and a 20-patient extension might achieve statistical significance while contributing marginally to practical knowledge; (2) if she stops when she achieves p < 0.05, this is informal p-hacking, which inflates false positive rates; (3) clinical trial participants bear costs and risks — extending recruitment without strong justification is an ethics issue. Arguments for continuing: (1) 70% power is a legitimate scientific consideration — if the true effect exists, she has only a 70% chance of detecting it even with 20 more patients; (2) underpowered studies that fail to reject null hypotheses contribute little — a larger sample is more informative; (3) the pre-registered hypothesis (presumably) specified a sample size for good reasons. Optimal stopping recommendation: if she pre-registered a sample size of 100 and stopped at 80, she should continue to 100 as pre-specified — stopping early because results are close to significance is itself a form of biased stopping. Each additional interim look at the data while deciding whether to stop inflates the cumulative false positive rate above the nominal α = 0.05 level; this is precisely why pre-registered stopping rules exist. If she pre-registered a stopping rule based on interim analysis, she should follow it exactly. If no stopping rule was pre-specified, she faces a genuine dilemma: publishing the 80-patient results with their non-significant but trending finding may be more transparent than extending to achieve a possibly spurious significant result.\n\n* * *\n\n**Q4.** You are negotiating salary for a new job and have received one offer at 85,000 USD. You have applied to three other positions and expect responses within the next two weeks. The current offer expires in one week. Using optimal stopping reasoning, what framework would you use to decide whether to accept now or continue?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 838,
+      "out_sha": "a355da1ac8fc",
       "note": ""
     },
     {
@@ -2159,11 +2159,11 @@
       "en_title": "Chapter 17: The Optimal Stopping Problem",
       "order": 170,
       "src_chars": 1478,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3381ccdd0d77",
       "src": "**Answer:** Frame the decision explicitly: you have 1 known option (85,000 USD, expires 1 week) and 3 potential future options (unknown salaries, revealed in 2 weeks). The relevant quantities: (1) What distribution of salaries are the other three positions likely to offer? If industry data suggests similar roles pay 80,000–100,000 USD, estimate the expected salary of the best of three draws from this distribution. (2) What is the probability the current offer can be extended or the employer negotiated with? Many \"firm\" deadlines have flexibility — a direct ask (\"I'm in final stages with other employers and need two more weeks\") succeeds more often than assumed. (3) What is your downside? If you decline 85,000 USD and no better offer materializes, you may end up at 85,000 USD from another employer anyway (or lower). Optimal stopping reasoning: your \"calibration phase\" has already occurred (you know the market from applications); the question is whether this offer clears your threshold. Decision tree: (a) If E[best of 3 remaining offers] > 85,000 USD + (cost of uncertainty) → ask for extension, then decide after two weeks; (b) If the employer won't extend and E[best of 3] < 85,000 USD significantly → accept now; (c) If E[best of 3] ≈ 85,000 USD → risk tolerance determines choice. The key move most people miss: ask for the extension before assuming it's impossible. The expected value of asking (and sometimes getting it) dominates accepting silently.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 529,
+      "out_sha": "67022cdaae49",
       "note": ""
     },
     {
@@ -2171,11 +2171,11 @@
       "en_title": "Chapter 17: The Optimal Stopping Problem",
       "order": 171,
       "src_chars": 2028,
-      "status": "pending",
+      "status": "done",
       "src_sha": "88117e4f743a",
       "src": "#### Think Deeper\n\n**Q1.** The optimal stopping framework maximizes the probability of selecting the _best_ option. But in many real decisions, \"good enough\" is genuinely sufficient — you don't need the absolute best. How does shifting from \"maximize probability of best\" to \"maximize expected quality\" change the optimal strategy?\n\n**Discussion:** The two objectives produce meaningfully different strategies. \"Maximize probability of selecting the best\" is what the secretary problem optimizes — and it leads to the 37% rule with a strict \"better than all seen so far\" threshold. \"Maximize expected quality\" is often more realistic: you want a good outcome, not just a non-zero probability of a perfect one. Key differences: (1) Exploration fraction decreases: if a \"good enough\" outcome is acceptable, you don't need to see as many options to calibrate your threshold. You know what good looks like after fewer observations. (2) The acceptance threshold lowers: instead of \"better than all seen so far,\" the threshold becomes \"good enough\" — which may be met by several options in your candidate pool. This means earlier stopping on average. (3) The strategy becomes more robust to non-random ordering: if options arrive roughly in order of quality (which happens in some real search problems — early candidates in a job pool may be screened to good quality), the exploration phase can be even shorter. Practical implication: before starting any sequential search, decide explicitly whether you're optimizing for \"the absolute best\" or \"very good.\" The former requires more exploration; the latter allows earlier commitment. Most life decisions are closer to the latter — the difference between a great outcome and a very good outcome is small relative to the cost of extended search.\n\n* * *\n\n**Q2.** Optimal stopping theory assumes you are deciding alone, sequentially, with full information about the options you've seen. How does competition — other decision-makers pursuing the same options — change the stopping problem?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 580,
+      "out_sha": "0888f5719713",
       "note": ""
     },
     {
@@ -2183,11 +2183,11 @@
       "en_title": "Chapter 17: The Optimal Stopping Problem",
       "order": 172,
       "src_chars": 3168,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9ec00c2a11b9",
       "src": "**Discussion:** Competition fundamentally changes the stopping problem in two ways: (1) Options disappear: in the classical secretary problem, a rejected option stays available (you just can't revisit it). With competition, the best options are taken by others if you delay. This compression of the effective decision window means optimal stopping theory's exploration fraction (37%) is too generous — you should explore less and commit earlier. The mathematical analog is a version of the secretary problem where each candidate has some probability of being taken during your exploration phase. As this probability increases, the optimal exploration fraction decreases. (2) Your assessment of option quality changes: if a competitor wants the same option strongly, that's information about quality (they may know something you don't). Conversely, an option nobody else wants is evidence of a problem. Competition adds a signal that pure optimal stopping theory ignores. Real-world implications: in hot real estate markets where good houses receive multiple offers within days, the calibration phase should be compressed. Bidding wars are costly — stopping slightly earlier (even if your calibration is imperfect) may be better than missing good options entirely. In job markets, offers can sometimes be held but not always — knowing the competitive landscape of your field changes the optimal threshold. The general principle: the more competitive the market and the faster options disappear, the lower the optimal exploration fraction. Conversely, in slow markets with patient sellers, more exploration is optimal.\n\n* * *\n\n\n### Chapter Summary\n\nThe optimal stopping problem asks: given that exploration is valuable but costly, when should you stop gathering information and commit?\n\nThe mathematical answer — the 37% rule — says to observe and reject the first 37% (1/e) of options as a pure calibration phase, then accept the first subsequent option that exceeds all previously seen. This strategy maximizes the probability of selecting the best option in the classical secretary problem, yielding approximately a 37% success probability.\n\nReal decisions depart from the classical assumptions in important ways: options can sometimes be recalled, N may be unknown, \"good enough\" is often sufficient, and competition from other decision-makers accelerates the timetable. These departures shift the optimal exploration fraction, but the core insight remains: some structured exploration before commitment is valuable, excessive exploration is costly, and the balance point depends on the specific structure of the problem.\n\nThread 1 showed Sarah reaching her structured stopping point: after one more bounded exploration — a 90-day simplified prototype test with defined success/failure criteria — she will make her final, non-negotiable decision. This is optimal stopping in practice: not endless search, but deliberate calibration followed by commitment at a defined threshold.\n\nIn Chapter 18, we examine the distinction between reversible and irreversible decisions — and why \"can I undo this?\" is one of the most important questions to ask before committing.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 882,
+      "out_sha": "bd09a18df6bd",
       "note": ""
     },
     {

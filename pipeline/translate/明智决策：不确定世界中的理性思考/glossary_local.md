@@ -66,3 +66,10 @@ endowment effect | 禀赋效应
 mental accounting | 心理账户
 hyperbolic discounting | 双曲线贴现
 present bias | 现时偏差
+value of information | 信息价值 | VOI
+expected value of sample information | 抽样信息的期望值 | EVSI
+option value | 期权价值 |
+real options | 实物期权 |
+explore-exploit tradeoff | 探索-利用权衡 |
+multi-armed bandit | 多臂老虎机 |
+secretary problem | 秘书问题 |
