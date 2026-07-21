@@ -3035,11 +3035,11 @@
       "en_title": "Chapter 24: Health Decisions",
       "order": 243,
       "src_chars": 2960,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2313afaa4675",
       "src": "Dr. Elena Martinez has been managing the same patient — a 58-year-old man we'll call David — for three years now. His case began with ambiguous autoimmune symptoms, progressed through differential diagnoses, a rare-disease diagnosis, and treatment adjustments. Through his case, this book has illustrated Bayesian reasoning (Chapter 7), regression to the mean (Chapter 10), groupthink in medical teams (Chapter 14), and the uncertainty of medical evidence (Chapter 9).\n\nNow, David faces a different kind of decision. His condition is stable on current medication, but his rheumatologist recommends a new immunosuppressive therapy that may provide better long-term outcomes but carries real risks: a small but non-trivial probability of serious side effects including opportunistic infections and rare malignancies. The alternative is continued management on the current regimen, which is well-tolerated but may be less protective long-term.\n\nThis is the health decision problem in its most general form: tradeoff between uncertain benefits, uncertain risks, personal values, and the reality of having to choose under conditions where no option is clearly dominant.\n\n\n### 24.1 What Makes Health Decisions Hard\n\nHealth decisions share features with other decisions but have distinctive characteristics that make them particularly challenging:\n\n**Asymmetric stakes:** Health decisions can involve outcomes that are catastrophic and irreversible — permanent disability, death. The asymmetry of possible outcomes (current health vs. severe deterioration) makes standard expected value calculation feel inadequate and emotionally difficult.\n\n**Expert-layperson knowledge gap:** Medical knowledge is specialized and accumulated over years of training. Patients must make consequential decisions about domains they understand poorly. This creates a dilemma: deferring entirely to physicians means abandoning the decision to someone who doesn't share your values; attempting full informed decision making requires understanding medical evidence that is genuinely complex.\n\n**Emotional activation:** Health decisions involve fear, hope, and the visceral experience of physical suffering in ways that make objective analysis especially difficult. The prospect of cancer, chronic pain, or disability engages emotional systems that are poorly calibrated for probabilistic reasoning.\n\n**Statistical complexity:** Medical evidence comes in the form of probabilistic statements (30% response rate, 5% risk of serious adverse events) that require statistical reasoning to interpret correctly. The same evidence can be represented in ways that produce very different responses (absolute vs. relative risk reduction, number needed to treat).\n\n**Time pressure and decision fatigue:** Health decisions are often made under time pressure, during periods of illness when cognitive resources are depleted, and with incomplete information. This is the worst possible decision context.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 845,
+      "out_sha": "6fc4f21098e1",
       "note": ""
     },
     {
@@ -3047,11 +3047,11 @@
       "en_title": "Chapter 24: Health Decisions",
       "order": 244,
       "src_chars": 2075,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3b375a061477",
       "src": "#### Common Misconception\n\n_\"I should trust my doctor's recommendation without question — they're the expert.\"_\n\nPhysicians are experts in medical knowledge: diagnosis, treatment mechanisms, evidence base, side effect profiles. They are not experts in your values: how you weigh quality of life versus longevity, how much risk you're willing to bear for a given expected benefit, what side effects are tolerable given your life circumstances. The ideal health decision combines physician expertise (about the medical facts) with patient values (about what matters to you). Decisions made entirely by physicians without patient input fail to incorporate value information that is essential for determining the optimal choice for a specific individual. This is why shared decision making — the physician providing information about options, risks, and benefits; the patient providing information about values and preferences — has become the gold standard in medical ethics.\n\n\n### 24.2 Absolute vs. Relative Risk: A Critical Literacy Skill\n\nOne of the most important statistical literacy skills for health decisions is understanding the difference between absolute and relative risk reduction.\n\n**Relative risk reduction (RRR):** The percentage reduction in risk compared to the control group. A drug that reduces risk from 4% to 2% has a 50% relative risk reduction.\n\n**Absolute risk reduction (ARR):** The actual reduction in risk in percentage points. The same drug reduces risk by 2 percentage points (from 4% to 2%).\n\n**Number needed to treat (NNT):** The inverse of ARR — the number of patients who need to be treated to prevent one additional bad outcome. With ARR = 2%, NNT = 50. Fifty patients must take the medication for one to benefit.\n\nWhy it matters: a \"50% reduction in risk\" sounds dramatic. Two additional patients per hundred benefiting sounds modest. Both describe exactly the same drug effect. Medical marketing consistently uses relative risk reduction (which sounds more impressive) rather than absolute risk reduction or NNT (which is more informative).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 645,
+      "out_sha": "f1fa7c90b618",
       "note": ""
     },
     {
@@ -3059,11 +3059,11 @@
       "en_title": "Chapter 24: Health Decisions",
       "order": 245,
       "src_chars": 1857,
-      "status": "pending",
+      "status": "done",
       "src_sha": "897f6f25eace",
       "src": "#### Thread 2 — Medical Decisions Synthesis: Dr. Martinez and David\n\nDavid's decision involves:\n\n**Current regimen:** Well-tolerated, manageable disease activity. 10-year probability of significant disease progression (organ damage): 25%.\n\n**New immunosuppressive therapy:** More aggressive treatment. 10-year probability of significant disease progression: 15%. But 2% probability of serious adverse event (serious infection requiring hospitalization) per year, or approximately 18% cumulative over 10 years.\n\nHow to present this to David in a way that supports genuine informed decision making?\n\nDr. Martinez uses an absolute risk framing:\n\n* Switching to the new therapy reduces the 10-year risk of disease progression from 25% to 15% — a 10 percentage point absolute reduction, or a 40% relative reduction.\n* However, the new therapy adds approximately 18% cumulative 10-year risk of a serious adverse event that would otherwise be absent.\n\nThe tradeoff: 10 percentage points less disease progression risk vs. 18 percentage points more adverse event risk.\n\nThis is not a self-evidently correct answer. David needs to know: (a) how does he weigh disease progression (which affects quality of life gradually) versus acute adverse events (which are episodic but potentially severe)? (b) does his life situation (work, family, travel) make the risk of serious infection more or less tolerable? (c) what does he value more — protecting against the slow deterioration of the chronic disease, or protecting against the acute but recoverable risk of infection?\n\nDr. Martinez's role is to provide accurate information about these tradeoffs, explain what the evidence base looks like, and help David understand what questions are genuinely value-dependent versus what the evidence clearly establishes. David's role is to apply his own values to that information.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 576,
+      "out_sha": "07371ca10913",
       "note": ""
     },
     {
@@ -3071,11 +3071,11 @@
       "en_title": "Chapter 24: Health Decisions",
       "order": 246,
       "src_chars": 2003,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4b88a178ae2f",
       "src": "### 24.3 Cognitive Biases in Health Decisions\n\nThe biases studied in this book appear in health decisions with particular force:\n\n**Availability bias in symptom interpretation:** We dramatically overestimate the probability of rare, vivid diseases we've recently heard about (cancer after a friend's diagnosis; heart attack after news coverage) and underestimate the probability of common, undramatic conditions. This produces both hypochondria (overestimating rare disease probability) and missed diagnoses (dismissing common conditions as rare).\n\n**Optimism bias in health behaviors:** People consistently underestimate their personal risk for health conditions, believing that statistics about smoking, obesity, and sedentary behavior apply to others more than to themselves. \"I've been smoking for 20 years with no problems\" is not evidence that the risk doesn't apply — it may be evidence of luck that is running out.\n\n**Status quo bias in treatment adherence:** The default (not taking a medication, not exercising, not changing diet) persists because it requires no active effort. The behavioral economics insight: making the healthy behavior the default (meal prep, automatic medication reminders, exercise scheduled like a meeting) leverages status quo bias toward health rather than against it.\n\n**Loss aversion in health risk evaluation:** Patients often prefer \"doing something\" (active treatment) over watchful waiting — even when watchful waiting has better expected outcomes — because active treatment feels like doing something to prevent loss, while watchful waiting feels like accepting loss. This drives overtreatment in many medical domains.\n\n**Framing effects in treatment decisions:** A 90% survival rate produces different decisions than a 10% mortality rate. Surgical procedures described as having an \"85% chance of full recovery\" produce more acceptances than the same procedures described as having a \"15% chance of permanent complications\" — even though these are identical.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 574,
+      "out_sha": "9bbf37746305",
       "note": ""
     },
     {
@@ -3083,11 +3083,11 @@
       "en_title": "Chapter 24: Health Decisions",
       "order": 247,
       "src_chars": 1923,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6905abf39003",
       "src": "### 24.4 Health Decision Tools\n\nSeveral frameworks improve health decision quality:\n\n**The BRAIN framework for medical decisions:**\n\n* **B** enefits: What are the potential benefits of this treatment or procedure?\n* **R** isks: What are the potential risks, and how are they quantified (absolute risk, NNT)?\n* **A** lternatives: What alternatives exist, including no treatment or watchful waiting?\n* **I** ntuition: What does your gut tell you, and what might be driving that intuition?\n* **N** ow or later: Is there urgency, or can the decision wait for more information?\n\n**Decision aids:** Evidence-based decision aids (structured documents or tools that present medical information on specific decisions in balanced, standardized ways) have been shown to improve decision quality, reduce decisional conflict, and produce decisions more consistent with patients' stated values. Many medical societies have developed decision aids for common high-stakes decisions (breast cancer screening, prostate cancer treatment, hip replacement timing).\n\n**The value clarification exercise:** Before making a health decision, explicitly articulate what you care about: longevity vs. quality of life; avoiding specific side effects vs. optimizing average outcomes; maintaining ability to work vs. other priorities. Many health decisions are implicitly value tradeoffs — making the values explicit before the decision helps avoid post-hoc rationalization.\n\n**Second opinions:** For consequential, irreversible health decisions — major surgery, cancer treatment, rare disease management — seeking a second opinion is consistently associated with better decision quality. Not because physicians make errors (though they do), but because different physicians frame the same evidence differently, may be aware of different alternatives, and second opinions force the patient to engage more actively with the decision.\n\n\n### 24.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 651,
+      "out_sha": "cacd12dd0773",
       "note": ""
     },
     {
@@ -3095,11 +3095,11 @@
       "en_title": "Chapter 24: Health Decisions",
       "order": 248,
       "src_chars": 3167,
-      "status": "pending",
+      "status": "done",
       "src_sha": "913fb016aa74",
       "src": "#### Concept Check\n\n**Q1.** What is the difference between absolute risk reduction (ARR) and relative risk reduction (RRR)? Why does the distinction matter for health decisions?\n\n**Answer:** Absolute risk reduction (ARR) is the difference in event rates between the treated group and the control group, expressed in percentage points. If a medication reduces heart attack rate from 6% to 4%, ARR = 2 percentage points. Relative risk reduction (RRR) is the percentage reduction in events relative to the control group's event rate: in the same example, RRR = (6% − 4%) / 6% = 33%. Number needed to treat (NNT) is 1/ARR = 1/0.02 = 50 patients treated per heart attack prevented. The distinction matters because: (1) the same drug effect sounds very different depending on which measure is presented — \"33% reduction in heart attacks\" sounds far more impressive than \"2 out of 100 additional patients protected\"; (2) relative risk reduction is often used in marketing of medications and medical procedures to maximize perceived benefit; (3) for patient decision making, ARR and NNT are more informative — they tell you how many patients need to be treated for one to benefit, which is essential for comparing the benefit against the burden (side effects, cost, inconvenience). A patient deciding whether a treatment is worth it needs to know whether 5 patients need to be treated for one to benefit (compelling) or 500 patients (marginal). RRR does not convey this.\n\n* * *\n\n**Q2.** What is shared decision making, and why is it considered the ethical gold standard for health decisions?\n\n**Answer:** Shared decision making is a collaborative process in which physicians and patients work together to make health decisions that integrate: (1) the physician's expertise about the medical evidence (treatment options, their benefits, risks, and evidence base); and (2) the patient's knowledge of their own values, preferences, life circumstances, and risk tolerance. It is the ethical gold standard because: (1) **Value-dependence:** Many health decisions between medically reasonable options are genuinely value-dependent — there is no objectively correct answer; the right answer depends on what the specific patient values (longevity vs. quality of life, specific risk tolerance, life goals). The physician cannot know these values without the patient's input. (2) **Informed consent:** The ethical principle of patient autonomy requires that patients make their own decisions about what happens to their bodies, based on genuine understanding of the relevant information. (3) **Outcomes:** Research shows that shared decision making produces decisions more consistent with patients' actual values, greater treatment adherence (people follow through on choices they genuinely made), and reduced decisional regret. The alternative models — pure paternalism (doctor decides) and pure patient autonomy (patient decides without medical guidance) — both fail. Paternalism ignores patient values; pure autonomy ignores medical expertise. Shared decision making integrates both.\n\n* * *\n\n**Q3.** How does the availability bias manifest in health decisions, and what is its cost?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 998,
+      "out_sha": "62c20ef1ace3",
       "note": ""
     },
     {
@@ -3107,11 +3107,11 @@
       "en_title": "Chapter 24: Health Decisions",
       "order": 249,
       "src_chars": 3119,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c05ad73c2adf",
       "src": "**Answer:** Availability bias in health decisions: we assess the probability of conditions or outcomes based on how easily examples come to mind — recent, vivid, dramatic cases are more available, so they seem more probable. Manifestations: (1) **Overestimation of rare conditions:** After reading about a dramatic rare cancer or hearing about a friend's diagnosis, people overestimate their personal risk of that condition, driving unnecessary tests, anxiety, and sometimes overtreatment. (2) **Underestimation of common conditions:** Conditions that are common, gradual, and undramatic (hypertension, type 2 diabetes risk from lifestyle) are underestimated because they lack the availability of vivid rare diseases. (3) **Symptom interpretation:** Patients and sometimes physicians interpret symptoms through the lens of recently seen cases rather than the actual base rate of conditions producing those symptoms. (4) **Media health scares:** Highly publicized cases of rare conditions (vaccine complications, exotic infections) become disproportionately salient, driving behavior that responds to availability rather than to probability (e.g., avoiding vaccines due to highly available rare complication reports while discounting common complications of the prevented diseases). Cost: misallocation of medical attention — too much toward vivid, rare conditions and too little toward common, modifiable risks; inappropriate anxiety; overuse of testing for low-probability conditions; and underuse of behaviors that reduce high-probability risks.\n\n* * *\n\n**Q4.** What is the BRAIN framework, and how does it structure health decision making?\n\n**Answer:** BRAIN is a mnemonic for the key questions to ask when facing a medical decision: **B** enefits — what are the specific, quantified potential benefits of this treatment or procedure? (Expressed in absolute terms: what percentage of patients experience which improvements?) **R** isks — what are the specific, quantified potential risks? (What percentage of patients experience serious adverse events? Minor adverse events? How does this compare to the no-treatment alternative?) **A** lternatives — what alternatives exist to this specific recommendation, including: different treatments, watchful waiting or active monitoring, lifestyle interventions, second opinions, or doing nothing? **I** ntuition — what does your intuitive response tell you, and what might be driving it? Is the intuition driven by fear, loss aversion, or wishful thinking — or is it tracking something the clinical information doesn't capture? **N** ow or later — is there genuine urgency requiring immediate decision, or can the decision be deferred to gather more information, seek a second opinion, or deliberate more carefully? The framework is useful because: it ensures all relevant information is sought before deciding; it distinguishes the medical facts (B and R) from the value judgment (I); it makes alternatives explicit, preventing premature commitment to the first option presented; and it legitimizes the option to wait, counteracting time-pressure-driven decisions.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 974,
+      "out_sha": "ec23565c52e1",
       "note": ""
     },
     {
@@ -3119,11 +3119,11 @@
       "en_title": "Chapter 24: Health Decisions",
       "order": 250,
       "src_chars": 3231,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9491c3c0c7b3",
       "src": "#### Application Problems\n\n**Q1.** A physician tells a 55-year-old patient: \"This medication reduces your risk of stroke by 30%.\" The patient's baseline 10-year stroke risk is 6%. Calculate the absolute risk reduction and number needed to treat. Does knowing this change whether the medication seems worthwhile?\n\n**Answer:** Calculation: Baseline 10-year stroke risk = 6%. Relative risk reduction = 30%. Absolute risk reduction = 30% × 6% = 1.8 percentage points. New risk with medication = 6% − 1.8% = 4.2%. Number needed to treat (10 years) = 1 / 0.018 = 56 patients treated for 10 years per stroke prevented.\n\nDoes this change the assessment? It should, depending on the medication's side effects and costs. \"30% reduction in stroke risk\" sounds substantial — it implies major protection. \"56 patients need to take this medication for 10 years to prevent one stroke\" sounds different. The patient is asking: given the burdens of this medication (cost, daily adherence, potential side effects), is it worthwhile to be one of 56 people taking it, knowing that for 55 of us, the medication does not prevent a stroke (though it may also have other unmodeled benefits)?\n\nThe answer is genuinely patient-dependent: (1) If the medication has minimal side effects and low cost, NNT = 56 is likely worthwhile — strokes are severe and often irreversible. (2) If the medication has significant side effects or high cost, the patient needs to weigh: is the ~1.8% additional absolute protection worth the burden of the medication? (3) The patient should also ask: is there a higher-risk category I might fall into that would make the NNT lower? (Age, blood pressure, atrial fibrillation all increase stroke risk.) (4) What alternatives exist that reduce stroke risk differently (lifestyle modifications, different medications)?\n\nThe key point: the physician has an obligation to present information in both relative and absolute terms, and ideally with NNT, to enable genuine informed decision making.\n\n* * *\n\n**Q2.** A 45-year-old woman is told she has a positive mammogram result and is being referred for biopsy. She knows that mammography has approximately 80% sensitivity and 90% specificity for breast cancer in her age group, and that the base rate of breast cancer in women her age at screening is approximately 0.5%. Apply Bayes' theorem (Chapter 7) to calculate the probability that she actually has cancer. What should she understand about this result?\n\nHint\n\nUse the natural frequency method from Chapter 7. Start with 10,000 women in her age group and calculate how many have cancer and how many would test positive.\n\n**Answer:** Natural frequency method with 10,000 women screened:\n\n**Women with cancer:** 0.5% × 10,000 = 50 **Women without cancer:** 9,950\n\n**Among the 50 with cancer:**\n\n* True positives (test correctly positive): 80% × 50 = 40\n* False negatives (test incorrectly negative): 20% × 50 = 10\n\n**Among the 9,950 without cancer:**\n\n* False positives (test incorrectly positive): 10% × 9,950 = 995\n* True negatives (test correctly negative): 90% × 9,950 = 8,955\n\n**Total positive test results:** 40 (true positive) + 995 (false positive) = 1,035 **Probability of cancer given positive test:** 40 / 1,035 ≈ **3.9%**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1175,
+      "out_sha": "658d4592cb64",
       "note": ""
     },
     {
@@ -3131,11 +3131,11 @@
       "en_title": "Chapter 24: Health Decisions",
       "order": 251,
       "src_chars": 3210,
-      "status": "pending",
+      "status": "done",
       "src_sha": "717010212381",
       "src": "What she should understand: A positive mammogram result, even with a reasonably accurate test, indicates only about a 4% probability of actually having breast cancer in her age group — because the base rate is low. This does not mean the biopsy is unnecessary — it is precisely the tool that will resolve this uncertainty, and the 4% probability warrants investigation. However, she should understand: (1) The positive mammogram result is not a diagnosis — it is an elevated probability that requires further investigation; (2) The biopsy will either confirm cancer (moving probability sharply upward) or provide a normal result (moving probability sharply downward); (3) The vast majority of women with positive mammogram results do not have cancer — approximately 96 out of 100 in her situation; (4) She should not catastrophize the result while waiting for biopsy, but she also should not dismiss it.\n\n* * *\n\n**Q3.** A patient with moderate chronic back pain is considering surgery (65% chance of significant improvement, 15% chance of worsening, 25,000 USD cost, 3-month recovery) versus physical therapy (40% chance of significant improvement, 5% chance of worsening, 3,000 USD cost, ongoing commitment). He currently rates his quality of life at 6/10 due to pain. Assuming \"significant improvement\" moves quality of life to 8/10 and \"worsening\" moves it to 4/10, which option has higher expected quality of life? What does the decision tree miss?\n\n**Answer:** Expected quality of life calculation:\n\n**Surgery:**\n\n* 65% chance of improvement: 0.65 × 8 = 5.2\n* 15% chance of worsening: 0.15 × 4 = 0.6\n* 20% chance of no change: 0.20 × 6 = 1.2\n* Expected QoL from surgery = 5.2 + 0.6 + 1.2 = **7.0**\n* Cost: 25,000 USD + 3-month recovery burden\n\n**Physical therapy:**\n\n* 40% chance of improvement: 0.40 × 8 = 3.2\n* 5% chance of worsening: 0.05 × 4 = 0.2\n* 55% chance of no change: 0.55 × 6 = 3.3\n* Expected QoL from PT = 3.2 + 0.2 + 3.3 = **6.7**\n* Cost: 3,000 USD + ongoing time commitment\n\nBy this analysis: surgery has modestly higher expected QoL (7.0 vs. 6.7) at substantially higher cost and risk. What the decision tree misses: (1) **Sequencing:** Physical therapy might be tried first — if it works, surgery is avoided; if it doesn't work, surgery remains an option. The tree treats them as mutually exclusive, but they may be sequential options. (2) **Reversibility:** Surgery is substantially irreversible; its 15% worsening outcome is potentially permanent. PT's 5% worsening rate may also have lasting effects but is likely more recoverable. The irreversibility asymmetry warrants extra weight on surgery's downside. (3) **Variance:** The expected value difference is small (0.3 QoL points), but surgery's higher variance means a higher chance of much better outcomes AND a higher chance of much worse outcomes. For risk-averse patients (who may be especially risk-averse about permanent worsening), PT's lower-variance outcome may be preferable. (4) **The 20% \"no change\" from surgery:** If surgery doesn't help, the patient has spent 25,000 USD and 3 months of recovery for nothing; PT's 55% \"no change\" at 3,000 USD and ongoing commitment is a different experience of the same outcome.\n\n* * *",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1179,
+      "out_sha": "c2cf774a6dba",
       "note": ""
     },
     {
@@ -3143,11 +3143,11 @@
       "en_title": "Chapter 24: Health Decisions",
       "order": 252,
       "src_chars": 2494,
-      "status": "pending",
+      "status": "done",
       "src_sha": "83f85616cd2f",
       "src": "**Q4.** A 62-year-old man with a family history of prostate cancer is being offered PSA screening. His physician explains that PSA screening has a 70% sensitivity, a 25% false positive rate, and that the base rate of clinically significant prostate cancer in men his age and family history is approximately 3%. He will need to decide whether to be screened. What information does he need to make an informed decision, and how should he weigh the tradeoffs?\n\nHint\n\nCalculate the probability of true cancer given a positive result. Then consider what happens next (biopsy, treatment), and what the overdiagnosis concern means in practice.\n\n**Answer:** Bayesian calculation with 10,000 men of his profile:\n\n**Men with clinically significant prostate cancer:** 3% × 10,000 = 300 **Men without:** 9,700\n\n**Among 300 with cancer:** 70% sensitivity → 210 true positives; 90 false negatives **Among 9,700 without cancer:** 25% false positive rate → 2,425 false positives; 7,275 true negatives\n\n**Total positive PSA results:** 210 + 2,425 = 2,635 **Probability of significant cancer given positive PSA:** 210 / 2,635 ≈ **8%**\n\nWhat he needs to understand for a full informed decision: (1) A positive PSA result indicates approximately 8% probability of clinically significant cancer — meaning about 92% of positive results will lead to biopsy and turn out not to be clinically significant cancer. This does not mean the screening is useless — it elevates his probability substantially from 3% — but it means he should be prepared for a high likelihood of further testing that ultimately doesn't confirm cancer. (2) **Overdiagnosis concern:** Prostate cancer exists on a spectrum; many detected cancers are slow-growing and would never cause symptoms or death. Screening detects some of these, leading to treatment (surgery, radiation) that causes side effects (incontinence, sexual dysfunction) without extending life. This is the overdiagnosis problem specific to prostate cancer screening. (3) **His values:** Does he want to know about slow-growing cancers he might never be harmed by? How does he weigh the anxiety and intervention risk of false positives versus the potential benefit of early detection of aggressive cancers? (4) **Family history context:** His family history increases the likelihood of aggressive prostate cancer, which is more likely to benefit from early detection — this shifts the benefit-risk calculation in favor of screening compared to men without family history.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 839,
+      "out_sha": "84fc553e36e6",
       "note": ""
     },
     {
@@ -3155,11 +3155,11 @@
       "en_title": "Chapter 24: Health Decisions",
       "order": 253,
       "src_chars": 2405,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d38ae37140dc",
       "src": "#### Think Deeper\n\n**Q1.** Physicians are sometimes reluctant to present statistical information to patients, believing that patients \"can't understand statistics\" or will make worse decisions with raw numbers. Is this paternalistic concern justified? What is the evidence on how patients respond to statistical information, and how should physicians handle this tension?\n\n**Discussion:** The concern has some empirical basis: some research shows that patients presented with statistical information in certain formats make decisions that differ from what they would have chosen with clear understanding. However, the research more consistently shows that the problem is format rather than patient capacity. When information is presented in natural frequencies (Chapter 7's approach: \"out of 1,000 women who receive this screening, 8 will have cancer detected and 992 will not\") versus percentages or conditional probabilities, comprehension improves dramatically across education levels. Research by Gerd Gigerenzer, Hal Pashler, and others shows that most people can correctly reason with natural frequencies even without formal statistical training. The paternalism concern: withholding statistical information to protect patients from their own misunderstanding is an ethical problem because: (1) it substitutes physician values for patient values in the decision; (2) it systematically biases toward the physician's preferred treatment option; (3) it fails the informed consent standard. A better approach: invest in communication quality rather than information withholding. Use visual representations (icon arrays, frequency trees), natural frequencies, absolute risk framing, and decision aids. Research shows these tools substantially close the comprehension gap. The implication: the correct response to \"patients don't understand statistics\" is \"improve how statistics are communicated,\" not \"withhold statistics from patients.\"\n\n**Q2.** The BRAIN framework (Benefits, Risks, Alternatives, Intuition, Nothing/waiting) includes \"Intuition\" as a legitimate input to health decisions alongside statistical evidence. Critics argue that including intuition in medical decisions is an invitation for motivated reasoning and bias. Defenders argue that intuition captures values and context that statistics cannot. Who is right, and how should patients actually use their intuition in health decisions?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 678,
+      "out_sha": "158c569dcdf1",
       "note": ""
     },
     {
@@ -3167,11 +3167,11 @@
       "en_title": "Chapter 24: Health Decisions",
       "order": 254,
       "src_chars": 2118,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b691804a7740",
       "src": "**Discussion:** Both sides capture something real. The critique: \"intuition\" in medical contexts is often not genuine intuitive wisdom — it's availability bias (fears about treatment from dramatic media portrayals), loss aversion (overweighting the certainty of side effects against the probability of benefit), optimism bias (discounting risks that don't feel personally relevant), or simple familiarity heuristics (preferring what the doctor seemed more confident about). Labeling these as \"intuition\" legitimizes reasoning errors as gut wisdom. The defense: formal statistical analysis cannot fully capture what a specific patient values — their tolerance for side effects, what they can manage given their life circumstances, their priorities among competing health goals, what level of risk they find personally acceptable. These are genuine value inputs that statistics cannot replace, and patients who override their own values in deference to probability calculations often experience the outcomes differently than the statistics predicted. The synthesis: a better framing than \"intuition vs. statistics\" is **\"values vs. evidence.\"** Statistical evidence tells you the distribution of outcomes; your values tell you which outcomes matter most to you. The role of I in BRAIN is best understood as: after understanding the evidence (B, R, A), check whether your emotional response is (a) a value signal (\"this side effect would significantly affect my ability to do what matters to me\") or (b) a bias signal (\"I'm afraid of this treatment because of a dramatic news story\"). The practical test: can you articulate what your intuition is responding to? If you can describe a specific value or life consideration, it's likely informative. If you can't explain it beyond \"it just feels wrong,\" it may be worth examining whether a known bias is operating. The N (Nothing/waiting) option is where intuition is most defensible: intuition that \"I need more time\" often reflects genuine information processing delay rather than avoidance bias, and for non-urgent decisions, taking that time is usually low-cost.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 609,
+      "out_sha": "f50876184823",
       "note": ""
     },
     {
@@ -3179,11 +3179,11 @@
       "en_title": "Chapter 24: Health Decisions",
       "order": 255,
       "src_chars": 1754,
-      "status": "pending",
+      "status": "done",
       "src_sha": "862e509a3490",
       "src": "### Chapter Summary\n\nHealth decisions are among the highest-stakes applications of this book's frameworks — the decisions are consequential, often irreversible, made under emotional duress, and typically require probabilistic reasoning that doesn't come naturally.\n\nThe expert-layperson gap makes health decisions genuinely difficult: physicians have medical expertise (diagnosis, evidence, treatment mechanisms); patients have value expertise (what matters to them, what tradeoffs they can bear). Shared decision making combines both, producing decisions more consistent with patient values and better outcomes.\n\nStatistical literacy — distinguishing absolute from relative risk reduction, understanding NNT, applying Bayesian reasoning to test results — is essential for genuine informed consent. The same medical evidence sounds dramatically different depending on framing, and patients who lack these tools are vulnerable to manipulation by framing choice alone.\n\nThread 2 showed Dr. Martinez and David reaching the synthesis of their three-year journey: a decision structured around absolute risk tradeoffs, explicit value clarification, and genuine shared decision making rather than passive deference.\n\nThe behavioral biases studied in this book — availability, optimism, loss aversion, framing effects — appear with full force in health decisions. The antidote is the same: explicit probabilistic reasoning, reference class forecasting, reframing in multiple ways, and pre-committing to a decision process before emotional intensity peaks.\n\nIn Chapter 25, we apply the decision-making toolkit to relationship decisions — the domain where values are most central, rationality most contested, and the consequences of bias most personally felt.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 471,
+      "out_sha": "7a5b69607c9f",
       "note": ""
     },
     {

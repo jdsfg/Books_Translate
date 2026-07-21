@@ -91,3 +91,7 @@ regret minimization | 后悔最小化 |
 efficient market hypothesis | 有效市场假说 | EMH
 disposition effect | 处置效应 |
 FOMO | FOMO | 错失恐惧
+absolute risk reduction | 绝对风险降低 | ARR
+relative risk reduction | 相对风险降低 | RRR
+number needed to treat | 需治疗人数 | NNT
+shared decision making | 共享决策制定 |
