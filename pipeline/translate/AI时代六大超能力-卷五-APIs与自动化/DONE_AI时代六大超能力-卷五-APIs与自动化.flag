@@ -1,13 +1,64 @@
 book: AI时代六大超能力-卷五-APIs与自动化
 done: 83/83
-verify: ERROR=0 WARN=10
-force_arabic: true
-glossary: pipeline/translate/glossary_cs.md (+ glossary_local.md)
+head_fixes: c07_b05（scope/scopes→权限范围）、c15_b02（prompts→提示词）
+verify_shared:
+  command: python3 pipeline/translate/verify_translation.py sources/AI时代六大超能力-卷五-APIs与自动化.md --force-arabic --glossary pipeline/translate/glossary_cs.md
+  result: ERROR=0 WARN=10
+verify_local:
+  command: python3 pipeline/translate/verify_translation.py sources/AI时代六大超能力-卷五-APIs与自动化.md --force-arabic --glossary pipeline/translate/AI时代六大超能力-卷五-APIs与自动化/glossary_local.md
+  result: ERROR=0 WARN=77
+  note: WARN 以「块」计（77 个块各至少 1 条术语提示）；非 77 个独立真实误译。
 
-Remaining WARN notes (false positives from shared glossary_cs.md):
-- CAP: English common noun “cap” in rate-limit prose (“a cap on how many…”) — not CAP theorem. Present in c08_b01, c08_b05, c13_b03, c13_b04, c13_b06, c16_b03.
-- ACID: English “acid”/figurative uses in narrative (not ACID transaction properties). Present in c15_b01, c15_b05, c16_b03, c16_b04, c16_b05.
+## 终审修复（2026-07-21）
+- c07_b05：普通英文残留 scope/scopes 已全部改为「权限范围」。
+- c15_b02：普通英文残留 prompts 已改为「提示词」。
+- 复跑共享库 + 本地库 verify；结构 ERROR 仍为 0。
 
-No structural ERROR. Sample PASS then full fine translation on same Draft PR #13.
+## 共享 glossary_cs.md WARN=10（全部假阳性）
+- CAP（6 块：c08_b01/b05, c13_b03/b04/b06, c16_b03）：源文 rate-limit / spending 语境普通词 “cap”（上限），非 CAP 定理。译文已用「上限」。
+- ACID（5 块：c15_b01/b05, c16_b03/b04/b05）：源文成语 “acid test”，已统一译「试金石」，非数据库 ACID。
 
-Also fixed idiom: “acid test” → 试金石 (was 酸性测试) in c15/c16.
+## 本地 glossary_local.md WARN=77 逐类判断
+校验逻辑：源块 `\b英文词\b` 命中后，要求译文含 glossary 中文栏的**整串字面**。下列均已人工对照源/译，**无需改译**（除上列两处英文残留已修）。
+
+### A. 英文常用词/动词误撞「保留英文」专名（约 70 次提及）
+源文日常英语被词界正则当成 HTTP 方法或产品名：
+- Make→Make：动词 make / making（非 Make.com）
+- GET/POST/PUT/DELETE→同名：动词 get/put/post/delete（非 HTTP 方法）
+- REST→REST：the rest of…（非 REST API）
+结论：假阳性。本书几乎不出现真 HTTP 方法名教学，故译文中不出现 GET/PUT 等属预期。
+
+### B. 斜杠备选译法整串不匹配（约 43 次提及）
+glossary 写成「流水线 / 管道」「管道 / 管件」「触发器 / 触发条件」「机密 / 密钥」「干跑 / 试运行」「误触发 / 走火」。
+译文已按语境选用其一（多为「管道」「触发…」「密钥」等），校验却要求字面含带斜杠的整串 → 假阳性。
+特例 c16_b04/b05 plumbing：译「管路」（管道同义隐喻），语义正确。
+
+### C. key 双义条目互斥（约 20 次提及）
+glossary 对 key 同时登记「键」（JSON）与「密钥」（鉴权）。源出现 key 时两条都触发；鉴权章只用「密钥/钥匙」会报缺「键」，属互斥假阳性。反向同理。
+
+### D. 常用词非术语义 / 合法同义改写（约 60+ 次提及，分布在多块）
+词界命中后，译文用了更贴语境的词，未出现 glossary 首选字面：
+- read→「读取」：日常 “have read / read a number” 译「读过/读出」等，非 API 术语「读取」
+- write→「写入」：如 “write JSON” 译「写 JSON」
+- send→「发送」：部分用「放行/进入世界」等同义叙述（安全区分未弱化）
+- response→「响应」：多用「回应/回答/答复」
+- territory→「疆域」：多用「领地」或非地图义（careful territory 等）
+- capstone→「综合项目」：章内作「综合收束/压顶石」（titles_zh 章名仍用综合项目）
+- manual→「手册」：如 “manual task” 作手工劳动义，非 map/manual 对立
+- event→「事件」：邮件里的 event 作「活动」
+- action→「动作」：survey vs action 作「行动」
+- permission→「权限」：give yourself permission 非 OAuth 权限
+- map→「地图」：动词 “map the blast radius” 非名词地图
+- object→「对象」：JavaScript Object Notation 史注，未强制插入「对象」
+- token/credential：定义句中作 key 别称；译为保留 token /「证明」等，未堆「令牌」「凭证」字面
+- scope→「权限范围」：c07_b05 已修复；修复后该条不再出现
+
+### E. 真实需改的英文残留（已处理）
+- c07_b05 scope/scopes → 权限范围（完成）
+- c15_b02 prompts → 提示词（完成）
+
+## 结论
+- 机械结构：ERROR=0
+- 共享库 WARN=10：全假阳性（cap / acid test）
+- 本地库 WARN=77：除已修复的两处英文残留外，均为校验器字面匹配、斜杠整串、key 双义或英语常用词误撞；逐条核对后**无剩余真实术语漏译**
+- 样张 PASS 后全书 83/83 精翻；本 flag 同时记录共享库与本地库结果，不以共享库 WARN=10 代替本地库。
