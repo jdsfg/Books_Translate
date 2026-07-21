@@ -979,11 +979,11 @@
       "en_title": "Chapter 9: The Workshop",
       "order": 75,
       "src_chars": 2163,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7b96d2d7680a",
       "src": "### Chapter Summary\n\nThe guide's third copy, out on the internet, turned out to be more than a safety measure. It gave the project a face and an address, and that changed what the project could be: from a private thing two people kept safe into a place where a reader could reach in and make it better.\n\nThat place is a workshop, and the largest of its kind, as of 2026, is GitHub: one building among several (GitLab and Codeberg among them) that all work on the same principles, so the map you're learning transfers. The crucial distinction, the one most people get wrong: GitHub is not Git. Git is the tool and the skill, yours and offline-capable, born in 2005 when Linus Torvalds wrote it in about ten days after his project lost access to another tool. GitHub is a workshop built on top of Git, founded in 2008 by Tom Preston-Werner, Chris Wanstrath, and PJ Hyett, later acquired by Microsoft in 2018 for 7.5 billion USD. The dates are settled history; the scale is weather you look up.\n\nA project's page in the workshop is its public face: files to browse, a welcome document, and, threaded through, structured places for conversation. Chief among them is the _issue_ : a single tracked note attached to the work that says \"here is something to address,\" kept where the project lives so it can't get lost. When Núria found that the Alfama café had closed, she didn't send a losable text; she opened an issue, on the record, next to the work. The issue reports the problem; it is pointedly _not_ the fix.\n\nThe fear this chapter retires: that being seen means losing control. It doesn't; a private bench shows only whom you choose, and an issue is a note left on your terms. What you can now dare: to show unfinished work to a trusted reader and treat their corrections as gifts landed in the right place.\n\nNext, in Chapter 10, Núria goes one step further. She doesn't just report the closed café; she writes the better paragraph and proposes it back, as a specific, reviewable change Maya can read and accept or question. That proposal has a name and a quiet importance: the pull request, the invention that let the world learn to build things together.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 959,
+      "out_sha": "056e53ea6aa1",
       "note": ""
     },
     {
@@ -991,11 +991,11 @@
       "en_title": "Chapter 10: The Pull Request",
       "order": 76,
       "src_chars": 3070,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6486866b67e7",
       "src": "Núria's message was sitting in the workshop, exactly where Chapter 9 left it: an issue, titled plainly, saying that the little café in Alfama the guide recommended for a rainy afternoon had closed its doors for good. Maya had read it, thanked her, and thought: _someone will need to fix that._ And then Núria, the friend from Chapter 9 who had never touched a line of code in her life, did something that a decade ago would have been unthinkable. She fixed it herself, and asked Maya's permission to hand the fix over.\n\nShe did not email Maya a corrected paragraph. She did not say \"change the third bullet under Alfama to this.\" She proposed a specific, reviewable change to the guide, attached the exact edit, and opened a conversation about it, all in one place. Then she waited. Nothing about the actual guide changed while she waited. That waiting is the whole point, and this chapter is about the object that makes it possible.\n\nThat object is called a **pull request** , and it is, I think, the single greatest social invention of this era of making things together. Bigger than any command, bigger than the tool itself. Let me earn that claim.\n\n\n### 10.1 The problem the pull request solves\n\nPicture the two ways strangers used to improve each other's work, before this thing existed.\n\nThe first way was to give the stranger the keys. You trust someone enough to let them into the project, and now they can change anything, at any time, and you find out afterward, if you find out at all. This is fast and it is terrifying. You would only ever do it with people you already trust completely, which means the circle of people who can help you stays tiny.\n\nThe second way was to keep the keys and pass suggestions over the wall. The friend emails you: \"the Alfama café closed.\" Now the work is all yours. You have to find the café in your guide, figure out what she means, write the replacement, and hope you understood her. The suggestion and the change live in two different places. Her words are in your inbox, the actual edit is in your hands, and the two never quite meet. Most suggestions from most people die in that gap. It is too much friction for a small fix, so the fix never happens.\n\nBoth ways force a miserable choice: total trust or total friction. Either you let strangers overwrite your work, or you do all the work of their suggestions yourself. For most of the history of people making things together, those were the only two options, and they are the reason that \"someone should really fix that\" so rarely became \"someone fixed that.\"\n\nThe pull request dissolves the choice. It lets a complete stranger do the _entire_ work of a fix, finding the spot, writing the exact change, explaining the reasoning, and then hand it to you finished, _without_ getting the keys. You keep total control over what actually goes into your project. She does all the labor of the improvement. Nobody has to choose between trust and friction, because the pull request separates two things that used to be fused: **doing the work** and **deciding to accept it.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1098,
+      "out_sha": "5c16b4201e7a",
       "note": ""
     },
     {
@@ -1003,11 +1003,11 @@
       "en_title": "Chapter 10: The Pull Request",
       "order": 77,
       "src_chars": 3304,
-      "status": "pending",
+      "status": "done",
       "src_sha": "97418eed87d7",
       "src": "### 10.2 Four things in one place\n\nHere is what the friend actually created when she opened her pull request. It is four things at once, and the magic is that they live together.\n\n**A proposed change.** She is not asking a question and she is not filing another complaint. She has _made_ the fix: a new version of the guide with the closed café removed and a still-open one suggested in its place. The proposal is concrete. Anyone can see precisely what the guide would become if it were accepted.\n\n**A diff.** Attached to the proposal is an exact, line-by-line account of what is different between the guide as it stands and the guide as she proposes it. Not \"I changed the Alfama section\" in vague words, but the specific old text and the specific new text, laid side by side. We will spend all of Chapter 11 learning to read one of these calmly; for now, hold it as _the receipt_ , the precise, reviewable statement of what changes and nothing more. Maya can see that Núria touched one paragraph and fixed one stray spelling, and left every other page of the guide untouched. That specificity is what makes review possible at all.\n\n**A conversation.** The pull request is a place to talk, and the talk lives _with_ the change, not in a separate inbox. The friend wrote a note: \"I walked past last Tuesday, it's a phone-repair shop now. I put in a spot I love — feel free to swap for a better one.\" Maya can reply right there. She can ask a question, right there, attached to the exact line she is asking about. When they are done, the whole discussion is stored next to the change forever, so that a year from now anyone can see not just _what_ changed but _why_ , and who agreed to it.\n\n**A decision.** And finally, hanging over all of it, is a single gate: someone with authority over the guide has to say yes. Until Maya decides, the proposed change is exactly that, proposed. The friend's edit sits in its own space, complete and waiting, and the real guide goes on exactly as it was. The moment Maya accepts, and only then, the change becomes part of the guide.\n\nProposed change, diff, conversation, decision. Four things, one object, one place. Pull the four apart and you get the old miserable world, with suggestions in one place and edits in another and decisions made silently. Fuse them and you get something new.\n\n\n#### Definition: Pull request\n\n> A **pull request** is a proposed change to a project, bundled together with an exact account of what it would alter, a conversation about it, and a decision about whether to accept it, all held in one place. It lets someone do the complete work of a change and offer it for review, while whoever owns the project keeps the sole authority to accept or decline. Nothing in the project changes until that acceptance happens.\n\nNotice the name is a little sideways, and it helps to see why. The person proposing the change is, in effect, asking the project's owner to _pull_ their proposed work in, to reach over and take it. It is a request to pull. The name describes the moment of handoff from the requester's side. Some workshops call the same object a \"merge request,\" which describes it from the owner's side, a request to merge the change in. Same object, two angles on the same handshake. Do not let the name carry more weight than that.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1235,
+      "out_sha": "9e6a015b8ae1",
       "note": ""
     },
     {
@@ -1015,11 +1015,11 @@
       "en_title": "Chapter 10: The Pull Request",
       "order": 78,
       "src_chars": 1513,
-      "status": "pending",
+      "status": "done",
       "src_sha": "33d81f95c38a",
       "src": "#### Common Misconception\n\n**\"Opening a pull request changes the project.\"**\n\nThis is the single most important misunderstanding to clear, and almost everyone new to this arrives holding it. They imagine that proposing a change is a little bit like committing a change, that once the friend clicks the button, the café is already gone from the live guide and Maya is now cleaning up after a stranger who edited her book.\n\nIt is the reverse. **A pull request changes nothing.** It is a proposal, and a proposal is precisely the thing that has _not_ happened yet. The friend's edit lives entirely in its own separate space. The real guide, the one Maya and Theo have been building for eight chapters, is completely untouched by the mere existence of the request. It will stay untouched if Maya ignores the request for a month, and it will stay untouched forever if Maya decides to decline it. The proposed change only becomes a real change at the instant someone with authority chooses to accept it, and not one second before.\n\nSit with how much that reversal buys you. You can invite proposals from anyone on Earth without any risk to your work, because a proposal cannot hurt you. A stranger can pour an hour of care into fixing your guide and the worst possible outcome is that you say \"no thank you\" and nothing changes. The safety that lets you open your work to the whole world comes entirely from this one fact: **proposing and accepting are two separate acts, and only the second one touches the project.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 541,
+      "out_sha": "63240ebbad6b",
       "note": ""
     },
     {
@@ -1027,11 +1027,11 @@
       "en_title": "Chapter 10: The Pull Request",
       "order": 79,
       "src_chars": 2898,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e0f17a3b9c84",
       "src": "### 10.3 Why this is the great social invention\n\nI promised to earn that phrase, so here is the argument in full.\n\nEvery important collaboration problem between people who don't fully trust each other comes down to the same tension. You want the benefit of other people's work, and you want to stay in control of your own. Those two desires pull against each other. Open the doors and you lose control; keep them shut and you lose the help. Human institutions have spent centuries building elaborate machinery (editors, committees, sign-off procedures, approval chains) to manage that exact tension, and all of it is slow and most of it is heavy.\n\nThe pull request resolves the tension in one clean move, for a wide and growing class of the things people make. It does it by making the change **specific** , by keeping the conversation **with the change** , and by making acceptance a **deliberate decision** instead of a silent overwrite. Take those three properties one at a time, because each does real work.\n\n_Specific._ Because the proposal is an exact diff and not a vague suggestion, the owner can review it in minutes and know precisely what she is agreeing to. There is no ambiguity to resolve, no \"did she mean the third bullet or the fourth.\" The change _is_ its own description. This is what makes it possible to accept contributions from people you have never met: you are not trusting the person, you are inspecting the change, and the change tells you everything.\n\n_Conversation lives with the change._ Because the discussion is attached to the exact lines in question, there is no gap for the suggestion to fall into. The reasoning, the question, the \"actually let's use the place Núria suggested,\" and the final yes are all stored together, permanently, next to the thing they are about. A year later the record explains itself. Compare that to a decision buried in an email thread nobody can find.\n\n_Acceptance is a deliberate decision._ Because nothing changes until the owner says yes, the owner never loses control, no matter how many strangers propose things. The default is _no change_. Improvement requires an active, conscious \"yes\" from someone with authority. That inversion, where doing nothing is safe and change requires a decision, is exactly the safety you need in order to open your work to people you don't know.\n\nPut those three together and you have solved, for a huge swath of human making, the ancient problem of how strangers can improve each other's work without either trusting each other or drowning in friction. That is why hundreds of millions of people now do it, every day, and why the number keeps climbing. It is not a coding feature. It is a way for humans to collaborate that barely existed thirty years ago and now feels like water. The guide Maya and Theo are writing has never had a line of code in it, and this invention serves them perfectly.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 979,
+      "out_sha": "e0af0fed2f8a",
       "note": ""
     },
     {
@@ -1039,11 +1039,11 @@
       "en_title": "Chapter 10: The Pull Request",
       "order": 80,
       "src_chars": 3377,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8cf8e600d349",
       "src": "### 10.4 The pull request is a conversation, not just code\n\nThere is a trap in the phrase \"pull request,\" and it is worth stepping around deliberately, because it will shape how you _use_ the thing.\n\nThe word \"request\" and the whole apparatus of diffs and acceptance make people imagine the pull request as a purely mechanical object: some new text goes in a box, a button gets pressed, the text is stamped into the project. Cold, technical, transactional. And it can be used that coldly, and when it is, the results are worse.\n\nThe pull requests that make projects better are the ones people treat as **conversations.** The friend did not just drop an edit and vanish. She explained what she saw, offered her reasoning, flagged her own uncertainty (\"feel free to swap for a better one\"), and left the door open. Maya, in Chapter 11, will not just click yes or no. She will reply, ask one small question, maybe suggest a wording, and the two of them will arrive together at a version better than either would have written alone. The change that finally goes in is the _outcome_ of the conversation, not the thing that was first proposed.\n\nThis is why the pull request is a social invention and not merely a technical one. The object holds a proposed change, yes, but it holds it inside a space built for people to talk, disagree gently, refine, and agree. The best contributions on Earth flow through exactly this shape: someone proposes, others read and respond with care, the proposer adjusts, and eventually a human decides. The code, or the paragraph, or the café correction is almost the smallest part. The generosity, the review, and the decision are where the quality actually comes from.\n\nWhich is the perfect place to hand you to the next chapter. Because Maya still has to do the hardest and most interesting part: she has to _read_ the friend's proposed change, understand exactly what it alters, decide whether it makes the guide better, and give a gracious yes or a gracious \"not quite.\" That act, reading a change and deciding on it, is a skill and a culture of its own, and it is the whole subject of Chapter 11.\n\n\n### 10.5 Exercises\n\nThese exercises ask you to predict how this object behaves and to feel why its shape matters. Read each one, sit with it, then read the discussion. The reasoning is spelled out in full.\n\n\n#### Concept Check\n\n**Q1.** The friend has just opened her pull request proposing the café fix. Maya is asleep and won't see it for two days. During those two days, what does the _actual guide_ , the one readers can buy, look like: fixed, or still showing the closed café?\n\nHint\n\nA pull request is a proposal. What is the one thing a proposal, by definition, has not yet done?\n\n**Answer:** Still showing the closed café. The proposed change sits entirely in its own space, waiting; it has not touched the real guide and will not until someone with authority accepts it. This is the central fact of the whole chapter, and it is worth feeling the slight discomfort of it: the fix _exists_ , fully written, and yet the problem it fixes is _still live_ , because proposing and accepting are two separate acts. That gap between \"written\" and \"in\" is not a flaw. It is the safety mechanism. It is what lets the friend do the work without Maya losing control, and it is why Maya can open her guide to corrections from anyone at all without fear.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1212,
+      "out_sha": "69f57d148b70",
       "note": ""
     },
     {
@@ -1051,11 +1051,11 @@
       "en_title": "Chapter 10: The Pull Request",
       "order": 81,
       "src_chars": 1487,
-      "status": "pending",
+      "status": "done",
       "src_sha": "db6ae73903df",
       "src": "#### Application Problems\n\n**Q1.** Think about the old way: a friend emails you a suggested correction to something you wrote. Now list, concretely, everything that has to happen, and everything that can go wrong, between her email and the correction actually appearing in your work. Then say which of those steps a pull request removes.\n\nHint\n\nWalk it literally: she writes words describing a change; you read the words; you locate the spot; you interpret what she meant; you write the edit; you hope you got it right. Where are the gaps?\n\n**Answer:** In the email world, the chain is long and leaky. She describes the change in prose. You have to find the right spot yourself. You have to interpret her words, which may be ambiguous. You do the actual edit, so any mistake in it is now yours. The suggestion (in your inbox) and the edit (in your hands) never physically meet, so there is no single record of what was proposed versus what got done. Most fixes die somewhere in that chain because it is more work than it is worth. A pull request collapses nearly all of it: _she_ finds the spot, _she_ writes the exact edit, and the proposal and the edit are the same object, so there is no interpreting, no relocating, no gap for the suggestion to fall into. All you keep is the one step that should be yours and only yours: the decision to accept. That is the whole gain in one sentence. The pull request moves the labor to the proposer and leaves the owner exactly one job, deciding.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 537,
+      "out_sha": "6170a6c3275e",
       "note": ""
     },
     {
@@ -1063,11 +1063,11 @@
       "en_title": "Chapter 10: The Pull Request",
       "order": 82,
       "src_chars": 3206,
-      "status": "pending",
+      "status": "done",
       "src_sha": "685e3232c679",
       "src": "#### Think Deeper\n\n**Q1.** This chapter calls the pull request \"the greatest social invention of this era of making things together,\" bigger than the tool itself. That's a strong claim. Make the strongest case _against_ it, and then say where you think the claim survives.\n\nHint\n\n\"Social invention\" is a claim about _people_ , not software. Ask: is the important thing here a piece of technology, or a new way for humans to relate around a shared object? And is it really new, or just a faster version of something old like editing?\n\n**Discussion:** The strongest case against is that this is just a nicer editorial workflow. Editors have taken suggestions, marked up manuscripts, and decided what goes in for centuries, so calling a software feature a great social invention is inflation. Take that seriously; the continuity is real. What is genuinely new is _who_ it includes and _at what scale and cost_. Old editorial machinery worked only inside institutions you had already joined — a magazine, a publisher, a committee — and it was slow and human-heavy. The pull request lets a total stranger, anywhere, who you have never met and may never meet, do the complete work of an improvement and hand it to you finished, while you keep absolute control, at essentially zero friction, and it does this hundreds of millions of times a day. That combination (strangers, scale, near-zero cost, owner keeps control) did not exist before, and it changed who gets to improve whose work. The claim survives not because the _idea_ of reviewed contribution is new, but because the pull request made it available to everyone, for almost anything, at almost no cost. And notice it is a claim about _people_ : the invention is not the diff or the button, it is the new shape of a relationship, where I can better your work without threatening it, and you can accept my help without trusting me first. That is why it belongs in a chapter about people and not about software, and why the couple writing a non-technical city guide benefit from it just as much as any programmer.\n\n\n#### Say This to Your AI\n\nYou now have the vocabulary for the whole handoff, so here is the chapter's ask, intent-level, no commands, building on everything before it:\n\n* **\"Turn my fix into a proposed change our friend can review before it goes in.\"**\n\nNotice the shape of that sentence and how it carries the whole chapter. You are not saying \"put my fix in.\" You are saying _propose_ it, and _before it goes in_ , naming in plain words the gap between proposing and accepting that this entire chapter is about. Your agent will build the pull request; you are the one who understood that a proposal is not yet a change, and that someone still has to decide.\n\nAnd here is the fear this chapter retires. Until now, opening your work to other people meant a choice between two frightening things: handing strangers the keys, or drowning in the labor of everyone's suggestions. **You no longer have to choose.** You can now dare to let anyone on Earth propose improvements to something you made, and dare to invite it, knowing that nothing they propose can touch your work until you, understanding exactly what it changes, decide to say yes.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1193,
+      "out_sha": "84cc63ede09b",
       "note": ""
     },
     {
@@ -1075,11 +1075,11 @@
       "en_title": "Chapter 10: The Pull Request",
       "order": 83,
       "src_chars": 1809,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ed4287ac43ab",
       "src": "### Chapter Summary\n\nThe friend's café fix, which began as an issue in Chapter 9, became a pull request: a proposed change to the guide, bundled with an exact account of what it would alter, a conversation about it, and a decision about whether to accept — all in one place. That bundling is the invention. It lets someone do the complete work of an improvement and offer it for review while the owner keeps sole authority to accept or decline, and it resolves the ancient tension between wanting other people's help and keeping control of your own work.\n\nThe fact to carry above all others: a pull request changes nothing. It proposes. The real project stays exactly as it was until someone with authority deliberately accepts, and that separation between proposing and accepting is the safety that lets you open your work to strangers without risk. The pull request is specific (an exact diff, not a vague suggestion), its conversation lives with the change (no gap for suggestions to fall into), and acceptance is a conscious decision (the default is no change). Those three properties, together, are why hundreds of millions of people now improve each other's work this way, and why it deserves to be called the great social invention of this era: a new shape for how humans collaborate, one that serves a city guide as well as it serves any program. Above all, the pull request is a conversation, not just a piece of code dropped in a box.\n\nNext, in Chapter 11, Maya does the part that matters most: she reads the friend's proposed change, understands in plain words exactly what it alters, asks one clarifying question, and decides. That act, reading a change and deciding on it well, is a skill and a culture of its own, and it is where the quality of everything made together actually comes from.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 621,
+      "out_sha": "64dcfe781c35",
       "note": ""
     },
     {
@@ -1087,11 +1087,11 @@
       "en_title": "Chapter 11: Reading the Change",
       "order": 84,
       "src_chars": 2452,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b35ab0ccd700",
       "src": "The proposal was sitting there when Maya opened the guide on Monday morning.\n\nTheir friend Núria, who had lived in Lisbon for a decade and read the guide the moment it went up, had done exactly what Chapter 10 promised she could do. She had not sent an email that said \"hey, the Alfama café closed, you should fix that sometime.\" She had turned her correction into a **proposed change** : a specific, reviewable thing, waiting inside the project with her note attached, asking one quiet question: _may I put this in?_\n\nAnd now the decision was Maya's. Not the typing. The agent could put Núria's change in with a nod, or leave it out, in seconds. The decision. Someone Maya trusted had offered to alter the book she and Theo had built, and before that alteration became part of the guide, a human who could tell right from wrong had to look at it and say yes.\n\nThat looking is the subject of this chapter. It is, quietly, the most important skill in the whole book, because everything else we have learned has been building toward the moment when you say _yes, this change is good, let it in_ , and the entire question is whether you can trust your own yes.\n\n\n### 11.1 The change, in plain words\n\nMaya's first instinct was one you may share: to feel unqualified. Núria had edited the guide. Reading someone else's edit sounded like it required knowing how to read code, or at least how to read whatever cryptic form an edit takes inside these tools. Maya braced for symbols.\n\nSo she asked her agent the only thing she knew how to ask: _walk me through what this actually changes, in plain words._\n\nAnd the answer was not cryptic at all:\n\n> Núria's proposed change touches one paragraph, in the Alfama section. It removes the line recommending Café Brilhante, which she notes closed in spring. In its place she suggests a nearby spot, Pastelaria do Rossio, with two sentences about it. She's also fixed a spelling: \"Alfama\" was written \"Alafma\" once, three paragraphs down. Nothing else in the guide is touched.\n\nThat is the whole thing. One café swapped for another because the first one closed. A typo caught in passing. Read in plain words, it is not a wall of symbols. It is a sentence any reader of the guide could understand: _here is exactly what would be different if you said yes, and here is why._\n\nThis is what a **diff** is, and it is worth meeting the word properly, because it is the object at the center of every review you will ever do.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 949,
+      "out_sha": "95113d679f78",
       "note": ""
     },
     {
@@ -1099,11 +1099,11 @@
       "en_title": "Chapter 11: Reading the Change",
       "order": 85,
       "src_chars": 2926,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c736fc599134",
       "src": "#### Definition: Diff\n\nA **diff** is _what changed, in plain words_ : the precise difference between the project as it is now and the project as it would be if a proposed change went in. Not the whole file. Not the whole book. Only the parts that would be _different_ : what got removed, what got added, and where.\n\nThe word is short for \"difference,\" and a tool can show a diff in a technical form full of markers and symbols, but you never have to read it that way. Your agent can render any diff as a plain-language summary: _this line goes, this line comes, this word is fixed, everything else stays._ When this book says \"read the diff,\" it means exactly that plain-language reading. The skill is not decoding symbols. The skill is understanding, in ordinary sentences, what would actually be different, so that when you approve, you are approving something real and known, not a mystery with a friendly note attached.\n\nA diff is honest in a way that description is not. Núria could have written \"small fixes to the Alfama section\" and been telling the truth, and Maya still would not have known what she was agreeing to. The diff shows the _whole_ difference, no more and no less. It cannot hide a change behind a vague summary, because it is not a summary. It is the change itself, laid out for reading.\n\n\n#### Common Misconception\n\n**\"Reviewing a change means checking it for mistakes; my job is to catch errors and reject bad ones.\"**\n\nThis is the most common picture of review, and it is a small, sad version of what review actually is.\n\nIf review were only error-catching, then the best possible review would be the one that rejects the most changes, and a review that ends in \"yes, this is good, thank you\" would feel like a review where you failed to find the problem. Reviewers who believe this become gatekeepers who guard the door, and the people who bring them changes learn to bring fewer, and to flinch.\n\nHere is the truer picture. **Review is a conversation that improves the work and spreads understanding.** The change arrives; you read it; you understand it; and often you can see a way to make it _better_ : a clearer sentence, a fact worth double-checking, a small thing the author could not see from inside their own edit. The best outcome of a review is frequently not a rejection and not a silent yes. It is a _better change than the one that arrived_ , arrived at together, with both people now understanding the work more deeply than either did alone.\n\nCatching an error is sometimes part of it. But if you walk in looking only for errors, you will miss the larger thing you are actually there to do, which is to be the second mind that makes the work better, and to make the person who brought it feel that bringing it was worth doing. The quality of a project does not live in its code or its prose. It lives in the _conversation_ around each change. That conversation is what you are joining.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1024,
+      "out_sha": "63185d2f85df",
       "note": ""
     },
     {
@@ -1111,11 +1111,11 @@
       "en_title": "Chapter 11: Reading the Change",
       "order": 86,
       "src_chars": 2072,
-      "status": "pending",
+      "status": "done",
       "src_sha": "deeeae924af3",
       "src": "### 11.2 The three questions, pointed at someone else's work\n\nSince Chapter 2 you have carried three pre-flight questions, and until now you have asked them about your own changes. Before I change this, you asked: _What exactly will change? Can we get back? Has this history already been shared?_\n\nThe quiet power of these questions is that they work just as well pointed at _someone else's_ change. Maya ran all three against Núria's proposal, and watch how naturally they translate.\n\n**What exactly will change?** This is the diff, read in plain words. One café out, one café in, one typo fixed. Maya now knew this precisely, not vaguely. She was not approving \"Núria's improvements.\" She was approving _these two specific edits and no others._ If the diff had shown a change she did not expect, such as a rewritten opening paragraph she never discussed, or a section quietly deleted, this question would have caught it. Approving means you have answered this one honestly.\n\n**Can we get back?** Almost always yes, and here it is doubly reassuring. Accepting Núria's change is itself just another snapshot in the album (Chapter 3), which means if the new café turns out to be wrong too, going back is one calm step (Chapter 4). Approving a change is not a door that locks behind you. It is a step you can retrace. That knowledge is exactly what lets you approve _without_ dread: you are not betting the book on being right.\n\n**Has this history already been shared?** For accepting a proposed change into the guide's main line, the honest answer is: you are _adding_ to the shared history, not rewriting it, which is the safe direction. The dangerous version of this question, rewriting history that others already have, belongs to Chapter 15, and Maya was nowhere near it. Accepting a well-formed proposal just extends the album with one more good snapshot. It disturbs nothing that came before.\n\nThree questions, answered, and the decision resolved into something calm. But one small thing remained, and it is the thing that separates real review from rubber-stamping.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 771,
+      "out_sha": "16f68a869522",
       "note": ""
     },
     {
@@ -1123,11 +1123,11 @@
       "en_title": "Chapter 11: Reading the Change",
       "order": 87,
       "src_chars": 2200,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6bb5c387c69d",
       "src": "### 11.3 The one question worth asking\n\nMaya read the diff and understood it completely, and she still did not immediately approve. Because one small thing nagged at her.\n\nPastelaria do Rossio, the new café Núria suggested, was, if Maya remembered the map right, not actually in Alfama. It was a good ten minutes' walk away, near a different square. And the guide's whole promise was that everything in the Alfama section was in _walking-around-Alfama_ distance. So Maya wrote one line back, inside the proposal, where Núria would see it:\n\n> Love this, one check: is do Rossio close enough to count as Alfama, or should we file it under the next section? Want to keep each neighborhood walk tight. Either way, thank you for catching Brilhante.\n\nThat is the whole art of it, and I want to slow down on how small and how kind it is.\n\nMaya did not reject. She did not silently accept a thing she half-doubted. She asked _one clear question_ , in the open, tied to a reason the author could actually evaluate: \"we keep each neighborhood walk tight.\" She led with genuine warmth, because Núria had done them a real favor and deserved to feel it. And she left the decision collaborative: _either way, thank you._\n\nThis is the whole difference between review-as-gatekeeping and review-as-conversation. A gatekeeper would have either waved it through to avoid friction or bounced it with a curt \"wrong neighborhood.\" Maya did the third thing, the thing that only exists because the proposal is a _conversation_ and not a verdict. She surfaced her doubt, gave the author the information to resolve it, and trusted the author to decide well. Núria wrote back within the hour: _good catch, it's technically Graça, move it there_ , and the change got _better_ than either of them first proposed. That is review working exactly as it should. Not a yes, not a no. A better change, reached together.\n\nNotice what made the good question possible: Maya had actually _read_ the diff. She could not have asked an intelligent question about a neighborhood boundary if she had only skimmed Núria's note. The reading is what earns you the right to a useful opinion. Which brings us to the danger this chapter has to name.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 887,
+      "out_sha": "d50df97546c9",
       "note": ""
     },
     {
@@ -1135,11 +1135,11 @@
       "en_title": "Chapter 11: Reading the Change",
       "order": 88,
       "src_chars": 2204,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a16116b4051b",
       "src": "### 11.4 The danger: approving what you did not read\n\nThere is a temptation at the heart of review, and it grows stronger the more you trust the person bringing you the change.\n\nNúria is a friend. Núria knows Lisbon. Núria has never steered them wrong. It would have been _so easy_ for Maya to see Núria's name on the proposal, feel the warmth of the trust, and click approve without reading a single line of the diff. The change is probably fine. Reading it feels almost insulting, like double-checking a friend's arithmetic.\n\nDo not do this. This is the most common and most costly mistake in all of collaborative work, and I want to name it now, flatly, because Chapter 15 will return to it with full weight.\n\n**When you approve a change, you are not endorsing the person. You are endorsing the change.** Your yes goes into the history of the project with your understanding attached to it. If the change contained something wrong, say a café that also closed, a \"fix\" that contradicts what the next section says, or a private detail accidentally pasted in, then \"but Núria's usually reliable\" is no comfort at all, because the wrong thing is now in the guide, published, under your name as much as hers.\n\nThe friendlier the source, the more the review matters, not less, because trust is precisely what tempts you to skip the reading, and a proposal you did not read is a change you did not actually make. You inherited it. If approving unread ever becomes a habit, you have quietly handed your judgment away, and the whole point of this book collapses: that _you_ are the one who decides, and the agent is the hands. The agent can summarize the diff in plain words in seconds. There is no honest excuse for not having read it.\n\nThis is not about distrusting Núria. Maya trusts Núria completely, and _still_ read every line, and _still_ found the neighborhood question, and the guide was better for it. Reading a friend's change carefully is not an insult. It is the respect of taking their contribution seriously enough to think about it. The insult would be waving it through unread, as if it did not matter enough to look at.\n\nRead the diff. Every time. It takes a minute and it is the whole job.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 789,
+      "out_sha": "6905e0a10e8f",
       "note": ""
     },
     {
@@ -1147,11 +1147,11 @@
       "en_title": "Chapter 11: Reading the Change",
       "order": 89,
       "src_chars": 3216,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e8fb089dc391",
       "src": "### 11.5 Being reviewed, graciously\n\nOne more turn, because the review conversation has two sides, and you will sit on both.\n\nSomeday soon it will be _your_ change in someone else's proposal, and _your_ work getting the one clarifying question. When Maya proposes a change to a project she does not own, which she will, in Chapter 12 and beyond, someone will read her diff and ask her something, and how she receives that question matters as much as how she gives one.\n\nThe graceful thing, when reviewed, is to remember what you now know from the other side: the reviewer's question is not an accusation. When someone asks \"is do Rossio really in Alfama?\", they are not saying you are careless. They are doing the second-mind work that makes the change better. The right response to a good review question is not defensiveness. It is \"good catch,\" because it usually is one, and because the whole thing works only if both people treat the conversation as collaboration rather than combat.\n\nAnd when a reviewer says no, when they decline your change, as maintainers sometimes will, that is their right, and receiving it gracefully is part of the craft. Their project, their call. A no you take well is an invitation to try again; a no you take badly is a door you closed yourself. We will meet this properly in Chapter 12, where the changes start coming from strangers. For now, hold the symmetry: the grace you want as a reviewer and the grace you want when reviewed are the same grace, and the conversation is the thing you are both protecting.\n\n\n### 11.6 Say This to Your AI\n\nThe vocabulary you have been building has, at each chapter, added one plain-language thing you can now honestly ask for. Here is the whole ledger so far, with this chapter's line added, no command syntax anywhere, just intent your agent can act on:\n\n* _Before you change anything, make a snapshot I can come back to, and note what it's for._\n* _Show me the history of this project as a list, newest first, in plain words._\n* _Take me back to how the intro read last Tuesday — but don't throw away today's work._\n* _Start a separate branch so I can try a risky reorganization without touching the version that works._\n* _The reorder worked — weave it back into the main version, and tell me if anything collides._\n* _We both edited the same line; show me both versions side by side and let me choose._\n* _Publish today's snapshots to our shared copy — but don't make it public yet._\n* _Put this project in the workshop as private, and open an issue for the café that closed._\n* _Turn my fix into a proposed change our friend can review before it goes in._\n* **New this chapter:** _Walk me through what this proposed change actually alters, in plain words, before I approve._\n\nThat last line is the review, in one sentence. Say it every time a proposal lands in front of you, and you will never again be tempted to approve a mystery. The agent reads the symbols; you read the meaning; and the yes, when you give it, is genuinely yours.\n\n\n### 11.7 Exercises\n\nThese are not drills. They ask you to read a change the way Maya read Núria's, and to notice where your own judgment would speak up. Sit with each one before reading the discussion.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1226,
+      "out_sha": "8a3a63a92ddf",
       "note": ""
     },
     {
@@ -1159,11 +1159,11 @@
       "en_title": "Chapter 11: Reading the Change",
       "order": 90,
       "src_chars": 995,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2de2c6096c69",
       "src": "#### Concept Check\n\n**Q1.** In your own words, what is a diff, and why is reading a diff more honest than reading a one-line description of a change like \"small fixes to chapter 3\"?\n\nHint\n\nThink about what a vague summary can hide, and what the diff cannot.\n\n**Answer:** A diff is _what changed, in plain words_ : the exact difference between the project now and the project if the change went in, showing only what is removed, added, and where. It is more honest than a description because a description is a summary written by the author, and a summary can be vague, incomplete, or unintentionally misleading: \"small fixes to chapter 3\" could hide a deleted paragraph or a rewritten opening. The diff is not a summary of the change; it _is_ the change, laid out for reading. It cannot leave anything out, because leaving something out would make it a different diff. That is why \"read the diff\" and not \"read the description\" is the rule: you approve what you can see, not what you were told.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 410,
+      "out_sha": "3839e22a9e33",
       "note": ""
     },
     {
@@ -1171,11 +1171,11 @@
       "en_title": "Chapter 11: Reading the Change",
       "order": 91,
       "src_chars": 2920,
-      "status": "pending",
+      "status": "done",
       "src_sha": "40e223b7a196",
       "src": "#### Application Problems\n\n**Q1.** A collaborator proposes a change to your shared project, and your agent summarizes the diff in plain words like this: _\"This removes the second half of the introduction, about six sentences, and adds a new closing paragraph to the final section. It also changes three prices in the pricing table.\"_ You expected only a small wording fix to the intro. Reading this diff, what would you ask before approving, and why?\n\nHint\n\nCompare what the diff shows against what you expected. The gap is where your question lives. Apply \"what exactly will change?\"\n\n**Answer:** You would ask about the parts you did not expect, which is most of them. You expected a small wording fix; the diff shows a deleted half-intro, a brand-new closing paragraph, and three changed prices. Each is a legitimate question: _\"I was expecting just a wording tweak, so can you walk me through why the second half of the intro is coming out?\"_ and, separately, _\"the three price changes weren't something we discussed — where did those numbers come from?\"_ The price changes especially deserve a check, because a wrong price is a concrete harm to a real reader. The point of the exercise is the discipline: you read the diff, you compared it to what you expected, and the _gap between them_ is exactly where a good clarifying question lives. Had you skipped reading and approved on the description \"small intro fix,\" three prices you never agreed to would now be in your project. This is the first pre-flight question, _what exactly will change?_ , doing its work on someone else's change.\n\n**Q2.** Rehearse the reply. A friend has sent you a genuinely helpful proposed change, but one part of it doubles a section's length and you're not sure the extra material earns its place. Write the one message you'd leave on the proposal, the way Maya wrote to Núria.\n\nHint\n\nLead with warmth, ask one clear question tied to a reason the author can evaluate, and leave the decision open. Not a verdict, but a conversation.\n\n**Answer:** Something in the shape of: _\"This is a real improvement, thank you — one thing I want to think through together: the museums section roughly doubles in length here, and I'm trying to keep each section short enough to read on a phone while walking. Is there a version that keeps the best two additions and trims the rest, or do you think the full length earns it? Genuinely open either way.\"_ Notice the parts. It opens with sincere warmth, because the person did you a favor. It raises _one_ concern, not a scattershot list. It ties the concern to a reason the author can actually weigh, \"short enough to read on a phone while walking,\" rather than to bare preference. And it leaves the decision collaborative, inviting a better version rather than demanding one. This is review as conversation: the likely outcome is not your version or theirs, but a third, better one you reach together.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1104,
+      "out_sha": "e4ebba8da8d2",
       "note": ""
     },
     {
@@ -1183,11 +1183,11 @@
       "en_title": "Chapter 11: Reading the Change",
       "order": 92,
       "src_chars": 2085,
-      "status": "pending",
+      "status": "done",
       "src_sha": "49e1a32062e4",
       "src": "#### Think Deeper\n\n**Q1.** Here is a judgment scenario. A teammate you deeply trust — smart, careful, never wrong before — sends you a large proposed change late on a Friday, with a warm note: _\"No need to read closely, it's all straightforward, just approve whenever.\"_ You are tired. Approving unread would take one second and would clearly please them. Reading the whole diff would take twenty minutes you would rather spend elsewhere. What do you do, and what is actually at stake in the choice?\n\n**Discussion:** You read it. Not because you distrust the teammate — you have every reason to trust them — but because the thing you are being asked to approve is the _change_ , not the _person_ , and your approval carries your understanding into the project's history whether or not you actually understood anything. The trust that makes skipping feel safe is precisely the trap: the more you trust the source, the more tempting it is to wave the change through, and the temptation has nothing to do with whether _this particular_ change is fine. What is at stake is two things at once. The small stake is this change: even careful people make mistakes, and \"it's all straightforward\" is exactly the note that precedes the one line that wasn't. The large stake is the habit. The first time you approve unread, you have not endorsed a change — you have quietly resigned as the person who decides, and handed that role to whoever sends you proposals. Every chapter of this book rests on the opposite premise: that you are the judgment, and the agent is the hands. An approval you did not read is a judgment you did not make. The kind, honest move is also the twenty-minute one: read it, and if it truly is all straightforward, your yes now means something. If it isn't, you just saved both of you. There is no version of \"no need to read closely\" that survives contact with what your approval actually is. Chapter 15 will show you the specific disasters this habit prevents; for now, it is enough to know that the reading _is_ the review, and skipping the reading is skipping the job.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 722,
+      "out_sha": "0193acfda838",
       "note": ""
     },
     {
@@ -1195,11 +1195,11 @@
       "en_title": "Chapter 11: Reading the Change",
       "order": 93,
       "src_chars": 2718,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cb8e94d436d6",
       "src": "### Chapter Summary\n\nNúria's correction arrived not as an email to retype but as a proposed change waiting inside the guide, and the decision, not the typing, was Maya's. She asked her agent to walk her through it in plain words, and the wall of symbols she braced for turned out to be one ordinary sentence: one café out because it closed, one café in, one typo fixed, nothing else touched. That plain-language reading is what a **diff** is: _what changed, in plain words_ , the exact difference between the project now and the project if the change went in, no more and no less. It is more honest than any description, because it is not a summary of the change; it is the change itself.\n\nMaya pointed the three pre-flight questions at someone else's work and they translated cleanly: _what exactly will change_ is the diff read in plain words; _can we get back_ is the reassurance that approving is just another snapshot you can retrace; _has this history been shared_ keeps her safely on the side of adding, not rewriting. Then she did the thing that separates review from rubber-stamping: she asked one warm, clear question (was the new café really in Alfama?), and the change got _better_ than either version that started the conversation. That is the truth this chapter is built on: review is not error-hunting and its best outcome is not a rejection. It is a conversation that improves the work and spreads understanding, and the quality of a project lives in that conversation, not in its lines.\n\nThe danger, named here and returned to in Chapter 15, is approving what you did not read, the temptation that grows _stronger_ with trust, because a friend's name on a proposal makes the reading feel unnecessary right when it matters most. Your yes endorses the change, not the person, and it carries your understanding into the history whether you understood anything or not. So read the diff, every time; it takes a minute and it is the whole job. And when you are the one being reviewed, receive the clarifying question as the second-mind gift it is: \"good catch,\" not defensiveness.\n\nYou came into this chapter fearing that reading someone else's change required expertise you did not have; you leave knowing it requires only that you ask for the change in plain words and think about what you read. What you can now dare is to say a real yes, an approval that is genuinely yours, given with understanding rather than with a hopeful nod. Next, in Chapter 12, the changes start coming from more than one friend: we look at the _shapes_ of working together, from you-and-your-agent to a small team to the open-source move where a stranger takes their own copy of your work, improves it, and offers it back.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 999,
+      "out_sha": "693e3404d6c4",
       "note": ""
     },
     {
@@ -1207,11 +1207,11 @@
       "en_title": "Chapter 12: Shapes of Working Together",
       "order": 94,
       "src_chars": 3158,
-      "status": "pending",
+      "status": "done",
       "src_sha": "805ad5805078",
       "src": "In the last chapter, Maya sat with a change that a friend had proposed, read it in plain words, asked one small question, and approved it. Two people, one guide, one careful nod. That is a shape of working together, and for most of this book it has been the only shape you needed.\n\nNow we widen the frame. Because the guide was quietly getting known. Someone had linked to it in a Lisbon expat group; a travel blog had mentioned it. And one Tuesday, a message arrived from a name Maya and Theo did not recognize.\n\n_\"I love your guide. I'm a parent of two, and I keep wishing it had a section on museums that actually work with small kids on a rainy day. I've drafted one. Can I add it?\"_\n\nThis is a stranger. Not a friend who lives around the corner. Someone who found the work, cares about it, and wants to make it better, and who has no laptop in Maya and Theo's apartment, no access to their files, no relationship except the guide itself. A month ago this message would have started an awkward dance of emailed documents and copy-paste. Instead, something cleaner is about to happen, and it has a name you have probably heard used as an insult. By the end of this chapter, you will hear it as the friendliest word in the whole toolkit.\n\n\n### 12.1 Three shapes, one toolkit\n\nEvery concept in this book was built for people working together, but \"together\" is not one thing. It comes in shapes, and it helps to see them laid out, because you have already learned the tools for all three without noticing.\n\n**The solo shape.** You, your agent, and your future self. This is where you started, and it never goes away. Even alone, you are collaborating with the person you will be in six months, who will open this project having forgotten why you did what you did. Snapshots with honest notes are messages to that person. When Maya browses last spring's version of the intro, she is receiving a gift from a past collaborator who happened to be herself. The solo shape is not a lesser shape. It is the foundation, and most of the value in this book is available to someone who works entirely alone and never shares a thing.\n\n**The small-team shape.** A handful of people who trust each other, working on one project they all can touch. Maya and Theo are the smallest possible team; Rosa's bakery, with Rosa and her partner Ana editing the price list, is another. Here the tools you learned in the branching chapters do their quiet work. Everyone takes their own branch for their own experiment, weaving back when it is ready, and when two people edit the same line the tool stops and asks a human instead of guessing. A small team shares one home for the work, and everyone has a key.\n\n**The open shape.** Strangers improving each other's work, in the open, without ever meeting. This is the shape the parent's message just opened, and it is the one this chapter is about. Here nobody hands out keys. The stranger does not get access to Maya and Theo's home for the guide. Instead they get something better, something that keeps everyone safe and makes contribution the natural, low-friction thing to do. They take their own full copy.\n\nThat copy has a name.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1173,
+      "out_sha": "cb607c5fc01f",
       "note": ""
     },
     {
@@ -1219,11 +1219,11 @@
       "en_title": "Chapter 12: Shapes of Working Together",
       "order": 95,
       "src_chars": 2308,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ec1fe10868cb",
       "src": "### 12.2 The fork\n\nRemember the album, the repository, the home where the whole history of a project lives. Maya and Theo have one for the guide. It holds every snapshot they have ever taken, all the way back to the overwritten Saturday.\n\nThe parent who wants to add a museums section does not need to get inside that album. They need their own.\n\n\n#### Definition: Fork\n\n**A fork is your own full copy of someone else's album, which you can change freely, and then offer your changes back to the original.**\n\nWhen the parent forks the guide, the tool makes them a complete, independent copy of the whole project: every snapshot, the full history, all of it, exactly the way a clone gave Theo a full copy on his laptop back in Chapter 8. The difference is where it lives and whose it is. This copy is _theirs_. It sits under their own name in the workshop. They can add a museums section, rewrite a paragraph, take snapshots, make a mess, start over, and none of it touches Maya and Theo's original by so much as a comma. The two albums are separate homes now.\n\nThat independence is the whole point. The parent can do their work in peace, without permission, without waiting, without any way to damage the thing they admire. Maya and Theo, meanwhile, notice nothing; their guide sits exactly as it was. The fork costs the parent nothing and costs the original owners nothing, and it removes the only real friction in letting a stranger help, which is the fear of letting a stranger in.\n\nAnd here is where the shape closes into a loop. Once the parent has drafted their museums section in their own copy, they do the move you already know from Chapter 10. They open a pull request (a proposed change, a diff, a conversation, a decision) pointed _from their copy back at the original_. \"Here is a section I wrote. Would you like it in your guide?\" Maya reads the diff, in plain words, exactly as she read the friend's café fix. She can ask a question. She can accept it, and the section flows into the original. She can decline it. The choice is hers, because it is her guide.\n\nFork to make your own copy. Change it freely. Propose the change back. That three-step loop, **fork, change, propose back** , is how millions of strangers improve each other's work every day, and you now understand every step of it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 894,
+      "out_sha": "f402311e03a7",
       "note": ""
     },
     {
@@ -1231,11 +1231,11 @@
       "en_title": "Chapter 12: Shapes of Working Together",
       "order": 96,
       "src_chars": 1403,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c671382ba823",
       "src": "#### Common Misconception\n\n**\"A fork is hostile. Forking someone's project means stealing it, or splitting it, or walking off with their work.\"**\n\nThe word carries baggage from the news, where you hear that some group \"forked\" a project after a bitter argument and stormed off to build a rival version. That does happen, rarely, and it is the dramatic exception people remember precisely because it is dramatic. It is not what forking is.\n\nA fork is the ordinary, friendly on-ramp to helping. Overwhelmingly, forks exist for exactly one reason: someone wants to contribute, and taking their own copy is the polite, safe way to do the work before offering it back. The parent forking the guide is not stealing it and not splitting it. They are rolling up their sleeves. The fork is the workshop's way of saying \"here is a bench of your own; make your improvement here, and when it is ready, bring it to me.\" Taking a copy is not walking away with the work. It is the first step of walking _toward_ the owner with a gift.\n\nThe proof is in what comes next. A hostile act ends the relationship. A fork, in the normal case, _begins_ one; it exists to make the pull request possible. If forking felt like theft, nobody would ever accept a proposed change; and yet accepting proposed changes from forks is the single most common way large public projects grow. The word sounds aggressive. The act is generous.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 535,
+      "out_sha": "013e08170a5a",
       "note": ""
     },
     {
@@ -1243,11 +1243,11 @@
       "en_title": "Chapter 12: Shapes of Working Together",
       "order": 97,
       "src_chars": 2671,
-      "status": "pending",
+      "status": "done",
       "src_sha": "378b64196f2e",
       "src": "### 12.3 Contribution etiquette, in one page\n\nThe tools let a stranger propose a change to your work. Whether that stranger is a welcome collaborator or an exhausting one has nothing to do with the tools and everything to do with manners. Here is the whole etiquette, small enough to hold in your head, whether you are the one proposing or the one deciding.\n\n**Keep each change small and focused.** One idea per proposal. The parent adding a museums section should propose _the museums section_ , not the museums section plus a rewrite of the intro they happen to dislike plus a fix to a caption they noticed. A small, focused change is one a maintainer can actually read, understand, and decide on in a sitting. A sprawling one that touches everything is a change nobody can safely approve, so it sits and rots. If you have three improvements, that is three proposals, not one. Your agent can help you keep them separate; ask it to.\n\n**Say why, clearly, in plain words.** A proposed change arrives with a note, and the note is where the real work of collaboration happens. \"Added a children's-museums section; as a parent I kept wanting one, and I checked that all five places currently do rainy-day activities\" tells Maya everything she needs to decide with confidence. \"here's some stuff\" tells her nothing and makes her do the archaeology herself. The clearer your why, the easier your yes.\n\n**Respect the maintainer's right to say no.** This is the one that matters most, and the one people forget when they are proud of their work. It is Maya's guide. She gets to decline your section, or ask you to change it, or sit on it for a month because she is busy. A \"no\" is not an insult and not a waste of your effort. You still have your fork, your copy, your section, and you are free to keep it for yourself or offer it elsewhere. The maintainer is not obligated to you. When you propose a change to someone's project, you are a guest offering a gift, not a customer filing a complaint. Guests who understand this get invited back.\n\nThree lines, then: **small and focused; clear why; respect the no.** That is the entire code of manners for improving other people's work. Everything else is decoration.\n\nAnd it runs both ways. If you are the maintainer, and once your project is public, you will be, the etiquette has a mirror. Thank people for proposals even when you decline them. Say _why_ you are declining, kindly, because a clear no teaches; a silent no just wounds. Remember that someone spent their evening trying to make your thing better. The health of the open shape rests on both sides being gracious, and you will play both roles, often in the same week.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 952,
+      "out_sha": "8ec9dbfb89d0",
       "note": ""
     },
     {
@@ -1255,11 +1255,11 @@
       "en_title": "Chapter 12: Shapes of Working Together",
       "order": 98,
       "src_chars": 3412,
-      "status": "pending",
+      "status": "done",
       "src_sha": "76ad3845891b",
       "src": "### 12.4 What this shape lets you dare\n\nStep back and notice what has quietly happened over the last four chapters. In Chapter 8 your work learned to live in more than one place. In Chapter 9 it got a public face. In Chapter 10 a friend could propose a fix without your files ever leaving your hands. In Chapter 11 you learned to read that proposal with judgment. And now, in Chapter 12, the circle widens past the people you know: a stranger who cares about your work can improve it, safely, without your permission and without any risk to what you have, and hand you the result to accept or decline.\n\nThe fear this retires is a specific and common one: _\"real projects are for experts, and contributing to someone else's work is a thing only serious programmers do.\"_ It is not. The parent adding a museums section to a travel guide is not a programmer. They cared about something, took their own copy, made it better, and offered it back, and every step of that was a thing you now understand well enough to do yourself, in plain words, with your agent handling the mechanics. You can be the parent. You can also be Maya, receiving the gift with grace.\n\nWhat you can now dare: to improve work that isn't yours, and to let others improve work that is. Forking is not trespass. It is the open door.\n\nThat door opens onto something enormous, and we have only peeked through it with one friendly parent and one guide. The next chapter walks all the way in. Millions of projects, most of them made by strangers, most of them free to read, copy, and improve: a commons the size of the working world, held together by exactly the moves you just learned, plus one new thing, the quiet legal agreement, the license, that says what you are allowed to do with what you find there. That is Chapter 13: the whole workshop, at world scale.\n\n\n### 12.5 Exercises\n\nRead each question, sit with it, then read the discussion. The point is to see the shapes clearly and to feel where the etiquette lives, because the manners, not the mechanics, are what make the open shape work.\n\n\n#### Concept Check\n\n**Q1.** A stranger forks Maya and Theo's guide to add a museums section. While the stranger is working in their copy, Maya edits the original guide's intro. Do the stranger's changes and Maya's changes interfere with each other in any way?\n\nHint\n\nA fork is a _full, independent copy_ under the stranger's name. Ask yourself: after the fork is made, do the two albums share anything, or are they two separate homes for the work?\n\n**Answer:** They do not interfere at all. The moment the fork is made, there are two independent albums: the original (Maya and Theo's) and the copy (the stranger's). Each has its own history and its own owner. Maya editing the intro changes only the original; the stranger adding museums changes only their copy. That total independence is the entire reason forking is safe; it is why a stranger can be trusted to work on \"your\" project without you handing over any keys. The two only ever meet again on purpose, when the stranger opens a pull request offering their section back, and even then nothing moves until Maya says yes. (If, by the time the section is accepted, Maya's new intro and the stranger's work touched the very same lines, that would be an ordinary merge situation; the tool would stop and ask a human, exactly as in Chapter 7. Notice how the earlier chapters keep paying off.)\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1284,
+      "out_sha": "1af4f68c4bdd",
       "note": ""
     },
     {
@@ -1267,11 +1267,11 @@
       "en_title": "Chapter 12: Shapes of Working Together",
       "order": 99,
       "src_chars": 3266,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c4512bcb76cb",
       "src": "#### Application Problems\n\n**Q1.** A well-meaning contributor forks your guide and opens a proposed change that, in a single bundle, (a) adds a rooftop-bars section, (b) rewrites your opening paragraph in a voice you don't like, and (c) fixes a genuinely wrong tram number. In plain words, using no commands, what would you say back to them, and what does the etiquette from this chapter suggest they should have done?\n\nHint\n\nTwo of these three things you might want; one you don't; and they are all welded together so you can't take one without the others. What single etiquette rule, if the contributor had followed it, would have made this easy for you?\n\n**Answer:** The etiquette rule they broke is _keep each change small and focused_ , one idea per proposal. Because they bundled three unrelated things, you cannot accept the tram fix (which is clearly good) without also swallowing the intro rewrite (which you don't want), and that forces you to reject the whole thing or start a negotiation. A gracious reply respects both the maintainer's right to decide and the contributor's effort: something like \"Thank you; the tram fix is exactly right and I'd love that on its own; the rooftop-bars section is interesting, let's talk about it separately; I'm going to keep my current intro, but I really appreciate you taking the time.\" Then you'd ask them (or your agent) to split the good parts into their own focused proposals. Notice that the whole mess was avoidable: three separate small proposals would each have gotten a clean, fast yes or no. This is exactly why \"small and focused\" is the first rule — it is a kindness to the person who has to decide.\n\n**Q2.** You've found a small public project — a community list of accessible hiking trails, with one wrong detail: a trail it lists as wheelchair-accessible has a flight of stairs halfway along. You've never contributed to anyone's project before. Walk through the three-step loop you'd use, in intent-level plain words, and say what you would put in your \"why\" note.\n\nHint\n\nThe loop is fork → change → propose back. You are not asking for access to their project; you are taking your own copy first. And the \"why\" note is where you make the maintainer's yes easy: what would you want to know if you were them?\n\n**Answer:** The loop, in plain words: first, take your own full copy of their project so you can edit it without touching theirs _(fork)_ ; second, correct the one wrong detail in your copy _(change)_ ; third, offer that correction back to the original as a proposed change they can review and accept _(propose back)_. Your \"why\" note should be short, specific, and evidence-carrying, because it is doing all the persuading: \"This trail is listed as wheelchair-accessible, but there's a flight of about ten stairs at the halfway footbridge; I walked it last Sunday. Suggesting we change the label to 'partially accessible' with a note about the stairs.\" That note gives the maintainer everything they need to say yes with confidence: what's wrong, how you know, and exactly what you propose instead. And notice the courage ladder turning here: a one-line fix to a stranger's public project, the \"real projects are for experts\" fear dissolving into a five-minute act of ordinary helpfulness.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1150,
+      "out_sha": "21f5cd3d4a59",
       "note": ""
     },
     {
@@ -1279,11 +1279,11 @@
       "en_title": "Chapter 12: Shapes of Working Together",
       "order": 100,
       "src_chars": 2712,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e4854271a202",
       "src": "#### Think Deeper\n\n**Q1.** The word \"fork\" sounds aggressive, and occasionally it _is_ used for a genuine split, where a group takes a copy and walks away to build a rival. If the same tool serves both \"here's a friendly improvement\" and \"we're leaving to compete,\" how can it be the friendly on-ramp this chapter claims? What actually distinguishes the generous fork from the hostile one, and is the distinction in the tool at all?\n\n**Discussion:** The distinction is not in the tool, and that is the whole insight. A fork is just a full independent copy, mechanically identical whether the person means to contribute or to compete. What differs is entirely _intent and what happens next_ , which no tool can see. The generous fork exists to make a pull request possible: the copy is a workbench, and the loop closes when the improvement is offered back. The hostile fork breaks the loop on purpose: the copy is a departure, and no proposal ever comes home. So the same neutral capability serves both, the way a road serves both the neighbor coming to help and the neighbor moving away. That the friendly use is overwhelmingly the common one is a fact about _people_ , not about forks: most people who copy a project they admire do it because they want to give something back, and the etiquette in this chapter (small changes, clear why, respect the no) is the shared culture that keeps the friendly reading the default reading. The deeper lesson runs through this whole book: the tools are neutral, and neutrality is a feature. A tool that could only be used generously would also be a tool that could stop you at the worst moment. The judgment about which use is which lives with the humans, which is exactly where it belongs, and it is why the maintainer's right to say no, and the contributor's grace in accepting a no, matter more than any mechanism. The open shape is held together by manners, not by machinery.\n\n\n#### Say This to Your AI\n\nAdding to your growing set of plain-language asks (the ones from every chapter still apply), this chapter contributes the move that lets you improve a stranger's work without ever risking it:\n\n* **\"Take my own copy of their project so I can add a section without disturbing theirs.\"** (Then, when the section is ready, the ask you already know from Chapter 10: \"Turn this into a proposed change they can review before it goes in.\")\n\nThat single sentence retires the fear that real projects are for experts. You can now dare to improve work that isn't yours (take your own full copy, make it better in peace, and offer it back), knowing that you cannot harm the original and that the owner remains free to say yes or no. The stranger's on-ramp is now yours to walk.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 979,
+      "out_sha": "f28a2612371c",
       "note": ""
     },
     {
@@ -1291,11 +1291,11 @@
       "en_title": "Chapter 12: Shapes of Working Together",
       "order": 101,
       "src_chars": 1984,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0efbf8b74b85",
       "src": "### Chapter Summary\n\nWorking together is not one thing; it comes in shapes. The **solo shape** (you, your agent, and your future self) is the foundation, and everything in this book serves it even when you never share. The **small-team shape** (a few people who trust each other, all with keys to one shared home) is where branches and clean weaving do their quiet work. And the **open shape** (strangers improving each other's work without ever meeting) is the one that widens the world, and it runs on a single move you now understand fully.\n\nThat move is the **fork** : your own full copy of someone else's album, which you change freely and then offer back through a pull request. Nobody hands out keys; the contributor takes an independent copy, works in peace with zero risk to the original, and proposes their change home for the owner to accept or decline. **Fork, change, propose back** : three steps, all built from tools you already had. And \"fork\" is not the hostile word it sounds like: it is the friendly on-ramp to helping, the workshop's way of handing a stranger a bench of their own.\n\nWhat keeps the open shape healthy is not machinery but manners, small enough to hold in one hand: keep each change **small and focused** , say **why** in clear plain words, and **respect the maintainer's right to say no** , with the mirror rule for when you are the maintainer, that a kind, reasoned \"no\" teaches where a silent one wounds. With that, the fear that real projects belong only to experts falls away. A parent adding a museums section to a travel guide is not a programmer; they are someone who cared, took a copy, and gave something back, and you can be either side of that exchange now.\n\nNext, in Chapter 13, we walk all the way through the open door: the whole commons at world scale, millions of projects free to read and improve, held together by the moves you have learned plus the one new thing that governs what you may do with what you find: the license.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 739,
+      "out_sha": "9e319a3a8d40",
       "note": ""
     },
     {
@@ -1303,11 +1303,11 @@
       "en_title": "Chapter 13: The World's Workshop",
       "order": 102,
       "src_chars": 2886,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0c4dc8a17e28",
       "src": "In Chapter 12, someone you had never met took a full copy of your project, changed it, and offered the change back. That was a stranger, and it worked, and nothing broke. Fork, then propose. The move that let a friend fix a closed café now lets anyone, anywhere, improve what you have made.\n\nThis chapter is about what happens when you stop thinking of that as an accident and start thinking of it as a place. Millions of people are doing this to each other's work, right now, in the open, at a scale that is hard to picture. Maya and Theo are about to feel it from the far side: a person they will never meet, in a city they have never visited, is about to make their guide a little more true. And to let that happen safely, they will have to answer a question they have been quietly avoiding. What, exactly, are they letting strangers do with their book?\n\n\n### 13.1 A place, not just a trick\n\nThe proposal-from-a-stranger move is not a clever trick that occasionally happens. It is the founding habit of the largest collaborative workshop humans have ever built. As of 2026, something like 180 million or more people keep their work in it, across more than 630 million projects. That is not a website with some code on it. That is a commons.\n\nThe word _commons_ is old and worth keeping. A commons is a shared thing that everyone can use and that gets richer the more people tend it: a village green, a public library, a body of folk songs. Nobody owns the whole of it. People draw from it and add to it, and the adding is the point. The world's workshop is a commons made of projects: a photo-editing tool, a font, a recipe format, a translation of an old poem, a guide to a rainy city. Most of it is open. You can walk in, read how it was built, and, if you have something to add, add it.\n\nHere is the part that changes your life quietly, long before you ever contribute anything. When you are stuck, the fix has very often already been found by a stranger and left in the open, in their project, for anyone to read. You can go look. Not at a forum thread about the thing, but at the thing itself: the actual working project, its history, the exact change someone made when they hit exactly your wall. Reading strangers' projects for answers is a skill in its own right, and it is available to you now because your agent can read a project's history and its diffs and tell you, in plain words, how someone else solved the problem you are staring at.\n\nYou do not have to be a programmer for this to matter. The commons holds document templates, spreadsheet formats, checklists, translations, teaching materials. When Maya wondered how other self-published guides handled their table of contents, the honest answer was: dozens of them are open, right there, with every revision visible. She could read how a working guide was actually assembled, not how someone said to assemble one.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1044,
+      "out_sha": "12eb319b2e40",
       "note": ""
     },
     {
@@ -1315,11 +1315,11 @@
       "en_title": "Chapter 13: The World's Workshop",
       "order": 103,
       "src_chars": 3494,
-      "status": "pending",
+      "status": "done",
       "src_sha": "51d540459d29",
       "src": "### 13.2 The stranger with an agent\n\nThe email that started it was three sentences long. _Love the Alfama walk. The tram you list for the Graça viewpoint is the 12; it's actually the 28. I fixed it and sent you the change._\n\nNeither Maya nor Theo knew the sender. A reader in another country had found their guide in the workshop, spotted a wrong tram number in the directions, and done something a reader could not have done a few years ago: not written to complain, not posted a bad review, but _made the correction and proposed it back_. He had an agent, the same kind of assistant Maya and Theo had. He had told it, roughly, \"take my own copy of their guide, fix the tram number in the Graça section, and offer the fix back as a proposed change.\" The agent did the mechanical part. The proposal arrived as a clean, reviewable change: here is the exact line, here is what it said, here is what it should say, here is why.\n\nThis is a first real contribution, and it is worth pausing on how small it is. He did not rewrite a chapter. He did not add a feature. He fixed one number that was wrong. And that is precisely the on-ramp. The most common first contribution anyone makes to the commons is not code and not grand. It is a typo, a broken link, a stale fact, a confusing sentence in the instructions. **Documentation fixes are the front door of open source.** They are welcome, they are low-risk, they are exactly where a beginner with an agent belongs, and they are genuinely valuable: a guide with the right tram number is a better guide.\n\nNotice what the stranger needed, and what he did not. He did not need permission to _read_ the guide or to _copy_ it for his own use, because it was in the open. He did not need to know Maya and Theo. He needed his agent to do the copy-and-propose mechanics, and he needed the guide to actually accept outside proposals. What Maya and Theo needed, before they could comfortably say yes to strangers doing this, was to have decided one thing in advance: the terms. That is what a license is.\n\n\n### 13.3 The terms of the commons\n\nMaya's first instinct, reading the stranger's fix, was gratitude, followed immediately by a small unease. _He copied our book. Was that allowed? Are we saying it's fine for anyone to copy it? What if someone takes the whole thing and sells it?_\n\nThose are the right questions, and the commons has a specific instrument for answering them: the **license**. Putting a project in the open where people can read it does not, by itself, tell anyone what they may _do_ with it. Reading is not the same as reusing, copying, selling, or building on top of. A license is the short legal document, attached to the project, that spells out the terms: what a stranger is and is not permitted to do with your work.\n\nMost open-source projects use one of a small number of standard, well-understood licenses rather than writing their own. You choose one, drop it into the project, and from then on the terms are clear to everyone who walks in. There is a well-known site, **choosealicense.com** , whose entire job is to explain the common ones in plain language and help you pick; that is the place to go, and the actual license text is the thing that governs. What follows here is a map of the two broad shapes, at the level of a gist, enough to know which door you are walking through. It is not legal advice, and I am not going to quote clauses, because inventing or paraphrasing legal terms is exactly how people get this wrong.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1252,
+      "out_sha": "7393fa8f3a46",
       "note": ""
     },
     {
@@ -1327,11 +1327,11 @@
       "en_title": "Chapter 13: The World's Workshop",
       "order": 104,
       "src_chars": 2907,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c67de1ee2f1f",
       "src": "#### Definition: Open-source license (at gist level)\n\nAn **open-source license** is a standard legal document attached to a project that grants strangers permission to use, copy, modify, and share the work, under stated conditions. Two broad families cover most of what you will meet:\n\n* **Permissive (the MIT-ish shape).** The gist: _do almost anything with this. Use it, change it, build on it, even in something you sell, just keep the original notice and don't claim you wrote it._ It asks for very little in return. It is the \"help yourself\" end of the commons.\n\n* **Share-alike / copyleft (the GPL-ish shape).** The gist: _you may use and change this freely, but if you distribute your changed version, it has to stay open under these same terms._ Improvements come back to the commons rather than disappearing into a closed product. It is the \"pay it forward\" end.\n\nBoth are genuinely open. They differ in one question: _when you build on this and pass it on, does your version have to stay open too?_ Permissive says no, you choose. Share-alike says yes, keep it open. Everything else is detail in the actual text, which, again, is the thing that counts, and which choosealicense.com will walk you through.\n\nFor _Rainy-Day Lisbon_ , Maya and Theo talked it through the way you would talk through any shared decision. They wanted people to read it, correct it, translate it, and share it freely. They did not particularly mind if someone made their own thing on top of it. What they wanted was to be credited and to keep the guide theirs in name. A permissive license fit that, and they told their agent to add one and to point them at its plain-language summary first so they understood what they were agreeing to. The stranger's fix now had clear ground to land on: he had been allowed to copy and propose all along, and now it was written down.\n\n\n#### Common Misconception\n\n**\"Open source means there are no rules; if it's public, anyone can do anything with it.\"**\n\nThis is the belief that sinks people, and it is wrong twice over.\n\nFirst, _public to read_ is not _free to do anything_. A project you can see is not automatically a project you can copy, sell, or fold into your own work. In fact, a project posted with **no** license attached is, by default, the most restrictive case, not the least: the absence of stated permission generally means permission has not been granted, even though you can see every line. Openness is created by the license, not by visibility.\n\nSecond, even the most permissive license has terms: keep the notice, don't misrepresent authorship. The commons is not lawless; it runs on a small, clear set of rules that everyone can read in advance. That is exactly why it works at the scale of hundreds of millions of people. \"No rules\" would not be a commons. It would be a place nobody could safely contribute to. The license is what makes the openness trustworthy.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1083,
+      "out_sha": "8bbccaffd5d0",
       "note": ""
     },
     {
@@ -1339,11 +1339,11 @@
       "en_title": "Chapter 13: The World's Workshop",
       "order": 105,
       "src_chars": 2796,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a6766128a9dc",
       "src": "### 13.4 Is this project alive? Reading the vital signs\n\nReading strangers' projects for answers, and contributing to them, both raise a practical question the moment you arrive at one: _should I trust this? Is anyone home?_ A project in the open might be lovingly maintained, or it might be a beautiful ruin someone abandoned four years ago. You need to be able to tell, quickly, and you do not need to read a line of its contents to make a first estimate. Every project in the workshop wears its vital signs on the outside.\n\nThree of them do most of the work.\n\n**Stars.** A star is a bookmark-slash-thumbs-up; people click it to say \"this is worth remembering.\" A high star count is a rough popularity signal, meaning a lot of people found this useful. It is not proof of quality, and it is easy to over-read, but a project many thousands of people bookmarked is at least not obscure. Think of it as the size of the crowd, not the verdict of the judges.\n\n**Open issues.** Remember that an issue is a reported problem or request. A pile of them is not automatically bad, since a busy, well-loved project attracts lots of issues. What you are reading is the _pattern_ : are issues being answered and closed, or are there hundreds sitting untouched for years with no reply from anyone? An issues list where the maintainer shows up and responds is a sign of a living project. A graveyard of ignored reports is a warning.\n\n**Last-commit date.** This is the single most telling sign, and the easiest to check. When was the last snapshot added? If the answer is \"last week,\" someone is tending this. If the answer is \"three years ago,\" you are likely looking at something abandoned: possibly still useful, but nobody is coming to fix your problem or review your contribution. For \"is this alive?\", the date of the most recent commit is the pulse.\n\nYou read these together, not one at a time. A project with 40,000 stars but no commit in four years and 900 unanswered issues is a famous ruin: excellent once, a museum now. A project with 400 stars, a last-commit from yesterday, and a maintainer answering issues within a day is more alive, and a far better place to send your first contribution, because someone will actually see it. When the stranger picked _Rainy-Day Lisbon_ to fix, he was, in his way, reading its vital signs: a guide updated this month, with its authors clearly still tending it, is a guide worth correcting. A dead one, he would have left alone.\n\nYou can ask your agent to read these signs and summarize them in a sentence, something like \"this project was last touched two years ago and has a long tail of unanswered issues; it looks abandoned,\" which is exactly the plain-language verdict you want before you rely on someone's work or prepare a contribution nobody will read.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 994,
+      "out_sha": "eb88af5c1eb3",
       "note": ""
     },
     {
@@ -1351,11 +1351,11 @@
       "en_title": "Chapter 13: The World's Workshop",
       "order": 106,
       "src_chars": 2994,
-      "status": "pending",
+      "status": "done",
       "src_sha": "255ce3407c91",
       "src": "### 13.5 Making your own first contribution\n\nThe stranger's fix teaches you your own first move by showing you how small it is allowed to be. You do not need to be able to build anything. You need to be able to notice that something is wrong, and to propose the correction the polite way the commons has agreed on.\n\nThe shape is one you already know from the last few chapters, now pointed outward at the whole world. You find a project you use and rely on. You spot something: a typo in its instructions, a broken link, a step that is out of date, a wrong tram number. You take your own copy (the fork), you make the one small fix in it, and you propose it back to the original as a reviewable change. The maintainer reads your proposed change, and accepts it, or asks a question, or declines. If they accept it, your correction is now part of a thing that strangers all over the world use. You have added to the commons.\n\nEverything mechanical in that paragraph is your agent's job. You tell it, in plain words, what you noticed and what you want to propose, and it handles the copy, the change, and the proposal. But two things stay yours, and they are the whole reason you are reading this book instead of a manual. First, the _noticing_ : no agent can tell that the tram is the 28 and not the 12 unless a human who rode it says so. Second, the _judgment before you send_ : read your own proposed change, make sure it says what you mean, and, when you are proposing to someone else's project, glance at the license first so you know you are contributing under terms you understand. A one-line documentation fix, proposed to a living project, is a complete and honorable first contribution. It is where nearly everyone starts. Start there.\n\n\n### 13.6 Exercises\n\nThese are for thinking and predicting, not computing. Read each one, sit with it, then read the discussion.\n\n\n#### Concept Check\n\n**Q1.** A friend says: \"I found a great project in the open. I could read every line of it, so I copied the whole thing into my own product and shipped it.\" What is the flaw in that reasoning?\n\nHint\n\nSeparate two things: being able to _see_ the work, and being permitted to _reuse_ it. Which one did \"I could read every line\" establish?\n\n**Answer:** Being able to read a project establishes only that it is visible, not that you are free to reuse it. Reuse is governed by the license, not by visibility, and a project with **no** license attached is the restrictive case, not the free one, because permission was never actually granted. Before copying anything into your own product, your friend needed to check the license and confirm it permits that use. If it is a permissive (MIT-ish) license, it very likely does, as long as the required notice is kept. If it is share-alike (GPL-ish), shipping it inside a closed product may violate the terms. \"I could see it\" answers a different question than \"was I allowed to take it,\" and conflating the two is the single most common open-source mistake.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1057,
+      "out_sha": "b9ccd69b4a2b",
       "note": ""
     },
     {
