@@ -20,7 +20,9 @@ from pathlib import Path
 
 # ---------- 路径 ----------
 SRC_DEFAULT_DIR = r"D:\HuaweiMoveData\Users\淡水海边\Desktop\Postgraduate\项目\MySelf\Archive\成稿存档"
-WORK_ROOT = Path(r"D:\HuaweiMoveData\Users\淡水海边\Desktop\Postgraduate\项目\MySelf\Archive\书库抓取工具\translate")
+# 默认：脚本旁的 translate/；可用 BOOKS_TRANSLATE_WORK_ROOT 覆盖（跨平台）
+_WORK_ROOT_ENV = os.environ.get("BOOKS_TRANSLATE_WORK_ROOT", "").strip()
+WORK_ROOT = Path(_WORK_ROOT_ENV) if _WORK_ROOT_ENV else (Path(__file__).resolve().parent / "translate")
 BLOCK_CHARS = 3500          # 每个源块目标字符数（按段落累加切分，不切断句子）
 MAX_BACKOFF = 60.0
 BACKOFF_BASE = 2.0
