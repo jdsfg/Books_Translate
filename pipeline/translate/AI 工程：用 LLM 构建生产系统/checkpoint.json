@@ -899,11 +899,11 @@
       "en_title": "Chapter 3: Working with the LLM API — The Engineer's First Tool",
       "order": 64,
       "src_chars": 2703,
-      "status": "pending",
+      "status": "done",
       "src_sha": "644959ba1630",
       "src": "### 3.3 Sampling parameters: when to turn each knob\n\nFrom Chapter 2 you know what temperature, top-p, and top-k do. Here is when an engineer actually changes each from its default.\n\n**Temperature.** The default in most production code is **0.0 for tasks where you want consistency** (code generation in CI, structured extraction, classification, factual question-answering against retrieved context) and **0.7 to 1.0 for tasks where you want diversity** (creative writing, brainstorming, generating multiple candidates to choose from). Mid-range temperatures (0.2–0.5) are sometimes used to introduce a small amount of variation without losing reliability (for instance, a chat assistant where you do not want literally identical responses to identical prompts). The choice is task-specific; default to 0, change only with a reason.\n\n**Top-p.** The default of 1.0 (no truncation) or 0.95 (slight truncation) is fine for nearly all uses. Lowering to 0.5 or 0.8 reduces the chance of the model emitting a wildly unlikely token; this is occasionally useful as a _safety_ lever (less surprising outputs) but it interacts with temperature in non-obvious ways. The rule of thumb: turn one knob (temperature) at a time.\n\n**Top-k.** Mostly defunct in 2026. Anthropic exposes it; OpenAI does not; you will rarely touch it. Set it once during exploratory development if you want to compare against top-p; otherwise omit.\n\n**Stop sequences.** Set these whenever you have a delimiter that should terminate generation. Two common patterns:\n\n* _Structured output with a closing delimiter_ : ask the model to emit a JSON object ending in `}\\n###END###`, and set the stop sequence to `###END###`. The model terminates as soon as it emits the delimiter; you do not pay for trailing tokens.\n* _Chain-of-thought with a final answer marker_ : have the model think out loud, then emit `Final answer:`, then the answer; if you only want everything before _Final answer:_ , set the stop sequence to `Final answer:` and parse the response.\n\nStop sequences are a small but real cost lever. A response that the model would otherwise pad to 500 tokens often ends at 250 with the right stop sequence. The 5× output-to-input cost ratio (§2.10) means a 250-token saving on output is more cost-effective than the same saving on input.\n\n**max_tokens.** Always set explicitly. The default on most providers is generous (4K or 8K), and a runaway generation can cost you. A code-review response should not need more than 1000 tokens; cap it. A structured-output extraction might need 2000; cap it. A long-form essay might need 4000; cap it. The max_tokens is a _budget_ , not a _target_ ; the model often emits fewer tokens than the cap.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1183,
+      "out_sha": "fcfc6c7a15e3",
       "note": ""
     },
     {
@@ -911,11 +911,11 @@
       "en_title": "Chapter 3: Working with the LLM API — The Engineer's First Tool",
       "order": 65,
       "src_chars": 1942,
-      "status": "pending",
+      "status": "done",
       "src_sha": "89a941bc0f1f",
       "src": "### 3.4 Token limits, context windows, and what happens when you run out\n\nToken usage in a chat-completions call is the sum of:\n\n* **Input tokens** : system prompt + all messages (each role label adds a few tokens) + tool definitions (if any).\n* **Output tokens** : the model's response.\n\nThe model's context window is the cap on input + output. For Claude Sonnet 4 at 200K, that means input + output ≤ 200K. If you send 198K of input and ask for `max_tokens=4000`, you will get an error: `4000 > 200000 - 198000 = 2000`. The error is straightforward; the bug is usually that your input is bigger than you thought.\n\nA more interesting failure: you send 50K of input and ask for `max_tokens=8000`. The model generates 7950 tokens of output and the response truncates with `stop_reason: \"max_tokens\"`. You have a partial response. What now?\n\nThree patterns:\n\n  1. **Raise the cap and retry.** Useful for first-pass exploratory work. Bad in production because you cannot control cost.\n  2. **Ask the model to continue.** Send a follow-up `messages` array with the partial output appended as an assistant message and a user message saying _continue from where you left off_. The model will resume. This works but is fragile and doubles your token cost for the chunk you got truncated.\n  3. **Design the task to fit within`max_tokens`.** This is the right answer in production. If you are summarizing a document and the output is longer than your budget, the document is too long for one call. Break it into sections, summarize each section, then summarize the summaries. (This is _map-reduce summarization_ ; Chapter 8 will return to it.) Cap each call at a budget that matches the task; trust that you have to architect around the cap.\n\nThe general principle: `max_tokens` running out is an _architectural_ signal that your task does not fit the call shape, not an _operational_ signal that you should raise the cap. Treat it as a design alarm.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 862,
+      "out_sha": "220bfb8c6d11",
       "note": ""
     },
     {
