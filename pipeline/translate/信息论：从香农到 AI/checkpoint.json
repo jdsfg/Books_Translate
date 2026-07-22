@@ -1867,11 +1867,11 @@
       "en_title": "Chapter 11: Rate-Distortion Theory",
       "order": 147,
       "src_chars": 3032,
-      "status": "pending",
+      "status": "done",
       "src_sha": "06d5aef2235f",
       "src": "Lossless compression, the subject of Chapter 4, is bounded by entropy: no scheme can compress below H(X)H(X)H(X) bits per symbol on average. But many practical compression problems do not require _lossless_ reconstruction. JPEG compresses images by discarding visual detail imperceptible to the human eye. MP3 compresses audio by discarding frequencies the ear cannot distinguish. Modern neural compression compresses images to a tiny fraction of their pixel count by accepting some perceptible distortion.\n\nThe fundamental limit of _lossy_ compression is given by **rate-distortion theory** , the subject of this chapter. The rate-distortion function R(D)R(D)R(D) tells you the minimum bit rate needed to compress a source while keeping the average distortion below a level DDD.\n\nWe develop the theory, prove the rate-distortion theorem, compute R(D)R(D)R(D) for the canonical Gaussian source, and connect to the rate-distortion view of variational autoencoders that we previewed in Chapter 10.\n\nThe AI angle is **neural compression** : modern image compressors (Ballé, Minnen, and successors) train autoencoders with explicit rate-distortion objectives, achieving compression performance comparable to or better than JPEG-2000 and HEVC.\n\n\n### 11.1 The Setup\n\nA **distortion measure** is a function d:X×X^→R≥0d: \\mathcal{X} \\times \\hat{\\mathcal{X}} \\to \\mathbb{R}_{\\geq 0}d:X×X^→R≥0​ where X^\\hat{\\mathcal{X}}X^ is the reproduction alphabet. d(x,x^)d(x, \\hat{x})d(x,x^) is the cost of representing xxx as x^\\hat{x}x^.\n\nCommon choices:\n\n* **Hamming distortion** (binary): d(x,x^)=1d(x, \\hat{x}) = 1d(x,x^)=1 if x≠x^x \\neq \\hat{x}x=x^, else 0. The \"fraction of bits wrong\" measure.\n* **Squared error** (continuous): d(x,x^)=(x−x^)2d(x, \\hat{x}) = (x - \\hat{x})^2d(x,x^)=(x−x^)2.\n* **Perceptual measures** : SSIM, LPIPS for images. These better match human perception but are harder to analyze.\n\nFor a source XnX^nXn and reproduction X^n\\hat{X}^nX^n, the per-symbol average distortion is\n\nD=E[1n∑i=1nd(Xi,X^i)].D = \\mathbb{E}\\left[\\frac{1}{n} \\sum_{i=1}^n d(X_i, \\hat{X}_i)\\right].D=E[n1​i=1∑n​d(Xi​,X^i​)].\n\nA **rate-distortion code** of rate RRR for block length nnn consists of:\n\n* An encoder f:Xn→{1,2,…,2nR}f: \\mathcal{X}^n \\to \\\\{1, 2, \\ldots, 2^{nR}\\\\}f:Xn→{1,2,…,2nR} (mapping source sequences to one of 2nR2^{nR}2nR indices).\n* A decoder g:{1,2,…,2nR}→X^ng: \\\\{1, 2, \\ldots, 2^{nR}\\\\} \\to \\hat{\\mathcal{X}}^ng:{1,2,…,2nR}→X^n (mapping indices back to reproductions).\n\nThe achieved distortion is\n\nD=E[1n∑id(Xi,g(f(Xn))i)].D = \\mathbb{E}\\left[\\frac{1}{n} \\sum_i d(X_i, g(f(X^n))_i)\\right].D=E[n1​i∑​d(Xi​,g(f(Xn))i​)].\n\nA pair (R,D)(R, D)(R,D) is **achievable** if there exists a sequence of codes (one per nnn) with rate RRR and distortion →D\\to D→D as n→∞n \\to \\inftyn→∞.\n\nThe **rate-distortion function** is\n\nR(D)=inf⁡{R:(R,D) is achievable}.R(D) = \\inf \\\\{R : (R, D) \\text{ is achievable}\\\\}.R(D)=inf{R:(R,D) is achievable}.\n\nIt is the minimum rate needed for distortion ≤D\\leq D≤D.\n\n\n### 11.2 The Rate-Distortion Theorem\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1259,
+      "out_sha": "836b5b414423",
       "note": ""
     },
     {
@@ -1879,11 +1879,11 @@
       "en_title": "Chapter 11: Rate-Distortion Theory",
       "order": 148,
       "src_chars": 867,
-      "status": "pending",
+      "status": "done",
       "src_sha": "719916a5bff1",
       "src": "#### Theorem (Rate-Distortion Theorem)\n\nFor a discrete memoryless source XXX with distribution p(x)p(x)p(x) and distortion measure ddd,\n\nR(D)=min⁡p(x^∣x):E[d(X,X^)]≤DI(X;X^),R(D) = \\min_{p(\\hat{x} \\mid x) : \\mathbb{E}[d(X, \\hat{X})] \\leq D} I(X; \\hat{X}),R(D)=p(x^∣x):E[d(X,X^)]≤Dmin​I(X;X^),\n\nwhere the minimum is over all conditional distributions p(x^∣x)p(\\hat{x} \\mid x)p(x^∣x) such that the joint p(x,x^)=p(x)p(x^∣x)p(x, \\hat{x}) = p(x) p(\\hat{x} \\mid x)p(x,x^)=p(x)p(x^∣x) gives expected distortion at most DDD.\n\nIn plain language: the minimum rate is the minimum mutual information between source and reproduction such that the joint achieves the distortion target.\n\nLet RI(D)R^I(D)RI(D) denote the right-hand side (the **information rate-distortion function**). The theorem states R(D)=RI(D)R(D) = R^I(D)R(D)=RI(D) — operational rate equals information rate.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 322,
+      "out_sha": "4815e5308261",
       "note": ""
     },
     {
@@ -1891,11 +1891,11 @@
       "en_title": "Chapter 11: Rate-Distortion Theory",
       "order": 149,
       "src_chars": 3121,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c2fcf6361801",
       "src": "#### Sketch of the Proof\n\nThe proof has the same structure as Shannon's channel coding theorem.\n\n**Achievability** : Random coding. For a fixed conditional p(x^∣x)p(\\hat{x} \\mid x)p(x^∣x) achieving distortion DDD, draw a codebook of 2nR2^{nR}2nR reproduction sequences i.i.d. from ∏p(x^)\\prod p(\\hat{x})∏p(x^) (the marginal of X^\\hat{X}X^ under the joint).\n\nFor each source sequence xnx^nxn, find a codeword x^n\\hat{x}^nx^n that is jointly typical with xnx^nxn. By joint typicality (Chapter 3), this happens with probability ≥1−2−n(I(X;X^)−ϵ)\\geq 1 - 2^{-n(I(X; \\hat{X}) - \\epsilon)}≥1−2−n(I(X;X^)−ϵ) for each codeword tested. With 2nR2^{nR}2nR codewords and R>I(X;X^)R > I(X; \\hat{X})R>I(X;X^), at least one codeword is jointly typical with high probability.\n\nThe achieved distortion of a jointly typical codeword is approximately E[d(X,X^)]≤D\\mathbb{E}[d(X, \\hat{X})] \\leq DE[d(X,X^)]≤D. So the random code achieves rate RRR and distortion ≈D\\approx D≈D for any R>I(X;X^)R > I(X; \\hat{X})R>I(X;X^).\n\nOptimizing over p(x^∣x)p(\\hat{x} \\mid x)p(x^∣x) gives R≥RI(D)=min⁡I(X;X^)R \\geq R^I(D) = \\min I(X; \\hat{X})R≥RI(D)=minI(X;X^).\n\n**Converse** : We show that no code of rate R<RI(D)R < R^I(D)R<RI(D) can achieve average distortion ≤D\\leq D≤D. Suppose a code with index W∈{1,…,2nR}W \\in \\\\{1, \\ldots, 2^{nR}\\\\}W∈{1,…,2nR} and reproduction X^n=g(W)\\hat{X}^n = g(W)X^n=g(W) attains E[d(Xn,X^n)]≤D\\mathbb{E}[d(X^n, \\hat{X}^n)] \\leq DE[d(Xn,X^n)]≤D. Then:\n\nnR≥H(W)≥H(W)−H(W∣Xn)=I(Xn;W)≥I(Xn;X^n),nR \\geq H(W) \\geq H(W) - H(W \\mid X^n) = I(X^n; W) \\geq I(X^n; \\hat{X}^n),nR≥H(W)≥H(W)−H(W∣Xn)=I(Xn;W)≥I(Xn;X^n),\n\nwhere the last step is the data-processing inequality (X^n\\hat{X}^nX^n is a deterministic function of WWW). Now use the chain rule and the fact that conditioning reduces entropy:\n\nI(Xn;X^n)=∑i=1nI(Xi;X^n∣Xi−1)≥∑i=1nI(Xi;X^i),I(X^n; \\hat{X}^n) = \\sum_{i=1}^n I(X_i; \\hat{X}^n \\mid X^{i-1}) \\geq \\sum_{i=1}^n I(X_i; \\hat{X}_i),I(Xn;X^n)=i=1∑n​I(Xi​;X^n∣Xi−1)≥i=1∑n​I(Xi​;X^i​),\n\nwhere the inequality uses that XiX_iXi​ is independent of Xi−1X^{i-1}Xi−1 (i.i.d. source) and that dropping conditioning on Xi−1X^{i-1}Xi−1 plus reducing X^n\\hat{X}^nX^n to its iii-th coordinate can only decrease mutual information. Each term I(Xi;X^i)I(X_i; \\hat{X}_i)I(Xi​;X^i​) is at least RI(Di)R^I(D_i)RI(Di​) where Di=E[d(Xi,X^i)]D_i = \\mathbb{E}[d(X_i, \\hat{X}_i)]Di​=E[d(Xi​,X^i​)], simply by definition of RIR^IRI. Therefore\n\nR≥1n∑iRI(Di)≥RI ⁣(1n∑iDi)≥RI(D),R \\geq \\frac{1}{n} \\sum_i R^I(D_i) \\geq R^I\\\\!\\left(\\frac{1}{n} \\sum_i D_i\\right) \\geq R^I(D),R≥n1​i∑​RI(Di​)≥RI(n1​i∑​Di​)≥RI(D),\n\nusing Jensen's inequality (since RIR^IRI is convex and decreasing) and the distortion constraint 1n∑Di≤D\\frac{1}{n} \\sum D_i \\leq Dn1​∑Di​≤D. □\\square□\n\nThis converse is **single-letter** : although the code operates on blocks of length nnn, the lower bound reduces to a single-symbol minimization. That is the same compression of nnn-letter problems to one-letter problems we saw in source coding (Chapter 4) and channel coding (Chapter 6) — a recurring miracle of information theory. Cover and Thomas Chapter 10 gives a fuller treatment.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1356,
+      "out_sha": "6e5fa6844a77",
       "note": ""
     },
     {
@@ -1903,11 +1903,11 @@
       "en_title": "Chapter 11: Rate-Distortion Theory",
       "order": 150,
       "src_chars": 2333,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e12e4fe7aae9",
       "src": "### 11.3 Properties of R(D)R(D)R(D)\n\nThe rate-distortion function has several elegant properties:\n\n  1. **Monotonically decreasing** : R(D)R(D)R(D) decreases as DDD increases (more distortion allowed → less rate needed).\n  2. **Convex** : R(D)R(D)R(D) is a convex function of DDD. The convexity is a consequence of time-sharing arguments.\n  3. **R(0)=H(X)R(0) = H(X)R(0)=H(X)** for discrete sources with Hamming distortion: zero distortion means lossless compression, which costs H(X)H(X)H(X) bits.\n  4. **R(Dmax⁡)=0R(D_{\\max}) = 0R(Dmax​)=0**: at sufficiently high distortion, you can use the constant reproduction (no information at all) and still meet the constraint.\n\nThe general shape of R(D)R(D)R(D) is a smooth convex curve dropping from H(X)H(X)H(X) at D=0D = 0D=0 to 000 at some Dmax⁡D_{\\max}Dmax​.\n\n\n### 11.4 Worked Example: Binary Source with Hamming Distortion\n\nSource: X∈{0,1}X \\in \\\\{0, 1\\\\}X∈{0,1} with p(X=1)=p≤1/2p(X = 1) = p \\leq 1/2p(X=1)=p≤1/2. Distortion: Hamming.\n\nThe information rate-distortion function:\n\nR(D)={Hb(p)−Hb(D)if 0≤D≤p,0if D≥p.R(D) = \\begin{cases} H_b(p) - H_b(D) & \\text{if } 0 \\leq D \\leq p, \\\\\\ 0 & \\text{if } D \\geq p. \\end{cases}R(D)={Hb​(p)−Hb​(D)0​if 0≤D≤p,if D≥p.​\n\nSanity checks:\n\n* D=0D = 0D=0: R=Hb(p)R = H_b(p)R=Hb​(p). Lossless rate equals entropy. ✓\\checkmark✓\n* D=pD = pD=p: R=0R = 0R=0. At distortion ppp we can use the constant reproduction X^=0\\hat{X} = 0X^=0, which gives distortion ppp (the fraction of 1's that are mispredicted) at zero rate. ✓\\checkmark✓\n* For D∈(0,p)D \\in (0, p)D∈(0,p): the function smoothly interpolates. The optimal conditional is \"X^\\hat{X}X^ is a noisy version of XXX with crossover DDD\" — in some sense, the dual of channel coding.\n\n\n### 11.5 The Gaussian Source: Closed Form\n\nFor a Gaussian source X∼N(0,σ2)X \\sim \\mathcal{N}(0, \\sigma^2)X∼N(0,σ2) with squared-error distortion, the rate-distortion function is\n\nR(D)={12log⁡σ2Dif 0≤D≤σ2,0if D≥σ2.R(D) = \\begin{cases} \\frac{1}{2} \\log \\frac{\\sigma^2}{D} & \\text{if } 0 \\leq D \\leq \\sigma^2, \\\\\\ 0 & \\text{if } D \\geq \\sigma^2. \\end{cases}R(D)={21​logDσ2​0​if 0≤D≤σ2,if D≥σ2.​\n\nThis is the most-cited formula in lossy compression. It says: every bit of rate cuts the distortion (in MSE) by a factor of 4. Equivalently: doubling the rate (one extra bit per sample) reduces distortion by a factor of 4.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 951,
+      "out_sha": "fbf31ffbd120",
       "note": ""
     },
     {
@@ -1915,11 +1915,11 @@
       "en_title": "Chapter 11: Rate-Distortion Theory",
       "order": 151,
       "src_chars": 2766,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e4764bd8204f",
       "src": "#### Derivation (test channel)\n\nThe minimum mutual information at distortion DDD is achieved by the so-called _backward test channel_ : write the joint as\n\nX=X^+Z,X^∼N(0,σ2−D),Z∼N(0,D),X^⊥Z.X = \\hat{X} + Z, \\qquad \\hat{X} \\sim \\mathcal{N}(0, \\sigma^2 - D), \\qquad Z \\sim \\mathcal{N}(0, D), \\qquad \\hat{X} \\perp Z.X=X^+Z,X^∼N(0,σ2−D),Z∼N(0,D),X^⊥Z.\n\nNote the unusual direction: it is the _reproduction_ X^\\hat{X}X^ and an independent noise ZZZ that sum to the source XXX, not X^=X+Z\\hat{X} = X + ZX^=X+Z as one might first guess. This bookkeeping is what makes the algebra work out.\n\nBy construction the marginal of XXX is N(0,σ2)\\mathcal{N}(0, \\sigma^2)N(0,σ2) (since X^⊥Z\\hat{X} \\perp ZX^⊥Z and the variances add), and the squared-error distortion is\n\nE[(X−X^)2]=E[Z2]=D,\\mathbb{E}[(X - \\hat{X})^2] = \\mathbb{E}[Z^2] = D,E[(X−X^)2]=E[Z2]=D,\n\nso the constraint is satisfied. The mutual information is\n\nI(X;X^)=h(X)−h(X∣X^)=h(X)−h(Z)=12log⁡(2πeσ2)−12log⁡(2πeD)=12log⁡(σ2/D),I(X; \\hat{X}) = h(X) - h(X \\mid \\hat{X}) = h(X) - h(Z) = \\tfrac{1}{2}\\log(2\\pi e \\sigma^2) - \\tfrac{1}{2}\\log(2\\pi e D) = \\tfrac{1}{2}\\log(\\sigma^2 / D),I(X;X^)=h(X)−h(X∣X^)=h(X)−h(Z)=21​log(2πeσ2)−21​log(2πeD)=21​log(σ2/D),\n\nwhere the second equality uses X−X^=ZX - \\hat{X} = ZX−X^=Z (so h(X∣X^)=h(Z)h(X \\mid \\hat{X}) = h(Z)h(X∣X^)=h(Z)). One can check that no other joint distribution achieving the same distortion gives a smaller I(X;X^)I(X; \\hat{X})I(X;X^): this is the Gaussian extremality of the rate-distortion function, dual to the Gaussian extremality of channel capacity. □\\square□\n\n\n#### Reverse water-filling for parallel sources\n\nFor KKK independent Gaussian sources with variances σ12,…,σK2\\sigma_1^2, \\ldots, \\sigma_K^2σ12​,…,σK2​, the rate-distortion function is\n\nR(D)=∑imax⁡(0,12log⁡σi2Di),R(D) = \\sum_i \\max\\left(0, \\frac{1}{2} \\log \\frac{\\sigma_i^2}{D_i}\\right),R(D)=i∑​max(0,21​logDi​σi2​​),\n\nwhere Di=min⁡(σi2,λ)D_i = \\min(\\sigma_i^2, \\lambda)Di​=min(σi2​,λ) for a \"water level\" λ\\lambdaλ chosen so that ∑iDi=D\\sum_i D_i = D∑i​Di​=D.\n\nThis **reverse water-filling** says: spend bits on the high-variance components first; ignore (set X^i=0\\hat{X}_i = 0X^i​=0) any components whose variance is below the water level.\n\nThe picture is that of pouring water into a tub whose floor heights are the variances σi2\\sigma_i^2σi2​. The water level rises until the total area \"above water\" equals DDD. Components below water get Di=σi2D_i = \\sigma_i^2Di​=σi2​ (i.e., zero rate); components above water get Di=λD_i = \\lambdaDi​=λ and rate 12log⁡(σi2/λ)\\frac{1}{2} \\log(\\sigma_i^2/\\lambda)21​log(σi2​/λ).\n\nThis is the lossy analog of bit allocation in subband coding (used in MP3 and JPEG). The dual problem of waterfilling for the Gaussian channel (Chapter 5) has the same structure.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1189,
+      "out_sha": "d0f45a53352d",
       "note": ""
     },
     {
@@ -1927,11 +1927,11 @@
       "en_title": "Chapter 11: Rate-Distortion Theory",
       "order": 152,
       "src_chars": 3051,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4ce92c4e31e7",
       "src": "### 11.6 The Gaussian Source as a Special Case\n\nThe Gaussian source is special in rate-distortion theory in the same way it is special in channel coding: it is the _worst_ source (highest entropy for given variance), and so its rate-distortion function is the most permissive bound. For any source with variance σ2\\sigma^2σ2 and squared-error distortion,\n\nR(D)≥12log⁡σ2D.R(D) \\geq \\frac{1}{2} \\log \\frac{\\sigma^2}{D}.R(D)≥21​logDσ2​.\n\nThe bound is achieved iff the source is Gaussian. For non-Gaussian sources, the rate-distortion function is strictly smaller.\n\nThis is a useful baseline: the Gaussian R(D)R(D)R(D) is an upper bound on what's needed for any source with the same variance, and a near-tight bound for sources with low excess kurtosis.\n\n\n### 11.7 An AI Connection: Neural Compression\n\nModern neural compression is a direct application of rate-distortion theory. The setup:\n\n* Encoder: a neural network z=fθ(x)z = f_\\theta(x)z=fθ​(x) mapping image xxx to a latent zzz.\n* Decoder: a neural network x^=gϕ(z)\\hat{x} = g_\\phi(z)x^=gϕ​(z) mapping zzz back to a reconstructed image.\n* Entropy model: a parametric distribution pψ(z)p_\\psi(z)pψ​(z) used for arithmetic-coding the latent.\n\nTraining objective:\n\nL=−log⁡pψ(z)+λ⋅d(x,x^),\\mathcal{L} = -\\log p_\\psi(z) + \\lambda \\cdot d(x, \\hat{x}),L=−logpψ​(z)+λ⋅d(x,x^),\n\na Lagrangian rate-distortion loss. The first term is the rate (in bits, modulo a factor); the second is the distortion. λ\\lambdaλ controls the trade-off.\n\nThis is exactly the rate-distortion view of the variational autoencoder from Chapter 10, with a specific decoder loss (perceptual or pixel-wise) and a specific entropy model (often a hyperprior or autoregressive model over zzz).\n\n\n#### Performance\n\nModern neural compressors achieve:\n\n* Better than JPEG: by a wide margin at all bit rates.\n* Comparable to BPG (HEVC intra) at moderate rates.\n* Better than BPG at very low rates (where neural models can produce sharp, plausible images at rates classical codecs can't match).\n\nFor perceptual quality (MS-SSIM, LPIPS), neural compressors are now state of the art on standard image datasets. For PSNR (pixel-wise MSE), they are competitive but not dominant.\n\nThe picture: rate-distortion theory was developed in the 1950s for analog signal compression; it now describes the training objective of state-of-the-art image and video compressors using deep neural networks.\n\n\n### 11.8 Distortion in Modern Generative Models\n\nBeyond compression per se, rate-distortion shows up implicitly in modern generative modeling.\n\n\n#### β\\betaβ-VAE\n\nThe β\\betaβ-VAE objective from Chapter 10:\n\nL=E[log⁡p(x∣z)]−β⋅D(q(z∣x)∥p(z))\\mathcal{L} = \\mathbb{E}[\\log p(x \\mid z)] - \\beta \\cdot D(q(z \\mid x) \\| p(z))L=E[logp(x∣z)]−β⋅D(q(z∣x)∥p(z))\n\nis a Lagrangian rate-distortion loss. Different β\\betaβ trace out the rate-distortion curve.\n\n\n#### Diffusion models\n\nDiffusion models can be derived from a hierarchical ELBO with rate-distortion structure at each noise level. The training loss decomposes into a sum of per-noise-level distortion terms.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1157,
+      "out_sha": "63fb269976e7",
       "note": ""
     },
     {
@@ -1939,11 +1939,11 @@
       "en_title": "Chapter 11: Rate-Distortion Theory",
       "order": 153,
       "src_chars": 2506,
-      "status": "pending",
+      "status": "done",
       "src_sha": "dd350992f62e",
       "src": "#### Neural language models\n\nEven text language models have implicit rate-distortion structure. The cross-entropy loss (Chapter 4) is the rate; if we constrain the model's output distribution to a particular family, the achievable cross-entropy is bounded by an information rate-distortion bound.\n\nThe general claim: modern generative modeling is rate-distortion theory at scale. The rate is what the model uses to specify each generated example; the distortion is the gap between the generated and ideal distributions.\n\n\n### 11.9 Historical Note: Berger and the Rate-Distortion Era\n\nShannon's original 1948 paper introduced entropy and channel capacity, but rate-distortion theory was not fully developed until his 1959 paper _Coding Theorems for a Discrete Source with a Fidelity Criterion_. There Shannon proved the rate-distortion theorem in essentially its modern form and computed R(D)R(D)R(D) for the Gaussian source under squared-error distortion.\n\nThe systematic textbook treatment came from Toby Berger, whose 1971 book _Rate Distortion Theory: A Mathematical Basis for Data Compression_ is the canonical reference. Berger spent his career at Cornell and had a knack for finding the right level of generality: his book treats discrete and continuous sources, single-letter and multi-letter distortion measures, and the relationship to channel coding, all in a unified framework. Many later results in network information theory (Chapter 12) trace back to Berger's framing of distributed source coding.\n\nThe application of rate-distortion theory to actual codecs — JPEG (1992), MP3 (1993), H.264 (2003) — followed roughly the pattern of Shannon's channel coding theorem and practical codes (Chapter 7): twenty to forty years between theoretical limit and engineering reality. JPEG and MP3 do not literally implement R(D)R(D)R(D)-optimal schemes, but their design (transform coding, scalar quantization, entropy coding) is recognizably _informed_ by rate-distortion intuitions. Modern neural compressors by Ballé, Minnen, and collaborators between 2017 and 2024 come closer to operational optimality.\n\nThe deep result is that lossy compression is _fundamentally_ harder than lossless: not only do you need a compression algorithm, you need to know what kind of distortion is acceptable. The choice of distortion measure (MSE? perceptual? task-specific?) is part of the modeling problem. Rate-distortion theory does not tell you what to choose; it tells you what is achievable once you have chosen.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 825,
+      "out_sha": "59e01d613b61",
       "note": ""
     },
     {
@@ -1951,11 +1951,11 @@
       "en_title": "Chapter 11: Rate-Distortion Theory",
       "order": 154,
       "src_chars": 2226,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9746f0c98983",
       "src": "### Common Misconception\n\n* **Misconception** : \"Rate-distortion is the same as lossless compression with errors allowed.\"\n\nRate-distortion is more refined: it specifies the _type_ of distortion via the distortion measure. Two compressed versions of the same image can have the same MSE but very different perceptual quality. Choosing the right distortion measure is part of the design.\n\n* **Misconception** : \"The rate-distortion function is the operational rate at which lossy compression schemes work.\"\n\nThe rate-distortion function is the _fundamental limit_. Practical schemes (JPEG, MP3, neural compressors) operate at points above the curve, with various levels of suboptimality. JPEG, for instance, is far from the rate-distortion optimum at low rates; neural compressors are much closer.\n\n* **Misconception** : \"Rate-distortion theory applies only to compression.\"\n\nThe framework applies to any task that trades off \"complexity of representation\" against \"fidelity to source.\" This includes hashing, summarization, and the information bottleneck (Chapter 13). The rate-distortion formalism is one of the most generally applicable tools in information theory.\n\n\n### Chapter Summary\n\nRate-distortion theory gives the fundamental limit of lossy compression. The rate-distortion function R(D)R(D)R(D) is the minimum bit rate to represent a source with distortion at most DDD:\n\nR(D)=min⁡p(x^∣x):E[d]≤DI(X;X^).R(D) = \\min_{p(\\hat{x} \\mid x): \\mathbb{E}[d] \\leq D} I(X; \\hat{X}).R(D)=p(x^∣x):E[d]≤Dmin​I(X;X^).\n\nFor the canonical Gaussian source with squared-error distortion, R(D)=12log⁡(σ2/D)R(D) = \\frac{1}{2} \\log(\\sigma^2 / D)R(D)=21​log(σ2/D) — every bit cuts MSE by a factor of 4. For parallel Gaussian sources, the optimal allocation is reverse water-filling: spend bits on high-variance components first.\n\nModern neural compression is a direct application of rate-distortion theory: train autoencoders with explicit Lagrangian rate-distortion losses to achieve state-of-the-art compression. The same machinery underlies β\\betaβ-VAE, diffusion models, and other generative-modeling techniques.\n\nThe next chapter generalizes from point-to-point information theory to multi-user network channels.\n\n\n### 11.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 704,
+      "out_sha": "299e86798c1a",
       "note": ""
     },
     {
@@ -1963,11 +1963,11 @@
       "en_title": "Chapter 11: Rate-Distortion Theory",
       "order": 155,
       "src_chars": 2139,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6f483d44fbd2",
       "src": "#### Concept Check\n\n**Q1.** State the rate-distortion theorem.\n\n**Answer:** For a memoryless source XXX with distribution p(x)p(x)p(x) and distortion measure ddd, the operational rate-distortion function equals the information rate-distortion function:\n\nR(D)=min⁡p(x^∣x):E[d(X,X^)]≤DI(X;X^).R(D) = \\min_{p(\\hat{x} \\mid x) : \\mathbb{E}[d(X, \\hat{X})] \\leq D} I(X; \\hat{X}).R(D)=p(x^∣x):E[d(X,X^)]≤Dmin​I(X;X^).\n\nThis is the minimum bit rate at which a source can be lossily compressed while keeping average distortion below DDD.\n\n**Q2.** What is the rate-distortion function of a Gaussian source with variance σ2\\sigma^2σ2 and squared-error distortion?\n\n**Answer:** R(D)=12log⁡(σ2/D)R(D) = \\frac{1}{2} \\log(\\sigma^2 / D)R(D)=21​log(σ2/D) for 0≤D≤σ20 \\leq D \\leq \\sigma^20≤D≤σ2, and 0 for D≥σ2D \\geq \\sigma^2D≥σ2.\n\nEach additional bit per sample reduces MSE by a factor of 4. Doubling the rate (one extra bit) cuts MSE by 4×.\n\n**Q3.** What is reverse water-filling, and why is it called that?\n\n**Answer:** For KKK independent Gaussian sources with variances σi2\\sigma_i^2σi2​, the optimal bit allocation at total distortion DDD is to spend bits on each component to bring its distortion down to Di=min⁡(σi2,λ)D_i = \\min(\\sigma_i^2, \\lambda)Di​=min(σi2​,λ), where λ\\lambdaλ is a \"water level\" chosen so that ∑Di=D\\sum D_i = D∑Di​=D.\n\nThe \"water\" is the distortion budget; the \"container floors\" are the variances. Components with variance below the water line get no bits (we just zero them out). It is called \"reverse\" water-filling because the distortion is the _output_ of the procedure, not the input — contrast with forward water-filling for the Gaussian channel, where the input variances are sub-channel capacities.\n\n**Q4.** Explain why the rate-distortion function is monotonically decreasing in DDD.\n\n**Answer:** More distortion allowed means the constraint set {p(x^∣x):E[d]≤D}\\\\{p(\\hat{x} \\mid x) : \\mathbb{E}[d] \\leq D\\\\}{p(x^∣x):E[d]≤D} grows. The minimum over a larger set is at most the minimum over a smaller set. So R(D)R(D)R(D) decreases as DDD increases. Intuitively: if you allow yourself more error, you need fewer bits.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 811,
+      "out_sha": "3c66d13d83c6",
       "note": ""
     },
     {
@@ -1975,11 +1975,11 @@
       "en_title": "Chapter 11: Rate-Distortion Theory",
       "order": 156,
       "src_chars": 3421,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8e2f644a64f5",
       "src": "#### Application Problems\n\n**Q1.** A binary source has p(0)=p(1)=1/2p(0) = p(1) = 1/2p(0)=p(1)=1/2. Compute R(D)R(D)R(D) for Hamming distortion at D=0.1D = 0.1D=0.1.\n\nHint\n\nR(D)=Hb(p)−Hb(D)R(D) = H_b(p) - H_b(D)R(D)=Hb​(p)−Hb​(D) for symmetric binary.\n\n**Answer:** Hb(0.5)=1H_b(0.5) = 1Hb​(0.5)=1 bit. Hb(0.1)≈0.469H_b(0.1) \\approx 0.469Hb​(0.1)≈0.469 bits.\n\nR(0.1)=1−0.469=0.531R(0.1) = 1 - 0.469 = 0.531R(0.1)=1−0.469=0.531 bits per source symbol.\n\nSo we can represent the source at 0.531 bits per symbol while keeping the bit-error rate at 10%. Compare to lossless rate (D=0D = 0D=0): 1 bit per symbol. The 10% distortion saves about half the rate.\n\n**Q2.** A Gaussian source has variance 1. We want MSE ≤0.01\\leq 0.01≤0.01. What is the minimum rate?\n\nHint\n\nR=12log⁡(σ2/D)R = \\frac{1}{2} \\log(\\sigma^2 / D)R=21​log(σ2/D).\n\n**Answer:** R=12log⁡(1/0.01)=12log⁡100=log⁡10≈3.32R = \\frac{1}{2} \\log(1 / 0.01) = \\frac{1}{2} \\log 100 = \\log 10 \\approx 3.32R=21​log(1/0.01)=21​log100=log10≈3.32 bits per sample.\n\nTo achieve MSE 0.01 (i.e., 0.1 standard deviations) per sample, we need about 3.3 bits — exactly enough to specify which \"ten regions\" of the distribution the value is in.\n\n**Q3.** Three Gaussian sources have variances σ12=4,σ22=1,σ32=0.25\\sigma_1^2 = 4, \\sigma_2^2 = 1, \\sigma_3^2 = 0.25σ12​=4,σ22​=1,σ32​=0.25. The total distortion budget is D=1D = 1D=1. Find the reverse water-filling allocation.\n\nHint\n\nTry water level λ\\lambdaλ and find which components are above water.\n\n**Answer:** Try λ=0.25\\lambda = 0.25λ=0.25: components 1 and 2 are above water, component 3 is below. D1=0.25,D2=0.25,D3=0.25D_1 = 0.25, D_2 = 0.25, D_3 = 0.25D1​=0.25,D2​=0.25,D3​=0.25. Total: 0.75<10.75 < 10.75<1. Need more distortion.\n\nTry λ=0.5\\lambda = 0.5λ=0.5: D1=0.5,D2=0.5,D3=0.25D_1 = 0.5, D_2 = 0.5, D_3 = 0.25D1​=0.5,D2​=0.5,D3​=0.25. Total: 1.25>11.25 > 11.25>1. Too much.\n\nTry λ=0.375\\lambda = 0.375λ=0.375: D1=0.375,D2=0.375,D3=0.25D_1 = 0.375, D_2 = 0.375, D_3 = 0.25D1​=0.375,D2​=0.375,D3​=0.25. Total: 1.01.01.0. ✓\\checkmark✓\n\nSo λ=0.375\\lambda = 0.375λ=0.375: components 1, 2 are above water. Bit allocation:\n\n* Component 1: R1=12log⁡(4/0.375)≈12log⁡10.67≈1.71R_1 = \\frac{1}{2} \\log(4 / 0.375) \\approx \\frac{1}{2} \\log 10.67 \\approx 1.71R1​=21​log(4/0.375)≈21​log10.67≈1.71 bits.\n* Component 2: R2=12log⁡(1/0.375)≈12log⁡2.67≈0.71R_2 = \\frac{1}{2} \\log(1 / 0.375) \\approx \\frac{1}{2} \\log 2.67 \\approx 0.71R2​=21​log(1/0.375)≈21​log2.67≈0.71 bits.\n* Component 3: R3=0R_3 = 0R3​=0 bits (below water).\n\nTotal: about 2.42 bits per source vector. The lowest-variance component is \"thrown away.\"\n\n**Q4.** A neural compressor for images is trained with the loss L=−log⁡p(z)+λ⋅MSE(x,x^)\\mathcal{L} = -\\log p(z) + \\lambda \\cdot \\text{MSE}(x, \\hat{x})L=−logp(z)+λ⋅MSE(x,x^). For λ=0.001\\lambda = 0.001λ=0.001, it achieves rate 0.5 bits/pixel and MSE 50 (in 8-bit pixel scale). For λ=0.01\\lambda = 0.01λ=0.01, it achieves rate 0.2 bits/pixel and MSE 200. Which λ\\lambdaλ is right?\n\n**Answer:** The trade-off is between rate (bits/pixel) and distortion (MSE). Different λ\\lambdaλ trace out the rate-distortion curve. Both points are valid; the choice depends on the application.\n\nHigher λ\\lambdaλ (more distortion penalty): low MSE but higher rate. Lower λ\\lambdaλ (less distortion penalty): high MSE but lower rate.\n\nFor storage-constrained applications, low λ\\lambdaλ. For visual-fidelity-critical applications, high λ\\lambdaλ.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1541,
+      "out_sha": "7f6a7ff2f80a",
       "note": ""
     },
     {
@@ -1987,11 +1987,11 @@
       "en_title": "Chapter 11: Rate-Distortion Theory",
       "order": 157,
       "src_chars": 195,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7987720c1c0a",
       "src": "In practice, neural compressors are often deployed at multiple operating points (λ\\lambdaλ values) so users can choose. The actual rate-distortion curve is the set of optima as λ\\lambdaλ varies.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 70,
+      "out_sha": "a3aeae6538d8",
       "note": ""
     },
     {
@@ -1999,11 +1999,11 @@
       "en_title": "Chapter 11: Rate-Distortion Theory",
       "order": 158,
       "src_chars": 3389,
-      "status": "pending",
+      "status": "done",
       "src_sha": "34934d031131",
       "src": "#### Think Deeper\n\n**Q1.** Rate-distortion theory uses MSE or Hamming distortion as the canonical \"distortion measure.\" But for images, MSE doesn't match human perception. How is this addressed?\n\n**Discussion:** This is a major active research area.\n\n  1. **Better distortion metrics** : SSIM, MS-SSIM, LPIPS, FID. These are designed to better match human perception. Modern neural compressors typically use a combination: MSE + LPIPS (or perceptual + adversarial losses).\n\n  2. **Generative models for distortion** : train a GAN-style discriminator that distinguishes real from compressed images; use the discriminator's output as distortion. This produces visually pleasing reconstructions even when the rate is too low for accurate reconstruction.\n\n  3. **Task-specific distortion** : for downstream tasks (object detection, segmentation), use task accuracy as the distortion measure. The compressor is then tuned to preserve task-relevant information.\n\nThe general lesson: rate-distortion theory is a framework, not a prescription. The choice of distortion measure is part of the modeling problem and may itself require deep learning.\n\n**Q2.** Modern neural compression has surpassed classical codecs on perceptual quality. But it has computational costs at decode time. Is this trade-off acceptable?\n\n**Discussion:** Depends on the application.\n\nFor _storage_ : training and encoding are one-time costs; decode happens at every view. Decode complexity matters. Neural decoders can require multiple GPU seconds per high-resolution image — orders of magnitude slower than JPEG. For real-time video, this is a serious obstacle.\n\nFor _transmission_ : encode complexity matters too. Live broadcast cannot afford slow encoding.\n\nFor _archival_ : encode/decode time is irrelevant. Storage cost is what matters. Neural compression saves significant storage at the cost of computational dependencies (you need the trained model to decode).\n\nIn practice, neural compression is being deployed in scenarios where its compression efficiency outweighs its computational cost: low-bandwidth video streaming, satellite imagery, medical imaging archives. For everyday image storage and ubiquitous video, classical codecs still dominate due to inertia and computational constraints.\n\n**Q3.** The information bottleneck (Chapter 13) is \"rate-distortion in disguise.\" Sketch the analogy.\n\n**Discussion:** The information bottleneck objective is\n\nmin⁡I(X;T)−βI(T;Y)\\min I(X; T) - \\beta I(T; Y)minI(X;T)−βI(T;Y)\n\nwhere TTT is a representation of XXX and we want to predict YYY.\n\nCompare to rate-distortion: min⁡I(X;X^)\\min I(X; \\hat{X})minI(X;X^) subject to E[d(X,X^)]≤D\\mathbb{E}[d(X, \\hat{X})] \\leq DE[d(X,X^)]≤D.\n\nThe IB problem replaces the distortion constraint with a \"relevance\" constraint: instead of \"X^\\hat{X}X^ should be close to XXX in some distortion sense,\" it is \"TTT should preserve information about YYY.\" The β\\betaβ parameter is the Lagrange multiplier on this constraint.\n\nBoth are Lagrangian optimizations of mutual information. Both produce trade-off curves with similar shapes. Both have similar achievability proofs.\n\nThe IB formulation is more naturally suited to representation learning (where the goal is task-relevant encoding), while rate-distortion is more naturally suited to compression (where the goal is reproduction).\n\nWe will see the connection in detail in Chapter 13.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1126,
+      "out_sha": "fb3e54319c62",
       "note": ""
     },
     {
@@ -2011,11 +2011,11 @@
       "en_title": "Chapter 11: Rate-Distortion Theory",
       "order": 159,
       "src_chars": 568,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ae036f31971d",
       "src": "### Connections to Subsequent Chapters\n\nThis chapter completed the framework of lossy compression.\n\n* **Chapter 12** : extends to multi-user (network) lossy compression — Slepian-Wolf, Wyner-Ziv.\n* **Chapter 13** : information bottleneck as rate-distortion in representation learning.\n* **Chapter 18** : capstone uses rate-distortion to interpret the trained model.\n\nA reader who has finished this chapter understands the fundamental limits of lossy compression and can interpret modern neural compressors and β\\betaβ-VAEs through the rate-distortion lens.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 209,
+      "out_sha": "fafb591aef05",
       "note": ""
     },
     {
