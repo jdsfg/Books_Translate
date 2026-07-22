@@ -3163,11 +3163,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 255,
       "src_chars": 3221,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5b9919034472",
       "src": "### Chapter 11 — Rate-Distortion\n\n**Application Q1.** A Gaussian source with σ2=4\\sigma^2 = 4σ2=4 is compressed at rate R=1R = 1R=1 bit per sample. What is the minimum achievable MSE?\n\nSolve R(D)=12log⁡2(σ2/D)=1R(D) = \\tfrac{1}{2} \\log_2 (\\sigma^2 / D) = 1R(D)=21​log2​(σ2/D)=1: σ2/D=4\\sigma^2 / D = 4σ2/D=4, so D=1D = 1D=1. One bit per sample cuts MSE by a factor of four — the canonical 6 dB per bit rule.\n\n**Application Q2 (binary R(D) at p=0.3).** Compute R(D)R(D)R(D) for a binary source with p=0.3p = 0.3p=0.3 under Hamming distortion at D=0.1D = 0.1D=0.1 and at D=0.3D = 0.3D=0.3. Interpret.\n\nR(D)=Hb(p)−Hb(D)R(D) = H_b(p) - H_b(D)R(D)=Hb​(p)−Hb​(D) for D∈[0,p]D \\in [0, p]D∈[0,p], and 000 for D≥pD \\geq pD≥p. At p=0.3,D=0.1p = 0.3, D = 0.1p=0.3,D=0.1: R=0.881−0.469=0.412R = 0.881 - 0.469 = 0.412R=0.881−0.469=0.412 bits/symbol. At D=0.3D = 0.3D=0.3: R=0R = 0R=0 — at distortion equal to the source entropy of the minority class, the constant codeword X^=0\\hat{X} = 0X^=0 is already good enough on average. The transition from positive to zero rate is _sharp_ at D=pD = pD=p, corresponding to the threshold below which the source cannot be losslessly skipped.\n\n**Application Q3 (parallel-Gaussian water-filling).** Three parallel Gaussian channels have variances σ2=(10,4,1)\\sigma^2 = (10, 4, 1)σ2=(10,4,1), and you have a total distortion budget Dtotal=5D_{\\text{total}} = 5Dtotal​=5. Allocate the distortion across channels.\n\nReverse water-filling: choose a \"level\" λ\\lambdaλ, set Di=min⁡(σi2,λ)D_i = \\min(\\sigma_i^2, \\lambda)Di​=min(σi2​,λ), and choose λ\\lambdaλ so ∑Di=5\\sum D_i = 5∑Di​=5. Try λ=2\\lambda = 2λ=2: D=(min⁡(10,2),min⁡(4,2),min⁡(1,2))=(2,2,1)D = (\\min(10, 2), \\min(4, 2), \\min(1, 2)) = (2, 2, 1)D=(min(10,2),min(4,2),min(1,2))=(2,2,1), sum =5= 5=5. ✓ So allocate distortion 2, 2, 1 to the three channels. The third channel gets distortion equal to its entire variance (it is \"drowned\" — no rate spent on it); the first two split the remaining budget. Rates: R1=12log⁡2(10/2)=1.16R_1 = \\tfrac{1}{2}\\log_2(10/2) = 1.16R1​=21​log2​(10/2)=1.16, R2=12log⁡2(4/2)=0.5R_2 = \\tfrac{1}{2}\\log_2(4/2) = 0.5R2​=21​log2​(4/2)=0.5, R3=0R_3 = 0R3​=0. Total rate: 1.661.661.66 bits/sample.\n\n**Think Deeper Q1.** Why is the rate-distortion converse \"single-letter\" in the same sense as the channel coding converse?\n\nBoth reduce a vector problem of dimension nnn to a single-symbol problem of dimension 1, via convexity and chain-rule arguments. For channel coding (Ch. 6), Fano + chain rule gives R≤C+ϵR \\leq C + \\epsilonR≤C+ϵ. For rate-distortion (Ch. 11 §11.2), DPI + chain rule + Jensen on the convex RI(D)R^I(D)RI(D) gives R≥RI(Dˉ)R \\geq R^I(\\bar{D})R≥RI(Dˉ). Both succeed because mutual-information chain-rule terms decompose additively _and_ the per-symbol bounds tie back to the same single-letter quantity (CCC or RI(D)R^I(D)RI(D)). This single-letterization is the structural miracle of information theory; it does not extend cleanly to multi-user channels (Ch. 12), which is why network IT remains hard.\n\n**Think Deeper Q2.** Modern neural compressors (Ballé et al.) achieve bitrates close to R(D)R(D)R(D) on natural images. What does this say about the implicit source distribution they are exploiting?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1240,
+      "out_sha": "05f741e8cc8d",
       "note": ""
     },
     {
@@ -3175,11 +3175,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 256,
       "src_chars": 746,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c72825c346e3",
       "src": "Achieving R(D)R(D)R(D) requires the encoder-decoder pair to have correctly modeled the source distribution p(X)p(X)p(X) — for natural images, this means the manifold of \"natural-looking\" patches in pixel space. Neural compressors learn this manifold from data and therefore approximate the true p(X)p(X)p(X) far better than hand-crafted models (DCT bases for JPEG, wavelet bases for JPEG-2000). The fact that they reach near-R(D)R(D)R(D) on natural images is empirical evidence that natural images live on a low-dimensional manifold in pixel space (the _manifold hypothesis_ of Ch. 3 §3.8) — and that neural networks can capture it. The same compressor on white noise would achieve only the trivial R(D)R(D)R(D) of an unstructured source.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 238,
+      "out_sha": "23dbf8a43f18",
       "note": ""
     },
     {
@@ -3187,11 +3187,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 257,
       "src_chars": 2574,
-      "status": "pending",
+      "status": "done",
       "src_sha": "114539ea6752",
       "src": "### Chapter 12 — Network Information Theory\n\n**Application Q1.** State the Slepian-Wolf rate region for two correlated sources X,YX, YX,Y.\n\nRX≥H(X∣Y),RY≥H(Y∣X),RX+RY≥H(X,Y).R_X \\geq H(X \\mid Y), \\quad R_Y \\geq H(Y \\mid X), \\quad R_X + R_Y \\geq H(X, Y).RX​≥H(X∣Y),RY​≥H(Y∣X),RX​+RY​≥H(X,Y).\n\nThe astonishing part: separate encoders, no communication between them, can achieve the same rate sum as a joint encoder. Side information is implicitly carried by the codebook structure rather than by explicit message-passing.\n\n**Application Q2 (binary correlated sources).** Sources X,YX, YX,Y are jointly Bernoulli with p(00)=p(11)=0.4p(00) = p(11) = 0.4p(00)=p(11)=0.4, p(01)=p(10)=0.1p(01) = p(10) = 0.1p(01)=p(10)=0.1. Compute the Slepian-Wolf rate region.\n\nMarginals: each is Bernoulli(0.5), so H(X)=H(Y)=1H(X) = H(Y) = 1H(X)=H(Y)=1 bit. Conditional: p(Y=1∣X=0)=0.1/0.5=0.2p(Y = 1 | X = 0) = 0.1 / 0.5 = 0.2p(Y=1∣X=0)=0.1/0.5=0.2, so H(Y∣X)=Hb(0.2)≈0.722H(Y | X) = H_b(0.2) \\approx 0.722H(Y∣X)=Hb​(0.2)≈0.722 bits. Joint: H(X,Y)=−2⋅0.4log⁡0.4−2⋅0.1log⁡0.1≈1.722H(X, Y) = -2 \\cdot 0.4 \\log 0.4 - 2 \\cdot 0.1 \\log 0.1 \\approx 1.722H(X,Y)=−2⋅0.4log0.4−2⋅0.1log0.1≈1.722 bits. Region: RX≥0.722R_X \\geq 0.722RX​≥0.722, RY≥0.722R_Y \\geq 0.722RY​≥0.722, RX+RY≥1.722R_X + R_Y \\geq 1.722RX​+RY​≥1.722. Compare to the trivial bound (independent encoding without exploiting correlation): each source would need H(X)=1H(X) = 1H(X)=1 bit, total 2 bits. Slepian-Wolf saves ≈0.28\\approx 0.28≈0.28 bits per pair by exploiting correlation without communication between encoders.\n\n**Application Q3 (network coding throughput gain).** In the butterfly network with two sources s1,s2s_1, s_2s1​,s2​, each wanting to multicast one bit per time-slot to two sinks t1,t2t_1, t_2t1​,t2​ over a 7-edge unit-capacity network, what is the throughput improvement from network coding over routing?\n\nRouting-only: the bottleneck edge a→ba \\to ba→b carries one bit per time-slot, so each sink can receive only one of the two source bits per slot. Throughput per sink: 1 bit/slot. Network coding: aaa computes x1⊕x2x_1 \\oplus x_2x1​⊕x2​ and forwards; sinks receive x1x_1x1​ and x1⊕x2x_1 \\oplus x_2x1​⊕x2​ (or symmetrically) and recover both bits. Throughput per sink: 2 bits/slot. Improvement: ×2\\times 2×2. The min-cut from each source to each sink is 2, so network coding saturates the cut capacity while routing leaves half of it unused.\n\n**Think Deeper Q1.** The interference channel capacity is generally unknown after 50 years of research. Why is it harder than the multiple-access or broadcast channel?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 959,
+      "out_sha": "e92029f8d142",
       "note": ""
     },
     {
@@ -3199,11 +3199,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 258,
       "src_chars": 1896,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3d87dfa7ad35",
       "src": "The MAC has _one_ receiver who can jointly decode both messages — interference becomes \"extra info to subtract.\" The BC has _one_ transmitter who can superposition-code so that the better receiver decodes both messages and uses one as known interference. The interference channel has _separate_ transmitters and _separate_ receivers; neither side can fully cooperate, neither side knows the other's messages, and \"treating interference as noise\" turns out to be suboptimal in many regimes. The optimal strategy depends delicately on interference strength: for very strong interference, decode-and-cancel works; for very weak, treat as noise; in between, the Han-Kobayashi rate-splitting strategy gives the best known inner bound, but exact capacity remains open. The difficulty reflects the absence of single-letter characterization — a pattern that the \"single-letterization miracle\" (see Ch. 11 Think Deeper Q1) does not save.\n\n**Think Deeper Q2.** Federated learning's gradient-aggregation step is mathematically a multi-terminal source-coding problem. What information-theoretic concept governs its bandwidth efficiency?\n\nEach client's gradient is a noisy observation of the same underlying quantity (the true population gradient). The server only needs the aggregate, not the individual gradients. By Slepian-Wolf-like reasoning, the joint per-client rate can be much smaller than the sum of per-client entropies — in the limit, the total bandwidth approaches the entropy of the _aggregate_ , not the sum of entropies. Practical compression schemes (gradient quantization, top-kkk sparsification, error-feedback) realize this in approximation, often achieving 100–1000× bandwidth reduction with negligible accuracy loss. The connection to Slepian-Wolf is not literal (clients don't coordinate), but the intuition is the same: correlated sources need fewer bits than independent ones.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 561,
+      "out_sha": "d320bf430bc6",
       "note": ""
     },
     {
