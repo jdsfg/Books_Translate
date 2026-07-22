@@ -3067,11 +3067,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 247,
       "src_chars": 3252,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4a4df774b505",
       "src": "### Chapter 7 — Practical Codes\n\n**Application Q1.** Why does an [n,k,d][n, k, d][n,k,d] code with d=2t+1d = 2t + 1d=2t+1 correct ttt errors but not t+1t + 1t+1?\n\nCodewords sit in Hamming space at minimum distance ddd apart. A received word at Hamming distance ≤t\\leq t≤t from a codeword ccc is closer to ccc than to any other codeword (which is at distance ≥d−t=t+1\\geq d - t = t + 1≥d−t=t+1 from ccc, hence distance ≥1\\geq 1≥1 from the received word, by the triangle inequality). At Hamming distance t+1t + 1t+1 from ccc, the received word may sit equidistant from a different codeword c′c'c′ at distance ddd from ccc, and decoding becomes ambiguous.\n\n**Application Q2 (Hamming code parameters).** Verify that the (7, 4) Hamming code has minimum distance 3 by exhibiting its parity-check matrix and confirming that all nonzero codewords have weight at least 3.\n\nThe parity-check matrix is\n\nH=(101010101100110001111).H = \\begin{pmatrix} 1 & 0 & 1 & 0 & 1 & 0 & 1 \\\\\\ 0 & 1 & 1 & 0 & 0 & 1 & 1 \\\\\\ 0 & 0 & 0 & 1 & 1 & 1 & 1 \\end{pmatrix}.H=​100​010​110​001​101​011​111​​.\n\nThe minimum weight of a nonzero codeword equals the minimum number of HHH columns that sum to zero. Any single column is nonzero (weight 1 sums to a nonzero vector), and any pair of columns is distinct (weight 2 also nonzero). The smallest dependent subset has size 3 — for example, columns 1, 2, 3 sum to zero ((1,0,0)+(0,1,0)+(1,1,0)=0\\binom{1,0,0}{} + \\binom{0,1,0}{} + \\binom{1,1,0}{} = 0(1,0,0​)+(0,1,0​)+(1,1,0​)=0). So dmin⁡=3d_{\\min} = 3dmin​=3 and the code corrects 1 error.\n\n**Application Q3 (Reed-Solomon overhead).** A storage system uses a (255,223)(255, 223)(255,223) Reed-Solomon code over F28\\mathbb{F}_{2^8}F28​. What is the rate, the number of erasures it tolerates, and the maximum number of errors it corrects?\n\nRate R=223/255≈87.5%R = 223/255 \\approx 87.5\\%R=223/255≈87.5% (overhead is 12.5%). Since RS is MDS, dmin⁡=n−k+1=33d_{\\min} = n - k + 1 = 33dmin​=n−k+1=33. Erasure tolerance: up to dmin⁡−1=32d_{\\min} - 1 = 32dmin​−1=32 erased symbols. Error correction: ⌊(dmin⁡−1)/2⌋=16\\lfloor (d_{\\min} - 1)/2 \\rfloor = 16⌊(dmin​−1)/2⌋=16 symbol errors. In a deep-space link, this lets the receiver recover from arbitrary loss of any 32 of 255 symbols, or arbitrary corruption of any 16 — vastly more robust than naive triple repetition.\n\n**Think Deeper Q1.** Why was Polar codes' provable capacity-achievement a major theoretical milestone, even though Turbo and LDPC were already empirically very good?\n\nPolar codes were the first explicit, constructive code family with a _proof_ of capacity-achievement (under successive cancellation decoding) for arbitrary binary-input symmetric channels. Earlier near-capacity codes (Turbo, LDPC) were empirically excellent but lacked provable guarantees; the field had spent 60 years separating Shannon's existence theorem from a constructive analog. Polar codes closed that gap. Adoption in 5G is partly a consequence of this provable status (regulators value certainty) and partly of practical SCL-decoding performance at moderate block lengths.\n\n**Think Deeper Q2.** Belief propagation on LDPC graphs is exact only on trees, yet it works well on the loopy Tanner graphs of real LDPC codes. What is the principled reason?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1226,
+      "out_sha": "9601981a460a",
       "note": ""
     },
     {
@@ -3079,11 +3079,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 248,
       "src_chars": 786,
-      "status": "pending",
+      "status": "done",
       "src_sha": "28d26899d11a",
       "src": "Two complementary explanations. (i) **Sparse loops are rare** : well-designed LDPC codes have girth growing with nnn, so locally the graph looks like a tree. BP messages computed in a small neighborhood are approximately correct because the loops are far away. (ii) **Density evolution** : Richardson-Urbanke 2001 showed that for random LDPC ensembles, the average per-edge error probability under BP follows a deterministic recursion (the _density evolution_ equations). This recursion has a fixed point at zero error iff the channel is below the BP threshold, which can be designed within a fraction of a dB of Shannon capacity. So BP's success on loopy graphs is not magic — it is the average-case behavior of well-chosen sparse ensembles, made rigorous by density evolution.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 269,
+      "out_sha": "7889a699e4bb",
       "note": ""
     },
     {
@@ -3091,11 +3091,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 249,
       "src_chars": 3349,
-      "status": "pending",
+      "status": "done",
       "src_sha": "939709c6332b",
       "src": "### Chapter 8 — Differential Entropy\n\n**Application Q1.** Compute the differential entropy of N(0,σ2)\\mathcal{N}(0, \\sigma^2)N(0,σ2) and verify it's the maximum among continuous distributions on R\\mathbb{R}R with second moment σ2\\sigma^2σ2.\n\nBy direct integration, h(N(0,σ2))=12log⁡(2πeσ2)h(\\mathcal{N}(0, \\sigma^2)) = \\tfrac{1}{2} \\log(2\\pi e \\sigma^2)h(N(0,σ2))=21​log(2πeσ2) nats. For any density fff with ∫x2f dx=σ2\\int x^2 f \\, dx = \\sigma^2∫x2fdx=σ2, the maximum-entropy argument (Lagrange multipliers on entropy with a second-moment constraint) gives the Gaussian as the optimum; equivalently, D(f∥N(0,σ2))≥0D(f \\| \\mathcal{N}(0, \\sigma^2)) \\geq 0D(f∥N(0,σ2))≥0 implies h(f)≤h(N(0,σ2))h(f) \\leq h(\\mathcal{N}(0, \\sigma^2))h(f)≤h(N(0,σ2)) when fff has the same variance.\n\n**Application Q2 (uniform vs Gaussian).** Compare the differential entropy of Uniform(0,a)\\text{Uniform}(0, a)Uniform(0,a) with that of N(0,σ2)\\mathcal{N}(0, \\sigma^2)N(0,σ2) at matching variance. What does the gap measure?\n\nThe uniform on [0,a][0, a][0,a] has variance a2/12a^2/12a2/12, so for matching variance a=σ12a = \\sigma \\sqrt{12}a=σ12​. Differential entropies: h(Uniform)=log⁡a=log⁡(σ12)=log⁡σ+12log⁡12≈log⁡σ+1.793h(\\text{Uniform}) = \\log a = \\log(\\sigma\\sqrt{12}) = \\log \\sigma + \\tfrac{1}{2}\\log 12 \\approx \\log\\sigma + 1.793h(Uniform)=loga=log(σ12​)=logσ+21​log12≈logσ+1.793 nats. h(N)=12log⁡(2πeσ2)=log⁡σ+12log⁡(2πe)≈log⁡σ+1.419h(\\mathcal{N}) = \\tfrac{1}{2}\\log(2\\pi e \\sigma^2) = \\log\\sigma + \\tfrac{1}{2}\\log(2\\pi e) \\approx \\log\\sigma + 1.419h(N)=21​log(2πeσ2)=logσ+21​log(2πe)≈logσ+1.419 nats.\n\nWait — the uniform is _higher_ entropy? At matching variance, no: I have made the conventional mistake. Recompute. h(N)−h(Uniform)=12log⁡(2πe)−12log⁡12=12log⁡(2πe/12)≈12log⁡(1.423)≈0.176h(\\mathcal{N}) - h(\\text{Uniform}) = \\tfrac{1}{2}\\log(2\\pi e) - \\tfrac{1}{2}\\log 12 = \\tfrac{1}{2}\\log(2\\pi e / 12) \\approx \\tfrac{1}{2}\\log(1.423) \\approx 0.176h(N)−h(Uniform)=21​log(2πe)−21​log12=21​log(2πe/12)≈21​log(1.423)≈0.176 nats. So the Gaussian is higher by about 0.18 nats — small, but positive, as the maximum-entropy theorem requires. The gap measures how much \"less spread out\" (in the entropy sense) the uniform is for the same variance: the Gaussian uses its tails to spread mass more efficiently.\n\n**Application Q3 (entropy power inequality).** State the entropy power inequality (EPI) and verify it for two independent Gaussians.\n\nEPI: for independent continuous X,YX, YX,Y on R\\mathbb{R}R,\n\n22h(X+Y)≥22h(X)+22h(Y),2^{2 h(X+Y)} \\geq 2^{2 h(X)} + 2^{2 h(Y)},22h(X+Y)≥22h(X)+22h(Y),\n\nwith equality iff both XXX and YYY are Gaussian with proportional variances. For X∼N(0,σ12),Y∼N(0,σ22)X \\sim \\mathcal{N}(0, \\sigma_1^2), Y \\sim \\mathcal{N}(0, \\sigma_2^2)X∼N(0,σ12​),Y∼N(0,σ22​), X+Y∼N(0,σ12+σ22)X + Y \\sim \\mathcal{N}(0, \\sigma_1^2 + \\sigma_2^2)X+Y∼N(0,σ12​+σ22​), so\n\n22h(X+Y)=2πe(σ12+σ22)=2πeσ12+2πeσ22=22h(X)+22h(Y).2^{2h(X+Y)} = 2 \\pi e (\\sigma_1^2 + \\sigma_2^2) = 2 \\pi e \\sigma_1^2 + 2\\pi e \\sigma_2^2 = 2^{2h(X)} + 2^{2h(Y)}.22h(X+Y)=2πe(σ12​+σ22​)=2πeσ12​+2πeσ22​=22h(X)+22h(Y).\n\nEquality, as predicted. EPI is the continuous analog of Fano-type inequalities and is the workhorse for continuous-channel converse arguments.\n\n**Think Deeper Q1.** Why is differential entropy not a measure of \"average information\" in the same sense Shannon entropy is?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1478,
+      "out_sha": "7111435bf5c5",
       "note": ""
     },
     {
@@ -3103,11 +3103,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 250,
       "src_chars": 1528,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7dac262f33fb",
       "src": "Three reasons. (i) Differential entropy can be **negative** (e.g., a Gaussian with σ<1/2πe\\sigma < 1/\\sqrt{2\\pi e}σ<1/2πe​ has h<0h < 0h<0) — meaningless as a count of bits. (ii) It is **not invariant under change of coordinates** : h(aX)=h(X)+log⁡∣a∣h(aX) = h(X) + \\log|a|h(aX)=h(X)+log∣a∣, so rescaling changes the \"information content,\" which Shannon entropy never does. (iii) It depends on the **arbitrary reference unit** of the variable's measurement (meters vs centimeters changes hhh by log⁡100\\log 100log100). For these reasons, only _differences_ of differential entropies (mutual information, KL divergence) are coordinate-invariant and operationally meaningful.\n\n**Think Deeper Q2.** Differential entropy of a discrete-supported distribution (e.g., a delta function at 000) is −∞-\\infty−∞. Is this a problem or a feature?\n\nBoth. As a problem: many real signals are mixtures of continuous and discrete components (e.g., a sensor with quantization), and hhh is then formally −∞-\\infty−∞, which makes hhh useless as a single-number summary. As a feature: it correctly signals that the deltaistic part carries _no continuous information_ and any rate-distortion analysis must be in operational terms (which the rate-distortion function of Ch. 11 handles cleanly). The right framework for mixed-support distributions is _relative_ entropy with respect to a chosen reference measure, which avoids the divergence issue and matches the mutual-information formulas that depend only on the joint-vs-product comparison.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 495,
+      "out_sha": "0ab3415efdf5",
       "note": ""
     },
     {
