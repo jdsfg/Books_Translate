@@ -2275,11 +2275,11 @@
       "en_title": "Chapter 14: Mutual Information in Deep Learning",
       "order": 181,
       "src_chars": 2985,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3f164b6d6fa7",
       "src": "The previous chapter introduced the Information Bottleneck principle and its application to representation learning. This chapter zooms in on a question that lurked behind every IB analysis: **how do we actually estimate mutual information from samples in high dimensions?**\n\nThe answer is uncomfortable: we usually can't, not reliably. Estimating MI from finite samples in high dimensions is a hard statistical problem, with fundamental lower bounds on accuracy. Modern neural estimators (MINE) have given us tools that work in some regimes, but they are biased and unstable, and many empirical claims about \"MI in deep learning\" rest on shaky estimation foundations.\n\nThis chapter develops the modern toolkit:\n\n* **Donsker-Varadhan representation** of KL, the basis for many neural MI estimators.\n* **MINE** (Mutual Information Neural Estimation) and its variants.\n* **InfoNCE** and its connection to contrastive learning.\n* **The McAllester-Stratos bound** , which formalizes the difficulty of MI estimation.\n* **Practical implications** for deep learning theory.\n\nThe chapter is honest about the limits: MI estimation is a powerful tool when used carefully, but it is also a frequent source of empirical claims that don't replicate. The lesson is methodological: be skeptical of empirical MI claims in high dimensions.\n\n\n### 14.1 Why MI Estimation is Hard\n\nMI estimation from samples is fundamentally harder than mean estimation or variance estimation.\n\nFor a continuous random variable, MI is\n\nI(X;Y)=D(p(X,Y)∥p(X)p(Y)).I(X; Y) = D(p(X, Y) \\| p(X) p(Y)).I(X;Y)=D(p(X,Y)∥p(X)p(Y)).\n\nEstimating this requires accessing the densities p(X,Y)p(X, Y)p(X,Y) and p(X)p(Y)p(X) p(Y)p(X)p(Y), which in high dimensions are not directly observable from samples.\n\n\n#### Classical estimators\n\n* **Histogram / binning** : bin the joint distribution into cells; estimate MI from cell counts. Fast but crude; bias depends on bin size.\n* **Kernel density estimation (KDE)** : smooth the empirical distribution with a kernel. Better than binning but still scales poorly with dimension.\n* **k-nearest-neighbors (Kraskov et al.)** : estimate MI from kNN distances. Better-behaved in moderate dimensions.\n\nAll these estimators suffer in high dimensions: they are biased, slow to converge, and unreliable.\n\n\n#### The McAllester-Stratos Bound\n\nIn 2018, McAllester and Stratos proved a fundamental lower bound: any MI estimator computed from nnn samples can be no smaller than I−O(log⁡n/n1/d)I - O(\\log n / n^{1/d})I−O(logn/n1/d) for distributions of dimension ddd, in a precise sense.\n\nThis is brutal. For high-dimensional distributions (e.g., 100-dimensional latent representations), no estimator can reliably distinguish MI of 5 nats from MI of 500 nats with reasonable sample sizes. The bound is information-theoretic; it cannot be circumvented by clever algorithms.\n\nThe practical consequence: empirical MI values in high dimensions should be treated as approximate signals, not precise measurements.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1037,
+      "out_sha": "ef59d063000e",
       "note": ""
     },
     {
@@ -2287,11 +2287,11 @@
       "en_title": "Chapter 14: Mutual Information in Deep Learning",
       "order": 182,
       "src_chars": 3132,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0174b2293b42",
       "src": "### 14.2 The Donsker-Varadhan Representation\n\nModern neural MI estimators rely on the **Donsker-Varadhan representation** of KL divergence. For any pair of distributions p,qp, qp,q:\n\nD(p∥q)=sup⁡TEp[T]−log⁡Eq[exp⁡T],D(p \\| q) = \\sup_T \\mathbb{E}_p[T] - \\log \\mathbb{E}_q[\\exp T],D(p∥q)=Tsup​Ep​[T]−logEq​[expT],\n\nwhere the supremum is over all functions T:X→RT: \\mathcal{X} \\to \\mathbb{R}T:X→R. The optimal T∗(x)=log⁡(p(x)/q(x))+cT^*(x) = \\log(p(x)/q(x)) + cT∗(x)=log(p(x)/q(x))+c.\n\nThis is a variational representation: KL is the maximum of a functional over test functions. By restricting to neural-network test functions, we get a parametric lower bound.\n\nFor mutual information, I(X;Y)=D(p(X,Y)∥p(X)p(Y))I(X; Y) = D(p(X, Y) \\| p(X) p(Y))I(X;Y)=D(p(X,Y)∥p(X)p(Y)), so\n\nI(X;Y)=sup⁡TEp(X,Y)[T(X,Y)]−log⁡Ep(X)p(Y)[exp⁡T(X,Y)].I(X; Y) = \\sup_T \\mathbb{E}_{p(X, Y)}[T(X, Y)] - \\log \\mathbb{E}_{p(X) p(Y)}[\\exp T(X, Y)].I(X;Y)=Tsup​Ep(X,Y)​[T(X,Y)]−logEp(X)p(Y)​[expT(X,Y)].\n\nEstimating this with samples and parametrizing T=TθT = T_\\thetaT=Tθ​ as a neural network gives the **MINE** estimator by Belghazi and collaborators in 2018.\n\n\n### 14.3 MINE: Mutual Information Neural Estimation\n\nThe MINE estimator:\n\n  1. Parametrize Tθ:X×Y→RT_\\theta: \\mathcal{X} \\times \\mathcal{Y} \\to \\mathbb{R}Tθ​:X×Y→R as a neural network.\n  2. Sample joint pairs (xi,yi)(x_i, y_i)(xi​,yi​) and \"shuffled\" pairs (xi,yπ(i))(x_i, y_{\\pi(i)})(xi​,yπ(i)​) (where π\\piπ is a random permutation).\n  3. Maximize Ejoint[Tθ]−log⁡Eshuffled[exp⁡Tθ]\\mathbb{E}_{\\text{joint}}[T_\\theta] - \\log \\mathbb{E}_{\\text{shuffled}}[\\exp T_\\theta]Ejoint​[Tθ​]−logEshuffled​[expTθ​] over θ\\thetaθ.\n\nThe result is a lower bound on I(X;Y)I(X; Y)I(X;Y).\n\n\n#### Practical issues\n\nMINE is theoretically attractive but practically tricky:\n\n* **High variance** : the estimator's variance scales exponentially with III, so high-MI estimates are very noisy.\n* **Biased gradient** : stochastic gradient estimates are biased toward zero.\n* **Convergence speed** : requires extensive training of TθT_\\thetaTθ​ for each MI estimate.\n* **Overestimation** : in practice, MINE often overestimates MI when the network is overparametrized.\n\nVariants (NWJ bound, JS bound, InfoNCE) have been proposed to mitigate these issues, with varying success.\n\n\n### 14.4 InfoNCE\n\nThe InfoNCE bound by Oord, Li, and Vinyals in 2018, originally proposed for contrastive predictive coding, has become the workhorse of self-supervised learning. It is mathematically a lower bound on mutual information:\n\nI(X;Y)≥E[log⁡exp⁡fθ(x,y)1K∑j=1Kexp⁡fθ(x,yj)]+log⁡K,I(X; Y) \\geq \\mathbb{E}\\left[\\log \\frac{\\exp f_\\theta(x, y)}{\\frac{1}{K} \\sum_{j=1}^K \\exp f_\\theta(x, y_j)}\\right] + \\log K,I(X;Y)≥E[logK1​∑j=1K​expfθ​(x,yj​)expfθ​(x,y)​]+logK,\n\nwhere the yjy_jyj​ are KKK \"negative\" samples (drawn from p(Y)p(Y)p(Y)) and yyy is a \"positive\" sample (drawn from p(Y∣X=x)p(Y \\mid X = x)p(Y∣X=x)).\n\nThe bound is tight when fθ(x,y)=log⁡p(y∣x)+cf_\\theta(x, y) = \\log p(y \\mid x) + cfθ​(x,y)=logp(y∣x)+c and the negatives are i.i.d. from p(Y)p(Y)p(Y). With KKK large, the bound approaches I(X;Y)I(X; Y)I(X;Y) up to log⁡K\\log KlogK.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1368,
+      "out_sha": "b6d0dbd2d8da",
       "note": ""
     },
     {
@@ -2299,23 +2299,23 @@
       "en_title": "Chapter 14: Mutual Information in Deep Learning",
       "order": 183,
       "src_chars": 2032,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d864e785bbde",
       "src": "#### The contrastive learning connection\n\nIn contrastive learning (SimCLR, MoCo, CLIP), fθ(x,y)=zxTzy/τf_\\theta(x, y) = z_x^T z_y / \\taufθ​(x,y)=zxT​zy​/τ where zzz are normalized embeddings and τ\\tauτ is a temperature. The InfoNCE loss, viewed as a lower-bound estimator for I(zx;zy)I(z_x; z_y)I(zx​;zy​), trains the encoder to maximize this MI lower bound.\n\nConnection to IB (Chapter 13): contrastive learning is implicit IB with the \"target\" being the paired view. Maximizing InfoNCE pushes I(zx;zy)I(z_x; z_y)I(zx​;zy​) up, which is implicitly bounded by the shared information in the augmentation procedure.\n\n\n#### Why InfoNCE works (and fails)\n\nThe bound I≥InfoNCE+log⁡KI \\geq \\text{InfoNCE} + \\log KI≥InfoNCE+logK is loose for finite KKK: it can underestimate III by log⁡K\\log KlogK bits. For typical contrastive learning with K=104K = 10^4K=104, the bound saturates at about 13 bits of MI. Beyond this, InfoNCE cannot detect higher mutual information.\n\nThis limits InfoNCE's applicability to settings with low-to-moderate MI. For very low MI tasks, the bound is loose. For very high MI tasks, the bound saturates.\n\nThe practical lesson: InfoNCE is an effective contrastive-learning loss but a limited MI estimator. Many empirical claims about \"MI captured by contrastive learning\" are constrained by this bound.\n\n\n### 14.5 Other Bounds\n\nSeveral other variational MI bounds have been proposed:\n\n* **NWJ bound** by Nguyen, Wainwright, and Jordan in 2010: I≥Ep(X,Y)[T]−e−1Ep(X)p(Y)[exp⁡T]I \\geq \\mathbb{E}_{p(X, Y)}[T] - e^{-1} \\mathbb{E}_{p(X) p(Y)}[\\exp T]I≥Ep(X,Y)​[T]−e−1Ep(X)p(Y)​[expT]. Similar to MINE but with a different functional form.\n* **JS bound** : based on Jensen-Shannon divergence; bounded but tighter in some regimes.\n* **TUBA (Tractable Upper-Bound Approximation)** : provides upper as well as lower bounds.\n* **Smoothed estimators** : combine multiple bounds for variance reduction.\n\nThe literature on MI bounds is large and still developing. Each bound has its operating regime; none is universally best.\n",
-      "out_chars": 0,
-      "out_sha": "",
-      "note": ""
+      "out_chars": 824,
+      "out_sha": "1f5eb6ad0d59",
+      "note": "glossary fix"
     },
     {
       "id": "c15_b04",
       "en_title": "Chapter 14: Mutual Information in Deep Learning",
       "order": 184,
       "src_chars": 1696,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8d77bc5ccad3",
       "src": "### 14.6 An AI Connection: Self-Supervised Foundation Models\n\nSelf-supervised learning at the foundation-model scale has become central to modern AI. Models like SimCLR, MoCo, BYOL, CLIP, DINO are trained without labels by maximizing some form of mutual information (or related objective) between augmented views or paired modalities.\n\nThe information-theoretic perspective:\n\n* **Augmentation as a \"channel\"** : data augmentation creates a channel between original and augmented views. The capacity of this channel determines the MI between views.\n* **Encoder as channel decoder** : the learned encoder extracts the MI between augmentations into a representation.\n* **Pretraining objective is MI maximization** : InfoNCE-style losses are explicit MI maximizers.\n\nWhy does this work? Two arguments:\n\n  1. **MI maximization preserves invariances** : features that survive augmentation must be invariant to the augmentation. These are typically semantically meaningful (object identity, scene structure).\n\n  2. **Implicit data alignment** : the loss also drives \"alignment\" (paired views close together) and \"uniformity\" (random views spread out on the hypersphere). These geometric properties are not strictly MI but contribute to the empirical success.\n\nThe honest verdict: contrastive self-supervised learning works empirically, and MI is a useful framework for understanding it, but the precise role of MI is contested. Recent work has shown that contrastive losses without explicit MI interpretation (BYOL with stop-gradient, SimSiam) work nearly as well, suggesting that MI maximization may not be the primary cause of success.\n\nThe framework is valuable; its empirical centrality is debated.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 563,
+      "out_sha": "ff0a66fe6ad4",
       "note": ""
     },
     {
@@ -2323,11 +2323,11 @@
       "en_title": "Chapter 14: Mutual Information in Deep Learning",
       "order": 185,
       "src_chars": 2923,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8fdb06842a86",
       "src": "### 14.7 Historical Note: From Donsker–Varadhan to MINE\n\nThe variational representation of KL divergence at the heart of MINE is older than the modern field of mutual information estimation. M. D. Donsker and S. R. S. Varadhan introduced it in their 1975–1983 series of papers on large deviation theory, where it served as a tool for proving rate functions for the asymptotic behavior of empirical measures. The representation D(p∥q)=sup⁡TEp[T]−log⁡Eq[exp⁡T]D(p \\| q) = \\sup_T \\mathbb{E}_p[T] - \\log \\mathbb{E}_q[\\exp T]D(p∥q)=supT​Ep​[T]−logEq​[expT] is sometimes called the _Donsker–Varadhan variational formula_.\n\nFor nearly four decades the formula was a tool of mathematical statistics, not machine learning. The bridge to ML was MINE by Belghazi and colleagues in 2018, which observed that one could parametrize TTT as a neural network and obtain a differentiable lower bound on mutual information, trainable by stochastic gradient descent. The contemporaneous InfoNCE bound by Oord, Li, and Vinyals in 2018 made a related observation in the contrastive-learning context.\n\nThe history is a microcosm of how information theory has interacted with machine learning since 2015. A formula sitting unused in mathematical statistics for decades suddenly becomes a workhorse of self-supervised learning because someone notices it can be parametrized with a neural network and trained with SGD. The same pattern recurs in Chapter 7 (belief propagation = LDPC decoding = variational inference) and Chapter 13 (information bottleneck = an information-theoretic Lagrangian rediscovered as a deep-learning objective).\n\nThe McAllester–Stratos lower bound on estimator accuracy (2018) provided the cautionary counterweight: it told us that the new estimators, however clever, are bounded in what they can resolve. The combination of MINE and McAllester–Stratos defines the contemporary practice: use neural MI estimators, but treat their high-dimensional outputs as approximate signals.\n\n\n### Common Misconception\n\n* **Misconception** : \"MINE accurately estimates mutual information.\"\n\nMINE provides a lower bound, but in practice it can be biased (often upward) and has high variance. Empirical MI estimates from MINE in high dimensions should be treated as approximate.\n\n* **Misconception** : \"InfoNCE measures the MI between views.\"\n\nInfoNCE is a _lower bound_ on MI, capped at log⁡K\\log KlogK for KKK negative samples. For typical K=104K = 10^4K=104, it saturates at log⁡2104≈13\\log_2 10^4 \\approx 13log2​104≈13 bits. Higher MI cannot be detected.\n\n* **Misconception** : \"Self-supervised learning works because it maximizes mutual information.\"\n\nSelf-supervised learning empirically works, and InfoNCE is one effective loss. But methods like BYOL (no explicit MI objective) work similarly, suggesting MI is part of the story but not all of it. Geometric properties (alignment, uniformity) and inductive biases also contribute.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1071,
+      "out_sha": "7dbae4ca42d0",
       "note": ""
     },
     {
@@ -2335,11 +2335,11 @@
       "en_title": "Chapter 14: Mutual Information in Deep Learning",
       "order": 186,
       "src_chars": 3067,
-      "status": "pending",
+      "status": "done",
       "src_sha": "eaf0b661a2b5",
       "src": "### Chapter Summary\n\nMutual information estimation in high dimensions is fundamentally hard. The McAllester-Stratos bound formalizes this: any estimator from nnn samples in dimension ddd is bounded by O(log⁡n/n1/d)O(\\log n / n^{1/d})O(logn/n1/d) accuracy.\n\nModern neural estimators (MINE, InfoNCE) provide lower bounds based on the Donsker-Varadhan representation. They are useful as training objectives (InfoNCE for contrastive learning) but unreliable as point estimators of MI.\n\nThe connection to self-supervised learning: contrastive methods maximize MI lower bounds between augmented views, producing representations that are useful for downstream tasks. The role of MI in this success is empirically established but theoretically contested.\n\nThe broader lesson: be cautious of empirical MI claims in deep learning. The estimators are biased and noisy; the bounds are loose. Use MI as a framework and a heuristic, not as a precise measurement.\n\nThe next chapter — language models as information theory — applies cross-entropy and entropy estimation in a domain (text) where the math is more tractable.\n\n\n### 14.X Exercises\n\n\n#### Concept Check\n\n**Q1.** State the Donsker-Varadhan representation of KL divergence.\n\n**Answer:** D(p∥q)=sup⁡T[EpT−log⁡Eqexp⁡T]D(p \\| q) = \\sup_T [\\mathbb{E}_p T - \\log \\mathbb{E}_q \\exp T]D(p∥q)=supT​[Ep​T−logEq​expT], with the supremum over functions T:X→RT: \\mathcal{X} \\to \\mathbb{R}T:X→R. The optimum is T∗(x)=log⁡(p(x)/q(x))+cT^*(x) = \\log(p(x)/q(x)) + cT∗(x)=log(p(x)/q(x))+c.\n\n**Q2.** What is MINE, and what does it produce?\n\n**Answer:** MINE (Mutual Information Neural Estimation) parametrizes TθT_\\thetaTθ​ as a neural network and uses the Donsker-Varadhan representation to compute a lower bound on mutual information from samples.\n\nThe output is a lower bound on I(X;Y)I(X; Y)I(X;Y), trained by maximizing the bound over θ\\thetaθ. Practically, MINE is biased (can over- or underestimate) and has high variance, especially in high dimensions.\n\n**Q3.** What is InfoNCE, and how does it bound MI?\n\n**Answer:** InfoNCE: I(X;Y)≥E[log⁡(exp⁡f(x,y)/(1K∑jexp⁡f(x,yj)))]+log⁡KI(X; Y) \\geq \\mathbb{E}[\\log(\\exp f(x, y) / (\\frac{1}{K} \\sum_j \\exp f(x, y_j)))] + \\log KI(X;Y)≥E[log(expf(x,y)/(K1​∑j​expf(x,yj​)))]+logK, where yyy is a positive sample and yjy_jyj​ are KKK negative samples.\n\nThe bound is tight when f(x,y)=log⁡p(y∣x)+cf(x, y) = \\log p(y \\mid x) + cf(x,y)=logp(y∣x)+c and KKK is large; it saturates at log⁡K\\log KlogK. For K=10000K = 10000K=10000, it caps at about 13 bits.\n\n**Q4.** Why is MI estimation in high dimensions hard?\n\n**Answer:** Three reasons:\n\n  1. **Statistical** : the McAllester-Stratos bound shows accuracy degrades as n−1/dn^{-1/d}n−1/d in dimension ddd — exponentially bad in dimension.\n  2. **Computational** : classical density-based estimators (KDE) scale poorly with dimension.\n  3. **Bias** : neural estimators are typically biased; bias direction depends on the network and the regime.\n\nIn high dimensions, MI cannot be reliably estimated from any reasonable sample size with any known method.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1199,
+      "out_sha": "ed742edd4ded",
       "note": ""
     },
     {
@@ -2347,11 +2347,11 @@
       "en_title": "Chapter 14: Mutual Information in Deep Learning",
       "order": 187,
       "src_chars": 3423,
-      "status": "pending",
+      "status": "done",
       "src_sha": "487313b2f607",
       "src": "#### Application Problems\n\n**Q1.** A self-supervised contrastive method uses InfoNCE with K=4096K = 4096K=4096 negatives per positive. What is the maximum MI the bound can detect?\n\n**Answer:** log⁡24096=12\\log_2 4096 = 12log2​4096=12 bits. Any MI above 12 bits saturates the InfoNCE bound. Detected MI is at most 12 bits no matter how informative the views actually are.\n\nTo detect higher MI, increase KKK. K=106K = 10^6K=106 gives log⁡2106≈20\\log_2 10^6 \\approx 20log2​106≈20 bits ceiling.\n\n**Q2.** A MINE estimator for the MI between a 100-dimensional Gaussian XXX and a 100-dimensional Gaussian YYY (jointly Gaussian with known covariance) gives an estimate of 50 nats. Should you trust this estimate?\n\n**Answer:** For jointly Gaussian variables, the true MI is computable in closed form: I=−12log⁡det⁡(ρ)I = -\\frac{1}{2} \\log \\det(\\rho)I=−21​logdet(ρ) where ρ\\rhoρ is the canonical correlation matrix. So you have a ground truth.\n\nMINE in high dimensions (100D) is known to be unreliable. The estimate of 50 nats may be biased substantially. Compare to ground truth before trusting.\n\nIn practice, MINE is most useful in low-to-moderate dimensions (say, up to 10-20) where the estimation is more tractable. For very high dimensions, it should be used with extreme caution.\n\n**Q3.** A contrastive learning method achieves InfoNCE = 9 bits on a paired-image task. Can we conclude the MI between paired views is 9 bits?\n\n**Answer:** Not directly. InfoNCE is a _lower bound_ : the true MI is at least 9 bits (modulo bias and noise in the estimator). The actual MI could be substantially higher; the bound just doesn't tell us how much.\n\nIf the InfoNCE saturates at log⁡K\\log KlogK, the true MI may be much higher but undetected. Increasing KKK would (in principle) tighten the bound.\n\nFor the contrastive method's training, all that matters is that the loss is being minimized — the absolute MI value is interpretive. For scientific claims about MI captured, more careful estimation is needed.\n\n**Q4.** Explain why self-supervised methods like BYOL (no explicit MI maximization) succeed despite the lack of an explicit information-theoretic loss.\n\n**Answer:** BYOL (Bootstrap Your Own Latent) trains an encoder to predict its own outputs from augmented views, with stop-gradient preventing trivial collapse to a constant. There is no explicit InfoNCE-style MI maximization.\n\nYet BYOL's representations are nearly as good as SimCLR's for downstream tasks. Why?\n\nSeveral theories:\n\n  1. **Implicit MI maximization** : the prediction objective implicitly maximizes MI between views, even without explicit negatives.\n  2. **Geometric properties** : BYOL produces representations with similar alignment and uniformity properties as InfoNCE-trained models.\n  3. **Stop-gradient regularization** : prevents collapse, which is the only way to achieve constant predictions.\n  4. **Architecture matters more than loss** : the encoder architecture's inductive biases may dominate the loss specifics.\n\nThe honest assessment: we don't fully understand why BYOL works. Recent work has shown that simple variants (SimSiam) work nearly as well with even simpler losses. This suggests the role of MI in self-supervised learning is more subtle than InfoNCE-style methods imply.\n\nThe lesson: MI is a useful framework, but it is not the unique cause of self-supervised success. Geometric and architectural choices play equally important roles.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1279,
+      "out_sha": "85694ad82486",
       "note": ""
     },
     {
@@ -2359,23 +2359,23 @@
       "en_title": "Chapter 14: Mutual Information in Deep Learning",
       "order": 188,
       "src_chars": 3360,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e8087ddc7566",
       "src": "#### Think Deeper\n\n**Q1.** Should empirical MI estimates in deep learning papers be trusted?\n\n**Discussion:** Cautiously. Several rules of thumb:\n\n  1. **Low dimensions ( < 10)**: kNN-based estimators (Kraskov) are fairly reliable. KDE works.\n  2. **Moderate dimensions (10-50)** : neural estimators (MINE) are usable but have known biases. Verify with multiple estimators.\n  3. **High dimensions ( > 100)**: no estimator is reliable. MI claims should be treated as qualitative.\n  4. **Bounds, not point estimates** : InfoNCE and similar give bounds, not estimates. Use them as such.\n  5. **Sanity checks** : when ground truth is available (Gaussian, copula), check the estimator. If it fails, don't trust the same estimator on harder problems.\n  6. **Robustness to hyperparameters** : if MI estimates change wildly with bin size, kernel bandwidth, or network architecture, the estimate is unreliable.\n\nFollowing these rules eliminates many false MI claims. Unfortunately, the deep learning literature has not always followed them, and many published MI claims are likely artifacts.\n\n**Q2.** Why has MINE not become a standard tool in deep learning practice?\n\n**Discussion:** Several reasons.\n\n  1. **Instability** : MINE's gradient estimates are biased and high-variance. Training is finicky.\n  2. **Capacity** : training MINE requires extensive resources for each MI estimate.\n  3. **Use case** : MI estimation is rarely the goal of deep learning. Cross-entropy, contrastive losses, and other objectives directly optimize what we care about.\n  4. **Better alternatives for specific tasks** : InfoNCE is now standard for contrastive learning; explicit MI estimation is not needed.\n\nMINE is a research tool, useful for specific MI estimation problems but not a workhorse of deep learning practice. It has been influential in showing that neural networks can estimate MI in moderate dimensions, opening up applications, but its direct use is limited.\n\n**Q3.** The connection between contrastive learning and MI is contested. What does this say about the role of theory in deep learning?\n\n**Discussion:** Theory in deep learning is often retrospective, post-hoc, and contested. Successful methods (contrastive learning, transformer architecture, scaling laws) emerged from empirical experimentation, with theoretical interpretations following.\n\nFor contrastive learning:\n\n* 2018 InfoNCE: framed as MI maximization. Beautiful theory.\n* 2020 BYOL: shows MI maximization is not necessary.\n* 2021 onward: alignment and uniformity (Wang and Isola) framework provides geometric explanation.\n* Current: multiple competing theories, no consensus.\n\nThis is healthy. Theory evolves to match practice; practice is not constrained to wait for theory. The danger is when theoretical interpretations are mistaken for established science — they are heuristics that may or may not survive further empirical scrutiny.\n\nIn deep learning, the right epistemic stance is: theories are organizing principles to be tested and refined, not authoritative explanations. Successful practice often runs ahead of theoretical understanding.\n\nThis is similar to many areas of engineering. Steam engines worked before thermodynamics was understood. Antibiotics worked before molecular microbiology. Deep learning works without a unified theory. The theory will come; the practice doesn't wait.\n",
-      "out_chars": 0,
-      "out_sha": "",
-      "note": ""
+      "out_chars": 1193,
+      "out_sha": "eda7495093ab",
+      "note": "glossary fix"
     },
     {
       "id": "c15_b09",
       "en_title": "Chapter 14: Mutual Information in Deep Learning",
       "order": 189,
       "src_chars": 536,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c02c70c36b8a",
       "src": "### Connections to Subsequent Chapters\n\nThis chapter completed the survey of MI estimation in deep learning.\n\n* **Chapter 15** : language models as compressors — concrete information-theoretic measurement in a tractable domain.\n* **Chapter 18** : capstone uses MINE to estimate layer-wise MI in a trained model, with appropriate caveats.\n\nA reader who has finished this chapter is appropriately skeptical of high-dimensional MI claims and equipped to read modern self-supervised learning papers with the right critical lens.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 186,
+      "out_sha": "666f3c83c3b9",
       "note": ""
     },
     {
