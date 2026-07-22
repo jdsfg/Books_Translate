@@ -131,11 +131,11 @@
       "en_title": "导读",
       "order": 0,
       "src_chars": 2862,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7502a2546205",
       "src": "> 本导读整理自 Socratopia 网站本书介绍页：https://www.socratopia.app/library/ai-engineering-en\n\nThat incident, anchored in Chapter 14, is one of six real or composite failures this book uses as cautionary fixed points. Around them it builds a discipline. AI engineering in 2026 is not prompt-tinkering, not LangChain plumbing, and not waiting for the next model release to fix what's broken. It is engineering against a stochastic component you do not own — eval-driven, cost-aware, observability-first, bounded by design.\n\nThe book installs one habit above all: for every architectural choice you make, you should be able to answer four orthogonal questions — What's the pattern? What does the eval look like? How does it fail in production? What's the cost? These four questions become the spine of every chapter. They are the difference between an AI engineer and someone who shipped a demo.\n\nThree production cases recur through 25 chapters. Beacon Health AI builds a HIPAA-bound clinical-notes summarizer where the eval set itself is PHI and observability creates a BAA tension. Strata Research walks a legal-tech RAG arc from 43% to 81% pass rate over twelve months — no breakthrough, no single trick, just consistent application of four levers (chunking, embedding, retrieval, ranking) and an eval that catches every regression. Helios Customer AI runs an enterprise agent platform at 10M tickets/month and $1M+/month inference cost, with 63% deflection rate and per-tenant budget governance. By the end you will recognize their decisions as your own.\n\nWhat you take away is not a survey. It is fifteen binding workflows (eval-as-CI in GitHub Actions; a versioned prompt registry with A/B/C results; bounded-agent design doc; LiteLLM router config with per-tenant caps; Anthropic prompt caching with break-even math; the four-layer prompt-injection defense; and ten others) — each a production-grade artifact you can ship Monday morning. Four appendices close the loops: a 15-paper reading list, a catalog of ten reference architectures plus agent frameworks, a 280-term glossary, and a seven anti-pattern cheat sheet calibrated for team self-audit. If you finish the book and the four questions feel automatic, the book has succeeded.\n\n**Target audience**：software engineers and ML engineers pivoting into AI-product work; tech leads and EMs designing AI features; founders building LLM-powered startups; senior engineers adding AI features at established companies; junior engineers landing AI engineering jobs in 2026\n\n**Prerequisites**：Python fluency (B142 Python Programming in the AI Era or equivalent); conceptual familiarity with LLMs (B058 AI Science I or equivalent); API thinking + JSON + basic backend engineering. No ML PhD required.\n\n**Study hours**：~90–110 hours (25 chapters at roughly 3.5–4.5 hours each, including exercises with full worked solutions)",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1394,
+      "out_sha": "45dbb8127a1f",
       "note": ""
     },
     {
@@ -143,11 +143,11 @@
       "en_title": "Introduction",
       "order": 1,
       "src_chars": 2403,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4c8318e79ab8",
       "src": "In 2022, _AI engineer_ wasn't really a job title. Some people in machine learning called themselves that occasionally; the practice they pointed to was a loose collection of techniques applied to LLMs that had only recently become useful for general work. There was no consensus stack. There were no agreed disciplines. There weren't really textbooks.\n\nIn 2026, _AI engineer_ is a job title with a recognizable shape. There is a discipline. There is a stack. There is, you'll find, this book — one of several attempting to capture what the discipline has become. The book you are holding is the production-AI engineering bible the field needed since 2024 and finally got in 2026.\n\nThe shape this book takes is determined by what AI engineering actually is in 2026: engineering against a stochastic component you do not own. You did not train the model. You do not control when the provider updates it. You cannot guarantee any specific output. Yet you are responsible for the product that ships the model's outputs to your customers. The engineering discipline this implies — eval-driven development; bounded agent design; cost discipline; observability; the four-layer safety pattern; honest engineering judgment about what to build — is what the next 25 chapters lay out.\n\n\n#### Who this book is for\n\nThe book is written for the people doing this work today, and the people about to start. Specifically:\n\n* **Software engineers and ML engineers pivoting into AI-product work.** You know how to write production code; you need the AI-engineering layer on top.\n* **Tech leads and engineering managers designing AI features.** You set the team's discipline; this book is the discipline.\n* **Founders building LLM-powered startups.** You're betting the company on the architecture; the architecture is here.\n* **Senior engineers at companies adding AI features.** You've been asked to make the company AI-native; here is how to do it well.\n* **Junior engineers landing AI engineering jobs in 2026.** The interview for these jobs increasingly assumes the discipline in this book. Internalize it.\n\nIt is also suitable for AI researchers wanting fluency in productionization, consultants advising on AI projects, CTOs evaluating AI-platform decisions, and product managers willing to engage with engineering reality. The book is written at the level of an experienced engineer; it does not assume an ML PhD.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 887,
+      "out_sha": "aa8f980f8c31",
       "note": ""
     },
     {
@@ -155,11 +155,11 @@
       "en_title": "Introduction",
       "order": 2,
       "src_chars": 3132,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d3f5a0015e36",
       "src": "#### The shape of the book\n\nThe 25 chapters are organized into 9 parts. Each builds on the last; reading in order is recommended but not required.\n\n* **Part I (Chapters 1-3): Foundations.** What AI engineering is; the LLM mental model engineers actually use; the first API call you'll write and the production wrapping around it.\n\n* **Part II (Chapters 4-5): Evals as Spec.** The central discipline of the book. Without evals, every other layer is built on sand; with them, the engineering becomes possible.\n\n* **Part III (Chapters 6-8): Prompts, Output, Context.** The first layer of LLM-specific engineering: prompts as versioned artifacts; structured output that downstream code can trust; context budgeting as a finite-resource problem.\n\n* **Part IV (Chapters 9-12): Retrieval-Augmented Generation.** RAG from first principles; the four levers (chunking, embedding, retrieval, ranking); advanced patterns; multimodal RAG.\n\n* **Part V (Chapters 13-15): Agents and Tool Use.** Tools that let LLMs do things; bounded agents that don't spiral; multi-agent coordination; the computer-use frontier.\n\n* **Part VI (Chapters 16-19): Production AI Systems.** The 9-layer architecture stack; multi-model routing; cost optimization; observability and tracing.\n\n* **Part VII (Chapters 20-21): Voice and Production Operations.** Voice AI as its own engineering discipline; production eval, drift detection, and the model upgrade workflow.\n\n* **Part VIII (Chapters 22-23): Beyond Off-the-Shelf and Safety.** When to fine-tune, self-host, or go on-device; the four-layer safety architecture for production AI.\n\n* **Part IX (Chapters 24-25): Synthesis.** Teams, workflow, and engineering judgment; the consolidated anti-patterns and where the field is going.\n\nEach chapter follows a consistent structure: opening hook, sections building the discipline, a \"How This Breaks\" section naming a specific failure mode and its mitigation, a Triangle Trade-off sidebar exploring cost-latency-quality, a chapter summary tying back and forward, and exercises with full worked answers.\n\n\n#### How to get the most out of this book\n\nThree reading practices that will compound the book's value.\n\n**Read with your production system in mind.** Each chapter's discipline has a specific application to a system you're building or considering. Map the chapter to your current work; identify gaps; queue them for attention. The book is a tool for improving your team's practice, not just a survey of the field.\n\n**Work the exercises.** Each chapter ends with Concept Check, Application Problems, and Think Deeper exercises. They are not decoration. The Application Problems in particular include AI-collaboration sub-questions designed to teach you how to use an LLM as a thinking partner; treat them as practice.\n\n**Track the threading.** Three production cases — Beacon Health AI (clinical-notes summarization under HIPAA), Strata Research (legal-tech RAG), and Helios Customer AI (enterprise agents at 1M+ USD/month scale) — recur across nearly every chapter. The repeated cases let you see how disciplines compound in a real production context. Watch for them.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1255,
+      "out_sha": "8689a76d961f",
       "note": ""
     },
     {
@@ -167,11 +167,11 @@
       "en_title": "Introduction",
       "order": 3,
       "src_chars": 2769,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9b7b9f025b40",
       "src": "#### What this book is not\n\nThis book is not a survey of LLM capabilities; that genre exists elsewhere. It is not a research book on AI; researchers will find the depth inadequate. It is not a prompt-engineering tip list; the discipline has matured beyond that frame. It is not a LangChain tutorial — LangChain is one tool among many; this book is framework-pluralist.\n\nIt is also not a static reference. Specific tools, specific prices, specific named models will date. The book carries explicit \"Current as of 2026\" sidebars on the chapters most exposed to dating. A 2027 second edition will refresh those parts; the durable discipline (eval-driven development, bounded design, safety architecture) will need less revision.\n\n\n#### The book's central commitment\n\nIf you take only one thing from this book, take this: **evals are the spec; cost / latency / quality is a triangle with no free lunch; every pattern has a failure mode; AI engineering is engineering, not alchemy.**\n\nEvery chapter, in some way, is an elaboration of these four claims. The reader who finishes the book should be able to answer four orthogonal questions for every architectural choice they make for the rest of their career:\n\n  1. What's the pattern?\n  2. What does the eval look like?\n  3. How does it fail in production?\n  4. What's the cost?\n\nThe discipline of asking these four questions, every time, is what the book exists to install. If you finish the book and these questions feel natural — if you find yourself asking them automatically about new features your team proposes — the book has succeeded.\n\nNow go build something. The discipline works; the field is open; the practice is yours.\n\n\n#### Conventions used in this book\n\n**Model identifiers.** Code examples throughout the book pin to dated model versions like `claude-sonnet-4-20260315`, `claude-haiku-4-20250630`, and `gpt-4o-realtime-preview-2025`. These are _illustrative placeholders_ representing the kind of dated-version pinning that production code should use. The exact dated strings are not real public Anthropic / OpenAI snapshot IDs; substitute the current dated version from your provider's API docs before running the code. The pinning discipline is real and recommended; the specific date strings are not.\n\n**Pricing.** The 2026 prices quoted (3 USD/1M input for Sonnet 4, 15 USD/1M output, etc.) are accurate as of mid-2026 but providers reprice quarterly. Verify before doing breakeven math.\n\n**Threading characters.** Aiyana Carter (Beacon Health AI), the Strata Research team, and the Helios Customer AI staff engineer are composite characters drawn from real situations, engineered to teach. The companies, names, and incidents are fictional; the engineering decisions and trade-offs are not.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1139,
+      "out_sha": "0a7a47443aa9",
       "note": ""
     },
     {
@@ -179,11 +179,11 @@
       "en_title": "Chapter 1: What Is AI Engineering?",
       "order": 4,
       "src_chars": 3085,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a967db4205b5",
       "src": "Aiyana Carter has been a software engineer for nine years. Two months ago, her title changed. It now reads _Senior AI Engineer_ on the all-hands slide. Her job changed too, but not in the way the title suggested.\n\nShe is not training models. The clinical-notes summarizer her team at Beacon Health AI is shipping calls Anthropic's API. The CodeReview Bot the dev-tools team is building calls OpenAI's. There is no GPU cluster in the office. There is no PyTorch in the codebase that she touches daily. There is no paper she is going to publish.\n\nWhat there is, instead, is a list. The list has prompts on it. It has eval scores on it. It has a column for cost per query. It has a column for p50 latency (the median response time across requests). It has a column that reads _fail mode_ , and the entries in that column are sentences like _the model sometimes invents a medication that wasn't in the doctor's dictation, and the eval set we shipped does not catch it_. The list is the spec. The list is the engineering. The list is the job.\n\nThis is the job a hundred thousand software engineers got handed in 2025 and that two hundred thousand more will get handed in 2026. Most of them are looking around, the way Aiyana looked around two months ago, and asking: _is this engineering, or is this something else?_\n\nIt is engineering. It is a new kind of engineering, and it has a name, and it has a shape, and the shape is the subject of this book.\n\n\n### 1.1 The split: research is not engineering\n\nA useful place to start is with the split. For about thirty years, the people who built systems with machine learning were the same people who trained the models. You wrote the model, you trained the model, you served the model, you watched the model fail in production, you went back and trained a new model. The pipeline was vertical, and the title that covered the whole pipeline was _machine learning engineer_ , or sometimes _applied scientist_. The split between research and engineering was small, because the artifact you were building started with a paper and ended with an API call from a frontend.\n\nLarge language models broke this. The models are now too large for one team to train. A model with 70 billion parameters costs tens of millions of dollars to pretrain. The teams that pretrain frontier models number in the dozens (sometimes hundreds when counting infrastructure people), and they sit at a small number of labs: Anthropic, OpenAI, Google DeepMind, Meta, Mistral, a few others. They publish papers. They release weights or APIs. They train the next model.\n\nThen there is everybody else. Everybody else takes the model that comes out of those labs and builds products with it. The product layer is now huge: every company with software in production is being asked to add LLM features to it. Every startup pitch deck has an LLM in it somewhere. Every internal-tools team is being told to _try AI on this_.\n\nThe split, then, is this: **research builds better models; engineering builds products with them.** They share a vocabulary. They do not share a working day.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1104,
+      "out_sha": "f85ebce9cb7c",
       "note": ""
     },
     {
@@ -191,11 +191,11 @@
       "en_title": "Chapter 1: What Is AI Engineering?",
       "order": 5,
       "src_chars": 1218,
-      "status": "pending",
+      "status": "done",
       "src_sha": "90d3d15fde52",
       "src": "#### Definition: AI engineering\n\nThe discipline of building, shipping, and operating production software systems whose central capability is provided by a large language model (or a related foundation model) accessed as a service or as a self-hosted artifact. The engineer does not train the foundation model; the engineer makes the foundation model useful inside a product.\n\nIn plain language, this means: if you call an LLM from a backend, you are an AI engineer. If you wire that backend into a frontend, you are an AI engineer. If you build the eval suite that decides whether your LLM-powered feature ships, you are an AI engineer. If you operate the cost dashboards that keep the bill from running away, you are an AI engineer.\n\nYou are not necessarily a machine learning researcher. You are not necessarily someone who can derive backpropagation from scratch. You are not necessarily someone who has read fifty NeurIPS papers in the last year. Those are good things to be, but they are not the job. The job is engineering against a stochastic component you do not own.\n\nThat last phrase is the whole game, and the rest of this book is built on it: **engineering against a stochastic component you do not own.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 389,
+      "out_sha": "d3f1d1a77fad",
       "note": ""
     },
     {
