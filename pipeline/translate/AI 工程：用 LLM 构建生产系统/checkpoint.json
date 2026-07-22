@@ -707,11 +707,11 @@
       "en_title": "Chapter 2: The LLM Mental Model for Engineers",
       "order": 48,
       "src_chars": 573,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c5ec3c323df1",
       "src": "One prompt design decision this changes: **put the long, stable, system-level material at the _front_ of the prompt and the short, per-request material at the _back_**. Reverse that order and you waste your cache, because the cache matches on prefixes. Specifically: system prompt, then few-shot examples, then long retrieved context, then the user's query last. This is the canonical layout, and the KV-cache explanation is why it is the canonical layout rather than an arbitrary stylistic preference. Chapter 8 will return to this when it formalizes context engineering.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 211,
+      "out_sha": "cd633a4fec93",
       "note": ""
     },
     {
@@ -719,11 +719,11 @@
       "en_title": "Chapter 2: The LLM Mental Model for Engineers",
       "order": 49,
       "src_chars": 3439,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4ed7501d9cab",
       "src": "#### Application Problems\n\n**Q1.** _Estimating the cost of a feature_. You are scoping a chat feature for the Beacon Health CodeReview Bot. The feature will:\n\n* Use a fixed 1200-token system prompt (cached, 0.30 USD/1M effective)\n* Include the diff being reviewed (typical: 2500 tokens, fresh input)\n* Have no retrieved RAG context (the model uses the diff directly)\n* Use no tools\n* Produce structured-output reviews of approximately 800 tokens\n\nEstimate the per-PR inference cost at Sonnet 4 (3.00 USD/1M input fresh, 0.30 USD/1M cached read, 15.00 USD/1M output). The team handles 80 PRs per day across the engineering org. Estimate the monthly inference cost. Also estimate what the cost would be at GPT-4o-mini (0.15 USD/1M input, 0.60 USD/1M output) and at Claude Haiku (0.80 USD/1M input, 4 USD/1M output), both reasonable cheaper alternatives.\n\nHint\n\nCompute the per-call cost as the sum of (input tokens × input rate) + (output tokens × output rate), being careful to use the cached-read rate for the cacheable portion.\n\n**Answer:** Per-PR cost decomposition at Sonnet 4:\n\n* System prompt (cached read): 1200 × 0.30 USD/1M = **0.00036 USD**\n* Diff (fresh input): 2500 × 3.00 USD/1M = **0.0075 USD**\n* Output: 800 × 15.00 USD/1M = **0.012 USD**\n* **Total per PR: ~0.0199 USD ≈ 0.020 USD**\n\nAt 80 PRs/day × 30 days = 2400 PRs/month: **2400 × 0.020 USD = 48 USD/month** at Sonnet 4.\n\nAt GPT-4o-mini:\n\n* System prompt: 1200 × 0.15 USD/1M = 0.00018 USD (mini does not have the same prompt-caching discount as Sonnet; treat as fresh)\n* Diff: 2500 × 0.15 USD/1M = 0.000375 USD\n* Output: 800 × 0.60 USD/1M = 0.00048 USD\n* **Per PR: ~0.001 USD**\n* **Monthly: 2400 × 0.001 USD = 2.40 USD/month** at GPT-4o-mini\n\nAt Claude Haiku:\n\n* System prompt: 1200 × 0.80 USD/1M = 0.00096 USD (Haiku also offers prompt caching; if available, the cached rate would be ~0.08 USD/1M, dropping system prompt to ~0.0001. USD For this estimate, use fresh.)\n* Diff: 2500 × 0.80 USD/1M = 0.002 USD\n* Output: 800 × 4.00 USD/1M = 0.0032 USD\n* **Per PR: ~0.006 USD**\n* **Monthly: 2400 × 0.006 USD = 14.40 USD/month** at Haiku\n\nThe cheapest option is ~20× cheaper than the most expensive. At this scale (48 USD/month vs 2.40 USD/month), the absolute saving is small enough that you should pick on quality, not cost, since the cost is a rounding error in the engineer's salary. The decision-relevant question is whether GPT-4o-mini produces good enough reviews on your eval set; if yes, use it; if not, pay the extra 46 USD/month for Sonnet 4. Chapter 17 (multi-model routing) will let you mix-and-match: use the cheap model for easy reviews, escalate to Sonnet 4 for PRs that touch sensitive code paths.\n\n**AI-collaboration sub-question** : How would you ask an LLM to help with this exercise, and what would you verify in its response?\n\n**Answer:** Useful prompt: _I am estimating LLM inference costs for a feature that handles 80 PRs/day with a 1200-token cached system prompt, 2500-token fresh input, and 800-token output. Give me a per-PR cost calculation at Anthropic's current 2026 prices for Sonnet 4, Haiku, and OpenAI's GPT-4o-mini._ You verify by (a) checking that the LLM's quoted prices match the providers' current public pricing pages (LLMs can hallucinate prices, so always verify), and (b) re-running the arithmetic by hand or in a calculator; the LLM is bad at multi-step arithmetic (§2.8), so do not trust its computed totals without verification.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1890,
+      "out_sha": "9b40077f94e1",
       "note": ""
     },
     {
