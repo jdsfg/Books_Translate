@@ -3343,11 +3343,11 @@
       "en_title": "Appendix C: Reading List and Further Resources",
       "order": 270,
       "src_chars": 2832,
-      "status": "pending",
+      "status": "done",
       "src_sha": "967ffe8c4867",
       "src": "### C.4 Quantum Information\n\n* **Nielsen, M. A. and Chuang, I. L. (2010).** _Quantum Computation and Quantum Information_ , 10th anniversary edition. Cambridge.\n\nThe standard text. Chapters 11-12 cover quantum entropy and the Holevo bound at the level of detail our Chapter 16 only sketches.\n\n* **Wilde, M. M. (2017).** _Quantum Information Theory_ , 2nd edition. Cambridge.\n\nMore recent and more thorough than Nielsen-Chuang on Shannon-style capacity theorems for quantum channels. Available free online.\n\n\n### C.5 Machine Learning and the AI Connection\n\n* **Murphy, K. P. (2022, 2023).** _Probabilistic Machine Learning: An Introduction_ and _Probabilistic Machine Learning: Advanced Topics_. MIT Press.\n\nTwo volumes. The first covers the basics with information-theoretic motivation throughout; the second goes deep into VAE-style variational methods, normalizing flows, and modern generative models. The closest single resource to filling in everything our Chapters 10, 14, and 15 only preview.\n\n* **Kingma, D. P. and Welling, M. (2019).** \"An Introduction to Variational Autoencoders.\" _Foundations and Trends in Machine Learning_ , 12(4), 307-392.\n\nThe definitive treatment of VAEs by the original author. Read alongside our Chapter 10.\n\n* **Tishby, N., Pereira, F. C., and Bialek, W. (1999).** \"The Information Bottleneck Method.\" _Proceedings of the 37th Annual Allerton Conference_.\n\nThe original IB paper. Brief, conceptual, prescient.\n\n* **Tishby, N. and Zaslavsky, N. (2015).** \"Deep Learning and the Information Bottleneck Principle.\" _IEEE Information Theory Workshop_.\n\nThe paper that placed IB at the centre of deep learning theory discussion. Necessary background for our Chapter 14, even though the strong empirical claims have since been contested.\n\n* **Belghazi, M. I., Baratin, A., Rajeshwar, S., et al. (2018).** \"Mutual Information Neural Estimation.\" _Proceedings of the 35th International Conference on Machine Learning_.\n\nMINE, the workhorse mutual-information estimator for high-dimensional ML. Read in conjunction with our Chapter 14 §14.4.\n\n* **Vaswani, A., Shazeer, N., Parmar, N., et al. (2017).** \"Attention Is All You Need.\" _Advances in Neural Information Processing Systems 30_.\n\nThe Transformer paper. Ten pages. The foundation of every LLM in our Chapter 15.\n\n* **Kaplan, J., McCandlish, S., Henighan, T., et al. (2020).** \"Scaling Laws for Neural Language Models.\" _arXiv:2001.08361_.\n\nThe scaling-law paper. Read for the empirical methodology even more than the specific exponents (which Hoffmann et al. corrected in 2022).\n\n* **Hoffmann, J., Borgeaud, S., Mensch, A., et al. (2022).** \"Training Compute-Optimal Large Language Models.\" _arXiv:2203.15556_.\n\nThe Chinchilla paper. Restated the scaling laws under proper compute budgeting. Our Chapter 15's quantitative claims follow this paper.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1882,
+      "out_sha": "7f31b66583dc",
       "note": ""
     },
     {
@@ -3355,11 +3355,11 @@
       "en_title": "Appendix C: Reading List and Further Resources",
       "order": 271,
       "src_chars": 2122,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6e6f81049442",
       "src": "### C.6 History and Perspective\n\n* **Aftab, O., Cheung, P., Kim, A., Thakkar, S., and Yeddanapudi, N. (2001).** _Information Theory and the Digital Age_. MIT 6.933 final paper.\n\nA short, accessible history of how Shannon's theory propagated into the engineering world. Good background reading once you have finished Chapter 6.\n\n* **Gleick, J. (2011).** _The Information: A History, A Theory, A Flood_. Pantheon.\n\nPopular-press history of the concept of information from drum signals to Shannon to genomics. Not a textbook; a context-setter.\n\n* **Soni, J. and Goodman, R. (2017).** _A Mind at Play: How Claude Shannon Invented the Information Age_. Simon & Schuster.\n\nBiography of Shannon. Read for the human story behind the equations.\n\n\n### C.7 Online Resources\n\n* **lecture notes** : David MacKay's Cambridge lectures (videos and slides on inference.org.uk) parallel his book and are an unusually clear lecture series.\n* **arXiv categories** : cs.IT (information theory) and stat.ML (statistical machine learning) are the two streams to watch for current research; cross-listings between them are increasingly common.\n* **Information Theory Society newsletter** : The IEEE IT Society publishes accessible survey-level articles in its quarterly newsletter; archives are open.\n\n\n### C.8 A Suggested Reading Path\n\nThree trajectories, depending on your goal after this book:\n\n**Toward the math frontier.** Cover-Thomas → Csiszár-Körner _Information Theory: Coding Theorems for Discrete Memoryless Systems_ → El Gamal-Kim _Network Information Theory_ → research papers in IEEE Trans. IT.\n\n**Toward modern ML.** Murphy I → Murphy II → Kingma-Welling VAE survey → recent diffusion-model papers (the 2020 work of Ho and colleagues, and of Song and collaborators) → recent scaling-law papers.\n\n**Toward the foundations.** Shannon 1948 → Khinchin's _Mathematical Foundations of Information Theory_ (1957) → Rényi _On Measures of Entropy and Information_ (1961) → Csiszár-Shields survey _Information Theory and Statistics_ (2004).\n\nAll three converge eventually. The book in your hands aimed to put you at the junction.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1230,
+      "out_sha": "fffe82db1186",
       "note": ""
     },
     {
@@ -3367,11 +3367,11 @@
       "en_title": "Appendix D: Software Notes and the Capstone Code",
       "order": 272,
       "src_chars": 2609,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2b7b5052437b",
       "src": "This appendix backs the Chapter 18 capstone with a complete, runnable reference implementation. The code in Chapter 18 is sketched at the level of architecture; here it is filled in to the level of \"open a Python REPL, paste it in, train, get numbers.\" The pieces missing from Chapter 18 are: the `TransformerLayer` definition, the data-loading pipeline, the training loop with proper batching, the held-out evaluation, the arithmetic-coding compression check, and the layer-wise mutual-information probe.\n\nA note on scope. This is a teaching reference, not a production framework. It optimizes for clarity over speed, runs on a single CPU or GPU, and finishes in roughly an hour on a modern laptop. To produce frontier numbers you would need order-of-magnitude more compute and the engineering tricks (FlashAttention, mixed precision, distributed training) that production codebases bring. None of those tricks change the _information-theoretic_ claims of Chapter 18.\n\n\n### D.1 Environment\n    \n    \n    # Tested with Python 3.10, PyTorch 2.0+\n    import torch\n    import torch.nn as nn\n    import torch.nn.functional as F\n    from torch.utils.data import DataLoader, Dataset\n    import math\n    import urllib.request\n    import os\n    \n\nThe only external dependency is PyTorch. The dataset is downloaded directly from a public mirror.\n\n\n### D.2 Data Loading\n    \n    \n    DATA_URL = \"https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt\"\n    DATA_PATH = \"tiny_shakespeare.txt\"\n    \n    def fetch_data():\n        if not os.path.exists(DATA_PATH):\n            urllib.request.urlretrieve(DATA_URL, DATA_PATH)\n        with open(DATA_PATH, \"r\", encoding=\"utf-8\") as f:\n            return f.read()\n    \n    text = fetch_data()\n    n = len(text)\n    n_train = int(0.9 * n)\n    train_text, test_text = text[:n_train], text[n_train:]\n    \n    # Byte-level tokenization: each character is one token in [0, 256).\n    def encode(s):\n        return torch.tensor([b for b in s.encode(\"utf-8\")], dtype=torch.long)\n    \n    train_ids = encode(train_text)\n    test_ids = encode(test_text)\n    \n    class CharDataset(Dataset):\n        def __init__(self, ids, ctx):\n            self.ids = ids\n            self.ctx = ctx\n        def __len__(self):\n            return len(self.ids) - self.ctx - 1\n        def __getitem__(self, i):\n            x = self.ids[i : i + self.ctx]\n            y = self.ids[i + 1 : i + self.ctx + 1]\n            return x, y\n    \n\nByte-level tokenization keeps the vocabulary at exactly 256256256, matching the per-character bits/char numbers reported in Chapter 18.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1716,
+      "out_sha": "2277344b2c51",
       "note": ""
     },
     {
