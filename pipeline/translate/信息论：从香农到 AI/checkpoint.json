@@ -3115,11 +3115,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 251,
       "src_chars": 3325,
-      "status": "pending",
+      "status": "done",
       "src_sha": "87c9206087c2",
       "src": "### Chapter 9 — Beyond KL\n\n**Application Q1.** Compute D(p∥q)D(p \\| q)D(p∥q), D(q∥p)D(q \\| p)D(q∥p), and TV for p=(0.5,0.5)p = (0.5, 0.5)p=(0.5,0.5), q=(0.9,0.1)q = (0.9, 0.1)q=(0.9,0.1). Why are the two KLs so different?\n\nD(p∥q)=12log⁡20.50.9+12log⁡20.50.1≈0.737D(p \\| q) = \\tfrac{1}{2} \\log_2 \\tfrac{0.5}{0.9} + \\tfrac{1}{2} \\log_2 \\tfrac{0.5}{0.1} \\approx 0.737D(p∥q)=21​log2​0.90.5​+21​log2​0.10.5​≈0.737 bits. D(q∥p)=0.9log⁡20.90.5+0.1log⁡20.10.5≈0.531D(q \\| p) = 0.9 \\log_2 \\tfrac{0.9}{0.5} + 0.1 \\log_2 \\tfrac{0.1}{0.5} \\approx 0.531D(q∥p)=0.9log2​0.50.9​+0.1log2​0.50.1​≈0.531 bits. TV=0.4\\mathrm{TV} = 0.4TV=0.4. The asymmetry: D(p∥q)D(p \\| q)D(p∥q) penalizes qqq for being light at outcome 111 where ppp puts 0.50.50.5 mass; D(q∥p)D(q \\| p)D(q∥p) involves a smaller log-ratio because ppp is moderate everywhere. This is why \"reverse KL\" trains mode-seeking generators while \"forward KL\" trains mode-covering ones.\n\n**Application Q2 (Pinsker's inequality).** State Pinsker's inequality and apply it to bound TV from KL for the previous example.\n\nPinsker: TV(p,q)≤12D(p∥q)\\mathrm{TV}(p, q) \\leq \\sqrt{\\tfrac{1}{2} D(p \\| q)}TV(p,q)≤21​D(p∥q)​ (KL in nats). Convert: D(p∥q)≈0.737D(p \\| q) \\approx 0.737D(p∥q)≈0.737 bits =0.511= 0.511=0.511 nats, so Pinsker gives TV≤0.255≈0.505\\mathrm{TV} \\leq \\sqrt{0.255} \\approx 0.505TV≤0.255​≈0.505. The actual TV is 0.40.40.4, so the bound is correct but not tight. Pinsker is the right tool when you have a bound on KL (which is easier to compute or estimate from samples than TV) and need a TV consequence.\n\n**Application Q3 ( χ2\\chi^2χ2 goodness-of-fit).** A six-sided die is rolled 600 times yielding outcomes (110,95,105,100,90,100)(110, 95, 105, 100, 90, 100)(110,95,105,100,90,100). Compute the χ2\\chi^2χ2 statistic relative to a fair die and interpret.\n\nExpected counts under the null (fair die): 100 each. χ2=∑(Oi−Ei)2/Ei=(102+52+52+0+102+0)/100=250/100=2.5\\chi^2 = \\sum (O_i - E_i)^2 / E_i = (10^2 + 5^2 + 5^2 + 0 + 10^2 + 0)/100 = 250/100 = 2.5χ2=∑(Oi​−Ei​)2/Ei​=(102+52+52+0+102+0)/100=250/100=2.5. Under the null with 5 degrees of freedom, the critical value at α=0.05\\alpha = 0.05α=0.05 is χ0.05,52=11.07\\chi^2_{0.05, 5} = 11.07χ0.05,52​=11.07. Observed value 2.5≪11.072.5 \\ll 11.072.5≪11.07, so we fail to reject — the data are consistent with a fair die. The χ2\\chi^2χ2 divergence here is the empirical quantity χ^2=χ2/N=2.5/600=0.0042\\hat\\chi^2 = \\chi^2 / N = 2.5/600 = 0.0042χ^​2=χ2/N=2.5/600=0.0042, which is the per-sample analog and reflects how close the empirical distribution is to the model.\n\n**Think Deeper Q1.** Why is Wasserstein distance well-defined between distributions with disjoint supports while KL is not?\n\nKL between a delta at 000 and a delta at 111 requires log⁡(p/q)\\log(p/q)log(p/q), but ppp is zero where qqq is positive (and vice versa), giving 0/00/00/0 or plog⁡p/0p \\log p / 0plogp/0 terms. The result is undefined or infinite. Wasserstein is well-defined because it asks \"how much _mass_ moves how far\", a question that has a clean answer regardless of support overlap: in this example, mass 1 moves distance 1, so W1=1W_1 = 1W1​=1. This is exactly why WGANs replaced JS-divergence GANs — early training has the generator distribution far from the data distribution, so JS gradients vanish while W1W_1W1​ gradients remain informative.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1388,
+      "out_sha": "5566b0e03929",
       "note": ""
     },
     {
@@ -3127,11 +3127,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 252,
       "src_chars": 1027,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f2911e78683f",
       "src": "**Think Deeper Q2.** Information geometry treats parametric families as Riemannian manifolds with the Fisher metric. What does this geometric viewpoint _add_ that is invisible in the algebraic (KL-as-divergence) viewpoint?\n\nThree things. (i) **Coordinate invariance** : the natural-gradient direction (Fisher^{-1} times the gradient) is invariant under reparametrization, while plain gradient descent is not — explaining why some optimization algorithms behave qualitatively better despite cosmetic equivalence. (ii) **Curvature as identifiability** : regions of the parameter space with low Fisher curvature (large Cramér-Rao bound) are inherently hard to learn; the geometry tells you _where_ learning is hard without doing the experiment. (iii) **Dual flat structures** : exponential families and mixture families are dual flat under the Fisher-Rao metric, leading to closed-form ME-projection theorems (e.g., I-projections in Csiszár's theory). None of this is visible from the algebraic divergence viewpoint alone.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 342,
+      "out_sha": "2842aa6403e9",
       "note": ""
     },
     {
@@ -3139,11 +3139,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 253,
       "src_chars": 2996,
-      "status": "pending",
+      "status": "done",
       "src_sha": "72531ddf35a6",
       "src": "### Chapter 10 — Variational Inference\n\n**Application Q1.** Derive the ELBO from log⁡p(x)=Eq[log⁡p(x)]\\log p(x) = \\mathbb{E}_q[\\log p(x)]logp(x)=Eq​[logp(x)].\n\nInsert p(z∣x)p(z \\mid x)p(z∣x) and use p(x)=p(x,z)/p(z∣x)p(x) = p(x, z) / p(z \\mid x)p(x)=p(x,z)/p(z∣x):\n\nlog⁡p(x)=Eq ⁣[log⁡p(x,z)p(z∣x)]=Eq ⁣[log⁡p(x,z)q(z)]+Eq ⁣[log⁡q(z)p(z∣x)]=ELBO(q)+D(q∥p(⋅∣x)).\\log p(x) = \\mathbb{E}_q\\\\!\\left[\\log \\frac{p(x, z)}{p(z \\mid x)}\\right] = \\mathbb{E}_q\\\\!\\left[\\log \\frac{p(x, z)}{q(z)}\\right] + \\mathbb{E}_q\\\\!\\left[\\log \\frac{q(z)}{p(z \\mid x)}\\right] = \\mathrm{ELBO}(q) + D(q \\| p(\\cdot \\mid x)).logp(x)=Eq​[logp(z∣x)p(x,z)​]=Eq​[logq(z)p(x,z)​]+Eq​[logp(z∣x)q(z)​]=ELBO(q)+D(q∥p(⋅∣x)).\n\nSince D≥0D \\geq 0D≥0, log⁡p(x)≥ELBO(q)\\log p(x) \\geq \\mathrm{ELBO}(q)logp(x)≥ELBO(q) with equality iff q=p(⋅∣x)q = p(\\cdot \\mid x)q=p(⋅∣x). Maximizing the ELBO is equivalent to minimizing reverse KL between the variational posterior and the true posterior.\n\n**Application Q2 (ELBO decomposition).** For a VAE with encoder qϕ(z∣x)q_\\phi(z | x)qϕ​(z∣x), decoder pθ(x∣z)p_\\theta(x | z)pθ​(x∣z), and prior p(z)p(z)p(z), write the ELBO and identify the \"reconstruction\" and \"regularization\" terms.\n\nELBO=Eqϕ(z∣x)[log⁡pθ(x∣z)]−D(qϕ(z∣x)∥p(z)).\\mathrm{ELBO} = \\mathbb{E}_{q_\\phi(z|x)}[\\log p_\\theta(x|z)] - D(q_\\phi(z|x) \\| p(z)).ELBO=Eqϕ​(z∣x)​[logpθ​(x∣z)]−D(qϕ​(z∣x)∥p(z)).\n\nReconstruction: Eq[log⁡pθ(x∣z)]\\mathbb{E}_q[\\log p_\\theta(x|z)]Eq​[logpθ​(x∣z)] — average log-likelihood of xxx under the decoder, which for Gaussian decoders is essentially negative MSE. Regularization: D(qϕ(z∣x)∥p(z))D(q_\\phi(z|x) \\| p(z))D(qϕ​(z∣x)∥p(z)) — KL pulling the encoder posterior toward the prior. The first term wants zzz to be predictive of xxx; the second wants zzz to be uninformative about which xxx it came from. The trade-off is exactly the rate-distortion structure of Ch. 11.\n\n**Application Q3 (KL between two univariate Gaussians).** Compute D(N(μ1,σ12)∥N(μ2,σ22))D(\\mathcal{N}(\\mu_1, \\sigma_1^2) \\| \\mathcal{N}(\\mu_2, \\sigma_2^2))D(N(μ1​,σ12​)∥N(μ2​,σ22​)) in closed form.\n\nD=log⁡σ2σ1+σ12+(μ1−μ2)22σ22−12.D = \\log\\frac{\\sigma_2}{\\sigma_1} + \\frac{\\sigma_1^2 + (\\mu_1 - \\mu_2)^2}{2\\sigma_2^2} - \\frac{1}{2}.D=logσ1​σ2​​+2σ22​σ12​+(μ1​−μ2​)2​−21​.\n\nSanity checks. (i) Equal distributions (μ1=μ2,σ1=σ2\\mu_1 = \\mu_2, \\sigma_1 = \\sigma_2μ1​=μ2​,σ1​=σ2​): D=0+1/2−1/2=0D = 0 + 1/2 - 1/2 = 0D=0+1/2−1/2=0. ✓ (ii) Same variance, different means: D=(μ1−μ2)2/(2σ2)D = (\\mu_1 - \\mu_2)^2 / (2\\sigma^2)D=(μ1​−μ2​)2/(2σ2) — the squared mean-gap in standard-deviation units, divided by 2. ✓ This formula is the workhorse of the VAE KL term when p(z)=N(0,I)p(z) = \\mathcal{N}(0, I)p(z)=N(0,I): D(qϕ(z∣x)∥p(z))=12∑d(μd2+σd2−log⁡σd2−1)D(q_\\phi(z|x) \\| p(z)) = \\tfrac{1}{2}\\sum_d (\\mu_d^2 + \\sigma_d^2 - \\log\\sigma_d^2 - 1)D(qϕ​(z∣x)∥p(z))=21​∑d​(μd2​+σd2​−logσd2​−1), summed over latent dimensions.\n\n**Think Deeper Q1.** Mean-field VI is mode-seeking; MCMC is mode-covering. When in practice does one fail in a way the other catches?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1373,
+      "out_sha": "a408e3f592fd",
       "note": ""
     },
     {
@@ -3151,11 +3151,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 254,
       "src_chars": 1543,
-      "status": "pending",
+      "status": "done",
       "src_sha": "04daca0596a2",
       "src": "Mean-field VI with a single Gaussian on a multimodal posterior collapses onto one mode and underestimates posterior variance — fatal if downstream decisions depend on tail behavior (e.g., risk estimation in finance). MCMC visits all modes given enough time but is slow to mix between well-separated modes — fatal if you need a fast estimate and your posterior has multiple basins separated by low-probability barriers (common in neural-network posteriors). The honest practitioner runs both and compares: large discrepancy is a warning that the posterior is multimodal and either method alone is misleading.\n\n**Think Deeper Q2.** The variational autoencoder simultaneously learns an encoder and a decoder. How does the KL regularization term prevent the encoder from collapsing to a deterministic function?\n\nWithout the KL term, the encoder is free to make qϕ(z∣x)q_\\phi(z|x)qϕ​(z∣x) arbitrarily concentrated (e.g., a delta) so that zzz carries the entire identity of xxx, maximizing the reconstruction term. The KL term penalizes any deviation of qϕ(z∣x)q_\\phi(z|x)qϕ​(z∣x) from the prior p(z)p(z)p(z); a delta at any nonzero point has infinite KL to a Gaussian prior. So the encoder is forced to spread its posterior in latent space, which (i) prevents memorization of xxx, (ii) makes the latent space _smooth_ enough that interpolation between points produces sensible samples, and (iii) regularizes against overfitting. The β\\betaβ-VAE simply turns the KL coefficient up, trading reconstruction quality for stronger regularization.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 476,
+      "out_sha": "e10a2f3ce322",
       "note": ""
     },
     {
