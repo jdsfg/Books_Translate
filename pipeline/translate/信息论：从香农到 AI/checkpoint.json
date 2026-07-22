@@ -3379,11 +3379,11 @@
       "en_title": "Appendix D: Software Notes and the Capstone Code",
       "order": 273,
       "src_chars": 2112,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c71afdbbd7fa",
       "src": "### D.3 The TransformerLayer Definition\n\nChapter 18 referenced `TransformerLayer` without defining it. Here is the definition: a standard pre-norm transformer block with multi-head self-attention and a feed-forward MLP.\n    \n    \n    class CausalSelfAttention(nn.Module):\n        def __init__(self, embed_dim, n_heads):\n            super().__init__()\n            assert embed_dim % n_heads == 0\n            self.n_heads = n_heads\n            self.head_dim = embed_dim // n_heads\n            self.qkv = nn.Linear(embed_dim, 3 * embed_dim)\n            self.out = nn.Linear(embed_dim, embed_dim)\n    \n        def forward(self, x):\n            b, t, c = x.shape\n            qkv = self.qkv(x).reshape(b, t, 3, self.n_heads, self.head_dim)\n            qkv = qkv.permute(2, 0, 3, 1, 4)  # (3, b, h, t, d)\n            q, k, v = qkv[0], qkv[1], qkv[2]\n            # Scaled dot-product with causal mask.\n            att = (q @ k.transpose(-2, -1)) / math.sqrt(self.head_dim)\n            mask = torch.triu(torch.ones(t, t, device=x.device), diagonal=1).bool()\n            att = att.masked_fill(mask, float(\"-inf\"))\n            att = F.softmax(att, dim=-1)\n            out = att @ v  # (b, h, t, d)\n            out = out.transpose(1, 2).reshape(b, t, c)\n            return self.out(out)\n    \n    \n    class TransformerLayer(nn.Module):\n        def __init__(self, embed_dim, n_heads, mlp_mult=4):\n            super().__init__()\n            self.ln1 = nn.LayerNorm(embed_dim)\n            self.attn = CausalSelfAttention(embed_dim, n_heads)\n            self.ln2 = nn.LayerNorm(embed_dim)\n            self.mlp = nn.Sequential(\n                nn.Linear(embed_dim, mlp_mult * embed_dim),\n                nn.GELU(),\n                nn.Linear(mlp_mult * embed_dim, embed_dim),\n            )\n    \n        def forward(self, x):\n            x = x + self.attn(self.ln1(x))\n            x = x + self.mlp(self.ln2(x))\n            return x\n    \n\nPre-norm (LayerNorm applied before attention and MLP, with residual connections around them) is the standard modern variant; it is more stable to train than the original post-norm formulation.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1854,
+      "out_sha": "3c098cd1c508",
       "note": ""
     },
     {
@@ -3391,11 +3391,11 @@
       "en_title": "Appendix D: Software Notes and the Capstone Code",
       "order": 274,
       "src_chars": 1845,
-      "status": "pending",
+      "status": "done",
       "src_sha": "26c3112c6b45",
       "src": "### D.4 The SmallTransformer (Reproduced from Chapter 18)\n    \n    \n    class SmallTransformer(nn.Module):\n        def __init__(self, vocab_size=256, embed_dim=256, n_heads=8,\n                     n_layers=6, context_len=256):\n            super().__init__()\n            self.token_emb = nn.Embedding(vocab_size, embed_dim)\n            self.pos_emb = nn.Embedding(context_len, embed_dim)\n            self.layers = nn.ModuleList([\n                TransformerLayer(embed_dim, n_heads) for _ in range(n_layers)\n            ])\n            self.ln_final = nn.LayerNorm(embed_dim)\n            self.head = nn.Linear(embed_dim, vocab_size)\n    \n        def forward(self, x):\n            b, t = x.shape\n            positions = torch.arange(t, device=x.device).unsqueeze(0).expand(b, -1)\n            z = self.token_emb(x) + self.pos_emb(positions)\n            for layer in self.layers:\n                z = layer(z)\n            z = self.ln_final(z)\n            return self.head(z)\n    \n        def hidden_states(self, x):\n            \"\"\"Return per-layer hidden states. Used by the MI probe in §D.7.\"\"\"\n            b, t = x.shape\n            positions = torch.arange(t, device=x.device).unsqueeze(0).expand(b, -1)\n            z = self.token_emb(x) + self.pos_emb(positions)\n            states = [z]\n            for layer in self.layers:\n                z = layer(z)\n                states.append(z)\n            states.append(self.ln_final(z))\n            return states\n    \n\nParameter count: roughly nlayers⋅(4e2+8e2)+2⋅e⋅Vn_{\\mathrm{layers}} \\cdot (4 e^2 + 8 e^2) + 2 \\cdot e \\cdot Vnlayers​⋅(4e2+8e2)+2⋅e⋅V where e=embed_dim,V=vocabe = \\mathrm{embed\\\\_dim}, V = \\mathrm{vocab}e=embed_dim,V=vocab. Plug in: 6⋅12⋅65536+131072≈4.856 \\cdot 12 \\cdot 65536 + 131072 \\approx 4.856⋅12⋅65536+131072≈4.85 million — matching the \"4M parameters\" figure in Chapter 18.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1607,
+      "out_sha": "09b346bd8c4a",
       "note": ""
     },
     {
@@ -3403,11 +3403,11 @@
       "en_title": "Appendix D: Software Notes and the Capstone Code",
       "order": 275,
       "src_chars": 2121,
-      "status": "pending",
+      "status": "done",
       "src_sha": "39fed74c6d57",
       "src": "### D.5 Training Loop\n    \n    \n    def train(model, train_ds, test_ds, n_steps=50_000, batch_size=64, lr=3e-4):\n        device = \"cuda\" if torch.cuda.is_available() else \"cpu\"\n        model.to(device)\n        opt = torch.optim.AdamW(model.parameters(), lr=lr)\n        train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True)\n        train_iter = iter(train_loader)\n        log = []\n        for step in range(n_steps):\n            try:\n                x, y = next(train_iter)\n            except StopIteration:\n                train_iter = iter(train_loader)\n                x, y = next(train_iter)\n            x, y = x.to(device), y.to(device)\n            logits = model(x)\n            loss = F.cross_entropy(logits.reshape(-1, 256), y.reshape(-1))\n            opt.zero_grad()\n            loss.backward()\n            opt.step()\n            if step % 1000 == 0:\n                test_loss = evaluate(model, test_ds, device)\n                bpc_train = loss.item() / math.log(2)\n                bpc_test = test_loss / math.log(2)\n                log.append((step, bpc_train, bpc_test))\n                print(f\"step={step:6d}  train={bpc_train:.3f} bpc  test={bpc_test:.3f} bpc\")\n        return log\n    \n    \n    @torch.no_grad()\n    def evaluate(model, test_ds, device, n_batches=20, batch_size=64):\n        model.eval()\n        loader = DataLoader(test_ds, batch_size=batch_size)\n        losses = []\n        for i, (x, y) in enumerate(loader):\n            if i >= n_batches:\n                break\n            x, y = x.to(device), y.to(device)\n            logits = model(x)\n            loss = F.cross_entropy(logits.reshape(-1, 256), y.reshape(-1))\n            losses.append(loss.item())\n        model.train()\n        return sum(losses) / len(losses)\n    \n    \n    train_ds = CharDataset(train_ids, ctx=256)\n    test_ds = CharDataset(test_ids, ctx=256)\n    model = SmallTransformer()\n    log = train(model, train_ds, test_ds)\n    \n\nThe training loop reports cross-entropy in bits per character (bpc), which is what Chapter 18 plots. Conversion: bpc=nats/ln⁡2\\mathrm{bpc} = \\mathrm{nats} / \\ln 2bpc=nats/ln2.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1981,
+      "out_sha": "9c4de3e363b1",
       "note": ""
     },
     {
@@ -3415,11 +3415,11 @@
       "en_title": "Appendix D: Software Notes and the Capstone Code",
       "order": 276,
       "src_chars": 1475,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3a4ff21a8f6f",
       "src": "### D.6 The Compression Identity Check\n\nTo verify the central identity of Chapter 15 — cross-entropy equals the compression rate of the optimal arithmetic coder using the model — we compute both quantities on the same held-out text and compare.\n    \n    \n    @torch.no_grad()\n    def measured_bits_per_char(model, test_ids, ctx=256, max_chars=10_000):\n        \"\"\"Compute the actual compressed bit-length under arithmetic coding\n        with the model as the predictor.\"\"\"\n        device = next(model.parameters()).device\n        model.eval()\n        total_bits = 0.0\n        n_chars = min(len(test_ids) - ctx, max_chars)\n        for i in range(n_chars):\n            x = test_ids[i : i + ctx].unsqueeze(0).to(device)\n            target = test_ids[i + ctx].item()\n            logits = model(x)[0, -1]\n            log_probs = F.log_softmax(logits, dim=-1)\n            # Information content of the target under the model:\n            # -log_2 p(target) is the arithmetic coder's per-symbol bit cost\n            # (within an O(1/n) overhead from the coder's finite precision).\n            total_bits += -log_probs[target].item() / math.log(2)\n        return total_bits / n_chars\n    \n\nThe identity to verify: `measured_bits_per_char(model, test_ids)` should match the held-out cross-entropy reported by `evaluate()` (after unit conversion) to within roundoff. The 1% gap claimed in §18.2 comes from the arithmetic coder's finite-precision overhead, not from any conceptual slack.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1129,
+      "out_sha": "940af78c68e6",
       "note": ""
     },
     {
@@ -3427,11 +3427,11 @@
       "en_title": "Appendix D: Software Notes and the Capstone Code",
       "order": 277,
       "src_chars": 2529,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e2d0866a7605",
       "src": "### D.7 The Layer-Wise Mutual Information Probe\n\nChapter 18 §18.4 reported an MI-curve experiment across layers. The estimator used is a simple discrete proxy: bin the hidden activations and compute MI on the binned variables. This is a valid estimator for low-dimensional projections of the activations, and the qualitative shape of the curve (lower layers preserve raw character identity; upper layers preserve next-token identity) is robust.\n    \n    \n    def quantize(z, n_bins=64):\n        \"\"\"Hard-bin the first principal component of activations.\"\"\"\n        z_flat = z.reshape(-1, z.shape[-1])\n        z_centered = z_flat - z_flat.mean(0, keepdim=True)\n        u, s, v = torch.svd(z_centered)\n        pc1 = (z_centered @ v[:, 0]).cpu().numpy()\n        bins = torch.linspace(pc1.min(), pc1.max(), n_bins + 1)[1:-1].numpy()\n        import numpy as np\n        return np.digitize(pc1, bins)\n    \n    \n    def mi_discrete(a, b):\n        \"\"\"Plug-in estimator of mutual information between discrete arrays.\"\"\"\n        import numpy as np\n        from collections import Counter\n        n = len(a)\n        pa = Counter(a); pb = Counter(b); pab = Counter(zip(a, b))\n        mi = 0.0\n        for (ai, bi), c in pab.items():\n            p_ab = c / n\n            p_a = pa[ai] / n\n            p_b = pb[bi] / n\n            mi += p_ab * math.log2(p_ab / (p_a * p_b))\n        return mi\n    \n    \n    @torch.no_grad()\n    def layer_mi_curve(model, sample_ids, ctx=256, batch=8):\n        \"\"\"For each layer, estimate I(layer_activation; input_char) and\n        I(layer_activation; next_char).\"\"\"\n        device = next(model.parameters()).device\n        x = sample_ids[: batch * ctx].reshape(batch, ctx).to(device)\n        y_input = x[:, -1].cpu().numpy()\n        next_idx = batch * ctx\n        y_next = sample_ids[next_idx : next_idx + batch].cpu().numpy()\n        states = model.hidden_states(x)\n        out = []\n        for layer_idx, h in enumerate(states):\n            h_last = h[:, -1, :]\n            q = quantize(h_last)\n            mi_in = mi_discrete(q, y_input)\n            mi_next = mi_discrete(q, y_next)\n            out.append((layer_idx, mi_in, mi_next))\n        return out\n    \n\nThe estimator is intentionally crude. As Chapter 14 emphasized, MI in high dimensions is hard to estimate; the binning approach gives a _lower bound_ on the true MI but is enough to see the qualitative trend. For a tighter estimate, plug in MINE (also covered in Chapter 14) — but the laptop-runnable check above suffices for the capstone narrative.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1947,
+      "out_sha": "0415dd78b3ed",
       "note": ""
     },
     {
@@ -3439,11 +3439,11 @@
       "en_title": "Appendix D: Software Notes and the Capstone Code",
       "order": 278,
       "src_chars": 992,
-      "status": "pending",
+      "status": "done",
       "src_sha": "aa62286f0996",
       "src": "### D.8 Reproducibility Notes\n\n* **Seed** : the experiments in Chapter 18 used `torch.manual_seed(42)`. Different seeds shift the bits-per-character figure by roughly ±0.05\\pm 0.05±0.05; the qualitative claims (compression beats gzip; hidden-state MI shows the predicted shape; arithmetic coding matches cross-entropy) are seed-invariant.\n* **Hardware** : on a 2024 laptop CPU the full training takes about 90 minutes; on a single consumer GPU (RTX 3060 or better) about 8 minutes.\n* **Numerical precision** : the code runs in float32 throughout. Mixed precision (bfloat16 forward / float32 master weights) cuts memory in half with no perceptible quality change for a model this small, but adds non-trivial setup code and is omitted for clarity.\n* **What the code does not include** : dropout, learning-rate scheduling, gradient clipping, weight tying. Each is standard in production transformer training and would shift bpc by perhaps 0.1; none changes the conceptual story of the capstone.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 388,
+      "out_sha": "05a4434566af",
       "note": ""
     },
     {
@@ -3451,11 +3451,11 @@
       "en_title": "Appendix D: Software Notes and the Capstone Code",
       "order": 279,
       "src_chars": 248,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b3ea359c2274",
       "src": "### D.9 When Things Go Wrong\n\nA reference implementation only helps if you can diagnose your own deviations from it. Below are the failure modes we have actually seen when readers have tried to reproduce the capstone, with what they typically mean.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 69,
+      "out_sha": "ad1b65cb3dc9",
       "note": ""
     },
     {
@@ -3463,11 +3463,11 @@
       "en_title": "Appendix D: Software Notes and the Capstone Code",
       "order": 280,
       "src_chars": 3511,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b6cacf6ab3bf",
       "src": "Symptom | Likely cause | What to check  \n---|---|---  \n`loss` stays at log⁡2256≈8\\log_2 256 \\approx 8log2​256≈8 bpc forever | Forward pass returns logits but the loss function is reading the wrong shape | Print `logits.shape` and `target.shape` before the call to `cross_entropy`. They should be `(B*T, 256)` and `(B*T,)` respectively.  \n`loss` is `nan` after a few hundred steps | Learning rate too high, or fp16/bf16 underflow on a small model | First retry with `lr=1e-4` (one third of default) and float32; if still `nan`, you almost certainly have a bug in attention masking causing softmax over `-inf` rows.  \n`loss` plateaus around 4.0–4.5 bpc and refuses to drop | The model is learning unigram statistics only; positional embeddings or attention masking are silently broken | Sanity check: feed the model a fixed sequence and inspect the logits at position t>0t > 0t>0. If they don't depend on positions <t< t<t, attention is broken.  \n`loss` plateaus around 2.0 bpc but never improves further on this corpus | Probably correct! Tiny Shakespeare is a small corpus; 4M parameters genuinely saturate around here | Compare against the reported numbers in §18.2. If you are within 0.2 bpc of 2.0, you are on the expected curve.  \nTrain loss drops to 0.5 bpc while test loss stays at 3.5 bpc | Severe overfitting. Likely the test set is leaking into training, or the model is too large for the corpus | Verify that the train/test split is on byte indices, not on samples (each `i` in `CharDataset.__getitem__` should be in disjoint ranges across the two datasets).  \n`measured_bits_per_char` differs from `evaluate()` by more than 5% | The arithmetic-coding implementation is reading the wrong target index, or applying the wrong base for the log | Check that the `target` index in `measured_bits_per_char` is `test_ids[i + ctx]`, not `test_ids[i + ctx + 1]`. The off-by-one is the most common bug here.  \nMI estimate `mi_in` at layer 0 is essentially zero | Quantization with too few bins, or the input y_inputy\\\\_inputy_input is already constant across the batch | Increase `n_bins` to 128 and check that `y_input` has at least 4 distinct values in the batch.  \nMI estimate is _negative_ | Plug-in MI estimator with a small joint sample is biased downward; in extreme cases this manifests as a negative number | This is an estimator artifact, not a real result. Increase batch size or switch to MINE (Chapter 14).  \nTraining is 10× slower than §D.8's 8 minutes on a comparable GPU | Almost always: data loading is on the CPU and not pinned, or batch size is too small to saturate the GPU | Pass `pin_memory=True, num_workers=2` to `DataLoader` and increase batch size to 128 if memory allows.  \nSample output (`sample()`) is gibberish even after good training loss | Sampling is using the wrong logits index (e.g., `logits[0]` instead of `logits[-1]`), or temperature is `0.0` | Inspect the first 50 sampled tokens. If they cycle deterministically, temperature is too low. If they look uniformly random, temperature is too high or sampling is from the wrong position.  \n  \nA general principle: when reproducing the capstone, treat **bits-per-character on a held-out 10k-character slice** as your primary diagnostic. It is monotonically related to model quality, has a calibrated reference value (≈ 2.0 for the reference run), and reveals broken code earlier than any sample inspection. If your bpc is wrong, fix it before looking at samples; if your bpc is right, samples will eventually look reasonable.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1467,
+      "out_sha": "dd3ceed7921b",
       "note": ""
     },
     {
@@ -3475,11 +3475,11 @@
       "en_title": "Appendix D: Software Notes and the Capstone Code",
       "order": 281,
       "src_chars": 1116,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2ac0c0e24390",
       "src": "### D.10 Suggested Extensions\n\nIf you want to extend the capstone for your own learning:\n\n* **Train on a different corpus** (Wikipedia article, source code, music-notation MIDI). Compare bpc; the relative ordering tells you something about each domain's intrinsic compressibility.\n* **Vary model size** by changing `embed_dim` and `n_layers`. Plot bpc vs. parameter count on a log-log axis. You will see a noisy power law — your own miniature scaling law (Chapter 15).\n* **Implement MINE** (Chapter 14) as an alternative MI estimator and compare to the quantization estimator above; the MINE curves should be shifted upward (since MINE is a tighter lower bound) but qualitatively similar.\n* **Add a rate-distortion experiment** : compress test text at varying bitrates by truncating the model's predicted distribution to its top-kkk tokens, and plot reconstruction fidelity vs. compressed size. You will trace out an empirical R(D)R(D)R(D) curve on real text — Chapter 11 in action.\n\nThese extensions take a weekend each and will deepen your grip on the material more than another textbook chapter would.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 424,
+      "out_sha": "cdef7309e7fe",
       "note": ""
     }
   ],
