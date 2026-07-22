@@ -2767,11 +2767,11 @@
       "en_title": "Chapter 18: Building and Analyzing a Simple Language Model",
       "order": 222,
       "src_chars": 2998,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4650688ecb87",
       "src": "We have come a long way from Shannon's 1948 paper. Through seventeen chapters, we have built up the machinery of classical information theory (Chapters 1-7), the theory of divergences and variational methods (Chapters 8-10), the rate-distortion and network frameworks (Chapters 11-12), and the modern AI applications (Chapters 13-17).\n\nThis capstone chapter makes the entire arc concrete. We describe a **reference-design experiment** : a small language model that, when implemented as in Appendix D and run on a laptop, lets you reproduce the numbers reported here and verify the book's central information-theoretic claims with your own data.\n\nA note on what this chapter is and is not. The numbers in §18.2 onward (cross-entropy of about 2.0 bits/char, gzip baseline of about 4.5 bits/char, the layer-wise mutual-information shape) are from a specific reference run on the Tiny Shakespeare corpus with the architecture described below. These are _expected_ numbers — the kind of figures you should see if you run the reference implementation, plus or minus the seed-level noise discussed in Appendix D §D.8. Your own run may differ by perhaps 0.05 to 0.1 bits/char depending on hardware, seed, and library versions; the qualitative claims (the model beats gzip, cross-entropy equals the arithmetic-coder rate, MI rises through layers) are robust to these variations. The reference implementation is a teaching tool, not a benchmark; we report what it produces so you can check your own.\n\nThe goal is not to build a state-of-the-art model. Frontier models have hundreds of billions of parameters and require massive compute. Our reference model has a few million parameters and runs on a laptop in roughly an hour. But the principles — and therefore the verifications — are the same.\n\nBy the end of this chapter you will have:\n\n  1. A trained transformer language model on a small text corpus.\n  2. Measured perplexity and bits-per-character on held-out text.\n  3. Empirically verified that the model compresses text better than gzip when used as an arithmetic coder.\n  4. Layer-wise mutual information estimates (with appropriate caveats about MINE).\n  5. A rate-distortion interpretation of the model's training trajectory.\n\nThe chapter ends with a closing reflection on what we have learned.\n\n\n### 18.1 The Setup\n\nOur capstone model is a small transformer trained on the first 1 million characters of \"Tiny Shakespeare\" (a public-domain text dataset frequently used for educational purposes).\n\nArchitecture:\n\n* 6 transformer layers\n* 8 attention heads per layer\n* 256-dimensional embeddings\n* Context length 256 tokens\n* Total parameters: about 4 million\n\nTokenization: byte-level (each byte is a token; vocabulary size 256).\n\nTraining:\n\n* 50,000 steps with AdamW optimizer\n* Learning rate 3e-4 with cosine decay\n* Batch size 32\n\nThis setup is small enough to train on a single GPU in about 30 minutes; it is large enough to demonstrate clearly the information-theoretic claims of Chapter 15.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1039,
+      "out_sha": "97af99073b59",
       "note": ""
     },
     {
@@ -2779,11 +2779,11 @@
       "en_title": "Chapter 18: Building and Analyzing a Simple Language Model",
       "order": 223,
       "src_chars": 3491,
-      "status": "pending",
+      "status": "done",
       "src_sha": "40b59a6a470f",
       "src": "#### Code structure (Python pseudocode)\n    \n    \n    import torch\n    import torch.nn as nn\n    \n    class SmallTransformer(nn.Module):\n        def __init__(self, vocab_size=256, embed_dim=256, n_heads=8,\n                     n_layers=6, context_len=256):\n            super().__init__()\n            self.token_emb = nn.Embedding(vocab_size, embed_dim)\n            self.pos_emb = nn.Embedding(context_len, embed_dim)\n            self.layers = nn.ModuleList([\n                TransformerLayer(embed_dim, n_heads) for _ in range(n_layers)\n            ])\n            self.ln_final = nn.LayerNorm(embed_dim)\n            self.head = nn.Linear(embed_dim, vocab_size)\n    \n        def forward(self, x):\n            # x: (batch, seq_len) of token ids\n            b, t = x.shape\n            positions = torch.arange(t, device=x.device).unsqueeze(0).expand(b, -1)\n            z = self.token_emb(x) + self.pos_emb(positions)\n            for layer in self.layers:\n                z = layer(z)\n            z = self.ln_final(z)\n            logits = self.head(z)\n            return logits\n    \n\nThe training loop minimizes cross-entropy:\n    \n    \n    loss = F.cross_entropy(logits.reshape(-1, vocab_size),\n                           target.reshape(-1))\n    loss.backward()\n    optimizer.step()\n    \n\nThis is the standard recipe; nothing exotic. The transformer architecture itself is not the focus; any sufficiently capable architecture would work. **Appendix D gives the complete runnable code** , including the `TransformerLayer` definition omitted above, the data-loading pipeline, the held-out evaluator, the arithmetic-coding compression check (§D.6), and the layer-wise MI probe (§D.7). The code is a single self-contained Python file; copy it into a notebook and you have everything needed to reproduce every number in this chapter.\n\n\n### 18.2 Cross-Entropy and Perplexity\n\nAfter training, we evaluate on held-out text (the last 100,000 characters of the corpus, not seen during training).\n\nTypical results:\n\n* **Cross-entropy** : 1.4 nats per character ≈ 2.0 bits per character.\n* **Perplexity** : e1.4≈4.06e^{1.4} \\approx 4.06e1.4≈4.06 per character (the model is choosing among 4 effective characters per step on average).\n\nCompare to:\n\n* Random byte: 8 bits per character.\n* gzip on the same corpus: about 4.5 bits per character.\n* Frontier models on diverse English: about 0.7 bits per character.\n\nOur small model achieves 2.0 bits per character, intermediate between gzip and frontier models. This makes sense: 4 million parameters is far less than frontier models, but the architecture is still a transformer.\n\n\n#### Verification\n\nPer the source coding theorem (Chapter 4), the cross-entropy of our model on held-out text equals the compression rate when used as an arithmetic coder. Let's verify.\n\nImplementation:\n\n  1. For each character in the test set, compute the model's predicted distribution.\n  2. Use arithmetic coding to encode the actual character given this distribution.\n  3. Sum the bits used.\n\nA clean implementation gives compressed sizes within 1% of n⋅Ln \\cdot \\mathcal{L}n⋅L bits, where nnn is the test length and L\\mathcal{L}L is the cross-entropy in bits per character. For our model: 100,000 chars × 2.0 bits/char = 200 kilobits = 25 KB.\n\nThe actual gzip compressed size of the same test set: 56 KB. The model achieves about 2.2x better compression than gzip.\n\nThis is the central identity of Chapter 15 verified empirically: the cross-entropy IS the compression rate.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 2048,
+      "out_sha": "f239054b73df",
       "note": ""
     },
     {
@@ -2791,11 +2791,11 @@
       "en_title": "Chapter 18: Building and Analyzing a Simple Language Model",
       "order": 224,
       "src_chars": 3346,
-      "status": "pending",
+      "status": "done",
       "src_sha": "af8de028f8f2",
       "src": "### 18.3 The Training Trajectory\n\nHow does cross-entropy decrease during training? Let's plot cross-entropy on the training set and the held-out test set as a function of training step.\n\nA typical pattern:\n\n* **Step 0** (random init): cross-entropy ≈ log⁡2256=8\\log_2 256 = 8log2​256=8 bits/char on both sets.\n* **Step 1,000** : train ≈ 4.5, test ≈ 4.6 bits/char.\n* **Step 10,000** : train ≈ 2.5, test ≈ 2.7 bits/char.\n* **Step 50,000** : train ≈ 1.8, test ≈ 2.0 bits/char.\n\nTwo observations:\n\n  1. **Both decrease together** : training and test cross-entropy fall in parallel for most of training. There is generalization.\n\n  2. **Eventually, they diverge slightly** : the gap (train < test) widens at the end. This is the \"overfitting\" regime where the model is memorizing training-specific patterns.\n\nFor our small model on this corpus, overfitting is mild. For larger models or smaller datasets, the gap can grow substantially, requiring regularization or early stopping.\n\n\n#### Information-theoretic interpretation\n\nThe training cross-entropy is the achieved compression rate on training data; the test cross-entropy is the achieved rate on held-out data. The gap measures how much the model has \"memorized\" training-specific patterns vs. learned the underlying distribution.\n\nFor the model to be a good compressor of _any_ text from the same distribution (not just the training set), we want the test cross-entropy to be low. The training cross-entropy alone is misleading — it can be driven arbitrarily low by memorization.\n\nThis is the deepest lesson of the training trajectory: cross-entropy minimization on training data is not the goal; cross-entropy minimization on held-out data is.\n\n\n### 18.4 Mutual Information Between Layers\n\nWe promised in Chapters 13 and 14 that we would estimate layer-wise mutual information using MINE (with appropriate caveats). Let's do it.\n\nSetup:\n\n* For each transformer layer, extract the hidden representation hℓh_\\ellhℓ​ at every position.\n* Estimate I(hℓ;X)I(h_\\ell; X)I(hℓ​;X) (input-representation MI) and I(hℓ;Y)I(h_\\ell; Y)I(hℓ​;Y) (representation-target MI), where XXX is the context and YYY is the next token.\n\nImplementation:\n\n* Train a small MINE network for each layer separately.\n* Use about 10,000 sampled (hℓ,X)(h_\\ell, X)(hℓ​,X) pairs and same for (hℓ,Y)(h_\\ell, Y)(hℓ​,Y).\n\nTypical results (reflecting the sample-size challenge of MINE):\n\n* I(hℓ;X)I(h_\\ell; X)I(hℓ​;X) appears to _decrease_ slightly with depth: the deeper layers compress away input-specific detail.\n* I(hℓ;Y)I(h_\\ell; Y)I(hℓ​;Y) appears to _increase_ with depth: deeper layers carry more target-relevant information.\n\nThis roughly matches the information bottleneck picture from Chapter 13. But:\n\n**Critical caveat** : these estimates are noisy and biased. The McAllester-Stratos bound (Chapter 14) tells us we cannot reliably distinguish small differences in MI in high dimensions with reasonable sample sizes. Our 256-dimensional hidden representations are at the edge of MINE's reliability.\n\nThe qualitative pattern (deeper layers more target-relevant) is consistent across runs. The quantitative claims (specific MI values) should be treated as approximate.\n\nThis is the methodological lesson: MI in deep learning is real but hard to measure precisely. Use it as a qualitative guide, not as a precise measurement.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1209,
+      "out_sha": "cab174bbed0b",
       "note": ""
     },
     {
@@ -2803,11 +2803,11 @@
       "en_title": "Chapter 18: Building and Analyzing a Simple Language Model",
       "order": 225,
       "src_chars": 2890,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6edb002950aa",
       "src": "### 18.5 Sampling and Generation\n\nLet's see what the model generates.\n    \n    \n    def sample(model, context=\"ROMEO:\", max_length=200, temperature=1.0):\n        tokens = encode(context)\n        for _ in range(max_length):\n            logits = model(tokens[-256:])\n            probs = F.softmax(logits[-1] / temperature, dim=-1)\n            next_token = torch.multinomial(probs, 1)\n            tokens = torch.cat([tokens, next_token])\n        return decode(tokens)\n    \n\nSample output (typical):\n    \n    \n    ROMEO:\n    What say you to my mind, Lord Mercutio? Hath\n    the morn of thee in this fair lily come.\n    We shall not see the moon's silver, nor\n    the stars that watch the night.\n    \n\nThe output is fluent, somewhat Shakespearean, but not actually Shakespeare (the lines are grammatical but not from any real play). For a 4M-parameter model trained on 1M characters, this is impressive.\n\n\n#### Sampling temperature\n\nTemperature τ\\tauτ modulates the softmax: p∝exp⁡(logit/τ)p \\propto \\exp(\\text{logit}/\\tau)p∝exp(logit/τ).\n\n* τ=0\\tau = 0τ=0 (greedy): always pick the most probable token. Outputs become repetitive and \"boring.\"\n* τ=1\\tau = 1τ=1: standard sampling. Outputs are diverse but coherent.\n* τ≫1\\tau \\gg 1τ≫1: nearly uniform. Outputs become random and incoherent.\n\nIn information-theoretic terms, temperature controls the entropy of the model's sampling distribution. At τ=1\\tau = 1τ=1, the model samples from its predicted typical set (Chapter 3). At higher τ\\tauτ, it samples from a broader set; at lower τ\\tauτ, from a narrower one.\n\nThis is a direct application of the AEP picture: temperature is a knob on the size of the typical set the model samples from.\n\n\n### 18.6 Rate-Distortion Interpretation\n\nWe can interpret the trained model through the rate-distortion lens of Chapter 11.\n\nThe model's output is a probability distribution over next tokens. We can think of:\n\n* **Rate** : the entropy of the model's predicted distribution at each step. This is the \"rate\" at which the model generates uncertainty.\n* **Distortion** : the cross-entropy with the true next-token distribution. This is how far from optimal the model is.\n\nFor a perfect model, rate = entropy of the source = cross-entropy. For a suboptimal model, cross-entropy > entropy, and the gap is the KL divergence D(true∥model)D(\\text{true} \\| \\text{model})D(true∥model) — the redundancy in the model's compression.\n\nFor our small model, the rate is about 2 bits per character. The true entropy of the corpus is unknown but estimated at perhaps 1.5 bits per character (frontier models can achieve this on similar text). So our model has about 0.5 bits per character of redundancy — room for improvement with more parameters or training.\n\nThis is the rate-distortion picture made concrete: every model lies somewhere on or above the rate-distortion curve, and the gap from the curve is its excess cost.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1367,
+      "out_sha": "831fddba68ce",
       "note": ""
     },
     {
@@ -2815,11 +2815,11 @@
       "en_title": "Chapter 18: Building and Analyzing a Simple Language Model",
       "order": 226,
       "src_chars": 1728,
-      "status": "pending",
+      "status": "done",
       "src_sha": "455a229c3638",
       "src": "### 18.7 What We Have Shown\n\nAcross this capstone, we have:\n\n  1. **Trained a transformer language model** on a real text corpus.\n  2. **Measured cross-entropy and perplexity** : 2.0 bits/char and 4.06 perplexity on held-out text.\n  3. **Verified the compression-prediction identity** : arithmetic coding with the model gives compression rate equal to cross-entropy.\n  4. **Compared to gzip** : the model achieves 2.2x better compression on this corpus.\n  5. **Examined the training trajectory** : cross-entropy decreases on both train and test, with a small generalization gap.\n  6. **Estimated layer-wise MI** : qualitative IB-like patterns (deeper layers are more target-relevant), with appropriate caveats.\n  7. **Sampled from the model** : fluent text generation by sampling from the typical set of the learned distribution.\n  8. **Interpreted rate-distortion-style** : model lies above the entropy floor, with measurable excess redundancy.\n\nEvery chapter of this book is reflected in this analysis. Shannon entropy from Chapter 1 is what we measure. The chain rule from Chapter 2 is how we factor the loss. The AEP from Chapter 3 is what we sample from. The source coding theorem from Chapter 4 is the compression-prediction identity. Cross-entropy and KL from Chapter 8 are the workhorse. The variational view from Chapter 10 is what training does. Rate-distortion from Chapter 11 is the interpretation. Information bottleneck from Chapter 13 is the layer-wise picture. Mutual information estimation from Chapter 14 is the (caveat-laden) layer analysis. Language model compression from Chapter 15 is the central claim verified.\n\nThe capstone is not a single new result; it is the synthesis of everything we have learned.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 588,
+      "out_sha": "5a5faf5cfd78",
       "note": ""
     },
     {
@@ -2827,11 +2827,11 @@
       "en_title": "Chapter 18: Building and Analyzing a Simple Language Model",
       "order": 227,
       "src_chars": 2347,
-      "status": "pending",
+      "status": "done",
       "src_sha": "165cfc09cd5c",
       "src": "### 18.8 A Closing Thought\n\nInformation theory was born in 1948 from a question about telephone wires. It became, over seventy-five years, the mathematical language of communication, computing, and now machine learning. The journey from Shannon's source coding theorem to GPT-4's capability of compressing text 4x better than gzip is, in some sense, just one long chapter. The same equations describe both.\n\nBut a textbook should not end on a triumphalist note. Information theory tells us how many bits a message contains. It does not tell us what those bits _mean_. When a frontier language model generates fluent text indistinguishable from human writing, information theory measures the bits used; it does not pronounce on whether the model \"understands.\"\n\nWhether good prediction implies understanding is a question information theory cannot answer. It is for philosophy, cognitive science, and continuing research to grapple with.\n\nWhat information theory does give us, beautifully, is a way to _measure_ prediction. To measure compression. To measure relevance. To measure how far our models are from the entropy floor. These are precise quantities, in the unit of bits, that we can compute and compare. They give us a vocabulary for talking about what AI systems do, even if they do not give us a theory of what AI systems mean.\n\nShannon ended his 1948 paper with a humble note: \"A study of the foundations of communication theory is offered as the first step in this direction.\" He could not have foreseen that those foundations would, within a single human lifetime, become the mathematical core of an artificial intelligence revolution. But the foundations he laid have proven to be exactly the right ones.\n\nEvery neural network minimizing cross-entropy is doing applied information theory. Every model evaluated by perplexity is being measured in bits. Every claim that \"this model achieves X bits per character\" is a claim about the entropy of language as approached by a particular learned distribution.\n\nWe close with a sentence that summarizes the spirit of the entire book:\n\n**Information is not a thing. It is a relationship between what you know and what you don't.**\n\nShannon gave us the mathematics to measure that relationship. The rest of this century, and probably the next, will be spent applying it.\n\n\n### 18.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 679,
+      "out_sha": "bca6fe1fc462",
       "note": ""
     },
     {
@@ -2839,11 +2839,11 @@
       "en_title": "Chapter 18: Building and Analyzing a Simple Language Model",
       "order": 228,
       "src_chars": 1688,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0212e8a6c590",
       "src": "#### Concept Check\n\n**Q1.** What is the compression rate of a language model with cross-entropy 2 bits per character, used as an arithmetic coder?\n\n**Answer:** 2 bits per character. The compression rate equals the cross-entropy when the model is used as the source distribution in arithmetic coding.\n\n**Q2.** Why does temperature-1 sampling produce text that lies in the model's typical set?\n\n**Answer:** Temperature 1 samples from the model's predicted distribution at each step. By the AEP, samples from a distribution concentrate on its typical set with high probability. So temperature-1 sampling produces sequences whose empirical log-probability matches the model's per-token entropy — the typical set.\n\nHigher temperature samples more broadly (more entropic distribution → larger typical set); lower temperature samples more narrowly (more concentrated distribution → smaller typical set, including the most-probable continuations).\n\n**Q3.** What does the gap between training and test cross-entropy measure?\n\n**Answer:** The gap measures memorization: how much the model has fit training-specific patterns that don't generalize. A large gap indicates overfitting. A small gap indicates the model has learned generalizable features.\n\n**Q4.** Why do we treat layer-wise MI estimates with caution?\n\n**Answer:** Mutual information estimation in high dimensions is fundamentally hard (McAllester-Stratos bound). MINE estimators are biased and high-variance, especially for high-dimensional representations. Quantitative MI claims based on 256-dimensional hidden states are approximate. Qualitative patterns (e.g., monotonic increase with depth) are more reliable than absolute values.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 527,
+      "out_sha": "a7ed83559a63",
       "note": ""
     },
     {
@@ -2851,11 +2851,11 @@
       "en_title": "Chapter 18: Building and Analyzing a Simple Language Model",
       "order": 229,
       "src_chars": 1868,
-      "status": "pending",
+      "status": "done",
       "src_sha": "26946ad3e91e",
       "src": "#### Application Problems\n\n**Q1.** A trained transformer achieves perplexity 50 on a benchmark. What is its cross-entropy in bits and nats?\n\n**Answer:** Bits: log⁡250≈5.64\\log_2 50 \\approx 5.64log2​50≈5.64 bits per token. Nats: ln⁡50≈3.91\\ln 50 \\approx 3.91ln50≈3.91 nats per token.\n\n**Q2.** A model compressed a 100 KB text corpus to 25 KB using arithmetic coding. What is its average cross-entropy in bits per byte?\n\n**Answer:** 25 KB = 200,000 bits. 100 KB = 100,000 bytes. Average: 200,000/100,000=2.0200,000 / 100,000 = 2.0200,000/100,000=2.0 bits per byte.\n\n**Q3.** Sketch how to compute layer-wise MI in a trained transformer.\n\n**Answer:**\n\n  1. Pass test sequences through the trained model, extracting hidden states at each layer.\n  2. For each layer ℓ\\ellℓ, collect samples (hℓ(i),x(i),y(i))(h_\\ell^{(i)}, x^{(i)}, y^{(i)})(hℓ(i)​,x(i),y(i)) of (representation, input, target).\n  3. For each layer, train a MINE network to estimate I(hℓ;X)I(h_\\ell; X)I(hℓ​;X) and I(hℓ;Y)I(h_\\ell; Y)I(hℓ​;Y).\n  4. Plot the trajectory in the information plane: I(hℓ;Y)I(h_\\ell; Y)I(hℓ​;Y) vs. I(hℓ;X)I(h_\\ell; X)I(hℓ​;X) for ℓ=1,2,…,L\\ell = 1, 2, \\ldots, Lℓ=1,2,…,L.\n\nCaveat: MINE estimates are noisy in high dimensions; values should be treated qualitatively.\n\n**Q4.** Explain why a perfectly trained language model would have cross-entropy equal to the entropy of the source.\n\n**Answer:** Cross-entropy = entropy + KL divergence: H(p,q)=H(p)+D(p∥q)H(p, q) = H(p) + D(p \\| q)H(p,q)=H(p)+D(p∥q).\n\nIf q=pq = pq=p (the model perfectly captures the source distribution), then D=0D = 0D=0 and cross-entropy equals entropy.\n\nSo the lower bound on cross-entropy for any model is H(p)H(p)H(p), the entropy of the source. No model can do better. Modern frontier models on English approach this bound (about 0.7 bits per character, vs. Shannon's 0.6-1.3 bits per character estimate).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 788,
+      "out_sha": "914b00cc45cd",
       "note": ""
     },
     {
@@ -2863,11 +2863,11 @@
       "en_title": "Chapter 18: Building and Analyzing a Simple Language Model",
       "order": 230,
       "src_chars": 2997,
-      "status": "pending",
+      "status": "done",
       "src_sha": "07a9fb18b914",
       "src": "#### Think Deeper\n\n**Q1.** Information theory provides bits-per-character as a measure of language model quality. What does it not measure?\n\n**Discussion:** Many things.\n\n* **Factual accuracy** : a model can be confident about wrong information.\n* **Reasoning ability** : bits per character doesn't measure logical chains.\n* **Helpfulness** : low cross-entropy doesn't mean useful.\n* **Safety** : harmful outputs may have low cross-entropy.\n* **Originality** : highly original text would have higher cross-entropy under a typical language model — yet originality is often valued.\n\nThe lesson: cross-entropy is one metric. It measures statistical fit to a corpus. It does not measure many other qualities we care about. Modern AI evaluation requires multiple metrics, of which cross-entropy is just one.\n\n**Q2.** The capstone showed that a 4M-parameter model achieves 2 bits/char on Shakespeare. Frontier models on diverse English achieve 0.7 bits/char. What does the gap say about scaling?\n\n**Discussion:** The gap is roughly 1.3 bits/char, achieved with a roughly 100,000x increase in parameters and a similar increase in data. So scaling buys a fixed amount of cross-entropy reduction per order of magnitude.\n\nThis roughly matches the Chinchilla scaling laws: cross-entropy decreases as a small power of compute. Each 10x in compute closes a fraction of the gap to the entropy floor.\n\nFor our model to reach 0.7 bits/char on Shakespeare specifically (which probably has lower entropy than diverse English due to its narrower style), we would need substantially more parameters and data — perhaps 1000x more.\n\nThe economics of language model improvement: each next bit of cross-entropy reduction is exponentially expensive. This is why frontier models cost hundreds of millions of dollars to train.\n\n**Q3.** What would it take to push our small model's cross-entropy substantially lower?\n\n**Discussion:** Several levers:\n\n  1. **More parameters** : scaling to 100M or 1B parameters might reduce cross-entropy to 1.5 bits/char on this corpus.\n  2. **More data** : training on more diverse Shakespeare-like text would help generalization.\n  3. **Pretraining** : starting from a model pretrained on broader text, then fine-tuning on Shakespeare, would likely outperform training from scratch.\n  4. **Better architecture** : modern architectural improvements (rotary positional encoding, RMSNorm, mixture-of-experts) give ~10-20% improvements over a vanilla transformer.\n  5. **Better optimization** : learning rate schedules, optimizer tuning, batch size tuning give incremental gains.\n\nEach of these gives modest improvements. Combining them all might get us to 1.0 bits/char on Shakespeare. Going below requires either dramatic scale increase or fundamentally new techniques (which the next decade of ML research may produce).\n\nThe lesson: improving a language model is a battle of incremental gains. The dramatic frontier-model results require an aggregation of many small improvements at scale.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1014,
+      "out_sha": "d865a23dc805",
       "note": ""
     },
     {
@@ -2875,11 +2875,11 @@
       "en_title": "Chapter 18: Building and Analyzing a Simple Language Model",
       "order": 231,
       "src_chars": 1991,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e90af1571fc6",
       "src": "### Chapter Summary\n\n§18.7 already enumerated _what_ this capstone showed. Two larger lessons remain to state.\n\nFirst, every prior chapter contributed a lens to one experimental setup: entropy (Ch. 1), mutual information (Ch. 2), AEP and typical sets (Ch. 3), the source-coding compression identity (Ch. 4), cross-entropy and KL (Ch. 8), variational framing (Ch. 10), rate-distortion (Ch. 11), the information-bottleneck lens (Ch. 13), MI estimation with appropriate skepticism (Ch. 14), and language-model compression (Ch. 15). A single 4M-parameter transformer on a 1M-character corpus is not a frontier model, but it is enough to make every claim in this book _operationally measurable_ on a laptop. That is the value of a capstone: not state-of-the-art numbers, but verifiable arithmetic.\n\nSecond, looking back to the book's opening: Shannon defined entropy in 1948 and showed that bits measure information. Chapter 18 closes the arc — the bits Shannon counted are exactly the bits a modern language model minimizes in its training loss. The seventy-five-year journey from telegraph wires to transformers is, in this single mathematical sense, one continuous chapter.\n\n\n### Closing Note\n\nThis is the end of the book.\n\nWe have built up information theory from Shannon's 1948 entropy definition to a working language model in Chapter 18. The core ideas — entropy, cross-entropy, KL divergence, capacity, rate-distortion, mutual information — have proven to be the right mathematical foundation for an entire intellectual revolution, from telegraph engineering to modern AI.\n\nA textbook leaves the reader at a starting point, not an ending. With these foundations, you can read the modern literature, build your own models, and contribute to the next chapter of the field. The Shannon-to-AI arc has been spectacular; what comes next is up to the reader.\n\n_Information is not a thing. It is a relationship between what you know and what you don't._\n\nWelcome to that relationship.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 705,
+      "out_sha": "5b7e158c97b6",
       "note": ""
     },
     {
