@@ -863,11 +863,11 @@
       "en_title": "Chapter 3: Working with the LLM API — The Engineer's First Tool",
       "order": 61,
       "src_chars": 3252,
-      "status": "pending",
+      "status": "done",
       "src_sha": "09f8fa0a4acb",
       "src": "### 3.1 The chat-completions shape\n\nEvery modern LLM API in 2026 shares the same basic shape, with cosmetic differences in field names. We will use Anthropic's shape as the canonical example and note OpenAI / Google differences where they matter.\n\nThe request is a JSON object with at minimum:\n\n* **`model`** : a string naming the specific model version. Always pin to a dated version (`claude-sonnet-4-20260315`, not `claude-sonnet-4`) in production. Aliases can move underneath you.\n* **`messages`** : an array of message objects. Each message has a **role** and **content**. Roles are `system`, `user`, `assistant` (and `tool` on some APIs).\n* **`max_tokens`** : the upper bound on output length, in tokens. Required on Anthropic; optional on OpenAI but you should always set it.\n\nOptional but operationally important:\n\n* **`temperature`** : 0 to 2 (Anthropic clamps at 1). Sampling temperature, per Chapter 2.\n* **`top_p`** : 0 to 1. Nucleus sampling.\n* **`top_k`** : positive integer. Top-k sampling. Anthropic exposes it; OpenAI does not.\n* **`stop_sequences`** (Anthropic) / **`stop`** (OpenAI): one or more strings; if the model emits any of them, generation stops. Useful for structured output where you want generation to terminate on a delimiter you can post-process.\n* **`stream`** : boolean. When true, the response is delivered as a stream of server-sent events (more on §3.6).\n* **`tools`** : array of tool schemas. When set, the model can return a tool-use block instead of text (Chapter 13).\n* **`tool_choice`** : forces the model to use a specific tool, or auto, or none.\n* **`metadata`** : an object the provider stores alongside the request for observability (user IDs, session IDs).\n* **`response_format`** (OpenAI) / structured-output schema fields (Anthropic): forces the model to emit a specific JSON shape (Chapter 7).\n* **`system`** (Anthropic top-level field) / system role in the messages array (OpenAI): the system prompt.\n\nThe response is a JSON object with at minimum:\n\n* **`id`** : a unique identifier for the request. Log this; it is the only way to look up the request later.\n* **`model`** : echoed back. Useful for audit; the actual model that ran can differ from what you requested if the provider is doing a silent reroute.\n* **`content`** (Anthropic) / **`choices`** (OpenAI): the generated text, often as an array of blocks (text, tool use, etc.).\n* **`stop_reason`** : why generation stopped. `end_turn` (model finished), `max_tokens` (hit the cap: your `max_tokens` was too small), `stop_sequence` (your stop sequence fired), `tool_use` (model wants to use a tool).\n* **`usage`** : token counts. `input_tokens`, `output_tokens`. Sometimes broken out into `cache_creation_input_tokens`, `cache_read_input_tokens` for cached calls. This is the field your cost dashboard reads.\n\nThe response headers also carry information you want:\n\n* **Rate-limit headers** : `anthropic-ratelimit-tokens-remaining`, `anthropic-ratelimit-requests-remaining`, plus reset timestamps. (OpenAI: `x-ratelimit-remaining-tokens`, `x-ratelimit-remaining-requests`.) Read these on every response; cache them; use them to back off proactively before you hit the 429.\n* **Request ID** for support tickets (`x-request-id` on most providers).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1849,
+      "out_sha": "905f0a228098",
       "note": ""
     },
     {
@@ -875,11 +875,11 @@
       "en_title": "Chapter 3: Working with the LLM API — The Engineer's First Tool",
       "order": 62,
       "src_chars": 1948,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d082d69b1cfb",
       "src": "#### Definition: Role\n\nThe label attached to each message in the conversation, telling the model how to treat it. Three roles dominate: `system` (instructions from the developer, treated as privileged); `user` (the human or upstream system speaking to the model); `assistant` (the model's previous responses, echoed back when you want it to continue or to reference its own earlier output).\n\nIn plain language: roles are how you tell the model _who is speaking_. The model has been trained (per §2.3) to treat system-role content as authoritative configuration, user-role content as the input to act on, and assistant-role content as its own prior speech. The role separation is the foundation of multi-turn conversation and the first line of defense against prompt injection (Chapter 23).\n\n\n#### The minimal multi-turn request\n\nA real call with a system prompt and conversational history:\n    \n    \n    response = client.messages.create(\n        model=\"claude-sonnet-4-20260315\",\n        max_tokens=1024,\n        system=\"You are a code reviewer for Beacon Health AI. Be concise. Flag security issues with priority. Do not invent file names that are not in the diff.\",\n        messages=[\n            {\"role\": \"user\", \"content\": \"Review this diff:\\n```python\\nimport os\\nDB_PASSWORD = 'changeme'\\n```\"},\n            {\"role\": \"assistant\", \"content\": \"Security issue: hard-coded password 'changeme' is a placeholder credential committed to source. Move to environment variable; document the expected variable name in the README.\"},\n            {\"role\": \"user\", \"content\": \"What variable name do you suggest?\"},\n        ],\n        temperature=0,\n    )\n    \n\nThis is the shape you will work with for the rest of your career. Note the pinned model version, the explicit `max_tokens`, the system prompt that gives the model its role and the hard constraints, and `temperature=0` for reproducibility on a code-review task where you do not want creativity.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1324,
+      "out_sha": "78caa6b3269a",
       "note": ""
     },
     {
@@ -887,11 +887,11 @@
       "en_title": "Chapter 3: Working with the LLM API — The Engineer's First Tool",
       "order": 63,
       "src_chars": 2319,
-      "status": "pending",
+      "status": "done",
       "src_sha": "537881d74cea",
       "src": "### 3.2 Streaming: what it is and when to use it\n\nBy default, a chat-completions call holds the connection open until the model finishes generating, then returns the entire response. For a 500-token output at 50 tokens per second, that is a 10-second wait before the user sees anything. For an interactive UI, this is unacceptable.\n\nStreaming changes the delivery model. Instead of waiting for the full response, the API returns a stream of server-sent events (SSE), each containing a piece of the output as it is generated. The client appends each piece to a display buffer; the user sees text appearing token by token, the way ChatGPT looks. The total wall-clock time to finish is the same; the _time to first token_ (TTFT) drops to typically 200–600 ms in 2026, which feels instantaneous to a user.\n    \n    \n    with client.messages.stream(\n        model=\"claude-sonnet-4-20260315\",\n        max_tokens=1024,\n        messages=[{\"role\": \"user\", \"content\": \"Explain RAG in two paragraphs.\"}],\n    ) as stream:\n        for text in stream.text_stream:\n            print(text, end=\"\", flush=True)\n        final = stream.get_final_message()\n    \n\nA few practical notes:\n\n  1. **Streaming changes your error handling.** A non-streaming call either succeeds entirely or fails entirely. A streaming call can succeed for the first 200 tokens, then fail with a server error, then leave the client with a partial response. Your code has to decide what to do with partial output (show it with an error marker? Discard it? Save it for retry?).\n  2. **Streaming changes your usage accounting.** With streaming, the `usage` field is delivered at the end of the stream, in a final `message_stop` event. Code that reads `response.usage` directly from a non-streaming response has to be adapted to read the stream's final message.\n  3. **Streaming is essential for interactive UIs; useless for batch.** A backend job that summarizes 10,000 documents and writes the results to a database has no use for streaming; the database does not care about TTFT. Save the complexity for the cases where it matters.\n  4. **Streaming is essential for voice.** Sub-500ms TTFT budgets (Chapter 20) cannot be met without streaming. The voice pipeline starts speech synthesis on the first few tokens, in parallel with the model continuing to generate.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1147,
+      "out_sha": "52592f3b10e3",
       "note": ""
     },
     {
