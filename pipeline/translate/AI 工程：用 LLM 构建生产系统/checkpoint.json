@@ -959,11 +959,11 @@
       "en_title": "Chapter 3: Working with the LLM API — The Engineer's First Tool",
       "order": 69,
       "src_chars": 2710,
-      "status": "pending",
+      "status": "done",
       "src_sha": "91af25fda2a6",
       "src": "### 3.8 The 2026 model lineup at a glance\n\nA concise cheat sheet for choosing a model in 2026. The classic-triangle sidebar is below at §3.10; this section gives the prose context.\n\n**Frontier tier** (the model you pick when quality matters most):\n\n* **Claude Sonnet 4** (3 USD/15, USD ~500ms p50, 200K context). The default for code, reasoning, structured output. Strong at instruction-following. The pricing premium over GPT-4o is small; the differentiation in 2026 is on long-context handling and tool use, where Claude tends to be slightly more reliable.\n* **GPT-4o** (2.50 USD/10, USD ~400ms p50, 128K context). The OpenAI flagship. Strong at chat, multimodal (vision + audio in/out). Slightly cheaper than Claude on output; slightly shorter context window.\n* **Gemini 2.5 Pro** (3.50 USD/14, USD ~600ms p50, 2M context in long-context configuration). The long-context specialist. When your task fits in 200K, Claude or GPT are usually preferred; when it needs the 2M window, Gemini is the only game in town.\n\n**Workhorse tier** (the model you pick when cost matters more than top-tier quality):\n\n* **GPT-4o-mini** (0.15 USD/0.60, USD ~300ms p50, 128K context). The cheap-and-fast default. Good for high-volume tasks where the frontier model's quality margin does not justify the 10-20× cost.\n* **Claude Haiku 4** (0.80 USD/4, USD ~400ms p50, 200K context). Anthropic's workhorse. Faster than Sonnet, cheaper, but the quality gap is real on hard reasoning. The 200K context is a differentiator over GPT-4o-mini.\n* **Gemini 2.5 Flash** (0.10 USD/0.40, USD ~250ms p50, 1M context). The cheapest workhorse. Surprisingly capable for the price, with the long-context window thrown in.\n* **DeepSeek V3** (0.27 USD/1.10, USD ~600ms p50, 128K context). The strong open-weight option offered as an API. Real differentiation from the closed-source workhorses on some benchmarks; the latency is higher in 2026.\n\n**Specialist tier** (pick for specific tasks):\n\n* **Code-specific models** (DeepSeek Coder, etc.): sometimes outperform general models on pure code tasks at a fraction of the cost.\n* **Embedding models** (Chapter 10): text-embedding-3, Cohere embed-v3, Voyage AI. These are not chat models; they map text to vectors.\n* **Vision models** (Chapter 12): GPT-4o Vision, Claude Vision, Gemini Vision. Often the chat model with a vision modality enabled, sometimes with a per-image surcharge.\n\nThe pricing changes; the _shape_ persists. There will be a frontier tier, a workhorse tier, and specialists. In 2026, the frontier-to-workhorse cost ratio is roughly 10×–25×; the choice between tiers is the central everyday architectural decision, and Chapter 17 will turn that decision into engineering discipline.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1303,
+      "out_sha": "edcb1401e84c",
       "note": ""
     },
     {
@@ -971,11 +971,11 @@
       "en_title": "Chapter 3: Working with the LLM API — The Engineer's First Tool",
       "order": 70,
       "src_chars": 58,
-      "status": "pending",
+      "status": "done",
       "src_sha": "668106b938e9",
       "src": "### 3.9 Beacon Health AI: Aiyana's first day, instrumented",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 41,
+      "out_sha": "35611d6c7c32",
       "note": ""
     },
     {
@@ -983,11 +983,11 @@
       "en_title": "Chapter 3: Working with the LLM API — The Engineer's First Tool",
       "order": 71,
       "src_chars": 3463,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3c220df88e18",
       "src": "Aiyana's six-line call (§3.1) is the _Hello, world_ of her new role. Her actual first week's work was wrapping it with the things production code needs. Here is what those wrappers look like.\n    \n    \n    import os\n    import time\n    import logging\n    from anthropic import Anthropic, APIError\n    \n    logger = logging.getLogger(\"beacon.codereview\")\n    client = Anthropic(api_key=os.environ[\"ANTHROPIC_API_KEY\"])\n    \n    SYSTEM_PROMPT = \"\"\"You are the Beacon Health AI CodeReview Bot.\n    Review the diff that follows. Output a structured review with:\n    - Severity (critical/major/minor)\n    - File and line\n    - Issue\n    - Suggested fix\n    Flag any potential PHI exposure with severity=critical.\n    Do not invent files or lines not present in the diff.\n    \"\"\"\n    \n    def review_diff(diff_text: str, request_id: str, max_attempts: int = 3) -> dict:\n        for attempt in range(max_attempts):\n            try:\n                t0 = time.monotonic()\n                response = client.messages.create(\n                    model=\"claude-sonnet-4-20260315\",\n                    max_tokens=1024,\n                    system=SYSTEM_PROMPT,\n                    messages=[{\"role\": \"user\", \"content\": diff_text}],\n                    temperature=0,\n                    metadata={\"user_id\": request_id},\n                )\n                duration_ms = int((time.monotonic() - t0) * 1000)\n    \n                logger.info(\n                    \"codereview ok\",\n                    extra={\n                        \"request_id\": request_id,\n                        \"anthropic_request_id\": response.id,\n                        \"model\": response.model,\n                        \"input_tokens\": response.usage.input_tokens,\n                        \"output_tokens\": response.usage.output_tokens,\n                        \"duration_ms\": duration_ms,\n                        \"stop_reason\": response.stop_reason,\n                    },\n                )\n    \n                return {\n                    \"text\": response.content[0].text,\n                    \"input_tokens\": response.usage.input_tokens,\n                    \"output_tokens\": response.usage.output_tokens,\n                    \"duration_ms\": duration_ms,\n                    \"anthropic_request_id\": response.id,\n                }\n    \n            except APIError as e:\n                if e.status_code == 429:\n                    wait = float(e.response.headers.get(\"retry-after\", 2 ** attempt))\n                    logger.warning(\n                        \"codereview rate limited\",\n                        extra={\"request_id\": request_id, \"wait_seconds\": wait, \"attempt\": attempt},\n                    )\n                    time.sleep(wait)\n                    continue\n                elif e.status_code >= 500:\n                    wait = 2 ** attempt\n                    logger.warning(\n                        \"codereview server error\",\n                        extra={\"request_id\": request_id, \"status\": e.status_code, \"wait_seconds\": wait, \"attempt\": attempt},\n                    )\n                    time.sleep(wait)\n                    continue\n                else:\n                    logger.error(\n                        \"codereview client error\",\n                        extra={\"request_id\": request_id, \"status\": e.status_code, \"error\": str(e)},\n                    )\n                    raise\n    \n        raise RuntimeError(f\"codereview exceeded {max_attempts} attempts for {request_id}\")\n    ",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 3529,
+      "out_sha": "98ffaae12d8b",
       "note": ""
     },
     {
