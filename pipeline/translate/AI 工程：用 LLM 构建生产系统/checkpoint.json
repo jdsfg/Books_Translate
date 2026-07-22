@@ -611,11 +611,11 @@
       "en_title": "Chapter 2: The LLM Mental Model for Engineers",
       "order": 40,
       "src_chars": 2898,
-      "status": "pending",
+      "status": "done",
       "src_sha": "452dcc79b9ef",
       "src": "### 2.10 Triangle Trade-off sidebar: cost-breakdown of a single API call\n\nThe mental model from §2.1–§2.9 leaves one practical question to put a number on: when you call the model, what are you actually paying for? The cost shape is itself a property of the mental model — cost is denominated in _tokens_ , the same units the model reasons over, and the input/output asymmetry in pricing has a mechanistic reason rooted in how the model generates (every output token requires a full forward pass, every input token does not). This sidebar makes the connection concrete; Chapter 3 operationalizes it at the API layer; Chapter 18 turns it into the cost-engineering discipline. Let's trace a single Sonnet 4 call from the perspective of cost.\n\nA typical chat-API call to Sonnet 4 in 2026 has the following cost components, all denominated in tokens:\n\n* **System prompt** : usually 300–1500 tokens. At 3 USD per million input tokens, this is 0.0009 USD to 0.0045 USD per call. _Cached after the first call within the 5-minute TTL window (Chapter 18); the cached read rate is 0.30 USD per million tokens, or about 0.0001 USD to 0.0005 USD per call._\n* **User message and conversation history** : highly variable. A new conversation has just the user message (maybe 50–500 tokens, 0.00015 USD to 0.0015 USD). A 20-turn conversation can be 5K–20K tokens cumulative (0.015 USD to 0.06 USD in input).\n* **Retrieved RAG context (if applicable)** : 1K–10K tokens added per retrieval. At 3 USD per million input, that is 0.003 USD to 0.03 USD per call.\n* **Tool definitions (if applicable)** : 200–1500 tokens. Same per-token cost as system prompt; cached the same way.\n* **Model response (output)** : 100–2000 tokens typical for chat; can be much longer for code generation or document synthesis. At 15 USD per million output tokens, that is 0.0015 USD to 0.03 USD per call. _Note the 5× ratio of output to input cost: this is true across most provider pricing in 2026, and it means that whenever you can structure a task to reduce output length without hurting quality, you save real money._\n\nPulling these together for a representative production scenario: a customer-support agent at Helios making a single tool-augmented response with a 1500-token system prompt (cached), 500 tokens of recent conversation history, 2K tokens of retrieved knowledge-base context, 800 tokens of tool definitions (cached), and 600 tokens of model response. The cost decomposition:\n\n* System prompt (cached read): 1500 × 0.30 USD / 1M = **0.00045 USD**\n* Conversation history (fresh input): 500 × 3.00 USD / 1M = **0.0015 USD**\n* Retrieved context (fresh input): 2000 × 3.00 USD / 1M = **0.006 USD**\n* Tool definitions (cached read): 800 × 0.30 USD / 1M = **0.00024 USD**\n* Output: 600 × 15.00 USD / 1M = **0.009 USD**\n* **Total per call: ~0.017 USD (rounded up to 0.02 USD to leave headroom for variance and longer outputs)**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1426,
+      "out_sha": "6b9980024b8c",
       "note": ""
     },
     {
@@ -623,11 +623,11 @@
       "en_title": "Chapter 2: The LLM Mental Model for Engineers",
       "order": 41,
       "src_chars": 1442,
-      "status": "pending",
+      "status": "done",
       "src_sha": "950a6a0a0910",
       "src": "At Helios's 10 million tickets per month, with an average of 4 model calls per ticket (one for understanding, one for retrieval-augmented response, one for tool invocation, one for follow-up), that is 40 million calls per month — about **680K USD/month** at the unit cost of 0.017, USD or **~800K USD/month** at the 0.02 USD rounded-up unit cost. Both lower-bound estimates are close to Helios's reported 1M USD+ monthly inference spend. The gap to the reported figure is covered by occasional much-longer responses, multi-call ticket flows that overrun the four-call average, and occasional routing to a more expensive frontier model (Opus-class) for sensitive escalations where Sonnet's quality is not enough.\n\nTwo things to notice in this breakdown:\n\n  1. **The output is the dominant cost line per call** , even though it is one of the smaller token counts. The 5× output-vs-input pricing multiplier means a 600-token output costs more than a 2000-token input. This is why prompt design that yields shorter, more structured outputs (Chapter 7) is a real cost lever, not just a quality concern.\n  2. **Prompt caching is a big lever when it applies**. The system prompt and the tool definitions, both cached, cost 10× less per call than they would uncached. For a high-volume system where system prompts and tool definitions are stable, prompt caching can reduce per-call cost by 30–60%. Chapter 18 will turn this into binding workflow #9.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 570,
+      "out_sha": "8e570220e1c1",
       "note": ""
     },
     {
@@ -635,11 +635,11 @@
       "en_title": "Chapter 2: The LLM Mental Model for Engineers",
       "order": 42,
       "src_chars": 2864,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f8e3114f8f5f",
       "src": "### 2.11 How This Breaks: confusing the model with the product\n\n**Failure mode named** : confusing the model with the product. A team treats the LLM as if it were the product, rather than as a probabilistic component inside the product. Behavior that needs to be guaranteed (refusal on certain topics, specific output formats, attribution of sources, escalation paths) is delegated entirely to the model's trained behavior, with no enforcement layer outside the model.\n\n**Real or composite incident** : a composite example from across the industry. A startup ships an LLM-backed customer service feature that, per the system prompt, _should_ refuse to make commitments on the company's behalf: pricing, refunds, policy exceptions. The system prompt says so in three places, with examples. Six weeks after launch, a user constructs a prompt that exploits a quirk of how the model interprets nested instructions, and the model emits a commitment (\"yes, we will refund you 500 USD for the inconvenience\"). The user takes a screenshot. The legal team gets involved.\n\nThe failure was not that the model is bad. The failure was that _the engineering team treated the system prompt as a guarantee, when in fact the system prompt is a probabilistic conditioner that biases the model's behavior but does not enforce it_. There was no output-validation layer. There was no refusal classifier on the output. There was no tool-call mediation that would have routed any _refund commitment_ through a deterministic policy check.\n\n**Engineering mitigation** : separate the _model_ from the _product_. The system prompt does its job (biasing the model's behavior). A separate output-validation layer enforces the hard constraints: it runs a refusal classifier, checks for committed dollar amounts above a threshold, and validates the response shape. For agent-style flows with tool calls, the deterministic policy check happens at the tool layer, not in the model's natural language. The model is a component; the product is what you wrap around the component. Chapter 16 will build this principle into a 9-layer reference architecture. Chapter 23 will return to it under the heading of _safety in production_.\n\n**The eval that would have caught it** : a _prompt-injection robustness_ eval. A golden set of 100+ adversarial inputs designed to elicit refusal-violations from the model. Run on every prompt change and every model upgrade. If the system prompt is the only line of defense, an adversarial eval at this scale will surface the gaps within a day. If the output-validation layer is in place, the eval should show a robust 0% refusal-violation rate even when the model itself is occasionally tricked, because the validation layer catches what the model misses. The presence of the eval is what would have caught it; the failure is that no such eval existed before launch.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 971,
+      "out_sha": "1bbcd0f5f1d8",
       "note": ""
     },
     {
@@ -647,11 +647,11 @@
       "en_title": "Chapter 2: The LLM Mental Model for Engineers",
       "order": 43,
       "src_chars": 2009,
-      "status": "pending",
+      "status": "done",
       "src_sha": "679e96c2f36e",
       "src": "### Chapter Summary\n\nAn LLM is, mechanically, a function that turns a sequence of tokens into a probability distribution over the next token. Everything else (the chat product, the agent, the RAG system, the voice assistant) is engineering wrapped around that one function. Tokens are integer-encoded units of input and output; the model never sees text. Pretraining gave the model its knowledge of language and the world by training on enormous corpora to predict the next token; preference tuning (RLHF, DPO) turned the base model into a helpful, instruction-following chat model. The context window is the model's working memory and the only place state lives during a single inference call. Hallucinations are the visible artifact of the model having to commit to a next-token choice even under high uncertainty. Prompt sensitivity comes from the fact that the model is conditioning on specific tokens, not parsing an abstract intent. The model cannot reliably count letters because it never sees them; tokenization sits between text and the model. The model card is the spec sheet; treat it that way.\n\nThe three teams from Chapter 1 will keep showing up; Chapter 3 will hand you the API surface that makes this mental model concrete. Almost every chapter that follows leans on the model built here. Context engineering (Chapter 8) builds on §2.4; RAG (Chapter 9) is the architectural answer to §2.6; tool use (Chapter 13) is the engineering answer to §2.8; cost optimization (Chapter 18) is the engineering answer to §2.10. The four-question rubric and the _How This Breaks_ pattern recur throughout, and each recurrence rests on what you internalized here.\n\nThe most important thing to carry into Chapter 3 is the loop: _given a sequence of tokens, the model returns a probability distribution over the next token, you sample, you append, you repeat until stop._ If that loop is in your head, the API surface in Chapter 3 will make immediate sense, and the whole book will compound.\n\n\n### 2.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 725,
+      "out_sha": "12d850df382c",
       "note": ""
     },
     {
