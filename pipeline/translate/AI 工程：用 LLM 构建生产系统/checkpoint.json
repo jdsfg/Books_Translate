@@ -431,11 +431,11 @@
       "en_title": "Chapter 1: What Is AI Engineering?",
       "order": 25,
       "src_chars": 3113,
-      "status": "pending",
+      "status": "done",
       "src_sha": "339a506fe29f",
       "src": "#### Think Deeper\n\n**Q1.** _The end of AI engineering_. Consider the hypothesis: by 2030, frontier models will be capable enough that the techniques in this book (RAG, structured-output schemas, eval-driven CI, multi-model routing) will be obsolete: the model will just _do the right thing_ , and the engineering surface will collapse to _write a good prompt and call the API_. Argue for and against this hypothesis. Identify which chapters of this book would survive, and which would not.\n\n**Discussion:** **For the hypothesis** : model capability is the strongest historical force in the field. Each generation of frontier models obviates a layer of 2022-era prompt-engineering tricks. By 2026, basic prompts work without chain-of-thought scaffolding. Extrapolated forward, RAG eventually loses to context windows ≥10M tokens (Chapter 8 is already on the boundary). Multi-step structured output loses to native JSON-schema modes. Eval-driven CI shrinks to spot-checks because the model is reliably better than the eval. Multi-model routing simplifies because one model is uniformly best.\n\n**Against the hypothesis** : model capability is the strongest force, but it is not the only force. Cost, latency, and observability are engineering forces that do not collapse with capability. A model that is _capable_ of doing the right thing still costs money to run and still takes time to respond. The need to measure outcomes, attribute costs, debug failures, and operate at scale does not go away with capability. The most expensive part of LLM products in 2026 is not the techniques in this book; it is operating them well, and operating disciplines historically grow rather than shrink as systems mature.\n\n**Surviving chapters** : the chapters on eval discipline (4), failure modes and \"How This Breaks\" (across the book), observability (19), cost (18), team and judgment (24, 25). Even with a god-level model, you still need to measure outcomes and account for cost and operate the system. These chapters are the durable ones (per the §1.7 aging strategy).\n\n**Chapters that would shrink or shift** : the chapters on prompt engineering (6), structured output (7), RAG (9–12), agent design (13–15), routing (17), and on-device (22). These are the parts of the book that are time-stamped, and a strong capability jump would compress them. Chapter 25 (where the field is going) actually engages with this directly.\n\nThe honest answer to the hypothesis: some of this book ages out, much of it does not, and the durable parts are the discipline parts. _The discipline of engineering against a stochastic component you do not own_ outlasts any specific technique. That is the long bet of the book.\n\n**Q2.** _Why now and not earlier_. Why did AI engineering as a coherent discipline crystallize in 2024–2026 and not in 2018–2020, when machine learning was already widespread in production? Identify three factors that distinguished the LLM era from the earlier ML production era, and explain why those factors specifically produced a new discipline rather than just _more ML engineering_.\n\n**Discussion:** Three factors:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1148,
+      "out_sha": "8e4f490d1a5f",
       "note": ""
     },
     {
@@ -443,11 +443,11 @@
       "en_title": "Chapter 1: What Is AI Engineering?",
       "order": 26,
       "src_chars": 3249,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2e38a66f5aa8",
       "src": "  1. **The model is no longer yours**. Pre-2022 ML in production was almost always _we trained a model on our data and serve it from our infrastructure_. The engineering discipline was vertical: train, evaluate, deploy, monitor, all in-house. LLMs broke the vertical: the model is trained by someone else, served by someone else (or self-hosted but borrowed-weights), and you build the product around it. This separates the disciplines: training-research stayed at frontier labs; engineering-production moved to product teams. A new vertical discipline (AI engineering) was needed because the previous one (ML engineering) included training in its core.\n\n  2. **The output is open-ended**. Pre-2022 ML in production was overwhelmingly classification, regression, or ranking; outputs were closed-form and you could write a metric (accuracy, AUC, NDCG) directly against the ground truth. LLM outputs are open-ended text; closed-form metrics do not exist for them, which forced the new discipline of eval-as-spec (Chapter 4): LLM-as-judge, golden-answer cosine similarity, manual labeling, etc. The eval discipline of AI engineering is genuinely new.\n\n  3. **The product is conversational**. Pre-2022 ML was embedded in non-conversational products: recommenders, fraud detectors, search rankers. The user did not talk to the model. LLMs are conversational, which means the engineering discipline now includes turn-taking, context-window management, conversation memory, tool use, and agent loops, none of which had a direct analog in earlier ML engineering. This is the entire architecture surface of Parts III–V.\n\nThese three together (someone else's model, open-ended outputs, conversational products) made the existing ML engineering toolbox insufficient. The field invented new tools (eval-as-CI, vector databases, agent frameworks, prompt registries), and the discipline that uses those tools is what we now call AI engineering. The labor-market formalization in 2024–2026 followed the tool-set formalization in 2023–2025, which followed the model capability arc of 2022–2024 (GPT-3.5, GPT-4, Claude, Llama). The discipline could not have crystallized earlier because the tools and the labor demand were not in place; it could not have waited much longer because the labor demand outpaced the discipline.\n\n**Q3.** _Does the four-role split survive AI-assisted engineering?_ §1.3 argues that AI engineering split into four roles (AI engineer, ML platform engineer, AI product engineer, AI ops) because the work is wide enough that no one person can hold all of it. But by 2026, the engineers in each of those roles are themselves heavy users of AI tools (Copilot, Claude Code, agent IDEs). One reasonable hypothesis is that AI-assisted engineering compresses the four roles back into one or two: a single engineer with strong judgment, augmented by AI, can hold the surface that previously required four specialists. The competing hypothesis is that AI assistance raises the productivity floor without changing the role boundaries: each of the four roles becomes faster, but the boundaries hold because they are organizational, not just cognitive. Argue your position. Identify which of the four roles is most and least likely to collapse, and why.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1190,
+      "out_sha": "1485ac9ce17b",
       "note": ""
     },
     {
@@ -455,11 +455,11 @@
       "en_title": "Chapter 1: What Is AI Engineering?",
       "order": 27,
       "src_chars": 2562,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bc38c6ce811c",
       "src": "**Discussion:** **For compression** : AI assistance is, in 2026, strongest at the parts of the four roles that were the reason for the split in the first place. The AI engineer's job included a lot of prompt iteration and structured-output debugging; agent IDEs collapse that work. The ML platform engineer's job included a lot of integration glue (vector-store SDKs, eval harness boilerplate, LiteLLM router config); LLM-driven code generation collapses that too. If the _reason_ for the role split was that one human could not hold all of the cognitive load, and AI assistance is most useful at unloading exactly that cognitive load, then the role split is exactly where compression should appear. The most-likely-to-collapse role is the _AI engineer + AI product engineer_ boundary: in a small team, a single strong generalist with good judgment can hold both, and AI assistance closes the implementation-velocity gap that previously forced specialization.\n\n**Against compression** : the four roles exist for organizational reasons that AI assistance does not touch. Platform engineers exist because _the platform must outlive any one product team_ and the platform decisions (LiteLLM config, eval-CI shape, trace-store schema) need to be owned with a different incentive structure than product features. AI ops exists because _production failures are 24/7 and the on-call rotation needs a dedicated team_ — AI does not show up to the 3am page. AI product engineering exists because _scoping conversations with non-technical stakeholders are a relationship surface_ , not a typing surface, and the role lives there. None of these dissolve with stronger code-generation tools. The least-likely-to-collapse role is AI ops: the operational surface scales with traffic, not with engineering productivity, and AI assistance does not change how often an incident page fires.\n\nThe honest answer is probably both: AI assistance compresses the _implementation_ dimension of all four roles, but the _judgment, ownership, and on-call_ dimensions hold. So the four-role split survives, but the headcount ratios change: fewer specialists per role at a small startup, the same specialists per role at scale. The discipline-level skills (level 4 and 5 of the hierarchy) become more valuable; the pattern-level skills (level 3) become commoditized. This is the same shape every wave of engineering productivity has produced: tools eat the easy parts of the job, the hard parts (judgment about what to build, ownership of what is broken) become a larger fraction of the work.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 843,
+      "out_sha": "660491bde363",
       "note": ""
     },
     {
@@ -467,11 +467,11 @@
       "en_title": "Chapter 1: What Is AI Engineering?",
       "order": 28,
       "src_chars": 1176,
-      "status": "pending",
+      "status": "done",
       "src_sha": "68c1a09d3d0e",
       "src": "### Appendix to Chapter 1: How to Read This Book\n\nYou can read this book front-to-back or you can skim. Front-to-back is the recommended path; the threading (Beacon, Strata, Helios) and the four-question rubric compound across chapters in a way that is harder to reconstruct from skimming. The exercises are not optional decoration; they are the second pass on the material; work them, especially the Tier 2 build problems and the Tier 3 triangulation problems.\n\nThree reading paths if you are not reading front-to-back:\n\n* **The RAG path** : Chapter 9 → Chapter 10 → Chapter 11 → Chapter 12, with side trips to Chapter 4 (the eval foundations RAG presumes) and Chapter 8 (the context-engineering boundary RAG operates within).\n* **The agents path** : Chapter 13 → Chapter 14 → Chapter 15, with side trips to Chapter 7 (tool calls as structured output) and Chapter 18 (cost circuit breakers).\n* **The ops path** : Chapter 16 → Chapter 17 → Chapter 18 → Chapter 19 → Chapter 21, with side trips to Chapter 4 (eval as the production signal) and Chapter 23 (safety in production).\n\nThe synthesis (Chapters 24 and 25) is for the end no matter the path.\n\nWelcome to the field.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 473,
+      "out_sha": "34ccc22fed05",
       "note": ""
     },
     {
