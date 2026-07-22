@@ -2023,11 +2023,11 @@
       "en_title": "Chapter 12: Network Information Theory",
       "order": 160,
       "src_chars": 2602,
-      "status": "pending",
+      "status": "done",
       "src_sha": "57723c281766",
       "src": "The classical theory we have developed (Shannon's source and channel coding) covers a single transmitter and a single receiver. Real communication systems involve many transmitters and many receivers sharing a common medium. Cell phones in the same area share spectrum. Wi-Fi clients in a coffee shop coexist on the same channel. Sensor networks distribute computation across many devices. Federated learning trains models across millions of phones.\n\n**Network information theory** generalizes Shannon's framework to these multi-user scenarios. The single-letter capacity C=max⁡I(X;Y)C = \\max I(X; Y)C=maxI(X;Y) is replaced by a **capacity region** : a multidimensional set of achievable rate tuples. Many of the canonical multi-user problems have known solutions (broadcast channel, multiple-access channel); many remain open after fifty years (the general interference channel).\n\nThis chapter sketches the main ideas. We treat the multiple-access channel (the cleanest multi-user result), the broadcast channel, the interference channel, distributed source coding (Slepian-Wolf), and network coding. The chapter ends with the AI angle: federated learning and distributed estimation as multi-terminal information problems.\n\nThe chapter is conceptually rich but proof-light: full proofs in network information theory are technically demanding, and we refer interested readers to the El Gamal-Kim textbook for detailed treatments.\n\n\n### 12.1 The Multiple-Access Channel (MAC)\n\nA **multiple-access channel** has MMM transmitters each sending to one common receiver. Inputs X1,…,XMX_1, \\ldots, X_MX1​,…,XM​; output YYY; transition p(y∣x1,…,xM)p(y \\mid x_1, \\ldots, x_M)p(y∣x1​,…,xM​).\n\nFor two users (M=2M = 2M=2), each transmitter encodes independently and sends through the shared channel. The receiver decodes both messages.\n\n\n#### Capacity Region of the Two-User MAC\n\nThe capacity region of the two-user MAC is the set of rate pairs (R1,R2)(R_1, R_2)(R1​,R2​) such that there exist independent input distributions p(x1),p(x2)p(x_1), p(x_2)p(x1​),p(x2​) with:\n\nR1≤I(X1;Y∣X2),R_1 \\leq I(X_1; Y \\mid X_2),R1​≤I(X1​;Y∣X2​), R2≤I(X2;Y∣X1),R_2 \\leq I(X_2; Y \\mid X_1),R2​≤I(X2​;Y∣X1​), R1+R2≤I(X1,X2;Y).R_1 + R_2 \\leq I(X_1, X_2; Y).R1​+R2​≤I(X1​,X2​;Y).\n\nThe region is the convex hull of these constraints over all input distributions.\n\nThe **sum rate** R1+R2R_1 + R_2R1​+R2​ is bounded by I(X1,X2;Y)I(X_1, X_2; Y)I(X1​,X2​;Y) — the mutual information between the joint input and the output. Individual rates are bounded by the conditional mutual informations (assuming the other user's message is known).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 879,
+      "out_sha": "3347ce3120aa",
       "note": ""
     },
     {
@@ -2035,11 +2035,11 @@
       "en_title": "Chapter 12: Network Information Theory",
       "order": 161,
       "src_chars": 2651,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a7def12242e1",
       "src": "#### Worked Example: Gaussian MAC\n\nFor two users with power constraints P1,P2P_1, P_2P1​,P2​ and additive Gaussian noise of variance NNN:\n\nR1≤12log⁡(1+P1N),R_1 \\leq \\frac{1}{2} \\log\\left(1 + \\frac{P_1}{N}\\right),R1​≤21​log(1+NP1​​), R2≤12log⁡(1+P2N),R_2 \\leq \\frac{1}{2} \\log\\left(1 + \\frac{P_2}{N}\\right),R2​≤21​log(1+NP2​​), R1+R2≤12log⁡(1+P1+P2N).R_1 + R_2 \\leq \\frac{1}{2} \\log\\left(1 + \\frac{P_1 + P_2}{N}\\right).R1​+R2​≤21​log(1+NP1​+P2​​).\n\nThe sum-rate constraint is the most binding: the two users together can transmit at the rate of a single user with combined power. Any operation point (R1,R2)(R_1, R_2)(R1​,R2​) in the resulting pentagonal region is achievable; the corner points are achievable via **successive interference cancellation** (decode user 1 first, subtract its contribution, then decode user 2 with effectively higher SNR).\n\nThis is the foundation of how multiple cell phones share a single base station's spectrum, with appropriate generalizations for fading and multiple antennas.\n\n\n### 12.2 The Broadcast Channel\n\nA **broadcast channel** has one transmitter sending different messages to multiple receivers. Input XXX; outputs Y1,…,YKY_1, \\ldots, Y_KY1​,…,YK​; transitions p(y1,…,yK∣x)p(y_1, \\ldots, y_K \\mid x)p(y1​,…,yK​∣x).\n\nThe capacity region depends crucially on the channel structure. For **degraded broadcast channels** (where one receiver's output is a degraded version of another's), the capacity region is known and given by **superposition coding**.\n\nFor non-degraded broadcast channels, the capacity region is generally unknown — only inner and outer bounds.\n\n\n#### Superposition Coding for the Degraded Broadcast Channel\n\nConsider two receivers, with receiver 1 having a \"stronger\" channel than receiver 2. Strategy:\n\n  1. Encode messages: a \"base layer\" message at rate R2R_2R2​ (intended for both receivers) and a \"refinement layer\" message at rate R1−R2R_1 - R_2R1​−R2​ (intended for receiver 1 only).\n  2. Transmit the superposition: X=X1+X2X = X_1 + X_2X=X1​+X2​, where X2X_2X2​ carries the base layer (strong code) and X1X_1X1​ carries the refinement (weak code \"on top of\" the base).\n  3. Receiver 2 (weak) decodes only the base layer (treating refinement as noise).\n  4. Receiver 1 (strong) first decodes the base layer (easy because receiver 1's channel is better than receiver 2's), subtracts it, then decodes the refinement.\n\nThis **superposition coding** achieves the capacity region for degraded broadcast channels. It is the basis of, e.g., layered video coding (where a base layer gives low quality to all receivers, and refinement layers give higher quality to those with better channels).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 935,
+      "out_sha": "b49c9417a96a",
       "note": ""
     },
     {
@@ -2047,11 +2047,11 @@
       "en_title": "Chapter 12: Network Information Theory",
       "order": 162,
       "src_chars": 3192,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1b4499e6dd1a",
       "src": "### 12.3 The Interference Channel\n\nThe **interference channel** has multiple transmitters each sending to its own receiver, but with cross-interference. X1,X2→Y1,Y2X_1, X_2 \\to Y_1, Y_2X1​,X2​→Y1​,Y2​ with arbitrary coupling.\n\nThe two-user Gaussian interference channel has been studied for fifty years and its capacity region is _still unknown_ in general. The best inner bound (the Han-Kobayashi scheme, 1981) is believed to be tight, but no proof exists.\n\nFor the special case of **strong interference** (each interfering link is stronger than its own direct link), the capacity is known: each receiver decodes both messages, treating the channel as a virtual MAC.\n\nFor **weak interference** , the optimal strategy is approximately to treat interference as noise. But the exact capacity region is open.\n\nThis is the canonical \"open frontier\" of network information theory.\n\n\n### 12.4 Distributed Source Coding: Slepian-Wolf\n\nA different multi-user setting: separate sources at different locations, encoded _independently_ , decoded jointly at a common point. This is **distributed source coding**.\n\n\n#### Setup\n\nTwo correlated sources XXX and YYY, with joint distribution p(x,y)p(x, y)p(x,y). Encoder 1 encodes XXX at rate R1R_1R1​; encoder 2 encodes YYY at rate R2R_2R2​. Both encoded streams arrive at a single decoder, which reconstructs (X,Y)(X, Y)(X,Y) losslessly.\n\n\n#### Theorem: Slepian–Wolf (1973)\n\nThe achievable rate region is\n\nR1≥H(X∣Y),R_1 \\geq H(X \\mid Y),R1​≥H(X∣Y), R2≥H(Y∣X),R_2 \\geq H(Y \\mid X),R2​≥H(Y∣X), R1+R2≥H(X,Y).R_1 + R_2 \\geq H(X, Y).R1​+R2​≥H(X,Y).\n\nIn plain language: each source can be compressed conditional on the other (even though the encoders don't communicate); the joint rate equals the joint entropy.\n\nThe astonishing fact: the encoders achieve the same rate as if they were jointly encoding (which would give rate H(X,Y)H(X, Y)H(X,Y) by the source coding theorem). Independent encoding loses no rate, despite the encoders not knowing the other source.\n\nThis is the **Slepian-Wolf theorem** , and its proof uses random binning — assign each source sequence to one of 2nR2^{nR}2nR bins randomly. With high probability, the joint decoder can pick the unique (xn,yn)(x^n, y^n)(xn,yn) pair that is consistent with the received bin indices and is jointly typical.\n\n\n#### Wyner-Ziv: Lossy Distributed Source Coding\n\nA lossy generalization: XXX and YYY are correlated, but the decoder needs to reconstruct only XXX (with some distortion), with YYY available as side information at the decoder. The Wyner-Ziv rate-distortion function gives the minimum rate to compress XXX given decoder side information.\n\nThe surprising result: there is no rate penalty for the encoder _not_ knowing the side information — the minimum rate is the same as if both encoder and decoder had access to YYY. This is the source-coding analog of the channel coding \"benefit of side information at the receiver only.\"\n\nThese distributed source coding results have direct application in sensor networks (where many sensors send correlated measurements to a central fusion point) and in distributed video coding (where bandwidth-constrained sensors compress video without coordinating).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1090,
+      "out_sha": "3a67b506280c",
       "note": ""
     },
     {
@@ -2059,11 +2059,11 @@
       "en_title": "Chapter 12: Network Information Theory",
       "order": 163,
       "src_chars": 2125,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5c9dbd85b15d",
       "src": "### 12.5 Network Coding\n\nClassical network theory treats data as commodity flow: bits move from source to destination through edges, subject to bandwidth constraints. **Network coding** , introduced by Ahlswede, Cai, Li, Yeung in 2000, allows intermediate nodes to combine packets — the result is a different and often higher achievable throughput.\n\n\n#### The Butterfly Example\n\nConsider a network with two source nodes s1,s2s_1, s_2s1​,s2​, two sink nodes t1,t2t_1, t_2t1​,t2​, and two intermediate nodes a,ba, ba,b. Edges: s1→a,s2→a,a→b,b→t1,b→t2s_1 \\to a, s_2 \\to a, a \\to b, b \\to t_1, b \\to t_2s1​→a,s2​→a,a→b,b→t1​,b→t2​, plus s1→t1,s2→t2s_1 \\to t_1, s_2 \\to t_2s1​→t1​,s2​→t2​. Each edge has unit capacity.\n\nGoal: s1s_1s1​ sends one bit to both t1t_1t1​ and t2t_2t2​; s2s_2s2​ sends one bit to both t1t_1t1​ and t2t_2t2​.\n\n**Without network coding** (routing only): the bottleneck is the edge a→ba \\to ba→b, which has unit capacity but must carry both bits. Each sink can receive only one bit per unit time. Throughput: 1 bit per unit time per sink.\n\n**With network coding** : at node aaa, compute x1⊕x2x_1 \\oplus x_2x1​⊕x2​ and forward through a→ba \\to ba→b. At sink t1t_1t1​: receive x1x_1x1​ directly and x1⊕x2x_1 \\oplus x_2x1​⊕x2​ via bbb; recover x2x_2x2​ by XOR. Symmetric at t2t_2t2​. Throughput: 2 bits per unit time per sink.\n\nSo network coding doubles the throughput in this example.\n\n\n#### General Theorem\n\nFor multicast (one source, many sinks), the maximum throughput equals the **min-cut max-flow** value for each sink, achieved with linear network coding by Li, Yeung, and Cai in 2003.\n\nFor multi-source multicast and other more general patterns, the situation is more complex: some patterns benefit greatly from coding; others see no benefit; the general question of which is which is partially open.\n\nNetwork coding has practical applications in distributed storage (regenerating codes), peer-to-peer streaming, and some IoT deployments. It has not become as widespread as initially predicted, partly because of complexity and partly because the gains are often modest in real-world traffic patterns.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 794,
+      "out_sha": "b0ee7ef47c2f",
       "note": ""
     },
     {
@@ -2071,11 +2071,11 @@
       "en_title": "Chapter 12: Network Information Theory",
       "order": 164,
       "src_chars": 2265,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fc09eeff2e6c",
       "src": "### 12.6 An AI Connection: Federated Learning as Multi-Terminal IT\n\n**Federated learning** , introduced by McMahan and colleagues in 2017, trains a shared machine learning model across many user devices, without centralizing the data. Each user computes gradient updates on local data and sends them to a central server, which aggregates them to update the global model.\n\nThis is a multi-terminal information problem:\n\n* **Encoders** : each user device. Sources XiX_iXi​ are local datasets; encoded messages are gradient updates.\n* **Decoder** : the central server.\n* **Constraints** : bandwidth, privacy, heterogeneity of users.\n\nInformation-theoretic perspective:\n\n* **Bandwidth** : how much do the gradient updates need to be communicated? This is a distributed source coding problem where the \"source\" is the implicit gradient information.\n* **Privacy** : how much information about an individual's data leaks through the aggregated updates? This is a side-channel analysis problem informed by mutual information.\n* **Convergence vs. communication trade-off** : how many rounds of communication are needed to achieve a given training accuracy? This connects to rate-distortion: the \"distortion\" is the model's deviation from optimal.\n\nModern federated learning systems use techniques like gradient compression (a form of distributed source coding), differential privacy (information-theoretic privacy), and secure aggregation (cryptographic + IT). Network information theory provides the formal framework for analyzing these systems.\n\n\n#### Distributed inference\n\nA related problem: many sensors, each observing partial information about the same underlying signal, send compressed observations to a central decision maker who must take action. This is the **CEO problem** in network IT, formulated by Berger and others in the 1990s.\n\nThe CEO problem has surprising results: the rate-distortion trade-off in distributed inference can be much worse than centralized, but better than independent encoding. The structure of the loss is governed by mutual information identities.\n\nThese ideas inform modern sensor network design: how much data should each sensor send? How should they coordinate? Information theory gives bounds; engineering gives implementations.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 697,
+      "out_sha": "eca61a3b3bb0",
       "note": ""
     },
     {
@@ -2083,11 +2083,11 @@
       "en_title": "Chapter 12: Network Information Theory",
       "order": 165,
       "src_chars": 3004,
-      "status": "pending",
+      "status": "done",
       "src_sha": "af7d4e5a7025",
       "src": "### 12.7 Historical Note: From Slepian-Wolf to Network Coding\n\nNetwork information theory has been built largely outside the major industrial research labs, primarily by academic researchers, and its key figures form a coherent intellectual lineage.\n\nDavid Slepian (Bell Labs) and Jack Keil Wolf (UC San Diego) published the distributed source coding theorem we covered in §12.4 in 1973. The result was so unintuitive (independent encoders achieving joint-encoder rates without coordination) that the proof using random binning took the community years to fully digest. Slepian was Shannon's contemporary at Bell Labs; Wolf went on to become one of the central figures in coding theory and was the doctoral advisor of many later contributors.\n\nAaron Wyner (Bell Labs) and Jacob Ziv (Technion) collaborated on the lossy-compression-with-side-information theorem (the Wyner–Ziv result, 1976, separate from the Lempel–Ziv compression algorithms of 1977). Wyner is also responsible for the channel-with-side-information variant. Wyner-Ziv coding underlies modern distributed video coding and was an important step toward what we now call edge-cloud distributed inference.\n\nNetwork coding, the result that intermediate-node packet combining can outperform pure routing, emerged from a 2000 paper by Rudolf Ahlswede, Ning Cai, S.-Y. Robert Li, and Raymond W. Yeung. The butterfly example we drew in §12.5 was their cleanest illustration. Network coding never achieved the deployment success of Reed-Solomon or LDPC codes (see Chapter 7), but it has found niches in distributed storage and peer-to-peer streaming.\n\nThe current generation of network IT researchers works on capacity regions for fading networks, multi-hop wireless, and federated-learning-style multi-terminal problems. The field has not produced a unified theorem for the general two-user interference channel after fifty years, which is one of the most stubborn open problems in mathematical engineering.\n\n\n### Common Misconception\n\n* **Misconception** : \"Network information theory is just classical IT applied to graphs.\"\n\nNo. The genuinely new phenomena (capacity regions, network coding, distributed source coding) cannot be derived from single-user IT. The multi-terminal setting introduces structural constraints that are absent from single-user theory.\n\n* **Misconception** : \"If the capacity region of the interference channel is open, the field is stuck.\"\n\nThe interference channel is open in _exact_ capacity. Approximate capacity (within constants) is known via Han-Kobayashi schemes. For practical engineering, the approximate results are usually adequate.\n\n* **Misconception** : \"Network coding is widely deployed.\"\n\nNetwork coding is theoretically beautiful and used in some specific applications (regenerating codes for distributed storage). But for everyday Internet traffic and cellular networks, classical routing dominates. The practical benefits of network coding are often outweighed by complexity and compatibility costs.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1100,
+      "out_sha": "96a02e70b4ff",
       "note": ""
     },
     {
@@ -2095,11 +2095,11 @@
       "en_title": "Chapter 12: Network Information Theory",
       "order": 166,
       "src_chars": 3399,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ea3ac4c5008a",
       "src": "### Chapter Summary\n\nNetwork information theory generalizes Shannon's framework to multi-user systems. Key results:\n\n* **Multiple-access channel** : capacity region known via successive cancellation.\n* **Broadcast channel** : capacity known for degraded; open in general.\n* **Interference channel** : capacity open after 50 years; Han-Kobayashi gives the best known inner bound.\n* **Slepian-Wolf** : distributed lossless coding achieves joint entropy without coordination.\n* **Wyner-Ziv** : distributed lossy coding with side information.\n* **Network coding** : combining packets at intermediate nodes can increase throughput beyond classical routing.\n\nThe AI angle: federated learning, distributed inference, and sensor networks are multi-terminal information problems whose theoretical analysis is the province of network IT.\n\nThe next chapter pivots to modern AI applications: the information bottleneck as a theoretical framework for representation learning.\n\n\n### 12.X Exercises\n\n\n#### Concept Check\n\n**Q1.** State the capacity region of the two-user MAC.\n\n**Answer:** For independent inputs p(x1),p(x2)p(x_1), p(x_2)p(x1​),p(x2​):\n\nR1≤I(X1;Y∣X2),R_1 \\leq I(X_1; Y \\mid X_2),R1​≤I(X1​;Y∣X2​), R2≤I(X2;Y∣X1),R_2 \\leq I(X_2; Y \\mid X_1),R2​≤I(X2​;Y∣X1​), R1+R2≤I(X1,X2;Y).R_1 + R_2 \\leq I(X_1, X_2; Y).R1​+R2​≤I(X1​,X2​;Y).\n\nThe capacity region is the convex hull over all input distributions.\n\n**Q2.** Why is Slepian-Wolf surprising?\n\n**Answer:** Slepian-Wolf says distributed encoders (who don't communicate) can achieve the same total rate as joint encoders (who do). Without coordination, the encoders incur no penalty in compression rate.\n\nThis is surprising because intuitively, the encoders should waste rate by independently encoding redundant information. Slepian-Wolf shows they don't, provided the decoder is joint and uses random binning.\n\n**Q3.** Sketch the butterfly network and the network coding solution.\n\n**Answer:** Network: two sources s1,s2s_1, s_2s1​,s2​; two sinks t1,t2t_1, t_2t1​,t2​; intermediate nodes a,ba, ba,b. Edges: s1→as_1 \\to as1​→a (also s1→t1s_1 \\to t_1s1​→t1​), s2→as_2 \\to as2​→a (also s2→t2s_2 \\to t_2s2​→t2​), a→ba \\to ba→b, b→t1b \\to t_1b→t1​, b→t2b \\to t_2b→t2​. Each edge has capacity 1.\n\nGoal: each sis_isi​ sends 1 bit to both t1,t2t_1, t_2t1​,t2​.\n\nRouting solution: bottleneck is a→ba \\to ba→b, so each sink gets only 1 bit per unit time. Throughput: 1.\n\nNetwork coding: aaa sends x1⊕x2x_1 \\oplus x_2x1​⊕x2​ to bbb. Sink t1t_1t1​ gets x1x_1x1​ directly and x1⊕x2x_1 \\oplus x_2x1​⊕x2​ from bbb; recovers x2=x1⊕(x1⊕x2)x_2 = x_1 \\oplus (x_1 \\oplus x_2)x2​=x1​⊕(x1​⊕x2​). Symmetric at t2t_2t2​. Throughput: 2.\n\nSo coding doubles throughput.\n\n**Q4.** Why is the interference channel still open?\n\n**Answer:** The interference channel has been studied since the 1970s. Various achievability schemes (Han-Kobayashi being the most general) give inner bounds; converse bounds (cut-set, etc.) give outer bounds. The two bounds coincide in special cases (very strong, strong, weak interference) but not in general.\n\nThe mathematical difficulty: the interference channel breaks the \"single-letter\" property — different block lengths and joint distributions give different mutual information. The general capacity is a multi-letter limit, which is intrinsically intractable.\n\nThis is a central open question in network IT, with active research toward closing it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1303,
+      "out_sha": "92fa40659abf",
       "note": ""
     },
     {
@@ -2107,11 +2107,11 @@
       "en_title": "Chapter 12: Network Information Theory",
       "order": 167,
       "src_chars": 3438,
-      "status": "pending",
+      "status": "done",
       "src_sha": "96beb5228db7",
       "src": "#### Application Problems\n\n**Q1.** Two users share a Gaussian MAC with noise variance 1, each with power 4. (a) What is the maximum rate per user? (b) What is the maximum sum rate? (c) Can both users transmit at their maximum rate simultaneously?\n\n**Answer:** (a) Each user alone: R=12log⁡(1+4)≈1.16R = \\frac{1}{2} \\log(1 + 4) \\approx 1.16R=21​log(1+4)≈1.16 bits per use.\n\n(b) Sum rate: R1+R2≤12log⁡(1+8)≈1.59R_1 + R_2 \\leq \\frac{1}{2} \\log(1 + 8) \\approx 1.59R1​+R2​≤21​log(1+8)≈1.59 bits per use.\n\n(c) No: 2⋅1.16=2.32>1.592 \\cdot 1.16 = 2.32 > 1.592⋅1.16=2.32>1.59, so both users cannot achieve their individual maxima simultaneously. The sum-rate constraint is binding.\n\nThe corner points of the pentagonal capacity region give the maximum rates achievable subject to the sum constraint. Time-sharing or successive cancellation give intermediate operating points.\n\n**Q2.** A sensor network has 100 sensors, each measuring a noisy version of the same underlying signal. The noise per sensor has variance 1; the signal has variance 1. If each sensor sends its measurement losslessly, the total rate is huge. What does Slepian-Wolf say about the minimum rate?\n\n**Answer:** Slepian-Wolf for distributed lossless coding requires ∑Ri≥H(X1,…,X100)\\sum R_i \\geq H(X_1, \\ldots, X_{100})∑Ri​≥H(X1​,…,X100​). With heavy correlation (all measurements driven by the same signal), the joint entropy is much less than the sum of individual entropies — so the total rate is much less than just summing individual rates.\n\nQuantitatively: if the signal has entropy H(S)H(S)H(S) and each sensor's measurement is S+S +S+ independent noise, the joint entropy approximately equals H(S)+∑H(noisei∣S)H(S) + \\sum H(\\text{noise}_i \\mid S)H(S)+∑H(noisei​∣S), which is dominated by the noise terms for many sensors. The reduction from naive coding is significant — roughly, only the signal needs to be communicated once, plus a small per-sensor noise term.\n\nThis is the underlying principle of efficient sensor network protocols: exploit the shared signal across sensors.\n\n**Q3.** A federated learning system has 1000 clients. Each computes a 10-million-dimensional gradient per round. Naive sum: 10 GB per round. Discuss compression strategies.\n\n**Answer:** Several strategies:\n\n  1. **Quantization** : each gradient component is sent at low precision (8 bits, 4 bits, even 1 bit). A 1-bit \"signed-gradient\" approach (signSGD) reduces communication by 32× while still converging.\n\n  2. **Sparsification** : send only the top-k gradient components per client. The remaining components are zero or are compensated for in the next round.\n\n  3. **Sketching / random projection** : project gradients to a low-dimensional space using random matrices, send the projection. The server reconstructs an approximation.\n\n  4. **Distributed source coding** : exploit correlation between client gradients using Slepian-Wolf-like techniques.\n\nIn practice, combinations of quantization and sparsification dominate. Modern federated learning systems achieve 10-100× compression with negligible accuracy loss.\n\n**Q4.** Wyner-Ziv coding compresses XXX given side information YYY at the decoder only. How might this apply to distributed video coding?\n\n**Answer:** A camera XXX and a remote (low-power) recorder YYY capture overlapping but distinct views of the same scene. Their content is correlated. The remote recorder is bandwidth-limited; it cannot communicate with the camera.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1252,
+      "out_sha": "8d74d197c137",
       "note": ""
     },
     {
@@ -2119,11 +2119,11 @@
       "en_title": "Chapter 12: Network Information Theory",
       "order": 168,
       "src_chars": 553,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1745287f6673",
       "src": "Wyner-Ziv coding allows the recorder to compress its video at a low rate, knowing that the central decoder will have access to the camera's video as side information. The decoder reconstructs the recorder's video using the side information.\n\nThis is the basis of distributed video coding, introduced by Girod and Aaron in 2002. It enables low-power cameras to participate in distributed surveillance without high upstream bandwidth. It has not seen wide deployment due to complexity, but the theoretical framework is elegant and the principle is sound.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 164,
+      "out_sha": "ef60c3995064",
       "note": ""
     },
     {
@@ -2131,11 +2131,11 @@
       "en_title": "Chapter 12: Network Information Theory",
       "order": 169,
       "src_chars": 3321,
-      "status": "pending",
+      "status": "done",
       "src_sha": "da90fc4c4dd4",
       "src": "#### Think Deeper\n\n**Q1.** The interference channel is open after 50 years. What does that say about information theory's progress?\n\n**Discussion:** Information theory has not slowed down; the easy problems were solved by 1990. What remain are problems with structural difficulties: multi-letter capacities, non-convex regions, settings where single-letter formulas fail.\n\nThe interference channel's openness is not a sign of failure — it is a sign that the problem is genuinely hard. Hundreds of papers have made progress, narrowing the gap between inner and outer bounds, but the exact capacity is intrinsically multi-letter and may never have a clean single-letter formula.\n\nThis is similar to the situation in many areas of mathematics: the easy problems are solved; what remains is intrinsically harder. Network IT continues to make progress on approximate capacities, achievability schemes, and special cases. Whether the general two-user interference capacity will ever be closed is uncertain.\n\n**Q2.** Federated learning has emerged as the practical face of distributed ML. What information-theoretic insights should inform its design?\n\n**Discussion:** Several:\n\n  1. **Compression matters** : gradient updates are the bandwidth bottleneck. Distributed source coding ideas (Wyner-Ziv) suggest that exploiting cross-client correlation could help. In practice, simpler methods (quantization, sparsification) dominate, but research into Slepian-Wolf-like federated compression is active.\n\n  2. **Privacy is information-theoretic** : how much an individual's data leaks through aggregated gradients is a mutual information question. Differential privacy adds noise to bound this leakage in formal terms.\n\n  3. **Heterogeneity is multi-terminal** : clients have different data distributions, different bandwidths, different reliabilities. Network IT has tools (broadcast channels, asymmetric MACs) for analyzing heterogeneous systems.\n\n  4. **Convergence is rate-distortion** : how many rounds to reach a target accuracy is a rate-distortion problem where rate is communication rounds and distortion is model loss.\n\nThe opportunity: federated learning is an active research area where information theory has deep theoretical claims but the engineering reality is heuristic. Bridging the two is an open opportunity.\n\n**Q3.** Network coding promised major throughput gains but has seen limited deployment. Why?\n\n**Discussion:** Several reasons.\n\n  1. **Complexity** : coding requires intermediate-node processing that classical routers don't do. Adding this capability to deployed networks (cellular, Wi-Fi, Internet) is expensive.\n\n  2. **Latency** : network coding can require collecting multiple packets before forwarding, increasing latency. This is unacceptable for many real-time applications.\n\n  3. **Compatibility** : existing protocols don't support network coding. Migrating requires both ends and intermediate hops to support new functionality.\n\n  4. **Modest gains in practice** : for typical Internet traffic patterns (one source, one destination), network coding offers no benefit. Only specific patterns (multicast, distributed storage) see significant gains.\n\n  5. **Encryption** : end-to-end encryption (TLS, etc.) prevents intermediate nodes from coding the contents (they can only see encrypted bits).",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1043,
+      "out_sha": "fb166229ef80",
       "note": ""
     },
     {
@@ -2143,11 +2143,11 @@
       "en_title": "Chapter 12: Network Information Theory",
       "order": 170,
       "src_chars": 1238,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3b2a4041892e",
       "src": "The lesson: theoretical gains do not always translate to practical deployment. Network coding is now a niche technology used in specialized applications (regenerating codes for cloud storage, P2P systems) but not in everyday networking.\n\nThis is similar to many academic ideas: beautiful in theory, hard to deploy. The successful deployments of information-theoretic ideas (Reed-Solomon, LDPC, Polar) all had compelling cases for their specific application domains. Network coding has not yet found such a domain at scale.\n\n\n### Connections to Subsequent Chapters\n\nThis chapter completed the network half of the classical theory. The remaining chapters pivot fully to AI applications.\n\n* **Chapter 13** : information bottleneck as a representation learning framework.\n* **Chapter 14** : mutual information in deep learning.\n* **Chapter 15** : language models as compressors.\n* **Chapter 17** : open problems include network coding and large-scale neural network theory.\n* **Chapter 18** : capstone synthesis.\n\nA reader who has finished this chapter has the framework to think about distributed learning systems and multi-user communication problems. The next chapters apply information theory directly to modern deep learning.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 411,
+      "out_sha": "0032acad07cf",
       "note": ""
     },
     {
