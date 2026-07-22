@@ -3259,11 +3259,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 263,
       "src_chars": 2817,
-      "status": "pending",
+      "status": "done",
       "src_sha": "67adfdf0df75",
       "src": "### Chapter 15 — LLMs and Cross-Entropy\n\n**Application Q1.** A language model achieves test perplexity 202020. What's its average per-token cross-entropy in bits?\n\nPerp=2H\\mathrm{Perp} = 2^HPerp=2H, so H=log⁡220≈4.32H = \\log_2 20 \\approx 4.32H=log2​20≈4.32 bits per token. To compare across tokenizations, divide by tokens-per-character (BPE typically gives 0.25−0.40.25 - 0.40.25−0.4 tokens per character for English), yielding ∼1.1−1.7\\sim 1.1 - 1.7∼1.1−1.7 bits per character, in the ballpark of Shannon's 1951 estimate of English entropy at 0.6−1.30.6 - 1.30.6−1.3 bits per letter.\n\n**Application Q2 (entropy floor extrapolation).** A scaling-law analysis fits cross-entropy L(N)=(Nc/N)α+L∞L(N) = (N_c / N)^\\alpha + L_\\inftyL(N)=(Nc​/N)α+L∞​ with Nc=8×1013N_c = 8 \\times 10^{13}Nc​=8×1013, α=0.076\\alpha = 0.076α=0.076, L∞=0.7L_\\infty = 0.7L∞​=0.7 bits/char. What model size would close 90% of the remaining gap from current 0.9 bits/char to the estimated entropy floor?\n\nCurrent excess L−L∞=0.2L - L_\\infty = 0.2L−L∞​=0.2 bits/char; target excess 0.020.020.02 bits/char (10% remaining). Need (Nc/N)α=0.02(N_c/N)^\\alpha = 0.02(Nc​/N)α=0.02, so Nc/N=0.021/0.076=0.0213.16≈4.4×10−23N_c/N = 0.02^{1/0.076} = 0.02^{13.16} \\approx 4.4 \\times 10^{-23}Nc​/N=0.021/0.076=0.0213.16≈4.4×10−23, giving N≈Nc/4.4×10−23≈1.8×1036N \\approx N_c / 4.4 \\times 10^{-23} \\approx 1.8 \\times 10^{36}N≈Nc​/4.4×10−23≈1.8×1036 parameters. That is roughly 23 orders of magnitude larger than current frontier models — a stark illustration of why scaling has _diminishing returns_ near the entropy floor. Closing the last 10% is more expensive than getting from random to where we are now.\n\n**Application Q3 (compression as evaluation).** A new language model claims to achieve 0.6 bits per character on Wikipedia, beating frontier models. How would you verify this claim using arithmetic coding?\n\n(i) Take a fixed Wikipedia test set (e.g., Wiki-103 test split, ~1 GB). (ii) Use the model as the source distribution in an arithmetic coder, encoding the test set token-by-token (or character-by-character if that's the right unit). (iii) Measure the encoded size in bits and divide by the original character count. (iv) Verify: bits-per-char from arithmetic coding should match the model's reported cross-entropy to within ~1% (the small overhead is the arithmetic coder's finite-precision tail). If the encoded size is significantly larger than 0.6×chars0.6 \\times \\text{chars}0.6×chars, the cross-entropy claim is wrong (or the test set differs from what the claim used). This is the _ground-truth_ test of any compression-rate claim, and is harder to game than perplexity numbers.\n\n**Think Deeper Q1.** \"Cross-entropy training is equivalent to compression training.\" Is this metaphor or mathematical fact, and what is the precise statement?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1048,
+      "out_sha": "9c74cdb3f96b",
       "note": ""
     },
     {
@@ -3271,11 +3271,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 264,
       "src_chars": 1769,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2faaf7784575",
       "src": "Mathematical fact, not metaphor. The precise statement: a language model with cross-entropy L\\mathcal{L}L bits per token, used as the source distribution in arithmetic coding, achieves compression rate exactly L\\mathcal{L}L bits per token (within an O(1/n)O(1/n)O(1/n) tail). This is the source coding theorem (Ch. 4) applied to the LLM as source distribution; arithmetic coding achieves this rate constructively. Therefore minimizing cross-entropy on training data minimizes the (training-data) compression rate of the resulting model-as-coder. There is no slippage between the two formulations; they are the same optimization with different vocabularies (NLP vs information theory).\n\n**Think Deeper Q2.** Modern LLMs are trained on most of the indexable web. As they approach the entropy floor of \"available text,\" what does that say about their future capabilities?\n\nThree implications. (i) **Per-token cross-entropy improvements will saturate** , because there is a hard lower bound (the Shannon entropy of the data), and once you are within ~0.1 bits of it, further gains are exponentially expensive. This is the \"diminishing returns\" phenomenon already visible in Chinchilla scaling. (ii) **The remaining entropy is the _irreducible_ entropy** of language given the conditioning context — it represents genuine uncertainty about what comes next that no amount of additional training can resolve. (iii) **Capability gains will increasingly come from non-cross-entropy objectives** : RLHF, constitutional AI, tool use, multi-step reasoning. None of these are well-modeled as compression. So information theory says less about post-training methods than about pre-training, and a different theoretical framework is needed for the next decade's frontier work.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 566,
+      "out_sha": "ddc2831ea570",
       "note": ""
     },
     {
@@ -3283,11 +3283,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 265,
       "src_chars": 3297,
-      "status": "pending",
+      "status": "done",
       "src_sha": "134120a759a3",
       "src": "### Chapter 16 — Quantum Information\n\n**Application Q1.** Compute the von Neumann entropy of ρ=(1/3)∣0⟩⟨0∣+(2/3)∣+⟩⟨+∣\\rho = (1/3) |0\\rangle\\langle 0| + (2/3) |+\\rangle\\langle +|ρ=(1/3)∣0⟩⟨0∣+(2/3)∣+⟩⟨+∣, where ∣+⟩=(∣0⟩+∣1⟩)/2|+\\rangle = (|0\\rangle + |1\\rangle) / \\sqrt{2}∣+⟩=(∣0⟩+∣1⟩)/2​.\n\nIn the computational basis, ρ=(2/31/31/31/3)\\rho = \\begin{pmatrix} 2/3 & 1/3 \\\\\\ 1/3 & 1/3 \\end{pmatrix}ρ=(2/31/3​1/31/3​). Eigenvalues solve det⁡(ρ−λI)=0\\det(\\rho - \\lambda I) = 0det(ρ−λI)=0: λ2−λ+1/9=0\\lambda^2 - \\lambda + 1/9 = 0λ2−λ+1/9=0, giving λ±=(1±1−4/9)/2=(1±5/9)/2≈0.873,0.127\\lambda_{\\pm} = (1 \\pm \\sqrt{1 - 4/9}) / 2 = (1 \\pm \\sqrt{5/9}) / 2 \\approx 0.873, 0.127λ±​=(1±1−4/9​)/2=(1±5/9​)/2≈0.873,0.127. Then S(ρ)=−0.873log⁡20.873−0.127log⁡20.127≈0.553S(\\rho) = -0.873 \\log_2 0.873 - 0.127 \\log_2 0.127 \\approx 0.553S(ρ)=−0.873log2​0.873−0.127log2​0.127≈0.553 bits.\n\nNote this is less than log⁡22=1\\log_2 2 = 1log2​2=1 (the maximum for a qubit), as expected for a non-maximally-mixed state.\n\n**Application Q2 (Holevo bound for two-state encoding).** Alice encodes a classical bit b∈{0,1}b \\in \\\\{0, 1\\\\}b∈{0,1} into the quantum state ρb\\rho_bρb​ where ρ0=∣0⟩⟨0∣\\rho_0 = |0\\rangle\\langle 0|ρ0​=∣0⟩⟨0∣ and ρ1=∣+⟩⟨+∣\\rho_1 = |+\\rangle\\langle +|ρ1​=∣+⟩⟨+∣. What is the Holevo bound on classical information Bob can extract?\n\nρ0\\rho_0ρ0​ and ρ1\\rho_1ρ1​ are pure states, so each has S(ρb)=0S(\\rho_b) = 0S(ρb​)=0. The averaged state is ρˉ=(ρ0+ρ1)/2\\bar\\rho = (\\rho_0 + \\rho_1)/2ρˉ​=(ρ0​+ρ1​)/2, with eigenvalues computed from ρˉ=(0.750.250.250.25)\\bar\\rho = \\begin{pmatrix} 0.75 & 0.25 \\\\\\ 0.25 & 0.25 \\end{pmatrix}ρˉ​=(0.750.25​0.250.25​), eigenvalues ≈(0.854,0.146)\\approx (0.854, 0.146)≈(0.854,0.146), so S(ρˉ)≈0.601S(\\bar\\rho) \\approx 0.601S(ρˉ​)≈0.601 bits. Holevo:\n\nχ=S(ρˉ)−12(S(ρ0)+S(ρ1))=0.601−0=0.601 bits.\\chi = S(\\bar\\rho) - \\tfrac{1}{2}(S(\\rho_0) + S(\\rho_1)) = 0.601 - 0 = 0.601 \\text{ bits}.χ=S(ρˉ​)−21​(S(ρ0​)+S(ρ1​))=0.601−0=0.601 bits.\n\nLess than 1 bit — Bob cannot perfectly distinguish the two states (they overlap), so at most 0.6 bits of classical information per qubit, despite Alice using a 2-state encoding for a 1-bit message. To send classical information optimally, use orthogonal states.\n\n**Application Q3 (entanglement entropy of a Bell state).** Compute the entanglement entropy of the Bell state ∣Φ+⟩=(∣00⟩+∣11⟩)/2|\\Phi^+\\rangle = (|00\\rangle + |11\\rangle)/\\sqrt{2}∣Φ+⟩=(∣00⟩+∣11⟩)/2​ across the bipartition AAA-BBB.\n\nReduced density matrix on subsystem AAA: trace over BBB:\n\nρA=trB(∣Φ+⟩⟨Φ+∣)=12∣0⟩⟨0∣+12∣1⟩⟨1∣=12I.\\rho_A = \\mathrm{tr}_B(|\\Phi^+\\rangle \\langle \\Phi^+|) = \\tfrac{1}{2}|0\\rangle\\langle 0| + \\tfrac{1}{2}|1\\rangle\\langle 1| = \\tfrac{1}{2} I.ρA​=trB​(∣Φ+⟩⟨Φ+∣)=21​∣0⟩⟨0∣+21​∣1⟩⟨1∣=21​I.\n\nThe maximally mixed qubit state. Its entropy is S(ρA)=log⁡22=1S(\\rho_A) = \\log_2 2 = 1S(ρA​)=log2​2=1 bit. Despite the global state ∣Φ+⟩|\\Phi^+\\rangle∣Φ+⟩ being pure (entropy 0), the local state is maximally mixed (entropy 1) — exactly the Araki-Lieb violation: S(ρAB)=0<1=S(ρA)=S(ρB)S(\\rho_{AB}) = 0 < 1 = S(\\rho_A) = S(\\rho_B)S(ρAB​)=0<1=S(ρA​)=S(ρB​). Entanglement entropy of 1 bit is the maximum for a 2-qubit bipartition, marking the Bell states as maximally entangled.\n\n**Think Deeper Q1.** Why is the additivity question for quantum channel capacity surprising?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1531,
+      "out_sha": "c188f34cb68c",
       "note": ""
     },
     {
@@ -3295,11 +3295,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 266,
       "src_chars": 1521,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6d6ff5ffff19",
       "src": "Classically, the capacity of a product channel W1⊗W2W_1 \\otimes W_2W1​⊗W2​ equals C(W1)+C(W2)C(W_1) + C(W_2)C(W1​)+C(W2​): combining channels does not help. Hastings (2008) proved that for quantum channels with the Holevo capacity, this fails — there exist channels for which the joint capacity strictly exceeds the sum. Entanglement between code symbols can improve transmission in ways no classical analog allows. The phenomenon has no classical analog; it is, in effect, a free-bonus communication resource produced by entanglement.\n\n**Think Deeper Q2.** Quantum teleportation transmits a quantum state using only classical bits + shared entanglement. Why does this not contradict the Holevo bound, which says at most 1 classical bit per qubit?\n\nThe Holevo bound governs _encoding classical information into qubits and recovering it via measurement_. Teleportation is the reverse: it uses 2 classical bits + 1 ebit (shared Bell pair) to transmit 1 qubit's worth of _quantum_ information. The ebit is the resource that differs from Holevo's setup; without it, classical communication alone cannot transmit unknown quantum states (no-cloning theorem). Counting resources fairly: teleportation uses up 1 ebit (a pre-shared entanglement resource that is consumed) plus 2 classical bits to transmit 1 qubit of quantum information. There is no violation; the bookkeeping just acknowledges entanglement as a separately-tradeable resource. This bookkeeping is the foundation of the quantum _resource theory_ framework.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 483,
+      "out_sha": "07cfb2dab3d5",
       "note": ""
     },
     {
