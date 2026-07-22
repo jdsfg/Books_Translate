@@ -923,11 +923,11 @@
       "en_title": "Chapter 3: Working with the LLM API — The Engineer's First Tool",
       "order": 66,
       "src_chars": 1935,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7a0af25a3633",
       "src": "### 3.5 Rate limits and the 429\n\nEvery provider rate-limits both _requests per minute_ (RPM) and _tokens per minute_ (TPM). Default tiers in 2026 are tight: Anthropic's free tier starts around 50 RPM / 50K TPM; OpenAI similar. Paid tiers (typically tier 1 through tier 5, gated by total spend) scale up to thousands of RPM and millions of TPM.\n\nWhen you exceed the limit, the API returns HTTP **429 Too Many Requests**. The response includes a `retry-after` header (or equivalent) telling you how long to wait. Standard practice:\n    \n    \n    import time\n    from anthropic import APIError\n    \n    def call_with_retry(client, max_attempts=5, **kwargs):\n        for attempt in range(max_attempts):\n            try:\n                return client.messages.create(**kwargs)\n            except APIError as e:\n                if e.status_code == 429:\n                    wait = float(e.response.headers.get(\"retry-after\", 2 ** attempt))\n                    time.sleep(wait)\n                    continue\n                raise\n        raise RuntimeError(\"Exceeded max retry attempts on 429.\")\n    \n\nThat is the minimal pattern. Production code does more:\n\n* **Read the rate-limit headers on every response, not just on 429** , and back off proactively when the remaining budget drops below a threshold.\n* **Add jitter** to the retry wait to avoid thundering-herd retries from a fleet of workers.\n* **Differentiate 429 (rate limit) from 529 (overloaded, Anthropic-specific) from 503 (service unavailable)**. The retry behavior is similar but the backoff intervals differ.\n* **Have an explicit budget per user / per tenant** , enforced at your gateway layer, before requests even reach the provider. This is the _per-tenant cost governance_ pattern that Helios uses (Chapter 17, Chapter 18).\n\nProduction-grade retry libraries (`tenacity` in Python is standard) wrap all of this. Use one; do not roll your own beyond the minimal pattern above.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1154,
+      "out_sha": "1168bb0ed5ba",
       "note": ""
     },
     {
@@ -935,11 +935,11 @@
       "en_title": "Chapter 3: Working with the LLM API — The Engineer's First Tool",
       "order": 67,
       "src_chars": 2229,
-      "status": "pending",
+      "status": "done",
       "src_sha": "64beab608606",
       "src": "### 3.6 API key management: do not check it into the repo\n\nAiyana's first PR at Beacon Health AI was three PRs in disguise: one to wire the CodeReview Bot to Anthropic, one to add the API key to dev, and one to add separate keys for staging and production. The key is the bearer credential — anyone with the key can spend the company's money — and the disciplines around handling it were established within her first week.\n\nThe discipline, in the order Beacon's team writes it down:\n\nNever commit keys to source control. The key lives in a secrets manager (HashiCorp Vault, AWS Secrets Manager, GCP Secret Manager) or the platform's equivalent, and the code reads it from there at startup. A key that ends up in `git log` is a key that has to be rotated immediately and a budget-cap audit that has to run.\n\nUse separate keys for dev, staging, and production. Different spend budgets, different audit trails, and revoking one does not break the others. Beacon's production key has a monthly cap that would cover ten times their typical traffic; their dev key caps at 200 USD/month per engineer, which is enough to experiment and not enough to lose sleep over.\n\nRotate quarterly, or on any suspected compromise. Quarterly is conservative; the operational cost is small if your codebase reads from the secrets manager (rotation is a one-line config change).\n\nUse the provider's organization features to scope keys to projects. Anthropic, OpenAI, Google all support sub-organization API key scoping; the scoping pays off the first time you need to debug per-project spend.\n\nPer-developer keys for local development, each with a small budget cap, so a misfire at 2 AM costs 50 USD rather than 50,000. USD The cap is the safety net; the discipline of not running expensive experiments without rate-limiting is the real defense.\n\nMonitor spend per key. A key that is suddenly burning 10× its usual traffic is either compromised or being misused. Alert on it.\n\nThe canary that Aiyana's team kept running: a one-line CLI script that reads the API key from the secrets manager and sends a `Hello, world` request. If the key is broken or the secrets manager is misconfigured, the canary tells you in seconds, not after a production deploy.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1009,
+      "out_sha": "420c8c720ab7",
       "note": ""
     },
     {
@@ -947,11 +947,11 @@
       "en_title": "Chapter 3: Working with the LLM API — The Engineer's First Tool",
       "order": 68,
       "src_chars": 2532,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ad1b8f0bc9b0",
       "src": "### 3.7 Cost per token, again: pricing the call you just made\n\nYou already saw the pricing structure in §2.10. Let's apply it concretely to the Beacon CodeReview Bot call from §3.1.\n\nThe call:\n    \n    \n    response = client.messages.create(\n        model=\"claude-sonnet-4-20260315\",\n        max_tokens=1024,\n        system=\"You are a code reviewer for Beacon Health AI. Be concise. Flag security issues with priority. Do not invent file names that are not in the diff.\",\n        messages=[\n            {\"role\": \"user\", \"content\": \"Review this diff:\\n```python\\nimport os\\nDB_PASSWORD = 'changeme'\\n```\"},\n        ],\n        temperature=0,\n    )\n    \n\nThe token counts you can read from `response.usage`:\n\n* `input_tokens`: ~50 (system prompt: ~30; user message: ~20; role markers and structural tokens: ~5)\n* `output_tokens`: ~80 (the model's review)\n\nAt Sonnet 4 fresh-input pricing:\n\n* Input: 50 × 3.00 USD / 1,000,000 = **0.00015 USD**\n* Output: 80 × 15.00 USD / 1,000,000 = **0.0012 USD**\n* **Total: ~0.00135 USD**\n\nThat is the cost of a single PR review _at the tiny inputs sketched above_ — a 30-token system prompt and a 20-token user message, which is the smallest plausible API call. At 80 PRs/day across the engineering org, that is **0.11 USD/day, or about 3.20 USD/month** at that floor. A realistic PR review actually sends the diff (Chapter 2 Q1 uses 1200 cached tokens + a 2500-token diff + 800-token output and lands closer to 0.02 USD per PR, or ~48 USD/month at 80 PRs/day); both numbers tell the same story: Beacon Health AI is paying tens of dollars a month for the CodeReview Bot's inference. The engineer's salary spent on building it dwarfs either figure. _Cost is not the right reason to skip this feature._\n\nBut scale up the math. The clinical-notes summarizer at Beacon does about 10,000 summaries per day across the customer base. Each one is a larger call: ~3K tokens of input (the dictated note + a structured system prompt + retrieved patient context) and ~800 tokens of output. At Sonnet 4:\n\n* Input: 3000 × 3.00 USD / 1M = 0.009 USD\n* Output: 800 × 15.00 USD / 1M = 0.012 USD\n* Per summary: 0.021 USD\n* Per day: 10,000 × 0.021 USD = **210 USD/day, or 6,300 USD/month**\n\nNow the cost matters. At this scale, choosing between Sonnet 4 and a cheaper alternative is a real decision. Chapter 17 will route between models; Chapter 18 will cache prompts and explore distillation. For now, the lesson is: **read the bill the call generated**. Treat every `response.usage` field as the meter ticking. It is.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1695,
+      "out_sha": "fbc42da8ce7d",
       "note": ""
     },
     {
