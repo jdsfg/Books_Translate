@@ -2155,11 +2155,11 @@
       "en_title": "Chapter 13: The Information Bottleneck",
       "order": 171,
       "src_chars": 2334,
-      "status": "pending",
+      "status": "done",
       "src_sha": "98a6e423f94a",
       "src": "In 1999, Naftali Tishby, Fernando Pereira, and William Bialek published a paper that has become one of the most provocative theoretical interpretations of representation learning ever proposed. The paper, \"The Information Bottleneck Method,\" asked a simple question: given an input XXX and a target YYY, what is the optimal compressed representation TTT of XXX for predicting YYY?\n\nThe answer, formalized as the **Information Bottleneck (IB)** principle, is to find TTT that minimizes I(X;T)I(X; T)I(X;T) (compression of input) while maximizing I(T;Y)I(T; Y)I(T;Y) (preservation of relevant information). The trade-off is captured by a Lagrangian:\n\nLIB(T)=I(X;T)−β⋅I(T;Y).\\mathcal{L}_{IB}(T) = I(X; T) - \\beta \\cdot I(T; Y).LIB​(T)=I(X;T)−β⋅I(T;Y).\n\nDifferent β\\betaβ trace out the **information bottleneck curve** , the IB analog of the rate-distortion curve.\n\nThis chapter develops the IB framework, applies it to deep learning representations, and discusses the controversial claim that deep network training has a \"compression phase\" predicted by IB. The chapter is honest about the contested empirical claims (the Saxe et al. critique) while presenting the IB framework as a useful organizing principle even where its empirical predictions are debated.\n\nThe AI angle is the broader use of IB ideas in modern representation learning: the deep variational information bottleneck (DVIB), self-supervised learning, and disentanglement.\n\n\n### 13.1 The Setup\n\nA Markov chain Y→X→TY \\to X \\to TY→X→T: the observed input XXX carries information about a target YYY; we compute a representation TTT from XXX and want TTT to be useful for predicting YYY.\n\nThe IB Lagrangian:\n\nLIB=I(X;T)−β⋅I(T;Y),\\mathcal{L}_{IB} = I(X; T) - \\beta \\cdot I(T; Y),LIB​=I(X;T)−β⋅I(T;Y),\n\nwith β>0\\beta > 0β>0 controlling the trade-off:\n\n* **Large β\\betaβ**: emphasize relevance — TTT should preserve all information about YYY. At β→∞\\beta \\to \\inftyβ→∞, T=YT = YT=Y (optimal predictor).\n* **Small β\\betaβ**: emphasize compression — TTT should be a minimal compression of XXX. At β→0\\beta \\to 0β→0, TTT is constant (no information).\n* **Intermediate β\\betaβ**: trade-off between compression and prediction.\n\nThe optimum at each β\\betaβ is a representation Tβ∗T_\\beta^*Tβ∗​, the most-compressed representation that retains I(T;Y)≥I(T; Y) \\geqI(T;Y)≥ some level.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 890,
+      "out_sha": "7547fb48167d",
       "note": ""
     },
     {
@@ -2167,11 +2167,11 @@
       "en_title": "Chapter 13: The Information Bottleneck",
       "order": 172,
       "src_chars": 2506,
-      "status": "pending",
+      "status": "done",
       "src_sha": "df0bdbfc795b",
       "src": "### 13.2 The IB Curve\n\nPlotting I(T;Y)I(T; Y)I(T;Y) against I(X;T)I(X; T)I(X;T) for various β\\betaβ gives the **information plane** trajectory. The optimum traces a curve (the IB curve), analogous to the rate-distortion curve.\n\nKey properties:\n\n* The curve is monotonically increasing: more compression rate (I(X;T)I(X; T)I(X;T)) allows more prediction (I(T;Y)I(T; Y)I(T;Y)).\n* The curve is concave.\n* The curve is bounded above by I(X;Y)I(X; Y)I(X;Y) (the data-processing inequality: I(T;Y)≤I(X;Y)I(T; Y) \\leq I(X; Y)I(T;Y)≤I(X;Y)).\n\nThe \"shape\" of the curve depends on the joint p(X,Y)p(X, Y)p(X,Y). For data with rich structure (much of I(X;Y)I(X; Y)I(X;Y) is \"easy\" to extract), the curve is steep; a small amount of compression preserves most of the relevance. For \"noisy\" data, the curve is flat.\n\nA picture is worth a paragraph here. The information plane has I(X;T)I(X; T)I(X;T) on the horizontal axis (how much the representation TTT remembers about the input) and I(T;Y)I(T; Y)I(T;Y) on the vertical axis (how much the representation tells you about the label). Every possible representation is a point in this plane; the IB curve is the upper-frontier of _achievable_ points:\n    \n    \n       I(T; Y)\n       (relevance)\n            ▲\n     I(X;Y) ┤ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ upper bound (DPI)\n            │                       *  *  *\n            │                  *\n            │             *           ← IB curve\n            │         *          (concave, monotone)\n            │      *                   - large β: top right\n            │    *                     - small β: bottom left\n            │  *\n            │ *\n            │*\n            ●─────────────────────────────────▶  I(X; T)\n           0                    H(X)            (compression rate)\n    \n       feasible region: everything below and to the right of the curve.\n       Every (compression, relevance) pair below the curve is achievable\n       by some representation; everything above is impossible.\n    \n\nSliding β\\betaβ from 000 to ∞\\infty∞ walks the optimum along this curve from the origin (a constant TTT, with no information about anything) to (H(X),I(X;Y))(H(X), I(X; Y))(H(X),I(X;Y)) (the trivial T=XT = XT=X). The \"interesting\" representations live in the middle: enough compression to discard nuisance, enough relevance to predict the label. The curve's _concavity_ means there are diminishing returns: each additional bit of compression-rate buys less and less relevance once you are near the top.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1142,
+      "out_sha": "cecdf4158ff2",
       "note": ""
     },
     {
@@ -2179,11 +2179,11 @@
       "en_title": "Chapter 13: The Information Bottleneck",
       "order": 173,
       "src_chars": 3476,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5ebe63eed4c4",
       "src": "### 13.3 The Iterative Solution\n\nThe IB Lagrangian admits an iterative optimization, originally given by Tishby, Pereira, and Bialek in their 1999 paper. For discrete X,Y,TX, Y, TX,Y,T, starting from a random p(t∣x)p(t \\mid x)p(t∣x), iterate:\n\n  1. **p(t∣x)p(t \\mid x)p(t∣x) update**: p(t∣x)∝p(t)exp⁡(−βD(p(y∣x)∥p(y∣t)))p(t \\mid x) \\propto p(t) \\exp(-\\beta D(p(y \\mid x) \\| p(y \\mid t)))p(t∣x)∝p(t)exp(−βD(p(y∣x)∥p(y∣t))).\n  2. **p(y∣t)p(y \\mid t)p(y∣t) update**: p(y∣t)=∑xp(y∣x)p(x∣t)p(y \\mid t) = \\sum_x p(y \\mid x) p(x \\mid t)p(y∣t)=∑x​p(y∣x)p(x∣t) (marginalize).\n  3. **p(t)p(t)p(t) update**: p(t)=∑xp(x)p(t∣x)p(t) = \\sum_x p(x) p(t \\mid x)p(t)=∑x​p(x)p(t∣x).\n\nThese updates increase the IB Lagrangian at each step and converge to a local optimum. The procedure is similar in spirit to the Blahut-Arimoto algorithm for rate-distortion.\n\nFor continuous variables, the iteration is replaced by gradient descent on a parametrized model, leading to the deep variational information bottleneck.\n\n\n### 13.4 The Deep Variational Information Bottleneck\n\nIn 2017, Alemi et al. proposed the **Deep Variational Information Bottleneck (DVIB)** , which uses neural networks to parametrize the IB problem.\n\n\n#### Setup\n\n* Encoder: pϕ(t∣x)p_\\phi(t \\mid x)pϕ​(t∣x) — a neural network mapping input to a stochastic representation (typically Gaussian).\n* Decoder: qθ(y∣t)q_\\theta(y \\mid t)qθ​(y∣t) — a neural network mapping representation to a prediction.\n\nThe IB Lagrangian is approximated by:\n\nLDVIB=−Ep(x,y)[log⁡qθ(y∣t)]+β⋅D(pϕ(t∣x)∥r(t)),\\mathcal{L}_{DVIB} = -\\mathbb{E}_{p(x, y)} [\\log q_\\theta(y \\mid t)] + \\beta \\cdot D(p_\\phi(t \\mid x) \\| r(t)),LDVIB​=−Ep(x,y)​[logqθ​(y∣t)]+β⋅D(pϕ​(t∣x)∥r(t)),\n\nwhere r(t)r(t)r(t) is a marginal prior (typically standard Gaussian).\n\nThe first term is a cross-entropy (negative classification log-likelihood). The second term is a KL divergence pulling the representation toward the prior.\n\nThis is structurally identical to the β\\betaβ-VAE objective (Chapter 10), except that the \"decoder\" predicts YYY (the target) rather than reconstructing XXX (the input). DVIB and β\\betaβ-VAE differ in their interpretation: DVIB is supervised (target YYY provided); β\\betaβ-VAE is unsupervised (only XXX provided).\n\n\n#### Practical performance\n\nDVIB trains classifiers with several attractive properties:\n\n* **Robustness** : more robust to adversarial perturbations than standard cross-entropy classifiers.\n* **Calibration** : predictions are better calibrated (probabilities match empirical accuracies).\n* **Disentanglement** : representations tend to be more disentangled.\n\nThe cost is the additional KL term and the stochastic representation; training is somewhat slower than vanilla classification.\n\nDVIB is used in a few specialized settings, but vanilla cross-entropy training remains the default for most classification tasks. The information bottleneck serves more as a theoretical lens than as a default training prescription.\n\n\n### 13.5 The \"Compression Phase\" Controversy\n\nThe most provocative empirical claim from the IB literature: that deep network training has two phases: a \"fitting\" phase (in which both I(X;T)I(X; T)I(X;T) and I(T;Y)I(T; Y)I(T;Y) increase) and a \"compression\" phase (in which I(X;T)I(X; T)I(X;T) decreases while I(T;Y)I(T; Y)I(T;Y) remains high).\n\nThis claim, made by Tishby and Schwartz-Ziv in 2017, generated significant excitement: it suggested that IB captures something fundamental about how deep networks generalize.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1307,
+      "out_sha": "caabc64d9e59",
       "note": ""
     },
     {
@@ -2191,35 +2191,35 @@
       "en_title": "Chapter 13: The Information Bottleneck",
       "order": 174,
       "src_chars": 2952,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d2a9e8d0b048",
       "src": "#### The Saxe Critique\n\nIn 2018, Andrew Saxe et al. published a careful empirical analysis showing that the \"compression phase\" depends sensitively on:\n\n* **Activation function** : visible with saturating activations (tanh) but absent with non-saturating (ReLU).\n* **MI estimator** : visible with binning estimators but absent with kernel density estimators.\n* **Dataset** : visible on synthetic IB-friendly datasets but elusive on natural data.\n\nSaxe et al. argued that the compression phase is largely an artifact of saturating activations: as training progresses with tanh activations, neurons saturate, the encoded distribution collapses to a few discrete modes, and binning-based MI estimators show \"compression.\"\n\nThe debate continues. Some recent work has reproduced versions of the compression phase using more sophisticated MI estimators on natural data; other work has provided alternative explanations. The honest verdict is: the compression phase is a real phenomenon in some settings and an artifact in others, and the exact conditions for its appearance are not fully understood.\n\n\n#### What survives\n\nEven if the empirical \"compression phase\" is contested, the IB _framework_ remains valuable:\n\n* It provides a Lagrangian objective for representation learning.\n* It connects representation learning to information theory.\n* It motivates DVIB and related practical methods.\n* It clarifies the structure of trade-offs in deep learning.\n\nThe lesson: theoretical frameworks can be useful organizing principles even when their specific empirical predictions are uncertain.\n\n\n### 13.6 IB in Modern Self-Supervised Learning\n\nThe IB framework has resurfaced in modern self-supervised learning, particularly in contrastive methods.\n\nIn contrastive learning (e.g., SimCLR, MoCo, CLIP), an encoder fθf_\\thetafθ​ maps inputs to representations; the loss encourages representations of \"positive pairs\" (different augmentations of the same image) to be similar and \"negative pairs\" (different images) to be dissimilar. This is, formally, mutual information maximization between augmented views.\n\nThe connection to IB: contrastive learning maximizes I(T;T′)I(T; T')I(T;T′) where T,T′T, T'T,T′ are representations of two augmented views of the same input. By data processing, I(T;T′)≤I(X;X′)I(T; T') \\leq I(X; X')I(T;T′)≤I(X;X′). The key quantity is the \"shared\" mutual information between augmentations — what survives both augmentation procedures.\n\nThis is an IB-like setup with a different \"target\": instead of predicting a label YYY, the goal is to preserve information shared with another augmented view. The IB Lagrangian becomes:\n\nL=−I(T;T′)+β⋅I(X;T)(implicitly).\\mathcal{L} = -I(T; T') + \\beta \\cdot I(X; T) \\quad\\text{(implicitly)}.L=−I(T;T′)+β⋅I(X;T)(implicitly).\n\nMost contrastive methods don't explicitly include the compression term, but it is implicit in the architecture (low-dimensional representation) and in regularization techniques.\n",
-      "out_chars": 0,
-      "out_sha": "",
-      "note": ""
+      "out_chars": 982,
+      "out_sha": "6bb320fbef3d",
+      "note": "glossary fix"
     },
     {
       "id": "c14_b05",
       "en_title": "Chapter 13: The Information Bottleneck",
       "order": 175,
       "src_chars": 3298,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1662accdc9bf",
       "src": "### 13.7 An AI Connection: Disentanglement and IB\n\nA representation is **disentangled** if its different dimensions correspond to different generative factors of the data. For images, a disentangled representation might have one dimension for object identity, another for lighting direction, another for pose, and so on.\n\nThe IB framework provides a natural objective for disentanglement: maximize I(T;Y)I(T; Y)I(T;Y) while keeping I(X;T)I(X; T)I(X;T) low. With low total mutual information I(X;T)I(X; T)I(X;T), each dimension of TTT carries little information; for it to predict YYY well, the dimensions must each capture different factors.\n\nβ\\betaβ-VAE with high β\\betaβ is known empirically to produce more disentangled representations than vanilla VAE. The reason, in IB language, is that the high regularization forces the encoder to use representations efficiently, and an \"efficient\" representation tends to align with the underlying generative factors.\n\nThis is one of the success stories of IB-inspired thinking: even where the formal IB framework is debated, its design principles (compress the input, preserve the target) produce empirically useful representations.\n\n\n### Common Misconception\n\n* **Misconception** : \"The Information Bottleneck explains generalization in deep learning.\"\n\nThis is the strong claim of Tishby and collaborators, but it is contested. Saxe et al. and others have argued that the empirical phenomena IB predicts (the compression phase) are artifacts. The IB framework is a useful organizing principle but not an established theory of generalization.\n\n* **Misconception** : \"DVIB is just β\\betaβ-VAE with labels.\"\n\nMathematically, the objectives are similar. Conceptually, they differ: DVIB is a supervised representation learner; β\\betaβ-VAE is an unsupervised generative model. The \"decoder\" in DVIB predicts YYY; in β\\betaβ-VAE, it reconstructs XXX. These are different inductive biases.\n\n* **Misconception** : \"Mutual information in deep networks is easily computed.\"\n\nEstimating mutual information from samples in high dimensions is hard. Many of the empirical IB analyses use estimators that may be biased or noisy. Whether the observed phenomena are real or estimator-driven is a key methodological issue.\n\n\n### Chapter Summary\n\nThe Information Bottleneck principle, introduced by Tishby, Pereira, and Bialek in 1999, formulates representation learning as an information-theoretic Lagrangian:\n\nLIB=I(X;T)−βI(T;Y).\\mathcal{L}_{IB} = I(X; T) - \\beta I(T; Y).LIB​=I(X;T)−βI(T;Y).\n\nCompress the input; preserve the target. Different β\\betaβ trace out the IB curve.\n\nThe deep variational information bottleneck, introduced by Alemi and colleagues in 2017, makes IB practical with neural networks. DVIB classifiers are robust and well-calibrated; the framework underlies aspects of contrastive learning and disentanglement.\n\nThe empirical claim that deep network training has a \"compression phase\" is contested: Saxe et al. show it depends on activation choice and MI estimator. Honest about this: IB is a valuable framework whose specific empirical predictions are debated.\n\nThe next chapter treats mutual information in deep learning more broadly: estimators (MINE), bounds (InfoNCE), and the limits of MI-based representation learning.\n\n\n### 13.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
-      "note": ""
+      "out_chars": 1112,
+      "out_sha": "82a09046db2e",
+      "note": "glossary fix"
     },
     {
       "id": "c14_b06",
       "en_title": "Chapter 13: The Information Bottleneck",
       "order": 176,
       "src_chars": 2079,
-      "status": "pending",
+      "status": "done",
       "src_sha": "736d682b0bb2",
       "src": "#### Concept Check\n\n**Q1.** State the IB Lagrangian and explain the role of β\\betaβ.\n\n**Answer:** LIB=I(X;T)−β⋅I(T;Y)\\mathcal{L}_{IB} = I(X; T) - \\beta \\cdot I(T; Y)LIB​=I(X;T)−β⋅I(T;Y).\n\nβ\\betaβ is the trade-off parameter: large β\\betaβ prioritizes preserving I(T;Y)I(T; Y)I(T;Y) (relevance); small β\\betaβ prioritizes minimizing I(X;T)I(X; T)I(X;T) (compression).\n\nThe goal is to find a representation TTT of XXX that is maximally compressed while preserving relevance for YYY.\n\n**Q2.** What is the IB curve, and why is it monotonically increasing?\n\n**Answer:** The IB curve plots I(T;Y)I(T; Y)I(T;Y) (relevance) against I(X;T)I(X; T)I(X;T) (compression rate) for the optimal representation at each β\\betaβ. It traces a curve in the information plane.\n\nIt is monotonically increasing because giving the encoder more rate (I(X;T)I(X; T)I(X;T) higher) cannot decrease the achievable relevance. More compression rate allows preserving more relevant information, up to the data-processing limit I(T;Y)≤I(X;Y)I(T; Y) \\leq I(X; Y)I(T;Y)≤I(X;Y).\n\n**Q3.** What is the main empirical claim of Tishby and Schwartz-Ziv (2017)?\n\n**Answer:** That deep network training proceeds in two phases: an initial \"fitting\" phase (both I(X;T)I(X; T)I(X;T) and I(T;Y)I(T; Y)I(T;Y) increase together) and a subsequent \"compression\" phase (I(X;T)I(X; T)I(X;T) decreases while I(T;Y)I(T; Y)I(T;Y) remains high or also decreases slowly).\n\nThe interpretation: the network first memorizes (fits) the data and then compresses to retain only the task-relevant information. This was proposed as an explanation for generalization in deep networks.\n\n**Q4.** What is the main critique by Saxe et al. (2018)?\n\n**Answer:** That the compression phase is largely an artifact of saturating activations (tanh) and binning-based MI estimators. With non-saturating activations (ReLU) or kernel-density MI estimators, the compression phase is much weaker or absent.\n\nThe critique does not invalidate IB as a framework — it questions the specific empirical claim that deep network training implements IB-style compression.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 761,
+      "out_sha": "8b8cbb13e564",
       "note": ""
     },
     {
@@ -2227,11 +2227,11 @@
       "en_title": "Chapter 13: The Information Bottleneck",
       "order": 177,
       "src_chars": 3408,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bfe8279c8964",
       "src": "#### Application Problems\n\n**Q1.** Compute the IB Lagrangian for a trivial case: X=YX = YX=Y and T=XT = XT=X. What is LIB\\mathcal{L}_{IB}LIB​ at any β\\betaβ?\n\n**Answer:** I(X;T)=I(X;X)=H(X)I(X; T) = I(X; X) = H(X)I(X;T)=I(X;X)=H(X). I(T;Y)=I(X;Y)=H(X)I(T; Y) = I(X; Y) = H(X)I(T;Y)=I(X;Y)=H(X) (since X=YX = YX=Y).\n\nLIB=H(X)−β⋅H(X)=(1−β)H(X)\\mathcal{L}_{IB} = H(X) - \\beta \\cdot H(X) = (1 - \\beta) H(X)LIB​=H(X)−β⋅H(X)=(1−β)H(X).\n\nFor β<1\\beta < 1β<1, this is positive (we are penalizing the rate more than rewarding the relevance). For β>1\\beta > 1β>1, negative (we benefit from increased I(T;Y)I(T; Y)I(T;Y) more than we pay for increased I(X;T)I(X; T)I(X;T)).\n\nTo minimize the Lagrangian for β<1\\beta < 1β<1, use a constant TTT (I(X;T)=0I(X; T) = 0I(X;T)=0). For β>1\\beta > 1β>1, use T=XT = XT=X (extract all information). At β=1\\beta = 1β=1, the Lagrangian is constant — any TTT is \"optimal.\"\n\n**Q2.** A DVIB classifier trains with β=0.001\\beta = 0.001β=0.001 on MNIST. The reconstruction (here, classification) accuracy is 99%; the KL is 50 nats per image. The standard cross-entropy classifier achieves 99.5% accuracy. Comment on the trade-off.\n\n**Answer:** DVIB at β=0.001\\beta = 0.001β=0.001 achieves nearly the same accuracy as vanilla cross-entropy (99% vs 99.5%). The cost: a slightly lower accuracy and more complex training (additional KL term, stochastic representation).\n\nBenefits: better calibration, more robust to adversarial perturbations, more disentangled representations. These benefits are valuable in safety-critical applications even at a small accuracy cost.\n\nFor applications where peak accuracy is paramount, vanilla cross-entropy is preferred. For applications where uncertainty quantification or robustness matters, DVIB is worth the small accuracy trade-off.\n\n**Q3.** In a contrastive learning setup (SimCLR), the InfoNCE loss is a lower bound on I(T;T′)I(T; T')I(T;T′) where T,T′T, T'T,T′ are representations of two augmented views. Explain how this connects to the IB framework.\n\n**Answer:** SimCLR maximizes I(T;T′)I(T; T')I(T;T′) — mutual information between representations of augmented views. By data processing, I(T;T′)≤I(X;X′)I(T; T') \\leq I(X; X')I(T;T′)≤I(X;X′), where X,X′X, X'X,X′ are the original views. The \"target\" is no longer a label YYY but the representation of a paired view.\n\nIn IB terms: the encoder is p(t∣x)p(t \\mid x)p(t∣x); the \"target\" is the paired view's representation T′T'T′; the objective is to maximize I(T;T′)I(T; T')I(T;T′) while implicitly limiting I(X;T)I(X; T)I(X;T) through architectural choices (low-dimensional representation, normalization).\n\nThis is \"self-supervised IB\": instead of needing labels, use augmented views as a proxy target. The framework explains why contrastive methods work — they extract information shared across natural transformations of the input, which tends to be semantically meaningful.\n\n**Q4.** A β\\betaβ-VAE is trained with β=4\\beta = 4β=4 on faces. The KL is 5 nats per image; the reconstruction is somewhat blurry. The disentanglement score is 0.85. Compare to β=1\\beta = 1β=1: KL 30 nats, sharp reconstruction, disentanglement 0.45.\n\n**Answer:** The trade-off: β=4\\beta = 4β=4 sacrifices reconstruction sharpness for better disentanglement. At higher β\\betaβ, the encoder uses each latent dimension efficiently (otherwise the KL would be too high), forcing alignment with underlying factors of variation.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1289,
+      "out_sha": "72b5f69a0fba",
       "note": ""
     },
     {
@@ -2239,11 +2239,11 @@
       "en_title": "Chapter 13: The Information Bottleneck",
       "order": 178,
       "src_chars": 481,
-      "status": "pending",
+      "status": "done",
       "src_sha": "95d12a5574f6",
       "src": "β=1\\beta = 1β=1 (standard VAE) gives sharper reconstruction but less disentangled representation. The encoder uses many dimensions in entangled ways.\n\nThe choice of β\\betaβ depends on the application: for downstream tasks where interpretability and manipulation of factors matter (face editing, scientific analysis), high β\\betaβ. For high-fidelity generation, low β\\betaβ. β\\betaβ-VAE made this trade-off explicit and influenced much of the subsequent disentanglement literature.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 155,
+      "out_sha": "f6ecaa89925c",
       "note": ""
     },
     {
@@ -2251,23 +2251,23 @@
       "en_title": "Chapter 13: The Information Bottleneck",
       "order": 179,
       "src_chars": 3483,
-      "status": "pending",
+      "status": "done",
       "src_sha": "59f8294d3e39",
       "src": "#### Think Deeper\n\n**Q1.** Is the Information Bottleneck the \"right\" framework for understanding deep learning?\n\n**Discussion:** Probably not the only one, but a useful one.\n\nThe IB framework gives a clean information-theoretic objective for representation learning. It produces useful design principles (compress + preserve target). It motivates practical methods (DVIB, β\\betaβ-VAE, contrastive learning).\n\nBut: empirical claims about deep networks implementing IB are contested. The compression phase is at best a special-case phenomenon. Many deep learning successes are not naturally explained by IB (e.g., the success of overparametrized models, the role of stochastic gradient descent in generalization).\n\nA balanced view: IB is one of several useful theoretical frameworks for deep learning. PAC-Bayes generalization bounds, neural tangent kernels, lottery ticket hypotheses, and others each capture aspects of why deep learning works. Theoretical understanding is patchy and far from unified.\n\n**Q2.** Why is mutual information so hard to estimate in high dimensions?\n\n**Discussion:** Several reasons.\n\n  1. **Statistical** : McAllester and Stratos (2018) proved that any MI estimator from nnn samples in ddd-dimensional distributions can be no smaller than I−O(log⁡n/n1/d)I - O(\\log n / n^{1/d})I−O(logn/n1/d). The exponent 1/d1/d1/d is the killer: in high dimensions the convergence becomes effectively glacial, and estimation requires astronomical sample sizes. We treat this bound carefully in §14.1.\n\n  2. **Computational** : many MI estimators require kernel density estimation, which scales badly with dimension. Modern neural estimators (MINE) trade kernel cost for neural training cost, but they are unstable and biased.\n\n  3. **Statistical vs. operational MI** : the \"true\" MI of a distribution may be infinite (e.g., for continuous variables with continuous joint distributions). Practical estimators always estimate a discretized or coarse-grained MI, whose value depends on the discretization.\n\nThe practical lesson: MI is a useful theoretical concept but a treacherous empirical estimator. Empirical claims about MI in high dimensions should be treated with caution.\n\nWe will treat MI estimation in detail in Chapter 14.\n\n**Q3.** The IB framework has been around for 25 years. Why has it not become as central to deep learning practice as cross-entropy minimization?\n\n**Discussion:** Several reasons.\n\n  1. **Cross-entropy is simpler** : cross-entropy minimization has a direct probabilistic interpretation (maximum likelihood) and a straightforward gradient. IB requires careful estimation of mutual informations, which is hard.\n\n  2. **Cross-entropy is enough** : for many tasks, vanilla cross-entropy classification gives state-of-the-art performance. The marginal value of IB-style additions (DVIB) is not always worth the cost.\n\n  3. **IB's empirical claims are contested** : the strong claim that IB explains deep learning has been challenged. This has reduced the urgency of incorporating IB into practice.\n\n  4. **The IB curve is hard to compute** : in principle, you'd want to operate at a chosen β\\betaβ on the IB curve. In practice, this requires estimating the curve, which requires reliable MI estimation, which is hard.\n\n  5. **Practical successes have come from other quarters** : the rise of self-supervised learning, foundation models, scaling laws — these are the dominant themes of modern deep learning, and IB is at best peripheral to them.",
-      "out_chars": 0,
-      "out_sha": "",
-      "note": ""
+      "out_chars": 1138,
+      "out_sha": "a6e578bcdaaa",
+      "note": "glossary fix"
     },
     {
       "id": "c14_b10",
       "en_title": "Chapter 13: The Information Bottleneck",
       "order": 180,
       "src_chars": 1230,
-      "status": "pending",
+      "status": "done",
       "src_sha": "89cde66eafc9",
       "src": "That said, IB ideas do appear in many modern methods (β\\betaβ-VAE, DVIB, contrastive learning). The framework is influential as a design heuristic even if it is not the central training principle.\n\nThe long-term view: IB may be remembered as one of several theoretical lenses on representation learning, useful for some problems and less useful for others. It is unlikely to displace cross-entropy minimization as the workhorse, but it will continue to inform specific applications.\n\n\n### Connections to Subsequent Chapters\n\nThis chapter introduced the information bottleneck. The next chapters develop related themes.\n\n* **Chapter 14** : mutual information in deep learning — estimators, bounds, applications.\n* **Chapter 15** : language models as compressors — direct application of cross-entropy and information theory.\n* **Chapter 17** : open problems include the relationship between information theory and deep learning generalization.\n* **Chapter 18** : capstone uses an IB-flavored analysis of the trained language model.\n\nA reader who has finished this chapter understands one of the most provocative theoretical interpretations of deep learning, with appropriate caveats about the contested empirical claims.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 398,
+      "out_sha": "e0874da58e8d",
       "note": ""
     },
     {
