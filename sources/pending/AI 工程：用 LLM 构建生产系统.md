@@ -28,10 +28,10 @@
 - Chapter 23: Safety and Reliability in Production
 - Chapter 24: The AI Engineering Team, Workflow, and Engineering Judgment
 - Chapter 25: Anti-Patterns and Where the Field Is Going
-- Introduction
-- Introduction
-- Introduction
-- Introduction
+- Appendix A — Reading List
+- Appendix B — Reference Architecture Catalog
+- Appendix C — Glossary
+- Appendix D — Anti-Patterns Cheat Sheet
 
 ---
 
@@ -18408,30 +18408,6 @@ The discipline pattern parallels classical engineering: software defects are bes
 
 This synthesizes the book's overarching argument that AI engineering is engineering: the same root-cause-discipline principles that mature software engineering teams apply to defects also apply to anti-patterns in AI engineering. The discipline is the same; the specific patterns are domain-specific. The reader who internalizes the meta-discipline (address root causes, not symptoms) is equipped to handle anti-patterns this book does not name, in years beyond this book's publication.
 
-* Add the discipline to the team's recurring meeting agenda. The dashboard or evidence is reviewed weekly or biweekly.
-* Add the discipline to the team's hire-onboarding checklist; every new engineer's first month touches it.
-* Add the discipline to the team's quarterly review template; the review surfaces the state of the discipline.
-
-_Weeks 12-13: external alignment_
-
-* Make the discipline visible to the customer-facing pressure source. If the pressure is sales-driven, brief sales on why the discipline matters; if it is finance-driven, brief finance.
-* Make the discipline part of the team's external story (blog posts, sales materials). External visibility reinforces internal commitment.
-
-_Expected outcomes at week 13_ :
-
-* The discipline is in OKRs, in 1-on-1 conversations, in three engineers' workflows, in the meeting cadence, in the runbook, and visible externally. The reinforcement is multi-layered.
-
-* A symptom regression (e.g., judge calibration drifts) would be caught by the cadence and addressed; the structural protection is in place.
-
-**Argument for why this is durable** :
-
-The symptom-only plan addresses one of the four root causes (and often only partially). The 13-week plan addresses all four. The combination makes the discipline self-sustaining: when one root cause weakens (e.g., leadership turnover changes the OKR culture), the other three keep the discipline alive long enough for the team to adapt.
-
-This is harder than a symptom-only plan. It takes more time; it requires leadership engagement; it touches more of the team's surface. The teams that invest in root-cause mitigations compound their discipline over years; the teams that stop at symptom mitigations cycle through the same incidents in slightly different forms.
-
-The discipline pattern parallels classical engineering: software defects are best addressed at the root cause, not the surface symptom. AI engineering discipline is the same. The 2026 reader's takeaway: when the team's anti-pattern surfaces, do not just mitigate the instance; ask why it surfaced, and address the why.
-
-This synthesizes the book's overarching argument that AI engineering is engineering: the same root-cause-discipline principles that mature software engineering teams apply to defects also apply to anti-patterns in AI engineering. The discipline is the same; the specific patterns are domain-specific. The reader who internalizes the meta-discipline (address root causes, not symptoms) is equipped to handle anti-patterns this book does not name, in years beyond this book's publication.
 
 ---
 
@@ -19282,15 +19258,15 @@ The cheat sheet is intentionally denser than the chapter. The chapter argues the
 
 ### Quick reference
 
-## | Anti-pattern | The kill criterion | Anchor failure | Chapter(s)  
----|---|---|---|---  
-1 | Shipping without evals | If you can't articulate measurable success, the feature shouldn't ship. | Air Canada (Thread B Failure 1) | Ch 4  
-2 | Over-engineering with frameworks | If the framework abstracts something you need direct control over, don't use the framework for that layer. | (no canonical — death by a thousand cuts) | Ch 15, Ch 16  
-3 | Treating LLM outputs as deterministic | If your code can't handle an unexpected response, it isn't production-ready. | Google AI Overviews (Failure 2) | Ch 2, Ch 7  
-4 | Ignoring the cost dimension | If you can't say what a feature costs per active user per day, you don't have cost discipline. | Fine-tune deprecation cascade (Failure 4, anchored Ch 22) | Ch 17, Ch 18 (discipline); Ch 22 (anchor)  
-5 | Trusting LLM-as-judge without validation | If your judge hasn't been calibrated against humans at κ ≥ 0.6 on ≥ 50 cases, the eval isn't production-grade. | (no canonical — correlated-family bias) | Ch 4, Ch 11  
-6 | Building agents when workflows suffice | If you can specify the task as deterministic steps with at most one LLM call per step, don't agent-ify it. | 52K USD overnight agent (Failure 5); 2026 agentic recursion (Failure 6) | Ch 14, Ch 15  
-7 | Shipping without safety architecture | If you have a multi-tenant or RAG system without the four-layer defense (§23.3), you have a known unaddressed threat. | 2025 prompt-injection-in-production incident (Failure 3) | Ch 23  
+| # | Anti-pattern | The kill criterion | Anchor failure | Chapter(s) |
+| --- | --- | --- | --- | --- |
+| 1 | Shipping without evals | If you can't articulate measurable success, the feature shouldn't ship. | Air Canada (Thread B Failure 1) | Ch 4 |
+| 2 | Over-engineering with frameworks | If the framework abstracts something you need direct control over, don't use the framework for that layer. | (no canonical — death by a thousand cuts) | Ch 15, Ch 16 |
+| 3 | Treating LLM outputs as deterministic | If your code can't handle an unexpected response, it isn't production-ready. | Google AI Overviews (Failure 2) | Ch 2, Ch 7 |
+| 4 | Ignoring the cost dimension | If you can't say what a feature costs per active user per day, you don't have cost discipline. | Fine-tune deprecation cascade (Failure 4, anchored Ch 22) | Ch 17, Ch 18 (discipline); Ch 22 (anchor) |
+| 5 | Trusting LLM-as-judge without validation | If your judge hasn't been calibrated against humans at κ ≥ 0.6 on ≥ 50 cases, the eval isn't production-grade. | (no canonical — correlated-family bias) | Ch 4, Ch 11 |
+| 6 | Building agents when workflows suffice | If you can specify the task as deterministic steps with at most one LLM call per step, don't agent-ify it. | 52K USD overnight agent (Failure 5); 2026 agentic recursion (Failure 6) | Ch 14, Ch 15 |
+| 7 | Shipping without safety architecture | If you have a multi-tenant or RAG system without the four-layer defense (§23.3), you have a known unaddressed threat. | 2025 prompt-injection-in-production incident (Failure 3) | Ch 23 |
   
 ### The seven anti-patterns in detail
 

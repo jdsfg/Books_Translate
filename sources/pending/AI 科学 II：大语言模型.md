@@ -2536,11 +2536,11 @@ Note that the exact Chinchilla fit gives βN≈0.45\beta_N \approx 0.45βN​≈
 
 The near-equality of αN\alpha_NαN​ and αD\alpha_DαD​ (0.34 vs. 0.28) drives the near-equal allocation. When compute increases 10×:
 
-| Kaplan | Chinchilla  
----|---|---  
-NNN grows by | ~5.4× | ~3.2×  
-DDD grows by | ~1.9× | ~3.2×  
-D/ND/ND/N ratio | Decreasing | Constant ≈ 20  
+| Metric | Kaplan | Chinchilla |
+| --- | --- | --- |
+| NNN grows by | ~5.4× | ~3.2× |
+| DDD grows by | ~1.9× | ~3.2× |
+| D/ND/ND/N ratio | Decreasing | Constant ≈ 20 |
   
 > **Cross-Disciplinary Connection**
 > 
@@ -10483,23 +10483,23 @@ LLMs confabulate about their own capabilities -- claiming to be unable to do thi
 
 The following table summarizes the assessment:
 
-Category | Capability | Status | Evidence Chapter  
----|---|---|---  
-**Do well** | Fluent text generation | Robust | 7--9  
-| Instruction following | Robust (after RLHF) | 15--16  
-| In-context learning | Robust (above 1B) | 8--9  
-| CoT reasoning | Robust (above 100B) | 19--20  
-| Knowledge retrieval | Robust (within training data) | 8--9  
-| Code generation | Robust | 22  
-**Struggle with** | Precise arithmetic | Consistent limitation | 11  
-| Novel logical deduction | Consistent limitation | 21  
-| Knowledge updating | Fundamental limitation | 9, 22  
-| Long-conversation consistency | Consistent limitation | \--  
-| Reliable self-knowledge | Consistent limitation | 21  
-**Contested** | Language understanding | Mixed evidence | 21  
-| Genuine reasoning | Mixed evidence | 19--21  
-| Sycophancy | Debated | 16  
-| General intelligence via scale | Unknown | 5--6, 10  
+| Category | Capability | Status | Evidence Chapter |
+| --- | --- | --- | --- |
+| **Do well** | Fluent text generation | Robust | 7--9 |
+| **Do well** | Instruction following | Robust (after RLHF) | 15--16 |
+| **Do well** | In-context learning | Robust (above 1B) | 8--9 |
+| **Do well** | CoT reasoning | Robust (above 100B) | 19--20 |
+| **Do well** | Knowledge retrieval | Robust (within training data) | 8--9 |
+| **Do well** | Code generation | Robust | 22 |
+| **Struggle with** | Precise arithmetic | Consistent limitation | 11 |
+| **Struggle with** | Novel logical deduction | Consistent limitation | 21 |
+| **Struggle with** | Knowledge updating | Fundamental limitation | 9, 22 |
+| **Struggle with** | Long-conversation consistency | Consistent limitation | \-- |
+| **Struggle with** | Reliable self-knowledge | Consistent limitation | 21 |
+| **Contested** | Language understanding | Mixed evidence | 21 |
+| **Contested** | Genuine reasoning | Mixed evidence | 19--21 |
+| **Contested** | Sycophancy | Debated | 16 |
+| **Contested** | General intelligence via scale | Unknown | 5--6, 10 |
   
 * * *
 

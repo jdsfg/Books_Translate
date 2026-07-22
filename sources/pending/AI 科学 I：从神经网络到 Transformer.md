@@ -2018,12 +2018,12 @@ Three patterns to note:
 
 The computational graph reveals an elegant symmetry between the forward and backward passes:
 
-| Forward pass | Backward pass  
----|---|---  
-Direction | Leaf → Root | Root → Leaf  
-Computes | Node values | Node gradients ∂L/∂⋅\partial L/\partial \cdot∂L/∂⋅  
-Local operation | Apply node's function | Multiply by local gradient  
-Dependencies | Needs parent values | Needs child gradient + cached parent values  
+|  | Forward pass | Backward pass |
+| --- | --- | --- |
+| Direction | Leaf → Root | Root → Leaf |
+| Computes | Node values | Node gradients ∂L/∂⋅\partial L/\partial \cdot∂L/∂⋅ |
+| Local operation | Apply node's function | Multiply by local gradient |
+| Dependencies | Needs parent values | Needs child gradient + cached parent values |
   
 The backward pass runs in the _reverse_ topological order of the forward pass. This is why deep learning frameworks cache intermediate activations during forward computation — they are needed again to compute local gradients in the backward pass.
 

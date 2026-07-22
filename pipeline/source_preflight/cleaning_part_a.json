@@ -1,0 +1,218 @@
+{
+  "report": "pipeline/source_preflight/cleaning_part_a.md",
+  "generated_at": "2026-07-21T22:36:49.990488+00:00",
+  "revision": "round3-distributed-three-tables-stub-col",
+  "pr": 20,
+  "scope": [
+    "AI 科学 I：从神经网络到 Transformer",
+    "AI 科学 II：大语言模型",
+    "AI 工程：用 LLM 构建生产系统",
+    "数据库系统",
+    "分布式系统",
+    "操作系统",
+    "系统设计思维：大规模软件的架构之道",
+    "理性之外：行为经济学",
+    "营养的逻辑",
+    "钱为我用",
+    "训练的科学·卷二：耐力与整体表现"
+  ],
+  "summary": {
+    "CLEAN_PASS": 0,
+    "CLEAN_WITH_REMAINDERS": 0,
+    "BLOCK": 11
+  },
+  "policy": {
+    "no_blind_formula_regex": true,
+    "CLEAN_WITH_REMAINDERS_not_promotable": true,
+    "unclear_formulas": "SOURCE_CONFLICT + keep original"
+  },
+  "books": [
+    {
+      "name": "AI 科学 I：从神经网络到 Transformer",
+      "path": "sources/pending/AI 科学 I：从神经网络到 Transformer.md",
+      "preflight_source": "pending_part_2",
+      "before_status": "BLOCK",
+      "status": "BLOCK",
+      "structural_fixes": [
+        "table_stub_header L2021-2026"
+      ],
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "约 L2021-2026",
+      "unresolved": [
+        "SOURCE_CONFLICT: systemic formula multi-render left unchanged after reverting unsafe batch peel"
+      ],
+      "promotable": false
+    },
+    {
+      "name": "AI 科学 II：大语言模型",
+      "path": "sources/pending/AI 科学 II：大语言模型.md",
+      "preflight_source": "pending_part_1",
+      "before_status": "BLOCK",
+      "status": "BLOCK",
+      "structural_fixes": [
+        "kaplan_metric_column",
+        "assessment_category_fill L10486-10502"
+      ],
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "约 L2539-2543; L10486-10502",
+      "unresolved": [
+        "SOURCE_CONFLICT: systemic formula multi-render left unchanged"
+      ],
+      "promotable": false
+    },
+    {
+      "name": "AI 工程：用 LLM 构建生产系统",
+      "path": "sources/pending/AI 工程：用 LLM 构建生产系统.md",
+      "preflight_source": "pending_part_1",
+      "before_status": "BLOCK",
+      "status": "BLOCK",
+      "structural_fixes": [
+        "toc_appendices",
+        "duplicate_discipline_block_removed",
+        "fake_h2_table_to_5_cols"
+      ],
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "TOC L31-34; dup ~L18411-18434; table ~L19261+",
+      "unresolved": [
+        "SOURCE_CONFLICT: L6559 RRF triple-render left unchanged"
+      ],
+      "promotable": false
+    },
+    {
+      "name": "数据库系统",
+      "path": "sources/pending/数据库系统.md",
+      "preflight_source": "pending_part_1",
+      "before_status": "BLOCK",
+      "status": "BLOCK",
+      "structural_fixes": [
+        "lock_matrix_header_col",
+        "duplicate_tail_removed"
+      ],
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "L7616-7622; tail dup removed",
+      "unresolved": [
+        "SOURCE_CONFLICT: systemic formula multi-render left unchanged"
+      ],
+      "promotable": false
+    },
+    {
+      "name": "分布式系统",
+      "path": "sources/pending/分布式系统.md",
+      "preflight_source": "pending_part_2",
+      "before_status": "BLOCK",
+      "status": "BLOCK",
+      "structural_fixes": [
+        "ghost_toc_removed",
+        "postscript_dup_removed",
+        "fake_h2_tables_fixed",
+        "round3_workflow_table_stub_col L11276-11289 (7 cols)",
+        "round3_lies_table_stub_col L11817-11824 (4 cols)",
+        "round3_misconceptions_table_stub_col L12103-12129 (4 cols)"
+      ],
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "TOC L34; ending; tables L11276+/L11817+/L12103+ (round3 stub #)",
+      "unresolved": [
+        "SOURCE_CONFLICT: formula/variable multi-render left unchanged"
+      ],
+      "promotable": false
+    },
+    {
+      "name": "操作系统",
+      "path": "sources/pending/操作系统.md",
+      "preflight_source": "pending_part_2",
+      "before_status": "BLOCK",
+      "status": "BLOCK",
+      "structural_fixes": [
+        "toc_rebuilt_from_h2",
+        "intro_heading_####_to_###"
+      ],
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "TOC L3-33; intro subheads",
+      "unresolved": [
+        "SOURCE_CONFLICT: Ch5 scheduling arithmetic triple-render left unchanged"
+      ],
+      "promotable": false
+    },
+    {
+      "name": "系统设计思维：大规模软件的架构之道",
+      "path": "sources/pending/系统设计思维：大规模软件的架构之道.md",
+      "preflight_source": "pending_part_1",
+      "before_status": "BLOCK",
+      "status": "BLOCK",
+      "structural_fixes": [],
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "无",
+      "unresolved": [
+        "SOURCE_CONFLICT: formula multi-render left unchanged (no structural BLOCK)"
+      ],
+      "promotable": false
+    },
+    {
+      "name": "理性之外：行为经济学",
+      "path": "sources/pending/理性之外：行为经济学.md",
+      "preflight_source": "pending_part_1",
+      "before_status": "BLOCK",
+      "status": "BLOCK",
+      "structural_fixes": [],
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "无",
+      "unresolved": [
+        "SOURCE_CONFLICT: CE/RP/x multi-render left unchanged"
+      ],
+      "promotable": false
+    },
+    {
+      "name": "营养的逻辑",
+      "path": "sources/pending/营养的逻辑.md",
+      "preflight_source": "pending_part_2",
+      "before_status": "BLOCK",
+      "status": "BLOCK",
+      "structural_fixes": [
+        "section_12_9_renumbered_to_12_8"
+      ],
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "L2746",
+      "unresolved": [
+        "SOURCE_CONFLICT: GL formula triple-render + ZWSP left unchanged"
+      ],
+      "promotable": false
+    },
+    {
+      "name": "钱为我用",
+      "path": "sources/pending/钱为我用.md",
+      "preflight_source": "pending_part_2",
+      "before_status": "BLOCK",
+      "status": "BLOCK",
+      "structural_fixes": [
+        "intro_heading_####_to_###",
+        "ending_duplicate_removed",
+        "discussion_body_preserved"
+      ],
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "L55/L67; ending ~L4479+",
+      "unresolved": [
+        "SOURCE_CONFLICT: wealth/Rule-of-72 formula multi-render left unchanged"
+      ],
+      "promotable": false
+    },
+    {
+      "name": "训练的科学·卷二：耐力与整体表现",
+      "path": "sources/pending/训练的科学·卷二：耐力与整体表现.md",
+      "preflight_source": "pending_part_2",
+      "before_status": "BLOCK",
+      "status": "BLOCK",
+      "structural_fixes": [
+        "heading_1_2_1_4_to_h3",
+        "list_items_4_5_restored",
+        "table_pipes_column_align"
+      ],
+      "formula_decision": "reverted_unsafe_batch_peel; originals retained",
+      "changed_line_ranges_note": "L78/102; L186-189; tables ~598-761",
+      "unresolved": [
+        "SOURCE_CONFLICT: Karvonen/Q-dot multi-render in cells left unchanged (no blind formula wash)"
+      ],
+      "promotable": false
+    }
+  ],
+  "round3_note": "Only fix 分布式系统 three tables: add # stub first column so header/sep/data column counts match."
+}
