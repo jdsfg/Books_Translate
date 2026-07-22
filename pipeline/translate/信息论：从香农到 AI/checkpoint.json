@@ -1771,11 +1771,11 @@
       "en_title": "Chapter 10: Variational Methods",
       "order": 139,
       "src_chars": 2825,
-      "status": "pending",
+      "status": "done",
       "src_sha": "99a1cfc62482",
       "src": "#### The reparametrization trick\n\nA practical issue: sampling z∼qϕ(z∣x)z \\sim q_\\phi(z \\mid x)z∼qϕ​(z∣x) is non-differentiable in ϕ\\phiϕ, which prevents backpropagation. Solution: rewrite the sample as a deterministic function of ϕ\\phiϕ and a noise variable:\n\nz=μϕ(x)+σϕ(x)⋅ϵ,ϵ∼N(0,I).z = \\mu_\\phi(x) + \\sigma_\\phi(x) \\cdot \\epsilon, \\quad \\epsilon \\sim \\mathcal{N}(0, I).z=μϕ​(x)+σϕ​(x)⋅ϵ,ϵ∼N(0,I).\n\nNow zzz is differentiable in ϕ\\phiϕ, and the gradient flows through. This **reparametrization trick** proposed independently by Kingma in 2013 and Rezende and colleagues in 2014 is what makes VAE training practical.\n\n\n#### Operational view: a learned compressor\n\nThe VAE can be understood as a learned compression scheme. The encoder maps an image to a compact code (with some uncertainty); the decoder reconstructs from the code. The rate is the KL term (in bits, this is the average number of bits per example to specify the code in the prior). The distortion is the reconstruction error.\n\nThis is an explicit rate-distortion picture, which Chapter 11 will treat in full. For now, note that the VAE is solving a rate-distortion problem at the population level: minimize total loss = rate + distortion, with the trade-off implicit.\n\n\n#### β\\betaβ-VAE\n\nA modification introduced by Higgins and collaborators in 2017 introduces a hyperparameter β\\betaβ:\n\nL=Eqϕ(z∣x)[log⁡pθ(x∣z)]−β⋅D(qϕ(z∣x)∥p(z)).\\mathcal{L} = \\mathbb{E}_{q_\\phi(z \\mid x)}[\\log p_\\theta(x \\mid z)] - \\beta \\cdot D(q_\\phi(z \\mid x) \\| p(z)).L=Eqϕ​(z∣x)​[logpθ​(x∣z)]−β⋅D(qϕ​(z∣x)∥p(z)).\n\nFor β=1\\beta = 1β=1, this is the standard VAE. For β>1\\beta > 1β>1, more weight on regularization; for β<1\\beta < 1β<1, more weight on reconstruction.\n\nThe β\\betaβ-VAE is a Lagrangian view of the rate-distortion trade-off. Different β\\betaβ yield different points on the rate-distortion curve. Empirically, larger β\\betaβ tends to produce more disentangled latent representations.\n\n\n### 10.5 Beyond VAE: Modern Variational Methods\n\nThe variational framework extends well beyond the VAE.\n\n\n#### Normalizing flows\n\nA normalizing flow proposed by Rezende in 2015 and Dinh and collaborators in 2016 parametrizes a complex distribution as a sequence of invertible transformations of a simple base distribution (typically Gaussian). The change of variables formula gives\n\nlog⁡pθ(x)=log⁡pbase(z)−∑ilog⁡∣det⁡Ji∣,\\log p_\\theta(x) = \\log p_{\\text{base}}(z) - \\sum_i \\log |\\det J_i|,logpθ​(x)=logpbase​(z)−i∑​log∣detJi​∣,\n\nwhere z=f−1(x)z = f^{-1}(x)z=f−1(x) and JiJ_iJi​ are the Jacobians of each layer.\n\nThis gives a tractable density model with exact likelihoods — no ELBO bound needed. Architectures like RealNVP, Glow, and various neural ODE flows have produced strong density estimators. For images, however, GANs and diffusion models have surpassed flows in sample quality.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1176,
+      "out_sha": "57f85e84113f",
       "note": ""
     },
     {
@@ -1783,11 +1783,11 @@
       "en_title": "Chapter 10: Variational Methods",
       "order": 140,
       "src_chars": 2292,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2ee8ff974760",
       "src": "#### Bayesian deep learning\n\nA Bayesian neural network treats the network weights as random variables with a prior. The posterior over weights given data is intractable, but variational approximations make Bayesian inference at neural-network scale tractable.\n\nThe \"weight uncertainty\" in Bayesian neural networks gives calibrated predictive uncertainty: the model knows what it doesn't know. This is valuable for safety-critical applications (medical imaging, autonomous driving) where overconfident wrong predictions are costly.\n\nPractical Bayesian neural networks: variational Bayes (Bayes by Backprop), Monte Carlo Dropout, deep ensembles. Each is a variational approximation of a different form.\n\n\n#### Diffusion models as variational\n\nModern diffusion models can be derived as variational models with a specific (fixed) forward noising process and a learned reverse process. The training objective is a hierarchical ELBO summed over noise levels. The connection between diffusion and variational methods is recent and elegantly unifies these two streams of generative modeling.\n\n\n### 10.6 An AI Connection: ELBO as Information Theory\n\nThe ELBO has a clean information-theoretic reading.\n\nDecomposed as ELBO=Eq[log⁡p(x∣z)]−D(q(z)∥p(z))\\text{ELBO} = \\mathbb{E}_q[\\log p(x \\mid z)] - D(q(z) \\| p(z))ELBO=Eq​[logp(x∣z)]−D(q(z)∥p(z)):\n\n* The reconstruction term Eq[log⁡p(x∣z)]\\mathbb{E}_q[\\log p(x \\mid z)]Eq​[logp(x∣z)] is the negative cross-entropy of the data given the code.\n* The KL term D(q(z)∥p(z))D(q(z) \\| p(z))D(q(z)∥p(z)) is the rate at which the code is described, measured against the prior.\n\nSo:\n\n**ELBO = -distortion - rate.**\n\nMaximizing the ELBO is minimizing the rate-distortion objective: code data at low rate (close to the prior) while keeping distortion (negative log-likelihood) low.\n\nThis is exactly the rate-distortion picture of Chapter 11, and it tells us that variational inference is, at root, lossy compression of the latent code.\n\nFor a generic latent-variable model, the maximum ELBO over variational families gives a lower bound on log⁡p(x)\\log p(x)logp(x) — i.e., an upper bound on the _unachievable_ compression rate. This is a deep operational interpretation: variational inference quantifies how compressible the data are under a particular model class.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 834,
+      "out_sha": "d9a5d3b7042d",
       "note": ""
     },
     {
@@ -1795,11 +1795,11 @@
       "en_title": "Chapter 10: Variational Methods",
       "order": 141,
       "src_chars": 2911,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bb5a14256ee0",
       "src": "### 10.7 Historical Note: From EM to ELBO\n\nThe variational perspective on Bayesian inference has a long pedigree. The expectation-maximization (EM) algorithm of Dempster, Laird, and Rubin (1977) can be read in retrospect as a coordinate-ascent algorithm on the ELBO: the E-step computes the posterior q(z∣x)q(z \\mid x)q(z∣x), the M-step maximizes the joint log-likelihood under that posterior. EM was developed for missing-data problems and only later recognized as variational inference avant la lettre.\n\nThe modern formulation, calling it \"variational\" and writing the ELBO explicitly, emerged in the 1990s through the work of Michael Jordan, Tommi Jaakkola, Lawrence Saul, and others, often in the context of graphical models and mean-field approximations. Wainwright and Jordan's 2008 monograph _Graphical Models, Exponential Families, and Variational Inference_ codified the framework as a unified approach to approximate inference.\n\nThe variational autoencoder (Kingma and Welling, 2013; Rezende, Mohamed, and Wierstra, 2014) was the breakthrough that brought variational methods into deep learning. Both papers appeared within months of each other and made the same conceptual move: parametrize the variational posterior with a neural network, use the reparametrization trick for stochastic gradient estimation. The VAE became the canonical example of how a 1990s statistical technique could be revived by combining it with neural networks.\n\nA characteristic feature of variational inference's history: the same mathematical structure has been rediscovered in different communities (statistical physics' mean-field theory, control theory's KL-divergence costs, message-passing in coding theory) and only later recognized as one framework. Variational ideas seem to have a habit of being reinvented every fifteen years.\n\n\n### Common Misconception\n\n* **Misconception** : \"Variational inference is just an approximation; MCMC is exact.\"\n\nBoth are approximations in practice. MCMC is asymptotically exact (as samples grow), but with finite samples, it is biased and noisy. Variational inference is structurally biased (constrained to the variational family) but converges quickly. Choose based on what you can afford: VI for fast approximate posteriors at scale; MCMC for high-fidelity inference at smaller scale.\n\n* **Misconception** : \"The ELBO is a single number you maximize.\"\n\nThe ELBO is a _function_ of the variational parameters ϕ\\phiϕ. You maximize it over ϕ\\phiϕ to get a posterior approximation. The maximum value of the ELBO is a lower bound on log-evidence, useful for model selection.\n\n* **Misconception** : \"VAEs reconstruct images perfectly.\"\n\nVAEs typically produce somewhat blurry images. This is a consequence of the variational objective (mode-seeking reverse KL) and the typically Gaussian decoder (which is L2-loss equivalent). For sharp images, GANs or diffusion models are preferred.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1018,
+      "out_sha": "84088b0c2322",
       "note": ""
     },
     {
@@ -1807,11 +1807,11 @@
       "en_title": "Chapter 10: Variational Methods",
       "order": 142,
       "src_chars": 1085,
-      "status": "pending",
+      "status": "done",
       "src_sha": "62befd017914",
       "src": "### Chapter Summary\n\nVariational inference is the optimization-based approach to Bayesian computation. It approximates the intractable posterior p(z∣x)p(z \\mid x)p(z∣x) by a tractable variational distribution qϕ(z)q_\\phi(z)qϕ​(z), found by maximizing the ELBO:\n\nELBO(qϕ)=Eqϕ[log⁡p(x∣z)]−D(qϕ(z)∥p(z))=log⁡p(x)−D(qϕ(z)∥p(z∣x)).\\text{ELBO}(q_\\phi) = \\mathbb{E}_{q_\\phi}[\\log p(x \\mid z)] - D(q_\\phi(z) \\| p(z)) = \\log p(x) - D(q_\\phi(z) \\| p(z \\mid x)).ELBO(qϕ​)=Eqϕ​​[logp(x∣z)]−D(qϕ​(z)∥p(z))=logp(x)−D(qϕ​(z)∥p(z∣x)).\n\nMaximizing the ELBO equals minimizing KL to the true posterior. The decomposition is rate-distortion in disguise: the reconstruction term is negative distortion; the KL term is rate.\n\nModern variational methods include the variational autoencoder (VAE), normalizing flows, Bayesian neural networks, and (in a recent unification) diffusion models. All rest on the same ELBO machinery introduced here.\n\nThe next chapter develops rate-distortion theory in full, making the rate-distortion view of VAE explicit and connecting to lossy compression.\n\n\n### 10.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 409,
+      "out_sha": "ab5c1704564d",
       "note": ""
     },
     {
@@ -1819,11 +1819,11 @@
       "en_title": "Chapter 10: Variational Methods",
       "order": 143,
       "src_chars": 2570,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5207cf2a1699",
       "src": "#### Concept Check\n\n**Q1.** State the ELBO and the identity log⁡p(x)=ELBO+D(q∥p(⋅∣x))\\log p(x) = \\text{ELBO} + D(q \\| p(\\cdot \\mid x))logp(x)=ELBO+D(q∥p(⋅∣x)).\n\n**Answer:** ELBO(qϕ)=Eqϕ[log⁡p(x,z)−log⁡qϕ(z)]\\text{ELBO}(q_\\phi) = \\mathbb{E}_{q_\\phi}[\\log p(x, z) - \\log q_\\phi(z)]ELBO(qϕ​)=Eqϕ​​[logp(x,z)−logqϕ​(z)].\n\nEquivalently: ELBO=Eq[log⁡p(x∣z)]−D(q∥p(z))\\text{ELBO} = \\mathbb{E}_q[\\log p(x \\mid z)] - D(q \\| p(z))ELBO=Eq​[logp(x∣z)]−D(q∥p(z)) (reconstruction minus KL to prior).\n\nIdentity: log⁡p(x)=ELBO(qϕ)+D(qϕ(z)∥p(z∣x))\\log p(x) = \\text{ELBO}(q_\\phi) + D(q_\\phi(z) \\| p(z \\mid x))logp(x)=ELBO(qϕ​)+D(qϕ​(z)∥p(z∣x)). Since D≥0D \\geq 0D≥0, ELBO is a lower bound on log-evidence. Maximizing ELBO over ϕ\\phiϕ minimizes KL to the true posterior.\n\n**Q2.** Why is the ELBO called a \"lower bound\"?\n\n**Answer:** Because log⁡p(x)=ELBO+D(q∥p(⋅∣x))\\log p(x) = \\text{ELBO} + D(q \\| p(\\cdot \\mid x))logp(x)=ELBO+D(q∥p(⋅∣x)) and D≥0D \\geq 0D≥0, we have ELBO≤log⁡p(x)\\text{ELBO} \\leq \\log p(x)ELBO≤logp(x). The ELBO is at most the log-evidence; we cannot make it larger than the truth.\n\n**Q3.** What is the reparametrization trick and why is it needed?\n\n**Answer:** The reparametrization trick: if z∼qϕ(z)=N(μϕ,σϕ2)z \\sim q_\\phi(z) = \\mathcal{N}(\\mu_\\phi, \\sigma_\\phi^2)z∼qϕ​(z)=N(μϕ​,σϕ2​), rewrite as z=μϕ+σϕ⋅ϵz = \\mu_\\phi + \\sigma_\\phi \\cdot \\epsilonz=μϕ​+σϕ​⋅ϵ with ϵ∼N(0,1)\\epsilon \\sim \\mathcal{N}(0, 1)ϵ∼N(0,1) fixed. Now zzz is a differentiable function of ϕ\\phiϕ (and a random sample ϵ\\epsilonϵ), and gradients flow through.\n\nWithout the trick, sampling z∼qϕz \\sim q_\\phiz∼qϕ​ is a non-differentiable operation, and you cannot backpropagate through the sample to update ϕ\\phiϕ. With the trick, you can, and the entire variational lower bound becomes optimizable by stochastic gradient descent.\n\n**Q4.** What does the VAE's \"reconstruction term\" measure, and what does the \"KL term\" measure?\n\n**Answer:** Reconstruction term Eqϕ[log⁡pθ(x∣z)]\\mathbb{E}_{q_\\phi}[\\log p_\\theta(x \\mid z)]Eqϕ​​[logpθ​(x∣z)]: expected log-likelihood of the data given the encoded latent. Measures how well the decoder reconstructs xxx from samples of qϕ(z∣x)q_\\phi(z \\mid x)qϕ​(z∣x). Larger is better.\n\nKL term D(qϕ(z∣x)∥p(z))D(q_\\phi(z \\mid x) \\| p(z))D(qϕ​(z∣x)∥p(z)): KL divergence of the encoder's output from the prior. Measures how \"different\" the encoded distribution is from the prior. Smaller is better.\n\nThe trade-off: better reconstruction often requires more \"spread\" in the encoder distribution (more bits used), which increases the KL. The ELBO chooses the optimal balance.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1134,
+      "out_sha": "57952162eb2b",
       "note": ""
     },
     {
@@ -1831,11 +1831,11 @@
       "en_title": "Chapter 10: Variational Methods",
       "order": 144,
       "src_chars": 3485,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b0ddc9b2092a",
       "src": "#### Application Problems\n\n**Q1.** A VAE is trained on MNIST. The reconstruction loss is 100 nats per image (i.e., Eq[log⁡p(x∣z)]≈−100\\mathbb{E}_q[\\log p(x \\mid z)] \\approx -100Eq​[logp(x∣z)]≈−100 on the training set). The KL term averages 30 nats per image. What is the ELBO?\n\n**Answer:** ELBO=Eq[log⁡p(x∣z)]−D(q∥p)=−100−30=−130\\text{ELBO} = \\mathbb{E}_q[\\log p(x \\mid z)] - D(q \\| p) = -100 - 30 = -130ELBO=Eq​[logp(x∣z)]−D(q∥p)=−100−30=−130 nats per image.\n\nLower bound on log-evidence: log⁡p(x)≥−130\\log p(x) \\geq -130logp(x)≥−130 nats. The actual log-evidence is at least -130 nats per image; the gap is the KL of qqq from the true posterior.\n\n**Q2.** Two VAEs are compared. Both achieve the same ELBO of -100 nats. Model A has reconstruction loss -90 nats and KL 10 nats; Model B has reconstruction loss -50 nats and KL 50 nats. Which is better, and for what?\n\n**Answer:** Same ELBO means the same lower bound on log-evidence. They are equivalent in this sense.\n\nBut operationally:\n\n* Model A has lower KL — its codes are close to the prior, so sampling from the prior gives codes that the decoder \"recognizes.\" Better for _generation_ (sampling new images).\n* Model B has higher KL — its codes are far from the prior. Sampling from the prior may give codes the decoder doesn't reconstruct well. But it has better reconstruction, meaning it captures more of the data's structure in the code. Better for _reconstruction_ (autoencoding existing images).\n\nThis trade-off is the rate-distortion view: Model A is at a low-rate, high-distortion point; Model B is at a high-rate, low-distortion point. Both are valid choices depending on the goal.\n\n**Q3.** A Bayesian neural network on a 1000-class classification task uses variational inference with a Gaussian variational posterior over weights. The KL term is enormous (millions of nats). Why? What does this say about the practical trade-off?\n\n**Answer:** The KL term is large because the variational posterior is far from the prior, which is what we want — the data has informed the weights significantly. With a vague prior over millions of weights, the KL grows roughly with the number of weights times their effective shift.\n\nThe practical trade-off: a strong prior (small KL allowed) means the posterior stays close to the prior, sacrificing fit to data. A weak prior allows large KL but grants the model flexibility. Hyperparameter tuning involves balancing these effects.\n\nThis is a major reason Bayesian neural networks are computationally challenging at scale: getting the prior right and the variational family expressive is a delicate engineering problem.\n\n**Q4.** Describe how to use a trained VAE to (a) reconstruct a test image and (b) generate a new image.\n\n**Answer:** (a) Reconstruction: encode the test image to get μϕ(x),σϕ(x)\\mu_\\phi(x), \\sigma_\\phi(x)μϕ​(x),σϕ​(x); sample (or take the mean) zzz from qϕ(z∣x)q_\\phi(z \\mid x)qϕ​(z∣x); decode to get reconstructed image x^∼pθ(x∣z)\\hat{x} \\sim p_\\theta(x \\mid z)x^∼pθ​(x∣z). The reconstruction is determined by the encoder-decoder pipeline.\n\n(b) Generation: sample z∼p(z)z \\sim p(z)z∼p(z) (the prior, e.g., N(0,I)\\mathcal{N}(0, I)N(0,I)); decode to get x∼pθ(x∣z)x \\sim p_\\theta(x \\mid z)x∼pθ​(x∣z). The new image is generated from the prior.\n\nFor generation to work well, the variational posterior must \"match\" the prior in some sense (small KL term ensures this). Otherwise, samples from the prior may give codes the decoder hasn't seen and produce poor samples.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1354,
+      "out_sha": "b37c02544ca0",
       "note": ""
     },
     {
@@ -1843,11 +1843,11 @@
       "en_title": "Chapter 10: Variational Methods",
       "order": 145,
       "src_chars": 3466,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b2705d83f150",
       "src": "#### Think Deeper\n\n**Q1.** Variational inference uses _reverse_ KL: D(q∥p)D(q \\| p)D(q∥p). Maximum likelihood and most cross-entropy losses use _forward_ KL: D(p∥q)D(p \\| q)D(p∥q). Why the asymmetry?\n\n**Discussion:** The choice is dictated by computability. Forward KL D(p∥q)=Ep[log⁡p−log⁡q]D(p \\| q) = \\mathbb{E}_p[\\log p - \\log q]D(p∥q)=Ep​[logp−logq] requires sampling from ppp, but ppp is the unknown true distribution — we have only data samples from it (which is fine for ML, where you're computing an empirical KL).\n\nReverse KL D(q∥p)=Eq[log⁡q−log⁡p]D(q \\| p) = \\mathbb{E}_q[\\log q - \\log p]D(q∥p)=Eq​[logq−logp] requires sampling from qqq, which is the _variational_ distribution — easy by construction (you choose qqq to be tractable).\n\nSo variational inference uses reverse KL because it is the only computable direction. Maximum likelihood uses forward KL because the data gives empirical samples from the true distribution.\n\nThe behavior also differs: forward KL is \"mass-covering\" (penalizes qqq for missing modes of ppp); reverse KL is \"mode-seeking\" (penalizes qqq for placing mass where ppp has none). Mode-seeking is the canonical failure mode of VAEs (blurry outputs that average over modes rather than sharply choosing one).\n\n**Q2.** When the variational family does not include the true posterior, the variational solution is biased. How bad is this in practice?\n\n**Discussion:** Highly variable. For convex posteriors (single mode, near-Gaussian), a Gaussian variational family captures most of the posterior. For multimodal posteriors, a single-mode variational family will collapse onto one mode, missing the rest. This is the canonical limitation of mean-field VI.\n\nPractical solutions:\n\n* **Richer variational families** : mixtures of Gaussians, normalizing flows, neural-network-parametrized distributions. More expressive but more expensive.\n* **Multiple restarts** : run VI from different initializations and ensemble.\n* **MCMC for ground truth** : use VI for fast approximation, MCMC to validate.\n\nIn Bayesian deep learning, where the true posterior over millions of weights is unimaginably complex, the variational approximation is necessarily a major simplification. The empirical question is whether the approximation captures enough of the posterior structure to give useful uncertainty estimates and predictions. The honest answer: often it does, sometimes it doesn't, and we are still learning when each happens.\n\n**Q3.** The ELBO is one form of variational bound. Tighter bounds (importance-weighted ELBO, Renyi divergences, ...) exist. When are they worth the cost?\n\n**Discussion:** Tighter bounds give better posterior approximations but at higher computational cost.\n\nImportance-weighted ELBO (IWAE, Burda 2015) uses KKK samples from qqq and weights them by importance ratios. As K→∞K \\to \\inftyK→∞, the bound becomes tight, and the gradient estimate has lower bias.\n\nIn practice:\n\n* For small models and exact log-evidence estimation, IWAE is standard.\n* For large models with many parameters, the extra cost of KKK samples per update is prohibitive, and standard ELBO with K=1K = 1K=1 is preferred.\n* For uncertainty quantification, tighter bounds give better-calibrated estimates of model evidence.\n\nThe general lesson: variational tightness is one knob in a multi-knob system. Tighter bounds matter when the computational budget allows; for very large models, looser bounds with more updates may give better final quality.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1239,
+      "out_sha": "cc9d9d191382",
       "note": ""
     },
     {
@@ -1855,11 +1855,11 @@
       "en_title": "Chapter 10: Variational Methods",
       "order": 146,
       "src_chars": 632,
-      "status": "pending",
+      "status": "done",
       "src_sha": "440ffb3aa049",
       "src": "### Connections to Subsequent Chapters\n\nThis chapter laid the foundation for variational methods. The next chapters apply them and extend.\n\n* **Chapter 11** : rate-distortion is the explicit framework for the ELBO decomposition.\n* **Chapter 13** : information bottleneck uses an ELBO-like Lagrangian.\n* **Chapter 14** : MI estimation uses lower bounds related to ELBO.\n* **Chapter 18** : capstone uses VAE-style variational components.\n\nA reader who has finished this chapter can read modern Bayesian deep learning papers and understand their objectives. The variational lens unifies many otherwise disparate techniques.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 241,
+      "out_sha": "95d35ef5ccdc",
       "note": ""
     },
     {
