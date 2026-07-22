@@ -575,11 +575,11 @@
       "en_title": "Chapter 2: The LLM Mental Model for Engineers",
       "order": 37,
       "src_chars": 2795,
-      "status": "pending",
+      "status": "done",
       "src_sha": "196d1a522ab4",
       "src": "#### Common Misconception\n\nHallucinations cannot be prompted away. \"Tell the model not to hallucinate, and it won't\" is a tempting but unreliable belief. The model does not have a _do not hallucinate_ switch. You can sometimes reduce the rate of hallucination by prompting the model to express uncertainty (\"if you do not know, say you do not know\"), but the model's compliance with this instruction is itself trained behavior, and it varies with the prompt and the topic. The reliable mitigations for hallucination are _architectural_ : ground the model in retrieved facts (RAG), structure the output (force JSON schema so the model has to commit to specific fields with validation), give the model tools to look things up (Chapter 13), and design the system to refuse gracefully when confidence is low (Chapter 23). Prompt-only hallucination control is not engineering-grade.\n\n\n### 2.7 Why LLMs are prompt-sensitive\n\nA small change to the wording of a prompt can produce a noticeably different output. This is jarring to engineers used to deterministic interfaces. The explanation is straightforward at the architectural level.\n\nThe model's next-token distribution is computed by attending to every token in the input sequence with a learned attention mechanism. Different tokens influence the distribution differently. When you change a prompt (say, replacing _please summarize this_ with _summarize the following_) you are changing the input sequence, and the model's attention patterns over that sequence will be different. The downstream effect on the output can be larger than the surface change in the prompt would suggest.\n\nThis is _not a bug_. It is the model behaving as designed. The model is not parsing your prompt into a semantic intent and then acting on the intent; it is computing a distribution over next tokens conditioned on the specific tokens you supplied. The intent is implicit in the tokens, and changing the tokens changes the conditioning.\n\nA few practical consequences:\n\n**Prompts are versioned artifacts.** If a prompt is in your production system, it is code, and it deserves the same version control, code review, and regression testing as any other production code. Chapter 6 will turn this into the prompt-registry pattern.\n\n**Prompt changes need eval regression checks.** A prompt change can subtly degrade output quality without any obvious user-visible symptom. The only reliable detection is an eval suite. Chapter 5 builds the workflow.\n\n**Few-shot examples matter.** Showing the model 2–5 examples of what you want (in the prompt) often produces a larger behavior change than detailed natural-language instructions. The model can pattern-match on examples more reliably than it can interpret abstract instructions. Chapter 6 will build out the technique.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1078,
+      "out_sha": "c13dd56f9d8b",
       "note": ""
     },
     {
@@ -587,11 +587,11 @@
       "en_title": "Chapter 2: The LLM Mental Model for Engineers",
       "order": 38,
       "src_chars": 2042,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b0b945c46b37",
       "src": "### 2.8 Why LLMs cannot reliably count letters\n\nThis is a classic question in _what is the model good at and bad at_. If you ask Claude or GPT-4o _how many r's are in the word strawberry?_ , you may get the right answer or you may not. This is not a flaw in a single model; it is a consequence of tokenization.\n\nRecall from §2.1 that the model never sees text. It sees integer tokens. The word _strawberry_ is, in many tokenizers, a single token, so the model receives one integer. To answer _how many r's are in this token?_ , the model would have to do something that does not naturally fall out of its architecture: it would have to introspect on the _spelling_ of a token whose internal structure the model does not directly process. The model can sometimes do this, by drawing on training data that talks about the spelling of words, but it is unreliable. The model's strong suits are pattern completion over sequences of tokens; the model's weak suits are operations that require character-level access to those tokens.\n\nThis generalizes. LLMs are unreliable at:\n\n* Counting characters in a word\n* Counting words in a sentence\n* Determining the position of a substring (third character of a token, etc.)\n* Reversing a word\n* Anagrams\n* Arithmetic with many digits (modern tokenizers actually split digits one per token to help — but the transformer architecture still lacks dedicated carry-propagation circuitry, and its limited depth means multi-step arithmetic exceeds what the model can reliably do in a single forward pass)\n* Counting items in a list, especially long lists\n\nThe mitigation for an engineer is _do not ask the model to do tasks that require character-level access to tokens_. If you need to count characters, do it in code outside the model. If you need to do arithmetic, give the model a calculator tool (Chapter 13). If you need to reverse a string, do it in code. The model is good at high-level reasoning over sequences; the model is bad at character-level mechanics. Knowing the difference is mental-model work.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 755,
+      "out_sha": "4710b4284dda",
       "note": ""
     },
     {
@@ -599,11 +599,11 @@
       "en_title": "Chapter 2: The LLM Mental Model for Engineers",
       "order": 39,
       "src_chars": 2045,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d2c5f90a076c",
       "src": "### 2.9 The model card as a spec sheet\n\nEvery frontier model release in 2026 comes with a _model card_ : a document published by the lab describing the model's capabilities, limitations, intended use, evaluation results on standard benchmarks, safety testing results, and operational characteristics (context window, supported features, pricing). The model card is the spec sheet for the model, and an engineer should read it the way a chip engineer reads a datasheet.\n\nWhat to look for in a 2026 model card, as an AI engineer:\n\n  1. **Context window** (in tokens, separately for input and possibly output)\n  2. **Knowledge cutoff** (the date past which the model has no reliable training data)\n  3. **Supported features** : streaming, tool use, JSON-schema output, vision, audio in/out, long-context billing rates\n  4. **Pricing** : input cost per million tokens, output cost per million tokens, any per-feature surcharges (vision is often higher than text, batch is often 50% off)\n  5. **Benchmark results** : MMLU, HumanEval, AIME, etc. (useful as relative comparison between models, not as absolute capability statements)\n  6. **Safety evaluation** : refusal rates, prompt-injection susceptibility, red-team results\n  7. **Latency characteristics** : time to first token, output tokens per second, often broken out by region and traffic level\n  8. **Rate limits** : requests per minute and tokens per minute by default; what tiers unlock higher limits\n  9. **Deprecation timeline** (if disclosed): when the model is expected to be sunset, and what its successor is\n\nTwo notes on the limits of model cards. First, lab-reported benchmark numbers are marketing-adjacent: they tend to be the model's best performance on the chosen benchmarks, and they do not generalize to your task. Always run your own evals. Second, model cards are documents about capabilities, not contracts about behavior: the model's behavior on your specific prompts is empirical, not deducible from the card. The card narrows the search space; it does not replace eval.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 834,
+      "out_sha": "6bdf3f290891",
       "note": ""
     },
     {
