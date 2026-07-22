@@ -2923,11 +2923,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 235,
       "src_chars": 680,
-      "status": "pending",
+      "status": "done",
       "src_sha": "100c7f28f741",
       "src": "This appendix gives full solutions to a representative subset of the end-of-chapter exercises — typically three Application Problems and two Think Deeper questions per chapter. The selection is biased toward problems that introduce computational technique, settle a common confusion, or expose a subtle point that a one-sentence answer would not adequately convey. Solutions to Concept Check questions are already in the chapters themselves; readers wanting more practice should attempt the remaining exercises and use these solutions as a calibration of expected depth.\n\nNotation matches the main text. References of the form \"Ch. NNN\" point to the corresponding chapter.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 174,
+      "out_sha": "a62bc6333fa6",
       "note": ""
     },
     {
@@ -2935,11 +2935,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 236,
       "src_chars": 3316,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0e849ade96a8",
       "src": "### Chapter 1 — Foundations\n\n**Application Q1 (loaded die).** A six-sided die has p=(0.5,0.1,0.1,0.1,0.1,0.1)p = (0.5, 0.1, 0.1, 0.1, 0.1, 0.1)p=(0.5,0.1,0.1,0.1,0.1,0.1). Compute its entropy.\n\nH(X)=−(0.5log⁡20.5+5⋅0.1log⁡20.1)=0.5+5⋅0.1⋅log⁡210≈0.5+1.661=2.161 bits.H(X) = -\\bigl(0.5 \\log_2 0.5 + 5 \\cdot 0.1 \\log_2 0.1\\bigr) = 0.5 + 5 \\cdot 0.1 \\cdot \\log_2 10 \\approx 0.5 + 1.661 = 2.161 \\text{ bits}.H(X)=−(0.5log2​0.5+5⋅0.1log2​0.1)=0.5+5⋅0.1⋅log2​10≈0.5+1.661=2.161 bits.\n\nFor comparison, a fair six-sided die has log⁡26≈2.585\\log_2 6 \\approx 2.585log2​6≈2.585 bits. The loaded die's bias removes about 0.420.420.42 bits of average uncertainty.\n\n**Application Q2 (concavity sanity check).** Verify H(p)=−plog⁡p−(1−p)log⁡(1−p)H(p) = -p \\log p - (1-p)\\log(1-p)H(p)=−plogp−(1−p)log(1−p) is concave on [0,1][0,1][0,1] and find its maximum.\n\nThe second derivative is\n\nH′′(p)=−1pln⁡2−1(1−p)ln⁡2<0 for p∈(0,1),H''(p) = -\\frac{1}{p \\ln 2} - \\frac{1}{(1-p)\\ln 2} < 0 \\text{ for } p \\in (0,1),H′′(p)=−pln21​−(1−p)ln21​<0 for p∈(0,1),\n\nso HHH is strictly concave. Setting H′(p)=log⁡2((1−p)/p)=0H'(p) = \\log_2((1-p)/p) = 0H′(p)=log2​((1−p)/p)=0 gives p=1/2p = 1/2p=1/2, where H(1/2)=1H(1/2) = 1H(1/2)=1 bit. Concavity guarantees this is the global maximum, matching Axiom 4.\n\n**Application Q3 (information of a typical English letter).** Using the standard frequency p(e)≈0.13p(\\text{e}) \\approx 0.13p(e)≈0.13 and p(q)≈0.001p(\\text{q}) \\approx 0.001p(q)≈0.001, compute and compare the self-information of \"e\" and \"q\".\n\nI(e)=−log⁡20.13≈2.94 bits,I(q)=−log⁡20.001≈9.97 bits.I(\\text{e}) = -\\log_2 0.13 \\approx 2.94 \\text{ bits}, \\qquad I(\\text{q}) = -\\log_2 0.001 \\approx 9.97 \\text{ bits}.I(e)=−log2​0.13≈2.94 bits,I(q)=−log2​0.001≈9.97 bits.\n\nEach \"q\" carries roughly three times as much information as each \"e\". This is why crossword puzzlers find rare letters in clue patterns informative — their presence narrows the answer space sharply.\n\n**Think Deeper Q1.** Why must Khinchin's recursivity axiom (Axiom 3) force a logarithmic form? Sketch the argument.\n\nApply recursivity to the uniform distribution on mnmnmn outcomes, decomposed first into mmm groups of nnn outcomes (uniform choice over groups), then within each group (uniform choice over nnn). Recursivity gives f(mn)=f(m)+f(n)f(mn) = f(m) + f(n)f(mn)=f(m)+f(n), where f(k)=H(uniform on k)f(k) = H(\\text{uniform on } k)f(k)=H(uniform on k). Combined with monotonicity (Axiom 2), the only continuous solution to this Cauchy-type equation is f(k)=clog⁡kf(k) = c \\log kf(k)=clogk. Extending by recursivity to non-uniform distributions yields H(p)=−c∑pilog⁡piH(p) = -c \\sum p_i \\log p_iH(p)=−c∑pi​logpi​. Axiom 4 fixes ccc and the log base.\n\n**Think Deeper Q2.** A new \"exotic entropy\" candidate, Hq(p)=∑piqH_q(p) = \\sum p_i^qHq​(p)=∑piq​ for some q>1q > 1q>1, is sometimes proposed as a generalized entropy. Which Khinchin axiom does it violate, and what is the practical consequence?\n\nIt violates additivity under independence (a corollary of recursivity). For independent X,YX, YX,Y with joint distribution p(x)q(y)p(x)q(y)p(x)q(y),\n\nHq(X,Y)=∑x,y(p(x)q(y))q=(∑xp(x)q)(∑yq(y)q)=Hq(X)⋅Hq(Y),H_q(X, Y) = \\sum_{x,y} (p(x)q(y))^q = \\left(\\sum_x p(x)^q\\right)\\left(\\sum_y q(y)^q\\right) = H_q(X) \\cdot H_q(Y),Hq​(X,Y)=x,y∑​(p(x)q(y))q=(x∑​p(x)q)(y∑​q(y)q)=Hq​(X)⋅Hq​(Y),",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1330,
+      "out_sha": "f2293c28e96c",
       "note": ""
     },
     {
@@ -2947,11 +2947,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 237,
       "src_chars": 449,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8471a5604b03",
       "src": "so it multiplies rather than adds. The practical consequence: HqH_qHq​ cannot serve as a measure of average uncertainty in bits-per-symbol for independent sources, since the bits-per-symbol of independent sources should add. The Rényi family Hα=(1/(1−α))log⁡∑piαH_\\alpha = (1/(1-\\alpha)) \\log \\sum p_i^\\alphaHα​=(1/(1−α))log∑piα​ restores additivity by passing through a logarithm and is a coherent generalization; the bare power sum is not.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 156,
+      "out_sha": "06cc87b02f45",
       "note": ""
     },
     {
@@ -2959,11 +2959,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 238,
       "src_chars": 3459,
-      "status": "pending",
+      "status": "done",
       "src_sha": "08c844e1651d",
       "src": "### Chapter 2 — Joint, Conditional, and Mutual Information\n\n**Application Q1 (binary symmetric pair).** Let X∼Bern(1/2)X \\sim \\mathrm{Bern}(1/2)X∼Bern(1/2) and Y=X⊕ZY = X \\oplus ZY=X⊕Z with Z∼Bern(p)Z \\sim \\mathrm{Bern}(p)Z∼Bern(p) independent of XXX. Compute H(X),H(Y),H(X,Y),H(X∣Y),I(X;Y)H(X), H(Y), H(X, Y), H(X \\mid Y), I(X; Y)H(X),H(Y),H(X,Y),H(X∣Y),I(X;Y).\n\nXXX and YYY are each Bernoulli(1/2)(1/2)(1/2), so H(X)=H(Y)=1H(X) = H(Y) = 1H(X)=H(Y)=1 bit. H(X,Y)=H(X)+H(Y∣X)=1+H(Z)=1+Hb(p)H(X, Y) = H(X) + H(Y \\mid X) = 1 + H(Z) = 1 + H_b(p)H(X,Y)=H(X)+H(Y∣X)=1+H(Z)=1+Hb​(p). Then H(X∣Y)=H(X,Y)−H(Y)=Hb(p)H(X \\mid Y) = H(X, Y) - H(Y) = H_b(p)H(X∣Y)=H(X,Y)−H(Y)=Hb​(p), and I(X;Y)=H(X)−H(X∣Y)=1−Hb(p)I(X; Y) = H(X) - H(X \\mid Y) = 1 - H_b(p)I(X;Y)=H(X)−H(X∣Y)=1−Hb​(p). At p=1/2p = 1/2p=1/2 the channel is useless: I=0I = 0I=0. At p∈{0,1}p \\in \\\\{0, 1\\\\}p∈{0,1} the channel is perfect: I=1I = 1I=1.\n\n**Application Q2 (data-processing in action).** A binary source X∼Bern(0.5)X \\sim \\mathrm{Bern}(0.5)X∼Bern(0.5) passes through two cascaded BSCs with crossover probabilities p1=0.1,p2=0.1p_1 = 0.1, p_2 = 0.1p1​=0.1,p2​=0.1 to produce YYY and then ZZZ. Compute I(X;Y)I(X; Y)I(X;Y) and I(X;Z)I(X; Z)I(X;Z) and verify the data-processing inequality.\n\nI(X;Y)=1−Hb(0.1)≈1−0.469=0.531I(X; Y) = 1 - H_b(0.1) \\approx 1 - 0.469 = 0.531I(X;Y)=1−Hb​(0.1)≈1−0.469=0.531 bits. The cascaded channel X→ZX \\to ZX→Z is a BSC with crossover p=p1(1−p2)+p2(1−p1)=2⋅0.1⋅0.9=0.18p = p_1(1-p_2) + p_2(1-p_1) = 2 \\cdot 0.1 \\cdot 0.9 = 0.18p=p1​(1−p2​)+p2​(1−p1​)=2⋅0.1⋅0.9=0.18. So I(X;Z)=1−Hb(0.18)≈1−0.680=0.320I(X; Z) = 1 - H_b(0.18) \\approx 1 - 0.680 = 0.320I(X;Z)=1−Hb​(0.18)≈1−0.680=0.320 bits. Indeed I(X;Z)≤I(X;Y)I(X; Z) \\leq I(X; Y)I(X;Z)≤I(X;Y), as the data-processing inequality requires; the second BSC degrades the information further.\n\n**Application Q3 (mutual information of categorical pair).** Let X∈{0,1}X \\in \\\\{0, 1\\\\}X∈{0,1} and Y∈{a,b,c}Y \\in \\\\{a, b, c\\\\}Y∈{a,b,c} with joint distribution\n\np(0,a)=0.3,p(0,b)=0.1,p(0,c)=0.1,p(1,a)=0.05,p(1,b)=0.25,p(1,c)=0.2.p(0, a) = 0.3, p(0, b) = 0.1, p(0, c) = 0.1, p(1, a) = 0.05, p(1, b) = 0.25, p(1, c) = 0.2.p(0,a)=0.3,p(0,b)=0.1,p(0,c)=0.1,p(1,a)=0.05,p(1,b)=0.25,p(1,c)=0.2.\n\nCompute I(X;Y)I(X; Y)I(X;Y) directly from the definition.\n\nMarginals: p(X=0)=0.5,p(X=1)=0.5p(X = 0) = 0.5, p(X = 1) = 0.5p(X=0)=0.5,p(X=1)=0.5; p(Y=a)=0.35,p(Y=b)=0.35,p(Y=c)=0.30p(Y = a) = 0.35, p(Y = b) = 0.35, p(Y = c) = 0.30p(Y=a)=0.35,p(Y=b)=0.35,p(Y=c)=0.30. H(X)=1H(X) = 1H(X)=1, H(Y)=1.581H(Y) = 1.581H(Y)=1.581. H(X,Y)=−∑plog⁡2p≈2.448H(X, Y) = -\\sum p \\log_2 p \\approx 2.448H(X,Y)=−∑plog2​p≈2.448. Therefore I(X;Y)=H(X)+H(Y)−H(X,Y)=1+1.581−2.448≈0.133I(X; Y) = H(X) + H(Y) - H(X, Y) = 1 + 1.581 - 2.448 \\approx 0.133I(X;Y)=H(X)+H(Y)−H(X,Y)=1+1.581−2.448≈0.133 bits — modest but nonzero, reflecting the weak association.\n\n**Think Deeper Q1.** Show by example that I(X;Y∣Z)I(X; Y \\mid Z)I(X;Y∣Z) can exceed I(X;Y)I(X; Y)I(X;Y).\n\nTake Z∼Bern(1/2)Z \\sim \\mathrm{Bern}(1/2)Z∼Bern(1/2), X∼Bern(1/2)X \\sim \\mathrm{Bern}(1/2)X∼Bern(1/2) independent of ZZZ, and Y=X⊕ZY = X \\oplus ZY=X⊕Z. Marginally, Y∼Bern(1/2)Y \\sim \\mathrm{Bern}(1/2)Y∼Bern(1/2) is independent of XXX, so I(X;Y)=0I(X; Y) = 0I(X;Y)=0. But given ZZZ, YYY determines XXX: I(X;Y∣Z)=1I(X; Y \\mid Z) = 1I(X;Y∣Z)=1. Conditioning can _create_ mutual information by removing a confounder; the reverse is also possible. The naive intuition \"more information is good\" misleads here.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1405,
+      "out_sha": "a605470a1349",
       "note": ""
     },
     {
@@ -2971,11 +2971,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 239,
       "src_chars": 891,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ebf72aecd9f9",
       "src": "**Think Deeper Q2.** A representation T=f(X)T = f(X)T=f(X) of an input XXX is _sufficient_ for a label YYY if I(T;Y)=I(X;Y)I(T; Y) = I(X; Y)I(T;Y)=I(X;Y). Show that sufficiency is a Markov-chain condition, and explain why \"sufficient + minimal\" connects to the information bottleneck of Chapter 13.\n\nSufficiency requires I(X;Y∣T)=0I(X; Y \\mid T) = 0I(X;Y∣T)=0, equivalently Y⊥X∣TY \\perp X \\mid TY⊥X∣T, i.e., the chain Y−T−XY - T - XY−T−X holds (jointly with the original T=f(X)T = f(X)T=f(X) determinism). A representation can be sufficient yet still encode irrelevant information about XXX; minimality demands also I(X;T)I(X; T)I(X;T) be as small as possible. The IB Lagrangian L=I(X;T)−βI(T;Y)\\mathcal{L} = I(X; T) - \\beta I(T; Y)L=I(X;T)−βI(T;Y) realizes exactly this trade-off, and as β→∞\\beta \\to \\inftyβ→∞ any minimum-I(X;T)I(X; T)I(X;T) sufficient representation is recovered.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 335,
+      "out_sha": "4aa4a93665a2",
       "note": ""
     },
     {
@@ -2983,11 +2983,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 240,
       "src_chars": 3374,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c33f538d2653",
       "src": "### Chapter 3 — Asymptotic Equipartition\n\n**Application Q1.** A binary i.i.d. source has p(0)=0.9p(0) = 0.9p(0)=0.9, p(1)=0.1p(1) = 0.1p(1)=0.1. Estimate the size of the typical set for block length n=100n = 100n=100 and ϵ=0.01\\epsilon = 0.01ϵ=0.01.\n\nH(X)=Hb(0.1)≈0.469H(X) = H_b(0.1) \\approx 0.469H(X)=Hb​(0.1)≈0.469 bits. Typical set size ∣Aϵ(n)∣≈2nH(X)=246.9≈1.3⋅1014|A_\\epsilon^{(n)}| \\approx 2^{nH(X)} = 2^{46.9} \\approx 1.3 \\cdot 10^{14}∣Aϵ(n)​∣≈2nH(X)=246.9≈1.3⋅1014. Total sequence space is 2100≈1.3⋅10302^{100} \\approx 1.3 \\cdot 10^{30}2100≈1.3⋅1030. Typical sequences form a vanishingly small fraction (10−16)(10^{-16})(10−16) of all sequences yet carry essentially all the probability — the AEP in numbers.\n\n**Application Q2 (probability of a specific typical sequence).** For the same source, what is the approximate probability of any single typical sequence?\n\nBy definition, a typical sequence has empirical probability ≈2−nH=2−46.9≈1.3⋅10−14\\approx 2^{-nH} = 2^{-46.9} \\approx 1.3 \\cdot 10^{-14}≈2−nH=2−46.9≈1.3⋅10−14. Since there are ≈246.9\\approx 2^{46.9}≈246.9 such sequences and each has probability ≈2−46.9\\approx 2^{-46.9}≈2−46.9, the total mass on the typical set is approximately 111 — consistent with the AEP. Compare: a specific sequence with all zeros has probability 0.9100≈2.66⋅10−50.9^{100} \\approx 2.66 \\cdot 10^{-5}0.9100≈2.66⋅10−5, which is \\emph{larger} than a typical sequence's probability; the all-zero sequence is _atypical from above_. Atypicality cuts both ways.\n\n**Application Q3 (joint typicality count).** A binary symmetric channel with p=0.1p = 0.1p=0.1 has joint distribution p(X,Y)p(X, Y)p(X,Y). For block length n=100n = 100n=100, estimate the number of jointly typical pairs and the number of \"false\" matches an independent codeword would have with a fixed yny^nyn.\n\nH(X,Y)=H(X)+H(Y∣X)=1+Hb(0.1)≈1.469H(X, Y) = H(X) + H(Y \\mid X) = 1 + H_b(0.1) \\approx 1.469H(X,Y)=H(X)+H(Y∣X)=1+Hb​(0.1)≈1.469 bits. So jointly typical pairs number ≈2nH(X,Y)≈2146.9\\approx 2^{n H(X,Y)} \\approx 2^{146.9}≈2nH(X,Y)≈2146.9. For an independent codeword chosen from 2nH(X)=21002^{nH(X)} = 2^{100}2nH(X)=2100 typical xnx^nxn sequences, the probability of being jointly typical with a fixed yny^nyn is ≈2−nI(X;Y)=2−100⋅0.531=2−53.1\\approx 2^{-n I(X;Y)} = 2^{-100 \\cdot 0.531} = 2^{-53.1}≈2−nI(X;Y)=2−100⋅0.531=2−53.1. With 2nR2^{nR}2nR codewords and R<I(X;Y)R < I(X;Y)R<I(X;Y), the expected number of false matches 2nR⋅2−nI(X;Y)→02^{nR} \\cdot 2^{-nI(X;Y)} \\to 02nR⋅2−nI(X;Y)→0 — exactly the channel coding theorem's bound (Ch. 6).\n\n**Think Deeper Q1.** The AEP is a _probabilistic_ statement, not a deterministic one. What goes wrong if we treat it deterministically — for instance, if we encode only typical sequences and discard atypical ones?\n\nA real source can produce atypical sequences with probability up to ϵ\\epsilonϵ (small but not zero). If the encoder discards them, decoding fails on those ϵ\\epsilonϵ fraction of inputs — a finite probability of catastrophic loss. This is why source coding with vanishing error probability requires ϵ→0\\epsilon \\to 0ϵ→0 as n→∞n \\to \\inftyn→∞, not just \"small ϵ\\epsilonϵ.\" Practical coders (Huffman, arithmetic) sidestep this by encoding _every_ sequence, paying O(1/n)O(1/n)O(1/n) extra bits in exchange.\n\n**Think Deeper Q2.** Why does the AEP extend to ergodic sources but not to all stationary sources?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1298,
+      "out_sha": "dcfe347e5275",
       "note": ""
     },
     {
@@ -2995,11 +2995,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 241,
       "src_chars": 674,
-      "status": "pending",
+      "status": "done",
       "src_sha": "302f8f5d0af4",
       "src": "Stationarity guarantees that time-averages of one-symbol functions converge to ensemble means almost surely (the ergodic theorem) only when the process is ergodic — that is, has no nontrivial invariant subsets. A non-ergodic stationary source is a mixture of ergodic components; the time-average of −(1/n)log⁡p(Xn)-(1/n)\\log p(X^n)−(1/n)logp(Xn) converges to a _random_ limit (the entropy of whichever component the realization came from), not to a single number. The AEP fails for such sources, and the correct theorem (Shannon-McMillan-Breiman) requires ergodicity in its hypothesis. The Bernoulli(0.1)/Bernoulli(0.5) mixture in §3.6 is the canonical illustration.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 229,
+      "out_sha": "502bb7d56cd7",
       "note": ""
     },
     {
