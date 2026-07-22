@@ -3007,11 +3007,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 242,
       "src_chars": 3493,
-      "status": "pending",
+      "status": "done",
       "src_sha": "734a9dadaa8f",
       "src": "### Chapter 4 — Source Coding\n\n**Application Q1.** Construct the Huffman code for p=(0.4,0.2,0.2,0.1,0.1)p = (0.4, 0.2, 0.2, 0.1, 0.1)p=(0.4,0.2,0.2,0.1,0.1) and compare its average length to entropy.\n\nMerge the two smallest (0.1,0.10.1, 0.10.1,0.1) into 0.20.20.2. The list is now (0.4,0.2,0.2,0.2)(0.4, 0.2, 0.2, 0.2)(0.4,0.2,0.2,0.2). Merge two 0.20.20.2s into 0.40.40.4. Now (0.4,0.4,0.2)(0.4, 0.4, 0.2)(0.4,0.4,0.2). Merge 0.40.40.4 and 0.20.20.2 into 0.60.60.6. Now (0.6,0.4)(0.6, 0.4)(0.6,0.4). Merge.\n\nCodeword lengths: 1,2,3,4,41, 2, 3, 4, 41,2,3,4,4. Average length L=0.4⋅1+0.2⋅2+0.2⋅3+0.1⋅4+0.1⋅4=2.2L = 0.4 \\cdot 1 + 0.2 \\cdot 2 + 0.2 \\cdot 3 + 0.1 \\cdot 4 + 0.1 \\cdot 4 = 2.2L=0.4⋅1+0.2⋅2+0.2⋅3+0.1⋅4+0.1⋅4=2.2 bits. Entropy H≈2.122H \\approx 2.122H≈2.122 bits. The Huffman code is within 0.080.080.08 bits of entropy — close but not tight, as predicted by the H≤L<H+1H \\leq L < H + 1H≤L<H+1 bound.\n\n**Application Q2 (Kraft inequality check).** Is there a binary prefix code with codeword lengths (1,2,3,3,3)(1, 2, 3, 3, 3)(1,2,3,3,3)? With (1,2,3,3,3,4)(1, 2, 3, 3, 3, 4)(1,2,3,3,3,4)?\n\nKraft: ∑2−ℓi≤1\\sum 2^{-\\ell_i} \\leq 1∑2−ℓi​≤1. For (1,2,3,3,3)(1,2,3,3,3)(1,2,3,3,3): 1/2+1/4+3⋅1/8=0.5+0.25+0.375=1.125>11/2 + 1/4 + 3 \\cdot 1/8 = 0.5 + 0.25 + 0.375 = 1.125 > 11/2+1/4+3⋅1/8=0.5+0.25+0.375=1.125>1. Not realizable. For (1,2,3,3,3,4)(1,2,3,3,3,4)(1,2,3,3,3,4): 0.5+0.25+3⋅0.125+0.0625=1.1875>10.5 + 0.25 + 3 \\cdot 0.125 + 0.0625 = 1.1875 > 10.5+0.25+3⋅0.125+0.0625=1.1875>1. Also not realizable. To make the first set realizable, drop one length-3 codeword and check: 0.5+0.25+2⋅0.125=1.00.5 + 0.25 + 2 \\cdot 0.125 = 1.00.5+0.25+2⋅0.125=1.0, realizable (and tight — uses up the Kraft budget exactly).\n\n**Application Q3 (arithmetic vs Huffman gap).** A binary source has p(0)=0.9,p(1)=0.1p(0) = 0.9, p(1) = 0.1p(0)=0.9,p(1)=0.1. What is the entropy, the optimal Huffman per-symbol cost, and the arithmetic-coding rate? Why does arithmetic do better?\n\nH=Hb(0.1)≈0.469H = H_b(0.1) \\approx 0.469H=Hb​(0.1)≈0.469 bits/symbol. Huffman with one symbol per codeword must use lengths {1,1}\\\\{1, 1\\\\}{1,1} (only legal binary prefix code on two symbols): cost =1= 1=1 bit/symbol. Block-Huffman on pairs: pairs have probabilities (0.81,0.09,0.09,0.01)(0.81, 0.09, 0.09, 0.01)(0.81,0.09,0.09,0.01) with optimal lengths (1,2,3,3)(1, 2, 3, 3)(1,2,3,3), average 0.81+0.18+0.27+0.03=1.290.81 + 0.18 + 0.27 + 0.03 = 1.290.81+0.18+0.27+0.03=1.29 bits/pair = 0.6450.6450.645 bits/symbol. Arithmetic coding achieves exactly H≈0.469H \\approx 0.469H≈0.469 bits/symbol in the limit. Huffman wastes bits because it must round each codeword length up to the nearest integer; arithmetic coding amortizes the rounding across the entire message.\n\n**Think Deeper Q1.** Why does Huffman fail to achieve the entropy bound in general, and which class of distributions makes Huffman exactly optimal?\n\nHuffman assigns integer codeword lengths, so its average length is always a sum of integers weighted by probabilities. The entropy HHH is a real number; equality L=HL = HL=H requires ⌈−log⁡pi⌉=−log⁡pi\\lceil -\\log p_i \\rceil = -\\log p_i⌈−logpi​⌉=−logpi​ for every iii, i.e., every probability is a negative power of two: pi=2−ℓip_i = 2^{-\\ell_i}pi​=2−ℓi​. For such \"dyadic\" distributions, Huffman is exact. For all others, the gap L−HL - HL−H is positive and bounded by 111 bit per symbol; block coding (Huffman on kkk-tuples) reduces the gap to O(1/k)O(1/k)O(1/k), and arithmetic coding eliminates it entirely.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1405,
+      "out_sha": "d73476ec5b46",
       "note": ""
     },
     {
@@ -3019,11 +3019,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 243,
       "src_chars": 883,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d95c5b8c4367",
       "src": "**Think Deeper Q2.** A \"perfect\" universal compressor would encode any sequence at rate H(X)H(X)H(X) without knowing ppp. LZ77 and friends approximately achieve this asymptotically. What prevents a _non-asymptotic_ universal compressor from existing?\n\nThe pigeonhole principle. A compressor is a map from sequences to bit strings; if it shortens _some_ sequence by kkk bits, it must lengthen at least one other sequence by kkk bits (by injectivity). For a fixed sequence length nnn, one cannot have a compressor that shortens _every_ input. The only escape is to know which inputs are \"common\" so that the savings on common inputs outweigh the losses on rare ones — and this knowledge is the source distribution ppp. Universality is achievable only asymptotically: as n→∞n \\to \\inftyn→∞, an LZ77-style coder learns enough of ppp from the input itself to compress at rate HHH.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 298,
+      "out_sha": "45c52119289a",
       "note": ""
     },
     {
@@ -3031,11 +3031,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 244,
       "src_chars": 3067,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0b2129556f4c",
       "src": "### Chapter 5 — Channels\n\n**Application Q1.** Compute the capacity of the binary symmetric channel with crossover p=0.1p = 0.1p=0.1.\n\nCBSC(p)=1−Hb(p)=1−Hb(0.1)≈1−0.469=0.531C_{\\mathrm{BSC}}(p) = 1 - H_b(p) = 1 - H_b(0.1) \\approx 1 - 0.469 = 0.531CBSC​(p)=1−Hb​(p)=1−Hb​(0.1)≈1−0.469=0.531 bits per channel use. To send 100010001000 bits reliably you need at least ⌈1000/0.531⌉=1884\\lceil 1000 / 0.531 \\rceil = 1884⌈1000/0.531⌉=1884 channel uses.\n\n**Application Q2 (BEC capacity).** Compute the capacity of the binary erasure channel with erasure probability ϵ=0.3\\epsilon = 0.3ϵ=0.3. Compare to BSC at the same crossover.\n\nCBEC(ϵ)=1−ϵ=0.7C_{\\mathrm{BEC}}(\\epsilon) = 1 - \\epsilon = 0.7CBEC​(ϵ)=1−ϵ=0.7 bits per use. Compare with CBSC(0.3)=1−Hb(0.3)=1−0.881=0.119C_{\\mathrm{BSC}}(0.3) = 1 - H_b(0.3) = 1 - 0.881 = 0.119CBSC​(0.3)=1−Hb​(0.3)=1−0.881=0.119 bits per use. The BEC is much more capacity-friendly than the BSC at the same noise level because the receiver knows _which_ bits failed, removing decoding ambiguity.\n\n**Application Q3 (Gaussian channel).** A Gaussian channel has bandwidth B=1B = 1B=1 MHz and signal-to-noise ratio P/N=100P/N = 100P/N=100. Compute its capacity in bits per second.\n\nC=Blog⁡2(1+P/N)=106⋅log⁡2101≈106⋅6.66≈6.66C = B \\log_2(1 + P/N) = 10^6 \\cdot \\log_2 101 \\approx 10^6 \\cdot 6.66 \\approx 6.66C=Blog2​(1+P/N)=106⋅log2​101≈106⋅6.66≈6.66 Mbit/s. To double the rate you would need P/N≈10000P/N \\approx 10000P/N≈10000 (a hundredfold SNR increase), or the bandwidth doubled — a vivid illustration of the logarithmic-in-power but linear-in-bandwidth scaling of Shannon's formula.\n\n**Think Deeper Q1.** Cascading two independent BSCs with crossover ppp gives a BSC with crossover 2p(1−p)2p(1-p)2p(1−p). Why does the capacity _strictly decrease_ under cascading, even though cascading two perfect (p=0p = 0p=0) channels would still be perfect?\n\nCapacity decreases because mutual information is monotone under degradation, and cascading is a degradation step (it adds independent noise). At p=0p = 0p=0 the cascaded crossover is 000, so capacity is preserved (111 bit). For any p∈(0,1/2)p \\in (0, 1/2)p∈(0,1/2), the cascaded crossover 2p(1−p)>p2p(1-p) > p2p(1−p)>p, so CCC drops. The data-processing inequality forces this: each additional channel use can only erase information, never restore it.\n\n**Think Deeper Q2.** Why is I(X;Y)I(X;Y)I(X;Y) maximized over the input distribution p(X)p(X)p(X), not over a joint distribution p(X,Y)p(X, Y)p(X,Y)?\n\nThe channel p(Y∣X)p(Y | X)p(Y∣X) is given — fixed by physics, not by the engineer. The engineer chooses only the _input_ distribution p(X)p(X)p(X); this then induces the joint via p(X,Y)=p(X)p(Y∣X)p(X, Y) = p(X)p(Y | X)p(X,Y)=p(X)p(Y∣X) and the marginal p(Y)=∑xp(X)p(Y∣X)p(Y) = \\sum_x p(X)p(Y|X)p(Y)=∑x​p(X)p(Y∣X). Mutual information is a function of the joint and so depends on p(X)p(X)p(X); capacity is the max over the only knob the engineer controls. Allowing arbitrary joint distributions would let us \"choose\" both the input and the noise, which violates the channel constraint.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1151,
+      "out_sha": "6f52c0c3ec6d",
       "note": ""
     },
     {
@@ -3043,11 +3043,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 245,
       "src_chars": 3445,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bbb92a68351f",
       "src": "### Chapter 6 — Channel Coding Theorem\n\n**Application Q1.** A channel has capacity C=0.5C = 0.5C=0.5. What's the minimum block length nnn needed to send 100010001000 bits with vanishing error using a rate-R=0.4R = 0.4R=0.4 code?\n\nThe block length is determined by the message size: n=1000/0.4=2500n = 1000 / 0.4 = 2500n=1000/0.4=2500. The rate is below capacity (0.4<0.50.4 < 0.50.4<0.5), so a sufficiently long random code achieves vanishing error. The error exponent at R=0.4R = 0.4R=0.4 governs how quickly PeP_ePe​ shrinks; finer questions about _how big_ nnn must be to drive PeP_ePe​ below a target depend on the channel and the chosen ensemble.\n\n**Application Q2 (gap to capacity for vanishing error).** A BSC has crossover p=0.1p = 0.1p=0.1, capacity 0.5310.5310.531 bits/use. A practical code operates at rate R=0.4R = 0.4R=0.4 with measured Pe=10−6P_e = 10^{-6}Pe​=10−6. How does PeP_ePe​ change if we increase nnn by a factor of 2 while keeping R=0.4R = 0.4R=0.4?\n\nBy the random-coding bound, Pe≲2−nEr(R)P_e \\lesssim 2^{-n E_r(R)}Pe​≲2−nEr​(R) where Er(R)>0E_r(R) > 0Er​(R)>0 for R<CR < CR<C. Doubling nnn squares the bound (in the random-coding regime): if Pe≈10−6P_e \\approx 10^{-6}Pe​≈10−6 at nnn, then Pe≈10−12P_e \\approx 10^{-12}Pe​≈10−12 at 2n2n2n. Real-world codes (LDPC, polar) approximately follow this exponential-in-nnn scaling once they enter the waterfall region, which is why doubling block length is a powerful tool in achieving near-error-free communication.\n\n**Application Q3 (rate sacrifice for better error exponent).** For the same BSC (p=0.1,C=0.531p = 0.1, C = 0.531p=0.1,C=0.531), a designer is willing to sacrifice rate to gain a larger error exponent. Compare the random-coding error exponents at R=0.4R = 0.4R=0.4 and R=0.2R = 0.2R=0.2 qualitatively.\n\nThe random-coding exponent Er(R)E_r(R)Er​(R) is decreasing in RRR, zero at R=CR = CR=C, and bounded by I(X;Y)−RI(X; Y) - RI(X;Y)−R for small enough RRR. At R=0.4R = 0.4R=0.4, the exponent is ≈0.531−0.4=0.131\\approx 0.531 - 0.4 = 0.131≈0.531−0.4=0.131 (informally; the true value involves a Gallager function but the gap is the right order). At R=0.2R = 0.2R=0.2, the exponent jumps to ≈0.531−0.2=0.331\\approx 0.531 - 0.2 = 0.331≈0.531−0.2=0.331 — more than double. So for a target Pe=10−12P_e = 10^{-12}Pe​=10−12, the lower-rate code needs roughly n≈12log⁡10/0.331≈84n \\approx 12 \\log 10 / 0.331 \\approx 84n≈12log10/0.331≈84 channel uses, versus n≈211n \\approx 211n≈211 at R=0.4R = 0.4R=0.4. Lower rate buys faster decay; in practice, rate-distance trade-offs depend on the target PeP_ePe​.\n\n**Think Deeper Q1.** Why does the strong converse imply a sharp phase transition?\n\nBelow capacity, error decays exponentially with a positive exponent. Above capacity, error approaches 111 exponentially with a positive exponent (the Wolfowitz-Arimoto theorem). The two error exponents meet at R=CR = CR=C, where the exponent vanishes. For any ϵ>0\\epsilon > 0ϵ>0, R=C−ϵR = C - \\epsilonR=C−ϵ and R=C+ϵR = C + \\epsilonR=C+ϵ sit on opposite sides of a discontinuity in _operational_ behavior, even though the analytical CCC is a smooth function of channel parameters. Capacity is a phase boundary in the same sense that TcT_cTc​ is a phase boundary in statistical mechanics.\n\n**Think Deeper Q2.** Shannon's proof is non-constructive: it shows good codes exist by averaging over random codes. What problem does this leave unresolved, and how was it eventually resolved?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1247,
+      "out_sha": "ea8760cd84a8",
       "note": ""
     },
     {
@@ -3055,11 +3055,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 246,
       "src_chars": 738,
-      "status": "pending",
+      "status": "done",
       "src_sha": "29278ee47e0f",
       "src": "The unresolved problem: an explicit, structured code whose decoder runs in polynomial time _and_ approaches capacity. Random codes have 2nR2^{nR}2nR codewords; ML decoding requires O(2nR)O(2^{nR})O(2nR) operations, which is infeasible for any practical nnn. The problem took 60 years to resolve. Algebraic codes (Hamming, Reed-Solomon) gave structured constructions but did not approach capacity. Iteratively-decoded codes (turbo 1993, LDPC rediscovered 1996) reached within 0.5 dB of capacity at moderate nnn using belief propagation. Polar codes (Arıkan 2009) gave the first explicit _provably_ capacity-achieving family with O(nlog⁡n)O(n \\log n)O(nlogn) decoding. The \"constructive Shannon\" question is now essentially settled.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 289,
+      "out_sha": "b574a14aa9a5",
       "note": ""
     },
     {
