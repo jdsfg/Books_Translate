@@ -3211,11 +3211,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 259,
       "src_chars": 2996,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9797b8974bc1",
       "src": "### Chapter 13 — Hypothesis Testing\n\n**Application Q1.** State the Stein lemma for binary hypothesis testing.\n\nFix a Type I error bound α\\alphaα. Then the optimal Type II error βn∗(α)→2−nD(P0∥P1)\\beta_n^*(\\alpha) \\to 2^{-n D(P_0 \\| P_1)}βn∗​(α)→2−nD(P0​∥P1​) exponentially fast as the sample size n→∞n \\to \\inftyn→∞. The exponent is exactly the KL divergence D(P0∥P1)D(P_0 \\| P_1)D(P0​∥P1​); KL is therefore the _operational_ rate at which evidence accumulates against the alternative.\n\n**Application Q2 (binary hypothesis test on coin flips).** Two coins: P0=Bern(0.5)P_0 = \\text{Bern}(0.5)P0​=Bern(0.5) (fair) and P1=Bern(0.7)P_1 = \\text{Bern}(0.7)P1​=Bern(0.7) (biased). For sample size n=100n = 100n=100 and α≤0.05\\alpha \\leq 0.05α≤0.05, what is the asymptotic β\\betaβ and how many samples to drive β≤10−6\\beta \\leq 10^{-6}β≤10−6?\n\nD(P0∥P1)=0.5log⁡2(0.5/0.7)+0.5log⁡2(0.5/0.3)≈0.0294D(P_0 \\| P_1) = 0.5 \\log_2 (0.5/0.7) + 0.5 \\log_2 (0.5/0.3) \\approx 0.0294D(P0​∥P1​)=0.5log2​(0.5/0.7)+0.5log2​(0.5/0.3)≈0.0294 bits = 0.02040.02040.0204 nats. Stein: βn∗≈exp⁡(−n⋅0.0204)\\beta_n^* \\approx \\exp(-n \\cdot 0.0204)βn∗​≈exp(−n⋅0.0204). At n=100n = 100n=100: β≈exp⁡(−2.04)≈0.13\\beta \\approx \\exp(-2.04) \\approx 0.13β≈exp(−2.04)≈0.13 — fairly weak evidence. To reach β≤10−6\\beta \\leq 10^{-6}β≤10−6: solve exp⁡(−n⋅0.0204)=10−6\\exp(-n \\cdot 0.0204) = 10^{-6}exp(−n⋅0.0204)=10−6, n=13.8/0.0204≈677n = 13.8 / 0.0204 \\approx 677n=13.8/0.0204≈677 samples. The KL gap between the two coins is small, so distinguishing them requires hundreds of flips — illustrative of why low-power studies in psychology and medicine often fail.\n\n**Application Q3 (Chernoff bound for symmetric error).** For the same two coins, what is the Chernoff exponent (the rate at which the symmetric error max⁡(α,β)\\max(\\alpha, \\beta)max(α,β) decays under the optimal test)?\n\nChernoff exponent C(P0,P1)=−min⁡0≤s≤1log⁡∑xP0(x)1−sP1(x)sC(P_0, P_1) = -\\min_{0 \\leq s \\leq 1} \\log \\sum_x P_0(x)^{1-s} P_1(x)^sC(P0​,P1​)=−min0≤s≤1​log∑x​P0​(x)1−sP1​(x)s. For Bernoulli(0.5) vs Bernoulli(0.7):\n\n∑xP0(x)1−sP1(x)s=0.51−s⋅0.7s+0.51−s⋅0.3s=0.51−s(0.7s+0.3s).\\sum_x P_0(x)^{1-s} P_1(x)^s = 0.5^{1-s} \\cdot 0.7^s + 0.5^{1-s} \\cdot 0.3^s = 0.5^{1-s}(0.7^s + 0.3^s).x∑​P0​(x)1−sP1​(x)s=0.51−s⋅0.7s+0.51−s⋅0.3s=0.51−s(0.7s+0.3s).\n\nOptimizing over sss gives s∗≈0.5s^* \\approx 0.5s∗≈0.5 by symmetry between P0P_0P0​ and P1P_1P1​. At s=0.5s = 0.5s=0.5: the sum is 0.5(0.7+0.3)=0.707⋅1.385≈0.979\\sqrt{0.5}(\\sqrt{0.7} + \\sqrt{0.3}) = 0.707 \\cdot 1.385 \\approx 0.9790.5​(0.7​+0.3​)=0.707⋅1.385≈0.979, so C≈−log⁡0.979≈0.0212C \\approx -\\log 0.979 \\approx 0.0212C≈−log0.979≈0.0212 nats. Note this is _smaller_ than D(P0∥P1)=0.0204D(P_0 \\| P_1) = 0.0204D(P0​∥P1​)=0.0204 — actually approximately equal because the two distributions are close. The Chernoff exponent governs the symmetric error, while Stein governs the asymmetric (Type II given Type I).\n\n**Think Deeper Q1.** Why is the likelihood-ratio test optimal, and what does \"optimal\" actually mean here?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1299,
+      "out_sha": "2044595f9365",
       "note": ""
     },
     {
@@ -3223,11 +3223,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 260,
       "src_chars": 2052,
-      "status": "pending",
+      "status": "done",
       "src_sha": "636b149e605e",
       "src": "The Neyman-Pearson lemma: for any test that achieves Type I error α\\alphaα, no test has lower Type II error than the likelihood-ratio test (LRT) at the same α\\alphaα. \"Optimal\" here means _uniformly most powerful at fixed Type I error_ ; the LRT pareto-dominates every other test on the (α,β\\alpha, \\betaα,β) plane. The intuitive content: the likelihood ratio p0(x)/p1(x)p_0(x)/p_1(x)p0​(x)/p1​(x) is a _sufficient statistic_ for the binary discrimination problem, so any test that does not threshold on the likelihood ratio is wasting evidence. This is why hypothesis testing can be reduced to thresholding a single scalar — the likelihood ratio is the one-dimensional projection that preserves all the discriminative information.\n\n**Think Deeper Q2.** A medical screening test has sensitivity 95% and specificity 99%. The disease prevalence is 0.1%. Compute the posterior probability of disease given a positive test, and explain the counterintuitive result information-theoretically.\n\nBy Bayes: P(D∣+)=P(+∣D)P(D)/P(+)=0.95⋅0.001/(0.95⋅0.001+0.01⋅0.999)=0.00095/0.01094≈0.087P(D | +) = P(+ | D) P(D) / P(+) = 0.95 \\cdot 0.001 / (0.95 \\cdot 0.001 + 0.01 \\cdot 0.999) = 0.00095 / 0.01094 \\approx 0.087P(D∣+)=P(+∣D)P(D)/P(+)=0.95⋅0.001/(0.95⋅0.001+0.01⋅0.999)=0.00095/0.01094≈0.087. Only **8.7%** posterior probability of disease, despite a positive test. Information-theoretically: the test contributes I(D;+)=D(P(D∣+)∥P(D))I(D; +) = D(P(D | +) \\| P(D))I(D;+)=D(P(D∣+)∥P(D)) bits, which is 0.087log⁡2(0.087/0.001)+0.913log⁡2(0.913/0.999)≈0.5610.087 \\log_2(0.087/0.001) + 0.913 \\log_2(0.913/0.999) \\approx 0.5610.087log2​(0.087/0.001)+0.913log2​(0.913/0.999)≈0.561 bits. The positive test substantially shifts the posterior (from 0.001 to 0.087 — a 87× concentration), but the prior was so low that even the substantial information shift leaves the posterior far from certainty. This is the _base-rate fallacy_ : rare conditions need extremely specific tests, and the test designer must report likelihood ratios, not raw sensitivity/specificity.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 708,
+      "out_sha": "21fc9a0c6b88",
       "note": ""
     },
     {
@@ -3235,11 +3235,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 261,
       "src_chars": 3382,
-      "status": "pending",
+      "status": "done",
       "src_sha": "378b8b8fa887",
       "src": "### Chapter 14 — Information Bottleneck (Mutual Information in Deep Learning)\n\n**Application Q1.** Sketch the IB Lagrangian and its two limits.\n\nLIB[T]=I(X;T)−β I(T;Y).\\mathcal{L}_{\\mathrm{IB}}[T] = I(X; T) - \\beta \\, I(T; Y).LIB​[T]=I(X;T)−βI(T;Y).\n\nAt β=0\\beta = 0β=0: the optimum is T=constT = \\mathrm{const}T=const (no compression cost penalty matters). As β→∞\\beta \\to \\inftyβ→∞: the optimum approaches T=XT = XT=X (preserve all task-relevant information). The interesting regime is intermediate β\\betaβ, where TTT must trade compression I(X;T)I(X; T)I(X;T) against task fidelity I(T;Y)I(T; Y)I(T;Y).\n\n**Application Q2 (MINE bound check).** A MINE estimator returns I^=3.2\\hat I = 3.2I^=3.2 nats from n=5000n = 5000n=5000 samples in d=10d = 10d=10 dimensions. Use the McAllester-Stratos bound to assess reliability.\n\nThe MS bound: any MI estimator from nnn samples in dimension ddd is bounded by O(log⁡n/n1/d)O(\\log n / n^{1/d})O(logn/n1/d) deviation. With n=5000,d=10n = 5000, d = 10n=5000,d=10: n1/d=50000.1≈2.32n^{1/d} = 5000^{0.1} \\approx 2.32n1/d=50000.1≈2.32, so the per-sample factor is log⁡(5000)/2.32≈8.52/2.32≈3.67\\log(5000) / 2.32 \\approx 8.52 / 2.32 \\approx 3.67log(5000)/2.32≈8.52/2.32≈3.67. The bound says MINE cannot reliably distinguish MI values that differ by less than ∼3.67\\sim 3.67∼3.67 nats in this regime. Since the estimate is 3.23.23.2 nats, this bound is _larger than the estimate itself_ — the true MI could plausibly be anywhere from 0 to 7 nats. The qualitative claim \"there is some MI\" is supported; the quantitative claim \"MI = 3.2\" is not. This is exactly the methodological skepticism Ch. 14 calls for.\n\n**Application Q3 (InfoNCE lower bound).** Show that InfoNCE, the contrastive loss, lower-bounds mutual information by log⁡K\\log KlogK for batch size KKK.\n\nThe InfoNCE estimate (Oord et al. 2018):\n\nI^NCE=log⁡K+E ⁣[log⁡f(x,y)1K∑i=1Kf(x,yi)],\\hat I_{\\text{NCE}} = \\log K + \\mathbb{E}\\\\!\\left[\\log \\frac{f(x, y)}{\\frac{1}{K}\\sum_{i=1}^K f(x, y_i)}\\right],I^NCE​=logK+E[logK1​∑i=1K​f(x,yi​)f(x,y)​],\n\nwhere the second term is bounded by 0 (by Jensen on log⁡\\loglog). So I^NCE≤log⁡K\\hat I_{\\text{NCE}} \\leq \\log KI^NCE​≤logK, which means I^NCE\\hat I_{\\text{NCE}}I^NCE​ is a lower bound on MI capped at log⁡K\\log KlogK bits regardless of the true MI. To estimate MI of 10 nats, you need K≥e10≈22000K \\geq e^{10} \\approx 22000K≥e10≈22000 negative samples per positive pair — a steep practical cost. This \"ceiling effect\" is the central limitation of InfoNCE-style estimators.\n\n**Think Deeper Q1.** Why does MI estimation succeed in some regimes despite the McAllester-Stratos bound being so pessimistic?\n\nMS is a _worst-case_ bound over all distributions of dimension ddd. For _structured_ distributions (e.g., where MI is concentrated in a few dimensions, or where the joint factorizes nearly), the effective dimension is smaller than the ambient ddd and MI can be estimated more efficiently. Modern neural estimators (MINE, InfoNCE, NWJ) implicitly exploit this structure by parametrizing the test function class — the network's inductive bias projects out the relevant low-dimensional subspace. The bound is not violated; it just doesn't apply in the regime where the data has structure the estimator can find. The honest practitioner notes when their estimator is in the \"easy\" or \"hard\" regime by checking estimator variance across reseedings.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1351,
+      "out_sha": "a05f908e967e",
       "note": ""
     },
     {
@@ -3247,11 +3247,11 @@
       "en_title": "Appendix B: Selected Solutions",
       "order": 262,
       "src_chars": 1036,
-      "status": "pending",
+      "status": "done",
       "src_sha": "70827ebc379c",
       "src": "**Think Deeper Q2.** Tishby's \"compression phase\" hypothesis claimed that deep networks first fit, then compress. Why was this controversial?\n\nThe claim rests on MI estimates of I(input;layer)I(\\text{input}; \\text{layer})I(input;layer) and I(layer;label)I(\\text{layer}; \\text{label})I(layer;label) measured during training. Tishby observed both quantities rising in early epochs (the \"fitting\" phase), then I(input;layer)I(\\text{input}; \\text{layer})I(input;layer) falling while I(layer;label)I(\\text{layer}; \\text{label})I(layer;label) stayed high (the \"compression\" phase). Saxe et al. (2018) showed the observed compression was an artifact of using saturating activations (tanh, sigmoid) — networks with ReLU showed no compression phase in MI measurements. Worse, the MI estimates themselves were unreliable (per the MS bound). The current synthesis: the IB principle is a useful organizing lens; the specific empirical claim of a measurable compression phase in real networks is contested. Ch. 13 §13.5 treats this honestly.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 419,
+      "out_sha": "e416f7a3c72a",
       "note": ""
     },
     {
