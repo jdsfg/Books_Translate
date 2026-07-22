@@ -251,11 +251,11 @@
       "en_title": "Chapter 1: What Is AI Engineering?",
       "order": 10,
       "src_chars": 2735,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5ce412aca765",
       "src": "### 1.5 The Air Canada moment: why this discipline matters\n\nIn February 2024, the Civil Resolution Tribunal of British Columbia issued a small but precedent-shaping ruling. A passenger, dealing with a family bereavement, had asked Air Canada's website chatbot about discounted bereavement fares. The chatbot (an LLM-backed agent integrated into the airline's customer-service surface) described a discount policy that did not match the airline's actual policy. The customer booked a flight on the basis of the chatbot's description. The airline declined to honor the discount after the fact, on the grounds that the chatbot had been wrong.\n\nThe tribunal held the airline liable. The chatbot's output was a statement made by the airline. The ruling is short, and you can read it; the principle was straightforward. **Your LLM's output is your company's statement.** If your chatbot says it, your company said it.\n\nThe dollar amount of the Air Canada award was small. The principle it established was not. It moved AI engineering from _cool feature you can ship loosely_ to _contractually binding software whose outputs are legally attributable to the company that deployed it_. Every legal team in every company that shipped an LLM-backed customer interface adjusted their posture after the ruling. The standard of care went up.\n\nThis is failure story #1 in this book. We will refer to it again in Chapter 23 (when we talk about prompt injection and adversarial inputs), in Chapter 24 (when we talk about engineering judgment and the _can we eval this?_ gate), and in Chapter 25 (when we talk about the consolidated anti-patterns). The shape of the failure recurs.\n\n\n#### Common Misconception\n\nEngineers new to AI engineering sometimes believe that the LLM provider (Anthropic, OpenAI, Google) is the party liable for what the model says. After all, the model is theirs.\n\nThis is wrong, and the Air Canada case is the easiest way to see why. The provider sells you an API. The provider's terms of service explicitly disclaim liability for the outputs you choose to deploy. The decision to wrap the model in a product, to show its outputs to your users, to attribute its outputs to your brand — that is your decision, and the liability follows your decision. The model is a component. The product is yours. The outputs are yours.\n\nThis is why evals are not optional. This is why prompt-injection defense is not optional. This is why fallback chains are not optional. The standard of care for shipping a probabilistic system whose outputs are attributable to you is higher than the standard of care for shipping a deterministic component. Every chapter in this book is, in some sense, a partial answer to _how do you meet that standard_.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 944,
+      "out_sha": "6c9499ac6bbc",
       "note": ""
     },
     {
@@ -263,11 +263,11 @@
       "en_title": "Chapter 1: What Is AI Engineering?",
       "order": 11,
       "src_chars": 1778,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fc9c82b5e284",
       "src": "### 1.6 The four-question rubric\n\nYou will see, in every chapter of this book, the same four questions answered explicitly for the chapter's central concept. They are the discipline. They are the way an AI engineer thinks. Memorize them; they are the first thing to ask about every architectural decision you make for the rest of your career.\n\n  1. **What's the pattern?** Describe the engineering technique abstractly. Not what it does in this product, but what it is as a reusable thing.\n  2. **What does the eval look like?** Concretely: what golden set, what metric, what threshold, what regression check. _If you cannot answer this, you do not understand the pattern well enough to ship it._\n  3. **How does it fail in production?** Name a failure mode. Name a real or composite incident where the mode happened. Name the engineering mitigation. Name the eval that would have caught it.\n  4. **What's the cost?** Latency. Dollars per query or per active user. Quality trade-off. With 2026 numbers.\n\nThis chapter's central concept is _AI engineering itself_. So:\n\n* **Pattern** : building production systems with LLMs as a service.\n* **Eval** : does the product work for users? (Operationally: golden user-flow evals, eval-driven CI, regression detection on every prompt change.)\n* **Failure mode** : shipping a feature whose outputs you cannot stand behind. The Air Canada case.\n* **Cost** : in 2026, an LLM-backed product typically costs 0.001 USD to 0.10 USD per active user per day in inference. Latency budgets are tight (p50 around 500 ms; voice is sub-500 ms time-to-first-token). Quality is measured by user-flow evals, not by abstract benchmarks.\n\nThis is the structure. Every chapter will follow it. Sometimes more, sometimes less, but always at least these four.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 735,
+      "out_sha": "319ee7918ef0",
       "note": ""
     },
     {
@@ -275,11 +275,11 @@
       "en_title": "Chapter 1: What Is AI Engineering?",
       "order": 12,
       "src_chars": 1813,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9d3af9a09ff2",
       "src": "### 1.7 Triangle Trade-off sidebar: cost, latency, quality (classic format)\n\nThe triangle is the law. You will see it in every architectural decision: cost goes down only by paying with latency or quality (or both); latency goes down only by paying with cost or quality (or both); quality goes up only by paying with cost or latency (or both). There is no free lunch.\n\nThe classic-table form of the triangle, as it applies to the choice of _which 2026 model to call_ :\n\nModel | Approximate input cost (USD/1M tokens) | Approximate output cost (USD/1M tokens) | Approximate p50 latency | Typical quality tier  \n---|---|---|---|---  \nClaude Sonnet 4 | 3.00 USD | 15.00 USD | ~500 ms | Tier 1 (frontier-class general reasoning)  \nGPT-4o | 2.50 USD | 10.00 USD | ~400 ms | Tier 1 (frontier-class general reasoning)  \nGemini 2.5 Pro | 3.50 USD | 14.00 USD | ~600 ms | Tier 1  \nGPT-4o-mini | 0.15 USD | 0.60 USD | ~300 ms | Tier 2 (fast workhorse)  \nDeepSeek V3 | 0.27 USD | 1.10 USD | ~600 ms | Tier 2 (strong open-weight alternative)  \nGemini 2.5 Flash | 0.10 USD | 0.40 USD | ~250 ms | Tier 2 (cheapest large-scale workhorse)  \n  \nNumbers are approximate, current as of 2026, and will shift in 2027. The point of the table is not the specific numbers; it is the shape. There is a tier-1 cluster with frontier-class general reasoning at roughly 2.50 USD–3.50 USD input and 10 USD–15 USD output, with latencies in the 400–600 ms range. There is a tier-2 cluster around an order of magnitude cheaper, with latencies often a bit faster. Choosing between tiers is the central everyday cost decision, and Chapter 17 (multi-model routing) is the chapter that turns it into discipline.\n\nFor now, internalize: **whenever you make an architectural choice in this book, ask which knob of the triangle moves, and by how much.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 851,
+      "out_sha": "845beb20233b",
       "note": ""
     },
     {
@@ -287,11 +287,11 @@
       "en_title": "Chapter 1: What Is AI Engineering?",
       "order": 13,
       "src_chars": 2247,
-      "status": "pending",
+      "status": "done",
       "src_sha": "49d390ee5a79",
       "src": "### 1.8 How This Breaks: the un-evaluable feature\n\nEvery chapter ends with a _How This Breaks_ section in the four-element binding format. Here is this chapter's.\n\n**Failure mode named** : the un-evaluable feature. A product team commits to ship an LLM-backed feature whose success criteria cannot be operationalized into an eval. The feature ships on vibes. The team monitors it on vibes. The feature degrades (model upgrade, prompt drift, retrieval corpus drift) and the team does not notice for weeks, because the only signal is qualitative user feedback, which is slow and noisy.\n\n**Real or composite incident** : the composite case at Beacon Health AI that we will return to in Chapter 24. A clinician-facing feature was scoped, designed, and prototyped. When the team sat down to write the eval, they found that _did the AI produce a good clinical summary?_ could not be cheaply operationalized. The proxies they could measure (length, structure, presence of required sections) did not correlate strongly with what an experienced clinician would call a _good_ summary. The honest engineering decision was to either (a) invest heavily in human-clinician review labels at a scale the company could not afford, or (b) kill the feature. The team killed the feature. This was the right call. The wrong call would have been to ship it anyway and hope.\n\n**Engineering mitigation** : the _can we eval this?_ gate. Before any AI-backed feature is committed to a roadmap, the team writes a one-page eval design: what is the golden set, what is the metric, what is the threshold, what is the regression detection. If the eval design is not feasible (no measurable proxy, no obtainable labels, no defensible threshold), the feature does not pass the gate. Chapter 24 builds this gate into a workflow template.\n\n**The eval that would have caught it** : this failure mode is meta: the failure is _not having an eval_. The eval that catches it is the eval-design review. If the team writes the eval design at scoping time, they discover the un-evaluability of the feature at scoping time, before any code is written, and the kill-or-invest decision happens before money is committed. Chapter 4 builds the discipline; Chapter 24 builds the team-level gate.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 839,
+      "out_sha": "bf1d7821674e",
       "note": ""
     },
     {
@@ -299,11 +299,11 @@
       "en_title": "Chapter 1: What Is AI Engineering?",
       "order": 14,
       "src_chars": 2142,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9d926ba9efe4",
       "src": "### Chapter Summary\n\nAI engineering is the discipline of building production software systems with large language models as their central capability. The role split from machine learning research because frontier models are now too large for product teams to train; the product layer is huge, and growing. The discipline crystallized over the window 2024–2026: frontier models got reliably useful, failure modes got named, the toolchain settled, and the labor market caught up.\n\nThe discipline has four roles (AI engineer, ML platform engineer, AI product engineer, AI ops), a five-level skills hierarchy (foundation, LLM literacy, the patterns, the discipline, the judgment), and a four-question rubric you apply to every architectural decision (pattern, eval, failure mode, cost). The Air Canada ruling is the first canonical failure story in this book (_your LLM's outputs are your company's statements_) and it justifies the whole stance of the rest of the book: ship defensively, measure rigorously, watch for cost spikes, evaluate before you commit.\n\nWe introduced three production cases that will thread the entire book: Beacon Health AI (clinical-notes summarizer and CodeReview Bot, HIPAA throughout), Strata Research (legal-tech RAG), and Helios Customer AI (enterprise agents at scale). You will meet them again in Chapters 3, 5, 8, 9, 13, 16, 17, 18, 19, 20, 21, and 24. Watch for them.\n\nThe next chapter (Chapter 2) builds the LLM mental model an AI engineer actually uses on the job. You will not need to derive backpropagation. You will need to know why hallucinations happen, why the model is stochastic, why prompts are sensitive, why models cannot count letters, and how to read a model card as a spec sheet. Chapter 3 then puts that mental model to work against the actual API surface, and the discipline starts in earnest.\n\nThe last thought to carry forward: **you are engineering against a stochastic component you do not own**. Every chapter in this book is, in some sense, a refinement of that one sentence. The sooner you internalize it, the more of this book will feel like the obvious next step.\n\n\n### 1.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 817,
+      "out_sha": "08197c04bd1c",
       "note": ""
     },
     {
