@@ -839,23 +839,23 @@
       "en_title": "Chapter 2: The LLM Mental Model for Engineers",
       "order": 59,
       "src_chars": 3,
-      "status": "pending",
+      "status": "done",
       "src_sha": "58b63e273b96",
       "src": "---",
-      "out_chars": 0,
-      "out_sha": "",
-      "note": ""
+      "out_chars": 31,
+      "out_sha": "3cf28a3eabd2",
+      "note": "separator-only"
     },
     {
       "id": "c04_b01",
       "en_title": "Chapter 3: Working with the LLM API — The Engineer's First Tool",
       "order": 60,
       "src_chars": 1650,
-      "status": "pending",
+      "status": "done",
       "src_sha": "659012114c8d",
       "src": "> **Current as of 2026.** Snapshot date for the dollar figures below: mid-2026. Anthropic Claude Sonnet 4 at 3.00 USD/1M input fresh + 0.30 USD/1M cached read + 15.00 USD/1M output; OpenAI GPT-4o at 2.50 USD/10.00 USD; Gemini 2.5 Flash at 0.10 USD/0.40 USD; DeepSeek V3 at 0.27 USD/1.10. USD Before you copy any of these into a budget spreadsheet, check the provider's current pricing page; these numbers drift quarterly. The mental model of what an API call actually does is the part that's worth committing to memory.\n\nAiyana's first commit at Beacon Health AI in her new role was forty-three lines of Python. The relevant six lines were these:\n    \n    \n    from anthropic import Anthropic\n    \n    client = Anthropic()\n    response = client.messages.create(\n        model=\"claude-sonnet-4-20260315\",\n        max_tokens=1024,\n        messages=[{\"role\": \"user\", \"content\": \"Hello, world\"}],\n    )\n    print(response.content[0].text)\n    \n\nThat is the entire API. Everything you will see in this book wraps around that call. Streaming wraps it. Tool use wraps it. RAG wraps it. Agents wrap it. Production observability wraps it. But the call itself is six lines and you should be able to write it in your sleep.\n\nThis chapter takes those six lines apart, then puts them back together with the full set of knobs you will actually turn in production. By the end you will know what every parameter on a chat-completions call does, when to set it and when to leave the default, how to read the rate-limit headers, how to handle the failure modes, and what your bill looks like for the call you just made.\n\nThis is the engineer's first tool. Pick it up.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 876,
+      "out_sha": "e403d100016b",
       "note": ""
     },
     {
