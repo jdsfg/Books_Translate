@@ -1,0 +1,705 @@
+{
+  "report": "cleaning_part_b",
+  "generated_at": "2026-07-21T22:36:59Z",
+  "control_review_ref": "https://github.com/jdsfg/Books_Translate/pull/19#issuecomment-5036606729",
+  "remediation": {
+    "ml_formula_rewrite": "fully_reverted_to_origin_main",
+    "fake_h2_tables_column_fix": [
+      "被讲述的自己——自欺背后的脑科学",
+      "情绪的科学：识别、调节、不被绑架",
+      "说服性写作",
+      "软件工程匠艺"
+    ],
+    "kept_safe_cleanups": [
+      "duplicate_tails",
+      "toc_repairs",
+      "classical_scaffold_removal",
+      "network_structural_fixes",
+      "brahms_read_heading"
+    ],
+    "round3_contingency_tables": {
+      "book": "被讲述的自己——自欺背后的脑科学",
+      "action": "Added blank row-label first header cell on L1850 and L1863 2x2 tables so header/sep/data are 3-col uniform",
+      "prior_honest_status_before_this_fix": {
+        "promotable": 7,
+        "pending_control": 2,
+        "BLOCK": 2
+      }
+    }
+  },
+  "scope_count": 11,
+  "summary": {
+    "CLEAN_PASS": 8,
+    "CLEAN_WITH_REMAINDERS": 2,
+    "BLOCK": 1,
+    "promotable": 8,
+    "pending_control": 2,
+    "blocked": 1
+  },
+  "books": [
+    {
+      "name": "机器学习：从数据到智能",
+      "path": "sources/pending/机器学习：从数据到智能.md",
+      "status": "BLOCK",
+      "promotion": "blocked",
+      "issues_before": 2,
+      "issues_before_detail": [
+        "systemic_formula_multiple_renderings (~775 latex-command hits)",
+        "table_cells_corrupted_by_dollar_math_parsing (L2657–2660, L7505–7511)"
+      ],
+      "issues_after": 2,
+      "bytes": 656016,
+      "lines": 7532,
+      "diff": {
+        "added": 0,
+        "deleted": 0,
+        "hunk_ranges": [],
+        "hunk_count": 0
+      },
+      "decisions": [
+        {
+          "kind": "revert",
+          "action": "Control review BLOCK: fully reverted unsafe formula batch rewrite (1135+/- lines) to origin/main; no further batch regex formula cleaning.",
+          "lines": "entire file restored to main"
+        },
+        {
+          "kind": "policy",
+          "action": "Retain as SOURCE_CONFLICT/BLOCK until human formula pass; corrupted amount tables and U+L+U triples unchanged from main."
+        }
+      ],
+      "remaining_issues": [
+        {
+          "severity": "BLOCKER",
+          "type": "SOURCE_CONFLICT",
+          "lines": [
+            "systemic"
+          ],
+          "count": 1027,
+          "evidence": "Main manuscript still has systemic unicode+LaTeX+plaintext formula multiple renderings and corrupted RMSE/$ tables; prior auto-clean introduced www→https://$w$ and Part III→Part I damage and was revoked.",
+          "reason": "Unsafe to auto-dedupe; control forbids further batch regex.",
+          "recommendation": "Human/control formula normalization only; do not init."
+        }
+      ],
+      "rescan": {
+        "fake_h2_table_headers": [],
+        "table_col_mismatches_count": 1,
+        "table_col_mismatches_sample": [
+          {
+            "start_line": 2319,
+            "colcounts": [
+              2,
+              3,
+              3,
+              3
+            ],
+            "header": "| Predicted Positive | Predicted Negative  "
+          }
+        ],
+        "residual_latex_outside_math": 1027,
+        "h2_count": 28,
+        "final_horizontal_rule": true,
+        "identical_to_main": true
+      }
+    },
+    {
+      "name": "被讲述的自己——自欺背后的脑科学",
+      "path": "sources/pending/被讲述的自己——自欺背后的脑科学.md",
+      "status": "CLEAN_PASS",
+      "promotion": "promotable",
+      "issues_before": 2,
+      "issues_before_detail": [
+        "table_header_misparsed_as_h2 (L4878)",
+        "duplicate_long_section (L5109–5129 / L5131–5151)"
+      ],
+      "issues_after": 0,
+      "bytes": 1098825,
+      "lines": 5282,
+      "diff": {
+        "added": 3,
+        "deleted": 25,
+        "hunk_ranges": [
+          {
+            "old": "L1850",
+            "new": "L1850"
+          },
+          {
+            "old": "L1863",
+            "new": "L1863"
+          },
+          {
+            "old": "L4878",
+            "new": "L4878"
+          },
+          {
+            "old": "L5110-L5131",
+            "new": "L5109"
+          }
+        ],
+        "hunk_count": 4
+      },
+      "decisions": [
+        {
+          "kind": "table",
+          "action": "Removed ## from application table header; added `#` first column so header/sep/data are 5-col uniform.",
+          "lines": "L4878"
+        },
+        {
+          "kind": "table",
+          "action": "Added blank row-label first header cell on two Kahan 2×2 contingency tables so header/sep/data are 3-col uniform.",
+          "lines": "L1850–L1853, L1863–L1866"
+        },
+        {
+          "kind": "duplicate",
+          "action": "Deleted second identical closing observations+letter block; kept one * * * before Coda.",
+          "lines": "former L5131–5151"
+        }
+      ],
+      "remaining_issues": [],
+      "rescan": {
+        "fake_h2_table_headers": [],
+        "table_col_mismatches_count": 0,
+        "table_col_mismatches_sample": [],
+        "residual_latex_outside_math": 0,
+        "h2_count": 16,
+        "final_horizontal_rule": true,
+        "identical_to_main": false
+      }
+    },
+    {
+      "name": "情绪的科学：识别、调节、不被绑架",
+      "path": "sources/pending/情绪的科学：识别、调节、不被绑架.md",
+      "status": "CLEAN_PASS",
+      "promotion": "promotable",
+      "issues_before": 1,
+      "issues_before_detail": [
+        "table_headers_misparsed_as_h2 (L359, L5034, L5047)"
+      ],
+      "issues_after": 0,
+      "bytes": 938492,
+      "lines": 5792,
+      "diff": {
+        "added": 3,
+        "deleted": 3,
+        "hunk_ranges": [
+          {
+            "old": "L359",
+            "new": "L359"
+          },
+          {
+            "old": "L5034",
+            "new": "L5034"
+          },
+          {
+            "old": "L5047",
+            "new": "L5047"
+          }
+        ],
+        "hunk_count": 3
+      },
+      "decisions": [
+        {
+          "kind": "table",
+          "action": "Removed ## from three Move/Emotion headers; added `#` first column so 3/3/3 and 4/4/4 columns match.",
+          "lines": "L359/5034/5047"
+        }
+      ],
+      "remaining_issues": [],
+      "rescan": {
+        "fake_h2_table_headers": [],
+        "table_col_mismatches_count": 0,
+        "table_col_mismatches_sample": [],
+        "residual_latex_outside_math": 0,
+        "h2_count": 25,
+        "final_horizontal_rule": true,
+        "identical_to_main": false
+      }
+    },
+    {
+      "name": "压力的科学",
+      "path": "sources/pending/压力的科学.md",
+      "status": "CLEAN_PASS",
+      "promotion": "promotable",
+      "issues_before": 2,
+      "issues_before_detail": [
+        "chapter_heading_glued_and_toc_gap (L16, L4141)",
+        "duplicate_tail_section (L6057–6081 / L6083–6107)"
+      ],
+      "issues_after": 0,
+      "bytes": 828766,
+      "lines": 6089,
+      "diff": {
+        "added": 5,
+        "deleted": 27,
+        "hunk_ranges": [
+          {
+            "old": "L15",
+            "new": "L16"
+          },
+          {
+            "old": "L4141",
+            "new": "L4142-L4145"
+          },
+          {
+            "old": "L6060-L6085",
+            "new": "L6063"
+          }
+        ],
+        "hunk_count": 3
+      },
+      "decisions": [
+        {
+          "kind": "toc",
+          "action": "Inserted Chapter 11 TOC entry from real H2.",
+          "lines": "TOC"
+        },
+        {
+          "kind": "heading",
+          "action": "Unglued '# Chapter 11' into ## Chapter 11.",
+          "lines": "former L4141"
+        },
+        {
+          "kind": "duplicate",
+          "action": "Deleted second closing diagnostic+summary; kept single ending.",
+          "lines": "former duplicate tail"
+        }
+      ],
+      "remaining_issues": [],
+      "rescan": {
+        "fake_h2_table_headers": [],
+        "table_col_mismatches_count": 0,
+        "table_col_mismatches_sample": [],
+        "residual_latex_outside_math": 0,
+        "h2_count": 16,
+        "final_horizontal_rule": true,
+        "identical_to_main": false
+      }
+    },
+    {
+      "name": "说服性写作",
+      "path": "sources/pending/说服性写作.md",
+      "status": "CLEAN_PASS",
+      "promotion": "promotable",
+      "issues_before": 2,
+      "issues_before_detail": [
+        "table_header_misparsed_as_h2 (L415)",
+        "table_column_mismatch (L4525–4526)"
+      ],
+      "issues_after": 0,
+      "bytes": 586624,
+      "lines": 5422,
+      "diff": {
+        "added": 3,
+        "deleted": 3,
+        "hunk_ranges": [
+          {
+            "old": "L415",
+            "new": "L415"
+          },
+          {
+            "old": "L4525-L4526",
+            "new": "L4525-L4526"
+          }
+        ],
+        "hunk_count": 2
+      },
+      "decisions": [
+        {
+          "kind": "table",
+          "action": "Removed ## from 6 Moves header; added `#` first column (3-col uniform).",
+          "lines": "L415"
+        },
+        {
+          "kind": "table",
+          "action": "Blank Layer cells for Heart Test / Restrained Connection rows.",
+          "lines": "L4525–4526"
+        }
+      ],
+      "remaining_issues": [],
+      "rescan": {
+        "fake_h2_table_headers": [],
+        "table_col_mismatches_count": 0,
+        "table_col_mismatches_sample": [],
+        "residual_latex_outside_math": 0,
+        "h2_count": 19,
+        "final_horizontal_rule": true,
+        "identical_to_main": false
+      }
+    },
+    {
+      "name": "计算机网络",
+      "path": "sources/pending/计算机网络.md",
+      "status": "CLEAN_WITH_REMAINDERS",
+      "promotion": "pending_control",
+      "issues_before": 3,
+      "issues_before_detail": [
+        "toc_corruption (L36 fake Chapter 1 / missing Appendix D)",
+        "duplicate_long_section (L9957–10033 / L10035–10111)",
+        "table_header_misparsed_as_h2 + column mismatch (L11411)"
+      ],
+      "issues_after": 1,
+      "bytes": 1178444,
+      "lines": 11357,
+      "diff": {
+        "added": 17,
+        "deleted": 94,
+        "hunk_ranges": [
+          {
+            "old": "L36",
+            "new": "L36"
+          },
+          {
+            "old": "L66",
+            "new": "L66"
+          },
+          {
+            "old": "L72",
+            "new": "L72"
+          },
+          {
+            "old": "L10035-L10111",
+            "new": "L10034"
+          },
+          {
+            "old": "L11411-L11424",
+            "new": "L11334-L11347"
+          }
+        ],
+        "hunk_count": 5
+      },
+      "decisions": [
+        {
+          "kind": "toc",
+          "action": "Replaced fake Chapter 1 Annotated ping with Appendix D from real H2.",
+          "lines": "TOC"
+        },
+        {
+          "kind": "duplicate",
+          "action": "Deleted exact Ch27 closing duplicate before Appendix A.",
+          "lines": "former second copy"
+        },
+        {
+          "kind": "table",
+          "action": "Normalized workflows table to | # | Workflow | Chapter | without ##.",
+          "lines": "Appendix D"
+        },
+        {
+          "kind": "heading",
+          "action": "Promoted Introduction H4 subsections to H3.",
+          "lines": "Intro"
+        }
+      ],
+      "remaining_issues": [
+        {
+          "severity": "WARNING",
+          "type": "pending_control_decision",
+          "lines": [
+            "~1305"
+          ],
+          "evidence": "Table cell 'TBD' for planned 1.6 Tbps standard",
+          "reason": "Structural blockers fixed; control review marks book pending control adjudication for residual WARNING.",
+          "recommendation": "Control confirm intentional TBD vs incomplete cell before promote."
+        }
+      ],
+      "rescan": {
+        "fake_h2_table_headers": [],
+        "table_col_mismatches_count": 0,
+        "table_col_mismatches_sample": [],
+        "residual_latex_outside_math": 20,
+        "h2_count": 33,
+        "final_horizontal_rule": true,
+        "identical_to_main": false
+      }
+    },
+    {
+      "name": "细听：古典音乐欣赏指南",
+      "path": "sources/pending/细听：古典音乐欣赏指南.md",
+      "status": "CLEAN_PASS",
+      "promotion": "promotable",
+      "issues_before": 3,
+      "issues_before_detail": [
+        "toc_duplicate (L5)",
+        "editing_scaffold_in_body (L103–454)",
+        "duplicate_tail_section (L7252–7303 / L7305–7356)"
+      ],
+      "issues_after": 0,
+      "bytes": 1070002,
+      "lines": 6952,
+      "diff": {
+        "added": 3,
+        "deleted": 411,
+        "hunk_ranges": [
+          {
+            "old": "L5",
+            "new": "L4"
+          },
+          {
+            "old": "L64",
+            "new": "L63"
+          },
+          {
+            "old": "L72",
+            "new": "L71"
+          },
+          {
+            "old": "L89",
+            "new": "L88"
+          },
+          {
+            "old": "L99-L453",
+            "new": "L97"
+          },
+          {
+            "old": "L7305-L7356",
+            "new": "L6948"
+          }
+        ],
+        "hunk_count": 6
+      },
+      "decisions": [
+        {
+          "kind": "toc",
+          "action": "Deleted corrupted duplicate Chapter 1 TOC entry.",
+          "lines": "former L5"
+        },
+        {
+          "kind": "scaffolding",
+          "action": "Removed generation metadata/outline between Introduction and Chapter 1; kept formal ## Introduction.",
+          "lines": "former scaffold block"
+        },
+        {
+          "kind": "duplicate",
+          "action": "Deleted second closing cousin-list through _Go listen._",
+          "lines": "former second closing"
+        },
+        {
+          "kind": "heading",
+          "action": "Promoted Introduction H4 to H3; cleaned extra * * * before Chapter 1.",
+          "lines": "Intro/Ch1"
+        }
+      ],
+      "remaining_issues": [],
+      "rescan": {
+        "fake_h2_table_headers": [],
+        "table_col_mismatches_count": 0,
+        "table_col_mismatches_sample": [],
+        "residual_latex_outside_math": 0,
+        "h2_count": 29,
+        "final_horizontal_rule": true,
+        "identical_to_main": false
+      }
+    },
+    {
+      "name": "软件工程匠艺",
+      "path": "sources/pending/软件工程匠艺.md",
+      "status": "CLEAN_PASS",
+      "promotion": "promotable",
+      "issues_before": 2,
+      "issues_before_detail": [
+        "toc_duplicate Introduction (L5/L29)",
+        "table_header_misparsed_as_h2 (L10606)"
+      ],
+      "issues_after": 0,
+      "bytes": 891894,
+      "lines": 10988,
+      "diff": {
+        "added": 1,
+        "deleted": 6,
+        "hunk_ranges": [
+          {
+            "old": "L29",
+            "new": "L28"
+          },
+          {
+            "old": "L10606",
+            "new": "L10605"
+          },
+          {
+            "old": "L10989-L10992",
+            "new": "L10987"
+          }
+        ],
+        "hunk_count": 3
+      },
+      "decisions": [
+        {
+          "kind": "toc",
+          "action": "Removed duplicate trailing Introduction TOC entry.",
+          "lines": "former TOC"
+        },
+        {
+          "kind": "table",
+          "action": "Removed ## from Appendix B header; added `#` first column (4-col uniform).",
+          "lines": "former L10606"
+        },
+        {
+          "kind": "separator",
+          "action": "Collapsed excess * * *; kept final ---.",
+          "lines": "file end"
+        }
+      ],
+      "remaining_issues": [],
+      "rescan": {
+        "fake_h2_table_headers": [],
+        "table_col_mismatches_count": 0,
+        "table_col_mismatches_sample": [],
+        "residual_latex_outside_math": 3,
+        "h2_count": 26,
+        "final_horizontal_rule": true,
+        "identical_to_main": false
+      }
+    },
+    {
+      "name": "看见彼此——亲密关系的科学",
+      "path": "sources/pending/看见彼此——亲密关系的科学.md",
+      "status": "CLEAN_PASS",
+      "promotion": "promotable",
+      "issues_before": 1,
+      "issues_before_detail": [
+        "duplicate_tail_section (L3719–3756 / L3758–3795)"
+      ],
+      "issues_after": 0,
+      "bytes": 871100,
+      "lines": 3838,
+      "diff": {
+        "added": 0,
+        "deleted": 39,
+        "hunk_ranges": [
+          {
+            "old": "L3724-L3762",
+            "new": "L3723"
+          }
+        ],
+        "hunk_count": 1
+      },
+      "decisions": [
+        {
+          "kind": "duplicate",
+          "action": "Deleted second Think Deeper/Summary/Begin/reading-list block.",
+          "lines": "former second closing"
+        }
+      ],
+      "remaining_issues": [],
+      "rescan": {
+        "fake_h2_table_headers": [],
+        "table_col_mismatches_count": 0,
+        "table_col_mismatches_sample": [],
+        "residual_latex_outside_math": 0,
+        "h2_count": 17,
+        "final_horizontal_rule": true,
+        "identical_to_main": false
+      }
+    },
+    {
+      "name": "睡眠的科学",
+      "path": "sources/pending/睡眠的科学.md",
+      "status": "CLEAN_PASS",
+      "promotion": "promotable",
+      "issues_before": 1,
+      "issues_before_detail": [
+        "duplicate_tail_section (L7050–7087 / L7089–7126)"
+      ],
+      "issues_after": 0,
+      "bytes": 794209,
+      "lines": 7091,
+      "diff": {
+        "added": 2,
+        "deleted": 41,
+        "hunk_ranges": [
+          {
+            "old": "L55",
+            "new": "L55"
+          },
+          {
+            "old": "L67",
+            "new": "L67"
+          },
+          {
+            "old": "L7060-L7098",
+            "new": "L7059"
+          }
+        ],
+        "hunk_count": 3
+      },
+      "decisions": [
+        {
+          "kind": "duplicate",
+          "action": "Deleted second closing argument+Summary+Diary instruction.",
+          "lines": "former second closing"
+        },
+        {
+          "kind": "heading",
+          "action": "Promoted Introduction H4 to H3.",
+          "lines": "Intro"
+        }
+      ],
+      "remaining_issues": [],
+      "rescan": {
+        "fake_h2_table_headers": [],
+        "table_col_mismatches_count": 0,
+        "table_col_mismatches_sample": [],
+        "residual_latex_outside_math": 0,
+        "h2_count": 16,
+        "final_horizontal_rule": true,
+        "identical_to_main": false
+      }
+    },
+    {
+      "name": "细听：勃拉姆斯",
+      "path": "sources/pending/细听：勃拉姆斯.md",
+      "status": "CLEAN_WITH_REMAINDERS",
+      "promotion": "pending_control",
+      "issues_before": 1,
+      "issues_before_detail": [
+        "body_misparsed_as_h3 Read item (L2807–2815)"
+      ],
+      "issues_after": 1,
+      "bytes": 480178,
+      "lines": 2817,
+      "diff": {
+        "added": 3,
+        "deleted": 1,
+        "hunk_ranges": [
+          {
+            "old": "L2813",
+            "new": "L2813-L2815"
+          }
+        ],
+        "hunk_count": 1
+      },
+      "decisions": [
+        {
+          "kind": "heading",
+          "action": "Changed ### **Read** to plain **Read** under Going Deeper.",
+          "lines": "former ~L2813"
+        },
+        {
+          "kind": "separator",
+          "action": "Ensured * * * + --- ending.",
+          "lines": "file end"
+        }
+      ],
+      "remaining_issues": [
+        {
+          "severity": "WARNING",
+          "type": "pending_control_decision",
+          "lines": [
+            43,
+            45
+          ],
+          "evidence": "Opaque B159 Close Listening cross-volume id",
+          "reason": "Registered heading issue fixed; control review marks residual WARNING pending adjudication.",
+          "recommendation": "Control decide whether to expand B159 before promote."
+        }
+      ],
+      "rescan": {
+        "fake_h2_table_headers": [],
+        "table_col_mismatches_count": 0,
+        "table_col_mismatches_sample": [],
+        "residual_latex_outside_math": 0,
+        "h2_count": 24,
+        "final_horizontal_rule": true,
+        "identical_to_main": false
+      }
+    }
+  ]
+}
