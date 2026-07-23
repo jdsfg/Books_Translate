@@ -3875,11 +3875,11 @@
       "en_title": "Chapter 13: Tool Use and Sandboxed Execution",
       "order": 312,
       "src_chars": 1689,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c388e28d3c4c",
       "src": "### 13.8 Triangle Trade-off sidebar: tool-augmented agent latency (latency-decomposition format)\n\nThe latency decomposition for a typical Helios customer-support tool-augmented call (4-step trajectory):\n\nStage | Latency (ms) | Cumulative (ms)  \n---|---|---  \nInitial LLM call (decide first tool) | 800 | 800  \nTool execution: `lookup_order` (DB query) | 80 | 880  \nSecond LLM call (decide what to do with order info) | 700 | 1580  \nTool execution: `search_knowledge_base` (vector retrieval) | 300 | 1880  \nThird LLM call (decide refund vs escalation) | 700 | 2580  \nTool execution: `process_refund` (policy + transaction) | 250 | 2830  \nFinal LLM call (compose response) | 600 | 3430  \n**Total p50 perceived latency** |  | **~3.4 seconds**  \n  \nWhat to read off:\n\n  1. **LLM calls dominate** (2800ms of 3400ms = ~80% of latency). Each tool call requires a follow-up LLM call to interpret; the LLM round-trips are the latency budget.\n\n  2. **Tool execution is fast** (630ms of 3400ms = ~20%). Individual tool calls are typically fast; the slowness is in the loop.\n\n  3. **Reducing iteration count is the biggest latency lever**. Going from 4 iterations to 2 (via parallel tool calls or better prompt) would cut latency roughly in half. Chapter 14 explores this.\n\n  4. **Faster models help linearly**. A workhorse model (Haiku, mini) cuts LLM-call latency from 700ms to ~400ms; total drops to ~2.4 seconds. The trade-off is quality (workhorse may make worse tool choices; eval the cost / quality / latency simultaneously).\n\nFor Helios's interactive customer experience, 3.4 seconds is acceptable; for a sub-1-second voice agent (Chapter 20), this architecture would need significant rework.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 799,
+      "out_sha": "920133ba9729",
       "note": ""
     },
     {
@@ -3887,11 +3887,11 @@
       "en_title": "Chapter 13: Tool Use and Sandboxed Execution",
       "order": 313,
       "src_chars": 2351,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f4eaa49089aa",
       "src": "### 13.9 How This Breaks: the tool that destroyed production\n\n**Failure mode named** : the tool that destroyed production. A team builds an agent with a tool that has more authority than it should. A user (or a prompt-injection attack) induces the agent to call the tool destructively. The damage is real and sometimes irreversible.\n\n**Real or composite incident** : a composite. An internal AI assistant at a company had a `delete_record` tool with no gating: the LLM could delete database rows directly. An adversarial user input caused the LLM to call `delete_record` on rows it shouldn't have. Recovery required restoring from backups; data loss occurred for records that had been modified since the last backup. Total business impact: significant; legal review followed; the incident became a case study.\n\n**Engineering mitigation** : three layers.\n\n  1. **Tool-level authorization**. Destructive tools (delete, modify, send, charge) require explicit policy approval before execution. The deterministic policy layer checks the LLM's proposed call against rules; rejected calls return a structured error rather than executing.\n\n  2. **Tool gating by user role**. The agent's available tool catalog is scoped to the user's permissions. A read-only user's agent has no write tools, full stop.\n\n  3. **Dry-run and confirmation patterns for high-impact tools**. The LLM's first call to a destructive tool is dry-run; the dry-run returns what _would_ happen; the LLM is required to confirm with the user (or with a deterministic policy check that includes user confirmation) before the real execution. Pattern enforced at the application layer, not at the prompt layer (which is bypassable).\n\n**The eval that would have caught it** : an _adversarial-tool-call eval_. A slice of the eval that includes inputs designed to induce the LLM to call destructive tools inappropriately. If the LLM is gated correctly, the calls are blocked (or required to pass confirmation); the eval verifies. The eval-design discipline (Chapter 4's coverage review) should have surfaced this slice before launch.\n\nThis failure mode is also the prompt-injection threat (Chapter 23) playing out at the tool layer. The defense pattern is the same: assume the LLM can be tricked; assume the prompt-level instructions are not airtight; enforce policy at the tool-execution layer.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 813,
+      "out_sha": "0b1ffc493796",
       "note": ""
     },
     {
