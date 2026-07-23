@@ -3299,11 +3299,11 @@
       "en_title": "Chapter 11: Advanced RAG and RAG Evaluation",
       "order": 264,
       "src_chars": 2162,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8553d970d4c0",
       "src": "#### The manual labeling SOP\n\nThe retrieval-recall axis requires labeled relevance: which chunks are relevant for which queries. This is the most expensive part of RAG eval; the SOP makes it disciplined.\n\n**Step 1: define relevance levels** :\n\n* 2 = directly answers the query\n* 1 = related but doesn't fully answer\n* 0 = not relevant\n\n**Step 2: prepare the labeling interface** :\n\n* Each query is paired with a candidate set (top-K from a baseline retrieval, plus a sample from the rest of the corpus to catch missed-but-relevant chunks).\n* Labelers see one query at a time with all candidates; they assign 0/1/2 to each candidate.\n\n**Step 3: two-labeler protocol** :\n\n* Each query labeled by two labelers independently.\n* Disagreements resolved through a calibration session (labelers discuss; a senior labeler arbitrates).\n* Inter-annotator agreement (weighted Cohen's kappa) tracked; production floor ≥ 0.6 per Chapter 4 §4.6, with a stretch target of 0.8 (\"confident signal\" band) on the most consequential rubric dimensions.\n\n**Step 4: calibration** :\n\n* Initial calibration session: 20 queries discussed jointly by all labelers to align on rubric interpretation.\n* Quarterly re-calibration: 10 queries sampled from recent production; labelers score; agreement is measured; rubric or instructions refined as needed.\n\n**Step 5: scale** :\n\n* Pilot phase: 50 queries; refine rubric and instructions based on labeling experience.\n* Production phase: 200–500 queries forming the production golden set.\n* Ongoing: add ~30 queries per quarter as production reveals new patterns.\n\nCost: at Strata's scale, initial labeling cost about 8K USD (paid labelers at consulting rates) + about 60 hours of senior-engineer review time. Ongoing cost: ~1K USD + 10 engineer-hours per quarter. The cost is real; the cost is what makes the eval defensible to customers in a regulated domain.\n\n\n#### Integration with CI\n\nThe eval runs against the production golden set on every PR that changes retrieval or generation components. Comparison against the baseline (current production) flags any regression below threshold. Chapter 5's eval-as-CI workflow extends naturally to RAG.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 815,
+      "out_sha": "f6454a7f7e23",
       "note": ""
     },
     {
