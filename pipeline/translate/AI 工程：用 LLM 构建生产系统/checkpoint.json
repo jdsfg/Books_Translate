@@ -5027,11 +5027,11 @@
       "en_title": "Chapter 17: Multi-Model Routing and LLM Gateways",
       "order": 408,
       "src_chars": 2440,
-      "status": "pending",
+      "status": "done",
       "src_sha": "79a59571b7f8",
       "src": "### 17.8 Helios case: 1M USD/month inference, per-tenant cost governance\n\nThe full story of Helios's router layer:\n\n**Scale** : 10M+ tickets/month; ~5M trajectories that involve LLM calls; ~30M total LLM calls/month including agent intermediate steps. 1M USD+/month inference spend.\n\n**Architecture** : LiteLLM self-hosted, deployed as a service on Kubernetes. ~5 router instances behind a load balancer; each instance handles ~1K calls/second. Backed by Postgres for tenant budget tracking and key management.\n\n**Tenant management** : 200+ enterprise customers, each with their own monthly inference budget (negotiated contract terms: 1K USD to 250K USD/month per tenant). Per-tenant budgets enforced via the budget middleware (§17.6).\n\n**Routing logic** :\n\n* A small classifier (Haiku call) runs at the start of each ticket to identify the tier (easy/standard/hard).\n* The agent uses the assigned tier for all calls in that trajectory.\n* If the agent escalates mid-trajectory (e.g., the easy-tier classifier was wrong; the ticket turned out to be hard), the router upgrades the trajectory to a higher tier.\n* Per-tenant overrides exist for tenants who've contracted for premium tiers regardless of ticket complexity.\n\n**Failure handling** :\n\n* 2024: Anthropic 4-hour partial outage. Router failed over to OpenAI for the affected calls; customers saw normal service. Cost: ~30K USD extra in OpenAI calls during the window; preserved revenue: estimated 200K USD+ in tickets that would have failed.\n* 2025: OpenAI rate-limit issue affected a subset of Helios's traffic for 90 minutes. Router redirected to Anthropic and Google. Service continuity preserved; minor latency spike on affected calls.\n* 2025: Google Gemini Flash had a quality regression that affected Helios's eval scores in production. The router was reconfigured (within hours) to skip Flash; service quality recovered.\n\n**Cost story** : From the discussion in §17.4, the routing layer saves ~65% vs always-Sonnet baseline. At 30M calls/month, that's tens of thousands of dollars per day in saved inference cost. The router's own cost (running the LiteLLM service, the Postgres for tracking, the classifier model) is in the low five figures per month (a small fraction of the savings).\n\nAt Helios's scale the router earns its keep: the architecture, the routing logic, and the per-tenant governance together enable the business model. Without it, the unit economics collapse.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 999,
+      "out_sha": "6147a66ed9b0",
       "note": ""
     },
     {
@@ -5039,11 +5039,11 @@
       "en_title": "Chapter 17: Multi-Model Routing and LLM Gateways",
       "order": 409,
       "src_chars": 2317,
-      "status": "pending",
+      "status": "done",
       "src_sha": "545fa4300ba5",
       "src": "### 17.9 Triangle Trade-off sidebar: routing strategies (cost-breakdown format)\n\nThe cost-decomposition for Helios's 10M tickets/month under three routing strategies:\n\n**Strategy A: always use Sonnet 4 (no routing)**\n\n* All 10M tickets × ~0.30 USD/ticket = **3,000,000 USD/month**\n\n**Strategy B: simple tiered routing (75% easy, 20% standard, 5% hard)**\n\n* Easy: 7.5M × 0.04 USD = 300,000 USD\n* Standard: 2.0M × 0.18 USD = 360,000 USD\n* Hard: 0.5M × 0.45 USD = 225,000 USD\n* **Total: 885,000 USD/month**\n\n**Strategy C: optimized routing (Helios actual; with classifier overhead)**\n\n* Classifier: 10M × 0.005 USD = 50,000 USD\n* Easy tier (Flash/mini, 75%): 7.5M × 0.04 USD = 300,000 USD\n* Standard tier (Haiku/4o, 20%): 2.0M × 0.18 USD = 360,000 USD\n* Hard tier (Sonnet/4o, 5%): 0.5M × 0.45 USD = 225,000 USD\n* Router infrastructure (LiteLLM service, DB): ~5,000 USD\n* **Total: 940,000 USD/month**\n\nNotice that C is slightly more than B because of the classifier overhead and infrastructure. The classifier is what _enables_ B and C; without it, the tier assignment is random and quality suffers. C is the _real_ optimized strategy; B is the idealized counterfactual you'd see if tiers were perfectly distributed at zero overhead.\n\nNet comparison vs Strategy A: **3M USD - 0.94M USD ≈ 2.06M USD/month savings, or ~69% on the table-arithmetic case**. Helios's reported operating number runs ~65%; the ~4-point gap covers classifier overhead, occasional misroutes, and the longer-than-modal tail of trajectories not represented in the modal arithmetic above. Either way, the routing layer + classifier pay back in days.\n\nWhat to read off:\n\n  1. **The single biggest cost lever in production AI is routing**. Going from always-Sonnet to tiered routing cuts the bill by ~65–70%, depending on whether you measure the table-arithmetic ideal (~69%) or Helios's reported operating result (~65%).\n  2. **The classifier overhead is small** (~5% of total cost) and pays for itself many times over by enabling the tiered routing in the first place.\n  3. **Standard tier is the largest single cost line** (despite handling only 20% of tickets) because the cost-per-ticket is meaningful and the volume is substantial. Optimizing the standard tier (cheaper model where possible without quality loss) is the biggest individual lever.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1082,
+      "out_sha": "62d5ac88af92",
       "note": ""
     },
     {
