@@ -7391,11 +7391,11 @@
       "en_title": "Chapter 25: Anti-Patterns and Where the Field Is Going",
       "order": 605,
       "src_chars": 1072,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e8dfafb43cb8",
       "src": "  9. _Cultures that reward consensus_ : trusting LLM-as-judge (anti-pattern 5) is reinforced because calibration work is contentious and slow; the team agrees to use whatever judge is available rather than fighting over calibration.\n\n  10. _Cultures that reward technical depth_ : over-engineering (anti-pattern 2) is reinforced. The senior engineers' instinct to build the _right_ solution drives unnecessary complexity.\n\nHow a team identifies its highest-risk anti-pattern: look at what the team rewards. If shipping is rewarded, anti-pattern 1 is the risk. If novelty is rewarded, anti-pattern 6. If technical depth is rewarded, anti-pattern 2. The anti-pattern that aligns with the team's reward structure is the one that gets reinforced over time; the team must explicitly counteract it.\n\nThis is harder than identifying anti-patterns in the abstract. It requires honest self-assessment of what the team praises and promotes. The teams that do this assessment improve; the teams that do not slowly intensify their dominant anti-pattern until it produces an incident.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 304,
+      "out_sha": "d94474a92a71",
       "note": ""
     },
     {
@@ -7403,11 +7403,11 @@
       "en_title": "Chapter 25: Anti-Patterns and Where the Field Is Going",
       "order": 606,
       "src_chars": 3212,
-      "status": "pending",
+      "status": "done",
       "src_sha": "baed4829c9b7",
       "src": "#### Application Problems\n\n**Q1.** _Self-audit_. Apply the §25.2 cheat sheet to your team's current AI engineering. Identify the 3 highest-impact gaps and propose a 6-month plan to close them.\n\n**Answer:** This is a self-assessment; the worked answer is structural. A representative example for a hypothetical team:\n\n**Identified gaps** :\n\n  1. **No production eval; offline eval only**. Catches some regressions but doesn't surface drift.\n  2. **Single-provider (Anthropic only); no router**. Cost discipline impaired; provider outage exposure real.\n  3. **Inline prompt strings; no registry**. Prompt changes scatter across PRs; eval-to-prompt traceability weak.\n\n**6-month plan** :\n\n_Months 1-2_ : build the prompt registry. Files-on-disk; manifest; loader. Migrate top-10 prompts. ~1 engineer-month.\n\n_Months 2-3_ : deploy LiteLLM as router. Start with provider abstraction (no fallback yet); validate same quality on Anthropic. Then add OpenAI as fallback; chaos-test once. ~1.5 engineer-months.\n\n_Months 3-5_ : build production eval. Sample 5% of production trajectories; LLM judge (GPT-4o as judge since system is Anthropic); calibrate against humans on 50 cases; alert on drift. ~2 engineer-months.\n\n_Month 6_ : integrate and stabilize. Each new capability has shaken out its issues; dashboard exists; alerts route appropriately; team has operational practice.\n\nTotal engineering investment: ~5 engineer-months. Total team disruption: minimal (each addition is small enough to fit in normal sprint work). Total business value: significantly reduced incident risk; multi-provider posture; production quality measurement.\n\nThe plan is realistic; the gaps are addressed in priority order; the team's 6-month state is materially better than the starting state.\n\n**AI-collaboration sub-question** : How would you ask an LLM to help with this exercise, and what would you verify in its response?\n\n**Answer:** Useful prompt: _Self-audit my team's AI engineering against the 12-item checklist. Identify the top 3 gaps and propose a 6-month plan._ You verify (a) the gap-prioritization reflects business impact, not engineering preference (LLMs may suggest fixing what's \"interesting\" rather than what's most important), and (b) the plan is realistic given your team's actual velocity (LLMs may compress estimates; pad against your true delivery pace).\n\n**Q2.** _Predict your team's 2028_. Based on §25.3's trends, what would your team look like in 2028? What would change in your stack, your practices, your size?\n\n**Answer:** A representative answer (your team's specifics will differ):\n\n**Stack changes** :\n\n* Model providers: probably still Anthropic + OpenAI + Google; possibly self-hosted Llama-class model for high-volume specialty if our scale grows enough.\n* Models: workhorse-tier models we use now (Haiku, mini, Flash) will be 2028's equivalents (possibly much more capable). Frontier-tier shifts to whatever Anthropic/OpenAI/Google's 2028 flagships are.\n* Eval platform: pytest-evals may have evolved or been replaced; the principles persist.\n* Routing: LiteLLM or successor; multi-provider strategy persists.\n* Observability: Langfuse or successor; production-eval integrated.\n\n**Practice changes** :",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1320,
+      "out_sha": "f2877f6caa6a",
       "note": ""
     },
     {
