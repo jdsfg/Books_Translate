@@ -2279,11 +2279,11 @@
       "en_title": "Chapter 7: Structured Output — Forcing the LLM to Speak JSON",
       "order": 179,
       "src_chars": 1502,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f00198d35271",
       "src": "Downstream code:\n    \n    \n    envelope = summarize_clinical_note(dictation, request_id=\"req-abc-123\")\n    if envelope.result.kind == \"success\":\n        insert_into_ehr(envelope.result)\n    elif envelope.result.kind == \"error\":\n        flag_for_human_review(envelope.result.reason, envelope.result.detail)\n    \n\nThe downstream code is type-safe, branches cleanly on the discriminator, and treats the error path as a first-class outcome rather than an exception. This is the production-grade shape.\n\n\n### 7.10 Triangle Trade-off sidebar: structured output choices (classic format)\n\nApproach | Cost (vs prose) | Latency (vs prose) | Reliability | Best for  \n---|---|---|---|---  \nProse + post-hoc regex | Same | Same | Low (regex breaks on phrasing) | Quick prototypes  \nNative JSON-schema mode | Slightly lower (output is more compact) | Same | High (provider-enforced) | Most production cases  \n`instructor` \\+ native | Slightly lower | Same | High + retry on validation | Pydantic-typed Python codebases  \n`outlines` (logit constraints) | Slightly lower | Slightly higher (constraint overhead) | Highest (mathematical guarantee) | Self-hosted / open-weight / unusual constraints  \nTool calling (as structured output) | Slightly lower | Same | High | Agent contexts; orchestration  \n  \nThe take: **for any production structured-output need, the default is`instructor` \\+ native JSON-schema mode**. Other approaches exist for specific reasons; the default covers the 80% case with excellent ergonomics.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 810,
+      "out_sha": "7e6565042763",
       "note": ""
     },
     {
@@ -2291,11 +2291,11 @@
       "en_title": "Chapter 7: Structured Output — Forcing the LLM to Speak JSON",
       "order": 180,
       "src_chars": 2048,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1d608aa50900",
       "src": "### 7.11 How This Breaks: the schema that hides the failure\n\n**Failure mode named** : the schema that hides the failure. A team designs a schema with overly permissive fields (e.g., `notes: str | None` everywhere). The model fills these permissive fields with its best guess when it should have failed loudly. The validator passes; the downstream code processes the output as if it were correct; the wrong information propagates through the system silently.\n\n**Real or composite incident** : a composite. A clinical summarizer had a `medications: list[str]` field. The model, faced with an unclear dictation, sometimes produced an empty list (`\"medications\": []`) — the safer-looking answer — when the dictation actually mentioned medications it couldn't parse cleanly. The validator passed (the schema allowed empty lists); the downstream code inserted \"no medications\" into the chart. Two cases of medication discrepancy were caught by clinicians on review; the team retrofitted a `medications_unclear: bool` field and a corresponding prompt instruction (_set medications_unclear to true if you saw medication mentions you could not parse_). The schema change closed the gap.\n\n**Engineering mitigation** : **the schema should expose model uncertainty, not hide it**. Design fields for the \"I don't know\" case explicitly: a `confidence` score, an `unclear_elements` list, a `kind: \"error\"` variant for unparseable inputs, an `unclear: bool` flag on uncertain fields. Force the model to use them when appropriate; verify with eval cases that include unparseable inputs and expect the error path.\n\n**The eval that would have caught it** : a _negative-test_ eval slice. Include in the golden set 20–30 cases of deliberately-unparseable or ambiguous inputs, with the reference output being the error variant or the explicit-uncertainty markers. If the model produces a \"success\" response with hallucinated content on these cases instead of the error response, the eval flags it. Without the negative-test slice, the failure mode propagates invisibly.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 817,
+      "out_sha": "4fa4cbec7c65",
       "note": ""
     },
     {
