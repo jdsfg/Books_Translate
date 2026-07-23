@@ -7691,11 +7691,11 @@
       "en_title": "Appendix B — Reference Architecture Catalog",
       "order": 630,
       "src_chars": 2325,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a59d89ea634b",
       "src": "#### Pattern 8: Observability with PHI Redaction (Regulated)\n\n**What problem it solves.** HIPAA covered entity, GDPR sensitive-category processor, PCI handler. The standard observability story — ship every prompt and response to Datadog or Honeycomb — is a compliance violation: prompts carry PHI/PII the vendor isn't a Business Associate for. You still need traces. Beacon Health AI lives in this constraint and built the pattern.\n\n**Topology.** Every LLM call emits an OpenTelemetry trace from the AI service. Before the trace leaves the network boundary, it passes through a redaction sidecar — a small Go or Rust service (low latency matters; redaction is on the ingestion critical path) that scans prompt and response spans. The detector is layered: regex for structured identifiers (SSN, MRN, account numbers, email, phone); NER (spaCy with a HIPAA-Safe-Harbor entity set, or a fine-tuned BERT-class model) for free-text PHI (names, addresses, dates); and a final LLM pass for adversarial cases, run only when prior layers agree the text is \"probably clean\" so you don't pay the LLM tax on the majority of traces. Detected entities are replaced with typed tokens (`[NAME_1]`, `[DOB_1]`) preserving co-reference. The redacted trace ships to the trace store — self-hosted Langfuse for LLM-observability features, self-hosted Tempo or Jaeger for spans only. Grafana dashboards show latency, cost, error rate, and a per-tenant quality proxy. The original un-redacted trace lives in a separate raw-trace vault inside the BAA-covered data plane with short retention (24-72 hours) and access-audited reads — for incident response only, never routine dashboards.\n\n**When to use it.** HIPAA, PCI, GDPR special category, or any regime where prompt contents are themselves regulated. The redaction layer pays for itself the first time legal asks \"what does our observability vendor see?\"\n\n**When NOT to use it.** Data is not regulated. Redaction adds 20-100 ms to every trace ingest and a meaningful operational surface to monitor; don't take it on without the compliance justification.\n\n**Cross-references.** Chapter 19 (observability for LLM systems, including §19.7's PHI-redaction patterns and §19.6's HIPAA tension); Chapter 23 (output-safety and the four-layer prompt-injection defense, which reuses the same PII patterns).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 931,
+      "out_sha": "b0797b559bbe",
       "note": ""
     },
     {
