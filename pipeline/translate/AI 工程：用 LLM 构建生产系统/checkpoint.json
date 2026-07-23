@@ -7019,11 +7019,11 @@
       "en_title": "Chapter 24: The AI Engineering Team, Workflow, and Engineering Judgment",
       "order": 574,
       "src_chars": 2846,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3f99357225e0",
       "src": "### 24.10 Triangle Trade-off sidebar: feature-investment decisions (cost-breakdown format)\n\nThe cost-decomposition for a proposed AI feature investment over 18 months:\n\nFor a hypothetical feature: spec → eval → build → canary → production → 12 months of operation. 4-engineer-pod (800K USD all-in over 18 months).\n\n**Cost lines** :\n\n* _Phase 1 (spec + can-we-eval gate)_ : 0.5 engineer-month = 20K USD\n* _Phase 2 (eval build, including labeling)_ : 2 engineer-months + ~15K USD labeling = 95K USD\n* _Phase 3 (build + prompt iteration)_ : 4 engineer-months = 160K USD\n* _Phase 4 (canary + rollout)_ : 2 engineer-months = 80K USD\n* _Phase 5 (12-month operations)_ : 4 engineer-months over the year for maintenance + iteration = 160K USD\n* _Production infrastructure (12 months)_ : ~60K USD (inference; observability; eval platform allocated share)\n* _Risk-management overhead (12 months)_ : ~30K USD (safety reviews; incident response; compliance)\n\nTotal 18-month cost: ~605K USD (engineering) + 90K USD (infrastructure + overhead) = ~695K USD.\n\n**Benefit estimate** (the engineering team's honest accounting, using Beacon's clinical-notes summarizer as the worked example, the feature that _did_ ship, contrasted with the killed feature in §24.9):\n\n* Clinician-time saved per note: ~4 minutes per note (the dictation-to-final-summary path goes from ~7 minutes of clinician edit time without the summarizer to ~3 minutes with it). At a loaded clinician cost of ~150 USD/hour and ~30 notes per clinician per day, savings are ~30 × 4 min × 150 USD/60 min = ~300 USD/clinician/day.\n* Across Beacon's pilot deployment of 200 clinicians and ~250 working days/year, that is ~15M USD/year in clinician-time recovered, of which Beacon captures a portion as subscription revenue and customer-retention value. Beacon's accounting credits the feature with ~4M USD/year in attributable value.\n* Operational cost saved: ~5% reduction in note-correction escalations to senior clinicians (from ambiguous unstructured notes). At Beacon's audit pricing, ~300K USD/year.\n\nNet benefit per year (if assumptions hold): ~4.3M USD/year.\n\n**Decision frame** : payback period = 695K USD / 4.3M USD/year ≈ 2 months. Beacon shipped the feature. The killed feature in §24.9 ran the same analysis and concluded the benefit-side numbers couldn't be defensibly estimated (because the eval κ was below the production floor, the team couldn't make a clinical-accuracy claim that supported any benefit estimate); without numerator, the analysis halted at the gate. Both decisions used the same template.\n\nThe discipline: **honest accounting with explicit assumptions**. Many features wouldn't survive this scrutiny; some that initially seemed attractive get killed at this analysis. Some that initially seemed marginal pass because the operational savings are larger than expected.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1207,
+      "out_sha": "55636efc84c7",
       "note": ""
     },
     {
@@ -7031,11 +7031,11 @@
       "en_title": "Chapter 24: The AI Engineering Team, Workflow, and Engineering Judgment",
       "order": 575,
       "src_chars": 1930,
-      "status": "pending",
+      "status": "done",
       "src_sha": "51338b818bd4",
       "src": "### 24.11 How This Breaks: the feature that shipped without the eval gate\n\n**Failure mode named** : the feature that shipped without the eval gate. The team skips the can-we-eval-this? gate at scoping. The feature gets built. The eval is attempted post-build and turns out to be infeasible: the rubric doesn't produce reliable labels; the threshold can't be defended. The team is now in the awkward position of having a built feature without a defensible quality measurement.\n\n**Real or composite incident** : the inverse of the Beacon kill. A team builds an AI feature; pre-launch eval design fails; the team ships anyway with vague quality assurances (\"we tested it informally\"). Six months later, a customer complaint reveals a quality issue; the team can't quantify how widespread the issue is because they don't have an eval; the recovery is unstructured. The feature is eventually deprecated quietly.\n\n**Engineering mitigation** :\n\n  1. **Eval gate is non-negotiable at scoping**. No feature passes spec without a viable eval design.\n  2. **Pilot the labeling early**. Inter-annotator agreement should be measured before committing engineering build cycles. If labels can't be made reliable, the eval can't be reliable.\n  3. **Senior engineering review of the eval design**. Don't let junior engineers self-approve their evals; senior review catches the _this won't actually work_ cases early.\n  4. **Discipline of _kill at scoping_** as a celebrated skill, not a failure. Teams that kill at scoping should be praised; the team that kills 10 features at scoping and ships 5 with reliable quality is a stronger team than one that ships 15 features with unknown quality.\n\n**The eval that would have caught it** : the eval-design review at scoping. The discipline is process, not specific code. Teams that institutionalize the review catch the failure mode at scoping; teams that don't ship and discover the issue post-launch.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 670,
+      "out_sha": "53a5cfdc9441",
       "note": ""
     },
     {
