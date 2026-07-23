@@ -3203,11 +3203,11 @@
       "en_title": "Chapter 10: Embeddings, Vector Databases, and Hybrid Search",
       "order": 256,
       "src_chars": 1568,
-      "status": "pending",
+      "status": "done",
       "src_sha": "66a4da34f87f",
       "src": "  3. **Latency cliff at peak QPS.** Pinecone scales QPS more elastically; pgvector under unexpected QPS spikes can hit Postgres connection-pool limits or HNSW index memory pressure. Load-test pgvector at projected peak QPS plus headroom; provision before cutover.\n\n**Cost summary.** A team migrating a 50M-chunk corpus from Pinecone to pgvector typically saves 3K USD to 15K USD per month in Pinecone fees, against a one-time ops cost of 20K USD to 50K USD in engineering time (~1 engineer-month for the migration, plus the ongoing ~10-20% ops surcharge thereafter). At scale, the ROI is good; at smaller scale, the engineering effort may not justify itself. The chapter's framing is: _defaults are right for the median case; pick what fits your case_.\n\n**AI-collaboration sub-question** : How would you ask an LLM to help with this exercise, and what would you verify in its response?\n\n**Answer:** Useful prompt: _Reverse migration from Pinecone back to pgvector with zero downtime. Specify steps, differences from the forward direction, new risks._ You verify (a) the LLM identifies the _ops-shape inversion_ (forward direction reduces ops, reverse direction adds ops; LLMs sometimes miss this asymmetry and describe both directions as symmetric), (b) the LLM proposes building the hybrid-search layer in pgvector _before_ cutover (without this, hybrid regression is the silent failure mode; LLMs sometimes skip this step), and (c) the LLM accounts for re-embedding cost if applicable (forward direction usually doesn't require re-embedding; reverse direction may).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 607,
+      "out_sha": "09175829293f",
       "note": ""
     },
     {
