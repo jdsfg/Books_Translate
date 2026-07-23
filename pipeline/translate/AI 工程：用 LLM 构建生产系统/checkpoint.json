@@ -3479,11 +3479,11 @@
       "en_title": "Chapter 11: Advanced RAG and RAG Evaluation",
       "order": 279,
       "src_chars": 3441,
-      "status": "pending",
+      "status": "done",
       "src_sha": "99309c654a30",
       "src": "  1. **Silent quality decay over time**. Each undetected regression accumulates. By month 6, the system's quality is materially worse than launch, and the team has no idea.\n\n  2. **No defensible answer to _is this safe for our use case?_**. In regulated industries (legal, medical), customers ask for evidence of quality. Without an eval, the answer is _we hope so_ , which doesn't pass procurement.\n\n  3. **Unable to make architectural changes**. _Should we switch the embedding model? Should we add a reranker? Should we increase chunk size?_ Without an eval, every change is a gamble. With an eval, every change is measurable.\n\n  4. **Customer-found bugs**. The team's first signal of a problem is a customer complaint, days or weeks after the issue started. By then, dozens of customers may have hit the problem.\n\nThe investment in RAG eval is the line between _demo-quality_ and _production-quality_. Teams that don't make the investment ship demo-quality systems and discover the costs later. Teams that make the investment up front pay the engineering cost early and ship reliably.\n\nIn 2026, the discipline is well-known but unevenly practiced. Teams shipping production RAG without rigorous eval will increasingly struggle to compete with teams that have the discipline. The pattern parallels the broader AI-engineering arc: eval discipline is the floor that makes everything else possible.\n\n**Q3.** _Multi-axis rubric weighting as a product decision._ The §11.4 rubric has six axes. The question of _how to weight them_ is a product decision, not an engineering one. Consider three different RAG products: a medical-decision-support tool, a developer-documentation assistant, and a legal-research product. For each, propose a weighting (which axes weigh most; which weigh least) and justify the choice in terms of the product's failure cost.\n\n**Discussion:** Each product has a different failure-cost profile; the rubric weighting should reflect what the product cannot afford to get wrong.\n\n**Medical-decision-support tool** : harm-avoidance dominates. Proposed weighting:\n\n* Harmful-output rate: hard gate (any positive blocks release; not a weighted axis but a binary requirement).\n* Clinical accuracy: highest weighted axis (e.g., 40% of the weighted score).\n* Faithfulness (no fabrication, every claim cited): 25%.\n* Completeness: 15% (missing some context is bad but not as bad as fabricating).\n* Retrieval recall: 10%.\n* Retrieval precision: 10%.\n\nRationale: a fabricated medication or a wrong dose can kill. Completeness can hurt (missing a relevant interaction) but is less catastrophic than fabrication. Retrieval quality matters but is upstream; the clinical-accuracy axis catches the integrated effect.\n\n**Developer-documentation assistant** : utility dominates; failure cost is friction, not harm. Proposed weighting:\n\n* Completeness: 30% (developers need enough context to actually use the answer).\n* Faithfulness: 25% (answers should be grounded in actual docs, not invented APIs).\n* Retrieval recall: 20% (the right doc page must be retrieved).\n* Retrieval precision: 10%.\n* Format compliance (correct code blocks, correct language hints): 10%.\n* Harmful-output rate: not applicable (developer audience; near-zero downside risk).\n\nRationale: a developer who gets a thin or wrong answer wastes time and loses trust; a developer who gets a complete, grounded answer ships faster. Completeness is the value proposition.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1146,
+      "out_sha": "80a31243ed67",
       "note": ""
     },
     {
@@ -3491,11 +3491,11 @@
       "en_title": "Chapter 11: Advanced RAG and RAG Evaluation",
       "order": 280,
       "src_chars": 1510,
-      "status": "pending",
+      "status": "done",
       "src_sha": "03d763869b17",
       "src": "**Legal-research product** : precision and groundedness dominate. Proposed weighting:\n\n* Faithfulness with citation: 35% (every claim must trace to a real, current authority).\n* Temporal validity (every cited authority is in force on the relevant date): 25%.\n* Retrieval precision: 20% (returning the wrong jurisdiction or wrong area is worse than missing context).\n* Clinical-style accuracy (here: legal accuracy): 10%.\n* Completeness: 5%.\n* Retrieval recall: 5%.\n\nRationale: legal answers must be defensible; a lawyer who cites a superseded statute or a wrong jurisdiction faces malpractice exposure. Precision dominates recall (better to return nothing than the wrong thing). Temporal validity is a unique legal concern (§11.5 Q3) that earns its own weight.\n\nThe general lesson: rubric weighting is not a one-size-fits-all formula; it encodes the product's value proposition and risk profile. Engineering can implement any weighting; the _choice_ of weighting requires product sense. A team that ships a RAG product without explicit weighting decisions is implicitly deciding _all axes matter equally_ , which is rarely right.\n\nCross-reference: Chapter 4's eval-design framework asks _what does success look like? what does failure look like?_ The rubric weighting is where that question concretely lands for RAG. The decision should be made in collaboration between AI engineers, product, and domain experts; documented in the eval-design doc; reviewed quarterly as the product's risk surface evolves.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 486,
+      "out_sha": "9fba8720a1ad",
       "note": ""
     },
     {
