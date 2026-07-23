@@ -2159,11 +2159,11 @@
       "en_title": "Chapter 6: Prompt Engineering — What Still Matters in 2026",
       "order": 169,
       "src_chars": 1194,
-      "status": "pending",
+      "status": "done",
       "src_sha": "947b456c71f3",
       "src": "**Organizational structure that makes this work.** A _prompt review process_ analogous to code review but with two reviewer pools. The domain expert owns the substance; the engineer owns the operational integration. The prompt registry's commit history records both reviewers. At Strata, this looks like: senior associates draft prompts; AI engineers review for token discipline and eval shape; both sign off before promotion. At Beacon, clinical leads draft summarizer prompts; AI engineers review and run the eval; both sign off. The pattern works when the two roles respect each other's expertise; it fails when one side dominates (lawyers writing untested prompts that crash production, or engineers writing prompts that pass eval but encode legal errors). The discipline is sociotechnical; the chapter's tooling supports it, but the discipline lives in the review process.\n\nThe 2030 prediction: as AI engineering matures, the _prompt-as-code_ frame wins on the operational layer (the chapter's tooling becomes industry baseline); the _prompt-as-content_ frame wins on the authorship layer (domain experts increasingly draft prompts in their domain). The hybrid is the durable pattern.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 428,
+      "out_sha": "488d282f09dd",
       "note": ""
     },
     {
