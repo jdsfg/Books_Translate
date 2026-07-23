@@ -2471,11 +2471,11 @@
       "en_title": "Chapter 7: Structured Output — Forcing the LLM to Speak JSON",
       "order": 195,
       "src_chars": 1489,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2e6c41d27051",
       "src": "  4. **Constraints beyond JSON-schema.** `outlines`-style grammar constraints stay useful as long as some outputs need richer constraints than schema (SQL, regex, custom grammars). Frontier models will not natively constrain to _every_ possible grammar; the library layer provides this.\n\n**The function that survives.** Even if the literal constrained-decoding problem disappears, the libraries' role as _integration layer_ between LLM calls and typed application code persists. They cease to be \"constraint enforcement libraries\" and become \"LLM-to-application integration libraries\" with constraint enforcement as one of several functions.\n\n**2030 prediction.** `instructor` looks similar in 2030 to its 2026 form, with the constraint-enforcement layer thinned (because the providers handle most of it natively) but the type-binding, retry-loop, and provider-abstraction layers thickened. `outlines` survives in the long-tail (research projects, self-hosted models, grammar-constrained outputs). Pydantic remains the type substrate. The libraries' _name_ may even survive; their _function set_ shifts.\n\nThe general lesson: **libraries that solve a technical problem die when the problem goes away; libraries that occupy a useful position in the stack survive even as the problem they originally addressed evaporates**. `instructor`'s position (between LLM and Pydantic) is durable; the constraint-enforcement angle is one historical justification for the position, not the only one.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 526,
+      "out_sha": "127a9251dff8",
       "note": ""
     },
     {
@@ -2483,11 +2483,11 @@
       "en_title": "Chapter 8: Context Engineering and the Long-Context vs RAG Decision Tree",
       "order": 196,
       "src_chars": 3048,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f3e3a4fc5822",
       "src": "> **Current as of 2026.** The single fastest-aging element here is the context-window numbers themselves: Claude 200K, GPT-4o 128K, Gemini 2.5 Pro 2M, and the tier boundaries built around them (<500K, 500K–10M, >10M). If you're reading this after a model release has pushed the frontier past 10M tokens, recompute the tier boundaries at roughly the same ratios; the decision tree itself still holds.\n\nChapter 6 was about what goes into the prompt. This chapter is about what goes into the _context window_ : a broader question. The system prompt, the conversation history, the retrieved documents, the tool outputs, the prior assistant messages, the few-shot examples, the user's current message, the structured-output schema: all of these together fit (or don't fit) into the context window the model has available.\n\nThe shift in vocabulary — from _prompt engineering_ to _context engineering_ — is a 2024–2025 turn in the field, and it reflects the reality that production LLM systems live or die on how their context budget is allocated. A team that thinks of the context window as _a place I put my prompt_ is mostly working on small features. A team that thinks of the context window as _a finite resource I am budgeting across competing demands_ is doing serious AI engineering.\n\nThis chapter sets the framing, walks the major techniques production teams use, and ends with binding workflow #4: the long-context vs RAG decision tree, in matrix form, with the tier boundaries dated.\n\n\n### 8.1 The context window as a finite resource\n\nThe context window is the model's working memory for a single inference call. As of 2026:\n\n* Claude Sonnet 4: 200K tokens\n* GPT-4o: 128K tokens\n* Gemini 2.5 Pro (long-context config): 2M tokens\n* Workhorse-tier models (Haiku, mini, Flash): 128K–1M tokens\n\n200K tokens sounds enormous. It is. 200K tokens is about 150K English words, which is more than this whole book. You could put the entire _Federalist Papers_ in a single API call to Claude Sonnet 4 and ask the model to summarize the constitutional theory contained therein.\n\nBut 200K tokens is also tight. A typical production system fills it like this:\n\nComponent | Typical tokens  \n---|---  \nSystem prompt | 500–2,000  \nTool definitions | 200–2,000  \nConversation history (long chat) | 5,000–50,000  \nRetrieved RAG context | 2,000–20,000  \nFew-shot examples (if used) | 500–5,000  \nCurrent user message | 50–2,000  \nOutput budget (`max_tokens`) | 500–4,000  \n  \nA real customer-support agent at Helios, fully loaded, fits in about 50K–80K tokens. Adding more retrieval, more history, more tool definitions, and that 200K ceiling gets close. And the cost story is brutal: 200K input tokens at 3 USD/1M is 0.60 USD per call, before output. At 10M tickets per month, fully-loaded context is _a real number on the inference bill_.\n\nSo context engineering is the discipline of **getting the most useful context into the window for the least cost and the least loss of model focus**. The trade-offs are real; the moves are limited; the engineering matters.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1275,
+      "out_sha": "eeee788db2af",
       "note": ""
     },
     {
