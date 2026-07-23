@@ -2111,11 +2111,11 @@
       "en_title": "Chapter 6: Prompt Engineering — What Still Matters in 2026",
       "order": 165,
       "src_chars": 3466,
-      "status": "pending",
+      "status": "done",
       "src_sha": "71f1bdc2b4e2",
       "src": "**Answer:** Useful prompt: _I have a classification prompt running 40M calls/month at 8.16K USD. Budget is 5.5K USD. Quality floor is 0.82. Propose three prompt variants under the cost ceiling; predict eval and cost for each._ You verify (a) the arithmetic (LLMs make per-token math errors; recompute by hand), (b) the eval predictions are not over-optimistic (the LLM tends to predict that compression preserves quality; cross-check against §6.6's V1 to V4 arc where each compression actually moved the score), and (c) that one variant lands above the quality floor with margin, not at floor; floor-grazing variants regress in production when traffic shifts.\n\n**Q6.** _Cross-chapter: prompt-iteration loop given a Chapter 4 eval suite._ You inherited a code-review-bot with a system prompt that scores 0.73 on the project's eval. The eval has four dimensions: correctness (0.78), specificity (0.65), false-positive rate (0.71), and tone (0.79). The team wants to lift specificity and the false-positive rate without regressing the others. Design the prompt-iteration loop. Use Chapter 4's eval discipline (golden set, multi-axis rubric) as the substrate.\n\nHint\n\nEach prompt change should target a specific dimension; the eval tells you whether the change paid off without unintended regression on the other dimensions. §6.5 and §6.6 are the workflow templates.\n\n**Answer:** The loop:\n\n  1. **Diagnose the failure modes per dimension.** Pull 20 to 30 eval examples where specificity scored low and 20 to 30 where false positives happened. Read them. The category of failure shapes the prompt change: _specificity low_ might mean the model gives generic suggestions (_consider error handling_) instead of pointing at the specific line; _false positive_ might mean the model flags style issues as bugs.\n\n  2. **Hypothesize a prompt change targeted at the diagnosed mode.** For specificity, add an instruction: _Each finding must reference the specific line number and quote the exact code being critiqued._ For false positives, add: _Distinguish between (a) definite bugs (code that will misbehave) and (b) style preferences (code that works but could be cleaner). Tag each finding with severity: critical, suggestion, or nit._\n\n  3. **Run the full eval on the new prompt.** Not just the targeted dimensions; the full multi-axis rubric. The risk: instructions added for specificity (e.g., _quote the code_) may slow the output (regress latency) or change the tone (regress tone). The Chapter 4 discipline is to score _all_ dimensions every run, because dimension trade-offs are the dominant failure mode of prompt iteration.\n\n  4. **Compare against the baseline with statistical significance.** A 0.02 lift on specificity may be noise if the eval size is 80. If the eval is 200+, a 0.03 lift is meaningful. Use the eval-confidence framing from Chapter 4; don't promote prompts on within-noise lifts.\n\n  5. **Iterate: if a dimension regressed, modify the change.** Often the first attempt at improving specificity adds verbosity that regresses tone; the next iteration restructures the verbosity (bullets instead of prose, line refs instead of long quotes) to preserve tone.\n\n  6. **Promote and version.** When a candidate passes the multi-axis bar (target dimensions up, no other dimension regressed beyond noise), promote in the prompt registry (§6.4); keep the diff and eval scores in the prompt's version history so the next maintainer sees why this version exists.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1366,
+      "out_sha": "5add68b7b379",
       "note": ""
     },
     {
@@ -2123,11 +2123,11 @@
       "en_title": "Chapter 6: Prompt Engineering — What Still Matters in 2026",
       "order": 166,
       "src_chars": 1240,
-      "status": "pending",
+      "status": "done",
       "src_sha": "563906af6f75",
       "src": "Expected outcome on this case: specificity probably reaches 0.75 to 0.80 with the line-quoting instruction; false-positive rate probably reaches 0.78 to 0.82 with the severity-tagging change. The overall score lifts from 0.73 to 0.78 to 0.81 region across 3 to 4 iterations of about half a day each. The eval is the steering wheel; without it, you're guessing.\n\n**AI-collaboration sub-question** : How would you ask an LLM to help with this exercise, and what would you verify in its response?\n\n**Answer:** Useful prompt: _Code-review-bot prompt scores 0.73 across four dimensions (correctness 0.78, specificity 0.65, false-positive rate 0.71, tone 0.79). Design a prompt-iteration loop that lifts the two weak dimensions without regressing the others, using a multi-axis eval discipline._ You verify (a) the LLM doesn't recommend changes that target one dimension while ignoring cross-dimension impact (the most common failure mode of LLM-generated prompt advice; it optimizes the asked dimension and silently regresses adjacent ones), and (b) the proposed loop includes a _reject_ step (some iterations don't pay off and must be rolled back; an LLM-generated loop often skips the rollback step and treats every change as an improvement).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 452,
+      "out_sha": "c8b54419f25b",
       "note": ""
     },
     {
