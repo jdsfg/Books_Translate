@@ -6911,11 +6911,11 @@
       "en_title": "Chapter 23: Safety and Reliability in Production",
       "order": 565,
       "src_chars": 2323,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5bc802915f6d",
       "src": "Safety dominates. The asymmetry is sharp: an unbounded runaway can cost five or six figures in a few hours and can also leak data, trigger compliance violations, or burn provider relationships. An economic over-spend caught later can be recovered through billing, customer conversation, or process improvement. The cost of safety false positives is bounded (customer experience hit; engineering work to revisit cap); the cost of safety false negatives is unbounded.\n\nThe practical reconciliation: design the system as _safety-first with economic layers on top_. Specifically:\n\n  1. _Hard kill at the safety boundary_. A trajectory cannot exceed, say, 10× the median trajectory cost without an immediate hard stop, no matter what. This is the runaway protection; it does not negotiate.\n\n  2. _Soft caps for economic differentiation_ below the safety boundary. Different trajectory classes have different soft caps; soft-cap exceedance triggers human review for legitimate over-spend, not a kill. The human's authority is bounded by the hard kill cap.\n\n  3. _Per-tool sub-budgets_ (Chapter 14 §14.5). Even with a generous total budget, individual tools have lower caps; runaway loops on a single tool are caught early.\n\n  4. _Per-window budgets layered over per-trajectory budgets_. A per-trajectory cap of 5 USD plus a per-hour cap of 200 USD catches both single-trajectory runaways and multi-trajectory coordinated runaways.\n\n  5. _Distinct alerts for safety vs economic exceedance_. Safety-cap hits page security on-call immediately; economic-cap hits go to a billing-review queue with 24-hour SLA. The team's attention is correctly directed.\n\n**Net argument** : a cost circuit breaker is genuinely two devices in one. Treating it as only economic (set caps to match budgets) under-protects against the catastrophic failure mode. Treating it as only safety (set caps low; kill on hit) constrains the agent's legitimate capability and damages customer experience. The mature design recognizes both purposes, layers them, and lets safety dominate when they conflict.\n\nThis connects to Chapter 18's cost-discipline framework and Chapter 14's bounded-agent design: the cost breaker is the point where economic and safety disciplines meet, and the right design honors both rather than collapsing them into a single number.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 669,
+      "out_sha": "88b2f987e079",
       "note": ""
     },
     {
