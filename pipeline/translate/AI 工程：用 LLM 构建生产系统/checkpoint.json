@@ -6995,11 +6995,11 @@
       "en_title": "Chapter 24: The AI Engineering Team, Workflow, and Engineering Judgment",
       "order": 572,
       "src_chars": 1728,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f2dc2d20098d",
       "src": "### 24.8 Honest cost-benefit\n\nStakeholders sometimes pressure for AI features that don't justify their cost. The engineering team's job is honest accounting.\n\nThe cost-benefit analysis for an AI feature includes:\n\n**Costs** :\n\n* Engineering build (specifically the AI team's cycles).\n* Engineering maintenance (ongoing eval, prompt iteration, model upgrades).\n* Infrastructure (inference, observability, eval platform).\n* Risk-management overhead (safety reviews, incident response).\n* Opportunity cost (what the team isn't doing instead).\n\n**Benefits** :\n\n* User outcomes improved (specifically; not generically \"better experience\").\n* Operational cost reduced (replacing human work; reducing escalations).\n* Revenue impact (new customer segments enabled; retention improved).\n* Strategic position (capability owned in-house vs vendor-dependent).\n\nThe team's honest assessment may surface that a proposed AI feature doesn't justify itself. The communication of this back to stakeholders is where engineering judgment meets organizational diplomacy. Some patterns:\n\n* _Show the math_ : explicit cost numbers, explicit expected benefit, explicit assumptions.\n* _Identify the assumptions that would have to be true_ for the feature to justify itself. \"This makes sense if we expect X retention lift. Is that lift plausible based on similar features we've shipped?\"\n* _Propose alternatives_ : if the AI feature doesn't justify, what does? A simpler version? A different product investment?\n\nThe discipline: cost-benefit analysis is part of the engineering work, not just the PM's work. AI engineers in 2026 are expected to engage with the economic dimension; the days of \"just build it and we'll figure out the value\" are passing.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 570,
+      "out_sha": "61a36383d26c",
       "note": ""
     },
     {
@@ -7007,11 +7007,11 @@
       "en_title": "Chapter 24: The AI Engineering Team, Workflow, and Engineering Judgment",
       "order": 573,
       "src_chars": 3316,
-      "status": "pending",
+      "status": "done",
       "src_sha": "dc86e697fdfe",
       "src": "### 24.9 Beacon Health AI: the feature that was killed\n\nThe composite case from §24.4 deserves the full treatment.\n\n**The proposed feature** : a clinical-decision-support module that would observe a clinician's note-taking and proactively surface treatment options. The product team's vision: \"the clinician dictates symptoms; the system suggests evidence-based treatment options ranked by appropriateness for the patient.\"\n\n**The team's response** : the first two weeks went into scoping the spec jointly with the product team. The feature was attractive on its face and the customer demand was real: clinicians had asked for it in user research. In week three the team sat down to design the eval, starting from the rubric: what does _good_ mean for a treatment suggestion? They settled on four dimensions: clinical accuracy (is the suggestion appropriate for the patient's presentation?), evidence quality (is it grounded in current guidelines?), risk awareness (does it flag contraindications?), and context appropriateness (is it practical given resources and follow-up capability?). Week four was the pilot labeling: three clinicians, thirty example cases. Clinician A and B agreed on 65% of suggestions (κ=0.40); B and C agreed on 58% (κ=0.32); A and C agreed on 70% (κ=0.45). The agreement was usable on some cases and not on the harder ones, and the cause wasn't model failure, it was that experienced clinicians genuinely disagreed about _which treatment was best_. Week five was spent refining the rubric, with more specific anchors and more structured dimensions; agreement improved modestly to κ ≈ 0.50 on the average pair but stayed below the 0.6 threshold for production use. By week six the team held the engineering-judgment meeting and asked the load-bearing question: \"If we ship this feature and a customer complains about a specific suggestion, what's our defense? We can't say 'the eval shows we're 92% correct' because our eval would have noise larger than the signal it's measuring.\" The team killed the feature.\n\n**The decision's consequences** :\n\n_Short-term_ : disappointment. Product team had invested in the vision; clinicians had been excited about the demos; the team had to communicate the kill back to stakeholders.\n\n_Medium-term_ : redirect. The 4-engineer-quarter that would have gone into the killed feature was redirected to the clinical-notes summarizer (Beacon's flagship). The summarizer's eval was tractable (κ=0.72 on the most complex rubric dimension, _appropriate handling of medications_ , per Chapter 4 §4.6; lower but acceptable on the easier dimensions). The summarizer shipped.\n\n_Long-term_ : the team's reputation for rigor strengthened. When the team said _we can ship this feature with measured quality_ , customers and regulators believed them. The killed feature became an internal case study; the team's judgment was respected.\n\n**The lesson** : the most important engineering decisions sometimes look like _not building_. The discipline to recognize when to kill is what separates senior AI engineering teams from junior ones. Saying _yes_ to every product request that sounds good produces a portfolio of shipped features with unknown quality; saying _no_ to the features that can't be done with measurable quality produces a portfolio of features that work.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1060,
+      "out_sha": "3b67e0af3f02",
       "note": ""
     },
     {
