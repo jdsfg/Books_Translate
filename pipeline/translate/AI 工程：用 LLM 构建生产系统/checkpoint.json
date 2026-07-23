@@ -1607,11 +1607,11 @@
       "en_title": "Chapter 5: Eval Tools and Where They Fit",
       "order": 123,
       "src_chars": 2730,
-      "status": "pending",
+      "status": "done",
       "src_sha": "211b800b6a45",
       "src": "#### `braintrust` — the SaaS eval platform\n\n`braintrust` is a SaaS product that provides eval-as-a-service: hosted golden-set storage, a UI for browsing eval results, regression comparison across runs, dashboards over time, dataset versioning, and a Python SDK for instrumenting your code. You write your eval cases against the SDK; results flow to the hosted platform; teammates browse, debate, and decide in the UI.\n    \n    \n    from braintrust import Eval, init_dataset\n    \n    dataset = init_dataset(project=\"beacon-clinical\", name=\"clinical_summary_v3\")\n    \n    eval_result = Eval(\n        \"beacon-clinical-eval\",\n        data=lambda: dataset.iter(),\n        task=lambda input: summarize_clinical_note(input[\"note\"]),\n        scores=[clinical_rubric_score, format_validity_score],\n    )\n    \n\nThe value-add over OSS is the platform: hosted storage, the UI, the ability for a PM or a clinician (a non-engineer) to browse results and provide feedback without setting up local infrastructure. For teams where eval results need to be visible to stakeholders outside engineering, the UI is a real productivity multiplier.\n\n**Fit** : teams beyond ~5 engineers; teams where eval results need to be reviewed by non-engineers; teams with budget for SaaS and a preference for not maintaining infrastructure.\n\n**Limits** : SaaS cost (varies by team size and data volume; mid-team in 2026 typically pays a few hundred to a few thousand dollars per month). Data residency considerations (your eval data, including any production samples, goes to the vendor's servers). For HIPAA-sensitive work, a BAA is required and adds vendor-management overhead.\n\n\n#### `langsmith` — the LangChain-tied workflow\n\n`langsmith` is LangChain's first-party observability and evaluation platform. If your codebase is built on LangChain, `langsmith` integrates with near-zero friction: every chain invocation produces a trace; traces are automatically captured; evals run against the captured traces.\n    \n    \n    from langsmith import Client\n    from langsmith.evaluation import evaluate\n    \n    client = Client()\n    results = evaluate(\n        lambda inputs: summarize_clinical_note(inputs[\"note\"]),\n        data=\"clinical_summary_v3\",\n        evaluators=[clinical_rubric_evaluator],\n    )\n    \n\n**Fit** : teams whose stack is LangChain-native; teams that benefit from the unified observability+eval surface; teams that have chosen LangChain as their orchestration layer (with the trade-offs discussed in Chapter 25's anti-patterns section).\n\n**Limits** : most useful when LangChain is your orchestration layer. For teams that have chosen lighter abstractions (direct provider SDKs, Pydantic AI, custom orchestration), `langsmith` is less ergonomic.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1485,
+      "out_sha": "d2824866284c",
       "note": ""
     },
     {
@@ -1619,11 +1619,11 @@
       "en_title": "Chapter 5: Eval Tools and Where They Fit",
       "order": 124,
       "src_chars": 1963,
-      "status": "pending",
+      "status": "done",
       "src_sha": "86c56849c923",
       "src": "### 5.2 Build vs buy at the eval layer\n\nThe five tools above are _buy_ options of various flavors. The remaining option is _build_ : your own eval infrastructure from scratch.\n\n**Build is right** when one of three conditions applies:\n\n  1. **Your data sensitivity precludes SaaS.** Beacon Health AI cannot send PHI to a third-party SaaS without a BAA, and even with a BAA the team may decide that the data-residency story is not worth the SaaS productivity for the sensitive pipeline. Build is the safe answer for highly regulated data.\n\n  2. **Your stack is unusual enough that off-the-shelf tools do not fit.** If your orchestration is custom, your evaluation patterns are unique to your domain, and you have engineering capacity, build can be cheaper than fighting the OSS tool's assumptions. Rare; assess honestly.\n\n  3. **You are at the scale where build amortizes.** A team running 100M+ evals per year may find that the SaaS pricing exceeds what an in-house team would cost. The breakeven is high: typically a year of senior-engineer time saved by SaaS is more than 200K USD, so the SaaS spend has to be larger than that for build to be the better economics. Mostly applies at very large companies.\n\n**Buy is right** otherwise, and the default at a startup or mid-sized engineering org is buy (or build-on-OSS, which is a third middle path). The reasoning: engineering cycles are scarcer than money at most companies; SaaS tools encode the discipline of others' eval-infrastructure work, which you would otherwise rediscover yourself; the dashboards and the cross-team UI are real productivity gains.\n\nA common pattern that hedges: **build on`pytest-evals` (OSS, free, your data stays local) for the production eval gate, plus a lightweight SQLite store for history, plus optional `braintrust` for stakeholder visibility on selected projects**. This is the pattern Aiyana adopted at Beacon Health AI; we will build out the GitHub Actions workflow shortly.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 777,
+      "out_sha": "92e85bd7cea2",
       "note": ""
     },
     {
