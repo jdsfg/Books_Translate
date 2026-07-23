@@ -3311,11 +3311,11 @@
       "en_title": "Chapter 11: Advanced RAG and RAG Evaluation",
       "order": 265,
       "src_chars": 2142,
-      "status": "pending",
+      "status": "done",
       "src_sha": "df99ebd9dac5",
       "src": "### 11.5 Strata Research: the V1→V4 quality journey (43% → 81% pass rate)\n\nThe full progression at Strata across the four levers, walked in detail. All scores below are reported on a 0–1 scale for comparability: pass rate and retrieval recall are naturally 0–1; the answer-axis scores (faithfulness, answer relevance, citation grounding) are the §11.4 raw 0–3 LLM-judge scores normalized by dividing by 3.\n\n**V1 (baseline)** : pure vector search; no reranker; generic embeddings; naive prompt.\n\n* Retrieval recall@10: 0.62\n* Answer relevance: 0.58\n* Overall pass rate: 0.43\n\n**V2 (add reranker + domain embedding)** : introduce Cohere Rerank on top-20 → top-5; switch to Voyage `voyage-law-2` embeddings.\n\n* Retrieval recall@10: 0.74 (+12)\n* Answer relevance: 0.72 (+14)\n* Overall pass rate: 0.62 (+19)\n\n**V3 (add hybrid search + query rewriting)** : hybrid search (vector + BM25); HyDE for paraphrased queries; self-querying retriever for metadata-constrained queries.\n\n* Retrieval recall@10: 0.82 (+8)\n* Answer relevance: 0.79 (+7)\n* Overall pass rate: 0.74 (+12)\n\n**V4 (advanced prompt + citation enforcement)** : prompt-level citation requirements (Chapter 6); chunk-id-based citation post-processing; explicit jurisdiction and temporal-validity discipline in the prompt.\n\n* Retrieval recall@10: 0.85 (+3)\n* Answer relevance: 0.85 (+6)\n* Citation grounding: 0.92 (+25 over earlier versions)\n* Overall pass rate: 0.81 (+7)\n\nThe journey took 12 months. The largest single lift was V1→V2's combined reranker + domain-embedding step (+19 points pass rate from introducing Cohere Rerank and Voyage `voyage-law-2` together; a controlled study would split the credit, but Strata shipped the pair). The cumulative engineering effort: ~6 engineer-months of focused RAG work, plus ongoing eval and infrastructure. The customer value: enterprise legal-tech that defenseably ships in a regulated domain.\n\nA 2026 takeaway from Strata's experience: **each lever contributes; the gains compound; the order matters less than the discipline of applying each lever and measuring**. There is no magic move; there is consistent engineering across the stack.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 976,
+      "out_sha": "b16039487b27",
       "note": ""
     },
     {
