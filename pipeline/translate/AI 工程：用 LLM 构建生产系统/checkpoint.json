@@ -2987,11 +2987,11 @@
       "en_title": "Chapter 9: RAG Architecture from First Principles",
       "order": 238,
       "src_chars": 824,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e373c310cfb2",
       "src": "**The 2030 picture.** The seven-step loop is probably a _five-step_ loop: chunk, retrieve (fused), build prompt, generate, post-process. The fusion of embed-search-rerank into _retrieve_ is the highest-conviction change. Other fusions may happen at lower probability (e.g., generate + post-process if the model handles its own citation rendering, which seems further out).\n\n**The deeper lesson.** Abstractions in this field are _transitional_ on a 3 to 5 year timescale. The vocabulary survives longer than the implementation; engineers in 2030 will still recognize the seven-step loop as the _conceptual_ model even after it has fused into fewer engineering steps. Teach the seven-step loop today (it maps to real components); expect the components to consolidate over time without the conceptual model becoming wrong.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 258,
+      "out_sha": "070b63080675",
       "note": ""
     },
     {
