@@ -3959,11 +3959,11 @@
       "en_title": "Chapter 13: Tool Use and Sandboxed Execution",
       "order": 319,
       "src_chars": 653,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0b24439b34c6",
       "src": "**Answer:** Useful prompt: _Design 5-7 tools for a CodeReview Bot: read code, search codebase, look up style guide, post comments, flag for review. Specify schema and policy gating for each._ You verify (a) the read/write boundary is clear (read tools have no gating; write tools have explicit gating), and (b) the policy gating is implementable (specific rules, not vague \"be careful\").\n\n**Q2.** _Build the sandboxed code execution wrapper_. Write the production-grade wrapper for the code-execution tool from §13.5. Include: structured error handling, logging, retry on infrastructure failures (but not on code errors), and a cost-counter integration.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 244,
+      "out_sha": "d2ac8a1d63da",
       "note": ""
     },
     {
@@ -3971,11 +3971,11 @@
       "en_title": "Chapter 13: Tool Use and Sandboxed Execution",
       "order": 320,
       "src_chars": 4201,
-      "status": "pending",
+      "status": "done",
       "src_sha": "88266c7b5001",
       "src": "**Answer:**\n    \n    \n    import logging\n    import time\n    from dataclasses import dataclass\n    from e2b import Sandbox, SandboxException\n    from tenacity import retry, stop_after_attempt, retry_if_exception_type, wait_exponential\n    \n    logger = logging.getLogger(\"agent.code_exec\")\n    \n    @dataclass\n    class CodeExecResult:\n        status: str  # \"success\" | \"code_error\" | \"timeout\" | \"infrastructure_error\"\n        stdout: str\n        stderr: str\n        exit_code: int | None\n        duration_ms: int\n        cost_cents: float\n    \n    class InfrastructureError(Exception):\n        pass\n    \n    @retry(\n        retry=retry_if_exception_type(InfrastructureError),\n        stop=stop_after_attempt(2),\n        wait=wait_exponential(multiplier=1, min=1, max=4),\n        reraise=False,\n    )\n    def _execute_with_retry(code: str, timeout_seconds: int) -> dict:\n        try:\n            t0 = time.monotonic()\n            with Sandbox(template=\"python-3.12\") as sandbox:\n                result = sandbox.run_code(code, timeout=timeout_seconds)\n            duration_ms = int((time.monotonic() - t0) * 1000)\n            return {\n                \"stdout\": result.stdout[-4000:],\n                \"stderr\": result.stderr[-2000:],\n                \"exit_code\": result.exit_code,\n                \"duration_ms\": duration_ms,\n            }\n        except SandboxException as e:\n            if \"infrastructure\" in str(e).lower() or \"transient\" in str(e).lower():\n                raise InfrastructureError(str(e))\n            raise\n    \n    def execute_python_safe(code: str, timeout_seconds: int = 10, request_id: str = \"\") -> CodeExecResult:\n        \"\"\"Execute LLM-generated Python code; return structured result for LLM context.\"\"\"\n        if not 1 <= timeout_seconds <= 60:\n            return CodeExecResult(\n                status=\"code_error\",\n                stdout=\"\",\n                stderr=f\"timeout_seconds must be 1-60, got {timeout_seconds}\",\n                exit_code=None,\n                duration_ms=0,\n                cost_cents=0,\n            )\n    \n        try:\n            result = _execute_with_retry(code, timeout_seconds)\n            cost_cents = 0.5 + result[\"duration_ms\"] * 0.0001  # E2B per-sandbox-minute pricing approx\n            outcome = CodeExecResult(\n                status=\"success\" if result[\"exit_code\"] == 0 else \"code_error\",\n                stdout=result[\"stdout\"],\n                stderr=result[\"stderr\"],\n                exit_code=result[\"exit_code\"],\n                duration_ms=result[\"duration_ms\"],\n                cost_cents=cost_cents,\n            )\n        except InfrastructureError as e:\n            outcome = CodeExecResult(\n                status=\"infrastructure_error\",\n                stdout=\"\",\n                stderr=\"Sandbox infrastructure failure; please try a different approach.\",\n                exit_code=None,\n                duration_ms=0,\n                cost_cents=0,\n            )\n        except Exception as e:\n            if \"timeout\" in str(e).lower():\n                outcome = CodeExecResult(\n                    status=\"timeout\",\n                    stdout=\"\",\n                    stderr=f\"Code execution exceeded {timeout_seconds}s timeout.\",\n                    exit_code=None,\n                    duration_ms=timeout_seconds * 1000,\n                    cost_cents=0.5,\n                )\n            else:\n                logger.exception(\"unexpected error\", extra={\"request_id\": request_id})\n                outcome = CodeExecResult(\n                    status=\"infrastructure_error\",\n                    stdout=\"\",\n                    stderr=\"Internal error in code execution.\",\n                    exit_code=None,\n                    duration_ms=0,\n                    cost_cents=0,\n                )\n    \n        logger.info(\n            \"code_exec.complete\",\n            extra={\n                \"request_id\": request_id,\n                \"status\": outcome.status,\n                \"duration_ms\": outcome.duration_ms,\n                \"cost_cents\": outcome.cost_cents,\n                \"code_chars\": len(code),\n            },\n        )\n        cost_counter.increment(request_id, outcome.cost_cents)\n        return outcome\n    ",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 4015,
+      "out_sha": "6cb52a124e0f",
       "note": ""
     },
     {
