@@ -2567,11 +2567,11 @@
       "en_title": "Chapter 8: Context Engineering and the Long-Context vs RAG Decision Tree",
       "order": 203,
       "src_chars": 2207,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6893a30e2d59",
       "src": "### 8.9 How This Breaks: the prompt that overflows mid-conversation\n\n**Failure mode named** : the prompt that overflows mid-conversation. A team builds a multi-turn agent. Conversation history grows. At turn 23 of a long support session, the cumulative history + retrieved context + tool definitions hits the 200K context window. The next API call fails with a context-overflow error. The user, mid-conversation, sees the agent \"crash.\" The team's fallback (start a new conversation) loses the context; the user is asked to re-explain their issue.\n\n**Real or composite incident** : a composite from Helios's early agent deployments. The failure rate was below 1% but was clustered in the longest sessions (the highest-value sessions: complex customer issues, multiple back-and-forth turns). The customers most likely to hit the issue were the customers most likely to churn over the experience.\n\n**Engineering mitigation** : three layers.\n\n  1. **Conversation-summarization at a threshold**. When history exceeds a soft threshold (say, 30K tokens), trigger summarization to compress older turns. The agent maintains a rolling summary plus the most recent turns verbatim.\n  2. **Context-budget monitoring**. The agent's inference call wraps a budget calculation: estimate the upcoming call's token usage; if over a soft threshold (e.g., 80% of context window), trigger compression eagerly.\n  3. **Graceful overflow handling**. If overflow happens despite the above, the response carries a structured _context_overflow_ error variant (recall Chapter 7's discriminated unions); the application handles it by triggering summarization and retrying, rather than crashing the conversation.\n\n**The eval that would have caught it** : a _long-session simulation_ in the eval suite. Synthetic 30-turn conversations stress-test the context engineering; the eval reports the rate of context-overflow errors and the latency p99 (which spikes as context grows). Without long-session evals, the team optimizes for typical sessions and discovers the failure mode in production. The fix is to include long-tail-session cases in the golden set; the discipline is to imagine production traffic's tails when designing the eval.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 745,
+      "out_sha": "67e1ec8d18da",
       "note": ""
     },
     {
