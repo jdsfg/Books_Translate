@@ -1871,11 +1871,11 @@
       "en_title": "Chapter 5: Eval Tools and Where They Fit",
       "order": 145,
       "src_chars": 2387,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3f295c75728d",
       "src": "**For no** : the disanalogy is that the eval-as-CI workflow's value is not in the average case but in the tail. Most PRs do not produce regressions; most invocations of the gate are uninteresting. The gate's value is concentrated in the small fraction of PRs that would have regressed if not caught. Statistical evaluation of this tail-concentrated value requires either much larger sample sizes than are practical (running thousands of PRs to detect the gate's effect on a handful of would-have-been-regressions), or stronger ground truth than is usually available (you need to know what would have happened in production without the gate, which is a counterfactual). The eval discipline of measuring against a representative golden set does not fit cleanly. The right discipline for the workflow is not eval-as-CI on itself, but operational discipline: post-incident reviews, periodic review of blocked PRs, occasional adversarial-testing exercises where a known-bad change is submitted to verify the gate catches it.\n\nThe honest answer is that _some_ of the eval-as-CI workflow is eval-able and some is not. The comparison script is a small piece of code with deterministic behavior; it deserves unit tests (which it has, hopefully) but not an eval. The gate's threshold-setting is a tunable parameter; its effect on false-positive and false-negative rates is empirically measurable over time and the team should treat the tuning as a regular operational discipline, not as a once-and-forget setting. The judge model's calibration (already covered by Chapter 4 §4.5) is the eval-able part. The workflow's wiring (does the GitHub Action correctly fetch the baseline, run the comparison, comment on the PR?) is testable through CI-meta-tests (run the workflow on a synthetic PR with a known regression, confirm it produces the expected gate verdict). The principle is: eval the parts whose behavior is probabilistic, test the parts whose behavior is deterministic, and accept that some operational discipline (post-incident review, threshold tuning) is the right discipline for the parts that are neither.\n\nThe recursive question (does the meta-eval need an eval?) terminates here. At some point, engineering discipline rests on judgment rather than on measurement. Chapter 24 will return to where that line sits and why drawing it correctly is part of senior engineering practice.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 743,
+      "out_sha": "1d15b06cd069",
       "note": ""
     },
     {
