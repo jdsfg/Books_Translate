@@ -1583,11 +1583,11 @@
       "en_title": "Chapter 5: Eval Tools and Where They Fit",
       "order": 121,
       "src_chars": 1860,
-      "status": "pending",
+      "status": "done",
       "src_sha": "15ec2b64cf03",
       "src": "#### `pytest-evals` — the pytest-native baseline\n\n`pytest-evals` is a small library that lets you write eval cases as pytest test functions. Each test function takes an input, calls your LLM-backed system, and asserts properties of the output. The library extends pytest with eval-specific concepts: golden sets as fixtures, per-case scoring, aggregated reporting, regression comparison against a baseline run.\n    \n    \n    # Illustrative; library APIs evolve — verify against current pytest-evals docs\n    # before copying. The shape (a pytest-style test that returns a structured\n    # score dict) is the pattern that survives across library versions.\n    import pytest\n    from pytest_evals import eval_test  # decorator name varies across versions\n    \n    @eval_test(golden_path=\"goldens/clinical_summary/case_001.json\")\n    def test_clinical_summary_case_001(eval_input, eval_reference):\n        output = summarize_clinical_note(eval_input[\"note\"])\n        return {\n            \"format_valid\": validate_schema(output),\n            \"rubric_score\": llm_judge_score(output, eval_reference, rubric=CLINICAL_RUBRIC),\n            \"contains_chief_complaint\": eval_reference[\"chief_complaint\"] in output,\n        }\n    \n\nThe pytest discovery wires this into CI naturally. If your team already uses pytest, the cognitive overhead of adding `pytest-evals` is near zero. The reporting is plain pytest output, augmented by the library's eval-aggregation step.\n\n**Fit** : any team that already uses pytest; teams that want their eval suite to look like their test suite; teams that do not want a separate SaaS dependency.\n\n**Limits** : storage and dashboarding are bring-your-own (the library writes results to JSON files; if you want a dashboard, you build one or pipe into something else). Large golden sets (>1000 cases) start to strain pytest's discovery model.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1166,
+      "out_sha": "22f465362d33",
       "note": ""
     },
     {
@@ -1595,11 +1595,11 @@
       "en_title": "Chapter 5: Eval Tools and Where They Fit",
       "order": 122,
       "src_chars": 3149,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6eda97328432",
       "src": "#### `inspect-ai` — the safety-evals specialist\n\n`inspect-ai` is the open-source eval framework published by the UK AI Safety Institute. It is built for safety evaluations: capability evaluations, dangerous-capability probes, prompt-injection robustness, refusal-pattern compliance. The design emphasizes reproducibility (full transcripts saved; deterministic replay), provenance (every score traceable to the input that produced it), and composability (eval definitions are Python objects that compose into larger suites).\n    \n    \n    from inspect_ai import Task, eval, task\n    from inspect_ai.dataset import Sample\n    from inspect_ai.solver import generate\n    from inspect_ai.scorer import answer\n    \n    @task\n    def clinical_summary_safety():\n        return Task(\n            dataset=load_clinical_dataset(\"goldens/clinical_summary/\"),\n            plan=[generate(model=\"claude-sonnet-4-20260315\")],\n            scorer=answer(grader=\"exact\"),\n        )\n    \n    eval(clinical_summary_safety, model=\"claude-sonnet-4-20260315\")\n    \n\nThe output is a structured log of every input, every model call, every score. The log is the artifact you keep, audit, and replay. For regulated work (Beacon Health AI's HIPAA-bound clinical pipeline; defense and government work), the audit trail is a real feature.\n\n**Fit** : teams doing safety-relevant evaluations; teams that need full audit trails for regulatory compliance; teams that want a framework explicitly designed for adversarial and capability evaluation.\n\n**Limits** : heavier-weight than `pytest-evals`. The framework has opinions; you write evals in the framework's idiom, not in your pytest idiom. The learning curve is steeper.\n\n\n#### `ragas` — the RAG-specialist\n\n`ragas` is purpose-built for RAG evaluation. The library implements the standard RAG eval metrics: _faithfulness_ (does the answer follow from the retrieved context?), _answer relevance_ (does the answer address the question?), _context precision_ (do the retrieved chunks contain relevant information?), _context recall_ (did retrieval find the relevant information?). All four are scored by LLM-as-judge calls under the hood, with sensible defaults.\n    \n    \n    from ragas import evaluate\n    from ragas.metrics import faithfulness, answer_relevancy, context_precision, context_recall\n    \n    dataset = load_rag_dataset(\"goldens/strata_legal/\")\n    result = evaluate(\n        dataset,\n        metrics=[faithfulness, answer_relevancy, context_precision, context_recall],\n        llm=ChatAnthropic(model=\"claude-sonnet-4-20260315\"),\n    )\n    \n\nThe metrics are _opinionated_ in the RAG-eval sense: they capture the four-axis decomposition that has become standard since the 2023–2024 RAG-eval literature. If your evaluation is RAG-shaped, `ragas` saves weeks of metric-design work.\n\n**Fit** : any team doing serious RAG evaluation; Strata Research is a paradigm case. The library's metrics are the right starting point and often the right ending point.\n\n**Limits** : outside RAG, the library does not apply. For agent evaluation, structured-output evaluation, voice-assistant evaluation, etc., `ragas` is not your tool.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1809,
+      "out_sha": "7098a23c2832",
       "note": ""
     },
     {
