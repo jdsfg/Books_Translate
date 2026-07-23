@@ -4139,11 +4139,11 @@
       "en_title": "Chapter 14: Designing Agents That Don't Spiral + Agent Memory Architectures",
       "order": 334,
       "src_chars": 2662,
-      "status": "pending",
+      "status": "done",
       "src_sha": "665993b45b97",
       "src": "#### Layer 2: episodic memory (cross-turn within session)\n\nThe agent remembers what happened in this _session_ (user interaction) even across multiple sub-trajectories. A customer-support session may involve multiple agent invocations; episodic memory carries learnings between them.\n\nImplementation patterns:\n\n* _Conversation summary_ : a running summary of the session's key facts and decisions. Re-injected into each new agent invocation's context.\n* _Decision log_ : structured records of decisions made during the session (\"agent issued a 50 USD refund at turn 7\"). Available as a tool for later invocations to query.\n* _User state_ : the agent's understanding of the user's goals, preferences, blockers. Updated across the session.\n\n\n#### Layer 3: long-term memory (cross-session)\n\nThe agent remembers what happened across multiple sessions with the same user or about the same topic. The customer-support agent that recognizes a returning customer; the coding-assistant that remembers your project's conventions.\n\nImplementation patterns:\n\n* _Vector memory_ : prior interactions are embedded and stored; relevant past interactions are retrieved when needed. Often a per-user index.\n* _Structured facts_ : explicit facts about the user are stored in a database (preferences, common workflows, past issues). Queried via tools.\n* _Profile summarization_ : a running summary of the user's history, periodically updated, retrieved at session start.\n\n\n#### The working-memory problem in long runs\n\nFor long agent trajectories, working memory accumulates. After 30 turns, the working memory may be 30K tokens. The agent's effective focus narrows; lost-in-the-middle effects (Chapter 8) kick in; cost rises.\n\nThe engineering pattern: **periodic in-trajectory summarization**. Every K turns, compress older turns into a structured summary; replace the verbatim history with the summary plus the last few turns. The agent's working memory remains bounded; the trajectory can continue indefinitely (within the bound from §14.4).\n    \n    \n    def maybe_compress(messages: list, threshold: int = 30_000) -> list:\n        tokens = estimate_tokens(messages)\n        if tokens < threshold:\n            return messages\n        # Keep first message (user goal) + last 5 turns verbatim; summarize the middle\n        middle = messages[1:-5]\n        summary = summarize_via_small_llm(middle)\n        return [messages[0], {\"role\": \"assistant\", \"content\": f\"[Earlier summary: {summary}]\"}, *messages[-5:]]\n    \n\nChapter 8's context-engineering work directly applies here. Agents in 2026 routinely compress working memory; agents that don't routinely fail in long trajectories.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1153,
+      "out_sha": "126f028533e1",
       "note": ""
     },
     {
@@ -4151,11 +4151,11 @@
       "en_title": "Chapter 14: Designing Agents That Don't Spiral + Agent Memory Architectures",
       "order": 335,
       "src_chars": 282,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b30b69d978e0",
       "src": "### 14.6 Binding workflow #7: the bounded-agent design doc\n\nThe deliverable is a real artifact: a design document specifying an agent's bounds, memory, and policy. The artifact is reviewed at agent inception; it is the explicit commitment to the safety properties of the deployment.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 97,
+      "out_sha": "74cf7181d76e",
       "note": ""
     },
     {
@@ -4163,11 +4163,11 @@
       "en_title": "Chapter 14: Designing Agents That Don't Spiral + Agent Memory Architectures",
       "order": 336,
       "src_chars": 3563,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c91242bd248e",
       "src": "Below is Helios's design doc for their customer-support agent. The format is portable.\n    \n    \n    # Agent Design Doc: Helios Customer Support Agent v3\n    \n    ## Purpose\n    Handle customer support tickets autonomously where possible; escalate to humans\n    when appropriate.\n    \n    ## Trajectory Bounds\n    - Maximum iterations per trajectory: 15\n    - Maximum tokens per single inference call: 4,096 (output)\n    - Maximum cumulative tokens per trajectory: 80,000\n    - Maximum dollar cost per trajectory: $0.50 (with override path for $5.00)\n    - Maximum wall-clock duration: 90 seconds (interactive) / 5 minutes (background)\n    \n    ## Tool Catalog Version: v7\n    - 40 tools across information, computation, action, escalation categories\n    - See tools/catalog/v7.yaml for full specifications\n    \n    ## Memory Architecture\n    - **Working memory**: conversation history of current trajectory; compressed if\n      exceeds 30K tokens via summarization to retain user goal + last 5 turns.\n    - **Episodic memory** (per-session): customer ID, ticket ID, decisions made (refunds\n      issued, escalations performed), running summary. Available via `get_session_state` tool.\n    - **Long-term memory** (per-customer): customer's prior ticket history (last 10\n      tickets summarized + structured key facts). Retrieved at session start via\n      `load_customer_profile` tool.\n    \n    ## Circuit Breakers\n    - Same tool with same args called 3 times: halt with \"loop detected\".\n    - Same tool fails 4 times in succession: halt with \"tool unhealthy\".\n    - Cost circuit breaker triggers at $0.40 (with $0.10 buffer to budget).\n    - Iteration counter triggers at 12 (with 3-iteration buffer).\n    \n    ## Policy Gating (per Chapter 13)\n    - Refund tool: amount cap per-tenant; customer confirmation required.\n    - Modify-customer-record: field allowlist; audit log mandatory.\n    - Send-email: template allowlist; cooldown to prevent email storm.\n    - Escalate-to-human: always allowed.\n    \n    ## Failure Modes Handled\n    - Infinite loop: bounded by iteration cap + circuit breakers.\n    - Hallucinated tool calls: tool schema validation + structured errors + tool circuit breaker.\n    - Lost goals: user goal re-injected at every iteration via system prompt; summary compression preserves it.\n    - Context overflow: in-trajectory summarization at 30K threshold.\n    - Cost overruns: cost circuit breaker + budget tracking.\n    \n    ## Observability\n    - Every iteration's tool calls, latency, cost, and outcome logged (Chapter 19).\n    - Trajectory traces available in Langfuse with full conversation, tool calls, and tool results.\n    - Alerts: trajectory > $0.30, trajectory > 10 iterations, trajectory failure rate > 2% per hour.\n    \n    ## Eval Suite\n    - 200 golden trajectories with reference outcomes.\n    - Per-trajectory metrics: deflection (did agent resolve without human?); customer\n      satisfaction (LLM-judged + post-session signal); cost-per-resolution; latency-per-resolution.\n    - Adversarial slice (50 trajectories): includes prompt-injection attempts,\n      ambiguous requests, multi-issue conversations. Tests circuit-breaker activation.\n    \n    ## Rollback Procedure\n    - Manifest pin to v2 agent if v3 production rollout shows >1.5x failure rate.\n    - Per-tenant rollback supported (some tenants stay on v2 if specific concerns).\n    \n    ## Sign-Off\n    - AI engineering lead: [name]\n    - Platform engineer: [name]\n    - Customer-support ops lead: [name]\n    - Compliance review: [name]\n    - Date: [date]\n    ",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1626,
+      "out_sha": "79f05b928099",
       "note": ""
     },
     {
