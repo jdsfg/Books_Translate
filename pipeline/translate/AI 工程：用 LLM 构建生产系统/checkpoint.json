@@ -7703,11 +7703,11 @@
       "en_title": "Appendix B — Reference Architecture Catalog",
       "order": 631,
       "src_chars": 2049,
-      "status": "pending",
+      "status": "done",
       "src_sha": "af8689712645",
       "src": "#### Pattern 9: Voice Agent with Fallback to Text\n\n**What problem it solves.** Product is voice-first — clinical scribe, customer-support agent, hands-free assistant — but voice is unreliable: STT mis-hears, TTS sounds wrong on rare phonemes, EOT detection cuts the user off, a dropped packet derails a turn. The pattern is the production-grade voice loop with graceful text fallback.\n\n**Topology.** Client opens a bidirectional audio stream (WebRTC, or a vendor SDK like LiveKit or Daily) to a voice-agent service. STT runs in streaming mode (Deepgram, Whisper-streaming, ElevenLabs Scribe) emitting partial transcripts every 200-500 ms. An EOT detector — a small classifier over partials (VAD, pause length, prosodic cues) or a dedicated EOT model — decides when the user is done. On EOT, the finalized transcript flows to the LLM (Pattern 1 or 5 depending on tool use). The LLM response streams token-by-token into a streaming TTS (ElevenLabs, Cartesia, or a vendor's native streaming TTS); audio frames stream to the client. An interruption handler runs in parallel: if the client detects user speech while TTS is playing, the service cancels in-flight TTS, flushes the LLM stream, and starts a new turn. If any stage fails — STT confidence below threshold, TTS error, audio channel stall — a fallback opens a text panel; the user sees the transcript and can type, with the LLM continuing in text-only mode. Voice attempts reconnect in the background; on success the client offers \"resume voice\".\n\n**When to use it.** Voice is a first-class product surface. Team has audio-engineering capability (or vendor partnership) and is prepared to debug RTC issues. Latency budget is tight (sub-700 ms turn latency for natural conversation, sub-300 ms ideal) and you've measured it.\n\n**When NOT to use it.** Voice is \"nice to have\" or a demo. Voice agents are an order of magnitude more operational work than text agents; don't take the work unless voice is the product.\n\n**Cross-references.** Chapter 20 (voice and multimodal interfaces in production).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 780,
+      "out_sha": "73614ddaca9d",
       "note": ""
     },
     {
@@ -7715,11 +7715,11 @@
       "en_title": "Appendix B — Reference Architecture Catalog",
       "order": 632,
       "src_chars": 2335,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c99aac8b8e44",
       "src": "#### Pattern 10: Cost-Optimized Multi-Tier Cache Stack\n\n**What problem it solves.** The LLM bill is the largest engineering line item. Per-token costs have fallen year over year but volume has grown faster. The cache stack squeezes the bill by serving repeated and similar requests without hitting the model, and by moving non-urgent work to cheaper async lanes.\n\n**Topology.** Layers run in front of the LLM call, each cheaper and faster than the next. Layer 1, exact-match application cache: Redis or Memcached lookup keyed by a hash of `(normalized prompt, model, temperature, tools, system prompt version)`; TTL of minutes to hours; hit rate 5-20% on user surfaces, higher on automated workloads. Layer 2, semantic cache: compute the prompt's embedding (reuse the RAG embedder), vector-lookup in a small dedicated index for prior prompts above cosine threshold (0.95-0.98); return cached response if threshold and freshness check pass. Mis-thresholded semantic caches return wrong answers — 0.92 will cheerfully misroute — so calibrate against an eval set and dashboard hit rate. Layer 3, provider prompt caching: Anthropic's feature (and similar at OpenAI and Gemini in 2026) discounts repeated prefix tokens; structure the prompt with long stable parts (system prompt, tool catalog, session-stable RAG context) at the front. Layer 4, batch endpoint: for non-synchronous workloads (overnight analytics, doc-processing, eval runs), submit to the provider's batch API at ~50% discount with a 24-hour SLA. Only after all four miss does the request hit the synchronous endpoint. Each layer is observable: hit rate, hit-rate-by-tenant, \"cost saved this month\" on the dashboard.\n\n**When to use it.** LLM spend at six figures annually or higher. Engineering bandwidth to operate caches (they will go stale, they will return wrong answers, you need a runbook). Traffic pattern has structural repetition (same user asks similar questions, system-prompt-plus-context mostly stable across requests).\n\n**When NOT to use it.** Traffic is mostly unique and caches won't hit. Or you haven't measured a hit-rate ceiling and are over-engineering pre-emptively. Start with Layer 1 and Layer 3; add 2 and 4 when data says they pay off.\n\n**Cross-references.** Chapter 18 (cost optimization), Chapter 17 (provider strategy and prompt caching).\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 894,
+      "out_sha": "33fe93733888",
       "note": ""
     },
     {
