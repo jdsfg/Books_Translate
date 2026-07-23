@@ -3707,11 +3707,11 @@
       "en_title": "Chapter 12: Multimodal RAG and Document Understanding",
       "order": 298,
       "src_chars": 3263,
-      "status": "pending",
+      "status": "done",
       "src_sha": "825ad4aee219",
       "src": "**Total monthly spend** : 3K USD + 5K USD + 2K USD = 10K USD, comfortably under the 20K USD budget. The remaining 10K USD is held as buffer for:\n\n* Surge ingestion (new document batches; M&A due diligence; new client onboarding).\n* Quality-eval re-runs (periodic re-ingestion at higher quality to measure drift).\n* Cost reserve for unexpected vision-token-price changes.\n\nThe tier-and-upgrade approach is the key idea: hot documents get the best treatment because their query value justifies the spend; cold documents get minimal treatment but can be upgraded on demand when they actually matter. This pattern generalizes beyond legal corpora: any domain with skewed query distributions benefits.\n\nCross-reference: this is the multimodal version of Chapter 9's progressive-disclosure pattern: spend the most where the value concentrates.\n\n**AI-collaboration sub-question** : How would you ask an LLM to help with this exercise, and what would you verify in its response?\n\n**Answer:** Useful prompt: _Allocate a 20K USD/month vision-token budget across hot/warm/cold tiers of a 1M-page legal corpus: processing approach, resolution, model, spend per tier._ You verify (a) the allocation is value-weighted not volume-weighted (the LLM may default to proportional-to-page-count; that's the wrong heuristic), and (b) the on-query upgrade mechanism for cold pages is explicit (the LLM may forget the upgrade path and treat cold pages as permanently un-vision-processed).\n\n**Q6.** _Diagnose a signature-block extraction failure_. Strata's multimodal RAG handles signature queries well overall (~85% recall on \"is this signed?\" queries) but consistently fails on one specific document type: power-of-attorney forms where the signature is a stamp rather than a handwritten mark. The VLM either misses the stamp or reports \"no signature found\". Diagnose the failure mode and propose a fix that doesn't degrade performance on standard handwritten signatures.\n\n**Answer:**\n\nDiagnosis: the VLM's training distribution emphasizes _handwritten_ signatures (the dominant signature type in its training corpus). Rubber-stamp signatures and seal-stamped attorneys-in-fact certificates are out-of-distribution. The model either (i) doesn't recognize the stamp as a signature mark, or (ii) recognizes it as text and transcribes it without flagging the signature semantic.\n\nThis is a long-tail extraction failure. The eval rubric (Q5 above) would catch it if the eval slice includes power-of-attorney documents; without that slice, it stays invisible.\n\nFixes, in priority order:\n\n  1. **Prompt enrichment with explicit stamp-signature instruction.** Update the extraction prompt to enumerate signature types: \"Identify all signature marks on this page. Signature marks include: handwritten signatures, rubber stamps, embossed seals, electronic signature blocks, and notary stamps. For each, report location, type, and any visible identifying text.\" The prompt-level fix is cheap and often sufficient.\n\n  2. **Few-shot example for stamp signatures.** Add 2-3 labeled examples to the prompt: a power-of-attorney with a stamp signature, with the correct extraction. Few-shot examples significantly improve VLM performance on out-of-distribution types (Chapter 6 lessons apply here too).",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1092,
+      "out_sha": "bcb6e381f435",
       "note": ""
     },
     {
@@ -3719,11 +3719,11 @@
       "en_title": "Chapter 12: Multimodal RAG and Document Understanding",
       "order": 299,
       "src_chars": 1720,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e2162e106347",
       "src": "  3. **Specialized worker for power-of-attorney documents.** If the volume of these documents justifies it, add a document-type classifier upstream; documents classified as power-of-attorney route through a specialized extraction prompt tuned for stamp signatures. Trades off engineering complexity for accuracy on the specialty.\n\n  4. **Targeted eval slice.** Build a 30-document eval slice of power-of-attorney forms with labeled signature locations. Verify each fix lifts the slice's recall. The slice becomes a permanent regression-prevention test.\n\nVerifying no degradation on standard signatures: run the existing handwritten-signature eval slice before and after each change. If the broader prompt or few-shot examples ever degrade the standard slice, back out the change or split the prompt path.\n\nThe general lesson: VLMs have long-tail distributions; production multimodal RAG must instrument for the long tail explicitly. Prompt-level fixes are usually enough for known long-tail cases; the eval discipline catches them before they become customer complaints.\n\n**AI-collaboration sub-question** : How would you ask an LLM to help with this exercise, and what would you verify in its response?\n\n**Answer:** Useful prompt: _Our VLM-based signature extraction works well on handwritten signatures but fails on stamp signatures. Diagnose and propose fixes that don't degrade standard performance._ You verify (a) the diagnosis names the out-of-distribution mechanism explicitly (LLMs may diagnose as \"model isn't smart enough\"; the OOD framing is more actionable), and (b) the fixes include the eval-slice safeguard (without before-and-after eval comparison, prompt enrichment can silently degrade other slices).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 572,
+      "out_sha": "68c397e2e7af",
       "note": ""
     },
     {
