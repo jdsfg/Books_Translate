@@ -7463,11 +7463,11 @@
       "en_title": "Chapter 25: Anti-Patterns and Where the Field Is Going",
       "order": 611,
       "src_chars": 3245,
-      "status": "pending",
+      "status": "done",
       "src_sha": "87dd7c3c3309",
       "src": "> _Hint_ : this is harder than auditing another team because self-bias is real. The discipline is to look at the team's reward structure honestly, not at the team's stated values.\n\n**Answer:** A structural worked example:\n\n_Team description (your specifics will differ)_ : 5 AI engineers at a healthcare-focused SaaS; shipping a clinical-notes assistant; high data-sensitivity environment; cost is moderate; team has explicit safety-first culture in stated values.\n\n_Prediction_ : the highest-risk anti-pattern is **anti-pattern 5: trusting LLM-as-judge without validation**.\n\n_Reasoning_ :\n\n  1. _The stated culture is safety-first; the operational culture rewards conservative answers from the judge_. When the LLM-as-judge produces a _the model's output was wrong_ score, the team accepts it because the conservative answer aligns with safety values. The team rarely pushes back, even when the judge is incorrect.\n\n  2. _The team has 50+ judge calls per day in CI_ ; manual calibration was done 8 months ago. The judge model has been silently updated by the provider since then; the team has not re-calibrated.\n\n  3. _The team has an upcoming compliance audit_. The audit will treat the LLM-as-judge eval scores as evidence. If the judge is uncalibrated, the compliance evidence is shaky.\n\n  4. _The cultural signal: when a junior engineer questioned a judge score last quarter, the senior engineer overrode the question because \"the judge said the output was wrong; that is conservative\"_. The pattern says: trust the judge by default.\n\n_Warning signs to watch for_ :\n\n* The judge's score distribution shifts (mean drift; variance change). Without calibration, the team cannot tell whether the model improved or the judge got tougher.\n* Disagreement between the judge and the team's domain experts on specific cases. Are the experts overruled? If so, the calibration discipline is eroding.\n* The audit. If the audit asks _show your judge-calibration evidence_ and the team cannot produce it, the failure mode is realized.\n\n_Early intervention_ :\n\n  1. _Re-calibrate the judge against domain experts_. 50 cases; record kappa; record agreement rate per dimension. Two engineer-days plus expert time. Output: a written calibration report.\n\n  2. _Add a calibration-decay alarm_. If the judge's score distribution shifts by more than 0.1 points over a 30-day window, page the team to investigate. Code the alarm into the CI pipeline.\n\n  3. _Train the team on judge skepticism_. A 1-hour internal session walks through the cases where the judge was wrong in the recent past. Junior engineers learn that questioning the judge is the right behavior; senior engineers learn to model the questioning.\n\n  4. _Add judge calibration to the compliance-audit prep_. Make the audit force the discipline; if the team has to show calibration evidence to the auditor, the team will produce it.\n\nThe prediction-and-intervention cycle takes ~5 engineer-days to set up. It buys the team meaningful protection against the highest-risk anti-pattern in their specific context. Without it, the most likely incident is _a compliance audit that questions the eval methodology and forces an emergency calibration project_.\n\n_Why this is the right form of the exercise_ :",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 946,
+      "out_sha": "2def6349e637",
       "note": ""
     },
     {
@@ -7475,11 +7475,11 @@
       "en_title": "Chapter 25: Anti-Patterns and Where the Field Is Going",
       "order": 612,
       "src_chars": 944,
-      "status": "pending",
+      "status": "done",
       "src_sha": "996084b4b192",
       "src": "A team that predicts and intervenes in advance has an easier path than a team that responds reactively. The prediction is grounded in honest self-assessment of culture and operations; the intervention is small and tractable. The discipline is repeatable: every 6 months, the team should re-predict and re-intervene as conditions shift.\n\n**AI-collaboration sub-question** : How would you ask an LLM to help with this exercise, and what would you verify in its response?\n\n**Answer:** Useful prompt: _Predict my team's highest-risk anti-pattern given this context [describe team]. Walk through reasoning, warning signs, early intervention._ You verify (a) the prediction is grounded in _your_ team's specifics (the LLM may default to anti-pattern 1 because it is most general; insist on a culture-matched prediction), and (b) the intervention is small enough to be executed (5-10 engineer-days, not a full quarter; LLMs over-scope interventions).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 297,
+      "out_sha": "4c412f27ae3e",
       "note": ""
     },
     {
