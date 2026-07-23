@@ -5087,11 +5087,11 @@
       "en_title": "Chapter 17: Multi-Model Routing and LLM Gateways",
       "order": 413,
       "src_chars": 3297,
-      "status": "pending",
+      "status": "done",
       "src_sha": "01d0dc156090",
       "src": "* Right for: a 30-engineer startup with platform-engineering capacity, no immediate need for built-in prompt management, preference for OSS + self-hosting, cost-sensitive at SaaS pricing.\n* Why: the OSS doesn't add SaaS cost; self-hosting keeps data in-house; the config-driven approach is straightforward for engineers comfortable with YAML.\n\n**Portkey** (SaaS):\n\n* Right for: a 5-engineer startup with no platform-engineering capacity, wants integrated prompt management and observability without building it, willing to pay SaaS pricing for productivity.\n* Why: the team doesn't have the engineers to self-host LiteLLM well; the integrated suite (router + observability + prompts) is more productive than assembling OSS pieces; the SaaS cost is small relative to engineering cost saved.\n\nA general pattern: **OSS where you have platform engineering; SaaS where you don't**. The same router-vs-SaaS decision applies layer-by-layer throughout the stack (Chapter 16); the team's structure determines the answer more than the layer's technicals.\n\n**Q4.** What is the _fallback that wasn't tested_ failure mode? Why does it specifically matter to have eval coverage of fallback models?\n\n**Answer:** The failure mode: a router has fallback configured; when the primary fails for the first time in production, the fallback succeeds technically (the API call returns a response) but the response is lower quality than the primary's would have been. The team doesn't notice immediately because the fallback \"worked\"; but the production users got worse answers during the failover window.\n\nEval coverage of fallback models matters because:\n\n  1. **Prompts are often model-tuned**. A prompt that produces good output on GPT-4o may produce different output on Claude Haiku; the fallback's quality is not the primary's quality minus a known delta.\n\n  2. **The team doesn't see fallback behavior in normal operation**. Without dedicated eval testing, the fallback is exercised only during actual incidents (exactly the wrong time to discover quality issues).\n\n  3. **Quality drops during incidents compound the incident**. The primary failed (problem 1); now the fallback produces worse quality (problem 2); customer experience is doubly bad. Eval-tested fallbacks limit the damage to problem 1.\n\nMitigation: run the eval against each model in the fallback chain. Document per-model scores. Periodically chaos-test by deliberately routing through fallbacks. Surface quality drops in production-eval sampling (Chapter 21).\n\n**Q5.** Chapter 16 argued that the router layer is one of the most universally \"buy\" layers. Yet this chapter advocates internal routing infrastructure for any team above 50K USD/month spend. Reconcile these positions. What does \"buy\" mean for the router layer in 2026?\n\n**Answer:** The apparent contradiction dissolves when \"buy\" is read precisely. Chapter 16's argument is that teams should not _build the router engine from scratch_ : the underlying technology (model abstraction, retry logic, fallback dispatch, callback hooks) is commoditized and well-served by LiteLLM, Portkey, Cloudflare AI Gateway, Kong AI Gateway, and similar tools (the four entrants enumerated in §17.3). Building this engine in-house is 4-8 engineer-months of work that returns no product differentiation.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1178,
+      "out_sha": "150336b8a69f",
       "note": ""
     },
     {
@@ -5099,11 +5099,11 @@
       "en_title": "Chapter 17: Multi-Model Routing and LLM Gateways",
       "order": 414,
       "src_chars": 1372,
-      "status": "pending",
+      "status": "done",
       "src_sha": "074b54e10ccf",
       "src": "This chapter's argument is that the _router configuration_ is product-specific and must be owned by the team: which tiers exist, which models map to which tiers, per-tenant budgets, classifier prompts, fallback chains tuned to specific quality requirements. This configuration is the team's strategic asset; it encodes business decisions about cost and quality that the team must own.\n\n\"Buy the router, build the routing policy\" is the right summary. The engine is purchased (deploy LiteLLM); the policy is built (your team writes the YAML, sets the budgets, designs the tiers, runs the evals that justify the configuration). This split is consistent with Chapter 16's general principle: buy the commoditized layer; build the product-specific policy on top of it.\n\nA specific implication: when teams say \"we bought a router,\" they should mean \"we deployed LiteLLM and our engineers configure it.\" They should not mean \"the router is opaque to us.\" A team that does not understand its own router configuration cannot reason about its routing decisions, debug its fallback chain, or defend its cost numbers. Buying the engine does not buy the team out of the engineering discipline.\n\nThe Chapter 16 principle in this chapter's language: the router _layer_ is buy; the router _configuration_ is build, owned by the team that owns the cost and quality of the calls it routes.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 430,
+      "out_sha": "0890025f034e",
       "note": ""
     },
     {
