@@ -6347,11 +6347,11 @@
       "en_title": "Chapter 22: Beyond Off-the-Shelf — When to Fine-Tune, Self-Host, or Go On-Device",
       "order": 518,
       "src_chars": 1808,
-      "status": "pending",
+      "status": "done",
       "src_sha": "80089f13f2a3",
       "src": "### 22.3 The open-weight landscape in 2026\n\nOpen-weight models (released by labs with their weights downloadable) are a real production option in 2026. The major families:\n\n**Llama 4+ (Meta)** : the most widely-deployed open-weight family. Multiple sizes (8B, 70B, 405B). Strong general performance; permissive license for most uses. The default open-weight choice for most teams.\n\n**Qwen (Alibaba)** : strong on multilingual tasks; competitive performance with Llama at similar sizes; strong Chinese-language support.\n\n**DeepSeek (DeepSeek Inc.)** : strong reasoning capabilities at competitive cost; DeepSeek V3 in 2026 is a workhorse-tier alternative.\n\n**Mistral (Mistral AI)** : European-based; strong models in the 7B-22B range; particularly good for tasks where European data-residency matters.\n\n**Gemma (Google)** : smaller models (2B, 7B, 27B); strong quality-per-parameter ratio.\n\nWhen do open-weight models displace hosted API models in practice?\n\n**Open-weight fits when** :\n\n* Data sensitivity precludes hosted APIs (PHI; classified; air-gapped environments).\n* Cost economics favor self-hosting at very high volume (typically >50M+ tokens/day on a sustained basis).\n* Custom fine-tuning needs that hosted providers don't support.\n* Edge / on-device deployment (§22.5).\n\n**Open-weight doesn't fit when** :\n\n* Quality requirements demand the frontier (open-weight models are competitive but the frontier closed-API models — Claude Sonnet 4, GPT-4o, Gemini 2.5 Pro — typically lead by a few percentage points).\n* Team lacks operational capacity for self-hosting (real engineering work).\n* Volume doesn't justify the fixed costs of running inference infrastructure.\n\nIn practice in 2026: open-weight lives at the edge or in cost-sensitive specialty cases; hosted API handles general production use.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 734,
+      "out_sha": "de49f317113b",
       "note": ""
     },
     {
@@ -6359,11 +6359,11 @@
       "en_title": "Chapter 22: Beyond Off-the-Shelf — When to Fine-Tune, Self-Host, or Go On-Device",
       "order": 519,
       "src_chars": 2500,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b1cb31e952d1",
       "src": "### 22.4 Self-hosting economics: when API calls are cheaper, when self-hosting wins\n\nThe self-host economics calculation is one of the most important decisions for high-volume teams. The 2026 framework:\n\n**API cost** = (tokens × per-token rate). Linear with volume; pay only for what you use; zero fixed cost.\n\n**Self-host cost** = (compute infrastructure cost + engineering operational cost + amortized model-load cost) / volume served. Has substantial fixed costs; per-token cost shrinks as volume grows.\n\nAt low volume, API wins. At high volume, self-host can win. The crossover depends on:\n\n* Cost per GPU-hour for the model size (varies by provider and instance type).\n* Throughput per GPU (tokens per second per dollar).\n* Utilization rate (most teams can't achieve 100% utilization).\n* Engineering cost to operate (~1-2 FTE for a serious self-hosted operation).\n\n**Worked breakeven example (2026 approximations)** :\n\nFor Llama 3.1 70B inference:\n\n* API option: Together AI, Anyscale, Replicate offer Llama 3.1 70B at ~0.80 USD/1M input + 0.80 USD/1M output. (Open-weight models on managed APIs are typically priced similarly to Haiku-tier closed-source models.)\n* Self-host option: AWS p4d.24xlarge instance at ~32 USD/hour; serves ~3-5K tokens/second with vLLM. At 5K tokens/second × 3600s × ~70% utilization = ~12.6M tokens/hour. Cost per million tokens served: 32 USD / 12.6 = ~2.54 USD/M (much higher than API for this specific config).\n\nBut: configure the self-host correctly (right GPU instance; right serving engine; high utilization), and the per-token cost can drop. With a different instance choice and high utilization, 0.40 USD-0.60 USD/M tokens is achievable. At that point, self-host beats the API for sustained high volume.\n\n**Crossover heuristic** (refined against §22.7's worked example): below 10M tokens/day, hosted API almost always wins. Between 10M and 100M tokens/day the answer depends heavily on serving-engine choice, GPU utilization, and operational maturity: at 50M tokens/day with typical configuration, self-host still loses (see §22.7 Option D). Above 100M+ tokens/day on a sustained basis, with good utilization, self-host meaningfully wins. Constraints (data residency, latency floors, vendor independence) can flip the answer earlier.\n\nThese numbers shift with hardware costs, model sizes, and provider pricing; the heuristic is the durable point. **Most teams should not self-host**. Self-host is for very-high-volume specialty cases or regulated use cases.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1074,
+      "out_sha": "dc637f7ae662",
       "note": ""
     },
     {
