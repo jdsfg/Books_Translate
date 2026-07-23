@@ -1655,11 +1655,11 @@
       "en_title": "Chapter 5: Eval Tools and Where They Fit",
       "order": 127,
       "src_chars": 1660,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2d8fd8f80efd",
       "src": "### 5.5 Per-prompt-version golden sets\n\nA subtle but important pattern. As the prompt evolves, the _appropriate_ golden set sometimes evolves too. A new prompt may handle a class of inputs better, and the original golden set may not have enough cases to exercise that class. Conversely, a prompt change may make some original golden cases irrelevant (e.g., a feature flag now routes them elsewhere).\n\nThe pattern is to version the golden set with the prompt. Each prompt version has an associated golden-set version. The eval runner picks the golden set matching the prompt version under test.\n    \n    \n    goldens/\n    ├── clinical_summary/\n    │   ├── v1/\n    │   │   ├── manifest.json\n    │   │   └── cases/\n    │   │       ├── case_001.json\n    │   │       └── ...\n    │   ├── v2/\n    │   │   └── ...\n    │   └── v3/  # current\n    │       └── ...\n    \n\nEach version's manifest carries the metadata: number of cases, stratification by category, calibration kappa from labeling, last-reviewed-at timestamp.\n\nWhen the team adds a new case (because a production incident exposed a failure mode), the case goes into the current version of the golden set, not retroactively into older versions. When the team changes a label (because the labeling instructions were refined), the change is recorded with a version bump.\n\nThe discipline this enforces: **regression comparisons are apples-to-apples** because both the candidate and the baseline run against the same golden-set version. A PR that changes the prompt and the golden set in the same commit gets a comparison against the _new_ golden set, with a clear note that the comparison is post-eval-evolution.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 806,
+      "out_sha": "0c1ea71997de",
       "note": ""
     },
     {
@@ -1667,23 +1667,23 @@
       "en_title": "Chapter 5: Eval Tools and Where They Fit",
       "order": 128,
       "src_chars": 67,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8846dfde7049",
       "src": "### 5.6 Binding workflow #1: the eval-as-CI GitHub Actions workflow",
-      "out_chars": 0,
-      "out_sha": "",
-      "note": ""
+      "out_chars": 103,
+      "out_sha": "33babd65e829",
+      "note": "section header only, 67 chars"
     },
     {
       "id": "c06_b10",
       "en_title": "Chapter 5: Eval Tools and Where They Fit",
       "order": 129,
       "src_chars": 3805,
-      "status": "pending",
+      "status": "done",
       "src_sha": "556928c21a50",
       "src": "Here is the full workflow. It is the production gate at Beacon Health AI for the CodeReview Bot (the non-PHI feature; the clinical-notes summarizer has additional steps for PHI sandboxing that we won't dump into this generic template).\n    \n    \n    # .github/workflows/eval.yml\n    name: Eval Suite\n    \n    on:\n      pull_request:\n        paths:\n          - 'prompts/**'\n          - 'src/**'\n          - 'goldens/**'\n          - '.github/workflows/eval.yml'\n      push:\n        branches: [main]\n    \n    jobs:\n      eval:\n        runs-on: ubuntu-latest\n        timeout-minutes: 30\n        permissions:\n          contents: read\n          pull-requests: write\n        env:\n          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY_EVAL }}\n          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY_EVAL }}\n        steps:\n          - name: Checkout\n            uses: actions/checkout@v4\n            with:\n              fetch-depth: 2\n    \n          - name: Set up Python\n            uses: actions/setup-python@v5\n            with:\n              python-version: '3.12'\n              cache: 'pip'\n    \n          - name: Install dependencies\n            run: |\n              pip install -r requirements.txt\n              pip install pytest-evals\n    \n          - name: Determine baseline SHA\n            id: baseline\n            run: |\n              if [ \"${{ github.event_name }}\" = \"pull_request\" ]; then\n                echo \"sha=${{ github.event.pull_request.base.sha }}\" >> $GITHUB_OUTPUT\n              else\n                echo \"sha=${{ github.event.before }}\" >> $GITHUB_OUTPUT\n              fi\n    \n          - name: Run eval suite (candidate)\n            id: candidate\n            run: |\n              python -m pytest tests/evals/ \\\n                --eval-output=eval_results_candidate.json \\\n                --eval-store=eval_store.sqlite \\\n                --git-sha=${{ github.sha }} \\\n                --prompt-version=$(cat prompts/version.txt) \\\n                --model-version=claude-sonnet-4-20260315\n    \n          - name: Run eval suite (baseline)\n            id: baseline_run\n            run: |\n              git checkout ${{ steps.baseline.outputs.sha }} -- prompts/ src/\n              python -m pytest tests/evals/ \\\n                --eval-output=eval_results_baseline.json \\\n                --eval-store=eval_store.sqlite \\\n                --git-sha=${{ steps.baseline.outputs.sha }} \\\n                --prompt-version=$(cat prompts/version.txt) \\\n                --model-version=claude-sonnet-4-20260315\n              git checkout ${{ github.sha }} -- prompts/ src/\n    \n          - name: Compare and gate\n            id: compare\n            run: |\n              python scripts/compare_evals.py \\\n                --candidate eval_results_candidate.json \\\n                --baseline eval_results_baseline.json \\\n                --threshold-summary-drop 0.1 \\\n                --threshold-dimension-floor 2.5 \\\n                --output comparison_report.md\n    \n          - name: Post comparison comment\n            if: github.event_name == 'pull_request'\n            uses: actions/github-script@v7\n            with:\n              script: |\n                const fs = require('fs');\n                const report = fs.readFileSync('comparison_report.md', 'utf8');\n                github.rest.issues.createComment({\n                  issue_number: context.issue.number,\n                  owner: context.repo.owner,\n                  repo: context.repo.repo,\n                  body: report,\n                });\n    \n          - name: Upload eval results\n            uses: actions/upload-artifact@v4\n            with:\n              name: eval-results\n              path: |\n                eval_results_candidate.json\n                eval_results_baseline.json\n                eval_store.sqlite\n    ",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 3613,
+      "out_sha": "1c7b9fa8deed",
       "note": ""
     },
     {
