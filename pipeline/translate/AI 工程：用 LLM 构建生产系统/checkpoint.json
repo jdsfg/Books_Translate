@@ -2819,11 +2819,11 @@
       "en_title": "Chapter 9: RAG Architecture from First Principles",
       "order": 224,
       "src_chars": 2013,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0af9acd61cca",
       "src": "### 9.9 How This Breaks: the retrieval that nobody audited\n\n**Failure mode named** : the retrieval that nobody audited. A team builds a RAG pipeline. The eval measures end-to-end answer quality and looks fine. Six months in, a user reports an answer that cites a source the team has never seen before. Investigation reveals: the retrieval corpus was populated by an automated ingest that included sources the team didn't realize they had: a deprecated internal wiki, a public forum the corpus's web-crawler had wandered onto, a marketing site that contradicted internal policy.\n\n**Real or composite incident** : a composite from across the industry. The Google AI Overviews case is a public example. Several enterprise RAG deployments have had analogous failures, often discovered by customers who complain about _the answer cited a competitor's marketing page_.\n\n**Engineering mitigation** :\n\n  1. **Source provenance tracking**. Every chunk in the index has a `source_id` and `source_type` (`internal_wiki`, `vendor_docs`, `external_web`, etc.). Retrieval can filter or weight by source type.\n  2. **Source allowlist for production**. Only sources explicitly approved go into the production index. New sources require explicit team review.\n  3. **Retrieval-content audit eval**. A slice of the eval measures whether retrieved chunks come from approved sources for production-style queries. Non-approved sources in top-K retrieval is a failure signal.\n  4. **Periodic audit of indexed sources**. A monthly listing of source IDs in the index, reviewed by a team member, catches inadvertent corpus drift.\n\n**The eval that would have caught it** : the _retrieval-content audit eval_ described above. The failure here is not that the LLM hallucinated; it's that retrieval pulled from sources nobody approved. The eval at the retrieval layer catches it. End-to-end answer evals miss it because the answer's grounding looks plausible, until someone notices the citation is to a source that shouldn't be in the corpus.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 708,
+      "out_sha": "2c809de28ba5",
       "note": ""
     },
     {
