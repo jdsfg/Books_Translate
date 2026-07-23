@@ -1979,11 +1979,11 @@
       "en_title": "Chapter 6: Prompt Engineering — What Still Matters in 2026",
       "order": 154,
       "src_chars": 2063,
-      "status": "pending",
+      "status": "done",
       "src_sha": "173adcd5d0ec",
       "src": "### 6.8 How This Breaks: the prompt that worked yesterday\n\n**Failure mode named** : the prompt that worked yesterday. A team's prompt has been stable for months. The eval passes; the production behavior is good. The provider releases a minor model update — same model name, same dated version, but with subtle backend changes (perhaps a tokenizer update, perhaps a safety-fine-tuning pass). The prompt's behavior shifts. The eval, if run, would catch it; the eval, if not run, lets it through. The team notices when customers complain about the new tone or the unexpected refusal pattern.\n\n**Real or composite incident** : a composite. A customer-support team's prompt produced a steady refusal rate of ~2% (cases where the model declined to answer). After a provider-side update, the refusal rate jumped to ~7%. The prompt had not changed; the model identifier had not changed (in the API call); the behavior had shifted because the provider's deployment had updated underneath the pinned version. The team's eval, run weekly, caught the shift on the next run; the lag between the change and the catch was four days, during which customer complaints accumulated.\n\n**Engineering mitigation** : continuous eval at a finer cadence than weekly. For high-volume production prompts, a nightly eval is the working floor; for highest-stakes prompts, an eval that runs every few hours. The cost is small (10 USD–100 USD/month per prompt for nightly evals at typical scale); the catch-time drops from days to hours. Chapter 21 builds out the production-eval pattern.\n\nA second mitigation: **subscribe to provider release notes** and re-run evals proactively on any minor model update. This is operational discipline more than engineering, but it matters; teams that ignore release notes are surprised more often than teams that read them.\n\n**The eval that would have caught it** : the nightly eval on the production prompt's golden set. The eval already existed (per Chapter 5); the failure was operational cadence, not eval design. Tightening the cadence closes the gap.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 766,
+      "out_sha": "77808c8ac7a2",
       "note": ""
     },
     {
@@ -1991,11 +1991,11 @@
       "en_title": "Chapter 6: Prompt Engineering — What Still Matters in 2026",
       "order": 155,
       "src_chars": 2278,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d0a48787979e",
       "src": "### Chapter Summary\n\nPrompt engineering in 2026 has narrowed from the broad 2022–2023 discipline to four specific use cases: cost and latency optimization through prompt design; constraining output structure (Chapter 7); eliciting tool use (Chapter 13); safety hardening (Chapter 23). The named patterns from the literature (chain-of-thought prompting, Wei et al., 2022; ReAct, Yao et al., 2022; Self-Refine, Madaan et al., 2023) have been partially absorbed into the training of frontier models; they still help in specific scenarios, especially on workhorse-tier models, but they are no longer the differentiating skill they were three years ago.\n\nDSPy and MIPRO represent the _prompt-as-code_ discipline: signatures replace strings; optimization replaces hand-tuning. The framework is right when you have a clear eval set, a well-bounded task, and willingness to give up direct prompt control. It is overkill for simple cases or tight stakeholder-visibility constraints.\n\nThe prompt-registry pattern (§6.4) is the discipline of treating prompts as versioned artifacts. Each prompt has a version, a baseline eval score, and a deployment manifest. Binding workflow #2 (§6.5) is the concrete artifact: three candidate prompt versions, each evaluated against the same golden set, with deltas visible side by side. The team picks the version on data, deploys via manifest update, and rolls back via manifest reversion.\n\nStrata Research's V1→V4 iteration arc (§6.6) shows the discipline in practice: each version targets a specific eval dimension; cumulative lift is engineered, not lucky. The prompt grows from ~150 to ~450 tokens; the cost is acceptable; the accuracy moves from 64% to 81% with full eval support.\n\nPrompt-as-code rests on the eval discipline of Chapter 4 and the tooling of Chapter 5. The downstream use cases — structured output (Chapter 7), tool use (Chapter 13), prompt caching as cost lever (Chapter 18), safety hardening (Chapter 23) — each take this chapter's registry pattern as given and engineer on top of it.\n\nWhat survives any specific 2026 tactic going obsolete is the _discipline_ : prompts as versioned code, evaluated against goldens, deployed via manifest. The tactics will rotate; the workflow shape is what carries forward.\n\n\n### 6.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 900,
+      "out_sha": "3b714ff051c4",
       "note": ""
     },
     {
