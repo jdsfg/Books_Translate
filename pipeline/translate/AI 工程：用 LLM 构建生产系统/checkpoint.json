@@ -6695,11 +6695,11 @@
       "en_title": "Chapter 23: Safety and Reliability in Production",
       "order": 547,
       "src_chars": 2418,
-      "status": "pending",
+      "status": "done",
       "src_sha": "200df0fbe405",
       "src": "#### What model training does and doesn't fix\n\nA trap worth naming: the belief that prompt-injection is _fully solved_ by modern models' trained refusal behavior. It isn't. Frontier models resist obvious direct-injection attempts well, but indirect injection (via retrieved content) and sophisticated direct injection still succeed at meaningful rates. Trained refusal is one layer in the defense; the architectural layers around it are required. Teams that lean on the model's trained behavior as their only protection eventually have an incident.\n\n\n### 23.8 Triangle Trade-off sidebar: safety investments (classic format)\n\nThe cost-effectiveness of safety investments:\n\nInvestment | Engineering effort | Latency cost | Risk reduction  \n---|---|---|---  \nPre-emit output classifier | 1-2 engineer-weeks | +200ms | Catches toxicity, PII leakage  \nSchema validation (output) | 1 engineer-week | +negligible | Catches structural deviation; first prompt-injection signal  \nUntrusted-content tagging | 1 engineer-week | +negligible | Layer 3 of injection defense  \nCross-tenant data isolation | 2-4 engineer-weeks (depends on existing arch) | +negligible | Hard barrier on multi-tenant data leaks  \nPattern-based injection screening | 1-2 engineer-weeks | +negligible (regex is fast) | Layer 4; flag known attack patterns  \nConfidence-elicitation prompts | 1 engineer-week | +5% output length | Signal for downstream decision-making  \nAudit-grade security logging | 2-4 engineer-weeks | +50ms (async) | Investigation capability for incidents  \nFull four-layer defense | 1-2 engineer-months | +200-400ms | Compounded; near-comprehensive  \n  \nWhat to read off:\n\n  1. **Individual investments are cheap relative to incident cost**. A 1-engineer-month investment in defense layers prevents incidents that can cost millions in business impact + legal exposure.\n  2. **Latency cost is real but manageable**. ~300ms additional latency for full defense; acceptable for most use cases. For voice (Chapter 20) where every ms matters, lighter defenses may need to be used selectively.\n  3. **The combination matters more than any single layer**. The risk reduction column shows \"compounded; near-comprehensive\" for the full pattern; no single layer achieves this.\n\nThe safety investment is one of the highest-ROI engineering investments in production AI. Skip it and the eventual incident is much more expensive than the prevention.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 848,
+      "out_sha": "09c84649f709",
       "note": ""
     },
     {
@@ -6707,11 +6707,11 @@
       "en_title": "Chapter 23: Safety and Reliability in Production",
       "order": 548,
       "src_chars": 1965,
-      "status": "pending",
+      "status": "done",
       "src_sha": "928d4df8feaf",
       "src": "### 23.9 How This Breaks: the defense that wasn't tested adversarially\n\n**Failure mode named** : the defense that wasn't tested adversarially. The team implements safety defenses. The defenses work on normal traffic. The first sophisticated adversarial attack reveals that the defenses don't actually catch the specific attack — a gap the team didn't think to test for.\n\n**Real or composite incident** : a composite. A team added an output classifier as their primary toxicity defense. The classifier worked well on overt toxic content. An adversarial input used encoded text (Unicode lookalikes; structured tricks) that the classifier didn't catch. The output reached the user; the company appeared in a screenshot.\n\n**Engineering mitigation** :\n\n  1. **Adversarial eval slices** : every defense layer has an eval slice that tests it specifically. The toxicity classifier is tested against a corpus of known-difficult toxic inputs including encoded variants. The injection defense is tested against a corpus of prompt-injection patterns.\n\n  2. **Red-team exercises** : periodically (quarterly minimum), security-aware engineers (or specialized contractors) attempt to break the defenses. The exercises produce specific findings; remediations are scheduled.\n\n  3. **Production monitoring of defense effectiveness** : production-eval (Chapter 21) includes safety dimensions; degradations or anomalies trigger investigation. Defense regressions are caught quickly.\n\n  4. **External coordination** : subscribe to AI security advisories (specialized researchers publishing known attacks); update defenses as new attacks become public.\n\n**The eval that would have caught it** : the adversarial-eval slice for the specific defense layer. Without explicit testing against the attack class, defenses ship blind. The discipline: every defense layer has an explicit eval; the eval covers the threat class the defense is designed for; gaps in the eval are gaps in production.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 607,
+      "out_sha": "aef615689ca5",
       "note": ""
     },
     {
