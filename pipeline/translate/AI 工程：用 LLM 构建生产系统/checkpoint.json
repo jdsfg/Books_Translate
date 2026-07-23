@@ -6083,11 +6083,11 @@
       "en_title": "Chapter 21: Production Eval, Drift Detection, and the Model Upgrade Workflow",
       "order": 496,
       "src_chars": 1637,
-      "status": "pending",
+      "status": "done",
       "src_sha": "295e2ff97500",
       "src": "### 21.4 A/B testing LLM features\n\nA/B testing in classical software is mature: ship variant A to a fraction of users, ship variant B to the rest, measure outcomes, decide which wins. For LLM features, classical A/B testing breaks in non-obvious ways.\n\nWhy LLM A/B is harder:\n\n  1. **Multi-dimensional outputs** : variant A may be better on one dimension (correctness) while worse on another (tone). A single metric can't capture the trade-off; the decision becomes harder.\n\n  2. **Eval noise** : the eval-as-judge scoring has noise (Chapter 4 §4.5). A 0.2-point delta between variants on a 200-call sample may not be statistically meaningful.\n\n  3. **User adaptation** : users adjust to how the system behaves. A new variant may seem worse initially because users were calibrated to the prior behavior; over weeks, they adapt; the variant looks better.\n\n  4. **Latency-induced confounding** : variants with different latencies (faster vs slower models) confound the engagement metrics. Faster variants get more engagement just because they're faster, independent of quality.\n\nWhat works for LLM A/B in practice:\n\n* **Run A/B for longer than classical** (weeks instead of days) to allow user adaptation to settle.\n* **Measure multiple dimensions** simultaneously; explicitly weigh trade-offs.\n* **Stratify by user segment** : new users vs experienced users react differently to variants.\n* **Combine A/B engagement signals with offline eval scores** : a variant that ships with both an eval lift and an engagement lift is a confident ship.\n\nA/B testing is a real tool for LLM features but requires more care than classical applications.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 601,
+      "out_sha": "f712809a3e23",
       "note": ""
     },
     {
@@ -6095,11 +6095,11 @@
       "en_title": "Chapter 21: Production Eval, Drift Detection, and the Model Upgrade Workflow",
       "order": 497,
       "src_chars": 1925,
-      "status": "pending",
+      "status": "done",
       "src_sha": "dfa5c2bfdd56",
       "src": "### 21.5 Catastrophic failure detection: the \"glue on pizza\" problem\n\nSome failures are subtle (small quality regressions over many calls). Other failures are catastrophic: a single specific output that's egregiously wrong, dangerous, or embarrassing. The Google AI Overviews \"glue on pizza\" case (Thread B Failure 2; Chapter 9 §9.7) is the canonical example.\n\nCatastrophic failures are dangerous because:\n\n* **They're rare in absolute terms** (perhaps 1 in 100K calls).\n* **They're disastrous in business terms** (newspaper headlines; brand damage; legal exposure).\n* **They're hard to detect via aggregate metrics** : a 0.001% rate doesn't move the mean.\n\nDetection patterns:\n\n  1. **Adversarial eval** : a slice of the production eval includes inputs designed to surface catastrophic failures. Specific patterns (prompt-injection attempts, edge-case formats, known-difficult queries) are evaluated explicitly.\n\n  2. **Output classifiers** : a downstream classifier scans every output for catastrophic categories (PII leakage; off-topic content; refused topics; safety violations). The classifier is itself an LLM call (cheap workhorse model) or a rule-based system.\n\n  3. **Human spot-check** : a small fraction of outputs (e.g., 0.1% across high-stakes paths) are reviewed by humans. Slow; expensive; the safety net.\n\n  4. **User reports** : a tight feedback loop where users can flag specific outputs as problematic. The flagged outputs go to immediate review; patterns inform eval-set additions.\n\nFor Beacon Health AI, catastrophic detection is especially critical (a clinical-summarizer that fabricates a medication dose is unambiguously catastrophic). The patterns layer: output schema validation (Chapter 7); structural checks (no `[fabricated]` markers; medication list cross-checked against allergies); clinician review of every output before EHR insertion. Catastrophic categories have multiple lines of defense.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 686,
+      "out_sha": "f3e75a888ef4",
       "note": ""
     },
     {
