@@ -3263,11 +3263,11 @@
       "en_title": "Chapter 11: Advanced RAG and RAG Evaluation",
       "order": 261,
       "src_chars": 2494,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2f17fc9e01ae",
       "src": "#### Pattern 1: query expansion\n\nAdd synonyms, related terms, or rephrasings to the query before retrieval. Done well, expansion catches relevant chunks the literal query would miss.\n    \n    \n    def expand_query(query: str) -> str:\n        expansion_prompt = f\"\"\"Expand the following query with synonyms and related terms.\n    Output only the expanded query.\n    \n    Query: {query}\n    Expanded query:\"\"\"\n        expansion = small_llm.complete(expansion_prompt, max_tokens=100, temperature=0)\n        return f\"{query} {expansion}\"\n    \n\nCost: one small LLM call per query (sub-cent at workhorse-tier models). Latency: ~200ms (negligible relative to total retrieval pipeline).\n\n\n#### Pattern 2: HyDE (Hypothetical Document Embeddings)\n\nGao et al. 2022. Instead of embedding the query, ask the LLM to generate a _hypothetical answer_ to the query, then embed the hypothetical answer. The hypothetical answer is more similar to retrieval targets (which are also answers / passages) than the query is.\n    \n    \n    def hyde_retrieve(query: str) -> list[Chunk]:\n        hypothetical_prompt = f\"\"\"Write a brief hypothetical answer to this question.\n    Question: {query}\n    Answer:\"\"\"\n        hypothetical = small_llm.complete(hypothetical_prompt, max_tokens=200, temperature=0)\n        hypothetical_vec = embed(hypothetical)\n        return vector_db.search(hypothetical_vec, top_k=20)\n    \n\nHyDE typically lifts retrieval recall by 3–7 points on benchmark tasks; the cost is one extra LLM call. For high-quality production RAG, often worth it.\n\n\n#### Pattern 3: query decomposition\n\nComplex queries that ask multiple things at once (_\"What is the policy for parental leave and how does it interact with the bereavement policy?\"_) are decomposed into sub-queries; each sub-query gets its own retrieval; the LLM synthesizes from the union.\n    \n    \n    def decompose_and_retrieve(query: str) -> list[Chunk]:\n        decomp_prompt = f\"\"\"Break this question into 1-3 simpler sub-questions, one per line.\n    \n    Question: {query}\"\"\"\n        sub_questions = small_llm.complete(decomp_prompt).split(\"\\n\")\n        all_chunks = []\n        for sq in sub_questions:\n            all_chunks.extend(hybrid_search(sq, top_k=5))\n        return deduplicate(all_chunks)\n    \n\nDecomposition helps when single-query retrieval misses one aspect of the user's question. Cost: one decomposition call plus multiple retrievals. For complex queries, the cost is justified; for simple queries, the overhead is wasted.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1498,
+      "out_sha": "c15eea0eaa2b",
       "note": ""
     },
     {
