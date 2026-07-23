@@ -2603,11 +2603,11 @@
       "en_title": "Chapter 8: Context Engineering and the Long-Context vs RAG Decision Tree",
       "order": 206,
       "src_chars": 2926,
-      "status": "pending",
+      "status": "done",
       "src_sha": "deaa713febe3",
       "src": "* **> 10M tokens (RAG wins)**: Strata's legal corpus (hundreds of millions of tokens of case law and regulations). Long-context cannot fit; even Gemini 2.5 Pro tops out at 2M. RAG is the only option; the question becomes how to engineer the RAG well (Chapters 9–12).\n\nThe tier boundaries assume 2026 model context sizes. As context windows grow, boundaries shift. The decision-tree structure (3 tiers based on corpus size) is the durable artifact.\n\n**Q4.** Why is the _escalation pattern_ (§8.7 Beacon example) a common context-engineering approach, and what determines whether to apply it?\n\n**Answer:** The escalation pattern uses cheap context as the default and switches to expensive context only when the cheap version signals uncertainty. The benefit is that most calls (often >80%) pay the cheap cost; only the difficult cases pay the expensive cost. The average cost is dominated by the cheap path.\n\nIt applies when:\n\n* The cheap context covers the majority of cases adequately. Without this, the escalation rate becomes too high and the average cost is close to the expensive version.\n* The model can signal uncertainty reliably. The discriminated-union pattern from Chapter 7 gives the model a typed way to say _I'm not sure_ ; the escalation pattern depends on this signal being meaningful.\n* The cost gap between cheap and expensive context is large. If the gap is small, the escalation logic isn't worth the engineering overhead.\n\nIt does not apply when:\n\n* Every call needs the full context (no escalation save possible).\n* The model's uncertainty signal is unreliable (escalation rate is either too high or too low).\n* The latency of the expensive path is unacceptable even for the small escalation fraction (some real-time systems can't tolerate it).\n\nFor Beacon, the pattern fits because most clinical notes are typical, the model's confidence signal correlates with actual clinical complexity, and the latency penalty of long-context only hits the ~15% of cases where it's warranted. The pattern saved Beacon ~70% on average inference cost vs always-expensive.\n\n**Q5.** Re-anchor the long-context vs. RAG decision (§8.6) for three corpus-size bands you've now seen in Chapters 8 and 9. For corpus sizes (a) 80K tokens, (b) 1.2M tokens, (c) 40M tokens, state the decision, identify the dominant deciding factor, and name the most common _wrong_ answer for that band.\n\n**Answer:**\n\n(a) **80K tokens: long-context wins.** Dominant deciding factor: it fits comfortably with headroom; building a RAG pipeline adds chunking, embedding, vector DB, retrieval-eval overhead for no quality gain. The most common wrong answer: building RAG anyway because _real production uses RAG_. This is over-engineering; the chapter's tier 1 explicitly argues against it. The team should put the full corpus in the system prompt with prompt caching for the stable portion (cost stays low for the cacheable part), and ship in a week.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1034,
+      "out_sha": "3470136f276b",
       "note": ""
     },
     {
@@ -2615,11 +2615,11 @@
       "en_title": "Chapter 8: Context Engineering and the Long-Context vs RAG Decision Tree",
       "order": 207,
       "src_chars": 1522,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7c010abdff64",
       "src": "(b) **1.2M tokens: judgment call, often RAG.** Dominant deciding factor: latency. At 1.2M input tokens, TTFT on workhorse models is multi-second; for interactive use cases (chat, search), the wait is painful. RAG retrieves a small chunk set per query; the LLM sees 5K to 20K tokens; latency is much lower. The cost story can also favor RAG at high volume (you pay for 5 to 20K input per query, not 1.2M). The most common wrong answer: long-context because _it fits, so why not?_ The fit isn't the only consideration; user-facing latency and per-query cost economics usually push the call to RAG.\n\n(c) **40M tokens: RAG wins.** Dominant deciding factor: it cannot fit; even Gemini 2.5 Pro's 2M context can't hold it. The engineering question shifts from _long-context or RAG_ to _how to engineer the RAG well_ (Chapter 9). The most common wrong answer: trying to split the corpus across multiple long-context calls and merge results. The merge logic becomes its own engineering problem with worse failure modes than a clean RAG; just build the RAG.\n\nCross-band lesson: the decision-tree boundaries are about _capability_ and _cost_. The tier 1 case is decided by capability (it fits, so simplicity wins); the tier 3 case is decided by capability (it doesn't fit); the middle tier is decided by cost and latency at the boundary. Memorizing the boundaries isn't the point; understanding _why_ each boundary matters is the point. As context windows expand, the boundaries move; the structural logic of why-this-tier persists.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 569,
+      "out_sha": "ca77dfb774bd",
       "note": ""
     },
     {
