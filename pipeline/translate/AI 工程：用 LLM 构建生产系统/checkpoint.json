@@ -6275,11 +6275,11 @@
       "en_title": "Chapter 21: Production Eval, Drift Detection, and the Model Upgrade Workflow",
       "order": 512,
       "src_chars": 555,
-      "status": "pending",
+      "status": "done",
       "src_sha": "79ff000409cc",
       "src": "**Answer:** Useful prompt: _Design canary criteria for a new contract-review agent (no prior baseline): signals, promotion thresholds, rollback thresholds, human-in-the-loop schedule._ You verify (a) the criteria account for the _no prior baseline_ aspect (the LLM may treat this as a model-upgrade canary, which assumes a baseline; insist on the offline-eval prediction as the proxy baseline), and (b) the human-in-the-loop schedule has a decay curve rather than a static rate (early-canary requires high density; the curve relaxes as data accumulates).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 186,
+      "out_sha": "9ec1d834493e",
       "note": ""
     },
     {
@@ -6287,11 +6287,11 @@
       "en_title": "Chapter 21: Production Eval, Drift Detection, and the Model Upgrade Workflow",
       "order": 513,
       "src_chars": 3448,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6739e8edea61",
       "src": "#### Think Deeper\n\n**Q1.** _Production eval as a discipline that pays back over years._ The chapter argues that production eval is a continuous discipline, not a one-time deliverable. Defend this argument with a specific scenario showing the payback over a multi-year horizon.\n\n**Discussion:** The argument: production eval compounds. Each year:\n\n* Year 1: production eval is set up; catches initial drift; finds an unexpected regression. Saves ~50K USD in customer-impact costs that would have accumulated without detection.\n* Year 2: the team runs 4 model upgrades; each upgrade is gated by the production eval. Saves 1-2 weeks of post-incident recovery per upgrade vs ad-hoc upgrades. Catches a fine-tune deprecation gracefully (Chapter 22).\n* Year 3: the team's eval expands to cover new features; the golden set has grown 3×; new dimensions added. The team can ship faster because the eval gates everything reliably.\n* Year 4: the eval has caught 50+ regressions over the years; most never reached customers. The team's quality trend is monotonically improving despite shipping features continuously.\n\nThe payback is real but distributed. No single quarter's eval work delivers a 10× ROI; the cumulative work across years delivers it. Teams that adopt production eval early and sustain it compound the value; teams that adopt it reactively (after an incident) start the compound clock later.\n\nThe lesson parallels classical software engineering: testing, CI, code review, monitoring — each is a discipline that compounds over time. Production eval is the LLM-engineering equivalent. The work isn't glamorous; the value is real.\n\n**Q2.** _Drift detection in 2030._ Speculate about drift detection patterns in 2030 as models become more capable and more frequently updated. Will the discipline shrink (because models are more stable) or grow (because models update more frequently)? Argue with specifics.\n\n**Discussion:** Two forces:\n\n  1. **Models become more capable** : by 2030, frontier model updates may shift behavior less, because models are closer to their capability ceiling on most tasks. Less drift per update; less work for drift detection.\n\n  2. **Models update more frequently** : providers may release minor updates more often (continuous improvement vs annual releases). More updates means more frequent drift, more frequent need for detection.\n\n**Most likely 2030** : drift detection becomes more automated and integrated. The 2026 manual quarterly model-upgrade workflow shrinks to an automated weekly micro-upgrade workflow. Production eval runs continuously; drift detection fires in near-real-time; small drifts are automatically investigated and either accepted or surfaced for human review.\n\nThe discipline doesn't shrink; it intensifies and automates. The team's _manual_ work shrinks (less manual upgrade work); the team's _infrastructure_ investment grows (more automated eval, drift detection, response systems).\n\nA specific 2030 prediction: **continuous eval becomes the default**. Every production trajectory is scored; no sampling needed (cost has dropped enough). The team's quality picture is continuous and current; drift becomes minor noise within an actively-managed quality trajectory.\n\nThe investment in production eval discipline in 2026 prepares the team for the more sophisticated 2030 patterns. Teams that skip the 2026 discipline can't catch up to the 2030 pattern; the foundation has to be built first.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1149,
+      "out_sha": "3a36818db523",
       "note": ""
     },
     {
@@ -6299,11 +6299,11 @@
       "en_title": "Chapter 21: Production Eval, Drift Detection, and the Model Upgrade Workflow",
       "order": 514,
       "src_chars": 3461,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bbd304d3c886",
       "src": "**Q3.** _A/B testing a non-binary outcome metric._ Classical A/B test theory assumes a binary outcome (conversion / no conversion). LLM features often produce non-binary outcomes (the eval rubric scores 1-10; the user-satisfaction signal is continuous; the customer's downstream behavior is multi-step). Argue how A/B test design should adapt to non-binary outcomes, and where the 2026 industry practice still falls short.\n\n**Discussion:** Classical A/B test math (sample-size formulas, confidence intervals, sequential testing rules) is derived for binary outcomes. The intuitions transfer to continuous metrics, but the specifics do not. Three adaptations matter:\n\n  1. **Distribution-aware sample sizing**. A 0.3-point shift on a 1-10 eval rubric is not the same statistical problem as a 3% lift in conversion rate. The sample size depends on the variance of the eval-score distribution, not on a baseline rate. Teams that use binary-A/B sample-size calculators on continuous metrics typically _under-power_ their tests (the calculator assumes lower variance than the eval score actually has). The fix: use Welch's t-test or Mann-Whitney U with empirically-measured variance, not a rule-of-thumb sample-size table.\n\n  2. **Effect-size definition**. For binary outcomes, a 1% lift is unambiguous (a percentage point on a probability). For continuous metrics, a _0.2-point lift_ on a 10-point eval is meaningful in some contexts and noise in others. The team must define the _minimum meaningful effect_ before running the test, ideally tied to a downstream business outcome. Without this, the team measures statistical significance without practical significance and ships changes that move the metric but not the business.\n\n  3. **Multi-dimensional outcomes**. Eval-score is rarely a single number; it is typically a vector across dimensions (faithfulness, tone, completeness, citation, safety). A variant that improves the aggregate may regress one critical dimension. Sound A/B for LLM features requires per-dimension analysis plus an aggregate. The team's decision criteria should specify: _aggregate must improve AND no critical dimension may regress by more than X_. Teams that look only at the aggregate ship features that erode dimensions their customers care about.\n\n**Where 2026 industry practice falls short** :\n\n* Many teams reuse the classical-product A/B platform (Optimizely, in-house variants) without adjusting the statistics for LLM-eval distributions. The platform reports significance with binary-tuned formulas; the team trusts the report; the actual confidence is lower than advertised.\n\n* Many teams ship LLM features when the _primary metric_ moves favorably without auditing the _secondary dimensions_. The aggregate-only discipline is faster but produces feature debt: the system gradually loses tone or citation quality while the headline metric improves.\n\n* Bayesian A/B (with priors and posteriors over continuous metrics) is theoretically a better fit but rare in production because of operational complexity. The next wave (2027-2030) likely formalizes Bayesian A/B for LLM features in tooling that hides the math from the practitioner.\n\n* _Stratification_ by user segment is under-used. A new variant may help new users and hurt experienced users, with the aggregate showing a wash. Stratified analysis surfaces this; aggregate analysis hides it. The 2026 maturity gap: most teams know they should stratify; few do it routinely.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1090,
+      "out_sha": "8183bf2b922a",
       "note": ""
     },
     {
@@ -6311,11 +6311,11 @@
       "en_title": "Chapter 21: Production Eval, Drift Detection, and the Model Upgrade Workflow",
       "order": 515,
       "src_chars": 758,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a405536a05ae",
       "src": "**Net argument** : A/B testing for LLM features is recognizably the same discipline as classical A/B testing but with three adaptations (distribution-aware sizing; effect-size meaningful definition; multi-dimensional outcomes). Teams that make the adaptations get reliable production signals; teams that skip them get noisy signals that mislead decisions. The discipline is teachable and tractable; the industry-wide adoption gap is the bottleneck, not the technique itself.\n\nThis connects back to the eval discipline of Chapter 4 (LLM-judge noise is real and must be measured) and the cost discipline of Chapter 18 (longer A/B tests cost more; the sample-size discipline directly determines test cost). The chain of disciplines is mutually reinforcing.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 218,
+      "out_sha": "31554795c177",
       "note": ""
     },
     {
