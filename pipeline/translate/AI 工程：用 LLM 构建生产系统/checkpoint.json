@@ -3755,11 +3755,11 @@
       "en_title": "Chapter 12: Multimodal RAG and Document Understanding",
       "order": 302,
       "src_chars": 2231,
-      "status": "pending",
+      "status": "done",
       "src_sha": "935e7b6ef7a8",
       "src": "* _Unlikely to flip_ : API references are intrinsically text/code. Even substantial query-type changes wouldn't favor ColPali. The only flip scenario: the corpus expands to include visual material (architecture diagrams, UI mockups) where standard text loses the relevant content; then hybrid (text-RAG + image embeddings for diagrams) becomes right, but still not specifically ColPali.\n\n**Patent corpus** : **Hybrid (text-RAG + specialized image retrieval), not ColPali specifically**.\n\nPatents are heavily text-based (claims, specification, background) with embedded technical drawings and (in pharma/chem patents) chemical structure diagrams. ColPali's whole-page-image approach is overkill: the text content benefits from standard text-RAG; the embedded images benefit from specialized image retrieval (chemical-structure search uses different embeddings than general images). Hybrid: text-RAG for text queries, ChemNLP-style structure embedding for chemical structures, general image embeddings for engineering diagrams.\n\nEval evidence that would change the recommendation:\n\n* _Patent layout becomes load-bearing_ : if a class of queries depends on patent-specific layout features (e.g., \"find patents where Claim 1 references Figure 3\"), ColPali's layout-awareness could compete; otherwise the cleaner hybrid wins.\n* _Image-search precision improves enough_ : as multimodal embeddings continue to improve, specialized image retrieval may handle more cases without needing ColPali's interaction architecture.\n\nThe general lesson: ColPali is not a universal upgrade over text-RAG; it's a specialty tool for layout-sensitive corpora where region-level retrieval matters. The eval is the arbiter; corpus characteristics are the prior. Teams that pick ColPali because it's the newest paper or text-RAG because it's the simplest pattern, without eval evidence, will both lose to teams that match the architecture to the corpus.\n\nCross-reference: this decision parallels Chapter 11's \"what's the right retrieval architecture for your data?\" framework. The multimodal layer just expands the menu of retrieval options; the choice criterion remains the same: eval evidence on a representative golden set, weighted by failure-cost.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 738,
+      "out_sha": "bff163634c1d",
       "note": ""
     },
     {
