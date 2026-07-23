@@ -2183,11 +2183,11 @@
       "en_title": "Chapter 7: Structured Output — Forcing the LLM to Speak JSON",
       "order": 171,
       "src_chars": 2114,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e748b6d6c88e",
       "src": "### 7.2 The modern stack: native JSON-schema modes\n\nIn 2026, the major providers offer **native JSON-schema modes**. You supply a JSON schema; the API enforces that the model's output conforms to it. Under the hood, the providers use _constrained decoding_ — at each token generation step, the model's output distribution is restricted to tokens that keep the output as a valid continuation of the schema.\n\nThe implementation varies:\n\n* **Anthropic** offers structured output via the tool-use mechanism. You define a tool with the schema you want; you set `tool_choice` to force the tool; the model's output is the tool-call arguments, which conform to the schema.\n* **OpenAI** offers a `response_format` parameter that takes a JSON schema directly. The Structured Output mode (gated behind a specific model version) guarantees schema conformance.\n* **Google Gemini** supports a similar response-schema parameter.\n\nAll three support the same fundamental semantics: _the model's output is JSON that validates against your schema; the API does the enforcement; if the schema cannot be satisfied, the API returns an error rather than malformed output._\n\n\n#### Definition: Constrained decoding\n\nA token-generation strategy in which the LLM's next-token probability distribution is masked at each step to allow only tokens that produce a valid continuation of the required output structure (a JSON schema, a regular expression, a context-free grammar). The model's expressive choices are constrained mechanically; the model cannot emit invalid output even if its natural distribution would.\n\nIn plain language: the model normally picks any token. With constrained decoding, the picker is filtered — only tokens that keep the output valid are allowed. The result is _guaranteed_ valid structure, where _guaranteed_ refers to syntactic validity (the output parses) but not semantic correctness (the output may parse to nonsense).\n\nThe 2026 default: **use native JSON-schema mode for any structured output, on any provider that supports it**. Library wrappers (`instructor`, `outlines`) add ergonomic improvements on top.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 854,
+      "out_sha": "14ff941eedf5",
       "note": ""
     },
     {
@@ -2195,11 +2195,11 @@
       "en_title": "Chapter 7: Structured Output — Forcing the LLM to Speak JSON",
       "order": 172,
       "src_chars": 2510,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f0fddd0fa476",
       "src": "### 7.3 `instructor`: Pydantic-typed structured output\n\n`instructor` is a Python library that wraps the major provider APIs and lets you specify the output schema as a Pydantic model. The library translates the Pydantic schema into the provider's JSON-schema format, makes the call, validates the response, and returns a typed Python object.\n    \n    \n    from typing import Literal\n    from pydantic import BaseModel, Field\n    import instructor\n    from anthropic import Anthropic\n    \n    class CodeReviewItem(BaseModel):\n        severity: Literal[\"critical\", \"major\", \"minor\"]\n        file: str\n        line: int = Field(ge=1, description=\"Line number, 1-indexed\")\n        issue: str\n        suggested_fix: str\n    \n    class CodeReview(BaseModel):\n        overall_assessment: str\n        items: list[CodeReviewItem]\n    \n    client = instructor.from_anthropic(Anthropic())\n    \n    review = client.messages.create(\n        model=\"claude-sonnet-4-20260315\",\n        max_tokens=1024,\n        response_model=CodeReview,\n        messages=[{\"role\": \"user\", \"content\": diff_text}],\n    )\n    \n    # review is a typed CodeReview object; review.items is list[CodeReviewItem]\n    \n\nWhat `instructor` gives you over native JSON-schema mode:\n\n  1. **Pydantic v2 validation**. Beyond schema conformance, Pydantic validates types, constraints (`ge=1`, `min_length=1`), and custom validators. A field declared as `Literal[\"critical\", \"major\", \"minor\"]` is validated to be one of those three strings; a `line: int = Field(ge=1)` is validated to be at least 1.\n  2. **Typed Python objects**. The return value is a typed object, not a dict. Your IDE knows the fields; refactoring is safe; bugs from typos in dict-key access vanish.\n  3. **Automatic schema generation**. You write the Pydantic model; the library generates the JSON schema. Schema and code stay in sync.\n  4. **Provider abstraction**. The same Pydantic model works against Anthropic, OpenAI, Google with one line changed. Useful when you may switch providers or run multi-provider in production.\n  5. **Built-in retry on validation failure**. If the model produces JSON that conforms to the schema but fails Pydantic validation (e.g., the `line` is 0 instead of ≥1), the library retries with the validation error fed back as a message. Configurable retry count.\n\nThe library is small enough to be auditable; the productivity gain is large enough to recommend. In 2026, most Python teams reaching for Pydantic-typed structured output reach for `instructor`.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1608,
+      "out_sha": "20dbb02e6797",
       "note": ""
     },
     {
