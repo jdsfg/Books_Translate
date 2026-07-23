@@ -6371,11 +6371,11 @@
       "en_title": "Chapter 22: Beyond Off-the-Shelf — When to Fine-Tune, Self-Host, or Go On-Device",
       "order": 520,
       "src_chars": 1429,
-      "status": "pending",
+      "status": "done",
       "src_sha": "925fe143ca7e",
       "src": "### 22.5 Inference engines and managed self-host\n\nIf you do self-host, the 2026 stack:\n\n**Inference engines** (the software that serves models on your hardware):\n\n* **vLLM** : open-source; high-throughput; supports many architectures; the default for self-hosted production inference. PagedAttention enables efficient memory use.\n* **TGI (Text Generation Inference)** : HuggingFace's inference engine; mature; good ecosystem integration.\n\nThese are the engines you'd install on your GPUs.\n\n**Managed self-host platforms** (provide GPUs + inference engine as a service):\n\n* **Modal** : serverless GPU compute; pay per invocation; good for variable workloads.\n* **Together AI** : managed inference for open-weight models; per-token billing similar to API providers but for open-weight selection.\n* **Anyscale** : Ray-based; designed for distributed inference at scale.\n* **Replicate** : simple API for hosted open-weight models; good for prototypes.\n\nThe split that has emerged: managed platforms (Together, Replicate) for teams that want open-weight without running infrastructure; self-hosted vLLM for teams with operational capacity that want maximum control and cost optimization.\n\nFor Beacon Health AI's HIPAA-bound use case, neither managed nor unmanaged hosted options are usually acceptable; Beacon either uses hosted APIs with BAAs or runs vLLM internally. The data-sensitivity dimension drives the choice more than cost.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 612,
+      "out_sha": "ddc2ac9e0eb3",
       "note": ""
     },
     {
@@ -6383,11 +6383,11 @@
       "en_title": "Chapter 22: Beyond Off-the-Shelf — When to Fine-Tune, Self-Host, or Go On-Device",
       "order": 521,
       "src_chars": 2862,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f67b3fa938f9",
       "src": "### 22.6 On-device and edge inference\n\nA specific class of self-hosting: running inference on the _user's device_ (phone, laptop, edge server). The 2026 landscape:\n\n**Apple Intelligence** : Apple's hybrid on-device + Private Cloud Compute stack for iOS/macOS. Smaller routine tasks (summarization, rewrite, on-device Siri) run locally on Apple Silicon; heavier tasks fall back to Apple's privacy-preserving cloud (Private Cloud Compute); even heavier or open-ended requests can route to a third-party model (e.g., ChatGPT) with explicit user consent. The architecture is privacy-focused but not strictly on-device; the on-device portion is real and substantial.\n\n**Small open-weight models for edge** : Phi-4 (Microsoft, ~14B but heavily optimized for edge); Gemma 3 (Google, 2-27B sizes including edge-friendly); Llama 3.2 (Meta, 1B and 3B sizes specifically for edge).\n\n**Inference frameworks for edge** :\n\n* **MLX (Apple)** : optimized for Apple Silicon; integrated with iOS/macOS development.\n* **llama.cpp** : cross-platform; runs on consumer hardware; the dominant open-source edge inference tool.\n* **Ollama** : developer-friendly wrapper around llama.cpp; one-command model deployment locally.\n\nEdge inference finds production use in four shapes:\n\n**Privacy-sensitive applications** : personal-data tasks where sending to a cloud is undesirable (transcription of personal voice memos; on-device assistant). Apple Intelligence is the leading consumer example.\n\n**Offline / unreliable-connectivity** : applications that must work without internet (field workers; vehicles; remote locations). Edge inference provides functional capability.\n\n**Latency-critical** : round-trip to cloud adds 50-200ms; for some real-time applications (AR; gaming; speech-feedback loops), edge is faster.\n\n**Cost economics at consumer scale** : when an application has millions of users and each user makes many calls, the cumulative cloud cost is large; edge moves the cost to the user's hardware (which they paid for anyway).\n\nEdge is a real production capability for specific use cases, not a general substitute. Most production AI is still cloud; edge is the specialty for the cases where it fits, and the capability is growing fast enough that 2030 may see substantially broader edge deployment as model efficiency improves.\n\n\n#### A separable pair: model family vs deployment\n\nTeams often equate _open-weight_ with _self-hosted_ , but the two are independent decisions. Open-weight models run perfectly well behind hosted APIs (Together, Replicate, Anyscale); closed-source models can occasionally be self-hosted under specific vendor agreements (uncommon; most providers don't permit it). So there are really two choices to make in sequence: _which model family_ (open-weight vs closed) and _which deployment_ (managed API vs self-hosted). Decide each on its own merits.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1128,
+      "out_sha": "f29627a5679c",
       "note": ""
     },
     {
