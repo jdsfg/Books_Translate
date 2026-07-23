@@ -3011,11 +3011,11 @@
       "en_title": "Chapter 10: Embeddings, Vector Databases, and Hybrid Search",
       "order": 240,
       "src_chars": 2276,
-      "status": "pending",
+      "status": "done",
       "src_sha": "089459d71041",
       "src": "### 10.2 Choosing an embedding model: the 2026 landscape\n\nIn 2026, four model families dominate:\n\n**OpenAI`text-embedding-3-small` and `text-embedding-3-large`**: general-purpose, well-supported, broad-language coverage, competitively priced (0.02 USD/1M tokens for small; 0.13 USD/1M for large). The default for most teams without a domain-specific need.\n\n**Cohere`embed-v3` (English / Multilingual)**: strong general performance; multilingual variant covers 100+ languages with quality close to monolingual; pricing competitive with OpenAI. Good default for non-English or mixed-language corpora.\n\n**Voyage AI** : specialty embeddings tuned for specific domains: `voyage-law-2` for legal text, `voyage-code-3` for code, `voyage-finance-2` for finance. The specialty advantage is real (3–8 points retrieval recall over general models on the targeted domain) but costs slightly more.\n\n**BGE family (open-weight)** : `bge-large-en-v1.5`, `bge-m3` and successors. Strong general performance from open weights; you self-host (vLLM, Triton, etc.). Cost is your compute (often cheaper than per-token APIs at high scale); operational complexity is yours.\n\nThe 2026 decision matrix:\n\nIf your corpus is... | Recommended starting point  \n---|---  \nGeneral English content | `text-embedding-3-large` or `embed-v3-english`  \nMultilingual content | `embed-v3-multilingual`  \nDomain-specific (legal, medical, financial, code) | Specialty (Voyage or fine-tuned BGE); evaluate first  \nSelf-hosted requirement (data privacy) | BGE family on your infrastructure  \nCost-extremely-sensitive at huge scale | BGE self-hosted; or `text-embedding-3-small`  \n  \nStrata Research evaluated `text-embedding-3-large` vs `voyage-law-2` on their legal corpus eval. Results: text-embedding-3-large at 0.71 retrieval recall@10; voyage-law-2 at 0.79. The 8-point lift was material, equivalent to maybe two months of other engineering work. Strata adopted voyage-law-2; the cost premium (~30% more per query) was small compared to the engineering value.\n\nThe general rule: **evaluate embeddings on your specific corpus and queries before committing**. Provider benchmarks (MTEB, MIRACL) are useful as relative orderings but do not predict your specific performance. The eval discipline from Chapter 4 applies.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1094,
+      "out_sha": "4d411eed00e6",
       "note": ""
     },
     {
