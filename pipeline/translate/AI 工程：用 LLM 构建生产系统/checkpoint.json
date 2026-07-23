@@ -7091,11 +7091,11 @@
       "en_title": "Chapter 24: The AI Engineering Team, Workflow, and Engineering Judgment",
       "order": 580,
       "src_chars": 3397,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a4cdfb909173",
       "src": "**Answer:** The two roles look related (both touch AI; both engineer) but they shape the team's trajectory differently. Hiring the wrong one first creates a year of structural debt that is hard to repair.\n\n_AI engineer (product-side)_ is closer to the product code. They iterate on prompts, build features, debug specific production issues, talk to PMs. They make the AI feature usable in the actual product. Their daily output is feature increments visible to customers.\n\n_ML platform engineer_ is closer to the shared infrastructure. They build the router, the eval platform, the observability stack, the prompt registry. Their daily output is infrastructure that multiple product engineers depend on. The output is less directly customer-visible but multiplies the velocity of the AI engineers who follow.\n\nThe two are complements; both are needed. But the _first hire_ sets the team's center of gravity. Hiring an AI engineer first means the first features get shipped; the infrastructure is improvised; later platform work pays down accumulated infrastructure debt. Hiring a platform engineer first means the foundation is solid; the first features are slower because the platform engineer has not yet built the platform that makes features fast.\n\nSignals that indicate prioritizing AI engineer:\n\n  1. _The company has zero AI features in production_. Until the first feature ships, infrastructure is hypothetical. The product engineer is essential to get something into customers' hands; the platform engineer would build for a non-existent traffic pattern.\n\n  2. _The product roadmap has a near-term AI deliverable with hard customer commitments_. Shipping matters; the AI engineer is the most direct path.\n\n  3. _Existing engineering team has solid backend infrastructure_. The platform foundations (deploys, observability, secrets management) are already in place; the AI engineer can build on them without needing a dedicated platform engineer.\n\n  4. _Customer demand is heterogeneous and exploratory_. The team needs to ship multiple small features quickly to learn what works; product engineering's flexibility matters more than platform's leverage.\n\nSignals that indicate prioritizing ML platform engineer:\n\n  1. _The company has multiple AI features already in production_ , shipped by general software engineers without AI-specific tooling. The features work but the operational story is fragile (no router; no eval-CI; ad-hoc observability). A platform engineer's foundation work unblocks the next wave of AI engineering.\n\n  2. _Multiple product teams will need AI infrastructure_. The leverage from shared infrastructure across product teams justifies the platform investment.\n\n  3. _Cost is becoming a board-level topic_. Without routing and cost tracking, the bill is opaque; a platform engineer's first deliverable (cost dashboard, routing) directly addresses the concern.\n\n  4. _Incidents are recurring_. Without observability, the team can't diagnose what went wrong; a platform engineer addresses the diagnosability problem.\n\nThe decision should be based on the company's specific situation, not on a default ordering. A common mistake is to default to AI engineer because the title is more familiar; a complementary mistake is to default to platform engineer because _we should build the foundation first._ Both are situational; the signals above are the input to the call.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 851,
+      "out_sha": "46e10963f622",
       "note": ""
     },
     {
@@ -7103,11 +7103,11 @@
       "en_title": "Chapter 24: The AI Engineering Team, Workflow, and Engineering Judgment",
       "order": 581,
       "src_chars": 221,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c561a5d90285",
       "src": "This cross-references Chapter 24 §24.1's four-role taxonomy: at small scale, one hire often covers two roles (e.g., AI engineer who also does platform work). The team formalizes the split as it grows past the first hire.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 86,
+      "out_sha": "e40d7f9d0db4",
       "note": ""
     },
     {
