@@ -1955,11 +1955,11 @@
       "en_title": "Chapter 6: Prompt Engineering — What Still Matters in 2026",
       "order": 152,
       "src_chars": 1946,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e985583b1643",
       "src": "### 6.6 Strata Research: prompt iteration in legal-tech RAG\n\nStrata Research's RAG system answers legal-research questions over a corpus of case law and regulations. The prompt that wraps the retrieved context evolved through several documented versions; the iteration arc is illustrative.\n\n**Version 1** was a simple wrapper: _Given the following retrieved documents, answer the user's question._ Eval baseline: 64% answer accuracy on the production golden set.\n\n**Version 2** added explicit citation requirements: _Cite the exact paragraph from the retrieved documents that supports each claim in your answer._ Eval: 71% accuracy, 88% citation-presence (up from 60% in V1). The citation requirement also exposed cases where the model was hallucinating answers not supported by retrieval; these now showed up as missing citations.\n\n**Version 3** added jurisdictional discipline: _If the user's question concerns a specific jurisdiction, only cite documents from that jurisdiction or from federal precedents that apply across jurisdictions. If the retrieved documents do not contain the relevant jurisdiction's law, say so explicitly rather than answering from an inapplicable jurisdiction._ Eval: 78% accuracy, 92% jurisdiction-correct.\n\n**Version 4** added temporal validity: _Note the effective date of any statute or case you cite. If the question concerns the current state of the law and your most recent retrieved document on the topic is more than 2 years old, flag the uncertainty in your answer._ Eval: 81% accuracy with no temporal-correctness regression.\n\nEach version was a small, targeted addition. Each one moved a specific eval dimension. The cumulative lift (from 64% to 81% accuracy) was real and engineered, not vibes-based. The cost in prompt length grew from ~150 tokens (V1) to ~450 tokens (V4); the cost was acceptable; the discipline of running every version through the same eval is what made the improvement defensible.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 722,
+      "out_sha": "4cd13981b2fd",
       "note": ""
     },
     {
@@ -1967,11 +1967,11 @@
       "en_title": "Chapter 6: Prompt Engineering — What Still Matters in 2026",
       "order": 153,
       "src_chars": 1609,
-      "status": "pending",
+      "status": "done",
       "src_sha": "60ff278243ea",
       "src": "### 6.7 Triangle Trade-off sidebar: prompt-engineering choices (quality-delta eval format)\n\nThe classic decision: _should we add chain-of-thought reasoning to our prompt?_ On a sample task (extractive question-answering over the Strata RAG corpus), here is what the eval table shows:\n\nEval dimension | No CoT (baseline) | \\+ Basic CoT | \\+ Structured CoT | \\+ Self-Refine  \n---|---|---|---|---  \nAnswer accuracy | 0.78 | 0.82 | 0.84 | 0.86  \nCitation-grounding | 0.84 | 0.85 | 0.91 | 0.91  \nAvg output tokens | 280 | 540 | 460 | 920  \nCost per call (USD) | 0.0084 USD | 0.0146 USD | 0.0126 USD | 0.0234 USD  \nLatency p50 (ms) | 850 | 1480 | 1320 | 2640  \n  \nWhat to read off:\n\n  1. **Basic CoT gives a modest quality lift (+0.04 accuracy) at almost 2× the cost.** The cost-effectiveness depends on whether the lift is worth ~0.006 USD/call.\n  2. **Structured CoT is better than basic CoT** : the structure constrains the reasoning to be relevant, producing shorter outputs with higher citation-grounding. The 2026 lesson: structure the thinking, don't just ask for thinking.\n  3. **Self-Refine is the highest accuracy but at 2.8× cost and 3.1× latency.** For a high-volume system, the cost is hard to justify; for a low-volume, high-stakes system (a legal-research tool where one wrong answer can lose a client), it may be the right call.\n\nThe trade-off is per-feature, not per-team. Strata uses Structured CoT in production for general queries and Self-Refine for queries flagged as high-stakes by an upstream classifier. Chapter 17's multi-model routing pattern extends naturally to prompt-variant routing.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 770,
+      "out_sha": "8d3750ec3903",
       "note": ""
     },
     {
