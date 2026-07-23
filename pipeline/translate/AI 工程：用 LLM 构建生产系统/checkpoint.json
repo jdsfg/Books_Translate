@@ -3851,11 +3851,11 @@
       "en_title": "Chapter 13: Tool Use and Sandboxed Execution",
       "order": 310,
       "src_chars": 1566,
-      "status": "pending",
+      "status": "done",
       "src_sha": "154776f6f3b2",
       "src": "#### Database query tools\n\nTools that query structured business data. `get_customer(customer_id)`; `list_orders(customer_id, status=None)`; `get_inventory(product_id)`. These are _parameterized_ ; the LLM's argument validation determines what the database sees.\n\nSecurity: never allow the LLM to construct arbitrary SQL. Tools should expose specific, parameterized queries. If you need a flexible-query tool (rare), implement it with a SQL builder that constrains operations (read-only; specific tables; no joins to forbidden tables).\n\n\n#### Action tools\n\nTools that change state. `create_ticket`, `assign_to_human`, `process_refund`, `send_notification`. These need the deterministic policy gating from §13.4 Principle 3.\n\nThe pattern at Helios: action tools have a `dry_run: bool = false` parameter. The deterministic policy layer first runs the tool in dry-run mode (returns what would happen); checks the result against policy; if passes, runs for real; if fails, returns an error to the agent.\n\n\n#### Computation tools\n\nTools that perform calculations, statistics, data transformations. The code-execution sandbox (§13.5) is the most general; specific computation tools (`calculate_loan_payment`, `compute_summary_statistics`) wrap common operations in safe, deterministic implementations.\n\n\n#### Time and external tools\n\nTools that depend on the real world: `current_time()`, `get_weather(location)`, `query_external_api(endpoint, params)`. These have failure modes (network, rate limits, API changes); their errors must be structured for the model to handle.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 742,
+      "out_sha": "3a7d2e9480fe",
       "note": ""
     },
     {
@@ -3863,11 +3863,11 @@
       "en_title": "Chapter 13: Tool Use and Sandboxed Execution",
       "order": 311,
       "src_chars": 2850,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8664167e2f14",
       "src": "### 13.7 Helios Customer AI: the tool catalog at production scale\n\nHelios's customer-support agent has ~40 tools in 2026, organized into categories:\n\n**Information tools** (read-only):\n\n* `search_knowledge_base(query)`\n* `lookup_order(order_id)`\n* `get_customer_history(customer_id, days)`\n* `check_inventory(product_id)`\n* `get_shipping_status(tracking_number)`\n\n**Computation tools** :\n\n* `calculate_eligibility(customer_id, policy_id)`: runs business logic against customer data\n* `estimate_shipping_cost(...)`: wrapping a deterministic library\n\n**Action tools** (state-changing, with policy gating):\n\n* `process_refund(order_id, amount, reason)`: gated on amount ≤ tenant limit; logged\n* `create_support_ticket(customer_id, summary)`: always allowed\n* `assign_to_human(ticket_id, queue)`: always allowed\n* `update_customer_record(customer_id, field, value)`: gated on field allowlist\n* `send_email(customer_id, template_id, args)`: gated on template-id allowlist\n\n**Escalation tools** :\n\n* `escalate_to_supervisor(ticket_id, reason)`: calls a human; agent's exit ramp\n* `flag_for_review(ticket_id, reason)`: flags but does not immediately escalate\n\n**Diagnostic tools** :\n\n* `run_account_diagnostic(customer_id)`: wraps internal diagnostics\n* `check_known_issues(symptom)`: searches known-issue database\n\nThe catalog's organization is intentional. The model's prompt names the categories; this helps the model pick the right category before picking the specific tool. The catalog is also versioned: `v3` includes specific tools; `v4` adds new tools and may deprecate old ones; the production agent pins to a specific catalog version.\n\nOperational discipline:\n\n* **Tool definitions are in a central registry** (similar to Chapter 6's prompt registry), versioned, eval-gated.\n* **Tool usage is observable** (Chapter 19): every tool call is traced with its arguments, output, latency, and outcome.\n* **Per-tool cost tracking** : some tools are expensive (a knowledge-base search has a small cost; a comprehensive customer-history query may cost more). Cost is allocated per tenant per tool.\n\nThe discipline scaled Helios from a 5-tool prototype agent to a 40-tool production agent serving 10M tickets/month. Without it, the tool catalog would have become unmaintainable.\n\n\n#### Common Misconception\n\nThe intuition that _more tools is better_ sounds right and is wrong. A model with 40 tools is harder to direct than a model with 8; tool-selection errors rise; latency creeps up as the model considers more options. The right number of tools is _enough to cover the task domain, not more_. Production teams that grow their tool catalogs without discipline eventually hit a quality cliff — the agent starts misrouting — and have to restructure. The right discipline: every new tool's value is measured against an eval before it's added to production.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1433,
+      "out_sha": "82af0420e294",
       "note": ""
     },
     {
