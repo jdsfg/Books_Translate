@@ -5459,11 +5459,11 @@
       "en_title": "Chapter 18: Cost Optimization — The Real Numbers",
       "order": 444,
       "src_chars": 2960,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9ef8f2a10352",
       "src": "**Q6.** _Debug a per-tenant cost spike_. Monday morning: the cost dashboard alert fires. Tenant Y's daily spend is 4.2 standard deviations above their 7-day average. Yesterday's spend was 850 USD on a typical-day baseline of 180. USD Walk through the debugging process. Specify: (a) the initial trace queries you run; (b) the candidate hypotheses; (c) the verification step for each; (d) the resolution.\n\n**Answer:**\n\n(a) **Initial trace queries** (run within 10 minutes of the alert):\n    \n    \n    -- Q1: what feature accounted for the spike?\n    SELECT feature_name, COUNT(*) AS calls, SUM(cost_usd) AS cost\n    FROM call_costs\n    WHERE tenant_id = 'Y' AND DATE(created_at) = CURRENT_DATE - 1\n    GROUP BY feature_name\n    ORDER BY cost DESC;\n    \n    -- Q2: what model was used disproportionately?\n    SELECT model, COUNT(*) AS calls, SUM(cost_usd) AS cost\n    FROM call_costs\n    WHERE tenant_id = 'Y' AND DATE(created_at) = CURRENT_DATE - 1\n    GROUP BY model\n    ORDER BY cost DESC;\n    \n    -- Q3: was the call count or the per-call cost the spike driver?\n    SELECT\n      DATE(created_at) AS day,\n      COUNT(*) AS calls,\n      AVG(cost_usd) AS avg_cost_per_call,\n      SUM(cost_usd) AS total_cost\n    FROM call_costs\n    WHERE tenant_id = 'Y' AND created_at >= CURRENT_DATE - INTERVAL '14 days'\n    GROUP BY day\n    ORDER BY day;\n    \n\n(b) **Candidate hypotheses** (typical sources of cost spikes, in rough order of likelihood):\n\n  1. **Tenant volume spike** : tenant changed usage pattern; call count up.\n  2. **Feature regression** : a recently deployed prompt or agent change increased per-call cost (longer outputs, more tool turns, more retries).\n  3. **Routing regression** : the router shifted traffic from a cheap tier to an expensive tier for this tenant.\n  4. **Cache regression** : cache hits dropped for this tenant (prompt change broke prefix stability).\n  5. **Abuse** : tenant is using the API in an unintended way (looping calls, prompt-injection attempts that trigger long responses).\n  6. **Eval or test traffic** : dev/QA traffic accidentally tagged with the tenant_id.\n\n(c) **Verification per hypothesis** :\n\n  1. Volume spike: Q3's `calls` column. If calls are up 4-5x but avg_cost_per_call is steady, this is the cause.\n  2. Feature regression: Q1 shows the bulk in a specific feature; correlate with the feature's deploy history (Chapter 19 traces should show the deploy timestamp).\n  3. Routing regression: Q2 shows traffic on a tier the tenant didn't use yesterday; check the router config history.\n  4. Cache regression: cache_hit_rate query for the tenant, today vs last week; if it dropped, investigate the prompt diff.\n  5. Abuse: inspect a sample of traces; look for repetitive identical-input patterns or escalating output lengths.\n  6. Test traffic: filter traces by source IP / user-agent / API key; check whether non-production keys are tagged with tenant Y.\n\n(d) **Resolution by case** (each is a distinct action):",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1577,
+      "out_sha": "6823f6f1d000",
       "note": ""
     },
     {
@@ -5471,11 +5471,11 @@
       "en_title": "Chapter 18: Cost Optimization — The Real Numbers",
       "order": 445,
       "src_chars": 2087,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b557e8a5edbe",
       "src": "* Volume spike: confirmed; check the tenant's contracted budget (per Chapter 17 Q6); if exceeded, the policy-enforcement kicks in and the conversation moves to the account team.\n* Feature regression: confirmed; roll back the prompt or feature change; deploy a fix that restores the cost profile; backfill the eval suite to catch this class of regression in the future.\n* Routing regression: confirmed; revert the router change; investigate why the tier-classifier mis-assigned this tenant's traffic.\n* Cache regression: confirmed; fix the prompt to restore prefix stability; the cache-hit rate should recover within hours.\n* Abuse: confirmed; the account team contacts the tenant; consider per-tenant rate limits even within their budget if the pattern is harmful.\n* Test traffic: confirmed; fix the tagging so test traffic uses a `dev` tenant identifier, not the production tenant's.\n\nThe debugging discipline: start with the trace queries; do not start with hypotheses. The data narrows the hypotheses quickly. Teams that start with \"I bet it's the new prompt\" before checking the data often investigate the wrong cause for hours.\n\nA pattern this exercise reveals: the cost dashboard is for _detection_ ; the trace store is for _diagnosis_ ; the engineering action is for _resolution_. Each layer of the operational stack has a distinct purpose. Confusing them (using the dashboard to debug, or using traces for monitoring) wastes the team's time on the wrong tool.\n\n**AI-collaboration sub-question** : How would you ask an LLM to help with this exercise, and what would you verify in its response?\n\n**Answer:** Useful prompt: _Tenant Y's cost spiked 4.7x yesterday vs baseline. Walk me through trace queries, hypotheses, verification, and resolution._ You verify (a) the LLM starts with data queries before hypotheses (an LLM that jumps to \"it's probably a runaway agent loop\" without checking traces is making the same mistake the team must avoid), and (b) the hypotheses cover both code-side (feature regression) and tenant-side (volume spike, abuse) causes, not just one category.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 662,
+      "out_sha": "c1fd61510ac7",
       "note": ""
     },
     {
