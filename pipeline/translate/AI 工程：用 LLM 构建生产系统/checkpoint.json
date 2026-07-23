@@ -5507,11 +5507,11 @@
       "en_title": "Chapter 18: Cost Optimization — The Real Numbers",
       "order": 448,
       "src_chars": 1641,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5d3c3ee9e730",
       "src": "* **Sampling-based correctness audit**. A small fraction (1-2%) of cache hits are dual-processed: the cached answer is returned to the user (preserving latency); a fresh LLM call also runs (offline) and is compared. Mismatches indicate cache entries that should have been invalidated; the rate is a quality signal.\n\nThe chapter's framing of cost as engineering applies here: semantic caching is not a feature you turn on; it is an _engineered system_ with policies for what to cache, when to invalidate, how to isolate, and how to verify correctness. Teams that deploy semantic caching without an eviction policy treat it as a feature; they discover the failure modes (stale answers; cross-tenant leakage; slow search) after they've shipped. Teams that treat it as an engineered system design the policy before deploying and avoid the failures.\n\nA specific 2026 observation: most commercial semantic-cache offerings (Redis Vector, pgvector, Weaviate caches) provide the storage and search but not the policy. The policy is the team's responsibility. This is the same pattern as routing (Chapter 17): the engine is bought; the policy is built.\n\nThe deeper principle: any cache that uses _judgment_ (semantic similarity is a judgment about whether two queries are equivalent) inherits the eval discipline. The similarity threshold is an eval parameter; the TTL is an eval parameter; the dual-processing audit is a continuous eval. Semantic caching is, like routing's classifier, another instance of LLM-judgment inside the production system, and it must be engineered with the same discipline as the rest of the eval-aware infrastructure.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 518,
+      "out_sha": "4c1d751c3dd4",
       "note": ""
     },
     {
@@ -5519,11 +5519,11 @@
       "en_title": "Chapter 19: Observability and Tracing for LLM Systems",
       "order": 449,
       "src_chars": 2868,
-      "status": "pending",
+      "status": "done",
       "src_sha": "10343cb868fc",
       "src": "Traditional application performance monitoring (APM) — Datadog, New Relic, Honeycomb — solves a well-defined problem: when a request hits a backend, what was its lifecycle, where did it spend time, what errors did it encounter? For decades these tools have been adequate for backend engineering.\n\nLLM systems break APM. The questions that matter for LLM systems aren't _did the request succeed in HTTP terms_ but _what was the prompt, what did the model emit, was the answer quality acceptable, what tools did the agent call, what was the cost?_ Traditional APM doesn't know to track these things. The questions require a new layer.\n\nThis is observability for LLM systems: the discipline of tracking what's needed to debug, monitor, and improve LLM-powered products. The 2026 stack has settled around three named entrants — Langfuse, Helicone, Phoenix (Arize) — alongside the existing APM tools. The binding workflow #12 is a Langfuse trace exemplar showing what a production LLM-system trace actually looks like.\n\nBeacon Health AI threads this chapter. The HIPAA-observability tension is real: trace tools store prompts and responses, which for clinical pipelines means storing PHI. The chapter walks Beacon's solution: a self-hosted Langfuse deployment on HIPAA-compliant infrastructure with PHI redaction at the trace-ingestion layer; observability that preserves debugging signal without surfacing regulated data inappropriately.\n\n\n### 19.1 Why traditional APM isn't enough\n\nDatadog tells you that a request took 800ms and returned HTTP 200. It tells you the request hit endpoints A, B, C in sequence. It tells you the database call in endpoint B took 80ms. This is real and useful information.\n\nDatadog doesn't tell you:\n\n* _What was the system prompt?_ (the prompt is what makes the response what it is)\n* _What model was actually called?_ (in a routed system, the model varies per call)\n* _What did the model emit?_ (text content; not just metadata)\n* _What tools did the model call?_ (intermediate tool calls within the request)\n* _What was the cost?_ (token counts and the cost calculation)\n* _What was the eval score for this call?_ (was the answer actually correct?)\n* _What was the trajectory through the agent loop?_ (multi-turn behavior over many seconds)\n\nThese are the questions that matter for debugging LLM systems. Traditional APM doesn't capture them by default. The team must either:\n\n  1. Add the LLM-specific data to APM via extensive custom instrumentation (technically possible; usually impractical).\n  2. Adopt a dedicated LLM observability tool that's purpose-built for these questions.\n\nThe 2026 norm: dedicated LLM observability tools, often alongside traditional APM (each tool handles its layer). The dedicated tools wrap LLM calls automatically; traces flow into a purpose-built backend; the UI is designed for LLM-debugging workflows.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1106,
+      "out_sha": "9dfffe57b7e2",
       "note": ""
     },
     {
