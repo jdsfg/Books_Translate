@@ -3287,11 +3287,11 @@
       "en_title": "Chapter 11: Advanced RAG and RAG Evaluation",
       "order": 263,
       "src_chars": 1704,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4c6706a332fd",
       "src": "#### The rubric (six axes)\n\n**Retrieval axes** :\n\n  1. **Retrieval recall@10** (range 0–1): of the labeled-relevant chunks for the query, how many are in the top-10 retrieved? Component-level metric; requires labeled relevance.\n  2. **Retrieval precision@5** (range 0–1): of the top-5 retrieved chunks, how many are labeled relevant? Catches the _too many off-topic chunks_ failure mode.\n\n**Answer axes** (scored 0–3 by LLM-as-judge calibrated against humans):\n\n  3. **Faithfulness** : does the answer follow from the retrieved chunks? 0 = answer contradicts retrieved chunks; 1 = answer goes beyond retrieved chunks; 2 = answer is mostly grounded but has minor unsupported claims; 3 = answer is fully grounded.\n  4. **Answer relevance** : does the answer address the user's question? 0 = answer is off-topic; 1 = answer is tangentially related; 2 = answer addresses the question but is incomplete; 3 = answer fully addresses the question.\n  5. **Citation grounding** : are claims in the answer cited to specific chunks? 0 = no citations; 1 = citations exist but are wrong or vague; 2 = mostly cited correctly; 3 = every claim is cited and citations are precise.\n  6. **Harmful-output rate** (binary, 0–1): does the answer contain hallucinated facts, fabricated citations, unsafe recommendations, or content that would embarrass the company?\n\nAggregate: total = retrieval_recall@10 + retrieval_precision@5 + (faithfulness + answer_relevance + citation_grounding) / 3 + (1 - harmful_output_rate). The first two axes are 0–1 each; the three answer axes are 0–3 each, averaged into a 0–3 contribution; the harm rate is 0–1. Range 0–6; Strata's production threshold is ≥ 4.6 (≈ 0.77 of the 6-point ceiling).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 710,
+      "out_sha": "c4da10d4552e",
       "note": ""
     },
     {
