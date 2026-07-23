@@ -1715,11 +1715,11 @@
       "en_title": "Chapter 5: Eval Tools and Where They Fit",
       "order": 132,
       "src_chars": 1935,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e41d009f1125",
       "src": "### Chapter Summary\n\nThe 2026 eval-tool landscape has five main entrants — `pytest-evals` (pytest-native, OSS), `inspect-ai` (safety-evals, OSS), `ragas` (RAG-specialist, OSS), `braintrust` (SaaS), and `langsmith` (SaaS, LangChain-tied) — plus the option to build from scratch. Build is right when data sensitivity precludes SaaS, when the stack is unusual, or when scale amortizes; buy or build-on-OSS otherwise. Most teams settle on a hybrid: OSS in CI, SaaS for cross-team visibility.\n\nBeacon Health AI's synthetic-PHI eval-construction pipeline is the case study where eval infrastructure meets regulatory reality: real-PHI input is transformed into structurally-equivalent synthetic-PHI output that is HIPAA-safe to use in CI and SaaS observability. The substitution approach is more defensible than naive de-identification.\n\nA SQLite-backed eval store is a small piece that does outsized work: two tables, a few indices, every eval result kept forever, regression analysis by SQL. Per-prompt-version golden sets keep regression comparisons apples-to-apples.\n\nThe chapter's binding workflow #1 is a real GitHub Actions configuration that gates a PR on eval regression with a per-dimension floor, posts a comparison comment, and uploads results as artifacts. The cost is about 3 USD per eval-relevant PR; the value is the discipline of _no regression ships without review_.\n\nThe eval suite is a living artifact. It grows; cases are retired; the suite is rebalanced quarterly. The unhealthy alternative is a continuously expanding bag of cases that becomes too slow to run and is silently abandoned.\n\nEverything here operationalizes the discipline of Chapter 4. The infrastructure pays off immediately in Chapter 6, where prompt iteration becomes the first thing the eval suite gets pointed at, and it carries forward into the production observability of Chapter 19 and the model-upgrade workflow of Chapter 21.\n\n\n### 5.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 789,
+      "out_sha": "467126cf7a02",
       "note": ""
     },
     {
