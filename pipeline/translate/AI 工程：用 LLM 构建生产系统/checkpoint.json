@@ -7775,11 +7775,11 @@
       "en_title": "Appendix C — Glossary",
       "order": 637,
       "src_chars": 1852,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f5c7790d3f91",
       "src": "### B\n\n**BAA** : Business Associate Agreement. A HIPAA-required contract between a covered entity and any vendor that processes PHI on its behalf. No BAA, no PHI through that vendor (Ch 19, §19.6).\n\n**Base model** : A pretrained model before any instruction tuning or RLHF. Useful for completion-style tasks; rarely used directly for chat (Ch 2, §2.3).\n\n**Batch inference** : Submitting requests asynchronously for processing within a deadline (usually 24h) at ~50% discount. Use for evals, backfills, and any non-interactive workload (Ch 18, §18.5).\n\n**Beam search** : Decoding strategy that keeps the top-k partial sequences. Largely replaced by sampling for LLMs because it produces bland, repetitive text (Ch 2, §2.5).\n\n**BM25** : Classical lexical retrieval scoring based on term frequency and document length. Still essential as the keyword half of hybrid search (Ch 10, §10.5).\n\n**Bounded agent** : An agent constrained by explicit caps on iterations, tool calls, tokens, wall time, and dollars. The only kind of agent that ships to production (Ch 14, §14.4).\n\n**BPE** : Byte-Pair Encoding. The dominant tokenization algorithm: starts from bytes and greedily merges the most frequent adjacent pairs until the target vocabulary size is reached (Ch 2, §2.2).\n\n**Build-vs-buy** : The decision matrix for whether to construct a layer of the AI stack in-house or adopt a vendor. The default answer in 2026 is buy for everything except the parts that are your differentiator (Ch 16, §16.3).\n\n**Bi-encoder** : Architecture that encodes query and document independently, enabling pre-computed document embeddings and fast nearest-neighbor search. The first-stage retriever in most RAG systems (Ch 10, §10.5).\n\n**Backfill** : Re-running an updated pipeline over historical inputs to refresh outputs. A common use case for batch inference (Ch 18, §18.5).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 721,
+      "out_sha": "2cb281a50e50",
       "note": ""
     },
     {
@@ -7787,11 +7787,11 @@
       "en_title": "Appendix C — Glossary",
       "order": 638,
       "src_chars": 3346,
-      "status": "pending",
+      "status": "done",
       "src_sha": "426135d8bce7",
       "src": "### C\n\n**Cache hit rate** : Fraction of prompt tokens served from a provider's prompt cache. The single most leveraged cost-and-latency metric for high-volume LLM systems (Ch 18, §18.2).\n\n**cache_control** : Anthropic API field that marks a content block as a cache breakpoint. Up to four breakpoints per request; everything before each is cached (Ch 18, §18.2).\n\n**Calibration** : How well a model's stated confidence matches its actual accuracy. A calibrated model that says \"70% sure\" is right 70% of the time (Ch 5, §5.4).\n\n**Canary deployment** : Routing a small fraction of traffic to a new model or prompt version, monitoring metrics, and rolling forward or back based on results (Ch 21, §21.6).\n\n**Can-we-eval gate** : Pre-build check that a proposed feature has measurable success criteria. If you can't write the eval, you can't build the feature (Ch 24, §24.4).\n\n**Capability matrix** : A team's mapping of approaches (rules / classical ML / LLM with prompt / RAG / agent / hybrid / don't use AI) to a task, used to make the build-or-not decision deliberately rather than by hype-chasing (Ch 24, §24.7).\n\n**Cartesia** : Low-latency TTS provider known for natural prosody and sub-100ms time-to-first-audio (Ch 20, §20.4).\n\n**Chroma** : Open-source vector database focused on developer ergonomics. Good for prototypes and small-to-medium corpora (Ch 10, §10.4).\n\n**Chunking** : Splitting source documents into retrieval units. Quality of chunking sets the ceiling on RAG quality (Ch 9, §9.3).\n\n**Citation grounding** : Requiring the model to attach source spans to claims and verifying that the cited spans support them. The defense against fluent hallucination in RAG (Ch 11, §11.7).\n\n**Cloudflare AI Gateway** : Edge-deployed gateway with built-in caching, rate limiting, and analytics across all major providers. Strong default for global low-latency routing (Ch 17, §17.3).\n\n**CoT** : Chain-of-thought. Prompting the model to reason in intermediate steps before answering. Largely subsumed by built-in reasoning modes in 2026, but still relevant for non-reasoning models (Ch 6, §6.2).\n\n**ColPali** : Late-interaction multimodal retriever that embeds document pages as patches without OCR. The state-of-the-art for visual document RAG in 2026 (Ch 12, §12.3).\n\n**Computer use** : Capability where the model controls a virtual desktop via screenshots and mouse/keyboard actions. Powerful, slow, and security-critical (Ch 15, §15.6).\n\n**Confidence calibration** : See _calibration_. In safety contexts, the property that lets a system refuse or escalate when uncertain rather than confabulate (Ch 23, §23.5).\n\n**Constrained decoding** : Restricting the model's next-token distribution to match a grammar or schema. The reliable path to valid JSON; supported natively by most providers in 2026 (Ch 7, §7.5).\n\n**Content filtering** : Pre- or post-generation classifiers that block outputs containing prohibited content (violence, sexual content involving minors, self-harm, etc.) (Ch 23, §23.2).\n\n**Context budget** : The token allocation for each section of a prompt (system, retrieval, history, query). Set explicitly, not implicitly (Ch 8, §8.2).\n\n**Context engineering** : The discipline of selecting, compressing, and ordering what goes into the context window. Replaced \"prompt engineering\" as the central skill in 2026 (Ch 8, §8.1).",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1271,
+      "out_sha": "bd74e358f477",
       "note": ""
     },
     {
