@@ -6755,11 +6755,11 @@
       "en_title": "Chapter 23: Safety and Reliability in Production",
       "order": 552,
       "src_chars": 3462,
-      "status": "pending",
+      "status": "done",
       "src_sha": "44fec18cdeb8",
       "src": "  3. **It enables fallback paths**. When the system refuses, alternative paths (human escalation, more research, deferred answer) engage. When the system confidently wrongs, the alternative paths don't trigger; the wrong answer propagates.\n\n  4. **It's a measurable quality signal**. Eval can score: did the model refuse when it should have? Did it answer confidently when it shouldn't have? Confident-wrong rate is a critical metric to track and improve.\n\nThe discipline: train the system (via prompts, fine-tuning if applicable, and evals) to prefer refusal over confabulation in the right contexts. Reward refusals in evals; penalize confident-wrong; treat the _I don't know_ output as a feature, not a bug.\n\nCounter-balance: don't over-refuse. A system that refuses everything is useless. The calibration is to refuse when the confidence justifies it; answer when it doesn't. The eval signals both directions: refusal-when-confident-was-warranted and answer-when-refusal-was-warranted.\n\n**Q5.** Why does cost-circuit-breaker design fail when the agent legitimately needs to spend more than the static cap allows? Identify the design pattern that handles this case without disabling the protection.\n\n**Answer:** A static cost circuit breaker is set to a single budget per trajectory (e.g., 1.50 USD per agent run). It protects the team from runaway loops (Chapter 14's 52K USD-overnight failure mode). But some legitimate trajectories _should_ spend more than the static cap: complex multi-document research; long-running customer support sessions involving multiple tool calls; analyses that recursively decompose problems. If the breaker is set too low, legitimate work is killed; if set too high, the protection against runaway loops is weakened.\n\nThis is the _tension between protection and capability_ that pure static breakers cannot resolve. The design pattern that handles both:\n\n  1. _Two-tier breaker_. A _soft cap_ and a _hard cap_. The soft cap triggers a _budget exhaustion signal_ to the agent, which the agent must acknowledge before proceeding. The agent may then plan its remaining work under awareness that it has used most of its budget; it may prioritize the most valuable remaining steps or escalate to a human. The hard cap is the absolute kill switch; the agent cannot proceed past it under any circumstance.\n\n  2. _Justified-exception logging_. When the agent legitimately spends past the soft cap, log the trajectory metadata: which user, which task, which tool calls consumed the budget, what value was delivered. The log feeds a quarterly review of _expensive trajectories_ : are they delivering proportionate value? If yes, the soft cap should be raised for that trajectory class. If no, the protection was the right call.\n\n  3. _Per-trajectory-class breakers_. Rather than a global cap, set per-class caps based on the trajectory type. Simple customer FAQ: 0.25 USD cap. Complex research: 5.00 USD cap. Critical legal review: 20.00 USD cap. The classification happens upfront (the user's request is classified to a tier before the agent runs); the cap is set per tier.\n\n  4. _Budget renewal on human approval_. When the agent hits its hard cap, it does not silently kill; it produces a _budget-exhausted result_ and requests human approval to continue with additional budget. The human (a senior agent or a designated reviewer) approves or denies. The agent's expensive path is gated by human judgment, not by an arbitrary number.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1117,
+      "out_sha": "02b4bc01c2e2",
       "note": ""
     },
     {
@@ -6767,11 +6767,11 @@
       "en_title": "Chapter 23: Safety and Reliability in Production",
       "order": 553,
       "src_chars": 972,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0b31ea4d74fd",
       "src": "  5. _Per-tool circuit breakers_. Independent of total cost, individual tools have their own caps (Chapter 14 §14.5). A search tool may have a 10-call cap per trajectory; a code-execution tool may have a 5-call cap. The aggregate cost stays bounded even when the total budget is generous.\n\nThe design that works in production combines these: per-class budgets with soft/hard caps; justified-exception logging; tool-level caps; human-approval renewal for legitimate over-spend. The agent has freedom to do real work; the team retains protection against runaway loops. Pure static breakers are too crude; pure trust-the-agent is too dangerous; the hybrid is the engineering answer.\n\nThis pattern connects to Chapter 14's bounded-agent design: bounds are not constraints on capability but rather the architecture that _makes capability deployable_. Without bounds, no team can trust the agent with consequential tasks; with proper bounds, the agent can be trusted with more.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 310,
+      "out_sha": "aea36de65094",
       "note": ""
     },
     {
