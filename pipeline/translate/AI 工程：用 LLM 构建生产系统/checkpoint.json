@@ -3527,11 +3527,11 @@
       "en_title": "Chapter 12: Multimodal RAG and Document Understanding",
       "order": 283,
       "src_chars": 2015,
-      "status": "pending",
+      "status": "done",
       "src_sha": "98e9f71a69bd",
       "src": "### 12.2 Multimodal embeddings\n\nFor some applications, the answer to \"what's similar to this query?\" is naturally an image, not text. Examples:\n\n* A user asks \"show me the page that contains the architecture diagram for the payment system\": the answer is a specific page image.\n* A user asks \"find contract clauses with the same legal structure as this clause\": the answer may involve clauses whose structural similarity is partly visual (indentation, numbering, formatting).\n* A user asks \"find pages where the signature is by [name]\": the answer requires matching signature appearance.\n\nText-only embeddings can't index page-images directly. Multimodal embeddings can:\n\n* **CLIP** (and its open-source successor **OpenCLIP**): the original cross-modal embedding: maps images and text to a shared embedding space. Trained on image-caption pairs. Strong on natural images; weaker on document-specific content.\n\n* **ColPali** : 2024 specialty for document retrieval. Uses a late-interaction architecture (described in §12.3) over page-image patches and query text. Production-relevant for document RAG.\n\n* **Voyage multimodal-3** : Voyage AI's 2025 multimodal embedding; handles mixed content (text + image) coherently. Pairs naturally with their domain-specific models.\n\n* **Cohere embed-v3-image** (extension of their text embeddings): multimodal variant for unified text-and-image retrieval.\n\nThe 2026 split:\n\n* **For document RAG with mixed content** : use vision-first ingestion (§12.1) to extract structured text, then text-only embeddings on the extracted text. Multimodal embeddings on the page-images themselves are optional layer for image-similarity queries.\n* **For pure image-search applications** (find similar product photos, find pages with specific visual layouts): use multimodal embeddings as the primary retrieval mechanism.\n\nMost production document-RAG in 2026 uses **vision-first ingestion + text-only embeddings on the extracted text**. The multimodal embedding layer is the rarer specialty.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 713,
+      "out_sha": "4ec24945f1bc",
       "note": ""
     },
     {
