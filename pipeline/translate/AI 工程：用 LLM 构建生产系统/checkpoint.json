@@ -1883,11 +1883,11 @@
       "en_title": "Chapter 6: Prompt Engineering — What Still Matters in 2026",
       "order": 146,
       "src_chars": 2350,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0765df518fe9",
       "src": "> **Current as of 2026.** Reading after 2027? Skim §6.3 with a skeptical eye; those low-level prompt patterns date fastest. §6.5 (prompts as versioned code) is the part that should still be true.\n\nIn 2022 you could become a prompt engineer by getting good at _let's think step by step_. That sentence, attached to the front of a math problem, made GPT-3.5 noticeably better at math. The trick became a meme. People wrote essays about how _prompt engineering_ was a new discipline.\n\nIn 2026, that sentence still helps a little on some tasks, but the gap is small enough that you would not notice on an eval. The frontier models — Claude Sonnet 4, GPT-4o, Gemini 2.5 Pro — handle basic reasoning without scaffolding. _Let's think step by step_ has been absorbed into the training; the model does it without being asked. Most of the 2022–2023 _prompt engineering tricks_ have followed the same path: into the training, out of the toolbox.\n\nSo what is left? Four things, and they are the actual job of prompt engineering in 2026:\n\n  1. **Cost and latency optimization through prompt design.** Shorter prompts and shorter outputs cost less and respond faster. Designing a prompt that gets the same job done in 60% of the tokens is a real engineering win.\n\n  2. **Constraining output structure.** Making the model produce JSON, XML, a specific markdown shape, or a function-call signature reliably. This is the topic of Chapter 7 (structured output) and is the most common production use of prompt engineering.\n\n  3. **Eliciting tool use.** Telling the model when to call which tool, what arguments to pass, how to interpret the tool's response. This is the topic of Chapter 13 (tool use) and is the foundation of agent design.\n\n  4. **Safety hardening.** Refusal patterns; PII redaction; prompt-injection defense; output-format constraints that prevent harmful outputs. This is the topic of Chapter 23 (safety) and is where most production prompt work lives.\n\nThis chapter is about the _discipline_ of working with prompts: treating them as versioned code, evaluating them against goldens, designing them as artifacts that ship and evolve. The specific tactics are time-stamped (the 2026 named patterns will be partially obsolete by 2028); the discipline is durable.\n\n\n### 6.1 The four things prompt engineering still does\n\nLet's expand each of the four.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 932,
+      "out_sha": "8094c5968103",
       "note": ""
     },
     {
