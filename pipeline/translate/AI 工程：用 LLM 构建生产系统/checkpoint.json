@@ -3791,11 +3791,11 @@
       "en_title": "Chapter 13: Tool Use and Sandboxed Execution",
       "order": 305,
       "src_chars": 1430,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4d7ed63fe553",
       "src": "### 13.2 Tool schemas as documentation for the model\n\nThe tool schema is read by the model and influences when and how it calls the tool. Underspecified schemas produce confused behavior: wrong tool chosen, wrong arguments, tool called when none was needed. Good schemas are clear, specific, and complete.\n\nA well-designed tool schema:\n\n* **Descriptive name** : `lookup_order` not `get_data`. The model picks tools partly by name; specific names reduce ambiguity.\n* **Action-and-purpose description** : \"Look up an order by order ID. Returns order details: status, items, totals, shipping.\" The description tells the model when to use the tool and what it returns.\n* **Constrained parameters** : `\"pattern\": \"^ORD-\\\\d{10}$\"` documents the expected format and rejects malformed calls.\n* **Required vs optional clearly marked** : the `required` field tells the model which parameters are mandatory.\n* **Type-safe** : numbers as numbers, dates as date strings, enums as `Literal`-equivalents in the schema.\n\nA poorly-designed tool schema:\n\n* Generic name (`run`, `execute`, `do`)\n* Vague description (\"Performs an operation\")\n* Untyped string parameters where structured types fit\n* Missing examples of usage\n\nThe discipline: **write tool descriptions as if you were briefing a smart but unfamiliar engineer who needs to know when to call the tool, what arguments to pass, and what to expect back**. That's what the model needs too.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 581,
+      "out_sha": "11c08c5dcffa",
       "note": ""
     },
     {
@@ -3803,11 +3803,11 @@
       "en_title": "Chapter 13: Tool Use and Sandboxed Execution",
       "order": 306,
       "src_chars": 2624,
-      "status": "pending",
+      "status": "done",
       "src_sha": "977bf5e0a4be",
       "src": "### 13.3 Multi-turn tool use and the ReAct pattern\n\nA single tool call may not finish the task. The model may need to call multiple tools, sometimes sequentially (the second call depends on the first's result), sometimes in parallel.\n\nThe standard pattern is the loop:\n    \n    \n    import json\n    \n    def agent_loop(user_message: str, max_iterations: int = 10):\n        messages = [{\"role\": \"user\", \"content\": user_message}]\n        for iteration in range(max_iterations):\n            response = client.messages.create(\n                model=\"claude-sonnet-4-20260315\",\n                tools=tools,\n                messages=messages,\n                max_tokens=2048,\n            )\n            messages.append({\"role\": \"assistant\", \"content\": response.content})\n    \n            if response.stop_reason != \"tool_use\":\n                # Concatenate all text blocks; tool_use blocks are absent at this stop_reason.\n                return \"\".join(b.text for b in response.content if b.type == \"text\")\n    \n            tool_results = []\n            for block in response.content:\n                if block.type == \"tool_use\":\n                    result = execute_tool(block.name, block.input)\n                    tool_results.append({\n                        \"type\": \"tool_result\",\n                        \"tool_use_id\": block.id,\n                        \"content\": json.dumps(result),\n                    })\n            messages.append({\"role\": \"user\", \"content\": tool_results})\n    \n        raise RuntimeError(\"agent did not finish within max_iterations\")\n    \n\nThis is Yao et al.'s **ReAct** pattern (2022): Reasoning (the model's thinking text), Acting (the tool call), Observing (the tool result), then back to Reasoning. The loop continues until the model produces a final answer or hits the iteration cap.\n\nVariants worth knowing:\n\n* **Parallel tool calls** : the model emits multiple tool-use blocks in one response. The application executes all of them (often in parallel) and returns all results in the next message. Modern Anthropic and OpenAI APIs support this; latency benefit can be large.\n* **Plan-then-execute** : the model first produces a structured plan (a sequence of intended tool calls), then executes the plan step by step. More structured than pure ReAct; sometimes more reliable on complex tasks.\n* **Reflection** : between tool calls, the model is prompted to reflect on the trajectory so far. Catches dead ends; sometimes overkill.\n\nThe discipline: **most production agents use simple ReAct loops with parallel tool calls; complexity beyond this is occasionally warranted but more often premature**.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1672,
+      "out_sha": "7b7b07313b72",
       "note": ""
     },
     {
