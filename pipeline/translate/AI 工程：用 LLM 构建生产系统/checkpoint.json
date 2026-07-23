@@ -7643,11 +7643,11 @@
       "en_title": "Appendix B — Reference Architecture Catalog",
       "order": 626,
       "src_chars": 2151,
-      "status": "pending",
+      "status": "done",
       "src_sha": "daa07d3d01d2",
       "src": "#### Pattern 4: Vision-First Document Ingestion\n\n**What problem it solves.** PDFs are not text. Text-extraction libraries (pdfminer, PyMuPDF) produce a stream of characters with no layout, no tables, no figures, and no awareness that a two-column journal article should be read column-by-column. The result is RAG over garbage. Vision-first ingestion treats each page as an image and uses a VLM to extract structured content directly.\n\n**Topology.** PDF lands in object storage (S3, GCS) with a job tag. A worker pulls the job, splits the PDF into PNG or JPEG renders at 200 DPI (PyMuPDF or pdf2image), and emits one image per page to a queue. A pool of VLM workers (Claude vision, GPT-4-class vision, Gemini Pro Vision, or self-hosted Qwen-VL) consumes the queue. Per page, the worker calls the VLM with a structured-extraction prompt: narrative text in reading order, tables as JSON, figures with captions, section headings with hierarchy level, and page metadata (page number, document ID, layout class). Output is one JSON document per page, validated against a Pydantic schema. A normalization stage joins pages into a single document tree (section continuity, table-spans-pages, footnote resolution). The normalized document is chunked semantically (on section boundaries, never split a table, attach figure captions to their figures), and chunks are indexed for retrieval as in Pattern 3 — with richer metadata (section path, page number, table-or-prose flag) the reranker and prompt-construction stages can exploit.\n\n**When to use it.** Source corpus is PDFs with non-trivial layout — academic papers, regulatory filings, medical records, contracts, financial statements with tables. Strata Research's legal-tech platform is canonical: case law is unusable through naive text extraction but a VLM pipeline yields clean, citable structure.\n\n**When NOT to use it.** Documents are already in HTML, Markdown, or other structured formats. Or simple enough that pdfminer-plus-cleanup gets 95% of the way. VLM ingestion is 10-50x more expensive per page than text extraction; volume matters.\n\n**Cross-references.** Chapter 12 (multimodal ingestion).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 835,
+      "out_sha": "6211c278f374",
       "note": ""
     },
     {
@@ -7655,11 +7655,11 @@
       "en_title": "Appendix B — Reference Architecture Catalog",
       "order": 627,
       "src_chars": 2046,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d84cec7fc961",
       "src": "#### Pattern 5: Bounded Agent with Tool Catalog\n\n**What problem it solves.** A single LLM call can't do the work — the task requires reading a database, calling an API, writing a file, and iterating on intermediate results. A naive agent loop (\"LLM, here are tools, go\") runs away: infinite iteration, exploding cost, repeated identical tool calls when the model gets stuck. The bounded agent is the production-safe variant.\n\n**Topology.** User goal enters an agent service that maintains per-session state: iteration count, cumulative token cost, tool-call history (arguments hashed for dedup), budget envelope. The loop is explicit: (1) compose the prompt — system instruction, goal, running scratchpad, tool catalog; (2) call the LLM; (3) if the LLM emits a tool call, dedup against history (identical name plus arguments within the last N iterations is rejected and the model is told it already tried that), then execute in a sandbox — gVisor, Firecracker, or a process-isolated subprocess with a strict syscall allowlist — with a per-call timeout (5-30 s) and result-size cap (4-16 KB); (4) append the result to the scratchpad; (5) check circuit breakers — iteration cap (10-30), cost cap (cumulative tokens × unit price), wall-clock cap (60-300 s) — and abort gracefully if any trips. Full trajectory (every prompt, response, tool call, result) is logged with a single trajectory ID so post-mortems are tractable.\n\n**When to use it.** The task genuinely requires tool use and iteration. Tools have meaningful side effects (writes, payments, irreversible operations) that demand a sandbox. You've already shipped one or two non-agent AI features and have an observability story.\n\n**When NOT to use it.** The task can be solved with one LLM call plus structured output. Or the team has never shipped a production AI feature and is reaching for an agent because of hype — most 2025 \"agent\" use cases turned out to be one-call-plus-RAG in disguise.\n\n**Cross-references.** Chapter 13 (the agent loop), Chapter 14 (tool catalogs and sandboxing).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 771,
+      "out_sha": "3432f9fc2cab",
       "note": ""
     },
     {
