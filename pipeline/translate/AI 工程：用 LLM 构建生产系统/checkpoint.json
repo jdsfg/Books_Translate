@@ -4235,11 +4235,11 @@
       "en_title": "Chapter 14: Designing Agents That Don't Spiral + Agent Memory Architectures",
       "order": 342,
       "src_chars": 3368,
-      "status": "pending",
+      "status": "done",
       "src_sha": "73f545c85b1b",
       "src": "Concretely: an unbounded agent that spirals for 14 hours doing nothing useful is not more capable than a bounded agent that halts at 15 iterations with a graceful error. The bounded agent fails fast and reports; the unbounded agent fails slow and racks up cost.\n\nThe capability question is about _what tasks the agent can complete_ , not _how many resources the agent can consume_. For any well-defined task with a reasonable solution space, the bounds in this chapter (max 15 iterations, 0.50 USD budget) are sufficient; the agent operates fully within those bounds. For tasks that genuinely need more (rare; usually a sign the task is mis-scoped or needs a different architecture), explicit operator approval can raise the bounds.\n\nThe mental shift: bounds are the engineering envelope that defines what the agent can attempt. The agent operates fully within the envelope. The unbounded alternative has the same fully-within-envelope capability _plus_ the disaster tail — and the disaster tail isn't capability, it's catastrophe.\n\n**Q4.** What is _in-trajectory summarization_ and when does it engage? Why is it different from inter-session summarization?\n\n**Answer:** In-trajectory summarization compresses older turns of the current trajectory when the working memory exceeds a threshold (e.g., 30K tokens). Older tool calls, observations, and reasoning are replaced with a structured summary; the agent's working memory stays bounded while the trajectory can continue.\n\nIt engages when:\n\n* The trajectory has accumulated significant working memory (typically after 15+ iterations or after a few large tool outputs).\n* The threshold is reached; further accumulation would risk context overflow (Failure mode 4).\n\nIt's different from inter-session summarization because:\n\n* In-trajectory summarization happens _during_ a trajectory; the agent continues operating on the compressed state.\n* Inter-session summarization happens _between_ trajectories or sessions; the result feeds into the next session's setup.\n* In-trajectory has to be fast (the trajectory waits); inter-session can be batched.\n* In-trajectory preserves the agent's current goal and recent decisions (which are about to be used); inter-session preserves long-term patterns.\n\nBoth use similar tooling (an LLM call to summarize) but serve different purposes. Production agents do both: in-trajectory to keep working memory bounded; inter-session to maintain episodic and long-term memory.\n\n**Q5.** Chapter 13 introduced tool use as the building block for agents; this chapter introduces the bounded loop that makes tools into agents. Identify two specific properties that emerge from the loop (and the bounds) that don't exist when tools are called one-shot. Why do these emergent properties justify the term _agent_ as distinct from _tool-augmented LLM_?\n\n**Answer:** Two emergent properties:\n\n  1. **Multi-step planning capacity.** A one-shot tool call answers a single question with a single tool. The bounded loop lets the LLM call multiple tools in sequence, observe each result, and adapt subsequent calls based on what it learned. The LLM can decompose a task (\"look up the customer's order; check shipping status; if delayed, check carrier tracking; if no signal, escalate\") into a trajectory of tool calls that no single call could express. The bounded loop is what enables this composition.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1062,
+      "out_sha": "3ebc689c31b8",
       "note": ""
     },
     {
@@ -4247,11 +4247,11 @@
       "en_title": "Chapter 14: Designing Agents That Don't Spiral + Agent Memory Architectures",
       "order": 343,
       "src_chars": 1764,
-      "status": "pending",
+      "status": "done",
       "src_sha": "27ffd0f8f990",
       "src": "  2. **Goal-directed behavior with intermediate decision-making.** In a one-shot tool call, the LLM doesn't _choose_ between calling a tool or composing an answer; the schema determines whether a tool was needed. In the bounded loop, the LLM at each step decides: _call another tool, ask the user a clarifying question, escalate to a human, or compose the final answer_. This is the structural definition of agency: the LLM is making decisions about its own next move, not just generating responses to fixed inputs.\n\nWhy these justify the term _agent_ : the word _agent_ implies a system that pursues goals through autonomous action. A tool-augmented LLM responds to one query with one tool call; an agent pursues a goal across multiple tool calls, choosing its actions to advance the goal, with the bounded loop as its action-selection mechanism. The bounds make the autonomy safe (catastrophic-tail clipped); without bounds, autonomous tool-calling is dangerous; with bounds, it's the foundation of production agents.\n\nThe framing matters for engineering decisions. A team building \"we want the LLM to also call this API\" can keep it as a one-shot tool-augmented LLM (simpler architecture, no agent loop, no bound infrastructure). A team building \"we want the LLM to investigate a problem and pursue a resolution\" needs to take on the agent's full infrastructure (loop, bounds, memory, observability). Skipping the infrastructure produces what §14.1 calls _unbounded prototypes_ : they work in the demo and break in production.\n\nCross-reference: Chapter 15 extends this further to multi-agent systems where multiple bounded loops coordinate; each agent remains an agent in this chapter's sense, and the system layer adds coordination as a new emergent property.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 576,
+      "out_sha": "e85b6a557f9d",
       "note": ""
     },
     {
