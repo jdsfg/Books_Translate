@@ -7751,11 +7751,11 @@
       "en_title": "Appendix B — Reference Architecture Catalog",
       "order": 635,
       "src_chars": 2066,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fdfbc8159a0b",
       "src": "**Smolagents.** Hugging Face, late 2024/early 2025; deliberately small (the name is the thesis). Distinctive design choice: the action space is Python code rather than structured tool calls. The agent generates a snippet that calls available tools as functions, the snippet runs in a sandbox, the result feeds back. Expressivity is high (compose tools, loop, branch, use intermediate variables in one step) and the codebase is small enough to read end-to-end. Risks are real: code-as-action depends on a trustworthy sandbox with a richer attack surface (Turing-complete by design), and provider support is thinner than the main-text four. Consider when code-as-action fits the problem (data-analysis, computational tasks) and the team can harden a sandbox. Skip when structured tool calling is sufficient.\n\n* * *\n\n\n### Closing note\n\nThe architecture patterns above are durable. The seven most teams use — single-provider chat, multi-model router, production RAG with reranker, vision-first ingestion, bounded agent, eval-as-CI, multi-tier caching — are versions of patterns that worked in 2024, work in 2026, and will work in 2028 even if providers, models, and frameworks have all changed. The other three (multi-agent orchestrator, regulated observability, voice with fallback) are sub-specialties that come up in particular settings and outlast the specific tools they're built with.\n\nThe framework landscape is the opposite. Of the ten frameworks named between Ch 15 and this appendix, a safe 2028 prediction is that at least three will be deprecated, at least two absorbed into larger ecosystems, and at least one framework not yet announced in 2026 will be the new conventional wisdom. The implication: pick frameworks for organizational fit — the team's language, the existing dependency graph, tolerance for framework opinion versus DIY control, availability of support contracts if procurement cares — and never for hype. The architecture survives the framework. Teams that internalize this ship more and panic less when the landscape moves under them.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 548,
+      "out_sha": "e87250b908c4",
       "note": ""
     },
     {
