@@ -5831,11 +5831,11 @@
       "en_title": "Chapter 20: Voice AI in Production",
       "order": 475,
       "src_chars": 96,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2d389347e3d9",
       "src": "### 20.6 Binding workflow #13: voice agent loop with turn-taking, interruption, fallback-to-text",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 45,
+      "out_sha": "9ba98aa4f580",
       "note": ""
     },
     {
@@ -5843,11 +5843,11 @@
       "en_title": "Chapter 20: Voice AI in Production",
       "order": 476,
       "src_chars": 4090,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d78c7c95891b",
       "src": "A production-grade voice agent loop. Helios's actual implementation (simplified):\n    \n    \n    import asyncio\n    from openai import AsyncOpenAI\n    from anthropic import AsyncAnthropic\n    from telephony_sdk import VoiceCall, AudioStream\n    \n    class VoiceAgent:\n        def __init__(self, call_id: str, customer_id: str):\n            self.call_id = call_id\n            self.customer_id = customer_id\n            self.realtime = AsyncOpenAI().beta.realtime\n            self.text_anthropic = AsyncAnthropic()\n            self.session = None\n            self.interrupted = False\n    \n        async def start(self, call: VoiceCall) -> None:\n            # Connect to OpenAI Realtime\n            self.session = await self.realtime.session.create(\n                model=\"gpt-4o-realtime-2026-03\",  # GA realtime model; substitute the dated ID current at your read date\n                modalities=[\"text\", \"audio\"],\n                voice=\"alloy\",\n                instructions=self._system_prompt(),\n                tools=self._tool_definitions(),\n                turn_detection={\"type\": \"server_vad\", \"threshold\": 0.5, \"silence_duration_ms\": 350},\n            )\n    \n            # Bidirectional audio streaming\n            async with self.session:\n                user_audio_task = asyncio.create_task(\n                    self._stream_user_audio(call.audio_input)\n                )\n                response_handler_task = asyncio.create_task(\n                    self._handle_responses(call.audio_output)\n                )\n                await asyncio.gather(user_audio_task, response_handler_task)\n    \n        async def _stream_user_audio(self, audio_input: AudioStream) -> None:\n            async for chunk in audio_input:\n                await self.session.send_audio(chunk)\n    \n        async def _handle_responses(self, audio_output: AudioStream) -> None:\n            async for event in self.session.events():\n                if event.type == \"response.audio.delta\":\n                    if self.interrupted:\n                        # User started talking; stop sending audio\n                        continue\n                    await audio_output.send(event.audio_chunk)\n                elif event.type == \"input_audio_buffer.speech_started\":\n                    # User started speaking; cancel any in-flight response\n                    self.interrupted = True\n                    await self.session.cancel_response()\n                elif event.type == \"input_audio_buffer.speech_stopped\":\n                    self.interrupted = False\n                elif event.type == \"response.tool_call\":\n                    # The model wants to call a tool\n                    await self._handle_tool_call(event.tool_call)\n                elif event.type == \"response.done\":\n                    self.interrupted = False\n                elif event.type == \"error\":\n                    # Fallback to text mode\n                    await self._fallback_to_text(audio_output, event)\n    \n        async def _handle_tool_call(self, tool_call) -> None:\n            if tool_call.name == \"lookup_order\":\n                result = await lookup_order(tool_call.input[\"order_id\"])\n                await self.session.send_tool_result(tool_call.id, result)\n            elif tool_call.name == \"process_refund\":\n                # High-stakes tool; verify policy and confirm with user\n                ...\n    \n        async def _fallback_to_text(self, audio_output: AudioStream, error_event) -> None:\n            \"\"\"If voice fails, fall back to a text-LLM call + TTS synthesis.\"\"\"\n            last_user_message = self.session.last_user_transcript()\n            text_response = await self.text_anthropic.messages.create(\n                model=\"claude-sonnet-4-20260315\",\n                max_tokens=512,\n                system=self._system_prompt(),\n                messages=[{\"role\": \"user\", \"content\": last_user_message}],\n            )\n            # Synthesize to audio via separate TTS service\n            audio = await synthesize_tts(text_response.content[0].text)\n            await audio_output.send(audio)\n    ",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 3731,
+      "out_sha": "5b6f3fd584b8",
       "note": ""
     },
     {
