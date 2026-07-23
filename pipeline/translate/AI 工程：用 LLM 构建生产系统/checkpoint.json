@@ -4703,11 +4703,11 @@
       "en_title": "Chapter 15: Multi-Agent Coordination and the Computer-Use Frontier",
       "order": 381,
       "src_chars": 819,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a8b9ef081949",
       "src": "* §15.3 debate pattern: this exercise concretizes the abstract pattern; the symmetric-prompts design is the key engineering work.\n* §15.9 failure modes: the common-bias failure is a multi-agent failure mode not in the chapter's catalog; this exercise extends it.\n* Chapter 5 eval: the debate system needs its own eval (was the right decision reached? was the escalation correct?), built from labeled borderline cases.\n\nThe 2026 deployment reality: debate-pattern moderation is still rare in production; the cost premium (2-3 LLM calls per case) compared to single-classifier moderation is significant; the quality lift only justifies it for high-stakes borderline cases. Some large platforms use it on the top 1% of borderline cases by user-impact; most cases stay with single-classifier or single-agent decisions.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 284,
+      "out_sha": "d9baa51321e2",
       "note": ""
     },
     {
