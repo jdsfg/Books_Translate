@@ -3455,11 +3455,11 @@
       "en_title": "Chapter 11: Advanced RAG and RAG Evaluation",
       "order": 277,
       "src_chars": 1741,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9539ae754b3b",
       "src": "* **Hedge with metadata-filter retrieval** : cross-references Chapter 11's self-querying retrieval (§11.2 Pattern 4). If the user has _any_ jurisdiction signal (explicit or in prior turns), use it as a filter; HyDE's jurisdiction guess is overridden. For ambiguous queries with no jurisdiction signal, run two parallel retrievals (HyDE-guessed jurisdiction + the next most likely) and let the reranker decide.\n* **Confidence threshold on HyDE jurisdiction** : prompt the LLM to express confidence in its jurisdiction guess. Low-confidence cases trigger a clarifying user question rather than a guess.\n\n(d) **Eval slice** : a 50-query \"ambiguous queries\" slice, labeled with the user's actually-intended case (collected from production query logs paired with user follow-up clarifications). Score retrieval recall@10 with and without HyDE. The lift on this slice is the metric; production decision rides on whether the lift justifies the extra LLM call cost (~0.0005 USD/query).\n\nCross-reference: this exercise specializes the §11.2 query-rewriting pattern to a high-ambiguity domain. The same logic applies to any short-query domain (medical \"lupus joint pain\"; technical-support \"login broken\").\n\n**AI-collaboration sub-question** : How would you ask an LLM to help with this exercise, and what would you verify in its response?\n\n**Answer:** Useful prompt: _Design a HyDE pre-retrieval step for ambiguous legal queries: HyDE prompt, retrieval feed, wrong-jurisdiction handling, eval slice._ You verify (a) the reranker scores against the original query, not the HyDE output (a common LLM mistake: amplifying HyDE through the whole pipeline), and (b) the eval slice is concrete (50 labeled queries, not a vague \"test on ambiguous queries\").\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 650,
+      "out_sha": "2237c2a11c74",
       "note": ""
     },
     {
@@ -3467,11 +3467,11 @@
       "en_title": "Chapter 11: Advanced RAG and RAG Evaluation",
       "order": 278,
       "src_chars": 3367,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a52440a9a169",
       "src": "#### Think Deeper\n\n**Q1.** _KG-RAG vs vector-only RAG: where each wins._ The chapter mentions KG-RAG is right when the domain's value is in relationships, not text. Identify three specific applications where KG-RAG would significantly outperform vector-only RAG. For each, explain what relationships KG-RAG captures that vector-only would miss.\n\n**Discussion:** Three applications:\n\n  1. **Drug-drug interaction checking**. Medical KG with drug nodes, interaction edges, severity attributes. A query \"is it safe to prescribe X to a patient already on Y?\" goes through the graph: are there interaction edges between X and Y? Vector-only would retrieve documents _about_ both drugs but might miss the specific interaction record; KG retrieval finds the relationship directly. Vector-only's miss rate on rare-but-critical interactions can be high.\n\n  2. **Organizational knowledge (\"who knows what?\")**. Enterprise KG with employee nodes, project nodes, skill nodes, \"worked on\" edges. A query \"who has worked on payment-system migrations?\" returns employees with project edges to relevant projects. Vector-only would retrieve random documents mentioning payment systems; KG returns the specific people.\n\n  3. **Citation networks in legal/academic**. Legal KG with case nodes, citation edges, jurisdiction nodes. A query \"what cases cite Smith v. Jones favorably?\" returns cases with positive-citation edges to Smith v. Jones, with metadata about treatment. Vector-only would retrieve text snippets mentioning Smith v. Jones; KG retrieves the actual citation network.\n\nWhat KG captures: _relationships as first-class queryable structures_. Vector-only captures _content similarity in text_. They are different abstractions; for some queries, the relationship structure is the answer the user actually wants.\n\nKG-RAG's cost: building and maintaining the graph is substantial engineering. Entity extraction has errors; relationship extraction has errors; the graph drifts as content evolves. A team committing to KG-RAG is committing to a multi-engineer-quarter project. The value has to justify it. In the three applications above, it usually does; in most general RAG projects, it doesn't.\n\n**Q2.** _RAG eval as a craft._ The chapter argues that production RAG eval requires labeled relevance, multi-axis rubrics, and disciplined labeling SOPs — a substantial up-front investment. Argue that this investment is what separates production-quality RAG from prototype-quality RAG. Identify the specific risks of shipping RAG without this investment.\n\n**Discussion:** The investment in production RAG eval has three layers of cost: the labeled golden set (low five figures for a meaningful one); the rubric design and calibration (engineer + domain expert time); the ongoing maintenance (quarterly recalibration, eval-set growth). For a small team it's a substantial commitment.\n\nThe argument for the investment: **without it, the team is shipping on vibes**. The prototype-quality system that demos well in week 1 has no defensible measurement of what _production behavior_ will look like. The team has no signal on whether prompt changes help; no signal on whether new corpus additions degrade retrieval; no signal on whether the model upgrade is safe. Decisions become opinion-based; regressions slip in; quality decays.\n\nSpecific risks of shipping without the investment:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1125,
+      "out_sha": "8754d06ad171",
       "note": ""
     },
     {
