@@ -7595,11 +7595,11 @@
       "en_title": "Appendix A — Reading List",
       "order": 622,
       "src_chars": 1618,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8ec69b0786e9",
       "src": "  15. **Site Reliability Engineering: How Google Runs Production Systems** — _Beyer, Jones, Petoff, Murphy (editors); O'Reilly, 2016._ This book has nothing to do with LLMs and everything to do with the operational discipline that AI engineering inherits. The SRE chapters on SLOs, error budgets, on-call rotations, postmortems, and graceful degradation are the substrate on which AI ops sits. Chapter 19 (observability) borrows its instrumentation vocabulary directly from the SRE book, and Chapter 21 (production eval and model upgrades) frames model upgrades as a special case of canary releases. Read the SRE book for the posture — calm, blameless, quantified, anti-heroic — that the best AI ops teams in 2026 are still trying to reach. The free HTML edition on Google's SRE site is complete and excellent; the printed book sits well on a shelf next to this one.\n\n\n### Closing note\n\nThese fifteen are starting points, not endpoints. The field moves fast — Vaswani-era Transformer work is nine years old as I write this in 2026, and _Lost in the Middle_ is barely two — and the half-life of any specific recommendation is short. Track the authors and labs named here for updates: Karpathy's blog and YouTube, Lilian Weng's site, Simon Willison's daily output, Hamel Husain and Shreya Shankar's continuing writing, Eugene Yan, Chip Huyen, Anthropic's and OpenAI's engineering guides, the Stanford CS329S successor courses. A 2027 second edition of this book will refresh both this reading list and the 2026 specifics that fill the rest of the chapters; what will not change is the discipline the list points at.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 726,
+      "out_sha": "e7a8dbdc51aa",
       "note": ""
     },
     {
