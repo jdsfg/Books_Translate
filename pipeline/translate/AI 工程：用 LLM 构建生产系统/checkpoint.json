@@ -1571,11 +1571,11 @@
       "en_title": "Chapter 5: Eval Tools and Where They Fit",
       "order": 120,
       "src_chars": 2052,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7263b0fc1f87",
       "src": "> **Current as of 2026.** The durable take-away from this chapter is the positioning logic: _pytest-native baseline, safety-evals specialist, RAG-specialist, SaaS platform, LangChain-tied_. The tools that currently occupy those five slots (`pytest-evals`, `inspect-ai`, `ragas`, `braintrust`, `langsmith`) are the 2026 incumbents; expect at least one slot to change hands by 2027. Read the logic first, then map whichever tools are dominant when you read this onto it.\n\nChapter 4 made the case that the eval is the spec. This chapter is about the tooling that makes the spec real on a Monday morning at a real company.\n\nA team that takes the eval-driven discipline seriously will spend, in 2026, somewhere between zero and 50% of one engineer's time on eval infrastructure. The variance is enormous. Some teams build everything from scratch and burn months. Some teams pick a SaaS vendor and burn a budget line. Most teams settle in the middle: a thin OSS layer pinned to their conventions, with a SaaS layer added when the data set or the team grows past what the OSS layer comfortably supports.\n\nThis chapter walks the five main entrants in the 2026 eval-tool landscape, names their fit, and ends with binding workflow #1: a real GitHub Actions workflow that gates a PR on eval regression, with a per-prompt-version golden set and a SQLite-backed eval store. Aiyana shipped this at Beacon Health AI; you should be able to ship it on Monday.\n\n\n### 5.1 The 2026 eval-tool landscape\n\nFive tools dominate the 2026 conversation. Each occupies a niche; none is the right answer for every team.\n\n> **A note on the code samples below.** All five tools ship breaking SDK changes more often than language standards do. Treat every snippet in this section as illustrative of the shape rather than as line-for-line current syntax; verify against each library's current docs before copying. The patterns (a pytest-style scoring function, an `inspect-ai` Task, a `ragas` metric set, a `braintrust` experiment, a `langsmith` evaluator) outlive the parameter names.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 870,
+      "out_sha": "d5f4397be775",
       "note": ""
     },
     {
