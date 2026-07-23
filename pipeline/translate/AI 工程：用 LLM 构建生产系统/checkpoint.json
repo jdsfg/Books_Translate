@@ -7259,11 +7259,11 @@
       "en_title": "Chapter 25: Anti-Patterns and Where the Field Is Going",
       "order": 594,
       "src_chars": 2767,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3d7ba38f77b0",
       "src": "#### Anti-pattern 3: treating LLM outputs as deterministic\n\n**The pattern** : code that reads LLM responses and dispatches on them as if the responses were stable function returns. No validation; no error variants; no calibration on confidence.\n\n**Why it fails** : LLM outputs are probabilistic. The 99% case works; the 1% case crashes the application. Schema violations, hallucinations, unexpected refusals all happen routinely. Google AI Overviews' \"glue on pizza\" failure (Thread B Failure 2, Chapter 9) is a retrieval-layer case of the same root failure: the system treated retrieved Reddit content as a reliable fact source and the model treated it as ground truth, with no mechanism to detect the absurdity.\n\n**The chapter** : Chapter 2 (the mental model: engineering against a stochastic component). Chapter 7 (structured output with discriminated unions and error variants).\n\n**The kill criterion** : if your code can't handle the LLM emitting an unexpected response, the code isn't production-ready.\n\n\n#### Anti-pattern 4: ignoring the cost dimension\n\n**The pattern** : shipping AI features without tracking per-feature cost. Discovering the bill at end-of-month review. Lacking levers to optimize.\n\n**Why it fails** : AI inference costs compound. A feature that costs 1K USD/month at launch can be 50K USD/month at scale. Without tracking, the team has no visibility; without levers (routing, caching, batching), the cost grows uncontrolled. The fine-tune deprecation cascade (Thread B Failure 4, Chapter 22) is the cost-dimension failure in a different key: a team's GPT-4 fine-tunes became worse than GPT-5 base on Day 1, forcing 6–8 engineer-weeks of emergency migration, a cost that systematic model-upgrade tracking would have anticipated and budgeted.\n\n**The chapter** : Chapter 17 (routing as the biggest cost lever). Chapter 18 (cost optimization, tracking, and discipline).\n\n**The kill criterion** : if you can't say what a feature costs per active user per day, you don't have cost discipline.\n\n\n#### Anti-pattern 5: trusting LLM-as-judge without validation\n\n**The pattern** : using an LLM to score outputs in eval (Chapter 4 §4.5) without calibrating the judge against humans. The eval becomes correlated-failure with the system; over-optimistic scores; team's confidence is misplaced.\n\n**Why it fails** : the LLM judge has biases (length bias, position bias, correlated-family bias). Without calibration against human labels, the judge's scores are not anchored to ground truth.\n\n**The chapter** : Chapter 4 (eval discipline). Chapter 11 (multi-axis RAG eval; calibration discipline).\n\n**The kill criterion** : if your LLM judge hasn't been validated against humans on at least 50 cases with κ ≥ 0.6 agreement, the eval is not production-grade.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 999,
+      "out_sha": "70d4b228f6ba",
       "note": ""
     },
     {
@@ -7271,11 +7271,11 @@
       "en_title": "Chapter 25: Anti-Patterns and Where the Field Is Going",
       "order": 595,
       "src_chars": 1824,
-      "status": "pending",
+      "status": "done",
       "src_sha": "25b380b44eda",
       "src": "#### Anti-pattern 6: building agents when workflows suffice\n\n**The pattern** : reaching for multi-agent or agentic architectures for problems that simple deterministic workflows would handle better. Treating \"agentic\" as inherently more sophisticated than \"workflow.\"\n\n**Why it fails** : agents add complexity (bound-engineering, observability, failure modes) that workflows don't have. For tasks that decompose into known steps, a workflow is more predictable, cheaper, and easier to debug than an agent. Two Thread B failures anchor this anti-pattern at different scales. The 52K USD overnight agent incident (Thread B Failure 5, Chapter 14) is the unbounded-loop case: a single agent without iteration caps, cost circuit breakers, or tool-call deduplication ran for fourteen hours before anyone noticed. The 2026 agentic recursion incident (Thread B Failure 6, Chapter 15) is the multi-agent case: an orchestrator-and-workers system converged on a wrong intermediate answer and spent retry loops doubling its token consumption before anyone noticed. Both are the same class of failure — an agentic system without the bounds a deterministic workflow would have made implicit — surfacing at different scales of architecture.\n\n**The chapter** : Chapter 14 (bounded agents, and the broader question of whether to build an agent at all). Chapter 15 (the production reality is that orchestrator-workers wins over multi-agent for most cases; many tasks need neither).\n\n**The kill criterion** : if you can specify your task as a sequence of deterministic steps with maybe one LLM call per step, you have a workflow; don't agent-ify it. If you do have a real agent, every one of {iteration cap, cost circuit breaker, tool-call deduplication, observation validation} must be in place before the agent ever sees production traffic.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 649,
+      "out_sha": "f429ca810062",
       "note": ""
     },
     {
