@@ -2783,11 +2783,11 @@
       "en_title": "Chapter 9: RAG Architecture from First Principles",
       "order": 221,
       "src_chars": 1677,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c736eb054e2c",
       "src": "### 9.5 How RAG retrieval evaluation differs from LLM evaluation\n\nA subtle but important point. Standard LLM evaluation (Chapter 4) measures answer quality. RAG has two layers, and you need to evaluate both.\n\n**Retrieval evaluation** measures: did retrieval find the relevant content? Standard metrics:\n\n* **Recall@K** : of the truly-relevant chunks for a query, how many are in the top-K retrieved?\n* **Precision@K** : of the top-K retrieved chunks, how many are truly relevant?\n* **MRR (Mean Reciprocal Rank)** : the average reciprocal of the rank position of the first relevant chunk.\n* **NDCG (Normalized Discounted Cumulative Gain)** : weighted by rank position, gives credit for ranking relevant chunks higher.\n\nThese are component-level evals. They require _labeled relevance_ — for each query in the golden set, which chunks in the corpus are relevant? This is expensive to produce (a human or careful LLM-as-judge has to label).\n\n**Answer evaluation** measures: given the retrieval, was the answer correct? Standard metrics:\n\n* **Faithfulness** : does the answer follow from the retrieved chunks (no hallucination)?\n* **Answer relevance** : does the answer address the question?\n* **Citation grounding** : does the answer cite the retrieved chunks correctly?\n\nThese are end-to-end evals. They require an answer-quality rubric or LLM-as-judge.\n\nA production RAG system needs both layers. Retrieval-only evals can show 90% recall@10 while end-to-end quality is poor (the model is failing to use what was retrieved). End-to-end-only evals don't tell you whether to fix retrieval or fix the LLM. Chapter 11 builds out the multi-axis RAG eval rubric (binding workflow #5).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 627,
+      "out_sha": "0285abbb2e31",
       "note": ""
     },
     {
@@ -2795,11 +2795,11 @@
       "en_title": "Chapter 9: RAG Architecture from First Principles",
       "order": 222,
       "src_chars": 3103,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b497be413e06",
       "src": "### 9.6 Strata Research's naive RAG and the path forward\n\nStrata Research's first version, in 2024, was naive RAG. They had a corpus of ~5M tokens of case law and regulations, OpenAI's `text-embedding-3-small` as the embedding model, Pinecone as the vector DB, top-5 retrieval, no reranker, GPT-4 as the LLM. The system shipped to a small beta.\n\nEval results from their initial production golden set:\n\nMetric | Naive RAG baseline  \n---|---  \nRetrieval recall@10 | 0.62  \nAnswer relevance | 0.58  \nCitation grounding | 0.51  \nJurisdiction correctness | 0.74  \nOverall pass rate | 0.43  \n  \nThese numbers don't ship. 43% pass rate means more than half the answers were unacceptable on Strata's rubric. The customers (legal researchers) needed _high reliability_ because their downstream work depends on the answer being correct; a 60% answer is worse than no answer because they can't tell which is which.\n\nThe path forward, executed over 2025:\n\n  1. **Document-structure-aware chunking** at paragraph level (lift: ~3 points on retrieval recall)\n  2. **Domain-specific embeddings** via Voyage AI's `voyage-law-2` (~8 points on retrieval recall on Strata's legal corpus; see Chapter 10 §10.8 for the embedding-only A/B table)\n  3. **Hybrid search** with BM25 alongside vector (~4 points on exact-citation queries)\n  4. **Cohere Rerank** on top-20 → top-5 (~8 points on relevance; the biggest single lift)\n  5. **Query rewriting** for ambiguous queries (~3 points on relevance)\n  6. **Prompt-level citation requirement** (Chapter 6 V2; ~7 points on citation grounding)\n  7. **Multi-axis RAG eval** to drive ongoing improvement (Chapter 11)\n\nBy Q4 2025, the production eval looked very different:\n\nMetric | Q4 2025  \n---|---  \nRetrieval recall@10 | 0.85  \nAnswer relevance | 0.85  \nCitation grounding | 0.92  \nJurisdiction correctness | 0.93  \nOverall pass rate | 0.81  \n  \nThe path was a year of disciplined engineering across all four levers, with every change validated against the eval. There were no breakthroughs. There was no single trick. There was _consistent application of the chapter's framework with eval-driven discipline_. This is what production RAG engineering looks like.\n\n(A note on the arithmetic: the per-lever lifts above are tagged against different metrics — some against retrieval recall, some against relevance, some against citation grounding — and they target overlapping failure cases on a multi-axis rubric. They do not add linearly into the overall-pass-rate delta. The +33 point sum from the seven levers above and the +38 point swing in overall pass rate (0.43 → 0.81) are consistent under this caveat; each lever fixes a slice of failures, with diminishing returns where slices overlap.)\n\n\n#### Common Misconception\n\nProduction-quality RAG is not a sprint deliverable. The Strata team spent a full year going from 43% pass rate to 81%; each lever required experimentation, evaluation, deployment, and monitoring. Teams that promise _RAG MVP in two weeks_ deliver something that demos but does not survive production traffic. The honest project scoping is months, not weeks.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1291,
+      "out_sha": "ebc0c8ba96d3",
       "note": ""
     },
     {
