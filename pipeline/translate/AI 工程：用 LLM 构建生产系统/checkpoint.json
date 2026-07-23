@@ -3767,11 +3767,11 @@
       "en_title": "Chapter 13: Tool Use and Sandboxed Execution",
       "order": 303,
       "src_chars": 1615,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b193ae840318",
       "src": "The LLM, by itself, cannot do most things. It cannot query your database. It cannot read the time. It cannot send an email. It cannot multiply two ten-digit numbers reliably (per Chapter 2 §2.8). It cannot fetch the current weather. It is a function from token sequences to token sequences, and the function is not very capable outside its language-modeling domain.\n\nTools change this. A tool is a function the LLM can invoke by emitting a structured call; the application executes the function; the result becomes part of the next inference's context. The LLM, augmented with tools, gains the abilities the application provides: database access, arithmetic, time-awareness, email-sending, web search, code execution. The augmentation transforms what the LLM can do from _talk about things_ to _do things_.\n\nThis chapter is about tool use as an engineering pattern. Chapter 14 builds agents (LLM + tools + loop + memory) on top. Chapter 15 explores multi-agent and computer-using-agent frontiers. Together, Chapters 13–15 are Part V: where most production AI fails, and where the engineering discipline matters most.\n\nHelios Customer AI is the case throughout Part V. Helios's customer-support agent calls many tools: search the knowledge base, query the customer's account, perform a refund, escalate to a human, run a diagnostic. The agent's value comes entirely from the tool layer; without tools, it would be a chatbot that politely declines to help. With tools, it resolves ~63% of tickets autonomously in 2026 (Helios's deflection-rate KPI from Chapter 1 §1.4; the per-mode breakdown is in Chapter 15 §15.6).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 601,
+      "out_sha": "b5e7609a41c5",
       "note": ""
     },
     {
