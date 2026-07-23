@@ -3347,11 +3347,11 @@
       "en_title": "Chapter 11: Advanced RAG and RAG Evaluation",
       "order": 268,
       "src_chars": 1878,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9909f08eada1",
       "src": "### Chapter Summary\n\nThe reranker is the highest-ROI single move in advanced RAG: +10 to +20 points quality at modest cost. Production RAG that doesn't use a reranker is leaving large quality gains on the table.\n\nQuery-side patterns — expansion, HyDE, decomposition, self-querying retrievers — each have niches. Expansion catches synonym mismatches; HyDE catches question-shape mismatches; decomposition handles multi-part queries; self-querying handles metadata constraints. Use them selectively; route specific patterns to specific query types.\n\nKnowledge-graph RAG is heavy infrastructure; right when the domain's value is in the relationships, not the text. Most production RAG does not use KG-RAG.\n\nBinding workflow #5 (§11.4) is the multi-axis RAG eval rubric (six axes spanning retrieval and answer quality) plus the manual labeling SOP (two-labeler protocol; calibration; quarterly review). The labeling cost is real (low five figures for initial; quarterly maintenance) and is what makes the eval defensible in regulated domains.\n\nStrata Research's V1→V4 journey (§11.5) shows the discipline in practice: 43% pass rate to 81% over 12 months, no single magic move, the largest single lift from V1→V2's combined reranker + domain-embedding step, the gains compounding across levers.\n\nLegal-tech specifics (§11.7) — citation grounding with paragraph-hash matching, jurisdictional filtering, temporal validity — illustrate the universal pattern: identify the domain's hard constraints, encode them as metadata, engineer retrieval to respect them. The pattern generalizes; the constraints differ by domain. The advanced-RAG layer built here extends the foundational machinery of Chapters 9–10; multimodal RAG comes next in Chapter 12, and the observability (Chapter 19) and drift-detection (Chapter 21) disciplines bolt onto the same retrieval surface.\n\n\n### 11.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 663,
+      "out_sha": "b517e6507adc",
       "note": ""
     },
     {
