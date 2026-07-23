@@ -6179,11 +6179,11 @@
       "en_title": "Chapter 21: Production Eval, Drift Detection, and the Model Upgrade Workflow",
       "order": 504,
       "src_chars": 3280,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3493eb83b9d6",
       "src": "  1. **Adversarial eval slices** : deliberately curated inputs designed to surface catastrophic failure modes. Tested against every model version and prompt change.\n\n  2. **Output classifiers** : every production output passes through a classifier checking for catastrophic categories (PII leakage; off-topic; safety violations; refused topics). An LLM-as-judge or rule-based system runs per output.\n\n  3. **Human spot-check** : a small fraction of outputs reviewed by humans, especially in high-stakes paths. Slow and expensive; the safety net.\n\n  4. **User-report channel** : users can flag problematic outputs; flagged outputs go to immediate review.\n\n  5. **Source-quality control** (for RAG): retrieval sources are vetted; low-trust sources excluded (the Google case was caused by retrieving from low-quality Reddit posts).\n\nNo single layer is sufficient; the layers compound. The team's defense in depth is what catches the rare-but-disastrous outputs.\n\n**Q4.** Why is A/B testing LLM features harder than classical A/B testing? Identify two specific challenges.\n\n**Answer:** Two challenges:\n\n  1. **Multi-dimensional outputs** : LLM responses vary on many dimensions (correctness, tone, completeness, length, formatting). Variant A may be better on correctness; variant B better on tone. A single A/B test outcome metric doesn't capture the trade-off. Classical A/B is single-metric (conversion rate; click-through); LLM A/B requires explicit multi-dimensional analysis.\n\n  2. **Eval noise dwarfs small effect sizes**. LLM-as-judge scoring has inherent noise (Chapter 4); for small variant differences (e.g., 0.1 point delta on a 10-point scale), the noise can be larger than the effect. Statistical significance requires larger samples and longer experiments than classical A/B.\n\nA third challenge: **user adaptation confounds the signal**. Users adjust their behavior to the system's responses. A new variant may seem worse initially (users were calibrated to the old variant) and better after a few weeks (users adapt). Classical A/B doesn't typically need to account for this.\n\nMitigations: run longer; measure multiple dimensions explicitly; stratify by user segment (new vs experienced users react differently); combine A/B engagement signals with offline eval scores. A confident decision often requires multiple signals aligning.\n\n**Q5.** When the drift-detection system fires an alert, why is _measurement artifact_ always on the differential-diagnosis list, and what specific checks rule it in or out?\n\n**Answer:** A drift alert can have two broad causes: (a) the system's quality actually changed; (b) the _measurement_ changed. Both produce the same dashboard symptom (eval mean dropped); the response is very different. Measurement-artifact must always be on the differential because acting on it as if it were real drift wastes engineering cycles, can cause unnecessary rollbacks, and damages the team's trust in the eval signal.\n\nSpecific checks that rule measurement artifact in or out:\n\n  1. _Judge model change_. Was the judge model updated, re-versioned, or re-prompted recently? Provider-side silent updates to the judge produce eval drift unrelated to system drift. Check: judge version pin; recent judge-prompt commits; the judge-calibration baseline.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1112,
+      "out_sha": "65ab6c66cc8f",
       "note": ""
     },
     {
@@ -6191,11 +6191,11 @@
       "en_title": "Chapter 21: Production Eval, Drift Detection, and the Model Upgrade Workflow",
       "order": 505,
       "src_chars": 1655,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0548ea6ff7a9",
       "src": "  2. _Sampling change_. Did sampling rates change recently (e.g., a new feature shifted the population)? If the per-feature mix changed, the aggregate mean shifts even when each feature's quality is unchanged (Simpson's paradox). Check: per-feature breakdown of the eval; weight contributions to the aggregate.\n\n  3. _Rubric or golden-set change_. Were eval prompts, rubric criteria, or golden-set entries modified? Even minor wording changes shift scores. Check: eval-prompt registry diff in the last 30 days; golden-set audit log.\n\n  4. _Trace-store schema change_. If the upstream trace store changed fields or formats, the eval may be scoring partial trajectories. Check: trace-store deploy log; sanity-check a sample trajectory end-to-end.\n\n  5. _Time-window comparison_. Is the alert comparing recent 1-day to a baseline that included an unusual high period? The baseline anchoring can produce false drift. Check: extend the comparison window; look at year-over-year same-period if available.\n\nIf three or more of these checks come back clean, the drift is likely real. If any one comes back hot, investigate that artifact path before declaring drift. The discipline: _artifact-first triage_ on every drift alert, then real-drift response. The cost of the extra triage step is small; the cost of acting on a phantom drift is large.\n\nThis pattern is a cross-chapter discipline: §19.5 in Chapter 19 on observability emphasizes the same principle that the measurement infrastructure is a system that can itself fail, and that failures in measurement masquerade as failures in the observed system. The drift-detection workflow inherits this discipline.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 527,
+      "out_sha": "059094d1b305",
       "note": ""
     },
     {
