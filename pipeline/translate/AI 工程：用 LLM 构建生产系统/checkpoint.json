@@ -7187,11 +7187,11 @@
       "en_title": "Chapter 24: The AI Engineering Team, Workflow, and Engineering Judgment",
       "order": 588,
       "src_chars": 3310,
-      "status": "pending",
+      "status": "done",
       "src_sha": "99537f855496",
       "src": "  1. _Resolution coverage_ : the eval golden set includes images at the production-realistic range of resolutions, not just one resolution.\n  2. _Viewpoint coverage_ : images from multiple viewpoints (frontal; oblique; partial occlusion).\n  3. _Lighting coverage_ : high-light, low-light, mixed-light examples.\n  4. _Modality coverage_ : if the production stream includes multiple imaging modalities (e.g., X-ray, CT, MRI), the eval covers each.\n  5. _Annotation quality_ : reference annotations are produced by domain experts (radiologists, in this case) with inter-annotator agreement measured.\n\n_Cost impact (vision additions)_ :\n\n  6. _Per-image token estimate_ : vision tokens depend on resolution; the PR should specify the token count per typical image and the cost per call.\n  7. _Volume projection_ : the expected images per day and resulting daily cost.\n  8. _Visual context cache potential_ : if multiple inferences run against the same image, can caching reduce cost? The PR should evaluate.\n\n_Safety considerations (vision additions)_ :\n\n  9. _Confidently-wrong on out-of-distribution images_ : vision models hallucinate confidently on images outside their training distribution. The PR should describe the OOD detection layer and the fallback path.\n  10. _PII in images_ : medical images can contain identifying information (faces; tattoos; jewelry). The PR should describe the de-identification step.\n  11. _Image-source provenance_ : is the image source trusted? Is metadata preserved for audit?\n  12. _Cross-modal injection_ : if the workflow combines image and text input, does adversarial image content induce text-side injection (the _visual prompt injection_ failure mode)?\n\n_Vision-specific verification (new section)_ :\n\n  13. _Inter-annotator agreement on the golden set_. Cohen's kappa or similar; record the value.\n  14. _Model-vs-annotator agreement on the golden set_. The model's agreement with the expert annotation, by image class.\n  15. _Confusion-matrix analysis on critical categories_. For medical annotation, false-negatives on critical findings are categorically different from false-positives; the PR should report both rates separately.\n  16. _Adversarial-image sample_. A set of 20-50 known-adversarial images (synthetic perturbations; edge cases) is included in the eval and tracked over time.\n\n(c) **Artifacts the PR should produce** :\n\n  1. _Eval report_ with the vision-specific dimensions explicitly broken out (per-resolution, per-viewpoint, per-lighting, per-modality).\n  2. _Cost projection_ with the per-image and per-day numbers.\n  3. _Safety analysis_ covering each item in the safety extension above.\n  4. _Annotator agreement table_ showing kappa values for each image class.\n  5. _Failure-mode catalog_ of the worst 10 misclassifications observed, with example images and proposed mitigations.\n  6. _OOD detection design document_ or reference to existing document.\n\nThe extended template is longer than the text version because vision features are inherently more complex. The discipline: do not skip sections because they feel onerous; the failure modes are real and the catastrophic-failure cost in medical imaging is large. Teams that maintain template discipline ship reliably; teams that erode the template accumulate risk that surfaces as incidents.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1068,
+      "out_sha": "ac49a40922c9",
       "note": ""
     },
     {
@@ -7199,11 +7199,11 @@
       "en_title": "Chapter 24: The AI Engineering Team, Workflow, and Engineering Judgment",
       "order": 589,
       "src_chars": 975,
-      "status": "pending",
+      "status": "done",
       "src_sha": "40f9f5137a90",
       "src": "This connects to Chapter 23's safety architecture: vision features have a safety surface that text features do not (visual prompt injection; cross-modal exploits). The PR template is one of the discipline gates that surfaces these concerns before deployment.\n\n**AI-collaboration sub-question** : How would you ask an LLM to help with this exercise, and what would you verify in its response?\n\n**Answer:** Useful prompt: _Extend an AI code-review PR template (with sections what-changed, type, eval impact, cost impact, safety, rollout) for vision features in medical-image annotation. Cover sections that need additions, specific checks, artifacts._ You verify (a) the additions cover all four vision-specific concerns (resolution, viewpoint, lighting, modality; LLMs often address only one or two), and (b) the safety section includes visual prompt injection and cross-modal exploits (these are 2026-specific failure modes that LLMs may not surface without a prompt nudge).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 345,
+      "out_sha": "84e0a49a245c",
       "note": ""
     },
     {
