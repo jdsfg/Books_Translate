@@ -5807,11 +5807,11 @@
       "en_title": "Chapter 20: Voice AI in Production",
       "order": 473,
       "src_chars": 2539,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9c2f2d7b953f",
       "src": "### 20.2 Vendor specialty options\n\nBeyond the major LLM providers' voice offerings, three specialty vendors deserve naming in 2026:\n\n**ElevenLabs Conversational AI** : built on top of ElevenLabs' high-quality TTS. The platform handles STT, LLM (via your provider or theirs), and TTS as an integrated package. Strength: voice quality (ElevenLabs voices are noticeably more natural than alternatives). Fit: customer-facing voice where voice quality differentiates.\n\n**Cartesia** : emerging 2025-era vendor with extremely low-latency voice models. Sub-100ms TTFT achievable with their Sonic-family models. Fit: latency-critical voice applications where the budget is even tighter than the general industry norm.\n\n**Deepgram** : primarily an STT vendor; in 2026 expanded to full conversational AI. Strong STT accuracy on accented speech, technical vocabulary, noisy environments. Fit: STT-heavy use cases (transcription, archival, mixed-environment voice).\n\nThe 2026 choice: **vendors are picked based on the dimension that differentiates your product**. Helios picked OpenAI Realtime as the primary (general-purpose latency and capability); kept Deepgram for STT-archival (better accuracy for transcript searchability); explored ElevenLabs for voice-quality on a premium-tier customer interface.\n\n\n### 20.3 The latency-budget problem\n\nThe central engineering reality of voice AI: **latency budgets are tight**. Users perceive voice conversation latency at a much higher resolution than text. A 2-second delay in a chat is acceptable; a 2-second delay in a voice conversation feels like a broken connection.\n\nProduction voice budgets:\n\n* **Time to first audio** (TTFT, the voice equivalent of TTT): target sub-500ms; competitive at sub-300ms. The user's brain interprets longer delays as \"the agent didn't hear me\" or \"the agent is broken.\"\n* **Total response duration** : depends on response length; the response should _start_ within the TTFT budget, then stream.\n* **End-of-turn detection** : detecting when the user has stopped speaking. Target: 200-400ms. Too aggressive (the agent cuts the user off); too slow (the agent feels unresponsive).\n\nCompare to text-based AI: text TTFT budgets are typically 1-3 seconds; total responses can take 5-15 seconds. Voice is an order of magnitude tighter.\n\nThe implication: **the standard text-AI architecture cannot support voice**. A typical agent loop (Chapter 14) with multiple LLM calls and tool calls takes 3-5 seconds: fine for text, fatal for voice. Voice architectures need to be different.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 982,
+      "out_sha": "4ec480c7d19b",
       "note": ""
     },
     {
@@ -5819,11 +5819,11 @@
       "en_title": "Chapter 20: Voice AI in Production",
       "order": 474,
       "src_chars": 2454,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4396507a0185",
       "src": "### 20.4 End-of-turn detection: the critical problem\n\nEnd-of-turn (EOT) detection is when the system recognizes that the user has finished speaking and the agent should respond. Get it wrong:\n\n* **Too aggressive** (small EOT timeout): the agent interrupts the user mid-sentence. The user is in the middle of a thought; the agent jumps in; the user repeats themselves; the conversation breaks down.\n* **Too slow** (large EOT timeout): the agent waits too long to respond. Conversation feels stilted; the user wonders if the agent heard them; some users hang up.\n\nThe art:\n\n* Voice models typically detect EOT via a combination of silence-duration thresholds, prosodic cues (the user's voice trails off, drops in pitch), and semantic cues (the sentence seems complete).\n* End-to-end voice models do this natively; STT+LLM+TTS pipelines need explicit EOT logic.\n* The right threshold varies by domain: technical support (users pause to think) tolerates longer EOT; casual conversation tolerates shorter.\n\nHelios's 2026 EOT engineering: tuned per customer (some enterprise customers have specific preferences); typical setting 350ms silence threshold; with prosodic-cue adjustments via the voice model.\n\n\n### 20.5 Interruption handling\n\nVoice conversations include interruptions: the user starts talking while the agent is still speaking. The agent must:\n\n  1. **Detect the interruption** : the user's voice is now active over the agent's output.\n  2. **Stop speaking** : the agent's current speech generation halts immediately.\n  3. **Process the user's interruption** : what did the user say? What does it mean for the agent's behavior?\n\nHandling:\n\n* _Stop synthesis_ : easy. Cut off the TTS output mid-word if needed.\n* _Replan_ : harder. The agent had been answering one question; the user's interruption may be a clarification, a redirect, or a new question. The agent's next response should reflect the interruption, not continue the prior line of thought.\n* _Acknowledge_ : optional. Some agent designs include explicit acknowledgment of the interruption (\"Sorry, I got that — you wanted to know about...\"); others just respond to the new input naturally.\n\nEnd-to-end voice models handle interruption natively (the audio input/output is unified; the model can attend to interruption events). STT-LLM-TTS pipelines need explicit interruption-event handling: typically via a streaming-audio interface where the application can interrupt the TTS stream.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 837,
+      "out_sha": "ecda3b6f4bc4",
       "note": ""
     },
     {
