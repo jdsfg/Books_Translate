@@ -6935,11 +6935,11 @@
       "en_title": "Chapter 24: The AI Engineering Team, Workflow, and Engineering Judgment",
       "order": 567,
       "src_chars": 2247,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a2bb72129831",
       "src": "### 24.2 The development workflow: spec → eval → prompt → deploy → monitor\n\nThe dev workflow for an AI feature has five phases. Each has artifacts; each has gates.\n\n**Phase 1: spec**. The AI product engineer (and PM) drafts a feature spec. Beyond classical product spec elements, the AI spec includes:\n\n* _AI-specific success criteria_ : what does _the AI working_ mean? Operationalize.\n* _Eval design preliminary_ : can this be evaluated? If so, with what golden set and rubric? If not — the _can we eval this?_ gate (§24.4) — kill the feature here.\n* _Cost envelope_ : expected cost per user-active-day at launch and at scale.\n* _Safety considerations_ : which threat classes apply? What's the defense?\n\n**Phase 2: eval**. Before building the feature, build the eval suite. Golden set; rubric; CI integration. This is Chapter 4's discipline applied at the feature-launch boundary.\n\nThe eval-first discipline is non-negotiable for serious production work. Teams that build features first and evals second find themselves unable to ship safely; the eval is the gate, and you can't gate without having one.\n\n**Phase 3: build with prompt iteration**. With the eval in place, iterate on prompts and architecture against the eval. Each iteration is measured; improvements are kept; regressions are reverted.\n\nHelios's typical pattern: 2-4 weeks of prompt iteration against the eval before the feature is ready for production-shadowing. By the end, the feature passes the eval threshold.\n\n**Phase 4: deploy with canary**. Production rollout follows the canary pattern (Chapter 21 §21.6): 2% → 10% → 50% → 100% over 2-4 weeks. Each step gated by observed production behavior matching offline eval predictions.\n\n**Phase 5: monitor and iterate**. Once at 100%, the feature is in continuous monitoring (Chapter 21). Production eval samples; drift detection; user-feedback signals. Iteration continues, with prompts evolving, tools added, and the agent getting better.\n\nThe workflow is roughly 6-12 weeks from spec to 100% rollout for a substantial feature. Smaller features compress to 2-4 weeks. Skipping phases is the failure mode; teams that compress by skipping the eval or the canary find themselves with quality or reliability incidents post-launch.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 876,
+      "out_sha": "2bcd3ef54eec",
       "note": ""
     },
     {
@@ -6947,11 +6947,11 @@
       "en_title": "Chapter 24: The AI Engineering Team, Workflow, and Engineering Judgment",
       "order": 568,
       "src_chars": 2164,
-      "status": "pending",
+      "status": "done",
       "src_sha": "73e401f3e9d9",
       "src": "### 24.3 Code review practices for AI code\n\nCode review for AI features differs from classical code review. Classical review focuses on correctness, security, performance. AI review adds:\n\n**Prompt review** : every prompt change reviewed for clarity, structure, eval impact (if available). Reviewers look for: ambiguity that could confuse the model; missing safety constraints; cost impact (length); model-specific assumptions.\n\n**Schema review** : structured output schemas reviewed for completeness, error variant handling (Chapter 7's discriminated unions), downstream consumer compatibility.\n\n**Eval coverage review** : when a feature changes, does the eval cover the change? If a new code path is added, is it exercised by an eval slice? If a new failure mode is hypothesized, is it tested?\n\n**Cost impact review** : how does the change affect cost? A more elaborate prompt costs more; an additional tool call doubles latency-and-cost; a model upgrade may shift the per-call cost. Cost-impact estimates accompany meaningful changes.\n\n**Safety review** : changes touching prompts, tools, or output handling reviewed for safety implications. New tools triggered policy-gating review (Chapter 13 §13.4); changes to retrieved-content handling triggered injection-defense review (Chapter 23 §23.3).\n\nThe reviewer doesn't have to be a security or eval specialist for every PR; they should know what to escalate. The team's review culture surfaces concerns; specialists join for the cases that need them.\n\n**PR templates for AI features** typically include:\n    \n    \n    ## What changed\n    [Description]\n    \n    ## Type of change\n    - [ ] Prompt change\n    - [ ] Schema change\n    - [ ] Tool change\n    - [ ] Model change\n    - [ ] Other code change\n    \n    ## Eval impact\n    [Eval scores before and after; link to the eval run]\n    \n    ## Cost impact\n    [Estimated per-call cost delta; if material, monthly delta]\n    \n    ## Safety considerations\n    [Threat classes affected; defenses verified]\n    \n    ## Rollout plan\n    [Canary or direct; rollback procedure]\n    \n\nThe template makes the review structured; the structure makes oversights less likely.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 855,
+      "out_sha": "d5da212f3ee4",
       "note": ""
     },
     {
@@ -6959,11 +6959,11 @@
       "en_title": "Chapter 24: The AI Engineering Team, Workflow, and Engineering Judgment",
       "order": 569,
       "src_chars": 3182,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ca9207daba6d",
       "src": "### 24.4 The \"can we eval this?\" gate\n\nThe single most important engineering judgment call in AI engineering: **before committing to build a feature, can we evaluate it?**\n\nThe gate process:\n\n  1. The AI product engineer drafts the feature's spec.\n  2. The spec includes a one-page eval design: what is the golden set; what is the rubric; what is the threshold; who labels the goldens.\n  3. The team reviews the eval design. Specific questions: \n     * Can a representative golden set be built? (Are inputs obtainable? Are reference outputs labelable?)\n     * Can the metric be operationalized? (Are scoring criteria specific enough?)\n     * Can humans agree on labels? (Pilot the labeling; check inter-annotator agreement.)\n     * Is the threshold achievable? (Is the bar achievable by 2026 models or is it a research problem?)\n\nIf all four answers are _yes_ , the feature passes the gate and proceeds to Phase 2.\n\nIf any answer is _no_ , the feature fails the gate. Choices:\n\n* **Scope down** : redefine the feature to be eval-able. Often the original spec was overly ambitious; a smaller version is eval-able.\n* **Invest in eval-making** : if the answer is \"yes, but it would take 3 engineer-months of labeling work,\" is the investment justified? Sometimes yes; sometimes no.\n* **Kill the feature** : if no reasonable scope is eval-able, the feature shouldn't ship. Better to kill at scoping than to ship and discover post-hoc that quality can't be measured.\n\nThe Beacon Health AI composite case anchors here. The team scoped a clinical-decision-support feature that would suggest treatment options to clinicians. The spec was ambitious; the team sat down to design the eval. The eval design failed:\n\n* _Reference outputs_ : what counts as a \"good\" treatment suggestion? Clinicians disagree among themselves on real cases; the team's pilot labeling reached only κ ≈ 0.39 inter-annotator agreement across clinician pairs (range 0.32–0.45; full breakdown in §24.9), well below the 0.6 threshold for usable signal.\n* _Threshold_ : even if labels could be made consistent, what's the threshold for \"good enough to influence a clinician's decision\"? Setting it too low risks bad recommendations; setting it too high makes the feature useless.\n\nAfter 6 weeks of attempting to make the eval work, the team made the engineering decision: _kill the feature_. The decision wasn't about model capability or engineering difficulty; it was about _we cannot reliably tell if this feature is working_. Shipping without that ability would be unprofessional.\n\nThe feature was killed; the engineering effort was redirected to a smaller, eval-able feature (the clinical-notes summarizer, which became Beacon's flagship). The team's reputation for engineering rigor strengthened; senior clinicians at customer hospitals respected the team's discipline; future features had stronger collaboration with clinical partners on eval design.\n\nNo other call in the workflow has comparable leverage. **The most valuable engineering decisions sometimes look like _not building something_.** Recognizing when to kill is a senior engineering skill; the team that develops it ships less but ships more reliably.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 974,
+      "out_sha": "c9a32f59262d",
       "note": ""
     },
     {
