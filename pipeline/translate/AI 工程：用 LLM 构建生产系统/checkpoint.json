@@ -6395,11 +6395,11 @@
       "en_title": "Chapter 22: Beyond Off-the-Shelf — When to Fine-Tune, Self-Host, or Go On-Device",
       "order": 522,
       "src_chars": 2662,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b575f8c34174",
       "src": "### 22.7 Triangle Trade-off sidebar: beyond-off-the-shelf choices (cost-breakdown format)\n\nCost decomposition for a high-volume specialty task (say, processing 50M tokens/day of medical-text summarization) across four options:\n\n**Option A: Hosted API (Claude Sonnet 4, 3 USD/15 USD per 1M)** :\n\n* Per-day cost at 70/30 input/output split: 35M × 3 USD/1M + 15M × 15 USD/1M = 105 USD + 225 USD = ~330 USD/day\n* Monthly: ~9,900 USD/month\n* Engineering: minimal (existing integration)\n* Risks: provider pricing; latency variability; capacity at scale\n\n**Option B: Hosted API (workhorse-tier; GPT-4o-mini at 0.15 USD/0.60 USD)** :\n\n* Per-day cost at 70/30 split: 35M × 0.15 USD/1M + 15M × 0.60 USD/1M = 5.25 USD + 9 USD = ~14 USD/day\n* Monthly: ~430 USD/month\n* Engineering: integration + eval validation (workhorse may have quality regressions)\n* Risks: quality gap from frontier; may not meet medical quality bar\n\n**Option C: Open-weight on managed (Llama 4 70B on Together AI at ~0.80 USD/0.80 USD)** :\n\n* Per-day cost: 50M × 0.80 USD/1M = ~40 USD/day\n* Monthly: ~1,200 USD/month\n* Engineering: moderate (managed but specialty model selection)\n* Risks: quality; managed-provider stability\n\n**Option D: Self-hosted (Llama 4 70B on AWS p5.48xlarge, 8× H100)** :\n\n* Compute: 98 USD/hour × 24h × 30 days ≈ 70,000 USD/month per instance (on-demand; reserved or savings plans drop this 30–50%)\n* Need 2 instances for high-availability + capacity: ~140K USD/month compute\n* Engineering: 1-2 FTE ongoing (~30K USD/month all-in)\n* Per-token cost at sustained volume: substantially higher than the hosted options at 50M/day\n* _Self-host loses for 50M tokens/day; the volume crossover is closer to 500M+/day or specific constraints like data residency_\n\nWhat to read off:\n\n  1. **Workhorse-tier hosted API is the cost winner at this volume** if quality is sufficient. Always evaluate the workhorse first.\n  2. **Self-host is uneconomical at this volume**. Self-host's fixed costs amortize across volume; 50M tokens/day isn't enough.\n  3. **Managed open-weight (Option C)** is a middle ground; useful if data residency or specific open-weight features matter, not for pure cost.\n  4. **At sustained 100M+ tokens/day with good utilization, or with regulatory constraints regardless of volume** , the analysis flips toward self-host (consistent with the §22.4 crossover heuristic above).\n\nThe decision is volume-dependent and constraint-dependent. The right answer for Beacon at 5M tokens/day of clinical summarization is the hosted API with appropriate BAAs; the right answer at 500M tokens/day with strict data residency is self-hosted vLLM on HIPAA-compliant infrastructure.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1250,
+      "out_sha": "c8f2707ff489",
       "note": ""
     },
     {
@@ -6407,11 +6407,11 @@
       "en_title": "Chapter 22: Beyond Off-the-Shelf — When to Fine-Tune, Self-Host, or Go On-Device",
       "order": 523,
       "src_chars": 2358,
-      "status": "pending",
+      "status": "done",
       "src_sha": "edbe823c9d47",
       "src": "#### 22.7.5 Case D-prime: when self-host actually wins (5B tokens/day, regulated payer)\n\nThe earlier cases (A-D) all favored hosted APIs. The crossover heuristic in §22.4 promises that self-host eventually wins; here is a worked scenario where it does. Consider a large U.S. health-payer ingesting clinical notes and prior-authorization documents across its provider network: roughly 5B tokens/day of Llama 4 70B-tier inference, sustained, with PHI in every request.\n\n**The constraints that force self-host** (not volume alone):\n\n  1. _BAA coverage_ : Together AI and Replicate do not sign BAAs for shared-tenant inference in 2026. The team's compliance posture rules them out regardless of price.\n  2. _Data residency_ : the payer's contracts require data to remain inside a specific AWS region inside a customer-controlled VPC; no third-party multi-tenant endpoint qualifies.\n  3. _Steady volume_ : 5B/day is sustained, not bursty, so the utilization assumption that breaks self-host at lower volumes holds here.\n\n**Infrastructure choice**. Llama 4 70B on AWS p5.48xlarge (8 x H100) using vLLM 0.6+ with continuous batching, PagedAttention, and FP8 KV-cache quantization. Throughput target: ~1,800 tokens/sec per GPU on 70B FP8, so ~14K tokens/sec per 8-GPU node at healthy batch sizes. At ~70% effective utilization that is ~850M tokens/day per node, so 6 nodes carries the 5B/day floor with one node of headroom and one for HA. Reserve 8 nodes total.\n\n**Cost math.** 8 x p5.48xlarge at 98 USD/hour on-demand is ~565K USD/month; a 3-year reserved commitment cuts this to ~340K USD/month. Engineering load is 2 FTE for vLLM operations and on-call, ~60K USD/month all-in. Total ~400K USD/month, or ~2.67 USD per million tokens served. The BAA-eligible comparison is Bedrock-hosted Llama at roughly 0.99 USD/M, which would land near 148K USD/month if available at full reserved capacity, plus a meaningful TTFT tax under sustained load. Self-host clears compliance, and once you price in capacity reservations, latency floors, and the prompt-caching wins available to a dedicated fleet (Chapter 18), the comparison narrows substantially.\n\nThe shape of the win: self-host stops being about beating 0.80 USD/M and starts being about the _only viable deployment_. At 5B tokens/day with FP8 vLLM and reserved capacity, the math also clears engineering overhead.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 997,
+      "out_sha": "f5ef5003518b",
       "note": ""
     },
     {
