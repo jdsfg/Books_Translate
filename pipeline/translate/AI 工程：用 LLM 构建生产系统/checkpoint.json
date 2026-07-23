@@ -3539,11 +3539,11 @@
       "en_title": "Chapter 12: Multimodal RAG and Document Understanding",
       "order": 284,
       "src_chars": 2112,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7b199d72cb60",
       "src": "### 12.3 ColPali and late-interaction retrieval\n\nColPali deserves a section. It is a 2024 architecture that has become the reference design for document retrieval at the page-image level.\n\nThe standard vector-search pattern (Chapter 10) is bi-encoder: query and document are encoded into single dense vectors; similarity is cosine. This is fast but coarse: the document's vector summarizes the whole document, losing positional detail.\n\nColPali uses a **late-interaction** architecture (originally from ColBERT in 2020). The document image is divided into patches; each patch gets its own embedding. The query gets its own embedding(s) per token. At retrieval time, the query interacts with the document at the patch level: for each query token, find the best-matching document patch, and aggregate the patch-level similarities into a document score.\n\nThe trade-off: ColPali is much more accurate on document retrieval (especially when the relevant content is localized to specific regions of a long document) but much heavier in storage (one embedding per patch, often dozens per page) and slower in retrieval (the late interaction must run at query time, not be precomputed as cosine similarity).\n\nThe 2026 application of ColPali:\n\n* **Multi-page document retrieval** where the relevant content is a specific region on a specific page. ColPali finds the right page; downstream processing (vision-language model) reads it for the answer.\n* **Visual-layout-sensitive queries** where the position and surrounding context matter to relevance.\n\nFor Strata: ColPali is a candidate for handling their contracts (which have layout-sensitive content: clauses in specific positions; tables in specific pages). They tested it; found a +6 point retrieval-recall lift over text-only RAG on layout-heavy queries; adopted it for the contracts subsystem while keeping text-only RAG for the case-law subsystem (which is mostly textual).\n\nThe lesson: **late-interaction retrieval is the right tool for document-image RAG where layout matters** ; for pure-text content, standard bi-encoder embeddings are sufficient and cheaper.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 681,
+      "out_sha": "c8731668b1ed",
       "note": ""
     },
     {
