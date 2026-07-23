@@ -7547,11 +7547,11 @@
       "en_title": "Appendix A — Reading List",
       "order": 618,
       "src_chars": 1784,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c8ca4bcec7f5",
       "src": "  4. **Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks** — _Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal, Küttler, Lewis, Yih, Rocktäschel, Riedel, Kiela; NeurIPS 2020._ The paper that gave RAG its name. The system the paper describes is fancier than what most teams ship — a learned retriever jointly trained with the generator — but the core insight survives intact in 2026 production systems: at query time, fetch relevant documents from a non-parametric memory and condition the generator on them. Chapter 9 builds the production RAG stack on this idea, and Chapter 7 (embeddings) and Chapter 8 (context windows) both refer back to it. Read it to understand what RAG _originally_ was, then notice how far the production pattern has drifted from the paper — and which drifts are improvements and which are concessions.\n\n  5. **Lost in the Middle: How Language Models Use Long Contexts** — _Liu, Lin, Hewitt, Paranjape, Bevilacqua, Petroni, Liang; TACL 2024._ This paper saved a generation of AI engineers from a generation of bad RAG designs. The empirical finding is sharp and depressing: even models with 100K+ context windows attend disproportionately to the beginning and end of their input and lose information placed in the middle. The U-shaped curve in the paper has since been replicated, partially mitigated, and partially papered-over, but the basic engineering lesson stands: a long context window is not a free lunch, and document order in your retrieval-augmented prompt matters more than your intuition expects. Chapter 8 treats this paper as the empirical anchor for its discussion of context budgeting and re-ranking; if you have ever shipped a RAG system that worked on small documents and broke on long ones, the explanation is probably here.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 758,
+      "out_sha": "aaa37ccba254",
       "note": ""
     },
     {
@@ -7559,11 +7559,11 @@
       "en_title": "Appendix A — Reading List",
       "order": 619,
       "src_chars": 3069,
-      "status": "pending",
+      "status": "done",
       "src_sha": "50ee3e1bd9f3",
       "src": "### Practitioner essays and field-defining writing (5)\n\n  6. **AI is the New Electricity / CS329S Course Notes** — _Andrew Ng; Stanford / deeplearning.ai talks and course materials, 2017 onward; CS329S \"Machine Learning Systems Design,\" 2021–2023._ Ng's _electricity_ framing — that AI will diffuse into every industry the way electrification did from 1890 to 1930 — is now so widespread it feels like wallpaper, but reading the original talks reminds you how much of the 2024–2026 industry posture comes directly from Ng's framing of AI as a _general-purpose technology_ that engineers, not researchers, will operationalize. The CS329S course notes are more concrete: they are where a generation of ML-systems-design vocabulary (training-serving skew, data leakage, feedback loops, the ML lifecycle) was packaged for industry. Chapter 1 of this book borrows Ng's voice when it argues that AI engineering is engineering — the same calm, definitional, slightly schoolteacherly register. Read Ng when you need to remember why the work matters at all.\n\n  7. **Software 2.0 / State of GPT** — _Andrej Karpathy; karpathy.medium.com (2017) and Microsoft Build 2023 keynote (also on YouTube)._ Karpathy's _Software 2.0_ essay reframed neural networks as a new programming paradigm — gradient descent as the compiler, weights as the program, data as the source. Re-read in 2026, it predicts the entire AI-engineering discipline: the _programmer_ of a Software 2.0 system curates the data and the eval set; the _compiler_ (training) emits the artifact; the _runtime_ (inference) ships it. The _State of GPT_ talk is the same instinct turned practical, walking through pre-training, SFT, RLHF, and the engineering-relevant consequences of each. Chapter 2's mental model — pretraining, alignment, prompting as three layers an engineer should hold in their head — is built almost directly on the _State of GPT_ picture. Karpathy is also the model practitioner-essayist; his voice (curious, exact, slightly playful, never breathless) is the register this book reaches for in its more technical chapters.\n\n  8. **What We've Learned From a Year of Building With LLMs** — _Hamel Husain, Shreya Shankar, Eugene Yan, Jason Liu, Charles Frye, Bryan Bischof; published as a three-part series on O'Reilly Radar, June 2024 (also on the authors' personal sites)._ If this book has a single contemporary peer essay, it is this one. Six practitioners — all consultants, all repeat shippers of LLM systems — pooled what they learned in 2023–2024 and produced a document that is half tactical (prompt techniques, eval design, structured output) and half operational (team structure, hiring, product strategy). Chapters 4 and 5 (evals) absorb the essay's evals-are-the-spec posture; Chapter 21 (production eval and model upgrade workflow) extends its operational lessons into the 2026 model-upgrade cadence. Read the whole thing — both the _tactical_ , _operational_ , and _strategic_ posts — and notice how much of what felt novel in 2024 is now table stakes; that distance is the field maturing.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1242,
+      "out_sha": "ea58aada4307",
       "note": ""
     },
     {
