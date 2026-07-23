@@ -4355,11 +4355,11 @@
       "en_title": "Chapter 14: Designing Agents That Don't Spiral + Agent Memory Architectures",
       "order": 352,
       "src_chars": 477,
-      "status": "pending",
+      "status": "done",
       "src_sha": "50f15dfaea9e",
       "src": "**Answer:** Useful prompt: _An agent ran 4 hours overnight for 342 USD (50x budget); cost circuit breaker at 0.50 USD didn't fire; 847 iterations. Diagnose and propose three fixes._ You verify (a) the diagnosis identifies multiple-bound-failure (not just \"the cost breaker is broken\"; the iteration cap and semantic-loop detection also failed), and (b) the fixes are independent (each one alone would have prevented the incident; not a chain where one fix depends on another).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 180,
+      "out_sha": "961a0ca22ebe",
       "note": ""
     },
     {
@@ -4367,11 +4367,11 @@
       "en_title": "Chapter 14: Designing Agents That Don't Spiral + Agent Memory Architectures",
       "order": 353,
       "src_chars": 3367,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6160af4ef52b",
       "src": "#### Think Deeper\n\n**Q1.** _Bound-engineering as a discipline that survives evolution._ The chapter argues that bound-engineering is the central agent discipline. Will this remain true as model capability improves? Argue that even if 2030 models are far more reliable, bounds remain essential. Identify two specific reasons.\n\n**Discussion:** Two reasons bounds remain essential:\n\n  1. **The cost asymmetry is durable**. Even a 99.99% reliable agent has a 0.01% catastrophic-tail rate. At scale (millions of trajectories), that's hundreds of catastrophic trajectories per day. Bounds limit each catastrophic trajectory's damage to a known cap; without bounds, each catastrophic trajectory is unbounded. The cost-asymmetry argument scales with deployment volume; as 2030 sees larger deployments, the case for bounds strengthens, not weakens.\n\n  2. **Bounded systems are more debuggable**. Even with a perfectly-reasoning agent, debugging production issues requires understanding _what happened in this specific trajectory_. Bounds force the trajectory to be finite, observable, and reviewable. An unbounded agent that runs for hours produces unbounded data to investigate; a bounded agent's trajectory fits in a reviewable form. The engineering ergonomics of bounded systems are durable.\n\nNet: bounds will continue to be required in production AI; the specific bound parameters may relax (a 2030 agent might routinely run for 30 iterations where a 2026 agent uses 15) but the architectural pattern persists. The discipline taught in this chapter survives the capability evolution.\n\nA third reason worth mentioning: **bounds are a precondition for safe deployment of riskier capabilities**. As agents in 2030 take more consequential actions (direct database writes, financial transactions, real-world device control), the bound-engineering discipline becomes more important, not less. The capability frontier and the safety frontier advance together; the discipline of bounds is part of the safety frontier.\n\n**Q2.** _The evolution from single-agent to multi-agent._ Failure 6 (§14.7) is a multi-agent failure mode. As multi-agent systems mature (Chapter 15), what additional disciplines emerge that aren't covered in this chapter's single-agent framework?\n\n**Discussion:** Multi-agent systems extend the single-agent framework with several new disciplines:\n\n  1. **System-level bounds vs per-agent bounds**. Discussed in Q4 above. The bound-engineering pattern from §14.4 doesn't compose naively; system-level counters are required.\n\n  2. **Trust and authority across agents**. In a single-agent system, the agent's tool catalog is the authority surface; the policy gating handles risky tools. In a multi-agent system, agents talk to each other; what authority does one agent grant another? A planner that spawns workers must specify what the workers are authorized to do; without this, workers may exceed the planner's intent.\n\n  3. **Coordination patterns**. Single-agent: ReAct loop, period. Multi-agent: orchestrator-and-workers; debate; hierarchical decomposition; pub-sub. Each pattern has its own failure modes, debugging characteristics, cost profile.\n\n  4. **Cross-agent observability**. A trace for a single-agent trajectory is one timeline. A multi-agent trace is multiple parallel timelines; merging them into a coherent view is its own engineering project.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1157,
+      "out_sha": "978542024b4d",
       "note": ""
     },
     {
