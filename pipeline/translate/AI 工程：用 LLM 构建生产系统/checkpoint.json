@@ -7667,11 +7667,11 @@
       "en_title": "Appendix B — Reference Architecture Catalog",
       "order": 628,
       "src_chars": 2092,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3f799f2782dd",
       "src": "#### Pattern 6: Orchestrator-and-Workers Multi-Agent\n\n**What problem it solves.** A single agent's context window can't hold all the state for a complex task: research the company, draft three email variants, generate matching social-media copy, compose a follow-up plan. Each sub-task wants a different prompt, tool catalog, and possibly a different model. The pattern decomposes across specialized workers and aggregates.\n\n**Topology.** Goal enters an orchestrator agent — typically a frontier model with a system prompt that specializes it for planning and routing rather than execution. The orchestrator emits a structured plan: sub-tasks tagged with worker type (\"research-worker\", \"writing-worker\", \"code-worker\") and inputs. The plan goes onto a work queue (Celery, Temporal, or a custom queue over Postgres/Redis). Worker pools — one per type, each running its own agent loop with its own tools and often its own model — consume sub-tasks and emit results. The orchestrator polls (or subscribes via Temporal); when all sub-tasks complete, it composes the final response. Cross-cutting concerns — overall iteration cap, budget envelope, cross-worker dedup — live with the orchestrator. Helios, the multi-agent legal-research extension to Strata's platform, is this pattern: decompose a question into \"find precedents\", \"summarize statutes\", \"draft argument\", \"check citations\", with specialized workers for each.\n\n**When to use it.** Task decomposes naturally along worker specializations, sub-tasks parallelize for latency wins, you've already shipped Pattern 5. Team is large enough that different specialists own different worker types.\n\n**When NOT to use it.** Sub-tasks have heavy interdependencies that defeat parallelism. Small team; the operational overhead of multiple worker pools isn't justified. You're seduced by an architecture diagram — in 2026 most production \"multi-agent\" systems would be simpler and more reliable as a single Pattern 5 agent with a richer tool catalog.\n\n**Cross-references.** Chapter 15 (multi-agent architectures and the 2026 framework landscape).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 724,
+      "out_sha": "ad3c7f2d1ecb",
       "note": ""
     },
     {
@@ -7679,11 +7679,11 @@
       "en_title": "Appendix B — Reference Architecture Catalog",
       "order": 629,
       "src_chars": 2302,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f6271a0ca6fa",
       "src": "#### Pattern 7: Eval-as-CI Gate\n\n**What problem it solves.** A prompt change, a model upgrade, or a RAG refactor silently regresses quality. The regression is discovered weeks later through customer complaints; the offending change is buried under twenty unrelated commits and rolling back is expensive. Eval-as-CI moves quality checks to the moment of change.\n\n**Topology.** The team maintains a golden eval set — 100 to 1,000 input/expected-output pairs, versioned in git alongside code, with a documented refresh cadence (typically quarterly, with a \"what changed and why\" note in the eval commit). A PR touching prompt files, model identifiers, or any code on the LLM-call path triggers a CI job. The job runs the candidate against the golden set, computes metrics (exact-match for structured tasks; LLM-as-judge for open-ended tasks, with the judge calibrated against human-labeled subsets), and posts the results as a PR comment with a diff against the merge-base baseline. If any metric regresses beyond a published threshold — typically 2-5 percentage points on the primary metric, or any drop on a pinned must-not-regress subset — CI fails and the PR is blocked. Thresholds and the pinned subset are themselves versioned; loosening a threshold requires its own PR with justification. Costs are bounded by running a cheap reproducible subset on every push and the full set only on merge-base updates or explicit `/run-full-eval` comments.\n\n**When to use it.** You've regretted at least one silent regression that reached customers. CI infrastructure is in place (GitHub Actions, Buildkite, Jenkins). The eval set is curatable — the team can articulate \"good\" with enough specificity to write 100 examples.\n\n**When NOT to use it.** You haven't yet figured out what good looks like — eval-as-CI before calibration will block PRs on noise. Or the product is so early that prompts change daily and there's no stable target. Invest in evals first (Chapter 5); flip the CI gate on when the set is stable.\n\n**Cross-references.** Chapter 4 (eval design and LLM-as-judge calibration), Chapter 5 (evals from scratch and binding workflow #1, the GitHub Actions eval-as-CI gate), Chapter 21 (production-eval drift detection and model-upgrade workflow), Chapter 24 (eval-as-CI in the development workflow).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 884,
+      "out_sha": "e63c94ecab59",
       "note": ""
     },
     {
