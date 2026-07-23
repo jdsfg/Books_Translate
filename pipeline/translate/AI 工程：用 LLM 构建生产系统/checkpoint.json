@@ -7523,11 +7523,11 @@
       "en_title": "Appendix A — Reading List",
       "order": 616,
       "src_chars": 369,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3c2198c3983f",
       "src": "A curated list of 15 references — papers, articles, and books — that an AI engineer building production systems with LLMs should read alongside this book. Each entry has a one-paragraph commentary explaining why it matters and where in this book it connects. The list is opinionated. It is not a survey of the literature; it is the shelf I want you to actually finish.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 110,
+      "out_sha": "7857ad51f5c6",
       "note": ""
     },
     {
@@ -7535,11 +7535,11 @@
       "en_title": "Appendix A — Reading List",
       "order": 617,
       "src_chars": 2714,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b1357a391e03",
       "src": "### Foundational papers (5)\n\n  1. **Attention Is All You Need** — _Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser, Polosukhin; NeurIPS 2017._ This is the paper that put the Transformer on the table, and every artifact you call from an API in 2026 is some descendant of the architecture it describes: multi-head self-attention, positional encodings, the encoder-decoder block diagram that has since collapsed into decoder-only stacks. You do not need to re-derive the math to ship product, but you should read it once carefully so that words like _attention head_ , _KV cache_ , and _context window_ stop being magic and start being a data structure. Chapter 2 of this book builds the engineer's mental model directly on top of this paper; if any sentence of Chapter 2 felt under-motivated, the answer is here. Read it slowly, with a pencil; the paper is short and the diagrams reward staring.\n\n  2. **Chain-of-Thought Prompting Elicits Reasoning in Large Language Models** — _Wei, Wang, Schuurmans, Bosma, Ichter, Xia, Chi, Le, Zhou; NeurIPS 2022._ The paper that named the most consequential prompt-engineering technique of the modern era. The empirical claim is narrow — appending _let's think step by step_ (or richer few-shot reasoning chains) lifts performance on arithmetic and symbolic tasks — but the conceptual claim is large: latent capability in a model can be unlocked by how you ask, not just by how it was trained. Chapter 6 returns to this paper when it explains why explicit reasoning scaffolds work, why they cost you tokens, and why the 2026 reasoning models (o1-style and the Claude extended-thinking family) are best understood as chain-of-thought baked into post-training rather than a fundamentally new capability. Read it for the framing; the tricks have since been packaged into APIs you can call.\n\n  3. **ReAct: Synergizing Reasoning and Acting in Language Models** — _Yao, Zhao, Yu, Du, Shafran, Narasimhan, Cao; ICLR 2023._ ReAct is the paper that gave us the _thought / action / observation_ loop you will recognize in every agent framework on the market. Its empirical contribution was modest by today's standards — slightly better HotpotQA and ALFWorld scores — but its architectural contribution defined a generation: the agent is a loop, the loop interleaves reasoning text with tool calls, and the model sees its own previous reasoning as context on the next turn. Chapter 13 builds the agent loop directly on this scaffold, and Chapter 14 (multi-step planning) examines exactly the failure modes — context bloat, reasoning drift, tool-call cycles — that the original ReAct paper hinted at but did not fully characterize. If you read only one agent paper, read this one.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1129,
+      "out_sha": "b49e31259a1e",
       "note": ""
     },
     {
