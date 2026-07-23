@@ -3059,11 +3059,11 @@
       "en_title": "Chapter 10: Embeddings, Vector Databases, and Hybrid Search",
       "order": 244,
       "src_chars": 2093,
-      "status": "pending",
+      "status": "done",
       "src_sha": "76b9ba05334f",
       "src": "#### Common Misconception\n\nIndexing is not a one-time job. The temptation is to think of it that way — build the index, ship the product, move on — but the index decays the moment the corpus does. New documents arrive; existing documents change; deprecated documents linger; metadata schemas evolve. A team that does not invest in indexing-pipeline engineering will find their RAG system getting worse over time, not better, even as they polish other layers. The indexing pipeline is the foundation; it must be maintained.\n\n\n### 10.8 Triangle Trade-off sidebar: embedding-model choices (quality-delta eval format)\n\nThe classic decision Strata faced: which embedding model? On their production legal-corpus eval (~250 representative queries):\n\nEmbedding model | Dimensions | Retrieval recall@10 | Citation grounding | Cost (USD/1M tokens) | Per-query embedding cost  \n---|---|---|---|---|---  \ntext-embedding-3-small | 1536 | 0.66 | 0.79 | 0.02 USD | 0.000001 USD  \ntext-embedding-3-large | 3072 | 0.71 | 0.81 | 0.13 USD | 0.000007 USD  \nCohere embed-v3-english | 1024 | 0.70 | 0.81 | 0.10 USD | 0.000005 USD  \n**Voyage voyage-law-2** | **1024** | **0.79** | **0.85** | **0.10 USD** | **0.000005 USD**  \nBGE-large-en-v1.5 (self-hosted) | 1024 | 0.68 | 0.80 | (compute) | (compute)  \n  \nWhat to read off:\n\n  1. **Voyage voyage-law-2 dominates on Strata's legal corpus** by 8 points over text-embedding-3-large despite being half the dimensions. The specialty advantage is real.\n  2. **text-embedding-3-large is general-purpose; the dimension premium (3072) buys little over Cohere embed-v3 (1024) on this domain**. More dimensions don't compensate for less domain-fit.\n  3. **Per-query embedding cost is in the noise**. At fractions of a penny per query, the cost differential between embedding models is dwarfed by LLM cost. Pick on quality, not on embedding cost.\n\nThe general lesson: **specialty embeddings outperform general embeddings on the targeted domain by margins that matter (5-10 points)**. If your domain has a specialty embedding, evaluate it; the cost premium is usually trivial.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1029,
+      "out_sha": "dcbc50c40945",
       "note": ""
     },
     {
