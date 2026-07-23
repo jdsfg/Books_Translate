@@ -3587,11 +3587,11 @@
       "en_title": "Chapter 12: Multimodal RAG and Document Understanding",
       "order": 288,
       "src_chars": 1692,
-      "status": "pending",
+      "status": "done",
       "src_sha": "eaece9d737dc",
       "src": "### 12.7 Triangle Trade-off sidebar: multimodal ingestion costs (cost-breakdown format)\n\nThe cost decomposition for one page of a Strata contract through the vision-first pipeline:\n\n* **Vision input** (page-image, ~1500 vision tokens at Sonnet 4 Vision): 1500 × 3 USD/1M = **0.0045 USD**\n* **Text input** (extraction prompt, ~200 tokens): 200 × 3 USD/1M = **0.0006 USD**\n* **Output** (structured extraction, ~1200 tokens): 1200 × 15 USD/1M = **0.018 USD**\n* **Object storage** (page image + extracted JSON, ~500KB combined): negligible (~0.0001 USD)\n* **Index storage** (chunks, embeddings, metadata): ~0.0001 USD\n* **Total per page** : **~0.0234 USD**\n\nAt Strata's scale (500K pages of initial corpus):\n\n* One-time ingestion: 500,000 × 0.0234 USD = **11,700 USD**\n* Daily incremental (200 new contracts × 50 pages avg = 10,000 pages/day): 10,000 × 0.0234 USD = **234 USD/day**\n* Monthly incremental: ~7,000 USD/month\n\nWhat to read off:\n\n  1. **Output dominates the per-page cost** (output is 75% of the per-page total). The 5× output multiplier strikes again. Reducing extraction-output verbosity — terser extraction prompts; structured output that doesn't need long prose descriptions — directly cuts cost.\n\n  2. **Vision input is ~20% of cost**. Resolution control and batching are the two levers.\n\n  3. **Storage is essentially free at this scale**. Cheap object storage means there's no reason to discard pages once ingested.\n\n  4. **At 7K USD/month for ongoing ingestion** of high-value legal documents, the cost is small relative to the engineering value (the ~30-point quality lifts on entire query categories from §12.5). The pattern is highly cost-effective for high-value content.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 815,
+      "out_sha": "e30a8dc3d256",
       "note": ""
     },
     {
