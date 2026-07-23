@@ -3611,11 +3611,11 @@
       "en_title": "Chapter 12: Multimodal RAG and Document Understanding",
       "order": 290,
       "src_chars": 2240,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b46612360327",
       "src": "### Chapter Summary\n\nThe 2026 turn in document understanding is **vision-first ingestion** : instead of OCR-then-parse, vision-language models process page-images directly and produce structured representations that preserve layout, tables, signatures, and figures. The OCR-replacement story is largely true for general document RAG; classical OCR persists for specific high-volume, stable-format cases.\n\nMultimodal embeddings — CLIP, OpenCLIP, ColPali, Voyage multimodal-3 — handle queries where image-similarity matters. ColPali's late-interaction architecture is the reference design for document-image retrieval where layout matters; it's heavier than bi-encoder embeddings but more accurate on layout-sensitive tasks.\n\nTable and chart extraction via VLMs is reliable enough for production on clean documents (>95% accuracy); messier documents need eval-driven discipline to verify extraction quality.\n\nStrata Research's vision-first contract pipeline (§12.5) is the case study: 30-point quality lifts on table, signature, and layout-sensitive queries; modest cost (~7K USD/month at production scale; full decomposition in §12.7); architectural pattern (PDF-split → VLM extraction → schema-normalized → chunked → indexed multimodally) generalizes to most document-RAG projects.\n\nProduction patterns include vision-token cost awareness (resolution control, batch processing, caching), handwriting and degraded-quality handling (confidence flagging, multi-pass extraction), and graceful failure on unprocessable content (failure isolation, tracking, user-visible flagging). The multimodal RAG built here extends the Chapter 9–11 retrieval architecture; the same vision capability becomes an agent tool in Chapter 13, batch processing returns as a cost lever in Chapter 18, ingestion-pipeline observability shows up in Chapter 19, and the extraction-failure modes need eval coverage of the kind Chapter 23 develops.\n\nTwo shifts to carry forward. First, document understanding in 2026 has crossed from OCR-first to vision-first: the model is now the OCR for general-purpose document RAG. Second, multimodal RAG has stopped being a specialty — it is the working pattern for any system that touches real-world documents.\n\n\n### 12.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 798,
+      "out_sha": "e5fce71b932a",
       "note": ""
     },
     {
