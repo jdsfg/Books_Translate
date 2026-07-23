@@ -3083,11 +3083,11 @@
       "en_title": "Chapter 10: Embeddings, Vector Databases, and Hybrid Search",
       "order": 246,
       "src_chars": 2331,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1de482613412",
       "src": "### Chapter Summary\n\nEmbeddings are dense vectors that map text to coordinates such that semantic similarity becomes geometric closeness. The 2026 landscape has four model families (OpenAI text-embedding-3, Cohere embed-v3, Voyage AI specialty, BGE open-weights), each with clear domains of fit. Specialty embeddings outperform general embeddings on targeted domains by 5–10 points; evaluate before committing.\n\nDimension trade-offs are real (storage, latency, quality) but typically settle at 1024–1536 for production. Matryoshka embeddings provide operational flexibility: index at high dimension; truncate at search time.\n\nVector databases split into five 2026 entrants: pgvector (default for Postgres-using teams up to ~10M vectors), Pinecone (managed at scale), Weaviate (OSS with hybrid built-in), Chroma (small projects), Qdrant (rich metadata + Rust performance). The default for new production projects is pgvector; specialty options pay back at scale or for specific feature needs.\n\nHybrid search (vector + BM25 + metadata filtering) is the production-RAG default. Pure vector misses exact-keyword and rare-term queries; hybrid catches them at ~+4 points retrieval recall typical lift. Reciprocal Rank Fusion is the standard score-fusion algorithm.\n\nThe indexing pipeline is the under-appreciated discipline that makes RAG production-grade: change detection, re-chunking, re-embedding, atomic index updates, consistency checks, versioning. A demo skips this; a production system invests in it.\n\nStrata Research's stack (§10.6) is a representative production RAG infrastructure: Voyage voyage-law-2 + Pinecone + hybrid search + paragraph-level chunking + incremental indexing.\n\nThe architectural framing of RAG is Chapter 9's; the engineering of advanced patterns and rigorous evaluation continues in Chapter 11; multimodal RAG (Chapter 12) extends embeddings into vision; the wrapping architecture stack is Chapter 16; observability for the retrieval layer is Chapter 19.\n\nOne sentence to carry from this chapter: **embedding model, vector DB, and hybrid search are the three foundation choices for production RAG.** Pick each on data rather than reputation; invest in the indexing pipeline as if it were the product (it largely is); expect to revisit these choices as scale grows or domain narrows.\n\n\n### 10.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 882,
+      "out_sha": "2639e4bb8a03",
       "note": ""
     },
     {
