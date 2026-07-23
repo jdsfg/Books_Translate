@@ -3371,11 +3371,11 @@
       "en_title": "Chapter 11: Advanced RAG and RAG Evaluation",
       "order": 270,
       "src_chars": 2891,
-      "status": "pending",
+      "status": "done",
       "src_sha": "186294a3c00c",
       "src": "Without self-querying, queries like _\"What was California's consumer protection law in 2023?\"_ go through vector search undifferentiated. The system retrieves chunks that match the semantic content (consumer protection law) but may include chunks from the wrong jurisdiction (e.g., New York) or wrong time (e.g., 2019 statute). The model then has to filter these in generation, which is unreliable.\n\nWith self-querying, the system parses the query, extracts jurisdiction=CA and effective_date_in=2023, applies these as metadata filters before vector search, and retrieves only California consumer protection law from 2023. The model's generation is grounded in only the relevant subset.\n\nThe pattern is essential because metadata-constrained queries are extremely common in any non-trivial corpus. Legal RAG has jurisdiction and date. Medical has specialty and condition. Enterprise has team and access-level. Without self-querying retrieval, the system retrieves over the full corpus, dilutes relevance, and pushes the filtering burden onto the LLM where it works less reliably. With self-querying, retrieval is precise.\n\n**Q4.** Why does the chapter argue for an explicit _long-tail_ eval slice (§11.8)? Identify two reasons.\n\n**Answer:**\n\n  1. **Representative samples miss rare queries by construction.** A 200-query eval drawn proportionally from production traffic will, by definition, include rare query types proportionally, which means few or zero rare-query cases in the eval. A 1%-frequency query type appears 2 times in a 200-query eval; statistically too few to measure performance on. Long-tail behavior is invisible.\n\n  2. **The cost of failure on rare queries can be disproportionately high.** Rare queries are often the highest-stakes ones (unusual situations the user is actively trying to figure out). A customer who hits a rare query and gets a poor answer is more likely to churn than a customer who hits a typical query and gets a typical-quality answer. The business cost per rare-query failure exceeds the cost per typical-query failure.\n\nMitigation: deliberately curate a long-tail eval slice (queries chosen for diversity, edge cases, unusual combinations of constraints, known weak points). The slice complements the main eval; both must pass for release.\n\nA third reason worth noting: **long-tail evals catch regression patterns that emerge gradually**. A change that subtly worsens long-tail behavior while not affecting typical behavior is invisible in the main eval, accumulates in production, and surfaces as customer complaints over weeks. The long-tail slice catches it immediately.\n\n**Q5.** Chapter 5 introduced the multi-axis rubric as a general eval discipline; §11.4 specializes it to RAG with retrieval-specific axes. What two characteristics of RAG make a RAG-specific rubric necessary rather than reusing a generic answer-quality rubric?\n\n**Answer:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 958,
+      "out_sha": "900b4d4eb62b",
       "note": ""
     },
     {
@@ -3383,11 +3383,11 @@
       "en_title": "Chapter 11: Advanced RAG and RAG Evaluation",
       "order": 271,
       "src_chars": 1713,
-      "status": "pending",
+      "status": "done",
       "src_sha": "13518fda1cc2",
       "src": "  1. **Retrieval is a measurable upstream component with its own failure modes.** A generic answer-quality rubric scores the final response. That treats retrieval as a black box: if the answer is wrong, the rubric tells you it's wrong but not whether the cause is _retrieval missed the relevant chunk_ or _generation ignored a retrieved relevant chunk_. The RAG-specific rubric adds retrieval recall and precision as separate axes, decomposing the failure into the layer that owns it. Without that decomposition, you debug blindly: a regression could be a chunking change, an embedding change, a prompt change, or a model change, and a single answer-score gives no localization signal.\n\n  2. **Faithfulness and citation grounding are RAG-specific quality dimensions absent from generic answer rubrics.** A generic rubric asks _is the answer correct?_ A RAG rubric also asks _is the answer grounded in the retrieved chunks, with traceable citations?_ The faithfulness axis catches a class of failure (right answer but invented justification; right answer drawn from training rather than retrieval) that a correctness-only rubric scores as a pass. In regulated domains (medical, legal) ungrounded answers fail compliance even when they happen to be correct; the RAG rubric makes the grounding-or-not signal explicit.\n\nThe structural lesson: rubrics specialize to the architecture. A pure-LLM rubric has axes about answer quality; a RAG rubric adds retrieval and grounding; an agent rubric (Chapter 14) adds trajectory and bound-compliance axes; a multi-agent rubric (Chapter 15) adds coordination axes. The multi-axis pattern from Chapter 5 is the frame; each architecture instantiates the frame with its own axes.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 514,
+      "out_sha": "9efe28d908b3",
       "note": ""
     },
     {
