@@ -4439,11 +4439,11 @@
       "en_title": "Chapter 15: Multi-Agent Coordination and the Computer-Use Frontier",
       "order": 359,
       "src_chars": 1347,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9711fafd6e1a",
       "src": "#### Pattern 2: debate\n\nTwo or more agents argue different positions; their disagreement surfaces issues a single agent might miss. Useful for high-stakes decisions where blind spots matter.\n    \n    \n    [Question]\n         ↓\n    [Agent A: argue for option X] ←→ [Agent B: argue for option Y]\n         ↓                              ↓\n    [Judge agent or human decides]\n    \n\nWhen it fits: judgment calls where you want explicit consideration of alternatives; review of decisions before commitment; eval-of-eval scenarios.\n\nWhen it doesn't: routine tasks where the answer is obvious; high-volume use where the 2x cost of debate doesn't justify the rare insight gain.\n\nHelios doesn't use debate in production agent flows; they use a debate-like pattern internally for evaluating new prompts (a \"critique agent\" reviews a \"candidate agent's\" trajectories).\n\n\n#### Pattern 3: hierarchical decomposition\n\nA multi-level decomposition: orchestrator → mid-level coordinators → workers. Useful for very complex tasks where the decomposition itself has structure.\n\nHierarchical decomposition is heavier than flat orchestrator-workers; the additional layer adds complexity, observability burden, and bound-engineering work. The 2026 lesson: **flat orchestrator-workers handles most cases; hierarchical only when you can articulate why flat doesn't work**.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 515,
+      "out_sha": "8596eecbe09a",
       "note": ""
     },
     {
@@ -4451,11 +4451,11 @@
       "en_title": "Chapter 15: Multi-Agent Coordination and the Computer-Use Frontier",
       "order": 360,
       "src_chars": 3069,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ae295b718769",
       "src": "### 15.3 The 2026 framework landscape: four named frameworks\n\nMulti-agent frameworks have proliferated; the 2026 main-text picks four with distinct positioning. Other frameworks (CrewAI, OpenAI Swarm, etc.) are catalogued in Appendix B.\n\n**LangGraph** (LangChain ecosystem): graph-based agent workflows. Each node is a step (agent call, tool call, conditional branch); edges define the flow. Mature, well-documented, large community. The default for teams already in the LangChain ecosystem.\n\n_Fit_ : teams comfortable with LangChain abstractions; complex deterministic flows that benefit from graph visualization and debugging.\n\n_Caveats_ : as with LangChain generally, the abstractions can fight you when you need fine control; some production teams have moved away from LangChain-stack frameworks in favor of lighter primitives.\n\n**AutoGen** (Microsoft Research): multi-agent conversation framework. Agents are first-class objects; agents talk to each other via structured messages. The model is \"agents in a chat room\"; agents can be specialized with different prompts, tool catalogs.\n\n_Fit_ : research-style multi-agent systems; teams that want explicit agent-to-agent message passing; explorations of debate, peer-review, and similar patterns.\n\n_Caveats_ : production maturity is improving but not as polished as LangGraph for some workflows.\n\n**Pydantic AI** (2025-era newcomer): lightweight, type-safe agent framework. Agents are Python-typed; tool definitions use Pydantic schemas; the framework is small enough to read in a sitting. Strong for teams that want minimal magic and tight type control.\n\n_Fit_ : Python-typed codebases (the Pydantic-first ergonomics); teams that prefer lighter abstractions; smaller agents where heavy framework overhead is unjustified.\n\n_Caveats_ : smaller ecosystem than LangGraph; some advanced patterns require more user-side code.\n\n**Anthropic MCP (Model Context Protocol)** : not a framework per se but a protocol for tool integration. MCP defines a standard interface for tool servers; LLM agents can discover and use any MCP-compatible tool. 2024 release; rapid adoption through 2025–2026.\n\n_Fit_ : integration-heavy systems where the tool layer needs to be portable across LLM providers; teams building tool servers that can be reused across multiple agents.\n\n_Caveats_ : MCP solves the protocol problem, not the agent-architecture problem. You still need a framework (or hand-rolled code) for the agent loop.\n\nThe 2026 decision: **Pydantic AI or hand-rolled code for new agents at small teams** ; **LangGraph for mature LangChain shops** ; **MCP for tool-integration concerns regardless of agent framework**. Most production teams in 2026 don't use AutoGen heavily; it shines for research-style experimentation.\n\nThe general lesson: **frameworks are a productivity tool, not a substitute for architecture**. The discipline of bounded design (Chapter 14), tool catalogs (Chapter 13), eval (Chapter 4) survives any framework choice. Pick the framework that fits your team; don't expect the framework to do the engineering.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1248,
+      "out_sha": "e60d5238c008",
       "note": ""
     },
     {
