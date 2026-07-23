@@ -3119,11 +3119,11 @@
       "en_title": "Chapter 10: Embeddings, Vector Databases, and Hybrid Search",
       "order": 249,
       "src_chars": 1436,
-      "status": "pending",
+      "status": "done",
       "src_sha": "80a0e6938efb",
       "src": "**Recommendation: 768-dim** for this scale. Reasoning: at 200M chunks, the storage cost difference between 768 and 1536 is 600 GB extra storage plus the latency penalty, for marginal quality lift (2 to 5 percentage points). At cost-sensitive scale, 768 is the sweet spot. 256-dim sacrifices too much quality (a 10 to 15 point gap can move recall@10 from 0.90 to 0.78, which destroys downstream quality). 1536-dim only earns its cost if retrieval quality is the binding constraint and the eval shows the lift translates to answer quality.\n\n**Alternative recommendation worth knowing.** Matryoshka embeddings (Voyage `voyage-3` and similar) let you store the full 1536-dim vector once and use truncated 256- or 768-dim views at query time. At 200M chunks, this is appealing: store at high dimension (most cost-tolerant during write), query at lower dimension (most cost-tolerant during read), and reserve the full-dim re-rank for the top-K candidates. The pattern was production-ready as of late 2025.\n\n**The most common wrong reasoning:** _go with 1536-dim because higher is better quality_. The reasoning ignores that quality is diminishing-returns and that storage and latency are dominant cost terms at scale. A team that defaults to the highest dimension without doing the math is over-paying for marginal quality. The dimension decision is a cost-quality optimization; the chapter's framing (§10.3) is that smart teams do the math.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 499,
+      "out_sha": "29304c058e0f",
       "note": ""
     },
     {
