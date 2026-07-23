@@ -5339,11 +5339,11 @@
       "en_title": "Chapter 18: Cost Optimization — The Real Numbers",
       "order": 434,
       "src_chars": 2249,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9bfd601150df",
       "src": "### 18.10 Triangle Trade-off sidebar: cost optimization levers (classic format)\n\nThe cost-optimization levers at typical production scale and their impact:\n\nLever | Engineering effort | Typical cost reduction | Risk  \n---|---|---|---  \nMulti-model routing (Ch 17, deploy LiteLLM/Portkey) | 1-2 engineer-months | 50-70% | Low (with eval discipline)  \nAnthropic prompt caching (#9) | 1 engineer-week | 30-60% on cacheable content | Very low  \nOpenAI implicit caching | 0 (automatic) | 10-30% on prefix-matching content | None  \nSemantic caching (#10) | 2-4 engineer-weeks | 10-30% on paraphrase-frequent traffic | Medium (false positives)  \nApplication-layer exact cache | 1-2 engineer-weeks | 5-15% on FAQ-style traffic | Low  \nBatch inference | 1-2 engineer-weeks | 50% on batch-eligible workload | Low (latency only)  \nOutput length reduction (prompt) | 1 engineer-week | 5-15% per affected prompt | Low (eval validates)  \nDistillation via routing (Ch 17) | Same as routing | included in routing | included  \nFine-tuning distillation | 2-6 engineer-months | 50-80% on covered tasks | High (half-life problem)  \n  \nWhat to read off:\n\n  1. **Routing is the biggest lever by far** (50-70% reduction). Should be the first investment.\n  2. **Caching layers compound**. Each individual layer (prompt caching + OpenAI implicit + semantic) gives modest reduction; combined they're substantial.\n  3. **The risk profile differs**. Routing and caching are low-risk with eval discipline; semantic caching has false-positive risk; fine-tuning distillation has the half-life maintenance problem.\n\nThe order of investment for a team starting from no optimization:\n\n  1. **Build the dashboard** (workflow #11). Visibility first.\n  2. **Implement routing** (workflow #8). Biggest lever.\n  3. **Add Anthropic prompt caching** (workflow #9). Easy win.\n  4. **Audit for batch-eligible workloads**. Free 50% discount on eligible workloads.\n  5. **Semantic caching** (workflow #10) if traffic justifies. Higher-effort, higher-risk.\n  6. **Fine-tuning distillation** if the cost is large enough that fine-tuning maintenance is worth it. Rare for most teams.\n\nThe 2026 well-engineered team is doing items 1-4 by default; 5 when traffic justifies; 6 only at extreme scale.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 967,
+      "out_sha": "5c579e792b4f",
       "note": ""
     },
     {
@@ -5351,11 +5351,11 @@
       "en_title": "Chapter 18: Cost Optimization — The Real Numbers",
       "order": 435,
       "src_chars": 1769,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7850d5c2329c",
       "src": "### 18.11 How This Breaks: the bill that arrived unexpectedly\n\n**Failure mode named** : the bill that arrived unexpectedly. The team's AI features were working. Costs weren't being tracked in detail. The first signal of a cost problem was the monthly invoice arriving at 3-5× the expected amount.\n\n**Real or composite incident** : a composite from multiple companies. A team had been building AI features steadily; the per-feature cost wasn't tracked; over six months, the monthly bill grew from 40K USD to 180K USD without anyone noticing the trend. Finance noticed when the AWS bill (which included the provider passthrough) was 3× the previous quarter. The team scrambled: per-tenant attribution showed one tenant was 60% of spend (a contract that should have been renegotiated months earlier); one feature was generating 90% of cost relative to its revenue contribution; caching wasn't deployed despite being available.\n\n**Engineering mitigation** :\n\n  1. **Cost dashboard from day one** (workflow #11). Even a simple dashboard surfaces trends before they become invoices.\n  2. **Per-tenant budget enforcement** (Chapter 17 §17.6). Bad-actor tenants don't escape detection.\n  3. **Weekly cost review** : a 30-minute meeting with engineering leadership and finance reviewing the cost dashboard. Catches anomalies; aligns on action.\n  4. **Per-feature cost SLOs** : each AI feature has a target cost-per-call; deviations trigger investigation.\n\n**The eval that would have caught it** : the dashboard itself is the catch mechanism. The failure here is operational, not engineering — the team didn't have the discipline to look at the dashboard. The mitigation is process: scheduled cost reviews, on-call rotation for cost alerts, ownership of the cost-tracking layer.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 588,
+      "out_sha": "5d86cdcdb7b8",
       "note": ""
     },
     {
