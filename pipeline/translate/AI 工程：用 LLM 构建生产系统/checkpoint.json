@@ -4715,11 +4715,11 @@
       "en_title": "Chapter 16: The AI System Architecture Stack",
       "order": 382,
       "src_chars": 937,
-      "status": "pending",
+      "status": "done",
       "src_sha": "395f68b03118",
       "src": "The previous chapters built capabilities: prompts, structured output, context engineering, RAG, agents, tool use, multi-agent. Each capability is a building block. This chapter is about how the blocks fit together: the architecture of a production AI system, the reference stack that most successful 2026 production teams converge on, and the build-vs-buy decisions at each layer.\n\nProduction AI systems are systems first. The LLM is one component among many, and the engineering value comes from how the components compose. A team that thinks at the architecture level rather than the per-feature level is the team whose AI engineering scales.\n\nThe case is the 9-layer architecture walked end-to-end by Ada, Helios's staff engineer for the customer-AI platform. By the end of this chapter you should be able to sketch the reference architecture for an AI system at your company and identify the build-vs-buy decisions you need to make.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 284,
+      "out_sha": "fa4661cb3c9a",
       "note": ""
     },
     {
