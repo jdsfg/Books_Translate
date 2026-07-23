@@ -3551,11 +3551,11 @@
       "en_title": "Chapter 12: Multimodal RAG and Document Understanding",
       "order": 285,
       "src_chars": 2040,
-      "status": "pending",
+      "status": "done",
       "src_sha": "574597216271",
       "src": "### 12.4 Charts, tables, and structured data extraction\n\nDocuments contain not just prose but **structured data** : tables of figures, charts and graphs, schematics. RAG over these requires extracting the structured data into a usable form.\n\nThe 2026 approach:\n    \n    \n    def extract_table_from_image(page_image: bytes) -> StructuredTable:\n        response = vision_model.complete(\n            model=\"claude-sonnet-4-20260315\",  # Sonnet 4 handles vision in the same model; no separate vision variant exists\n            messages=[{\n                \"role\": \"user\",\n                \"content\": [\n                    {\"type\": \"image\", \"source\": ...},\n                    {\"type\": \"text\", \"text\": \"Extract any tables in this image as a JSON array of objects. Include column names and row values. If multiple tables exist, return them as a list.\"},\n                ],\n            }],\n            response_model=StructuredTable,\n        )\n        return response\n    \n\nThe VLM produces structured data: list of rows, each row a dict of column-to-value. This goes into the index as both:\n\n* **Structured queryable data** (in a relational table or a JSON-document store) for queries that filter on numeric or categorical values.\n* **Markdown-formatted text** (embedded as part of the document's chunk) for queries that retrieve the table by semantic similarity to its content.\n\nCharts and graphs go through a similar pattern: the VLM produces a _description_ of the chart (axes, trends, key data points) plus, where possible, the underlying data. Both are indexed.\n\nThe accuracy of VLM-based table extraction in 2026 is high for simple tables (>95% cell-level accuracy on clean documents) and lower for complex tables (~80% on documents with merged cells, irregular layouts, footnoted rows). The right discipline: **eval the extraction accuracy on your specific document corpus before depending on it**. Domain-specific quirks (legal contract tables; financial statement tables) often have failure modes that don't show up on generic benchmarks.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1057,
+      "out_sha": "456cefda44b4",
       "note": ""
     },
     {
