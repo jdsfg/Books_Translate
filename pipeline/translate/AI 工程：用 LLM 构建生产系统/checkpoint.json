@@ -2999,11 +2999,11 @@
       "en_title": "Chapter 10: Embeddings, Vector Databases, and Hybrid Search",
       "order": 239,
       "src_chars": 2529,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f29e4e3ac2ee",
       "src": "> **Current as of 2026.** All embedding-model and vector-DB names in this chapter (OpenAI text-embedding-3, Cohere embed-v3, Voyage AI, BGE; pgvector, Pinecone, Weaviate, Chroma, Qdrant) were current as of late 2026. Before you commit to any of them in a production stack, check the MTEB leaderboard and the vendor's own benchmark page; both refresh quarterly. What won't refresh is the decision matrix itself: general vs domain, managed vs self-host, vector-only vs hybrid.\n\nChapter 9 laid out the four levers of RAG. This chapter engineers the most consequential of the four (embeddings) and the infrastructure that makes them useful at production scale: vector databases. Then it engineers the pattern that production teams have learned is essential: hybrid search.\n\nThe picking decisions in this chapter — _which embedding model, which vector DB, whether to do hybrid_ — are the highest-leverage architectural decisions an AI engineer makes in a RAG project. A team that picks well at this layer can usually meet quality targets with the rest of the standard stack. A team that picks badly here will be re-engineering for months.\n\n\n### 10.1 What an embedding actually is\n\nAn embedding model maps text to a dense vector of floating-point numbers (typically 256, 512, 768, 1024, 1536, or 3072 dimensions in 2026). The mapping is learned such that **semantically similar texts land close to each other** in vector space. Closeness is measured by cosine similarity (or related metrics).\n\nThe geometry matters. If \"I forgot my password\" and \"How do I reset my login credentials?\" map to vectors that are close (cosine similarity ~0.9), retrieval over a knowledge base will find the same documents for both. If they map to distant vectors (cosine similarity ~0.4), retrieval will miss the connection, exactly the failure mode that frustrates users when chatbots \"don't understand\" paraphrased questions.\n\nThe embedding model's quality is the geometry's faithfulness to the semantics that matter for your domain.\n\n\n#### Definition: Embedding\n\nA function `text → vector` that maps natural-language text into a fixed-dimensional vector of real numbers, learned such that semantically similar texts produce vectors close to each other under a similarity metric (typically cosine).\n\nIn plain language: an embedding turns text into coordinates. Two pieces of text are \"near\" each other in coordinate space if a human would call them \"about the same thing.\" Retrieval over an index is then geometry: find the chunks closest to the query.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 870,
+      "out_sha": "880b6da33cbf",
       "note": ""
     },
     {
