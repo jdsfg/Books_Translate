@@ -7319,11 +7319,11 @@
       "en_title": "Chapter 25: Anti-Patterns and Where the Field Is Going",
       "order": 599,
       "src_chars": 2653,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8b26360ad177",
       "src": "### 25.5 Where to go next\n\nThis book is Volume 2 of Series V (_Engineering for the AI Era_). The series continues:\n\n* **Series IV (Cloud Native)** : coming volumes on the cloud infrastructure that hosts production AI systems. Containers, Kubernetes, service mesh, the layer below this book.\n* **Series V Volume 3 (Security)** : application security in the AI era. Prompt injection at depth; AI red-teaming; threat modeling for AI products. The chapter 23 content here is the introduction; that book is the depth.\n* **Future ML Platform book** : for the teams that need to go deeper into self-hosted model serving, fine-tuning at scale, and the underlying ML infrastructure. The chapter 22 content here is the literacy; that book is the depth.\n\nFor the reader staying with this book: re-read the chapters that match your current production work. The disciplines compound; the book repays multiple readings as your team's situation evolves.\n\n\n### 25.6 Triangle Trade-off sidebar: the discipline's compounding value (time-to-benefit format)\n\nThe latency from \"team adopts an AI engineering discipline\" to \"production benefit\":\n\nDiscipline | Time to first benefit | Compounding effect | 5-year value  \n---|---|---|---  \nEval-driven CI | 2-4 weeks | Catches every regression going forward | Quality decay prevented; cumulative value large  \nRouting layer | 1-2 months | Cost savings start immediately; scale with volume | Direct USD savings; possibly millions over years  \nObservability | 1-2 months | Every incident is investigable; every change is measurable | Operational maturity; faster diagnosis  \nBounded agents | 3-6 weeks | Each incident-class prevented; trajectory failures bounded | Saves potential incidents that would be 100-1000x cost  \nSafety four-layer | 2-3 months | Defense in depth; specific attacks prevented | Insurance against catastrophic incidents  \nEval-driven hiring + workflow | 6-12 months | Team-level pattern shift; discipline embedded | Cultural; permanent  \n  \nWhat to read off:\n\n  1. **Most disciplines pay back in months, not quarters**. The investment isn't deferred; the value is current.\n  2. **The compounding effect dominates the first-year value**. Each discipline catches regressions or saves cost continuously; the cumulative effect over years is large.\n  3. **The cultural disciplines (eval-driven hiring, workflow) have the longest time-to-benefit but the deepest compounding**. The team that adopts them transforms; the team that doesn't stays at a lower competency level.\n\nThe book's argument in one chart: **invest in the disciplines; they pay back; the alternative (vibe-shipping AI features) doesn't scale**.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 924,
+      "out_sha": "af32a6d9f85e",
       "note": ""
     },
     {
@@ -7331,11 +7331,11 @@
       "en_title": "Chapter 25: Anti-Patterns and Where the Field Is Going",
       "order": 600,
       "src_chars": 1815,
-      "status": "pending",
+      "status": "done",
       "src_sha": "30823c44096b",
       "src": "### 25.7 How This Breaks: the team that stopped learning\n\n**Failure mode named** : the team that stopped learning. A team adopts AI engineering disciplines; gets to a reasonable level; stops investing. The field continues to evolve; the team's practices age; competitors who continue investing pull ahead.\n\n**Real or composite incident** : this is more of a slow decline than a single incident. A team in 2024 adopted eval-first development; built routing and observability; stabilized. Their 2026 architecture is what they shipped in 2024 with minor additions. Meanwhile, their competitors continued investing: adopted production eval (Chapter 21); migrated to vision-first ingestion (Chapter 12); added multi-modal capabilities (Chapter 20). By 2026, the stopped-learning team is competitively behind without realizing it.\n\n**Engineering mitigation** :\n\n  1. **Continuous learning culture**. Team members attend conferences; read industry publications; engage with the broader AI engineering community.\n  2. **Quarterly architecture review** : is our stack still current? What have we learned in the last 90 days? What are competitors doing that we should consider?\n  3. **Hiring for growth, not just current state**. Hire engineers who will push the team forward, not just maintain.\n  4. **Allocate explicit time for technical exploration**. Engineering hours aren't 100% feature work; some fraction goes to evaluating new tools, new techniques, new architectures.\n\n**The eval that would have caught it** : this is process, not engineering. The eval here is the _team's quality trajectory over time_ : are we getting better? If the answer is _we're maintaining_ rather than _we're improving_ , the team is stagnating. The fix is cultural: rebuild the learning practices that drove the team to its current level.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 636,
+      "out_sha": "7c7a0530c2a2",
       "note": ""
     },
     {
