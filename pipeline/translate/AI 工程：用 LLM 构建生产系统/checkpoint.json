@@ -5291,11 +5291,11 @@
       "en_title": "Chapter 18: Cost Optimization — The Real Numbers",
       "order": 430,
       "src_chars": 3421,
-      "status": "pending",
+      "status": "done",
       "src_sha": "951a6bfbb60d",
       "src": "* At Helios, ~25% of customer queries are paraphrase-equivalent to recent queries (within 24 hours). Without semantic caching, every one of these incurs full LLM cost. With semantic caching at threshold 0.93, ~22% of queries hit the cache (some misses on edge cases); cost savings ~80K USD/month.\n* The false-positive rate at threshold 0.93 is ~0.5%; combined with the LLM verification step, effective false-positive rate is ~0.1%.\n\nSemantic caching is a real production capability in 2026; it requires careful threshold tuning and quality monitoring. The savings can be substantial; the risks must be managed.\n\n\n### 18.5 Batch inference: 50% discount for async\n\nBoth Anthropic and OpenAI offer batch inference: submit a batch of requests; receive results asynchronously (typically within 24 hours, often much sooner); pay 50% of the normal rate.\n\nWhen batch fits:\n\n* **Document ingestion** : indexing a large corpus; you don't need results immediately.\n* **Eval runs** : running the full eval against a candidate prompt; can wait an hour.\n* **Backfills** : re-processing historical data; no urgency.\n* **Bulk summarization** : nightly summaries of daily activity; tomorrow's results are fine.\n\nWhen batch doesn't fit:\n\n* **Interactive UI** : users are waiting; can't tolerate even minutes.\n* **Voice and real-time** : sub-500ms TTFT budgets; batch is impossible.\n* **Critical alerts** : if an alert requires LLM analysis, you need sub-minute response.\n\nFor Strata's contract ingestion (Chapter 12 §12.5), batch processing cut the ingestion cost from ~7K USD to ~3.5K USD per month (50% discount). The latency increased from minutes-per-batch to hours-per-batch; for ingestion that's acceptable. The cost savings paid back the engineering work (~1 engineer-week to switch the pipeline to batch) in days.\n\nThe discipline: **audit your workloads; identify what's truly time-sensitive and what isn't; route non-time-sensitive to batch**. Most teams have meaningful batch opportunities that they haven't exercised.\n\n\n### 18.6 Model distillation, briefly\n\nDistillation: train a small model to imitate a larger one on a specific task. The small model is much cheaper to serve; if quality is acceptable, the cost story is dramatic.\n\nIn 2026, distillation as a sophisticated technique is largely a Series-III ML topic (Chapter 22 §22.x). The pragmatic 2026 version most production AI teams use:\n\n**Cheap-model substitution with eval validation**. Run the eval against multiple model sizes (Sonnet vs Haiku; GPT-4o vs GPT-4o-mini). For tasks where the cheap model meets the quality bar, use it. This is essentially the routing discipline from Chapter 17 applied at the per-task level.\n\nTrue fine-tuning-based distillation (training a small model to replicate a large model's outputs on your domain) is a real lever but adds significant complexity:\n\n* Requires substantial training data.\n* Requires ongoing maintenance (the distilled model becomes worse than its successor when the base model is updated — Thread B Failure 4, the _fine-tune deprecation cascade_ ; Chapter 22 §22.2).\n* Requires inference infrastructure (self-hosting or specialized serving).\n\nFor most 2026 teams, **distillation-via-routing** (use the workhorse model with eval validation) captures most of the value without the maintenance burden. Reserve fine-tuning-based distillation for cases where the cost savings are large enough to justify the complexity.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1260,
+      "out_sha": "1feb4ba1e4b9",
       "note": ""
     },
     {
@@ -5303,11 +5303,11 @@
       "en_title": "Chapter 18: Cost Optimization — The Real Numbers",
       "order": 431,
       "src_chars": 998,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f70f75ca2d30",
       "src": "### 18.7 Inference latency optimization, briefly\n\nCost and latency are related but distinct. Quick notes on latency:\n\n* **Streaming** (Chapter 3 §3.2) reduces time-to-first-token, improving user perception even when total wall-clock is unchanged.\n* **Parallelization** : multiple tool calls in parallel; multiple LLM calls in parallel (when independent). Sometimes the right architecture (RAG retrieval + LLM call in parallel; the LLM call doesn't wait for retrieval).\n* **Speculative decoding** (provider-side optimization): the model speculatively predicts multiple tokens at a time; faster when speculation succeeds. Most major providers offer this in 2026 transparently.\n* **Workhorse models are faster as well as cheaper**. Routing to a workhorse for latency-sensitive paths is a double win.\n\nLatency engineering is its own discipline; for cost optimization, the relevant latency note is: **workhorse-tier models give you both cost and latency benefits**. Routing decisions should weigh both.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 331,
+      "out_sha": "584d3f709c0e",
       "note": ""
     },
     {
