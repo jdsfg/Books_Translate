@@ -4475,11 +4475,11 @@
       "en_title": "Chapter 15: Multi-Agent Coordination and the Computer-Use Frontier",
       "order": 362,
       "src_chars": 2795,
-      "status": "pending",
+      "status": "done",
       "src_sha": "807301e82620",
       "src": "#### How computer-use agents work\n\nThe mechanism is a vision-language model in an agent loop:\n\n  1. The agent receives a goal (\"book a flight from SFO to JFK on June 12\").\n  2. The agent takes a screenshot of the current screen.\n  3. The agent reasons about what to do next, given the screen state.\n  4. The agent emits an action (click at coordinates (x, y); type text; press a key).\n  5. The action executes; the screen updates; back to step 2.\n\nThe loop continues until the goal is met or the agent halts. The vision model handles screen understanding; the agent's reasoning handles task planning.\n\n\n#### Where computer-use fits in 2026 production\n\nThree production fits:\n\n**One-off automations**. The user has a specific repetitive task (\"download all my receipts from this site as PDFs\") that doesn't justify writing an API integration. Computer-use is the right answer: it works on any site with a UI; the alternative is manual work.\n\n**Accessibility applications**. Users who can't operate computers easily (visual impairment, motor impairment) benefit from a computer-use agent that acts on their behalf. The reliability bar is lower than for high-volume production (the alternative is _no automation at all_); some failure rate is acceptable.\n\n**Long-tail integration**. An enterprise has 20 internal systems. Building API integrations to all 20 is expensive; computer-use lets the agent operate the systems' UIs directly. The trade-off: lower reliability than API integrations, no maintenance overhead from system updates that break UIs.\n\n\n#### Where computer-use doesn't fit in production\n\n**Production-critical workflows where reliability matters**. Computer-use failure rates in 2026 are typically 10–30% per task (varying by task complexity and the specific UI); even narrow well-scoped use cases land around 20–30% (see §15.7 for Helios's worked example: 26% failure rate on a deliberately narrow vendor-portal task). For workflows where a failure is costly (financial transactions, customer-facing actions), the failure rate is unacceptable; the real API integration is the right answer.\n\n**High-volume automation**. Per-task cost of computer-use is significantly higher than per-task cost of API integration (more inference cost per step; more steps required). At scale, the cost difference dominates.\n\n**Anything that needs to be auditable in detail**. Computer-use trajectories are hard to reproduce exactly; UI elements move; states differ. For workflows that need audit trails, API integrations are cleaner.\n\nThe 2026 production-AI heuristic: **if you can build a real API for the task, do that; computer-use is the last resort**. The heuristic is shaped by the failure-rate and cost realities; it will evolve as computer-use models improve, but as of 2026 the rule stands.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 993,
+      "out_sha": "e7d5d776859d",
       "note": ""
     },
     {
@@ -4487,11 +4487,11 @@
       "en_title": "Chapter 15: Multi-Agent Coordination and the Computer-Use Frontier",
       "order": 363,
       "src_chars": 1489,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0d0994c858c8",
       "src": "#### Security considerations for computer-use\n\nComputer-use agents have screen access. They see whatever the agent's session sees: the user's open tabs, their email, their banking apps, their messages. The security surface is large.\n\nProduction deployment patterns:\n\n* **Sandboxed environments** : the agent operates in a dedicated VM or container, not the user's actual computer. The VM has only the apps and credentials needed for the task.\n* **Per-task credential scoping** : the agent has credentials for the specific task (e.g., a flight-booking task has a flight-booking account; not the user's full credential vault).\n* **Human-in-the-loop for high-stakes actions** : the agent confirms with the human before final commitments (e.g., before clicking \"purchase\").\n* **Action logging and replay** : every screenshot, every action, logged for audit. If something goes wrong, the trajectory can be inspected.\n\nThese patterns are not optional in 2026. Computer-use without them produces incidents.\n\n\n#### Common Misconception\n\nReading the demo reels, it is easy to assume _computer-use agents replace API integrations_. They don't. APIs are more reliable, faster, cheaper, and easier to audit; they are the dominant integration pattern in 2026 and will remain so. Computer-use _complements_ APIs, filling the gap where APIs don't exist or where the cost of building them exceeds the value. The right mental model: APIs are the default; computer-use is the specialty for niche scenarios.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 499,
+      "out_sha": "e9b98f6043f6",
       "note": ""
     },
     {
