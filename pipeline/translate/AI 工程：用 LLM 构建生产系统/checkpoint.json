@@ -1271,11 +1271,11 @@
       "en_title": "Chapter 4: Eval-Driven Development — The Spec That Doesn't Exist Yet",
       "order": 95,
       "src_chars": 3168,
-      "status": "pending",
+      "status": "done",
       "src_sha": "036c3ad8c76b",
       "src": "### 4.5 LLM-as-judge: powerful, dangerous, and how to use it without getting burned\n\nFor Shape 1 (canonical answer) and Shape 4 (behavioral test), scoring can be done by code: string comparison, regex, schema validation. For Shape 2 (rubric) and Shape 3 (preference pair), and increasingly for nuanced versions of Shape 5, scoring traditionally required humans, which is expensive and slow.\n\nEnter LLM-as-judge. The idea: use a separate (often more powerful) LLM to score the outputs of your system, using the rubric as the prompt. Instead of a clinician scoring 200 outputs by hand, an LLM scores 200 outputs in two minutes for 5. USD The economics are transformative.\n\nSo is the failure mode. **LLMs as judges have correlated failures with LLMs as systems.** If your system is Sonnet 4 and your judge is also Sonnet 4, you have a meaningful risk of _the judge agrees with the system because they share biases_. The judge is more likely to mark as correct an output that contains the same patterns the judge would have produced. The eval is overoptimistic, and the team that ships on the optimistic eval is shipping on a less-honest signal than they think.\n\nThe mitigations are real and operational:\n\n  1. **Use a different model family as judge.** If you run the system on Anthropic, use OpenAI or Google as the judge. Cross-family judging breaks the strongest correlated-failure path. The cost premium of running the judge on a different provider is small relative to the eval-honesty benefit.\n\n  2. **Use a stronger model as judge.** If your system runs on Haiku (workhorse tier), use Sonnet 4 or GPT-4o as the judge. The judge needs at least as much capability as the system, plus enough headroom to catch the system's failure modes.\n\n  3. **Validate the judge against humans on a calibration set.** Take a subset of 50–100 cases, score them with the judge and with at least two humans, compute the agreement (Cohen's kappa for binary; weighted kappa or correlation for rubric scores). If the judge does not agree with humans at a defensible level (typically kappa ≥ 0.6 for production use), do not trust the judge. The calibration is the cost of using LLM-as-judge responsibly; it is not optional.\n\n  4. **Use structured judge prompts with explicit rubrics.** A judge prompt that says _score this output for quality from 1 to 10_ is going to produce noisy, inconsistent scores. A judge prompt that says _score this output on the following four dimensions: (a) clinical accuracy [0–3], with 3 = no clinical errors, 2 = one minor error, …; (b) completeness …_ is going to produce more consistent scores because the criteria are spelled out and the judge has less room to drift. The structure mirrors the rubric you would give a human; do not give the judge less guidance.\n\n  5. **Check for length bias.** LLM judges tend to prefer longer outputs over shorter ones, when length is not specified in the rubric. This bias can be measured (compute mean score by output length quartile; if monotonic, the judge is length-biased) and corrected (by adding length-neutrality to the rubric, by stratifying the eval by output length, or by switching to a less-biased judge).",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1225,
+      "out_sha": "b9b117d24268",
       "note": ""
     },
     {
@@ -1283,11 +1283,11 @@
       "en_title": "Chapter 4: Eval-Driven Development — The Spec That Doesn't Exist Yet",
       "order": 96,
       "src_chars": 1343,
-      "status": "pending",
+      "status": "done",
       "src_sha": "137a5eaefc54",
       "src": "  6. **Check for position bias on preference pairs.** When comparing two candidates A and B, LLM judges often have a position preference (some prefer A; some prefer B; the bias is not always intuitive). The mitigation is to run every pair twice, once as (A, B) and once as (B, A), and average. Doubles your judge cost but eliminates the position bias.\n\nLLM-as-judge is powerful enough that it has become the dominant scoring approach for nuanced evals in 2026. It is also dangerous enough that teams who deploy it without the calibration discipline above produce evals that look fine and are systematically misleading. Use it; calibrate it; never trust the unverified version.\n\n\n#### Common Misconception\n\nLLM-as-judge does not eliminate the need for human-labeled data, despite how often the claim is repeated. What it eliminates is _human scoring at every eval run_. You still need human labels at _calibration_ — the small set of human-scored outputs you use to verify the judge agrees with humans. Without the calibration set, you have no idea whether the judge is producing meaningful scores or hallucinating with the same confidence on every output. Treat human labels as a strategic investment in calibration capacity, not as a recurring cost on every eval. The cost amortizes; the calibration is durable; the eval becomes trustworthy.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 456,
+      "out_sha": "e1c163ad34b8",
       "note": ""
     },
     {
