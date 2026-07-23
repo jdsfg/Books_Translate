@@ -4259,11 +4259,11 @@
       "en_title": "Chapter 14: Designing Agents That Don't Spiral + Agent Memory Architectures",
       "order": 344,
       "src_chars": 323,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9e632f58e133",
       "src": "#### Application Problems\n\n**Q1.** _Design the bounded-agent design doc_. Write a one-page bounded-agent design doc (per §14.6) for the Beacon Health AI clinical-notes summarizer agent. The agent takes a dictation, calls retrieval tools, and produces a structured summary. Specify bounds, memory, policy gating, eval suite.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 141,
+      "out_sha": "c21dd83ad64e",
       "note": ""
     },
     {
@@ -4271,11 +4271,11 @@
       "en_title": "Chapter 14: Designing Agents That Don't Spiral + Agent Memory Architectures",
       "order": 345,
       "src_chars": 3651,
-      "status": "pending",
+      "status": "done",
       "src_sha": "910edd72c05d",
       "src": "**Answer:**\n    \n    \n    # Agent Design Doc: Beacon Clinical-Notes Summarizer v2\n    \n    ## Purpose\n    Take a dictated clinical note as input, retrieve relevant patient history,\n    and produce a structured EHR summary. Output is reviewed by a clinician\n    before insertion into the patient chart.\n    \n    ## Trajectory Bounds\n    - Maximum iterations: 8 (most cases complete in 2-4)\n    - Per-call max_tokens: 2,048 (output)\n    - Maximum cumulative tokens per trajectory: 40,000\n    - Maximum cost per trajectory: $0.20\n    - Maximum wall-clock: 30 seconds (we're synchronous; clinician is waiting)\n    \n    ## Tool Catalog (v3)\n    - `get_patient_history(patient_id, days=180)`: retrieves recent visit summaries\n    - `lookup_medication_list(patient_id)`: current active medications\n    - `lookup_allergy_list(patient_id)`: allergies\n    - `lookup_clinical_vocabulary(term)`: clarifies clinical jargon\n    - `flag_for_human_review(reason)`: exit ramp; always allowed\n    - `compose_summary(structured_data)`: terminal tool; produces final output\n    \n    Note: no action tools (no chart modification, no orders, no prescriptions);\n    all state changes are downstream of clinician review.\n    \n    ## Memory Architecture\n    - **Working memory**: trajectory history (typically <5 turns; rarely needs compression).\n    - **Episodic memory**: not applicable; each dictation is independent.\n    - **Long-term memory**: per-patient profile loaded at start via\n      `get_patient_history`; not persisted by agent itself, retrieved each time.\n    \n    ## Circuit Breakers\n    - Same tool with same args called twice: halt with \"ambiguity detected\" → flag for review.\n    - `flag_for_human_review` always allowed and treated as graceful exit.\n    - Cost circuit breaker at $0.15.\n    - Iteration counter triggers at 6 (with 2-iteration buffer).\n    \n    ## Policy Gating\n    - No state-changing tools; policy gating not required at agent layer.\n    - Output validation (schema conformance, no fabricated medications) per Chapter 7 §7.9.\n    - All summaries flagged for clinician review; agent does not insert to EHR directly.\n    \n    ## Failure Modes Handled\n    - Hallucinated tool calls: schema validation + structured errors.\n    - Context overflow: trajectory short enough that summarization not needed in\n      routine operation; if triggered, halts and flags for review (safer than guessing).\n    - Cost overruns: cost circuit breaker.\n    - Inability to parse dictation: structured \"unparseable\" output (Chapter 7) as\n      graceful exit.\n    \n    ## Observability\n    - Every trajectory logged with: patient_id (hashed; PHI compliance), tools called,\n      iterations, cost, outcome.\n    - HIPAA-aware trace storage (per Chapter 19): traces redact PHI; full PHI logs\n      in compliant separate store.\n    - Alerts: cost-circuit-breaker activation; iteration cap reached; tool failure rate >2%.\n    \n    ## Eval Suite (per Chapter 5)\n    - 200 synthetic-PHI golden trajectories (Beacon's golden set).\n    - Multi-axis rubric: clinical accuracy, completeness, format compliance, no fabrication.\n    - Adversarial slice (40 trajectories): unparseable dictations, ambiguous content,\n      edge cases (rare conditions, complex medication regimens).\n    - CI gate: regression >0.5 on summary score blocks merge.\n    \n    ## Rollback\n    - Manifest pin to v1; per-tenant rollback supported.\n    - Critical-incident protocol: emergency rollback to v1 within 1 hour; alerting\n      routes to clinical-AI on-call.\n    \n    ## Sign-Off\n    - AI engineering lead, Clinical advisor (MD), Compliance officer, Privacy officer.\n    - Quarterly review.\n    ",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1769,
+      "out_sha": "25d54f6055b1",
       "note": ""
     },
     {
