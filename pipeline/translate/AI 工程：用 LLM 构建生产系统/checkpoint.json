@@ -4775,11 +4775,11 @@
       "en_title": "Chapter 16: The AI System Architecture Stack",
       "order": 387,
       "src_chars": 1763,
-      "status": "pending",
+      "status": "done",
       "src_sha": "986c88b18713",
       "src": "### 16.5 Triangle Trade-off sidebar: layer-by-layer build vs buy (classic format)\n\n§16.2 named the realistic build and buy options per layer; this section puts numbers on the trade-offs for a 50-engineer company that already ships an AI product, so the rows are the same but the columns now read as costs rather than options.\n\nLayer | Build (engineer-months, first 12 mo) | Buy (USD/month) | Recommendation  \n---|---|---|---  \nModel Providers | 24+ (serious self-hosting at scale) | 10K USD-1M USD (depends heavily on traffic) | Buy (Anthropic / OpenAI / Google)  \nRouters / Gateways | 4-8 | 100 USD-2K USD (LiteLLM free) | OSS (LiteLLM)  \nOrchestration | 2-4 | 0 USD (frameworks free) | OSS (Pydantic AI / LangGraph) or hand-rolled  \nEval Platform | 2-4 | 200 USD-2K USD | OSS (pytest-evals) + selective SaaS  \nObservability | 4-8 | 200 USD-5K USD | OSS (Langfuse self-hosted) or SaaS  \nCost Tracking | 2-4 (custom on observability) | (often included in observability) | Build (on top of observability)  \nFeature Flags | 8-12 (parity with LaunchDarkly is multiple engineer-quarters) | 200 USD-2K USD | Buy (LaunchDarkly / Statsig)  \nSafety / Guardrails | 2-6 (per-product) | Emerging | Build (per-product)  \nApplication Layer | (this is your product) | (N/A) | Build  \n  \nWhat to read off:\n\n  1. **Lower layers favor buy** : the engineering cost of building a router (4-8 months) dwarfs the SaaS cost of 200 USD/month. Buy.\n  2. **Higher layers favor build** : application layer and safety guardrails are product-specific; SaaS is generic. Build.\n  3. **The middle (orchestration, eval, observability) is where the team's choice differs by stage**. Small teams use OSS; mid-size teams sometimes adopt SaaS for the productivity gain; large teams sometimes build.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 836,
+      "out_sha": "f8df2c537776",
       "note": ""
     },
     {
@@ -4787,11 +4787,11 @@
       "en_title": "Chapter 16: The AI System Architecture Stack",
       "order": 388,
       "src_chars": 2058,
-      "status": "pending",
+      "status": "done",
       "src_sha": "de17b6e83923",
       "src": "### 16.6 How This Breaks: the layer that nobody owned\n\n**Failure mode named** : the layer that nobody owned. The architecture sketch exists; the team thinks they have all 9 layers. In reality, one layer (often observability or cost tracking) is half-built; nobody owns it; nobody monitors it. The first sign of trouble is when production has an incident that the missing layer would have caught.\n\n**Real or composite incident** : a composite from various 2025–2026 teams. A team's architecture diagram showed observability via Langfuse. In practice, the Langfuse integration covered some agent paths but not others; some critical workflows had zero traces. When a customer reported intermittent quality issues, the team had no production data to investigate: the affected workflow's traces didn't exist. The remediation took weeks: instrument the missing workflow; backfill historical traces (impossible for past events); add monitoring to detect uninstrumented workflows.\n\n**Engineering mitigation** :\n\n  1. **Explicit ownership per layer**. Each layer has a named owner who is accountable for its operational health. Cross-team layers (cost tracking spans engineering + finance + ops) have multiple owners with explicit responsibilities.\n\n  2. **Layer-completeness audit**. Quarterly review: for each layer in the reference architecture, is it functioning? What's the coverage rate (% of workflows that touch the layer correctly)? Gaps surfaced and assigned.\n\n  3. **Automated coverage checks**. For observability specifically: a synthetic-trace check that runs through every workflow path and verifies traces are produced. Detects uninstrumented paths automatically.\n\n**The eval that would have caught it** : an _architecture-coverage eval_ that runs synthetic transactions through every production workflow and verifies each workflow's interactions hit the expected layers (router, observability, cost tracking). Workflows that bypass layers are flagged. This catches the _not actually instrumented_ problem before it becomes a customer-facing incident.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 639,
+      "out_sha": "498d5abc0d5c",
       "note": ""
     },
     {
