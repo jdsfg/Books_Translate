@@ -4799,11 +4799,11 @@
       "en_title": "Chapter 16: The AI System Architecture Stack",
       "order": 389,
       "src_chars": 2256,
-      "status": "pending",
+      "status": "done",
       "src_sha": "050790720f18",
       "src": "### Chapter Summary\n\nProduction AI systems in 2026 cluster around a 9-layer reference architecture: model providers; routers / gateways; orchestration; eval platform; observability; cost tracking; feature flags; safety / guardrails; application layer. Each layer wraps the layers below and exposes a refined interface to layers above. Not every team has every layer; smaller systems collapse layers; large systems sub-divide.\n\nBuild-vs-buy decisions follow three patterns: lower layers favor buy (commoditized; specialized vendors build better); higher layers favor build (where product differentiation lives); data-sensitive use cases shift toward build for the data-touching layers (observability, evals on sensitive data).\n\nThe 2026 default for a 20-person team: buy model providers; OSS router (LiteLLM); OSS or hand-rolled orchestration; OSS evals (pytest-evals); OSS or SaaS observability (Langfuse); build cost tracking on top; buy feature flags; build safety guardrails; build the application layer. Variations on this base.\n\nHelios's staff engineer case (§16.3) is the worked example: 9 layers mapped to specific 2026 tools and choices; three engineering choices that mattered (multi-provider routing from day one; self-hosted observability; custom orchestration on Temporal); two regrets (eval platform built too late; cost tracking underinvested early).\n\nThe AI engineering monolith (§16.4) is the anti-pattern: one large module doing everything. The fix is the layered architecture from §16.1; the lesson is to start layered.\n\nThe layer-that-nobody-owned (§16.6) is the common failure mode: the architecture exists on paper but one layer is half-built and unowned. The mitigation is explicit ownership per layer plus quarterly layer-completeness audits plus automated coverage checks.\n\nChapters 4-15 each built one of these layers in isolation; the next chapters pick the layers apart in production depth — Chapter 17 on the router, Chapter 18 on cost tracking discipline, Chapter 19 on observability, and Chapter 24 on the team structure that owns the layers.\n\nThe takeaway is a single sentence: production AI systems are systems first, and the engineering value lives in how the layers compose, not in any one component.\n\n\n### 16.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 770,
+      "out_sha": "73eeb79eb923",
       "note": ""
     },
     {
@@ -4811,11 +4811,11 @@
       "en_title": "Chapter 16: The AI System Architecture Stack",
       "order": 390,
       "src_chars": 3352,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cdd3cf42f3fa",
       "src": "#### Concept Check\n\n**Q1.** Name the 9 layers of the reference architecture and identify what each layer wraps and exposes.\n\n**Answer:**\n\n  1. **Model Providers** : wraps physical inference compute; exposes per-call API interface (chat completions, embeddings, etc.).\n  2. **Routers / Gateways** : wraps multiple model providers; exposes a unified interface with policy (cost-aware routing, fallback, per-tenant budgets).\n  3. **Orchestration** : wraps the model interface; exposes agent loops, multi-step workflows, tool dispatch.\n  4. **Eval Platform** : wraps the system under test; exposes scored runs against golden sets, regression detection, CI integration.\n  5. **Observability** : wraps every layer's runtime events; exposes traces, logs, metrics for debugging and monitoring.\n  6. **Cost Tracking** : wraps observability data; exposes cost dashboards, budget alerts, per-dimension cost attribution.\n  7. **Feature Flags** : wraps environment-and-version routing; exposes per-environment, per-tenant, per-canary configuration of which prompt/model/agent to use.\n  8. **Safety / Guardrails** : wraps inputs and outputs at the application boundary; exposes validation, PII redaction, prompt-injection defense, output safety.\n  9. **Application Layer** : wraps all of the above; exposes user-facing features.\n\nThe hierarchy is conceptual: each layer is built on those below; each layer adds discipline that the layer above can assume.\n\n**Q2.** Why does the chapter argue that lower layers favor buy while higher layers favor build? Address the cost-economics and the product-value reasoning.\n\n**Answer:** Two reasons:\n\n  1. **Cost-economics**. Lower layers (model providers, routers) are commoditized. The engineering cost to build a competitive router internally is 4-8 engineer-months; the SaaS or OSS alternatives cost dollars in dollars. The ratio is wrong; buy.\n\n  2. **Product-value**. Lower layers are infrastructure; they don't differentiate the product. A custom router doesn't make customers happier (they don't see it). Higher layers (application, safety) are where the product's value lives; building lets you specialize to your product's needs. Investing build effort where it differentiates pays back; investing build effort in infrastructure doesn't.\n\nA complementary reason: **maintenance cost**. Built infrastructure must be maintained forever; bought infrastructure has maintenance outsourced. Lower layers have more universal patterns (every team needs routing) and high maintenance burden; higher layers have specialized patterns (your product's exact safety needs) and the maintenance is tied to product evolution anyway.\n\nThe general principle: **build where you differentiate; buy where you don't**. The 9-layer architecture maps this principle onto the AI engineering stack.\n\n**Q3.** Why does the chapter call the _AI engineering monolith_ an anti-pattern? Identify three specific capabilities that the monolith blocks.\n\n**Answer:** The monolith mixes layers: prompt management, model calls, evals, logging, cost tracking, business logic all in one module. It blocks:\n\n  1. **Multi-provider routing**. Without a router layer separated out, switching from one provider to another or implementing fallback requires editing the monolith. Painful; rarely done; teams stay on one provider for inertia, not because it's optimal.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1107,
+      "out_sha": "3b8ea4c8b94b",
       "note": ""
     },
     {
@@ -4823,11 +4823,11 @@
       "en_title": "Chapter 16: The AI System Architecture Stack",
       "order": 391,
       "src_chars": 3148,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b08761dfe574",
       "src": "  2. **Per-tenant cost discipline**. Without a cost-tracking layer, attributing costs to specific tenants requires instrumenting every code path in the monolith. The monolith grows more tangled with each new tracking requirement. Teams give up; cost discipline lags.\n\n  3. **Eval-as-CI**. Without an eval-platform layer, running evals against the production code requires either duplicating the code path in test setup or invasive instrumentation. The monolith fights both. Teams ship without eval; quality decays; the team is back to vibes.\n\nA fourth: **independent updates to layers**. The monolith requires changing many things together; the layered architecture allows independent updates to prompts, models, eval suites, safety rules. Independent updates are faster, lower-risk, and more testable.\n\nThe fix is to start layered. Refactoring a monolith is expensive (Helios spent 3 engineer-months on theirs); avoiding the monolith from day one is cheap.\n\n**Q4.** What is the _layer-that-nobody-owned_ failure mode? Why does it commonly affect observability specifically?\n\n**Answer:** The failure mode: the architecture sketch shows N layers; the team thinks all N exist; in reality, one layer is half-built and unowned. The first sign of trouble is when an incident arises that the missing layer would have caught.\n\nObservability is commonly the affected layer because:\n\n  1. **It's everywhere and nowhere**. Observability isn't a single feature; it's a property of every workflow. Each workflow has to be instrumented separately. A team that adds Langfuse for the main feature may forget to instrument secondary features.\n\n  2. **Coverage is invisible by default**. The team sees observability data for instrumented workflows; they don't see _no data_ for uninstrumented workflows. The absence is hard to detect without active checking.\n\n  3. **Ownership is unclear**. Engineering owns the application code; ops owns the infrastructure; observability sits in between. Without explicit assignment, observability is everyone's responsibility and therefore no one's.\n\nMitigation: explicit owner; quarterly layer-completeness audit; automated coverage checks (a synthetic-trace test that verifies traces are produced for every workflow). The discipline catches the failure mode before it becomes a customer incident.\n\n**Q5.** Chapter 17 will argue that any production AI system above ~50K USD/month inference spend ought to have a router layer. Why does this claim depend on the 9-layer architecture being in place? Identify two layers besides the router itself that the routing decision presupposes.\n\n**Answer:** The routing decision (which model handles which call) only pays off if two adjacent layers already exist:\n\n  1. **Eval Platform (Layer 4)**. Without an eval, the team has no defensible answer to \"does the cheaper model meet quality on this task class?\" Routing without eval is gambling; the team will either over-route to the cheap model (silent quality decay) or under-route (savings never materialize because the team is afraid to commit). Chapter 17's \"cheapest model that works\" doctrine is meaningless without §17.4's eval gate.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1013,
+      "out_sha": "17fb477a8c63",
       "note": ""
     },
     {
@@ -4835,11 +4835,11 @@
       "en_title": "Chapter 16: The AI System Architecture Stack",
       "order": 392,
       "src_chars": 1081,
-      "status": "pending",
+      "status": "done",
       "src_sha": "af58c08c7abd",
       "src": "  2. **Observability (Layer 5)**. Without per-call traces tagged with which model served the call, the team cannot attribute quality regressions to routing decisions. A regression appears; was it the new prompt, the new model, the new fallback? Untraced routing is undiagnosable. Cost Tracking (Layer 6) similarly depends on observability: per-tier cost attribution requires per-call model tagging.\n\nThe deeper point: the 9-layer architecture is not a checklist of independent features. The layers are _coupled in a specific direction_. Higher layers depend on lower-and-adjacent layers to be functional. A team that builds a router without an eval has built infrastructure it cannot safely operate. The architecture's value is not the layers individually but the order and discipline of building them.\n\nThe general principle: when deciding whether to invest in a new layer, ask which adjacent layers must already work for the new investment to pay off. The 9-layer architecture makes those dependencies explicit; that's the value of treating it as a reference rather than a menu.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 300,
+      "out_sha": "a731b2b4a780",
       "note": ""
     },
     {
