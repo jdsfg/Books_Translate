@@ -2687,11 +2687,11 @@
       "en_title": "Chapter 8: Context Engineering and the Long-Context vs RAG Decision Tree",
       "order": 213,
       "src_chars": 2541,
-      "status": "pending",
+      "status": "done",
       "src_sha": "406b783dc4b7",
       "src": "_Tier 2: just-in-time loaded (9 to 11 tools)._ Lower-frequency tools the agent loads on demand. Pattern: a meta-tool `list_available_tools(category)` returns the schema for tools matching a category (subscription, refund, escalation). When the agent realizes it needs to update a subscription, it calls `list_available_tools(\"subscription\")`, gets the schema for `update_subscription`, calls it. The full tool set is never simultaneously in-context.\n\n**Latency-cost trade-off.**\n\n* _All-loaded_ : simpler, 1-2K tokens extra context per call, latency-neutral. At high volume, 1-2K extra per call adds up: at 100M calls/month, 0.30 USD/1M input tokens, that's an extra ~50 USD/month per 1K-tokens-saved. Not huge.\n* _Just-in-time-loaded_ : more complex (the agent must learn to discover tools), one extra round trip when a tier-2 tool is needed (latency +300 to 800ms), savings of 2K to 3K input tokens per call where the meta-tool isn't invoked. At very high volume or with a much larger tool inventory (50+ tools), the savings compound.\n\n**Recommendation for 14-tool agent.** _Mixed_. The five highest-frequency tools always-loaded; the rest just-in-time via a meta-tool. The mixed pattern preserves low-latency on the common path and cost-efficiency on the long tail. The pattern scales: when the tool inventory grows to 50, the always-loaded set stays at 5 (the ones that are still high-frequency); the just-in-time set grows. The agent's tool discovery is the engineering surface where the scale wins.\n\n**Connection to Chapter 13.** Chapter 13 will treat tool selection (which tools to surface to the agent for a given task) as a first-class concern. This Q is the context-window angle on that decision: even before Chapter 13's policy logic, the _budget_ shape of the agent's context favors the hierarchical pattern at scale.\n\n**AI-collaboration sub-question** : How would you ask an LLM to help with this exercise, and what would you verify in its response?\n\n**Answer:** Useful prompt: _Allocate context budget for a customer-service agent with 14 tools, 200K window, 30K history, 4K output. Which tools live in-context vs. load just-in-time? What's the latency-cost trade-off?_ You verify (a) the LLM correctly computes the budget (do the math by hand; LLMs often skip the budget calculation and jump to recommendations), and (b) the LLM proposes the _hierarchical_ pattern rather than all-loaded or all-just-in-time (the hybrid is the production answer; LLMs sometimes give a binary recommendation when the mixed pattern is correct).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1000,
+      "out_sha": "8714543cd094",
       "note": ""
     },
     {
