@@ -3503,11 +3503,11 @@
       "en_title": "Chapter 12: Multimodal RAG and Document Understanding",
       "order": 281,
       "src_chars": 1873,
-      "status": "pending",
+      "status": "done",
       "src_sha": "795584030e1a",
       "src": "> **Current as of 2026.** A 2026 reader sees this chapter as a description of where the field has just arrived; a 2028 reader will see it as a snapshot of an early moment in vision-first document understanding. The named VLMs (Anthropic Vision, GPT-4o Vision, Gemini Vision) and the named multimodal embeddings (CLIP, OpenCLIP, ColPali) will have moved on by then. The three-piece architecture — vision-first ingestion, multimodal embeddings, late-interaction retrieval — is what to internalize.\n\nThe last three chapters handled text-only RAG. In the real world, most documents aren't text-only. A contract has signature blocks. A regulatory filing has tables of figures. A patient chart has scanned forms, lab-result screenshots, handwritten margin notes. A product manual has architecture diagrams, exploded-view figures, schematic drawings. Text-only RAG treats these documents either as garbled OCR output or as text with mysterious gaps where the figures should be.\n\nThe 2026 turn in document understanding is that vision-language models (VLMs: Anthropic Vision, GPT-4o Vision, Gemini Vision) process images directly with quality comparable to dedicated computer-vision pipelines for many practical tasks. This has profound consequences for RAG: the OCR-first ingestion pipeline that defined 2010s-era document AI is being replaced by **vision-first ingestion**. A page of a contract is processed as a page (with its layout, tables, signatures, scanned regions) rather than as a sequence of OCR'd text strings that lose all that structure.\n\nThis chapter is about engineering RAG over multimodal documents. Strata Research is the case: legal contracts that contain text plus tables plus signature blocks plus scanned pages. Without multimodal handling, Strata's RAG misses critical content. With it, the system handles real-world documents the way they actually exist.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 663,
+      "out_sha": "6b2939edb09f",
       "note": ""
     },
     {
