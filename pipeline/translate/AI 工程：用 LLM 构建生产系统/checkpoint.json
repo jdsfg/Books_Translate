@@ -7619,11 +7619,11 @@
       "en_title": "Appendix B — Reference Architecture Catalog",
       "order": 624,
       "src_chars": 1766,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3edd8a3e1c3d",
       "src": "#### Pattern 2: The Multi-Model Router with Fallback\n\n**What problem it solves.** A single provider's outage takes down the AI feature; or 60% of traffic could run on a cheaper model with no quality loss while 40% genuinely needs the frontier model. The router classifies requests and falls back on 5xx, 429, or excessive latency.\n\n**Topology.** Before the LLM call, a router stage runs inside the AI service. Rule-based for the first version (regex on user-tier, request type, prompt-length thresholds); teams that need more graduate to a small classifier — a fine-tuned 7B or even a logistic regression on prompt features — emitting one of tier-1, tier-2, tier-3. Tier-1 routes to the frontier model (Claude Opus, GPT-5, or equivalent); tier-2 to a mid-tier model (Sonnet, GPT-4-class); tier-3 to a cheap model or a self-hosted open-weight model on the team's GPU pool. Each tier has a primary and a designated fallback provider; a circuit breaker (failure-rate threshold over a 60-second sliding window) flips traffic automatically. LiteLLM is the 2026 default that gives you provider abstraction and fallback wiring; teams with strong preferences write their own thin SDK over the raw HTTP APIs.\n\n**When to use it.** Cost pressure is real (monthly LLM spend at salary scale, finance asking questions). Or single-provider outage would be a customer-visible incident. Or you're running A/B model experiments and want one place to encode the routing.\n\n**When NOT to use it.** One AI feature, single-provider outage acceptable, ship-faster beats building a router. The router is a non-trivial operational surface — every model upgrade now means re-tuning thresholds.\n\n**Cross-references.** Chapter 17 (multi-provider strategy), Chapter 18 (cost effects of routing).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 665,
+      "out_sha": "d083da66749e",
       "note": ""
     },
     {
@@ -7631,11 +7631,11 @@
       "en_title": "Appendix B — Reference Architecture Catalog",
       "order": 625,
       "src_chars": 2221,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2a48633dd134",
       "src": "#### Pattern 3: Production RAG with Reranker\n\n**What problem it solves.** The LLM needs to answer questions over a corpus it wasn't trained on — customer docs, internal wikis, case law, medical literature. Vanilla vector search produces fluent answers grounded in the wrong documents; production RAG adds rewriting, hybrid retrieval, and reranking to push precision-at-k above the threshold where the LLM stops hallucinating citations.\n\n**Topology.** Query enters a rewriting stage — a small, cheap LLM call (or a fine-tuned model) that expands into one to three search-friendly variants, handling synonyms, acronyms, and pronoun resolution against recent turns. Each variant goes through two parallel retrievers: dense embedding search against the vector store (Pinecone, Weaviate, pgvector, or Turbopuffer in 2026), and BM25 lexical search against an inverted index (Elasticsearch, OpenSearch, or Tantivy). Candidate sets — typically 50 per retriever per variant — are deduped and merged into a pool of 100 to 200. A cross-encoder reranker (Cohere Rerank, BGE-reranker, or a fine-tuned in-house model) scores each candidate against the original query and keeps the top 8-20. Selected chunks go into the prompt with explicit document IDs. The LLM generates with structured citations referencing those IDs; a post-processing stage validates that every citation corresponds to a real chunk in the prompt and that the cited text actually appears in the source — otherwise the citation is stripped or the answer is regenerated with a stricter prompt.\n\n**When to use it.** Corpus is too large for the context window (more than a few hundred thousand tokens). Citations are required for trust, regulatory, or product reasons. Vanilla vector search has produced enough hallucinated-citation incidents to justify reranking infrastructure.\n\n**When NOT to use it.** Corpus is small enough to stuff in context (under 200k tokens) — long-context models in 2026 often outperform half-built RAG. Or queries don't need grounding (creative writing, brainstorming, code generation against training data).\n\n**Cross-references.** Chapter 9 (vector retrieval), Chapter 10 (reranking and hybrid), Chapter 11 (citations and post-processing).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 820,
+      "out_sha": "94d3b4cbf55b",
       "note": ""
     },
     {
