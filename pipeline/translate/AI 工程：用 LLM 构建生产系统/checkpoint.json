@@ -2939,11 +2939,11 @@
       "en_title": "Chapter 9: RAG Architecture from First Principles",
       "order": 234,
       "src_chars": 3251,
-      "status": "pending",
+      "status": "done",
       "src_sha": "17d50be8734e",
       "src": "* Input: LLM's raw text containing `[doc_id:para_id]` markers.\n* Output: list of citation objects with `(doc_id, para_id, anchor_position_in_text)`.\n* Failure handling: if the LLM emitted a malformed citation (typo in the doc_id, missing colon), log and either drop the citation (preserving the surrounding text) or surface a warning to the eval pipeline. Don't crash; legacy LLM outputs sometimes have noise.\n\n**Step 2: Resolve citations against the retrieved chunk set.**\n\n* Input: citation list + the chunk set that was passed to the LLM in this call.\n* Output: validated citations, each tied to a specific retrieved chunk.\n* Failure handling: if a citation references a `(doc_id, para_id)` that isn't in the retrieved set, the LLM hallucinated a citation. Mark the citation as `fabricated`; do not surface it to the user as a valid source. Log as a quality signal.\n\n**Step 3: Enrich with stable URLs and snippets.**\n\n* Input: validated citations + the source-document metadata store.\n* Output: citation objects with `(stable_url, snippet, source_title, effective_date, jurisdiction)`.\n* The stable URL is computed from the document's permanent identifier (e.g., a content-hash-based URL or a per-document slug), not from a transient retrieval-time URL. The snippet is the paragraph's text, with the cited claim's relevant span highlighted if possible.\n* Failure handling: if the source-document metadata store doesn't have an entry for `doc_id` (e.g., the document was deleted from the corpus after retrieval), mark as `stale`; either drop the citation or show with a _source no longer available_ note.\n\n**Step 4: Score citation confidence.**\n\n* Input: validated citations + the LLM's claim text near each citation anchor.\n* Output: per-citation confidence score (high / medium / low) and a _user verification recommended_ flag for low scores.\n* Scoring signals: \n    * _High_ : the cited paragraph contains a direct phrase or close paraphrase of the claim. NLI (natural language inference) score from a small model is high.\n    * _Medium_ : the cited paragraph contains relevant information but the claim involves synthesis across multiple paragraphs.\n    * _Low_ : the cited paragraph contains information about the topic but doesn't clearly support the specific claim. The LLM may be over-citing.\n* The classifier is itself a small LLM call or a fine-tuned NLI model; the choice depends on volume and latency budget.\n\n**Step 5: Render to the response format.**\n\n* Input: enriched, scored citations + the LLM's original answer text.\n* Output: the final response object with answer text, list of citation objects (each containing URL, snippet, confidence, jurisdiction, effective_date), and any quality flags.\n* Each citation in the UI links to the stable URL, shows the snippet on hover, and shows a verification-recommended badge when confidence is low.\n\n**Step 6: Log for ongoing eval.**\n\n* Input: the full pipeline output.\n* Output: an event for the analytics pipeline recording citation count, confidence distribution, fabrication rate (citations marked `fabricated` in step 2), and stale-source rate.\n* This logs feed Chapter 19's monitoring; spikes in fabrication or stale rates trigger alerts.\n\n**Quality safeguards across the pipeline:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1237,
+      "out_sha": "592e751d563c",
       "note": ""
     },
     {
@@ -2951,11 +2951,11 @@
       "en_title": "Chapter 9: RAG Architecture from First Principles",
       "order": 235,
       "src_chars": 1890,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9baefe5db27d",
       "src": "* _Fabrication rate_ : any non-zero rate is a quality concern; alert if rate exceeds 1% per week.\n* _Low-confidence-citation rate_ : high rates may indicate the LLM is over-citing or the corpus has fragmented information; review periodically.\n* _Stale-source rate_ : should be low; spikes indicate indexing-pipeline issues.\n\n**Cost.** The NLI scoring step (step 4) is the dominant cost; a small model like Haiku at ~0.0005 USD per call adds ~0.003 USD per RAG response (assuming ~6 citations per response). Acceptable for the user-experience lift; cuttable for high-volume non-legal queries.\n\n**Connection to Chapter 6.** The citation-format spec (`[doc_id:para_id]`) is set by the prompt (§6.1's _constraining output structure_). The post-processor depends on the prompt's compliance; if the prompt is changed, the post-processor's parsing must remain compatible. This is why prompt and post-processor co-version (see Chapter 7's co-versioning pattern).\n\n**AI-collaboration sub-question** : How would you ask an LLM to help with this exercise, and what would you verify in its response?\n\n**Answer:** Useful prompt: _Design a citation post-processing pipeline that turns LLM-emitted`[doc_id:para_id]` citations into user-facing citation objects with stable URLs, snippets, and confidence scores. Specify each step's input, output, and failure handling._ You verify (a) the LLM includes the _fabrication detection_ step (when the LLM cites a doc_id not in the retrieved set; this is the most important defense and LLMs sometimes skip it), (b) the LLM proposes a _confidence-scoring_ step rather than treating all validated citations as equal (users need this signal in legal-tech), and (c) the LLM correctly identifies that stable URLs must come from the document metadata store, not from the LLM's output (the LLM cannot generate valid URLs reliably; the post-processor must compute them).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 718,
+      "out_sha": "bfb41ec8dc7a",
       "note": ""
     },
     {
