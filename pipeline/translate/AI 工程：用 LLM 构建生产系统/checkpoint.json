@@ -3215,11 +3215,11 @@
       "en_title": "Chapter 10: Embeddings, Vector Databases, and Hybrid Search",
       "order": 257,
       "src_chars": 3329,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7d0840db5720",
       "src": "#### Think Deeper\n\n**Q1.** _The future of embeddings._ Speculate about the embedding landscape in 2030. Will domain-specialty embeddings still matter? Will hybrid search still be needed? Identify two forces likely to shift the answer.\n\n**Discussion:** Two forces:\n\n  1. **Foundation models improve at general semantic similarity**. By 2030, general embedding models may close most of the gap with specialty embeddings on common domains. Specialty embeddings may persist for very narrow domains (e.g., specific industries with proprietary vocabulary) where training data is limited.\n\n  2. **End-to-end retrieval models**. Today's retrieval is two-stage (embed, then search). End-to-end neural retrieval (transformer-based, single-stage) is improving; by 2030, it may be the dominant pattern for some use cases, displacing the bi-encoder embedding architecture. Hybrid search might evolve into multi-signal end-to-end models.\n\nNet prediction: in 2030, _general embeddings_ may suffice for 80% of use cases that specialty embeddings serve today; the long-tail specialty use cases (legal, medical, code) may still benefit from specialty models. Hybrid search persists for the exact-token cases (which are intrinsic to language; embeddings can't fully cover them).\n\nThe discipline of evaluating before picking (Chapter 4 applied at the retrieval layer) survives the architectural shift. The specific pick changes; the discipline doesn't.\n\n**Q2.** _Why Postgres won the vector DB question for most teams._ The chapter argues pgvector is the default for new production RAG projects in 2026. Argue both for and against this position. Identify a specific scenario where pgvector is the wrong default and a specialized vector DB is correct.\n\n**Discussion:** **For pgvector as default** : most production teams already operate Postgres; adding pgvector adds zero new infrastructure. Per-tenant access controls, transactional consistency with business data, the existing operational maturity of Postgres: all free. At scales up to ~10M vectors, performance is plenty. Operational simplicity is the dominant value.\n\n**Against pgvector as default** : specialized vector DBs have advantages at scale: better HNSW tuning, dedicated storage formats, native hybrid search, better ergonomics for vector-specific operations. A team that needs to operate a vector index at 100M+ scale finds pgvector's general-purpose Postgres infrastructure more work to tune; a specialized DB is more direct.\n\n**A specific scenario where pgvector is wrong** : a team building a _very_ large-scale RAG product where the index will reach 500M+ vectors at production maturity. At that scale, pgvector's general-purpose architecture is fighting you: index build times, query latency under load, memory characteristics all push against the Postgres design. Pinecone (or self-hosted Qdrant with serious tuning) handles this scale gracefully. Picking pgvector here adds engineering effort that the specialized DB doesn't require.\n\nThe general principle: **defaults are right for the median case; the right answer for your case depends on where you sit relative to the median**. A team well below the median scale (small corpus, simple queries) can pick anything; a team well above the median scale needs to pick specifically. The chapter's default is for the broad middle.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1149,
+      "out_sha": "7dd29f4abb8d",
       "note": ""
     },
     {
@@ -3227,11 +3227,11 @@
       "en_title": "Chapter 10: Embeddings, Vector Databases, and Hybrid Search",
       "order": 258,
       "src_chars": 3114,
-      "status": "pending",
+      "status": "done",
       "src_sha": "aadc089e58f0",
       "src": "**Q3.** _The end of the bi-encoder._ Today's retrieval is a bi-encoder architecture: documents and queries are encoded into vectors independently, then compared by cosine similarity. End-to-end neural retrieval (where a single model jointly attends to query and corpus) has been a research direction since the early 2020s but hasn't replaced bi-encoders in production. Speculate: by 2030, will bi-encoder embeddings still dominate production retrieval, or will end-to-end retrieval replace them? Argue both sides. Identify the specific technical or economic constraint that decides the question.\n\n**Discussion:** **The bi-encoder-dominates argument.** Bi-encoders work because they amortize: documents are encoded once, indexed, and reused across queries. The total compute scales as one encode-per-document plus one encode-per-query plus a cheap similarity computation. End-to-end retrieval that jointly attends has to evaluate the joint encoder per (query, candidate-document) pair; at corpus sizes of 50M to 500M chunks, this is computationally prohibitive at production query rates. The bi-encoder's economics are intrinsic, not contingent; better hardware doesn't change the asymptotic scaling.\n\n**The end-to-end-replaces argument.** Two-stage retrieval already exists: bi-encoder for the top-K coarse retrieval, then a cross-encoder reranker for the top-20 to top-50. This is partial end-to-end at the rerank stage. If the cross-encoder gets cheaper (smaller, faster, better tuned) or the top-K from the bi-encoder gets larger (so the rerank does more work), the architecture trends toward _more end-to-end every year_. By 2030, the pattern may be: bi-encoder for coarse-recall (50K candidates), end-to-end model for re-ranking (5K candidates), then top-10 to the LLM. The bi-encoder is reduced to a candidate-generator rather than the primary retrieval mechanism.\n\n**The deciding constraint.** **Per-query inference cost versus per-document storage cost.** Bi-encoders are storage-heavy and inference-light per query (one query encode plus similarity computation). End-to-end retrieval is storage-light and inference-heavy per query (no per-document storage of vectors, but joint inference over candidates). The deciding question is whether the cost curves cross: if storage gets relatively expensive (e.g., due to ever-larger embedding dimensions in bi-encoders), or if per-query inference gets relatively cheap (e.g., due to model-distillation and hardware advances), end-to-end gains ground. If storage continues to be cheaper than inference (the historical trend in cloud infrastructure), bi-encoders persist.\n\n**The 2030 prediction.** Bi-encoders still dominate at the coarse-recall layer for large corpora. End-to-end retrieval grows at the rerank layer and dominates in mid-scale settings where the corpus fits in a single-shot end-to-end pass (e.g., per-tenant corpora at the 1M-token scale). The two architectures coexist, picked by corpus size; the _vocabulary of choice_ shifts from _embedding model_ to _retrieval model_ but the engineering substrate (an index, a query, a ranked list) survives.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 953,
+      "out_sha": "ac93fcaf9e1a",
       "note": ""
     },
     {
@@ -3239,11 +3239,11 @@
       "en_title": "Chapter 10: Embeddings, Vector Databases, and Hybrid Search",
       "order": 259,
       "src_chars": 667,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5fcb1d7c6b3a",
       "src": "**The deeper lesson.** Architectures that survive are often those whose scaling economics are intrinsic, not contingent. Bi-encoder's amortization of document encoding is intrinsic; _one-encode-per-document_ is structurally cheaper than _joint-encode-per-query-document-pair_ and stays cheaper as hardware improves uniformly. End-to-end retrieval grows where the scaling is favorable (small corpora, expensive quality demands), not where the bi-encoder economics rule. Teach the bi-encoder pattern as the load-bearing default for 2026 RAG; expect the cross-encoder rerank layer to grow over time without the bi-encoder coarse-retrieval being displaced wholesale.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 202,
+      "out_sha": "ea159a0c1944",
       "note": ""
     },
     {
