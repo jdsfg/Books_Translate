@@ -1331,11 +1331,11 @@
       "en_title": "Chapter 4: Eval-Driven Development — The Spec That Doesn't Exist Yet",
       "order": 100,
       "src_chars": 1733,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0a41835980b9",
       "src": "### 4.8 Eval-as-CI: the production loop\n\nThe eval is most powerful when it runs _automatically_ , on every change to the system, blocking changes that regress. This is _eval-as-CI_. Chapter 5 will build the GitHub Actions workflow as binding workflow #1; this section sets up the why.\n\nThe structure:\n\n  1. **The golden set lives in the repository** (or in an external store keyed by version), version-controlled alongside the code.\n  2. **The CI job runs the eval suite** on every PR. The eval suite produces a score (or a vector of scores).\n  3. **The CI job compares the score against a baseline** (typically the score on `main`).\n  4. **If the score regresses below threshold, the CI job blocks the merge.** The PR cannot land until either (a) the engineer fixes the regression, or (b) an authorized reviewer overrides the block with explicit justification.\n  5. **The score history is stored** and visible in the PR description, in a dashboard, and in the model upgrade workflow (Chapter 21).\n\nThe discipline this produces:\n\n* Every prompt change is regression-tested before it lands.\n* Every model upgrade is regression-tested before it lands.\n* Every retrieval-corpus change is regression-tested before it lands.\n* Every dependency change is regression-tested before it lands.\n\nThe discipline this prevents:\n\n* The _innocuous prompt tweak that silently regresses behavior_ failure.\n* The _model upgrade that subtly shifts refusal patterns_ failure.\n* The _new retrieval source that introduces a hallucination pattern_ failure.\n\nEval-as-CI is the production version of the _write the test before the code_ discipline. The eval is not optional; it is the gate. Chapter 5 makes this concrete with a real GitHub Actions workflow.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 662,
+      "out_sha": "a10fd0cc09ad",
       "note": ""
     },
     {
@@ -1343,11 +1343,11 @@
       "en_title": "Chapter 4: Eval-Driven Development — The Spec That Doesn't Exist Yet",
       "order": 101,
       "src_chars": 2234,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d240df913bd0",
       "src": "### 4.9 Triangle Trade-off sidebar: eval-driven decisions (quality-delta eval format)\n\nThis chapter's Triangle Trade-off takes the form of a **quality-delta eval table**. The classic decision an AI engineer makes is _should we add a reranker to our RAG pipeline?_ Here is what the eval table looks like before and after the change, for the Strata Research legal-tech RAG system on its production golden set of 250 queries (composite, representative numbers):\n\nEval slice | Baseline (no reranker) | \\+ Cohere Rerank | Delta | \\+ BGE-Reranker | Delta  \n---|---|---|---|---|---  \nOverall answer accuracy | 0.62 | 0.81 | **+0.19** | 0.74 | +0.12  \nCitation-grounding rate | 0.71 | 0.87 | **+0.16** | 0.79 | +0.08  \nJurisdiction-correct filter | 0.85 | 0.91 | +0.06 | 0.88 | +0.03  \nTemporal-validity rate | 0.78 | 0.84 | +0.06 | 0.81 | +0.03  \nMean response latency (ms) | 850 | 1300 | **+450** | 1100 | +250  \nCost per query (USD) | 0.012 USD | 0.014 USD | +0.002 USD | 0.012 USD | +0.000 USD  \n  \nThree things to read off this table:\n\n  1. **Cohere Rerank produces the largest quality lift** (+0.19 on overall, +0.16 on citation-grounding) at a cost of +450ms latency and +0.002 USD per query. BGE-Reranker produces smaller lifts at lower latency cost and no dollar cost (it runs locally on Strata's hardware).\n  2. **The choice is not which is better; the choice is which trade-off is right.** If Strata's latency budget tolerates 1300ms (it does), Cohere is the right call. If Strata were latency-bounded at 1100ms, BGE-Reranker would be the right call. The eval makes the trade-off visible.\n  3. **Per-slice deltas matter.** The reranker improves jurisdiction-correct filtering by a smaller margin than overall accuracy. If jurisdiction-correct was the most important slice (because legal-correct answers matter more than retrieval-accurate ones), the smaller delta would matter more than the headline number suggests.\n\nThis is what _eval-driven_ looks like in practice: a table the team can read, a decision the team can make on the data, and a regression-detection signal that catches it if Cohere's quality degrades next quarter when they update their reranker. The eval is not the answer; the eval is the _frame for the answer_.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1147,
+      "out_sha": "e5ed3a826722",
       "note": ""
     },
     {
