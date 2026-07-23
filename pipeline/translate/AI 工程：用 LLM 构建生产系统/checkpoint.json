@@ -7799,11 +7799,11 @@
       "en_title": "Appendix C — Glossary",
       "order": 639,
       "src_chars": 1302,
-      "status": "pending",
+      "status": "done",
       "src_sha": "35509205bde8",
       "src": "**Context window** : The maximum number of tokens a model can attend to in one call. Quoted limits are best-case; effective limits are smaller due to lost-in-the-middle effects (Ch 2, §2.4).\n\n**Correlated-family bias** : When an LLM judge favors outputs from models in its own family (same vendor or training lineage). Mitigated by judge rotation (Ch 5, §5.6).\n\n**Cost circuit breaker** : Hard cap on per-request or per-session spend that aborts execution when crossed. Mandatory for agents (Ch 14, §14.4).\n\n**Cross-encoder** : A model that jointly encodes a query and a candidate document to produce a relevance score. More accurate than bi-encoders but too slow for first-pass retrieval; used as reranker (Ch 11, §11.1).\n\n**Cost per task** : The fully loaded LLM spend to complete one user-visible unit of work (one answer, one ticket, one document). The right cost metric for product decisions (Ch 18, §18.1).\n\n**Chain-of-thought** : See _CoT_ (Ch 6, §6.2).\n\n**Claude** : Anthropic's model family. The reference platform for prompt caching, MCP, and long-context use cases in this book (Ch 3).\n\n**Continuous batching** : Inference-server technique that interleaves requests at the token level, dramatically improving GPU utilization. The reason vLLM and TGI outperform naive serving (Ch 22, §22.5).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 527,
+      "out_sha": "b8db7c08f8b2",
       "note": ""
     },
     {
@@ -7811,11 +7811,11 @@
       "en_title": "Appendix C — Glossary",
       "order": 640,
       "src_chars": 2237,
-      "status": "pending",
+      "status": "done",
       "src_sha": "77e047c8d9fa",
       "src": "### D\n\n**Dated version** : Pinning a model identifier to a specific date snapshot (e.g., `claude-opus-4-7-20260315`) rather than a floating alias. Required for reproducible behavior (Ch 3, §3.1).\n\n**Debate** : Multi-agent pattern where two or more agents argue opposing positions and a judge picks the winner. Useful for hard analytic tasks; rarely worth the cost otherwise (Ch 15, §15.3).\n\n**Deepgram** : STT provider known for low latency and strong real-time streaming. Common voice-stack choice (Ch 20, §20.3).\n\n**DeepSeek** : Chinese open-weight model family with strong reasoning performance at low cost. Notable for V3 and R1 releases (Ch 22, §22.1).\n\n**Deprecation** : A provider's planned retirement of a model snapshot. In 2026, typical notice is 6-12 months with a forced cutover thereafter (Ch 3, §3.11).\n\n**Dimension** : The vector length of an embedding (e.g., 1024, 1536, 3072). Higher dimensions cost more storage and compute; Matryoshka embeddings let you truncate at retrieval time (Ch 10, §10.3).\n\n**Discriminated union** : A Pydantic/TypeScript pattern where a tag field selects which schema variant applies. The clean way to model \"one of N response shapes\" in structured output (Ch 7, §7.4).\n\n**Distillation** : Training a smaller model to match a larger one's outputs. The practical path to 5-10x cost reduction once you have a stable workload (Ch 18, §18.6).\n\n**DPO** : Direct Preference Optimization. Fine-tuning method that trains directly on (chosen, rejected) pairs without a separate reward model. Lighter alternative to RLHF (Ch 2, §2.3).\n\n**Drift detection** : Monitoring statistical changes in inputs, outputs, or embedding distributions over time. Early-warning signal for silent regressions (Ch 21, §21.2 and §21.7).\n\n**DSPy** : Framework for programmatically composing and optimizing LLM pipelines. Pairs with MIPRO for automatic prompt tuning (Ch 6, §6.3).\n\n**Dead-letter queue** : A holding area for requests that failed permanently after exhausting retries. Required for batch pipelines so failures don't block progress (Ch 18, §18.5).\n\n**Data residency** : Regulatory or contractual requirement that data stay in specific geographies. Constrains gateway routing and storage choices (Ch 19, §19.6).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 926,
+      "out_sha": "dfab713b00e3",
       "note": ""
     },
     {
