@@ -2543,11 +2543,11 @@
       "en_title": "Chapter 8: Context Engineering and the Long-Context vs RAG Decision Tree",
       "order": 201,
       "src_chars": 2171,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fd0b54fef9f1",
       "src": "### 8.7 Beacon Health AI: clinical-notes summarizer's context call\n\nA worked example. Beacon's clinical-notes summarizer takes:\n\n* A dictated note (~3K tokens)\n* The patient's recent visit history (last 3 visits' summaries; ~2K tokens)\n* The patient's active medication list (~500 tokens)\n* A small set of standard clinical-vocabulary references (~1K tokens, cached)\n* The system prompt with the EHR schema (~1.2K tokens, cached)\n\nTotal context per call: ~7.7K tokens of which ~2.2K is cached.\n\nThe team considered putting the patient's _entire_ medical history (up to ~100K tokens for a long-term patient) into context. They tested both approaches on the eval. The findings:\n\n* Full history (100K tokens): marginally better on rare cases where deep history mattered (+0.3 on rubric). Significantly higher cost (~0.30 USD/call vs ~0.018 USD/call). Significantly higher latency (~2400ms vs ~850ms).\n* Recent visits only (2K tokens): nearly equivalent quality on the eval; much cheaper; much faster.\n\nThe team chose recent-visits-only as the default, with a fallback: if the model's `confidence` field comes back below 0.6 _and_ the model flags `medications_unclear: true`, route the call to the long-context version with full history. This is the _escalation pattern_ : most calls get the cheap version; the small fraction that need depth get it.\n\nThe pattern is portable. Many production systems benefit from a tiered context strategy: cheap context as default; expensive context as escalation when the cheap version is uncertain.\n\n\n#### Common Misconception\n\n_More context is always better_ is the assumption that wrecks first-pass context budgets. Long contexts impose three costs: monetary (per-token billing), latency (more tokens to attend to), and quality risk (lost-in-the-middle, distraction from irrelevant content). A model given 100K tokens of which 5K are relevant often performs _worse_ on the task than a model given just the relevant 5K, because the model's attention is diluted across the irrelevant content. The right context is the _minimum_ context that contains the relevant signal, plus a small margin. More-than-minimum is waste; sometimes harmful.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 879,
+      "out_sha": "13601af6c211",
       "note": ""
     },
     {
@@ -2555,11 +2555,11 @@
       "en_title": "Chapter 8: Context Engineering and the Long-Context vs RAG Decision Tree",
       "order": 202,
       "src_chars": 1404,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f83b63b1c115",
       "src": "### 8.8 Triangle Trade-off sidebar: long-context vs RAG (latency-decomposition format)\n\nThe latency-decomposition trace for a single user query in three architectures, in milliseconds:\n\nStage | Long-context (200K corpus) | RAG (200K corpus, top-10 chunks retrieved) | Long-context (10K corpus)  \n---|---|---|---  \nNetwork in | 50 | 50 | 50  \nEmbedding (query) | — | 30 | —  \nVector DB lookup | — | 40 | —  \nReranker | — | 250 | —  \nLLM time-to-first-token | 4200 | 580 | 320  \nLLM streaming (output) | 1800 | 1800 | 1800  \nPost-processing | 80 | 80 | 80  \nNetwork out | 50 | 50 | 50  \n**Total perceived latency (p50)** | **~6180** | **~2880** | **~2300**  \n  \nThree things to read off:\n\n  1. **Long-context with a 200K-token input is dominated by LLM TTFT** (4.2 seconds before the first output token). For interactive use this is unacceptable; for batch use it may be fine.\n  2. **RAG adds retrieval latency (~320ms) but saves much more on LLM TTFT** (580ms vs 4200ms). The net is significantly faster despite the retrieval pipeline.\n  3. **Long-context with a small (10K) corpus is fastest of all**. The decision-tree's left tier (< 500K) is faster than RAG when applicable.\n\nThe latency lesson: **long context is slow on a per-call basis once the input is large**. For interactive products, this often forces RAG even when corpus-size could fit. For batch products, long-context's simplicity may win.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 711,
+      "out_sha": "0aa591f1b7e4",
       "note": ""
     },
     {
