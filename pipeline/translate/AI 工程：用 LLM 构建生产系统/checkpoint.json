@@ -2723,11 +2723,11 @@
       "en_title": "Chapter 8: Context Engineering and the Long-Context vs RAG Decision Tree",
       "order": 216,
       "src_chars": 1062,
-      "status": "pending",
+      "status": "done",
       "src_sha": "25afe61772e6",
       "src": "**Net prediction.** Partial fusion by 2030. The _application-layer_ distinction (RAG architecture vs. long-context architecture) thins because the model handles more of the retrieval. The _engineering-layer_ distinction stays: an indexed corpus is still an indexed corpus; the chunker, embedding model, and indexing pipeline still need engineering attention. What changes is _who_ makes the retrieval decision at query time: from the application's retrieval orchestration to the model's tool-use. Teams still build retrieval infrastructure; teams stop hand-coding retrieve-then-generate loops.\n\nThe deeper observation: **architectures often fuse at the boundary the user sees, while remaining distinct at the engineering layer**. RAG and long-context may converge from the application-developer perspective without converging from the data-engineer perspective. The vocabulary may also shift; _RAG_ as a term may fade even as the underlying engineering survives, the same way _web app_ faded as a distinguishing term once almost everything became a web app.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 315,
+      "out_sha": "491d3b2262ea",
       "note": ""
     },
     {
