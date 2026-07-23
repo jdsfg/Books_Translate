@@ -4415,11 +4415,11 @@
       "en_title": "Chapter 15: Multi-Agent Coordination and the Computer-Use Frontier",
       "order": 357,
       "src_chars": 1848,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ec76b431e824",
       "src": "> **Current as of 2026.** Of everything in this book, the agent-framework section dates fastest. The four frameworks treated as live in the main text (LangGraph, AutoGen, Pydantic AI, Anthropic MCP) are likely to be a different four within eighteen months; CrewAI and OpenAI Swarm sit in Appendix B for the same reason. Stay with the architectural patterns (orchestrator-and-workers, debate, hierarchical decomposition); those outlive whichever framework currently implements them.\n\nChapter 14 built single-agent design. This chapter extends to multi-agent: systems where multiple LLM-based agents coordinate to accomplish a task. It also covers the **computer-use frontier** (agents that operate computers the way humans do — clicking, typing, browsing), which is the 2025–2026 capability that most expanded what agents can do, with the failure modes to match.\n\nThe chapter's core lesson is twofold:\n\n  1. **Most production \"agentic\" systems are simpler than the demo videos suggest.** Multi-agent architectures are an engineering investment with real complexity costs; they're the right answer for some problems and wrong for many others.\n  2. **Computer-use is real and useful, but unreliable in ways that matter.** The 2026 reality is \"use it for the right tasks, with the right safeguards, and accept the failure rate.\" Most production deployments still prefer real APIs when available; computer-use is the last-resort tool.\n\nHelios Customer AI threads through this chapter; their multi-agent decomposition uses an orchestrator-and-workers pattern for complex tickets, with single-agent loops for the routine ones. The deflection-rate KPI from Chapter 1 (the share of tickets resolved autonomously) sits at the center of the trade-off: more capable agents → higher deflection, more capable agents → higher complexity and more failure surface.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 691,
+      "out_sha": "1a4f21c7071f",
       "note": ""
     },
     {
