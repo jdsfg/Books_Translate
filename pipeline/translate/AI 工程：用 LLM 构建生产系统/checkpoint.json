@@ -7043,11 +7043,11 @@
       "en_title": "Chapter 24: The AI Engineering Team, Workflow, and Engineering Judgment",
       "order": 576,
       "src_chars": 3330,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ff15b51bef9e",
       "src": "### Chapter Summary\n\nAI engineering teams in 2026 cluster into product pods (3-8 engineers per pod; ownership of specific AI features) and platform teams (5-15 engineers; shared infrastructure for routing, observability, evals, cost). AI ops is centralized at most companies for production reliability across products. Smaller companies collapse roles; larger sub-divide.\n\nThe development workflow has five phases: spec (with eval-design and cost-envelope); eval (built before code); build (iterating against eval); deploy (canary then progressive); monitor (continuous eval and iteration). The workflow takes 6-12 weeks for substantial features; skipping phases is the failure mode.\n\nCode review for AI features extends classical review with prompt review, schema review, eval coverage review, cost impact, safety considerations. PR templates surface these.\n\nThe \"can we eval this?\" gate (§24.4) is the single most important engineering judgment call. Before committing to build, verify: golden set buildable; rubric operationalizable; labelers achieve usable agreement; threshold defendable. If any answer is no, scope down or kill. The Beacon clinical-decision-support feature was killed at this gate because clinician agreement on treatment suggestions couldn't be made reliable. The kill was the right engineering decision.\n\nStakeholder communication of probabilistic systems requires probabilistic framing: explicit error rates with business context; explicit cost-quality-latency trade-offs; confidence-tagged outputs in user surfaces; incident transparency. Pretending systems are deterministic breaks trust eventually.\n\nThe feasibility-spike template (§24.6) bounds ambiguity-resolving work to 1-2 weeks. Output: a viability assessment with build/kill/research recommendation. The kill rate at spike is healthy; teams with 0% spike-kill are under-spiking.\n\nEngineering judgment about _when to use AI_ extends beyond _can we eval this?_ : the capability-matrix evaluates AI against simpler alternatives (rule-based, classical ML, human-in-the-loop, don't-use-AI). AI is the right answer when simpler doesn't suffice and the AI value justifies the cost-and-risk.\n\nHonest cost-benefit (§24.8) is part of the engineering work. Costs include build, maintenance, infrastructure, risk-management overhead, opportunity cost. Benefits include user outcomes, operational savings, revenue impact, strategic position. The discipline is showing the math; identifying the assumptions; proposing alternatives if the AI feature doesn't justify.\n\nThe Beacon kill (§24.9) is the worked engineering-judgment case. The team killed a clinically-attractive feature because the eval couldn't be made reliable. The decision strengthened the team's rigor and trust over the long term. The discipline of _not building when not building is right_ is a senior engineering skill.\n\nEverything here builds on what the technical chapters established — Chapter 4's eval foundation, Chapter 16's layered architecture as a frame for team structure, Chapter 18's cost discipline as a team practice, Chapter 21's production eval as ongoing operational work, Chapter 23's safety architecture as a shared responsibility. Chapter 25 closes the book by consolidating the anti-patterns this discipline is designed to avoid and looking at where the field is going.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1159,
+      "out_sha": "f0f7bcf75caa",
       "note": ""
     },
     {
@@ -7055,11 +7055,11 @@
       "en_title": "Chapter 24: The AI Engineering Team, Workflow, and Engineering Judgment",
       "order": 577,
       "src_chars": 325,
-      "status": "pending",
+      "status": "done",
       "src_sha": "05c986619ea8",
       "src": "The takeaway: AI engineering is engineering, and the team, the workflow, and the judgment matter as much as the technical disciplines. The most consequential decisions sometimes look like _not building_ — and **recognizing those cases is the senior engineering skill the rest of the practice rests on**.\n\n\n### 24.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 95,
+      "out_sha": "a4a930e108f1",
       "note": ""
     },
     {
