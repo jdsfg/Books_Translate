@@ -3071,11 +3071,11 @@
       "en_title": "Chapter 10: Embeddings, Vector Databases, and Hybrid Search",
       "order": 245,
       "src_chars": 1738,
-      "status": "pending",
+      "status": "done",
       "src_sha": "05f06dec39e8",
       "src": "### 10.9 How This Breaks: the embedding that drifts under your feet\n\n**Failure mode named** : the embedding that drifts under your feet. A team uses an API-based embedding model (OpenAI, Cohere, Voyage). The provider releases an updated version of the embedding model. The provider's API quietly routes new requests to the updated version. The team's existing index (built with the old version) now has vectors that don't align with the new version's query vectors. Retrieval quality degrades silently.\n\n**Real or composite incident** : a composite from across the industry. Several teams have lived through embedding-version updates from OpenAI (text-embedding-ada-002 → text-embedding-3 was the canonical example), with the lesson learned that _embedding model versioning is a real concern_.\n\n**Engineering mitigation** :\n\n  1. **Pin embedding model version explicitly in API calls.** Most providers expose dated versions; use them in production code.\n  2. **Re-embed the corpus when migrating to a new model version.** Mixing vectors from different model versions in the same index produces unpredictable retrieval. Atomic swap to the new index when re-embedding is complete.\n  3. **Embedding-version eval on every model-version change.** Run the eval against both the old and new embedding versions; understand the quality delta before cutover.\n  4. **Monitor production retrieval quality** (Chapter 19): if recall@10 drops by more than threshold, alert.\n\n**The eval that would have caught it** : a _retrieval-version regression eval_ , run on a cadence (weekly minimum) against the production index. Drift detection catches the issue before customers notice. The full mitigation requires the production-eval discipline (Chapter 21).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 639,
+      "out_sha": "6f3f8058465e",
       "note": ""
     },
     {
