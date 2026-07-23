@@ -4919,11 +4919,11 @@
       "en_title": "Chapter 16: The AI System Architecture Stack",
       "order": 399,
       "src_chars": 3487,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f87fa88f213e",
       "src": "#### Think Deeper\n\n**Q1.** _Architecture as a 2030 horizon._ The 9-layer architecture is a 2026 snapshot. By 2030, will the layers consolidate, expand, or remain similar? Argue for one scenario.\n\n**Discussion:** Three possibilities:\n\n**Consolidation argument** : provider-side tooling improves. Anthropic, OpenAI, Google offer integrated platforms that bundle multiple layers (router built in, observability built in, eval tooling built in). The 9-layer architecture collapses to perhaps 4-5 layers as providers absorb the work. Teams that buy from a provider get most of the stack for free; build effort shrinks dramatically.\n\n**Expansion argument** : new layers emerge. Multi-agent systems get their own coordination layer; computer-use agents get their own UI-handling layer; on-device deployment gets its own management layer. The 9 grow to 12-15.\n\n**Continuity argument** : the layers map to durable engineering concerns; the specific tools change but the layer concepts don't. 2030 has 9 layers (or close to it), but the specific implementations are different.\n\n**Most likely 2030** : continuity with light consolidation. The layers correspond to real engineering concerns that don't go away (model selection, routing, agent orchestration, eval, observability, cost, versioning, safety). Provider-side tooling improves but doesn't fully absorb the layers; companies want vendor-independence at lower layers, and the higher layers are inherently product-specific.\n\nA specific 2030 prediction: **the safety layer (Layer 8) becomes much more rigorous and specialized**. As AI capabilities expand, the safety burden grows; safety becomes its own discipline with substantial engineering investment, perhaps splitting into multiple sub-layers (input safety, output safety, policy gating, adversarial defense). The other layers remain recognizable.\n\n**Q2.** _The most-undervalued layer._ The chapter argues that observability and cost tracking are commonly under-invested. Pick the layer you believe is most often under-valued at the typical 2026 production AI team. Defend.\n\n**Discussion:** The strongest candidate for _most under-valued_ is **Eval Platform (Layer 4)**.\n\nDefense:\n\n  1. **The eval discipline (Chapter 4) is the foundation that everything else rests on**. Without it, every other layer's improvements are blind to whether they actually help. You can have great routing, observability, cost tracking, and still ship subtle quality regressions repeatedly because nobody is measuring them.\n\n  2. **It's easy to skip**. Eval infrastructure is invisible to customers; the team feels productive shipping features without it; the cost of skipping it accumulates silently.\n\n  3. **The cost of skipping it is large and lagging**. Teams that skip eval discover their quality has decayed when customers tell them, weeks or months after the decay started. The cost is real but doesn't show up immediately; teams discount it.\n\n  4. **It's harder to retrofit than other layers**. Adding routing later is straightforward (extract the API call, add a router). Adding eval later means building the golden set and rubric from scratch, which is engineer-months of effort. The pain of skipping early grows over time.\n\nAn alternative candidate: **Cost Tracking (Layer 6)**. Same pattern of being skippable, same cost of skipping (the bill arrives and surprises you), same retrofit difficulty. The two layers (eval and cost) are often skipped together at small teams; both come due eventually.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1147,
+      "out_sha": "76224eded004",
       "note": ""
     },
     {
@@ -4931,11 +4931,11 @@
       "en_title": "Chapter 16: The AI System Architecture Stack",
       "order": 400,
       "src_chars": 3327,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ec335cea2573",
       "src": "The general lesson: **layers that aren't customer-visible are most likely to be under-invested**. The discipline is to know that the engineering value of each layer is real even if invisible; the team's architecture review must include them explicitly.\n\n**Q3.** _Cross-layer integration audits._ The chapter treats each layer as a unit with its own build-vs-buy decision and its own owner. But many production failures occur not within a layer but at the _seams_ between layers: a router decision that the eval platform isn't aware of; a safety check that the observability layer doesn't log; a cost-attribution that the routing layer can't supply because per-tenant tags don't propagate through the orchestration. Argue that the team's architecture discipline must include a _cross-layer integration audit_ in addition to the per-layer audit from §16.6. Propose what such an audit would measure.\n\n**Discussion:** The per-layer audit checks completeness within each layer. It does not catch failures that arise from missing handoffs between layers. Three concrete examples of cross-layer failures:\n\n  1. **Router-to-eval gap**. The router selects models per the cost-aware doctrine, but the eval platform's regression suite only runs against the default model. A router change shifts traffic to a model with subtle quality degradation; the eval is blind because it never tested that model on real production traffic. The eval and router both pass their own audits, but the seam between them is broken.\n\n  2. **Safety-to-observability gap**. The safety layer rejects 0.3% of requests. The observability layer captures traces for accepted requests but not for rejected ones. When a safety incident occurs (a request that should have been rejected wasn't), the team has no trace to debug. Each layer is internally complete; the seam is broken.\n\n  3. **Orchestration-to-cost-tracking gap**. The orchestration layer creates per-call records with tenant identifiers; the cost-tracking layer aggregates by model and provider but not by tenant. Per-tenant cost reports are impossible. Both layers pass internal audits; the data contract between them is broken.\n\nA cross-layer integration audit would measure:\n\n* **Data-contract completeness** : for each pair of adjacent layers, what data flows between them? Is the schema documented? Is the propagation tested? Example: per-tenant identifiers must propagate from application layer through orchestration through router through observability and cost. A break anywhere defeats per-tenant attribution.\n* **Decision-coupling completeness** : when one layer makes a decision (router selects a model; safety rejects a request; orchestration runs a tool), does the other relevant layer have a corresponding action (eval covers that model; observability captures the rejection; cost tracking attributes the tool cost)?\n* **End-to-end test coverage** : synthetic traces that exercise the full path across layers, with assertions at each layer's seam. The eval covers per-layer correctness; cross-layer tests cover correctness at the seams.\n\nCadence: cross-layer audit alongside the quarterly per-layer audit, perhaps as a half-day session after the per-layer reviews. Participants include the owners of all relevant layers (not just one); the discussion focuses on the data and decision flows.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 955,
+      "out_sha": "9631260c9e0e",
       "note": ""
     },
     {
@@ -4943,11 +4943,11 @@
       "en_title": "Chapter 16: The AI System Architecture Stack",
       "order": 401,
       "src_chars": 930,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a416a86efdfd",
       "src": "The deeper principle: **architecture is not a set of components; it is a set of components plus the contracts between them**. The chapter's 9-layer model is necessary but not sufficient. The full architecture discipline is component-completeness _and_ contract-completeness. The cross-layer audit is the practice that surfaces contract gaps before they become incidents.\n\nA specific operational tip: maintain a \"data lineage\" diagram per project that shows which fields originate at which layer and propagate through which others. The diagram is the explicit artifact of the cross-layer contracts. New features that need new fields update the diagram; the audit verifies that fields the diagram declares are actually present at each downstream layer.\n\nThe chapter's lesson, generalized: per-layer thinking is the entry point; cross-layer thinking is the maturity. Teams that ship reliably in production have both disciplines.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 234,
+      "out_sha": "bba17143e9b3",
       "note": ""
     },
     {
