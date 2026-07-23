@@ -5879,11 +5879,11 @@
       "en_title": "Chapter 20: Voice AI in Production",
       "order": 479,
       "src_chars": 1873,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f4e12af0a8e6",
       "src": "### 20.9 Triangle Trade-off sidebar: voice architecture choices (latency-decomposition format)\n\nLatency decomposition for a single voice interaction:\n\n**Architecture A: STT → text LLM → TTS** (traditional 2023 pipeline)\n\n* Audio in (streaming): 0ms (continuous)\n* STT processing: 400ms (waits for end-of-turn + transcription)\n* Text LLM call: 800ms (Sonnet 4 with full context)\n* TTS synthesis: 600ms (waits for full response + audio generation)\n* Audio out: 50ms (first audio chunk)\n* **Total perceived TTFT: ~1850ms**\n\n**Architecture B: End-to-end voice (OpenAI Realtime)** (2026 default)\n\n* Audio in (streaming): 0ms\n* End-of-turn detection: 350ms\n* Model processing (audio-to-audio): 150ms\n* Audio out: 50ms (first audio chunk)\n* **Total perceived TTFT: ~550ms**\n\n**Architecture C: End-to-end voice + parallel tool execution** (Helios production)\n\n* Audio in (streaming): 0ms\n* End-of-turn detection: 350ms\n* Model processing: 100ms (filler audio: \"let me check that...\")\n* Tool execution (parallel): runs in background; doesn't block\n* Audio out: 50ms\n* (Tool result feeds in after the filler audio)\n* **Total perceived TTFT: ~500ms**\n\nWhat to read off:\n\n  1. **End-to-end voice is dramatically faster than STT+LLM+TTS** (~3x improvement). The architectural choice is the largest latency lever.\n  2. **Filler audio + parallel tool execution** further reduces perceived latency. The user hears the agent talking before the actual data arrives.\n  3. **Sub-500ms is achievable** with the 2026 stack, marginal with careful engineering. Sub-300ms is competitive; Cartesia's specialty models can achieve it.\n\nFor Helios's customer-support volume, the latency difference between architecture A and architecture B is the difference between \"users hang up frustrated\" and \"users have a conversation.\" The architectural choice is product-critical, not just engineering-elegant.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 821,
+      "out_sha": "4cb6dbf38adc",
       "note": ""
     },
     {
@@ -5891,11 +5891,11 @@
       "en_title": "Chapter 20: Voice AI in Production",
       "order": 480,
       "src_chars": 1828,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7c86a8806cf0",
       "src": "### 20.10 How This Breaks: the agent that talked over the customer\n\n**Failure mode named** : the agent that talked over the customer. End-of-turn detection mis-triggers; the agent thinks the user has finished but the user was just pausing; the agent starts talking; the user is interrupted mid-thought. The conversation breaks down. The user may hang up, repeat themselves, or get frustrated.\n\n**Real or composite incident** : a composite. A voice agent deployment with EOT threshold set too aggressively (200ms silence). On phone calls with poor connection quality, brief audio dropouts triggered EOT; the agent interrupted users; complaints accumulated. The team raised the threshold; complaints dropped; the latency cost was minor.\n\n**Engineering mitigation** :\n\n  1. **Tune EOT per use case**. Customer support tolerates 350-400ms; the team should validate against eval on representative calls.\n  2. **Confidence-based EOT**. Use a model that produces confidence scores for end-of-turn; low confidence triggers a longer wait. Most modern voice models do this natively.\n  3. **Connection-quality awareness**. Detect call quality issues (jitter, dropouts) and increase EOT thresholds when quality is poor.\n  4. **Graceful interruption recovery**. If the agent did interrupt mid-thought, the model should detect this from the user's response (\"I wasn't finished, I was about to say...\") and apologize/recover gracefully.\n\n**The eval that would have caught it** : a _voice-conversation eval_ that includes recorded conversations with pauses, hesitations, and connection-quality issues. The eval scores whether the agent handled them appropriately (no false interruptions; graceful recovery when interrupted). Without this eval slice, the team optimizes for happy-path conversations and discovers the failure mode in production.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 616,
+      "out_sha": "a1eccb1818f2",
       "note": ""
     },
     {
