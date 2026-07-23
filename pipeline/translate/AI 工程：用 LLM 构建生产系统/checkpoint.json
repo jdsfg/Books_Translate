@@ -1211,11 +1211,11 @@
       "en_title": "Chapter 4: Eval-Driven Development — The Spec That Doesn't Exist Yet",
       "order": 90,
       "src_chars": 2095,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f006d0d1851a",
       "src": "Every classical software interview asks you, at some point, to write a function. The interviewer says: _write a function that takes a list of integers and returns the largest one_. You write the function. The interviewer asks: _how do you know it works?_ You write a test. The interviewer adds a constraint: _what if the list is empty?_ You add a test case. _What about negative numbers?_ You add a test case. The interview ends and you both know what _works_ means: the function passes the tests, the tests cover the cases, the spec is the tests.\n\nNow imagine the same interview, but the function is: _given a clinical note dictated by a doctor, produce a structured summary suitable for insertion into the patient's chart_. Write a test for this function.\n\nYou can't.\n\nOr rather, you can't write a test the way you wrote the test for _largest integer_. There is no input-output pair where the output is the unique correct answer. There are many correct answers. There are degrees of correct (a summary that captures the chief complaint but misses the medication change is partially correct). There are styles — terse versus elaborate, structured versus flowing. There are dimensions you care about that are hard to articulate: _clinical accuracy_ , _completeness_ , _appropriate level of detail_ , _no fabricated information_. There are dimensions the doctor cares about that you didn't think to articulate.\n\nThis is the gap that the discipline of evals fills. **Evals are tests for systems that do not have a unique correct output** , and AI engineering is the field that has to operate inside that gap professionally, at scale, on a deadline. Aiyana spent her second week at Beacon writing test cases for the CodeReview Bot, and she could write them in her sleep. She spent her second _month_ writing evals for the clinical-notes summarizer, and she could not. The difference is the difference between Chapter 3 and this chapter.\n\nIf you take only one thing from this book, take this: **the eval is the spec, and the eval-driven workflow is the discipline.** Everything else builds on this.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 669,
+      "out_sha": "11c5efa4077c",
       "note": ""
     },
     {
