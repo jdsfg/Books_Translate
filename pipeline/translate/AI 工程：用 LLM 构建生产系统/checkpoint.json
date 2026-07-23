@@ -3599,11 +3599,11 @@
       "en_title": "Chapter 12: Multimodal RAG and Document Understanding",
       "order": 289,
       "src_chars": 2334,
-      "status": "pending",
+      "status": "done",
       "src_sha": "813fb0314114",
       "src": "### 12.8 How This Breaks: the page that wasn't processed\n\n**Failure mode named** : the page that wasn't processed. The ingestion pipeline runs; most pages succeed; one page fails (corrupted scan, unsupported language, VLM API error not retried). The failure is logged but not surfaced to the system. A user's query returns an answer based on retrieved chunks; the relevant content for their query was actually on the failed page; the answer is wrong by omission.\n\n**Real or composite incident** : a composite from Strata. A particular contract had a critical clause on page 23. Page 23's scan was poor; the VLM failed to extract cleanly; the pipeline logged the failure and skipped the page. The contract was indexed at pages 1-22 and 24-50. A user query about the contract's payment terms (which were on page 23) retrieved chunks from elsewhere in the contract; the answer was wrong by missing information. The customer noticed when they cross-referenced the answer with the original document.\n\n**Engineering mitigation** :\n\n  1. **Failed-page tracking** : every page-ingestion attempt has a status (success / failed / partial); failures are first-class data, not just log lines. A dashboard shows the failed-page count per document.\n\n  2. **Query-time awareness of incomplete documents** : when a query retrieves from a document with failed pages, the answer includes a flag: \"this contract has 3 unprocessed pages; the answer may be incomplete.\" The user knows to verify.\n\n  3. **Failed-page recovery** : a background job periodically retries failed pages with a stronger model or a different prompt. The recovery rate is typically 30-60% (some failures are recoverable; some are permanent like truly damaged scans).\n\n  4. **Document-level completeness checking** : before a document is added to the production index, the pipeline verifies an acceptable completeness ratio (e.g., >95% pages successfully processed). Documents below threshold are quarantined for manual review.\n\n**The eval that would have caught it** : a _coverage eval_ — a slice of queries where the labeled-relevant content is known to be on specific pages; the eval checks whether the retrieval actually returned content from those pages. If pages are silently missing from the index, the coverage eval drops. Without this slice, the failure mode is invisible.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 737,
+      "out_sha": "c13fcaae8f90",
       "note": ""
     },
     {
