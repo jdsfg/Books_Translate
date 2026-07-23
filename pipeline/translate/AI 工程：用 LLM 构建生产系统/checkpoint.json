@@ -2231,11 +2231,11 @@
       "en_title": "Chapter 7: Structured Output — Forcing the LLM to Speak JSON",
       "order": 175,
       "src_chars": 2221,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3a9f53f50447",
       "src": "#### Failure mode 1: schema too rigid\n\nThe schema is so constrained that the model cannot represent valid outputs. The `severity: Literal[\"critical\", \"major\", \"minor\"]` field we wrote in §7.3 is itself an example: the model encounters a comment-level issue that doesn't fit any of those three tiers, and it has to either (a) misclassify (force one of the available tiers, even though none fits), or (b) refuse to produce output. Both are bad.\n\nMitigation: design schemas with **explicit catch-all options** for the long tail. The fix to §7.3's schema is to extend severity to `Literal[\"critical\", \"major\", \"minor\", \"informational\"]` and let the model use `\"informational\"` for items that don't merit a real severity tier. The catch-all does not have to be common; it has to exist. Same pattern in other fields: add an `unspecified` enum value wherever the model needs an escape.\n\n\n#### Failure mode 2: schema too loose\n\nThe opposite. The schema allows arbitrary strings where it should constrain. The model produces JSON that validates but contains free-form text that the downstream code cannot use. Example: a field defined as `category: str` instead of `category: Literal[\"A\", \"B\", \"C\"]`; the model produces `\"category\": \"kind-of-A-but-also-B\"` and breaks the downstream switch statement.\n\nMitigation: **constrain field types as tightly as the downstream code's expectations**. Use `Literal` for finite categorical sets; use `Field(pattern=...)` for format-constrained strings; use `Field(ge=..., le=...)` for numeric ranges. The validator enforces the constraint; the downstream code can trust it.\n\n\n#### Failure mode 3: semantic-but-not-syntactic errors\n\nThe output is valid JSON, conforms to the schema, but is wrong. The model says `severity: critical` for a typo fix; the model lists a `file` that doesn't exist in the diff; the model fabricates a `suggested_fix` that doesn't apply. Validation does not catch this; only an eval does.\n\nMitigation: **structural validation is not enough; rubric or LLM-as-judge eval against semantic correctness is required**. The Chapter 4 eval discipline applies here. A team that ships structured output without the eval layer is shipping a parser that validates wrong answers.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 994,
+      "out_sha": "9830616a7f98",
       "note": ""
     },
     {
@@ -2243,11 +2243,11 @@
       "en_title": "Chapter 7: Structured Output — Forcing the LLM to Speak JSON",
       "order": 176,
       "src_chars": 1481,
-      "status": "pending",
+      "status": "done",
       "src_sha": "92acbc8a0769",
       "src": "### 7.8 Retries with validation\n\nThe native modes are very reliable but not infallible. Even at 99.5% schema conformance, at 100K calls per day you see 500 failures. The right pattern is **retry with the validation error fed back into the prompt**.\n    \n    \n    from tenacity import retry, stop_after_attempt, retry_if_exception_type\n    from pydantic import ValidationError\n    \n    @retry(\n        stop=stop_after_attempt(3),\n        retry=retry_if_exception_type(ValidationError),\n        reraise=True,\n    )\n    def extract_review(diff_text: str) -> CodeReview:\n        return client.messages.create(\n            model=\"claude-sonnet-4-20260315\",\n            max_tokens=1024,\n            response_model=CodeReview,\n            messages=[{\"role\": \"user\", \"content\": diff_text}],\n        )\n    \n\n`instructor`'s built-in retry does this more cleanly than `tenacity` directly: it captures the validation error, appends it as an assistant message + user message (\"your previous response failed validation with the following error: ... please retry\"), and re-calls. The model usually self-corrects on the retry.\n\nTwo things to watch:\n\n  1. **Cap the retry count**. Three attempts is the working default. More attempts add cost without proportional success.\n  2. **Log retries as a metric**. If your retry rate exceeds 1%, the prompt or the schema needs work. If it exceeds 5%, you have a structural problem (schema mismatch, ambiguous instructions, model not capable for the task).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 891,
+      "out_sha": "b8e62ef6e5df",
       "note": ""
     },
     {
