@@ -2831,11 +2831,11 @@
       "en_title": "Chapter 9: RAG Architecture from First Principles",
       "order": 225,
       "src_chars": 2068,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5e1ef7b862a3",
       "src": "### Chapter Summary\n\nRAG addresses three problems: the knowledge cutoff, your-data, and hallucination under uncertainty. The architecture is a seven-step loop: embed query → vector search → optional rerank → build prompt → LLM generates → post-process. The four levers (chunking, embedding, retrieval, ranking) each have engineering depth that the next three chapters build out.\n\nNaive RAG demos well but does not ship. The gap between naive-RAG-quality (50–65% pass rate) and production-quality RAG (80%+) is a year of disciplined engineering across all four levers, with every change validated by eval. Strata Research's V1→V4 path is the typical arc.\n\nRAG evaluation has two layers: retrieval evaluation (recall@K, MRR, NDCG, requires labeled relevance) and answer evaluation (faithfulness, answer relevance, citation grounding, requires answer rubric). Both layers are required; either alone misses failure modes.\n\nThe Google AI Overviews failure (Thread B Failure 2) is the canonical RAG-failure story: low-trust retrieval source produced a confident wrong answer. The lesson — _retrieval source quality matters more than LLM quality_ — is at the center of production RAG engineering. The mitigations (source provenance, allowlists, retrieval audits) are now standard.\n\nThe motivation traces back to hallucination (Chapter 2); the methodology is the eval discipline of Chapter 4 applied at two layers; the prompt-level grounding requirements come from Chapter 6; the context-window framing comes from Chapter 8. Chapter 10 engineers the four levers in depth; Chapter 11 covers advanced patterns and multi-axis eval; Chapter 12 extends to multimodal.\n\nWhat this chapter argues, in one sentence: **RAG is not search bolted onto an LLM — it is the architectural pattern that grounds the model in retrievable facts.** Retrieval quality is the dominant lever; the four levers all require discipline; the evaluation is rigorous and the iteration is patient. Teams that internalize this ship; teams that look for shortcuts revisit them the hard way.\n\n\n### 9.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 729,
+      "out_sha": "cf9ae8e779c0",
       "note": ""
     },
     {
