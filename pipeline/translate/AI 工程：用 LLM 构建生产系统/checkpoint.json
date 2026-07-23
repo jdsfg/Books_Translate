@@ -2519,11 +2519,11 @@
       "en_title": "Chapter 8: Context Engineering and the Long-Context vs RAG Decision Tree",
       "order": 199,
       "src_chars": 2801,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f3e28a9ce283",
       "src": "#### Move 4: just-in-time loading via tools\n\nThe most context-efficient move is to _not_ preload all the potentially-useful context, but to give the model tools to fetch what it needs. The model decides what to look up, the tool fetches it, the tool output goes into the next inference turn's context.\n\nFor Helios's customer support agent: instead of pre-loading the customer's full account history (which might be 20K tokens), give the agent a `get_customer_field(field)` tool. The agent fetches _only the fields it needs_. The context-per-call shrinks dramatically; the trade-off is more inference turns (one per tool call).\n\nThe tools pattern is the most aggressive form of context engineering; Chapter 13 builds it out.\n\n\n### 8.5 Lost in the middle: a real phenomenon, partially mitigated\n\nThe 2023 paper by Liu et al. (\"Lost in the Middle: How Language Models Use Long Contexts\") established that, when relevant information is placed at varying positions in a long context, model accuracy varies based on position. Information at the beginning of the context and at the end is more reliably attended to than information in the middle.\n\nBy 2026, frontier models have improved on this: they are noticeably better at long-context retrieval than 2023-era models. But the phenomenon has not been eliminated. The practical implication for context engineering:\n\n* **Put critical instructions at the end of the prompt** (closest to where generation begins).\n* **Put the most relevant retrieved content at the start and at the end** of the retrieved-context block.\n* **Sort retrieved chunks by relevance** (highest first, lowest second-to-last; the absolute middle of a large block of retrieved chunks is the weakest position).\n* **For very long contexts ( >50K tokens of retrieved material), expect some lost-in-the-middle loss** and consider whether the corpus can be reduced via stronger retrieval or chunking.\n\nThese are tactics, not laws. Frontier models handle long contexts well enough that the placement matters less than it did in 2023, but the marginal effect is still real and worth engineering around for high-volume or high-stakes systems.\n\n\n### 8.6 The Long-Context vs RAG Decision Tree (binding workflow #4)\n\nThe central architectural question of 2026 is this: when do you put everything in long context, and when do you build a RAG pipeline?\n\nThe answer depends on three things:\n\n  1. **The size of your relevant corpus.** How many tokens of text might be relevant to a typical query?\n  2. **The latency tolerance.** Long-context calls are slower than RAG-augmented calls (where retrieval has narrowed the input).\n  3. **The cost.** Long-context calls pay for every token of the included corpus on every call; RAG pays for retrieval infrastructure plus only the retrieved chunks per call.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 987,
+      "out_sha": "6c1d333f8270",
       "note": ""
     },
     {
@@ -2531,11 +2531,11 @@
       "en_title": "Chapter 8: Context Engineering and the Long-Context vs RAG Decision Tree",
       "order": 200,
       "src_chars": 2031,
-      "status": "pending",
+      "status": "done",
       "src_sha": "681ebf2d78c5",
       "src": "#### The 2026 decision tree\n\nCorpus size | Recommendation | Why  \n---|---|---  \n**< 500K tokens** | **Long-context wins** | Simpler. No retrieval infrastructure; no embedding choices; lower per-call latency at this scale; the corpus fits in the window (with Gemini 2.5 Pro's 2M, even more headroom).  \n**500K–10M tokens** | **Real architectural call** | Both options viable. Decide on latency, cost, accuracy of the specific use case. Often hybrid: long-context for hot subsets; RAG for the long tail.  \n**> 10M tokens** | **RAG wins** | Long-context can't fit; cost economics favor selective retrieval; freshness easier (incrementally update the corpus, no re-running long-context calls).  \n  \nThese boundaries are **dated**. They will shift as context windows grow. By 2028, the boundaries may be 2M / 50M / 500M. By 2030, _RAG only above 100M tokens_ may be the rule. The decision-tree _structure_ — three tiers based on corpus size — is durable; the _numbers_ are not.\n\n\n#### Tier-by-tier discipline\n\n**< 500K tokens (long-context tier)**:\n\n* Engineer for the cheapest, most cacheable preamble.\n* Watch lost-in-the-middle: put critical content at the start and end.\n* Avoid premature RAG: the operational complexity of retrieval is real; if your corpus fits, skip retrieval.\n\n**500K–10M tokens (judgment tier)** :\n\n* Run both architectures on a realistic eval; compare on quality, latency, cost.\n* Consider hybrid: long-context for the most-frequently-accessed subset, RAG for the rest.\n* If the corpus is mostly static and queries are similar, lean long-context (with caching). If the corpus is dynamic or queries are diverse, lean RAG.\n* This is where the team's eval discipline (Chapter 4) earns its keep: the choice is data-driven.\n\n**> 10M tokens (RAG tier)**:\n\n* You are doing RAG. Chapter 9 builds the architecture.\n* Apply standard RAG eval discipline (Chapter 11).\n* Don't try to fit a 50M-token corpus into a 2M context window through aggressive summarization; the lossy compression hurts more than RAG's complexity.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 883,
+      "out_sha": "0ded17093a10",
       "note": ""
     },
     {
