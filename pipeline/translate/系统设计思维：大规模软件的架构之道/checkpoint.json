@@ -2919,11 +2919,11 @@
       "en_title": "Chapter 16: Designing for Failure — Redundancy, Failover, and Graceful Degradation",
       "order": 234,
       "src_chars": 2519,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f6370512f38c",
       "src": "### 16.8 The Thread of Detective Clues — Reading Logs and Metrics\n\nWhen an incident occurs, the first challenge is not fixing it — it is understanding what is happening. The logs and metrics that the system emits are the evidence. Reading them correctly is the detective skill that separates engineers who fix incidents quickly from those who flail.\n\nIn SocialSnap's Redis outage, the key clues were present in the monitoring data the whole time:\n\n**Clue 1 — Redis error rate climbing.** The Redis client library logs connection errors and timeouts. A graph of Redis error rate over time shows a sharp increase starting at 2:47 PM. This is the earliest signal — the root cause is already visible at the moment the incident begins.\n\n**Clue 2 — Application server latency increasing.** Application server P99 latency (the 99th percentile response time — the slowest 1% of requests) increases from 200ms to 30 seconds. This matches the Redis timeout duration. The application is waiting for Redis. The latency increase lags the Redis error rate by about 30 seconds — the time it takes for one timeout cycle to complete.\n\n**Clue 3 — Thread pool saturation.** The JVM (or Python WSGI) monitoring shows active thread count approaching the thread pool maximum. This is the mechanism clue: why is latency increasing? Because threads are being held by waiting requests.\n\n**Clue 4 — Error rate spike.** The load balancer's \"503 responses\" metric spikes to near 100% of requests. This is the user-visible impact — the signal that the incident is \"declared.\"\n\nThe timeline of clues: Redis errors → application latency increase (30-second lag) → thread pool saturation → 503 errors. Each clue explains the next. An engineer reading this sequence in real time can trace the cascade backward: 503 errors are caused by thread pool exhaustion, which is caused by Redis timeout latency, which is caused by Redis errors.\n\nThe principle: **monitor leading indicators, not just lagging indicators.** Error rates and latency are lagging indicators — they tell you the system is failing _after_ users are affected. Redis error rate is a leading indicator — it tells you a failure is beginning _before_ users are affected. Good observability means monitoring the dependencies and internal metrics that precede user-visible failures, not just the user-visible failures themselves.\n\nThis preview of incident investigation will be developed in full in Chapter 17, where we build the observability stack that makes this kind of analysis possible.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 854,
+      "out_sha": "a2680063c291",
       "note": ""
     },
     {
@@ -2931,11 +2931,11 @@
       "en_title": "Chapter 16: Designing for Failure — Redundancy, Failover, and Graceful Degradation",
       "order": 235,
       "src_chars": 2185,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4a0f50536829",
       "src": "### 16.9 Chaos Engineering — Testing Failure Before It Happens\n\nHow do you know your circuit breakers work? How do you know your fallback strategies are correctly implemented? How do you know the failover completes within 30 seconds?\n\nYou test them. Not in a staging environment, and not by waiting for production failures — in production, intentionally.\n\nThis is **chaos engineering** : the practice of deliberately introducing failures into a production system to verify that the system responds correctly and that the team's incident response procedures work.\n\nNetflix popularized chaos engineering with **Chaos Monkey** — a service that randomly kills production instances. The goal: if servers can die at any time, the team must ensure the system handles server death gracefully. And by testing it repeatedly, they verify that it actually does.\n\nThe chaos engineering process:\n\n  1. **Define the steady state:** What does normal look like? What are the key metrics that indicate healthy operation? (Request latency under 200ms, error rate below 0.1%, all health checks green.)\n  2. **Hypothesize:** \"If we kill one application server, we believe the load balancer will redistribute traffic within 5 seconds and the steady state will be maintained.\"\n  3. **Introduce failure:** Kill one application server in production.\n  4. **Observe:** Did the steady state hold? If not, what degraded and by how much?\n  5. **Improve:** If the hypothesis was wrong (e.g., the failover took 30 seconds instead of 5), fix the issue. Then repeat.\n\nChaos engineering is not about causing random chaos — it is about controlled experiments that reveal gaps in resilience assumptions. The key word is _controlled_ : failures are introduced with known blast radius (limited to non-critical traffic or a subset of users) and with the team on standby to abort if the experiment goes wrong.\n\nFor a team that has never done chaos engineering, the starting point is simple: schedule a regular \"game day\" where known failure scenarios are simulated — kill an application server, terminate a database replica, saturate the Redis thread pool. Observe how the system responds. Fix what breaks. Build confidence.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 738,
+      "out_sha": "311db08da34d",
       "note": ""
     },
     {
@@ -2943,11 +2943,11 @@
       "en_title": "Chapter 16: Designing for Failure — Redundancy, Failover, and Graceful Degradation",
       "order": 236,
       "src_chars": 1622,
-      "status": "pending",
+      "status": "done",
       "src_sha": "db5efab8dbc7",
       "src": "### 16.10 Tradeoff Matrix — Final Update\n\nThe Tradeoff Matrix is now complete across all sixteen chapters. The final reliability-patterns row:\n\nStrategy | Benefit | Cost | When to Use  \n---|---|---|---  \nRedundancy / active-passive failover | Eliminates single points of failure; automatic recovery from hardware failure | Passive instances are \"wasted\" capacity; failover time creates brief unavailability | Any component that must survive single instance failure  \nActive-active | No failover time; all capacity is used; handles failures without user-visible downtime | Write coordination complexity; potential for split-brain | Read-heavy workloads; stateless services; components where brief coordination delay is acceptable  \nCircuit breaker | Prevents cascading failures; fast failure detection and recovery; preserves thread pool capacity | Complex state machine; threshold tuning required; false positives can cause unnecessary degradation | Any inter-service or external dependency call in a system where cascades are a risk  \nBulkhead | Isolates failures to the resource pool they affect; protects critical paths | More complex resource configuration; thread/connection pool management overhead | Systems with mixed-criticality features sharing the same application server infrastructure  \nGraceful degradation | System remains partially usable during failures; better user experience than complete outage | Requires explicit design of fallback behaviors; testing all degradation paths is complex | User-facing systems where partial functionality is better than complete unavailability  \n  \n\n### 16.11 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 489,
+      "out_sha": "497926e2a1da",
       "note": ""
     },
     {
@@ -2955,11 +2955,11 @@
       "en_title": "Chapter 16: Designing for Failure — Redundancy, Failover, and Graceful Degradation",
       "order": 237,
       "src_chars": 3489,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0f4bea25f9ad",
       "src": "#### Concept Check\n\n**Q1.** Define MTBF and MTTR. Which one has a larger impact on availability in a system that fails frequently with short recovery times?\n\n**Answer:** MTBF (Mean Time Between Failures) is the average time between failure events — how often the system fails. MTTR (Mean Time To Recovery) is the average time to restore service after a failure — how quickly the system recovers.\n\nAvailability = MTBF / (MTBF + MTTR).\n\nIn a system that fails frequently with short recovery times, MTTR has a larger marginal impact. Consider: MTBF = 10 hours (fails six times per day), MTTR = 5 minutes. Availability = 10 / (10 + 0.083) ≈ 99.2%. If MTTR is reduced to 1 minute (5x improvement), availability becomes 10 / (10 + 0.017) ≈ 99.8% — a significant improvement. If MTBF is doubled to 20 hours (system fails half as often), availability becomes 20 / (20 + 0.083) ≈ 99.6% — also a significant improvement, but achieved by halving failure frequency, which is often harder than improving recovery speed.\n\nIn high-frequency failure environments (hardware failures, flaky network links), reducing MTTR is often more achievable than drastically reducing MTBF. This is the philosophy of SRE: invest in fast detection, fast diagnosis, and fast recovery rather than trying to achieve impossible reliability on individual components.\n\n**Q2.** Describe the three states of a circuit breaker and what triggers transitions between them.\n\n**Answer:** A circuit breaker has three states:\n\n**Closed:** Normal operation. Calls pass through to the dependency. The circuit breaker monitors success and failure rates over a rolling window. Transition to Open is triggered when the failure rate exceeds a configured threshold (e.g., 50% failures in the last 30 seconds, or 10 consecutive failures).\n\n**Open:** The circuit is tripped. All calls to the dependency are immediately rejected with a failure response — no connection is attempted. This prevents thread pool exhaustion and fails fast. Transition to Half-Open is triggered by a timer (e.g., after 60 seconds of being open, automatically transition to test recovery).\n\n**Half-Open:** A testing state. A limited number of calls are allowed through to the dependency. If a configured number of consecutive calls succeed (e.g., 3 successes), the circuit transitions back to Closed (dependency has recovered). If a call fails, the circuit immediately transitions back to Open (dependency is still failing).\n\n**Q3.** What is the difference between active-passive and active-active failover? Give one advantage and one disadvantage of each.\n\n**Answer:** Active-passive: one instance handles traffic (active); one or more wait in standby (passive). When the active fails, the passive is promoted to active. Advantage: no write coordination complexity — only one instance accepts writes at a time. Disadvantage: failover time (the interval between active failure and passive promotion) causes brief unavailability; the passive instance is idle capacity under normal conditions.\n\nActive-active: multiple instances simultaneously handle traffic. When one fails, the load balancer redistributes its traffic to the remaining instances. Advantage: no failover time — remaining instances were already handling traffic and absorb the failed instance's share immediately. Disadvantage: for writable state, multiple active writers require coordination to avoid conflicts (split-brain scenarios, write conflicts), adding complexity and potential consistency issues.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1166,
+      "out_sha": "708672be7555",
       "note": ""
     },
     {
@@ -2967,11 +2967,11 @@
       "en_title": "Chapter 16: Designing for Failure — Redundancy, Failover, and Graceful Degradation",
       "order": 238,
       "src_chars": 1196,
-      "status": "pending",
+      "status": "done",
       "src_sha": "628ff6180d89",
       "src": "**Q4.** Explain graceful degradation using SocialSnap as an example. Name one feature that should degrade first and one that should be protected.\n\n**Answer:** Graceful degradation means reducing functionality in a controlled, prioritized way when some components fail, rather than failing completely. Non-essential features are degraded first; essential features are protected with all available resources.\n\nIn SocialSnap, the \"Trending Topics\" sidebar is a Tier 3 feature — it is non-essential. If the service that computes trending topics fails, the application should hide the sidebar entirely and serve the rest of the page normally. Users get a slightly reduced UI but can still use the application.\n\nThe login and feed-viewing features are Tier 1 — they are the core of the application. If the system is under severe load or partial failure, these features should be protected: they have dedicated thread pool capacity (bulkhead pattern), their dependencies have tight circuit breakers, and fallback strategies (cached feeds, database session fallback) are in place. Failing to serve the trending sidebar is acceptable; failing to let users log in or view their feeds is a complete outage.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 379,
+      "out_sha": "49da306291af",
       "note": ""
     },
     {
@@ -2979,11 +2979,11 @@
       "en_title": "Chapter 16: Designing for Failure — Redundancy, Failover, and Graceful Degradation",
       "order": 239,
       "src_chars": 3344,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3d847d9899dd",
       "src": "#### Application Problems\n\n**Q1.** SocialSnap's application server calls three services for a typical page load: the User Service (to get the logged-in user's profile), the Feed Service (to get the user's feed), and the Trending Service (to get trending topics). Each service has 99% availability. Without a circuit breaker, what is the probability that a page load succeeds? With circuit breakers and graceful degradation (where the Trending Service failure is gracefully handled), what is the probability?\n\nHint\n\nConsider which service failures are blocking (they prevent the page from loading at all) and which are non-blocking (they degrade the page but don't prevent it from loading).\n\n**Answer:** Without circuit breaker or graceful degradation: all three services must succeed. Probability = 0.99 × 0.99 × 0.99 = 0.970. 97% success rate — approximately 3% of page loads fail.\n\nWith circuit breaker and graceful degradation for the Trending Service: a Trending Service failure causes the trending topics to be omitted from the page, but the page loads successfully. The page load succeeds as long as the User Service and Feed Service succeed, regardless of the Trending Service.\n\nProbability of User Service AND Feed Service succeeding = 0.99 × 0.99 = 0.9801. The page always loads as long as both essential services are up (with or without trending topics).\n\nBreaking down the outcomes with graceful degradation:\n\n* **Fully functional page** (all three services up): 0.99 × 0.99 × 0.99 = 97.0%\n* **Degraded but usable page** (User + Feed up, Trending down): 0.99 × 0.99 × 0.01 = 0.98%\n* **Page fails completely** (User Service or Feed Service down): 1 − 0.9801 = 1.99%\n\nThis improvement (3% of page loads fail completely → 1.99% fail completely, with an additional 0.98% delivering a degraded-but-usable experience) demonstrates the value of graceful degradation. The absolute improvement in complete failure rate is modest, but the user experience improvement is significant: users who would have seen a total error now see a slightly reduced-functionality page instead.\n\n**Q2.** During SocialSnap's Tuesday outage, an engineer proposes two fixes: (a) increase the thread pool size from 200 to 2000 threads to handle more concurrent slow Redis calls, and (b) reduce the Redis connection timeout from 30 seconds to 500 milliseconds. For each fix, analyze whether it prevents the outage, and identify any new problems it introduces.\n\nHint\n\nThink about what happens to each fix at scale. Does it solve the root cause or just delay the problem?\n\n**Answer:** Fix (a): Increase thread pool to 2000 threads.\n\nAnalysis: This delays the problem but does not prevent it. With a 30-second Redis timeout and 2000 threads, the system can absorb 10 times more concurrent stalled requests before the thread pool fills. If the Redis failure lasts 30 seconds (threads hold for the full timeout), 2000 threads can hold 2000 simultaneous stuck requests. After that, the pool is still exhausted.\n\nNew problems: 2000 threads consume 10x more memory (threads are not free — each takes ~1 MB of stack space for its call stack). 2000 concurrent threads increase context-switching overhead. Most importantly, this is a band-aid: the root problem (threads being held by a failing dependency) is unchanged.\n\nFix (b): Reduce Redis timeout from 30 seconds to 500ms.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1404,
+      "out_sha": "f1a8ee9ee10d",
       "note": ""
     },
     {
@@ -2991,11 +2991,11 @@
       "en_title": "Chapter 16: Designing for Failure — Redundancy, Failover, and Graceful Degradation",
       "order": 240,
       "src_chars": 3409,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3517767ffabb",
       "src": "Analysis: This significantly reduces the outage severity. With a 500ms timeout, each stuck Redis request holds its thread for at most 500ms instead of 30 seconds. The thread pool recovers 60x faster from each failure. If Redis returns 30% errors, threads are held for 500ms and then released. At steady state, the system needs 60x fewer threads to handle the same number of concurrent in-flight requests. With a 200-thread pool, the system can handle approximately 400 requests/second with 500ms timeouts (200 threads / 0.5s = 400 req/s throughput of stuck requests) before pool exhaustion — compared to approximately 7 req/s with 30-second timeouts.\n\nNew problems: If Redis is legitimately slow (under high load, not failed) and some requests genuinely need 500-1000ms, a 500ms timeout causes unnecessary failures. Any Redis operation that takes 501ms returns an error even if Redis would have responded successfully in another 50ms. Timeout tuning requires careful analysis of the actual latency distribution of Redis calls — set the timeout at the 99th percentile of normal latency, not an arbitrary short value.\n\nBest fix: circuit breaker + 500ms timeout. The short timeout prevents thread-holding during partial failures. The circuit breaker opens after the failure threshold is reached, eliminating even the 500ms wait for subsequent requests. Together, they prevent the cascade entirely.\n\n**Q3.** Design a health check endpoint (`/health`) for SocialSnap's application server. What should it check, what should it return, and how should the load balancer use the information?\n\nHint\n\nConsider the difference between checking whether the application server process is running and checking whether it can actually serve requests correctly.\n\n**Answer:** Health check design:\n\n**What to check:**\n\n  1. **Database connectivity:** Can the application server connect to PostgreSQL and execute a trivial query? (`SELECT 1` — a query that returns a result without touching user data, fast and low-impact.)\n  2. **Redis connectivity:** Can the application server connect to Redis and execute a `PING`? Redis returns `PONG` for a simple connectivity check.\n  3. **Thread pool headroom:** Is the application server's thread pool below a critical threshold (e.g., fewer than 90% of threads in use)? If threads are > 90% saturated, the server may be healthy but unable to accept more traffic.\n  4. **Application server process state:** Is the process itself running and responsive? (Trivially answered by the fact that the HTTP request is being handled at all.)\n\n**What NOT to check:** Third-party services (payment processor, external APIs). The application server's health check should reflect the server's own ability to serve requests, not the health of external dependencies it cannot control. If the payment processor is down, the server can still serve 99% of requests — it should not be marked unhealthy.\n\n**Response format:**\n    \n    \n    {\n      \"status\": \"healthy\" | \"degraded\" | \"unhealthy\",\n      \"checks\": {\n        \"database\": {\"status\": \"ok\", \"latency_ms\": 2},\n        \"redis\": {\"status\": \"ok\", \"latency_ms\": 1},\n        \"thread_pool\": {\"status\": \"ok\", \"used\": 45, \"max\": 200}\n      },\n      \"timestamp\": \"2024-01-15T14:47:23Z\"\n    }\n    \n\nHTTP status codes:\n\n* 200: healthy or degraded (load balancer keeps routing)\n* 503: unhealthy (load balancer removes from rotation)\n\n**Load balancer behavior:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1460,
+      "out_sha": "b3b8d8b2d751",
       "note": ""
     },
     {
@@ -3003,11 +3003,11 @@
       "en_title": "Chapter 16: Designing for Failure — Redundancy, Failover, and Graceful Degradation",
       "order": 241,
       "src_chars": 427,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9253790227c1",
       "src": "* Poll `/health` every 5 seconds.\n* Mark a server as unhealthy after 2 consecutive 503 responses (10 seconds to declare failure, avoiding flapping on transient issues).\n* Mark a server as healthy again after 3 consecutive 200 responses (ensuring recovery is stable before returning traffic).\n* On \"degraded\" (200 with degraded status): optionally reduce routing weight to this server — it is still functional but under stress.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 166,
+      "out_sha": "27f0f45165de",
       "note": ""
     },
     {
@@ -3015,11 +3015,11 @@
       "en_title": "Chapter 16: Designing for Failure — Redundancy, Failover, and Graceful Degradation",
       "order": 242,
       "src_chars": 2900,
-      "status": "pending",
+      "status": "done",
       "src_sha": "db9c271c54e5",
       "src": "#### Think Deeper\n\n**Q1.** Chaos engineering at Netflix involves intentionally killing production servers. A CTO objects: \"This is insane — why would we deliberately break our own production system? We have enough real failures; we don't need to create artificial ones.\" Make the case for chaos engineering in a way that addresses this objection.\n\n**Discussion:** The CTO's objection reveals a fundamental assumption: that the system behaves correctly during failures because it was designed to. This assumption is rarely tested rigorously.\n\nThe case for chaos engineering:\n\nThe alternative to controlled chaos is uncontrolled chaos. Production systems fail in production. The question is not \"will failures happen?\" but \"when they happen, at what time and in what form?\" An uncontrolled failure happens at the worst time — peak traffic on a Friday afternoon, with the on-call engineer on vacation, with no experience handling this particular failure mode. A controlled chaos experiment happens at a chosen time, with the team prepared, with the blast radius limited.\n\nThe confidence gap: teams believe their redundancy works. They believe circuit breakers are correctly configured. They believe failover completes within 30 seconds. Until these have been tested in production, these are beliefs, not verified facts. Configuration errors, stale assumptions, and edge cases that staging environments don't reveal mean that the first \"real\" test of the failover mechanism is an uncontrolled production failure.\n\nNetflix's discovery: when Chaos Monkey was first deployed, it regularly revealed failures that the team had believed were handled correctly. Health checks that didn't work. Failover that worked in theory but not in practice. Dependencies that weren't properly circuit-broken. Each discovery was fixed in a controlled setting. Each fix made the system more resilient. After years of chaos engineering, Netflix's availability improved — because they found and fixed fragility before customers experienced it.\n\nThe controlled nature of chaos engineering is exactly what makes it safe: experiments run during business hours, with the team watching, with kill switches ready, affecting only a fraction of traffic. This is fundamentally safer than waiting for an uncontrolled incident.\n\n**Q2.** An active-active database configuration allows two data centers (US and EU) to both accept writes simultaneously. What specific scenario could cause \"split-brain\" — a situation where both data centers believe they are the authoritative writer and their data diverges? What safeguards can prevent it?\n\n**Discussion:** Split-brain occurs when network connectivity between data centers is lost (a network partition), and both data centers continue accepting writes without coordinating with each other. Both believe they are the authoritative writer; neither knows what the other is doing.\n\nThe scenario:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 902,
+      "out_sha": "b44dbe6cac5d",
       "note": ""
     },
     {
@@ -3027,11 +3027,11 @@
       "en_title": "Chapter 16: Designing for Failure — Redundancy, Failover, and Graceful Degradation",
       "order": 243,
       "src_chars": 2285,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9ffbc124a736",
       "src": "  1. At 3:00 PM, a network partition severs the link between the US and EU data centers.\n  2. User A in New York updates their profile bio to \"Engineer at SocialSnap.\" The US data center accepts the write (it cannot reach EU to coordinate, but it is configured to accept writes independently).\n  3. User A simultaneously (from a roaming EU device) also updates their bio to \"Software Engineer.\" The EU data center accepts this write.\n  4. At 3:30 PM, the network partition heals. The US data center has bio = \"Engineer at SocialSnap\"; the EU data center has bio = \"Software Engineer.\" These are two conflicting values for the same record.\n\nThis is split-brain. Without a conflict resolution strategy, one write must be discarded.\n\nSafeguards:\n\n**Fencing tokens / epoch numbers:** Each data center has an \"epoch\" number. During a partition, only the data center with the higher epoch (the \"winner\" of a leader election before the partition) is permitted to accept writes. The other data center refuses writes (sacrificing availability for consistency). When the partition heals, the lower-epoch data center replays writes from the winner. This is the CP approach from Chapter 14's CAP theorem.\n\n**Quorum-based writes:** Writes require acknowledgment from a quorum of nodes across both data centers (e.g., 3 of 5 nodes). During a partition, if a data center cannot reach enough nodes for a quorum, it refuses writes. This prevents the split-brain scenario at the cost of write unavailability during the partition.\n\n**Application-level last-write-wins with client-side conflict detection:** Use vector clocks (Chapter 14). When the partition heals and both data centers merge, the conflict is surfaced to the application layer. The application applies domain knowledge to resolve: for profile bios (non-critical), last-write-wins by timestamp. For account balances (critical), surface the conflict to a human operator for manual resolution.\n\n**Avoid active-active for critical data:** For financial data, user authentication tokens, and other data where conflicts are catastrophic, use active-passive (one data center writes, the other is a read-only replica). Active-active is appropriate for data where conflicts are tolerable — social interactions, analytics events, content metadata.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 814,
+      "out_sha": "f8684d8dc799",
       "note": ""
     },
     {
@@ -3039,11 +3039,11 @@
       "en_title": "Chapter 16: Designing for Failure — Redundancy, Failover, and Graceful Degradation",
       "order": 244,
       "src_chars": 1888,
-      "status": "pending",
+      "status": "done",
       "src_sha": "88b5f5731c52",
       "src": "### Chapter Summary\n\nThis chapter completed the architectural journey by addressing the reality that even well-designed systems fail. Understanding MTBF and MTTR reframes reliability from \"prevent all failures\" to \"fail and recover fast.\" Availability is determined by both dimensions, and reducing MTTR is often the more achievable and impactful investment.\n\nRedundancy eliminates single points of failure; failover (active-passive or active-active) handles the transition when components fail. Circuit breakers prevent cascading failures by detecting failing dependencies and failing fast rather than blocking threads. Bulkheads isolate resource pools so that one failing feature cannot exhaust resources needed by another. Graceful degradation ensures that failures produce partial functionality rather than complete blackout.\n\nSocialSnap v6 survived its first production failure because these patterns were in place: circuit breakers opened to prevent cascade, bulkheads protected the critical path, and automatic failover promoted a replica to primary within 30 seconds. The outage lasted 45 seconds rather than hours.\n\nThe Thread C detective skill — reading logs and metrics as clues during an incident — previewed the observability challenges of Chapter 17. The sequence of clues (Redis errors → latency increase → thread saturation → 503 errors) tells the story of the cascade and points directly to the root cause. Building systems that emit rich diagnostic signals is the prerequisite for fast incident resolution.\n\nChapter 17 will build the observability stack: logs, metrics, distributed traces, and the dashboards and alerting systems that make them actionable. The Chapter 16 incident that SocialSnap experienced would have taken 30 minutes to diagnose without the right observability tools; with them, it takes 3 minutes. That difference is the value of observability.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 586,
+      "out_sha": "073d425e31b1",
       "note": ""
     },
     {
@@ -3051,11 +3051,11 @@
       "en_title": "Chapter 17: Monitoring and Observability — Knowing What's Happening",
       "order": 245,
       "src_chars": 2366,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6aaada26e240",
       "src": "Recall the Tuesday afternoon from Chapter 16. SocialSnap's Redis cluster began degrading at 2:47 PM. By 2:49 PM, the entire application was returning 503 errors. The circuit breakers we installed in Chapter 16 prevented the cascade from propagating further — but the engineering team still had a two-minute window of total blindness. They knew something was wrong only because users started complaining on Twitter.\n\nThat is not good enough.\n\n\"Design for failure\" from Chapter 16 assumes you can detect failure quickly. A circuit breaker trips when it accumulates enough errors — but it can only count errors if your application is instrumented to track them. Graceful degradation means serving a stale feed instead of an error page — but only if your system can tell the difference between \"the cache is slow\" and \"the cache is completely down.\" Every pattern from Chapter 16 depends on a prerequisite we haven't built yet: the ability to see inside your running system.\n\nThis chapter builds that ability. The goal is not just to know when things are broken — the goal is to understand what your system is doing at all times, well enough that you can answer the question \"what changed?\" within minutes of something going wrong.\n\n\n### 17.1 The Three Pillars of Observability\n\nEngineers sometimes use \"monitoring\" and \"observability\" interchangeably, but they mean different things. **Monitoring** is the practice of collecting predefined metrics and alerting when they exceed thresholds. **Observability** is a property of a system: an observable system is one you can interrogate to understand its internal state without deploying new code.\n\nThe difference matters in practice. Monitoring tells you that something is wrong. Observability tells you why.\n\nConsider two scenarios after SocialSnap's outage. In the first, your monitoring system tells you: \"Redis error rate exceeded 30%.\" That's monitoring — a predefined threshold was crossed. In the second, you can ask arbitrary questions of your production system: \"Which users saw elevated latency in the past 10 minutes? Which application servers were involved? Which Redis commands were timing out? Was it all commands or a specific key pattern?\" That's observability — you can form and answer questions you didn't think to ask before the incident.\n\nThree types of telemetry form the foundation of observability.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 778,
+      "out_sha": "7f8a5cbc6d47",
       "note": ""
     },
     {
