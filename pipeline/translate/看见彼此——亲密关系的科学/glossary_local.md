@@ -53,6 +53,7 @@
 | Eli Finkel | Eli Finkel（伊莱·芬克尔） |
 | Lisa Diamond | Lisa Diamond（莉萨·戴蒙德） |
 | Harry Reis | Harry Reis（哈里·雷斯） |
+| Sarah Kim | Sarah Kim（萨拉·金） |
 | Shelly Gable | Shelly Gable（谢莉·盖布尔） |
 | Robert Waldinger | Robert Waldinger（罗伯特·瓦尔丁格） |
 | Earnest Hooton | Earnest Hooton（欧内斯特·胡顿） |
