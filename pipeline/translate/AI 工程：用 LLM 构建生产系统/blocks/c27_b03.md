@@ -1,0 +1,3 @@
+4. **Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks** — _Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal, Küttler, Lewis, Yih, Rocktäschel, Riedel, Kiela；NeurIPS 2020。_ 给 RAG 命名的论文。论文描述的系统比多数团队发布的更精致——一个与生成器联合训练的学习型检索器——但核心洞察在 2026 年生产系统中完整存活：在查询时，从非参数记忆中获取相关文档并以此为条件生成。第 9 章在此想法上构建生产 RAG 栈，第 7 章（嵌入）和第 8 章（上下文窗口）都回溯它。读它理解 RAG _原始_ 是什么，然后注意生产模式从论文偏移了多远——以及哪些偏移是改进哪些是让步。
+
+5. **Lost in the Middle: How Language Models Use Long Contexts** — _Liu, Lin, Hewitt, Paranjape, Bevilacqua, Petroni, Liang；TACL 2024。_ 此论文拯救了一代 AI 工程师免于一代糟糕的 RAG 设计。经验发现尖锐且令人沮丧：即使有 10 万+ 上下文窗口的模型也不成比例地关注输入的开头和结尾，并丢失放在中间的信息。论文中的 U 形曲线此后被复制、部分缓解、部分掩盖，但基本工程教训成立：长上下文窗口不是免费午餐，且检索增强 prompt 中的文档顺序比你直觉预期的更重要。第 8 章将此论文作为其上下文预算和重排序讨论的经验锚点；如你曾发布过在小文档上工作但在长文档上崩溃的 RAG 系统，解释可能在此。

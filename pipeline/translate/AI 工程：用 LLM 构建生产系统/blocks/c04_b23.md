@@ -1,0 +1,28 @@
+**答案：** 有用的 prompt：_我在结构化提取调用上遇到 max_tokens 截断。两种主要缓解模式是什么，它们的 trade-off 是什么，生产推荐的是哪个？_ 你通过检查提议的代码是否正确解析部分 JSON 来验证——LLM 经常以意外方式编写容忍格式错误 JSON 的代码，你必须确认它做了 LLM 说它做的事。在真实截断示例上运行提议的代码并确认恢复路径。
+
+**Q4.** _设计每租户速率限制层_。Helios Customer AI 正在为新企业客户（称之为 _Acme Corp_）部署一个 LLM 驱动的支持 agent。Acme 签订了每月 50,000 美元推理预算的合同。设计一个位于 Helios 请求路由器和 Anthropic API 之间的层，执行：(a) 每租户输入 + 输出 token 的预算上限（以美元计）；(b) 月度上限 80% 的软告警；(c) 月度上限 100% 的硬上限（请求以清晰错误拒绝）。勾勒架构；识别关键数据存储；识别设计必须处理的两个故障模式。
+
+提示
+
+你需要一个在每次 API 调用的 `usage` 响应上更新的每租户计数器。那个计数器存在哪里？当计数器不可用时（数据存储宕机）会发生什么？
+
+**答案：** 草图：
+
+
+    [Helios Request Router]
+            |
+            v
+    [Rate-Limit Layer] -- reads/writes --> [Postgres: tenant_budget]
+            |
+            v
+    [Anthropic API]
+            |
+            v
+    [Rate-Limit Layer (post-response)] -- increments --> [Postgres: tenant_budget]
+
+
+速率限制层是围绕 Anthropic 调用的中间件。请求入口：从 `tenant_budget` 读取租户当月已花费美元。如果已花费 > 上限的 100%，以 HTTP 402（或自定义错误）和清晰消息拒绝；如果 80% < 已花费 ≤ 100%，记录软告警并放行请求。响应后：从 `response.usage` 计算美元成本（输入 × 输入费率 + 输出 × 输出费率，使用实际模型定价）并增加租户已花费总额。
+
+关键数据存储：**Postgres 带 `tenant_budget` 表**（tenant_id、month、spent_dollars、cap_dollars）。读写按租户按月；行争用低；事务廉价。Redis 是超高流量租户的替代方案，其中 Postgres 写入速率成为瓶颈，但对于 Helios 的流量 Postros 足够。
+
+设计必须处理的两个故障模式：

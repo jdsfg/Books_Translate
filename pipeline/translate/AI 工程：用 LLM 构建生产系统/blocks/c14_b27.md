@@ -1,0 +1,40 @@
+`check_provisioning_status` 返回结构化进度：
+
+
+    {
+      "workflow_id": "wf_abc123",
+      "overall_status": "partially_succeeded",
+      "stages": [
+        {"name": "create_account", "status": "succeeded",
+         "outcome": {"account_id": "acc_xyz"}},
+        {"name": "set_permissions", "status": "succeeded", "outcome": {}},
+        {"name": "generate_credentials", "status": "succeeded",
+         "outcome": {"credentials_sent_to": "contact_email"}},
+        {"name": "send_welcome_email", "status": "failed",
+         "outcome": {"error": "smtp_rate_limit",
+                     "retry_at": "2026-05-21T16:00:00Z"}}
+      ],
+      "next_action": "wait_for_retry_at_2026-05-21T16:00:00Z_or_send_email_manually"
+    }
+
+
+LLM 准确看到什么成功、什么失败及推荐的下一步。它可组合对状态诚实的面向客户消息："您的账户已供应并凭证已发送；欢迎邮件将在 30 分钟后重试。您可以立即使用凭证。"
+
+**防止 LLM 破坏状态的纪律**：
+
+1. **工作流 ID 是应用生成的**，非 LLM 生成。LLM 无法伪造 workflow_id 来操纵状态。
+2. **状态转换是应用控制的**，非 LLM 控制。LLM 不能通过说来标记工作流为"成功"；应用的状态机决定。
+3. **每个工具的策略门控强制不变量**：`abort_provisioning` 仅对当前会话拥有的工作流有效；不能用于中止其他客户的工作流。
+4. **幂等键**：`start_customer_provisioning` 返回绑定到 (customer_name, plan) 的幂等键；用相同参数重试返回现有 workflow_id，非重复。
+
+**此说明的通用模式**：_将 LLM 对有状态操作的视图与操作的实际状态分离_。LLM 操作 workflow_id（不透明 token）；应用操作状态机。LLM 不能直接修改状态；它只能通过工具调用请求转换；应用的状态机强制不变量。
+
+这是 §13.4"LLM 提议，应用处置"原则应用于有状态操作。工具目录成为 LLM 对状态机的 API；状态机是真相源。
+
+交叉引用：
+
+* 第 14 章的有界 agent 纪律：等待长时间运行工作流的 agent 有工作记忆含义。如工作流需数分钟，agent 不应循环于 `check_provisioning_status`；它应让出，workflow_id 传到后续轮次（这也是为什么供应工作流通常由后台工作器而非同步 agent 处理）。
+* 第 15 章的多 agent 模式：有状态工作流可成为跨 agent 的协调对象（一个 agent 启动；另一个数小时后检查状态）。
+* 第 19 章的可观测性：workflow_id 是追踪的自然关联键。
+
+教训：有状态操作的正确工具 schema 是应用拥有的状态机上的多个窄工具，非单一全包工具。这给目录增加工具但使 LLM 行为有界、可观测和可恢复。

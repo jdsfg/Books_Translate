@@ -1,0 +1,41 @@
+#### 概念检查
+
+**Q1.** 一位队友写了以下代码并请你审查。指出三个问题。
+
+    client = Anthropic(api_key="sk-ant-1234567890abcdef...")
+    response = client.messages.create(
+        model="claude-sonnet-4",
+        messages=[{"role": "user", "content": user_input}],
+    )
+    return response.content[0].text
+
+
+提示
+
+看 API key、模型标识符，以及完全缺失的东西。
+
+**答案：** 三个问题：
+
+1. **API key 硬编码。** key 被提交到版本控制；任何有 repo 访问权限的人都可以花公司的钱。它必须来自环境变量或 secrets manager：`api_key=os.environ["ANTHROPIC_API_KEY"]`。立即轮换 key，因为它已经在版本历史中暴露。
+2. **模型标识符是别名，而非固定版本。** `claude-sonnet-4` 是别名；provider 可以静默重路由它。固定到日期版本：`claude-sonnet-4-20260315`。这保护你免受静默重路由（§3.11）。
+3. **没有 `max_tokens`、没有错误处理、没有日志。** 调用可能失控（恶意或意外超长的用户输入可能花费真金白银）；429 或 5xx 会崩溃请求；之后没有记录用于调试或成本归因。用 §3.9 的生产模式封装：显式 `max_tokens`、在 429/5xx 上带退避重试、记录请求 ID 和 token 用量。
+
+第四个问题，如果你注意到了：没有 system prompt。模型被给用户输入而没有角色上下文。这是否错误取决于任务，但对于大多数生产用途你至少想要一个 system prompt 来 ground 模型的角色并添加基本安全约束。
+
+**Q2.** Streaming 与非 streaming：指出两个 streaming 必不可少的场景、两个非 streaming 更优的场景，以及一个选择取决于额外上下文的模糊情况。
+
+**答案：**
+
+Streaming 必不可少：
+
+* **交互式聊天 UI**。用户期望 ChatGPT 式的逐 token 输出。没有 streaming，用户等待 5–10 秒才看到任何内容；有 streaming，他们在约 300–500 毫秒内看到文本出现。UX 差异是巨大的。
+* **语音管道**（第 20 章）。低于 500 毫秒的 TTFT 预算不使用 streaming 是不可能的。语音合成在前几个 token 上开始，与模型生成并行。
+
+非 streaming 更优：
+
+* **批处理任务**。总结 10,000 个文档并将摘要写入数据库。数据库不关心 TTFT；非 streaming 的更简单控制流胜出。
+* **需要完整 JSON 才能进一步处理的结构化输出提取**。你无法验证部分 JSON；你必须等待完整响应。Streaming 是浪费的复杂性。
+
+模糊：
+
+* **一个封装 LLM 调用并返回给下游调用者的 API 端点。** 如果下游调用者是面向人的 UI，你想转发流（server-sent events 通过你的端点到 UI）。如果下游调用者是另一个后端服务，非 streaming 更简单。正确答案取决于调用者如何处理响应，有时 _整个管道_ 必须是 streaming 才能使选择有意义。

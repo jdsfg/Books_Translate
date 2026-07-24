@@ -1,0 +1,48 @@
+### 19.7 追踪中的 PHI 脱敏
+
+即使在自托管可观测性中，团队也常想从追踪中 _脱敏_ 某些内容（既为减少团队内敏感数据暴露，也为使调试追踪可更广泛访问）。
+
+Beacon 的模式：
+
+**在追踪创建点脱敏**：中间件在存储前处理 prompt 和响应。PHI 字段（患者标识、出生日期、MRN）被替换为占位符（`[NAME]`、`[DOB]`、`[MRN]`）。脱敏版本被存储；原始版本仅保留在带审计访问的更受限合规存储中。
+
+首先是模式表。每个 PHI 类别有一个预编译正则表达式以其替换标签为键，使字典既是规则列表又是替换映射：
+
+
+    import re
+
+    PHI_PATTERNS = {
+        "name": re.compile(r"\b(Mr\.|Mrs\.|Ms\.|Dr\.)\s+[A-Z][a-z]+\s+[A-Z][a-z]+\b"),
+        "dob": re.compile(r"\b(0[1-9]|1[0-2])/(0[1-9]|[12]\d|3[01])/(19|20)\d{2}\b"),
+        "mrn": re.compile(r"\bMRN-\d{8}\b"),
+        "ssn": re.compile(r"\b\d{3}-\d{2}-\d{4}\b"),
+    }
+
+
+叶子脱敏器对单个字符串遍历每个模式。保持无状态使其可从任何遍历上下文安全调用：
+
+
+    def redact_phi(text: str) -> str:
+        redacted = text
+        for tag, pattern in PHI_PATTERNS.items():
+            redacted = pattern.sub(f"[{tag.upper()}]", redacted)
+        return redacted
+
+
+写入器先复制追踪（原始永不变异），然后按 span 形状分发。消息可以是纯字符串或 Anthropic 内容块列表，所以两个分支都处理：
+
+    from copy import deepcopy
+
+    def redacted_trace_writer(trace: dict, sink) -> None:
+        trace_copy = deepcopy(trace)
+        for span in trace_copy["spans"]:
+            if span.get("messages"):
+                for message in span["messages"]:
+                    # message["content"] 是多态的：简单聊天为字符串，
+                    # 或内容块列表（Anthropic 风格）
+                    if isinstance(message.get("content"), str):
+                        message["content"] = redact_phi(message["content"])
+                    elif isinstance(message.get("content"), list):
+                        for block in message["content"]:
+                            if isinstance(block, dict) and isinstance(block.get("text"), str):
+                                block["text"] = redact_phi(block["text"])

@@ -1,0 +1,99 @@
+### 6.5 绑定工作流 #2：带 A/B/C eval 结果的版本化 prompt
+
+交付物是一个你可以在周一发布的真实制品：一个有三个候选版本的 prompt，每个对相同 golden set 评估，delta 并排可见。
+
+    ---
+    prompt_name: clinical_summary
+    candidate_set: 2026-04-15
+    golden_set_version: v3
+    model: claude-sonnet-4-20260315
+    temperature: 0
+    max_tokens: 1024
+    ---
+
+    ## 版本 A：简洁结构化（基线）
+
+    你是 Beacon Health AI 的临床笔记摘要器。
+    产生结构化摘要，包含主诉、现病史、
+    检查发现、计划。绝不编造。用[不确定]
+    标记不确定性。
+
+    ## 版本 B：简洁结构化 + 少样本示例
+
+    你是 Beacon Health AI 的临床笔记摘要器。
+    产生结构化摘要，包含主诉、现病史、
+    检查发现、计划。绝不编造。用[不确定]
+    标记不确定性。
+
+    示例 1：
+    输入："Pt presents with 3-day h/o cough, fever 101.2, no SOB..."
+    输出：
+    {
+      "chief_complaint": "3-day cough with fever",
+      "hpi": "...",
+      ...
+    }
+
+    示例 2：
+    输入：...
+    输出：...
+
+    ## 版本 C：思维链 + 结构化输出
+
+    你是 Beacon Health AI 的临床笔记摘要器。
+
+    在产生摘要前，简要记录（在 <thinking></thinking>
+    标签中）你从笔记中捕捉到哪些临床信号；
+    这有助于捕获遗漏的发现。
+
+    然后产生结构化摘要，包含主诉、现病史、
+    检查发现、计划。绝不编造。用[不确定]
+    标记不确定性。
+
+
+对相同 200 案例 golden set 运行每个版本。将每维度分数记录到结果文件中：
+
+    # results/2026-04-15.yaml
+    golden_set_version: v3
+    candidate_set: 2026-04-15
+    runs:
+      - version: A
+        total_score: 9.40
+        dimensions:
+          clinical_accuracy: 2.85
+          completeness: 2.65
+          format_compliance: 2.95
+          brevity: 2.95
+        avg_input_tokens: 380
+        avg_output_tokens: 620
+        avg_latency_ms: 850
+      - version: B
+        total_score: 9.62
+        dimensions:
+          clinical_accuracy: 2.88
+          completeness: 2.78
+          format_compliance: 2.96
+          brevity: 2.92
+        avg_input_tokens: 480
+        avg_output_tokens: 600
+        avg_latency_ms: 880
+      - version: C
+        total_score: 9.71
+        dimensions:
+          clinical_accuracy: 2.92
+          completeness: 2.85
+          format_compliance: 2.97
+          brevity: 2.91
+        avg_input_tokens: 410
+        avg_output_tokens: 780
+        avg_latency_ms: 980
+    recommendation: C (总分 + 临床准确性提升最佳，成本增加适度)
+
+
+制品小而高信号。审查者可以看到：
+
+* 版本 C 在总分上获胜（+0.31 超基线）且在临床准确性上（+0.07）。
+* 版本 B 的提升主要来自完整性（+0.13），代价是 token（+100 输入）。
+* 版本 C 每次调用成本更高（更长输出：780 vs 620 token）；以 5 倍输出乘数，这在规模化时有意义。
+
+推荐是数据驱动的；部署是清单更新。制品就是绑定工作流。

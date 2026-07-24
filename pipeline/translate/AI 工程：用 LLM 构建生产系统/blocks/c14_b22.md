@@ -1,0 +1,50 @@
+1. 验证 `confirmation_token` 存在、未过期且匹配当前 (order_id, amount_cents, reason)。
+2. 验证 `amount_cents <= order.total_cents` 且 `amount_cents <= tenant.per_refund_limit_cents`。
+3. 验证 `order.customer_id == current_session.customer_id`（不退款其他客户的订单）。
+4. 验证 `order.status` 允许退款（delivered 或 shipped，未已退款，未取消）。
+5. 验证客户终身退款次数低于租户的防滥用阈值。
+6. 如所有检查通过，通过支付处理器发出退款；记录审计条目。
+
+(d) **结构化响应格式**：
+
+提议后（`confirm_refund_intent` 后，等待客户）：
+
+
+    {"status": "confirmation_pending", "message": "退款确认已展示给客户；如确认将返回 token。"}
+
+确认后（客户同意）：
+
+
+    {"status": "confirmed", "confirmation_token": "abc-123-...", "ttl_seconds": 300}
+
+成功发出后（`issue_refund` 带有效 token 后）：
+
+
+    {"status": "success", "refund_id": "ref_xyz", "amount_cents": 5000,
+     "processed_at": "2026-05-20T14:32:00Z"}
+
+策略拒绝：
+
+
+    {"status": "policy_rejected", "reason": "amount_exceeds_tenant_limit",
+     "detail": "500 美元退款超过租户限制 200 美元。通过 escalate_to_supervisor 工具升级。",
+     "suggested_action": "escalate_to_supervisor"}
+
+客户拒绝：
+
+
+    {"status": "customer_declined", "detail": "客户未确认退款。确认其决定并提供替代方案。"}
+
+每种响应形状给 LLM 足够信息以优雅地继续对话。
+
+(e) **审计轨迹**：
+
+每次 `confirm_refund_intent` 调用记录：时间戳、customer_id、order_id、提议金额、agent_request_id、客户响应（确认/拒绝/超时）。
+每次 `issue_refund` 调用记录：时间戳、customer_id、order_id、金额、理由、使用的 confirmation_token、策略检查结果、支付处理器响应、agent_request_id。
+审计日志仅追加、签名、按合规要求保留。可供客户支持监督和财务对账使用。
+
+此设计闭合 §13.4 的循环：LLM 不能在无 (i) 客户显式确认、(ii) 应用策略批准和 (iii) 每步审计日志的情况下发出退款。告诉 LLM 发出未授权退款的 prompt 注入无法成功：LLM 可能尝试在无确认步骤下调用 `issue_refund`，但缺失的 `confirmation_token` 确定性地阻止它。
+
+**AI 协作子问题**：你会如何请 LLM 帮助完成这个练习，你会在它的回答中验证什么？
+
+**答案：** 有用的 prompt：_设计带客户确认的退款工具：schema、确认流程、策略门控、响应格式、审计。_ 你验证 (a) 确认是单独工具，非布尔参数（LLM 有时在 schema 中提议 `confirmed: bool`，可伪造；坚持服务端生成 token），以及 (b) confirmation_token 绑定到特定参数（非可跨退款重用的通用"已确认"标志）。

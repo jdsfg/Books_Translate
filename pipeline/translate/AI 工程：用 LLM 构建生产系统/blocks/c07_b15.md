@@ -1,0 +1,53 @@
+**答案：** 有用的 prompt：_设计一个 prompt 注册表：文件布局、清单、加载器代码。支持多环境、每 prompt 版本化和带 YAML front-matter 的 prompt 文件。_ 你验证 (a) 加载器正确处理你选择的 YAML front-matter 格式（LLM 有时在 prompt 正文包含 `---` 时用简单 `split("---", 2)` 不正确地分割 front-matter；要么转义要么用正确解析器），以及 (b) 环境解析逻辑匹配你在技术栈中实际设置环境的方式。
+
+**Q2.** _用 A/B/C 测试迭代 prompt_。取 Strata RAG 系统的 V1 prompt（_给定以下检索文档，回答用户的问题_）并设计三个候选变体。对每个，预测你期望提升哪些 eval 维度以及你预期什么成本。列出 eval 结果格式。
+
+提示
+
+§6.5 的绑定工作流 + §6.6 的 V1→V4 弧。
+
+**答案：** 三个候选变体：
+
+**变体 A（基线）**：_给定以下检索文档，回答用户的问题。_
+* 预测提升：无（基线）。
+* 预测成本：最小。
+
+**变体 B**：_给定以下检索文档，回答用户的问题。从检索文档中引用支持每个声明的确切段落。如果声明不受检索文档支持，明确说明文档未涉及它而非从先验知识回答。_
+* 预测提升：+5–10 分引用基础；+2–4 分准确率（因为模型被迫将答案基于文档）。
+* 预测成本：约 50 输入 token（额外 prompt 指令）；输出可能因显式引用稍长。
+
+**变体 C**：_给定以下检索文档，回答用户的问题。回答前：(a) 列出每个相关文档；(b) 注明它适用于哪个司法管辖区；(c) 标记任何过时文档（生效日期在查询前 2 年以上）。然后用段落级引用、司法管辖区纪律和相关时的显式不确定性标记回答。_
+* 预测提升：管辖区正确性上升；时间有效性上升；准确率上升；引用基础上升。提升在显式针对的维度上最大。
+* 预测成本：显著更多输出 token（预回答脚手架）；更高延迟；更高美元成本。
+
+Eval 结果格式：
+
+
+    golden_set_version: v3
+    candidate_set: 2026-05-20
+    runs:
+      - version: A
+        accuracy: 0.64
+        citation_grounding: 0.60
+        jurisdiction_correct: 0.85
+        temporal_correctness: 0.78
+        avg_output_tokens: 540
+        cost_per_call: $0.0096
+        latency_p50_ms: 920
+      - version: B
+        accuracy: 0.71
+        citation_grounding: 0.88
+        jurisdiction_correct: 0.85
+        temporal_correctness: 0.78
+        avg_output_tokens: 620
+        cost_per_call: $0.0114
+        latency_p50_ms: 1050
+      - version: C
+        accuracy: 0.81
+        citation_grounding: 0.91
+        jurisdiction_correct: 0.93
+        temporal_correctness: 0.85
+        avg_output_tokens: 820
+        cost_per_call: $0.0152
+        latency_p50_ms: 1280
+    recommendation: C 用于高风险查询；B 用于一般查询；通过上游分类器路由

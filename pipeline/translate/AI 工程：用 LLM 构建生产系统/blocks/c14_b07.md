@@ -1,0 +1,56 @@
+agent 的循环包装此：
+
+
+    import json
+
+    def code_assistant(user_question: str) -> str:
+        messages = [{"role": "user", "content": user_question}]
+        for _ in range(10):
+            response = ANTHROPIC.messages.create(
+                model="claude-sonnet-4-20260315",
+                max_tokens=2048,
+                tools=[CODE_EXEC_TOOL],
+                messages=messages,
+                system="你是数据分析助手。需要计算时使用 execute_python 工具。"
+                       "以清晰散文提供最终答案。",
+            )
+            messages.append({"role": "assistant", "content": response.content})
+            if response.stop_reason != "tool_use":
+                return "".join(b.text for b in response.content if b.type == "text")
+            tool_results = []
+            for block in response.content:
+                if block.type == "tool_use" and block.name == "execute_python":
+                    result = execute_python_in_sandbox(**block.input)
+                    tool_results.append({
+                        "type": "tool_result",
+                        "tool_use_id": block.id,
+                        "content": json.dumps(result),
+                    })
+            messages.append({"role": "user", "content": tool_results})
+        raise RuntimeError("agent 超出迭代预算")
+
+
+此模式提供的：
+
+1. **模型可以计算，而非仅描述**。多步计算、数据分析、文件处理。
+2. **执行有界**。超时、内存、无网络：代码最坏只能消耗自己的沙箱。
+3. **成本有界**。沙箱每次调用几美分；即使失控 agent 也被迭代次数 × 每迭代成本限制。
+
+安全考量：
+
+* **代码执行按定义是高风险的。** 即使沙箱历史上也被逃逸过；沙箱打补丁但新漏洞涌现。纪律：假设沙箱可被逃逸；确保 _逃逸损害有限_（无生产凭证访问、沙箱内无敏感数据、网络隔离）。
+* **代码来自 LLM，可被 prompt 注入。** 恶意用户输入可诱导 LLM 生成尝试数据渗出的代码。沙箱 + 网络隔离 + 沙箱内无凭证即使生成出错也防止渗出。
+* **日志和监控**：每次代码执行记录代码、输入、输出和结果。异常（执行失败突增；异常代码模式）触发告警。
+
+这是 2025–2026 主导的代码解释器模式。使用它；无令人信服理由不要自己造。
+
+### 13.6 常见工具模式
+
+跨生产 agent 复现的工具。
+
+
+#### 搜索/检索工具
+
+查询知识库或向量索引的工具。对于 Helios，`search_knowledge_base(query)` 返回最相关的 top-K 文章。模型将此用于事实性问题。
+
+纪律：搜索工具返回 _检索块加引用_，非合成答案。agent 的 LLM 调用从检索组合答案；工具不预摘要。这保留引用链。

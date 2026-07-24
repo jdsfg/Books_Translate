@@ -1,0 +1,35 @@
+### 3.1 chat-completions 的结构
+
+2026 年的每个现代 LLM API 都共享相同的基本结构，字段名称有表面差异。我们将使用 Anthropic 的结构作为规范示例，并在重要之处标注 OpenAI / Google 的差异。
+
+请求是一个 JSON 对象，至少包含：
+
+* **`model`**：命名特定模型版本的字符串。在生产中始终固定到日期版本（`claude-sonnet-4-20260315`，而非 `claude-sonnet-4`）。别名可能在你底下移动。
+* **`messages`**：消息对象数组。每条消息有一个 **role** 和 **content**。角色为 `system`、`user`、`assistant`（某些 API 上还有 `tool`）。
+* **`max_tokens`**：输出长度的上限，以 token 为单位。Anthropic 上必填；OpenAI 上可选但你应始终设置。
+
+可选但操作上重要的：
+
+* **`temperature`**：0 到 2（Anthropic 在 1 处截断）。采样温度，见第 2 章。
+* **`top_p`**：0 到 1。Nucleus 采样。
+* **`top_k`**：正整数。Top-k 采样。Anthropic 暴露它；OpenAI 不暴露。
+* **`stop_sequences`**（Anthropic）/ **`stop`**（OpenAI）：一个或多个字符串；如果模型发射其中任何一个，生成停止。用于结构化输出中你希望生成在可后处理的分隔符上终止的情况。
+* **`stream`**：布尔值。为 true 时，响应以 server-sent events 流的形式传递（详见 §3.6）。
+* **`tools`**：工具 schema 数组。设置后，模型可以返回工具调用块而非文本（第 13 章）。
+* **`tool_choice`**：强制模型使用特定工具，或 auto，或 none。
+* **`metadata`**：provider 与请求一起存储的对象，用于 observability（用户 ID、会话 ID）。
+* **`response_format`**（OpenAI）/ 结构化输出 schema 字段（Anthropic）：强制模型发射特定 JSON 形状（第 7 章）。
+* **`system`**（Anthropic 顶层字段）/ messages 数组中的 system 角色（OpenAI）：system prompt。
+
+响应是一个 JSON 对象，至少包含：
+
+* **`id`**：请求的唯一标识符。记录这个；这是稍后查找请求的唯一方式。
+* **`model`**：回显。用于审计；实际运行的模型可能与请求的不同，如果 provider 做了静默重路由。
+* **`content`**（Anthropic）/ **`choices`**（OpenAI）：生成的文本，通常为块数组（文本、工具调用等）。
+* **`stop_reason`**：生成停止的原因。`end_turn`（模型完成）、`max_tokens`（到达上限：你的 `max_tokens` 太小）、`stop_sequence`（你的 stop sequence 触发）、`tool_use`（模型想使用工具）。
+* **`usage`**：token 计数。`input_tokens`、`output_tokens`。有时细分为 `cache_creation_input_tokens`、`cache_read_input_tokens` 用于缓存调用。这是你的成本仪表盘读取的字段。
+
+响应头还携带你想要的信息：
+
+* **速率限制头**：`anthropic-ratelimit-tokens-remaining`、`anthropic-ratelimit-requests-remaining`，加上重置时间戳。（OpenAI：`x-ratelimit-remaining-tokens`、`x-ratelimit-remaining-requests`。）在每个响应上读取这些；缓存它们；用它们在命中 429 之前主动退避。
+* **请求 ID**，用于支持工单（大多数 provider 上为 `x-request-id`）。
