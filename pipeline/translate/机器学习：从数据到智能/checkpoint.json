@@ -1850,8 +1850,8 @@
       "status": "done",
       "src_sha": "7c6e280508df",
       "src": "### Chapter Summary\n\nConvolutional neural networks exploit two properties of images: local structure (nearby pixels are related) and translation invariance (features should be detected regardless of position).\n\nKey ideas:\n\n* **Convolution** : slide a filter across the image; weight sharing reduces parameters by orders of magnitude\n* **Pooling** : reduce spatial dimensions; max pooling provides local translation invariance\n* **Feature hierarchy** : early layers detect edges, middle layers detect textures, late layers detect objects — this hierarchy emerges from training\n* **Landmark architectures** : LeNet → AlexNet → VGG → ResNet, each advancing what's possible\n* **Transfer learning** : pre-trained CNN features transfer across domains; fine-tuning requires far less labeled data\n\nChapter 18 will cover the techniques (batch normalization, dropout, residual connections) that make very deep CNNs trainable. But first: Chapter 17 introduces a completely different neural architecture for sequential data — Recurrent Neural Networks.\n\n---",
-      "out_chars": 470,
-      "out_sha": "6771d8ccaaf3",
+      "out_chars": 466,
+      "out_sha": "88629833809a",
       "note": ""
     },
     {
