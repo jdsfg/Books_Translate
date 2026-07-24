@@ -2983,11 +2983,11 @@
       "en_title": "Chapter 22: What Inequality Does, and the Questions You Now Carry",
       "order": 240,
       "src_chars": 888,
-      "status": "pending",
+      "status": "done",
       "src_sha": "64f7a894031e",
       "src": "We have come a long way from the two newborns of Chapter 1. We have measured the ladder, defined it, watched it shape lives and pass itself down, counted its bottom, read its gaps, and judged it from every serious angle. One large question about inequality remains, and it is the one most likely to ambush an unprepared thinker, because it wears the costume of settled fact while smuggling a verdict: the question of what inequality _does_ , its consequences. And then, having handled that with the discipline the whole book has built toward, we will gather our three threads, take a last look at Maya and Devon, and close, not with an answer, but with the honest discomfort of a reader who can now see the whole ladder clearly and has not been told what to do about it. That discomfort, this book will argue, is not a failure of the book. It is the book's final and most important gift.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 319,
+      "out_sha": "9512e6aabfb6",
       "note": ""
     },
     {
@@ -2995,11 +2995,11 @@
       "en_title": "Chapter 22: What Inequality Does, and the Questions You Now Carry",
       "order": 241,
       "src_chars": 3111,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a8fbf7b6324e",
       "src": "### 22.1 The consequences literature, and why it is the prime site of verdict-by-disguise\n\nThere is a large and influential body of work arguing that inequality itself, not just poverty, but the _gap_ between rich and poor, causes a wide range of social harms: that more unequal societies suffer more violence, more mental illness, worse physical health, less social trust, weaker democracy, even slower or less stable economic growth. The most famous statement of this thesis, Richard Wilkinson and Kate Pickett's _The Spirit Level_ (2009), assembled cross-national correlations showing that more unequal rich countries tend to score worse on a striking array of social and health problems, and proposed a mechanism: that inequality generates status anxiety, stress, and a corrosion of the social bonds that hold a society together, harming even the well-off.\n\nIf this thesis is correct, it would seem to settle the whole argument of this book in one stroke: inequality would be not merely contestable but _demonstrably harmful_ , bad for everyone, and the verdict the book has refused to deliver would deliver itself. And that is exactly why this is the most dangerous terrain in the entire subject, and why we apply, here, the hardest version of the discipline of Chapter 12. Because the consequences literature is the _prime site of verdict-by-disguise_ : the place where a contested causal hypothesis, dressed in the authority of measured correlations, is most often presented as a settled finding that quietly establishes \"inequality is bad,\" skipping every one of the careful steps this book has insisted on.\n\nApply the discipline. _Is_ there a correlation between inequality and various social problems across societies? Often, yes, that is the measured part, the IS. Does the correlation establish that inequality _causes_ those problems? No, and every caution from the Great Gatsby chapter applies with full force, and more. Correlation is not causation: more unequal societies differ from more equal ones in many ways besides their inequality (history, size, social composition, institutions, culture), any of which could drive the social outcomes. Reverse and common causes lurk: the same factors that produce social problems might produce inequality, or some third thing might produce both. And there is a subtle statistical trap specific to this literature, a version of which critics have pressed hard (arguing the correlations are sensitive to country selection and to the choice of measures): because the benefit of an additional dollar is larger for a poor person than a rich one, a society's _average_ outcome on something like health can correlate with its _inequality_ as a near-arithmetic artifact, without inequality _as such_ causing anything, the aggregate correlation can be partly an illusion arising from how individual-level relationships add up. On top of all this, the data have been contested, with critics arguing that the choice of which countries and which problems to include shapes the result, and that the relationships are weaker or vanish under different specifications.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1067,
+      "out_sha": "40cb6f488081",
       "note": ""
     },
     {
@@ -3007,11 +3007,11 @@
       "en_title": "Chapter 22: What Inequality Does, and the Questions You Now Carry",
       "order": 242,
       "src_chars": 1857,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b3e65b63602c",
       "src": "#### Common Misconception\n\nThe misconception this section must dismantle is the most consequential in the whole book, because it would, if accepted, undo the book's entire method: that the consequences literature has _proven inequality harmful_ and therefore settled the normative question. It has not, and presenting it as if it had is verdict-by-disguise in its purest form. The honest state of the consequences literature is this: there are real, measured correlations between inequality and various social problems; the _causal_ interpretation is genuinely contested, with serious methodological objections (confounding, reverse causation, statistical artifact, data sensitivity); and even if some causal links were established, that would _still_ not settle the normative question, because, as the entire book has shown, no causal finding delivers a verdict without a value premise. So the consequences literature must be presented as _contested causal hypotheses with their strongest critiques_ , never as a settled finding that establishes \"inequality is bad.\" This does not mean the thesis is false, it may well capture something real, and the status-anxiety mechanism is the thesis's proposed causal pathway, itself contested. It means the thesis is _contested_ , and that intellectual honesty requires saying so, especially because the conclusion is one many readers (and many authors) _want_ to be true. The temptation to let the consequences literature do the book's normative work for it, to finally get the verdict the book has so scrupulously withheld, is exactly the temptation the book must resist most firmly at its very end, because yielding to it would betray everything the preceding chapters built. The discipline does not get to relax because we have reached the conclusion we were hoping for. That is precisely when it matters most.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 603,
+      "out_sha": "181cb7cba01c",
       "note": ""
     },
     {
@@ -3019,11 +3019,11 @@
       "en_title": "Chapter 22: What Inequality Does, and the Questions You Now Carry",
       "order": 243,
       "src_chars": 3431,
-      "status": "pending",
+      "status": "done",
       "src_sha": "95271d226e12",
       "src": "### 22.2 Gathering the threads\n\nThree threads have run through this book, and it is time to gather them, because together they are what you carry away when the particular facts have faded.\n\n**Thread B, is / why / ought** , was the book's governing habit, and it is the tool you will reach for most often. You now know, as a reflex, to ask of any claim about inequality: is this a measured fact (IS), a contested account of causes (WHY), or a judgment of value (OUGHT)? And you know the cardinal rule that no pile of IS and WHY ever adds up to an OUGHT without a value premise that must be stated and owned. This is not a trick for winning arguments; it is a discipline for thinking honestly, and it is what allows a person to state measured facts plainly _and_ hold contested verdicts genuinely open, which is the rarest and most valuable posture on this entire subject. If you remember nothing else, remember to ask which register you are in, and to catch the moment when someone, including yourself, slides from one to another while pretending not to.\n\n**Thread C, structure versus merit** , was the spine debate, and we deliberately never resolved it. How much of where people end up is the structure they were born into, and how much is what they did with it? We gave the structural side its full strength (the gradients, the inheritance machinery, cultural capital, the morally arbitrary lottery of birth) and the agency side its full strength (real human capital, real effort and choice, the reality of striving and rising), and we held the apportionment open because it is genuinely open: contested, varying by domain and society, and resting partly on a normative question (whether developed merit is deserved when its development was unequally enabled) that no measurement can answer. You now know that \"it's all structure\" and \"it's all choices\" are both signals rather than analyses, and that the honest position is the harder one of holding the tension without collapsing it.\n\n**Thread A, the two lives** , was Maya and Devon, and it is time for a last look, taken with all the care the book has taught. We have followed them from a shared, equal infancy through diverging odds, in health, in schooling, in the wealth behind them, in the gaps that touched them, in the chances of rising or staying. Here is what the book entitles us to say about them, and what it forbids. We may say their odds were unequal from the morning of their birth, large and real and measured, because that is true. We may _not_ say their fates were sealed, because that is false: Devon was never doomed and Maya was never safe, the within-rung variance was always enormous, and both remained, to the end, agents facing genuine uncertainty whose own choices genuinely mattered. The two lives were never an illustration of \"structure determines everything.\" They were an illustration of something subtler and truer and harder to hold: that position shifts the odds profoundly _and_ never writes the story, that a weighted die is still thrown, that the gap in their chances was a fact about probability and the openness of their futures was a fact about freedom, and that both facts were always true at once. If you can hold those two facts together, about Maya and Devon and about every real person whose life the statistics of this book have counted, you have the sociological eye on its most human object, and you have what the book was for.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1272,
+      "out_sha": "23dd6e036d9d",
       "note": ""
     },
     {
@@ -3031,11 +3031,11 @@
       "en_title": "Chapter 22: What Inequality Does, and the Questions You Now Carry",
       "order": 244,
       "src_chars": 2825,
-      "status": "pending",
+      "status": "done",
       "src_sha": "16bfab4c8a6f",
       "src": "### 22.3 The discomfort, and why it is the point\n\nWe arrive, finally, at the strange place the book has been leading you toward all along, and I want to name it honestly rather than disguise it as a triumphant conclusion. You have read a whole book about inequality, and it has refused, at every turn, to tell you whether inequality is just or what should be done about it. You may feel, closing it, a certain discomfort: a wish that after all this careful looking, someone would just _say_ whether the ladder is right or wrong, and what to do. That wish is natural, and the book's refusal to satisfy it is deliberate, and I want to explain, one last time, why the refusal is a gift and not a withholding.\n\nThe book could easily have ended with a verdict. It would have been the most popular thing it could do, because a verdict is comfortable: it resolves the tension, it tells you which side you are on, it lets you close the book feeling you have _learned the answer_. But a verdict would have been a lie, in a precise sense. It would have taken the author's own value premises, about what justice requires, about what we owe each other, about how to weigh liberty and equality and desert and need, and presented them, dressed in all the authority of the preceding chapters of evidence, _as if they were a conclusion the evidence had reached_. That is verdict-by-disguise, the very move the book has taught you, chapter after chapter, to detect and refuse. For the book to end by committing the sin it spent twenty-one chapters warning against would not be a satisfying conclusion; it would be a betrayal.\n\nSo the discomfort you may feel is the feeling of being treated as a free and intelligent moral agent, which is rarer and more demanding than being handed an answer. The book has given you everything it honestly can: the measured facts, stated plainly; the contested causes, laid out fairly with every serious side at full strength; the great normative traditions, each in its strongest form; and the discipline to tell these apart and to see exactly where, in any argument, the value premise enters that the facts cannot supply. What it has not given you, because no one honestly can, is the value premise itself. _That_ is yours. Whether the ladder is just, how much inequality is too much, what we owe those at the bottom, whether justice is about process or outcome or need, whether our concern stops at our borders, these are questions you must answer with your own reasoned judgment, and the book's whole purpose was to make sure that when you answer them, you answer them _knowing what you are doing_ : aware of the facts, fair to the other side, and honest about the fact that your conclusion rests, finally, on a value commitment you are responsible for and that a thoughtful person could reasonably reject.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 876,
+      "out_sha": "cc8b12da45a5",
       "note": ""
     },
     {
@@ -3043,11 +3043,11 @@
       "en_title": "Chapter 22: What Inequality Does, and the Questions You Now Carry",
       "order": 245,
       "src_chars": 1167,
-      "status": "pending",
+      "status": "done",
       "src_sha": "595c48d53b52",
       "src": "This is what it means to see the ladder clearly without being told what to do about it. It is uncomfortable because clarity without a verdict is harder to carry than either ignorance or dogma. The person who has not looked can rest in not knowing; the person who has accepted a dogma can rest in certainty; but the person who has looked clearly and honestly, and who knows that the verdict is theirs to make and that reasonable people will make it differently, carries a weight that neither of the others does. That weight is the weight of being a free person thinking honestly about a hard thing. The book cannot lift it from you. It would be wrong to try. All it can do, all it has tried to do, is make sure that when you take up the weight, you take it up with both eyes open, with respect for the people on every rung and every side, and with the hard-won knowledge that the ladder is real, the gaps are real, the lives are real, and the verdict, real as it must be to you, was never written in the facts. It was always going to be yours to write. Now you are ready to write it. That readiness, and not any answer, is what this book was for.\n\n\n### 22.4 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 342,
+      "out_sha": "88564547df4e",
       "note": ""
     },
     {
@@ -3055,11 +3055,11 @@
       "en_title": "Chapter 22: What Inequality Does, and the Questions You Now Carry",
       "order": 246,
       "src_chars": 3489,
-      "status": "pending",
+      "status": "done",
       "src_sha": "99576afe6bdc",
       "src": "#### Concept Check\n\n**Q1.** Why does the chapter call the \"consequences of inequality\" literature \"the prime site of verdict-by-disguise\"? What is the honest way to present it?\n\nHint\n\nWhat would the thesis, if accepted as proven, do to the whole book's method? Which steps from the Great Gatsby chapter apply, and does even a proven causal link settle the OUGHT?\n\n**Answer:** It is the prime site of verdict-by-disguise because, if accepted as proven, the claim that inequality _itself_ causes social harms (violence, ill health, low trust, weak democracy) would seem to settle the normative question in one stroke, \"inequality is demonstrably harmful, therefore bad\", delivering the verdict the book has scrupulously withheld, and doing so by dressing a contested causal hypothesis in the authority of measured correlations while skipping every careful step. The honest presentation has three parts: (1) there are real, measured _correlations_ between inequality and various social problems (the IS); (2) the _causal_ interpretation is genuinely _contested_ , with serious objections, confounding (unequal societies differ in many ways), reverse causation, a statistical artifact (aggregate correlations can arise from the curvilinear individual income-outcome relationship without inequality-as-such causing anything), and data sensitivity (results depend on which countries and problems are included); and (3) even if some causal links were established, that would _still_ not settle the normative question, because no causal finding delivers a verdict without a value premise. So it must be presented as _contested causal hypotheses with their strongest critiques_ , never as a settled finding establishing \"inequality is bad\", while acknowledging the thesis may capture something real and that its proponents offer the status-anxiety mechanism as the proposed causal pathway, itself contested.\n\n**Q2.** The chapter says the temptation to let the consequences literature \"do the book's normative work\" is \"exactly the temptation the book must resist most firmly at its very end.\" Why is the discipline _hardest_ to maintain precisely here?\n\nHint\n\nWhat is special about reaching a conclusion you _want_ to be true? Does the discipline get to relax when the desired answer is in view?\n\n**Answer:** The discipline is hardest to maintain here because the conclusion the consequences literature points toward, that inequality is harmful, is one that many readers (and many authors) _want_ to be true, and the desire to reach a wished-for conclusion is exactly when intellectual honesty is most likely to slip. After twenty-one chapters of withholding the verdict, the consequences literature offers a tempting shortcut: a way to finally get the verdict the book has refused, and to feel that the evidence itself delivered it rather than the author's values. Yielding would let the book commit, at its very end, the precise sin (verdict-by-disguise) it spent the whole book teaching readers to detect, which would betray its entire method. The chapter's point is that the discipline does _not_ get to relax because we have reached a conclusion we were hoping for, that is precisely when it matters most. Honest method is tested not when it leads somewhere you dislike but when it would be easy and gratifying to abandon it for a desired answer. Resisting that, even at the cost of the satisfying ending, is what makes the book's refusal of a verdict principled rather than merely stylistic.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1218,
+      "out_sha": "9af58d6fc569",
       "note": ""
     },
     {
@@ -3067,11 +3067,11 @@
       "en_title": "Chapter 22: What Inequality Does, and the Questions You Now Carry",
       "order": 247,
       "src_chars": 2647,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3c6ce89bd804",
       "src": "#### Application Problems\n\n**Q1.** Take the three threads (A: two lives; B: is/why/ought; C: structure vs. merit) and state, for each, the single most important thing the book wants you to carry away. Then explain how Thread B is the tool that lets you hold Threads A and C honestly.\n\nHint\n\nA is about odds vs. fate; B is about three registers and the value premise; C is about the open apportionment. How does the IS/WHY/OUGHT discipline keep you from collapsing the two lives into determinism or the structure-merit question into a slogan?\n\n**Answer:** _Thread A (two lives)_ : position shifts the odds profoundly _and_ never writes the story, the gap in chances is a fact about probability, the openness of futures a fact about freedom, and both are true at once; never collapse odds into fate (Devon doomed, Maya safe) in either direction. _Thread B (is/why/ought)_ : every claim is a measured fact (IS), a contested cause (WHY), or a value judgment (OUGHT), and no facts add up to a verdict without a value premise that must be stated and owned. _Thread C (structure vs. merit)_ : the apportionment of outcomes between inherited structure and genuine merit is genuinely open, contested, varying, and partly normative; \"all structure\" and \"all choices\" are both signals, not analyses. _How B holds A and C honestly_ : Thread B is the discipline that prevents the collapses the other two threads are vulnerable to. For Thread A, the IS/WHY distinction keeps \"the odds are unequal\" (a measured IS) from sliding into \"the fates are sealed\" (a determinist overreach), preserving both the real gradient and real agency. For Thread C, the IS/WHY/OUGHT distinction keeps the _empirical_ apportionment question (how much structure, how much merit, a contested WHY) separate from the _normative_ desert question (whether merit is deserved when unequally enabled, an OUGHT), so you neither pretend the facts settle the structure-merit weighting nor pretend that settling it would deliver a verdict. In both cases, Thread B is the tool that lets you state what is measured plainly while holding what is contested genuinely open, which is the whole book's posture.\n\n**Q2.** A reader finishes the book frustrated: \"It told me everything except what to think. What good is all this analysis if it won't reach a conclusion?\" Using the chapter's argument, write the strongest response, and be honest about what the reader has lost and gained.\n\nHint\n\nCould the book have reached a verdict honestly? What would a verdict have actually been (a finding, or the author's value premise in disguise)? What has the reader gained that a verdict would have denied them?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1093,
+      "out_sha": "8fcbf1bc3f4f",
       "note": ""
     },
     {
@@ -3079,11 +3079,11 @@
       "en_title": "Chapter 22: What Inequality Does, and the Questions You Now Carry",
       "order": 248,
       "src_chars": 1665,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ad883f3d176d",
       "src": "**Answer:** The strongest response: the book _could_ have reached a verdict, but not _honestly_ , because a verdict on whether inequality is just would not be a conclusion the evidence reached, it would be the _author's value premises_ (about justice, desert, what we owe each other, liberty vs. equality) dressed in the authority of the preceding chapters and presented as if the facts had delivered them. That is verdict-by-disguise, the exact move the book taught the reader to detect, so ending with a verdict would have betrayed the method and, worse, would have _imposed_ one contestable value commitment while disguising its nature. What the reader has _lost_ : the comfort of a resolved tension, the feeling of having \"learned the answer,\" the relief of being told which side to be on. What the reader has _gained_ is greater and rarer: the measured facts stated plainly, every serious position at full strength, the great normative traditions in their best forms, and, above all, the discipline to tell IS from WHY from OUGHT and to see exactly where in any argument the value premise enters that no fact can supply, which means the reader can now reach their _own_ verdict _knowingly_ , aware of the facts, fair to the other side, and honest that their conclusion rests on a value commitment they own and a thoughtful person could reject. The frustration is the feeling of being treated as a free moral agent rather than handed a dogma, which is harder to carry but is the only honest gift a book on this subject can give. The analysis was not meant to reach the conclusion _for_ the reader; it was meant to make the reader _capable_ of reaching it well.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 564,
+      "out_sha": "52abca921a15",
       "note": ""
     },
     {
@@ -3091,11 +3091,11 @@
       "en_title": "Chapter 22: What Inequality Does, and the Questions You Now Carry",
       "order": 249,
       "src_chars": 2739,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3e7738779c3a",
       "src": "#### Think Deeper\n\n**Q1.** The book ends by claiming that \"clarity without a verdict is harder to carry than either ignorance or dogma,\" and that carrying it is \"the weight of being a free person thinking honestly about a hard thing.\" Do you accept this? Is there a real difference between the book's refusal to deliver a verdict and simple fence-sitting or relativism? And, having read the whole book: does seeing inequality this clearly change what you think you _should_ do, even though the book declined to tell you?\n\n**Discussion:** This final question turns the book's method back on the reader one last time, and it deserves a response that models the very discipline it asks about, including an honest reckoning with the strongest objection.\n\nFirst, the distinction between the book's stance and mere fence-sitting or relativism, because this is the objection that most threatens the book's whole project. _Relativism_ would say there is no truth of the matter about whether inequality is just, that all views are equally valid, that the question is meaningless. The book has _not_ said this, and the distinction is crucial. The book holds that there _are_ better and worse ways to think about the justice of inequality, more and less honest, more and less informed, more and less fair to the evidence and to opposing views, and it has insisted throughout on real standards: get the facts right, state them plainly, steelman every side, separate the registers, find the value premise. A relativist needs none of that discipline because for the relativist nothing is at stake; the book's entire apparatus presupposes that thinking honestly about this is _hard and matters_ , which is the opposite of relativism. Nor is it _fence-sitting_ , the refusal to take a position out of timidity or a desire to offend no one. The book takes many positions, firmly: that wealth is more concentrated than income, that the gradients are real, that both Bourdieu and human capital capture something true, that verdict-by-disguise is an error, that the facts do not settle the OUGHT. What it declines to do is take a position on the _contested value question_ of whether inequality is just, not because it is afraid to, but because that question genuinely depends on a value premise that is the _reader's_ to supply, and on which reasonable people genuinely differ. The difference between fence-sitting and principled restraint is whether you are refusing to decide a question that is _yours_ to decide, or declining to decide for _others_ a question that is _theirs_. The book does the latter. That is not cowardice; it is respect, disciplined by the recognition that delivering the verdict would require disguising a value premise as a finding.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 912,
+      "out_sha": "2b8ead33073b",
       "note": ""
     },
     {
@@ -3103,11 +3103,11 @@
       "en_title": "Chapter 22: What Inequality Does, and the Questions You Now Carry",
       "order": 250,
       "src_chars": 2679,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a380f23fb4f0",
       "src": "Second, whether you accept that clarity without a verdict is the hardest thing to carry. You might push back: perhaps the book overstates the nobility of its own refusal, and a wiser book would have offered its honest judgment _as_ a judgment, clearly labeled, so the reader had something concrete to argue with rather than a mirror. This is a serious objection, and there is something to it, a thinker who lays out their own conclusion, explicitly flagged as their value-laden view, gives the reader a real interlocutor, and arguably models honest engagement better than studied neutrality. The book's reply would be that on _this_ subject, the most politically charged in the field, an author's stated verdict, however carefully labeled, tends to swamp everything else, becoming the thing readers remember and either rally to or dismiss, so that the discipline of the preceding chapters gets read through the lens of the conclusion rather than on its own terms. Whether that justifies total restraint, or whether a clearly-owned authorial verdict would have served you better, is itself a question you are now equipped to weigh, and reasonable people, including reasonable authors, weigh it differently. That the book's own central choice is itself contestable is, perhaps, the most fitting possible ending for a book built on the conviction that the hardest questions are the ones we must each answer for ourselves.\n\nFinally, the question the book cannot answer and you now must: does seeing inequality this clearly change what you think you should do? Here I will say only what the whole book commits me to. I do not know what you should do, and I do not believe anyone honestly can know it _for_ you, because what you should do depends on the value premise you bring, and that is yours. But I will venture this, which is not a verdict but an observation about the activity you have just completed: it is very difficult to look this clearly and honestly at the reality of the ladder, at the gradients in the body, the machinery of inheritance, the lives of Maya and Devon held as odds rather than fates, the gaps and their contested causes, the great unresolved arguments about justice, and to come away _unchanged_ , whatever direction the change takes. Clear seeing is not neutral in its effects, even when the seer refuses to prescribe. What you do with what you have seen, whether it moves you toward action or toward humility or toward a settled view you can now defend or toward a productive unsettlement you will carry for years, is the one thing this book was always, finally, going to leave entirely in your hands. It has tried to make you ready. The rest is yours.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 913,
+      "out_sha": "05641944e696",
       "note": ""
     },
     {
@@ -3115,11 +3115,11 @@
       "en_title": "Chapter 22: What Inequality Does, and the Questions You Now Carry",
       "order": 251,
       "src_chars": 3303,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a80e6fb175e0",
       "src": "### Chapter Summary\n\nThe final chapter confronted the last great question, what inequality _does_ , its consequences, and treated it as the **prime site of verdict-by-disguise**. The influential thesis that inequality _itself_ causes social harms (violence, ill health, low trust, weak democracy, via status anxiety and stress) rests on real measured _correlations_ but a genuinely _contested_ causal interpretation: every Great Gatsby caution applies (correlation is not causation; confounding; reverse causation), plus a statistical-artifact objection (aggregate correlations can arise from the curvilinear individual income-outcome relationship) and data-sensitivity critiques. We insisted it be presented as _contested causal hypotheses with their strongest critiques_ , never as a settled finding establishing \"inequality is bad\", and we identified the deepest temptation of the whole book: to let this literature deliver the verdict the book withheld, a temptation hardest to resist precisely because the conclusion is one many _want_ to be true, which is exactly when the discipline matters most.\n\nWe gathered the three threads. **Thread B (is/why/ought)** is the book's most useful gift, the reflex of asking which register a claim is in and catching the value premise that any verdict requires. **Thread C (structure vs. merit)** was deliberately left open, contested, varying, partly normative, with both \"all structure\" and \"all choices\" exposed as signals not analyses. **Thread A (Maya and Devon)** got its last look, held with full discipline: their odds were unequal from birth (real, measured) _and_ their fates were never sealed (the within-rung variance enormous, agency real), the gap a fact about probability and the openness a fact about freedom, both true at once, and Thread B is what lets us hold A and C honestly.\n\nFinally we named the **discomfort** of seeing the ladder clearly without being told what to do, and argued it is the book's central gift, not its failure: a verdict would have been verdict-by-disguise, the author's value premises dressed as a conclusion the evidence reached, betraying the whole method. The discomfort is the weight of being treated as a free moral agent, harder to carry than ignorance or dogma. The book gives everything it honestly can, the facts plainly, every side at full strength, the normative traditions in their best forms, and the discipline to tell them apart, but not the value premise itself, which is the reader's. The Think Deeper distinguished this principled restraint from relativism (the book insists on real standards of honest thinking) and from fence-sitting (it declines to decide for _others_ a question that is _theirs_), while honestly admitting that the book's own choice of restraint is itself contestable. Seeing clearly is not neutral in its effects; what you do with what you have seen was always, finally, going to be yours.\n\n_The Shape of Inequality_ ends as it began, with two children and an open question, and with the conviction that the highest service a book on this subject can render is not to settle the argument but to make its reader capable of joining it honestly, with both eyes open, fair to every position on the ladder, and ready to write a verdict that was never the book's to write.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1224,
+      "out_sha": "21a629bfa2bb",
       "note": ""
     }
   ],
