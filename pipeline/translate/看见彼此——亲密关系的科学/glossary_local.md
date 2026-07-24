@@ -62,6 +62,20 @@
 | John Bowlby | John Bowlby（约翰·鲍尔比） |
 | B. F. Skinner | B. F. Skinner（B. F. 斯金纳） |
 | Mary Main | Mary Main（玛丽·梅因） |
+| Gary Chapman | Gary Chapman（加里·查普曼） |
+| Knee | Knee（克尼） |
+| Bessel van der Kolk | Bessel van der Kolk（巴塞尔·范德科尔克） |
+| Stephen Porges | Stephen Porges（斯蒂芬·波吉斯） |
+| Emily Nagoski | Emily Nagoski（埃米莉·纳戈斯基） |
+| John Bancroft | John Bancroft（约翰·班克罗夫特） |
+| Erick Janssen | Erick Janssen（埃里克·扬森） |
+| Julianne Holt-Lunstad | Julianne Holt-Lunstad（朱丽安·霍尔特-伦斯泰德） |
+| Arthur Aron | Arthur Aron（阿瑟·阿伦） |
+| Stephanie Coontz | Stephanie Coontz（斯蒂芬妮·库恩茨） |
+| Stan Tatkin | Stan Tatkin（斯坦·塔特金） |
+| Robin Dunbar | Robin Dunbar（罗宾·邓巴） |
+| Lydia Denworth | Lydia Denworth（莉迪娅·登沃思） |
+| Dan Siegel | Dan Siegel（丹·西格尔） |
 
 ## Recurring 人物（保留原名）
 
