@@ -575,11 +575,11 @@
       "en_title": "Chapter 3: The Relational Model",
       "order": 39,
       "src_chars": 2073,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ce1a86a8a0bb",
       "src": "#### Referential integrity (typos)\n\nChapter 2: `1099,Alice Wong,109,...` could be written into the CSV with no complaint.\n\nRelational schema: the foreign keys on `Enrollments.student_id` and `Enrollments.course_id` catch the typo at insert time:\n    \n    \n    INSERT INTO Enrollments (student_id, course_id) VALUES (1099, 109);\n    -- ERROR: insert or update on table \"Enrollments\" violates\n    -- foreign key constraint — Key (student_id)=(1099) is not\n    -- present in table \"Students\".\n    \n\nThe bad row never lands. The operator sees the error and retries with the correct IDs.\n\nFour Chapter 2 failures, four Chapter 3 structural fixes. This is why the relational model was a revolution.\n\n\n### 3.8 The Relational Model as a Teaching Device\n\nThroughout the rest of this book, we will sometimes speak of \"the relational model\" and sometimes of \"SQL\". These are not the same thing:\n\n* **The relational model** (Codd, 1970) is the mathematical abstraction: sets of tuples, operated on by relational algebra (Chapter 7). It is clean and orthogonal.\n* **SQL** (commercial, ~1974–present) is the language implementations converged on. It is not purely relational — it permits duplicates (bag semantics), it has NULLs with three-valued logic, it has procedural features — but it is the interface every mainstream relational DBMS uses.\n\nWhy the divergence? Three reasons:\n\n  1. Duplicates are easier to produce and reason about in many common operations. Strict set semantics requires extra work on the engine's part.\n  2. Three-valued logic is a concession to the fact that real-world data has holes.\n  3. SQL evolved under commercial pressure and accumulated features (window functions, recursive queries, JSON support) that the original relational model did not anticipate.\n\nFor the next three chapters (3, 4, 7), we lean on the clean mathematical abstraction when it helps reasoning, and on SQL when we need to show real code. By Chapter 8, SQL and the relational model will diverge further (window functions are not purely relational), and we will be explicit about that.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 920,
+      "out_sha": "d8fbe733a704",
       "note": ""
     },
     {
@@ -587,11 +587,11 @@
       "en_title": "Chapter 3: The Relational Model",
       "order": 40,
       "src_chars": 1751,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5a428f4037e8",
       "src": "### Tradeoffs Summary\n\n* **Set semantics (pure relational model) trades expressive convenience for mathematical cleanliness.** Sets give you simple equivalence laws for the optimizer to exploit; SQL's bag semantics gives you `COUNT` and `SUM` that work the way users expect. Nearly every real system kept the bag.\n* **Surrogate keys trade meaning for stability.** A numeric `id` never changes when a student's name, email, or major changes, so foreign keys never dangle — but the key carries no information on its own, and you need a separate uniqueness constraint on whatever attribute the humans actually use.\n* **Foreign-key constraints trade write flexibility for referential integrity.** An insert or delete that would produce an orphan is rejected outright; you cannot accidentally point at a nonexistent row, but bulk loads and schema migrations must now respect the dependency order.\n* **`ON DELETE CASCADE` trades safety for convenience.** Deleting a student automatically deletes their enrollments, which is what you usually want — and exactly what you catastrophically don't want the day someone deletes the wrong student. `RESTRICT` forces you to acknowledge the fan-out.\n* **Three-valued logic (NULL) trades Boolean simplicity for honest handling of missing data.** `x = NULL` is UNKNOWN, not FALSE, so `WHERE` clauses quietly drop rows you might have expected; in exchange, you can represent \"we don't know yet\" without inventing sentinel values that break arithmetic.\n* **Declaring`NOT NULL` where possible trades schema flexibility for query predictability.** Every nullable column is a future three-valued-logic surprise. Make columns nullable only when \"missing\" is a real state of the world, not just a default.\n\n\n### 3.9 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 647,
+      "out_sha": "28bcf185dd8f",
       "note": ""
     },
     {
@@ -599,11 +599,11 @@
       "en_title": "Chapter 3: The Relational Model",
       "order": 41,
       "src_chars": 3194,
-      "status": "pending",
+      "status": "done",
       "src_sha": "dffdf038cca0",
       "src": "#### Concept Check\n\n**Q1.** For the `Students` relation with attributes `(id, name, email, birthdate)`, list: (a) Two superkeys that are _not_ candidate keys. (b) Two candidate keys. (c) State which candidate key you would choose as the primary key, and why.\n\nAssume email is unique per student and that no two students have the same id.\n\nHint\n\nCandidate keys are minimal superkeys. A superkey that has a proper subset which is also a superkey is not minimal.\n\n**Answer:** (a) `{id, name}` and `{email, birthdate}` are both superkeys but not candidate keys. The first is a superkey because `{id}` alone is a superkey, so adding `name` preserves uniqueness but isn't minimal. The second is a superkey because `{email}` alone is a superkey.\n\n(b) `{id}` and `{email}`. Both uniquely identify, and neither contains a proper subset that does.\n\n(c) Use `{id}` as the primary key. `id` is a surrogate integer: stable, not meant to change, cheap to index, and cheap to reference from other tables (a 4-byte integer is cheaper than a 50-byte email string). `email` becomes a `UNIQUE NOT NULL` column, preserving its uniqueness without dragging around a heavy, user-controlled value as the canonical row identifier.\n\n**Q2.** Consider the `Enrollments` relation with primary key `(student_id, course_id)`. Suppose a student enrolls in the same course twice (say, they failed and re-took it). Does the current primary key support this?\n\n**Answer:** No. The composite primary key `(student_id, course_id)` enforces that each (student, course) pair appears at most once. A second attempt at course 101 by student 1001 would violate the primary key constraint.\n\nFix: extend the primary key to include a `semester` or `term_id` attribute: `PRIMARY KEY (student_id, course_id, term_id)`. This lets the same student take the same course in different terms. The schema now models \"enrollment of student X in course Y during term Z\" rather than the simpler \"student X is or was enrolled in course Y.\" The choice reflects what the business rule actually wants.\n\n**Q3.** Why does SQL have `IS NULL` as a separate construct instead of letting us write `x = NULL`? What would go wrong if `= NULL` returned `TRUE` for rows where x is null?\n\n**Answer:** Because NULL means \"unknown\", not \"the value null\". If `NULL = NULL` returned `TRUE`, we'd be asserting \"two unknowns are definitely equal\" — which is the opposite of what \"unknown\" means. Two rows with null `grade` might actually have different grades once we find out; we just don't know yet. So comparisons involving NULL must return \"unknown\" (SQL's third boolean value), and `IS NULL` exists as an explicit test for the \"no value\" state, separate from comparisons for actual value equality. This is the essence of three-valued logic.\n\nIf `= NULL` returned `TRUE`, queries like `WHERE grade = target_grade` would silently match rows where the grade is unknown whenever `target_grade` happens to be null — producing phantom matches that have nothing to do with the actual data.\n\n**Q4.** What are the four possible referential actions on delete, and what does each mean in one sentence? For each, give a one-line example of when it's the right choice.\n\n**Answer:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1379,
+      "out_sha": "3891a28bed2c",
       "note": ""
     },
     {
@@ -611,11 +611,11 @@
       "en_title": "Chapter 3: The Relational Model",
       "order": 42,
       "src_chars": 951,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7971da896703",
       "src": "* **RESTRICT / NO ACTION:** block the delete if any child row references the parent. _Example:_ don't let a student be deleted while they still have current enrollments.\n* **CASCADE:** delete the parent and all child rows that reference it. _Example:_ delete an order and its order line items together — the line items have no meaning without the order.\n* **SET NULL:** delete the parent and null out the references in child rows. _Example:_ a user deletes their account; their posts remain but show \"deleted user\" as author (FK set to null).\n* **SET DEFAULT:** delete the parent and set the child references to a default value. _Example:_ a category is deleted; affected products are reassigned to a \"Miscellaneous\" category.\n\nChoose RESTRICT for relationships where the dependent data must not be accidentally erased; CASCADE for strictly parent-owned data; SET NULL / SET DEFAULT for relationships where the reference is incidental, not essential.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 378,
+      "out_sha": "8ca63faf1887",
       "note": ""
     },
     {
