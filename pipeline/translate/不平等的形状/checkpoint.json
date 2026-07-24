@@ -1615,11 +1615,11 @@
       "en_title": "Chapter 13: Drawing the Poverty Line",
       "order": 126,
       "src_chars": 1627,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b957c353286e",
       "src": "We have spoken of \"the bottom\" for twelve chapters now, abstractly, as a position on a ladder, a rung with bad odds. In Part 5 we go there. Not to study the poor as specimens, which would betray everything this book is about, but to ask the questions that the lowest rungs force on anyone trying to think honestly about inequality: What _is_ poverty? How do we know who is poor? And, in the next chapter, why are some people poor, the most charged and most caricatured question in the entire field?\n\nBegin with what looks like the simplest question and turns out to be one of the most revealing: who counts as poor? You might think this is merely a technical matter, a line on a chart, the business of statisticians. It is not. _Where you draw the poverty line embeds a contested idea about what poverty is_ , and the choice of definition can change the measured poverty rate dramatically, can make a society look like it is winning or losing its war on want, can determine who receives help and who does not. The line is not found in nature. It is drawn by people, according to a theory, and the theory is exactly the kind of thing this book teaches you to examine rather than swallow. This chapter is about that line, and about the surprising depth of disagreement hiding in the apparently dry question of how to count the poor.\n\n\n### 13.1 Two ideas of what poverty is\n\nThe deepest fork in the road is between two fundamentally different ideas of what it even means to be poor. They are not two ways of measuring the same thing; they are two different things, and a society that confuses them will argue past itself forever.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 514,
+      "out_sha": "666d1e250c7d",
       "note": ""
     },
     {
@@ -1627,11 +1627,11 @@
       "en_title": "Chapter 13: Drawing the Poverty Line",
       "order": 127,
       "src_chars": 2738,
-      "status": "pending",
+      "status": "done",
       "src_sha": "df9ed2d25929",
       "src": "#### Definition: Absolute vs. Relative Poverty\n\n**Absolute poverty** defines poverty against a _fixed standard_ of material need: lacking the resources to obtain the basic necessities for survival and minimal functioning, food, shelter, clothing, clean water. The standard does not change as the society gets richer; by an absolute measure, a society can in principle eliminate poverty entirely by lifting everyone above the fixed line.\n\n**Relative poverty** defines poverty against the _standard of one's own society_ : lacking the resources to participate in the normal life of the community one lives in. The standard _rises as the society gets richer_ , because what counts as \"normal participation\" changes; by a relative measure, poverty is harder to eliminate, because it is defined by distance from the middle, not by a fixed floor.\n\nIn plain language: absolute poverty asks \"do you have enough to survive and function?\" while relative poverty asks \"do you have enough to live a normal life _here_?\" The difference is profound and genuinely contested, and both ideas capture something real. The absolute idea captures the bedrock intuition that there is a level of deprivation, hunger, exposure, that is poverty anywhere and always, regardless of how rich the neighbors are. The relative idea captures the equally real intuition that poverty is partly _social_ : a child who cannot have what is needed to take part in the ordinary life of their society, to dress so as not to be shamed at school, to have what classmates have, is experiencing something that bare survival statistics miss, even if they are not starving. A person can be absolutely non-poor (fed, housed, surviving) and relatively poor (excluded, unable to participate), and which of these we count as \"poverty\" is a real choice with real stakes.\n\nNotice that this is not a dispute that evidence can settle, and saying so honestly is itself part of the discipline. The question \"is poverty about survival or about participation?\" is partly a _values_ question, an OUGHT about what we owe people and what a decent life requires, dressed as a definitional one. Someone who holds that what matters is keeping people from destitution will favor an absolute measure; someone who holds that a decent society must let everyone participate in its common life will favor a relative one. Neither is simply _correct_ ; they reflect different views of what poverty fundamentally is. This is the IS/OUGHT distinction reaching all the way down into the apparently neutral act of measurement, and it is worth seeing clearly: even the _definition_ of the thing we are measuring carries a value commitment, which is why we must always ask which definition a poverty statistic uses.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 912,
+      "out_sha": "6a1475edd5cb",
       "note": ""
     },
     {
@@ -1639,11 +1639,11 @@
       "en_title": "Chapter 13: Drawing the Poverty Line",
       "order": 128,
       "src_chars": 2309,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3315e404d608",
       "src": "### 13.2 How the line gets drawn in practice\n\nIn real societies, poverty lines are usually messy hybrids of the two ideas, and understanding the actual machinery helps you read the numbers honestly.\n\nTake the United States as a worked example, stated with its as-of and source. The official US poverty measure is essentially _absolute_ : it is based on a fixed threshold, originally derived decades ago from the cost of a minimal food budget multiplied out to cover other needs, and then adjusted each year only for inflation, not for rising living standards. By this official measure, the US poverty rate in 2023 was around eleven percent (US Census Bureau), meaning roughly one in nine people fall below the fixed line. But the United States also computes a _Supplemental Poverty Measure_ , which takes a broader approach, counting a wider range of resources (including the value of government benefits like food assistance and tax credits) and subtracting necessary expenses (like taxes, work costs, and medical and housing costs that vary by region). By this supplemental measure, the 2023 rate was somewhat higher, around thirteen percent. The two measures can move in _opposite directions_ in a given year, and they tell partly different stories, because they are built on different theories of what to count.\n\nThis worked example teaches three things at once. First, _the measure determines the number_ : the same society, the same year, the same people, yields different poverty rates depending on which line you use, so any poverty statistic is meaningless until you know which measure produced it. Second, _the measures reveal what they are built to reveal_ : the official measure, ignoring government benefits, cannot show whether those benefits reduce poverty (by its accounting they do not exist), while the supplemental measure, counting them, can, which is why debates about whether anti-poverty programs \"work\" often turn on which measure is used. Third, and most important for our discipline, _no measure is neutral_ : each embeds choices, about what counts as a resource, what counts as a necessity, whether to fix the line or let it rise, that are partly technical and partly value-laden, and a careful reader interrogates those choices rather than taking the headline rate as simple fact.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 750,
+      "out_sha": "977737bef0a1",
       "note": ""
     },
     {
@@ -1651,11 +1651,11 @@
       "en_title": "Chapter 13: Drawing the Poverty Line",
       "order": 129,
       "src_chars": 1261,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4b266a5234f9",
       "src": "#### Common Misconception\n\nA common mistake is to treat the poverty rate as a hard, objective number like a temperature, and therefore to read a change in it, or a difference between countries, as straightforwardly meaningful. It is not that simple. Because the measure embeds contested choices, a country can lower its measured poverty rate by changing the definition rather than the conditions, and two countries with identical living standards can report very different poverty rates because they draw the line differently (one absolute, one relative, at different thresholds). This does _not_ mean poverty statistics are useless or that \"it's all subjective\", that lazy conclusion is its own error, because the underlying deprivation is real and the measures, read carefully, track it. It means you must always ask _which line, drawn how, counting what_ , before you let a poverty number into your thinking. A relative measure will show \"poverty\" persisting even as a society grows richer (because the line rises); an absolute measure will show it falling with growth (because the line is fixed). Neither is lying. They are answering different questions, and confusing them produces endless false arguments about whether poverty is getting better or worse.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 385,
+      "out_sha": "b40cbcdaff55",
       "note": ""
     },
     {
@@ -1663,11 +1663,11 @@
       "en_title": "Chapter 13: Drawing the Poverty Line",
       "order": 130,
       "src_chars": 2519,
-      "status": "pending",
+      "status": "done",
       "src_sha": "217a6db9f212",
       "src": "### 13.3 What the line cannot capture\n\nThe line, however drawn, is a threshold on a single dimension, usually income. But poverty as lived is not a number; it is a condition, and three features of that condition escape any line, which is why the next chapter must turn from measuring poverty to understanding it.\n\nFirst, _poverty is dynamic, not static_. The people below the line in one year are not all the same people below it the next. Some are passing through a bad spell, a lost job, an illness, a divorce, and will climb back; others are persistently, chronically poor across years and even generations. A single year's poverty rate cannot tell these apart, yet the difference is enormous, both for understanding the experience and for thinking about causes. A spell of poverty after a layoff is a different phenomenon from poverty that has held a family for three generations, and lumping them under one number obscures both.\n\nSecond, _poverty is deeper than income_. Recall everything Parts 2 and 3 established: the bottom rung is not just a low income but the correlated web of disadvantages, worse health, weaker schooling, less safety, no wealth cushion, thinner networks. A line on income captures the flow and misses the reservoir (Chapter 2) and the web (Chapter 7). Two households at the same low income differ enormously if one has a paid-off home and family support and the other has nothing behind it, the income line treats them identically and the reality does not. This is why some thinkers argue poverty should be measured not by income alone but by _deprivation_ across multiple dimensions at once, a richer picture that no single line provides.\n\nThird, and most important for keeping faith with the humanity of the subject, _poverty is experienced, not just measured_. To be poor is not merely to be a data point below a threshold; it is to live a particular kind of life, marked by insecurity, by the constant management of scarcity, by exposure to shame and to the judgment of others, by what some researchers describe as the cognitive load of having no margin for error. The statistics are essential, they discipline our thinking and prevent sentimental error in both directions, but they are a measurement of a human condition, and the measurement must never be mistaken for the condition. We will hold this firmly in the next chapter, where the temptation to treat the poor as a category to be explained, rather than as people whose lives we are trying to understand, is at its strongest.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 806,
+      "out_sha": "5f3ef8b31842",
       "note": ""
     },
     {
@@ -1675,11 +1675,11 @@
       "en_title": "Chapter 13: Drawing the Poverty Line",
       "order": 131,
       "src_chars": 1642,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4bcd3185767b",
       "src": "### 13.4 The harder question ahead\n\nThis chapter has shown that even _counting_ the poor is not the neutral, technical act it appears, that the poverty line embeds a contested idea, absolute or relative, survival or participation, with a value commitment buried in the definition, and that the measure determines the number, so no poverty statistic means anything until you know which line drew it. We have seen that real measures, like the United States' official and supplemental rates, are hybrids that reveal what they are built to reveal, and that the lived condition of poverty, dynamic, multidimensional, and experienced, escapes any single threshold.\n\nBut the question that makes poverty the most charged topic in the study of inequality is not _how many_ are poor. It is _why_. Why are some people poor, in a society where others are not? This is where the structure-versus-merit debate of Thread C reaches its hottest and most human point, where the competing explanations, structural, cultural, and individual, collide most violently, and where the single most caricatured idea in this entire book, the \"culture of poverty,\" sits waiting to be misunderstood. The next chapter takes up that question with the greatest care the book can muster, because nowhere else is it easier to slide into either the activist's tract or the apologist's sneer, and nowhere else does honest, even-handed thinking matter more to the dignity of the people it concerns. We have learned to count the poor. Now we must try, fairly, to understand why they are poor, holding every explanation to its strongest form and crowning none.\n\n\n### 13.5 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 544,
+      "out_sha": "ab602a525213",
       "note": ""
     },
     {
@@ -1687,11 +1687,11 @@
       "en_title": "Chapter 13: Drawing the Poverty Line",
       "order": 132,
       "src_chars": 2474,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f8351a45ad0c",
       "src": "#### Concept Check\n\n**Q1.** Distinguish absolute from relative poverty, and explain why the chapter says a person can be \"absolutely non-poor but relatively poor.\"\n\nHint\n\nOne measures against a fixed survival standard, the other against the normal life of one's own society. Could someone be fed and housed yet unable to participate normally?\n\n**Answer:** _Absolute poverty_ is measured against a _fixed standard_ of material need (lacking resources for basic survival and functioning, food, shelter, clothing); the standard does not rise as the society gets richer. _Relative poverty_ is measured against the _standard of one's own society_ (lacking resources to participate in the community's normal life); the standard _rises_ as the society grows richer. A person can be _absolutely non-poor but relatively poor_ when they have enough to survive and physically function (fed, housed) yet lack what is needed to take part in the ordinary life of their society, the child who is not starving but cannot have what classmates have, cannot dress to avoid shame, cannot participate. Bare survival is met (so not absolutely poor) while social participation is not (so relatively poor). Both ideas capture something real: the bedrock of survival, and the social dimension of exclusion.\n\n**Q2.** Why does the chapter say the choice between absolute and relative measures is \"partly a values question dressed as a definitional one\"?\n\nHint\n\nCan evidence alone tell you whether poverty is \"really\" about survival or about participation? What kind of commitment does each choice reflect?\n\n**Answer:** Because the question \"is poverty about survival or about participation?\" cannot be settled by evidence, it depends on what one thinks a decent life requires and what we owe people, which is an OUGHT. Someone who holds that what matters is preventing destitution will favor an _absolute_ measure; someone who holds that a decent society must let everyone participate in its common life will favor a _relative_ one. Neither is simply \"correct\"; they reflect different views of what poverty fundamentally _is_. So the apparently neutral, technical act of choosing a poverty line carries a buried value commitment, an instance of the IS/OUGHT distinction reaching all the way down into measurement itself. This is why the chapter insists you always ask _which_ definition a poverty statistic uses: the definition is not value-free, and the number it produces inherits the value choice.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 836,
+      "out_sha": "57312f8bddfc",
       "note": ""
     },
     {
@@ -1699,11 +1699,11 @@
       "en_title": "Chapter 13: Drawing the Poverty Line",
       "order": 133,
       "src_chars": 2984,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d86bebea0de1",
       "src": "#### Application Problems\n\n**Q1.** A society's economy grows substantially over twenty years, and everyone's real income rises. Its _absolute_ poverty rate falls sharply, but its _relative_ poverty rate barely changes. A commentator says one of the measures must be \"wrong.\" Explain why both can be right, and what each is telling you.\n\nHint\n\nThe absolute line is fixed; the relative line rises with the society. What does each measure track as the society grows?\n\n**Answer:** Both can be right because they measure different things. The _absolute_ rate falls because its line is _fixed_ : as everyone's real income rises, more people clear the unchanging survival threshold, so absolute poverty (deprivation against a fixed standard) genuinely declines, a real and good fact. The _relative_ rate barely moves because its line _rises with the society_ : as the middle gets richer, \"normal participation\" gets more expensive, so people at the bottom can remain the same distance _below the middle_ even as their real income grows, meaning relative poverty (exclusion from the community's normal life) persists. Neither measure is wrong; they answer different questions, \"are fewer people destitute?\" (yes) and \"are fewer people excluded from normal social life?\" (not really). The commentator's error is assuming there is one true poverty rate; the disciplined reader reports both and specifies what each tracks, recognizing that growth can reduce destitution while leaving social exclusion largely intact.\n\n**Q2.** The US official poverty measure ignores government benefits like food assistance and tax credits, while the Supplemental Poverty Measure counts them. Explain how this single difference can make the two measures tell opposite stories about whether anti-poverty programs \"work.\"\n\nHint\n\nIf a measure does not count a benefit as a resource, can it ever show that benefit reducing poverty?\n\n**Answer:** The difference is decisive because a measure can only credit what it counts. The _official_ measure ignores government benefits as resources, so by its accounting those benefits effectively \"do not exist\", no matter how much food assistance or tax-credit money reaches poor families, the official rate cannot reflect it, and the programs can appear to do nothing for poverty. The _supplemental_ measure counts those benefits as resources, so it _can_ show them lifting families above the line, making the programs appear to reduce poverty substantially. Same programs, same families, opposite conclusions, purely because of what each measure counts. This is why debates over whether anti-poverty programs \"work\" so often turn on which measure is cited: the choice of measure is not a neutral technicality but partly determines the answer. The disciplined move is to ask what a measure counts before accepting its verdict on a program, and to recognize that the official measure is structurally unable to detect the effect of the very benefits designed to reduce poverty.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 985,
+      "out_sha": "cbb9ea9cfba6",
       "note": ""
     },
     {
@@ -1711,11 +1711,11 @@
       "en_title": "Chapter 13: Drawing the Poverty Line",
       "order": 134,
       "src_chars": 2634,
-      "status": "pending",
+      "status": "done",
       "src_sha": "36831454991a",
       "src": "#### Think Deeper\n\n**Q1.** Some thinkers argue that as a society grows rich, _relative_ poverty is the more meaningful measure, because mere survival is no longer the real issue; others argue that relative poverty \"isn't really poverty at all\" but just inequality renamed, and that conflating the two cheapens the word. Steelman both positions. Does the relative measure capture something real that the absolute misses, or does it smuggle a claim about inequality into the word \"poverty\"?\n\n**Discussion:** This is a genuinely deep and unsettled debate, and it sits exactly on the seam between poverty (the subject of this Part) and inequality (the subject of the book), so it rewards careful handling.\n\nThe steelman for the _relative_ measure: human beings are social creatures, and deprivation is not only physical but social. To be unable to participate in the normal life of your society, to send your child to school unable to have what every other child has, to be excluded from the ordinary activities that constitute belonging, is a real harm, not a statistical artifact, and it is a harm that bare survival figures cannot see. As a society grows rich, the relative measure says, the meaningful question shifts from \"can people survive?\" (mostly yes) to \"can people take part?\" (often no), and a measure stuck on physical survival becomes increasingly blind to the actual experience of disadvantage. On this view, relative poverty captures something the absolute measure genuinely misses: the social, participatory dimension of want, which is consequential and gets worse, not better, as the gap between bottom and middle widens.\n\nThe steelman for the _skeptical_ position: there is a real risk of definitional inflation. If \"poverty\" is defined as falling a fixed distance below the middle, then \"poverty\" becomes, by construction, just another name for inequality, it can never be solved by growth, only by compression of the distribution, and it would persist in a society where everyone, including the \"poor,\" lived in great material comfort, so long as some lived in greater comfort still. The skeptic argues this drains the word \"poverty\" of its moral force, which comes from the image of genuine deprivation, and quietly converts a debate about _poverty_ (which most people agree is bad and should be relieved) into a debate about _inequality_ (which is contested, as this whole book shows). To call inequality \"poverty\" is, on this view, to borrow the moral urgency of deprivation for a different and more contested claim about distribution, smuggling a verdict on inequality into what looks like a neutral measurement.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 897,
+      "out_sha": "9ba37a778413",
       "note": ""
     },
     {
@@ -1723,11 +1723,11 @@
       "en_title": "Chapter 13: Drawing the Poverty Line",
       "order": 135,
       "src_chars": 1465,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1000ee69af09",
       "src": "Is there a resolution? Partly, and it is clarifying rather than dissolving. The honest move is to recognize that _both_ measures track something real and that they are _not interchangeable_ : the absolute measure tracks deprivation against a fixed floor (and growth can genuinely reduce it), while the relative measure tracks distance from the social mainstream (which is conceptually closer to inequality and which growth alone does not reduce). The skeptic is right that the relative measure is, in part, a measure of inequality wearing poverty's clothes, and that this can smuggle a contested distributional claim past the reader. The relativist is right that the social, participatory dimension is a genuine harm the absolute measure cannot see. The disciplined conclusion is not to crown one but to _insist on labeling_ : when someone reports \"poverty,\" ask whether they mean deprivation against a fixed standard or distance from the social middle, because the second is partly a claim about inequality, and the moral and empirical arguments for relieving the two are different. This keeps faith with the book's core method, the relative measure is not illegitimate, but it carries a value-and-distributional commitment that must be made visible rather than hidden inside the apparently neutral word \"poverty.\" Whether you ultimately count relative deprivation as \"real poverty\" is a choice you should make knowingly, aware of what each answer commits you to.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 452,
+      "out_sha": "a93d08d7da85",
       "note": ""
     },
     {
@@ -1735,11 +1735,11 @@
       "en_title": "Chapter 13: Drawing the Poverty Line",
       "order": 136,
       "src_chars": 2450,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c8443e0a55f5",
       "src": "### Chapter Summary\n\nWe went, at last, to the bottom rungs, beginning with the deceptively simple question of who counts as poor, and found that _drawing the poverty line embeds a contested idea about what poverty is_. The deepest fork is between **absolute poverty** (deprivation against a _fixed_ survival standard, which growth can eliminate) and **relative poverty** (inability to participate in the normal life of one's own society, a standard that _rises_ with the society), so a person can be absolutely non-poor yet relatively poor. Crucially, the choice between them is _partly a values question dressed as a definitional one_ , an OUGHT about what a decent life requires, so even the definition of poverty carries a buried value commitment.\n\nIn practice, measures are hybrids, and we worked through the United States as an example (with as-of and source): the _official_ measure is essentially absolute (a fixed, inflation-adjusted threshold, recent rate around eleven percent, roughly one in nine), while the _Supplemental Poverty Measure_ counts more resources, including government benefits, and subtracts necessary expenses (recent rate around thirteen percent). This taught that _the measure determines the number_ (no poverty statistic means anything until you know which line drew it), that _measures reveal what they are built to reveal_ (the official measure cannot detect benefits' effects because it ignores them), and that _no measure is neutral_. We warned against treating the rate as a hard objective number while also rejecting the lazy \"it's all subjective.\"\n\nWe saw three features of lived poverty that escape any line: it is _dynamic_ (a temporary spell differs from chronic, generational poverty), _deeper than income_ (the reservoir and the web of Parts 2-3, which is why some argue for multidimensional _deprivation_ measures), and _experienced, not just measured_ (a human condition the statistic must never be mistaken for). The Think Deeper weighed whether relative poverty captures a real social harm or smuggles inequality into the word \"poverty,\" concluding for _visible labeling_ rather than crowning either.\n\nThis sets up Chapter 14's harder question, not _how many_ are poor but _why_ , where Thread C reaches its hottest point and the most caricatured idea in the book, the \"culture of poverty,\" must be handled with the greatest care to avoid both the activist's tract and the apologist's sneer.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 929,
+      "out_sha": "2bc10a303bd8",
       "note": ""
     },
     {
