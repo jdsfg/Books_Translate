@@ -935,11 +935,11 @@
       "en_title": "Chapter 6: Multi-Region Replication and Datacenter Networking Literacy",
       "order": 67,
       "src_chars": 2328,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f40ce1d65926",
       "src": "A new engineer asks: \"Why does our same-rack RPC take 100 microseconds while our cross-region commit takes 200 milliseconds? Both are 'over the network'.\"\n\nThe answer is two orders of magnitude of difference, and the difference is not networking. It is physics. Light travels about 200,000 km/s in fiber. New York to Singapore is roughly 15,000 km, so a one-way photon trip is 75 ms. Round trip is 150 ms. Add queueing, serialization, and protocol overhead, and a single Spanner commit between New York and Singapore lands near 200 ms.\n\nThe engineer who does not internalize the speed-of-light floor will design systems that the laws of physics will not let work. The engineer who internalizes it will design systems that respect the floor, by either placing the data near the user (sharding by region), by tolerating staleness (follower reads), or by accepting the latency where it cannot be avoided (cross-region commits for global truth).\n\n\n### 6.1 The Speed of Light Floor\n\nLight in vacuum: 299,792 km/s. Light in fiber: roughly 200,000 km/s (the index of refraction of glass slows it by about 1.5x). Real cables wind around obstacles, so the effective speed is closer to 150,000 km/s on intercontinental routes.\n\nSample one-way latencies for the floor (round trip is double):\n\nPath | Distance (km) | Floor (ms)  \n---|---|---  \nWithin a rack | 0.001 | < 0.001  \nWithin a datacenter | 1 | 0.01  \nWithin a metro region (e.g. US-East to US-East-2) | 100 | 0.7  \nCross-continental US (NY to LA) | 4,000 | 27  \nAtlantic (NY to London) | 5,500 | 37  \nPacific (US to Tokyo) | 9,000 | 60  \nEurasian (London to Singapore) | 11,000 | 73  \nAntipodal (London to Sydney) | 17,000 | 113  \n  \nThese are _floors_. Real production p50 latencies are 2-4x higher due to queueing, serialization, and intermediate hops. A New York to Singapore p50 of 175 ms is healthy; a p50 of 75 ms is impossible.\n\nThe implication: any distributed protocol that requires kkk round-trips between New York and Singapore takes at least k×150k \\times 150k×150 ms. A Spanner commit requires one TrueTime wait plus one Paxos round, so 7 + 150 = 157 ms minimum. A 2-phase commit (Chapter 13) requires two round-trips, so 300 ms. A naive multi-region transaction with three round-trips lands near 450 ms, which is past the threshold where users notice (~100-200 ms).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 985,
+      "out_sha": "aa6db925c49c",
       "note": ""
     },
     {
@@ -947,11 +947,11 @@
       "en_title": "Chapter 6: Multi-Region Replication and Datacenter Networking Literacy",
       "order": 68,
       "src_chars": 3028,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d47903ed13f5",
       "src": "### 6.2 What Multi-Region Buys You\n\nThree benefits, in approximate order of priority for most teams:\n\n(a) **Disaster recovery.** A single region (one AWS availability zone group, one GCP region) can become unavailable due to natural disaster, datacenter fire, network failure, or regional regulatory action. Multi-region deployment survives single-region loss.\n\n(b) **User latency.** Serving European users from a European region cuts latency from 100+ ms (transcontinental) to 10-30 ms (regional). For latency-sensitive workloads (gaming, real-time collaboration, voice), the difference is the product.\n\n(c) **Regulatory data residency.** EU's GDPR, China's PIPL, Russia's data-localization laws, and similar regimes require certain user data to remain in certain jurisdictions. Multi-region with per-region storage of regional users is the architecture.\n\nThe costs:\n\n* **Latency tax on cross-region operations.** If any operation spans regions, it pays the round-trip cost.\n* **Egress fees.** Cloud providers charge for cross-region (and cross-cloud) data movement. The bill can be the dominant infrastructure cost.\n* **Operational complexity.** Three regions means three failure surfaces, three deploys, three monitoring stacks.\n\n\n### 6.3 Three Multi-Region Patterns\n\nThe choice is forced by what your data needs.\n\n\n#### Pattern 1: Active-passive single-region\n\nAll writes go to one region (the \"active\"). The other regions are warm standbys replicating asynchronously. Reads can go to any region (with staleness).\n\n* **Latency** : writes pay only intra-region cost; reads can be local.\n* **Failover** : switching active to a standby takes minutes; some writes may be lost.\n* **Right for** : workloads where one-region availability is sufficient and DR is the only multi-region goal.\n\n\n#### Pattern 2: Geo-partitioned per-user\n\nEach user's data is \"homed\" in one region (chosen by user residence). Reads and writes for that user go to that region. Other regions cache reads (stale-tolerant) or proxy requests to the home region.\n\n* **Latency** : home-region users see local latency; cross-home-region operations pay full cost.\n* **Failover** : per-region failover; other regions unaffected.\n* **Right for** : user-centric workloads (chat, social, productivity) where most operations are about a single user's data.\n\nThis is what Slack does, what many gaming companies do, and what most SaaS products quietly evolve into once they hit multi-region scale.\n\n\n#### Pattern 3: Globally consistent (true multi-master)\n\nEvery region can serve any operation. Writes are coordinated across regions for global consistency.\n\n* **Latency** : every write pays cross-region round-trip cost.\n* **Failover** : regions are interchangeable; loss of any one is transparent.\n* **Right for** : globally-shared state where any operation might touch any data (rare, expensive).\n\nSpanner targets this pattern. CockroachDB supports it. The cost is the per-write latency, which is usually 50-200 ms. Most workloads do not need it for most operations.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1174,
+      "out_sha": "eac86f6a73db",
       "note": ""
     },
     {
@@ -959,11 +959,11 @@
       "en_title": "Chapter 6: Multi-Region Replication and Datacenter Networking Literacy",
       "order": 69,
       "src_chars": 3202,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0171c425d2cb",
       "src": "### 6.4 CLOS and Leaf-Spine Topology\n\nInside a modern datacenter, the network is not a tree of switches. It is a _CLOS network_ (named after Charles Clos, 1953), implemented in 2026 as _leaf-spine_.\n\nThe structure:\n\n* **Spine switches** : a small number of high-bandwidth switches at the top.\n* **Leaf switches** : many lower-cost switches, each connected to every spine.\n* **Servers** : connected to leaves; each server has multiple leaves to provide redundancy.\n\nProperties:\n\n* **Any-to-any bandwidth** : traffic from any server to any other passes through exactly one spine hop. The bisection bandwidth (the bandwidth between any partition of the servers) is much higher than in a classical tree topology.\n* **No oversubscription** (in the idealized version): the total upstream bandwidth from leaves to spines matches the total downstream bandwidth from leaves to servers.\n* **Equal-cost multi-path (ECMP)** : traffic from one server to another can take any of several spine paths. The network load-balances across them.\n\nThe leaf-spine replaced classical three-tier networking (core, aggregation, access) because the three-tier oversubscription pattern produced bandwidth bottlenecks at the core that limited east-west (server-to-server) traffic, which is what distributed systems generate.\n\nFor distributed-systems engineers, the practical implications:\n\n* Same-DC RPC latency is dominated by serialization and queueing, not by the network. Within a CLOS, the latency floor is microseconds.\n* Network bisection bandwidth is rarely the bottleneck. Disk I/O, CPU, and application-level coordination usually are.\n* Cross-rack and same-rack RPC have similar latency (a few microseconds difference). Network locality matters less than application design.\n\n\n### 6.5 RDMA\n\nRemote Direct Memory Access lets a server's NIC write directly to another server's memory without involving the destination CPU. The two implementations in datacenter use:\n\n* **RoCE (RDMA over Converged Ethernet)** : most common in 2026; runs over Ethernet with PFC (Priority Flow Control) to ensure lossless delivery.\n* **iWARP** : TCP-based RDMA; less common but easier to deploy because it tolerates lossy networks.\n\nThe performance: RDMA latencies are on the order of 1-2 microseconds for same-DC traffic, compared to 50-100 microseconds for kernel-bypass TCP. The kernel is not involved on either side; the NIC handles the data movement.\n\nThe uses:\n\n* **Distributed in-memory databases** (Microsoft FaRM, the basis for Azure Cosmos DB at one stage) use RDMA for cross-node memory access at memory-like latencies.\n* **Distributed training** for ML uses RDMA over InfiniBand or RoCE to move gradients between GPUs across nodes.\n* **Distributed LLM inference** (Chapter 24-26) uses RDMA for KV cache movement between prefill and decode nodes.\n\nRDMA is not a panacea. It requires careful network configuration (lossless guarantees, PFC tuning), the application must use the RDMA primitives (one-sided puts and gets), and the failure modes are different from TCP. For most application-layer distributed systems, RDMA is overkill; it lives in the storage and ML layers where the latency improvement justifies the operational cost.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1409,
+      "out_sha": "bed642077ecd",
       "note": ""
     },
     {
@@ -971,11 +971,11 @@
       "en_title": "Chapter 6: Multi-Region Replication and Datacenter Networking Literacy",
       "order": 70,
       "src_chars": 2559,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7edec7e4bce2",
       "src": "### 6.6 The Latency Budget Method\n\nFor any new distributed system, the discipline is to write a latency budget _before_ implementation.\n\nSteps:\n\n  1. **Identify the user-visible latency target.** Often 100-200 ms p99 for interactive applications; 1-2 seconds for asynchronous workflows.\n  2. **Subtract fixed costs.** TLS handshake (10-100 ms on first connection), CDN edge to origin (5-50 ms), authentication (5-20 ms).\n  3. **Allocate remaining budget across application hops.** Each downstream service gets a slice.\n  4. **For each downstream service** , identify whether it crosses a region. If so, the round-trip floor is fixed; the application's latency budget for that hop must accept it.\n  5. **If the budget does not fit** , redesign: place the service in the same region, denormalize the data to avoid the cross-region hop, or accept staleness via caching.\n\nExample for the Crescent payment system:\n\n* Target: 500 ms p99 for a payment authorization.\n* TLS, auth, application logic: 100 ms.\n* Idempotency check: 10 ms (local cache + 5 ms DB lookup).\n* Risk scoring: 50 ms.\n* Bank communication: 100 ms (Crescent + bank in same region).\n* CockroachDB commit (multi-region): 150 ms (Raft quorum across three regions).\n* Slack: 90 ms.\n\nThe budget works because Crescent placed its CockroachDB nodes in three regions reachable within 150 ms of each other (US-East, US-West, EU-West). If the third region were Singapore, the budget would not work: cross-region Raft quorum across US-East and Singapore is 200 ms one-way, 400 ms round-trip, blowing the budget.\n\nOlamide's team chose the three regions specifically to keep the Raft quorum latency below 100 ms. This is the kind of operational decision the latency budget surfaces; without writing it down, the system gets deployed and the latencies surprise the team in production.\n\n\n#### Common Misconception\n\nA common error: \"We are 'multi-region for high availability', but we expect normal-operation reads and writes to be local-region.\" The implication is that you do not pay the multi-region tax in normal operation. This is only true if the multi-region setup is async-only; the moment you require a quorum that spans regions for correctness (Raft, Paxos, Spanner), every write pays the cross-region cost.\n\nThe two patterns (\"multi-region for DR, single-region active\" vs \"multi-region for HA, quorum across regions\") have very different cost profiles. Confusing them produces deployments that pay quorum cost without getting quorum benefit, or get DR-only behavior while paying for HA architecture.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1010,
+      "out_sha": "5cc7c4d9693a",
       "note": ""
     },
     {
@@ -983,11 +983,11 @@
       "en_title": "Chapter 6: Multi-Region Replication and Datacenter Networking Literacy",
       "order": 71,
       "src_chars": 1362,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0201c3985969",
       "src": "### 6.7 Cross-Region Egress Costs\n\nThe dollar cost of moving data between regions is, in 2026 cloud pricing, roughly:\n\n* Within a region: free or nearly free.\n* Between regions (same cloud): 0.01 to 0.09 USD per GB.\n* Between clouds: 0.08 to 0.15 USD per GB.\n\nFor a system that replicates 1 TB/day between regions, that is 10-90 USD/day in egress alone, or 300-2,700 USD/month. For systems that replicate 100 TB/day, the bill is six figures per year.\n\nThe architectural implications:\n\n* **Replicate the delta, not the full state.** Most cross-region replication is change-data-capture, not periodic full snapshots.\n* **Compress on the wire.** Modern systems use Zstd or similar; the compression saves 50-90% of bytes for typical structured data.\n* **Avoid chatty protocols across regions.** A protocol that sends 100 small messages instead of 1 batched message pays per-message overhead (TLS framing, header bytes) that dominates the actual payload at small message sizes.\n\nThe Crescent example: cross-region replication of the CockroachDB write-ahead log generates roughly 10 GB/day, which is small. The dominant cross-region cost is actually the application's metric and log shipping (each region sends its observability data to a central aggregator), which the team mitigated by aggregating regionally and shipping summaries cross-region.\n\n\n### 6.8 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 546,
+      "out_sha": "fcb20fe6e411",
       "note": ""
     },
     {
@@ -995,11 +995,11 @@
       "en_title": "Chapter 6: Multi-Region Replication and Datacenter Networking Literacy",
       "order": 72,
       "src_chars": 3499,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6d63ef8dfc57",
       "src": "#### Concept Check\n\n**Q1.** Compute the one-way speed-of-light latency floor between (a) Chicago and São Paulo, (b) Tokyo and Mumbai, (c) any two points on the equator that are 180 degrees apart.\n\nHint\n\nIn fiber, light travels at roughly 200,000 km/s. Earth's circumference is about 40,000 km.\n\n**Answer:**\n\n(a) Chicago to São Paulo: great-circle distance is about 8,500 km. At 200,000 km/s in straight-line fiber, the floor is 8,500 / 200,000 = 42.5 ms. Real cables wind around the Caribbean and Brazilian coast, so the effective distance is closer to 10,000 km, giving 50 ms one-way.\n\n(b) Tokyo to Mumbai: great-circle is about 6,750 km. Floor: 34 ms. Real cables go via Hong Kong and Singapore, adding distance; expect 50-60 ms one-way.\n\n(c) Two equatorial points 180 degrees apart: half the equator's circumference, 20,000 km. Floor: 100 ms one-way, 200 ms round trip. This is the antipodal floor; nothing on Earth can be farther.\n\nThese are the limits. They are why no protocol can give you a sub-50-ms round trip from New York to Tokyo, no matter how good the engineering. A team that promises a 30-ms p99 for a cross-Pacific operation is promising the impossible.\n\n**Q2.** Describe leaf-spine topology in 2-3 sentences. Why did it replace three-tier?\n\nHint\n\nLeaf-spine has every leaf connected to every spine; classical three-tier had aggregation switches that became bandwidth bottlenecks.\n\n**Answer:** Leaf-spine has two layers: leaf switches connect to servers, and every leaf is connected to every spine switch. Traffic between any two servers passes through exactly one spine hop, and ECMP load-balances across spine paths. It replaced three-tier (core, aggregation, access) because the aggregation switches in three-tier became bottlenecks for east-west (server-to-server) traffic, which dominates modern distributed-systems workloads; leaf-spine provides flat, low-oversubscription bandwidth from any server to any other.\n\n**Q3.** A team's multi-region database deployment has nodes in US-East, US-West, and Frankfurt. They want Raft quorum to commit within 80 ms. Is this achievable? If not, what would they change?\n\nHint\n\nRaft quorum requires majority. With three regions, the quorum is any 2. Compute the round-trip floor for each pair.\n\n**Answer:** Raft with three replicas needs 2 of 3 to ack. The relevant pair latencies (round-trip):\n\n* US-East to US-West: ~80 ms.\n* US-East to Frankfurt: ~90 ms.\n* US-West to Frankfurt: ~160 ms (the worst pair).\n\nA write originating in US-East waits for the second ack to commit. The second ack comes from whichever of US-West or Frankfurt responds first; both are ~80-90 ms round-trip. So a US-East-originating write commits in ~85 ms round-trip, just over the 80 ms budget.\n\nThe budget is achievable but tight. Options to fit:\n\n(a) Move one replica closer (e.g., replace Frankfurt with US-Central or replace US-West with Toronto), reducing the second-fastest round-trip below 80 ms.\n\n(b) Use Spanner-style leaderless writes where the quorum is computed per region (regional quorums plus a global commit timestamp), which can be faster for specific workloads.\n\n(c) Accept the 85 ms and adjust the latency budget. The 5 ms is unlikely to matter for human-visible operations.\n\n(d) Use follower reads for read operations (which do not need quorum), keeping writes at quorum cost but reducing the perceived multi-region latency for reads.\n\n**Q4.** Why is RDMA used in distributed LLM inference but rarely in application-layer microservices?\n\nHint",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1935,
+      "out_sha": "15625f39681e",
       "note": ""
     },
     {
@@ -1007,11 +1007,11 @@
       "en_title": "Chapter 6: Multi-Region Replication and Datacenter Networking Literacy",
       "order": 73,
       "src_chars": 1041,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8aaad7af8821",
       "src": "RDMA's latency improvement is meaningful at sub-millisecond scale. Application services have much larger latency budgets.\n\n**Answer:** RDMA reduces network latency from ~50 microseconds (kernel-bypass TCP) to ~1-2 microseconds (RDMA over RoCE). For applications where total request latency is ~10 ms, this saves ~0.5% of the budget — not worth the operational complexity of running an RDMA fabric.\n\nFor distributed LLM inference, KV cache movement between prefill and decode nodes happens many times per token, and each token must be generated in ~10-50 ms total. A 50-microsecond network hop is 5-25% of the budget; reducing it to 2 microseconds is the difference between fitting in budget and exceeding it. The frequency and tight budget make RDMA worth its operational cost.\n\nSame reasoning applies to ML training (gradient exchanges per step) and to distributed in-memory databases (remote memory access in critical paths). For general application services with millisecond-or-larger budgets, the kernel-bypass + TCP path is sufficient.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 362,
+      "out_sha": "2dd66e73e63e",
       "note": ""
     },
     {
@@ -1019,11 +1019,11 @@
       "en_title": "Chapter 6: Multi-Region Replication and Datacenter Networking Literacy",
       "order": 74,
       "src_chars": 3421,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ae51066d0109",
       "src": "#### Application Problems\n\n**Q1.** A team is designing a global chat application. Users in any region should see messages from any region within 500 ms. The team is choosing between (a) a central US-East database that all regions read from, (b) per-region databases with async cross-region replication, and (c) a globally-replicated database (Spanner). Evaluate each option against the latency requirement.\n\nHint\n\nCompute the cross-region round-trip for each option's worst case. 500 ms is the threshold; what does each option deliver in the worst case?\n\n**Answer:**\n\n(a) **Central US-East DB.** A user in Tokyo writes; the message must reach US-East (one-way ~100 ms), be persisted (~10 ms), and be readable by users in Tokyo (another ~100 ms). Round-trip ~210 ms for write-to-read in same Tokyo session; cross-region read from Tokyo to Sydney sees similar. The 500 ms budget is met for most paths, but the user experience is asymmetric (Tokyo users feel laggy because every operation is transpacific).\n\n(b) **Per-region DBs with async replication.** A user in Tokyo writes to Tokyo DB (local, fast). The write propagates to other regions over async replication (typically <5 seconds, often sub-second). A user in London reading the same chat sees the message within seconds. The latency budget is met for the write path; the read path has an \"eventual\" delay that may or may not be acceptable. For chat, \"messages appear within a few seconds across regions\" is usually acceptable; the latency is felt as message-delivery lag rather than as click-response lag.\n\n(c) **Globally replicated (Spanner).** Each chat-room's data lives in some region with global replication. A write pays Spanner commit-wait (~7 ms) plus quorum round-trip; for global quorum across continents, ~200 ms commit. Reads can be follower-region with bounded staleness. The 500 ms budget is met; the cost is the Spanner infrastructure overhead.\n\nRecommendation: option (b) is the right answer for most chat applications. The async replication latency is invisible to users (they perceive chat-message delivery latency as a few seconds, which is the user's mental model for messaging). Spanner is overkill; central DB makes the user experience asymmetric.\n\nThis is exactly the pattern Slack uses: per-region \"channels\" with cross-region replication for federation.\n\n**Q2.** A team is choosing between three regions for a Raft-replicated database. They want to minimize the worst-case Raft quorum latency. Given the speed-of-light floors above, propose a three-region selection and justify.\n\nHint\n\nRaft quorum is majority; you want the median pairwise round-trip to be low. Geographic clustering helps.\n\n**Answer:** Raft with three replicas: quorum is any 2 of 3. The leader counts as one ack; the entry commits as soon as the _fastest_ of the two followers responds. So for a write originating in region X, the commit latency is the round-trip to the _fastest_ of the other two regions. The system-level worst case is the maximum of this latency across all three possible originating regions.\n\nA clustered three-region setup: US-East, US-Central, US-West. Pairwise round-trips: East-Central ~30 ms, East-West ~80 ms, Central-West ~50 ms.\n\n* Write originates in US-East: fastest follower = US-Central at 30 ms.\n* Write originates in US-Central: fastest follower = US-East at 30 ms.\n* Write originates in US-West: fastest follower = US-Central at 50 ms.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1338,
+      "out_sha": "df339866970d",
       "note": ""
     },
     {
@@ -1031,11 +1031,11 @@
       "en_title": "Chapter 6: Multi-Region Replication and Datacenter Networking Literacy",
       "order": 75,
       "src_chars": 3327,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f941c528b1d7",
       "src": "Worst-case Raft commit across all originating regions: **~50 ms** (US-West originating). Excellent for latency; bad for disaster recovery (all in continental US, single-country exposure).\n\nA spread three-region setup: US-East, EU-West, Asia-Pacific (Tokyo). Pairwise round-trips: US-East ↔ EU-West ~90 ms; US-East ↔ Tokyo ~200 ms; EU-West ↔ Tokyo ~250 ms.\n\n* Write originates in US-East: fastest follower = EU-West at 90 ms.\n* Write originates in EU-West: fastest follower = US-East at 90 ms.\n* Write originates in Tokyo: fastest follower = US-East at 200 ms.\n\nWorst-case Raft commit: **~200 ms** (Tokyo originating). Better DR (three continents); worse latency, especially for Asia-Pacific users.\n\nA compromise: US-East, EU-West, US-West. Pairwise: East-EU ~90 ms, East-West ~80 ms, EU-West to US-West ~180 ms.\n\n* Write originates in US-East: fastest follower = US-West at 80 ms.\n* Write originates in EU-West: fastest follower = US-East at 90 ms.\n* Write originates in US-West: fastest follower = US-East at 80 ms.\n\nWorst-case Raft commit: **~90 ms** (EU-West originating). Two continents; one-region DR loss survived; latency capped at ~90 ms.\n\nFor most workloads, the third option (US-East, EU-West, US-West) is the right balance: DR across continents, worst-case commit latency under 100 ms across all originating regions.\n\n**Q3.** A microservice architecture has 20 services. The latency budget is 1 second p99 for a user request. Walk through the latency budget for a request that touches 8 services, one of which is in a different region. What is the budget per local hop?\n\nHint\n\nCross-region adds 100-200 ms minimum. Subtract from total, divide remainder among local hops.\n\n**Answer:** Budget breakdown, treating the 8 service hops as initially serial.\n\nFixed costs:\n\n* TLS handshake (first connection, often reused via keep-alive): ~30 ms.\n* Auth check: ~20 ms.\n* Cross-region hop round-trip: ~150 ms (let us assume US-East to EU-West).\n* Total fixed: ~200 ms.\n\nRemaining budget = 1000 − 200 = 800 ms for the 7 local (in-region) hops (the 8th hop is the cross-region one, already counted in fixed).\n\n**Case 1 — fully serial 7 hops** : 800 / 7 ≈ 115 ms p99 per hop. Feasible but tight; the system has no headroom.\n\n**Case 2 — parallel fan-out** : if the service mesh allows 4 of the 7 hops to run in parallel as one batch (a fan-out pattern), and the remaining 3 are serial, then:\n\n* Parallel batch latency = max(p99 of 4 parallel hops). At ~115 ms p99 each, the batch p99 is also ~115 ms (the slowest of 4 dominates, but each is independent and similar).\n* Serial 3 hops + parallel batch: 800 ms − 115 ms (parallel) = 685 ms for the 3 serial hops; ~228 ms p99 each.\n\nSo with one fan-out batch, individual hops have ~228 ms p99 each — much more comfortable. The parallel batch \"buys back\" budget for the serial path.\n\n**Case 3 — 2 parallel batches of 2 hops each + 3 serial** : even more relaxed; serial 3 hops can each be ~190 ms.\n\nThe optimization priorities:\n\n(a) **Question whether all 7 local hops are needed.** Service-mesh graphs often have hops that exist for historical reasons; the actual data dependency may be 4-5 hops, not 7.\n\n(b) **Identify parallelizable fan-outs.** Hops that don't depend on each other (e.g., fetching user profile + checking auth + loading pricing in parallel) should run in parallel.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1596,
+      "out_sha": "c8b739f2244c",
       "note": ""
     },
     {
@@ -1043,11 +1043,11 @@
       "en_title": "Chapter 6: Multi-Region Replication and Datacenter Networking Literacy",
       "order": 76,
       "src_chars": 633,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c026c0a18662",
       "src": "(c) **Question whether the cross-region hop is necessary.** Can the data be cached locally with acceptable staleness? Can the request be routed entirely to the user's home region?\n\n(d) **Tighten the tail.** A 115 ms p99 typically means the median is 30-50 ms and the tail dominates. Improving the tail (connection pooling, retry budgets, better caching) gives the most return.\n\nThe discipline: write the budget _before_ implementation. Discover that the budget does not fit _before_ committing to an architecture that cannot meet it. The cost of architectural change after deployment is much higher than the cost of analysis before.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 186,
+      "out_sha": "f15a4ec5e755",
       "note": ""
     },
     {
@@ -1055,11 +1055,11 @@
       "en_title": "Chapter 6: Multi-Region Replication and Datacenter Networking Literacy",
       "order": 77,
       "src_chars": 3059,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4264336fd032",
       "src": "#### Think Deeper\n\n**Q1.** Defend or refute: \"Latency is a solved problem in 2026; CDNs and edge computing have eliminated the speed-of-light tax for user-facing applications.\"\n\n**Discussion:** Defense: CDNs put static content within ~10 ms of every user. Edge computing (Cloudflare Workers, AWS Lambda@Edge, Fastly Compute) puts simple business logic within similar distance. For static content delivery and stateless edge computation, the speed-of-light tax is essentially zero.\n\nRefutation: any operation that requires consulting global state still pays the tax. A payment cannot be approved at the edge without a round-trip to the system of record. A login cannot be validated without the user database. The CDN cache hit rate for personalized content is low. Most user-facing latency is dominated by the dynamic, stateful paths, not the static CDN paths.\n\nThe synthesis: CDNs and edge eliminate the latency tax for the operations that _can_ be served from a stateless cache. They do nothing for stateful operations that must touch a global source of truth. The frontier in 2026 is making more operations edge-servable via state-replication patterns (CRDT-based collaborative editing, eventually-consistent shopping carts, optimistic UI with backend reconciliation). Each such pattern is a real engineering win, but each has limits.\n\nA deeper observation: many user complaints about \"slow apps\" are not about network latency at all. They are about JavaScript parse time, render-blocking resources, or backend processing time. Network is often a smaller component than engineers assume. Profiling user-perceived latency end-to-end usually finds bigger wins outside the network.\n\n**Q2.** An LLM is asked \"should we deploy in three regions or five?\" and answers \"five gives better availability.\" Identify the questions the model failed to ask, and explain why the more-regions-equals-better-availability framing is too simple.\n\n**Discussion:** Questions missing:\n\n* What is the consistency requirement? More regions can _hurt_ availability for strongly consistent systems by increasing the chance that any single region's outage breaks the quorum. A 5-region Raft system tolerates 2-region loss (quorum of 3 of 5); a 3-region Raft system tolerates 1-region loss (quorum of 2 of 3). The 5-region setup is genuinely more available, but it pays higher per-write latency (more spread-out replicas).\n* What is the read/write ratio? Read-heavy workloads benefit from regional reads; the more regions, the more local read paths. Write-heavy workloads pay quorum cost per write; more regions usually means higher write latency.\n* What is the cost? Five regions of any meaningful size cost roughly five times the infrastructure of one. The marginal availability is rarely worth 5x cost.\n* What is the operational maturity? Each region needs monitoring, on-call coverage, deploy pipelines. A team running five regions with three engineers will have more outages than a team running one region with three engineers, regardless of the theoretical availability advantage.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 973,
+      "out_sha": "9c91646cdcef",
       "note": ""
     },
     {
@@ -1067,11 +1067,11 @@
       "en_title": "Chapter 6: Multi-Region Replication and Datacenter Networking Literacy",
       "order": 78,
       "src_chars": 2315,
-      "status": "pending",
+      "status": "done",
       "src_sha": "eec5d9a7cf4b",
       "src": "The \"more regions = better availability\" framing is too simple because it confuses _theoretical availability_ (the system can survive more failures) with _actual availability_ (the system stays up in practice). The actual availability is usually dominated by operational mistakes, deploys, dependency failures, and configuration drift, none of which scale with regions. Adding regions often _decreases_ actual availability by multiplying the operational surface.\n\nThe honest answer: deploy in the minimum number of regions that satisfies (a) your DR requirements, (b) your user-latency requirements, (c) any regulatory requirements. For most products, that is 2-3 regions. Going beyond requires a specific business case.\n\n\n### Chapter Summary\n\nThe speed of light is the bound on inter-region latency, and it is not negotiable. A distributed-systems engineer's first reflex when designing a multi-region system is to compute the one-way floor, double it for round-trip, and check whether the protocol fits in the latency budget. Most cross-region performance problems are diagnosable from this floor.\n\nMulti-region serves disaster recovery, user latency, and regulatory residency, in some combination. The three patterns (active-passive, geo-partitioned, globally consistent) have different cost profiles; the choice is forced by what the data needs.\n\nInside the datacenter, CLOS leaf-spine topology gives flat any-to-any bandwidth at low latency. RDMA reduces same-DC latency to single-digit microseconds, useful for storage systems and ML/inference workloads. For most application-layer services, the network is not the bottleneck; kernel-bypass TCP suffices.\n\nThe latency budget method (compute target, subtract fixed costs, allocate remaining per hop) catches infeasible designs before deployment. The Crescent team's three-region choice (US-East, US-West, EU-West) was driven by the 80 ms Raft-quorum budget; placing one replica in Singapore would have made the budget infeasible.\n\nChapter 7 begins Part III on consensus. Now that we know how to broadcast and replicate, we need protocols that let a group of nodes agree on a value despite arbitrary failures. The journey from FLP impossibility to partial synchrony to the practical protocols (Paxos, Raft, HotStuff) is the topic of the next four chapters.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 784,
+      "out_sha": "5704242a4bee",
       "note": ""
     },
     {
