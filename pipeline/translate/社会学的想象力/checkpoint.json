@@ -1251,11 +1251,11 @@
       "en_title": "Chapter 10: The Most Private Act — Durkheim on Suicide",
       "order": 96,
       "src_chars": 1382,
-      "status": "pending",
+      "status": "done",
       "src_sha": "157a4b28a6a6",
       "src": "#### Definition: Social Fact (first statement)\n\nA **social fact** is a pattern, condition, or force that exists at the level of the group rather than the individual, that is _external_ to any single person, and that _exerts influence_ on individuals' behavior. The suicide _rate_ of a society is a social fact; any individual death is not.\n\nIn plain language: a social fact is something true of the group as a whole, that no one person creates or controls, and that presses on people from outside. We will deepen this definition in Chapter 11; here, the suicide rate is its founding example.\n\nThe key move, and the one that founds the discipline, is the distinction between the _individual act_ and the _social rate_. Durkheim was not claiming to explain why any particular person died; that question belongs partly to psychology, partly to the irreducible privacy of a life, and he said so. He was explaining why the _rate_ takes the value it does and varies as it does, and that, he showed, is a question only sociology can answer, because the rate is a property of the society, not of any person in it. This is Chapter 1's troubles-and-issues distinction in its sharpest possible form: the individual death is a trouble of the most absolute kind, and the rate is an issue, a social fact with social causes, and no amount of studying individuals one by one will explain the rate.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 422,
+      "out_sha": "7e1598b131f9",
       "note": ""
     },
     {
@@ -1263,11 +1263,11 @@
       "en_title": "Chapter 10: The Most Private Act — Durkheim on Suicide",
       "order": 97,
       "src_chars": 2642,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b5df97c4327f",
       "src": "### 10.2 Integration and regulation\n\nWhat social conditions, then, move the rate? Durkheim's analysis pointed to two features of how a society binds its members, and though the specifics of his data have not all survived (we come to that), the underlying insight has proven durable and is worth understanding.\n\nThe first he related to **social integration** : how strongly individuals are bound into groups, connected to others, woven into a fabric of relationships and shared life. Durkheim argued that when integration is too _low_ , when people are isolated, cut loose from the ties that give life meaning and obligation, the rate tends to rise; he called this **egoistic** suicide, the suicide of the unattached. But he also argued, importantly, that integration can be too _high_ : where the individual is so completely absorbed into the group that their own life seems to count for nothing beside it, a different pattern appears, which he called **altruistic** suicide, the self-sacrifice demanded or invited by total absorption. The relationship was not \"more connection is always better\" but something more like a curve, with danger at both extremes.\n\nThe second he related to **social regulation** : how strongly a society's norms and expectations structure and constrain individual desires and give life a sense of order. When regulation breaks down, in times of sudden upheaval, whether of crisis _or_ of windfall, when the familiar rules that ordered people's expectations dissolve and desire is left without limit or guide, the rate tends to rise; this he called **anomic** suicide, from _anomie_ , his term for a condition of normlessness. And again he noted the opposite extreme, excessive regulation, the suffocation of lives hemmed in with no room or hope, which he called **fatalistic** suicide.\n\nThe deep and lasting insight underneath the four labels is what matters, more than the labels themselves. It is that suicide rates move with the _quality of a society's social bonds_ , with how well it integrates its members and how well its norms give their lives shape, and that both too little and too much of each can be associated with rising rates. This is genuinely a finding about _society_ , not about individuals: it says that the architecture of social connection and social regulation is doing something, at the population level, to the most private act there is. That was the revolutionary claim, and in its general form it has held up: social isolation and social upheaval are, robustly, associated with population-level patterns in suicide and in much else, which is exactly what Durkheim's framework predicted.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 901,
+      "out_sha": "0c059487692a",
       "note": ""
     },
     {
@@ -1275,11 +1275,11 @@
       "en_title": "Chapter 10: The Most Private Act — Durkheim on Suicide",
       "order": 98,
       "src_chars": 1762,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4054feac2e7c",
       "src": "### 10.3 Where the study went wrong, concretely\n\nNow the honest thing, which a celebratory account would skip: tell you, concretely, where Durkheim's actual study was flawed, because a foundational study presented as flawless is a lie, and because the specific flaws are themselves deeply instructive. Honesty about the subject demands that the limits be made concrete, not waved at, and there are two that every educated reader should understand.\n\nThe first is a problem with his **data**. Durkheim relied on the official suicide statistics of nineteenth-century European states, and those statistics were, by modern standards, unreliable in ways that could have manufactured some of his findings. Whether a death was recorded as a suicide depended on local officials, coroners, and customs, and these varied systematically in ways correlated with the very things Durkheim was studying. The clearest example concerns his famous finding that Protestant regions showed higher suicide rates than Catholic ones, which he read as evidence about religion and integration. But Catholic communities, where suicide carried a heavier religious stigma, had strong reasons to record ambiguous deaths as accidents or \"deaths from unknown causes\" rather than suicides, while Protestant communities may have recorded them as suicides. If so, then part of the Catholic-Protestant difference Durkheim treated as a real difference in _behavior_ was partly an artifact of differences in _record-keeping_ , the data measuring the stigma rather than the act. This is not a minor quibble; it potentially undercuts one of his headline results.\n\nThe second flaw is more subtle and more important, because it has a name and recurs throughout social science: the **ecological fallacy**.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 520,
+      "out_sha": "e7d15678a152",
       "note": ""
     },
     {
@@ -1287,11 +1287,11 @@
       "en_title": "Chapter 10: The Most Private Act — Durkheim on Suicide",
       "order": 99,
       "src_chars": 2247,
-      "status": "pending",
+      "status": "done",
       "src_sha": "99fd46bd8744",
       "src": "#### Definition: The Ecological Fallacy\n\nThe **ecological fallacy** is the error of drawing conclusions about _individuals_ from data about _groups_ , assuming that what is true of a group's rate must be true of the individuals in it.\n\nIn plain language: knowing that a group has a higher rate of something does not tell you why any particular member did it, and reasoning from the group rate to the individual's motive is a logical mistake.\n\nDurkheim sometimes slid across this line. From the _group-level_ fact that, say, less-integrated populations had higher suicide rates, it is tempting to conclude something about the _individuals_ , that the isolated individuals were the ones who died. But the group rate cannot establish that. The higher rate in a less-integrated population might be driven by people who were not themselves the most isolated; the individual-level chain cannot be read off the group-level correlation. Durkheim's data were almost entirely group-level (rates by region, religion, marital status), and from them he sometimes inferred individual motives he had no individual-level evidence for. This does not destroy the _social-fact_ claim, which is precisely a claim about _rates_ and _groups_ , that level is exactly where his evidence was strong. But it does mean that his confident statements about why _individuals_ died went beyond what his data could bear.\n\nSo here is the honest accounting, and it is the model for how this book treats every flawed-but-foundational study. Durkheim's _enduring insight_ , that the suicide rate is a social fact, real at the level of the group, moving with the integration and regulation of social bonds, and not reducible to or explainable by individual psychology alone, has survived and remains foundational. His _specific data_ (the official statistics) were unreliable in ways that may have produced some of his particular results, like the Catholic-Protestant difference. And his _individual-level inferences_ sometimes committed the ecological fallacy, reading individual motives off group rates. Keep these three apart, and you can honor the founding achievement without swallowing the dated specifics, which is exactly what a mature reader of any classic must learn to do.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 663,
+      "out_sha": "f95eba571c57",
       "note": ""
     },
     {
@@ -1299,11 +1299,11 @@
       "en_title": "Chapter 10: The Most Private Act — Durkheim on Suicide",
       "order": 100,
       "src_chars": 1916,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5fdfe5578d51",
       "src": "### 10.4 The tip, and the social fact in plain sight\n\nLet me step back from the grave subject to introduce Part 3's running everyday object, where we can see the idea of a social fact more lightly, before we generalize it in Chapter 11. The object is the **tip** : the gratuity left for service.\n\nWatch how the tip behaves like a social fact. In societies where tipping is customary, there is a remarkably stable _rate_ , a percentage that \"one tips,\" that almost everyone converges on, that holds steady across millions of individual transactions and shifts only slowly over time. No law sets it. No one individual controls it. And yet it presses on you with real force: leave well below the customary rate and you will feel the discomfort of having violated something (the norm of Chapter 7), even though you chose the number \"freely.\" The tipping rate is external to you (it was there before you sat down), it constrains you (you feel its pull), and it is general across the society (nearly everyone enacts it), which are precisely the marks of a social fact we will formalize next chapter. The amount any one person tips on any one night is an individual act; the stable customary _rate_ across the society is a social fact, exactly as the individual death is a trouble and the rate is an issue.\n\nAnd the comparative reflex (Chapter 3) sharpens the point at once: travel to a society where tipping is not customary, or where it is even mildly insulting, and the \"natural\" obligation you felt evaporates, proving it was never natural but a social fact of _your_ society, real but local. We will follow the tip through Chapter 11 (as a full social fact) and Chapter 12 (as a relation between people). For now it has shown, in a low-stakes setting, the very structure Durkheim found in the gravest one: a stable group-level rate, external and constraining, that no individual authored and that presses on everyone.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 635,
+      "out_sha": "07d1fbb76ebe",
       "note": ""
     },
     {
