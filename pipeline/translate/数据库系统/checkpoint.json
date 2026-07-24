@@ -479,11 +479,11 @@
       "en_title": "Chapter 3: The Relational Model",
       "order": 31,
       "src_chars": 3223,
-      "status": "pending",
+      "status": "done",
       "src_sha": "717b7c98a263",
       "src": "Chapter 2 left us with wreckage — three anomalies, dangling references, a file-system data layer that corrupts itself under light use. This chapter introduces the idea that quietly replaced the wreckage in the 1970s and still underwrites every mainstream database in 2026: the **relational model**.\n\nThe relational model's insight is almost philosophical. Instead of asking \"how do I store my data?\" (which produces files, structures, pointers, indexes), ask \"what is the _shape_ of my data, independent of storage?\" Answer: sets of tuples, each tuple a flat collection of values, each value drawn from a known domain. That's it. The relational model says data _is_ a collection of sets of tuples, and anything else — pages, B-trees, buffer pools — is just the storage engine's problem.\n\nThis abstraction is what makes databases a discipline rather than a collection of tricks. The same three anomalies that plagued Chapter 2's CSV files become structurally _impossible_ under a properly designed relational schema. That is the claim we will make precise in this chapter and prove (formally) in Chapter 6.\n\n\n### 3.1 Relations: The Central Concept\n\nA **relation** is, in the mathematical sense, a set. Specifically, a set of **tuples** , where each tuple has the same structure — same attributes, same number of values, drawn from the same domains.\n\nFor our university registration system from Chapter 2, the `Students` relation might be written:\n    \n    \n    Students(id INTEGER, name VARCHAR, email VARCHAR)\n    \n\nAnd a particular instance of this relation might be the set:\n    \n    \n    { (1001, \"Alice Wong\",   \"alice.wong@uni.edu\"),\n      (1002, \"Bob Khan\",     \"bob.khan@uni.edu\"),\n      (1003, \"Carlos Silva\", \"carlos.silva@uni.edu\") }\n    \n\nNotice three consequences of \"relation is a set\":\n\n  1. **No order.** The three tuples above could be listed in any order — the relation is the same. If you write SQL that depends on row order (\"give me the first student\"), you have misunderstood the model. (To get order, you ask for order: `ORDER BY`.)\n  2. **No duplicates.** Strictly speaking, a relation cannot contain two identical tuples. In SQL — a bag model, not a strict set model — duplicates are possible, but candidate keys and uniqueness constraints exist precisely to let you enforce set semantics when you need them.\n  3. **Every tuple has the same attributes.** There is no \"row-level schema\" that varies per tuple. This is a principled decision — it constrains flexibility but enables everything from type-checked queries to index structures.\n\n> ### Definition: Relation\n\nA **relation** is a set of tuples, all sharing the same schema — i.e., all with the same attributes drawn from the same domains. A relation's schema is the pairing of attribute names with their domains; a relation instance is the particular set of tuples present at a given moment.\n\nIn plain language, a relation is a table where rows are unordered, duplicates aren't meaningful, and every row has the same columns of the same types. \"Table\" is the SQL name; \"relation\" is the mathematical name. We will use them interchangeably but, when precision matters, \"relation\" signals we care about the abstract set, not the storage layout.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1273,
+      "out_sha": "e3455fc4c605",
       "note": ""
     },
     {
@@ -491,11 +491,11 @@
       "en_title": "Chapter 3: The Relational Model",
       "order": 32,
       "src_chars": 1762,
-      "status": "pending",
+      "status": "done",
       "src_sha": "141895b4a61b",
       "src": "#### The Three Terminologies\n\nYou will encounter three parallel vocabularies for the same concepts. They are used interchangeably in literature, so it pays to know all three:\n\nMathematical | Logical | Physical (file-system era)  \n---|---|---  \nRelation | Table | File  \nTuple | Row | Record  \nAttribute | Column | Field  \nDomain | Type | Field type  \nRelation schema | Table schema | File format  \nRelation instance | Table contents | File contents  \n  \nThe left column is the formal (mathematical) vocabulary. The middle column is what SQL uses. The right column is how the same concepts were named in the era before databases. If you read a 1972 paper on databases, expect the right column; a 1995 textbook, the middle column; a 2026 theory paper, the left column.\n\n\n#### Attributes and Domains\n\nEach attribute draws its values from a **domain** — a named set of permissible values. For example, the `credits` attribute of the `Courses` relation might have domain `INTEGER` (or, more strictly, `INTEGER IN [1, 12]` if the registrar wants to enforce that no single course is worth more than a semester's worth of credits).\n\nDomains serve two purposes:\n\n  1. They **type-check** the data at insertion time. A DBMS will reject `'four'` for an `INTEGER` column.\n  2. They **constrain queries**. The SQL engine knows that comparing two `INTEGER` columns with `<` is meaningful, but comparing an `INTEGER` with a `VARCHAR` is either coerced or forbidden depending on strictness settings.\n\nMost SQL databases offer a fixed set of built-in domains (INTEGER, VARCHAR, TEXT, BOOLEAN, DATE, TIMESTAMP, NUMERIC(p,s)) plus mechanisms to extend them (ENUM types, CHECK constraints, user-defined types). PostgreSQL's type system is famously rich; SQLite's is famously loose.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 879,
+      "out_sha": "8722fea2692a",
       "note": ""
     },
     {
@@ -503,11 +503,11 @@
       "en_title": "Chapter 3: The Relational Model",
       "order": 33,
       "src_chars": 1888,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2eb0dd360eb8",
       "src": "### 3.2 The Registrar's Schema, Properly\n\nLet's rebuild the university registration system from Chapter 2 in the relational model. The anomalies of Chapter 2 arose when unrelated facts were co-stored; the relational fix is to put each kind of fact in its own relation.\n    \n    \n    Students(\n      id       INTEGER     PRIMARY KEY,\n      name     VARCHAR(100) NOT NULL,\n      email    VARCHAR(100) UNIQUE NOT NULL\n    )\n    \n    Instructors(\n      id       INTEGER      PRIMARY KEY,\n      name     VARCHAR(100) NOT NULL,\n      office   VARCHAR(50),\n      phone    VARCHAR(20)\n    )\n    \n    Courses(\n      id            INTEGER     PRIMARY KEY,\n      title         VARCHAR(200) NOT NULL,\n      credits       INTEGER      NOT NULL CHECK (credits BETWEEN 1 AND 12),\n      instructor_id INTEGER      NOT NULL REFERENCES Instructors(id)\n    )\n    \n    Enrollments(\n      student_id INTEGER NOT NULL REFERENCES Students(id),\n      course_id  INTEGER NOT NULL REFERENCES Courses(id),\n      grade      VARCHAR(3),\n      PRIMARY KEY (student_id, course_id)\n    )\n    \n\nThis schema encodes, in its very structure, the cure for all three anomalies from Chapter 2:\n\n* **Update anomaly cured.** Dr. Park's name lives in exactly one row of `Instructors`. A name change is one `UPDATE`.\n* **Deletion anomaly cured.** Deleting a course does not touch the instructors table. Deleting Bob's enrollment does not touch the courses or instructors tables.\n* **Insertion anomaly cured.** A new course with no enrolled students is a straightforward `INSERT` into `Courses` — enrollments are an independent concern.\n* **Referential integrity.** A typo `INSERT INTO Enrollments (student_id, course_id) VALUES (1099, 109)` fails at the database level because there is no student 1099 and no course 109.\n\nWe will walk through each of these constructs — keys, references, constraints — in Sections 3.3 through 3.6.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1259,
+      "out_sha": "bfe2b6785f0e",
       "note": ""
     },
     {
@@ -515,11 +515,11 @@
       "en_title": "Chapter 3: The Relational Model",
       "order": 34,
       "src_chars": 2364,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d62c09f66981",
       "src": "### 3.3 Keys: Superkeys, Candidate Keys, Primary Keys\n\nKeys are the relational model's mechanism for identifying tuples. They are the single most important structural feature of a relation, and they come in a hierarchy.\n\n> ### Definition: Superkey\n\nA **superkey** of a relation is a set of attributes whose values, taken together, uniquely identify every tuple. That is: if two tuples have the same values on the superkey's attributes, they must be the same tuple.\n\nIn plain language, a superkey is any combination of columns whose values never repeat across two rows.\n\nFor the `Students` relation, every one of these is a superkey:\n\n* `{id}`\n* `{email}`\n* `{id, name}`\n* `{id, email}`\n* `{id, name, email}`\n\nThe superkey concept is permissive: every attribute of `Students` could reasonably be different for every student, so many combinations uniquely identify a tuple. We want a stricter version.\n\n> ### Definition: Candidate Key\n\nA **candidate key** is a superkey _no proper subset of which is itself a superkey_. That is, a minimal superkey — removing any attribute destroys its uniqueness property.\n\nIn plain language, a candidate key is a _minimal_ combination of columns that still uniquely identifies a row.\n\nFor `Students`, the candidate keys are `{id}` and `{email}`. Neither can lose any attribute and still be unique (they each have only one attribute). `{id, name}` is a superkey but not a candidate key — you can drop `name` and `{id}` still uniquely identifies.\n\nA relation may have more than one candidate key. The relation designer chooses **one** candidate key to be the **primary key** ; the others are called _alternate_ candidate keys.\n\n> ### Definition: Primary Key\n\nA **primary key** is the single candidate key designated by the relation's designer as the canonical identifier for tuples. A primary key must be:\n\n  1. **Unique:** no two tuples share a primary key value.\n  2. **Non-null:** the primary key is never `NULL` — this is called **entity integrity**.\n  3. **Stable:** the primary key value should not change over the tuple's lifetime. (Changing a primary key forces every foreign-key reference to be updated in lockstep.)\n\nIn plain language, the primary key is how the database (and you) refer to a specific row. Entity integrity — \"no primary key is NULL\" — exists because you cannot have a real entity without a real identity.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 908,
+      "out_sha": "9b9a256e748a",
       "note": ""
     },
     {
