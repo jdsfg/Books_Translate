@@ -2363,11 +2363,11 @@
       "en_title": "Chapter 20: When Frames Break",
       "order": 188,
       "src_chars": 2336,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d2d4bc8ba0cc",
       "src": "### 20.2 The vulnerability of \"what is going on here?\"\n\nFrames, we said last chapter, are the achievement that makes experience intelligible. But the same machinery that makes them powerful makes them vulnerable, and the vulnerability has a particular structure worth understanding.\n\nRecall that frames are read from signals, small, fast, fallible cues (the grin, the tone, the bystanders' reactions, the prior relationship). This is what makes framing efficient: we do not have to be told \"this is a joke\"; we read it instantly from how it is delivered. But it is also what makes framing exploitable and error-prone, because the signals can be ambiguous, can be misread, and can be deliberately falsified. The con artist supplies exactly the signals that key the frame \"trustworthy friend\"; the ambiguous gesture supplies signals compatible with two frames at once; the cross-cultural encounter supplies signals that mean one thing to the sender and another to the receiver. Because we must read the frame from cues rather than being handed it directly, we are always, in principle, one set of misleading cues away from a wrong frame, and usually we never notice, because usually the cues are honest and we get it right.\n\nThere is a further vulnerability: frames can be _contested_. Two people can find themselves in a genuine dispute about what is going on, not because either is lying, but because each is sincerely applying a different frame to the same activity, and each experiences their own frame as simply the truth of the situation. This is one of the most common and most painful failures of the interaction order, and it has a special bitterness, because each party feels not merely disagreed-with but as though the other were denying plain reality, confronted by someone insisting that the obvious (their own frame) is somehow wrong. The argument about \"what really happened\" between two people who were both there is very often a frame dispute: they agree on the physical events and disagree, irreconcilably and sincerely, on what those events _were._ Was that criticism helpful honesty or a cruel attack? Was that silence respectful space or cold withdrawal? Was that touch friendly or invasive? The facts are not in dispute; the frame is, and because the frame is where the meaning lives, the dispute can be bottomless.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 686,
+      "out_sha": "bd5277ecddb8",
       "note": ""
     },
     {
@@ -2375,11 +2375,11 @@
       "en_title": "Chapter 20: When Frames Break",
       "order": 189,
       "src_chars": 3054,
-      "status": "pending",
+      "status": "done",
       "src_sha": "69f7f19565bd",
       "src": "### 20.3 A joke, and a friendship that bends\n\nLet a single scene hold all of this. Two friends are talking, and one makes a remark, a barbed, teasing remark of exactly the kind the two of them have exchanged for years, under the shared frame \"this is how we joke with each other; the barbs are affection.\" But this time, for reasons the joker cannot see, a bad day, a sore spot freshly touched, some accumulated strain, the other friend receives it under a different frame: \"this is a real criticism, dressed as a joke; this is what you actually think of me.\" And in an instant the encounter forks. The joker is still inside the frame \"we are joking\"; the friend is now inside the frame \"I am being attacked.\" They are no longer in the same situation, though they are in the same conversation.\n\nWatch what happens, because it is the anatomy of a thousand real ruptures. The friend's face changes; they go quiet, or sharp. The joker registers the change and is bewildered: _what just happened? it was a joke, like always._ If the joker is quick and tactful, they may catch the misframe and repair it, _hey, I'm kidding, you know that, right? I'm sorry, that landed wrong_ , a piece of frame-repair that, offered fast and warmly, can restore the shared frame before the damage sets. But if the joker doubles down (_can't you take a joke?_), or if the friend cannot re-enter the joking frame because the barb genuinely found a wound, the rupture deepens. Now they may dispute the frame openly: _that wasn't a joke, you meant it_ , _I absolutely did not mean it, don't put words in my mouth_ , each sincerely certain of their own frame, each experiencing the other's account as a distortion of reality. The friendship bends, and whether it springs back depends on whether they can find their way back to a shared frame, through repair, through generosity, through one of them granting the other's reading enough to de-escalate.\n\nNotice what this scene is _not_. It is not, in most cases, a story about a hidden truth exposed, the cynical reading that says the \"joke\" revealed what the friend \"really\" thinks. That reading takes one frame (\"it was a real criticism\") and crowns it as the truth behind the other. But the honest description is that there was no single fact of the matter about what the remark \"really\" was; there were two sincere framings of an ambiguous act, and the question of which was \"correct\" may have no answer, because the remark was genuinely both, affectionate in intent and wounding in effect. The rupture came not from a hidden truth surfacing but from two people falling out of a shared frame, and the repair, when it works, is not the exposure of a truth but the _rebuilding of a shared answer to \"what is going on here.\"_ Frame disputes are painful precisely because we are built to experience our own frame as reality, and so a disagreement about the frame feels like a disagreement about the facts, when it is something subtler and more human: two people, in good faith, seeing the same thing as two different kinds of thing.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 989,
+      "out_sha": "2bcd812879a9",
       "note": ""
     },
     {
@@ -2387,11 +2387,11 @@
       "en_title": "Chapter 20: When Frames Break",
       "order": 190,
       "src_chars": 2212,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9949fc481cef",
       "src": "#### Common Misconception\n\nThe misconception to confront is the cynical reading of frame breaks, and it is a close cousin of every cynical reading we have met: that when a frame breaks and a \"truer\" frame appears, the joke revealed as a real criticism, the warmth revealed as a con, the broken frame was a lie and the new frame is the truth, so that frame breaks are fundamentally _unmaskings_ , exposures of the reality behind the social pretense.\n\nSometimes this is exactly right, and we should say so plainly, because the book is not in the business of denying that deception exists. When a _fabrication_ is exposed, the cynical reading is correct: the con artist's \"friendship\" really was a false frame deliberately induced, and its collapse really does reveal the truth behind a lie. Fabrication is real faking, and unmasking it is real truth. But the error is to read _all_ frame breaks this way, to treat every shift to a darker frame as the exposure of a hidden truth. Most frame trouble is not fabrication but _misframing_ and _frame dispute_ : honest errors and sincere disagreements about ambiguous activity, where there is no single hidden truth being unmasked because the activity was genuinely ambiguous or genuinely both things at once. The joke that lands as an insult is usually not a criticism unmasked; it is an ambiguous act sincerely framed two ways. To assume that the darker frame is always the true one, that the insult-reading reveals what the joke-reading concealed, is to import the cynical premise that the unflattering interpretation is always the real one, which is no more justified here than anywhere else in the book. The discipline is to distinguish: _fabrication_ exposed is an unmasking (the cynic is right); _misframing_ and _frame dispute_ are not unmaskings but failures of shared framing (the cynic is wrong to read them as exposures). The skill is telling which is which, and resisting the seductive habit of treating every frame break as a mask torn away.\n\n\n### 20.4 Exercises\n\n> Watch It Happen sends you to observe; Hold the Open Question asks you to argue more than one side without resolving; Conversation Seeds are written for the companion that teaches this book.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 710,
+      "out_sha": "e9872eefef32",
       "note": ""
     },
     {
@@ -2399,11 +2399,11 @@
       "en_title": "Chapter 20: When Frames Break",
       "order": 191,
       "src_chars": 2442,
-      "status": "pending",
+      "status": "done",
       "src_sha": "07d840246c1c",
       "src": "#### Watch It Happen\n\n**Q1.** Recall a frame break you've experienced, a moment when \"what is going on here\" suddenly turned out to be different than you thought. A joke you took seriously (or a serious thing you took as a joke); a prank revealed; a relationship that wasn't the kind you believed. What did the break _feel_ like, and was it a misframe (honest error), a fabrication (someone deceived you on purpose), or a frame dispute (two sincere, incompatible readings)?\n\nHint\n\nThe three are genuinely different and feel different. Misframe: \"oh, I got it wrong.\" Fabrication: \"they lied to me.\" Frame dispute: \"we both think the other is distorting reality.\" Diagnosing which one you experienced is the whole exercise.\n\n**Answer:** This exercise teaches the three modes of frame trouble by sorting a real experience. The diagnostic distinctions are the lesson. A _misframe_ is an honest error (you read the frame wrong from fallible signals), and it feels like \"oh, I got it wrong.\" A _fabrication_ is deliberate deception (someone engineered a false frame they knew to be false), and it feels like betrayal: \"they lied to me about what was going on.\" A _frame dispute_ is two sincere, incompatible framings of the same ambiguous activity, and it has a special bitterness, each party feels the other is distorting reality, because each experiences their own frame as simply the truth. The crucial insight, carried from the chapter, is that these must not be collapsed: only fabrication is genuine faking/unmasking; misframes and disputes involve no hidden truth being exposed, because the activity was genuinely ambiguous or genuinely both things. Diagnosing which mode you experienced, and resisting the pull to read every frame break as a fabrication unmasked, is the skill the exercise builds.\n\n**Q2.** Find a frame _dispute_ in your experience, an argument about \"what really happened\" between people who agreed on the physical events but disagreed, sincerely, on what those events _were._ (Helpful honesty or cruel attack? Respectful space or cold withdrawal? Friendly or invasive?) Notice: was there actually a single fact of the matter about the \"real\" frame, or were both framings sincere readings of a genuinely ambiguous act?\n\nHint\n\nThe bottomless arguments are the ones where the facts aren't in dispute but the frame is. Ask whether the activity might have been genuinely _both_ , and what that would mean for who was \"right.\"",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 771,
+      "out_sha": "7f4960840478",
       "note": ""
     },
     {
