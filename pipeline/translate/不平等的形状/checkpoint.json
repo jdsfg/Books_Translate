@@ -2071,11 +2071,11 @@
       "en_title": "Chapter 16: The Pay Gap",
       "order": 164,
       "src_chars": 3330,
-      "status": "pending",
+      "status": "done",
       "src_sha": "55b7a4727eda",
       "src": "Few statistics in public life are quoted more often, or understood less well, than the one we take up now: that women earn less than men. You have heard it as a slogan, a number of cents on the dollar, deployed in speeches and headlines and arguments, by people who treat it as self-evidently an outrage and by people who treat it as self-evidently a myth. Both treatments are failures of thought, and we are now equipped to do better, because we spent the last chapter building exactly the instrument this number requires. The pay gap is the textbook case for the gap-reading procedure, and working it carefully is the best possible demonstration that method beats reflex on charged ground.\n\nWe will proceed exactly by the five steps of Chapter 15, and the result will satisfy no tribe, which is the point. We will state the gross gap plainly, because it is real. We will decompose it honestly, because that is what understanding requires. We will refuse to inflate either the residual into \"pure discrimination\" or the explained portion into \"pure choice.\" We will hold the two clusters at equal standing. And we will mark, clearly, the place where the question stops being about what _is_ and becomes about what is _fair_ , and hand that part to you. If you finish this chapter certain that the pay gap is simply an injustice, or simply a statistical illusion, then either the chapter or your reading of it has failed, because the honest answer is more interesting and more demanding than either slogan.\n\n\n### 16.1 The gross gap, stated plainly\n\nStep one: establish the gross figure, with its as-of, society, and source, and state it without hedging, because it is a measured fact.\n\nIn recent US Census Bureau data (full-time, year-round earnings, around 2023), women earn, at the median, somewhere in the range of eighty to eighty-four cents for every dollar earned by men working full time, year round, a gross gap on the order of sixteen to twenty cents on the dollar. The exact figure moves a little year to year and by source, which is why we carry it as a range rather than a false-precise decimal, but the order of magnitude is solid and has been for some time, though it has narrowed substantially over the longer run. This is the number you have heard. It is real. It is not a myth, and anyone who tells you \"there is no pay gap\" is wrong about the gross measured fact.\n\nBut now recall, with full force, what kind of number this is. It is a _gross gap_ : it compares all full-time women to all full-time men, accounting for nothing else. It does not yet tell us whether women and men in this comparison are doing the same jobs, working the same hours (within the \"full-time\" category, which spans a wide range), in the same fields, with the same years of experience, at the same ages. It lumps every possible reason for the difference into one figure. So while \"there is no pay gap\" is false, the equally common move, treating this gross figure as if it were the measure of unequal pay _for the same work_ , is also false, or at least unproven, because the gross gap is precisely _not_ a comparison of the same work. It is the starting point of analysis, exactly as the Northern/Southern division gap was. We have completed step one. The roughly sixteen-to-twenty-cent gross gap is on the table, real and unexplained.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1002,
+      "out_sha": "f94836dec26b",
       "note": ""
     },
     {
@@ -2083,11 +2083,11 @@
       "en_title": "Chapter 16: The Pay Gap",
       "order": 165,
       "src_chars": 2842,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f6b81afeffb2",
       "src": "#### Common Misconception\n\nThe most common misconception, repeated endlessly, is that the gross pay-gap figure means \"women are paid X cents less than men _for doing the same job_.\" It does not, and this matters in both directions. The gross figure compares _all_ full-time women to _all_ full-time men, across different occupations, fields, hours, and experience levels; it is not a same-job comparison. So those who cite the gross figure as direct proof of unequal pay for equal work are overreaching, the gross gap has not isolated \"the same work.\" _But_ the opposite error is equally wrong: those who point out that the gross gap is not a same-job comparison and conclude \"therefore it's not a real problem\" have also overreached, because, as we are about to see, the very fact that women and men are _in different jobs, fields, and hours_ is itself something to be explained, not a clean exoneration. The gross figure is neither proof of discrimination nor proof of its absence. It is the raw material for a decomposition, and treating it as a conclusion, in either direction, is the cardinal error of Chapter 15.\n\n\n### 16.2 Decomposing the gap\n\nStep two: decompose. When researchers account for measurable factors, how much of the gross gap is \"explained,\" and how much is residual?\n\nA large body of careful work has decomposed the gender pay gap, and the broad findings, stated at the level of confidence they actually support, are these. A substantial portion of the gross gap is statistically associated with measurable differences between working women and men: differences in _occupation and industry_ (women and men are distributed differently across fields, and the fields pay differently), in _hours worked_ (even among full-time workers, men average somewhat longer hours, and the longest hours often carry disproportionate pay), and in _years of continuous experience_ (work histories differ, on average, partly around childbearing and caregiving). When these and similar factors are accounted for, the gap shrinks considerably from the gross figure, but, by most careful estimates, it does _not_ vanish: a residual remains after the measured factors are accounted for. So the decomposition yields, as it did in the neutral case, an explained portion (associated with occupation, hours, experience) and a residual (what is left when comparing women and men similar on those measured factors).\n\nThis is real progress, and notice that it already refutes both slogans. The \"no gap\" camp is refuted by the persistence of a residual. The \"the whole gross gap is discrimination\" camp is refuted by the large explained portion. We are now in the genuinely interesting territory, which has two distinct questions, corresponding to steps three and four, and the tilt in this entire debate lives in how those two questions get handled.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 919,
+      "out_sha": "cecc21f4f5b3",
       "note": ""
     },
     {
@@ -2095,11 +2095,11 @@
       "en_title": "Chapter 16: The Pay Gap",
       "order": 166,
       "src_chars": 2927,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fe379f143892",
       "src": "### 16.3 Step three: is the explained portion innocent?\n\nHere is where the careless analyst declares victory too early, in both directions, and where the disciplined one keeps working. We found that much of the gap is \"explained\" by occupation, hours, and experience. The crucial question of step three is: _are those explaining factors themselves freely chosen and fair, or do they themselves reflect constraint and unequal treatment?_ \"Explained\" means \"associated with a measured factor\"; it does not yet mean \"innocent.\"\n\nTake occupational sorting, the largest piece. That women and men are concentrated in different fields is measured. _Why_ they are is exactly where the honest debate lives, and both readings must be given full strength.\n\nThe **choice-and-preference reading** , stated at full vividness: women and men, on average, differ in their occupational preferences and priorities, and these differences, to the extent they are freely held, produce different occupational distributions and thus different average pay, without anyone being treated unfairly. People genuinely differ in what they want from work, how they weigh pay against flexibility, interest, safety, meaning, hours, and human-capital theory predicts that those who prioritize, say, flexibility or shorter hours will, on average, earn less, as a price they willingly pay for things they value more. On this reading, much of the occupational sorting reflects autonomous choices that we should respect rather than override, and treating the resulting pay differences as injustice insults women's agency by implying their choices were not really theirs. This is a serious position held by serious people, and it has real evidence behind it: preferences do differ on average, and the differences do track pay.\n\nThe **constraint-and-treatment reading** , stated with equal vividness: the occupational \"choices\" are not made on a level field but are shaped, from early childhood, by expectations, stereotypes, steering, discouragement, and unequal treatment, so that the sorting reflects constraint dressed as preference. Fields may pay less _because_ they became female-dominated, rather than women choosing them because they pay less. And the heaviest factor, the experience and hours differences around caregiving, reflects not a free choice but the unequal distribution of unpaid domestic and care work, which falls disproportionately on women through social expectation and structure, so that what the data record as \"fewer continuous years\" or \"shorter hours\" is the footprint of an unequal arrangement, not a neutral preference. On this reading, calling the explained portion \"innocent choice\" launders structural inequality into the language of freedom. This too is a serious position held by serious people, with real evidence: the caregiving burden is unequally distributed, and the timing of pay penalties around childbearing is measurable.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 905,
+      "out_sha": "b5b6340f173f",
       "note": ""
     },
     {
@@ -2107,11 +2107,11 @@
       "en_title": "Chapter 16: The Pay Gap",
       "order": 167,
       "src_chars": 1355,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8962fe5660d0",
       "src": "#### Definition: The Symmetry Applied to the Explained Portion\n\nFor the explained portion of the pay gap, two things are _measured_ and not in dispute: that women and men differ, on average, in occupation, hours, and continuous experience, and that these differences are associated with the pay gap. What is _contested_ is the _interpretation_ : whether these differences reflect _free choices_ (to be respected) or _constraints and unequal treatment_ (operating through the measured factors). The measured sorting is real; reading it as \"freely chosen\" is one interpretation and reading it as \"constrained\" is another, and the decomposition does not adjudicate between them. Neither side may attach \"measured\" to its preferred interpretation.\n\nIn plain language: that women and men are in different jobs is a fact; _why_ , and whether it is fair, is the fight, and the fact does not settle the fight. The truth almost certainly contains both, free choices _and_ constraints, tangled together in proportions no one can cleanly measure, which is precisely why honest analysts report the explained portion as _associated with_ occupation and hours _whose own freedom is contested_ , rather than as either \"just choices\" or \"just discrimination in disguise.\" Step three does not resolve; it reveals that even the \"explained\" part hides a contested question.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 426,
+      "out_sha": "b7186561967f",
       "note": ""
     },
     {
@@ -2119,11 +2119,11 @@
       "en_title": "Chapter 16: The Pay Gap",
       "order": 168,
       "src_chars": 3171,
-      "status": "pending",
+      "status": "done",
       "src_sha": "291e1d9a00e0",
       "src": "### 16.4 Step four: the residual, two clusters at equal standing\n\nNow the residual, the part that remains after occupation, hours, experience, and the rest are accounted for. Here the discipline of Chapter 15 must be applied at maximum pressure, because the residual is where both tribes plant their flags.\n\nThe residual is, first of all, a measure of our _ignorance_ : it is what our measured factors could not account for. It contains, at least, two clusters held at equal standing. The **discrimination cluster** : the residual may reflect unequal treatment of women not captured by the measured factors, including direct pay discrimination, biased evaluation and promotion, and subtler structural and historical forms. The **non-discrimination cluster** : the residual may reflect factors we could not measure, finer differences in roles within occupations, in hours and intensity within \"full-time,\" in negotiation, in unmeasured aspects of preference or productivity. Both are live readings of the _same residual_ , and the decomposition adjudicates neither.\n\nNow apply, precisely, the most important distinction from Chapter 15, because this is where it earns its keep. Does discrimination against women in pay and hiring _exist_? Yes, and this is _measured_ , not merely asserted: carefully designed studies, including ones where otherwise-identical materials differ only by an apparent sex, have found unequal treatment in specific settings. So the existence of sex discrimination is a settled IS, and anyone who denies discrimination occurs at all is wrong about the evidence. _But_ does that measured existence tell us what _share_ of this gross pay gap discrimination accounts for? No. The share is not measured; it is a contested interpretation, because the aggregate gap mixes discrimination with all the unmeasured legitimate factors, and no audit study apportions the real-world residual. So the disciplined two-part statement, which will satisfy neither tribe and is nonetheless the honest one: _discrimination against women is real and measured in specific settings, and the proportion of the overall pay gap that it explains is genuinely unknown and contested._ Hold both halves. Dropping the first gives you the apologist's denial; dropping the second gives you the activist's overreach.\n\nOne contested piece deserves naming because it is so central: the _motherhood penalty_. It is measured that women's pay trajectories often diverge from men's around the time of childbearing, this is a real, datable pattern. But its interpretation runs the full decomposition: is it discrimination (mothers treated as less committed, penalized by employers)? Is it the consequence of the unequal distribution of caregiving (a structural constraint)? Is it, in part, a shift in some mothers' own freely-revised priorities toward family (a choice)? The honest answer is that it is studied, contested, and probably a mixture, and that the measured pattern (pay diverges around childbearing) does not by itself tell you which reading dominates. The motherhood penalty is the pay gap's decomposition in miniature: a solid measurement wrapped around a contested cause.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 966,
+      "out_sha": "276e15145f7a",
       "note": ""
     },
     {
@@ -2131,11 +2131,11 @@
       "en_title": "Chapter 16: The Pay Gap",
       "order": 169,
       "src_chars": 2665,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4e070f7ea601",
       "src": "### 16.5 Step five: the crossing into ought\n\nWe have now done the empirical work as honestly as it can be done: a real gross gap, a substantial explained portion whose own freedom is contested, a residual containing a measured-but-unquantified discrimination component alongside unmeasured factors, all of it a tangle of genuine choice and genuine constraint in proportions no one can cleanly fix. Step five marks the crossing that the slogans skip entirely: _even with all of this established, whether the pay gap is unjust is a separate, normative question._\n\nWatch how the OUGHT remains open even after the IS and WHY are pinned down as far as they can be. Suppose we agreed, for argument, on the exact decomposition, that the gap is, say, partly free choice, partly constraint, partly measured discrimination, partly unmeasured factors, in some specified mix. _We would still not have agreed on whether it is unjust_ , because that depends on contested value questions the decomposition cannot answer. Is a pay difference that flows from freely chosen priorities (flexibility over pay) unjust, or is it the respectful result of autonomy? Is a difference that flows from the unequal distribution of caregiving unjust, and if so, is the injustice in the _pay_ or in the _caregiving arrangement_ that lies upstream of it? How much should a society intervene in either? These are OUGHT questions, and people who agree on every fact can still disagree about them, because they weigh autonomy, fairness, and the proper limits of intervention differently. The book's job ends where it always ends: with the strongest cases laid out and the verdict in your hands.\n\nThere is one more disciplined observation, and it cuts against a complacency the careful analysis can accidentally breed. Showing that much of the gap is \"explained\" and that the residual's discrimination-share is unquantified does _not_ establish that the gap is fine. If the explained portion runs substantially through _constraint_ (unequal caregiving, early steering), then a gap can be largely \"explained\" and still reflect deep unfairness, just unfairness located upstream of the paycheck rather than in it. The decomposition tells you _where_ the gap comes from; it does not tell you that any of those sources is just. Equally, showing that discrimination is real and measured does not establish that the _whole_ gap, or most of it, is discrimination. The analysis disciplines the question; it does not deliver the verdict, in either direction. That is not a failure of the analysis. It is the analysis doing its only honest job, which is to hand you a clear question instead of a muddled slogan.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 815,
+      "out_sha": "58f7c7b21cf3",
       "note": ""
     },
     {
@@ -2143,11 +2143,11 @@
       "en_title": "Chapter 16: The Pay Gap",
       "order": 170,
       "src_chars": 1702,
-      "status": "pending",
+      "status": "done",
       "src_sha": "15bbd3606d5b",
       "src": "### 16.6 What this chapter modeled\n\nWe applied the full five-step procedure to the gender pay-gap figure, a number routinely quoted as a slogan and routinely read as a same-work comparison it is not, and the payoff is not a conclusion but a _competence_ : you can now read the pay gap, and any group gap, without joining a tribe. We stated the gross gap plainly (women earning, in recent US data, roughly eighty to eighty-four cents per dollar, full-time year-round, a real measured fact). We decomposed it into an explained portion and a persistent residual. We refused to treat \"explained\" as \"innocent,\" finding the occupational and caregiving factors themselves contested between free-choice and constraint readings. We held the residual's two clusters at equal standing, while precisely distinguishing the _settled existence_ of discrimination from its _unquantified share_. And we marked the crossing into the normative, where even a fully agreed decomposition leaves the verdict open.\n\nThe next chapter applies the same instrument to gaps by race and origin, where a new and crucial wrinkle appears. With the pay gap, even the gross figure is sometimes disputed; with some racial gaps, especially the wealth gap, the _measurement itself is settled beyond reasonable dispute_ , and the discipline shifts: we must state the measured gap plainly and refuse to fake a debate over whether it exists, _while_ running its _causes_ through the full contested decomposition we have just practiced. Learning when to state a measurement flatly and when to open a contested decomposition, and never confusing the two, is the final skill of Part 6, and Chapter 17 is where we master it.\n\n\n### 16.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 553,
+      "out_sha": "57a4a77d5a5a",
       "note": ""
     },
     {
@@ -2155,11 +2155,11 @@
       "en_title": "Chapter 16: The Pay Gap",
       "order": 171,
       "src_chars": 2346,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6c33cc7a44e2",
       "src": "#### Concept Check\n\n**Q1.** Explain why both \"there is no pay gap\" and \"women are paid X cents less for the same work\" are wrong readings of the gross gender pay-gap figure.\n\nHint\n\nWhat does the gross figure actually compare? Is it a same-job comparison? Is it zero?\n\n**Answer:** The gross figure (women full-time year-round earning roughly eighty to eighty-four cents per dollar men earn, US, recent data) compares _all_ full-time women to _all_ full-time men, accounting for nothing else. \"There is no pay gap\" is wrong because this gross gap is a real, measured fact, it is not zero and not a myth. But \"women are paid X cents less for the _same work_ \" is also wrong, because the gross figure is _not_ a same-job comparison: it lumps together different occupations, fields, hours, and experience levels, so it has not isolated \"the same work.\" The gross gap is neither proof of unequal pay for equal work nor proof of its absence; it is the raw starting material for a decomposition. Both errors commit the cardinal mistake of Chapter 15, treating a gross gap as if it were already a conclusion.\n\n**Q2.** State the disciplined two-part claim about discrimination in the pay gap, and explain why dropping either half produces a tribal error.\n\nHint\n\nOne half is about discrimination's _existence_ (measured); the other about its _share_ of the gap (contested). What error comes from dropping each?\n\n**Answer:** The two-part claim: (1) discrimination against women in pay/hiring is _real and measured in specific settings_ (carefully designed studies, e.g. identical materials differing only by apparent sex, find unequal treatment), so its existence is a settled IS; and (2) the _share_ of the overall pay gap that discrimination explains is _genuinely unknown and contested_ , because the aggregate gap mixes discrimination with unmeasured legitimate factors and no study apportions the real-world residual. Dropping half (1) yields the _apologist's denial_ (\"discrimination doesn't really happen / isn't a factor\"), which contradicts the measured evidence. Dropping half (2) yields the _activist's overreach_ (\"the whole gap, or most of it, is discrimination\"), which claims a share that has not been measured. Holding both halves is the honest position; it satisfies neither tribe precisely because each tribe is built on dropping one half.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 818,
+      "out_sha": "166aede5c0a0",
       "note": ""
     },
     {
@@ -2167,11 +2167,11 @@
       "en_title": "Chapter 16: The Pay Gap",
       "order": 172,
       "src_chars": 2391,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8e6e0614095e",
       "src": "#### Application Problems\n\n**Q1.** A decomposition finds that much of the gender pay gap is \"explained\" by women being concentrated in lower-paying occupations and working fewer continuous years. Give the strongest free-choice reading and the strongest constraint reading of these \"explained\" factors, and explain why the chapter says \"explained\" does not mean \"innocent.\"\n\nHint\n\nWhy are women in different fields and with different work histories? Could the same measured factor be read as autonomous preference or as structural constraint?\n\n**Answer:** _Strongest free-choice reading_ : women and men differ, on average, in occupational preferences and in how they weigh pay against flexibility, interest, hours, and family; to the extent these preferences are freely held, the resulting occupational sorting and work-history differences reflect autonomous choices (accepting lower pay as a price for valued things like flexibility), which we should respect, and treating the resulting pay difference as injustice arguably insults women's agency. _Strongest constraint reading_ : the \"choices\" are shaped from early childhood by expectations, stereotypes, steering, and discouragement, and the experience/hours differences largely reflect the _unequal distribution of unpaid caregiving_ , which falls disproportionately on women through social structure, not free choice; fields may even pay less _because_ they became female-dominated. \"Explained\" does not mean \"innocent\" because it only means _associated with a measured factor_ (occupation, hours, experience); it does not tell you _why_ the groups differ on that factor or whether the difference is fair. If the sorting runs through constraint, the \"explained\" portion can hide real unfairness located upstream of the paycheck. The honest report is that the explained portion is associated with factors _whose own freedom is contested_ , almost certainly a tangle of genuine choice and genuine constraint in proportions no one can cleanly measure.\n\n**Q2.** The \"motherhood penalty\" is described as \"the pay gap's decomposition in miniature.\" Explain what is measured about it and what is contested, and lay out the three competing readings without crowning one.\n\nHint\n\nThe _pattern_ (pay diverging around childbearing) is measured. The _cause_ runs the full decomposition. What are the discrimination, constraint, and choice readings?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 766,
+      "out_sha": "26af1994d2e9",
       "note": ""
     },
     {
@@ -2179,11 +2179,11 @@
       "en_title": "Chapter 16: The Pay Gap",
       "order": 173,
       "src_chars": 1153,
-      "status": "pending",
+      "status": "done",
       "src_sha": "85a5d915e7f6",
       "src": "**Answer:** _Measured_ : women's pay trajectories often diverge from men's around the time of childbearing, a real, datable pattern. _Contested_ : why it happens. The three readings, held at equal standing: (1) _discrimination_ , mothers are treated by employers as less committed or capable and penalized accordingly (a discrimination-cluster reading); (2) _constraint_ , the divergence reflects the unequal distribution of caregiving that falls on mothers through social structure, reducing hours and continuous experience not by free choice but by an unequal arrangement; (3) _choice_ , some mothers freely revise their own priorities toward family, accepting lower pay for time or flexibility they now value more. The honest answer is that it is studied, contested, and probably a _mixture_ , and the measured pattern (pay diverges around childbearing) does not by itself reveal which reading dominates. It is the decomposition in miniature because it pairs a solid measurement with a fully contested cause, exactly the structure of the whole pay gap, and the discipline is to state the pattern plainly while keeping the three causal readings open.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 368,
+      "out_sha": "998495b964a2",
       "note": ""
     },
     {
@@ -2191,11 +2191,11 @@
       "en_title": "Chapter 16: The Pay Gap",
       "order": 174,
       "src_chars": 2886,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6dd1c30be09e",
       "src": "#### Think Deeper\n\n**Q1.** Suppose two careful analysts agree completely on the decomposition of the pay gap, say, on exactly how much is free choice, constraint, measured discrimination, and unmeasured factors. Show how they could _still_ reach opposite conclusions about whether the gap is unjust and whether anything should be done. What does this reveal about the limits of even a perfect empirical analysis?\n\n**Discussion:** This question is the capstone of the chapter's discipline, and it drives home, on the most charged of gaps, the book's deepest claim: that even a fully settled empirical picture cannot deliver a normative verdict.\n\nGrant the two analysts a perfect, agreed decomposition. They still face value questions the decomposition cannot answer, and reasonable people answer them oppositely.\n\nConsider the portion attributable to _free choice_ (women, on average, accepting lower pay for flexibility or other valued things). Analyst One says: this portion is not unjust at all, it is the respectful result of autonomy, and to \"correct\" it would override women's own freely-made priorities, which is itself disrespectful. Analyst Two says: even freely-made choices occur within a social context that assigns different options and pressures to women and men, so a \"free\" choice made under unequal background conditions is not fully exonerating, and a society might still owe something to reduce the penalty attached to valuing flexibility. They agree it is \"free choice\"; they disagree on whether free choices under unequal conditions yield just outcomes, which is a contested principle about the relationship between choice and justice, not a fact.\n\nConsider the portion attributable to _unequal caregiving_ (a structural constraint). Analyst One says: this is genuinely unjust, but the injustice is in the _caregiving arrangement_ , not the paycheck, so the pay gap here is a symptom, and what (if anything) to do belongs to a debate about family and care, where the proper limits of intervention are themselves contested. Analyst Two says: symptom or not, a society that lets caregiving translate into lifelong pay penalties is permitting an injustice it could mitigate, and the location of the cause does not dissolve the obligation. They agree on the cause; they disagree on where responsibility lies and how much a society should intervene, which depends on values about the family, the state, and individual responsibility.\n\nConsider even the _measured discrimination_ portion. Surely _that_ is agreed to be unjust? Mostly, yes, this is the closest to a shared value premise. But notice that even here the analysts can disagree on what _follows_ : how much enforcement, at what cost to other values (employer freedom, false accusations, administrative burden), is warranted to address it, which is again a value-and-prudential question beyond the decomposition.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 935,
+      "out_sha": "30575d574fd9",
       "note": ""
     },
     {
@@ -2203,11 +2203,11 @@
       "en_title": "Chapter 16: The Pay Gap",
       "order": 175,
       "src_chars": 1270,
-      "status": "pending",
+      "status": "done",
       "src_sha": "edc0f272dacd",
       "src": "What this reveals is the irreducible limit of empirical analysis on contested ground: the decomposition can tell you _what the gap is made of_ , with great care and honesty, but it cannot tell you _whether the gap is unjust_ or _what should be done_ , because every step from the composition to the verdict requires value premises, about whether choices under unequal conditions are exonerating, about where responsibility lies, about the proper scope of intervention, that the facts cannot supply and on which reasonable people genuinely differ. This is why the slogans are so seductive and so wrong: each smuggles a value premise past you under cover of a number (\"the gap is X cents, therefore injustice\" or \"the gap is mostly choices, therefore fine\"). The disciplined alternative is harder and more honest: do the decomposition as carefully as you can, mark exactly where the empirical ends and the normative begins, and then make, and own, your value judgment as a judgment rather than disguising it as a finding. The perfect empirical analysis does not end the argument. It _clarifies_ it, by showing you precisely which value questions you and your opponent actually disagree about, which is the most any analysis can do, and far more than any slogan ever does.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 377,
+      "out_sha": "415005b25150",
       "note": ""
     },
     {
@@ -2215,11 +2215,11 @@
       "en_title": "Chapter 16: The Pay Gap",
       "order": 176,
       "src_chars": 2520,
-      "status": "pending",
+      "status": "done",
       "src_sha": "81eaea93da29",
       "src": "### Chapter Summary\n\nWe applied the full five-step gap-reading procedure to the gender pay gap, a figure routinely quoted as a slogan and routinely misread as a same-work comparison, to demonstrate that method beats reflex on charged ground. _Step one_ : the gross gap is real and measured, women working full-time year-round earn, in recent US data, roughly eighty to eighty-four cents per dollar men earn, stated plainly (so \"there is no pay gap\" is false) while recognizing it is _not_ a same-job comparison (so \"X cents less for the same work\" is also unproven). _Step two_ : decomposing it yields a substantial _explained portion_ (associated with occupation, hours, and continuous experience) and a _persistent residual_ , which already refutes both \"no gap\" and \"the whole gap is discrimination.\"\n\n_Step three_ refused to treat \"explained\" as \"innocent\": the occupational and caregiving factors are themselves contested between a _free-choice reading_ (autonomous preferences to be respected) and a _constraint reading_ (steering and the unequal distribution of caregiving), both given full strength, with the truth almost certainly a tangle of both in unmeasurable proportions. _Step four_ held the residual's two clusters (discrimination and unmeasured legitimate factors) at equal standing, and applied Chapter 15's crucial distinction: discrimination against women is _real and measured in specific settings_ (settled existence) while its _share of the overall gap is unknown and contested_ , with the **motherhood penalty** as the decomposition in miniature (a measured pattern around childbearing wrapping a contested cause). _Step five_ marked the crossing into the normative: even a fully agreed decomposition leaves the verdict open, because whether choices-under-constraint, caregiving-driven, or discriminatory differences are _unjust_ , and what to do, are value questions the analysis cannot settle.\n\nThe chapter's payoff is a _competence_ , not a conclusion: the ability to read any group gap without joining a tribe, refusing to inflate the residual into pure discrimination or the explained portion into pure choice. Chapter 17 carries the instrument to gaps by race and origin, where a new wrinkle appears, some gaps (notably the racial wealth gap) are _settled measurements_ to be stated flatly without faking a debate over their existence, even as their _causes_ run the full contested decomposition, and the final skill of Part 6 is knowing which is which and never confusing them.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 846,
+      "out_sha": "eeed22d6c025",
       "note": ""
     },
     {
