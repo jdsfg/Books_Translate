@@ -463,11 +463,11 @@
       "en_title": "Chapter 5: Your Heart-Rate Zones",
       "order": 33,
       "src_chars": 3167,
-      "status": "pending",
+      "status": "done",
       "src_sha": "67c04328e5dc",
       "src": "#### Worked example: Jordan's zones\n\nTake Jordan: HRmax 187 (Tanaka), HRrest 55 (measured on waking, lying still, averaged over a few mornings). First the reserve:\n\nHRR=187−55=132 bpm \\text{HRR} = 187 - 55 = 132 \\text{ bpm} HRR=187−55=132 bpm\n\nNow apply Karvonen at each zone boundary of a common five-zone scheme. The pattern is always 132×% +55132 \\times \\%\\ + 55132×% +55:\n\n| Zone | %HRR | Karvonen target (bpm) | What it feels like |\n| --- | --- | --- | --- |\n| Bottom of Z1 | 50% | 132(0.50)+55=121132(0.50)+55 = 121132(0.50)+55=121 | very easy, recovery |\n| Z1 / Z2 line | 60% | 132(0.60)+55=134132(0.60)+55 = 134132(0.60)+55=134 | easy, conversational |\n| Z2 / Z3 line | 70% | 132(0.70)+55=147132(0.70)+55 = 147132(0.70)+55=147 | steady, aerobic |\n| Z3 / Z4 line | 80% | 132(0.80)+55=161132(0.80)+55 = 161132(0.80)+55=161 | comfortably hard, near threshold |\n| Z4 / Z5 line | 90% | 132(0.90)+55=174132(0.90)+55 = 174132(0.90)+55=174 | hard |\n| Top of Z5 | 100% | 132(1.00)+55=187132(1.00)+55 = 187132(1.00)+55=187 | maximal |\n  \nSo Jordan's easy \"Zone 2\" runs roughly **134 to 147 bpm** , and the comfortably-hard threshold region (recall Chapter 4) sits up around **161 to 174 bpm**. Every one of these is reconstructable: reserve times the percentage, plus resting heart rate. Change any input and you can rebuild the whole table.\n\n\n### 5.3 Why the method matters: %HRR is not %HRmax\n\nNow the payoff that most watch-wearers never see. There are two common ways to define zones, and **they are not the same number.** One takes a percentage of the heart-rate _reserve_ (Karvonen, above). The other takes a flat percentage of _maximum_ heart rate. Watch what happens to \"60 percent\" for Jordan:\n\n* **60 percent of HRR (Karvonen):** 132×0.60+55=134132 \\times 0.60 + 55 = 134132×0.60+55=134 bpm.\n* **60 percent of HRmax (flat):** 187×0.60=112187 \\times 0.60 = 112187×0.60=112 bpm.\n\nThat is a **22-beat difference** for the same label, \"60 percent.\" They are not small variations on one idea; they are different definitions. A zone chart built on flat %HRmax will place Jordan's \"easy\" runs far lower (a heart rate of 112 is an easy walk-to-jog effort for a fit 30-year-old, not a real training stimulus) than one built on %HRR. Neither is \"wrong,\" but they mean different things, and if you do not know which one your watch or your training plan uses, you can end up running your easy days at what another chart would call a near-nap, or, worse, running your \"easy\" days too hard because you assumed a lower-anchored scheme.\n\nThe reconciliation: the two schemes converge at the top (at 100 percent both give HRmax) and diverge most at the bottom, because flat %HRmax pretends the usable range starts at zero while %HRR correctly starts it at your resting heart rate. For training that respects the easy/hard distinction of Chapter 6, **%HRR (Karvonen) is generally the more meaningful scheme** , because it is anchored to your actual usable range and it individualizes to your fitness. The practical lesson is not \"always use one,\" it is _know which one you are looking at_ , because a zone number with no scheme attached is ambiguous by up to twenty-plus beats.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1359,
+      "out_sha": "9d28b58fe51c",
       "note": ""
     },
     {
@@ -475,11 +475,11 @@
       "en_title": "Chapter 5: Your Heart-Rate Zones",
       "order": 34,
       "src_chars": 2150,
-      "status": "pending",
+      "status": "done",
       "src_sha": "003632b3cff1",
       "src": "#### Common Misconception\n\n_\"A heart-rate zone chart is standardized, so 'Zone 2' means the same heart rate on any app or watch.\"_\n\nIt does not, and this chapter shows two independent reasons why. First, the **anchor numbers are personal** : your zones depend on your HRmax (itself an estimate with ±11 bpm of error) and, in the Karvonen scheme, your resting heart rate. Two 30-year-olds with different resting heart rates get genuinely different zone bands. Second, the **scheme differs** : an app using flat %HRmax and one using %HRR will draw \"Zone 2\" more than twenty beats apart for the same person, as we just computed. Add that zone _schemes_ themselves (three-zone versus five-zone versus seven-zone) are conventions, not physiology, and \"Zone 2\" turns out to be three different things depending on the anchor, the method, and the number of zones. This is not a reason to distrust zones; it is a reason to _build your own_ from your own numbers and know exactly how you built them, which is precisely what this chapter had you do.\n\n\n### 5.4 An honest note on zone schemes\n\nOne caveat so you hold all this with the right looseness. The specific boundaries (why Zone 2 ends at 70 percent and not 72) are **conventions** , not laws of physiology. The underlying reality is the continuous effort landscape of Chapter 4, with its fuzzy thresholds. Zone schemes chop that continuum into a handful of bands for convenience, and different coaches chop it differently. What is real is the physiology (the sustainable region below threshold, the unsustainable region above); what is conventional is exactly where the lines fall. So use your computed zones as a **practical guide** , expect them to be approximate, and calibrate them against the more direct signals from Chapter 4 (the talk test, perceived effort) and against your log. When your computed \"easy\" zone and your talk test disagree, trust your body: the zone predicts, the log and your breathing decide.\n\n\n### 5.5 Exercises\n\nThe heart of this chapter is computation, so work the numbers by hand. At least one problem asks you to build your own zones, the signature landing of the chapter.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 729,
+      "out_sha": "41690c8ce1b5",
       "note": ""
     },
     {
@@ -487,11 +487,11 @@
       "en_title": "Chapter 5: Your Heart-Rate Zones",
       "order": 35,
       "src_chars": 2515,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b3a6671bc4da",
       "src": "#### Concept Check\n\n**Q1.** Explain why the Karvonen method adds resting heart rate back in, rather than just taking a flat percentage of maximum heart rate. What real-world fact about the heart makes the flat-percentage method less meaningful?\n\nHint\n\nAt complete rest, is your heart rate zero? Where does your \"usable range\" of heart rates actually begin?\n\n**Answer:** The flat-percentage method implicitly assumes your usable range of heart rates starts at zero, but it does not: even at complete rest your heart beats at your resting heart rate. So the range actually available for exercise runs from resting heart rate up to maximum, and that range is your heart-rate _reserve_. The Karvonen method takes the target percentage _of that reserve_ and then adds resting heart rate back on, so \"50 percent intensity\" correctly means \"halfway up the range you can actually use,\" not \"half of your maximum number.\" This makes Karvonen track true internal effort better and individualize to fitness: a fitter person with a lower resting heart rate has a larger reserve and gets appropriately different zones from the same maximum. It also means the zones update as training lowers your resting heart rate (the Chapter 2 stroke-volume adaptation), automatically shifting your bands as you improve.\n\n**Q2.** Your friend's watch says he was in \"Zone 2\" on a run; your watch says you were in \"Zone 3\" on a run at the very same perceived effort. Give two distinct reasons, from this chapter, why the same effort could land in different labeled zones for the two of you.\n\n**Answer:** Two independent reasons. First, **the anchor numbers are personal.** Your zones are built on your estimated HRmax (which carries about ±11 bpm of error and differs by age and individual) and, under Karvonen, on your resting heart rate. If your resting heart rate is higher or your estimated max is lower, the same absolute heart rate falls into a higher-labeled zone for you than for him. Second, **the two watches may use different schemes.** One might define zones as percentages of heart-rate reserve (Karvonen) and the other as flat percentages of maximum, and as the chapter showed, those can differ by more than twenty beats for the same \"percentage,\" so identical physiology gets sorted into different bands. A third contributor: zone _schemes_ (three-zone versus five-zone) are conventions, so even the number and placement of the bands can differ. The takeaway is that a zone label is meaningless without knowing how it was built.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 834,
+      "out_sha": "84215e37b124",
       "note": ""
     },
     {
@@ -499,11 +499,11 @@
       "en_title": "Chapter 5: Your Heart-Rate Zones",
       "order": 36,
       "src_chars": 3085,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8a3acf322745",
       "src": "#### Compute It\n\n**Q1.** A 50-year-old man has a measured resting heart rate of 62 bpm. (a) Estimate his HRmax with both the classic and Tanaka formulas and note which is higher at this age. (b) Using the Tanaka value and the Karvonen method, compute his heart rate at 65 percent of heart-rate reserve. Show every step.\n\nHint\n\nClassic: 220−age220-\\text{age}220−age. Tanaka: 208−0.7×age208 - 0.7\\times\\text{age}208−0.7×age. Then HRR=HRmax−HRrest \\text{HRR}=\\text{HRmax}-\\text{HRrest}HRR=HRmax−HRrest, and target =HRR×0.65+HRrest=\\text{HRR}\\times 0.65 + \\text{HRrest}=HRR×0.65+HRrest.\n\n**Answer:** (a) Classic: 220−50=170220 - 50 = 170220−50=170 bpm. Tanaka: 208−0.7×50=208−35=173208 - 0.7 \\times 50 = 208 - 35 = 173208−0.7×50=208−35=173 bpm. At age 50 the **Tanaka value is higher** (173 versus 170), the reverse of the young-adult case, because the two formulas cross at age 40 and Tanaka's gentler slope keeps older adults' estimates higher. (b) Using Tanaka's 173 and resting 62: reserve is 173−62=111173 - 62 = 111173−62=111 bpm. Then\n\nHRtarget=111×0.65+62=72.15+62=134 bpm \\text{HRtarget} = 111 \\times 0.65 + 62 = 72.15 + 62 = 134 \\text{ bpm} HRtarget=111×0.65+62=72.15+62=134 bpm\n\nSo his 65 percent-HRR target is about 134 bpm. (Note that this is his _estimate_ ; a measured max from a hard effort, if he is cleared for one, would replace the 173 and shift the whole calculation.)\n\n**Q2.** For the same 50-year-old (Tanaka HRmax 173, resting 62), compute \"70 percent\" two ways: (a) 70 percent of heart-rate reserve (Karvonen), and (b) a flat 70 percent of HRmax. How far apart are they, and which one represents the harder actual effort?\n\nHint\n\nKarvonen: 111×0.70+62111\\times0.70+62111×0.70+62. Flat: 173×0.70173\\times0.70173×0.70. Subtract.\n\n**Answer:** (a) Karvonen: 111×0.70+62=77.7+62=139.7≈140111 \\times 0.70 + 62 = 77.7 + 62 = 139.7 \\approx 140111×0.70+62=77.7+62=139.7≈140 bpm. (b) Flat %HRmax: 173×0.70=121.1≈121173 \\times 0.70 = 121.1 \\approx 121173×0.70=121.1≈121 bpm. They differ by about 140−121=19140 - 121 = 19140−121=19 bpm for the same \"70 percent\" label. The **Karvonen value (140) represents the harder effort** , because %HRR is anchored to the top of the usable range and correctly places a given percentage higher than the flat method does. This is the same divergence we saw with Jordan (a 22-beat gap at 60 percent), and it is exactly why you must know which scheme a chart uses before trusting its zones: a plan that says \"run at 70 percent\" could mean 121 or 140 for this man, a difference between a steady aerobic effort and a genuinely hard one.\n\n**Q3 (now do it for your own body).** Measure your resting heart rate (take your pulse for a full minute on waking, lying still, ideally averaged over three mornings). Estimate your HRmax with the Tanaka formula, or use a measured max if you have safely obtained one and are cleared for maximal effort. Then use the Karvonen method to compute the boundaries of your own five zones (at 50, 60, 70, 80, 90, and 100 percent of reserve, which is six boundary values), and write the resulting bands in your log.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1265,
+      "out_sha": "548d392c4621",
       "note": ""
     },
     {
@@ -511,11 +511,11 @@
       "en_title": "Chapter 5: Your Heart-Rate Zones",
       "order": 37,
       "src_chars": 3004,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e6e15b57ab6d",
       "src": "**Answer:** The correct answer is _your_ zone table, built with your own two numbers and the Karvonen formula HRR×% +HRrest\\text{HRR}\\times\\%\\ + \\text{HRrest}HRR×% +HRrest. Checks on your work: (1) Did you measure resting heart rate properly (on waking, still, averaged), since a resting rate measured after coffee or activity will be too high and shrink your reserve? (2) Did you use Tanaka rather than the less accurate classic formula, or better, a safely measured max? (3) If you have any cardiac risk factor or symptom, did you use the _formula_ estimate rather than performing a max-HR test, per the cardiac-screening boundary? And remember the estimate-honesty rule: these bands are a starting guide with real error, so treat your first \"easy\" runs as an experiment, cross-check the bands against the talk test (Chapter 4), and let your log refine them. In Chapter 6 you will take exactly these bands and use them to dose a week of training.\n\n\n#### Take It Further\n\n**Q1.** Suppose you build your zones from the Tanaka formula, then two months later you finally measure your true max on a cleared, all-out effort and it comes out 14 bpm higher than the formula predicted. Walk through everything downstream that this changes, and argue whether it was still worthwhile to train on the formula zones for those two months.\n\n**Discussion:** A 14-bpm miss is entirely plausible given the ±10-to-12-bpm error bar, and it ripples through everything, which is a good illustration of why the anchor matters. If your true max is 14 bpm higher than assumed, then your heart-rate _reserve_ was underestimated by 14 bpm, so every Karvonen zone boundary you computed was set too low. In practice that means the runs you _thought_ were \"comfortably hard threshold\" work were actually easier than intended, and your \"easy\" zone was also set low. Recomputing every band with the true max shifts them all upward, and your genuinely hard days would now be prescribed at higher heart rates. So the correction is real and worth making. But was training on the formula zones for two months wasted? Not at all, and this is the important judgment. First, the errors were in the _safe_ direction here (you trained a bit easy rather than a bit hard, which is exactly the conservative default this book prefers, especially early). Second, you were still training in _sensible_ bands that kept easy days easy and hard days structured, which is 90 percent of the benefit; the last 10 percent of precision only arrived once you had real data. Third, and most important, this is the estimate-honesty rule working as designed: you started with the best available prediction, you trained, you gathered ground-truth data, and you updated. That loop, predict, train, log, recalibrate, is the whole method of this book, and running it for two months on a slightly-off estimate is not a mistake, it is the process. The only actual error would have been treating the formula number as sacred and _never_ checking it against your body.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 911,
+      "out_sha": "4b3e05283b02",
       "note": ""
     },
     {
@@ -523,11 +523,11 @@
       "en_title": "Chapter 5: Your Heart-Rate Zones",
       "order": 38,
       "src_chars": 1688,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a16ed76813ce",
       "src": "### Chapter Summary\n\nYou built your heart-rate zones from the ground up, and in doing so you saw why the numbers your watch displays are less solid than they look. **Maximum heart rate** comes from formulas (the classic 220−age220 - \\text{age}220−age and the better-fitting Tanaka 208−0.7×age208 - 0.7\\times\\text{age}208−0.7×age) that disagree by a few beats but, far more importantly, each carry a **±10-to-12-bpm error** that dwarfs the disagreement, so a measured max from a hard effort beats any formula, and the cardiac-screening boundary (red line 1a) routes at-risk readers to a physician and a formula estimate rather than a max test.\n\nThe **Karvonen (heart-rate-reserve) method** , (HRmax−HRrest)×% +HRrest(\\text{HRmax}-\\text{HRrest})\\times\\%\\ + \\text{HRrest}(HRmax−HRrest)×% +HRrest, turns those anchors into real zone bands by working with the range you can actually use, from resting heart rate up. Working it for Jordan produced concrete bands (easy Zone 2 around 134 to 147 bpm), all fully reconstructable. And the sharpest lesson: **%HRR is not %HRmax** , differing by more than twenty beats at the same \"percentage,\" so a zone label is ambiguous until you know its scheme and its anchors. Zone schemes themselves are conventions laid over the continuous threshold landscape of Chapter 4, to be used as a guide and calibrated against your body.\n\nThis was the signature chapter: you computed your own zones, the second of the volume's \"your own number\" landings. In Chapter 6 you put those bands to work, deciding how much of your week to spend in each, and meeting the polarized-training debate about how easy and how hard endurance training should actually be.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 573,
+      "out_sha": "4434e14276d4",
       "note": ""
     },
     {
