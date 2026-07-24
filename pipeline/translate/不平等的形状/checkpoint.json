@@ -1219,11 +1219,11 @@
       "en_title": "Chapter 10: Effort, Family, and Human Capital",
       "order": 93,
       "src_chars": 2041,
-      "status": "pending",
+      "status": "done",
       "src_sha": "79bcf259e7ad",
       "src": "Two chapters ago we began building a powerful case. Advantage, we showed, is transmitted through wealth, place, networks, and the inherited cultural capital that comes to feel like merit. A reader who absorbed Chapters 8 and 9 and stopped there would walk away with a clear and forceful picture: where you end up is mostly where you started, dressed up as desert. That picture is half the truth, and a book that left you holding only that half would have betrayed its central promise. Because there is another case, just as serious, just as evidence-backed, and just as easy to caricature, and the discipline of this book requires that it be given exactly the strength and exactly the protection we just gave Bourdieu. This chapter is the pivot of Thread C, the place where the structure-versus-merit question stops being a lean in one direction and becomes a hard, open contest.\n\nThe case this chapter makes is that a great deal of what separates people is _real_ : differences in skill and knowledge that make people more productive, differences in effort and choice and the willingness to defer and to risk, things that families do that develop their children, and reward systems that are not merely badges of class but solve a real problem, getting difficult and necessary things done. If Chapters 8 and 9 are the strongest case that outcomes are inherited advantage misread as merit, this chapter is the strongest case that much of what we call merit is real and does its work. The honest reader should finish this chapter unsure which way to lean, which is the correct state to be in, and far harder to reach than committing to either side.\n\n\n### 10.1 Human capital: skill as something real and built\n\nBegin with the idea that gives the agency side its rigor, the economic concept of **human capital**. Its founding insight is simple and, once stated, hard to deny: a person's productive capacities, their knowledge, skills, training, and experience, are valuable, can be invested in, and earn a return, much as physical capital does.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 654,
+      "out_sha": "ec3cd35b25cf",
       "note": ""
     },
     {
@@ -1231,11 +1231,11 @@
       "en_title": "Chapter 10: Effort, Family, and Human Capital",
       "order": 94,
       "src_chars": 2305,
-      "status": "pending",
+      "status": "done",
       "src_sha": "05aebded8a61",
       "src": "#### Definition: Human Capital\n\n**Human capital** is the stock of knowledge, skills, training, health, and experience embodied in a person that makes their labor more productive and therefore more valuable. Like physical capital, it can be _built_ through investment (education, training, practice) and yields a _return_ (higher earnings and opportunities) because it makes the person better at producing things people want.\n\nIn plain language: human capital is the idea that skill is _real and earns a real reward_. The surgeon earns more than the orderly not, on this account, because of an arbitrary class badge but because years of training built a capacity that is scarce and valuable and that saves lives. The software engineer's salary reflects a skill that took work to acquire and that produces things people pay for. This is the agency side's foundational claim, and notice how directly it answers Bourdieu: where Bourdieu says institutions reward inherited cultural markers misrecognized as ability, the human-capital theorist says institutions reward _actual ability that was actually built_ , and that the returns to education and skill are not illusions but the market correctly valuing real productivity. The reason wages rise with education and skill, across virtually every society measured, is, on this account, that education and skill make workers more productive, and the reward is the recognition of something real.\n\nAnd the human-capital account has a powerful, often overlooked, _egalitarian_ edge that the structural story can miss. If advantage were purely inherited wealth and connections, the poor would be locked out. But human capital is something a person can _build_ , even from nothing, and its returns are why education has been, for millions of people across history, a ladder out, the first-generation student whose degree transformed her life chances, not through any inheritance but through a capacity she acquired. To dismiss human capital as mere class signaling is to dismiss an escape route that real people have climbed. The agency side is not only the comfortable defending their comfort; it is also the testimony of everyone who built something and rose on it, and there are a great many of them, and their achievement is not an illusion to be explained away.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 764,
+      "out_sha": "0a9379882589",
       "note": ""
     },
     {
@@ -1243,11 +1243,11 @@
       "en_title": "Chapter 10: Effort, Family, and Human Capital",
       "order": 95,
       "src_chars": 2580,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2f39f2195fa6",
       "src": "### 10.2 Choice, effort, and the things people choose\n\nHuman capital explains why skill earns its reward. But the agency case goes further, into the harder and more contested territory of effort and choice, and here it must be stated carefully, because this is the terrain where the apologist's caricature lurks, just as the snob's caricature lurked around Bourdieu. Stated at its strongest and most honest, the claim is this: people differ in things that are at least partly within their control, and those differences shape outcomes.\n\nPeople differ in _effort_ : how hard they work, how much they persist, how many hours they are willing to put in. People differ in _time preference_ : the willingness to defer gratification, to study now for a payoff later, to save rather than spend. People differ in _risk tolerance_ : the willingness to bet on an uncertain venture, to forgo a safe paycheck for a chance at more. People differ in _preferences_ about how to live: how much weight they put on income versus leisure, security versus autonomy, money versus meaning. These differences are real, they are not simply imposed by structure, and they produce different outcomes, the person who works the extra years, saves the larger share, takes the calculated risk, and chooses the higher-paying field will, on average, end up in a different place than the person who, with the same starting position, makes the opposite choices. To deny this is to deny that human beings are agents whose choices matter, which insults everyone, the striver who did strive and the person who, having made different choices, deserves the dignity of being treated as someone who chose rather than as a helpless object of structure.\n\nOne choice in particular concentrates family resources: _whom people partner with_. Highly educated people tend to partner with each other, a pattern called **assortative mating** , and on the agency reading this is itself a choice, two people freely selecting a partner who shares their outlook and aspirations, and the resulting household pools two strong sets of skills, incomes, and habits to invest in its children. The _fact_ that partners increasingly match on education is measured, not contested. Whether such matching is _freely chosen and therefore just_ , or is itself heavily shaped by where one was schooled, who one ever meets, and which doors background opens, is contested, exactly the kind of two-sided factor the next section's symmetry tool is built to handle. Either way, it is a concrete choice-side mechanism by which family advantage compounds.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 851,
+      "out_sha": "1e6f086d2437",
       "note": ""
     },
     {
@@ -1255,11 +1255,11 @@
       "en_title": "Chapter 10: Effort, Family, and Human Capital",
       "order": 96,
       "src_chars": 2165,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a2df592aaa0c",
       "src": "Consider too what families _do_ , beyond transmitting cultural capital. A parent who reads to a child every night, who insists on homework, who models discipline and curiosity and the expectation of effort, who teaches a child to delay gratification and to keep promises, is doing developmental work that builds the child's capacities, and is doing it through _choices and effort_ , often at great personal cost and often with little money. The structural account, told carelessly, can make all parenting collapse into \"transmitting advantage,\" but a poor parent's nightly reading is not a transmission of wealth or a class marker; it is an act of love and will that develops a child. To call it merely reproduction is to miss what is most admirable in it, and to deny that families with little can do enormous good for their children through what they choose to do, which is both false and, again, a quiet contempt for the people it claims to defend.\n\n\n#### Common Misconception\n\nThe caricature this chapter must dismantle, the mirror image of the \"poor have bad taste\" caricature of Bourdieu, is the _apologist's_ slide: from \"effort and choice matter\" to \"therefore outcomes simply reflect effort and choice, and the poor have mostly themselves to blame.\" This does not follow, and the chapter does not claim it. That effort, time preference, and risk tolerance are _real causes_ operating _partly within people's control_ is true. That they are the _whole_ story, or that they operate on a level field, is false, and everything in Chapters 6 through 9 stands against it. The honest agency claim is bounded: these factors are _real and they matter_ , not _they are everything_. The slide from the first to the second is exactly the move the prompt's \"complacent apologist\" makes, treating existing positions as earned-by-default, reading poverty as revealed preference, framing concern about inequality as envy. The chapter rejects that slide as firmly as Chapter 9 rejected the snob. Differences in effort and choice exist; that they explain everything, or operate on equal terrain, does not follow, and asserting it is its own failure of the sociological eye.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 740,
+      "out_sha": "dfb2a57c962a",
       "note": ""
     },
     {
@@ -1267,11 +1267,11 @@
       "en_title": "Chapter 10: Effort, Family, and Human Capital",
       "order": 97,
       "src_chars": 2446,
-      "status": "pending",
+      "status": "done",
       "src_sha": "12698b6a1bdb",
       "src": "### 10.3 The two-sided truth about every factor\n\nNow we reach the chapter's most important and most demanding idea, the one that, properly grasped, makes the whole structure-versus-merit debate tractable instead of a shouting match. It is this: _almost every factor in the debate has both a measured component and a contested-interpretation component, on both sides, and honest analysis refuses to grant \"measured\" as an honorific to either side._\n\nTake the assortative mating we just met as a first test case: that partners increasingly match on education is a measured fact, while whether such partner-matching is _freely chosen and therefore just_ is a contested interpretation. The same split runs through the factors below.\n\nWatch it work on a factor the agency side loves: differences in **field of study and occupation**. It is _measured_ , not contested, that people in different fields earn different amounts, and that people sort into different fields. That is an IS. But _why_ they sort, and whether the sorting is _freely chosen and therefore just_ , is contested. One reading: people choose fields according to their own preferences and talents, so the resulting earnings differences reflect free choice. Another reading: the \"choices\" are heavily shaped by background, expectation, information, and constraint, so they are far less free than they look. The measured fact (different fields, different pay, different sorting) is solid; the interpretation of the sorting as \"free choice\" is contested. The agency side does not get to attach \"measured\" to its preferred interpretation just because the _fact_ of sorting is measured.\n\nNow watch the very same structure on a factor the structural side loves: **discrimination**. It is _measured_ , in carefully designed audit and experimental studies, that identical qualifications can receive different treatment based on group membership, that is an IS, and a solid one. But the _share_ of any real-world aggregate gap that discrimination explains is _not_ measured; it is a contested interpretation, because such gaps mix discrimination with many other factors and no clean measurement apportions them. So the structural side, too, has a measured component (discrimination occurs in specific tested settings) and a contested-interpretation component (how much of the overall gap it drives). The structural side does not get to attach \"measured\" to its preferred interpretation either.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 762,
+      "out_sha": "f9b52b3662d6",
       "note": ""
     },
     {
@@ -1279,11 +1279,11 @@
       "en_title": "Chapter 10: Effort, Family, and Human Capital",
       "order": 98,
       "src_chars": 1577,
-      "status": "pending",
+      "status": "done",
       "src_sha": "241cda1f11a3",
       "src": "#### Definition: The Symmetry of Measurement and Interpretation\n\nFor nearly every factor in the structure-versus-merit debate, two things must be held apart: a **measured component** (a checkable IS, such as \"fields differ in pay\" or \"identical résumés get different callbacks in audit studies\") and a **contested-interpretation component** (a WHY, such as \"the field choice was free\" or \"discrimination drives most of the aggregate gap\"). The discipline is symmetric: _neither side may treat \"measured\" as an honorific for its preferred interpretation_. Both sides rest on a mix of solid measurement and contested reading, and recognizing this is what keeps the debate honest.\n\nIn plain language: everybody has some real facts and some debatable stories, and the trick that corrupts the whole argument is to dress up your debatable story in your real facts' authority. The agency side does this when it says field-choice differences are \"just the data\" while smuggling in the contested claim that the choices were free. The structural side does this when it says discrimination is \"measured\" while smuggling in the contested claim that it drives most of the gap. Both moves take a real IS and use it to launder a contested WHY. Once you can see this move, you can catch it on either side, and you will catch it constantly in Part 6, where the gaps are charged and the laundering is heaviest. This single piece of discipline, refusing to let either side wear \"measured\" as an honorific, is a practical tool for thinking about inequality without being captured by either tribe.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 538,
+      "out_sha": "a8df72a87b10",
       "note": ""
     },
     {
