@@ -3835,11 +3835,11 @@
       "en_title": "Chapter 14: Whose Environment Is This?",
       "order": 313,
       "src_chars": 3009,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ebf1c5477556",
       "src": "#### The good habit you want to keep\n\nLook at the entries about your good habit. Across the two weeks:\n\n* **What is the cue currently sustaining it?** Specifically: where, when, after what, with whom, in what state? _Be precise._\n* **Is the environment robust enough to protect it?** What would have to be true for this habit to disappear? Is your current setup arranged to prevent that?\n* **What change would destroy it?** Travel? A move? A new job? An increase in cognitive load? A change in the household? Identify the specific threats.\n* **How do you immunize it?** What structural safeguards make the habit resilient? Can you make the cue more reliable, the response more automatic, the social support more durable?\n\nSpecific prescription: write down, in one paragraph, _what you would do to protect this habit through the next year of life changes_. The protection plan is the work.\n\n\n#### The bad habit you want to break\n\nLook at the entries about your bad habit. Across the two weeks:\n\n* **What is its cue?** Where, when, after what, with whom, in what state? _In the entries where the habit fired, what was happening just before?_\n* **Can you remove the cue from the environment?** If yes, do it now. This is choice architecture (Chapter 10). The cleanest fix.\n* **If not, can you weaken it?** Add friction. Move the cue to a less convenient location. Make the response harder.\n* **Can you substitute a new response?** What function is the habit serving? (The Chapter 11 audit.) Design a function-matched substitute, write it as an implementation intention (Chapter 9), execute consistently in the cue's presence.\n* **Is the function being served elsewhere?** If the bad habit was meeting a real need (stress relief, comfort, social connection, novelty), is anything else meeting that need? If not, the habit will tend to return because the underlying need is unmet. Address the upstream layer.\n\nSpecific prescription: write down, in one paragraph, _the structural redesign plan for breaking this habit_. The cue, the substitute, the implementation intention, the upstream-need address. This is the working plan.\n\n\n#### The new habit you want to build\n\nLook at the entries about your new habit. Across the two weeks:\n\n* **Have you written your if-then plan?** Is the cue specific and reliable? Is the response a clear first action?\n* **Does your environment support the cue?** Is the infrastructure close? Is the friction in front of the response low? Is competing-cue density manageable?\n* **What is your tiny-starts starting point?** Are you executing at a magnitude small enough that consistency is achievable? Or are you trying for too much?\n* **What's the consolidation timeline you're holding?** Are you expecting weeks or months? (The honest answer is months; calibrate accordingly.)\n\nSpecific prescription: write down, in one paragraph, _the installation plan for this new habit over the coming three months._ The cue, the response, the infrastructure, the tiny start, the expected timeline.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 977,
+      "out_sha": "631a3179e6ad",
       "note": ""
     },
     {
@@ -3847,11 +3847,11 @@
       "en_title": "Chapter 14: Whose Environment Is This?",
       "order": 314,
       "src_chars": 1062,
-      "status": "pending",
+      "status": "done",
       "src_sha": "383910acea7e",
       "src": "#### The integrated picture\n\nNow, set the three paragraphs side by side. This is your **personalized habit-redesign prescription** — drawn from your specific data, refined through the book's framework, written in concrete terms.\n\nThis is what behavior change at the practical limit looks like. Not \"I should be more disciplined.\" Not \"I'll try harder.\" A specific structural plan, addressing specific cues, with specific responses, on a specific timeline, integrated across three habits whose interactions you have observed in your own data.\n\nMost readers, doing this exercise honestly for the first time, find that the result is more concrete and more actionable than anything they had previously held about their own behavior change. The two weeks of diary work plus the framework produces a level of specificity that introspection alone never reaches. _This specificity is the leverage._\n\nHold the prescription as your working document for the next three months. Revisit monthly. Refine based on observation. _This is the personal-level closing of the book._\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 299,
+      "out_sha": "c4c0fd3a578a",
       "note": ""
     },
     {
@@ -3859,11 +3859,11 @@
       "en_title": "Chapter 14: Whose Environment Is This?",
       "order": 315,
       "src_chars": 3492,
-      "status": "pending",
+      "status": "done",
       "src_sha": "11c18f6031b1",
       "src": "### 14.2 The Engineered Environment, Re-Examined\n\nNow zoom out. The three-habit prescription is your personal-level work, and it is real. But the habits you've been working with sit inside a larger context, and that context has been the running concern of Thread C for thirteen chapters.\n\nYour phone. Your workplace. Your city. Your social media. Your supermarket. Your healthcare. Your school system. Your media diet. Each of these environments has a choice architecture (Chapter 10). Each was designed by someone — sometimes deliberately, sometimes by inertia, sometimes by aggregation of many small decisions over decades. **Most of these environments were not designed primarily for your benefit.**\n\nThis is uncomfortable to say plainly, so let's say it plainly.\n\n**Your phone is engineered by teams of professionals whose KPIs include your time-on-app and your engagement metrics.** Their compensation depends, in part, on how often you open the apps and how long you stay. The variable-ratio reinforcement you spent Chapter 7 understanding is not an accident; it is a deliberate design choice, refined through A/B testing on hundreds of millions of users. The teams are talented; the budgets are large; the optimization is sophisticated. _The fight in your pocket is not a fair fight, and pretending it is one is part of why most users lose._\n\n**Your city is engineered by planners — most often, by planners working from assumptions formed in the mid-20th century when private automobiles were treated as the default mode of transportation.** In most American cities, walking is impractical for daily life because the infrastructure does not support it. The \"decision\" you make to drive everywhere is partly your decision and partly a constraint imposed by an environment designed against the alternative. The car-dependence has consequences (sedentary lifestyle, social isolation, environmental impact, time loss) that you bear personally and that the planners did not pay for.\n\n**Your workplace's open-plan design serves observability over productivity.** The data has, for years, suggested that open-plan offices reduce focused work and increase stress. Yet they persist, in part because they signal cost-efficient real estate and let management see who is at their desk. Your inability to focus deeply at work is partly your problem and partly a consequence of an environment that has been arranged against deep work, by people whose KPIs were not your productive output.\n\n**Your social media feed is algorithmically optimized for engagement.** Engagement, as a metric, correlates positively with revenue and negatively with several measures of subjective wellbeing, including self-reported happiness, anxiety, and life satisfaction. The optimization, in other words, is not aligned with your wellbeing; it is aligned with the company's revenue. _Your time on the feed is the product being sold to advertisers; the design has been refined to maximize the supply of that product._\n\n**Your supermarket** (Chapter 6) is arranged for unplanned spending. **Your healthcare system** is shaped by billing codes and insurance structures whose alignment with your actual health is partial at best. **Your school system** (in many countries) defaults to compliance, standardization, and testing structures that may have little to do with your child's flourishing. **Your media diet** is shaped by attention markets that select for emotional intensity and conflict over accuracy and substance.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1064,
+      "out_sha": "8bf5d52be9f9",
       "note": ""
     },
     {
@@ -3871,11 +3871,11 @@
       "en_title": "Chapter 14: Whose Environment Is This?",
       "order": 316,
       "src_chars": 1008,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8618d3f154c4",
       "src": "This is the engineered-environment thesis at full strength: _most of the environments you spend time in were designed by someone, often without your knowledge, for purposes that include but are not limited to your wellbeing — and in many cases are misaligned with your wellbeing._\n\nThis recognition does not require you to be paranoid or alienated. Most of the people working in these environments are not malicious; many are doing their best within constrained systems. The problem is structural: market mechanisms have selected for designs that maximize narrow engineering objectives (engagement, revenue, observability, compliance), and the cumulative effect on individual users is, in many domains, adverse. _Nobody designed it to be this way; everyone with a hand on the steering wheel is operating within their own incentive structure; the cumulative result is what it is._\n\nThe structural framing is not a complaint; it is a description. And the description sets up the question that closes the book.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 274,
+      "out_sha": "d4780e46c285",
       "note": ""
     },
     {
@@ -3883,11 +3883,11 @@
       "en_title": "Chapter 14: Whose Environment Is This?",
       "order": 317,
       "src_chars": 3243,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1dbc2c7c660a",
       "src": "### 14.3 The Question\n\nIf your environment is engineered, but not entirely for you — what do you do about it?\n\nThe book has given you, in compact form, the personal-level answer. _Reclaim the design rights to your own environment, in the parts that are within your reach._ Your home. Your phone. Your daily routes. Your social structure. Your work setup, where possible. Your kitchen. Your bedroom. Your social media defaults. Your media diet. Each of these has been (or can be) redesigned by you, deliberately, in service of the version of you you'd like to be. _This is the book's central practical recommendation, and it is real._\n\nBut the personal-level reclamation is a partial response to a larger pattern. Many of the engineered environments that affect your life are not within your individual reach. You can delete the apps; you cannot redesign the platforms. You can move closer to a gym; you cannot redesign the city. You can ask for focus hours; you cannot single-handedly transform your workplace's culture. You can stock your kitchen well; you cannot reform the food system. The personal layer is the part within your reach. The collective layer — the question of how the engineered environments that affect billions of people get designed — is somebody else's chapter, and it is worth seeing.\n\nThe collective-level question, in compact form: _who has the design rights to the environments we share, and on what terms could those rights be redistributed?_\n\nThis is a political question in the broadest sense — about how power, design, and individual life intersect. It is also a question that has begun to receive serious attention in many domains:\n\n* **The technology accountability movement** is asking what it would mean to constrain the design of attention-capture products, particularly for children. Regulation is happening in some jurisdictions; cultural shifts are happening more broadly; the question is whether the response will be adequate to the scale of the design pattern.\n* **Urban design reform** is asking what cities arranged around walking, biking, and public transit would look like, and many cities are implementing partial versions. The car-dependent default is being questioned.\n* **Workplace design reform** is asking what work environments arranged for focused work and human flourishing would look like, and some employers are experimenting with the alternatives.\n* **Food system reform** is asking what food environments that default to nutrition rather than to processed-food-marketing would look like, with measures in some countries on advertising restrictions, school food, and tax structures.\n* **Healthcare reform** is asking what healthcare arranged around long-term wellbeing rather than billing codes would look like, and various countries have approached this differently.\n* **Education reform** is asking what schools arranged for actual learning and human development would look like, and many alternatives exist alongside the standardized default.\n\nEach of these is a political project in the broad sense. Each is partial, contested, and slow. _The collective layer is the layer where the choice architecture of the world we share gets shaped, and it shapes the personal layer profoundly._",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 939,
+      "out_sha": "e73933ff91d6",
       "note": ""
     },
     {
