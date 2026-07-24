@@ -55,6 +55,10 @@
 | Harry Reis | Harry Reis（哈里·雷斯） |
 | Shelly Gable | Shelly Gable（谢莉·盖布尔） |
 | Robert Waldinger | Robert Waldinger（罗伯特·瓦尔丁格） |
+| Earnest Hooton | Earnest Hooton（欧内斯特·胡顿） |
+| Sheldon Glueck | Sheldon Glueck（谢尔登·格鲁克） |
+| Eleanor Glueck | Eleanor Glueck（埃莉诺·格鲁克） |
+| George Vaillant | George Vaillant（乔治·维兰特） |
 | Marc Schulz | Marc Schulz（马克·舒尔茨） |
 | Vivek Murthy | Vivek Murthy（维韦克·默蒂） |
 | Robert Putnam | Robert Putnam（罗伯特·帕特南） |
