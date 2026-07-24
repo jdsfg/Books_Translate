@@ -7979,11 +7979,11 @@
       "en_title": "Appendix D — Anti-Patterns Cheat Sheet",
       "order": 654,
       "src_chars": 2141,
-      "status": "pending",
+      "status": "done",
       "src_sha": "427590d55687",
       "src": "A printable summary of the seven anti-patterns from Chapter 25, designed to be referenced quickly during architecture reviews, design docs, and feature scoping. Pin this to the wall by your desk. When a teammate proposes an AI feature, walk down the table and ask which row they're closest to falling into. If the answer is \"none,\" ask again; the honest answer is usually \"two of them.\"\n\nThe cheat sheet is intentionally denser than the chapter. The chapter argues the case; this page is the operational summary.\n\n\n### Quick reference\n\n| # | Anti-pattern | The kill criterion | Anchor failure | Chapter(s) |\n| --- | --- | --- | --- | --- |\n| 1 | Shipping without evals | If you can't articulate measurable success, the feature shouldn't ship. | Air Canada (Thread B Failure 1) | Ch 4 |\n| 2 | Over-engineering with frameworks | If the framework abstracts something you need direct control over, don't use the framework for that layer. | (no canonical — death by a thousand cuts) | Ch 15, Ch 16 |\n| 3 | Treating LLM outputs as deterministic | If your code can't handle an unexpected response, it isn't production-ready. | Google AI Overviews (Failure 2) | Ch 2, Ch 7 |\n| 4 | Ignoring the cost dimension | If you can't say what a feature costs per active user per day, you don't have cost discipline. | Fine-tune deprecation cascade (Failure 4, anchored Ch 22) | Ch 17, Ch 18 (discipline); Ch 22 (anchor) |\n| 5 | Trusting LLM-as-judge without validation | If your judge hasn't been calibrated against humans at κ ≥ 0.6 on ≥ 50 cases, the eval isn't production-grade. | (no canonical — correlated-family bias) | Ch 4, Ch 11 |\n| 6 | Building agents when workflows suffice | If you can specify the task as deterministic steps with at most one LLM call per step, don't agent-ify it. | 52K USD overnight agent (Failure 5); 2026 agentic recursion (Failure 6) | Ch 14, Ch 15 |\n| 7 | Shipping without safety architecture | If you have a multi-tenant or RAG system without the four-layer defense (§23.3), you have a known unaddressed threat. | 2025 prompt-injection-in-production incident (Failure 3) | Ch 23 |\n  \n\n### The seven anti-patterns in detail\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 905,
+      "out_sha": "a77bdcfa13a3",
       "note": ""
     },
     {
@@ -7991,11 +7991,11 @@
       "en_title": "Appendix D — Anti-Patterns Cheat Sheet",
       "order": 655,
       "src_chars": 1821,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8d4193648196",
       "src": "#### Anti-pattern 1: Shipping without evals\n\n**The pattern.** AI features ship on team intuition. The eval is _we tried a few prompts and it seemed to work._ There is no graded set, no regression gate, no signal when a model upgrade silently changes behavior.\n\n**How teams fall into it.** The team is small, the deadline is tight, the demo went well. Evals feel like the kind of overhead a more mature team would add later. They also feel hard to write: the team isn't sure what \"good\" looks like in measurable terms, so writing the eval feels like solving the product problem twice. So they ship, planning to add evals once the feature stabilizes. The feature never stabilizes.\n\n**Symptoms.** Bug reports describe quality regressions the team can't reproduce. Prompts get tweaked based on the most recent complaint. Model upgrades are scary because no one knows what they'll change. The phrase _it used to work better_ appears in standups.\n\n**The discipline.** Eval-driven development (Chapter 4). Treat the eval as the executable specification of the feature — written before or alongside the implementation, run on every change, blocking on regression. Start with 20 to 50 hand-graded cases; grow the set as failures appear in production.\n\n**Anchor.** Air Canada (Thread B Failure 1). The airline's chatbot promised a refund policy that didn't exist; the tribunal ruled the chatbot's outputs were company statements. The company had no systematic way to know what statements it was making. That is the cost of no evals at scale.\n\n**Kill criterion.** If you can't articulate what success looks like in measurable terms — not \"users will love it\" but \"≥ 85% on the graded set, no regression on the failure set\" — the feature shouldn't ship until you can. Articulating the criterion is half the work of writing the eval.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 628,
+      "out_sha": "fa428cad92e6",
       "note": ""
     },
     {
@@ -8003,11 +8003,11 @@
       "en_title": "Appendix D — Anti-Patterns Cheat Sheet",
       "order": 656,
       "src_chars": 2156,
-      "status": "pending",
+      "status": "done",
       "src_sha": "992b68c664cc",
       "src": "#### Anti-pattern 2: Over-engineering with frameworks\n\n**The pattern.** The team reaches for LangChain (or LlamaIndex, or whatever the current heavy framework is) reflexively. The framework's abstractions become the engineering surface. Every customization is a fight: monkey-patching, subclassing, reading source to figure out which callback fires when. The team is no longer building product; it's building around the framework.\n\n**How teams fall into it.** The framework looks like leverage. Its README shows a three-line RAG pipeline. The team doesn't realize that the three-line version is the only version that's three lines; everything past the README is bespoke. By the time they discover this, they've built a system that's 70% framework integration code and 30% domain logic. The migration cost feels too high to walk back.\n\n**Symptoms.** Onboarding new engineers takes weeks because they have to learn the framework before they can learn the product. PRs are reviewed for framework-correctness more than product-correctness. Upgrading the framework version is a quarterly event with its own project plan. Debugging a single LLM call requires tracing through six layers of abstraction.\n\n**The discipline.** Start with primitives (Chapter 15, Chapter 16). The provider SDK, a prompt template, a Pydantic schema, an HTTP client. Add abstraction only when the same pattern appears in three places. Prefer Pydantic AI or a hand-rolled orchestrator over heavy frameworks for small teams. Layered architecture beats framework-driven architecture for most products.\n\n**Anchor.** No single canonical failure — this anti-pattern kills by a thousand cuts. The shape is framework debt that accumulates until the team is spending more time on the framework than the product, and the cost is measured in months of velocity loss rather than a single bad headline.\n\n**Kill criterion.** If the framework abstracts something you need direct control over — the prompt, the retry policy, the streaming protocol, the tool-call format — don't use the framework for that layer. Drop to primitives for that layer specifically, even if you keep the framework elsewhere.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 671,
+      "out_sha": "ba6fa3528931",
       "note": ""
     },
     {
