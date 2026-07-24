@@ -3143,11 +3143,11 @@
       "en_title": "Chapter 22: Metastable and Gray Failures",
       "order": 251,
       "src_chars": 2992,
-      "status": "pending",
+      "status": "done",
       "src_sha": "53ff18e31bfb",
       "src": "The on-call alert fires at 2:17 a.m.: \"Customer-facing error rate spiked to 14%.\" Olamide pulls up the monitoring dashboard. Every node is green. CPU is normal. Memory is normal. Health checks are all returning 200 OK. The dashboard is green; the customers are getting errors.\n\nShe finds the problem twenty minutes later: one node's disk has silently degraded. Reads that used to take 1 ms are taking 100 ms. The health check is a cheap RAM-only endpoint — it never touches the disk, so it returns 200 in under a millisecond. The load balancer trusts the 200, keeps routing traffic to the slow node, and customers see hangs.\n\nThis is the gray-failure pattern. The node is \"alive\" by the health check's definition, but \"dead\" by the application's. Gray failures and their cousin, metastable failures (a 2021 formal framework), are the hardest production failure modes to detect and recover from. This chapter is about both.\n\nThe failure that fooled Olamide's monitoring was produced, in part, by following the default advice an LLM gives for health checks:\n    \n    \n    @app.route('/healthz')\n    def health():\n        return 'OK', 200\n    \n\n> Illustrative pseudocode; the bug is what the check does _not_ exercise (the real I/O path), not the syntax.\n\nThe check is fast, cheap, and wrong for catching gray failures. It returns 200 even while the node serves real requests at 30-second latency.\n\n\n### 22.1 Gray Failures\n\nThe classical definition: a process that responds to its monitoring (passes health checks) while being effectively broken from the application's perspective. The gap between \"monitoring says alive\" and \"users see broken\" is the gray-failure window.\n\nExamples:\n\n(a) **Slow node**. A node's disk has degraded; reads that used to take 1 ms now take 100 ms. The health check is a cheap RAM-only endpoint; it returns 200 quickly. Application requests that touch the disk are slow; users experience hangs. The load balancer continues routing traffic to the slow node.\n\n(b) **Memory pressure**. A node is at 90% memory; GC pauses are growing. The health check completes between GCs; returns 200. Application requests pause when GC kicks in; latency is bimodal (fast or 30s).\n\n(c) **Stale state**. A node's local cache is corrupt; it returns wrong answers without error. The health check does not detect the wrong answers; the node is \"alive.\"\n\n(d) **Network blackhole**. A node can receive incoming traffic but cannot send outgoing (firewall misconfiguration, NIC issue). Health checks (received from monitoring, return value not strictly validated) pass; application requests that need downstream calls hang.\n\n(e) **CPU contention from noisy neighbor**. A node in a shared environment (cloud, Kubernetes) competes with another tenant for CPU; latency varies wildly. Health checks complete before the noisy neighbor kicks in; pass.\n\nThe pattern: the failure is real (users see problems) but not detected (monitoring is green). Operators are blind until customer reports arrive.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1125,
+      "out_sha": "116359c696b0",
       "note": ""
     },
     {
@@ -3155,11 +3155,11 @@
       "en_title": "Chapter 22: Metastable and Gray Failures",
       "order": 252,
       "src_chars": 3048,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ec8d4a9070e8",
       "src": "### 22.2 Defending Against Gray Failures\n\nDefenses:\n\n(a) **Deep health checks**. Health checks should exercise the same code path as real requests: query the database, check downstream dependencies, exercise the file system. The check takes longer (100-500 ms) but catches gray failures.\n\n(b) **Application-level health metrics**. Beyond /healthz, expose application-level metrics: p99 latency, error rate, queue depth. Use these as health indicators for routing decisions.\n\n(c) **Latency-based load balancer**. Modern load balancers (Envoy, NGINX with custom modules) can deprioritize slow backends. A backend whose response time is 10x the cluster median is routed away from.\n\n(d) **Active probes**. Continuously probe nodes from outside the cluster (synthetic transactions). The probes exercise the user-visible path; they catch issues that internal health checks miss.\n\n(e) **End-to-end SLI monitoring**. Track service-level indicators that match user experience: time to first byte, full-page latency, transaction completion rate. Alert on these even when the underlying infrastructure looks healthy.\n\nThe discipline: a node is healthy when it can serve real requests, not when it answers a cheap probe. Health checks should match the standard, not be the lowest bar.\n\n\n### 22.3 Metastable Failures\n\nA 2021 paper by Nathan Bronson and Marcos Aguilera introduced the formal concept of _metastable failure_ : a failure mode where a small initial trigger pushes the system into a self-sustaining failure state that does not recover even when the trigger is removed.\n\nDistinct from cascading failures (Chapter 21):\n\n* Cascading: trigger plus amplification spread to other components; recovery requires intervention but may also restart components.\n* Metastable: trigger plus a feedback loop where the failed state itself sustains the failure; even removing the trigger doesn't help.\n\nThe key property: _bistability_. The system has two stable states: \"healthy\" and \"broken.\" Both are self-sustaining. The transition from healthy to broken can happen with a small trigger; the transition back requires substantial intervention.\n\n\n#### Example: the database cache thrash\n\nA database has a cache (in-memory) of recent rows. Normal operation: 90% of queries are cache hits (fast); 10% are misses (require disk reads).\n\nTrigger: a traffic spike. The cache hit rate drops briefly to 70%. The disk-read rate triples; disk queues build; per-query latency increases.\n\nFeedback loop: the increased latency means each query holds memory longer (the query state is held until completion); memory pressure increases; the cache shrinks to make room; the hit rate drops further; more disk reads; more latency.\n\nNow the trigger (the traffic spike) is over, but the system is in the broken state: cache shrunken, disk saturated, queries slow. The system does not recover on its own because the broken state sustains itself.\n\nRecovery requires intervention: throttle traffic to let the cache rebuild, restart the database to reset the cache, scale up the resource.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1037,
+      "out_sha": "1c8f0364adf9",
       "note": ""
     },
     {
@@ -3167,11 +3167,11 @@
       "en_title": "Chapter 22: Metastable and Gray Failures",
       "order": 253,
       "src_chars": 3135,
-      "status": "pending",
+      "status": "done",
       "src_sha": "34644005f8b9",
       "src": "#### Example: the retry-storm amplification (deeper)\n\nChapter 21's retry storm is itself often metastable. The trigger (a brief downstream slowdown) causes retries; the retries cause more load; the load sustains the slowdown; the slowdown sustains the retries.\n\nEven if the original trigger is removed (e.g., the slow node is replaced), the retry traffic persists because the system has converged to \"everything is retrying.\" The retry rate sustains the overload. Recovery requires throttling all callers, which the system cannot do on its own.\n\n\n#### Defenses against metastability\n\n(a) **Bounded feedback loops**. Each loop must have a damping mechanism. For the cache thrash: cap memory per query; reject new queries when memory is exhausted (load shedding). For the retry storm: retry budgets.\n\n(b) **Hysteresis**. The transition from healthy to broken should require sustained signal; the transition back from broken to healthy should be more aggressive (favor recovery). Circuit breakers with longer cool-down periods after multiple opens are an example.\n\n(c) **Avoiding bistability**. Some bistability is structural; some can be engineered out. For example, a system that always shrinks the cache under memory pressure is bistable; a system that always reserves a minimum cache is not.\n\n(d) **Workload-aware throttling**. Recognize when the system is in the broken state and throttle traffic to allow recovery. This may require external coordination (the SRE team observes the metastable state and applies manual throttling).\n\nBronson and Aguilera's paper enumerates patterns and defenses; it is required reading for SRE-style engineers in 2026.\n\n\n### 22.4 Combining Gray and Metastable\n\nGray failures often precede metastable failures. The sequence:\n\n* A gray failure starts: one node is slow but passes health checks.\n* The slow node continues to receive traffic; its queues build; latency further increases.\n* Upstream callers retry against the slow node (the load balancer has not deprioritized it).\n* The retry traffic amplifies the slow node's load; latency spikes; other nodes start to share the load.\n* The metastable state engages: the entire cluster is in retry-storm mode; even removing the slow node does not stop the retries.\n\nThe gray failure was the trigger; the retry-storm metastability was the cascade. Both are present; both need their own defenses.\n\nThe 2026 production pattern: deep health checks + latency-based load balancing + retry budgets + circuit breakers. Each defends a different layer; together, they prevent the gray-to-metastable cascade.\n\n\n### 22.5 Real-World Examples\n\n\n#### AWS S3 2017 outage\n\nA typo during an operational task (more capacity removed than intended) put S3 in a state where indexing subsystems had insufficient capacity. The recovery was slow because the index had to be rebuilt; rebuilding required resources that were busy serving requests. The system was metastable: the broken state (high latency, indexing behind) sustained itself because recovery competed with normal operation.\n\nRecovery: throttle incoming traffic to free resources for rebuilding. Took several hours.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1003,
+      "out_sha": "f793ed233a5b",
       "note": ""
     },
     {
@@ -3179,11 +3179,11 @@
       "en_title": "Chapter 22: Metastable and Gray Failures",
       "order": 254,
       "src_chars": 2115,
-      "status": "pending",
+      "status": "done",
       "src_sha": "37946e9c9359",
       "src": "#### Google's Magic Pony outage (paraphrased from internal lore)\n\nA widely-deployed Google service experienced a metastable failure where its garbage collector entered a regime of constant collection (because memory was always near full). The system continued to \"work\" but extremely slowly. The trigger was a feature rollout that increased memory usage by 5%; the system passed health checks but every request was latency-spiked.\n\nRecovery: identified the rollout via traces; rolled back; cluster recovered over hours.\n\n\n#### Roblox 2021 multi-day outage\n\nA combination of gray failure and metastable cascading. The trigger was a deploy that caused excess CPU usage; the cascading was retry storms and connection-pool exhaustion. The metastable: the system's traffic patterns and resource usage stabilized in a broken state that did not recover without intervention. Took several days to fully resolve.\n\nThe pattern in all three: a small trigger; a feedback loop; the system's broken state was self-sustaining. Recovery required throttling, intervention, and time.\n\n\n### 22.6 Detection and Alerting\n\nFor gray and metastable failures, the key operational discipline is _detection_. The defenses (retry budgets, circuit breakers) help but the operations team must also know when the system is degrading.\n\nUseful signals:\n\n(a) **End-to-end SLI** : time from user click to response. If this rises, the user is suffering, regardless of internal metrics.\n\n(b) **Tail latency** : p99 and p99.9 latency. The mean may be fine while the tail is catastrophic.\n\n(c) **Retry rate** : how many calls are retries vs originals. A rising retry rate indicates degradation upstream.\n\n(d) **Saturation metrics** : how full are the queues, pools, caches. Saturation precedes overload.\n\n(e) **Error budgets** : if the error rate is consistently above the SLO, the system is degraded even if \"still working.\"\n\nAlert thresholds should be set on the _change rate_ of these signals as much as on absolute values. A sudden 5x increase in retry rate is an alert; a gradual 10% increase over a day is a different concern.\n\n\n### 22.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 734,
+      "out_sha": "4f35ab15200c",
       "note": ""
     },
     {
@@ -3191,11 +3191,11 @@
       "en_title": "Chapter 22: Metastable and Gray Failures",
       "order": 255,
       "src_chars": 3476,
-      "status": "pending",
+      "status": "done",
       "src_sha": "313ec843f129",
       "src": "#### Concept Check\n\n**Q1.** What is a gray failure? Give two examples.\n\nHint\n\nGray failure: the process passes health checks but is broken from the application's perspective.\n\n**Answer:** A gray failure is a failure mode where a process responds to its monitoring (passes health checks) while being effectively broken from the application's perspective. The gap between \"monitoring says alive\" and \"users see broken\" is the gray-failure window.\n\nExamples:\n\n(a) **Slow node with cheap health check** : the node's disk is degraded; reads are 100x slower than normal. The health check is a RAM-only endpoint; it returns 200 quickly. The load balancer continues routing traffic; users experience slow requests.\n\n(b) **Memory pressure with bimodal latency** : the node is at 90% memory; GC pauses are growing. The health check completes between GCs. Application requests are sometimes fast (between GCs) and sometimes 30+ seconds (during GC). The node is \"alive\" but unreliable.\n\nOther examples: stale cache returning wrong data; network blackhole (receives but cannot send); noisy-neighbor CPU contention; corrupted state passing structural checks.\n\nThe pattern: the failure is real but undetected by standard monitoring. Defenses: deep health checks that exercise the same path as real requests; latency-based load balancing; active probes; end-to-end SLI monitoring.\n\n**Q2.** What is a metastable failure? How is it different from a cascading failure?\n\nHint\n\nMetastable: failure state is self-sustaining; removing the trigger doesn't help. Cascading: failure spreads through amplification.\n\n**Answer:** A metastable failure is a failure mode where a small initial trigger pushes the system into a self-sustaining failure state. Even when the trigger is removed, the failure persists because the failed state itself sustains the failure.\n\nCascading failure (Chapter 21): a trigger plus amplification spreads the failure across components; recovery may require restarting components but, in principle, can recover once the spread stops.\n\nMetastable failure (the term coined by Bronson and Aguilera in their 2021 paper): the _broken state_ is itself stable. The system has two stable states (healthy and broken); transitioning from broken to healthy requires substantial intervention because the broken state's feedback loop keeps the system there.\n\nExample of the difference:\n\n* **Cascading** : a slow database causes upstream timeouts; upstream services slow; users see errors. If you fix the database (or restart the upstream), the system recovers.\n\n* **Metastable** : a slow database causes a retry storm; the retry traffic exceeds the database's capacity; the database is now slow because of the retries (not because of the original cause). Removing the original cause does not help; the retries sustain the slowness. Recovery requires throttling all upstream traffic (not just the original source).\n\nMany production failures are both: cascading at the visible level, metastable at the deep level. The defenses overlap (circuit breakers help both) but the metastable case requires explicit attention to feedback loops.\n\n**Q3.** What is \"hysteresis\" in the context of metastable failures, and how does it help?\n\nHint\n\nHysteresis: different thresholds for entering vs leaving a state. Makes the system slow to break, aggressive to recover.\n\n**Answer:** Hysteresis: applying different thresholds for transitioning into a state vs out of it. In the context of metastable failures:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1063,
+      "out_sha": "36d1145b55d6",
       "note": ""
     },
     {
@@ -3203,11 +3203,11 @@
       "en_title": "Chapter 22: Metastable and Gray Failures",
       "order": 256,
       "src_chars": 3314,
-      "status": "pending",
+      "status": "done",
       "src_sha": "19f232005e7d",
       "src": "* **Trigger threshold (into broken state)** : requires sustained signal. The system does not flip to \"broken\" on a brief spike; it requires the spike to persist for some duration.\n\n* **Recovery threshold (out of broken state)** : more aggressive. The system flips back to \"healthy\" as soon as the signal recovers, even briefly.\n\nWhy this helps with metastability: the broken state sustains itself; the system should be reluctant to enter it (avoiding false-positive transitions) and eager to leave it (favoring recovery).\n\nExample: a circuit breaker. Without hysteresis, the breaker opens at 50% failure rate over 30 seconds; reopens with the same threshold. With hysteresis: opens at 50% over 30 seconds; closes (in half-open probe) at 80% success over 5 seconds. The closing is aggressive: as soon as a brief recovery is detected, the breaker reopens.\n\nWithout hysteresis, the breaker oscillates (open/closed/open) under variable conditions. With hysteresis, the breaker is stable in each state but responsive to genuine transitions.\n\nThe pattern generalizes: any signal that flips behavior should have different thresholds for the two directions. Auto-scaling, load shedding, leader election all benefit from hysteresis. Without it, the system \"flaps\" between states; with it, the system is stable but responsive.\n\n**Q4.** Why are deep health checks important for detecting gray failures?\n\nHint\n\nCheap health checks pass when the node is gray-failing. Deep checks exercise the real path.\n\n**Answer:** Cheap health checks (e.g., return 200 from `/healthz` without doing real work) pass even when the node is in a gray-failure state. The check does not exercise the same code path as real requests, so it does not detect the failure mode.\n\nDeep health checks exercise the same path as real requests:\n\n* Query the database (the real database, with a real query).\n* Check downstream dependencies (call the downstream's health endpoint).\n* Exercise the file system (read a small file).\n* Validate any in-memory state (check that caches are populated, queues are not stuck).\n\nThe check takes longer (100-500 ms instead of <1 ms) but it catches gray failures. A node whose database is slow will have a slow deep health check; the load balancer will deprioritize the node; users will be routed to healthy nodes.\n\nTrade-offs:\n\n* Deep checks add load to dependencies (each check is a real call). For 100 nodes checking every 5 seconds, the downstream gets 20 RPS of health-check traffic.\n* Deep checks can themselves fail intermittently (a transient downstream blip causes the check to fail; the node is marked unhealthy; cluster capacity drops). Mitigation: require multiple consecutive failures before marking unhealthy.\n\nProduction pattern: a cheap liveness check (for the kubelet to know if the container is alive) plus a deep readiness check (for the load balancer to know if the node can serve traffic). The two have different semantics; both are necessary.\n\nThe right depth depends on the workload. Stateless services with no external dependencies can use cheap checks. Stateful services or services with critical dependencies need deep checks. The Crescent payment service uses deep checks: a real (low-traffic) test transaction every 30 seconds; failure indicates the node should not receive production traffic.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1140,
+      "out_sha": "21aa304e4a15",
       "note": ""
     },
     {
@@ -3215,11 +3215,11 @@
       "en_title": "Chapter 22: Metastable and Gray Failures",
       "order": 257,
       "src_chars": 3320,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7f57967d8dd8",
       "src": "#### Application Problems\n\n**Q1.** A team's microservice is showing intermittent 30-second latency spikes. Health checks all pass. Diagnose the likely cause and propose detection.\n\nHint\n\nBimodal latency with passing health checks = gray failure. Likely cause: GC pauses, lock contention, or downstream blip.\n\n**Answer:** The pattern (intermittent 30-second spikes, health checks pass) is characteristic of a gray failure with bimodal latency. Common causes:\n\n(a) **Garbage collection pauses** : a JVM-based or other GC-language service that has memory pressure. GC pauses can be 30 seconds in extreme cases. Diagnostic: GC logs; look for long pauses correlated with the latency spikes.\n\n(b) **Lock contention** : a critical section in the service that occasionally serializes many requests. The first request takes long because of the lock; queued requests behind it also take long. Diagnostic: thread dumps during a spike; look for many threads blocked on the same lock.\n\n(c) **Downstream blip** : a downstream call that occasionally takes 30 seconds (perhaps due to its own GC, network issue, etc.). Diagnostic: trace analysis; identify which downstream call is slow.\n\n(d) **Network blip** : occasional packet loss or retransmission. Diagnostic: TCP-level metrics, network interface counters.\n\nDetection improvements:\n\n(a) **Add latency-based health check** : a health check that fails if the node's p99 latency over the last minute exceeds a threshold (say, 5 seconds). The load balancer deprioritizes nodes failing this check.\n\n(b) **Add tracing** : distributed tracing for every slow request reveals the bottleneck. Even sampling 1% of requests provides enough data to identify patterns.\n\n(c) **Add detailed GC monitoring** : GC-pause histograms, full GC counts, allocation rates. Alert on full GCs that exceed 1 second.\n\n(d) **Add downstream dependency monitoring** : SLI per downstream service; alert when any exceeds normal latency.\n\nThe diagnostic process: pick one cause, instrument for it, see if the data matches. If yes, fix; if no, move to the next cause. Most teams find the cause within a few hours of focused investigation.\n\n**Q2.** A database is in a metastable state: queries are slow, the cache is thrashing, but the original trigger (a traffic spike) is over. The team is debating: restart the database vs throttle traffic. Analyze the trade-offs.\n\nHint\n\nRestart: fast recovery but disrupts service. Throttle: less disruptive but slower recovery; requires manual coordination.\n\n**Answer:**\n\n_Option 1: Restart the database_\n\nPros: resets the cache (rebuilds from scratch); clears any stuck queries; \"clean slate\" recovery.\n\nCons: in-flight requests fail (the application sees errors); cache must be rebuilt (the first many minutes are slow because of cold cache); brief total outage (typically 30-120 seconds).\n\nWhen right: when the metastable state is clearly stuck and not recovering; when the team accepts a brief outage; when the cache rebuild is fast.\n\n_Option 2: Throttle traffic_\n\nPros: no outage; the service stays up; users see slower but continuous responses; the throttled state allows the cache to rebuild gradually.\n\nCons: slower recovery (minutes to hours); requires coordination (the throttle must be applied at upstream services); some users are still affected by the slow responses.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1129,
+      "out_sha": "56a64292cee3",
       "note": ""
     },
     {
@@ -3227,11 +3227,11 @@
       "en_title": "Chapter 22: Metastable and Gray Failures",
       "order": 258,
       "src_chars": 3465,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8963b6bdac5b",
       "src": "When right: when restart is too disruptive (peak traffic, high-revenue period); when the cache can rebuild with reduced traffic; when the team has the tooling to apply throttling.\n\nRecommendation: depends on context.\n\n* For Crescent's payment system during business hours: throttle. The brief outage from restart is unacceptable; throttling some traffic is preferable.\n\n* For an internal analytics service during off-hours: restart. Brief outage is OK; faster recovery is worth it.\n\n* For a system without good throttling tooling: restart (because throttling can't be done effectively).\n\nBetter than choosing between the two: engineer the system to not need to choose. Mechanisms like load shedding (automatic per-node throttle), shard isolation (one shard's metastability does not spread), and graceful degradation (some features disable under load) avoid the dilemma.\n\nThe deeper lesson: metastable failures expose architectural choices. A system that has only \"restart everything\" and \"throttle everything\" as recovery tools is brittle. A system with finer-grained controls (shard-level, feature-level, user-tier-level) recovers from metastability more gracefully.\n\n**Q3.** Walk through the design of a load balancer that defends against gray failures using latency-based routing.\n\nHint\n\nPer-backend p99 latency tracking; deprioritize backends with high p99; gradual rather than abrupt removal.\n\n**Answer:** Design:\n\n(a) **Per-backend latency tracking** : the load balancer tracks the latency of every request to each backend. Maintains a sliding window (e.g., last 60 seconds) of latency observations.\n\n(b) **Per-backend p99 computation** : every few seconds, compute p99 latency per backend.\n\n(c) **Cluster-wide latency reference** : compute the median p99 across all backends. This is the \"expected\" latency.\n\n(d) **Backend weight** : assign each backend a weight inversely proportional to its p99 latency relative to the cluster median. Backends faster than median get weight 1.0; backends slower get weight proportionally less.\n\nFor example, if median p99 is 100 ms and a backend's p99 is 500 ms, the backend's weight is 0.2. The load balancer routes ~5x fewer requests to it.\n\n(e) **Hysteresis** : backends recovering to healthy latency are gradually re-weighted toward 1.0 (over 30 seconds or so) rather than abruptly. Backends entering high latency are deprioritized quickly (within 5-10 seconds) to limit damage.\n\n(f) **Minimum weight** : even the worst backend gets some traffic (e.g., 0.1 weight) so the load balancer can observe whether it has recovered. Without this, a backend that briefly spikes can be permanently deprioritized.\n\n(g) **Maximum skew** : cap the difference between weights so the cluster does not converge on serving all traffic from one backend (which would also be a gray failure).\n\n(h) **Active probing** : in addition to passive observation, the load balancer can issue synthetic requests to each backend to detect gray failures that passive observation might miss.\n\nImplementations: Envoy's \"outlier detection\" implements much of this; the AWS Application Load Balancer's \"least-outstanding-requests\" routing is a simpler approximation; Netflix's Ribbon (deprecated but historically important) had similar features.\n\nThe design above defends against gray failures without requiring deep health checks on every backend. The load balancer is the natural choke point; observability at the load balancer reveals the gray failures.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1238,
+      "out_sha": "b2cc2a02bc74",
       "note": ""
     },
     {
@@ -3239,11 +3239,11 @@
       "en_title": "Chapter 22: Metastable and Gray Failures",
       "order": 259,
       "src_chars": 224,
-      "status": "pending",
+      "status": "done",
       "src_sha": "99bbf4f67b3c",
       "src": "For Crescent: Envoy with outlier detection at the regional load balancer. A backend that exhibits 5x the cluster median latency is \"ejected\" from the active pool; periodically tested via probes; reinstated when it recovers.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 94,
+      "out_sha": "9df1eed87831",
       "note": ""
     },
     {
@@ -3251,11 +3251,11 @@
       "en_title": "Chapter 22: Metastable and Gray Failures",
       "order": 260,
       "src_chars": 3306,
-      "status": "pending",
+      "status": "done",
       "src_sha": "dea37cabd7af",
       "src": "#### Think Deeper\n\n**Q1.** Defend or refute: \"All distributed systems will have metastable failures eventually. The question is not 'whether' but 'when' and 'how prepared we are.'\"\n\n**Discussion:** Defense: metastability is a structural property of systems with feedback loops. Distributed systems have many feedback loops (retries, caches, queues, GC, load balancing). The combination of feedback loops virtually guarantees at least one metastability path; whether it triggers depends on conditions.\n\nRefutation: not all distributed systems have metastable failures. Simple stateless systems (a static-content CDN) have few feedback loops and rarely exhibit metastability. The risk is correlated with complexity; less-complex systems are less exposed.\n\nThe synthesis: complex distributed systems will have metastable failures. The Crescent payment platform, Google Search, AWS S3 are all complex enough to have demonstrated metastability. Simple systems may genuinely avoid it. The preparation is about (a) avoiding unnecessary complexity, (b) instrumenting feedback loops for visibility, (c) preparing intervention mechanisms (throttle, restart, fail-over).\n\nThe 2026 reality: SRE practice has matured around metastability. The Bronson-Aguilera paper provides a framework; companies have internal metastability playbooks; runbooks for \"system is stuck\" are standard. The frequency of catastrophic metastable failures (Roblox-scale multi-day outages) has decreased as awareness has grown.\n\nA second consideration: AI-assisted operations (LLMs detecting metastability patterns, auto-throttling) may further reduce metastable failures. In 2026, this is early; in 2030 it may be standard. The trajectory: more automated detection and intervention.\n\n**Q2.** An LLM is asked to \"design a health check for our service.\" It produces a simple `/healthz` endpoint that returns 200. Identify why this is wrong for production, and what a correct health check includes.\n\n**Discussion:** The simple `/healthz` returning 200 has the gray-failure problem: it passes even when the service is broken. For a non-trivial service, it gives a false sense of safety.\n\nA correct health check for production:\n\n(a) **Liveness check** (`/healthz` for kubelet): is the process running? Cheap; returns 200 if the process can respond.\n\n(b) **Readiness check** (`/readyz` for load balancer): is the service ready to serve real requests?\n\n* Exercises database connectivity (a trivial SELECT).\n* Exercises downstream dependencies (call the downstream's health endpoint, or maintain a cached availability bit).\n* Checks internal state (caches populated, queues not stuck, no critical resource exhausted).\n* Returns 200 only if everything required for serving is OK.\n\n(c) **Startup check** (`/startupz`): is the service still initializing? Used during the first 30-60 seconds of life; differentiates \"starting up\" from \"broken.\" Allows longer timeouts during startup.\n\n(d) **Detailed health endpoint** (`/health/details` for operators): JSON output with each subsystem's status. Used by operators for diagnosis; not for automated routing.\n\n(e) **Latency-based metric** : separately, expose a metric for the service's recent p99 latency. The load balancer (or auto-scaler) uses this for routing decisions in addition to the readiness check.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1251,
+      "out_sha": "2c8591dcd584",
       "note": ""
     },
     {
@@ -3263,11 +3263,11 @@
       "en_title": "Chapter 22: Metastable and Gray Failures",
       "order": 261,
       "src_chars": 2482,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1b2889eae5d5",
       "src": "A correct LLM response would ask: \"What is your service's role? What dependencies does it have? What is the cost budget for the health check? With that context, I can design liveness, readiness, and startup checks appropriate to your service.\" The single-line \"return 200\" answer is appropriate only for the simplest stateless services.\n\nThe deeper observation: health checks are part of the system's reliability story. A poorly designed health check produces brittle deployments (every restart fails the check; the cluster degrades) or hidden failures (the check passes during real problems). An LLM that produces health checks without context is likely producing one of these failure modes; the correct response involves the design dialog.\n\n\n### Chapter Summary\n\nGray failures are failures where a process passes health checks while being effectively broken from the application's perspective. The cheap-health-check anti-pattern (return 200 quickly) is the most common cause. Defenses: deep health checks, latency-based load balancing, active probes, end-to-end SLI monitoring.\n\nMetastable failures (the Bronson-Aguilera 2021 framework) are failure modes where the broken state is itself self-sustaining. The system has two stable states (healthy and broken); a small trigger flips to broken; removing the trigger does not restore healthy. Recovery requires substantial intervention (throttling, restart, scale-up).\n\nCascading vs metastable: cascading is the failure spreading across components; metastable is the failure sustaining itself in a single component or system. Both can coexist; both need their own defenses.\n\nReal-world examples: AWS S3 2017, Google's Magic Pony (informally), Roblox 2021. All featured small triggers, feedback loops, and self-sustaining broken states. Recovery took hours to days.\n\nDefenses: bounded feedback loops (caps, budgets, limits); hysteresis (slow to break, eager to recover); avoiding bistability (engineer out the broken stable state); workload-aware throttling (explicit recovery procedures).\n\nDetection: end-to-end SLI, tail latency, retry rate, saturation metrics, error budgets. Alert on rate-of-change as much as absolute values.\n\nChapter 23 takes the discipline that addresses these failure modes proactively: chaos engineering. From Netflix Chaos Monkey to 2026 production discipline. Game days, blast radius, Nora Jones's organizational practice. Olamide's Crescent game day program (Workflow 11) walks through the practice.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 865,
+      "out_sha": "b12aca3ebd92",
       "note": ""
     },
     {
@@ -3275,11 +3275,11 @@
       "en_title": "Chapter 23: Chaos Engineering as Discipline",
       "order": 262,
       "src_chars": 3039,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b032b1dfe44c",
       "src": "Olamide is planning Crescent's first formal chaos engineering game day. Her team has been running well-engineered services for two years; they have not yet exercised the failure modes. The chaos game day is the discipline that closes the gap between \"we built defenses\" and \"we know the defenses work.\"\n\nThis chapter is Workflow 11: the design and execution of a chaos game day, and the broader chaos engineering discipline of which it is a part. The discipline originated at Netflix with Chaos Monkey; it has matured into a standard SRE practice with organizational and technical components.\n\n\n### 23.1 What Chaos Engineering Is\n\nChaos engineering: the practice of deliberately injecting failures into a production (or production-like) system to verify that the system behaves correctly under failure.\n\nThe principles:\n\n(a) **Verify, do not assume**. Defenses (retry budgets, circuit breakers, redundancy) are believed-to-work until proven. Chaos engineering converts belief into evidence.\n\n(b) **Production scale, not lab scale**. Many failures are visible only at production scale and traffic patterns. Lab testing finds bugs; chaos finds the bugs that only appear under load.\n\n(c) **Steady state hypothesis**. Before the experiment, define what \"the system is healthy\" means (specific SLIs). The experiment succeeds if the steady state is maintained; fails if it is not.\n\n(d) **Vary real-world events**. Inject the failures that actually happen in production: node failures, network partitions, downstream slowness, regional outages.\n\n(e) **Minimize blast radius**. Start small (one node, one shard); expand only after confidence is established.\n\nThe Netflix origins: Chaos Monkey (a tool that randomly kills production instances) was introduced around 2010. Netflix's reasoning: if instances will fail in production anyway, kill them deliberately during business hours when engineers can respond, so the system is robust to inevitable failures. The discipline spread; by 2026, every mature SRE organization has some chaos practice.\n\n\n### 23.2 The Game Day\n\nA _game day_ is a scheduled, deliberate chaos exercise. The team gathers; failures are injected; the system's response is observed; learnings are documented.\n\nThe structure of a game day:\n\n(a) **Pre-game (1-4 weeks before)** : design the experiment. Define the failure to inject; the steady-state hypothesis; the rollback plan; the participants and roles.\n\n(b) **Day-of preparation** : confirm participants; verify the rollback plan; alert other teams; brief observers.\n\n(c) **Execute the experiment** : inject the failure; observe the system; document observations.\n\n(d) **Recovery and debrief** : end the experiment (rollback or natural recovery); team retrospective; document learnings.\n\n(e) **Post-game** : file action items for improvements; schedule the next game day to verify the fixes.\n\nThe game day is a _social_ exercise as much as a technical one. It teaches the team about the system; it builds shared mental models of failure modes; it surfaces operational gaps.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1087,
+      "out_sha": "1733cb5a93ff",
       "note": ""
     },
     {
@@ -3287,11 +3287,11 @@
       "en_title": "Chapter 23: Chaos Engineering as Discipline",
       "order": 263,
       "src_chars": 2444,
-      "status": "pending",
+      "status": "done",
       "src_sha": "28fa53f6e912",
       "src": "### 23.3 Nora Jones's Organizational Practice\n\nNora Jones (co-author of \"Chaos Engineering: System Resiliency in Practice\" with Casey Rosenthal) is the canonical voice on the organizational side of chaos engineering.\n\nKey practices:\n\n(a) **Psychological safety**. Game days must be safe for the team to identify problems without blame. If a failure reveals an operational gap, the discussion is \"how do we fix the system\" not \"who is responsible.\" Without psychological safety, teams hide problems rather than expose them.\n\n(b) **Blameless retrospectives**. The post-game discussion focuses on systemic causes (the defenses were missing; the runbook was wrong) not individual mistakes. Blame produces defensive behavior; system improvements require honest analysis.\n\n(c) **Diverse participation**. Game days should include not just the on-call engineers but also product managers, customer-support representatives, business stakeholders. Each role brings a different perspective on what \"the system breaking\" means.\n\n(d) **Documented learning**. Every game day produces a written artifact: what was tested; what happened; what was learned; what action items are filed. Over time, the artifacts form an institutional memory of the system's failure modes.\n\n(e) **Regular cadence**. Game days are not one-off events. Monthly or quarterly cadence keeps the muscle exercised; new team members learn from participating.\n\nThe organizational practice is what differentiates \"we use Chaos Monkey\" from \"we have a chaos engineering discipline.\" The tooling is easy; the culture is hard.\n\n\n### 23.4 Tools\n\nModern chaos engineering tooling:\n\n(a) **Chaos Mesh** : Kubernetes-native chaos engineering. Inject pod failures, network failures, disk failures, time skew. Wide adoption.\n\n(b) **Litmus** : another Kubernetes chaos framework. Cloud-native; Helm-based deployment; extensible.\n\n(c) **Gremlin** : commercial chaos engineering platform. Easy to use; targets enterprise teams.\n\n(d) **AWS Fault Injection Simulator** : AWS-native; injects EC2 failures, RDS failures, network failures. Useful for AWS-heavy teams.\n\n(e) **Toxiproxy** : TCP-level fault injection. Slow connections, drop packets, simulate downstream slowness. Application-agnostic.\n\nThe choice depends on the deployment: Kubernetes-native deployments use Chaos Mesh or Litmus; AWS-native deployments use FIS; teams wanting commercial support use Gremlin; cross-platform teams use Toxiproxy.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 992,
+      "out_sha": "1db20b9d54c5",
       "note": ""
     },
     {
@@ -3299,11 +3299,11 @@
       "en_title": "Chapter 23: Chaos Engineering as Discipline",
       "order": 264,
       "src_chars": 1406,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a20b6fc16cf4",
       "src": "### 23.5 The Jepsen Tradition\n\nKyle Kingsbury's Jepsen project is a different flavor of chaos: not \"inject failures into production\" but \"systematically test distributed-database claims by injecting failures.\"\n\nJepsen tests:\n\n* Run a distributed database under controlled conditions.\n* Inject specific failures (network partitions, clock skew, slow nodes).\n* Observe whether the database's correctness claims (linearizability, snapshot isolation, etc.) hold.\n\nThe findings have been brutal. Almost every major distributed database, when first tested by Jepsen, had violated some claim. The findings drive industry improvement: vendors fix bugs; engineers learn what to verify; the field's correctness baseline rises.\n\nNotable Jepsen findings:\n\n* **Cassandra (multiple)** : lightweight transactions violating linearizability; counter inconsistencies; lost writes during failover.\n* **MongoDB (multiple)** : read concern issues; sharding metadata inconsistencies; failover data loss.\n* **CockroachDB** : early versions had serializability violations; fixed in subsequent releases.\n* **Redis** : Redlock issues (the subject of Chapter 18); various failover bugs.\n* **etcd** : minor consistency issues in older versions; fixes incorporated.\n\nThe Jepsen reports are required reading for any distributed-systems engineer. They are the empirical evidence of what claims are real and what claims are aspirational.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 543,
+      "out_sha": "c287d41170b1",
       "note": ""
     },
     {
@@ -3311,11 +3311,11 @@
       "en_title": "Chapter 23: Chaos Engineering as Discipline",
       "order": 265,
       "src_chars": 2943,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1d277728b7d3",
       "src": "### 23.6 Workflow 11: Olamide's First Game Day\n\nOlamide's plan:\n\n**Pre-game design (3 weeks before)** :\n\n* Experiment: simulate the failure of the EU-West region of the CockroachDB cluster.\n* Steady-state hypothesis: payment transactions in US-East continue at <500 ms p99 latency; payment success rate stays above 99.5%.\n* Rollback plan: if the experiment causes user-visible impact above the SLO threshold, restore the EU-West region within 5 minutes.\n* Blast radius: only EU-West region; US-East and US-West continue normally.\n* Participants: SRE team (4 people), payment team (3 engineers), customer support lead (1 person), product manager (1 person).\n\n**Day-of** :\n\n* 14:00 UTC: team gathers; rollback plan reviewed; observers in the on-call room.\n* 14:10 UTC: experiment begins. Olamide invokes the CockroachDB \"drain\" command on EU-West nodes (graceful shutdown).\n* 14:15 UTC: EU-West nodes are down. The cluster's Raft groups re-elect leaders on the remaining regions. Payment transactions originating in EU-West fail over to US-East via Consul-based service mesh.\n* 14:20 UTC: system stabilizes. p99 latency for EU-West-originated transactions: 480 ms (up from 180 ms baseline; the cross-region failover is the cost). Success rate: 99.7%.\n* 14:30 UTC: experiment ends. EU-West nodes are restarted; cluster heals.\n* 14:45 UTC: system returns to baseline.\n\n**Debrief** :\n\n* Steady state: maintained (latency within SLO, success rate above threshold).\n* Observations: \n    * The Consul-based service mesh failover took 30 seconds; during this window, EU-West users saw timeouts. Action item: tune Consul's health-check frequency.\n    * The customer support dashboard did not have a clear indicator of \"EU-West region down.\" Action item: add regional health to the dashboard.\n    * One payment was double-charged during the failover window (a 30-second period of two leaders for one shard before Raft re-election completed). Action item: investigate and fix; this is the same class of bug as Chapter 1's incident.\n    * The retry budget on EU-West's API gateway was correctly configured; no retry storm.\n* Learnings: \n    * The failover works, but not as cleanly as the design predicted.\n    * The customer-facing impact (timeouts) is bigger than the team expected.\n    * One real bug (double-charge) was found that production traffic might have hit during a real failure.\n\n**Action items** :\n\n* Tune Consul health-check frequency (target: 10s detection).\n* Add regional health to customer-support dashboard.\n* Investigate the double-charge case; if reproducible, file a P0.\n* Schedule next game day in 4 weeks: simulate the failure of the US-East database leader (within-region failover, smaller blast radius).\n* Update runbook for \"regional database failure\" with the observed behavior.\n\nThe game day was a success. It found real issues; the team learned. The next game day will verify the fixes and exercise a different failure mode.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1303,
+      "out_sha": "d847411c8ea7",
       "note": ""
     },
     {
@@ -3323,11 +3323,11 @@
       "en_title": "Chapter 23: Chaos Engineering as Discipline",
       "order": 266,
       "src_chars": 1247,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b5107303d169",
       "src": "### 23.7 Chaos Engineering Maturity Model\n\nWhere does a team's chaos practice sit? A rough maturity model:\n\n(a) **Level 0 (No chaos)** : failures are not deliberately injected. The team finds out about failure modes from real incidents.\n\n(b) **Level 1 (Manual chaos)** : occasional ad-hoc experiments. The team kills a node and watches what happens. No structured discipline.\n\n(c) **Level 2 (Game days)** : scheduled chaos exercises. Pre-planned; documented; team participates. Crescent's first game day is Level 2.\n\n(d) **Level 3 (Continuous chaos)** : automated chaos in production. Chaos Monkey-style: random failures injected continuously during business hours. The system is always being tested.\n\n(e) **Level 4 (Chaos as design input)** : chaos findings drive architectural decisions. The team uses chaos data to prioritize work; new features are tested via chaos before launch.\n\nIn 2026, most mature SRE organizations are at Level 2-3. Level 4 is the aspiration; few teams achieve it consistently.\n\nThe progression is from \"we react to failures\" to \"failures are the design constraint, not the surprise.\" Each level is a step up in operational sophistication; each requires more organizational and technical investment.\n\n\n### 23.8 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 504,
+      "out_sha": "f5fd243da001",
       "note": ""
     },
     {
@@ -3335,11 +3335,11 @@
       "en_title": "Chapter 23: Chaos Engineering as Discipline",
       "order": 267,
       "src_chars": 3372,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7100dbdd9b42",
       "src": "#### Concept Check\n\n**Q1.** What is chaos engineering? Name the five principles.\n\nHint\n\nDeliberate failure injection. Five principles: steady-state hypothesis, real-world events, production scale, vary, minimize blast radius.\n\n**Answer:** Chaos engineering is the practice of deliberately injecting failures into a system to verify that the system behaves correctly under failure. The goal is to convert belief into evidence: instead of assuming defenses work, prove they do.\n\nFive principles (from the \"Principles of Chaos Engineering\" website, originated by the Netflix team):\n\n(a) **Build a hypothesis around steady state behavior**. Define what \"the system is healthy\" means in terms of measurable outputs (SLIs). The experiment succeeds if the steady state is maintained.\n\n(b) **Vary real-world events**. Inject failures that actually happen in production: node failures, network partitions, downstream slowness, regional outages, clock skew, full disks.\n\n(c) **Run experiments in production**. Production has properties (scale, traffic patterns, full dependency graph) that no test environment replicates. Lab testing is necessary but not sufficient.\n\n(d) **Automate experiments to run continuously**. Manual game days are valuable; continuous automated chaos (Chaos Monkey style) keeps the system perpetually tested.\n\n(e) **Minimize blast radius**. Start small (one node, one shard); expand only after confidence is established. The first experiments must not cause customer-visible damage; later experiments can expand once defenses are confirmed.\n\nThe principles are the foundation. Specific tools (Chaos Mesh, Litmus, Gremlin) implement them; the organizational practice (game days, blameless retros, documented learning) makes them stick.\n\n**Q2.** What is a game day? Describe the structure.\n\nHint\n\nPre-game, day-of, execute, debrief, post-game. Each phase has specific activities.\n\n**Answer:** A game day is a scheduled, deliberate chaos exercise. The team gathers; failures are injected; the system's response is observed; learnings are documented.\n\nStructure:\n\n(a) **Pre-game (1-4 weeks before)** :\n\n* Design the experiment: what failure to inject; what the blast radius is; what the steady-state hypothesis is.\n* Plan the rollback: how to end the experiment if needed.\n* Confirm participants and roles.\n\n(b) **Day-of preparation** :\n\n* Brief participants on roles and rollback plan.\n* Alert other teams (customer support, on-call) that an exercise is in progress.\n* Verify monitoring is in place.\n\n(c) **Execute the experiment** :\n\n* Inject the failure.\n* Observe the system's response in real time.\n* Document observations as they happen.\n\n(d) **Recovery and debrief** :\n\n* End the experiment (planned timeout, or earlier if rollback is needed).\n* Team retrospective: what happened; what was learned; what was surprising.\n\n(e) **Post-game** :\n\n* File action items for improvements (fix bugs, update runbooks, add monitoring).\n* Schedule the next game day to verify the fixes.\n* Communicate learnings to the broader organization.\n\nThe game day is a recurring practice, not a one-off event. Monthly or quarterly cadence keeps the team's failure-response muscle exercised.\n\n**Q3.** Why is psychological safety important in chaos engineering practice?\n\nHint\n\nWithout safety, teams hide problems. Game days surface issues; safety lets the team discuss honestly.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1203,
+      "out_sha": "dc687fe0fb88",
       "note": ""
     },
     {
@@ -3347,11 +3347,11 @@
       "en_title": "Chapter 23: Chaos Engineering as Discipline",
       "order": 268,
       "src_chars": 3401,
-      "status": "pending",
+      "status": "done",
       "src_sha": "eecc6e13645d",
       "src": "**Answer:** Game days surface problems: failure modes that the team did not know about; operational gaps; bugs that have been latent. The post-game discussion is the opportunity to capture the learning.\n\nIf the team is afraid (of blame, of looking incompetent, of being responsible for the gap), they will hide the problems. They will explain away the surprises; minimize the gaps; avoid escalation. The game day's value is destroyed.\n\nPsychological safety means: the team can identify problems without personal blame. \"The retry budget was too high; it caused the cascade\" is a system observation; \"Alice configured the retry budget; she made a mistake\" is personal blame. The first leads to a fix; the second leads to defensive behavior and no fix.\n\nNora Jones's blameless retrospective practice is the operational manifestation: the discussion focuses on systemic causes, not individual mistakes. \"Why was the configuration what it was?\" leads to \"the runbook was unclear\" or \"the default was wrong\" — actionable. \"Who set the configuration?\" leads to defensiveness.\n\nThe cultural change is hard. Teams accustomed to blame culture take time to adopt blameless practices. Leadership modeling (the senior engineers and managers visibly accept \"I made a mistake\" without consequence) is essential. Without this, chaos engineering remains a technical exercise without the organizational learning.\n\nThe deeper observation: chaos engineering tests both the system and the team. The system's defenses are visible in the post-game data; the team's defenses are visible in the post-game discussion. Both need to be strong.\n\n**Q4.** What is the Jepsen project, and why is it important for the distributed-systems field?\n\nHint\n\nJepsen: systematic testing of distributed database claims. Found many bugs; raised the field's correctness baseline.\n\n**Answer:** Jepsen is Kyle Kingsbury's project (started ~2013) that systematically tests distributed databases' correctness claims under failure conditions.\n\nMethodology:\n\n* Run a database under controlled conditions (controllable failures, observable traffic).\n* Inject specific failures (network partitions, clock skew, slow nodes).\n* Verify whether the database's claimed properties (linearizability, snapshot isolation, etc.) hold.\n\nFindings: almost every major distributed database had violated some claim when first tested. Cassandra's lightweight transactions, MongoDB's read concerns, CockroachDB's early serializability, Redis's failover, etcd's older versions — all had Jepsen-found bugs.\n\nWhy important:\n\n(a) **Empirical evidence** : the Jepsen reports are the empirical evidence of what claims are real. Without them, vendor claims are marketing; with them, claims are testable.\n\n(b) **Industry improvement** : vendors fix the bugs Jepsen finds. The field's correctness baseline rises.\n\n(c) **Engineer education** : engineers reading Jepsen reports learn what to verify and what to distrust. The reports are required reading for distributed-systems engineers.\n\n(d) **Standard methodology** : Jepsen's approach (formal model, randomized testing, history validation) has become the standard methodology for testing distributed-systems correctness.\n\nThe Jepsen project is one of the most important contributions to distributed-systems engineering in the last decade. It made correctness testable in a field where verification was previously aspirational.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1135,
+      "out_sha": "d8d324379970",
       "note": ""
     },
     {
@@ -3359,11 +3359,11 @@
       "en_title": "Chapter 23: Chaos Engineering as Discipline",
       "order": 269,
       "src_chars": 179,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ecaa9f44815f",
       "src": "For Crescent: the team consults Jepsen reports before adopting any new distributed database. The reports are part of the diagnostic method (Chapter 11) for evaluating candidates.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 65,
+      "out_sha": "3b0cf6c46e50",
       "note": ""
     },
     {
@@ -3371,11 +3371,11 @@
       "en_title": "Chapter 23: Chaos Engineering as Discipline",
       "order": 270,
       "src_chars": 3485,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2a2adf1e106c",
       "src": "#### Application Problems\n\n**Q1.** Olamide is planning a game day to test regional failover. Walk through the design questions she needs to answer before the day.\n\nHint\n\nSteady-state hypothesis, blast radius, rollback plan, participants, success criteria, runbook updates.\n\n**Answer:** Design questions:\n\n(a) **What failure to inject?** Region failure can be modeled multiple ways: total region shutdown (all nodes terminated); region network isolation (still running but unreachable); regional database leader failure (specific subset). Pick the one that most closely models the real risk.\n\n(b) **What is the steady-state hypothesis?** Specific SLIs: payment success rate stays above X%; p99 latency for affected region's users stays below Y ms; no user-visible double-charge events.\n\n(c) **What is the blast radius?** Only the chosen region; not the others. Define what \"blast contained\" means and how it is monitored.\n\n(d) **What is the rollback plan?** If the experiment exceeds SLO thresholds (success rate drops below 99%, latency exceeds 1000 ms p99), restore the region within X minutes. Who triggers rollback? How fast can it complete?\n\n(e) **Who participates?** SRE team (executes the experiment); payment team (familiar with the application logic); customer support (monitors user-visible impact); product manager (business context); observer roles.\n\n(f) **What is the timing?** Pick a window that minimizes user impact (low-traffic period, business hours so the team can respond) and is communicated in advance to dependent teams.\n\n(g) **What success criteria define a successful experiment?** Steady state maintained; at most N action items filed; clear learnings documented. The experiment can \"succeed\" by revealing problems (that is its purpose); the criterion is whether the experiment was productive.\n\n(h) **What monitoring is in place?** Real-time dashboards for the chosen SLIs; alerts that fire if rollback is needed; logging of every action.\n\n(i) **What runbook updates result?** The game day will reveal runbook gaps; what is the process for capturing them?\n\n(j) **What is the communication plan?** Who is informed before/during/after? How are learnings shared with the broader engineering organization?\n\nThe 3-week pre-game phase covers these questions. The investment is real (several days of senior engineer time) but the alternative (finding the issues in a real incident) costs much more.\n\n**Q2.** A team has run Chaos Monkey for two years. They have not had a major outage. Are they \"done\" with chaos engineering?\n\nHint\n\nChaos Monkey kills random instances. It tests one failure mode; the system might have many others. Continuous chaos at one level is not the full discipline.\n\n**Answer:** No. Chaos Monkey tests one failure mode (random instance termination). The system has many other failure modes that Chaos Monkey does not test:\n\n(a) **Network partitions** : nodes still running but isolated from each other. Chaos Monkey kills nodes (the network is unaffected).\n\n(b) **Slow nodes / gray failures** : nodes still alive but degraded. Chaos Monkey kills (binary) rather than degrading.\n\n(c) **Regional failures** : entire region offline. Chaos Monkey randomly kills individual nodes, not coordinated regional events.\n\n(d) **Cascading dependencies** : failure in service X causing problems in service Y. Chaos Monkey tests instance failures; cascading is about the propagation.\n\n(e) **Clock skew** : nodes alive but with wrong clocks. Specialized fault.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1313,
+      "out_sha": "4b13e422f17a",
       "note": ""
     },
     {
@@ -3383,11 +3383,11 @@
       "en_title": "Chapter 23: Chaos Engineering as Discipline",
       "order": 271,
       "src_chars": 3225,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bf60b8f358e1",
       "src": "(f) **Disk full** : nodes alive but cannot write. Specialized fault.\n\n(g) **Memory pressure / GC pauses** : nodes alive but slow. Specialized fault.\n\n(h) **Configuration changes** : deploys, schema changes, feature flags. Not failures per se but operational events that interact with the system.\n\nChaos Monkey tests one slice (the \"instance failure\" slice). The full chaos engineering discipline tests the others as well. The progression: Chaos Monkey for the basic instance-failure resilience; specialized chaos tools (Chaos Mesh, Toxiproxy) for the other failure modes; game days for the coordinated scenarios.\n\nThe team that has \"run Chaos Monkey for two years\" without a major outage has built one slice of resilience. They should now expand: add network-partition chaos; add slow-node chaos; run game days for regional failures. Each expansion finds new issues.\n\nThe deeper observation: chaos engineering is not \"done.\" It is a continuous practice that grows with the system. As the system adds features, integrates with new dependencies, expands to new regions, the chaos surface grows. Mature chaos engineering practices treat it as ongoing investment, not a one-time milestone.\n\n**Q3.** A team's game day reveals a real bug (a race condition causing data corruption). They are now debating: continue the planned schedule of further game days, or pause and fix the bug first. Analyze.\n\nHint\n\nContinue game days vs pause and fix. The bug is real; further game days might reveal more issues; fixing first ensures the next game day tests the right thing.\n\n**Answer:** Both options have merit; the right answer depends on the bug's severity and the team's bandwidth.\n\n_Continue game days_ :\n\n* Pros: each game day reveals more issues; the team builds up an action-item list and fixes them in priority order.\n* Cons: the known bug remains in production; risk of customer impact during the gap.\n\n_Pause and fix_ :\n\n* Pros: the known bug is fixed quickly; subsequent game days test the system with the bug removed (more useful data).\n* Cons: the game-day schedule slips; other issues may go undetected longer.\n\nRecommendation factors:\n\n(a) **Severity of the bug** : if the bug is data corruption (as in the example), it is high severity. Pause and fix immediately; do not continue game days that might expose more customers to corruption.\n\n(b) **Fix complexity** : if the fix is small (hours), pause and fix; resume game days. If the fix is large (weeks), do not block all game days on the fix; continue scoped game days that don't trigger the bug.\n\n(c) **Production impact** : is the bug already affecting customers? If yes, fix urgency is highest. If only triggers under specific conditions, more flexibility.\n\n(d) **Team bandwidth** : a small team with limited bandwidth must prioritize; pause one thing to do another. A large team can do both in parallel.\n\nFor Olamide's hypothetical scenario (double-charge under failover): the bug is high severity (data corruption visible to customers); fix complexity is probably moderate (single team can address in days). Recommendation: pause major game days; small targeted experiments to verify the fix can proceed; resume the regular game-day schedule after the fix is verified.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1218,
+      "out_sha": "445aa5df61b1",
       "note": ""
     },
     {
@@ -3395,11 +3395,11 @@
       "en_title": "Chapter 23: Chaos Engineering as Discipline",
       "order": 272,
       "src_chars": 288,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b3dc5256a144",
       "src": "The deeper observation: game days are valuable because they find bugs. Finding bugs is success, not failure. The team should celebrate finding the bug (better than the customer finding it) and prioritize fixing it. Continuing chaos with a known unfixed bug is operationally questionable.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 94,
+      "out_sha": "164546163707",
       "note": ""
     },
     {
@@ -3407,11 +3407,11 @@
       "en_title": "Chapter 23: Chaos Engineering as Discipline",
       "order": 273,
       "src_chars": 3264,
-      "status": "pending",
+      "status": "done",
       "src_sha": "163da92e14b3",
       "src": "#### Think Deeper\n\n**Q1.** Defend or refute: \"Chaos engineering should be mandatory for any production distributed system. Systems without it are operationally negligent.\"\n\n**Discussion:** Defense: distributed systems will fail; the question is whether the failures are surprises or rehearsed events. Chaos engineering converts surprises into rehearsals. A system without chaos engineering is one where every failure is a surprise; the team learns from production incidents (expensive) rather than game days (cheap). For mission-critical systems, this is operationally negligent.\n\nRefutation: chaos engineering has costs (engineer time, complexity, occasional customer-visible incidents during exercises). For systems that are not mission-critical (internal tools, low-traffic services, prototypes), the cost-benefit may not favor chaos engineering. Mandating it would be over-engineering for many real workloads.\n\nThe synthesis: chaos engineering is right-sized for the system's risk profile. Mission-critical systems (payments, healthcare, infrastructure) should have rigorous chaos engineering. Lower-risk systems can have lighter practices (passive chaos, manual experiments) or none at all. The mistake is treating it as binary (do all of it or none of it); the right framing is \"what is the right level for this system.\"\n\nThe 2026 reality: mature SRE organizations have chaos engineering practices proportional to system criticality. The Crescent payment system gets monthly game days; the internal HR system gets none. Both are correct for their context.\n\nA second consideration: the \"operationally negligent\" framing is too strong because it implies a moral judgment that crosses team boundaries. A small team without chaos engineering may have made the right cost-benefit trade-off; calling them negligent dismisses the trade-off. The honest framing is \"for mission-critical systems, chaos engineering is necessary; for others, evaluate the trade-off.\"\n\n**Q2.** An LLM is asked to \"design a chaos engineering practice for our team.\" It outputs a list of tools (Chaos Monkey, Chaos Mesh, Gremlin). Identify what the LLM missed and what a complete answer includes.\n\n**Discussion:** The LLM produced the _tooling_ answer without the _practice_ answer. Tools are necessary but not sufficient; the organizational practice (game days, blameless retros, documented learning, regular cadence) is what makes chaos engineering work.\n\nA complete answer includes:\n\n(a) **Tools** : yes, name the tools (Chaos Mesh, Litmus, AWS FIS, etc.) and their fit for the team's stack.\n\n(b) **Game day structure** : the pre-game / day-of / execute / debrief / post-game pattern. The team needs the operational playbook, not just the tools.\n\n(c) **Organizational practices** : blameless retros, psychological safety, documented learning, regular cadence. Without these, the technical experiments do not produce learning.\n\n(d) **Maturity progression** : start with Level 2 (game days) before Level 3 (continuous chaos). Each level requires the previous; jumping ahead breaks.\n\n(e) **Specific first experiment** : a concrete recommendation for \"what to do first.\" For a new team, this might be a controlled instance-termination exercise; for an experienced team, a regional failover.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1082,
+      "out_sha": "8eb97dcdeb96",
       "note": ""
     },
     {
@@ -3419,11 +3419,11 @@
       "en_title": "Chapter 23: Chaos Engineering as Discipline",
       "order": 274,
       "src_chars": 2503,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ba2019fba041",
       "src": "(f) **Metrics for chaos engineering itself** : how does the team know its chaos practice is working? Metrics like \"issues found per game day,\" \"incidents prevented by chaos engineering,\" \"time to mitigate during real incidents (lower because of rehearsal).\"\n\n(g) **Communication and buy-in** : chaos engineering may face resistance (\"you'll break production\"); the team needs to articulate the value and get buy-in from leadership.\n\nThe deeper observation: the LLM's \"list of tools\" is a partial answer. The questioner probably needs the full practice, not the tools list. An LLM that produces only the tools answer is missing the organizational dimension.\n\nThe correct LLM response: \"Chaos engineering is both technical and organizational. Tools include [...]. Practices include game days with blameless retros. For a team starting out, I recommend [...]. Here is a 3-month plan to build the practice [...].\" The tools are part of the answer; not all of it.\n\n\n### Chapter Summary\n\nChaos engineering is the practice of deliberately injecting failures to verify the system's behavior under failure. Five principles: steady-state hypothesis, vary real-world events, run in production, automate, minimize blast radius.\n\nGame days are scheduled chaos exercises with a structured flow: pre-game design, day-of execution, debrief, post-game action items. They are a recurring practice, not a one-off event.\n\nNora Jones's organizational practice emphasizes psychological safety, blameless retros, diverse participation, documented learning, regular cadence. Without the cultural foundation, the technical exercises do not produce learning.\n\nTools (Chaos Mesh, Litmus, Gremlin, AWS FIS, Toxiproxy) implement the failure injection; the choice depends on deployment. The Jepsen project is a different flavor: systematic testing of database correctness claims under failure.\n\nThe maturity model: Level 0 (no chaos), Level 1 (manual), Level 2 (game days), Level 3 (continuous), Level 4 (chaos as design input). Most mature organizations sit at Level 2-3; Level 4 is the aspiration.\n\nOlamide's Workflow 11 game day (regional failover) found real issues: Consul health-check tuning, dashboard gaps, a real double-charge bug. The game day was a success because it found problems before customers did.\n\nChapter 24 opens Part VIII on distributed AI inference. The inference cluster as a 2026 sub-discipline; vLLM, SGLang, NVIDIA NIM; Tobias Schwartz's 1M USD/month Continuum Inference cluster as the worked example.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 950,
+      "out_sha": "ec5c78772e25",
       "note": ""
     },
     {
