@@ -1619,11 +1619,11 @@
       "en_title": "Chapter 14: The Perceptron and Neural Network Foundations",
       "order": 125,
       "src_chars": 3395,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4d008ce8217d",
       "src": "#### Concept Check\n\n**Q1.** A perceptron has weights w=(2,−1,0.5)\\mathbf{w} = (2, -1, 0.5)w=(2,−1,0.5) and bias b=−1b = -1b=−1. For input x=(1,2,4)\\mathbf{x} = (1, 2, 4)x=(1,2,4), compute the output.\n\n**Answer:**\n\nz=w⊤x+b=2(1)+(−1)(2)+0.5(4)+(−1)=2−2+2−1=1z = \\mathbf{w}^\\top \\mathbf{x} + b = 2(1) + (-1)(2) + 0.5(4) + (-1) = 2 - 2 + 2 - 1 = 1z=w⊤x+b=2(1)+(−1)(2)+0.5(4)+(−1)=2−2+2−1=1\n\nSince z=1≥0z = 1 \\geq 0z=1≥0, the perceptron outputs y^=1\\hat{y} = 1y^​=1.\n\n**Q2.** Explain why the following two-layer network computes XOR. Weights for hidden layer: W(1)=(1111)W^{(1)} = \\begin{pmatrix}1 & 1 \\\\\\ 1 & 1\\end{pmatrix}W(1)=(11​11​), biases b(1)=(−0.5,−1.5)\\mathbf{b}^{(1)} = (-0.5, -1.5)b(1)=(−0.5,−1.5), output weights w(2)=(1,−1)\\mathbf{w}^{(2)} = (1, -1)w(2)=(1,−1), bias b(2)=0b^{(2)} = 0b(2)=0. Use a threshold activation: f(z)=1f(z) = 1f(z)=1 if z>0z > 0z>0, else 0.\n\n**Answer:** Let's trace all four inputs:\n\nFor x=(0,0)\\mathbf{x} = (0, 0)x=(0,0): Hidden inputs: [0+0−0.5,0+0−1.5]=[−0.5,−1.5][0+0-0.5, 0+0-1.5] = [-0.5, -1.5][0+0−0.5,0+0−1.5]=[−0.5,−1.5]. Hidden outputs: f(−0.5)=0,f(−1.5)=0f(-0.5) = 0, f(-1.5) = 0f(−0.5)=0,f(−1.5)=0. Output: 0(1)+0(−1)+0=00(1) + 0(-1) + 0 = 00(1)+0(−1)+0=0. f(0)=0f(0) = 0f(0)=0. XOR = 0. ✓\n\nFor x=(0,1)\\mathbf{x} = (0, 1)x=(0,1): Hidden inputs: [0+1−0.5,0+1−1.5]=[0.5,−0.5][0+1-0.5, 0+1-1.5] = [0.5, -0.5][0+1−0.5,0+1−1.5]=[0.5,−0.5]. Hidden outputs: [1,0][1, 0][1,0]. Output: 1(1)+0(−1)=1>01(1) + 0(-1) = 1 > 01(1)+0(−1)=1>0, outputs 1. XOR = 1. ✓\n\nFor x=(1,0)\\mathbf{x} = (1, 0)x=(1,0): Hidden inputs: [1+0−0.5,1+0−1.5]=[0.5,−0.5][1+0-0.5, 1+0-1.5] = [0.5, -0.5][1+0−0.5,1+0−1.5]=[0.5,−0.5]. Hidden outputs: [1,0][1, 0][1,0]. Output: 1. ✓\n\nFor x=(1,1)\\mathbf{x} = (1, 1)x=(1,1): Hidden inputs: [1+1−0.5,1+1−1.5]=[1.5,0.5][1+1-0.5, 1+1-1.5] = [1.5, 0.5][1+1−0.5,1+1−1.5]=[1.5,0.5]. Hidden outputs: [1,1][1, 1][1,1]. Output: 1(1)+1(−1)=01(1) + 1(-1) = 01(1)+1(−1)=0. f(0)=0f(0) = 0f(0)=0. XOR = 0. ✓\n\nThe first hidden neuron fires when \"at least one input is 1\" (OR gate); the second fires when \"both inputs are 1\" (AND gate). The output computes OR−AND=XOR\\text{OR} - \\text{AND} = \\text{XOR}OR−AND=XOR.\n\n**Q3.** Compute the derivative of ReLU at z=2z = 2z=2, z=0z = 0z=0, and z=−3z = -3z=−3. Why is the non-differentiability at z=0z = 0z=0 not a practical problem?\n\n**Answer:**\n\nf′(2)=1f'(2) = 1f′(2)=1 (since z>0z > 0z>0, ReLU equals the identity function) f′(−3)=0f'(-3) = 0f′(−3)=0 (since z<0z < 0z<0, ReLU equals zero; derivative is 0) f′(0)f'(0)f′(0) = undefined (non-differentiable at z=0z = 0z=0)\n\nThe non-differentiability at exactly z=0z = 0z=0 is not a practical problem because: (1) the probability of any particular floating-point computation yielding exactly 0 is negligible; (2) in practice, a **subgradient** of 0 or 1 is arbitrarily assigned at z=0z = 0z=0 without affecting training; (3) SGD with mini-batches is inherently noisy, and the occasional zero-gradient at the single non-differentiable point is entirely masked by this noise.\n\n**Q4.** Why can't we use the identity function f(z)=zf(z) = zf(z)=z as an activation function in a multi-layer network?\n\n**Answer:** With identity activations, the entire network computes:\n\ny=W(L)(W(L−1)(⋯W(1)x+b(1)⋯ )+b(L−1))+b(L)\\mathbf{y} = W^{(L)}(W^{(L-1)}(\\cdots W^{(1)}\\mathbf{x} + \\mathbf{b}^{(1)} \\cdots) + \\mathbf{b}^{(L-1)}) + \\mathbf{b}^{(L)}y=W(L)(W(L−1)(⋯W(1)x+b(1)⋯)+b(L−1))+b(L)",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1427,
+      "out_sha": "9e6f7f464c50",
       "note": ""
     },
     {
@@ -1631,11 +1631,11 @@
       "en_title": "Chapter 14: The Perceptron and Neural Network Foundations",
       "order": 126,
       "src_chars": 2629,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6bc6270e9123",
       "src": "The product of matrices W(L)W(L−1)⋯W(1)W^{(L)} W^{(L-1)} \\cdots W^{(1)}W(L)W(L−1)⋯W(1) is itself a matrix W′W'W′. The entire deep network reduces to a single linear transformation y=W′x+b′\\mathbf{y} = W'\\mathbf{x} + \\mathbf{b}'y=W′x+b′. No matter how many layers, a network of linear neurons is a linear function — equivalent to a single-layer network. Depth adds nothing without non-linearity.\n\n\n#### Application Problems\n\n**Q1.** You're trying to classify points in 2D as inside a circle (y=1y=1y=1) vs. outside (y=0y=0y=0). Explain why a perceptron can never solve this problem, and describe the minimum architecture that could.\n\nHint\n\nThink about what the decision boundary of a perceptron looks like. Can a line separate the inside from the outside of a circle?\n\n**Answer:** A perceptron's decision boundary is always a straight line (hyperplane). The inside of a circle is a convex region bounded by a curve, not a line. No straight line can separate all interior points from all exterior points — the \"inside\" class is surrounded on all sides by the \"outside\" class.\n\n**Minimum architecture:** A single hidden layer with at least 3 neurons can approximate circular boundaries (with enough neurons, any smooth boundary can be approximated). Alternatively: add polynomial features x12,x22x_1^2, x_2^2x12​,x22​ to the input. Then the circle boundary x12+x22=r2x_1^2 + x_2^2 = r^2x12​+x22​=r2 becomes a linear boundary in the augmented feature space, and a single perceptron on (x1,x2,x12,x22)(x_1, x_2, x_1^2, x_2^2)(x1​,x2​,x12​,x22​) can solve it exactly.\n\nThe MLP with one hidden layer solves this by learning to create the non-linear features automatically — this is the power of representation learning.\n\n**Q2.** A perceptron is trained on a linearly separable dataset with m=200m = 200m=200 examples. The maximum data point norm is R=3R = 3R=3 and the geometric margin of the true separating hyperplane is γ=0.5\\gamma = 0.5γ=0.5. What is the upper bound on the number of weight updates the perceptron learning rule will make before converging?\n\n**Answer:** The Perceptron Convergence Theorem bounds the number of updates by R2/γ2R^2 / \\gamma^2R2/γ2:\n\nUpdates≤R2γ2=320.52=90.25=36\\text{Updates} \\leq \\frac{R^2}{\\gamma^2} = \\frac{3^2}{0.5^2} = \\frac{9}{0.25} = 36Updates≤γ2R2​=0.5232​=0.259​=36\n\nThe perceptron converges in at most 36 updates, regardless of the dataset size m=200m = 200m=200. The bound depends only on the geometry of the problem (data norm and margin), not the number of training examples. A dataset with a larger geometric margin γ\\gammaγ gives a tighter bound — more separable data converges faster.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 862,
+      "out_sha": "0bbe0dcb5c19",
       "note": ""
     },
     {
@@ -1643,11 +1643,11 @@
       "en_title": "Chapter 14: The Perceptron and Neural Network Foundations",
       "order": 127,
       "src_chars": 3009,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2dc5eb880e0b",
       "src": "#### Think Deeper\n\n**Q1.** The universal approximation theorem says a single hidden layer is sufficient. But modern deep networks use 50, 100, even 1000 layers. If one layer is theoretically sufficient, why do practitioners use deep networks?\n\n**Q2.** The Leaky ReLU activation uses f(z)=max⁡(0.01z,z)f(z) = \\max(0.01z, z)f(z)=max(0.01z,z). Compute the derivative f′(z)f'(z)f′(z) for z=5z = 5z=5, z=−2z = -2z=−2, and z=0z = 0z=0. Explain why Leaky ReLU was designed to address the \"dying ReLU\" problem, and describe a scenario where standard ReLU neurons might systematically die during training.\n\n**Discussion:** Derivatives:\n\nf′(5)=1f'(5) = 1f′(5)=1 (since 5>05 > 05>0, Leaky ReLU equals the identity function) f′(−2)=0.01f'(-2) = 0.01f′(−2)=0.01 (since −2<0-2 < 0−2<0, Leaky ReLU equals 0.01z0.01z0.01z; derivative is 0.01) f′(0)f'(0)f′(0) = undefined (non-differentiable at z=0z = 0z=0; in practice, assign 0.01 or 1 as subgradient)\n\nIn standard ReLU, f′(z)=0f'(z) = 0f′(z)=0 for all z<0z < 0z<0. If a neuron's pre-activation is always negative, its gradient is always 0 — the neuron stops learning entirely (it is \"dead\"). Leaky ReLU sets f′(z)=0.01f'(z) = 0.01f′(z)=0.01 for z<0z < 0z<0, so gradients always flow, even through the negative region.\n\nA scenario where standard ReLU neurons die: a very large learning rate causes a large negative weight update, pushing many neurons into the permanently-negative region. Once stuck, they receive zero gradient and can never recover. This can eliminate a large fraction of a network's capacity mid-training. Leaky ReLU, ELU, and GELU all prevent this by ensuring a nonzero gradient everywhere.\n\n**Discussion:** The universal approximation theorem guarantees that sufficient _width_ can approximate any function — but the required width may be exponential in the input dimension. Deep networks can represent the same functions with exponentially fewer neurons by _composing_ simpler functions.\n\nThe key insight: many real-world functions have hierarchical structure. An image recognition function is \"is it a face\" = \"does it have two eyes, a nose, and a mouth\" = \"are there the right local patterns in the right relative positions\" = \"are there the right edge combinations.\" This hierarchy maps naturally to layers: early layers detect edges, middle layers detect parts, later layers detect objects. A single wide layer would need to redundantly encode all these levels simultaneously.\n\nFormally, there exist functions that a depth-ddd circuit can compute with O(n)O(n)O(n) gates but a depth-(d−1)(d-1)(d−1) circuit requires exponentially many gates (this is related to circuit complexity theory). Similar separation results hold for neural networks.\n\nEmpirically: on every major benchmark (images, text, audio, games), deeper networks have consistently outperformed shallower ones with equal parameter counts. Depth enables not just expressiveness but _efficient_ expressiveness — the same complexity in fewer parameters, leading to better generalization.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 996,
+      "out_sha": "540ba3c95ce6",
       "note": ""
     },
     {
@@ -1655,11 +1655,11 @@
       "en_title": "Chapter 14: The Perceptron and Neural Network Foundations",
       "order": 128,
       "src_chars": 963,
-      "status": "pending",
+      "status": "done",
       "src_sha": "35154e50a44d",
       "src": "### Chapter Summary\n\nThe perceptron is the simplest classifier: a threshold linear unit that updates weights only on misclassified examples. It converges for linearly separable data but fails on non-linear problems like XOR.\n\nKey ideas:\n\n* **Perceptron** : threshold function, convergence theorem for separable data, fails on non-linearly-separable data\n* **Multi-layer perceptrons** : hidden layers create non-linear feature transformations that make previously non-separable problems separable\n* **Activation functions** : sigmoid and tanh saturate (vanishing gradient); **ReLU** enabled modern deep learning by allowing gradients to flow through deep networks\n* **Universal approximation theorem** : one hidden layer suffices in theory; depth provides exponential efficiency gains in practice\n\nChapter 15 builds on this foundation: we formalize the forward pass and derive backpropagation — the algorithm that makes training multi-layer networks feasible.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 306,
+      "out_sha": "37d6cad397c3",
       "note": ""
     },
     {
@@ -1667,11 +1667,11 @@
       "en_title": "Chapter 15: Multi-Layer Networks and Backpropagation",
       "order": 129,
       "src_chars": 1942,
-      "status": "pending",
+      "status": "done",
       "src_sha": "36d9e4c21e08",
       "src": "The perceptron is a single neuron. A multi-layer perceptron (MLP) stacks layers of neurons, with each layer transforming the representation from the previous layer. The big question we deferred in Chapter 14: how do we train these multi-layer networks? How do we compute the gradient of the loss with respect to the weights in early layers, given that those weights affect the output only through many intermediate layers?\n\nThe answer is **backpropagation** — an efficient algorithm for computing gradients in a computational graph by applying the chain rule backward through the network. It was independently discovered multiple times and popularized by Rumelhart, Hinton, and Williams in 1986. More than any other single algorithm, backpropagation enabled the deep learning revolution.\n\n\n### 15.1 The Forward Pass\n\nConsider a neural network with LLL layers. The forward pass computes:\n\na(0)=x(input)\\mathbf{a}^{(0)} = \\mathbf{x} \\quad \\text{(input)}a(0)=x(input) z(ℓ)=W(ℓ)a(ℓ−1)+b(ℓ)(pre-activation)\\mathbf{z}^{(\\ell)} = W^{(\\ell)} \\mathbf{a}^{(\\ell-1)} + \\mathbf{b}^{(\\ell)} \\quad \\text{(pre-activation)}z(ℓ)=W(ℓ)a(ℓ−1)+b(ℓ)(pre-activation) a(ℓ)=f(z(ℓ))(activation, applied element-wise)\\mathbf{a}^{(\\ell)} = f(\\mathbf{z}^{(\\ell)}) \\quad \\text{(activation, applied element-wise)}a(ℓ)=f(z(ℓ))(activation, applied element-wise)\n\nfor ℓ=1,2,…,L\\ell = 1, 2, \\ldots, Lℓ=1,2,…,L. The output a(L)\\mathbf{a}^{(L)}a(L) is the final prediction.\n\n**Dimensions:** If layer ℓ\\ellℓ has dℓd_\\elldℓ​ neurons and the previous layer has dℓ−1d_{\\ell-1}dℓ−1​ neurons:\n\n* W(ℓ)∈Rdℓ×dℓ−1W^{(\\ell)} \\in \\mathbb{R}^{d_\\ell \\times d_{\\ell-1}}W(ℓ)∈Rdℓ​×dℓ−1​\n* b(ℓ)∈Rdℓ\\mathbf{b}^{(\\ell)} \\in \\mathbb{R}^{d_\\ell}b(ℓ)∈Rdℓ​\n* a(ℓ)∈Rdℓ\\mathbf{a}^{(\\ell)} \\in \\mathbb{R}^{d_\\ell}a(ℓ)∈Rdℓ​\n\nThe forward pass applies a sequence of affine transformations (linear + bias) and non-linear activations. Each layer is applying one function; the network is composing all of them.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 794,
+      "out_sha": "60c1871302e9",
       "note": ""
     },
     {
