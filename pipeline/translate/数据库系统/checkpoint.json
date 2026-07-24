@@ -1079,11 +1079,11 @@
       "en_title": "Chapter 6: Functional Dependencies and Normalization",
       "order": 81,
       "src_chars": 1227,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6da1cdcfdba1",
       "src": "In Chapter 2 we found that **uncontrolled redundancy** in a schema produces the update, deletion, and insertion anomalies. In Chapter 3 we fixed the specific anomalies by splitting `enrollments.csv` into separate tables. In Chapter 5 we formalized the design process with ER modeling.\n\nBut one nagging question remains: **how do we _know_ a schema is anomaly-free?** Eyeballing it and saying \"looks good\" works when the schema has four tables and obvious relationships. It does not work for a hospital records system with 150 tables where hidden dependencies lurk in innocuous-looking fields.\n\nThis chapter gives us the formal answer. We introduce **functional dependencies** — a precise way of saying \"attribute X determines attribute Y\" — and **normal forms** , which are conditions on the schema that guarantee specific anomaly classes cannot occur. Along the way we meet Armstrong's axioms, attribute closure, candidate key derivation via closure, the minimal cover, and the two normal forms that matter most in practice (3NF and BCNF).\n\nBy the end of this chapter, Thread A's Chapter 3 schema is provably anomaly-free. And the flip side — when denormalization is _correct_ — becomes a principled choice rather than a sin.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 491,
+      "out_sha": "038f7deba5f8",
       "note": ""
     },
     {
@@ -1091,11 +1091,11 @@
       "en_title": "Chapter 6: Functional Dependencies and Normalization",
       "order": 82,
       "src_chars": 2917,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5ff6da1f21eb",
       "src": "### 6.1 Functional Dependencies\n\n> ### Definition: Functional Dependency\n\nA **functional dependency** (FD) from attribute set XXX to attribute set YYY, written X→YX \\rightarrow YX→Y, holds on a relation RRR if and only if: any two tuples of RRR that agree on XXX must also agree on YYY.\n\nIn plain language, X→YX \\rightarrow YX→Y says \"if you know XXX, you know YYY.\" Or, equivalently, \"two tuples with the same XXX value cannot have different YYY values in the same instance.\"\n\nLet's make this concrete on our university schema. Consider the (bad) denormalized enrollments table from Chapter 2:\n    \n    \n    Enrollments_Bad(student_id, student_name, course_id, course_title, instructor, credits, grade)\n    \n\nPlausible FDs:\n\n* {student_id}→{student_name}\\\\{\\text{student\\\\_id}\\\\} \\rightarrow \\\\{\\text{student\\\\_name}\\\\}{student_id}→{student_name}: if you know the student's id, you know their name. (A student's id uniquely identifies them, and each student has exactly one name.)\n* {course_id}→{course_title,instructor,credits}\\\\{\\text{course\\\\_id}\\\\} \\rightarrow \\\\{\\text{course\\\\_title}, \\text{instructor}, \\text{credits}\\\\}{course_id}→{course_title,instructor,credits}: if you know the course id, you know everything about the course.\n* {student_id,course_id}→{grade}\\\\{\\text{student\\\\_id}, \\text{course\\\\_id}\\\\} \\rightarrow \\\\{\\text{grade}\\\\}{student_id,course_id}→{grade}: if you know the (student, course) pair, you know the grade. (Each pair has at most one grade.)\n* {student_id,course_id}→{student_name,course_title,instructor,credits,grade}\\\\{\\text{student\\\\_id}, \\text{course\\\\_id}\\\\} \\rightarrow \\\\{\\text{student\\\\_name}, \\text{course\\\\_title}, \\text{instructor}, \\text{credits}, \\text{grade}\\\\}{student_id,course_id}→{student_name,course_title,instructor,credits,grade}: if you know (student, course), you know everything, because you can derive student_name from student_id and course_title etc. from course_id.\n\nTwo things to notice:\n\n  1. **FDs are claims about _meaning_ , not about the current instance.** \"student_id→student_name\\text{student\\\\_id} \\rightarrow \\text{student\\\\_name}student_id→student_name\" is a structural rule (\"each student has exactly one name\") that applies to every valid instance of the database — not just the one currently on disk. An accidentally-consistent instance (where, coincidentally, no two students share a name) does not establish student_name→student_id\\text{student\\\\_name} \\rightarrow \\text{student\\\\_id}student_name→student_id as an FD; the FD must hold for every _possible_ valid instance.\n\n  2. **FDs are directional.** student_id→student_name\\text{student\\\\_id} \\rightarrow \\text{student\\\\_name}student_id→student_name does _not_ imply student_name→student_id\\text{student\\\\_name} \\rightarrow \\text{student\\\\_id}student_name→student_id. (The first is true — each id has one name — but the second is false — two students can share the name \"Alice Chen\".)\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1219,
+      "out_sha": "cec711adc737",
       "note": ""
     },
     {
@@ -1103,11 +1103,11 @@
       "en_title": "Chapter 6: Functional Dependencies and Normalization",
       "order": 83,
       "src_chars": 2607,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0e4a60f25922",
       "src": "#### Trivial vs Non-Trivial FDs\n\nA functional dependency X→YX \\rightarrow YX→Y is **trivial** if Y⊆XY \\subseteq XY⊆X. For example, {course_id}→{course_id}\\\\{\\text{course\\\\_id}\\\\} \\rightarrow \\\\{\\text{course\\\\_id}\\\\}{course_id}→{course_id} is trivial; so is {student_id,course_id}→{course_id}\\\\{\\text{student\\\\_id}, \\text{course\\\\_id}\\\\} \\rightarrow \\\\{\\text{course\\\\_id}\\\\}{student_id,course_id}→{course_id}.\n\nTrivial FDs always hold (they are tautologies) and carry no real information. The FDs we care about are **non-trivial** : X→YX \\rightarrow YX→Y where Y⊈XY \\not\\subseteq XY⊆X.\n\n\n### 6.2 Armstrong's Axioms\n\nGiven a set of FDs, what other FDs are logically implied? Armstrong (1974) gave us three rules — Armstrong's axioms — that are _sound and complete_ : from any set of FDs, applying the axioms derives exactly the FDs that are logically implied.\n\n> ### Definition: Armstrong's Axioms\n\n**A1 — Reflexivity.** If Y⊆XY \\subseteq XY⊆X, then X→YX \\rightarrow YX→Y. (Trivial FDs are always implied.)\n\n**A2 — Augmentation.** If X→YX \\rightarrow YX→Y, then for any attribute set ZZZ, XZ→YZXZ \\rightarrow YZXZ→YZ. (If you know X determines Y, adding the same attributes to both sides preserves the FD.)\n\n**A3 — Transitivity.** If X→YX \\rightarrow YX→Y and Y→ZY \\rightarrow ZY→Z, then X→ZX \\rightarrow ZX→Z. (FDs compose.)\n\nThree useful derived rules:\n\n* **Union.** If X→YX \\rightarrow YX→Y and X→ZX \\rightarrow ZX→Z, then X→YZX \\rightarrow YZX→YZ.\n* **Decomposition.** If X→YZX \\rightarrow YZX→YZ, then X→YX \\rightarrow YX→Y and X→ZX \\rightarrow ZX→Z.\n* **Pseudo-transitivity.** If X→YX \\rightarrow YX→Y and WY→ZWY \\rightarrow ZWY→Z, then XW→ZXW \\rightarrow ZXW→Z.\n\nYou will use Union and Decomposition constantly. You will invoke Armstrong's three axioms directly less often, but they are the foundation that makes the derived rules sound.\n\n\n#### Common Misconception\n\nStudents often think Armstrong's axioms are a \"computational procedure\" for finding all FDs. They aren't — they are logical implication rules. To _compute_ implications efficiently, we don't apply the axioms blindly; we use **attribute closure** (Section 6.3), which is a dynamic-programming algorithm that answers \"what does a given attribute set determine?\" in linear time.\n\n\n### 6.3 Closures\n\n\n#### Attribute Closure\n\nGiven a relation schema RRR, a set of FDs FFF, and an attribute set XXX, the **closure of X under F** , written X+X^+X+, is the set of all attributes YYY such that X→YX \\rightarrow YX→Y is logically implied by FFF.\n\nInformally, X+X^+X+ answers: \"starting from knowing the values of XXX, what else can I deduce?\"\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1203,
+      "out_sha": "5f5142662ac7",
       "note": ""
     },
     {
@@ -1115,11 +1115,11 @@
       "en_title": "Chapter 6: Functional Dependencies and Normalization",
       "order": 84,
       "src_chars": 2936,
-      "status": "pending",
+      "status": "done",
       "src_sha": "72d92bca6980",
       "src": "#### Algorithm: Computing X+X^+X+\n    \n    \n    X_plus = X\n    repeat:\n      for each FD Y -> Z in F:\n        if Y ⊆ X_plus:\n          X_plus = X_plus ∪ Z\n    until X_plus stops changing\n    return X_plus\n    \n\nWorked example. Consider relation R(A,B,C,D,E)R(A, B, C, D, E)R(A,B,C,D,E) with FDs:\n\n* A→BA \\rightarrow BA→B\n* BC→DBC \\rightarrow DBC→D\n* D→ED \\rightarrow ED→E\n\nCompute {A,C}+\\\\{A, C\\\\}^+{A,C}+:\n\nStart: {A,C}\\\\{A, C\\\\}{A,C}. Apply A→BA \\rightarrow BA→B: A∈{A,C}A \\in \\\\{A,C\\\\}A∈{A,C} → add BBB. Now {A,B,C}\\\\{A, B, C\\\\}{A,B,C}. Apply BC→DBC \\rightarrow DBC→D: {B,C}⊆{A,B,C}\\\\{B, C\\\\} \\subseteq \\\\{A,B,C\\\\}{B,C}⊆{A,B,C} → add DDD. Now {A,B,C,D}\\\\{A, B, C, D\\\\}{A,B,C,D}. Apply D→ED \\rightarrow ED→E: D∈{A,B,C,D}D \\in \\\\{A,B,C,D\\\\}D∈{A,B,C,D} → add EEE. Now {A,B,C,D,E}\\\\{A, B, C, D, E\\\\}{A,B,C,D,E}. No more changes possible.\n\nSo {A,C}+={A,B,C,D,E}\\\\{A, C\\\\}^+ = \\\\{A, B, C, D, E\\\\}{A,C}+={A,B,C,D,E} — which means {A,C}\\\\{A, C\\\\}{A,C} determines _every_ attribute of RRR. That makes {A,C}\\\\{A, C\\\\}{A,C} a **superkey** of RRR.\n\n\n#### Using Closure to Find Candidate Keys\n\nDefinition (recap): a candidate key of RRR is a minimal superkey. To find one:\n\n  1. Start with a candidate set XXX (often all attributes).\n  2. For each attribute A∈XA \\in XA∈X, check: does X−{A}X - \\\\{A\\\\}X−{A} still have closure =R= R=R? \n     * If yes, remove AAA from XXX.\n     * If no, AAA is essential — keep it.\n\nWorked example, continuing from above (R(A,B,C,D,E)R(A, B, C, D, E)R(A,B,C,D,E) with FDs A→BA \\rightarrow BA→B, BC→DBC \\rightarrow DBC→D, D→ED \\rightarrow ED→E):\n\nStart with {A,B,C,D,E}\\\\{A, B, C, D, E\\\\}{A,B,C,D,E} (all attributes). Clearly this is a superkey. Now prune:\n\n* Drop EEE? {A,B,C,D}+=?\\\\{A, B, C, D\\\\}^+ = ?{A,B,C,D}+=? {A,B,C,D}\\\\{A,B,C,D\\\\}{A,B,C,D} already includes DDD, and D→ED \\rightarrow ED→E, so closure is {A,B,C,D,E}\\\\{A,B,C,D,E\\\\}{A,B,C,D,E}. Superkey. Remove EEE.\n* Drop DDD? {A,B,C}+=?\\\\{A, B, C\\\\}^+ = ?{A,B,C}+=? A→BA \\rightarrow BA→B already covered. BC→DBC \\rightarrow DBC→D — {B,C}⊆{A,B,C}\\\\{B,C\\\\} \\subseteq \\\\{A,B,C\\\\}{B,C}⊆{A,B,C}, so DDD added. Then D→ED \\rightarrow ED→E, so EEE added. Closure === all five. Superkey. Remove DDD.\n* Drop BBB? {A,C}+\\\\{A, C\\\\}^+{A,C}+ — we computed this above: all five attributes. Superkey. Remove BBB.\n* Drop AAA? {C}+\\\\{C\\\\}^+{C}+ — CCC alone, no FDs fire, closure is {C}\\\\{C\\\\}{C}. Not a superkey. Keep AAA.\n* Drop CCC? {A}+\\\\{A\\\\}^+{A}+ — A→BA \\rightarrow BA→B gives {A,B}\\\\{A, B\\\\}{A,B}. BC→DBC \\rightarrow DBC→D requires CCC, so it doesn't fire. Closure is {A,B}\\\\{A, B\\\\}{A,B}. Not a superkey. Keep CCC.\n\nCandidate key: {A,C}\\\\{A, C\\\\}{A,C}. Minimal superkey — removing either AAA or CCC destroys the superkey property.\n\nIf you need to find _all_ candidate keys (not just one), you search systematically: try attribute subsets of increasing size, checking closures. For small schemas, this is feasible by hand. For large schemas, it is done mechanically.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1460,
+      "out_sha": "42c80db95d59",
       "note": ""
     },
     {
