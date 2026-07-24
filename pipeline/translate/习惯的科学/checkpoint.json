@@ -3175,11 +3175,11 @@
       "en_title": "Chapter 11: Tiny Wins and Substitution",
       "order": 258,
       "src_chars": 2970,
-      "status": "pending",
+      "status": "done",
       "src_sha": "94d4488f24d2",
       "src": "### Chapter Summary\n\nThis chapter introduced two related structural tools for the procedural-system-level toolkit. **Tiny starts** — anchored to existing strong cues via habit stacking — solve the consolidation problem in installing new behaviors. The procedural system encodes cue-response pairs through repetition in stable contexts; the magnitude of the response matters much less than the consistency of execution; _one pushup, every day, after teeth-brushing, for 60 days will install a robust cue-response link_ , and the response can scale organically once the link is consolidated.\n\nWe were honest about **the limits of tiny starts** : not all behaviors scale from tiny (writing a few words a day installs the habit but may not produce good writing); tiny doesn't compensate for adversarial environments; some behaviors require substantive minimum size; and Fogg's claim that all tiny habits scale is overclaimed. _Calibrate enthusiasm; use the technique for what it's for._\n\n**Substitution** is the structural answer to mature habit-breaking, given the un-erasable nature of habits (Chapter 5). When a cue cannot be removed, the only real alternative to suppression is to link the cue to a different response and repeat in the cue's presence until the new pairing consolidates. Substitution beats suppression on speed (the substitute fires as fast as the old response); cost (no sustained inhibition required); reinforcement (a new pattern is being installed rather than the same battle being fought repeatedly); catastrophizing (no abstinence-violation effect); and cue weakening (the old response stops being executed).\n\nThe critical concept for designing substitutes: **function-matching**. Substitutes must serve the same psychological function the original was serving, not just be \"healthier alternatives.\" Most failed substitutions fail because the alternative doesn't function-match. The honest version: identify what the habit is actually doing for you (comfort, distraction, ritual, social ritual, oral fixation, etc.), then design a substitute that serves that function through a different mechanism. _The function-matching is the leverage; the substantive improvement is the bonus._\n\nWe presented a **worked example** combining all four Part III tools: choice architecture (delete the app, remove the cue), implementation intentions (pre-script the if-then plan), substitution (function-matched alternative), and tiny starts (install the new positive behavior at tiny scale). This is what the structural toolkit looks like in operation: not heroic, not requiring willpower, mostly invisible from the outside, and producing sustained change in a way that motivation-based or suppression-based approaches do not.\n\nThread B's specific exercise: audit the _function_ each of your bad habits is serving, then design function-matched substitutes. This is one of the most useful diary exercises in the book and the foundation for substitution-based change.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 836,
+      "out_sha": "d323ad0ad7cc",
       "note": ""
     },
     {
@@ -3187,11 +3187,11 @@
       "en_title": "Chapter 11: Tiny Wins and Substitution",
       "order": 259,
       "src_chars": 962,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1ddbfc68080a",
       "src": "Chapter 12 closes Part III by **calibrating identity-based change** — what James Clear's _Atomic Habits_ framing gets right (self-perception theory has a real role) and where it overclaims (identity-based change is a supporting tool, not the master mechanism). With Chapter 12's calibration, Part III's toolkit will be complete: implementation intentions, choice architecture, tiny starts, substitution, and identity (calibrated). Part IV will then be about stacking: how to deploy these tools together across the most consequential habits in your life, and the political question of who designed your environment in the first place.\n\n* * *\n\n_This week, your assignment: for each bad habit in your three-habit diary, write down the function it is serving, then design a function-matched substitute. Write the substitute as an implementation intention. Execute consistently for the week and note in your diary which substitutes work and which need refining._\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 305,
+      "out_sha": "9a74617762f6",
       "note": ""
     },
     {
@@ -3199,11 +3199,11 @@
       "en_title": "Chapter 12: Identity and Its Limits",
       "order": 260,
       "src_chars": 2486,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7950fb22e94b",
       "src": "In 2018, a former marketing executive named James Clear published _Atomic Habits_ , and the book became one of the most popular self-help titles of the past decade. By most counts, more than 15 million copies have sold; the book has been translated into many languages; its core ideas have entered popular discourse in ways few self-help books achieve. Many readers, after _Atomic Habits_ , started thinking about their behavior in terms Clear made vivid — _cast a vote for the type of person you want to be; be one percent better every day; build systems, not goals; identity is the foundation of habit change._\n\nClear's book has done genuine good in the world. It has popularized real ideas, offered useful tools, and helped many people start thinking more clearly about their behavior. The chapter you are reading is not a hatchet job on _Atomic Habits_ , and it would be foolish to pretend otherwise. **But Clear's framework is also overclaimed in important ways** , particularly around identity-based change, and getting the calibration right is the work of this chapter.\n\nThe chapter has three goals. _First_ , to credit what Clear got right — the genuine psychology behind self-perception theory and the real role identity plays in habit change. _Second_ , to be specific about where the framework exceeds the evidence — particularly the claim that identity is the _foundation_ of habit change, which is stronger than the data supports. _Third_ , to place identity in its correct role within the broader toolkit: as a **supporting tool** , especially valuable in early habit establishment and slip-up resilience, but not the master mechanism that Clear sometimes makes it sound.\n\nThis is the closing chapter of Part III. With it, the calibrations of the popular literature are mostly complete: Duhigg in Chapter 3, Fogg in Chapter 11, Baumeister in Chapter 8, and now Clear here. The chapter's posture, like the others, is **calibration, not contempt.** Each of these authors has done real work that has helped real people; each has also pushed claims further than the evidence supports; the goal is to give the reader a more accurate map without losing the part that drew them to those books in the first place.\n\nBy the end, the reader should be able to use identity-based framing where it works (early establishment, slip resilience), recognize where it doesn't (as a substitute for context and structure), and integrate it into the broader toolkit Part III has been building.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 809,
+      "out_sha": "ac2e32fc1e33",
       "note": ""
     },
     {
@@ -3211,11 +3211,11 @@
       "en_title": "Chapter 12: Identity and Its Limits",
       "order": 261,
       "src_chars": 3348,
-      "status": "pending",
+      "status": "done",
       "src_sha": "19ca88ad46c2",
       "src": "### 12.1 What Clear Got Right\n\nLet's start with credit, because the pieces of Clear's framework that are well-supported are genuinely useful and shouldn't be lost in the calibration.\n\n**1\\. The cue-craving-response-reward formulation.**\n\nClear's \"four laws of behavior change\" — make it obvious, make it attractive, make it easy, make it satisfying — are a usable popularization of the underlying behavioral science. The cue-craving-response-reward framework Clear uses is essentially Duhigg's cue-routine-reward sharpened by an explicit treatment of the wanting (craving) component. We addressed this in Chapter 3, where we noted that the precise version (dopamine prediction error, cue-locked wanting in mature habits) is more accurate than either Duhigg's or Clear's popularizations — but Clear's framing is closer to the modern view than Duhigg's, and it offers a more mechanism-aware vocabulary for practical purposes.\n\n**2\\. The systems-not-goals framing.**\n\nClear emphasizes that goals are downstream of systems — that \"winners and losers have the same goals\" but different systems for actually getting there. This is broadly consistent with the structural-architecture framing this book has been advocating since Chapter 1. The distinction between \"I want to lose 20 pounds\" (a goal, weakly predictive of outcomes) and \"I have a structural setup that defaults me into healthy eating and regular exercise\" (a system, strongly predictive of outcomes) is real, and Clear popularized it well.\n\n**3\\. The 1%-better-every-day framing.**\n\nThe compounding-of-small-improvements idea is mathematically real and motivationally useful. _Sustained small structural improvements, executed daily, compound into substantial change over years._ This is consistent with the Lally data on habit formation timelines (Chapter 8) and with everything the book has been arguing about the slow nature of structural change. Clear gets this right.\n\n**4\\. Habit-stacking as a tool.**\n\nClear popularizes habit-stacking (\"after I [existing habit], I will [new habit]\") as a deliberate technique, which we covered in Chapter 11. The technique is structurally well-founded — borrowing the reliability of an existing cue is a legitimate way to install new behaviors. Clear's version is functional and accessible.\n\n**5\\. Environment design.**\n\nClear includes substantial discussion of the role of the physical environment in shaping behavior — the kitchen layout, the phone position, the visibility of cues. This is consistent with the choice-architecture framing of Chapter 10 and is one of the parts of Clear's book that is most aligned with what the data supports.\n\n**6\\. Self-perception and identity (with calibration).**\n\nThis is the part of Clear's framework that we'll spend most of the chapter on, because it's the part that is most overclaimed. _There is a real psychological mechanism_ — self-perception theory — _that supports a role for identity-based change._ Clear correctly identifies that this mechanism exists and integrates it into his framework. The calibration is about _how big_ a role it plays.\n\nThe summary: a substantial fraction of _Atomic Habits_ is well-supported and useful. The book has been a net positive contribution to popular behavior-change literature. The calibration is targeted at specific overclaims, not at the framework as a whole.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1080,
+      "out_sha": "2563446fb8ee",
       "note": ""
     },
     {
@@ -3223,11 +3223,11 @@
       "en_title": "Chapter 12: Identity and Its Limits",
       "order": 262,
       "src_chars": 2817,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f0ec8cebefc7",
       "src": "### 12.2 Self-Perception Theory: The Real Mechanism\n\nNow to the mechanism behind identity-based change. The relevant psychology is **self-perception theory** , originally articulated by Daryl Bem in 1972, and the subsequent decades of research that have refined and qualified it.\n\nThe core claim of self-perception theory: **people often infer their own attitudes and identities from observing their own behavior** , much as they would infer someone else's attitudes from observing their behavior. We don't always know our own minds directly; we sometimes figure out what we think by noticing what we do.\n\nThe classic illustration: in a series of experiments through the 1970s and beyond, participants who were induced to perform certain actions (e.g., by small incentives or framing) often shifted their stated attitudes to match the actions. _People who acted as if they cared about something started to actually care about it more._ The behavior, even when initially produced by external nudges, fed back into self-understanding and updated the stated attitude.\n\nFor habit change, the implication is real and useful: **performing the behavior of \"a person who exercises\" can, over time, shift your self-description toward \"I am a person who exercises,\" and this self-description can then support continued execution of the behavior.** The mechanism is bidirectional in some sense — behavior shapes identity, and identity supports behavior — and the bidirectionality, when set up correctly, can produce a virtuous loop.\n\nThe empirical support for this mechanism is solid. People who, after some initial period of behavior change, describe themselves in identity terms (\"I'm a runner\") show somewhat lower relapse rates than people who describe themselves in goal terms (\"I'm trying to run more\"). The effect size is moderate, the literature is consistent, and the mechanism is plausible.\n\nThis is the part of Clear's framework that is well-supported. **Identity is real, identity matters, and shifting one's self-description can support sustained behavior change.**\n\nThe question is _how big_ a role identity plays. This is where the calibration starts.\n\n\n### 12.3 What Clear Overclaims\n\nHere is the central proposition of Clear's identity-based framework, in his words and in the popular interpretation that has spread from his book: _\"The most effective way to change your habits is to focus not on what you want to achieve, but on who you wish to become. ... Every action you take is a vote for the type of person you wish to become.\"_\n\nThis is a strong claim. The strong version says: **identity-based change is the foundation of behavior change** ; behavior follows from identity; the way to change behavior is to change who you understand yourself to be.\n\nThe data does not, in its strong form, support this.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 828,
+      "out_sha": "8c31c489d29d",
       "note": ""
     },
     {
