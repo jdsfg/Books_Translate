@@ -655,11 +655,11 @@
       "en_title": "Chapter 5: The Ladder of Occupations",
       "order": 46,
       "src_chars": 2028,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6626e3a4c012",
       "src": "#### Concept Check\n\n**Q1.** Explain the difference between thinking of class as a _team_ and thinking of it as a _height_. Which views from Part 1 correspond to each?\n\nHint\n\nOne view sorts people into discrete categories with boundaries; the other arrays them along a smooth scale.\n\n**Answer:** Thinking of class as a _team_ is the relational/discrete approach: people belong to distinct categories (Marx's owners vs. sellers of labor) separated by real boundaries, and there is a meaningful \"side\" you are on. Thinking of class as a _height_ is the **gradational** approach: people are arrayed along a continuous ladder of resources (occupation, income, education, summarized as SES), with no natural boundaries, only higher and lower positions, so any line like \"middle class\" is a convenience rather than a natural joint. Marx is the clearest \"team\" view; the gradational/SES tradition is the \"height\" view; Weber sits in between, with distinct dimensions that are more team-like for status groups but gradient-like for market situation. The everyday language of \"moving up\" is implicitly gradational.\n\n**Q2.** Why does occupation work so well as a single indicator of gradational class?\n\nHint\n\nWhat does a job bundle together that would otherwise take several separate questions to capture?\n\n**Answer:** Occupation works well because a single job _bundles_ together many things that matter for class: income, the education typically required, working conditions, job security, and social standing. Asking one observable question (what is your job?) captures, in compressed form, much of what would otherwise require several separate measurements. This is also why occupational _prestige scales_ , rankings of jobs by accorded esteem, turn out to be strikingly stable across time and across different societies: the bundle that occupation represents is broadly legible everywhere. Income and education are then added to capture what occupation alone misses, forming the combined SES measure that anchors most empirical work.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 702,
+      "out_sha": "70ba7ac8329d",
       "note": ""
     },
     {
@@ -667,11 +667,11 @@
       "en_title": "Chapter 5: The Ladder of Occupations",
       "order": 47,
       "src_chars": 2713,
-      "status": "pending",
+      "status": "done",
       "src_sha": "74954e721db6",
       "src": "#### Application Problems\n\n**Q1.** A researcher measures class purely as SES and reports: \"We find no evidence of class conflict; inequality is simply a smooth gradient of outcomes.\" Using the chapter's argument about instruments and blind spots, explain what is wrong with this conclusion.\n\nHint\n\nCould the instrument she chose even _detect_ conflict if it existed? What follows about her conclusion?\n\n**Answer:** The conclusion confuses a limit of the instrument with a fact about the world. The gradational SES measure represents class as a _continuum_ , which by construction has no categories for _relationships_ or _opposed interests_ ; it can detect distances along a ladder but not fault lines of conflict. So finding \"no class conflict\" with an SES instrument is exactly what you would expect _whether or not_ conflict exists, because the instrument cannot see conflict either way. The researcher has discovered the blind spot of her chosen tool, not the absence of the phenomenon. To investigate conflict and opposed interests, she would need a relational (Marxian) lens that has categories for them. The honest move is to state which definition is doing the work and to remain aware of what that definition cannot register, rather than promoting a tool's silence into a finding.\n\n**Q2.** Two newspaper articles both discuss \"the decline of the working class.\" One uses \"working class\" to mean Marx's sellers of labor; the other uses it to mean a band of lower-prestige, lower-income occupations. Give one concrete way these two articles could reach _opposite_ conclusions about whether the working class is \"shrinking,\" even with the same underlying society.\n\nHint\n\nThink about salaried professionals: are they \"sellers of labor\"? Are they \"lower-prestige occupations\"?\n\n**Answer:** Consider the growth of salaried professionals and managers (engineers, nurses, analysts). In the _Marxian_ sense, most of these people are _sellers of labor_ , they own no significant means of production, so by that definition the working class could be _growing_ or holding steady as such jobs expand. In the _gradational/prestige_ sense, those same jobs are _higher-SES, higher-prestige_ positions, not \"working class\" at all, so by that definition the working class (the lower-prestige band) could be _shrinking_ as employment shifts toward professional work. Same society, same people, opposite conclusions, purely because \"working class\" names two different populations under the two definitions. This is the chapter's central practical warning: always ask which definition of class a claim is using, because much public confusion about inequality is people talking past each other with one word and two meanings.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 894,
+      "out_sha": "ed0182b1bf70",
       "note": ""
     },
     {
@@ -679,11 +679,11 @@
       "en_title": "Chapter 5: The Ladder of Occupations",
       "order": 48,
       "src_chars": 2821,
-      "status": "pending",
+      "status": "done",
       "src_sha": "989544fbac5a",
       "src": "#### Think Deeper\n\n**Q1.** Part 1 ends by claiming that the _contest over how to define class is itself the first real finding_ , not a failure of the field. Do you find this convincing? Could a critic reasonably argue that a science which cannot agree on its central term is in trouble? Make the strongest case on each side.\n\n**Discussion:** This question invites you to weigh a genuine methodological dispute, and both sides have real force.\n\nThe case _for_ the chapter's claim: \"class\" is not a natural kind like an element on the periodic table; it is a concept we impose to carve up a continuous, tangled social reality. That reality genuinely contains relationships of ownership _and_ a gradient of resources _and_ distinct dimensions of honor and power, all at once. So the existence of three durable, useful definitions is not a scandal but an accurate reflection of a multifaceted object: each definition is true to part of the thing and silent about the rest. On this view, demanding a single correct definition would be like demanding a single correct projection of the globe onto a flat map; every projection distorts something, and the right one depends on your purpose. The \"disagreement\" is really a division of labor among complementary tools.\n\nThe case _for_ the critic: a field that cannot pin its central term risks letting the choice of definition do its arguing for it, quietly smuggling conclusions into premises. If one can reach opposite findings about \"the working class\" by switching definitions (as the previous exercise showed), then loose talk about \"class\" can be used to prove almost anything, and the looseness can shelter ideological preference behind a veneer of measurement. A demand for more discipline, clear definitions, stated up front, with their limits acknowledged, is not philistine; it is the difference between a science and a vocabulary for opinions. A critic might add that the natural sciences also study multifaceted things yet manage tighter operational definitions, and that sociology's tolerance for definitional drift sometimes excuses imprecision.\n\nA reasonable synthesis is that _both_ are right, and the resolution is procedural rather than substantive: the multiplicity of definitions is legitimate and even necessary (the chapter's point stands), _and_ it imposes a strict obligation the critic rightly demands, that every claim about class must name which definition it uses and stay honest about what that instrument cannot see. The danger the critic fears is real, but the cure is not a forced single definition; it is transparency about which tool is in hand. That obligation, to always ask \"which definition is doing the work here?\", is exactly the discipline Part 1 was built to install, and you will exercise it on every statistic in the chapters to come.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 908,
+      "out_sha": "acee392de405",
       "note": ""
     },
     {
@@ -691,11 +691,11 @@
       "en_title": "Chapter 5: The Ladder of Occupations",
       "order": 49,
       "src_chars": 2207,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fe48a3afd880",
       "src": "### Chapter Summary\n\nWe completed the conceptual map of \"class\" with the **gradational view** : class as a continuous ladder of measurable resources, occupation, income, and education, summarized as **socioeconomic status (SES)**. Unlike Marx's relational categories or Weber's three dimensions, it treats class like _height_ rather than _team membership_ , with no natural boundaries. Its great virtue is measurability, which is why it is the quiet workhorse behind nearly all the data in the rest of the book; **occupation** is a powerful single indicator because it bundles income, education, conditions, security, and standing, and occupational prestige scales prove strikingly stable across societies.\n\nThe chapter's central lesson works through its consequences: measure class with the gradational SES instrument alone and you will tend to conclude there is no class _conflict_ , not because none exists but because a continuum has no category for opposed interests, while the relational view that does see the fault line of ownership blurs the rich middle gradient, and Weber's dimensions that catch honor and power diverging from money resist clean measurement. Each instrument quietly fixes what you are equipped to notice. Asking which definition is simply \"correct\" is the wrong question; the right one is always \"correct for what purpose?\", and the skilled analyst chooses the instrument to fit the question while staying aware of its blind spots, so as not to mistake a tool's silence for a fact about the world.\n\nWe closed Part 1 by reframing the apparent embarrassment, three definitions, no single truth, as the field's first real finding: \"class\" is a multifaceted concept carving a tangled reality, and the contest over it is honest rather than defective. The practical upshot, which you will use on every statistic ahead, is to always ask _which definition is doing the work_. This connects back to Chapter 2's discipline of stating exactly what a number measures, and forward to Part 2, where the abstractions become flesh: how position, measured mostly as this gradational ladder, shapes the most intimate life chances of all, beginning with health and the length of a life.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 770,
+      "out_sha": "be55cb35b66c",
       "note": ""
     },
     {
