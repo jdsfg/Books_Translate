@@ -5,6 +5,7 @@
 close reading | 细读 |
 close-reading | 细读 |
 narrator | 叙述者 |
+author | 作者 |
 point of view | 视角 |
 omniscient narrator | 全知叙述者 |
 omniscience | 全知 |
