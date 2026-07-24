@@ -1039,11 +1039,11 @@
       "en_title": "Chapter 5: Habits Don't Get Erased",
       "order": 80,
       "src_chars": 2361,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0cb444860df7",
       "src": "### 5.2 What \"Consolidation\" Means\n\nLet's get a little more precise about what's actually stored in the dorsal striatum after thousands of repetitions.\n\nIn the early phase of any new behavior, performing the behavior involves a relatively scattered network of brain activity: the prefrontal cortex deliberating, the caudate processing goal-related information, the dorsal striatum beginning to encode the cue-response pair, the cerebellum coordinating the motor execution, the sensory cortices providing input. The behavior is \"working\" but it is not yet a unified, low-cost program. Cognitive load is high.\n\nAs the behavior is repeated in stable contexts, several things happen. The prefrontal cortex backs off — it no longer needs to deliberate moment-by-moment. The dorsal striatum's encoding of the cue-response pair strengthens through long-term potentiation (the synaptic process by which connections become more efficient through repeated activation). The pattern gets _chunked_ into a single executable program. Eventually, in a fully consolidated habit, the dorsal striatum can launch the entire behavioral sequence on a single cue, with minimal involvement from the rest of the brain.\n\nThis consolidation is **structural**. The synaptic connections that encode the cue-response pair are physical features of the brain. They have been laid down over time, through repeated co-activation, in a way that reflects the basic biology of how neurons learn (\"cells that fire together wire together,\" in the popular slogan, with appropriate caveats).\n\nThe structural nature of consolidation is what makes it so durable. **You do not have a representation of the habit; you have a connection.** Connections, once made, do not unmake themselves. They can become silent (the connection is still there but the cue isn't firing it), or they can be overwritten by competing connections (a different cue-response pair gets practiced in the same context, gradually outcompeting the old one), but they do not, on the available evidence, simply disappear.\n\nThis is why, in the smoker's brain decades after quitting, the imaging still shows the circuit. The synapses are there. They were laid down by years of practice. Time alone does not unbuild them. Cue absence makes them dormant. But put the cues back, and the circuit responds — because it never stopped existing.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 681,
+      "out_sha": "6b82146f8a04",
       "note": ""
     },
     {
@@ -1051,11 +1051,11 @@
       "en_title": "Chapter 5: Habits Don't Get Erased",
       "order": 81,
       "src_chars": 1243,
-      "status": "pending",
+      "status": "done",
       "src_sha": "be924241d10b",
       "src": "#### Definition: Habit Dormancy\n\nA habit's circuit is **dormant** when its cues are not present often enough to activate it, but the underlying structural connections in the dorsal striatum (and supporting regions) remain intact. A dormant habit is not the same as a deleted habit. The behavioral output may be entirely absent, the person may correctly describe themselves as no longer having the habit, and the habit may stay dormant for years — but the circuit is still wired and can still fire if its cues return.\n\nIn plain language, this means: the smoker who quit fifteen years ago, in their day-to-day life, is genuinely a non-smoker — they don't smoke, they don't think about smoking, they have no behavioral indicator of smoking. Their habit is dormant. But they carry the habit's circuit with them, and in a sufficiently provocative cue context (the right bar, the right friend, the right level of stress, the right moment), the circuit can light up. Whether or not the response follows is a different question; but the wanting can fire as if the fifteen years had not happened.\n\nThis concept will keep coming up. It is one of the most clarifying ideas in habit science, and it is one of the least known outside of clinical contexts.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 370,
+      "out_sha": "6339b0c15e81",
       "note": ""
     },
     {
@@ -1063,11 +1063,11 @@
       "en_title": "Chapter 5: Habits Don't Get Erased",
       "order": 82,
       "src_chars": 3333,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b6baf0c37c5b",
       "src": "### 5.3 The House-Move Studies, Briefly\n\nWendy Wood's research, which we'll cover in detail in Chapter 6, includes a remarkable line of work on what happens when people move. The result is striking enough that it deserves a preview here, because it is so directly tied to the un-erasable-but-context-dependent nature of habits.\n\n**When people move house, they lose, on average, about 60% of their prior habits.** Not improve them — _lose them._ The behavior simply stops happening. It is replaced, over the following weeks, by new habits that fill the same functional slots but with different cues, different responses, and different reinforcement histories.\n\nThis finding has been replicated across many studies. The student who moves from home to university dorms loses much of their prior daily routine and acquires a new one; the same person, ten weeks later, exercises differently, eats differently, sleeps differently, watches different things. The professional who relocates for a job loses or replaces a substantial fraction of their habits in the first few months. The spouse who moves into a partner's house loses many of their prior single-person habits.\n\n**Why does this happen?** Because the cues that supported the old habits are no longer there. The dorsal striatum's stored cue-response pairs require the cues to fire. Move the body to a new context, and most of the old cues are absent — the same kitchen layout is gone, the same morning sequence is gone, the same neighborhood is gone, the same social environment is gone. The old habits are still consolidated in the brain (they are dormant), but they are not firing because their cues are missing. New cues are present in the new environment, and over the first few weeks, new cue-response pairs get built up to handle the new contexts.\n\nThis is _not_ a change in the person's character. It is a change in the person's cues. The same person who was \"lazy about exercise\" in one apartment becomes \"a person who walks every morning\" in the new apartment with the park across the street. The dispositional language (\"lazy,\" \"disciplined\") was misleading the whole time; what changed was not the person but the cue environment.\n\nThe clinical implication for habit change is immediate. **One of the highest-leverage moves in habit change is environmental change** — relocate the body to a context where the old cues are absent. This is most dramatic in the case of relocation, but it generalizes: changing rooms, changing rituals around a target behavior, changing routes, changing social contexts — each is a partial relocation, and each weakens the old cue's grip in proportion to how thoroughly the relocation is executed.\n\nConversely, attempting to break a habit while remaining in the same environment that supported it is fighting an unfair fight. The cues are still there, firing the dormant circuit, every day. The willpower-based override has to be deployed many times per day, indefinitely, against a system that doesn't take willpower as input. Most people who try this lose.\n\nWe'll see Wood's data in detail next chapter. The framing for this chapter: **moving the body to a new context is the closest practical equivalent to \"deleting\" a habit, even though, technically, the circuit is still in the brain — just not firing because no cue is calling it.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 937,
+      "out_sha": "c5dab2d61ef1",
       "note": ""
     },
     {
@@ -1075,11 +1075,11 @@
       "en_title": "Chapter 5: Habits Don't Get Erased",
       "order": 83,
       "src_chars": 3099,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f052440f4f27",
       "src": "### 5.4 The Bad News and the Good News, Together\n\nNow the move that, when fully internalized, restructures most readers' relationship to habit change.\n\n**Bad news first.** What you \"broke\" was suppressed, not erased. The first relapse is not a return to zero; it is the dormant circuit reactivating. Stress, return to old environment, lowered guard — any of these can wake the circuit up. The circuit will respond as if it had never stopped. _This is not weakness; this is neuroscience._ The wanting system was trained over years to fire at the cues, and it will keep doing so until either the cues are removed, the cue-response pair is overwritten by a stronger competing pair, or the person is no longer in the cue's range.\n\nThis is hard news for most readers, especially readers who have invested heavily in a \"delete the habit\" framing. The investment in that framing is, in a sense, what produces the catastrophizing response to relapse — _I thought I had this beaten; I must not really be a different person; I'm back to square one._ All three of these conclusions are wrong, in ways the chapter's framework can correct. You did not have it beaten in the sense of deletion; nobody can have a habit beaten in that sense. You are not \"back to square one\" — your years of behavior change built up a great deal of overwriting and substitute-response practice, none of which has been undone by a single slip. And you are, in fact, a different person — your procedural patterns have been substantially reshaped by years of practice — but in a way that includes, within the same person, the old dormant circuits that can wake up under the right cues. Both are you. The work is to keep the cues from being met.\n\n**Good news, second.** _You don't need to delete a habit to be free of it. You only need to ensure the circuit is never triggered, or never followed when triggered._ This is a much more achievable goal.\n\nThree structural moves operate on this principle, and all three are within your power:\n\n  1. **Remove the cues from your environment.** This is the cleanest move and the one most tied to the un-erasability fact. If the cigarette is not in the house, the response is much less likely to fire. If the bar is not on the route home, the cue-locked craving has nothing to fire about. If the app is deleted, the notification cue does not arrive. Each removal reduces the probability of triggering by orders of magnitude. (We'll see specific tools in Chapters 9, 10, and 11.)\n\n  2. **Add friction between cue and response.** When the cue cannot be removed (some cues are in your body, your social network, the unavoidable structure of your life), make the response slower. The cigarettes are in a high cabinet that requires a chair. The phone requires unlocking with a long passcode. The cabinet of snacks is in a room you don't naturally pass through. Each unit of friction is a unit of opportunity for the goal-directed system to come online and intervene. The procedural system runs in tens of milliseconds; if friction adds five seconds, you have created a window for the deliberate self.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 938,
+      "out_sha": "490a0f99acce",
       "note": ""
     },
     {
@@ -1087,11 +1087,11 @@
       "en_title": "Chapter 5: Habits Don't Get Erased",
       "order": 84,
       "src_chars": 2610,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2fb413fa5955",
       "src": "  3. **Re-link the cue to a different response.** When the cue does fire, have a substitute response ready that fires faster than the old one. The smoker who, when offered a cigarette, says \"no thanks, I'm getting water\" and walks to the water cooler — the substitute response is pre-scripted, practiced, and ready. Each execution of the substitute strengthens the new cue-response pair and weakens (relatively) the old one. The old circuit doesn't get deleted, but it gets outcompeted in the moment.\n\nNotice what these three moves have in common: **they all act on the cue-response link, not on the underlying circuit.** The circuit is still there. It is dormant or interrupted, but it remains. The work is at the level of which cues are encountered and which responses follow. This is the procedural-system-language version of \"I have changed.\"\n\n\n#### Common Misconception: \"If I really committed, I'd be done with this for good\"\n\nA close cousin of the deletion fantasy is the belief that _real_ change should be permanent, internal, and not require ongoing environmental support. Phrases like \"I'm just going to commit\" or \"I shouldn't need help with this anymore\" are markers of this belief.\n\nThe belief is structurally wrong. **Permanent, internal, environmentally-unsupported habit change is not what successful habit change actually looks like.** Successful long-term change, on the available evidence, looks like:\n\n* Stable environmental structures that minimize cue exposure for the unwanted habit.\n* Practiced substitute responses that fire reliably when cues do appear.\n* Social structures that reinforce the new patterns (community, accountability, witnesses).\n* Ongoing, light-touch attention to the cue-response architecture, with periodic adjustments as life circumstances shift.\n\nPeople who have maintained sobriety, stayed off cigarettes, kept up exercise habits, or sustained any other major behavioral change over years almost universally describe their lives in these terms. The change required, and continues to require, structural support. They do not describe their change as a one-time act of will that produced a permanent internal transformation — because that is not how habit change actually works.\n\nThe belief that change should be permanent and unsupported is a kind of folk theory, inherited from a culture that overstates \"willpower\" and understates context. Letting it go is one of the most useful intellectual moves a reader can make. _Real change is structural, not heroic._ The structures need maintenance, not because the person is weak but because the brain is the brain.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 779,
+      "out_sha": "3fa26613eac1",
       "note": ""
     },
     {
