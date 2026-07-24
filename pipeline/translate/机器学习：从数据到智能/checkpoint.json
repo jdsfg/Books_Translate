@@ -1079,11 +1079,11 @@
       "en_title": "Chapter 9: Decision Trees — Learning by Asking Questions",
       "order": 80,
       "src_chars": 2248,
-      "status": "pending",
+      "status": "done",
       "src_sha": "dc757bfb44f8",
       "src": "#### Definition: Entropy and Information Gain\n\nAlternatively, use **entropy** (from information theory):\n\nH=−∑k=1Kpklog⁡2pkH = -\\sum_{k=1}^K p_k \\log_2 p_kH=−k=1∑K​pk​log2​pk​\n\nwhere 0log⁡200 \\log_2 00log2​0 is defined as 0. H=0H = 0H=0 for a pure node; H=1H = 1H=1 for a perfectly mixed binary node.\n\n**Information gain** of a split is the reduction in entropy:\n\nIG=H(parent)−[nLnH(left)+nRnH(right)]\\text{IG} = H(\\text{parent}) - \\left[\\frac{n_L}{n} H(\\text{left}) + \\frac{n_R}{n} H(\\text{right})\\right]IG=H(parent)−[nnL​​H(left)+nnR​​H(right)]\n\nwhere nL,nRn_L, n_RnL​,nR​ are the sizes of the left and right children, and n=nL+nRn = n_L + n_Rn=nL​+nR​. Gini impurity and entropy typically produce similar trees in practice; the choice rarely matters.\n\n\n#### Definition: Variance Reduction (for Regression)\n\nFor regression trees, use **variance reduction** as the split criterion:\n\nΔV=Var(parent)−[nLnVar(left)+nRnVar(right)]\\Delta V = \\text{Var}(\\text{parent}) - \\left[\\frac{n_L}{n}\\text{Var}(\\text{left}) + \\frac{n_R}{n}\\text{Var}(\\text{right})\\right]ΔV=Var(parent)−[nnL​​Var(left)+nnR​​Var(right)]\n\nChoose the split that maximizes variance reduction — the split that makes the labels in each child as homogeneous as possible.\n\n**The greedy algorithm:** At each node, evaluate all possible splits (all features, all possible split values within each feature) and choose the one with the highest information gain or variance reduction. This is a greedy approach — it doesn't guarantee the globally optimal tree, but finding the globally optimal tree is NP-hard.\n\n**Finding split values:** For a continuous feature with nnn values, there are n−1n-1n−1 possible splits. Evaluate all of them and pick the best. For categorical features, try all possible binary partitions of categories.\n\n\n#### Common Misconception\n\nStudents often think that choosing the best split at each step (greedy approach) produces the globally optimal tree. It does not. A mediocre first split might enable better subsequent splits that together outperform any tree built from an \"optimal\" first split. This is a fundamental limitation of greedy algorithms. However, the globally optimal tree problem is computationally intractable, so the greedy approach is the standard.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 840,
+      "out_sha": "9165aab20193",
       "note": ""
     },
     {
@@ -1091,11 +1091,11 @@
       "en_title": "Chapter 9: Decision Trees — Learning by Asking Questions",
       "order": 81,
       "src_chars": 2101,
-      "status": "pending",
+      "status": "done",
       "src_sha": "00ea30731032",
       "src": "### 9.3 Overfitting and Tree Regularization\n\nA fully grown tree (where every leaf contains a single example) achieves zero training error. But it has memorized the training data completely — one leaf per training example, just reproducing the training labels. This is extreme overfitting.\n\nDecision trees have high variance: small changes in the training data produce very different trees (the greedy algorithm is highly sensitive to the training examples present at each node).\n\nSeveral techniques prevent overfitting:\n\n**Maximum depth:** Limit the tree to at most ddd levels. The most important hyperparameter. Typical values: 3–10 levels for interpretable models; up to 20–30 for ensemble models (Chapter 10).\n\n**Minimum samples per leaf:** Require each leaf to contain at least nminn_\\text{min}nmin​ training examples. This prevents creating leaves that represent just 1-2 noisy examples.\n\n**Minimum information gain:** Only split if the best available split achieves at least ϵ\\epsilonϵ information gain. If no split is informative enough, stop.\n\n**Pre-pruning vs. post-pruning:** Pre-pruning stops growing early (using the criteria above). Post-pruning grows the full tree then collapses back leaves that don't improve validation performance — more principled but computationally expensive.\n\nThe right hyperparameters are chosen by cross-validation (Chapter 8). Typically: tune max depth and minimum leaf size simultaneously.\n\n\n### 9.4 Classification Trees\n\nFor classification, the same recursive partitioning algorithm applies, using information gain or Gini impurity as the split criterion. The leaf prediction is the majority class among training examples in that leaf, or the full class probability distribution.\n\n**Class probability estimation:** A leaf containing 8 positive examples and 2 negative examples predicts class 1 with probability 80%. This probability estimate can be used directly as a soft classifier output.\n\n**Multi-class trees:** Decision trees naturally handle more than 2 classes — Gini impurity and entropy both generalize directly to KKK classes with no modification.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 655,
+      "out_sha": "f2ca3b90aa2a",
       "note": ""
     },
     {
@@ -1103,11 +1103,11 @@
       "en_title": "Chapter 9: Decision Trees — Learning by Asking Questions",
       "order": 82,
       "src_chars": 3318,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fa9777704bfd",
       "src": "### 9.5 Thread A — Decision Trees for House Price Prediction (A3)\n\n_[Thread A: A3 — Fit decision tree; see non-linear boundaries; compare against linear baseline]_\n\nWe now apply a decision tree regression model to the same house price dataset from Chapters 5 and 6. Recall: the best linear regression model (with regularization) achieved R2=0.73R^2 = 0.73R2=0.73 on the test set.\n\n**Decision tree results** (max depth = 6, min samples per leaf = 10, tuned by 5-fold CV):\n\n* Test R2R^2R2: **0.78**\n* Test RMSE: **31,200 USD**\n\nBetter than linear regression (R2=0.73R^2 = 0.73R2=0.73, RMSE ≈ 34,500 USD)! The tree has captured non-linear relationships that the linear model missed.\n\n**What has the tree learned?**\n\nExamining the top few levels of the tree:\n\n  1. First split: area > 1,850 sq ft\n  2. Left branch (smaller homes): next split on age ≤ 15 years\n  3. Right branch (larger homes): next split on neighborhood_quality > 6.5\n\nThe tree has automatically discovered that the relevant features and their interactions differ between small and large houses. This interaction between area and neighborhood quality was not captured by the linear model (which treated these as independent additive effects).\n\n**Residual analysis:** Where does the decision tree still fail? The tree makes \"step-function\" predictions — within each leaf, every house gets the same predicted price. Houses near the leaf boundaries can have large errors. The tree also struggles with houses that are genuinely unusual (extreme price-to-area ratios reflecting unique architectural features). Linear regression can sometimes extrapolate better in these cases.\n\n**Comparison at a glance:**\n\nModel | Test RMSE | Test R2R^2R2 | Interpretable? | Handles non-linearity?  \n---|---|---|---|---  \nLinear Regression | (34,500 | 0.73 | Yes (weights) | No  \nDecision Tree | )31,200 | 0.78 | Yes (tree) | Yes (piecewise)  \n  \nIn Chapter 10, we will use an _ensemble_ of many decision trees (random forest, gradient boosting) to push accuracy further.\n\n\n### 9.6 Feature Importance\n\nDecision trees provide a natural measure of **feature importance** : how much does each feature contribute to the model's predictions?\n\n\n#### Definition: Feature Importance (Impurity-Based)\n\nFor each feature jjj, sum the weighted impurity reduction from all splits that use feature jjj:\n\nimportance(j)=∑nodes t splitting on jpt⋅ΔIt\\text{importance}(j) = \\sum_{\\text{nodes } t \\text{ splitting on } j} p_t \\cdot \\Delta I_timportance(j)=nodes t splitting on j∑​pt​⋅ΔIt​\n\nwhere pt=nt/mp_t = n_t / mpt​=nt​/m is the fraction of examples reaching node ttt, and ΔIt\\Delta I_tΔIt​ is the impurity reduction at that node.\n\nFor the house price tree, the feature importances might be:\n\nFeature | Importance  \n---|---  \nLiving area | 0.42  \nNeighborhood quality | 0.28  \nHouse age | 0.19  \nGarage spaces | 0.11  \n  \nArea is the dominant predictor (42% of total split criterion reduction), followed by neighborhood quality. This is consistent with domain knowledge.\n\n**Caveat:** Impurity-based importance can overstate the importance of features with many unique values (like continuous features vs. binary features). For more robust importance estimates, use _permutation importance_ (Chapter 22): measure how much test performance drops when a feature's values are randomly shuffled.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1310,
+      "out_sha": "9467ee656b73",
       "note": ""
     },
     {
@@ -1115,11 +1115,11 @@
       "en_title": "Chapter 9: Decision Trees — Learning by Asking Questions",
       "order": 83,
       "src_chars": 437,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cfaa6e6f5630",
       "src": "#### Common Misconception\n\nFeature importance from decision trees measures _how much the tree uses the feature_ , not whether the feature has a causal relationship to the target. A feature might be important in the tree model simply because it happens to correlate with the true causal features in this dataset. Correlation-based importance should not be interpreted as causal importance without additional analysis.\n\n\n### 9.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 137,
+      "out_sha": "570cd67bbbfa",
       "note": ""
     },
     {
@@ -1127,11 +1127,11 @@
       "en_title": "Chapter 9: Decision Trees — Learning by Asking Questions",
       "order": 84,
       "src_chars": 3289,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d9420cd0cfb9",
       "src": "#### Concept Check\n\n**Q1.** Compute the Gini impurity for a node with 6 positive examples and 4 negative examples.\n\n**Answer:**\n\np1=6/10=0.6p_1 = 6/10 = 0.6p1​=6/10=0.6 (fraction positive), p0=4/10=0.4p_0 = 4/10 = 0.4p0​=4/10=0.4 (fraction negative)\n\nG=1−(p12+p02)=1−(0.36+0.16)=1−0.52=0.48G = 1 - (p_1^2 + p_0^2) = 1 - (0.36 + 0.16) = 1 - 0.52 = 0.48G=1−(p12​+p02​)=1−(0.36+0.16)=1−0.52=0.48\n\nCompare to the worst case: for a 50/50 split, G=1−(0.25+0.25)=0.5G = 1 - (0.25 + 0.25) = 0.5G=1−(0.25+0.25)=0.5. This node is close to maximally impure.\n\n**Q2.** A node with 10 examples (5 positive, 5 negative) is split into left (4 positive, 1 negative) and right (1 positive, 4 negative). Compute the information gain.\n\n**Answer:**\n\nParent entropy: H=−0.5log⁡2(0.5)−0.5log⁡2(0.5)=1.0H = -0.5\\log_2(0.5) - 0.5\\log_2(0.5) = 1.0H=−0.5log2​(0.5)−0.5log2​(0.5)=1.0 (maximally impure)\n\nLeft child (4P, 1N): p=4/5=0.8p = 4/5 = 0.8p=4/5=0.8. HL=−0.8log⁡2(0.8)−0.2log⁡2(0.2)=0.8⋅0.322+0.2⋅2.322=0.257+0.464=0.722H_L = -0.8\\log_2(0.8) - 0.2\\log_2(0.2) = 0.8\\cdot 0.322 + 0.2\\cdot 2.322 = 0.257 + 0.464 = 0.722HL​=−0.8log2​(0.8)−0.2log2​(0.2)=0.8⋅0.322+0.2⋅2.322=0.257+0.464=0.722\n\nRight child (1P, 4N): p=1/5=0.2p = 1/5 = 0.2p=1/5=0.2. By symmetry, HR=HL=0.722H_R = H_L = 0.722HR​=HL​=0.722.\n\nWeighted average child entropy: (5/10)(0.722)+(5/10)(0.722)=0.722(5/10)(0.722) + (5/10)(0.722) = 0.722(5/10)(0.722)+(5/10)(0.722)=0.722\n\nInformation gain: 1.0−0.722=0.2781.0 - 0.722 = 0.2781.0−0.722=0.278\n\nThis split reduces entropy from 1.0 to 0.722 — meaningful information gain of 0.278 bits.\n\n**Q3.** Why does a decision tree with unlimited depth always achieve 0% training error (assuming no two training examples have identical features but different labels)?\n\n**Answer:** If no two training examples share identical feature vectors with different labels, the tree can perfectly partition the training data by growing deep enough — ultimately placing each training example in its own leaf (or one leaf per unique feature combination). With one example per leaf, the tree predicts that example's exact label with 100% accuracy. No generalization is happening; the tree has memorized the training data.\n\nThis illustrates why depth must be limited: unlimited depth = 0 training error but potentially catastrophic test performance (high variance). The maximum depth hyperparameter is the primary regularization tool for decision trees.\n\n**Q4.** Explain why Gini impurity and entropy produce similar trees in practice.\n\n**Answer:** Both Gini impurity G=1−∑pk2G = 1 - \\sum p_k^2G=1−∑pk2​ and entropy H=−∑pklog⁡pkH = -\\sum p_k \\log p_kH=−∑pk​logpk​ are measures of the \"impurity\" or \"mixing\" in a distribution. They are both:\n\n* Minimized at 0 for a pure node (all one class)\n* Maximized for an equal mix of all classes\n* Concave functions of the class proportions pkp_kpk​\n\nNear the extremes and near uniform distributions, they agree closely on which splits are best. The ordering of candidate splits is similar in nearly all cases. Empirically, trees built with Gini vs. entropy differ in at most a few splits and show nearly identical test performance. The choice between them is usually not worth worrying about; Gini is slightly faster to compute (avoids logarithms), so it's the default in scikit-learn.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1201,
+      "out_sha": "bd92ea44a41c",
       "note": ""
     },
     {
