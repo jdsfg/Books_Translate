@@ -335,11 +335,11 @@
       "en_title": "Chapter 2: The Naive Approach — Files, Anomalies, and the Birth of the Relational Model",
       "order": 19,
       "src_chars": 2830,
-      "status": "pending",
+      "status": "done",
       "src_sha": "79a25a1ac683",
       "src": "### 2.6 Concurrent Access, File-Style\n\nTwo staffers, Xia and Yannick, are processing enrollment edits on a Monday morning. Both open `enrollments.csv` in their favorite editor.\n\n* Xia edits the grade for student 1001 in course 101 from A to A+.\n* Yannick, in parallel, adds a new row for student 1050 in course 104.\n\nBoth save the file back. Whoever saves second wins. If Yannick saves second, Xia's grade edit is silently erased — because Yannick's editor loaded the file before Xia's save, modified it (adding the new row), and wrote the whole file back. Xia's grade change never made it into the version Yannick was editing, so Yannick's save reverses it.\n\nThis is the **lost update** problem, and it is exactly the bank-account scenario we will return to in Chapter 13 as Threading C. The CSV version and the bank-account version are the same structural bug: two readers loaded the _same_ data, made independent changes, and wrote back, with the second write silently clobbering the first.\n\nThe \"solution\" at the file level — take an exclusive lock on the whole file during any edit — scales catastrophically. If Xia is editing for five minutes, Yannick is blocked for five minutes. In the university's actual workflow with twelve staffers during enrollment week, this means eleven people are always waiting. Single-writer files cannot scale to multiple users. This is why Chapter 13 onward takes concurrency so seriously.\n\n\n### 2.7 Crash Recovery, File-Style (It Doesn't Exist)\n\nRegistrar is processing the weekly enrollment batch — a legitimate 2,000-row insert into `enrollments.csv`. Halfway through, the server's power supply fails.\n\nWhat is the state of the file?\n\nProbably: a partially-written final row (`1843,Sarah Lee,10`). Possibly: the file is truncated — the OS had buffered the write and only flushed some of it. Possibly: nothing at all — the OS flushed none of it. Registrar has no way to know without reading every row and checking it parses.\n\nWorse: suppose the 2,000-row batch was supposed to be _atomic_ — either all 2,000 rows are present or none are. There is no way to express that guarantee over a file. If the crash hit after row 1,500, Registrar has to figure out, by hand, which 1,500 actually landed, reverse them, and redo the batch. Without careful manual accounting, she will end up with duplicates or gaps.\n\nA DBMS turns this from \"manual forensics\" into a single API call (`BEGIN TRANSACTION`, then 2,000 inserts, then `COMMIT` — or on crash, automatic rollback). Chapter 17 will show how this is actually implemented with a Write-Ahead Log. The key takeaway here: **atomicity is a structural property the storage layer must support.** A bare CSV file cannot. Even a CSV file plus the OS's sync calls cannot, because there is no language for grouping many writes into one all-or-nothing unit.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1184,
+      "out_sha": "f9d4cb116e53",
       "note": ""
     },
     {
@@ -347,11 +347,11 @@
       "en_title": "Chapter 2: The Naive Approach — Files, Anomalies, and the Birth of the Relational Model",
       "order": 20,
       "src_chars": 1919,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1d33861c9425",
       "src": "### 2.8 Why a Query Language Matters\n\nLet's return to one of our original questions from Chapter 1: \"The average grade of all students enrolled in courses taught by Dr. Chen.\"\n\nIn a proper relational database, this is one sentence:\n    \n    \n    SELECT AVG(e.grade)\n    FROM enrollments e\n    JOIN courses c ON e.course_id = c.id\n    WHERE c.instructor = 'Dr. Chen';\n    \n\nIn a CSV world, this is:\n\n  1. Write a script (Python, awk, spreadsheet) that reads `courses.csv` and filters to Dr. Chen's courses.\n  2. Take the resulting `course_id`s and filter `enrollments.csv` to only those.\n  3. Average the grades — but grades are letter grades; first convert to a numeric scale, which requires another table (`grade_points.csv`? that doesn't exist yet).\n  4. Return the number.\n\nEach of those steps is doable but requires _imperative code_ that describes _how_ to compute the answer. Every new question demands a new script.\n\nThe relational model plus SQL is **declarative** : you describe _what_ answer you want, and the engine decides _how_. This is the single biggest win of switching from files to a database. It is what makes a DBMS feel like a programming language for data, not a storage system.\n\n\n#### Common Misconception\n\nSome engineers (especially those who learned SQL after deep experience with imperative code) think declarative querying is \"just convenience\" — \"I could write the same thing in Python, it would just be longer.\" This underestimates the win. The optimizer (Chapter 12) uses the _freedom_ of declarativity to pick a plan that is sometimes 1000× faster than the most obvious Python. You could _in principle_ write the same plan in Python, but you would have to re-derive it for every query, for every change in data size, for every new index. Declarativity is not a quality-of-life improvement; it is the interface that lets the engine do the optimization work that humans cannot do at scale.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 802,
+      "out_sha": "0e41312f5772",
       "note": ""
     },
     {
@@ -359,11 +359,11 @@
       "en_title": "Chapter 2: The Naive Approach — Files, Anomalies, and the Birth of the Relational Model",
       "order": 21,
       "src_chars": 1985,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e26afe1ea555",
       "src": "### 2.9 The Relational Shape of the Problem\n\nLook back at Registrar's three original files at the start of this chapter:\n\n* `students.csv` — facts about _students_.\n* `courses.csv` — facts about _courses_.\n* `enrollments.csv` — facts about the _relationship between a student and a course_.\n\nThis decomposition was the right instinct. The anomalies we explored in this chapter arose when a later well-meaning staffer _added redundancy_ to `enrollments.csv` — duplicating the student's name, the course's title, and the instructor's name into the enrollment rows. Undo that denormalization, and:\n\n* **Update anomaly disappears.** Dr. Park's name lives in `courses.csv` and nowhere else. One edit to one row.\n* **Deletion anomaly disappears.** Dr. Navarro lives in `courses.csv`; Bob's enrollment lives in `enrollments.csv`. Deleting Bob's enrollment doesn't touch the courses file.\n* **Insertion anomaly disappears.** Course 104 with Dr. Lam is inserted into `courses.csv` without any enrollment row needed.\n\nWhat Registrar has just derived, by negative example, is the **relational principle** : store each kind of fact in its own table, and link tables by references (foreign keys) rather than by repeating data.\n\nThree things are still missing before this is a real database:\n\n  1. **A way to enforce referential integrity** — the CSVs can still contain `student_id = 1099` for a nonexistent student. Chapter 3 introduces foreign-key constraints.\n  2. **A query language** over the normalized tables — otherwise every report is a fresh Python script. Chapter 4 introduces SQL.\n  3. **Concurrency control and crash recovery** — because even perfectly normalized CSVs still suffer the multi-writer and crash-mid-write problems. Chapters 13–17 tackle these.\n\nBut the _shape_ of the solution — \"split your data into tables, each representing one kind of thing, and link them by references\" — is now visible. That shape is called the relational model, and it is the subject of Chapter 3.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 803,
+      "out_sha": "d602bb4c7411",
       "note": ""
     },
     {
@@ -371,11 +371,11 @@
       "en_title": "Chapter 2: The Naive Approach — Files, Anomalies, and the Birth of the Relational Model",
       "order": 22,
       "src_chars": 1607,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9fdcab226010",
       "src": "### Tradeoffs Summary\n\n* **Denormalized CSVs trade update safety for read locality.** Keeping a student's name and instructor's name inside every enrollment row makes a single-file report trivial but guarantees update, deletion, and insertion anomalies the moment the data changes.\n* **File-level locking trades concurrency for simplicity.** You can prevent lost writes on `books.csv` by locking the whole file, but then no one else can read it either — the only safe multi-writer file system is a single-writer file system.\n* **Whole-file rewrites trade crash safety for implementation effort.** Writing a temp file and renaming is easy and almost atomic, but mid-write crashes still leave you torn between the old and new version with no bounded recovery story. A DBMS spends Chapter 17's machinery specifically to avoid this.\n* **Putting integrity in application code trades enforcement guarantees for flexibility.** Every caller must remember every rule; one forgotten check leaves an orphan row. A DBMS moves the rules into the schema so that no caller can bypass them.\n* **Ad-hoc Python scripts trade a query language for raw control.** You can compute anything, but every new question is a new program. SQL gives up some imperative power in exchange for a declarative interface the engine can optimize.\n* **The relational decomposition trades query-side join cost for write-side anomaly immunity.** Splitting facts into separate tables means reports need joins; it also means one edit touches one row, not hundreds. For anything that gets updated, this trade almost always pays.\n\n\n### 2.10 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 570,
+      "out_sha": "cfec7fc295ae",
       "note": ""
     },
     {
@@ -383,11 +383,11 @@
       "en_title": "Chapter 2: The Naive Approach — Files, Anomalies, and the Birth of the Relational Model",
       "order": 23,
       "src_chars": 3340,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1f22f9a81070",
       "src": "#### Concept Check\n\n**Q1.** In one sentence each, define the update anomaly, deletion anomaly, and insertion anomaly. Your definitions should make clear what is common to all three.\n\nHint\n\nTry to identify the single structural cause underlying all three.\n\n**Answer:**\n\n* **Update anomaly:** when the same fact is stored in many rows, changing the fact in one row while missing others produces contradictory data.\n* **Deletion anomaly:** when deleting one fact (an enrollment) unintentionally erases another logically independent fact (the instructor) because they were co-stored in the same row.\n* **Insertion anomaly:** when a new fact cannot be recorded without inventing NULLs or phantom related rows because the schema forces unrelated facts to live together.\n\nCommon cause: _redundancy driven by schemas that mix unrelated facts into the same row._ All three anomalies are symptoms of the same underlying disease; removing redundancy cures all three at once.\n\n**Q2.** Which of the following does a CSV-based \"database\" _not_ provide on its own? Mark each as provided / not provided and give a one-line reason.\n\n(a) Schema-level type checking (e.g., \"`credits` must be an integer\"). (b) Prevention of duplicate primary keys. (c) Atomic multi-row updates. (d) Human readability. (e) Referential integrity (foreign-key enforcement). (f) Cross-platform portability.\n\n**Answer:** (a) **Not provided.** A CSV is text. Storing \"not a number\" in the `credits` column produces no error until something tries to interpret it. (b) **Not provided.** Nothing enforces uniqueness of the `id` column — you can have two students with `id = 1001` and the file system is happy. (c) **Not provided.** No notion of transactions; any multi-row operation is a sequence of independent writes that can be interrupted. (d) **Provided.** CSVs are plain text, open in any editor. (e) **Not provided.** No foreign-key concept; `enrollments.csv` can reference nonexistent students and no one will notice. (f) **Provided.** CSV is about as portable a data format as exists.\n\nCSVs trade almost all correctness guarantees for maximum simplicity and portability. That trade is occasionally the right one — for static data exports, archival, human-editable config — but not for operational data.\n\n**Q3.** Registrar keeps one instructor-email field on each course row in `courses.csv`. One instructor teaches three courses. The instructor changes her email address. How many rows must be updated? What kind of anomaly is this, and what would fix it structurally?\n\n**Answer:** Three rows must be updated, one per course the instructor teaches. This is an **update anomaly** : the same fact (the instructor's email) is stored redundantly across multiple rows. The structural fix is to introduce a fourth table, `instructors(id, name, email)`, and change `courses.csv` to reference `instructor_id` instead of embedding the instructor's name and email. Now the email lives in exactly one row, and editing it is a one-row change. (Chapter 3 introduces foreign keys for this; Chapter 6 proves formally why this arrangement eliminates the anomaly.)\n\n**Q4.** A colleague argues: \"We can avoid update anomalies in a CSV just by being careful — whenever we change a fact, we'll grep the whole file and fix every occurrence.\" Why is this argument weak?\n\n**Answer:** Three problems.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1255,
+      "out_sha": "9050844eb559",
       "note": ""
     },
     {
@@ -395,11 +395,11 @@
       "en_title": "Chapter 2: The Naive Approach — Files, Anomalies, and the Birth of the Relational Model",
       "order": 24,
       "src_chars": 798,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e4464531f896",
       "src": "  1. It doesn't scale. One careful person can handle a file of 100 rows; the same person cannot reliably handle 80,000 rows, especially under time pressure. Humans are not atomic transactions.\n  2. It doesn't handle concurrency. If two people are running \"careful grep-and-fix\" in parallel, their edits can interleave and lose changes (Section 2.6).\n  3. Most importantly, it moves the correctness property from the system to a human policy. \"Being careful\" is a policy, not a guarantee. The whole point of a DBMS is to convert policies (things we hope humans will do) into structural guarantees (things the system prevents from going wrong). A properly normalized schema makes update anomalies _structurally impossible_ , which is a different species of guarantee from \"we promise to be careful\".\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 277,
+      "out_sha": "f8bd4c941ff4",
       "note": ""
     },
     {
@@ -407,11 +407,11 @@
       "en_title": "Chapter 2: The Naive Approach — Files, Anomalies, and the Birth of the Relational Model",
       "order": 25,
       "src_chars": 2545,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5c979fc07667",
       "src": "#### Application Problems\n\n**Q1.** Registrar has a fourth file, `instructor_offices.csv`:\n    \n    \n    instructor_name,office,phone\n    Dr. Chen,Building A-214,x4421\n    Dr. Park,Building B-105,x4587\n    Dr. Navarro,Building A-310,x4309\n    \n\nShe is considering whether to merge this data back into `courses.csv` (one row per course, with office and phone duplicated for each course the same instructor teaches) \"for convenience\". Describe two realistic anomalies that would appear within one month if she does so, and describe what a relational DBMS would do differently.\n\nHint\n\nThink about what changes from month to month: offices, phone extensions, new courses, cancelled courses.\n\n**Answer:** **Anomaly 1 (update).** Dr. Park moves from Building B-105 to Building B-220. His phone extension also changes. In the merged version, his office and phone are duplicated across every course he teaches (say 5 courses) — now we must update 5 rows. Miss even one, and the database says Dr. Park is in two offices simultaneously.\n\n**Anomaly 2 (deletion).** Dr. Navarro's only course this semester is Linear Algebra, 103, which is cancelled for lack of enrollment. Registrar deletes row 103 from `courses.csv`. Because Dr. Navarro's office and phone were only co-stored with that row, they vanish — even though Dr. Navarro is still a faculty member who will likely teach next semester. Dr. Navarro's office now exists only as institutional memory, not in the database.\n\n**What a relational DBMS would do differently.** Keep the schema normalized: `instructors(name, office, phone)` as one table, `courses(id, title, credits, instructor_name)` with a foreign key referencing `instructors`. Dr. Park's office moves: one row changes. Dr. Navarro's course is cancelled: the instructors table is untouched; only the courses row is removed. In both cases, one edit, one row, no redundancy to manage. And the foreign key constraint prevents a typo from creating a dangling reference.\n\n**Q2.** Consider this single row from a hypothetical denormalized `orders.csv` for an e-commerce site:\n    \n    \n    order_id, customer_name, customer_email, item_id, item_name, item_price, quantity, ship_to_address, order_date\n    2213, Sofia Ruiz, sofia.r@example.com, 7741, USB-C Cable, 14.99, 2, 18 Elm St, 2026-03-15\n    \n\nIdentify at least five redundancies. For each, describe the anomaly it exposes and give a one-line example of the anomaly triggering.\n\nHint\n\nEvery time the same fact appears in more than one row of the real data, it's a redundancy.\n\n**Answer:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1253,
+      "out_sha": "1a8ea4bb536c",
       "note": ""
     },
     {
@@ -419,11 +419,11 @@
       "en_title": "Chapter 2: The Naive Approach — Files, Anomalies, and the Birth of the Relational Model",
       "order": 26,
       "src_chars": 3478,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fb27ed2a7264",
       "src": "  1. **`customer_name`** — appears in every order Sofia places. _Update:_ Sofia changes her last name; five orders must be updated. _Deletion:_ Sofia's last order is cancelled; her customer record vanishes.\n  2. **`customer_email`** — same redundancy pattern. _Update:_ email change requires touching every historical order row.\n  3. **`item_name`** — appears in every order containing that item. _Update:_ item is renamed from \"USB-C Cable\" to \"USB-C Cable 1m\"; hundreds of historical orders must be touched.\n  4. **`item_price`** — appears redundantly in every order. _Deletion:_ if the item is discontinued and all its orders are cancelled, the historical price is gone; we cannot compute \"what was the average USB-C Cable price in 2025?\"\n  5. **`ship_to_address`** — likely redundant across a customer's orders. _Update:_ customer moves; which orders' addresses do we update? (Hint: probably _not_ historical ones — the shipping address at the time of the order is a historical fact — which itself suggests item_price and ship_to_address are correctly placed here _for historical orders_. The real schema should separate \"the customer's current address\" from \"the shipping address snapshot at order time\", a distinction the denormalized file cannot make.)\n\n**Cross-chapter connection:** this exercise is a preview of Chapter 6 (normalization) and Chapter 23 (the capstone design review). It also raises a subtle point — some \"redundancies\" are actually desired snapshots of historical fact, which is why normalizing an e-commerce schema requires real judgment, not a mechanical rule.\n\n**Q3.** Write a single Python script that, given the `students.csv` and `enrollments.csv` from the start of the chapter, produces a report \"Number of courses each student is enrolled in, sorted descending\". Then write the equivalent SQL. Compare the two and discuss: (a) which is easier to write, (b) which is easier to modify if the question changes (\"also exclude students with 0 enrollments\"), and (c) which is easier for the engine to optimize.\n\nHint\n\nCount rows per student_id in enrollments.csv, join with students.csv on id, sort by count descending.\n\n**Answer:**\n\nPython (one reasonable version):\n    \n    \n    import csv\n    from collections import Counter\n    \n    with open('enrollments.csv') as f:\n        counts = Counter(row['student_id'] for row in csv.DictReader(f))\n    \n    with open('students.csv') as f:\n        students = {row['id']: row['name'] for row in csv.DictReader(f)}\n    \n    report = sorted(\n        ((students[sid], cnt) for sid, cnt in counts.items()),\n        key=lambda x: -x[1]\n    )\n    \n    for name, cnt in report:\n        print(f\"{name}: {cnt}\")\n    \n\nSQL (the same question):\n    \n    \n    SELECT s.name, COUNT(*) AS course_count\n    FROM students s\n    JOIN enrollments e ON s.id = e.student_id\n    GROUP BY s.name\n    ORDER BY course_count DESC;\n    \n\n(a) **Easier to write:** SQL, clearly. The Python code must explicitly express _how_ to compute the aggregation (count, join, sort). The SQL expresses _what_ we want.\n\n(b) **Easier to modify:** SQL. To exclude students with zero enrollments, the SQL `JOIN` already does that (it's an inner join). To _include_ them, change to `LEFT JOIN` and the rest is unchanged. In Python, handling zero-enrollment students requires restructuring the code — iterating over `students` rather than `counts`, using `counts.get(sid, 0)`, etc. Every modification of the question requires re-writing the procedure.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1831,
+      "out_sha": "bc8d538c566d",
       "note": ""
     },
     {
