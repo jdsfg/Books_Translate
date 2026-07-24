@@ -1495,11 +1495,11 @@
       "en_title": "Chapter 12: The Great Gatsby Curve",
       "order": 116,
       "src_chars": 2069,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0d922fde9756",
       "src": "In 2012, the economist Alan Krueger, then chairing the US Council of Economic Advisers, wanted to make a single point memorable, and he reached for a chart drawn from existing cross-country research and gave it a literary name. The chart plotted the rich countries on two axes. Along the bottom: how _unequal_ each country was, how wide the gap between its rich and poor. Up the side: how _immobile_ each country was, how strongly a child's eventual position was predicted by their parents'. When the countries landed on the chart, they formed a striking line. The more _unequal_ a country, the more _immobile_ it tended to be. The more _equal_ , the more _mobile_. Krueger called it, after the novel about a man trying and failing to escape his origins, the Great Gatsby Curve, and the name stuck, because the pattern was vivid and the implication seemed to leap off the page: inequality, it appeared, traps people where they start. (The underlying cross-country data and finding were not Krueger's own; they came chiefly from the economist Miles Corak's research, which Krueger drew on and gave its memorable name.)\n\nThat apparent implication is where almost everyone goes wrong, including many who should know better, and learning to handle this one chart correctly exercises nearly every skill this book teaches: separating a measured pattern from a contested cause, and a cause from a value judgment. The pattern is real. The cross-country comparison behind it is genuine and important. And the leap from the pattern to \"inequality causes immobility\" is exactly the kind of move that Part 4 has been training you to refuse. This chapter is about holding all three of those truths at once: the pattern is robust, the comparison is illuminating, and the cause is genuinely open. If you can do that here, on the most seductive chart in the field, you can do it anywhere.\n\n\n### 12.1 The pattern, stated carefully\n\nLet us first say precisely what the Great Gatsby Curve is, in our disciplined way, because the careful statement already disarms most of the misreadings.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 717,
+      "out_sha": "9b2652c00bf3",
       "note": ""
     },
     {
@@ -1507,11 +1507,11 @@
       "en_title": "Chapter 12: The Great Gatsby Curve",
       "order": 117,
       "src_chars": 2232,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3a8890801d83",
       "src": "#### Definition: The Great Gatsby Curve\n\nThe **Great Gatsby Curve** is an observed cross-national _correlation_ : across the rich countries, those with higher income inequality tend to have lower intergenerational mobility (higher rank persistence), and those with lower inequality tend to have higher mobility. It is a _pattern across countries at a point in time_ , not a finding about what causes what. The pattern is fairly robust, it shows up across data sources and is associated with the economist Miles Corak's research on cross-country mobility, and it was given its memorable name by Alan Krueger in 2012.\n\nIn plain language: countries that are more unequal also tend to be more sticky, as a matter of observed correlation. Notice what the careful definition does and does not claim. It claims a _correlation_ (the two things go together across countries). It does _not_ claim _causation_ (that one produces the other). And it does not claim the relationship holds for every country, the curve is a tendency with real scatter, not a law that every nation obeys. Some countries sit well off the line. The pattern is a tendency, and tendencies are real and worth explaining, but they are not destiny and not, by themselves, proof of any causal story.\n\nThe comparison underlying the curve is genuinely illuminating, and this is the part worth keeping regardless of what one concludes about causation. The societies that cluster in the low-inequality, high-mobility corner tend to be the Nordic countries, along with places like Canada; the societies in the high-inequality, lower-mobility region include several with wider gaps; and large countries like the United States tend to sit toward the more-unequal, less-mobile side, in the middle-to-upper range, neither the most mobile nor the least. This is the comparative eye of Chapter 1 doing exactly the work it was meant to do: by setting societies side by side, it shows that the _level_ of stickiness is not fixed by human nature but varies enormously with how a society is arranged. Whatever causes it, mobility is clearly _changeable_ , because it is so different across places. That alone is a valuable finding, and it does not depend on settling the causal question.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 723,
+      "out_sha": "3c0cb9f8956b",
       "note": ""
     },
     {
@@ -1519,11 +1519,11 @@
       "en_title": "Chapter 12: The Great Gatsby Curve",
       "order": 118,
       "src_chars": 3053,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fee64695dd7b",
       "src": "### 12.2 Why the causal leap is a trap\n\nNow to the heart of the matter: why \"inequality causes immobility\" does not follow from the curve, however much it seems to. There are at least three distinct reasons, and a careful thinker holds all of them.\n\nThe first is the most basic principle in all of empirical reasoning, and it applies here with brutal clarity: _correlation is not causation_. That two things move together across countries is consistent with several different causal stories, and the chart alone cannot distinguish them. Inequality might cause immobility. But immobility might cause inequality (a society where advantage is locked in across generations will tend to grow more unequal over time). Or some _third factor_ , the structure of a society's schools, its labor markets, its family arrangements, its history, might cause _both_ inequality and immobility at once, so that the two are correlated without either causing the other. The curve is equally consistent with all three stories, and pointing at the curve cannot tell you which is operating, or in what mix. To read the chart as \"inequality causes immobility\" is to pick one of several compatible stories and present it as if the data had chosen it. The data did not.\n\nThe second reason is subtler and more technical, and it is the kind of subtlety the casual reading misses. The standard way of _measuring_ mobility is, by its mathematical construction, _partly tied to inequality itself_. The common measure of immobility, how strongly parents' income predicts children's income, is defined in a way that is mechanically related to how spread-out incomes are. Without getting lost in the mathematics, the upshot is this: part of the Great Gatsby correlation may arise not from any real-world causal link but from the way the two quantities are _defined_ , so that more-unequal societies will tend to _score_ as less mobile partly as an artifact of measurement. How much of the curve is this measurement artifact and how much is a genuine relationship is itself debated. This does not make the curve meaningless, but it means that even the _size_ of the real relationship, before we ask about its cause, is uncertain. A pattern that is partly built into the definitions of its own axes must be handled with extra care.\n\nThe third reason is that the curve is a _snapshot across countries_ , and snapshots are weak evidence for causal claims because the countries differ in a thousand ways at once. The Nordic countries do not differ from more-unequal societies _only_ in their inequality; they differ in their histories, their sizes, their homogeneity, their welfare arrangements, their school systems, their labor markets, and much else. Any of these differences, or many in combination, could drive the mobility differences. A cross-country correlation cannot isolate inequality from this crowd of co-varying factors, which is why serious researchers treat the curve as a _provocation to investigate_ , a pattern demanding explanation, rather than as an explanation itself.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 934,
+      "out_sha": "a709835b5885",
       "note": ""
     },
     {
@@ -1531,11 +1531,11 @@
       "en_title": "Chapter 12: The Great Gatsby Curve",
       "order": 119,
       "src_chars": 1341,
-      "status": "pending",
+      "status": "done",
       "src_sha": "91a3322c3c82",
       "src": "#### Common Misconception\n\nThe signature misuse of the Great Gatsby Curve, found in countless articles and speeches, is to present it as settled proof that \"reducing inequality would increase mobility.\" This claim may even be true, several plausible mechanisms could link them, but _the curve does not establish it_ , and presenting it as if it did is precisely the verdict-by-disguise this book exists to expose. It dresses a contested causal claim (inequality causes immobility, and reducing one would raise the other) in the authority of a measured pattern (the correlation). We have seen this move before, in Chapter 10's \"symmetry of measurement and interpretation\": a real IS (the correlation exists) is used to launder a contested WHY (inequality is the cause). The correlation is measured; the causal direction is not. Anyone who shows you the curve and concludes \"therefore we must reduce inequality to restore mobility\" has slipped a causal claim past you on the back of a correlation, and your job is to notice the slip, whatever you ultimately think about inequality. The same caution applies in the other direction: someone who waves the curve away entirely, because it is \"just correlation,\" is also wrong, a robust correlation is real evidence that _something_ connects the two, and demands explanation rather than dismissal.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 480,
+      "out_sha": "e0a20e39c328",
       "note": ""
     },
     {
@@ -1543,11 +1543,11 @@
       "en_title": "Chapter 12: The Great Gatsby Curve",
       "order": 120,
       "src_chars": 2733,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9bfa523a7567",
       "src": "### 12.3 The honest state of the question\n\nSo where does this leave us? With the discipline of Thread B applied to its hardest case, and with three things to hold separately.\n\nWhat is _measured_ (the IS): there is a fairly robust cross-national correlation between inequality and immobility. More-unequal rich countries tend to be more sticky. This is real, though its true size is uncertain because of the measurement-definition issue. State it plainly; do not hedge it into nothing.\n\nWhat is _contested_ (the WHY): _why_ the correlation exists. The candidate stories, inequality causing immobility (through the mechanisms of Part 3, where higher inequality means bigger gaps in the resources parents pass down, the schools they can buy, the neighborhoods they can reach), immobility causing inequality, a third factor causing both, and measurement artifact, are all live, and serious researchers weight them differently. The most defensible position is that _several of these probably operate together_ , and that the pure \"inequality causes immobility\" reading, taken as established, goes well beyond what the evidence supports. This is genuinely open, and we keep it open.\n\nWhat is _also open_ , and is a different question again (the OUGHT): _how much_ mobility a society _should_ have, and whether the level any particular society has is _acceptable_. Even if the causal question were fully settled, this normative question would remain, because \"how much stickiness is too much\" is a value judgment, not a measurement, and it connects to the deeper question of whether what matters is fair _opportunity_ (in which case high persistence is alarming) or decent _outcomes_ (in which case persistence matters less than how people actually live). The curve speaks to none of this directly. It is a fact about correlation, three causal steps and one value judgment away from any policy verdict.\n\nThere is, however, one solid and important conclusion the curve genuinely supports, and we should not lose it in all the caution: _mobility varies enormously across societies, so it is not fixed by human nature, and is therefore changeable._ Whatever the causal mechanism, the sheer spread of stickiness across the rich countries proves that a society's level of mobility is a product of its arrangements, not an immovable fact. That is a real and valuable finding, it follows directly from the comparison, and it does not require settling the causal question. The Nordic countries and the more-unequal societies are not different species of human; they are different arrangements of human life, producing different odds for their children. _Why_ the arrangements produce different odds is contested. _That_ arrangements matter is not.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 870,
+      "out_sha": "8d2171f88141",
       "note": ""
     },
     {
@@ -1555,11 +1555,11 @@
       "en_title": "Chapter 12: The Great Gatsby Curve",
       "order": 121,
       "src_chars": 1818,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ff1d979c701e",
       "src": "### 12.4 What Part 4 has taught\n\nPart 4 set out to put a number on the soft promise of the open society, and it has delivered both numbers and a discipline. The numbers: absolute mobility has faded sharply in recent decades (Chapter 11); relative mobility shows substantial, stable stickiness everywhere, varying greatly across societies; and the cross-national pattern links higher inequality to lower mobility (this chapter). The discipline: to separate, ruthlessly, the _measured pattern_ (the correlation is real) from the _contested cause_ (why it exists is open) from the _normative question_ (how much mobility a society should have), and to refuse the seductive collapse of all three into a single slogan, in either political direction.\n\nThis completes the empirical core of the book's first movement. We have seen _that_ position shapes life chances (Part 2), mapped the _machinery_ by which it passes down (Part 3), and _measured how much_ it passes down (Part 4). Two great topics remain before the normative reckoning. First, we have spoken of \"the bottom\" abstractly; in Part 5 we go there directly, to _poverty_ , the lived reality of the lowest rungs, where the structure-versus-merit debate becomes most charged and most human, and where the most caricatured idea in the whole book, the \"culture of poverty,\" must be handled with the greatest care. Second, in Part 6, we turn to the gaps _between groups_ , by sex, by race, by origin, the most politically explosive terrain in the field, where every tool this book has built, the decomposition procedure, the symmetry of measurement and interpretation, the is/why/ought registers, will be tested at once. The conceptual and empirical groundwork is laid. Now the ground gets harder, and the discipline matters more with every step.\n\n\n### 12.5 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 613,
+      "out_sha": "c8879799c5eb",
       "note": ""
     },
     {
@@ -1567,11 +1567,11 @@
       "en_title": "Chapter 12: The Great Gatsby Curve",
       "order": 122,
       "src_chars": 2417,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6f4e621e17f4",
       "src": "#### Concept Check\n\n**Q1.** State precisely what the Great Gatsby Curve is, being careful to say what kind of claim it is and what it is not.\n\nHint\n\nIs it a correlation or a causal finding? Across countries at one time, or over time? A law or a tendency?\n\n**Answer:** The Great Gatsby Curve is an observed cross-national _correlation_ : across the rich countries, those with higher income inequality tend to have lower intergenerational mobility (higher rank persistence), and lower-inequality countries tend to be more mobile. It is a _pattern across countries at a point in time_ , fairly robust and associated with Miles Corak's research, named by Alan Krueger in 2012. What it is _not_ : it is not a finding about _what causes what_ (it is a correlation, not a demonstrated causal link), and it is not a law every country obeys (it is a _tendency_ with real scatter, some countries sit well off the line). Stating it this carefully already blocks the main misreading, because once you say \"correlation, across countries, a tendency,\" the leap to \"inequality causes immobility\" visibly does not follow.\n\n**Q2.** Give the three distinct reasons the chapter offers for why \"inequality causes immobility\" does not follow from the curve.\n\nHint\n\nOne is the most basic principle in empirical reasoning; one is about how mobility is _measured_ ; one is about what a cross-country snapshot can and cannot isolate.\n\n**Answer:** (1) _Correlation is not causation_ : the curve is equally consistent with inequality causing immobility, immobility causing inequality, or a _third factor_ (school systems, labor markets, history) causing both; the chart alone cannot distinguish them. (2) _Measurement entanglement_ : the standard measure of immobility (how strongly parents' income predicts children's) is, by its mathematical construction, partly tied to how spread-out incomes are, so part of the correlation may be a _definitional artifact_ rather than a real-world link, leaving even the true _size_ of the relationship uncertain. (3) _Snapshot weakness_ : the curve compares countries that differ in a thousand ways at once (history, size, homogeneity, welfare, schools, labor markets), so a cross-country correlation cannot isolate inequality from this crowd of co-varying factors. Together these make the curve a _provocation to investigate_ , not an explanation, even though it is a real pattern demanding explanation.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 858,
+      "out_sha": "3b01fce9f2a0",
       "note": ""
     },
     {
@@ -1579,11 +1579,11 @@
       "en_title": "Chapter 12: The Great Gatsby Curve",
       "order": 123,
       "src_chars": 3146,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e77f9375b92d",
       "src": "#### Application Problems\n\n**Q1.** A columnist writes: \"The Great Gatsby Curve proves that reducing inequality would restore mobility.\" Using Chapter 10's \"symmetry of measurement and interpretation,\" diagnose exactly what has gone wrong, and then explain why the _opposite_ error, dismissing the curve as \"just a correlation, so meaningless\", is also wrong.\n\nHint\n\nWhich part of the columnist's claim is measured (IS) and which is a contested causal claim (WHY) being laundered through it? And does \"just correlation\" mean \"no evidence of anything\"?\n\n**Answer:** The columnist commits _verdict-by-disguise_ : she takes a real **IS** (the correlation between inequality and immobility is measured) and uses its authority to launder a contested **WHY** (that inequality _causes_ immobility, so reducing one would raise the other). The causal claim might be true, but the curve does not establish it, correlation is consistent with reverse causation, a third factor, or measurement artifact, so \"proves\" is exactly the smuggled word. This is the same laundering move flagged in Chapter 10, now on a chart instead of a statistic. But the _opposite_ error is also wrong: dismissing the curve as \"just a correlation, so meaningless\" treats a robust cross-national pattern as if it were nothing. A correlation that is fairly robust across data sources is _real evidence that something connects the two_ and demands explanation; it also supports the solid conclusion that mobility _varies across societies and is therefore changeable_. The disciplined position is the narrow one between the two errors: the correlation is real and important (do not dismiss it), and its causal interpretation is open (do not launder it into a verdict).\n\n**Q2.** The chapter says the curve does support one \"solid and important conclusion.\" State it, explain why it follows from the comparison _without_ needing the causal question settled, and connect it to the comparative eye introduced in Chapter 1.\n\nHint\n\nIf stickiness varies enormously across societies, what does that prove about whether it is fixed by human nature, regardless of _why_ it varies?\n\n**Answer:** The solid conclusion is that _mobility varies enormously across societies, so it is not fixed by human nature and is therefore changeable_. This follows directly from the _comparison_ without settling causation: whatever the mechanism, the sheer spread of stickiness across rich countries shows that a society's level of mobility is a product of its _arrangements_ , not an immovable fact, the Nordic countries and the more-unequal societies are not different species of human but different arrangements of human life producing different odds for their children. We do not need to know _why_ arrangements matter to conclude _that_ they matter; the variation alone proves it. This is exactly the comparative eye of Chapter 1: by setting societies side by side, we separate what is _universal_ about stratification (every society has some persistence) from what is _particular_ and changeable (how much), puncturing the assumption that any one society's level of stickiness is the natural human default.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1168,
+      "out_sha": "2f32d86b6e7a",
       "note": ""
     },
     {
@@ -1591,11 +1591,11 @@
       "en_title": "Chapter 12: The Great Gatsby Curve",
       "order": 124,
       "src_chars": 2896,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b2b9f5657bbd",
       "src": "#### Think Deeper\n\n**Q1.** Suppose future research managed to show convincingly that inequality really does _causally_ reduce mobility (through the Part 3 mechanisms: bigger gaps mean bigger differences in what parents can pass down). Walk through why even this strong causal finding would _still_ not settle whether a society should reduce its inequality. What further questions, empirical and normative, would remain?\n\n**Discussion:** This is the capstone of Part 4's discipline, and it drives home that even a fully settled WHY leaves the OUGHT open, which is the spine of the whole book.\n\nGrant the strong causal finding: inequality genuinely causes immobility. It is tempting to conclude \"then obviously we should reduce inequality.\" But several questions remain, and they are exactly where real disagreement lives.\n\nFirst, _empirical_ questions remain even after the causal direction is settled. How _large_ is the effect, would a given reduction in inequality produce a large gain in mobility or a tiny one? At what _cost_ , might the policies that reduce inequality also reduce the growth that drives absolute mobility (Chapter 11), so that you trade rank-fluidity for everyone being worse off in real terms? Are there _other ways_ to raise mobility (improving schools, neighborhoods, the specific Part 3 channels) that do not require reducing inequality directly, and might be more effective? A causal link between inequality and mobility does not tell you that reducing inequality is the best, or even a good, way to raise mobility; it tells you only that the two are causally connected. The policy question depends on magnitudes, costs, and alternatives that the causal finding alone does not supply.\n\nSecond, and deeper, _normative_ questions remain that no empirical finding can touch. Even granting that reducing inequality would raise mobility, one must still hold that _higher mobility is worth what reducing inequality costs_ , and that depends on how much you value mobility against the other things at stake (liberty, the family's freedom to advantage its children from Chapter 8, the incentives the reward structure provides, which we meet in Part 7). Someone might accept the entire causal story and still judge that a particular reduction in inequality is not worth its costs to other values they hold. And underneath even that lies the question from Chapter 11's Think Deeper: _why_ do we want mobility in the first place, is it because we value fair _opportunity_ (in which case the causal finding matters a lot) or because we ultimately care about _outcomes_ (in which case we might address the bottom directly rather than through mobility at all)? If you care about outcomes, you might prefer to improve the lives of those at the bottom _regardless_ of whether they or their children can change rank, making the whole inequality-mobility link somewhat beside your point.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 929,
+      "out_sha": "c7042a904024",
       "note": ""
     },
     {
@@ -1603,11 +1603,11 @@
       "en_title": "Chapter 12: The Great Gatsby Curve",
       "order": 125,
       "src_chars": 3487,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c7f090172d3d",
       "src": "The lesson is the book's deepest refrain, now proven on the hardest case: a settled WHY (even \"inequality causes immobility, established\") does not deliver an OUGHT (even \"therefore reduce inequality\"), because getting from the causal fact to the policy verdict requires further empirical judgments (magnitude, cost, alternatives) and, irreducibly, value judgments (how to weight mobility against liberty, growth, family, and what we think justice is fundamentally about) that no amount of causal certainty can supply. This is why the book, even when the facts are as settled as they get, still hands you the verdict. The Great Gatsby Curve, the most policy-suggestive chart in the field, turns out to be many careful steps away from telling anyone what to do, and seeing exactly how many steps, and that the last one is always yours, is the whole point of learning to read it.\n\n\n### Chapter Summary\n\nWe took up the **Great Gatsby Curve** , the cross-national correlation that more-unequal rich countries tend to be less mobile, and used it as the capstone test of Part 4's discipline. Stated carefully, it is a _correlation across countries at a point in time_ (associated with Corak's research, named by Krueger in 2012), a robust _tendency_ with real scatter, not a causal law. The comparison it rests on is genuinely illuminating, the low-inequality, high-mobility corner holds the Nordics and Canada; more-unequal societies cluster on the sticky side; the US sits toward the more-unequal, less-mobile region, demonstrating the comparative eye of Chapter 1.\n\nWe gave three reasons the leap to \"inequality causes immobility\" is a trap: _correlation is not causation_ (the curve fits inequality→immobility, immobility→inequality, or a third factor causing both); _measurement entanglement_ (the standard mobility measure is mathematically partly tied to inequality, so part of the curve may be a definitional artifact, leaving even its true size uncertain); and _snapshot weakness_ (countries differ in countless co-varying ways a cross-section cannot isolate). The signature misuse, presenting the curve as proof that reducing inequality would restore mobility, is _verdict-by-disguise_ , laundering a contested WHY through a measured IS; but dismissing the curve as \"just correlation\" is the opposite error, since a robust correlation is real evidence demanding explanation.\n\nWe separated the three registers explicitly: _measured_ (the correlation is real, size uncertain); _contested_ (why it exists, several mechanisms probably operate together, the pure causal reading overreaches); _open_ (how much mobility a society _should_ have, a value question). And we preserved the one solid conclusion the curve genuinely supports without needing causation settled: _mobility varies enormously across societies, so it is changeable, an arrangement, not human nature_.\n\nThis completes the empirical core, that position shapes life chances (Part 2), the machinery transmits it (Part 3), and it passes down measurably but variably (Part 4). The Think Deeper proved the book's deepest refrain on the hardest case: even a fully settled causal link would not deliver a policy verdict, which still requires magnitudes, costs, alternatives, and irreducible value judgments. Next, Part 5 goes directly to _poverty_ , the lived reality of the bottom rungs, where the structure-versus-merit debate turns most human and the \"culture of poverty\" demands the book's most careful handling.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1330,
+      "out_sha": "de1d146f74d0",
       "note": ""
     },
     {
