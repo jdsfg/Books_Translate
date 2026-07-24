@@ -1499,11 +1499,11 @@
       "en_title": "Chapter 13: Dimensionality Reduction — PCA and t-SNE",
       "order": 115,
       "src_chars": 856,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6b258fadaec4",
       "src": "### 13.6 Connection to SVMs and Embeddings\n\nRecall from Chapter 11 that the SVM kernel trick projects data into an implicit high-dimensional feature space. PCA projects in the opposite direction: from high-dimensional to low-dimensional. Together, they illustrate a key principle: the \"right\" dimensionality for a problem depends on the structure of the data, not on the number of original features.\n\nWord embeddings (Chapter 19) will take this further: instead of an unsupervised linear projection, they _learn_ a dense low-dimensional representation that is maximally predictive of linguistic context. The connection between PCA (unsupervised linear representation learning) and word embeddings (supervised non-linear representation learning) is deep — both are trying to find the low-dimensional structure in high-dimensional data.\n\n\n### 13.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 238,
+      "out_sha": "92cea9832e02",
       "note": ""
     },
     {
@@ -1511,11 +1511,11 @@
       "en_title": "Chapter 13: Dimensionality Reduction — PCA and t-SNE",
       "order": 116,
       "src_chars": 3482,
-      "status": "pending",
+      "status": "done",
       "src_sha": "53495231144a",
       "src": "#### Concept Check\n\n**Q1.** A dataset has 100 features, and PCA gives eigenvalues λ1=50,λ2=30,λ3=10\\lambda_1 = 50, \\lambda_2 = 30, \\lambda_3 = 10λ1​=50,λ2​=30,λ3​=10, with the remaining 97 eigenvalues summing to 10. How much variance do the first 3 components explain?\n\n**Answer:**\n\nTotal variance = 50+30+10+10=10050 + 30 + 10 + 10 = 10050+30+10+10=100.\n\nVariance explained by top 3 components = (50+30+10)/100=90%(50 + 30 + 10) / 100 = 90\\%(50+30+10)/100=90%.\n\nWe can reduce from 100 dimensions to 3 while retaining 90% of variance — a 97% reduction in dimensionality. This is common in practice: real-world high-dimensional data often has most of its variance concentrated in a small number of directions.\n\n**Q2.** Why does PCA center the data (subtract the mean) before computing the covariance matrix?\n\n**Answer:** Centering ensures that the covariance matrix X⊤X/(m−1)X^\\top X / (m-1)X⊤X/(m−1) measures the _variance_ of the data around its mean — the relevant quantity for PCA. Without centering, the covariance matrix includes the effect of the mean vector, and the first principal component would point toward the mean rather than capturing the direction of maximum spread. The first \"principal component\" would be trivially the direction of the mean, which is uninformative about the data's structure. After centering, all principal components capture genuine variance around the center.\n\n**Q3.** A t-SNE plot of a dataset shows 5 distinct clusters. Can you conclude that: (a) the original data has 5 natural groups? (b) the clusters in the plot are the same \"size\" in original space? (c) the spatial arrangement of clusters in the plot reflects their relative positions in original space?\n\n**Answer:** **(a) Yes, with caution:** t-SNE is designed to reveal cluster structure, and well-separated clusters in a t-SNE plot typically reflect genuine local structure in the original data. This conclusion is reasonable, though you should verify with other methods.\n\n**(b) No:** t-SNE rescales and distorts distances. A small cluster in the t-SNE plot might be a large, dense group in original space; a large cluster might be a small, sparse group. Cluster sizes in t-SNE plots are not meaningful.\n\n**(c) No:** This is the critical caveat for t-SNE. The algorithm preserves local neighborhoods but not global distances. Two clusters that are nearby in the t-SNE plot might actually be far apart in original space, or vice versa. Never interpret the spatial arrangement of clusters in a t-SNE plot as reflecting their relative distances in original space.\n\n**Q4.** Compare PCA and feature normalization (standardization). Both modify the feature representation before applying another algorithm. What does each one do, and when would you use each?\n\n**Answer:** **Feature normalization/standardization** rescales each feature independently to zero mean and unit variance. It does not change the number of features or rotate the coordinate system. It prevents features with large numerical scales from dominating distance-based algorithms. Used as preprocessing for almost any ML algorithm.\n\n**PCA** rotates the coordinate system to align with the directions of maximum variance, then reduces dimensionality by keeping only the top-kkk components. It decorrelates features (principal components are orthogonal), reduces dimensionality, and can remove noise.\n\nUse standardization: always, before distance-based methods (K-means, SVM, KNN) and when features are on different scales.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1129,
+      "out_sha": "1c34530ada3f",
       "note": ""
     },
     {
@@ -1523,11 +1523,11 @@
       "en_title": "Chapter 13: Dimensionality Reduction — PCA and t-SNE",
       "order": 117,
       "src_chars": 414,
-      "status": "pending",
+      "status": "done",
       "src_sha": "52f66549b727",
       "src": "Use PCA: when the data is high-dimensional and you suspect most variance is in a low-dimensional subspace; for visualization (reduce to 2–3 components); for noise reduction; before K-means when many features are correlated.\n\nOften both: standardize first, then apply PCA. Standardization ensures each feature contributes equally to the PCA; otherwise features with large raw variance dominate the first component.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 120,
+      "out_sha": "312638eb391f",
       "note": ""
     },
     {
@@ -1535,11 +1535,11 @@
       "en_title": "Chapter 13: Dimensionality Reduction — PCA and t-SNE",
       "order": 118,
       "src_chars": 3331,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ae432e649cc1",
       "src": "#### Application Problems\n\n**Q1.** You have a medical imaging dataset: 5,000 MRI scans, each with 256×256=65,536256 \\times 256 = 65,536256×256=65,536 voxels. You want to cluster patients by brain structure similarity. Using raw voxels as features would be infeasible. Describe how you would use PCA to make clustering tractable, and discuss how many principal components to keep.\n\nHint\n\nThink about the computational cost of clustering in 65,536 dimensions vs. 100 dimensions. Also consider: what fraction of variance is typically captured by the top principal components for images?\n\n**Answer:**\n\n**Step 1 — Flatten and center:** Represent each MRI as a 65,536-dimensional vector; subtract the mean MRI across the dataset.\n\n**Step 2 — PCA:** Compute the SVD of the centered data matrix X∈R5000×65536X \\in \\mathbb{R}^{5000 \\times 65536}X∈R5000×65536. Note: computing the full 65,536×65,53665,536 \\times 65,53665,536×65,536 covariance matrix is infeasible. Instead, compute the SVD of XXX directly (or use the 5000×50005000 \\times 50005000×5000 matrix XX⊤XX^\\topXX⊤, since m<nm < nm<n, and extract right singular vectors from the top left singular vectors).\n\n**Number of components to keep:** MRI data is typically highly structured — brain anatomy occupies a relatively small subspace of all possible 256×256256 \\times 256256×256 images. A common heuristic: keep enough components for 90–95% explained variance. For medical images, this often requires 100–500 principal components (vs. 65,536 raw voxels). Plot the scree plot and choose the \"elbow,\" or retain components explaining >90% of variance.\n\n**Step 3 — Cluster in reduced space:** Apply K-means or agglomerative clustering on the 200-dimensional (say) PCA representation. Clustering in 200D is tractable; in 65,536D it would suffer from the curse of dimensionality and be computationally prohibitive.\n\n**Caveat:** PCA is a linear projection. Brain structure differences that appear in non-linear subspaces (e.g., topological connectivity differences) might be lost. For large datasets, consider UMAP or autoencoders (non-linear generalization of PCA using neural networks, covered in Chapter 24).\n\n**Q2.** You apply PCA to a dataset and find that the first two principal components explain 45% and 30% of total variance respectively. A colleague proposes using both components as features for a downstream logistic regression model. You notice that the raw data has 50 features. Describe two reasons this dimensionality reduction might help the logistic regression, and one scenario where it could hurt.\n\n**Answer:**\n\n**Reason 1 — Reduced overfitting (variance reduction):** With 50 features and a limited training set, logistic regression may overfit by finding spurious correlations between noise features and the label. By compressing to 2 principal components, we drastically reduce the number of parameters from 50 to 2, greatly lowering variance. The model is forced to focus on the two dominant directions of variation in the data.\n\n**Reason 2 — Removes multicollinearity:** Real-world datasets often have highly correlated features (e.g., multiple demographic variables that move together). Logistic regression is unstable when features are nearly collinear — weights blow up. PCA produces orthogonal components, so multicollinearity is eliminated by construction.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1140,
+      "out_sha": "b2c3836d7c1a",
       "note": ""
     },
     {
@@ -1547,11 +1547,11 @@
       "en_title": "Chapter 13: Dimensionality Reduction — PCA and t-SNE",
       "order": 119,
       "src_chars": 608,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fbd6fa107229",
       "src": "**Scenario where it hurts:** If the discriminative signal lives in lower-variance directions (as discussed in the Common Misconception in Section 13.2), PCA may discard the most predictive dimensions. For example, if the label is determined by a combination of features that only explains 5% of total variance, neither PC1 (45%) nor PC2 (30%) will capture it. The compressed 2-component model may perform worse than the full 50-feature model. This is why supervised dimensionality reduction (LDA, or learning the representation jointly with the classifier) is often superior to PCA for classification tasks.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 177,
+      "out_sha": "96c4296de65e",
       "note": ""
     },
     {
