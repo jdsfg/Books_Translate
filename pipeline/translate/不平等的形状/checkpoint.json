@@ -2227,11 +2227,11 @@
       "en_title": "Chapter 17: Race, Origin, and the Wealth Gap",
       "order": 177,
       "src_chars": 3431,
-      "status": "pending",
+      "status": "done",
       "src_sha": "359e805e8f3a",
       "src": "The pay gap taught us to decompose. This chapter teaches a second, equally important discipline that the pay gap could not, because the pay gap's gross figure is itself sometimes disputed. With the gaps we take up now, gaps by race and origin, and above all the racial wealth gap, we meet a different situation: a gap whose _existence and rough size are settled beyond reasonable dispute_. And settledness changes the discipline. With a settled measurement, the false-balance trap becomes the live danger: the temptation to manufacture a fake debate over whether the gap _exists_ , to hedge a measured reality into \"some argue there may be disparities,\" which is not even-handedness but cowardice, and is as much a failure as taking a side. So the rule for this chapter has two parts, and keeping them apart is the whole skill: _state the measured gap plainly and with conviction, because it is real; and run its causes through the full contested decomposition, because they are not settled._ Confuse the two, fake a debate about the measurement or smuggle a verdict about the cause, and you fail. Keep them apart, and you can think about gaps by race and origin, where the distinction between a settled measurement and a contested cause carries its heaviest load, without losing either your honesty or your nerve.\n\nThis is also the chapter where the comparative eye and the within-group-variance guard do their hardest work, because group gaps are uniquely prone to two errors: treating one society's racial arrangement as the universal shape of the problem, and collapsing a difference between group _averages_ into a claim about group _members_. We will guard both.\n\n\n### 17.1 A settled measurement: the racial wealth gap\n\nLet us begin with the wealth gap by race in the United States, stated plainly, with its as-of and source, exactly as a settled fact should be stated.\n\nIn the United States, the typical (median) white family holds substantially more wealth than the typical Black family, on the order of roughly six times as much, and considerably more than the typical Hispanic family, on the order of roughly four to five times as much. In the Federal Reserve's 2022 Survey of Consumer Finances, the median white household's net worth was a few hundred thousand dollars while the median Black household's was a small fraction of that. This is not a contested claim. It is among the most robustly measured facts in American social science, found across data sources and across decades, and the gap in _wealth_ is far larger than the gap in _income_ , for exactly the reasons Chapter 2 taught: wealth compounds and is inherited, so it accumulates the residue of the past in a way income does not.\n\nState that plainly, and resist three temptations at once. The first temptation is to hedge it (\"some studies suggest possible disparities\"), which would be false-balance cowardice, the gap is real and large, full stop. The second temptation is the opposite: to let the plainly-stated measurement _imply its own explanation_ , to say \"the wealth gap\" in a tone that makes a particular causal story sound already proven. It is not; the size is settled, the cause is the contested part, and we have not gotten there yet. The third temptation is to forget the _within-group variance_ the moment a group average is stated, so we install that guard immediately, before going further, because everything that follows depends on it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1081,
+      "out_sha": "a21ccf8634dd",
       "note": ""
     },
     {
@@ -2239,11 +2239,11 @@
       "en_title": "Chapter 17: Race, Origin, and the Wealth Gap",
       "order": 178,
       "src_chars": 1405,
-      "status": "pending",
+      "status": "done",
       "src_sha": "49bc9e64fbff",
       "src": "#### Common Misconception\n\nThe most important thing to understand about any between-group gap is that _a difference in group averages is not a fact about group members._ The statement \"median white wealth is about six times median Black wealth\" is a statement about two _medians_ , two typical points in two wide distributions. It is emphatically _not_ a statement that white individuals have six times the wealth of Black individuals, and it is consistent with enormous overlap between the two distributions: millions of Black families with more wealth than millions of white families, vast ranges within each group, and individual lives that the group average cannot predict. The _between-group_ gap (the difference in averages) and the _within-group_ variance (the spread inside each group) are different quantities, and the within-group variance is, for almost every group on almost every measure, _much larger_ than the between-group gap. To read a group average as a claim about any individual, or to treat a group as internally uniform, is a basic statistical error and also a moral one, because it erases the individual person into a category. Every group gap in this chapter is a fact about distributions, and a person is never a distribution. Hold this guard especially hard here, because nowhere is the slide from \"group difference\" to \"claim about individuals\" more tempting or more damaging.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 416,
+      "out_sha": "e45058b4082c",
       "note": ""
     },
     {
@@ -2251,11 +2251,11 @@
       "en_title": "Chapter 17: Race, Origin, and the Wealth Gap",
       "order": 179,
       "src_chars": 3140,
-      "status": "pending",
+      "status": "done",
       "src_sha": "04bf96a0d8a7",
       "src": "### 17.2 The causes: running the full decomposition\n\nNow we cross, with a clear marker, from the settled measurement (the gap exists and is roughly this large) into the contested terrain of _why_. The existence is settled; the causes run the full Chapter 15 decomposition, with the residual's clusters held at equal standing and no verdict smuggled in. Let us lay out the major families of explanation, each at its strongest, none crowned.\n\nThe **historical-legacy** account, stated at full strength: wealth is precisely the thing that accumulates and inherits across generations (Chapter 8), so a gap that opened in the past, through historical exclusion from the very mechanisms of wealth-building, will persist into the present by the ordinary compounding logic of Chapter 8 even if all present-day treatment were identical, because the descendants of those who could not accumulate start with less to inherit, less to pass on, less cushion to convert risk into opportunity. On this account, much of the wealth gap is the long shadow of history operating through the entirely ordinary machinery of inheritance. Notably, it does not depend on contested claims about the present; it follows from the inheritance mechanics we already established and the historical fact of past exclusion. This is a genuine logical feature of the legacy account, not a mark of superiority, and the other three accounts have their own evidentiary footing in turn: the structural account can point to direct, matched-application measurement of present-day treatment, the measurable-factors account to observable mediating variables that can be tallied, and the cultural account, read with the two-way guard of Chapter 14, to documented patterns of practice. Each of the four rests on a different kind of evidence, and which set of premises is \"firmest\" is not a ranking this chapter makes.\n\nThe **structural-and-treatment** account, at full strength: present-day mechanisms, not only past ones, continue to shape the gap, through the channels of Part 3 operating unequally, unequal access to the neighborhoods and schools that build advantage, to the networks that open opportunities, to credit and homeownership (the largest wealth-builder for most families), plus discrimination that, as we saw, is real and measured in specific settings. On this account, the gap is sustained not only by history's shadow but by present arrangements that distribute wealth-building opportunities unequally.\n\nThe **differences-in-measurable-factors** account, at full strength: part of the gap is associated with measurable differences that themselves bear on wealth accumulation, differences in income (which feeds saving), in age structure, in family structure, in education, in inheritance received, in patterns of saving and asset-holding. To the extent these factors differ across groups, they account for part of the wealth gap in the decomposition sense, though, exactly as in Chapter 16, \"accounted for by\" does not mean \"innocent,\" because those factors themselves have causes (including the historical and structural ones above) and their own freedom is contested.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1018,
+      "out_sha": "c83e28cbab25",
       "note": ""
     },
     {
@@ -2263,11 +2263,11 @@
       "en_title": "Chapter 17: Race, Origin, and the Wealth Gap",
       "order": 180,
       "src_chars": 2171,
-      "status": "pending",
+      "status": "done",
       "src_sha": "99151fb96efb",
       "src": "The **cultural** account, at full strength and with the Chapter 14 care: there may be group differences in patterns of saving, investing, asset preference, or financial practice that contribute at the margin, understood, in the disciplined Lewis-style sense, as potentially _adaptive responses_ to historical and structural conditions rather than as free-floating \"values,\" and held with the same protection from caricature in both directions that we gave the culture-of-poverty debate. This account must be neither inflated into \"the gap is their own fault\" nor reflexively declared unspeakable; like the other three, it is one possible contributing factor, structurally rooted, of contested weight.\n\n\n#### Definition: Settled Measurement vs. Contested Cause\n\nA **settled measurement** is an IS so robustly established that manufacturing a debate over its _existence_ is itself a balance failure (false balance): it must be stated plainly. A **contested cause** is a WHY, an account of _why_ the settled measurement exists, where genuine debate among serious people is real and the steelman duty applies. The discipline is to _never confuse them_ : do not fake a debate over the settled measurement, and do not present any contested cause as if it shared the measurement's settledness. The wealth gap's _size_ is a settled measurement; its _causes_ are contested; and a contested _normative verdict_ about whether it is unjust is a third thing again, never settled.\n\nIn plain language: that the gap exists is not up for debate; why it exists is genuinely up for debate; whether it is unjust is a separate value question. Three registers, one gap, kept rigorously apart, the is/why/ought discipline of Chapter 2 in its most charged application. Notice the asymmetry from the pay-gap chapter: there, even the gross figure invited \"it's a myth\" denials we had to rebut; here, the measurement is settled enough that the live danger flips to false balance, and the steelman duty lives entirely on the _causal_ side, where it belongs. Learning to feel which danger is live, denial of a real measurement, or fake debate over a settled one, is the judgment this chapter trains.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 860,
+      "out_sha": "d06958b938f3",
       "note": ""
     },
     {
@@ -2275,11 +2275,11 @@
       "en_title": "Chapter 17: Race, Origin, and the Wealth Gap",
       "order": 181,
       "src_chars": 3236,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0f125378cecb",
       "src": "### 17.3 Holding the causal decomposition honest\n\nThe causes above are not rivals to be ranked into a winner; all four mechanisms operate, their relative weights are genuinely contested, and this chapter does not rank them. To do otherwise would be to commit the very error Chapter 15 named: apportionment-as-argument, the move that pre-weights some accounts above others and hands the reader a verdict dressed as a description. Saying \"this account carries substantial support and that one is merely debated\" treats a contested apportionment as if it were a settled measurement, which is exactly what we are forbidden to do here, where the _size_ of the gap is settled but the _weights of its causes_ are not. So we state the weights as contested, full stop, and leave the weighing to the reader. But honesty here requires more than listing the accounts and declining to rank them; it requires applying the residual discipline at maximum pressure, because this is exactly where apportionment-as-argument creeps in.\n\nFirst, the discrimination distinction, once more, because it is indispensable: discrimination by race in housing, lending, hiring, and evaluation is _real and measured in specific settings_ , this is a settled IS, established by careful studies including matched-application designs. _And_ the _share_ of the aggregate wealth gap attributable to present-day discrimination is _not_ directly measured; it is a contested interpretation, because the aggregate gap mixes present discrimination with history's compounding shadow and with the measurable factors, and no study cleanly apportions the whole. Both halves, again: discrimination is real and measured (do not deny it), and its precise share of this gap is contested (do not assume it). The same two-part discipline as the pay gap.\n\nSecond, the \"explained\" trap, race edition. When a decomposition finds that part of the wealth gap is \"accounted for\" by, say, income differences, the careless analyst on one side concludes \"so it's not about race, it's about income.\" This commits Chapter 15's trap two: it forgets to ask _why_ the groups differ in income, which itself may run through the historical and structural channels, so the income difference may be race operating _through_ a measured factor, not instead of it. The careless analyst on the other side commits trap one, treating the entire unexplained residual as present-day discrimination, when it also contains history's shadow and unmeasured factors. Both inflate; the discipline holds the explained portion's own causes open and the residual's clusters at equal standing.\n\nThird, and crucial for keeping the IS register clean, none of this causal contestation reaches back to unsettle the _measurement_. That the causes are debated does not make the gap's existence debatable. A common and corrosive move is to use genuine causal uncertainty (\"we can't be sure how much is discrimination versus history versus income\") to cast doubt on the gap itself (\"so maybe it's overstated\"). No. The size is settled; the causal uncertainty lives entirely downstream of it. Keeping the settled measurement firmly stated even while the causes are fought over is the precise discipline this chapter exists to teach.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1003,
+      "out_sha": "2c79c4477b09",
       "note": ""
     },
     {
@@ -2287,11 +2287,11 @@
       "en_title": "Chapter 17: Race, Origin, and the Wealth Gap",
       "order": 182,
       "src_chars": 2104,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7b2243429107",
       "src": "### 17.4 The comparative eye and the gentle caution\n\nTwo final disciplines, the first to widen the view and the second to keep it humane.\n\nThe comparative eye, applied here, cuts against treating any one society's racial arrangement as the universal shape of group inequality. Between-group inequality takes profoundly different forms across societies: which groups are advantaged or disadvantaged, the histories that produced the gaps, the categories themselves (what counts as a \"group\" is socially and historically specific and varies enormously across societies), and the size and trend of the gaps all differ. A reader formed entirely on one country's racial story can mistake its particular categories and history for the universal template, which is exactly the error Chapter 1 warned against. Group gaps are real in many societies; their _shape_ is particular to each, and the honest analyst says which society, which groups, which history, which as-of, every time, and does not export one nation's template onto another or treat any society (including the reader's own, and including others one might be tempted to caricature) as the human default.\n\nThe gentle caution returns us to the within-group guard, now with its full human weight. Every account in this chapter is about _distributions_ , group averages and their spreads, and a person is never a distribution. The Black family with substantial wealth and the white family with none are not statistical errors; they are among the millions who populate the overlap between the distributions, and their lives are not predicted by the group average. To keep faith with them, we must say clearly what the group statistics do and do not claim: they describe real differences in averages, produced by real and contested causes, _and_ they say nothing about any individual, who remains an agent whose life the category cannot foretell. The gap is real and worth understanding; the individual is real and not reducible to the gap. Holding both is the difference between sociology and stereotype, and on this subject the difference is everything.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 681,
+      "out_sha": "628158bf6762",
       "note": ""
     },
     {
@@ -2299,11 +2299,11 @@
       "en_title": "Chapter 17: Race, Origin, and the Wealth Gap",
       "order": 183,
       "src_chars": 1966,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d802d5ba1aea",
       "src": "### 17.5 What Part 6 has built\n\nPart 6 took us across the gaps between groups, the terrain where opposing camps most often wield the same numbers as weapons, and it did so with method rather than reflex. Chapter 15 built the instrument: the decomposition of a gross gap into an explained portion and a residual, the two traps of inflating either, the residual's two clusters held at equal standing, and the distinction between discrimination's _measured existence_ and its _contested share_. Chapter 16 applied it to the pay gap, modeling all five steps and the crossing into the normative. This chapter added the final discipline, the difference between a _settled measurement_ (stated plainly, never faked into a debate) and a _contested cause_ (run through the full decomposition), and the dangers specific to each, false balance for the former, smuggled verdicts for the latter, plus the comparative eye and the within-group guard that group gaps especially demand.\n\nThe tools are now complete. We have learned to measure inequality (Part 0), to define class (Part 1), to see how position shapes lives (Part 2) and passes down (Part 3) and how much it passes down (Part 4), to understand poverty (Part 5), and to read group gaps without joining a tribe (Part 6). Through all of it, one register has been deliberately held in reserve: the OUGHT. We have separated it, marked it, and refused it, again and again, promising that the strongest cases on every side would come in Part 7. That promise now comes due. Part 7 turns from _what is_ and _why_ to the question the whole book has been circling and declining to answer: _is inequality just?_ It is the contested heart, and we enter it the way we have done everything, by giving every serious position its strongest form and crowning none, beginning with the oldest and most provocative claim of all: that a society _needs_ its inequality, that stratification is not a flaw but a function.\n\n\n### 17.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 643,
+      "out_sha": "319a012390ff",
       "note": ""
     },
     {
@@ -2311,11 +2311,11 @@
       "en_title": "Chapter 17: Race, Origin, and the Wealth Gap",
       "order": 184,
       "src_chars": 3087,
-      "status": "pending",
+      "status": "done",
       "src_sha": "779518005041",
       "src": "#### Concept Check\n\n**Q1.** Explain the difference between a \"settled measurement\" and a \"contested cause,\" using the racial wealth gap, and state the specific failure that threatens each.\n\nHint\n\nWhich is the _existence and size_ of the gap, and which is _why_ it exists? What is the danger of faking a debate, and the danger of smuggling a verdict?\n\n**Answer:** A _settled measurement_ is an IS so robustly established that debating its _existence_ is itself a balance failure. The racial wealth gap's _size_ , the typical white family holding roughly six times the wealth of the typical Black family and roughly four to five times the typical Hispanic family (US, recent Federal Reserve data), is a settled measurement: found across sources and decades, not in dispute. A _contested cause_ is a WHY, an account of _why_ the gap exists (historical legacy, present structural mechanisms, differences in measurable factors, cultural factors), where genuine debate among serious people is real and the steelman duty applies. The failure threatening the settled measurement is _false balance_ , faking a debate over whether the gap exists (\"some studies suggest possible disparities\"), which is cowardice, not even-handedness. The failure threatening the contested cause is _smuggling a verdict_ , presenting one causal story as if it shared the measurement's settledness, or letting the plainly-stated gap imply its own explanation. The discipline is to never confuse them: state the measurement plainly, run the causes through the full contested decomposition.\n\n**Q2.** Why does the chapter insist that \"a difference in group averages is not a fact about group members,\" and why is the within-group variance usually larger than the between-group gap?\n\nHint\n\nThe gap compares two _medians_ (or means) of two wide distributions. What does that allow about overlap between the distributions and about any individual?\n\n**Answer:** A group gap (like \"median white wealth is about six times median Black wealth\") compares two _typical points_ in two _wide distributions_ ; it is not a claim that any white individual has six times any Black individual's wealth. It is fully consistent with enormous _overlap_ between the distributions, millions of Black families with more wealth than millions of white families, and vast ranges within each group, so it cannot predict any individual's wealth. The within-group variance (the spread inside each group) is usually _much larger_ than the between-group gap because each group spans nearly the whole range from very poor to very rich, while the gap is only a difference between the two groups' middles; the internal spread dwarfs the difference between the averages. Reading a group average as a fact about individuals, or treating a group as internally uniform, is both a statistical error (confusing a distribution with a point) and a moral one (erasing the individual into a category). The chapter stresses this guard hardest here because the slide from \"group difference\" to \"claim about individuals\" is most tempting and most damaging on race.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 961,
+      "out_sha": "44d61a35760d",
       "note": ""
     },
     {
@@ -2323,11 +2323,11 @@
       "en_title": "Chapter 17: Race, Origin, and the Wealth Gap",
       "order": 185,
       "src_chars": 2448,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5dc35fc1fc2e",
       "src": "#### Application Problems\n\n**Q1.** A decomposition finds that part of the racial wealth gap is \"accounted for\" by differences in income between groups. One commentator says \"so it's about income, not race.\" Another says \"the entire unexplained remainder is present-day discrimination.\" Diagnose both errors using Chapter 15's two traps, and give the disciplined statement.\n\nHint\n\nFor the first: _why_ do the groups differ in income, could race operate _through_ income? For the second: what besides present discrimination lives in the residual (recall the historical-legacy account)?\n\n**Answer:** The first commentator commits _trap two_ (inflating the explained portion into innocence): saying \"it's about income, not race\" forgets to ask _why_ the groups differ in income, which itself may run through the historical and structural channels, so the income difference may be _race operating through_ a measured factor, not instead of it. \"Accounted for by income\" does not mean \"not about race.\" The second commentator commits _trap one_ (inflating the residual into discrimination): treating the entire unexplained remainder as present-day discrimination ignores that the residual also contains _history's compounding shadow_ (the historical-legacy account, which needs no present discrimination to persist) and _unmeasured factors_ ; the residual is a measure of ignorance, not a measure of present discrimination. The disciplined statement: part of the gap is associated with income differences _whose own causes may include the historical and structural channels_ (so \"explained\" is not \"innocent\"), and the residual contains a discrimination cluster (real, measured in specific settings, of contested share) _and_ the legacy of past exclusion compounding through inheritance _and_ unmeasured factors, held at equal standing, with the decomposition adjudicating none of them.\n\n**Q2.** For _each_ of the four accounts of the wealth gap (historical-legacy, structural-and-treatment, differences-in-measurable-factors, cultural), state in one sentence what premises it rests on and what it cannot by itself measure. Then explain why stating these features for one account, but not the others, would itself be a balance failure.\n\nHint\n\nEach account rests on some premises (some about the past, some about the present) and none, on its own, fixes its _share_ of the aggregate gap. Recall §17.3: the _weights_ of the causes are contested, full stop.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 802,
+      "out_sha": "5460323d8134",
       "note": ""
     },
     {
@@ -2335,11 +2335,11 @@
       "en_title": "Chapter 17: Race, Origin, and the Wealth Gap",
       "order": 186,
       "src_chars": 1432,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ce39a1b0fcaf",
       "src": "**Answer:** _Historical-legacy_ : rests on the inheritance mechanics of Chapter 8 plus the historical fact of past exclusion (premises not seriously disputed, and notably not about the present); it cannot by itself measure how much of the present gap is its doing. _Structural-and-treatment_ : rests on present-day mechanisms (unequal access to neighborhoods, schools, networks, credit, homeownership) plus discrimination that is real and measured in specific settings; it cannot by itself measure its _share_ of the aggregate gap, which mixes with history and measured factors. _Differences-in-measurable-factors_ : rests on observable group differences (income, age, family, education) that bear on accumulation; it cannot tell us _why_ those factors differ, so \"accounted for\" is not \"innocent.\" _Cultural_ : rests on possible group differences in saving or asset practice, held in the disciplined Lewis-style as adaptive responses to structure; it cannot by itself measure its weight and is most prone to caricature in both directions. Stating these features for one account alone would be a balance failure of the apportionment-as-argument kind (§17.3): giving one account more air-time, more vividness, or its own dedicated treatment hands the reader a ranking dressed as a description, when the _weights of the causes are contested, full stop_. The honest move is to hold all four at equal standing and let the reader weigh.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 487,
+      "out_sha": "aaf713277809",
       "note": ""
     },
     {
@@ -2347,11 +2347,11 @@
       "en_title": "Chapter 17: Race, Origin, and the Wealth Gap",
       "order": 187,
       "src_chars": 3214,
-      "status": "pending",
+      "status": "done",
       "src_sha": "50c21bb27e8b",
       "src": "#### Think Deeper\n\n**Q1.** This chapter says the existence of a gap can be _settled_ while its causes are _contested_ and its justice is a _third, open question_. Take the racial wealth gap and trace how three people could agree completely that the gap exists and is large, agree substantially on its causes, and _still_ disagree about whether it is unjust and what (if anything) should be done. What does this show about the relationship between history, cause, and verdict?\n\n**Discussion:** This question integrates the chapter's three-register discipline at its most charged, and it shows, once more, that even agreement on the facts and the causes does not produce agreement on the verdict, because the verdict rests on value premises the facts cannot supply.\n\nGrant all three people the settled measurement (the gap is real and large) and even substantial agreement on causes (say, they agree on roughly the same mix of historical, structural, measurable-factor, and cultural contributions, however they apportion the weights). They can still diverge sharply on justice and response.\n\nPerson One holds that justice is fundamentally _backward-looking_ and concerned with rectification: if the present gap is largely the compounded result of past injustice (exclusion that was wrong when it happened), then the present distribution inherits that wrongness, and a society has an obligation to address it precisely _because_ of how it came about. For this person, the causal story (history's shadow) does heavy normative work: the gap is unjust because its lineage is unjust, and something is owed.\n\nPerson Two holds that justice is fundamentally _forward-looking_ and concerned with present and future treatment, not with the lineage of current holdings. This person can fully agree that past exclusion was wrong and _still_ hold that what justice requires now is that present arrangements treat everyone fairly going forward, not that present holdings be rearranged according to their history. For this person, the same causal story (history's shadow) does _not_ establish a present obligation to close the gap, because they locate justice in the fairness of present rules, not in the ancestry of present wealth. Note that Persons One and Two can agree on every fact and every cause and still disagree, because they hold different _theories of what justice is about_ (rectification versus present fairness), which is a value question, not a factual one, and which we will meet head-on in Chapter 20 as the clash between historical and present-time-slice principles of justice.\n\nPerson Three holds that justice is about _present outcomes and need_ regardless of history or causal lineage: for this person, what matters is not how the gap arose but whether anyone is presently deprived, so they might support addressing deprivation wherever it falls (across all groups) while being indifferent to the _racial_ composition of the gap as such, caring about the bottom of every group rather than the difference between group averages. This person agrees on facts and causes too, and still reaches a different practical conclusion, because their value premise locates justice in outcomes, not in groups or in history.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1010,
+      "out_sha": "c5f1c1ef5520",
       "note": ""
     },
     {
@@ -2359,11 +2359,11 @@
       "en_title": "Chapter 17: Race, Origin, and the Wealth Gap",
       "order": 188,
       "src_chars": 1266,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f95f34256b30",
       "src": "What this shows is the book's deepest structure, here at maximum charge: _history_ (what happened), _cause_ (why the present gap exists), and _verdict_ (whether it is unjust and what to do) are three distinct things, and the move from the first two to the third _always_ requires a value premise, specifically, a theory of what justice is fundamentally about (rectification of past wrongs, fairness of present rules, or decency of present outcomes), and reasonable people hold different such theories. This is why establishing the cause, even establishing that the gap descends from acknowledged historical injustice, does not by itself settle the verdict: the backward-looking, forward-looking, and outcome-focused theories of justice are genuinely contested, and which you hold determines what the agreed facts and causes _mean_ for what should be done. The chapter's discipline, state the measurement, debate the causes, and keep the verdict separate and open, is not evasion; it is the recognition that the verdict turns on a contested theory of justice that the next Part will lay out in full, with every position given its strongest form and none crowned. The facts and causes are the input to that argument. They are not the argument, and they do not end it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 402,
+      "out_sha": "98f93eb1a5ac",
       "note": ""
     },
     {
@@ -2371,11 +2371,11 @@
       "en_title": "Chapter 17: Race, Origin, and the Wealth Gap",
       "order": 189,
       "src_chars": 2894,
-      "status": "pending",
+      "status": "done",
       "src_sha": "31837251615a",
       "src": "### Chapter Summary\n\nThis chapter taught the discipline of distinguishing a **settled measurement** from a **contested cause** , using gaps by race and origin. The racial wealth gap's _size_ is a settled measurement, stated plainly: in the US, the typical white family holds roughly six times the wealth of the typical Black family and roughly four to five times the typical Hispanic family (recent Federal Reserve data), with the wealth gap far larger than the income gap because wealth compounds and inherits (Chapter 2). With a settled measurement, the live danger flips from denial to _false balance_ : we must state it plainly and refuse to fake a debate over its existence, while installing the **within-group variance guard** , a group-average difference is _not_ a fact about group members, the distributions overlap enormously, and the within-group spread dwarfs the between-group gap, so a person is never a distribution.\n\nWe then ran the _causes_ through the full contested decomposition, each account at full strength, none crowned: the **historical-legacy** account (a past gap compounding through ordinary inheritance, persisting without requiring present discrimination), the **structural-and-treatment** account (present mechanisms and measured discrimination distributing wealth-building unequally), the **differences-in-measurable-factors** account (income, age, family, education, where \"accounted for\" is not \"innocent\"), and the **cultural** account (held in the disciplined Lewis-style, structurally-rooted, protected from caricature in both directions). We applied the residual discipline at maximum pressure: discrimination is _real and measured in specific settings_ while its _share of the aggregate gap is contested_ ; the \"explained\" trap and the residual-inflation trap were diagnosed in their race editions; and crucially, causal contestation does _not_ reach back to unsettle the measurement.\n\nTwo final disciplines: the _comparative eye_ (between-group inequality takes different forms across societies, no society's racial arrangement is the universal template, always name which society, groups, history, and as-of) and the _humane within-group caution_ (the statistics describe real average differences from contested causes _and_ say nothing about any individual agent). The Think Deeper showed that three people can agree on the settled measurement and substantially on causes and _still_ disagree on the verdict, because the move from history and cause to verdict requires a contested _theory of justice_ (rectification, present fairness, or outcome/need), which Part 7 will lay out.\n\nThe tools are now complete. Part 7 turns at last to the OUGHT held in reserve through the whole book: _is inequality just?_ It begins with the most provocative claim of all, that a society _needs_ its inequality, that stratification is a function, not a flaw.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 963,
+      "out_sha": "d36746bd71a8",
       "note": ""
     },
     {
