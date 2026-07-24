@@ -311,11 +311,11 @@
       "en_title": "Chapter 2: Mathematical Foundations I — Linear Algebra Essentials",
       "order": 16,
       "src_chars": 3275,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9d2e2a24272e",
       "src": "#### Definition: Matrix Multiplication\n\nThe product of an m×km \\times km×k matrix AAA and a k×nk \\times nk×n matrix BBB is an m×nm \\times nm×n matrix C=ABC = ABC=AB, where:\n\n(AB)ij=∑r=1kairbrj(AB)_{ij} = \\sum_{r=1}^k a_{ir} b_{rj}(AB)ij​=r=1∑k​air​brj​\n\nIn plain language, the (i,j)(i,j)(i,j) entry of the product is the dot product of row iii of AAA with column jjj of BBB.\n\nThe inner dimensions must match: an m×km \\times km×k matrix can only multiply a k×nk \\times nk×n matrix (the kkk's must agree). The result has the outer dimensions: m×nm \\times nm×n.\n\nExample: Apply a 2×22 \\times 22×2 weight matrix to a 2D feature vector:\n\nW=(1234),x=(56)W = \\begin{pmatrix} 1 & 2 \\\\\\ 3 & 4 \\end{pmatrix}, \\quad \\mathbf{x} = \\begin{pmatrix} 5 \\\\\\ 6 \\end{pmatrix}W=(13​24​),x=(56​) Wx=(1⋅5+2⋅63⋅5+4⋅6)=(1739)W\\mathbf{x} = \\begin{pmatrix} 1 \\cdot 5 + 2 \\cdot 6 \\\\\\ 3 \\cdot 5 + 4 \\cdot 6 \\end{pmatrix} = \\begin{pmatrix} 17 \\\\\\ 39 \\end{pmatrix}Wx=(1⋅5+2⋅63⋅5+4⋅6​)=(1739​)\n\n\n#### Definition: Transpose\n\nThe **transpose** of a matrix A∈Rm×nA \\in \\mathbb{R}^{m \\times n}A∈Rm×n is A⊤∈Rn×mA^\\top \\in \\mathbb{R}^{n \\times m}A⊤∈Rn×m, where (A⊤)ij=Aji(A^\\top)_{ij} = A_{ji}(A⊤)ij​=Aji​.\n\nIn plain language, flip the matrix along its diagonal: rows become columns.\n\nKey property: (AB)⊤=B⊤A⊤(AB)^\\top = B^\\top A^\\top(AB)⊤=B⊤A⊤. Notice the reversal — this matters when computing gradients in Chapter 4.\n\n\n#### Definition: Symmetric Matrix\n\nA matrix AAA is **symmetric** if A=A⊤A = A^\\topA=A⊤. Symmetric matrices arise naturally in ML: the _covariance matrix_ of a dataset is always symmetric. Many theorems simplify enormously for symmetric matrices.\n\n\n#### Common Misconception\n\nMatrix multiplication is _not_ commutative: in general, AB≠BAAB \\neq BAAB=BA. (Sometimes ABABAB is defined but BABABA is not, because the dimensions don't match. Even when both are defined and the same size, they can differ.) This trips up many beginners when they try to rearrange matrix expressions from ML algorithms.\n\n\n### 2.3 The Matrix Inverse and Linear Systems\n\n\n#### Definition: Matrix Inverse\n\nA square matrix A∈Rn×nA \\in \\mathbb{R}^{n \\times n}A∈Rn×n is **invertible** (or _non-singular_) if there exists a matrix A−1A^{-1}A−1 such that AA−1=A−1A=IAA^{-1} = A^{-1}A = IAA−1=A−1A=I, where III is the **identity matrix** (ones on the diagonal, zeros elsewhere).\n\nIn plain language, A−1A^{-1}A−1 is the \"undo\" operation for AAA: applying AAA then A−1A^{-1}A−1 returns to the original vector.\n\n**Why this matters for ML:** A key step in solving linear regression (Chapter 5) is solving the system of equations X⊤Xw=X⊤yX^\\top X \\mathbf{w} = X^\\top \\mathbf{y}X⊤Xw=X⊤y for the weight vector w\\mathbf{w}w. If X⊤XX^\\top XX⊤X is invertible, the solution is:\n\nw=(X⊤X)−1X⊤y\\mathbf{w} = (X^\\top X)^{-1} X^\\top \\mathbf{y}w=(X⊤X)−1X⊤y\n\nThis is called the _normal equation_ and we will derive it from first principles in Chapter 5.\n\nNot every matrix is invertible. A matrix fails to be invertible when its columns are linearly dependent — when some column is a linear combination of others. In ML terms, this happens when features are _perfectly correlated_ (e.g., if \"price in dollars\" and \"price in cents\" are both features). This is called _multicollinearity_ and causes numerical instability in the normal equation.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1563,
+      "out_sha": "c2ae2d017e4c",
       "note": ""
     },
     {
@@ -323,11 +323,11 @@
       "en_title": "Chapter 2: Mathematical Foundations I — Linear Algebra Essentials",
       "order": 17,
       "src_chars": 3023,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c3938bf6b7f6",
       "src": "#### Definition: Linear Independence\n\nA set of vectors v1,v2,…,vk\\mathbf{v}_1, \\mathbf{v}_2, \\ldots, \\mathbf{v}_kv1​,v2​,…,vk​ is **linearly independent** if the only solution to:\n\nc1v1+c2v2+⋯+ckvk=0c_1 \\mathbf{v}_1 + c_2 \\mathbf{v}_2 + \\cdots + c_k \\mathbf{v}_k = \\mathbf{0}c1​v1​+c2​v2​+⋯+ck​vk​=0\n\nis c1=c2=⋯=ck=0c_1 = c_2 = \\cdots = c_k = 0c1​=c2​=⋯=ck​=0.\n\nIn plain language, no vector in the set can be written as a combination of the others. Each vector adds genuinely new information.\n\n**The rank of a matrix** is the number of linearly independent columns (equivalently, linearly independent rows — they're always equal). A matrix is invertible if and only if its rank equals its number of columns (and rows).\n\n\n### 2.4 Projections: The Geometry of Least Squares\n\nThis section introduces one of the most beautiful ideas in linear algebra — and the idea that makes linear regression geometrically transparent.\n\nSuppose you have a vector b∈Rm\\mathbf{b} \\in \\mathbb{R}^mb∈Rm and a subspace V⊂RmV \\subset \\mathbb{R}^mV⊂Rm (say, the column space of a matrix AAA). What is the point in VVV _closest_ to b\\mathbf{b}b?\n\nThe answer is the **projection** of b\\mathbf{b}b onto VVV: the unique point b^∈V\\hat{\\mathbf{b}} \\in Vb^∈V such that the error vector e=b−b^\\mathbf{e} = \\mathbf{b} - \\hat{\\mathbf{b}}e=b−b^ is orthogonal to every vector in VVV.\n\n\n#### Definition: Orthogonal Projection\n\nThe **projection** of vector b\\mathbf{b}b onto the column space of matrix AAA is:\n\nb^=A(A⊤A)−1A⊤b\\hat{\\mathbf{b}} = A(A^\\top A)^{-1} A^\\top \\mathbf{b}b^=A(A⊤A)−1A⊤b\n\nThe **projection matrix** is P=A(A⊤A)−1A⊤P = A(A^\\top A)^{-1} A^\\topP=A(A⊤A)−1A⊤.\n\nIn plain language: PPP takes any vector b\\mathbf{b}b and finds the closest point in the column space of AAA.\n\nWhy does this matter for machine learning? In linear regression, we have a data matrix XXX (each row is a feature vector) and a target vector y\\mathbf{y}y (the labels). We want to find a weight vector w\\mathbf{w}w such that XwX\\mathbf{w}Xw is as close as possible to y\\mathbf{y}y.\n\nBut XwX\\mathbf{w}Xw lies in the _column space_ of XXX for any w\\mathbf{w}w. So we're asking: what is the closest point in the column space of XXX to the vector y\\mathbf{y}y? The answer is the projection:\n\ny^=X(X⊤X)−1X⊤y\\hat{\\mathbf{y}} = X(X^\\top X)^{-1} X^\\top \\mathbf{y}y^​=X(X⊤X)−1X⊤y\n\nAnd the optimal weight vector is exactly w^=(X⊤X)−1X⊤y\\hat{\\mathbf{w}} = (X^\\top X)^{-1} X^\\top \\mathbf{y}w^=(X⊤X)−1X⊤y.\n\nWe will derive this properly in Chapter 5. For now, understand the geometric picture: _linear regression is projection_.\n\n\n#### Common Misconception\n\nMany students think that projections are only useful in 2D or 3D geometry. In fact, the projection formula works in any number of dimensions and is one of the most computationally important operations in ML. PCA (Chapter 13), linear regression (Chapter 5), and the fundamental theorem of least squares all rely on projection.\n\n\n### 2.5 Special Matrices and the Spectral Theorem\n\nTwo matrix families are especially important in ML.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1346,
+      "out_sha": "339334ea2506",
       "note": ""
     },
     {
@@ -335,11 +335,11 @@
       "en_title": "Chapter 2: Mathematical Foundations I — Linear Algebra Essentials",
       "order": 18,
       "src_chars": 1224,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a96851e92602",
       "src": "#### Definition: Positive Semi-Definite Matrix\n\nA symmetric matrix A∈Rn×nA \\in \\mathbb{R}^{n \\times n}A∈Rn×n is **positive semi-definite (PSD)** if for all vectors x∈Rn\\mathbf{x} \\in \\mathbb{R}^nx∈Rn:\n\nx⊤Ax≥0\\mathbf{x}^\\top A \\mathbf{x} \\geq 0x⊤Ax≥0\n\nA PSD matrix with strict inequality (>0> 0>0) for all x≠0\\mathbf{x} \\neq \\mathbf{0}x=0 is called **positive definite (PD)**.\n\nIn plain language, a PSD matrix can only \"stretch\" vectors non-negatively. Covariance matrices and Gram matrices are always PSD. Positive definite matrices are always invertible.\n\n\n#### Definition: Eigenvalues and Eigenvectors\n\nFor a square matrix AAA, a non-zero vector v\\mathbf{v}v and scalar λ\\lambdaλ are an **eigenvector-eigenvalue pair** if:\n\nAv=λvA\\mathbf{v} = \\lambda \\mathbf{v}Av=λv\n\nIn plain language, v\\mathbf{v}v is a direction that AAA doesn't rotate — it only stretches by factor λ\\lambdaλ.\n\n**The Spectral Theorem** states: every real symmetric matrix AAA can be written as A=QΛQ⊤A = Q \\Lambda Q^\\topA=QΛQ⊤, where QQQ is an orthogonal matrix whose columns are the eigenvectors, and Λ\\LambdaΛ is a diagonal matrix of eigenvalues. This decomposition, called the _eigendecomposition_ , underlies PCA (Chapter 13).\n\n\n### 2.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 682,
+      "out_sha": "ab5519dd1e36",
       "note": ""
     },
     {
@@ -347,11 +347,11 @@
       "en_title": "Chapter 2: Mathematical Foundations I — Linear Algebra Essentials",
       "order": 19,
       "src_chars": 3127,
-      "status": "pending",
+      "status": "done",
       "src_sha": "da3a1d12a277",
       "src": "#### Concept Check\n\n**Q1.** Compute the dot product x⋅y\\mathbf{x} \\cdot \\mathbf{y}x⋅y for x=(2,−1,3)\\mathbf{x} = (2, -1, 3)x=(2,−1,3) and y=(1,4,0)\\mathbf{y} = (1, 4, 0)y=(1,4,0). Then find ∥x∥\\|\\mathbf{x}\\|∥x∥, ∥y∥\\|\\mathbf{y}\\|∥y∥, and the angle between them.\n\n**Answer:** The dot product is:\n\nx⋅y=(2)(1)+(−1)(4)+(3)(0)=2−4+0=−2\\mathbf{x} \\cdot \\mathbf{y} = (2)(1) + (-1)(4) + (3)(0) = 2 - 4 + 0 = -2x⋅y=(2)(1)+(−1)(4)+(3)(0)=2−4+0=−2\n\nThe norms are:\n\n∥x∥=4+1+9=14,∥y∥=1+16+0=17\\|\\mathbf{x}\\| = \\sqrt{4 + 1 + 9} = \\sqrt{14}, \\quad \\|\\mathbf{y}\\| = \\sqrt{1 + 16 + 0} = \\sqrt{17}∥x∥=4+1+9​=14​,∥y∥=1+16+0​=17​\n\nThe angle θ\\thetaθ satisfies:\n\ncos⁡θ=x⋅y∥x∥∥y∥=−214⋅17=−2238≈−215.43≈−0.130\\cos\\theta = \\frac{\\mathbf{x} \\cdot \\mathbf{y}}{\\|\\mathbf{x}\\| \\|\\mathbf{y}\\|} = \\frac{-2}{\\sqrt{14} \\cdot \\sqrt{17}} = \\frac{-2}{\\sqrt{238}} \\approx \\frac{-2}{15.43} \\approx -0.130cosθ=∥x∥∥y∥x⋅y​=14​⋅17​−2​=238​−2​≈15.43−2​≈−0.130\n\nTherefore θ=arccos⁡(−0.130)≈97.5°\\theta = \\arccos(-0.130) \\approx 97.5°θ=arccos(−0.130)≈97.5°. The vectors form an obtuse angle, consistent with the negative dot product.\n\n**Q2.** Let A=(123456)A = \\begin{pmatrix} 1 & 2 \\\\\\ 3 & 4 \\\\\\ 5 & 6 \\end{pmatrix}A=​135​246​​ and B=(1001)B = \\begin{pmatrix} 1 & 0 \\\\\\ 0 & 1 \\end{pmatrix}B=(10​01​). What are the dimensions of ABABAB? Compute ABABAB.\n\n**Answer:** AAA is 3×23 \\times 23×2 and BBB is 2×22 \\times 22×2. The inner dimensions match (both 2), so ABABAB exists and has dimensions 3×23 \\times 23×2. Since B=IB = IB=I (the identity matrix), AB=AI=AAB = AI = AAB=AI=A. So:\n\nAB=(123456)AB = \\begin{pmatrix} 1 & 2 \\\\\\ 3 & 4 \\\\\\ 5 & 6 \\end{pmatrix}AB=​135​246​​\n\nThis illustrates a key property: multiplying any matrix by the identity matrix on the right returns the original matrix. The identity plays the same role as the number 1 in scalar arithmetic.\n\n**Q3.** True or false, with explanation: \"If x⋅y=0\\mathbf{x} \\cdot \\mathbf{y} = 0x⋅y=0, then either x=0\\mathbf{x} = \\mathbf{0}x=0 or y=0\\mathbf{y} = \\mathbf{0}y=0.\"\n\n**Answer:** **False.** Two non-zero vectors can have a dot product of zero if they are orthogonal (perpendicular). For example, x=(1,0)\\mathbf{x} = (1, 0)x=(1,0) and y=(0,1)\\mathbf{y} = (0, 1)y=(0,1) satisfy x⋅y=0\\mathbf{x} \\cdot \\mathbf{y} = 0x⋅y=0 but neither is the zero vector.\n\nThe statement would be true for _scalar_ multiplication: ab=0ab = 0ab=0 implies a=0a = 0a=0 or b=0b = 0b=0. But dot products are more general, and the zero dot product just means the vectors are at right angles. This is the definition of orthogonality and is frequently used in ML (e.g., a regression residual is orthogonal to the column space of the design matrix).\n\n**Q4.** A dataset has m=500m = 500m=500 examples and n=20n = 20n=20 features. What is the size of the data matrix XXX? What is the size of X⊤XX^\\top XX⊤X? Is X⊤XX^\\top XX⊤X always invertible?\n\n**Answer:** The data matrix X∈R500×20X \\in \\mathbb{R}^{500 \\times 20}X∈R500×20 (rows are examples, columns are features).\n\nX⊤∈R20×500X^\\top \\in \\mathbb{R}^{20 \\times 500}X⊤∈R20×500 and X∈R500×20X \\in \\mathbb{R}^{500 \\times 20}X∈R500×20, so X⊤X∈R20×20X^\\top X \\in \\mathbb{R}^{20 \\times 20}X⊤X∈R20×20.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1539,
+      "out_sha": "87b5a8dcf650",
       "note": ""
     },
     {
@@ -359,11 +359,11 @@
       "en_title": "Chapter 2: Mathematical Foundations I — Linear Algebra Essentials",
       "order": 20,
       "src_chars": 469,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fa583b962106",
       "src": "X⊤XX^\\top XX⊤X is _not_ always invertible. It is invertible if and only if XXX has rank 20 — meaning the 20 features are linearly independent. If any feature is a linear combination of others (e.g., two columns are identical, or one feature is always twice another), then XXX has rank less than 20, and X⊤XX^\\top XX⊤X is singular (non-invertible). In practice, this can also happen when m<nm < nm<n (fewer examples than features), a situation called \"underdetermined.\"\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 173,
+      "out_sha": "65bd3fe28dfd",
       "note": ""
     },
     {
