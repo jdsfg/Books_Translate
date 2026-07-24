@@ -4007,11 +4007,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 323,
       "src_chars": 879,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c7b13941038e",
       "src": "It is 2026-09-15. The four protagonists ship the multi-region payment platform together.\n\nOlamide is the SRE lead. Anya is the database lead (Stratus DB, now embedded as Crescent's commit-log layer). Yuki is on loan from Glide for the collaborative document-editing component (the merchant onboarding flow). Tobias is on loan from Continuum Inference for the AI-powered fraud-detection layer.\n\nThe system they ship is the synthesis of the entire book. Every primitive is in it. Every chapter's lesson is operationalized. The system is the answer to \"what does the working distributed-systems engineer in 2026 actually build?\"\n\nThis chapter walks the architecture, the launch, and the lessons. It is the book's closing argument: the mental model — _systems lie about time, identity, and failure; the discipline is to compose primitives that tell the truth_ — is the through-line.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 326,
+      "out_sha": "34285d2ef484",
       "note": ""
     },
     {
@@ -4019,11 +4019,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 324,
       "src_chars": 1964,
-      "status": "pending",
+      "status": "done",
       "src_sha": "13e6439764b3",
       "src": "### 28.1 The Architecture\n\nThe platform: a multi-region payment processor for Crescent's enterprise customers. It accepts payments globally, processes them with sub-750-ms p99 end-to-end latency (per the SLO negotiated with the product team; §28.2 walks the full p50 ~360 ms / p99 ~580 ms breakdown), settles to banks in 50+ countries, and provides real-time fraud detection.\n\nThe components:\n\n(a) **API gateway** : Cloudflare Workers at the edge. Handles TLS, authentication, rate limiting. Routes to the nearest healthy regional cluster.\n\n(b) **Regional cluster** : 3 regions (US-East, EU-West, US-West). Each region has the full stack.\n\n(c) **Operational store** : CockroachDB (cluster of 12 nodes per region, 36 total). Stores accounts, transactions, merchant data. Serializable transactions.\n\n(d) **Ledger** : TigerBeetle (5 replicas, multi-region). Records every monetary movement.\n\n(e) **Coordinator** : Stratus DB (now Crescent's component). Manages distributed-transaction state; Raft-replicated; fencing tokens for safety.\n\n(f) **Cache** : Redis Cluster per region. Hot path for account balance, idempotency keys.\n\n(g) **Queue** : Kafka per region. Asynchronous workflows (notifications, downstream pipelines).\n\n(h) **Merchant collaboration** : Yjs-based collaborative document editor (Yuki's component) for merchant onboarding contracts.\n\n(i) **Fraud detection** : Continuum-style LLM inference (Tobias's component). Sub-100-ms p99 for the per-transaction fraud check.\n\n(j) **Observability** : OpenTelemetry traces, Prometheus metrics, Grafana dashboards, PagerDuty alerts.\n\n(k) **Service mesh** : Consul for cross-region service discovery; Envoy for in-cluster.\n\n(l) **Lock service** : etcd cluster for distributed locks (with fencing tokens for safety-critical operations).\n\nThe architecture is layered: edge (Cloudflare), regional stateless (API services), regional stateful (CockroachDB, TigerBeetle), cross-region async (Kafka), edge cache (Redis).",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1076,
+      "out_sha": "31ebceea24cc",
       "note": ""
     },
     {
@@ -4031,11 +4031,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 325,
       "src_chars": 1662,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a7f19dbc63c2",
       "src": "The full Crescent stack, visualized:\n    \n    \n    graph TB\n        subgraph Edge[\"Edge (Cloudflare Workers)\"]\n            CF[API Gateway<br/>TLS / auth / rate limit]\n        end\n        subgraph USE[\"US-East Region\"]\n            APIE[API Service]\n            REDISE[Redis Cluster]\n            CRDBE[CockroachDB nodes]\n            STRATUSE[Stratus DB<br/>coordinator]\n            ETCDE[etcd lock service]\n            KAFKAE[Kafka brokers]\n        end\n        subgraph EUW[\"EU-West Region\"]\n            APIW[API Service]\n            REDISW[Redis Cluster]\n            CRDBW[CockroachDB nodes]\n            KAFKAW[Kafka brokers]\n        end\n        subgraph USW[\"US-West Region\"]\n            APIW2[API Service]\n            CRDBW2[CockroachDB nodes]\n        end\n        subgraph Shared[\"Shared Services\"]\n            TB[TigerBeetle<br/>5-replica VSR<br/>multi-region]\n            CONSUL[Consul<br/>cross-region mesh]\n            SNOW[Snowflake<br/>analytics]\n            CONT[Continuum LLM<br/>fraud detection]\n        end\n        CF --> APIE\n        CF --> APIW\n        CF --> APIW2\n        APIE --> REDISE\n        APIE --> CRDBE\n        APIE --> STRATUSE\n        APIE --> ETCDE\n        APIE --> KAFKAE\n        APIE -.fraud.-> CONT\n        CRDBE <-->|\"Raft<br/>cross-region\"| CRDBW\n        CRDBE <-->|\"Raft<br/>cross-region\"| CRDBW2\n        CRDBE -.->|\"CDC nightly\"| SNOW\n        TB -.->|\"CDC nightly\"| SNOW\n        APIE -.discovery.-> CONSUL\n        APIW -.discovery.-> CONSUL\n        STRATUSE --> TB\n        style Edge fill:#fff4e6\n        style USE fill:#e6f3ff\n        style EUW fill:#e6f3ff\n        style USW fill:#e6f3ff\n        style Shared fill:#f0f9e8\n    \n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1632,
+      "out_sha": "b174987890af",
       "note": ""
     },
     {
@@ -4043,11 +4043,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 326,
       "src_chars": 2947,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8002151ee985",
       "src": "### 28.2 A Payment's Journey\n\nTrace a single payment from Adaeze (in São Paulo) to merchant Femi (in Lagos):\n\n(1) Adaeze's phone sends the payment request to the Cloudflare edge worker. The worker validates the request (HMAC signature; rate limit check via per-customer counter). 5 ms.\n\n(2) The worker routes to the US-East region (Adaeze's home region for compute, established by geo-DNS; São Paulo to US-East is ~55 ms one-way, the closest of Crescent's three regions). 60 ms cross-equator.\n\n(3) US-East's regional load balancer routes to a healthy API service instance. The instance starts the payment processing. Trace context (OpenTelemetry W3C `traceparent`) is propagated throughout.\n\n(4) The API service checks the idempotency key via Redis (Chapter 18 cache pattern). If the key exists, return the previously-computed result (Lie 1 defense). 2 ms.\n\n(5) The API service begins a Stratus DB transaction. The coordinator state for this transaction is Raft-replicated across US-East nodes (Chapter 9). The coordinator gets a fencing token (Chapter 18). 5 ms.\n\n(6) The transaction reads Adaeze's balance from CockroachDB (Chapter 11/13/14). Adaeze's account is geo-partitioned to US-East, so the read is local; linearizable (read from the leader; uses HLC, Chapter 3). 8 ms.\n\n(7) The transaction checks fraud via the Continuum LLM inference (Chapter 24-26). The fraud model returns a score in 80 ms p50 (sub-100 ms p99, per Tobias's SLO); the score is below the threshold; the payment proceeds.\n\n(8) The transaction writes to TigerBeetle (the ledger): debit Adaeze, credit Femi. TigerBeetle's 5-replica Viewstamped Replication commits in 30 ms.\n\n(9) The transaction commits in CockroachDB: update Adaeze's balance (US-East shard), update Femi's balance (EU-West shard for the Lagos merchant), update merchant_day_rollup. Cross-shard, cross-region transaction with HLC timestamps; commit-wait for serializable consistency. 95 ms (bounded by the worst-case cross-region quorum, per Ch.6).\n\n(10) The transaction's coordinator (Stratus DB) records the completion with the fencing token; the bank's downstream endpoint verifies the token (Lie 4 defense). 5 ms.\n\n(11) The API service publishes a \"payment.completed\" event to Kafka. Downstream services (notification, analytics, ledger reconciliation) consume asynchronously. 5 ms.\n\n(12) The API service returns success to Adaeze's phone via Cloudflare. 60 ms cross-equator + 5 ms last-mile.\n\nTotal: ~360 ms end-to-end p50. p99 is around 580 ms (the fraud-detection LLM has a wider tail, and the cross-region commit hop pays its physics-bounded ~95 ms worst-case Raft quorum on every commit). Well within the 750-ms p99 SLO that Crescent's product team negotiated as the cost of geographic correctness for cross-region payments.\n\nThe trace (Chapter 20) captures the full journey. 47 spans, distributed across 6 services. The trace is stored for 7 years as a forensic record (compliance requirement).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1525,
+      "out_sha": "176e38d8961e",
       "note": ""
     },
     {
@@ -4055,11 +4055,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 327,
       "src_chars": 2584,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b28fb4a57c51",
       "src": "### 28.3 Where the Book's Lessons Live\n\nEvery chapter's lesson appears in the architecture. The \"Case study\" column links each lesson to the Appendix E real-world incident that exercises it; reading the case study alongside the lesson makes the abstraction concrete.\n\nChapter | Lesson | Where it lives in Crescent | Case study (Appendix E)  \n---|---|---|---  \n1 | Three lies (time, identity, failure) | The architecture defends against each | E.1, E.2, E.5, E.7 (each lie causes a real outage)  \n2 | CAP, PACELC | PACELC-classified each component | n/a  \n3 | Time, HLC | CockroachDB uses HLC; cross-region timestamps | n/a  \n4 | Broadcast primitives | Kafka (atomic), Consul (gossip) | E.2 (Consul gossip overload)  \n5 | Replication | Raft (per CockroachDB range), Viewstamped (TigerBeetle) | E.5 (failover without fencing)  \n6 | Multi-region | Three-region deployment; latency budget per hop | n/a  \n7-10 | Consensus | Raft (Stratus, CockroachDB), VSR (TigerBeetle) | E.5 (split-brain prevention)  \n11 | Diagnostic method | Used for component selection | n/a  \n12 | Sharding, LSM | CockroachDB range-based; LSM under the hood | n/a  \n13 | Distributed transactions | CockroachDB serializable; Percolator-style; saga in §13.6.5 | n/a  \n14 | NewSQL + query processors | CockroachDB + Snowflake for analytics | n/a  \n15-17 | Eventual, causal, CRDTs | Redis cache (eventual), Yjs (CRDT) | n/a  \n18 | Locks | etcd + fencing tokens | E.5 (GitHub MySQL dual-primary)  \n19 | Service discovery | Consul + Cloudflare Workers | E.2 (Roblox Consul), E.7 (Fastly config rollout)  \n20 | Tracing | OpenTelemetry end-to-end | E.3 (Cloudflare email loop diagnosed via trace)  \n21 | Cascading failures | Retry budgets, circuit breakers | E.1, E.6 (retry-amplified outages)  \n22 | Metastable, gray failures | Latency-based load balancing, deep health checks | E.1 (S3 metastable), E.2 (Roblox), E.6 (BigQuery)  \n23 | Chaos engineering | Monthly game days, Jepsen-style verification | E.4 (CrowdStrike no canary), E.7 (Fastly no canary)  \n24-26 | LLM inference | Continuum-style cluster for fraud detection | n/a  \n27 | LLM-generated code review | Six-lie checklist in PR review; §27.10 three-layer AI/human review | E.3, E.4 (deploy-time review gaps)  \n28 | Synthesis | This chapter; every primitive composed in one system | n/a  \n29 | Forward look | The architecture as a 2026 snapshot; the mental model travels with the reader to 2030 | n/a  \n  \nThe system is the book made concrete. The protagonists assembled their components; each component embodies the lessons of the chapters that introduced it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1519,
+      "out_sha": "dec163d0b8aa",
       "note": ""
     },
     {
@@ -4067,11 +4067,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 328,
       "src_chars": 1664,
-      "status": "pending",
+      "status": "done",
       "src_sha": "66079318c498",
       "src": "### 28.4 The Launch\n\nLaunch day: 2026-09-15. The team gathers at 06:00 UTC (covering all regions' business hours).\n\n(a) **Pre-launch checklist** : chaos game day was 2 weeks ago; all action items closed. Capacity tests passed. Customer migration plan reviewed. Rollback plan reviewed. Customer support briefed.\n\n(b) **06:00 UTC** : traffic gradually shifted to the new system. Per the canary plan: 1% of traffic on the new system; observe for 1 hour. Latency, error rate, success rate all green.\n\n(c) **07:00 UTC** : increase to 10%. Continue for 2 hours.\n\n(d) **09:00 UTC** : increase to 50%. Critical observation period. The team watches every dashboard.\n\n(e) **10:30 UTC** : a small anomaly. p99 latency in EU-West has crept up by 30 ms. Investigation: a cross-region replication lag from the previous night's database update is causing some follower reads to be slower than expected. The lag is within bounds but visible. Decision: continue monitoring; do not roll back.\n\n(f) **12:00 UTC** : 100% of traffic. The lag has resolved; latencies are normal. The team continues to watch.\n\n(g) **18:00 UTC** : 12 hours of full traffic. Latency p50: 365 ms; p99: 590 ms (within the 750-ms SLO; the §28.2 baseline matches). Error rate: 0.02% (within expected). No customer complaints. The launch is declared successful.\n\n(h) **24:00 UTC** : post-launch retrospective. Lessons captured; action items filed. The team takes the next day off (the previous month was 80-hour weeks).\n\nThe launch was a successful application of the book's discipline. No surprises; the chaos engineering caught the issues that would have surfaced in production; the customer impact was zero.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 714,
+      "out_sha": "517ccbf977e7",
       "note": ""
     },
     {
@@ -4079,11 +4079,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 329,
       "src_chars": 1966,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e2d4bb65a249",
       "src": "### 28.5 The Four Protagonists' Perspectives\n\nEach protagonist contributed and learned:\n\n**Olamide (SRE lead)** : \"The architecture is robust because we paid the cost of paying for distributed-systems correctness up front. Three years ago, we shipped systems with the six lies built in; we paid for them with incidents. The investment in chaos engineering, observability, and the discipline of the diagnostic method has produced a system that just works.\"\n\n**Anya (Stratus DB lead)** : \"The Raft-replicated coordinator with fencing tokens is the core of the system's safety. The integration into Crescent's stack was straightforward because Stratus DB was designed with these patterns from the start. The diagnostic method (Chapter 11) is how we sold the integration to the Crescent team; they ran the method on Stratus and verified the profile matched their needs.\"\n\n**Yuki (Glide loan)** : \"The merchant onboarding contract editor uses Yjs. The collaborative editing 'just works' because the CRDT handles conflicts deterministically. The integration with Crescent's authentication and audit-trail systems was the hard part; the editor itself was easy.\"\n\n**Tobias (Continuum loan)** : \"The fraud-detection inference is sub-100-ms p99 (80 ms p50; matching what §28.2 records) because of the disaggregated architecture and KV-cache-aware routing. The integration is via a simple HTTP endpoint; Crescent's API service calls our endpoint; we return a score. The complexity is on our side; Crescent's side is trivial.\"\n\nThe four perspectives illustrate the 2026 reality: complex distributed systems are built by composing components, each from a team with deep expertise. The book's discipline applies at every level: within each component (Raft for CockroachDB, VSR for TigerBeetle); across components (consistent integration via HTTP, Kafka, trace propagation); at the architectural level (PACELC analysis per workload, chaos engineering for end-to-end verification).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 810,
+      "out_sha": "457b55f154eb",
       "note": ""
     },
     {
@@ -4091,11 +4091,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 330,
       "src_chars": 1547,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6618dfb27bef",
       "src": "### 28.6 The Mental Model\n\nThe book's through-line: _distributed systems lie to themselves about time, identity, and failure; the discipline is to compose primitives that tell the truth._\n\nThe mental move:\n\n(1) Identify what the system needs. What is the workload? What is the consistency requirement? What is the latency budget?\n\n(2) For each component, ask the four diagnostic questions (Chapter 11): replication protocol, failure-recovery, consistency model, partition behavior.\n\n(3) For each operation, ask the three lies (Chapter 1): what is this lying about time, identity, failure? Apply the defenses.\n\n(4) For each interaction, ask the six lies (Chapter 2): RPC, network, clocks, locks, partial failure, CAP. Apply the appropriate primitives.\n\n(5) Verify with chaos engineering (Chapter 23): the defenses must be tested, not assumed.\n\n(6) Observe and iterate (Chapter 20): the system's behavior in production reveals the gaps; close them.\n\nThis mental move is what the working distributed-systems engineer does. It is not a checklist (though checklists help). It is not a methodology (though methodologies help). It is a _posture_ toward the system: a willingness to assume the worst about every component, every connection, every operation, until verified otherwise.\n\nThe 2026 engineer who has internalized this posture builds systems like Crescent's. The engineer who has not produces the original Chapter 1 double-charge bug, and many similar bugs, and is repeatedly surprised that \"the system that worked in test broke in production.\"\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 514,
+      "out_sha": "fd008406bf83",
       "note": ""
     },
     {
@@ -4103,11 +4103,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 331,
       "src_chars": 1146,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1ebaac863cd8",
       "src": "### 28.7 The Closing Argument\n\nYou started this book in Chapter 1 reading about Adaeze's double-charge. You now know:\n\n* Why it happened (the three lies, plus the specific combination of clock skew, dual coordinators, and missing idempotency).\n* How it was fixed (HLC for time, fencing tokens for identity, Raft-replicated coordinator for failure tolerance).\n* How to prevent it (the diagnostic method, the chaos engineering discipline, the LLM-code review checklist).\n* How to build the system that processes Adaeze's payment now without the bug (the Chapter 28 architecture).\n\nThe 12 binding workflows from the syllabus all appeared. Each is summarized here as a one-card reference; the chapter section is where the full walkthrough lives. The \"Pitfalls\" column lists the most common debugging-time failure modes; this is the column readers consult most often during incident response.\n\n> The table below is intentionally wide (7 columns). Readers using narrow viewports can also reference Appendix F.1-F.5 for the narrative-form decision walkthroughs, and Appendix E for case studies that exercise these workflows on real production incidents.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 389,
+      "out_sha": "8f86b5dc547b",
       "note": ""
     },
     {
@@ -4115,11 +4115,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 332,
       "src_chars": 4288,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9070dc27900f",
       "src": "| # | Workflow | Chapter | Input | Output | Core primitive | Common pitfalls |\n| --- | --- | --- | --- | --- | --- | --- |\n| 1 | Logical-Clock Implementation | Ch.3 §3.3 | Sequence of local + send + receive events across N processes | Per-event timestamp respecting happens-before | Lamport / Vector / HLC counter rules | Mixing wall-clock with logical-clock comparisons; vector clock growth in 10k-node fleets; HLC counter overflow without bound |\n| 2 | Broadcast-Primitive Pseudocode | Ch.4 §4.7 | A message to be delivered to N processes | All correct receivers deliver in same order (atomic) or weaker variants | Quorum acknowledgment + re-broadcasting | Defaulting to atomic \"to be safe\" when reliable suffices; missing uniformity (sender + only-receiver both crash) |\n| 3 | Sync vs Async Replication Trace | Ch.5 §5.10 | Write to primary; replicas exist | Per-write RPO + per-write latency (configurable trade-off) | Per-write quorum membership | Sync replica becomes single point of slowness; W+R>N mistaken for linearizability; sloppy quorum under partition |\n| 4 | Raft State-Machine Walkthrough | Ch.9 §9.4 | Client request → leader → followers | Replicated state machine; committed entries durable on majority | AppendEntries consistency check + commit-on-majority | Applying-on-append instead of applying-on-commit; missing Figure-8 previous-term-commit subtlety; reconfiguration without joint consensus |\n| 5 | HotStuff Three-Phase Trace | Ch.10 §10.3 | Validator proposal + 2f+1 vote rounds | Quorum-certificated decision; O(N) view change | Quorum Certificates + pipelined three-phase voting | Confusing N≥3f+1 threshold with 2f+1 quorum; QC validation skipped under deadline pressure; view-change race between competing new leaders |\n| 6 | Reading a Database in 30 Minutes | Ch.11 §11.3 | Any vendor's documentation | One-page PACELC + diagnostic profile | Four diagnostic questions: replication, recovery, consistency, partition | Accepting marketing-grade \"consistent\"; conflating CAP and PACELC; missing per-operation consistency choices |\n| 7 | Anya's Resharding Migration | Ch.12 §12.5 | N-node cluster at high disk utilization; need to add M nodes | Rebalanced cluster, zero downtime, transactional consistency preserved | Consistent hashing + range streaming + Raft leadership transfer | Range size estimation drift; throttling forgotten under business-hours load; failover of source node mid-stream not handled |\n| 8 | Olamide's Cross-Region Payment | Ch.13 §13.7 | Multi-shard cross-region payment transaction | Atomic commit or atomic abort across all shards/regions | 2PC with Raft-replicated coordinator + HLC-based MVCC | Coordinator state in volatile memory; uncertainty restarts under contention; missing fencing token at downstream API |\n| 9 | Yuki's Yjs Collaborative Editor | Ch.16 §16.4 | Concurrent edits from many clients, some offline | Deterministically merged document state | RGA-style list CRDT + WebSocket sync + awareness protocol | Storing transient cursor positions in the CRDT; missing periodic compaction; sharding logic confused with merge logic |\n| 10 | Cascading-Failure Post-Mortem | Ch.21 §21.7 | Incident: trigger + amplification + spread + recovery | Action items: retry budgets, circuit breakers, capacity buffers, runbook | Post-mortem template + Five Whys with structural defenses | \"We increased the timeout\" without changing the category; missing the metastable feedback loop; blame-focused retro |\n| 11 | Olamide's Chaos Game Day | Ch.23 §23.6 | Hypothesized failure mode + steady-state SLI | Verified defenses; documented learnings; action items | Pre-game design + day-of execution + blameless retro | Skipping blast-radius scoping; no rollback plan; finding bugs but continuing further game days without fixing |\n| 12 | vLLM Disaggregated Cluster | Ch.25 §25.5 | LLM inference workload at 1M+ USD/month | 30-50% cost reduction; same or better latency | Disaggregated prefill/decode + KV cache tier + RDMA fabric | First-token latency penalty from cross-rack KV transfer; cache-tier bandwidth as new bottleneck; mixed prefill/decode failover |\n  \nEach workflow can be read as a self-contained mini-manual: input, mechanism, output, pitfalls. Together they cover the operational arc of distributed-systems engineering in 2026.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 2069,
+      "out_sha": "a7fc3b391903",
       "note": ""
     },
     {
@@ -4127,11 +4127,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 333,
       "src_chars": 479,
-      "status": "pending",
+      "status": "done",
       "src_sha": "adc3ed28b745",
       "src": "The four protagonists' systems converge on the multi-region payment platform of Chapter 28. The book ends where it began: with Adaeze's payment, now processed correctly because the engineers learned the discipline.\n\nThe 2026 distributed-systems engineer is the one who has internalized the mental model. They are not a coder; they are an architect of trustworthy systems out of components that lie. They are the working engineer this book exists to produce.\n\n\n### 28.8 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 160,
+      "out_sha": "f247a255f297",
       "note": ""
     },
     {
@@ -4139,11 +4139,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 334,
       "src_chars": 3238,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3ba9e6e8abd7",
       "src": "#### Concept Check\n\n**Q1.** Restate the book's central thesis in your own words.\n\nHint\n\nSystems lie about time, identity, failure. Engineering discipline: compose primitives that tell the truth.\n\n**Answer:** Distributed systems are inherently unreliable in three specific ways: they lie about time (clocks across machines do not agree precisely), about identity (each node sees itself as uniquely playing its role while others may disagree), and about failure (partial failure is the default mode, not the exception).\n\nThe engineering discipline of distributed systems is to assume these lies are happening, identify which ones each part of the system is susceptible to, and compose primitives (HLC for time, fencing tokens for identity, retries/timeouts/circuit breakers/sagas for failure) that defend against them.\n\nThe working engineer's posture: assume the worst about every component, every connection, every operation, until verified otherwise. This posture is what differentiates engineers who build robust distributed systems from engineers who keep being surprised by failures.\n\nThe book's path: from Chapter 1's introduction of the three lies, through the protocols (consensus, replication, transactions, CRDTs), through the operating discipline (tracing, cascading failures, chaos engineering), to Chapter 27's review of why LLMs are bad at this and Chapter 28's synthesis. The reader who internalizes the discipline can build systems like Crescent's; the reader who does not produces buggy systems.\n\n**Q2.** Identify which chapter introduced each of the following primitives: HLC, fencing tokens, Raft, atomic broadcast, CRDTs, retry budgets, chaos engineering, KV-cache-aware routing.\n\nHint\n\nThe chapters introduce primitives roughly in order; use the table of contents.\n\n**Answer:**\n\n* HLC: Chapter 3 (time, order, lying clocks).\n* Fencing tokens: Chapter 18 (distributed locks).\n* Raft: Chapter 9 (the implementation-friendly consensus).\n* Atomic broadcast: Chapter 4 (broadcast hierarchy).\n* CRDTs: Chapter 16 (CRDTs in production).\n* Retry budgets: Chapter 21 (cascading failures).\n* Chaos engineering: Chapter 23 (chaos as discipline).\n* KV-cache-aware routing: Chapter 26 (load balancing LLM inference).\n\nEach primitive solves a specific class of the three lies' manifestations. HLC defends against the time lie; fencing tokens defend against the identity lie; retries-with-budgets defend against the failure lie's amplification. The complete defense uses many primitives together.\n\nThe Crescent system in Chapter 28 uses all of these. The book's path is the path of accumulating the toolkit; the synthesis is using the toolkit together.\n\n**Q3.** Why does the book emphasize \"the working engineer's mental model\" rather than \"the algorithms\" or \"the systems\"?\n\nHint\n\nMental model is durable; algorithms and systems evolve. The mental model lets engineers evaluate new systems.\n\n**Answer:** Algorithms and systems evolve. Paxos was the canonical consensus in 1998; Raft is canonical in 2026. ZooKeeper was the canonical coordination service; etcd is now. Distributed-systems engineering in 2026 includes Spanner, CockroachDB, vLLM, Splitwise, Mooncake — none of which existed when the field's foundational work was done.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 982,
+      "out_sha": "f02fc250db22",
       "note": ""
     },
     {
@@ -4151,11 +4151,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 335,
       "src_chars": 3194,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d0f4a43577e7",
       "src": "The mental model is durable. Knowing what time, identity, and failure mean in distributed contexts is true in 1985 (FLP impossibility) and true in 2030. Knowing how to compose primitives to defend against the lies is true regardless of which specific primitives are available.\n\nThe book emphasizes the mental model because the model lets engineers evaluate new systems as they emerge. The diagnostic method (Chapter 11) is the operational form of the model: given any new database (or storage system, or consensus library), the engineer can analyze its properties in 30 minutes and decide whether it fits the workload.\n\nWithout the mental model, the engineer learns specific systems (Cassandra, MongoDB) and is helpless when faced with the next generation. With the mental model, the engineer learns the principles and can analyze any system.\n\nThe 2026 engineer's career arc spans 30+ years. The mental model serves throughout; the specific systems will change a dozen times. The book invests in the durable knowledge.\n\n**Q4.** How does the book's coverage of LLM inference (Chapters 24-26) fit into the broader distributed-systems narrative?\n\nHint\n\nLLM inference is a 2026 sub-discipline; same lies apply; specific primitives are inference-specific.\n\n**Answer:** LLM inference is a 2026 sub-discipline of distributed systems. The same three lies apply (time, identity, failure) in inference clusters as in general distributed systems. The specific primitives (PagedAttention, RadixAttention, disaggregated prefill/decode, KV cache sharding) are inference-specific applications of distributed-systems thinking.\n\nHow it fits:\n\n(a) **Common foundation** : inference clusters use the same general patterns (sharding, replication, load balancing, observability). The chapters on these patterns (Ch 11-19) apply to inference.\n\n(b) **Specific specialization** : inference has unique constraints (GPU as unit, two-phase computation, KV cache as state, tight per-token latency). The chapters on inference (Ch 24-26) develop the specialized primitives.\n\n(c) **Same discipline** : inference engineering uses the same diagnostic method, the same review checklist, the same chaos engineering. Tobias's optimization push applies the book's discipline to a specific workload.\n\n(d) **Forward-looking** : LLM inference is a growing area. Engineers entering it in 2026 are at the frontier; the next 5-10 years will see substantial development. The book's coverage prepares them for the field's rapid evolution.\n\nThe Crescent system (Chapter 28) includes Continuum's inference component as one piece of a larger system. The chapters on inference are not standalone; they integrate with the broader distributed-systems narrative because inference is part of the broader landscape of 2026 distributed systems.\n\nA second observation: AI inference has changed what \"distributed system\" means. Before 2022, distributed systems were primarily about data (databases, queues, caches, coordination). Now they include computation (inference clusters with their own optimization profiles). The book's framing reflects this: distributed systems are the systems that span multiple computers, regardless of what they compute.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1355,
+      "out_sha": "a30bdcecfcb7",
       "note": ""
     },
     {
@@ -4163,11 +4163,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 336,
       "src_chars": 3490,
-      "status": "pending",
+      "status": "done",
       "src_sha": "11925ce6a8ca",
       "src": "#### Application Problems\n\n**Q1.** Pick any production distributed system you have used or read about. Apply the diagnostic method (Chapter 11) and identify the three-lies posture (Chapter 1).\n\nHint\n\nChoose a system; answer the four diagnostic questions; identify how it defends against time, identity, failure.\n\n**Answer:** Sample answer for a Postgres + Patroni high-availability deployment:\n\n_Diagnostic method (Chapter 11)_ :\n\n* Replication protocol: Postgres logical replication; asynchronous by default; Patroni manages failover via etcd.\n* Failure-recovery: Patroni detects primary failure via etcd-based leader election; promotes standby; takes 30-60 seconds. Manual intervention may be needed for split-brain.\n* Consistency model: snapshot isolation within transactions; reads from replicas are eventually consistent.\n* Partition behavior: CP — minority side cannot acquire leadership in etcd, refuses writes.\n\nPACELC: PC/EL (consistent under partition; low latency for primary reads in normal operation due to async replication).\n\n_Three-lies posture_ :\n\n* **Time** : Postgres uses wall-clock timestamps; transactions are ordered by transaction-start-time, not wall clock. Cross-replica ordering is determined by replication; not subject to clock skew within one replica.\n* **Identity** : Patroni + etcd provides leader uniqueness; etcd's Raft ensures only one primary at a time. Fencing tokens are not natively used; the etcd revision serves a similar purpose at the orchestration layer.\n* **Failure** : async replication can lose recent writes if the primary fails before propagation. The team must accept some RPO; can tighten via `synchronous_commit = remote_apply`.\n\nStrengths: mature; well-understood; rich SQL. Weaknesses: failover unavailability window; async-replication RPO.\n\nFor Crescent: the Postgres + Patroni would not meet the multi-region requirements; CockroachDB is the right choice. For a single-region OLTP workload, Postgres + Patroni is operationally clean and works well.\n\nThe exercise illustrates: the diagnostic method works for any system; the three-lies posture surfaces the defenses (or lack of them); together they let an engineer evaluate a system without reading every page of its documentation.\n\n**Q2.** Olamide is mentoring a new engineer. The engineer asks: \"What's the most important thing to learn about distributed systems?\" Construct Olamide's answer.\n\nHint\n\nThe mental model, the discipline, the willingness to assume the worst.\n\n**Answer:** Olamide's likely answer:\n\n\"The most important thing to learn is the mental move: assume every component is lying about time, identity, and failure. Then ask what defenses are in place. Then verify the defenses with chaos engineering.\n\n\"That's it. Everything else — the specific consensus algorithms, the specific databases, the specific patterns — is implementation detail of that mental move.\n\n\"You'll learn the algorithms over time. You'll learn the systems by reading their docs and running them in production. You'll learn the patterns by writing code and reviewing PRs. What you can't learn implicitly is the _posture_ : the willingness to assume the worst about every interaction in your code, every connection in your architecture, every operation in your system.\n\n\"Engineers who don't have that posture build systems that work in test and break in production. Engineers who have it build systems like Crescent's. The difference between them is not knowledge; it's the discipline of distrust.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1318,
+      "out_sha": "fbc9939e332d",
       "note": ""
     },
     {
@@ -4175,11 +4175,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 337,
       "src_chars": 2364,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f17b63b9fa7d",
       "src": "\"Start by reading every system's documentation with that posture: ask what time, identity, failure means for this system, and what defenses are in place. After you've done that for 10 systems, you'll have the muscle memory. After you've done it for 50, you'll be the engineer your team relies on.\n\n\"Welcome to the team.\"\n\nThe answer reflects the book's central argument: the mental model is the durable knowledge; the specific systems and algorithms are the application. The new engineer's investment is in the model, not in memorizing algorithms.\n\nFor Olamide, this mentoring style is how she has built her team. The team's collective discipline is what makes the Crescent system robust; that discipline is more important than any single engineer's specific knowledge.\n\n**Q3.** Reflect on a distributed system bug you have encountered (in production or in a course). Identify which of the three lies it was, and what defense would have prevented it.\n\nHint\n\nReframe the bug in three-lies language; identify the missing defense.\n\n**Answer:** A common pattern: a worker pool consumes from a queue; each worker processes a job; occasionally a job is processed twice.\n\n_The lie_ : the lie of identity (the worker assumes it is uniquely processing this job) combined with the lie of failure (the worker assumes \"I'm not crashed, so I'm processing\").\n\n_What happened_ : worker A pulled job 42, started processing, paused (GC pause). The queue's visibility timeout expired; worker B pulled job 42, started processing. Both completed. The job was processed twice; the downstream side effect happened twice.\n\n_The defense missed_ : idempotency on the job's side effect. If the downstream is idempotent (uses an idempotency key), the second processing is a no-op. Without idempotency, both processings have effects.\n\n_What I learned_ : the discipline of \"assume the worst\" applies even to operational patterns that look safe. A worker pool with visibility timeouts is the standard pattern; assuming \"the timeout protects us\" is the lie. The defense is idempotency at the downstream, regardless of how confident the operational pattern looks.\n\nThis is the kind of bug that recurs throughout a distributed-systems engineer's career. Each occurrence is a lesson; the discipline of three-lies analysis surfaces the gap; the fix becomes part of the engineer's standard practice.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 807,
+      "out_sha": "90eedd09b52f",
       "note": ""
     },
     {
@@ -4187,11 +4187,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 338,
       "src_chars": 3359,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2bd60faa0e78",
       "src": "#### Think Deeper\n\n**Q1.** Defend or refute: \"In 2030, the discipline this book teaches will be partially automated. AI tools will detect the lies and propose defenses. The engineer's role will shift from 'write the defenses' to 'verify the AI's defenses.'\"\n\n**Discussion:** Defense: the pattern detection in the book (the six lies, the diagnostic method, the review checklist) is well-suited to AI tooling. By 2030, IDE plugins or PR-review bots will likely flag patterns (\"this code has the lie of failure; missing idempotency\"). The engineer's role shifts from producing the defenses to verifying them.\n\nRefutation: distributed-systems decisions depend on context (workload, deployment, business requirements) that the AI tooling cannot fully grasp. The engineer's role of \"what does this workload actually need\" is not automatable in the same way as \"is the code missing a timeout.\" The high-level design will remain human.\n\nThe synthesis: routine pattern-matching parts of the discipline will be automated (timeouts, retry budgets, idempotency, basic checklist). The contextual judgment (which consistency model fits this workload; what is the latency budget; what trade-offs are acceptable) will remain human. The engineer's role shifts from \"do all of it\" to \"do the high-judgment parts, with AI handling the routine.\"\n\nThe 2030 reality: hybrid engineering. AI tooling improves productivity; the engineer's focus is on the parts the tooling cannot do. The book's discipline remains relevant because the high-judgment parts are the durable parts.\n\nA second consideration: as AI tooling gets better, the cost of distributed-systems engineering drops. More applications become feasible. The field expands. The need for engineers who can supervise the AI's output grows, not shrinks. The book's mental model is the supervisory framework.\n\n**Q2.** A team has read this book and is ready to apply the discipline. They are joining a new project that has been running for 5 years without the discipline. Where do they start?\n\nHint\n\nDon't try to rewrite everything; audit, prioritize, fix incrementally.\n\n**Answer:** Strategy:\n\n(a) **Audit the system** : use the diagnostic method (Chapter 11) to read each major component's properties. Identify the gaps: which components are missing which defenses?\n\n(b) **Prioritize by impact** : rank the gaps by the cost of failure (customer impact, data corruption risk) and the effort to fix. The highest-impact, lowest-effort gaps go first.\n\n(c) **Add observability before fixing** : instrument the system with tracing (Chapter 20) and metrics (Chapter 22). Visibility into the system's behavior is the prerequisite for safe changes.\n\n(d) **Add chaos engineering as a checkpoint** : run a game day (Chapter 23) on the system as-is. Document what breaks; what surprises. Use the findings to prioritize.\n\n(e) **Fix the top 3 gaps in the first quarter** : typical first targets — add retry budgets if missing; add circuit breakers; fix idempotency for critical operations. Each fix is a contained PR; each is testable.\n\n(f) **Continuous incremental improvement** : each quarter, fix the next batch of gaps. Run a chaos game day after each batch to verify.\n\n(g) **Educate the team** : as fixes go in, teach the team why. Each PR is an opportunity to spread the discipline. Over a year, the team's collective knowledge rises.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1084,
+      "out_sha": "4c949f84fb53",
       "note": ""
     },
     {
@@ -4199,11 +4199,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 339,
       "src_chars": 2279,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d4d01b2392bf",
       "src": "(h) **Accept partial progress** : the system will never be perfectly aligned with the discipline. Aim for \"the most important defenses are in place; the team knows the rest is a known gap; new code follows the discipline.\"\n\nFor a 5-year-old project: expect 12-18 months of work to bring it up to good distributed-systems hygiene. The investment is real but the cost of _not_ doing it (recurring incidents, customer impact, on-call burnout) is higher.\n\nThe deeper observation: legacy projects can be improved incrementally. The discipline does not require rewriting the system; it requires identifying gaps and closing them in priority order. The book's mental model is the framework for the analysis and prioritization.\n\n\n### 28.9 Closing\n\nYou started this book reading about Adaeze's double-charge in São Paulo at 2:47 a.m. local time. You now know:\n\n* Why distributed systems lie to themselves about time, identity, and failure (Chapter 1).\n* How to quantify the lies via CAP and PACELC (Chapter 2).\n* How to defend against each lie with specific primitives — HLC for time (Chapter 3), Raft and fencing tokens for identity (Chapters 9, 18), retries-with-budgets and saga for failure (Chapters 13, 21).\n* How to evaluate any distributed system in 30 minutes (Chapter 11).\n* How to operate distributed systems under failure (Chapters 20-23).\n* How to handle the 2026 sub-discipline of distributed LLM inference (Chapters 24-26).\n* Why LLMs are bad at writing distributed code, and how to review their output (Chapter 27).\n* What the working engineer's mental model looks like when applied to a real production system (Chapter 28).\n\nYou are now the engineer this book exists to produce. The four protagonists are fictional; their systems are real composites of 2026 production architectures. The mental move they apply — _assume every component is lying; compose primitives that tell the truth; verify with chaos engineering_ — is the move you now know.\n\nYour career as a distributed-systems engineer is just beginning, or continuing, or shifting. Whatever your stage, the mental model travels with you. Specific systems will change; the model endures.\n\nAdaeze's payment, in the system you would build, would not double-charge. That is the book's argument.\n\nGo build the systems.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 780,
+      "out_sha": "d8ee6d6308ed",
       "note": ""
     },
     {
@@ -4211,11 +4211,11 @@
       "en_title": "Chapter 28: The Working Engineer's Distributed Mental Model",
       "order": 340,
       "src_chars": 1837,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7a81d4699d0e",
       "src": "### Chapter Summary\n\nThe Crescent multi-region payment platform is the synthesis. Four protagonists (Olamide, Anya, Yuki, Tobias) contributed components; the system uses every primitive from the book. The launch was a successful application of the discipline: pre-launch chaos, gradual canary rollout, post-launch retrospective.\n\nEvery chapter's lesson appears in the architecture: CAP/PACELC analysis per component; HLC for cross-region ordering; Raft for consensus; CRDTs for collaborative editing; etcd + fencing tokens for locks; OpenTelemetry for tracing; retry budgets and circuit breakers for resilience; chaos engineering for verification; six-lie checklist for AI-assisted code review.\n\nThe mental model: distributed systems lie about time, identity, failure. The discipline is to compose primitives that tell the truth. The mental move: assume the worst about every component; identify the lies; apply the defenses; verify with chaos engineering.\n\nThe 2026 engineer who has internalized this builds robust systems. The engineer who has not produces double-charge bugs. The difference is not knowledge of specific algorithms; it is the discipline of distrust applied consistently.\n\nThe book has provided the model, the primitives, and the operational discipline. The reader who has worked through the chapters has the toolkit. The next step is application: build the systems, run them in production, learn from the failures, improve.\n\nThe thesis sentence from Chapter 1: _Distributed systems lie to themselves about time, identity, and failure. The working engineer's discipline in 2026 is to compose primitives that tell the truth — and to recognize that LLMs systematically lie about all three._\n\nThis is the through-line. This is the book. This is what the working distributed-systems engineer in 2026 carries with them.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 590,
+      "out_sha": "dd3e9a178998",
       "note": ""
     },
     {
