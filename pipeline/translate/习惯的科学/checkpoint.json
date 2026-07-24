@@ -739,11 +739,11 @@
       "en_title": "Chapter 4: Procedural Memory and Why H.M. Could Still Learn",
       "order": 55,
       "src_chars": 2251,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a866df91efb1",
       "src": "In a basement laboratory at the Montreal Neurological Institute in 1962, a young neuropsychologist named Brenda Milner sat across from a soft-spoken man in his mid-thirties named Henry. Henry had had brain surgery nine years earlier — an experimental procedure to control the seizures that had been ruining his life — and the surgery had gone, by the surgeon's standards, well: the seizures were dramatically reduced. The surgery had also gone, by every other standard, catastrophically. It had taken from Henry his ability to form new memories of his own life. Each time Brenda walked into the room, she was a stranger to him. Each time she explained a task, it was the first time he'd heard of it.\n\nThat afternoon, she was going to ask him to try a small puzzle: trace a star drawn on a piece of paper, but watching only the mirror image of his hand. The task is harder than it sounds — anyone who tries it for the first time finds their hand jerking the wrong direction every time the geometry inverts. Most people, after thirty minutes of practice, are still mediocre. Henry tried it that afternoon and was, predictably, bad.\n\nThe next afternoon, Brenda came back. She introduced herself again. She explained the task again. Henry, with his usual quiet patience, said he had never done anything like it before. He sat down to try.\n\nHis tracing was significantly better than it had been the day before.\n\nThe third day, the same thing. Henry, again, did not remember the previous sessions. Henry, again, was even better. By the end of the third session, his performance was approaching the level of a healthy person who had practiced for the same number of trials.\n\nMilner, watching this, understood that something extraordinary was happening. **Henry was learning a skill without remembering having learned it.** The hand that traced the star was being shaped by repetition. The mind that watched the hand had no record of any of the repetitions. Two different memory systems, separable, were doing work in parallel, and one of them was operating without any access to the other.\n\nThe implications, for the next sixty years of memory research, were enormous. They are also the implications that sit underneath everything this book is trying to do.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 675,
+      "out_sha": "208b12cd50e4",
       "note": ""
     },
     {
@@ -751,11 +751,11 @@
       "en_title": "Chapter 4: Procedural Memory and Why H.M. Could Still Learn",
       "order": 56,
       "src_chars": 3107,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3c0a4daacd72",
       "src": "### 4.1 What H.M. Could and Couldn't Do\n\nHenry Molaison — known in the literature for half a century as \"H.M.\" until his identity was revealed after his 2008 death — became the most studied patient in the history of neuroscience. The 1953 surgery had removed parts of his medial temporal lobes on both sides, including his hippocampus and amygdala, in a desperate attempt to control the epilepsy that had been getting worse since adolescence. The surgeon, William Beecher Scoville, had operated on the basis of a guess about which brain region was producing the seizures. The guess was partially right; the seizures improved. But Scoville had not understood — nobody at the time understood — what role the hippocampus played in memory formation, and the bilateral removal had a side effect nobody had predicted.\n\nH.M. could remember almost nothing of his life from the day of the surgery onward. Faces of people he met daily remained perpetually new. Conversations he had had an hour earlier left no trace. He could be told the same joke many times in an afternoon and laugh, freshly, each time. His childhood memories were largely intact — anything consolidated before the surgery survived. The surgery had eliminated the _formation_ of new declarative memories, the hippocampally-dependent memory system that records facts, events, and explicit recollections.\n\nBut H.M. was not, in any general sense, an unintelligent man. His IQ remained roughly average. His personality was stable. His vocabulary was intact. He could carry on a conversation, follow simple reasoning, hold a job (in a kind of supported environment). And — most importantly for our story — _he could learn._\n\nHe couldn't learn facts. He couldn't learn the names of the people who saw him daily. He couldn't learn what year it was. But he could learn skills. He could learn motor sequences. He could learn cue-response patterns. **He could form new habits.** The mirror-tracing study was the cleanest demonstration, but it was followed over the years by many others: H.M. could learn to do tasks more efficiently, could form preferences for things that had been repeatedly paired with rewards, could acquire procedural fluencies that he could not consciously remember acquiring.\n\nThis pattern — declarative memory devastated, procedural memory intact — is what neuroscientists call a **dissociation**. And when, in other patients, the opposite pattern showed up — declarative memory intact but procedural memory impaired (as in some forms of basal ganglia damage and some Parkinson's-like conditions) — the field had a **double dissociation** , the gold-standard evidence in cognitive neuroscience that two distinct systems exist.\n\nH.M. was the first half of that double dissociation. His case told the world, with unusual clarity, that the brain stores information in (at least) two different places, organized in (at least) two different ways, that can be damaged independently. The thing you learn (a phone number, a fact, a story) and the thing you do (a skill, a routine, a habit) are kept in different filing cabinets in your head.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1009,
+      "out_sha": "74027f055217",
       "note": ""
     },
     {
@@ -763,11 +763,11 @@
       "en_title": "Chapter 4: Procedural Memory and Why H.M. Could Still Learn",
       "order": 57,
       "src_chars": 2816,
-      "status": "pending",
+      "status": "done",
       "src_sha": "03085d000bcd",
       "src": "### 4.2 The Memory Architecture\n\n> **[Figure 4.1: Two Memory Systems]** A schematic showing the brain regions central to each memory system. **Declarative memory** highlights the hippocampus and surrounding medial temporal lobe (semantic + episodic sub-branches indicated). **Procedural memory** highlights the basal ganglia (with the dorsal striatum specifically marked), the cerebellum, and motor cortex. Visual emphasis on the spatial separation makes clear why H.M.'s surgery — which removed medial temporal structures — could destroy declarative memory while leaving procedural memory intact.\n\n\n#### Definition: Declarative Memory\n\n**Declarative memory** is the memory system for facts, events, and explicit recollections — the kind of memory that can, in principle, be put into words and reported. It is sometimes divided into _semantic_ memory (general knowledge: \"Paris is the capital of France\"; \"the Pythagorean theorem says...\") and _episodic_ memory (personal experience: \"yesterday I had lunch with my sister\"; \"I remember the day I got the job\"). Anatomically, declarative memory critically depends on the **hippocampus** and surrounding medial temporal lobe structures.\n\nIn plain language, this means: declarative memory is the memory you can talk about. It is what you \"know\" in the everyday sense of the word. When you remember that your friend's birthday is next Tuesday, or that you went to a movie last weekend, or that the capital of Australia is Canberra (not Sydney) — that's declarative memory. It is the memory system H.M. lost.\n\n\n#### Definition: Procedural Memory\n\n**Procedural memory** is the memory system for skills, habits, and cue-triggered automatic responses. It is what you \"know how to do\" rather than what you \"know that.\" Anatomically, procedural memory depends on the **basal ganglia** (especially the dorsal striatum, which we met in Chapter 2), the **cerebellum** , and parts of motor cortex.\n\nIn plain language, this means: procedural memory is the memory you can't talk about, but can perform. Riding a bicycle. Typing. Reading. The motor sequence of opening your front door. The cue-response pair \"phone vibrates → look at phone.\" The complex skill of driving while holding a conversation. _None of these can be fully explained in words, even by people who can perform them flawlessly._ Try writing instructions for how to ride a bicycle that would actually let a non-rider succeed. You'll discover, fairly quickly, that the knowledge isn't in your mouth — it's in your body.\n\nThe two systems are anatomically distinct, can be damaged independently, learn at different speeds, and respond to different kinds of intervention. Once you internalize this distinction, it explains a great deal about why habit change is hard — and what kinds of habit change are even possible.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 884,
+      "out_sha": "11c8d78c4aa8",
       "note": ""
     },
     {
@@ -775,11 +775,11 @@
       "en_title": "Chapter 4: Procedural Memory and Why H.M. Could Still Learn",
       "order": 58,
       "src_chars": 1142,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1584a716d6f5",
       "src": "#### A Practical Test\n\nA useful test for whether something is declarative or procedural: **can you communicate it in words to someone else, fully and reliably?**\n\nDeclarative knowledge transfers in language. You can tell someone the phone number, and they can store it. You can tell them what year the French Revolution started, and they have it. The information moves through speech.\n\nProcedural knowledge does not transfer in language well. You can tell someone a thousand times \"ride the bicycle by balancing it; pedal smoothly; don't oversteer.\" They will fall off. The transfer of procedural knowledge requires repetition in the body, building up the cue-response pairs through experience. You cannot install a procedural skill in someone else by describing it. You can only point them toward the practice that will install it.\n\nThis is why coaching of procedural skills — sports, music, surgery, dance — relies so heavily on demonstration, practice, and immediate corrective feedback rather than on lectures. The lectures alone cannot reach the procedural memory system. Lectures are language; procedural memory doesn't speak language.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 339,
+      "out_sha": "4244101ffb28",
       "note": ""
     },
     {
@@ -787,11 +787,11 @@
       "en_title": "Chapter 4: Procedural Memory and Why H.M. Could Still Learn",
       "order": 59,
       "src_chars": 2442,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ab7588785ec2",
       "src": "### 4.3 The Range of Procedural Memory\n\nMost people, when first told about procedural memory, think of it as the memory for motor skills — the bicycle, the piano, the typing. That's correct, but it's narrower than the actual category.\n\n**Procedural memory includes any cue-triggered, automatically executed response that is built up through repetition and not consciously deliberated.** Motor skills are the most obvious case, but the system is much more general. Consider:\n\n* _Reaching for the phone when bored._ No motor virtuosity required. But: a cue (the feeling of boredom, the visible phone, a pause in conversation), a response (reach, unlock, open app), executed without deliberation, refined through thousands of repetitions. This is procedural.\n* _Filling silence with \"um\" and \"you know.\"_ A cue (a moment of mental searching during speech), a response (a verbal placeholder), executed before the speaker has consciously decided to use one. Procedural.\n* _Eating sweet things when stressed._ A cue (a stress signal: tightness in the chest, a difficult email, a moment of overwhelm), a response (open the kitchen cabinet; reach for the candy), executed before the eater has consciously decided to comfort themselves. Procedural.\n* _Making a particular face when a particular family member walks into the room._ A cue (the family member's voice or face), a response (a micro-expression of irritation, fondness, defense — whatever the long-trained response is), executed before the person has consciously processed who walked in. Procedural.\n* _Typing the password to a particular site._ A cue (the login screen), a response (the finger sequence for the password), executed so automatically that the person often cannot consciously recall the password if asked, but can type it without error. Procedural.\n\nThe category is enormous. Once you start looking, almost every habituated cue-response pair in your behavioral repertoire is procedural — including many that don't involve motor activity in the obvious sense. **Anything that fires before consciousness can interrupt is procedural.**\n\nThis is the system that runs much of the 43% of daily behavior that Wendy Wood found is automatic. It is the system that produced the smoker's hand reaching for the cigarette before the smoker decided. It is the system that opens the fridge when the kitchen is passed.\n\nAnd, critically, **it is the system that does not understand language.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 756,
+      "out_sha": "404d0d65f899",
       "note": ""
     },
     {
