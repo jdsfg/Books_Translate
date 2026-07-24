@@ -163,11 +163,11 @@
       "en_title": "Chapter 1: The Gap Between Wanting and Doing",
       "order": 7,
       "src_chars": 2032,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fc904aef6810",
       "src": "### 1.3 The Pigeon Dance, Now With Names\n\nReturn to Skinner's pigeons. Their ritual dances are funny because pigeons can't tell us what they think they're doing. But the structure of their behavior is not at all unlike yours. Some food machine somewhere — your office, your phone, your fridge, your favorite coffee shop, your social feed — has, at some moment, delivered a reward while you happened to be doing something. The reward did not arrive _because_ of what you were doing. It arrived in spite of what you were doing, or alongside it, or after it, by coincidence. But the system in your brain that watches for those coincidences cannot tell coincidence from causation. It only watches for _what was done in this context the last time something good happened_. And it noticed.\n\nSo now, in that context, you do that thing. And maybe sometimes the reward comes, and your dance gets reinforced, and your behavior gets less and less under your control, and more and more under the control of the dance.\n\nThis is not a metaphor. Your brain runs an unconscious pattern detector that records context → behavior → outcome triplets and adjusts your future behavior toward whatever previously coincided with reward. It does not check whether the coincidence was causally meaningful. It does not check whether you, the conscious owner, endorse the resulting behavior. It is in many cases not even running in a part of your brain that _can_ be checked.\n\nIf this sounds like it should be embarrassing, notice that it is also why you can drive a car. The same pattern detector that is responsible for \"I picked up my phone before I knew what I was doing\" is also responsible for the smooth coordination of clutch and gas, the way you know how to shift your weight on a bicycle, the way you can pour coffee while reading email. It is the system that lets your prefrontal cortex think about what to write while your hand types it. _We do not actually want to live without this system._ The trick is to be deliberate about what we let it do.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 658,
+      "out_sha": "20f08f73d038",
       "note": ""
     },
     {
@@ -175,11 +175,11 @@
       "en_title": "Chapter 1: The Gap Between Wanting and Doing",
       "order": 8,
       "src_chars": 1499,
-      "status": "pending",
+      "status": "done",
       "src_sha": "965251398fb1",
       "src": "#### A New Frame, Stated Out Loud\n\nHere is the frame this book wants you to adopt and to keep adopting whenever you slip. It is repeated in different language in almost every chapter, because it does not \"stick\" the first time you read it; it has to be installed by repetition.\n\n**Your behavior does not reflect your preferences. Your preferences are shaped by your behavior. And your behavior is shaped by your environment.**\n\nRead it twice. The order is the part that matters and the part that almost no popular self-help book gets right.\n\nThe popular order is: _I have preferences → I act on them → I shape my behavior accordingly._ The empirically more accurate order, after sixty years of habit research, is: _my environment cues a behavior → I do the behavior → I infer, from having done the behavior, what kind of person I must be → I rationalize my preferences to match._ Most of the time, you are not running your behavior. You are explaining it to yourself after the fact.\n\nIf you find this claim too strong, hold the question — we will return to it with evidence in Chapter 6 (Wendy Wood's house-move studies, where the same person changes 60% of their habits after relocation, are about as clean a demonstration as social science offers) and in Chapter 12 (where we discuss self-perception theory and place identity-based change in its correct, narrower role). But you will find, the more carefully you watch yourself this week, that the claim has more grip than you initially expected.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 497,
+      "out_sha": "adda0aff068f",
       "note": ""
     },
     {
@@ -187,11 +187,11 @@
       "en_title": "Chapter 1: The Gap Between Wanting and Doing",
       "order": 9,
       "src_chars": 2460,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6f171fb6c4b4",
       "src": "### 1.4 What This Book Is Trying to Do\n\nMost habit books offer a system, a routine, a number, or an identity. _21 days to a habit. Atomic habits. Tiny habits. The four laws. The five mornings. The seven secrets._ Some of the underlying ideas are real. We will give the better ones their due — implementation intentions, choice architecture, substitution — and place each in the part of the toolkit it actually belongs to. We will also be honest, in chapters specifically organized for the purpose, about which popular formulations are overclaimed.\n\nBut the deeper move of this book is not to give you a system. It is to give you a **map of the machine** — what your dorsal striatum is and isn't, why your prefrontal cortex doesn't talk to it through the channel you assume, why \"wanting it more\" doesn't reach the part of your brain that needs to be changed, why your environment matters more than your motivation. With that map, you can read any habit-change advice you encounter for the rest of your life and tell whether it is acting on the right system. Without that map, you are at the mercy of whichever popular book you happened to read first.\n\nThe book has four parts. Part I (Chapters 1–4) maps the machine. Part II (Chapters 5–8) explains why your previous attempts failed — habits don't get erased, context predicts behavior more than motivation, variable-ratio reinforcement makes some habits especially sticky, and the popular concept of willpower has empirically failed to hold up. This is the book's hardest section emotionally; it dismantles widely held false beliefs, and we give it full weight so the tools that follow can land. Part III (Chapters 9–12) gives you a real toolkit: implementation intentions, choice architecture, tiny starts, substitution, identity (calibrated). Part IV (Chapters 13–14) shows you how to stack those tools across the most consequential habits in your life, and then closes with a question about who designed your environment and what it would mean to take back the design rights.\n\nThe book's organizing question is **not** \"how do I build better habits?\" That phrasing already accepts a frame that doesn't quite fit the science. The organizing question is:\n\n> _What is happening when I do something automatically, why can't I \"just decide\" to stop, and what really works?_\n\nIf by the end of the book you can answer that — for yourself, for your specific habits, with your own data — the book has done its job.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 788,
+      "out_sha": "c60baafe2b59",
       "note": ""
     },
     {
@@ -199,11 +199,11 @@
       "en_title": "Chapter 1: The Gap Between Wanting and Doing",
       "order": 10,
       "src_chars": 1887,
-      "status": "pending",
+      "status": "done",
       "src_sha": "992523cda420",
       "src": "### 1.5 The Engineered Aisle\n\nBefore we move on, one short observation that the book will keep returning to.\n\nThe next time you walk into a major supermarket, notice three things. Where is the milk? Where are the eggs? Where is the bread?\n\nIn almost every supermarket designed in the last sixty years, milk is at the back. Eggs are usually near the back. Bread, if you're in the United States, is near the back-left or back-right corner. These are the items the largest fraction of customers come in to buy. They are deliberately placed as far from the entrance as the building allows, because the supermarket's research — and they have a great deal of research — has found that customers who walk past more shelves on the way to the milk buy more things they did not plan to buy. The candy at the checkout is the same idea, executed at the checkout — your prefrontal cortex is tired from forty minutes of decisions, your habit system is in charge by then, and a chocolate bar at eye level catches the habit system's attention without ever consulting you.\n\nYou did not choose to walk past the cereal aisle. You did not choose, exactly, to put the candy bar on the conveyor. _Someone_ chose. They chose for you.\n\nNow hold this lightly: every shelf in your life has been arranged by _someone_. Your phone home screen. The default tab in your browser. The autoplay on your video site. The placement of the snacks in your kitchen. The route from your front door to your office. Some of these were arranged by you, on purpose. Most were arranged by someone else, on their purpose. We will spend the rest of the book teaching you to see these arrangements, and the last chapter teaching you to redesign the ones you have any control over.\n\nFor now: just notice. The aisle was arranged. The dance was inherited. The pigeon does not know that the food machine is on a timer.\n\n\n### 1.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 567,
+      "out_sha": "2ba395f74dde",
       "note": ""
     },
     {
@@ -211,11 +211,11 @@
       "en_title": "Chapter 1: The Gap Between Wanting and Doing",
       "order": 11,
       "src_chars": 3335,
-      "status": "pending",
+      "status": "done",
       "src_sha": "821b8bf90e16",
       "src": "#### Concept Check\n\n**Q1.** In two or three sentences, explain in your own words why Skinner's pigeons developed ritual behaviors despite the food being delivered at random intervals. What does this show about how the brain's reinforcement system relates to actual causation?\n\nHint\n\nThe pigeons' brains were watching for \"what was happening when the reward arrived\" — but didn't have a way to verify whether the behavior actually caused the reward. What does that imply about the role of coincidence?\n\n**Answer:** Skinner's pigeons developed ritualized behaviors because each bird, by chance, was doing something at the moment a pellet arrived, and its reinforcement system increased the probability of repeating that behavior. With more random pellets came more reinforcement of whatever the bird had been doing in between, and the rituals stabilized. The deeper finding is that the brain's reinforcement system increases the probability of behaviors that _coincided_ with reward, with no built-in test for whether the behavior _caused_ the reward. The system mistakes correlation for causation by design — and this design feature is not a bug, because in the natural environments the system evolved in, behaviors that consistently coincided with reward usually did cause it. The artificial randomness of the experiment exposes a pattern detector that, in everyday life, you would never notice was working.\n\n**Q2.** Wendy Wood's experience-sampling studies find that approximately what percentage of daily behavior is habitual? What does \"habitual\" mean precisely in this context — i.e., what makes a behavior count as a habit rather than as a deliberate choice?\n\n**Answer:** Approximately 43%. In this context, \"habitual\" means a behavior that is (a) automatic, (b) cue-triggered, (c) executed with little or no conscious deliberation, and (d) relatively stable across time. Crucially, it is _not_ simply a behavior that gets repeated — repetition is necessary but not sufficient. A habit is a behavior the person is performing without consulting their conscious goal. The 43% figure refers to genuinely automatic execution caught in real time by experience sampling, not retrospective self-report.\n\n**Q3.** What is wrong with the following sentence: \"I really want to quit smoking, but I keep smoking, so I must not really want to quit\"? Be specific about which step in the reasoning fails.\n\n**Answer:** The reasoning fails at the inference step. The fact that someone consistently performs a behavior they consciously want to stop does _not_ require the conclusion that they don't really want to stop. It is fully consistent with the wanting living in one brain system (broadly, prefrontal/goal-directed) and the doing living in another brain system (broadly, the dorsal striatum/habit system) that does not take instructions from the first. The first sentence (\"I really want to quit\") and the second (\"I keep smoking\") describe two different systems, both of which are real. The conclusion only follows if you assume there is one unitary \"self\" producing both — and the central claim of this book, which the next chapters will substantiate anatomically, is that this assumption is wrong.\n\n**Q4.** Why is the supermarket placement of milk at the back of the store an example of the engineered environment that this book discusses?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1062,
+      "out_sha": "dda502d2da78",
       "note": ""
     },
     {
