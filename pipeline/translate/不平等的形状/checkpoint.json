@@ -499,11 +499,11 @@
       "en_title": "Chapter 4: Weber — Class, Status, and Life Chances",
       "order": 33,
       "src_chars": 1869,
-      "status": "pending",
+      "status": "done",
       "src_sha": "54b400fa00a9",
       "src": "Here is a puzzle that Marx's two-class map cannot solve. Consider a newly rich entrepreneur, a man who has made a large fortune in, say, scrap metal or fast food, and who owns his factories outright. By Marx's measure he is unambiguously bourgeoisie, an owner of the means of production, near the top of the only ladder that counts. Now consider an aristocrat from an old family whose money has largely run out, who owns no productive capital to speak of, perhaps only a crumbling estate and a famous name. By Marx's measure he is sliding toward the propertyless. And yet, in their actual society, the impoverished aristocrat is received in drawing rooms that would never admit the scrap-metal millionaire; his name opens doors that no amount of the millionaire's money can buy; people defer to him in ways they will never defer to the richer man. Who, then, is \"higher\"?\n\nThe question has no answer if you have only one ladder. Max Weber's great contribution was to notice that we have been trying to measure with a single ruler something that has at least three dimensions. The millionaire is high on one and low on another; the aristocrat, the reverse. To say flatly that one outranks the other is to assume that the three dimensions collapse into one, and Weber's whole point is that they do not. Writing a generation after Marx, with Marx's framework fully in view, Weber did not reject the economic axis. He absorbed it, and then insisted it was incomplete. This chapter is about his richer map, and about a central organizing concept he left us, _life chances_ , which the entire middle of this book will use.\n\n\n### 4.1 Three dimensions, not one\n\nWeber proposed that the distribution of power in a society runs along three analytically distinct dimensions. They often line up, but they do not have to, and the cases where they come apart are the most revealing.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 623,
+      "out_sha": "7c740d53fb92",
       "note": ""
     },
     {
@@ -511,11 +511,11 @@
       "en_title": "Chapter 4: Weber — Class, Status, and Life Chances",
       "order": 34,
       "src_chars": 3201,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3315b358ef39",
       "src": "#### Definition: Class, Status, and Party (Weber's three dimensions)\n\nWeber distinguished three orders of stratification:\n\n* **Class** : a person's position in the _economic_ order, determined by their \"market situation,\" the resources and skills they bring to markets, which shape their access to goods, income, and opportunities. (Close to, but broader than, Marx's economic axis.)\n* **Status** (_Stände_): a person's position in the order of _social honor or prestige_ , expressed through lifestyle, esteem, and patterns of association, who is admired, deferred to, dined with, married.\n* **Party** : organized position in the order of _power_ , the capacity to pursue collective goals through associations, parties, movements, lobbies, and other organized means.\n\nIn plain language: class is about money and market leverage, status is about honor and respect, and party is about organized power. The aristocrat and the millionaire from our opening differ because the aristocrat is high in _status_ and low in _class_ , while the millionaire is the reverse. Marx saw the class dimension brilliantly and treated the others as mostly downstream of it, derivative reflections of economic position. Weber's counter was that status and party have their own logic and can move independently, sometimes even against the economic grain.\n\nWhy does this matter beyond solving a parlor puzzle? Because real stratification is shot through with cases where the dimensions diverge, and a one-axis map misreads every one of them. A celebrated artist or a respected teacher may have modest income (low-to-middling class) but considerable status. A lottery winner has the money but not, at least at first, the honor. A discriminated-against group may include people of high income who are nonetheless denied social honor, their class position failing to convert into status. An organized bloc of modest-income people can wield real power through sheer collective discipline, high in party, low in class. Each of these is invisible on Marx's single axis and immediately legible on Weber's three. The cost of the richer map is that it is messier; the benefit is that it fits the world.\n\nWeber's framework also lets us understand the older systems from Chapter 1 more precisely. In Weberian terms one can read a caste system as one in which _status_ is supreme and rigidly fixed, status groups sealed off from one another by rules of honor, marriage, and contact, with economic class subordinated to the status order. A pure class society, by contrast, is one in which the economic dimension dominates and status becomes more fluid, attaching itself increasingly to money. Most real societies are mixtures, and one of the most interesting questions you can ask about any society is _which dimension is on top_ , and how the dimensions are converting into one another.\n\n\n### 4.2 Life chances: the idea the whole book runs on\n\nWe now meet the concept that justifies this entire chapter and that the next several chapters will make vivid. When Weber defined class, he did not define it by income alone but by something he called **life chances** , and the phrase is so central that it deserves its own careful unpacking.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1120,
+      "out_sha": "c5c588c347dc",
       "note": ""
     },
     {
@@ -523,11 +523,11 @@
       "en_title": "Chapter 4: Weber — Class, Status, and Life Chances",
       "order": 35,
       "src_chars": 3081,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3e18c8ffd6ab",
       "src": "#### Definition: Life Chances\n\n**Life chances** are the _probabilities_ an individual has, given their position in the social structure, of obtaining the things a society treats as valuable and of avoiding the things it treats as harmful: health, long life, education, security, comfort, safety, and the like. Position does not _give_ a person these goods directly; it shapes the _odds_ of getting them.\n\nIn plain language: your life chances are the lot you are statistically likely to draw because of where you stand, before you have done anything to play the hand. This is the rigorous version of the idea we began the book with, when Maya and Devon were born facing unequal odds. Weber's word for those unequal odds is _life chances_ , and the word \"chances\" is load-bearing. He did not say position _determines_ your health or your education. He said it shapes the _probabilities_. A child born low can still flourish; a child born high can still fall ill, fail, and founder. What position does is tilt the odds, often dramatically, and tilt them across nearly every domain of life at once.\n\nThe power of the concept is that it converts an abstract ranking into a list of concrete, measurable consequences. To say \"Maya's family is higher in the class order\" is, in Weberian terms, to make a checkable prediction: Maya is more likely to reach old age, to finish her education, to be safe, to be secure, to weather a shock. Each of those is a life chance, each can be measured, and the measuring is the work of Part 2. The concept is also exactly calibrated to the discipline of Chapter 2, because it is built from _probabilities_. It tells you the odds are unequal without claiming any individual's fate is sealed, which is the precise truth the data support and the precise place where careless thinking about inequality goes wrong in both directions, the fatalist who says the poor child has no chance and the optimist who says position does not matter. Both are wrong about the same thing: the difference between a probability and a certainty.\n\n\n#### Common Misconception\n\nA tempting misreading is that \"life chances\" means the poor are _doomed_ and the rich are _guaranteed_ , that position is destiny. This is precisely what the concept does not say, and getting it wrong corrupts everything downstream. Life chances are odds, not fates. Within every rung there is enormous variation: people who beat long odds and people who squander short ones, and you know examples of both. When this book reports, later, that a child from the bottom is far less likely to finish college than a child from the top, it is making a statement about _distributions_ , about what happens on average across many lives, not a prophecy about any particular child. Confusing the distribution with the individual fate produces two opposite errors: a fatalism that discourages the very striving that does sometimes prevail, and a denial that treats the rare success story as proof the odds are equal. Hold the probabilistic meaning firmly. Almost every dispute in the chapters ahead turns on it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1014,
+      "out_sha": "de262400f0aa",
       "note": ""
     },
     {
@@ -535,11 +535,11 @@
       "en_title": "Chapter 4: Weber — Class, Status, and Life Chances",
       "order": 36,
       "src_chars": 2821,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f7bda7f1a016",
       "src": "### 4.3 Weber and Marx, weighed honestly\n\nIt would be easy, and wrong, to present Weber as simply correcting Marx, the wise multidimensionalist tidying up the crude monomaniac. That is a strawman of Marx and a flattery of Weber, and this book does neither. Let us weigh them as the genuine rivals they are, each seeing something the other underweights.\n\nWhat Weber gets that Marx underplays: the irreducibility of honor and of organized power. Status is not merely a reflection of economic position; it has its own machinery (lifestyle, association, exclusion, prestige) that can resist and outlast money, as the impoverished aristocrat shows, and that can deny honor to the economically successful, as discriminated-against but prosperous groups have repeatedly found. Party, organized power, likewise has its own dynamics; history is full of economically subordinate groups that nonetheless seized real power through organization, and economically dominant ones that lost it. By giving these their own axes, Weber explains a vast range of cases that a one-axis theory must either ignore or contort. And his multidimensional map fits the modern occupational world, with its gradient of market situations, far better than the two-class scheme, which is why empirical sociology leaned Weberian.\n\nWhat Marx gets that Weber can underplay: the possibility that one axis really is, in the end, more fundamental than the others, that economic position tends over time to _convert into_ status and power, buying honor and buying influence, so that treating the three as fully independent can obscure a deeper unity. A Marxist will say that Weber's three dimensions, observed over generations, show money steadily purchasing the other two, and that the apparent independence is a snapshot illusion. There is something to this. Old money is, after all, new money that lasted; the scrap-metal millionaire's _grandchildren_ may well sit in the drawing rooms that excluded him. Weber's map is better for a single moment; Marx's may be better for the long sweep, if economic position is the master variable that slowly bends the others to itself. Which emphasis is right is, you will not be surprised to hear, contested, and the honest answer is that each captures part of the truth and the balance differs by society and era.\n\nNotice what we are doing, because it is the book's method in miniature. We are not crowning a winner between two of the discipline's founders. We are establishing that each lens reveals real features the other blurs, and that a skilled analyst keeps both in hand, reaching for Marx's single relational axis when conflict and ownership are the question, and for Weber's three dimensions when the puzzle is why honor and money and power have come apart. To insist on only one is to give up sight in one eye.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 973,
+      "out_sha": "7062819f25ce",
       "note": ""
     },
     {
@@ -547,11 +547,11 @@
       "en_title": "Chapter 4: Weber — Class, Status, and Life Chances",
       "order": 37,
       "src_chars": 1726,
-      "status": "pending",
+      "status": "done",
       "src_sha": "785a0c977d1c",
       "src": "### 4.4 Why life chances carry the book\n\nWe linger on Weber's _life chances_ rather than his three dimensions because the rest of the book needs it more. The three-dimensional map is a tool we will reach for now and then, especially when status and power diverge from money. But _life chances_ is the spine of the entire middle of the book. When we ask, in Part 2, how position shapes health and longevity and schooling and safety, we are measuring life chances. When we ask, in Part 3, how those chances are passed down across generations, we are asking how life chances are inherited. When we ask, in Part 4, how much people move between positions, we are asking how fixed or fluid life chances are. The whole architecture stands on Weber's quiet, devastating observation that where you stand shapes the odds of nearly everything that happens to you.\n\nAnd the concept keeps faith with our two newborns. Maya and Devon are not, in Weber's terms, fated. They are _positioned_ , which means their odds are unequal across health, education, safety, and security, all at once, from the morning of their birth. The chapters ahead will put real measured gradients to those odds, always as probabilities, always with their society and source and as-of, always remembering that within each rung there are children who defy the numbers. We turn first, in Chapter 5, to one last conceptual question before the human stakes begin: if class can be Marx's relationship or Weber's market situation, can it also simply be the ladder of occupations that surveys actually measure? The answer will complete our map of what \"class\" means, and reveal why the very choice of definition quietly shapes everything we will find.\n\n\n### 4.5 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 658,
+      "out_sha": "9bdc196a953f",
       "note": ""
     },
     {
