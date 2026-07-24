@@ -2339,11 +2339,11 @@
       "en_title": "Chapter 22: Practical Machine Learning — From Notebook to Production",
       "order": 185,
       "src_chars": 1133,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6b1e253b5de5",
       "src": "### 22.5 Experiment Management\n\n**Reproducibility** is one of the most underrated practical skills in ML. An experiment that can't be reproduced provides no value.\n\n**What to log in every experiment:**\n\n  1. Code version (git commit hash)\n  2. Data version (dataset hash or version number)\n  3. Hyperparameters (all of them)\n  4. Training metrics (loss per epoch, validation metrics)\n  5. Test metrics (only after final model selection)\n  6. Environment (library versions, hardware)\n  7. Random seeds\n\n**Tools:** MLflow (open-source), Weights & Biases (W&B), Comet ML. All provide: experiment tracking, model registry, comparison dashboards, artifact storage.\n\n**A minimal, reproducible ML experiment:**\n    \n    \n    import random, numpy as np, torch\n    \n    # Set all random seeds\n    random.seed(42); np.random.seed(42); torch.manual_seed(42)\n    \n    # Log hyperparameters\n    config = {\"lr\": 0.001, \"batch_size\": 64, \"epochs\": 50, \"dropout\": 0.5}\n    \n    # Train model\n    model = MyModel(**config)\n    train(model, config)\n    \n    # Evaluate on test set (ONCE, at the end)\n    test_metrics = evaluate(model, test_data)\n    \n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 704,
+      "out_sha": "63c95c5bfb0f",
       "note": ""
     },
     {
@@ -2351,11 +2351,11 @@
       "en_title": "Chapter 22: Practical Machine Learning — From Notebook to Production",
       "order": 186,
       "src_chars": 3039,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6780a16541fa",
       "src": "### 22.6 Thread A — Feature Engineering Retrospective (A6)\n\n_[Thread A: A6 — Feature engineering retrospective: which features helped each model]_\n\nWe now look back at the entire house price prediction journey, asking: what actually drove the predictions in each model?\n\n**Original feature set (Chapters 5–6):**\n\n* x1x_1x1​ = Living area (sq ft)\n* x2x_2x2​ = Bedrooms\n* x3x_3x3​ = House age (years)\n* x4x_4x4​ = Garage spaces\n\n**Extended feature set (Chapter 6, 25 features):** Added: neighborhood quality score, school rating, distance to downtown (km), distance to nearest park, property tax rate, last renovation year, crime rate, walkability score, and more.\n\n**What each model used:**\n\nModel | Most Important Features | Feature Engineering Lesson  \n---|---|---  \nLinear Regression | Area (0.42), Garage (0.22), Age (-0.18) | Raw area dominates; additive model misses interactions  \nLasso | Area, Neighborhood quality, School rating (17 of 25 zeroed) | Lasso discovered that 8 features capture 90% of signal  \nDecision Tree | Area (0.42), Neighborhood (0.28), Age (0.19) | Non-linear splits on area × neighborhood interaction  \nRandom Forest | Area (0.38), Neighborhood (0.25), Age (0.18), School (0.12) | Multiple features matter with non-linear contributions  \nGradient Boosting | Area (0.35), Neighborhood (0.24), Age (0.15), School (0.12), Last Renovation (0.08) | Captures fine-grained interactions  \nNeural Network | Weights not directly interpretable | Learns implicit interactions but needs normalization  \n  \n**Key lessons from the feature engineering retrospective:**\n\n**1\\. Area × Neighborhood is the dominant interaction.** A small house in a premium neighborhood often costs more than a large house in an average neighborhood. Linear models (with additive features) can't capture this interaction unless we explicitly add `area × neighborhood_quality` as a feature. Decision trees capture it naturally.\n\n**2\\. The \"last renovation year\" feature became important at the ensemble level.** Raw house age misses that a 40-year-old house fully renovated last year is worth much more than an unrenovated 40-year-old house. Replacing \"house age\" with \"years since last renovation\" improves Gradient Boosting by  ~ 800 RMSE.\n\n**3\\. Distance features should be log-transformed.** `distance_to_downtown` has diminishing returns: going from 5 km to 10 km is more impactful than going from 50 km to 55 km. Log-transform makes this relationship linear.\n\n**4\\. The school rating feature only helps in certain price ranges.** School quality matters most for families buying mid-range houses; ultra-luxury buyers may prioritize other factors. This interaction (school × price_range) is better captured by tree-based methods than linear models.\n\n**5\\. Removing redundant features helped linear models.** \"Number of rooms\" and \"number of bedrooms + bathrooms\" are highly correlated. For linear models, this creates multicollinearity. Removing one feature reduced prediction variance.\n\n**Final comparison with feature-engineered variables:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1309,
+      "out_sha": "679e64fcb853",
       "note": ""
     },
     {
@@ -2363,11 +2363,11 @@
       "en_title": "Chapter 22: Practical Machine Learning — From Notebook to Production",
       "order": 187,
       "src_chars": 1616,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2c39a63f16cf",
       "src": "Model | Original Features RMSE | Engineered Features RMSE | Improvement  \n---|---|---|---  \nLinear (Lasso) | 34,500 USD | 29,800 USD | -4,700 USD  \nGradient Boosting | 23,800 USD | 21,200 USD | -2,600 USD  \n  \n> _Note: \"Original Features RMSE\" uses the 4-feature baseline from Chapter 5. The Lasso regularization in Chapter 6 was applied to an expanded 25-feature set and achieved modest improvement on its own; the larger gains shown here come from the full feature engineering pipeline developed in this chapter._\n\nEven the best model benefits from feature engineering, though complex models benefit less (they partially learn the transformations themselves).\n\n**Thread A complete.** We've seen the same dataset through 6 models across 17 chapters, with the performance progression:\n\n34,500→decision tree31,200→random forest27,100→gradient boosting23,800→feature engineering21,200 (RMSE, USD)34{,}500 \\xrightarrow{\\text{decision tree}} 31{,}200 \\xrightarrow{\\text{random forest}} 27{,}100 \\xrightarrow{\\text{gradient boosting}} 23{,}800 \\xrightarrow{\\text{feature engineering}} 21{,}200 \\text{ (RMSE, USD)}34,500decision tree​31,200random forest​27,100gradient boosting​23,800feature engineering​21,200 (RMSE, USD)\n\nLinear regression → Decision Tree → Random Forest → Gradient Boosting → + Feature Engineering. (Lasso regularization on this small dataset produced negligible improvement on its own; the primary gains came from nonlinear models and engineered features.) Every improvement had a clear reason: better model flexibility, better variance reduction, and ultimately better features.\n\n\n### 22.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 677,
+      "out_sha": "652c892ab5e0",
       "note": ""
     },
     {
@@ -2375,11 +2375,11 @@
       "en_title": "Chapter 22: Practical Machine Learning — From Notebook to Production",
       "order": 188,
       "src_chars": 2925,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ec99561fd0e6",
       "src": "#### Concept Check\n\n**Q1.** A dataset has the feature \"days_since_last_purchase\" with values ranging from 1 to 365. What would you expect the distribution to look like, and what transformation would you apply?\n\n**Answer:** Days since last purchase is likely right-skewed: many customers purchased recently (values 1–30) and fewer purchased a long time ago (values 200–365). The distribution has a long right tail.\n\n**Transformation:** Log-transform x′=log⁡(1+x)x' = \\log(1 + x)x′=log(1+x). This compresses the long tail, making the distribution more symmetric. After transformation: differences in recent purchase times (1 day vs. 7 days) are amplified, while differences in old purchases (180 days vs. 240 days) are compressed — which likely matches the business logic (recency matters a lot initially, then less so).\n\nAlternative: quantile transform, which maps the data to a uniform or Gaussian distribution regardless of the original distribution.\n\n**Q2.** You have a categorical feature \"country\" with 195 unique values. You plan to use a linear model. Describe two approaches for encoding this feature and their trade-offs.\n\n**Answer:**\n\n**Approach 1 — One-hot encoding:** Create 195 binary indicator features. Pro: linear model can learn a separate weight per country; no ordinal assumption. Con: 195 extra dimensions, sparse (only 1/195 active per example); some countries may have few training examples, leading to poor estimates (overfitting).\n\n**Approach 2 — Target encoding:** Replace each country with its mean target value (e.g., mean sale price or click rate in that country) computed from training data. Pro: 1 dimension; captures the country's relationship to the target. Con: must compute within cross-validation folds to avoid leakage; rare countries will have noisy estimates (need smoothing: use a weighted average between the country mean and the overall mean, weighted by sample size).\n\n**Hybrid:** Group rare countries into an \"Other\" category before one-hot encoding. This limits dimensions while preserving the information from common countries.\n\nFor tree-based models: raw label encoding (0–194) works fine because trees split at any threshold, effectively computing category-specific thresholds. Target encoding can still speed up convergence.\n\n**Q4.** A numeric feature \"house_price\" has mean 250,000 USD and standard deviation 80,000 USD. After standardization (Z-score), what value does a house priced at 330,000 USD receive? What transformation would you apply if you suspected the price distribution is strongly right-skewed, and why?\n\n**Answer:**\n\n**Z-score standardization:**\n\nx′=x−μσ=330,000−250,00080,000=80,00080,000=1.0x' = \\frac{x - \\mu}{\\sigma} = \\frac{330{,}000 - 250{,}000}{80{,}000} = \\frac{80{,}000}{80{,}000} = 1.0x′=σx−μ​=80,000330,000−250,000​=80,00080,000​=1.0\n\nA house at 330,000 USD receives a standardized value of 1.0 — it is exactly one standard deviation above the mean.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1003,
+      "out_sha": "1bbd125d0916",
       "note": ""
     },
     {
@@ -2387,11 +2387,11 @@
       "en_title": "Chapter 22: Practical Machine Learning — From Notebook to Production",
       "order": 189,
       "src_chars": 2075,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b65563d114a8",
       "src": "**For right-skewed distributions:** Apply a log-transform: x′=log⁡(1+price)x' = \\log(1 + \\text{price})x′=log(1+price). House prices are typically right-skewed: most houses cluster around the median, but a small number of luxury properties have very high prices, creating a long right tail. The log-transform compresses this tail, making the distribution more symmetric and ensuring that very expensive houses don't dominate gradient-based models (which are sensitive to large input magnitudes). After log-transform, percentage differences in price (e.g., 10% more expensive) correspond to approximately equal additive differences in the transformed space — which matches how humans typically reason about relative price differences.\n\n**Q3.** Describe a scenario where SMOTE oversampling would be inappropriate or potentially harmful.\n\n**Answer:** SMOTE creates synthetic minority examples by interpolating between real minority examples in feature space. It can be harmful when:\n\n**1\\. The minority class examples are not clustered:** SMOTE assumes minority class examples form compact clusters, and interpolating between them creates valid new examples. If minority examples are scattered widely (e.g., fraud can occur in any part of feature space), SMOTE creates synthetic examples in regions dominated by the majority class, adding noise rather than signal.\n\n**2\\. Categorical features are present:** SMOTE was designed for numeric features. Interpolating between two categorical feature values (e.g., between \"country: France\" and \"country: Japan\") is meaningless.\n\n**3\\. When you care about predictions at test time on the natural class distribution:** SMOTE changes the training distribution, which can miscalibrate predicted probabilities. If you need calibrated probabilities (not just rankings), class weighting is safer than oversampling.\n\n**4\\. With tree-based methods:** Decision trees and random forests are relatively robust to class imbalance (adjustable via class weights), and SMOTE doesn't reliably help. Class weights are simpler and generally sufficient.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 607,
+      "out_sha": "898e6ac228ed",
       "note": ""
     },
     {
