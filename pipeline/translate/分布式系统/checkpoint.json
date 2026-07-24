@@ -4271,11 +4271,11 @@
       "en_title": "Appendices",
       "order": 345,
       "src_chars": 1928,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e2773d744761",
       "src": "* * *\n\n\n### Appendix A — Reading List\n\nOrganized by chapter, with the canonical papers and books referenced throughout the text. The list is curated for the working engineer, not exhaustive; for each topic the most directly applicable source is included.\n\n\n#### Foundations (Part I — Chapters 1-3)\n\n* Kleppmann, M. (2017). _Designing Data-Intensive Applications_. O'Reilly. — The reference for the foundational material; required parallel reading.\n* Tanenbaum, A. S., & Van Steen, M. (2017). _Distributed Systems_ (3rd ed.). — Textbook foundation for academic treatment.\n* Deutsch, P. (1994). \"The Eight Fallacies of Distributed Computing.\" Sun Microsystems. — Source of Chapter 2's Eight Fallacies.\n* Gilbert, S., & Lynch, N. (2002). \"Brewer's conjecture and the feasibility of consistent, available, partition-tolerant web services.\" _ACM SIGACT News_. — Formal CAP proof.\n* Abadi, D. (2012). \"Consistency Tradeoffs in Modern Distributed Database System Design: CAP is Only Part of the Story.\" _IEEE Computer_. — The PACELC paper.\n* Lamport, L. (1978). \"Time, Clocks, and the Ordering of Events in a Distributed System.\" _Communications of the ACM_. — Required reading for Chapter 3.\n* Kulkarni, S. S., Demirbas, M., Madappa, D., Avva, B., & Leone, M. (2014). \"Logical Physical Clocks.\" _OPODIS_. — The HLC paper.\n* Corbett, J. C., et al. (2012). \"Spanner: Google's Globally-Distributed Database.\" _OSDI_. — TrueTime described.\n\n\n#### Broadcast and Replication (Part II — Chapters 4-6)\n\n* Cachin, C., Guerraoui, R., & Rodrigues, L. (2011). _Introduction to Reliable and Secure Distributed Programming_ (2nd ed.). Springer. — The broadcast hierarchy reference.\n* Chandra, T. D., & Toueg, S. (1996). \"Unreliable failure detectors for reliable distributed systems.\" _Journal of the ACM_. — Atomic broadcast ↔ consensus equivalence.\n* Birman, K., et al. (1999). \"Bimodal multicast.\" _ACM TOCS_. — Gossip-based reliable broadcast.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1461,
+      "out_sha": "2a4224365ab3",
       "note": ""
     },
     {
@@ -4283,11 +4283,11 @@
       "en_title": "Appendices",
       "order": 346,
       "src_chars": 3304,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9100ac4c68df",
       "src": "#### Consensus (Part III — Chapters 7-10)\n\n* Fischer, M. J., Lynch, N. A., & Paterson, M. S. (1985). \"Impossibility of distributed consensus with one faulty process.\" _Journal of the ACM_. — FLP impossibility.\n* Dwork, C., Lynch, N., & Stockmeyer, L. (1988). \"Consensus in the presence of partial synchrony.\" _Journal of the ACM_. — Partial-synchrony formalization.\n* Alpern, B., & Schneider, F. B. (1985). \"Defining liveness.\" _Information Processing Letters_. — Safety/liveness decomposition.\n* Lamport, L. (1998). \"The Part-Time Parliament.\" _ACM TOCS_. — The original Paxos paper.\n* Lamport, L. (2001). \"Paxos Made Simple.\" _ACM SIGACT News_. — Required-reading rewrite.\n* Ongaro, D., & Ousterhout, J. (2014). \"In Search of an Understandable Consensus Algorithm.\" _USENIX ATC_. — The Raft paper.\n* Howard, H., Malkhi, D., & Spiegelman, A. (2016). \"Flexible Paxos: Quorum Intersection Revisited.\" _OPODIS_. — Tunable quorums.\n* Lamport, L., Shostak, R., & Pease, M. (1982). \"The Byzantine Generals Problem.\" _ACM TOPLAS_. — BFT foundations.\n* Castro, M., & Liskov, B. (1999). \"Practical Byzantine Fault Tolerance.\" _OSDI_. — PBFT.\n* Yin, M., Malkhi, D., Reiter, M. K., Gueta, G. G., & Abraham, I. (2019). \"HotStuff: BFT Consensus with Linearity and Responsiveness.\" _PODC_.\n* Danezis, G., Kokoris-Kogias, L., Sonnino, A., & Spiegelman, A. (2022). \"Narwhal and Tusk: A DAG-based Mempool and Efficient BFT Consensus.\" _EuroSys_.\n* Spiegelman, A., et al. (2022). \"Bullshark: DAG BFT Protocols Made Practical.\" _CCS_.\n* Buchman, E., Kwon, J., & Milosevic, Z. (2018). \"The latest gossip on BFT consensus.\" _arXiv:1807.04938_. — Tendermint.\n\n\n#### Distributed Storage (Part IV — Chapters 11-14)\n\n* Karger, D., et al. (1997). \"Consistent Hashing and Random Trees.\" _STOC_.\n* Chang, F., et al. (2006). \"Bigtable: A Distributed Storage System for Structured Data.\" _OSDI_. — LSM-tree at production scale.\n* O'Neil, P., Cheng, E., Gawlick, D., & O'Neil, E. (1996). \"The log-structured merge-tree (LSM-tree).\" _Acta Informatica_.\n* Peng, D., & Dabek, F. (2010). \"Large-scale Incremental Processing Using Distributed Transactions and Notifications.\" _OSDI_. — Percolator.\n* Thomson, A., et al. (2012). \"Calvin: Fast Distributed Transactions for Partitioned Database Systems.\" _SIGMOD_.\n\n\n#### Eventual Consistency and CRDTs (Part V — Chapters 15-17)\n\n* Chandy, K. M., & Lamport, L. (1985). \"Distributed snapshots: determining global states of distributed systems.\" _ACM TOCS_.\n* Terry, D. B., Theimer, M. M., Petersen, K., Demers, A. J., Spreitzer, M. J., & Hauser, C. H. (1994). \"Session Guarantees for Weakly Consistent Replicated Data.\" _PDIS_. — Five session guarantees.\n* Shapiro, M., Preguiça, N., Baquero, C., & Zawirski, M. (2011). \"Conflict-Free Replicated Data Types.\" _SSS_. — The CRDT framework.\n* Kleppmann, M., & Beresford, A. R. (2017). \"A Conflict-Free Replicated JSON Datatype.\" _IEEE TPDS_. — Automerge basis.\n* Kleppmann, M., Wiggins, A., van Hardenberg, P., & McGranaghan, M. (2019). \"Local-First Software.\" _Onward!_.\n* Lloyd, W., Freedman, M. J., Kaminsky, M., & Andersen, D. G. (2011). \"Don't Settle for Eventual: Scalable Causal Consistency for Wide-Area Storage with COPS.\" _SOSP_.\n* Lloyd, W., et al. (2013). \"Stronger Semantics for Low-Latency Geo-Replicated Storage.\" _NSDI_. — Eiger.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 3081,
+      "out_sha": "3359e5944f7a",
       "note": ""
     },
     {
@@ -4295,11 +4295,11 @@
       "en_title": "Appendices",
       "order": 347,
       "src_chars": 3470,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e827df587179",
       "src": "#### Coordination and Operating (Parts VI-VII — Chapters 18-23)\n\n* Kleppmann, M. (2016). \"How to do distributed locking.\" Blog post. — The Redlock critique.\n* Hunt, P., Konar, M., Junqueira, F. P., & Reed, B. (2010). \"ZooKeeper: Wait-free coordination for Internet-scale systems.\" _USENIX ATC_.\n* Bronson, N., Aguilera, M. K., Lu, X., Yan, B., & Xu, L. (2021). \"Metastable Failures in Distributed Systems.\" _HotOS_.\n* Rosenthal, C., & Jones, N. (2020). _Chaos Engineering: System Resiliency in Practice_. O'Reilly.\n* Beyer, B., Jones, C., Petoff, J., & Murphy, N. R. (2016). _Site Reliability Engineering_. O'Reilly. — Retry budgets and circuit breakers as production discipline.\n* The Jepsen reports (https://jepsen.io) — Empirical tests of distributed-database correctness; required reading.\n* 2003 Northeast Blackout final NERC report. — Canonical cascading-failure case study.\n\n\n#### Distributed AI Inference (Part VIII — Chapters 24-26)\n\n* Kwon, W., Li, Z., Zhuang, S., et al. (2023). \"Efficient Memory Management for Large Language Model Serving with PagedAttention.\" _SOSP_. — vLLM.\n* Zheng, L., et al. (2023). \"SGLang: Efficient Execution of Structured Language Model Programs.\" — RadixAttention.\n* Patel, P., et al. (2023). \"Splitwise: Efficient Generative LLM Inference Using Phase Splitting.\" _ISCA_. — The disaggregation paper.\n* Zhong, Y., et al. (2024). \"DistServe: Disaggregating Prefill and Decoding for Goodput-optimized LLM Serving.\" _OSDI_.\n* Qin, R., et al. (2024). \"Mooncake: A KVCache-centric Disaggregated Architecture for LLM Serving.\" — Moonshot AI's KV cache tier.\n* LMCache (https://github.com/LMCache/LMCache). — Open-source KV cache tier.\n* Leviathan, Y., Kalman, M., & Matias, Y. (2023). \"Fast Inference from Transformers via Speculative Decoding.\" _ICML_.\n\n\n#### Synthesis and AI-Generated Code (Part IX — Chapters 27-28)\n\n* \"The Bitter Lesson\" (Sutton, 2019) and follow-up commentary. — Why pattern-matching dominates LLM behavior.\n* The Crescent post-mortems (this book, throughout). — Worked examples of all six lies.\n\n\n#### Forward Look (Chapter 29 — Postscript)\n\n* Amazon Web Services. (2024-2025). \"Amazon Time Sync Service and ClockBound\" documentation, including the 2024 introduction of microsecond-bounded time on EC2. — The strongest signal that TrueTime-style bounded clocks are leaving Google and entering the public-cloud baseline (§29.1).\n* Kleppmann, M., Wiggins, A., van Hardenberg, P., & McGranaghan, M. (2019). \"Local-First Software: You Own Your Data, in Spite of the Cloud.\" _Onward!_ — The 2019 essay re-read as a 2027-2030 mainstream-adoption forecast (§29.1).\n* Castro, M., & Liskov, B. (1999). \"Practical Byzantine Fault Tolerance.\" _OSDI_. — Foundational BFT, re-read in light of BFT's predicted spread to cloud control planes (§29.1).\n* NVIDIA Blackwell (B100 / B200) and Hopper successor product briefs (2024-2026 announcements). — Hardware trajectory underlying the sub-100-ms ITL claim (§29.1, with caveats on retrospective accuracy).\n* Fedus, W., Zoph, B., & Shazeer, N. (2022). \"Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity.\" _JMLR_. — MoE foundations cited as a forward-look topic (§29.1; deep coverage deferred to _Software at Scale_ Series IV Vol 4).\n* Rosenthal, C., & Jones, N. (2020). _Chaos Engineering_. O'Reilly. — Already in the Operating part, re-cited here because chaos engineering is forecast to become more, not less, important (§29.2).\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 2633,
+      "out_sha": "18194859bd4e",
       "note": ""
     },
     {
@@ -4307,11 +4307,11 @@
       "en_title": "Appendices",
       "order": 348,
       "src_chars": 1040,
-      "status": "pending",
+      "status": "done",
       "src_sha": "497848fdd0aa",
       "src": "### Appendix B — The Five-Database CAP Position Reference\n\nSystem | Replication | Failure-recovery | Consistency | Partition | PACELC | Best for  \n---|---|---|---|---|---|---  \n**Spanner** | Paxos per tablet; TrueTime | Lease-based; sub-second | Linearizable + stale reads | CP | PC/EC | Global linearizable workloads; GCP-only  \n**CockroachDB** | Raft per range; HLC + skew | Raft re-election; sub-second per range | Serializable + follower reads | CP | PC/EC | Multi-region Postgres-compat; any cloud  \n**DynamoDB** | Leaderless; quorum | Transparent | Eventual default; strong on request | AP default | PA/EL | AWS-native KV; predictable latency  \n**Cassandra** | Leaderless; tunable | Gossip-based; 10-30 s | Eventual default; LWT for linearizable | Tunable | Tunable | Write-heavy; massive scale-out  \n**FoundationDB** | Custom (sequencer + log + storage) | Sub-second sequencer change | Serializable | CP | PC/EC | OLTP foundation; building DBs on top  \n  \nFor Aurora DSQL, TiDB, YugabyteDB, Neon, TigerBeetle: see Chapter 14.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 683,
+      "out_sha": "9cce12253e70",
       "note": ""
     },
     {
@@ -4319,11 +4319,11 @@
       "en_title": "Appendices",
       "order": 349,
       "src_chars": 38,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e10e08d9baa4",
       "src": "### Appendix C — Glossary of Key Terms",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 38,
+      "out_sha": "257cbad221f9",
       "note": ""
     },
     {
@@ -4331,11 +4331,11 @@
       "en_title": "Appendices",
       "order": 350,
       "src_chars": 5362,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6fef0bef88ac",
       "src": "* **AI/human review split (60/40)** : 2026-era rough division of responsibility for AI-generated code review. AI catches ~60% (syntactic patterns, idiom mismatches, test-coverage hints); humans catch ~40% (contextual judgment, business invariants, architectural choices, novel patterns, considered-and-kept reasoning). See Ch.27 §27.10.\n* **Atomic broadcast** : broadcast in which all correct processes deliver messages in the same total order. Equivalent to consensus.\n* **BFT** : Byzantine Fault Tolerance. Tolerates nodes that send arbitrary or malicious messages, not just crash failures.\n* **Causal consistency** : per-operation consistency model where causally-related operations are seen in causal order; concurrent operations may be in any order.\n* **Cascading failure** : failure that spreads across components through amplification (e.g., retry storms).\n* **Choreographed saga** : saga in which each step publishes a completion event; subsequent steps subscribe; no central orchestrator. Compensations happen via \"rollback events.\" See Ch.13 §13.6.5.\n* **Circuit breaker** : defense pattern that opens (rejects calls fast) when downstream failure rate exceeds threshold.\n* **Compensating action** : in a saga, a forward-progress action that semantically undoes a previously-committed step. Rarely an \"exact undo\"; usually restores invariants (refund, restock, cancellation notification). Must itself be idempotent.\n* **CRDT** : Conflict-free Replicated Data Type. Data structure with deterministic merge regardless of operation order.\n* **Disaggregated prefill/decode** : 2025-2026 LLM inference pattern; prefill (compute-bound) and decode (memory-bound) on different GPU types.\n* **Fencing token** : monotonically increasing counter issued by a lock service; the resource enforces token order.\n* **FLP impossibility** : Fischer-Lynch-Paterson 1985. No deterministic consensus protocol guarantees termination under pure asynchrony with one crash.\n* **Gray failure** : failure where a process passes health checks while being effectively broken from the application's perspective.\n* **HLC** : Hybrid Logical Clock. Pair (l, c) of wall-clock-ish l and logical counter c; respects happens-before, stays close to wall time.\n* **KV cache** : in-memory key-value working state for LLM inference; the per-request memory that lets the model decode token by token.\n* **Linearizable** : per-operation consistency model where every operation appears to take effect at some instant between invocation and response, consistent with real-time.\n* **LSM-tree** : Log-Structured Merge-tree. Write-optimized storage substrate used by Bigtable, Cassandra, RocksDB.\n* **Metastable failure** : failure where the broken state is self-sustaining; removing the trigger doesn't restore healthy state.\n* **Orchestrated saga** : saga in which a dedicated orchestrator service holds the saga's state, calls each step in turn, and triggers compensations on failure. The orchestrator's state is itself durable. Contrast with choreographed saga.\n* **PACELC** : PACELC extension of CAP. If Partition: Availability or Consistency; Else: Latency or Consistency.\n* **Paxos** : Lamport's 1989/1998 consensus protocol. Two phases (prepare, accept) plus quorum intersection.\n* **Quorum intersection** : any two majorities of N nodes share at least one node; foundational to consensus safety.\n* **Raft** : Ongaro-Ousterhout 2014 consensus protocol. Decomposes into leader election + log replication + safety.\n* **Retry budget** : cap on retry traffic as a percentage of successful traffic; bounds cascading-failure amplification.\n* **Rubber-stamping anti-pattern** : a human reviewer approving an AI-reviewed PR without engaging — treating the AI's review as the review. Named in Ch.27 §27.10. Defense: every approval must articulate at least one substantive human-verified item.\n* **Saga** : cross-service transaction pattern with compensating actions instead of locks. See Ch.13 §13.6.5 for orchestrated vs choreographed variants.\n* **Serializable** : per-transaction consistency model where execution is equivalent to some serial order. Weaker than linearizable.\n* **Snapshot isolation** : transactions read a consistent snapshot; write-write conflicts may exist (write skew possible).\n* **Speculative decoding** : LLM inference acceleration; small draft model proposes K tokens, large verify model checks in parallel.\n* **Three-layer review architecture** : 2026 production discipline for AI-generated distributed code. Layer 1 = automated AI review (seconds); Layer 2 = human review with the six-lies checklist (minutes); Layer 3 = chaos verification before launch (hours). Skipping any layer produces predictable gaps. See Ch.27 §27.10.\n* **TrueTime** : Spanner's hardware-assisted time service. Returns time as [earliest, latest] uncertainty interval.\n* **Workflow (numbered)** : one of the 12 binding patterns catalogued in Ch.28 §28.7. Each workflow is the recurring \"input → mechanism → output\" framing of one chapter's central operational skill (e.g., Workflow 4 = Raft state-machine walkthrough; Workflow 7 = Anya's resharding migration; Workflow 11 = chaos game day). The numbering is shared between the chapter sections where the workflow is developed in full and the Ch.28 §28.7 summary table that lists all 12 with their inputs, outputs, core primitives, and common pitfalls.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 2484,
+      "out_sha": "b1d8ceb916d5",
       "note": ""
     },
     {
@@ -4343,11 +4343,11 @@
       "en_title": "Appendices",
       "order": 351,
       "src_chars": 2692,
-      "status": "pending",
+      "status": "done",
       "src_sha": "35254a7212af",
       "src": "* * *\n\n\n### Appendix D — The Six Lies LLMs Tell About Distributed Systems\n\nA consolidated reference card. For worked examples and the review checklist, see Chapter 27.\n\n| # | Lie | Refuting chapters | Defense |\n| --- | --- | --- | --- |\n| 1 | RPC has TCP-like semantics | Ch.4, 5 | Idempotency keys; explicit retry semantics |\n| 2 | The network is reliable | Ch.2, 21 | Timeouts; retry budgets; circuit breakers |\n| 3 | Machine clocks tell the truth | Ch.3 | HLC; causal/vector clocks; TrueTime |\n| 4 | Naive distributed locks work | Ch.18 | Consensus-backed lock + fencing tokens |\n| 5 | Partial failure is rare | Ch.22 | Saga pattern; outbox; compensating actions |\n| 6 | CAP categories are simple | Ch.2 | PACELC analysis; per-operation consistency choice |\n  \nThe Crescent payment system's defenses against each lie are detailed in Chapter 28.\n\n* * *\n\n\n### Appendix E — Case Studies\n\nSeven real-world distributed-systems incidents, each with technical trigger, amplification mechanism, recovery, and the chapter-mapped defenses that would have prevented it. Recommended as deep follow-up reading after Ch.21-23.\n\n\n#### E.1 — AWS S3 (US-EAST-1) Outage, 2017-02-28\n\n* **Trigger** : an engineer running a routine debug command for the S3 billing subsystem typed an incorrect input, removing more capacity from the index subsystem than intended.\n* **Amplification** : the index subsystem was responsible for managing metadata for all S3 objects in US-EAST-1. With reduced capacity, the index could not keep up with traffic; index lookups slowed; client retries amplified load; the index queues built up. The placement subsystem (which uses the index) also degraded. The metastable state: requests were too slow to complete, but the high latency itself prevented the system from catching up. Recovery required restarting the index subsystem, but the restart itself required throttling new traffic.\n* **Timeline** : 4-hour customer-visible impact; many AWS-dependent services (Slack, Quora, Trello, Medium) were down.\n* **Recovery** : AWS engineers throttled incoming traffic, restarted the index subsystem, and brought capacity back online incrementally.\n* **Chapter-mapped defenses** : \n    * Ch.22 (metastable failures): the system's broken state was self-sustaining; the index couldn't catch up while serving traffic. Defense: workload-aware throttling on detection of metastability.\n    * Ch.21 (cascading failures): retry amplification at multiple layers. Defense: retry budgets at every client.\n    * Ch.23 (chaos engineering): the failure mode \"operator removes too much capacity\" should have been a game-day scenario; the recovery path (throttle + restart) should have been rehearsed.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1049,
+      "out_sha": "fd01054f2f07",
       "note": ""
     },
     {
@@ -4355,11 +4355,11 @@
       "en_title": "Appendices",
       "order": 352,
       "src_chars": 3416,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f3ab277201c3",
       "src": "#### E.2 — Roblox Multi-Day Outage, 2021-10-28 to 2021-11-02\n\n* **Trigger** : a deploy of a new Consul version with subtle behavioral changes (longer heartbeat-induced load on the Consul cluster).\n* **Amplification** : the cluster's HashiCorp Consul service-discovery layer became overloaded; CPU saturation caused gradual streaming failure; the streaming failures caused queue backups; the backups caused more CPU pressure (gray + metastable combination). The Consul gossip protocol's BoltDB-based state grew unboundedly under the failure mode.\n* **Timeline** : 73-hour customer-visible outage (largest in Roblox history); millions of users affected.\n* **Recovery** : required multi-vendor incident response (Roblox + HashiCorp); ultimately the BoltDB needed to be recovered from snapshots and the streaming subsystem rebuilt from a clean state.\n* **Chapter-mapped defenses** : \n    * Ch.19 (service discovery): a single point of dependency on Consul without graceful degradation; defense in depth was missing.\n    * Ch.22 (metastable failures): the self-sustaining broken state required external intervention to break.\n    * Ch.21 (cascading failures): the streaming subsystem's failure propagated to dependent services.\n    * Ch.23 (chaos engineering): the specific failure mode (Consul under high heartbeat load) had not been game-day-tested before deploy.\n\n\n#### E.3 — Cloudflare Email-Routing Outage, 2024-04\n\n* **Trigger** : a misconfigured deployment rolled out a code change that caused the email-routing worker to enter an infinite loop on certain message types.\n* **Amplification** : looped workers held connection pools open; new email traffic queued; queues filled; the entire email-routing service degraded.\n* **Timeline** : ~2 hour outage of Cloudflare's email forwarding service.\n* **Recovery** : deploy rollback after identifying the looping worker via tracing.\n* **Chapter-mapped defenses** : \n    * Ch.20 (distributed tracing): the trace data revealed the loop; without tracing, the diagnosis would have taken much longer.\n    * Ch.27 (LLM-generated code review): the bug pattern was not caught by the AI-assisted review pipeline because the loop condition depended on input data, not on code shape.\n\n\n#### E.4 — Crowdstrike Falcon Sensor Crash, 2024-07-19\n\n* **Trigger** : a content update for the Crowdstrike Falcon kernel-mode sensor contained malformed data that triggered an out-of-bounds memory read on Windows kernel; the read caused a BSOD.\n* **Amplification** : the update was rolled to millions of Windows machines simultaneously (no canary); affected machines booted into a BSOD loop and required manual recovery.\n* **Timeline** : 8.5 million Windows machines bricked simultaneously; multi-day recovery; airlines, hospitals, financial services severely impacted.\n* **Recovery** : per-machine manual recovery (boot to safe mode, delete bad sensor file).\n* **Chapter-mapped defenses** : \n    * Ch.23 (chaos engineering, game-day discipline): the deploy should have been canaried; the \"what if the sensor crashes on millions of machines\" scenario should have been a game day.\n    * Ch.21 (cascading failures, deploy as trigger): treat deploys as triggers; staged rollout (1% → 10% → 100%) is the canonical defense.\n    * Ch.27 (LLM-assisted review architecture): the kernel-mode sensor's input handling is exactly the kind of code where the review checklist must catch missing validation.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1458,
+      "out_sha": "4d7245d5fc57",
       "note": ""
     },
     {
@@ -4367,11 +4367,11 @@
       "en_title": "Appendices",
       "order": 353,
       "src_chars": 3323,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a566a90ee1b7",
       "src": "#### E.5 — GitHub MySQL 24-Hour Degradation, 2018-10-21\n\n* **Trigger** : a 43-second network partition between two of GitHub's primary datacenters caused MySQL's Orchestrator failover automation to elect a new primary in the east coast facility while the original primary in the west coast was still alive.\n* **Amplification** : when the partition healed, the system had two primaries with diverged data. The recovery required manual reconciliation of the diverged writes (cluster-wide read-only mode while data was reconciled).\n* **Timeline** : 24-hour service degradation; complete recovery took ~24 hours.\n* **Recovery** : extensive manual data reconciliation, with some commits permanently lost.\n* **Chapter-mapped defenses** : \n    * Ch.18 (distributed locks, fencing tokens): the failover automation lacked fencing tokens; the new primary should not have been able to write while the old primary still believed itself the primary.\n    * Ch.7 (consensus, split-brain prevention): consensus-based leader election would have prevented the dual-primary state.\n    * Ch.5 (replication, primary-failover discipline): the failover-without-fencing pattern is exactly what Chapter 5 warns against.\n\n\n#### E.6 — Google Cloud BigQuery Storage Outage, 2023-08-08\n\n* **Trigger** : a bug in BigQuery's storage write API caused the storage layer to start rejecting writes for specific table classes.\n* **Amplification** : client applications retried; retries amplified the rejection rate; the rejection metric crossed an alert threshold and triggered an automatic regional failover that did not include the bug fix.\n* **Timeline** : 4-hour partial outage of BigQuery writes for affected workloads.\n* **Recovery** : bug fix deployed; manual reset of the regional failover state.\n* **Chapter-mapped defenses** : \n    * Ch.21 (cascading failures, retry storms): retry budgets at the client layer would have bounded the amplification.\n    * Ch.22 (gray failures): the rejection-rate-spike-triggers-failover loop is a classic metastable pattern; better failover discipline (require human-in-the-loop for cross-region failover) helps.\n    * Ch.27 (review checklist): the bug fix should have been reviewed for \"what happens when this is rolled back across regions\"; the failover-without-the-fix scenario was missed.\n\n\n#### E.7 — Fastly Global CDN Outage, 2021-06-08\n\n* **Trigger** : a customer pushed a valid configuration that exercised a previously-undiscovered software bug in Fastly's Varnish-based CDN platform. The bug caused the configuration parser to crash on a specific input pattern.\n* **Amplification** : the bad configuration was distributed to all Fastly CDN nodes globally; every node crashed; the entire CDN went offline simultaneously.\n* **Timeline** : ~1 hour global outage; major sites (Reddit, Stack Overflow, Amazon, BBC) affected.\n* **Recovery** : customer reverted the configuration; Fastly's nodes recovered.\n* **Chapter-mapped defenses** : \n    * Ch.19 (config-as-data, watch streams): config rollouts need staging (canary regions); global atomic rollout is the anti-pattern.\n    * Ch.23 (chaos engineering): the failure mode \"config triggers parser crash on all nodes\" should have been a game-day scenario.\n    * Ch.21 (cascading failures): the simultaneous global crash is the worst case of an unstaged rollout.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1422,
+      "out_sha": "1f468efe2537",
       "note": ""
     },
     {
@@ -4379,11 +4379,11 @@
       "en_title": "Appendices",
       "order": 354,
       "src_chars": 2898,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a23156833823",
       "src": "#### Reading these case studies\n\nEach one is a worked example of the book's framework. Reading the official post-mortems alongside the corresponding chapter makes the framework concrete. Recommended order:\n\n* Read Ch.21-23 first (cascading, gray/metastable, chaos engineering).\n* Then read 2-3 case studies in depth (S3 2017, Roblox 2021, GitHub 2018 are highest-leverage).\n* For each case study, ask: which of the six lies was at play? What defense was missing? What would Olamide have run as a game day before this could happen?\n\n* * *\n\n\n### Appendix F — Production Decision Tree\n\nFor five common workload patterns, this appendix provides an end-to-end \"from requirements to architecture\" walkthrough. Each path applies the Ch.11 diagnostic method, the Ch.14 system matrix, and the relevant defenses.\n\n\n#### F.1 — Single-region OLTP at moderate scale (10K-100K QPS)\n\n**Inputs** : read-heavy with some writes; transactional consistency required; single-country deployment; sub-100ms p99 latency.\n\n**Decision** : PostgreSQL with read replicas + Redis cache.\n\n* **Operational store** : PostgreSQL 16 with one or two hot-standby read replicas (synchronous to one, async to the other).\n* **Cache** : Redis Cluster for hot-read paths (TTL 60s; event-driven invalidation on writes).\n* **Replication** : sync to one standby, async to the other. RPO = 0 for the sync replica; RPO = seconds for the async.\n* **Why not NewSQL** : at moderate single-region scale, PostgreSQL's operational maturity and ecosystem outweigh the marginal benefit of horizontal-scale-out. Defer the NewSQL migration until you actually need multi-region.\n* **Alternatives** : MySQL with similar replication if the team prefers MySQL ecosystem; Aurora PostgreSQL (AWS) for managed simplicity at the cost of higher per-IOPS billing.\n\n\n#### F.2 — Multi-region OLTP for global users\n\n**Inputs** : global users; cross-region consistency for some operations (payments, inventory); sub-500ms p99 latency; disaster recovery across continents.\n\n**Decision** : CockroachDB or Spanner; supplemented by TigerBeetle for financial ledger.\n\n* **Operational store** : CockroachDB (any cloud) or Spanner (GCP-only). Choose based on cloud commitment.\n* **Ledger** (if applicable): TigerBeetle for double-entry accounting; reference TigerBeetle transfer IDs from the operational store.\n* **Region placement** : 3 regions chosen for ~90ms worst-case Raft quorum (Ch.6 AP Q2 method). Typical: US-East + EU-West + US-West (or similar).\n* **Cache** : regional Redis Cluster for hot reads; cross-region replication for global tables.\n* **Why this combination** : CockroachDB's per-table region affinity matches geo-partitioned data; TigerBeetle's specialized correctness model is the right tool for financial integrity.\n* **Alternatives** : TiDB if MySQL-compatible; YugabyteDB for closer-to-Postgres compatibility; Aurora DSQL for AWS-native serverless.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1387,
+      "out_sha": "59f128be83fe",
       "note": ""
     },
     {
@@ -4391,11 +4391,11 @@
       "en_title": "Appendices",
       "order": 355,
       "src_chars": 2974,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0fc53e187c42",
       "src": "#### F.3 — Read-heavy global content delivery\n\n**Inputs** : read-dominated workload; user-facing; latency-sensitive; eventual consistency acceptable for most reads.\n\n**Decision** : DynamoDB Global Tables OR Cassandra/ScyllaDB + CDN.\n\n* **Operational store** : DynamoDB Global Tables (AWS-native, managed) or Cassandra/ScyllaDB (open-source, multi-cloud).\n* **CDN** : Cloudflare or Fastly for static-content paths.\n* **Cache** : regional Redis or Memcached for hot reads.\n* **Consistency strategy** : per-operation choice; eventual for content reads, conditional writes for unique-claim operations (username reservation, etc.).\n* **Why this combination** : read-scale dominates; eventual consistency is acceptable; vendor lock-in (DynamoDB) is acceptable for AWS-only deployments.\n* **Alternatives** : Spanner for stronger consistency at higher cost; Cassandra with LWT for selective linearizability.\n\n\n#### F.4 — High-throughput streaming / event processing\n\n**Inputs** : 100K-1M events/sec; ordered processing within partitions; exactly-once semantics end-to-end; minutes-to-hours latency budget.\n\n**Decision** : Kafka + Apache Flink + Postgres or CockroachDB sink.\n\n* **Event broker** : Kafka (or NATS JetStream for lighter weight).\n* **Stream processor** : Apache Flink (for exactly-once via Chandy-Lamport snapshots, Ch.15) or Spark Structured Streaming.\n* **Sink** : PostgreSQL or CockroachDB with idempotent writes; transactional sink coordinated with Flink checkpoints.\n* **Schema management** : Confluent Schema Registry or equivalent.\n* **Why this combination** : Kafka's per-partition ordering is the right primitive; Flink's exactly-once is mature; the sink choice depends on downstream requirements.\n* **Alternatives** : Pulsar instead of Kafka; Materialize for materialized-view-style streaming SQL; Beam for cross-runner portability.\n\n\n#### F.5 — Distributed LLM inference at scale (100K+ USD/month inference budget)\n\n**Inputs** : 1B+ tokens/day; multiple models; latency-sensitive interactive paths + batch paths; cost optimization is mandatory.\n\n**Decision** : vLLM/SGLang + disaggregated prefill/decode + KV-cache-aware routing.\n\n* **Inference engine** : vLLM (general) or SGLang (prefix-heavy workloads); both via NVIDIA NIM for enterprise deployments.\n* **Architecture** : disaggregated prefill/decode (Ch.25) once cluster crosses ~50 nodes; KV cache tier (Mooncake / LMCache) for prefix reuse.\n* **Routing** : KV-cache-aware load balancer (Ch.26) plus length-prediction routing.\n* **Speculative decoding** : enabled per-model for long-output workloads.\n* **Monitoring** : per-customer GPU-second cost; utilization per phase.\n* **Why this combination** : the 2025-2026 architectural breakthroughs (disaggregation, KV cache tier, speculative decoding) compound for substantial cost savings.\n* **Alternatives** : NVIDIA NIM for enterprise teams; Anyscale / Together / Fireworks as managed alternatives if the team wants to avoid the operational complexity.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1565,
+      "out_sha": "ddd5cd8ee9d9",
       "note": ""
     },
     {
@@ -4403,11 +4403,11 @@
       "en_title": "Appendices",
       "order": 356,
       "src_chars": 3296,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cf0288274a2f",
       "src": "#### F.6 — Common anti-patterns: when NOT to reach for the obvious choice\n\nThe decision tree above is biased toward \"what to pick.\" Equally important is when to _not_ pick a system that looks tempting. These are the most common 2026 anti-patterns Olamide's team sees in incoming engineers:\n\n**Don't reach for NewSQL at the first sign of scaling pain.** A team running into PostgreSQL p99 latency issues at 50k QPS usually does not need CockroachDB; it needs read replicas, better indexing, connection pooling, and Redis caching. The cost of migrating to NewSQL is real (operational learning curve, latency increase per write, license cost); the migration should be triggered by a _structural_ need (multi-region requirement, horizontal write scaling beyond single-node hardware, regulatory data-residency), not by the first p99 spike.\n\n**Don't reach for Spanner when a single-region Postgres + read replicas suffices.** Spanner is the cleanest multi-region system, but its commit-wait latency is paid on every write. For single-region workloads, the Postgres ecosystem maturity and per-write latency are usually better. Pay the Spanner cost only when you actually need its capabilities.\n\n**Don't reach for DynamoDB when your team needs SQL flexibility.** DynamoDB's predictable per-request cost and low latency are real benefits, but they come with a strict data-modeling discipline (PK design, GSI design, no joins). A team accustomed to \"throw a query at it\" SQL flexibility will fight DynamoDB constantly. Pick DynamoDB only when the data model genuinely fits its access pattern.\n\n**Don't reach for Cassandra when a 3-node cluster will do.** Cassandra's operational story (tombstones, compaction, node-by-node maintenance) is real engineering work. For workloads that can be served by 3 of anything, the operational tax of Cassandra is not justified. Cassandra earns its place at 100+ node clusters where its horizontal scale-out is the necessary thing.\n\n**Don't reach for a service mesh when 10 services don't need one.** Istio/Linkerd add operational complexity. For small service graphs, Kubernetes-native service discovery is sufficient. Adopt a service mesh when the multi-region, multi-protocol, complex-traffic requirements actually exist.\n\n**Don't reach for BFT when crash-failure consensus is sufficient.** BFT is 3x the replicas and the operational cost. For teams whose operators are trusted and whose nodes are reasonably secured, crash-failure consensus (Raft) is the right choice. BFT belongs to specific high-stakes verticals (blockchain, financial settlement across organizations, defense), not the mainstream.\n\n**Don't reach for Spanner-style global linearizability when geo-partitioned per-user data suffices.** Most user-centric workloads (chat, social, productivity) can be served with per-user data homed in one region. Global linearizability is the most expensive consistency level; pay it only when the workload genuinely requires global ordering across all users.\n\nThe unifying pattern: **the cost of a system is paid every day; the benefit may be needed only on rare occasions.** Choose the system whose every-day cost matches the workload's every-day needs, and accept that the rare occasions (cross-region partition, hot-key contention, etc.) may pay an extra cost.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1306,
+      "out_sha": "7a7a007eb119",
       "note": ""
     },
     {
@@ -4415,11 +4415,11 @@
       "en_title": "Appendices",
       "order": 357,
       "src_chars": 1654,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2890413170b1",
       "src": "#### Decision-procedure summary\n\nFor any workload not in F.1-F.5, apply Ch.11 diagnostic method:\n\n  1. **Replication protocol** for your throughput / availability needs.\n  2. **Failure-recovery semantics** for your RTO / RPO.\n  3. **Consistency model** per operation, not per system.\n  4. **Partition behavior** based on what your application can tolerate.\n\nThen map to systems via Ch.14's matrix. Then apply the appropriate defenses (retry budgets, circuit breakers, fencing tokens, saga compensations) per the relevant chapters. Then audit against the F.6 anti-patterns to make sure you are not over-reaching.\n\n* * *\n\n\n### Appendix G — Runnable Code Repository (Planned Companion)\n\nA companion code repository is **planned** at `github.com/socratopia/distributed-systems-2026-examples` (status: _in development as of this book's publication date, 2026-05-20_). The structure documented below is the intended layout; readers consulting this appendix should treat it as the design spec rather than as a fully-shipped artifact. The Socratopia team and contributors will populate the repository over the months following publication; readers who want to track progress (or contribute) should consult the Socratopia community channels.\n\nWhen complete, the repository will contain runnable implementations of the book's core primitives, organized by chapter. The intent is not a production-grade distributed-systems library — vetted libraries (etcd, raft-rs, vLLM, Yjs) exist for that purpose and should be used for production. The repository's purpose is _learning_ : code small enough to read in one sitting, with the chapter's invariants made executable.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 626,
+      "out_sha": "e1be2eb81513",
       "note": ""
     },
     {
@@ -4427,11 +4427,11 @@
       "en_title": "Appendices",
       "order": 358,
       "src_chars": 3367,
-      "status": "pending",
+      "status": "done",
       "src_sha": "35ad1c4ad386",
       "src": "#### Intended repository structure\n    \n    \n    distributed-systems-2026-examples/\n    ├── ch03_clocks/\n    │   ├── lamport.py        — Lamport timestamps\n    │   ├── vector.py         — Vector clocks (small N)\n    │   └── hlc.py            — Hybrid Logical Clock per Kulkarni 2014 four-case rule\n    ├── ch04_broadcast/\n    │   ├── best_effort.py    — best-effort broadcast (TCP + for-loop)\n    │   ├── reliable.py       — reliable broadcast via flooding\n    │   └── causal.py         — causal broadcast with vector clocks\n    ├── ch09_raft/\n    │   ├── raft_minimal.py   — ~300 lines: leader election + AppendEntries + commit\n    │   ├── kv_state_machine.py — replicated key-value store on top\n    │   └── tests/            — split-brain, partition, recovery scenarios\n    ├── ch12_lsm/\n    │   └── tiny_lsm.py       — minimal LSM-tree (memtable + WAL + SSTable + compaction)\n    ├── ch13_saga/\n    │   ├── orchestrator.py   — orchestrated saga with durable state (SQLite)\n    │   ├── choreographed.py  — choreographed saga via in-memory event bus\n    │   └── crescent_payment_saga.py — the Ch.13 §13.6.5 worked example\n    ├── ch16_crdt/\n    │   ├── g_counter.py      — G-Counter (grow-only)\n    │   ├── pn_counter.py     — PN-Counter\n    │   ├── or_set.py         — Observed-Remove Set\n    │   └── tiny_yjs.py       — minimal RGA-like list CRDT\n    ├── ch18_locks/\n    │   ├── redlock_naive.py  — the wrong way (no fencing tokens) — for demonstration\n    │   ├── etcd_lock.py      — consensus-backed lock via etcd client library\n    │   └── fencing_token_demo.py — protected resource enforces monotonic tokens\n    ├── ch20_tracing/\n    │   └── propagation_demo.py — OpenTelemetry context propagation across HTTP + Kafka\n    ├── ch21_resilience/\n    │   ├── retry_budget.py   — retry budget implementation (gRPC-style)\n    │   ├── circuit_breaker.py — three-state circuit breaker\n    │   └── load_shedder.py   — adaptive concurrency limiter\n    ├── ch24_inference/\n    │   └── continuous_batching_toy.py — minimal continuous-batching scheduler\n    └── ch27_review/\n        ├── ai_review_checklist.py — automated checks for the six-lies patterns\n        └── examples/\n            ├── bad_distributed_code.py  — code with all six lies (the §27.2-§27.7 examples)\n            └── good_distributed_code.py — same workflow with defenses applied\n    \n\n\n#### Using the repository\n\nEach chapter directory has:\n\n* A `README.md` linking back to the book chapter and naming the invariants the code demonstrates.\n* Runnable examples (`make run` per chapter).\n* Failure-injection tests (`make chaos`) that exercise the failure modes the chapter discusses.\n* Notes on what the code does _not_ do (the gap between the learning example and production).\n\nThe repository is open-source (MIT license). Pull requests for additional language ports (Rust, Go) are welcome.\n\n\n#### What the repository deliberately does not include\n\nFollowing the book's anti-definition discipline (Ch.1 §1.4):\n\n* Production-grade implementations (use vetted libraries).\n* Performance-tuned versions (clarity over performance).\n* Security-hardened versions (these are learning examples).\n* Coverage of every protocol variant.\n\nThe point of the repository is to give the reader something to _run_ , _modify_ , and _break_ — so the invariants of the book become hands-on rather than only conceptual.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 2687,
+      "out_sha": "84c222404963",
       "note": ""
     },
     {
@@ -4439,11 +4439,11 @@
       "en_title": "Appendices",
       "order": 359,
       "src_chars": 304,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2c634729968e",
       "src": "### Appendix H — Twenty-Five Common Misconceptions\n\nEach body chapter has a \"Common Misconception\" callout. This appendix consolidates the twenty-five most frequent and operationally consequential ones, with one-sentence rebuttals. Use it as a pre-review checklist before approving a distributed-code PR.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 113,
+      "out_sha": "ade2fab4ff49",
       "note": ""
     },
     {
@@ -4451,11 +4451,11 @@
       "en_title": "Appendices",
       "order": 360,
       "src_chars": 4704,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1bed35b14506",
       "src": "| # | The misconception | The reality | Chapter |\n| --- | --- | --- | --- |\n| 1 | \"Distributed systems are about making things fast.\" | They are about correctness under partial failure; speed is sometimes a benefit, never the driver. | Ch.1 |\n| 2 | \"We run NTP within 10 ms; clock skew is solved.\" | NTP gives expected drift, not guaranteed. VM pauses, NTP outages, and the 10 ms window itself all break this. | Ch.1, Ch.3 |\n| 3 | \"CAP: pick two of consistency, availability, partition tolerance.\" | Partition tolerance is not a choice; under partition, choose between linearizability and availability. | Ch.2 |\n| 4 | \"Linearizable = serializable.\" | Linearizable is per-operation real-time order; serializable is per-transaction any-order. Linearizable is strictly stronger. | Ch.2, Ch.11 |\n| 5 | \"We use a CP system, so we're consistent.\" | CP names partition behavior; PACELC names everyday cost. Per-operation consistency is the right question. | Ch.2 |\n| 6 | \"Vector clocks tell you what time it is.\" | Vector clocks reason about _order_ , not wall-clock time. The values are not seconds. | Ch.3 |\n| 7 | \"If I run NTP I have TrueTime.\" | TrueTime gives a _provable_ uncertainty interval and waits it out; NTP gives \"probably.\" | Ch.3 |\n| 8 | \"RPC has TCP-like semantics.\" | The response can be lost even when the request was processed. Idempotency keys are required. | Ch.4, Ch.27 |\n| 9 | \"W + R > N gives linearizability.\" | It gives _intersection_ , which is weaker. Concurrent writes and sloppy quorum break linearizability. | Ch.5 |\n| 10 | \"Multi-region for HA without paying multi-region tax.\" | Quorum across regions pays the cross-region cost on every write. DR-only is async; HA is quorum. | Ch.6 |\n| 11 | \"FLP says consensus is impossible.\" | FLP says deterministic consensus with bounded termination is impossible under pure asynchrony. Real systems use partial synchrony. | Ch.7 |\n| 12 | \"Paxos elects a leader.\" | Single-decree Paxos has no leader. Multi-Paxos has a leader as an optimization, not a safety requirement. | Ch.8 |\n| 13 | \"Raft commits an entry as soon as a majority replicates it.\" | Almost right; the previous-term-commit subtlety (Figure 8) requires committing a current-term entry first. | Ch.9 |\n| 14 | \"BFT is only for blockchain.\" | BFT is a consensus property; non-blockchain use cases include cloud control planes and cross-org data sharing. | Ch.10 |\n| 15 | \"An 'AP' system is always available.\" | The control plane of any AP system needs strong consistency. Every AP system has a CP corner. | Ch.11 |\n| 16 | \"LSM is for write-heavy; B-tree is for read-heavy.\" | Oversimplified. LSM's structural advantage is converting random writes to sequential; read performance is competitive. | Ch.12 |\n| 17 | \"2PC is broken; nobody uses it.\" | Classical single-coordinator 2PC blocks; modern 2PC replicates the coordinator state via consensus and is the production default inside distributed DBs. | Ch.13 |\n| 18 | \"Eventual consistency means inconsistent forever.\" | Eventual = converges given no new updates. Causal and strong-eventual are stronger eventual variants. | Ch.15, Ch.17 |\n| 19 | \"CRDTs replace the broadcast hierarchy.\" | CRDTs need reliable broadcast; they tolerate any order but require delivery. Operations that _conflict_ (inventory, unique-claim) still need atomic broadcast. | Ch.4, Ch.16 |\n| 20 | \"Redlock is wrong; don't use it.\" | Redlock is wrong for _correctness_ use cases; fine for efficiency. The discipline is classifying the use case. | Ch.18 |\n| 21 | \"Cache as a lock works.\" | Cache-based locks fail under process pause, clock drift, cache eviction, and failover. Use consensus + fencing tokens. | Ch.18 |\n| 22 | \"We use a service mesh; we have service discovery solved.\" | Discovery is one feature; mesh adds mTLS, traffic policies, and observability — also operational overhead. Pick by need. | Ch.19 |\n| 23 | \"We have OpenTelemetry; tracing is solved.\" | Tracing requires context propagation across every async boundary (queues, scheduled jobs) and consensus boundaries. Default Kafka clients don't propagate. | Ch.20 |\n| 24 | \"Retry with exponential backoff is resilience.\" | Retries without budgets amplify load on a slow downstream. Bound them with retry budgets + circuit breakers. | Ch.21 |\n| 25 | \"Health checks tell us if a node is alive.\" | Cheap health checks pass during gray failures. Use deep health checks that exercise the real path. | Ch.22 |\n  \nThe pattern: each misconception is plausible at first glance, has a one-word version that fits in a slide, and is exactly the version LLMs reproduce when asked to write distributed code. Reviewers who internalize these 25 catch the high-frequency LLM-generated bugs in seconds.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 2149,
+      "out_sha": "fcc1a9fada64",
       "note": ""
     },
     {
@@ -4463,11 +4463,11 @@
       "en_title": "Appendices",
       "order": 361,
       "src_chars": 6,
-      "status": "pending",
+      "status": "done",
       "src_sha": "df3c0a61db05",
       "src": "* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 27,
+      "out_sha": "1c9df68f3fbc",
       "note": ""
     },
     {
@@ -4475,11 +4475,11 @@
       "en_title": "Appendices",
       "order": 362,
       "src_chars": 301,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0a612a9c8b76",
       "src": "### Appendix I — Trace-to-Chapter Reverse Index\n\nWhen debugging a production incident from a distributed trace, the engineer often knows _what they see in the trace_ but not _which chapter explains it_. This appendix is the reverse index: given a trace symptom, which chapter has the relevant defense.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 110,
+      "out_sha": "733958eb36d7",
       "note": ""
     },
     {
@@ -4487,11 +4487,11 @@
       "en_title": "Appendices",
       "order": 363,
       "src_chars": 3462,
-      "status": "pending",
+      "status": "done",
       "src_sha": "35e690e5a3ac",
       "src": "Trace symptom | Likely cause | Chapter to consult  \n---|---|---  \nTwo spans show the same operation with different effects (double-charge, duplicate write) | Missing idempotency key; retry hit unguarded path | Ch.4 (RPC semantics), Ch.18 (fencing tokens), Ch.27 §27.2  \nSpans across services show wall-clock ordering that contradicts causal expectation (B before A despite B being a reply to A) | Wall-clock used for cross-machine ordering; clock skew | Ch.3 (HLC), Ch.20 §20.2 (context propagation)  \nOne slow span dominates request latency; the called service's own health checks are green | Gray failure; cheap health check doesn't exercise the real path | Ch.22 (gray failures, deep health checks)  \nRequest latency p99 climbs over hours without trigger; system never recovers | Metastable failure (self-sustaining broken state) | Ch.22 §22.3 (metastable framework), Appendix E.1, E.2, E.6  \nBurst of retries from upstream after a downstream slowdown | Retry amplification; missing retry budget | Ch.21 §21.3 (retry budgets), Appendix E.1, E.6  \nSpan exists but no parent span; orphaned in trace tree | Context propagation broken at an async boundary | Ch.20 §20.2 (causality preservation)  \nMultiple coordinator-state spans for the same transaction in different regions | Replicated coordinator; failover mid-transaction | Ch.13 §13.2 (2PC + replicated coordinator)  \nSaga compensations triggered but not all completed | Compensation idempotency violation or saga state lost | Ch.13 §13.6.5 (saga correctness obligations)  \nCross-region commit takes >150 ms p99 | Raft quorum across regions; latency floor | Ch.6 §6.1 (speed-of-light), Ch.13 §13.7  \nLock acquired in trace but no fencing-token check at downstream | Naive distributed lock without fencing | Ch.18 §18.2 (Redlock critique), Ch.27 §27.5  \nTrace shows transaction commits but read after returns old value | Read-after-write failure; reading from follower without HLC propagation | Ch.5 §5.8 (read-after-write), Ch.15 §15.2 (session guarantees)  \nTrace shows two writes succeed but only one persisted after failover | Async replication; primary died before propagation | Ch.5 §5.3, Ch.5 §5.4 (sync vs async)  \nTwo leaders' write spans visible during partition heal | Split-brain; failover without consensus | Ch.7 (consensus), Ch.18 (fencing tokens), Appendix E.5  \nService mesh sidecar shows circuit breaker \"Open\" but trace still shows attempted calls | Circuit breaker misconfigured (failures not detected) | Ch.21 §21.4 (circuit breaker states)  \nStream-processing trace shows duplicate events after job restart | Exactly-once broken; missing checkpoint coordination | Ch.15 §15.4 (Chandy-Lamport), Ch.4 §4.6  \nLLM inference trace shows first-token latency >300 ms | KV cache transfer cost in disaggregated architecture | Ch.25 §25.5 (disaggregation latency)  \nLLM inference trace shows long-output requests blocking short ones | Head-of-line blocking; no length-prediction routing | Ch.26 §26.3 (length-prediction routing)  \nSudden cluster-wide failure on config change | Atomic global rollout; missing staging | Ch.19 §19.5, Appendix E.7 (Fastly)  \n  \nThe reverse index is meant for the debugging engineer at 2 a.m. looking at a flame graph and asking \"what is this pattern called?\" The chapter pointer is the entry point; the chapter's defense is the fix.\n\n* * *\n\n_Generated as part of the post-pipeline polish, 2026-05-20._ _QBooks · A Socratopia Learning Series Publication_\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1719,
+      "out_sha": "aea835cc81bb",
       "note": ""
     }
   ],
