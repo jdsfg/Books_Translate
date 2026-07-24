@@ -30,7 +30,6 @@ XGBoost | XGBoost |
 ## 训练与优化
 gradient descent | 梯度下降 |
 loss function | 损失函数 |
-loss | 损失 |
 regularization | 正则化 |
 overfitting | 过拟合 |
 underfitting | 欠拟合 |
