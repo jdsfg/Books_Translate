@@ -27,3 +27,32 @@ replication | 复制 |
 consistency | 一致性 |
 availability | 可用性 |
 partition tolerance | 分区容忍性 |
+
+## 产品名
+PostgreSQL | PostgreSQL | 保留英文
+MySQL | MySQL | 保留英文
+InnoDB | InnoDB | 保留英文
+SQLite | SQLite | 保留英文
+Redis | Redis | 保留英文
+Cassandra | Cassandra | 保留英文
+DuckDB | DuckDB | 保留英文
+MongoDB | MongoDB | 保留英文
+ClickHouse | ClickHouse | 保留英文
+Snowflake | Snowflake | 保留英文
+Spanner | Spanner | 保留英文
+CockroachDB | CockroachDB | 保留英文
+
+## 并发控制
+lost update | 丢失更新 |
+dirty read | 脏读 |
+write skew | 写偏斜 |
+snapshot isolation | 快照隔离 |
+strict isolation | 严格隔离 |
+
+## 存储与查询
+page | 页 |
+columnar storage | 列式存储 |
+nested-loop join | 嵌套循环连接 |
+sort-merge join | 排序合并连接 |
+hash join | 哈希连接 |
+cost-based optimization | 基于代价的优化 |
