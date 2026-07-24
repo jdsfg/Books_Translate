@@ -149,3 +149,13 @@
 | log | 日志 |
 | trace | 追踪 |
 | span | 跨度 |
+| NVIDIA NIM | NVIDIA NIM（保留英文） |
+| prefill/decode disaggregation | prefill/decode 分离 |
+| continuous batching | continuous batching / 连续批处理 |
+| paged attention | paged attention / 分页注意力 |
+| tensor parallelism | tensor parallelism / 张量并行 |
+| pipeline parallelism | pipeline parallelism / 流水线并行 |
+| data parallelism | data parallelism / 数据并行 |
+| expert parallelism | expert parallelism / 专家并行 |
+| sequence parallelism | sequence parallelism / 序列并行 |
+| model parallelism | model parallelism / 模型并行 |
