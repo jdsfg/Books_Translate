@@ -1975,11 +1975,11 @@
       "en_title": "Chapter 8: The Willpower Myth",
       "order": 158,
       "src_chars": 1460,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4fc12d7c3d46",
       "src": "#### Definition: Self-Control as Allocation\n\nIn the modern view, **self-control** is the resolution of a moment-to-moment allocation problem in favor of long-term goals over short-term rewards, modulated by many inputs (fatigue, stress, cognitive load, social context, motivation, framing). It is **not** a depletable resource. It is **not** a single skill that improves uniformly with practice. It is the output of a complex weighting that varies with circumstance.\n\nIn plain language: when you \"have willpower\" in a moment, what's happening is that the inputs to the allocation favor the long-term goal. When you \"lose willpower\" in a moment, the inputs have shifted. The fix is not to \"get more willpower\" but to **change the inputs to the allocation** — by reducing the short-term temptation (cue removal), by adding social structure, by maintaining sleep and energy, by reducing cognitive load on the moments that matter, and by making the long-term goal felt rather than just stated.\n\nEach of these is, in fact, the kind of structural-environmental intervention this book has been advocating for since Chapter 1. The post-replication-crisis understanding of self-control is, more or less, an explicit endorsement of structural intervention over heroic effort. The willpower-as-muscle framework was the popular alternative to structural intervention; with that framework deflated, structural intervention is what's left, and what's empirically supported.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 412,
+      "out_sha": "268f0e23cf10",
       "note": ""
     },
     {
@@ -1987,11 +1987,11 @@
       "en_title": "Chapter 8: The Willpower Myth",
       "order": 159,
       "src_chars": 2912,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0a9e2d99065d",
       "src": "### 8.4 The 21-Days Myth, and Why It's Wrong\n\nWhile we're correcting popular misconceptions about behavior change, there is one other piece of folk wisdom that deserves explicit deflation. The claim is that **it takes 21 days to form a habit.** This appears in countless self-help books, motivational speeches, and habit-tracking apps. The number is often presented as if it were established science.\n\nIt is not. The 21-day figure is folk lore. It originated, by most accounts, with a 1960s plastic surgeon named Maxwell Maltz who observed that his patients seemed to take about 21 days to adjust to a change in their appearance after surgery. He extrapolated, in a popular self-help book, that this was probably how long it took for any psychological adjustment, including habit formation. The claim was not based on data on habits per se; it was a casual extrapolation that captured the public imagination and persisted.\n\nThe actual data, when researchers eventually ran careful studies, looks quite different. The most-cited study, by Phillippa Lally and colleagues at University College London, tracked participants who were trying to install various new health-related habits in their daily lives. The participants logged their behavior daily, and the researchers measured the asymptotic \"automaticity\" of the behavior — how habitual it had become — over time.\n\nThe results:\n\n* **The median time to automaticity was about 66 days** — three times the popular 21-day figure.\n* **The range was enormous.** Some habits formed in as little as 18 days; others required more than 254 days. The variability was much larger than any popular framing acknowledges.\n* **Some habits did not become fully automatic during the study window at all.** Particularly complex behaviors (e.g., \"exercise for an hour daily\") sometimes did not transition fully to automaticity within the time the study could observe.\n* **The time depended on the specific behavior.** Simple behaviors (drinking a glass of water with breakfast) automated faster than complex ones (going to the gym). Behaviors with strong intrinsic reward automated faster than ones with mostly delayed reward.\n\nWhat the Lally data suggests is that **habit formation is much slower and more variable than popular discourse implies.** The 21-day figure is not just wrong; it is wrong in a way that probably contributes to people giving up on habits prematurely. Someone who has been working on a new habit for three weeks, expecting it to be \"automatic\" by then, and finding that it isn't, may conclude they've failed or that they're not cut out for the change. In fact, three weeks is, for most habits, only a fraction of the way to consolidation. The honest expectation, based on the Lally data, is that habit formation typically takes two to three months for simple habits and longer for complex ones, with substantial variation across individuals and behaviors.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 846,
+      "out_sha": "b8891bf80a16",
       "note": ""
     },
     {
@@ -1999,11 +1999,11 @@
       "en_title": "Chapter 8: The Willpower Myth",
       "order": 160,
       "src_chars": 1601,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9d7bf36fba2f",
       "src": "There is also a deeper observation that the Lally study cannot fully address: **some complex behaviors may not become fully habitual at all.** \"Going to the gym four times a week\" involves a sequence of decisions, contextual checks, social negotiations, and execution steps that may always require some degree of conscious deliberation, even after years of practice. The habit-formation literature is, at best, applicable to relatively simple, single-cue-single-response behaviors; for complex multi-step behaviors, the goal is probably \"well-supported routine\" rather than \"fully automatic habit.\"\n\nThe practical implications:\n\n* **Expect habit formation to take months, not weeks.** Calibrate your expectations accordingly.\n* **Don't conclude failure if a habit feels effortful at three weeks.** It's still consolidating.\n* **Different habits will have different timelines.** A short habit may consolidate quickly; a complex one may never fully automate.\n* **The \"streak\" matters more than any specific number of days.** Continued repetition over a long period, with the structural support to keep going through the inevitable setbacks, is what produces the gradual transition.\n\nThis is also a calibrating finding for the book's overall framing. The structural interventions in Part III are designed to produce _sustained_ behavior change, not to produce magical transformation in 21 days. The honest expected timeline is months; the honest expected method is structural; the honest expected outcome is a slow, mostly invisible accumulation of the new pattern that, eventually, runs without effort.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 472,
+      "out_sha": "14caff3ea44d",
       "note": ""
     },
     {
@@ -2011,11 +2011,11 @@
       "en_title": "Chapter 8: The Willpower Myth",
       "order": 161,
       "src_chars": 2975,
-      "status": "pending",
+      "status": "done",
       "src_sha": "762db56fd901",
       "src": "### 8.5 The Damage Done by the Willpower Frame\n\nStep back for a moment and consider what the popular willpower frame has cost.\n\nFor at least a hundred years, the dominant cultural narrative around behavior change has placed willpower at the center. People who succeed are stronger; people who fail are weaker; the remedy for failure is to build more willpower. This narrative is, on the evidence, substantially wrong.\n\nThe damage takes several forms.\n\n**1\\. Self-blame for structurally-driven failures.** Millions of people, over the course of the willpower era, have interpreted their failures at behavior change as personal failures of character. Diet failures. Smoking failures. Exercise failures. Phone-use failures. Each has been interpreted, by the person experiencing it, as evidence of weak character, insufficient discipline, lack of grit. The reframe — that these failures are mostly structural and respond to structural intervention — would have spared a great deal of unnecessary suffering. The willpower frame produced shame; the structural frame produces problem-solving.\n\n**2\\. Misallocated effort.** People who believed they needed to \"build their willpower\" invested time, attention, and money in motivational books, willpower-training courses, discipline-building exercises, and various other interventions targeting the wrong system. Much of this effort was wasted. Resources that could have gone to structural change (move closer to the gym, change the kitchen, adjust the social network, alter the cue environment) went instead to building character that does not, in fact, do what they thought it would.\n\n**3\\. Stigma against asking for structural support.** The willpower frame implicitly stigmatizes structural support as a sign of weakness. Need to put your phone in another room to focus? _That's just not having enough discipline to keep it nearby._ Need an accountability partner for exercise? _That's not really doing it on your own._ The frame treats structural support as a weak crutch, when in fact it is the actual mechanism by which behavior change works. The cultural pressure to \"do it on your own\" has made many people refuse the very structures that would have made their change succeed.\n\n**4\\. Misunderstanding of populations who need extra structural support.** People with certain mental health conditions (depression, anxiety, ADHD) are not, on the evidence, deficient in some general \"willpower.\" Their underlying allocation machinery is differently calibrated, and they need different structural support. The willpower frame has produced a great deal of cultural and clinical pressure on these populations to \"just be more disciplined,\" which has done real harm. The structural frame, applied with the calibrated allocation model, produces interventions that actually help these populations: more deliberate cue management, more environmental support, more social structure, sometimes medication that adjusts the allocation inputs.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 811,
+      "out_sha": "31f2eda8dcd2",
       "note": ""
     },
     {
@@ -2023,11 +2023,11 @@
       "en_title": "Chapter 8: The Willpower Myth",
       "order": 162,
       "src_chars": 1025,
-      "status": "pending",
+      "status": "done",
       "src_sha": "acde5ce47d39",
       "src": "**5\\. Public-policy misalignment.** Public health and education policies, in many countries, have been built on the assumption that informing people of the right behaviors plus exhorting them to be disciplined is most of what's needed. The structural frame would put much more emphasis on infrastructure (walkable cities, healthy-food access, clean indoor air, school environments calibrated for learning) and much less on information-and-exhortation. The current allocation of public-policy investment is, on the structural view, badly miscalibrated.\n\nThe damage has been substantial and is ongoing. The cultural correction is not yet complete; popular discourse, popular books, and popular self-help still operate, in large part, on the willpower frame. The shift is happening, but slowly. Each individual reader, in adopting the structural frame, is one small data point in the cultural shift. They are also, importantly, sparing themselves the unnecessary suffering of the willpower frame applied to their own struggles.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 260,
+      "out_sha": "28e50c25b563",
       "note": ""
     },
     {
