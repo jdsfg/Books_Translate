@@ -2487,11 +2487,11 @@
       "en_title": "Chapter 10: Loneliness as Public Health Crisis",
       "order": 201,
       "src_chars": 2122,
-      "status": "pending",
+      "status": "done",
       "src_sha": "936460e26926",
       "src": "In 2023, the U.S. Surgeon General Vivek Murthy issued a formal advisory declaring loneliness a public health emergency. The advisory drew on multiple decades of accumulating epidemiological evidence to make a claim that, twenty years earlier, would have been considered surprising: that social isolation is a major contributor to disease, disability, and mortality in industrialized societies. Murthy's advisory framed the situation as a crisis comparable in scope to other major public health emergencies and called for systematic response across the policy, healthcare, and community levels.\n\nThe advisory was not, as some commentary suggested, a moral statement about the loneliness of contemporary life. It was an epidemiological claim with substantial evidence behind it. The empirical work that grounded the advisory comes from multiple research lines, most prominently the meta-analytic work of the public health researcher Julianne Holt-Lunstad, whose decades of synthesis across hundreds of studies have produced what is now the consensus statement of the field: _social isolation carries all-cause mortality risk roughly comparable to smoking on the order of fifteen cigarettes per day_. The exact magnitude varies by methodology and population, but the broad claim is robust: loneliness, treated as an epidemiological variable, is one of the larger predictors of premature mortality that the field has identified.\n\nThis chapter develops the loneliness epidemic and its specific contemporary form. It pays particular attention to the **mid-life friendship gap** — the structural fragility of adult friendship in contemporary industrialized societies — and offers concrete tools for the work of friendship maintenance and friendship formation in the years when most adults find both genuinely difficult. The chapter is also the most explicitly political of the book's chapters before Chapter 14, because the loneliness phenomenon is partly produced by structural features of contemporary life that are partly outside individual control and partly shaped by collective decisions about how societies are organized.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 587,
+      "out_sha": "73fd52ce6345",
       "note": ""
     },
     {
@@ -2499,11 +2499,11 @@
       "en_title": "Chapter 10: Loneliness as Public Health Crisis",
       "order": 202,
       "src_chars": 3359,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c8c680dd189b",
       "src": "### 10.1 The Epidemiological Picture\n\nBegin with what the data actually say. Julianne Holt-Lunstad's meta-analytic syntheses, conducted across multiple decades and reviewing hundreds of studies, converge on several findings.\n\n**Finding 1: Subjective social isolation predicts all-cause mortality at effect sizes comparable to major established health risks.** The often-cited comparison — that social isolation has mortality effects roughly comparable to smoking around fifteen cigarettes per day — is a useful approximation rather than a precise figure. The exact magnitude varies. Different studies find effect sizes in different ranges depending on methodology, population, and how loneliness is measured. But the broad claim — that the effect size is large, comparable to other major public health risks — is robust across studies.\n\n**Finding 2: The effect is partly independent of objective network size.** This is critical. _Loneliness_ in the epidemiological literature is typically a _subjective_ measure — how disconnected the person feels — not an objective count of how many relationships they have. The two are correlated but not identical. A person with many social contacts who feels deeply lonely has worse health outcomes than a person with fewer contacts who feels deeply connected. The variable that predicts mortality is the felt-sense of isolation, not the headcount of acquaintances. This finding parallels the PPR finding from Chapter 6 — what predicts outcomes is the subjective felt-sense, not the objective behavior count.\n\n**Finding 3: The effect is partly mechanism-specific.** Several biological mechanisms have been proposed and partly demonstrated. Social isolation is associated with elevated baseline cortisol; chronic low-grade inflammation; impaired immune function; cardiovascular changes; sleep architecture disruption; cognitive changes including faster decline in some studies; depression and anxiety prevalence. The Coan-fMRI work (Chapter 1) is part of the mechanistic story: the chronic absence of co-regulating others means the body's threat system is, in effect, always on, with measurable downstream effects on multiple physiological systems.\n\n**Finding 4: Effects are present across populations and life stages but particularly pronounced in some.** Older adults — particularly recently widowed and isolated elders — show particularly large effect sizes, partly because their broader physiological vulnerability amplifies the relational signal. But effects appear at all life stages: lonely children, lonely adolescents, lonely young adults, lonely mid-life adults, and lonely elders all show measurable health effects. The framing of loneliness as primarily an elderly issue is empirically incomplete; it is an issue across the life course.\n\n**Finding 5: Trends in loneliness are concerning.** Multiple surveys across recent decades suggest that subjective loneliness has, on average, increased in many industrialized societies. The data are imperfect — measurement methodologies vary, comparisons across decades are difficult — but the broad trend appears to be upward. Reports of _I have no close friends_ among working-age adults in some surveys have increased substantially across recent decades. The _epidemic_ framing in Murthy's advisory reflects the trend trajectory as much as the current absolute level.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 976,
+      "out_sha": "be23c17b8f51",
       "note": ""
     },
     {
@@ -2511,11 +2511,11 @@
       "en_title": "Chapter 10: Loneliness as Public Health Crisis",
       "order": 203,
       "src_chars": 1138,
-      "status": "pending",
+      "status": "done",
       "src_sha": "73030a46cb3c",
       "src": "These findings together produce the contemporary public-health picture. Loneliness is not a soft moral or psychological concern that exists alongside health; it is a structural input into health outcomes at scales comparable to other major risks. The implication is that public health responses that ignore the relational dimension are leaving substantial leverage unused.\n\n\n#### Definition: Loneliness\n\nLoneliness is the subjective felt-sense of social disconnection — the experience of lacking close relationships in some configuration that would meet one's relational needs — and is an epidemiological variable distinct from objective network size. Loneliness predicts all-cause mortality at effect sizes comparable to major established health risks; the predictive relationship operates through documented mechanisms including chronic stress activation, inflammation, immune function impairment, cardiovascular changes, and sleep disruption.\n\nIn plain language: loneliness is what your nervous system reports when it lacks the connections it evolved to expect, and the report has measurable physiological consequences across decades.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 292,
+      "out_sha": "3b1e58dcf1c6",
       "note": ""
     },
     {
@@ -2523,11 +2523,11 @@
       "en_title": "Chapter 10: Loneliness as Public Health Crisis",
       "order": 204,
       "src_chars": 3389,
-      "status": "pending",
+      "status": "done",
       "src_sha": "44f1fcca0c13",
       "src": "### 10.2 The Mid-Life Friendship Gap\n\nWithin the broader loneliness phenomenon, one specific configuration deserves particular attention. The _mid-life friendship gap_ — the period roughly from late twenties through early sixties — is when adult friendship is, in many industrialized societies, structurally most fragile.\n\nMaya Patel is in the middle of this gap. Thirty-four, a software engineer who relocated from the Bay Area to Austin eighteen months ago for a senior position at a midsize fintech firm. The relocation made career sense; her compensation went up, the cost of living went down, the work was more interesting. What it cost her, she did not register at the time of the move, was the relational ecosystem she had spent fifteen years building in San Francisco — the close friend who lived three blocks away, the running group that met every Saturday, the apartment building where the neighbors had become weekend dinner companions, the hiking community that had become extended family. None of it survived the move intact. She has good colleagues in Austin and is on dating apps and has been to a respectable number of group events; her 2-AM tier (which we will define in §10.6) is two people, both not in Austin, one not in the United States. Several reinforcing features produce her current configuration.\n\n**Time scarcity.** Mid-life adults typically have the highest concurrent demands of any life stage: career responsibilities, child-rearing, aging parents, household management, financial obligations. The time and energy available for friendship is, on average, lower than at twenty (when school provided structure and time was abundant) or seventy (when retirement and freedom from many demands return time but often with reduced friend availability). The mid-life pinch is real and felt.\n\n**Geographic mobility.** Most adults relocate at least once between college and mid-life, often multiple times. Each relocation requires rebuilding local friendship networks at the same time that the natural friendship-formation contexts (school, college, early-career colleagues) are no longer available. By mid-life, many adults' closest friendships are scattered across cities or countries.\n\n**Activity-based vs depth-based friendships.** Adult friendships often form around shared activities — work colleagues, parents-of-kids-on-the-team, neighbors, members of a particular community. When the activity ends or changes (job change, kids growing up, neighborhood move, community institution closure), the friendships that formed around it often do not sustain. Adult friendship formation through deep mutual interest, sustained over decades, is rarer than it was in earlier life stages where contexts of sustained co-presence were more common.\n\n**Gender-specific patterns.** Available evidence suggests that men's friendships, on average, have higher fragility than women's in contemporary contexts. Men's friendships often organize more around shared activity and less around explicit emotional engagement; when the activity disappears, the friendships often do too. Women's friendships, on average, sustain across life transitions somewhat better, partly through the more deliberate emotional maintenance women's friendship norms support. Both genders experience mid-life friendship gaps, but the data suggest men face a particularly pronounced version of the problem.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 947,
+      "out_sha": "29600c6280b0",
       "note": ""
     },
     {
@@ -2535,11 +2535,11 @@
       "en_title": "Chapter 10: Loneliness as Public Health Crisis",
       "order": 205,
       "src_chars": 2926,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b7b40282e152",
       "src": "**No automatic resetting.** School and college provide automatic friendship-formation: new cohorts every year, dense daily contact, shared developmental challenges, abundant time. Mid-life provides essentially none of this. Adult life lacks the _social-resetting_ mechanisms that earlier life stages had. New friendships can form, but they require deliberate effort against the structural features of contemporary mid-life.\n\n**Digital substitution.** Many adults attempt to maintain friendships partly through digital means — texts, messaging, social media, occasional video calls. The substitution is partial: digital connection can preserve threads of relationships across distance, but the empirical evidence consistently suggests it cannot fully substitute for in-person contact in producing the felt-sense of connection or the physiological co-regulation effects that close relationships produce. Heavy reliance on digital connection in the absence of in-person contact appears to reduce loneliness less effectively than in-person contact does.\n\nThe result is that many mid-life adults arrive at their forties and fifties with thinner local friendship networks than they had at twenty, despite knowing more people total, despite digital connectedness to many of those people, and despite having ostensibly more resources to support friendships. The thinning is structural, not personal.\n\n\n### 10.3 The Holt-Lunstad Comparison Calibrated\n\nThe often-cited _fifteen cigarettes per day_ comparison deserves brief careful treatment. The comparison is grounded in the meta-analytic effect sizes, but it is rhetorical compression — it is meant to land with force in a culture that takes smoking very seriously and takes loneliness casually. The compression has both benefits and costs.\n\nThe benefit is that the comparison correctly conveys that loneliness has health effects of large practical importance, comparable to a major established health risk that the culture treats with substantial concern. Many readers, hearing the comparison for the first time, recalibrate their sense of how serious loneliness is. The recalibration is the rhetorical work the comparison is doing.\n\nThe cost is that the comparison's precision is somewhat misleading. The exact equivalence between _X amount of loneliness_ and _X cigarettes per day_ depends on definitions, populations, and methodologies. Different studies produce different specific numbers. Treating _fifteen_ as a precise figure, rather than as a rough order-of-magnitude indicator of the effect's importance, would overstate what the data support.\n\nThe honest middle ground: loneliness has health effects in the same order of magnitude as major established health risks, and the comparison is appropriately serious in that sense. The specific figure is a useful approximation rather than a precise quantity. Take the comparison's force without treating it as exact arithmetic.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 804,
+      "out_sha": "aa20569fa5e5",
       "note": ""
     },
     {
