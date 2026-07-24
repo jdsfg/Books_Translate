@@ -3207,11 +3207,11 @@
       "en_title": "Chapter 17: Monitoring and Observability — Knowing What's Happening",
       "order": 258,
       "src_chars": 1819,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4a7a952d1dd1",
       "src": "### Chapter Summary\n\nObservability is what separates a system that knows it is failing from a system that discovers it is failing through user complaints. The three pillars — metrics, logs, and distributed traces — each answer different questions: metrics for aggregates, logs for specific events, traces for request journeys across services.\n\nThe SLI/SLO/SLA framework, with its error budget extension, does more than provide measurement targets. It creates a shared language for making tradeoff decisions between reliability and development velocity — answering the question \"how much risk can we take with this deployment?\" with a number rather than a debate.\n\nAlerting philosophy shapes the culture of on-call operations. Symptom-based alerts reduce false positives and preserve trust in the alerting system. The four golden signals — latency, traffic, errors, saturation — provide a minimal but complete alerting framework for any service.\n\nThe detective's discipline from Chapter 3 reaches its natural home in incident investigation. Logs are clues. Hypotheses are formed, tested, and discarded or confirmed. Good investigators do not search randomly — they reason from evidence to cause.\n\nSocialSnap v6's Tuesday outage, revisited through an observability lens, demonstrates the quantitative difference: four minutes of graceful degradation versus twenty minutes of complete failure. Not different architecture — different epistemic access to what the system was doing.\n\nIn Chapter 18, we address the question that immediately follows: how do you deploy changes to a system that is being watched this carefully, without breaking it? The same observability infrastructure that helps you detect failures in production becomes the instrument by which you validate that a new deployment is not introducing them.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 531,
+      "out_sha": "613258c49708",
       "note": ""
     },
     {
@@ -3219,11 +3219,11 @@
       "en_title": "Chapter 18: Testing at Scale — Chaos, Canaries, and Confidence",
       "order": 259,
       "src_chars": 2664,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b1480425be1a",
       "src": "There is a version of software development where you write code, test it on your laptop, and deploy it to production. If something breaks, you fix it and deploy again. This workflow is perfectly reasonable when the system is small, when users are few, when failures affect only a handful of people, and when the cost of a production incident is low.\n\nSocialSnap has 3 million users. A 10-minute outage affects 500,000 concurrent users. A bad deployment that corrupts the feed for 5% of users generates thousands of support tickets, measurable churn, and a damaged reputation. And yet SocialSnap needs to ship features continuously — that is how it competes. The engineering team needs to answer a question that sounds simple but is genuinely hard: how do you change a running system without breaking it?\n\nThe circuit breakers from Chapter 16 protect against cascading failures. The observability stack from Chapter 17 tells you when something is wrong. But neither helps if you break the system yourself by deploying code that has a subtle bug. You need a discipline for validating changes before they affect all users — and a strategy for minimizing the blast radius when, inevitably, a change does cause problems.\n\n\n### 18.1 The Limits of Unit Testing in Distributed Systems\n\nStart with a question that seems provocative: why aren't unit tests enough?\n\nA unit test verifies that a function produces the correct output given a specific input. It is fast, deterministic, and isolated. A well-tested codebase with 90% code coverage provides confidence that individual pieces of logic are correct.\n\nBut consider what unit tests do not test in a distributed system:\n\n* The behavior of your service when a downstream dependency responds slowly (not fails, just slow)\n* The behavior of your load balancer when one backend is unhealthy\n* The behavior of your database when a read replica has 5 seconds of replication lag\n* The behavior of your message queue when a consumer restarts mid-processing and reprocesses a message\n* The combined behavior of five services that each work correctly in isolation but interact in unexpected ways when connected\n\nThis is not a failure of unit testing — unit testing is doing exactly what it promises. The problem is that the bugs that cause production outages are often not bugs in individual functions. They are bugs in the **interactions** between components: the timeout configuration that is too long, the retry that amplifies load during an outage, the cache invalidation that happens in the wrong order, the distributed transaction that leaves data in a half-committed state.\n\nThese bugs require different testing strategies.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 811,
+      "out_sha": "429454b76375",
       "note": ""
     },
     {
@@ -3231,11 +3231,11 @@
       "en_title": "Chapter 18: Testing at Scale — Chaos, Canaries, and Confidence",
       "order": 260,
       "src_chars": 3090,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d8580c644e22",
       "src": "#### The Testing Pyramid Revisited\n\nThe classic \"testing pyramid\" recommends: many unit tests (fast, cheap, isolated), fewer integration tests (slower, more expensive, test component interactions), and even fewer end-to-end tests (slowest, most expensive, test the full system). This model was designed for monolithic applications where \"integration\" means testing a few modules together.\n\nFor distributed systems, the pyramid gains additional levels:\n\n  1. **Unit tests** — test individual functions and classes in isolation\n  2. **Service integration tests** — test a single service with its real dependencies (real database, real cache, real queue) running in a test environment\n  3. **Contract tests** — test that the API contract between two services is compatible (this service produces the response format that service B expects)\n  4. **End-to-end tests** — test complete user journeys through the full system\n  5. **Performance/load tests** — test system behavior under realistic traffic levels\n  6. **Chaos tests** — test system behavior when dependencies fail in controlled ways\n\nEach level catches different categories of bugs. A service integration test that runs against a real PostgreSQL instance catches \"this SQL query has a syntax error on PostgreSQL even though it passes our SQLite unit tests.\" A contract test catches \"the feed service was changed to return `authorName` but the rendering service still expects `author_name`.\" A load test catches \"our Redis connection pool is set to 10 connections and at 5,000 RPS we exhaust it.\"\n\n\n#### Common Misconception\n\nThe most common testing misconception in distributed systems is that comprehensive unit test coverage is sufficient for confidence in production. Engineers sometimes see unit test coverage as a proxy for overall quality. It is not. A codebase with 95% unit test coverage and no integration tests may have undetected bugs in every database interaction, every API response parsing, and every timeout configuration. Coverage measures how much of your code is executed during tests, not how many of your failure modes are tested.\n\n\n### 18.2 Integration and Load Testing — Testing the Interactions\n\n\n#### Integration Testing\n\nA service integration test runs a single service against real (or realistic) instances of its dependencies. For SocialSnap's Feed Service, an integration test might:\n\n  1. Start a PostgreSQL instance (using Docker in the test environment)\n  2. Seed it with test data (10 users, 50 posts)\n  3. Start a Redis instance\n  4. Start the Feed Service configured to point to these test instances\n  5. Make HTTP requests to the Feed Service\n  6. Assert on the responses\n\nThis test is significantly slower than a unit test — perhaps 5–30 seconds — but it catches a class of bugs that unit tests miss entirely: real database query bugs, real serialization errors, real authentication flow issues.\n\nIntegration tests should be run in CI (Continuous Integration) — automatically, on every pull request — but they do not need to run as part of the local development loop because of their slower speed.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1120,
+      "out_sha": "e242b22722ca",
       "note": ""
     },
     {
@@ -3243,11 +3243,11 @@
       "en_title": "Chapter 18: Testing at Scale — Chaos, Canaries, and Confidence",
       "order": 261,
       "src_chars": 2578,
-      "status": "pending",
+      "status": "done",
       "src_sha": "873d11166ed2",
       "src": "#### Load Testing\n\nLoad testing validates that a service can handle realistic traffic volumes. The questions load testing answers:\n\n* \"At what request rate does response latency begin to degrade?\"\n* \"At what request rate does the error rate exceed our SLO threshold?\"\n* \"Does the system stabilize under sustained load, or does it degrade progressively?\"\n* \"Where is the bottleneck — CPU, database connections, network bandwidth, something else?\"\n\nA load test runs a realistic traffic pattern against a staging environment (an environment that mirrors production architecture but uses smaller instance sizes and test data). Tools like Locust, k6, or Apache JMeter simulate hundreds or thousands of concurrent users making requests.\n\nA well-designed load test:\n\n  1. **Ramps up gradually** — starts at low traffic and increases linearly. This lets you observe the inflection point where latency begins to degrade, rather than overwhelming the system immediately.\n  2. **Uses realistic traffic patterns** — if production traffic has a ratio of 80% reads to 20% writes, the load test should match this.\n  3. **Tests specific scenarios** — \"simulate a viral post that causes 1,000 simultaneous requests for the same feed page\" tests the thundering herd problem from Chapter 7.\n  4. **Runs to steady state** — not just for 60 seconds, but for long enough to catch memory leaks, connection pool exhaustion, and other slow-developing degradation patterns.\n\nLoad testing should be done before every major release and periodically (weekly or monthly) for production systems, even when no major changes have been made. Infrastructure drifts; traffic patterns change; dependencies slow down. Regular load tests catch these changes before they become outages.\n\n\n### 18.3 Chaos Engineering — Testing What You Can't Predict\n\nLoad testing validates behavior under high traffic. But traffic is not the only way systems fail. Hardware fails. Network links become unreliable. Dependencies respond slowly. DNS resolution fails. Memory becomes fragmented. Disks fill up.\n\n**Chaos engineering** is the practice of deliberately introducing failures into a running system — often in production — to discover how the system behaves before real failures expose weaknesses.\n\nThe foundational principle: in a distributed system, failure is not a matter of if but when. If you are going to experience failure anyway, it is better to experience it in a controlled experiment where you are watching carefully and can stop if things get bad, rather than experiencing it unexpectedly when you are not prepared.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 823,
+      "out_sha": "f64088194ec9",
       "note": ""
     },
     {
@@ -3255,11 +3255,11 @@
       "en_title": "Chapter 18: Testing at Scale — Chaos, Canaries, and Confidence",
       "order": 262,
       "src_chars": 2159,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1f66b6ba24ae",
       "src": "#### The Chaos Monkey Story\n\nNetflix popularized chaos engineering with a tool called Chaos Monkey. Netflix runs on AWS, and they observed that EC2 instances sometimes fail unexpectedly. Rather than building architecture designed to prevent instance failures (impossible to fully achieve), they built architecture designed to tolerate them — and then ran a tool that randomly terminated production EC2 instances during business hours to prove the architecture actually worked.\n\nThe insight: if you only discover that your system cannot tolerate instance failure when an instance actually fails, you will be fixing the problem under the worst possible conditions — in production, unexpectedly, with users affected. If you discover it in a controlled chaos experiment, you can fix it deliberately, at your own pace, while watching carefully.\n\nChaos Monkey was later expanded into a suite called the Simian Army, with tools for:\n\n* **Chaos Gorilla:** taking down an entire availability zone\n* **Latency Monkey:** introducing artificial delays in service calls\n* **Conformity Monkey:** checking instances against configuration standards and terminating non-conforming ones\n\n\n#### What Chaos Engineering Tests\n\nChaos experiments test the gap between \"the circuit breaker should trip when Redis is down\" and \"the circuit breaker does trip when Redis is down.\" The first is a design claim; the second is an empirical result.\n\nExamples of chaos experiments:\n\n* **Kill a database replica:** Does traffic automatically route to the primary? How long does it take? What do users experience during the transition?\n* **Introduce 500ms latency in calls from the Feed Service to the Post Service:** Does the Feed Service's timeout configuration handle this gracefully? Does it trigger a circuit breaker? Does it serve a degraded response or return an error?\n* **Fill the message queue to 100,000 messages:** Does the notification service continue processing without crashing? Does the system correctly apply backpressure?\n* **Exhaust the connection pool:** What error do callers receive when the database connection pool is full? Is it a clear error or a confusing timeout?\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 781,
+      "out_sha": "9a01e29b1ffd",
       "note": ""
     },
     {
@@ -3267,11 +3267,11 @@
       "en_title": "Chapter 18: Testing at Scale — Chaos, Canaries, and Confidence",
       "order": 263,
       "src_chars": 3015,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1d134c5ca40e",
       "src": "#### Chaos Engineering in Practice\n\nStarting a chaos engineering program requires discipline:\n\n  1. **Define the steady state** — before breaking anything, measure what \"normal\" looks like. What is the p99 latency? What is the error rate? What is the queue depth? This is your baseline; if chaos introduces deviations, you'll detect them only if you know where the baseline is. This connects directly to Chapter 17's observability work.\n\n  2. **Start in staging** — do not start chaos experiments in production. Learn whether your architecture actually tolerates the failures you designed for in a safe environment first.\n\n  3. **Define the blast radius** — each experiment should have a clear scope: \"we will terminate one instance of the Post Service, while other services continue normally.\" Avoid experiments that could cascade into full outages.\n\n  4. **Have a stop button** — every chaos experiment should be stoppable immediately. A person should be watching monitoring during the experiment and ready to stop it if things go worse than expected.\n\n  5. **Graduate to production** — once you have confidence that your architecture handles specific failures in staging, run the same experiments in production at times of lower traffic. The goal is to continuously validate that production's actual resilience matches the theoretical resilience of the design.\n\n\n### 18.4 Deployment Strategies — Managing Risk During Releases\n\nAll the testing in the world does not eliminate the risk of a production deployment. Unit tests, integration tests, load tests, and chaos tests all run in controlled environments. Production is different — different traffic patterns, different data distributions, different edge cases that only appear at scale.\n\nThree deployment strategies manage the risk of production deployments.\n\n\n#### Blue-Green Deployments\n\n**Blue-green deployment** maintains two production environments: blue (currently serving traffic) and green (currently idle, about to receive the new deployment). The deployment process is:\n\n  1. Deploy the new version to the green environment. Run health checks and smoke tests.\n  2. Switch the load balancer to send traffic to green. This is instant — a single configuration change.\n  3. Monitor the green environment with full observability from Chapter 17. If metrics are healthy, blue is retired. If metrics are bad, switch the load balancer back to blue — instant rollback.\n\nBlue-green deployments provide zero-downtime deployments and instant rollback. Their limitation: you run two complete production environments simultaneously, which doubles infrastructure cost during the deployment window.\n\nThey are also difficult to use when the deployment includes database schema changes. If blue is using schema version 1 and green is using schema version 2, and the schema change is not backward compatible, you cannot serve traffic from both simultaneously. This is why database migrations are the hardest part of most deployments — we address this separately below.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 983,
+      "out_sha": "725e23f69f2a",
       "note": ""
     },
     {
@@ -3279,11 +3279,11 @@
       "en_title": "Chapter 18: Testing at Scale — Chaos, Canaries, and Confidence",
       "order": 264,
       "src_chars": 1272,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b7698959119f",
       "src": "#### Canary Deployments\n\n**Canary deployment** routes a small fraction of production traffic to the new version while the majority of traffic continues to the old version. The name comes from coal miners who brought canaries into mines — if the canary died, there was dangerous gas and the miners evacuated. Similarly, a canary deployment lets the new version \"absorb\" a small fraction of production failures before those failures reach all users.\n\nThe deployment process:\n\n  1. Deploy the new version alongside the old version.\n  2. Configure the load balancer to route 1–5% of traffic to the new version.\n  3. Monitor the new version's metrics (error rate, latency, any business metrics like feed engagement rate) against the old version.\n  4. If metrics are comparable to the old version, gradually increase traffic: 5% → 10% → 25% → 50% → 100%.\n  5. If metrics are worse on the new version, route 0% to it — effectively a rollback with zero user impact.\n\nCanary deployments are the dominant deployment strategy for large-scale systems because they provide empirical validation in production with bounded blast radius. If the new version has a bug that only manifests under production conditions, it affects at most 5% of users while the team diagnoses and rolls back.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 427,
+      "out_sha": "a6bb5ba7164f",
       "note": ""
     },
     {
@@ -3291,11 +3291,11 @@
       "en_title": "Chapter 18: Testing at Scale — Chaos, Canaries, and Confidence",
       "order": 265,
       "src_chars": 2384,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7b6f21332cf7",
       "src": "#### SocialSnap's First Canary Deployment\n\nSocialSnap's engineering team has built a new feed ranking algorithm. The old algorithm shows posts in reverse chronological order. The new algorithm uses an engagement prediction model to reorder the feed, showing posts the model predicts the user will engage with first.\n\nThis is not a bug fix — it is a product change with uncertain impact. The team cannot predict whether the new algorithm will increase engagement, decrease it, or produce unexpected edge cases. They deploy it as a canary.\n\n**Setup:** The team deploys the new Feed Service version (v2.4.0) alongside the current version (v2.3.1). The load balancer is configured to route 5% of users to v2.4.0. The routing is sticky — the same user always goes to the same version, ensuring that users don't see their feed reorder as they make requests.\n\n**Instrumentation:** Before deploying, the team adds SLI metrics specifically for this experiment:\n\n* `feed_engagement_rate`: fraction of feed impressions that result in a like, comment, or click\n* `feed_load_time_p99`: 99th percentile feed load time\n* `feed_error_rate`: fraction of feed requests that return errors\n\nThey set up a dashboard showing both the canary (v2.4.0) and the control (v2.3.1) side by side on all three metrics.\n\n**Evaluation:** After 24 hours, the dashboard shows:\n\n* Canary engagement rate: 23.4% vs control: 19.1% — a significant improvement\n* Canary p99 load time: 312ms vs control: 287ms — slightly higher, likely due to ranking model computation\n* Canary error rate: 0.08% vs control: 0.07% — essentially identical\n\nThe team discusses the latency increase: the SLO for p99 is 500ms, so 312ms is within budget, but the additional 25ms comes from the ranking computation. They decide to optimize the ranking model before full rollout. They update the ranking model to use a precomputed score (cached at post creation time), reducing the computation overhead.\n\n**Rollout:** After the optimization, canary p99 drops to 291ms — matching the control. The team gradually expands: 5% → 20% → 50% → 100% over three days. At each step they check metrics before proceeding. The full rollout completes without incident.\n\nThis is the detective's discipline applied to deployment: the canary is the experiment, the metrics are the evidence, the decision to expand or roll back is the conclusion drawn from evidence.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 915,
+      "out_sha": "5e7bc165f89d",
       "note": ""
     },
     {
@@ -3303,11 +3303,11 @@
       "en_title": "Chapter 18: Testing at Scale — Chaos, Canaries, and Confidence",
       "order": 266,
       "src_chars": 3458,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8b28a67a2428",
       "src": "#### Feature Flags\n\n**Feature flags** (also called feature toggles) decouple deployment from release. Code is deployed to production but the new behavior is controlled by a configuration flag. When the flag is off, the code follows the old path. When the flag is on, it follows the new path.\n\nFeature flags enable a powerful workflow:\n\n* Deploy code weeks before the feature is ready to release, so the deployment itself is not the risky moment\n* Enable the feature for internal users first (dogfooding), then a small percentage of external users, then all users\n* Instantly disable a feature if it causes problems, without a rollback deployment\n* A/B test features by routing different user segments to different flag states\n\nFeature flags are implemented as a database lookup or a configuration service call: `if feature_flags.is_enabled(\"new_feed_algorithm\", user_id): use_new_algorithm()`. The flag state can be changed without deploying code.\n\nThe cost of feature flags: they add complexity to the code, they accumulate over time (old flags that were never cleaned up create dead code paths), and they add a remote call (or cache lookup) to request handling. Good engineering teams treat flags as temporary: once a feature is fully rolled out, the flag is removed and the old code path is deleted.\n\n\n#### Database Migration Strategies\n\nDatabase schema migrations are the most dangerous part of most deployments. A migration that adds a new column is usually safe. A migration that renames a column is not — every query that references the old column name will fail until the code is also updated.\n\nThe safest migration pattern for high-availability systems is **expand-contract** , also called **parallel change** :\n\n**Phase 1 (Expand):** Add the new state alongside the old. If you need to rename a column from `author` to `author_id`, first add the `author_id` column without removing `author`. Update the application code to write to both columns and read from the new one. Deploy this change. Now both columns exist, old code (if any) still works.\n\n**Phase 2 (Migrate):** Run a background migration to populate `author_id` for all existing rows that were written before the new code was deployed.\n\n**Phase 3 (Contract):** Once all rows have `author_id` populated and the old code paths are gone, drop the `author` column in a separate migration.\n\nThis three-phase approach means that at no point is the schema incompatible with the running code. Each phase is independently deployable and independently rollbackable.\n\n\n#### Rollback Planning\n\nBefore every deployment, define the rollback procedure. A rollback plan should specify:\n\n  1. **The trigger:** What condition causes a rollback? (e.g., \"error rate exceeds 0.5% for 5 minutes\" or \"p99 latency exceeds SLO threshold\")\n  2. **The rollback action:** Deploy the previous version? Flip a feature flag? Switch load balancer back to blue?\n  3. **The rollback owner:** Who makes the call to roll back? The on-call engineer? The release manager?\n  4. **The rollback verification:** After rolling back, how do you confirm the system is healthy again?\n  5. **The database consideration:** If the deployment included a migration, can the rollback handle the migrated data? (This is why expand-contract migrations are so valuable — the old code works with both the old and new schema state.)\n\nA rollback plan that exists only as a mental note is not a rollback plan. Write it down before the deployment.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1296,
+      "out_sha": "a005048f62e7",
       "note": ""
     },
     {
@@ -3315,11 +3315,11 @@
       "en_title": "Chapter 18: Testing at Scale — Chaos, Canaries, and Confidence",
       "order": 267,
       "src_chars": 1317,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d1a0c1d206a4",
       "src": "### 18.5 Tradeoffs and the Tradeoff Matrix\n\nTesting strategies fit into the Tradeoff Matrix alongside the reliability patterns from Chapter 16 and the observability stack from Chapter 17:\n\nStrategy | Development Velocity | Production Risk | Blast Radius | Operational Complexity  \n---|---|---|---|---  \nNo deployment strategy (direct to prod) | Highest | Highest | All users | Lowest  \nBlue-green deployments | High | Low | Zero (instant rollback) | Medium (double infrastructure)  \nCanary deployments | Medium-High | Low | 1-5% during canary phase | Medium-High  \nFeature flags | High | Low | Configurable | Medium (flag management overhead)  \nChaos engineering | Low (time investment) | Reduces production risk | Controlled (staging or small production scope) | High  \n  \nThe key insight from this table: all the deployment strategies that reduce risk impose some cost — infrastructure cost (blue-green), velocity reduction (canary ramp-up time), code complexity (feature flags), or engineering time (chaos engineering). The choice of strategy depends on the risk profile of the change and the cost of getting it wrong.\n\nA one-line bug fix to a non-critical endpoint probably does not need a canary deployment. A new ranking algorithm that changes every user's feed experience absolutely does.\n\n\n### 18.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 465,
+      "out_sha": "f30e5e6640d8",
       "note": ""
     },
     {
@@ -3327,11 +3327,11 @@
       "en_title": "Chapter 18: Testing at Scale — Chaos, Canaries, and Confidence",
       "order": 268,
       "src_chars": 3351,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0a181d502549",
       "src": "#### Concept Check\n\n**Q1.** What does it mean for a test to be \"flaky,\" and why are flaky tests particularly dangerous in a CI pipeline for a distributed system?\n\n**Answer:** A flaky test is one that sometimes passes and sometimes fails for reasons unrelated to the code being tested — typically because it depends on timing (the test assumes a database write completes within 100ms, but sometimes it takes 150ms), on external service availability, or on shared test data that other tests modify. In a CI pipeline, flaky tests are dangerous because they erode trust in the test suite. Engineers learn to re-run failed tests rather than investigating failures, because \"it might just be a flaky test.\" When a real bug causes a real test failure, it gets re-run and may pass by coincidence — allowing a defect to reach production. The cultural consequence is worse than the technical one: a CI pipeline with frequent false failures teaches engineers not to take test failures seriously.\n\n**Q2.** Explain the difference between blue-green deployment and canary deployment in terms of how they manage deployment risk.\n\n**Answer:** Blue-green deployment manages risk by maintaining a complete parallel environment: all traffic goes to one environment (blue), the new version is deployed to the other (green), and the switch is instant — zero users see the new version until the cutover, then all users see it simultaneously. Rollback is instant: flip back to blue. The risk is binary: either all users are on the old version or all users are on the new version.\n\nCanary deployment manages risk by gradually shifting a fraction of traffic to the new version: 1% see the new version, and if they experience good metrics, 5% see it, then 10%, etc. Risk is gradual: at any point, at most X% of users are exposed to any bugs in the new version. Rollback means routing 0% to the canary. Blue-green is better for changes where you need to test at full production scale before exposing any users (e.g., performance-sensitive changes). Canary is better for changes where you want to observe real user behavior and metrics before committing.\n\n**Q3.** Why is database schema migration the hardest part of a deployment, and what makes the expand-contract pattern safer than direct schema changes?\n\n**Answer:** Direct schema changes are dangerous because database schema is shared state between the running application code and the stored data. If you rename a column in the database and the running application code still queries the old column name, every query fails — potentially instantly affecting all users. Rollback requires re-running the migration in reverse, which may not be possible if data has been written to the new schema.\n\nThe expand-contract pattern is safer because it keeps both the old and new schema states valid simultaneously, allowing the old code and new code to coexist during the migration window. The application can be deployed, rolled back, and re-deployed without any state becoming inconsistent. The cost is that the migration takes three separate deployments over days or weeks rather than one. This is the right tradeoff for high-availability systems where even brief query failures are unacceptable.\n\n**Q4.** What is \"steady state\" in the context of chaos engineering, and why must it be defined before running any chaos experiment?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1124,
+      "out_sha": "3b1eb93786e7",
       "note": ""
     },
     {
@@ -3339,11 +3339,11 @@
       "en_title": "Chapter 18: Testing at Scale — Chaos, Canaries, and Confidence",
       "order": 269,
       "src_chars": 761,
-      "status": "pending",
+      "status": "done",
       "src_sha": "930cd5885a6b",
       "src": "**Answer:** Steady state is the baseline behavior of the system during normal, healthy operation: what are the error rates, what are the latency percentiles, what is the queue depth, what is the CPU utilization. Steady state must be defined before a chaos experiment because the purpose of the experiment is to observe whether the system returns to steady state after a failure is introduced. If you do not know what steady state looks like, you cannot tell whether the experiment caused a deviation or whether the deviation was already present. Without a baseline, chaos engineering produces observations without meaning: \"p99 latency was 287ms during the experiment\" — is that high? Low? Normal? You cannot say without knowing that steady state p99 is 250ms.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 225,
+      "out_sha": "f2ae65e005fe",
       "note": ""
     },
     {
