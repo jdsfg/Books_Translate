@@ -92,5 +92,4 @@ diffusion model | 扩散模型 |
 reinforcement learning | 强化学习 |
 reward | 奖励 |
 policy | 策略 |
-agent | 智能体 |
 environment | 环境 |
