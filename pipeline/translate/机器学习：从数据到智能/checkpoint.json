@@ -2699,11 +2699,11 @@
       "en_title": "Chapter 25: Ethical AI — Fairness, Interpretability, and Responsibility",
       "order": 215,
       "src_chars": 3060,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d8c95eefae4b",
       "src": "#### SHAP: SHapley Additive exPlanations\n\n**SHAP** (Lundberg & Lee, 2017) provides theoretically grounded feature attributions for any model, based on Shapley values from cooperative game theory.\n\n**Shapley value** for feature jjj in prediction for input x\\mathbf{x}x:\n\nϕj=∑S⊆F∖{j}∣S∣!(∣F∣−∣S∣−1)!∣F∣![fS(x)−fS∖{j}(x)]\\phi_j = \\sum_{S \\subseteq F \\setminus \\\\{j\\\\}} \\frac{|S|!(|F|-|S|-1)!}{|F|!}\\left[f_S(\\mathbf{x}) - f_{S \\setminus \\\\{j\\\\}}(\\mathbf{x})\\right]ϕj​=S⊆F∖{j}∑​∣F∣!∣S∣!(∣F∣−∣S∣−1)!​[fS​(x)−fS∖{j}​(x)]\n\nwhere FFF is the set of all features, and fS(x)f_S(\\mathbf{x})fS​(x) is the model's prediction using only features in SSS.\n\nIn plain language: the Shapley value for feature jjj is the average marginal contribution of feature jjj across all possible subsets of features — how much does adding feature jjj to any group of other features improve the prediction? It satisfies desirable axioms: efficiency (attributions sum to prediction), symmetry (features with identical contributions get equal attribution), dummy (unused features get zero attribution), and linearity.\n\n**TreeSHAP** computes exact Shapley values for tree-based models in O(TLD2)O(TLD^2)O(TLD2) time (where TTT is number of trees, LLL leaves, DDD depth) — tractable even for large forests.\n\n**SHAP applications:**\n\n* **Feature importance (global):** Average ∣ϕj∣|\\phi_j|∣ϕj​∣ across all training examples ranks features by global importance\n* **Individual explanation:** The SHAP values for a single prediction show which features pushed the prediction up or down relative to the average\n\n\n#### LIME: Local Interpretable Model-Agnostic Explanations\n\n**LIME** (Ribeiro et al., 2016) generates local explanations by fitting a simple interpretable model (linear or decision tree) in the neighborhood of a specific prediction:\n\n  1. Perturb the input x\\mathbf{x}x randomly: generate NNN nearby samples {x1′,…,xN′}\\\\{\\mathbf{x}'_1, \\ldots, \\mathbf{x}'_N\\\\}{x1′​,…,xN′​}\n  2. Query the black-box model: get predictions {f(x1′),…,f(xN′)}\\\\{f(\\mathbf{x}'_1), \\ldots, f(\\mathbf{x}'_N)\\\\}{f(x1′​),…,f(xN′​)}\n  3. Weight samples by proximity to x\\mathbf{x}x\n  4. Fit a linear model on the weighted samples: g(x′)=∑jwjxj′g(\\mathbf{x}') = \\sum_j w_j x'_jg(x′)=∑j​wj​xj′​\n  5. The coefficients {wj}\\\\{w_j\\\\}{wj​} are the local explanation\n\n**Limitation:** LIME explanations depend on the neighborhood sampling strategy and are not guaranteed to be consistent across multiple runs. SHAP is generally preferred when exact computation is feasible.\n\n\n#### Attention Is Not Explanation\n\nTransformers (Chapter 20) produce attention weights that have been widely used as \"explanations\" — the model attended to these words, so they are important. This is largely misleading. Jain & Wallace (2019) showed that attention weights can be arbitrarily changed without affecting the model's output (because the output depends on the attended values, not just the weights). Attention shows which representations are combined, not which inputs causally determine the output.\n\n\n### 25.5 Privacy and Data Ethics\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1250,
+      "out_sha": "b4110858f0c7",
       "note": ""
     },
     {
@@ -2711,11 +2711,11 @@
       "en_title": "Chapter 25: Ethical AI — Fairness, Interpretability, and Responsibility",
       "order": 216,
       "src_chars": 2486,
-      "status": "pending",
+      "status": "done",
       "src_sha": "de9eb00cf915",
       "src": "#### Data Consent and Usage\n\nML models are trained on data collected from humans. This raises questions that are often legally, not just ethically, regulated:\n\n* Were users informed their data would be used to train AI systems?\n* Can users opt out, or have their data deleted from trained models?\n* Do the data's terms of service permit model training?\n\nCopyright and consent issues have become central to large-scale foundation model training (web scraping without explicit consent, training on artists' work without compensation).\n\n\n#### Differential Privacy\n\n**Differential privacy (DP)** provides a formal, mathematically rigorous guarantee that a model's output reveals very little about any individual training example.\n\n**Definition (Dwork, 2006):** A randomized mechanism MMM is (ε,δ)(\\varepsilon, \\delta)(ε,δ)-differentially private if for any two datasets DDD and D′D'D′ differing in a single record, and any output set SSS:\n\nP(M(D)∈S)≤eε⋅P(M(D′)∈S)+δP(M(D) \\in S) \\leq e^\\varepsilon \\cdot P(M(D') \\in S) + \\deltaP(M(D)∈S)≤eε⋅P(M(D′)∈S)+δ\n\nIn plain language: an adversary who sees the model's output cannot determine (with confidence better than eεe^\\varepsiloneε) whether any specific individual was in the training data.\n\n**DP-SGD:** Implements differential privacy in deep learning by:\n\n  1. Clipping per-example gradients to a maximum norm CCC\n  2. Adding Gaussian noise N(0,σ2C2I)\\mathcal{N}(0, \\sigma^2 C^2 \\mathbf{I})N(0,σ2C2I) to each batch's gradient\n\n**Privacy-accuracy tradeoff:** Stronger privacy (smaller ε\\varepsilonε) requires more noise, degrading model accuracy. The practical implications: with ε=1\\varepsilon = 1ε=1 (strong privacy), accuracy drops significantly. With ε=10\\varepsilon = 10ε=10 (weaker privacy), accuracy is near-normal. Finding the right tradeoff depends on the sensitivity of the data and the harm from privacy violations.\n\n\n#### Membership Inference Attacks\n\nWithout formal privacy guarantees, models can leak information about their training data. In a **membership inference attack** , an adversary queries the model and determines whether a specific individual was in the training set — a privacy violation if the training set is sensitive (e.g., medical records).\n\nThe mechanism: models often exhibit higher confidence on training examples than test examples. The attack trains a binary classifier on (model confidence, correct/incorrect) features to distinguish members from non-members.\n\n\n### 25.6 Robustness and Distribution Shift\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 887,
+      "out_sha": "00104208e3ba",
       "note": ""
     },
     {
@@ -2723,11 +2723,11 @@
       "en_title": "Chapter 25: Ethical AI — Fairness, Interpretability, and Responsibility",
       "order": 217,
       "src_chars": 3028,
-      "status": "pending",
+      "status": "done",
       "src_sha": "005a0097f62f",
       "src": "#### Distribution Shift\n\nA model trained on distribution Ptrain(x,y)P_\\text{train}(\\mathbf{x}, y)Ptrain​(x,y) and deployed on distribution Pdeploy(x,y)≠PtrainP_\\text{deploy}(\\mathbf{x}, y) \\neq P_\\text{train}Pdeploy​(x,y)=Ptrain​ may fail silently.\n\n**Types of shift:**\n\n* **Covariate shift:** P(x)P(\\mathbf{x})P(x) changes, P(y∣x)P(y|\\mathbf{x})P(y∣x) is the same (input distribution shifts)\n* **Label shift:** P(y)P(y)P(y) changes, P(x∣y)P(\\mathbf{x}|y)P(x∣y) is the same (class proportions change)\n* **Concept drift:** P(y∣x)P(y|\\mathbf{x})P(y∣x) changes (the relationship between inputs and outputs changes over time)\n\n**Real-world examples:**\n\n* COVID-19 caused concept drift for every model trained on pre-pandemic health data: symptom-diagnosis relationships changed, hospital utilization patterns changed\n* An ML fraud detection model trained before a new payment type was introduced may classify all new-type transactions as anomalous\n* A hiring model trained on 2010 resumes and deployed in 2025 may penalize skills that didn't exist in 2010 (cloud computing, ML frameworks)\n\n\n#### Adversarial Robustness\n\n**Adversarial examples** (Szegedy et al., 2013; Goodfellow et al., 2014): small, often imperceptible perturbations to an input that cause a model to make incorrect predictions with high confidence.\n\nExample: adding carefully crafted pixel-level noise to an image of a panda causes ResNet to classify it as a gibbon with 99% confidence, while humans see only a panda.\n\n**Why this matters:** Adversarial examples are not academic toys. Self-driving car systems using computer vision can be fooled by stickers placed on stop signs. Medical imaging classifiers can be attacked by perturbing the imaging process. Physical adversarial patches can fool object detectors in the real world.\n\n**Defenses:**\n\n* **Adversarial training:** Include adversarial examples in training data. Effective but computationally expensive (must generate adversarial examples at each training step).\n* **Certified robustness:** Use mathematical proofs to guarantee that no perturbation within a radius ϵ\\epsilonϵ can change the prediction. Achievable with randomized smoothing (add Gaussian noise to the input, take majority vote of perturbed predictions) but at significant accuracy cost.\n\n\n### 25.7 Responsible ML in Practice\n\n\n#### Model Cards\n\n**Model cards** (Mitchell et al., 2019) are standardized documentation for ML models, analogous to nutrition labels for food:\n\n* Intended use and out-of-scope uses\n* Performance metrics disaggregated by subgroup\n* Limitations and known failure modes\n* Evaluation data and training data description\n\nModel cards are now standard at Google, Hugging Face, and many organizations; required by some regulatory frameworks.\n\n\n#### Datasheets for Datasets\n\nSimilarly, **datasheets for datasets** (Gebru et al., 2021) document the provenance, collection process, intended uses, and known limitations of training datasets. A model can only be responsibly deployed if its training data is understood.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1096,
+      "out_sha": "3c4b71302141",
       "note": ""
     },
     {
@@ -2735,11 +2735,11 @@
       "en_title": "Chapter 25: Ethical AI — Fairness, Interpretability, and Responsibility",
       "order": 218,
       "src_chars": 815,
-      "status": "pending",
+      "status": "done",
       "src_sha": "476dce5e4938",
       "src": "#### The ML Deployment Checklist\n\nBefore deploying a model that affects people:\n\n  1. **Who is affected?** Map all stakeholders, including those not in the training data.\n  2. **What could go wrong?** Failure mode analysis, adversarial use cases, edge cases.\n  3. **Disaggregate evaluation.** Measure performance on every relevant subgroup.\n  4. **Audit for bias.** Apply fairness metrics; mitigate identified biases.\n  5. **Establish a feedback loop.** How will errors be detected and corrected post-deployment?\n  6. **Set performance thresholds.** Below what accuracy/fairness level should the model not be deployed?\n  7. **Plan for distribution shift.** How will the model be monitored and retrained?\n  8. **Determine accountability.** Who is responsible for harms caused by model failures?\n\n\n### 25.8 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 309,
+      "out_sha": "d95baf91ffc9",
       "note": ""
     },
     {
@@ -2747,11 +2747,11 @@
       "en_title": "Chapter 25: Ethical AI — Fairness, Interpretability, and Responsibility",
       "order": 219,
       "src_chars": 3330,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9330eddaeec6",
       "src": "#### Concept Check\n\n**Q1.** A recidivism prediction model has 70% accuracy for both Black and White defendants. A critic argues the model is still biased. What additional statistics would you need to evaluate, and what bias might they reveal?\n\n**Answer:** Overall accuracy being equal across groups is insufficient to establish fairness. We need:\n\n**False positive rate (FPR):** Among defendants who do NOT reoffend, what fraction does the model incorrectly predict as high-risk? If FPR(Black) > FPR(White), then the model incorrectly labels more innocent Black defendants as risky — they are denied bail or given harsher sentences even though they would not reoffend. This is exactly what the ProPublica analysis found in COMPAS.\n\n**False negative rate (FNR):** Among defendants who DO reoffend, what fraction does the model miss? If FNR(White) > FNR(Black), the model under-predicts risk for White defendants who do reoffend.\n\n**Precision by group:** What fraction of defendants labeled high-risk actually reoffend? Lower precision for one group means more unjustified interventions for that group.\n\nEqual accuracy is consistent with systematically higher false positive rates for one group. The accuracy paradox: if one group has a lower base rate of reoffending, a classifier that predicts \"low risk\" for everyone in that group achieves high accuracy by construction.\n\n**Q2.** A facial recognition system achieves 99% accuracy overall. A journalist reports that for women with darker skin tones, the false positive rate is 35% (incorrectly identifying the person as someone else), versus 1% for lighter-skinned men. The company responds: \"Our overall accuracy is 99%, well above the industry standard.\" Explain the flaw in this response, and identify which fairness metric the journalist is pointing to.\n\n**Answer:** The company's response is an example of the **accuracy paradox** — high aggregate accuracy can coexist with severe disparate error rates across subgroups. If the test population contains mostly lighter-skinned men, overall accuracy can be 99% even while the system fails severely for women with darker skin tones.\n\nThe journalist is pointing to **equalized odds** (specifically, equal false positive rates across demographic groups). A false positive in facial recognition means incorrectly matching a person to someone else's identity — in law enforcement or security contexts, this can lead to wrongful arrest or denial of access. A 35% false positive rate for one demographic versus 1% for another means women with darker skin tones are 35× more likely to be misidentified. This is a serious, quantifiable harm that aggregate accuracy completely obscures.\n\nThe appropriate response is **disaggregated evaluation** : report accuracy, false positive rate, and false negative rate separately for each demographic group. If equalized false positive rates are required, the model should be audited and either retrained with more representative data, post-processed with group-specific thresholds, or not deployed in high-stakes settings until the disparity is resolved.\n\n**Q3.** You compute SHAP values for a loan model and find that \"zip code\" has a high positive SHAP value for some predictions. Should you remove zip code as a feature? Discuss the tradeoffs.\n\n**Answer:** The decision is not straightforward:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1026,
+      "out_sha": "8076e99b8bd1",
       "note": ""
     },
     {
