@@ -607,11 +607,11 @@
       "en_title": "Chapter 3: How a Habit Forms",
       "order": 44,
       "src_chars": 1555,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d2d4221ed4ed",
       "src": "### 3.7 What Duhigg Got Right\n\nBefore moving on, a calibration. The chapter's framing has corrected Duhigg's cue-routine-reward formula in a specific direction: the formula is too coarse to describe mature-habit dynamics, because it doesn't capture the dopamine migration from reward to cue. But Duhigg got the broad shape right: habits are built around cues, they involve a stereotyped response, and they are reinforced by reward-related signaling. The popularity of the _Power of Habit_ gave millions of people their first usable framework for thinking about their behavior, and that's a real public service.\n\nWhere the precise version improves on the popular one is in three places. First, it explains why the reward fades but the habit doesn't. Second, it explains why the cue, not the reward, is the leverage point in mature habits. Third, it makes the connection between habit dynamics and the design of modern attention-capture technologies (which Duhigg, writing in 2012, could not yet have fully foreseen). The precise version is the version we'll use for the rest of the book. But Duhigg's framing remains useful as a first cut, especially for the early phase of habit awareness.\n\nThis is the book's distinctive intellectual posture in a sentence: **calibrate, don't dismiss.** Clear, Duhigg, Fogg have all popularized real ideas, and we'll engage with each in the same spirit — credit what they got right, sharpen what they got loose, and give the reader a more accurate map without losing the part that drew the reader in.\n\n\n### 3.8 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 577,
+      "out_sha": "490e822972f2",
       "note": ""
     },
     {
@@ -619,11 +619,11 @@
       "en_title": "Chapter 3: How a Habit Forms",
       "order": 45,
       "src_chars": 3443,
-      "status": "pending",
+      "status": "done",
       "src_sha": "80b4afb9a483",
       "src": "#### Concept Check\n\n**Q1.** State, in your own words, what dopamine signals — and what it does _not_ signal. Why is the popular phrase \"dopamine hit\" misleading?\n\nHint\n\nWhat is the difference between \"I got a reward\" and \"I got more (or less) reward than I expected\"?\n\n**Answer:** Dopamine, in the parts of the brain relevant to habit and reinforcement, signals **prediction error** — the difference between expected reward and actual reward. When reward exceeds expectation, dopamine spikes upward; when reward equals expectation, dopamine is flat; when reward falls short of expectation, dopamine drops below baseline. It does _not_ simply signal pleasure or reward magnitude. The same reward, repeated, produces decreasing dopamine signals as expectations catch up to reality, even though the reward itself is just as good. The popular phrase \"dopamine hit\" is misleading because it suggests dopamine = pleasure, which conflates the wanting system (dopamine, prediction error, drive to seek) with the liking system (separate circuits including opioid signaling, hedonic experience). The two can come apart. Addicts, for example, report intense wanting and diminished liking — exactly what the dopamine-prediction-error model predicts.\n\n**Q2.** Describe Wolfram Schultz's monkey experiment. What do the three findings (dopamine at reward, then dopamine at cue, then dopamine drop when reward fails) reveal about how the dopamine system computes?\n\n**Answer:** Schultz trained monkeys on a simple cue-then-juice task — a light comes on, a few seconds later juice arrives — while recording from individual dopamine neurons in the ventral tegmental area. Three key findings:\n\n  1. _Initially_ , when the monkey is naive, the dopamine neurons fire at the moment of juice delivery. The reward is unexpected; the dopamine response signals that the reward exceeded expectation.\n\n  2. _After learning_ , the dopamine response migrates backward in time from the reward to the cue. The light now produces the dopamine spike; the juice, arriving on schedule, produces no spike. The cue has acquired the prediction-error response that used to belong to the reward.\n\n  3. _When the cue appears but the reward fails to arrive_ , the dopamine signal at the time the reward should have arrived dips below baseline. The system has explicitly registered \"expected reward, did not get it\" — a negative prediction error.\n\nThese findings reveal that dopamine computes the **temporal-difference prediction error** : at any moment, the dopamine signal represents how much the current state changes the brain's expectation of future reward. When the cue appears, expected future reward suddenly increases, so dopamine fires. When the reward arrives on schedule (already predicted), there's no further change in expectation, so no dopamine. When the reward fails to arrive, expected future reward suddenly drops, so dopamine dips. The system is not tracking reward; it is tracking _changes in expectation about reward_. This is one of the most beautiful findings in computational neuroscience and is the foundation for much of modern reinforcement learning theory.\n\n**Q3.** A friend says to you: \"I've been smoking for fifteen years. I don't even really enjoy it anymore. But I can't stop. There must be something wrong with me.\" Using only what we've covered in this chapter, explain to your friend what is going on, in a way that is both accurate and compassionate.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1062,
+      "out_sha": "09d44c3e3e0e",
       "note": ""
     },
     {
@@ -631,11 +631,11 @@
       "en_title": "Chapter 3: How a Habit Forms",
       "order": 46,
       "src_chars": 3332,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6be4eb40908b",
       "src": "**Answer:** What your friend is describing is exactly what the mature-habit dopamine architecture predicts, and they should know it isn't a moral failing or a sign that something is wrong with them. Here is the explanation:\n\nWhen they first started smoking, the cigarette produced an unexpected reward, and dopamine fired at the cigarette itself — the wanting and liking systems both responded together. Each repetition reinforced the cue-response-reward loop. Over years of repetition, two things happened. First, the **reward stopped producing dopamine** because the brain learned to predict it; by year five, the cigarette was no longer surprising the system. Second, the **cue acquired the dopamine response that used to belong to the cigarette** — the post-lunch moment, the drink with that friend, the drive home. The brain now wants the cigarette before the cigarette is even in the hand.\n\nThis means two phenomena that feel like they should be in tension are actually consistent with each other:\n\n* The cigarette no longer produces strong pleasure. (The liking system, mediated by separate circuits, has habituated. There's no prediction error left.)\n* The pull toward the cigarette is just as strong as ever, maybe stronger. (The wanting system, mediated by dopamine, is firing in response to the cue, which has acquired thirty thousand trials of conditioning.)\n\nSo your friend is not lying to themselves about not enjoying it. They are accurately describing the desynchronization between two systems that the brain runs separately. There is nothing wrong with them. The fix, which we'll see in Part III, is not to \"want it less\" — that is acting on the wrong system. The fix is to act on the **cue** : remove cigarettes from the home and car; avoid the post-lunch moment and the drink-with-friend context for the first weeks; install a substitute response that fires when the cue does.\n\nCompassion here is not soft — it is empirically aligned. Relapse research shows that people who interpret the persistence of cravings as their own moral failure relapse harder and longer than those who interpret it as predictable neurology. Your friend is not weak. The cue is doing exactly what fifteen years of consolidation taught it to do.\n\n**Q4.** What does it mean for the dopamine signal to \"migrate from reward to cue\" across the maturation of a habit? What is the practical implication for habit change?\n\n**Answer:** Migration means that, as a behavior is repeated in stable contexts, the dopamine response (the wanting signal) shifts in time from being triggered at the moment of reward to being triggered at the moment of the cue. In a fully mature habit, the cue itself produces the dopamine spike; the reward, now fully expected, produces little or none.\n\nPractically, this means that **mature habits are maintained by their cues, not their rewards.** Trying to break a mature habit by reducing the reward (e.g., trying to make the cigarette less enjoyable, the food less tasty, the app less interesting) is acting on a part of the mechanism that has gone quiet. The habit will persist as long as the cue is present and the response is available.\n\nThe leverage point in mature habits is the **cue**. Three structural moves are available, and almost all effective habit-change interventions are some version of one of them:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 786,
+      "out_sha": "42e6da03ab67",
       "note": ""
     },
     {
@@ -643,11 +643,11 @@
       "en_title": "Chapter 3: How a Habit Forms",
       "order": 47,
       "src_chars": 807,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e96001e99c91",
       "src": "  1. **Remove the cue** (don't have the cigarettes; delete the app; redesign the environment so the cue isn't encountered).\n  2. **Weaken the cue with friction** (put the cigarettes far away; turn off notifications; require an extra step before the response).\n  3. **Re-link the cue to a different response** (substitution: when the cue appears, do something else; we'll see this in detail in Chapter 11).\n\nConversely, the early phase of _building_ a new habit — when the dopamine signal is still firing at the reward — benefits from making the reward salient and at least a little surprising (calendar tracking, social acknowledgment, savoring the result). Different phases of the habit lifecycle require different strategies, and a lot of habit-change failure comes from applying a phase-mismatched tool.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 425,
+      "out_sha": "841635cdf16e",
       "note": ""
     },
     {
@@ -655,11 +655,11 @@
       "en_title": "Chapter 3: How a Habit Forms",
       "order": 48,
       "src_chars": 3476,
-      "status": "pending",
+      "status": "done",
       "src_sha": "993a8b27c52b",
       "src": "#### Application Problems\n\n**Q1.** A friend has been trying to quit social media for three months. They have tried \"willing themselves\" not to open the app, leaving the phone in another room sometimes (but not always), and reminding themselves of how Instagram makes them feel worse, not better. They are still on Instagram about as much as ever. Using the framework of cue-locked mature habits and the three structural moves, diagnose what is going wrong and propose a specific plan.\n\nHint\n\nWhich of the three structural moves are they actually executing? Inconsistently or consistently?\n\n**Answer:** The friend is executing some version of all three moves, but inconsistently and in ways that don't actually disable the cue.\n\n* _Willing themselves_ is acting on the goal-directed system, not the cue. We covered in Chapter 2 why this is structurally insufficient. The dopamine response to the Instagram cue (a free moment, a phone in hand) is firing as designed.\n* _Leaving the phone in another room sometimes_ is the right kind of move (cue removal), but the inconsistency is the problem. If the cue is sometimes available and sometimes not, the variable schedule is, in fact, exactly the schedule that produces the strongest behavioral persistence (we'll see why in Chapter 7). The friend may have inadvertently made the habit _more_ persistent by sometimes-removing-and-sometimes-not.\n* _Reminding themselves of how it makes them feel worse_ is again goal-directed-system work, addressing the liking system, but the wanting system (the dopamine response to the cue) is the one driving the behavior — and the wanting system isn't reachable by reasoning about how-it-makes-me-feel-afterward.\n\nThe diagnosis: the friend is acting on the right rough levers but inconsistently and in ways that are leaving the cue partially intact. The mature-habit cue keeps firing the dopamine response, the response (open Instagram) is still available, and the reward (intermittent social acknowledgment, intermittent interesting content) is still landing often enough to maintain the loop.\n\nA specific plan that has a chance of working:\n\n  1. **Cue removal, executed consistently for at least two weeks.** Delete the Instagram app from the phone entirely, not just turn off notifications. The cue (the icon, the badge, the muscle memory of opening) is gone. Force them to use a desktop browser, on a computer, with a friction step (e.g., logging in each time, with a complex password they don't have memorized).\n  2. **Substitution for the most common cue contexts.** What contexts most often trigger the open? Probably: a moment of waiting (in a line, between tasks), a moment of low-grade boredom, a moment of mild anxiety. Pre-script a substitute response for each: in line, look up at the surroundings; between tasks, take three slow breaths; mild anxiety, walk for thirty seconds. The substitute won't be as rewarding initially, but it gets installed in the cue's slot.\n  3. **Two-week rule.** Commit to not reinstalling the app for two weeks, no exceptions. This is enough time for the dopamine response to the cue to weaken substantially without ongoing reinforcement. After two weeks, if they want to re-evaluate, fine — but the experiment requires the consistent removal first.\n  4. **What not to do.** Do not try to \"use Instagram less\" or \"be more disciplined about it.\" That's the inconsistency that maintains the habit. The intervention has to be structural, not motivational.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1080,
+      "out_sha": "61e4aff6bed8",
       "note": ""
     },
     {
