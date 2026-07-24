@@ -275,11 +275,11 @@
       "en_title": "Chapter 1: Distributed Systems Lie to Themselves",
       "order": 12,
       "src_chars": 341,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a58ca0d19f3e",
       "src": "In general, the lies you held that were wrong tend to cluster around: (a) what \"now\" means in this system, (b) whether the system guarantees uniqueness of something you assumed was unique, (c) what happens when the system or your client crashes mid-operation. The rest of the book builds the vocabulary for asking these questions precisely.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 111,
+      "out_sha": "63ee95e8438c",
       "note": ""
     },
     {
@@ -287,11 +287,11 @@
       "en_title": "Chapter 1: Distributed Systems Lie to Themselves",
       "order": 13,
       "src_chars": 3188,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5342405553e3",
       "src": "#### Think Deeper\n\n**Q1.** Many engineers, after their first serious distributed-systems failure, decide \"I'll keep everything on one machine for as long as possible.\" Defend or critique this position. Under what conditions is it correct, and under what conditions is it a trap?\n\n**Discussion:** The position has real merit. A correctly engineered single-machine system handles many problems with vastly less complexity than any distributed equivalent. Postgres on one box, replicated to a hot standby, can serve enormous load with strong consistency. The decision to go distributed has real costs and should not be taken lightly.\n\nThe position becomes a trap when the requirements quietly outgrow it. The system that started as \"one Postgres\" needs read replicas (now you have replication lag and read-your-writes failures). It needs cross-region for latency or disaster recovery (now you have multi-region replication). It needs partition tolerance for an SLA (now you are in CAP territory whether you named it or not). At each step, distributed concerns crept in without the team formally adopting distributed disciplines, and the resulting system has all the failure modes of a distributed system with none of the rigor.\n\nThe honest answer is: stay single-machine as long as the requirements truly are single-machine. The moment you add a second machine for any reason, name the distributed disciplines that now apply (time, identity, failure) and verify that you are handling them.\n\nA second consideration: in 2026, \"single machine\" is itself a fiction at the scale of the largest workloads. A modern database deployment may be one logical instance backed by a distributed storage layer (Aurora, Neon), so even when the application thinks it is talking to one Postgres, the storage is already distributed and inherits all three lies.\n\n**Q2.** The Crescent post-mortem named three lies and required fixes for all three. In your experience or reading, find one production incident where the responders fixed only the most visible failure and missed a deeper lie. What is the cost pattern when this happens?\n\n**Discussion:** The pattern repeats: a visible bug gets fixed, the same class of bug appears six months later under slightly different conditions, and only on the second or third occurrence does someone identify the deeper lie. The cost is the cumulative incident response, the customer impact, and the engineering time spent on each fix in succession.\n\nExamples to look for in your reading: post-mortems that fix a retry storm by tuning timeouts (without addressing the underlying lack of retry budgets or circuit breakers); incidents that fix a leader-election bug by increasing the lock TTL (without introducing fencing tokens); duplicate-charge incidents that widen the idempotency window (without making the idempotency check strongly consistent).\n\nA useful frame: each of these \"tuning\" fixes makes the same failure rarer without changing its category. The honest fix changes the category. If you find yourself reading a post-mortem that ends with \"we increased the timeout,\" it is worth asking: what would the post-mortem have said if the timeout were already infinite?\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1061,
+      "out_sha": "05afea55398a",
       "note": ""
     },
     {
@@ -299,11 +299,11 @@
       "en_title": "Chapter 1: Distributed Systems Lie to Themselves",
       "order": 14,
       "src_chars": 1806,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d09dd33836c0",
       "src": "### Chapter Summary\n\nDistributed systems lie to themselves about three things. They lie about time: the clocks are not synchronized at the resolution your code assumes. They lie about identity: each node sees itself as uniquely playing its role, while the rest of the system may disagree. They lie about failure: partial failure is the default mode, not the exception, and the gap between \"what happened on this node\" and \"what the system as a whole experienced\" is where the bugs live.\n\nThe Crescent incident exploited all three lies in a single retry. The fix involved fencing tokens (Chapter 18), Hybrid Logical Clocks (Chapter 3), and a Raft-backed commit log (Chapter 9). No single fix would have closed the gap.\n\nThe mental move this book trains is simple: when you encounter any distributed system, ask the three questions. What is it lying about time? About identity? About failure? If you can answer, you can reason about failure modes. If you cannot, the system is opaque to you regardless of how well you know its API.\n\nThe chapter ahead (Chapter 2) makes these lies quantitative. You will meet Deutsch's Eight Fallacies (which name them as engineering assumptions), CAP (which quantifies the trade-off between consistency and availability under partition), and PACELC (which extends CAP to the no-partition case). Then Chapter 3 takes the first lie, time, and develops the protocols (Lamport clocks, vector clocks, HLC, TrueTime) that let you reason about ordering without lying.\n\nThe book will keep returning to Adaeze. The system that double-charged her in the second-to-last paragraph of this chapter is the system the four protagonists ship together in Chapter 28. Everything in between is the path; Chapter 29 closes the book by separating what will keep evolving from what will hold.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 620,
+      "out_sha": "07e95010299b",
       "note": ""
     },
     {
@@ -347,11 +347,11 @@
       "en_title": "Chapter 2: The Eight Fallacies, CAP, and PACELC",
       "order": 18,
       "src_chars": 3240,
-      "status": "pending",
+      "status": "done",
       "src_sha": "770170bb7f43",
       "src": "#### What CAP does not say\n\nCAP does _not_ say:\n\n* That you must \"pick CP\" or \"pick AP\" as a categorical property of your system.\n* That the choice is the same for every operation. Spanner offers both strongly consistent reads and stale reads in the same database, served from the same replicas.\n* That the choice matters when there is no partition.\n* That \"consistency\" in any looser sense (read-your-writes, eventual, monotonic) is forbidden by CAP. CAP forbids only linearizability under partition with availability.\n\nThe narrow scope of CAP is the source of half the bad CAP discussions on the internet. Most workloads do not need linearizability for most operations. Many systems labeled \"AP\" provide stronger guarantees than the label implies; many systems labeled \"CP\" trade availability in subtle ways the label does not name.\n\n\n### 2.3 PACELC: The Honest Extension\n\nDaniel Abadi pointed out, around 2010, that CAP names only the partition case and ignores the much more common case: when the network is healthy. The trade-off in the healthy case is between latency and consistency.\n\nPACELC: if Partition, then Availability or Consistency; Else, then Latency or Consistency.\n\nThe acronym is awkward but the point is sharp. CockroachDB during a partition is CP (it refuses writes to the partitioned side rather than serving stale data). CockroachDB during normal operation pays a latency cost for its consistency: a commit that needs to round-trip to a quorum of replicas across a region is slower than a commit that needs only to write to a local leader. Spanner pays the famous 7 ms of commit-wait (Chapter 13) to give linearizable timestamps via TrueTime.\n\nDynamoDB during a partition is AP (the partitioned nodes continue to serve reads from their replicas, possibly stale). DynamoDB during normal operation has very low read latency because it does not coordinate reads with anything. Cassandra is similar; its tunable consistency lets you choose at request time whether you want speed or strict ordering.\n\n\n#### PACELC in practice\n\nThe useful question for any system is: under PACELC, what does this system give up under partition, and what does it give up in normal operation? A PACELC summary for the systems you will meet in Part IV:\n\nSystem | Under partition | Else (no partition)  \n---|---|---  \nSpanner | C (refuses writes minority side) | C with commit-wait latency  \nCockroachDB | C (refuses writes minority side) | C with quorum-write latency  \nTiDB / YugabyteDB | C | C with quorum-write latency  \nDynamoDB | A (serves possibly stale reads) | L (low-latency reads, eventual consistency by default)  \nCassandra | tunable (per-request quorum) | tunable (L by default)  \nFoundationDB | C | C, optimized for OLTP latency  \n  \nThis table is more useful than the CAP table. CAP tells you what happens when things go wrong. PACELC tells you what your application pays _every day_ , which is usually what determines whether the system is right for your workload.\n\n\n### 2.4 The Counter-Leaderboard-Inventory Workload\n\nThroughout the book, three workloads will reappear as the test bed for consistency models. The three are the counter, the leaderboard, and the inventory commit. They differ in what they need from the system.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1289,
+      "out_sha": "4738ce181115",
       "note": ""
     },
     {
@@ -359,11 +359,11 @@
       "en_title": "Chapter 2: The Eight Fallacies, CAP, and PACELC",
       "order": 19,
       "src_chars": 2671,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d7564bdbb5b3",
       "src": "#### The counter\n\nA page-view counter on a popular article. Each \"view\" is one increment. The total is shown to a visitor with a delay of seconds or more. Tolerance for inconsistency: high. Tolerance for lost increments: medium (a 10% undercount in the displayed total is embarrassing but not catastrophic).\n\nSuitable consistency: eventual is fine. Linearizability is overkill and would limit throughput by a large factor. A counter implemented as a CRDT (G-Counter, Chapter 16) on every replica, gossiping increments to converge, scales horizontally without coordination.\n\n\n#### The leaderboard\n\nThe top 10 scores in a game, refreshed for all viewers within a few seconds. Each score submission is a write. The leaderboard is a read of the top-10. Tolerance for transient inconsistency: medium (different viewers may see different orderings for a few seconds). Tolerance for stale data after partition heal: low (everyone should converge on the same leaderboard within minutes).\n\nSuitable consistency: causal consistency (Chapter 17) or strong-eventual. If two players A and B submit scores, and A's submission causally precedes B's (B saw A's appear before submitting), all viewers should eventually agree that A's appeared first.\n\n\n#### The inventory commit\n\nA purchase that decrements inventory by one. If two purchases race for the last item, exactly one must succeed. Tolerance for inconsistency: zero. Tolerance for partial failure: zero (we must not sell two items when one exists).\n\nSuitable consistency: strong (linearizable) under partition. Either Spanner-style global linearizability or a Raft-replicated decrement (Chapter 9) on the inventory record. The latency cost is paid because the alternative (overselling) is unacceptable.\n\nThe three workloads recur because they show the spectrum: counter (eventual fine), leaderboard (causal needed), inventory (linearizable required). The mistake the inventory-as-a-CRDT engineer makes is using the technique that worked for the counter on a workload that does not tolerate convergence. The mistake the counter-on-Spanner engineer makes is paying linearizable latency for a workload that does not need it.\n\n\n#### Common Misconception\n\nEngineers sometimes treat consistency as a property of the system rather than a property of the request. Modern systems are much more flexible. Spanner offers stale reads with a configurable bound on staleness; Cassandra offers per-request quorum levels (ONE, QUORUM, ALL); CockroachDB offers `AS OF SYSTEM TIME` for bounded-staleness reads. The right question is not \"is this system consistent?\" but \"what is the consistency of this specific operation, and what does it cost?\"\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 937,
+      "out_sha": "e9736ae64b44",
       "note": ""
     },
     {
@@ -371,11 +371,11 @@
       "en_title": "Chapter 2: The Eight Fallacies, CAP, and PACELC",
       "order": 20,
       "src_chars": 1194,
-      "status": "pending",
+      "status": "done",
       "src_sha": "41adf8917a68",
       "src": "### 2.5 PACELC Decision Procedure\n\nWhen you are choosing between systems for a workload, the PACELC procedure is:\n\n  1. **Classify the workload.** What does each operation need? Linearizable, causal, eventual?\n  2. **Compute the latency budget.** What latency can the user (or downstream system) tolerate? Per-operation, p99, p999.\n  3. **Estimate partition frequency.** A single-region system experiences partitions rarely (months between events). A cross-region system experiences cross-region partitions much more often (weeks). A geo-distributed cross-cloud system experiences them weekly or more.\n  4. **Compute the partition-time cost.** When a partition occurs, what is the cost of unavailability versus the cost of stale reads? For an inventory system, unavailability is preferable to overselling. For a content-delivery system, stale reads are preferable to a blank page.\n  5. **Pick the system whose PACELC profile matches.** For the workload, the latency budget, and the partition-time priority.\n\nThis procedure is what Chapter 11 will teach in depth as the \"diagnostic method\" for reading any distributed database in 30 minutes. The PACELC table is the summary.\n\n\n### 2.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 408,
+      "out_sha": "5564032379f3",
       "note": ""
     },
     {
@@ -383,11 +383,11 @@
       "en_title": "Chapter 2: The Eight Fallacies, CAP, and PACELC",
       "order": 21,
       "src_chars": 3429,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fb221eafa9eb",
       "src": "#### Concept Check\n\n**Q1.** State each of Deutsch's Eight Fallacies in your own words, and give one example of code that quietly assumes each fallacy is true.\n\nHint\n\nFor each fallacy, find a code pattern. For \"the network is reliable,\" code with no retry. For \"latency is zero,\" a loop that does an RPC per element of a million-element array.\n\n**Answer:**\n\n_The network is reliable._ Example: `response = http.get(url); parse(response)` with no try/except, no timeout, no retry. Assumes the call always returns a parseable response.\n\n_Latency is zero._ Example: `for item in million_items: total += rpc_lookup(item.id)`. Each call is 1 ms, so the loop takes 1000 seconds for a function that the engineer expected to take under a second. The same code with batched RPCs (1000 items per call) is 1000x faster.\n\n_Bandwidth is infinite._ Example: a logging pipeline that sends each individual log line as a separate gRPC message to a centralized aggregator. The serialization overhead and per-message header cost dominate the actual log payload, and the aggregator's network saturates long before its CPU.\n\n_The network is secure._ Example: an internal service that accepts any caller from the VPC because \"the VPC is private.\" A compromised pod in the cluster can now act as any caller, because there is no per-caller authentication.\n\n_Topology doesn't change._ Example: a configuration file with hardcoded IP addresses for service dependencies, no DNS, no service discovery. Works until a single node restarts on a new IP.\n\n_There is one administrator._ Example: a Sunday-evening deploy that breaks because the network team rolled out a firewall change at 4 p.m. that no one in your team knew about. The change is permitted and operational from their view; your code happens to be the canary.\n\n_Transport cost is zero._ Example: a cross-region data sync job that runs every five minutes \"to keep the regions in sync.\" After the cloud bill arrives, the team discovers each sync transfers 50 GB across regions at 0.09 USD/GB. Monthly bill: many thousands of dollars for a feature no one is actively using.\n\n_The network is homogeneous._ Example: a service whose p50 latency is 50 ms in test (all traffic from the same region) and 350 ms in production (some traffic from Asia to a US-East deployment). The code did not account for the realistic distribution of caller locations.\n\n**Q2.** State CAP precisely. Then state what is wrong with the slogan version \"pick two of consistency, availability, partition tolerance.\"\n\nHint\n\nThe precise statement is about what is forbidden in the presence of a partition. The slogan is wrong because partition tolerance is not a choice.\n\n**Answer:** Precise statement: in a distributed system, in the presence of a network partition, the system cannot be both linearizable and available (where availability means \"every non-failing node responds to every request with a non-error response in bounded time\").\n\nWhat is wrong with the slogan: it implies you can pick \"consistency and availability without partition tolerance,\" but partitions happen whether you account for them or not. A system that \"is not partition-tolerant\" is not a system that experiences no partitions; it is a system that fails arbitrarily when partitions occur, which is worse than choosing in advance how to fail. The honest framing is: partitions are inevitable; under partition, choose between consistency and availability.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1231,
+      "out_sha": "58bd312d88a6",
       "note": ""
     },
     {
