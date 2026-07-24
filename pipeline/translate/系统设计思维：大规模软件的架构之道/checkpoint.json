@@ -4071,11 +4071,11 @@
       "en_title": "Chapter 22: Design a News Feed — The Fan-Out Problem",
       "order": 330,
       "src_chars": 2834,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6fd4fde91538",
       "src": "#### Concept Check\n\n**Q1.** Define fan-out on write and fan-out on read, and give the primary advantage and disadvantage of each.\n\n**Answer:** **Fan-out on write (push model):** When a post is created, it is immediately written to all followers' precomputed timelines. Feed reads are fast because the timeline is ready in memory. Disadvantage: high write cost — a post with N followers requires N timeline writes. For high-follower users, this becomes prohibitively expensive.\n\n**Fan-out on read (pull model):** When a post is created, only the post itself is written to the database. When a user requests their feed, the system queries all followed accounts' recent posts and assembles the feed on demand. Advantage: post creation is cheap regardless of follower count. Disadvantage: feed reads are expensive — assembling the feed requires multiple queries across many accounts, leading to high read latency and high database load.\n\n**Q2.** What is the celebrity problem in news feed design, and why does it require a special case?\n\n**Answer:** The celebrity problem is that users with extremely high follower counts (millions of followers) create a fan-out cost that is orders of magnitude higher than typical users. If a user with 10 million followers posts once and fan-out on write is used, the system performs 10 million timeline writes per post. With 10 such users posting frequently, this generates hundreds of millions of fan-out writes per day — dominating the system's write capacity. The celebrity case is special because the power law distribution means it affects only a tiny fraction of users (0.01%) but generates a disproportionate share of write load. The solution is to treat celebrity posts differently: skip fan-out on write for celebrities and instead fetch their posts at read time, leveraging the fact that their posts are cached and can be served to millions of readers with a single cache read.\n\n**Q3.** Why should a timeline store post IDs rather than full post content?\n\n**Answer:** Two reasons: (1) Storage efficiency — storing post IDs (8 bytes each) rather than full post content (200–2,000 bytes) reduces timeline storage by 25–250x. For 50 million users each with 1,000 timeline entries, this difference is 400 GB vs 400 TB — a massive cost difference. (2) Consistency — when a post is edited or deleted, only one record needs to be updated (in the posts database). If post content were stored in timelines, every copy of the content across all followers' timelines would need to be updated, creating a complex invalidation problem identical to the cache invalidation problem from Chapter 7. Post IDs are permanent references; the content they point to can be updated in a single place.\n\n**Q4.** Explain why the follower count power law distribution makes the hybrid fan-out strategy work efficiently.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1025,
+      "out_sha": "ea92eecaa2e9",
       "note": ""
     },
     {
@@ -4083,11 +4083,11 @@
       "en_title": "Chapter 22: Design a News Feed — The Fan-Out Problem",
       "order": 331,
       "src_chars": 723,
-      "status": "pending",
+      "status": "done",
       "src_sha": "733c467090da",
       "src": "**Answer:** The power law distribution means that the vast majority of users (95%+) have follower counts in a range where fan-out on write is feasible — a few hundred to a few thousand writes per post. The celebrity case (millions of followers) affects only 0.01% of users. Because the population needing special treatment (fan-out on read) is tiny, the hybrid strategy's complexity cost is paid for a small fraction of cases. If follower counts were uniformly distributed — every user had millions of followers — there would be no threshold that separates \"manageable fan-out\" from \"celebrity fan-out,\" and the hybrid strategy would not help. The power law is the structural property that makes the optimization possible.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 197,
+      "out_sha": "ae99ee7a4a96",
       "note": ""
     },
     {
@@ -4095,11 +4095,11 @@
       "en_title": "Chapter 22: Design a News Feed — The Fan-Out Problem",
       "order": 332,
       "src_chars": 3402,
-      "status": "pending",
+      "status": "done",
       "src_sha": "737f30af1c6a",
       "src": "#### Application Problems\n\n**Q1.** SocialSnap adds a feature: \"close friends\" — a subset of a user's followers who see posts marked as \"close friends only.\" Approximately 5% of posts are marked close friends only; each user has an average of 50 close friends. How does this affect the fan-out architecture?\n\nHint\n\nThink about what changes in the fan-out flow when only a subset of followers should see a post. How does this affect the Fanout Service's work per post? Does it simplify or complicate the timeline design?\n\n**Answer:** The fan-out architecture needs to be aware of post visibility. The key changes:\n\n**Database change:** Add a `visibility` field to posts: `ENUM('public', 'close_friends', 'private')`. Add a `close_friends` relationship table: `(user_id, friend_id)`.\n\n**Fanout Service change:** When processing a `post_created` event with `visibility = 'close_friends'`, the Fanout Service fetches the author's close friends list (not all followers) and writes to only those users' timelines.\n\n**Impact on fan-out cost:** Close friends posts fan-out to only 50 people instead of potentially thousands. This is much cheaper than public posts. The 5% of posts that are close-friends-only generate negligible fan-out cost.\n\n**Timeline complexity:** The timeline must handle mixed visibility. If user F is in user U's close friends list, F's timeline includes some close-friends posts and some public posts. When rendering the feed, the Feed Service returns whatever is in the timeline without additional visibility filtering — the visibility filter was applied at fan-out time.\n\n**Celebrity close friends:** If a celebrity (follower count > 1 million threshold) posts a close-friends-only post, it goes to at most 50 close friends. This is not a celebrity fan-out problem — the fan-out is bounded at 50 regardless of follower count. The celebrity exception applies only to public posts.\n\n**Q2.** Design the \"new posts available\" notification: when a user is looking at their feed and followed accounts have posted new content since the feed was loaded, show a \"X new posts\" badge without auto-refreshing the feed. How do you implement this efficiently without polling the entire feed on every check?\n\nHint\n\nThink about what information the client needs to determine whether there are new posts: it needs to know the timestamp or ID of the most recent post it has seen. The server needs to tell it whether any followed account has posted since then. Can this be done without re-running the entire feed assembly query?\n\n**Answer:**\n\n**The core insight:** The client doesn't need the new posts — it just needs to know whether any exist. This is a much cheaper query than full feed assembly.\n\n**Client state:** When the client loads the feed, it stores `last_seen_post_timestamp = T`. When checking for new posts, it sends `GET /feed/new-count?since=T`.\n\n**Server implementation — the lightweight approach:** The server maintains a per-user \"latest activity timestamp\" in Redis: `user:F:latest_followed_activity`. The Fanout Service updates this when fanning out a post to F's timeline: `SET user:F:latest_followed_activity <post_timestamp>`. This is a single Redis write per fan-out entry — negligible overhead.\n\nThe `/feed/new-count?since=T` endpoint becomes: `GET user:F:latest_followed_activity`. If the value > T, new posts exist. Return `{has_new_posts: true}`. The client shows the badge.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1474,
+      "out_sha": "85e9190a507c",
       "note": ""
     },
     {
@@ -4107,11 +4107,11 @@
       "en_title": "Chapter 22: Design a News Feed — The Fan-Out Problem",
       "order": 333,
       "src_chars": 1003,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bd08ea2c0b30",
       "src": "When the client clicks the badge (requesting the actual new posts), it calls `/feed?since=T` to get the new posts specifically — or it re-loads the full feed.\n\n**Celebrity handling:** The `latest_followed_activity` approach doesn't account for celebrity posts (not fanned out). For the new-posts check, include a secondary check: `SELECT COUNT(*) FROM posts WHERE author_id IN (celebrities F follows) AND created_at > T`. This is a small query (few celebrities, cached).\n\n**Polling frequency:** The client polls `/feed/new-count` every 30–60 seconds. At 5 million concurrent users, this is ~100,000 RPS — but each request is a single Redis GET (~1ms), making it entirely viable. Compare to polling the full feed assembly at 100,000 RPS, which would require 100,000 × 20 database fetches per second = 2 million database reads per second.\n\nThe lightweight check query reduces the per-request cost by 20x compared to full feed assembly, enabling much higher polling frequency with the same infrastructure.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 473,
+      "out_sha": "71b3916960df",
       "note": ""
     },
     {
@@ -4119,11 +4119,11 @@
       "en_title": "Chapter 22: Design a News Feed — The Fan-Out Problem",
       "order": 334,
       "src_chars": 3104,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9132783e8155",
       "src": "#### Think Deeper\n\n**Q1.** The fan-out on write approach precomputes timelines in Redis. Redis is an in-memory store — what happens to all those precomputed timelines during a Redis restart or failure? How does the architecture recover from a cold Redis cache?\n\n**Discussion:** This is the warm-up problem — when Redis starts empty after a failure, the precomputed timelines are gone. Users who request their feed get a cache miss, and the feed assembly falls back to fan-out on read — exactly the expensive path we designed to avoid. For 5 million concurrent feed viewers simultaneously cold-cache, this is 5 million full feed assembly queries hitting the database — likely an overwhelming surge.\n\n**Recovery strategies:**\n\n**Redis persistence (RDB or AOF):** Redis can be configured to persist data to disk (RDB snapshots or append-only log). After a restart, Redis reloads from the snapshot. For timeline data with frequent updates, RDB snapshots every 60 seconds may lose up to 60 seconds of fan-out writes. For freshness SLO of 60 seconds, this is acceptable — users may see feeds from 60 seconds ago immediately after recovery, which is within the SLO.\n\n**Redis replication (Redis Cluster or Sentinel):** Run Redis with replicas. A primary failure causes replica promotion, losing only a few seconds of in-flight writes. This is the standard production approach from Chapter 11 and Chapter 16.\n\n**Gradual cache warm-up:** When Redis starts cold (after a full cluster failure), limit the number of cold-miss requests that trigger database fallback per second. Use a request queue or rate limiter to prevent all 5 million users from simultaneously triggering expensive fallback queries. The first few requests per user warm their timeline; subsequent requests hit the cache. Over 5–10 minutes, most active users' timelines are repopulated.\n\n**Pre-warming from the database:** A background process reads recent posts and user follow relationships from the database and reconstructs timelines for the most active users (top 10% of daily active users). This warm-up completes in minutes rather than hours.\n\nThe lesson: Redis (or any in-memory store used as a primary data source for precomputed state) must be treated as a critical component with active-passive failover and persistence, not as a disposable cache. The chapter 16 reliability patterns apply fully.\n\n**Q2.** Consider the following observation: the news feed ranking algorithm creates a feedback loop. Users engage with highly-ranked content, which signals that this content should rank higher, which causes the algorithm to show it to more users, which generates more engagement. What are the long-term implications of this feedback loop for the diversity of content in the feed, and what mechanisms might counteract it?\n\n**Discussion:** The feedback loop creates an \"engagement gravity\" — content that captures early engagement gets ranked higher, shown to more users, receives more engagement, and climbs further. This is the rich-get-richer dynamic, also known as preferential attachment in network theory.\n\n**Long-term implications:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1094,
+      "out_sha": "5f883f7a5689",
       "note": ""
     },
     {
@@ -4131,11 +4131,11 @@
       "en_title": "Chapter 22: Design a News Feed — The Fan-Out Problem",
       "order": 335,
       "src_chars": 2381,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c7f34f9c2f0a",
       "src": "  1. **Filter bubbles:** Users see increasingly narrow content that matches their past behavior. Someone who engaged with political content sees more political content, sees less of other topics, and gradually their feed becomes a filter bubble of their existing views.\n  2. **Content homogenization:** Viral content (high early engagement) gets promoted to many users regardless of their individual preferences. The feed becomes dominated by a small number of high-engagement posts rather than reflecting each user's diverse interests.\n  3. **Creator inequality:** New creators who lack initial engagement signals cannot compete with established creators whose content already has engagement history. The rich-get-richer effect creates barriers to entry for new content creators.\n  4. **Engagement-bait optimization:** Content creators learn that emotionally provocative content (outrage, fear, surprise) generates high engagement signals. The algorithm rewards this, creating incentives to produce engagement-bait rather than substantive content.\n\n**Counteracting mechanisms:**\n\n* **Exploration budget:** Deliberately allocate some feed positions to content outside the user's engagement history — content from new creators, new topics, or content that is high-quality but not yet viral. This prevents the feedback loop from fully closing.\n* **Diversity constraints:** Enforce that the feed contains posts from at least N different followed accounts, spans at least M different topics, and does not repeat the same author more than X times.\n* **Engagement rate vs raw engagement:** Rank by engagement rate (likes per view) rather than absolute engagement. This levels the playing field between popular and emerging creators.\n* **Long-term user satisfaction signals:** Optimize not only for immediate engagement but for long-term signals like \"did the user continue using the platform?\" and \"did the user report this content as harmful?\" These signals capture whether the feed is actually serving the user's long-term interests, not just their immediate impulses.\n\nThese are not purely technical questions — they are product philosophy and ethics questions. The engineering architecture makes the feedback loop possible; the product and policy decisions determine how much the feedback loop is allowed to run. This is a preview of the human side of system design from Chapter 28.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 696,
+      "out_sha": "78d2b8c08df0",
       "note": ""
     },
     {
@@ -4143,11 +4143,11 @@
       "en_title": "Chapter 22: Design a News Feed — The Fan-Out Problem",
       "order": 336,
       "src_chars": 2208,
-      "status": "pending",
+      "status": "done",
       "src_sha": "dbc34472fe3f",
       "src": "### Chapter Summary\n\nThe news feed is the fan-out problem at its most complex. A single post creation must be distributed to potentially millions of followers, with the constraint that reads must be fast (200ms p99) and writes must not overwhelm the system.\n\nTwo fundamental strategies exist — fan-out on write and fan-out on read — and each is impractical in its pure form at social-platform scale. Fan-out on write creates overwhelming write load for high-follower users. Fan-out on read creates overwhelming read load for the feed assembly query.\n\nThe hybrid strategy — fan-out on write for regular users, fan-out on read for celebrities — exploits the power law distribution of follower counts. Because 99.99% of users have follower counts where fan-out on write is feasible, and celebrity posts can be fetched cheaply from cache at read time, the hybrid approach handles the entire distribution efficiently.\n\nTimeline storage (precomputed post ID lists in Redis sorted sets) enables sub-millisecond feed assembly for the regular-user portion. Celebrity posts are merged at read time with negligible overhead. Re-ranking at read time with user-specific signals gives personalized feeds without stale precomputed scores.\n\nThe Fanout Service (an asynchronous Kafka consumer) decouples post creation from fan-out, allowing post creation to return immediately while fan-out happens in the background within the freshness SLO.\n\nThe follower count distribution — identified as a \"critical clue\" in the Detective's Brief — was the key to the entire design. Without understanding the power law, a designer might apply a single strategy uniformly and discover the celebrity problem only in production. The detective's discipline of gathering all evidence before designing prevented this failure.\n\nIn Chapter 23, we design a search engine — a system that inverts the feed's push model entirely: instead of precomputing what content to show to users, the user expresses what content they want and the system must find it across billions of documents in milliseconds. The inverted index, like the precomputed timeline, trades write cost for read speed — a thread connecting back to this chapter's core tradeoff.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 674,
+      "out_sha": "5a2d4c74957d",
       "note": ""
     },
     {
@@ -4155,11 +4155,11 @@
       "en_title": "Chapter 23: Design a Search Engine — Crawling, Indexing, and Ranking",
       "order": 337,
       "src_chars": 2879,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4913034eca4d",
       "src": "In Chapter 22, we encountered a design pattern that should feel familiar by now: precompute at write time so that reads are fast. The news feed's precomputed timeline is the same idea as caching, but applied specifically to personalized, ordered content. You pay the cost of fan-out at write time so that feed retrieval at read time is nearly free.\n\nThe inverted index — the central data structure powering every search engine — is this same tradeoff applied to text. When a document is added to a search system, the system pays an indexing cost: it reads the document, extracts every meaningful word, and records which documents contain that word. Then, when a user searches for \"distributed systems consistency,\" the search engine does not scan billions of documents. It looks up three words in a precomputed table and finds the intersection. The pay-at-write, earn-at-read bargain, again.\n\nBut building a search engine introduces problems that a news feed does not have. A news feed knows its documents: users post them through your own API. A search engine must first discover its documents — and those documents live on the open internet, an enormous, unstructured, constantly changing graph of web pages. Before you can index, you must crawl. Before you can rank, you must understand what a document is about and why it should be trusted.\n\nThis is a detective's chapter. The crawler, as we will see, is literally a system that follows clues.\n\n\n### Detective's Brief\n\n**Client:** A new general-purpose search engine must be designed from scratch. It must index the public web at scale and serve query results within 200ms.\n\n**Clues (Requirements):**\n\n* Index a significant fraction of the public web: approximately 10 billion web pages\n* Keep the index fresh: pages change; new pages are published; old pages are deleted\n* Return the top 10 most relevant results for any query in under 200ms\n* Support basic keyword search with ranking by relevance and page authority\n* Handle a query volume of 100,000 queries per second at peak\n\n**Constraints (Evidence):**\n\n* The average web page is approximately 100KB of HTML\n* A typical English web page contains approximately 2,000 distinct words\n* At 10 billion pages, the raw HTML storage would be approximately 1 petabyte\n* Query traffic is highly skewed: the top 1% of queries account for approximately 50% of volume\n* Users expect sub-second results; 200ms is the upper bound, not the target\n* Search results must feel trustworthy: low-quality or spammy pages must rank below high-quality authoritative content\n\n**The Question:** How does a system discover, ingest, understand, and rapidly retrieve from 10 billion web pages?\n\nThis question has four parts — discovery (crawling), storage (ingestion), comprehension (indexing), and retrieval (ranking and serving) — and each part contains interesting engineering problems.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1001,
+      "out_sha": "05ea534cc448",
       "note": ""
     },
     {
@@ -4167,11 +4167,11 @@
       "en_title": "Chapter 23: Design a Search Engine — Crawling, Indexing, and Ranking",
       "order": 338,
       "src_chars": 3466,
-      "status": "pending",
+      "status": "done",
       "src_sha": "528ff3744d5e",
       "src": "### 23.1 The Web Crawler — A Detective Following Clues\n\nThe web is not a database with a known list of all documents. It is a graph. Web pages contain links to other pages. Those pages contain links to still more pages. To discover the web, you must follow those links.\n\nHere is the simplest possible crawler, which already embeds all the right ideas:\n    \n    \n    seed_urls = [\"https://en.wikipedia.org\", \"https://nytimes.com\", ...]\n    queue = Queue(seed_urls)\n    \n    while queue is not empty:\n        url = queue.dequeue()\n        page = fetch(url)\n        links = extract_links(page)\n        for link in links:\n            queue.enqueue(link)\n        store(url, page)\n    \n\nThis is a breadth-first search over the web graph, starting from a set of seed URLs. The crawler fetches a page, discovers new links, and adds them to the queue for future processing.\n\nBut consider the problems this simplest crawler immediately encounters.\n\n**The duplicate problem.** Many pages link to each other. If Wikipedia links to the New York Times, and the New York Times links back to Wikipedia, our crawler will add Wikipedia to the queue again and crawl it a second time — and then again, infinitely. The queue becomes infinite.\n\nThe solution is a **seen set** — a set of all URLs already visited. Before enqueuing a URL, check if it is in the seen set. If so, skip it.\n    \n    \n    if url not in seen_set:\n        queue.enqueue(url)\n        seen_set.add(url)\n    \n\nAt 10 billion URLs, the seen set is 10 billion URL strings. Storing these exactly in memory is not feasible (each URL is perhaps 100 bytes; 10 billion × 100 bytes = 1 TB of memory for the seen set alone). The practical solution is a **Bloom filter** — a probabilistic data structure that answers \"have I seen this URL?\" with near certainty but uses only a few bits per entry. A Bloom filter for 10 billion URLs with a 1% false positive rate requires approximately 9.6 GB — far more manageable. The cost of a false positive is only that we occasionally skip a URL we haven't actually crawled. Since most such false positives are for very minor pages, this is an acceptable tradeoff.\n\n**The politeness problem.** If our crawler runs on 1,000 machines in parallel and sends 10 requests per second per machine, it generates 10,000 requests per second. A single news website might only handle 1,000 requests per second in total — our crawler would consume its entire capacity. This is called a **crawl rate limit** or **politeness** problem.\n\nThe solution is to rate-limit crawl requests per domain. Each domain gets a **per-domain queue** : one URL at a time is fetched from each domain, with a configurable delay between requests (e.g., 1 second). A robot is polite when it respects `robots.txt` — a file that web servers publish to indicate which pages may and may not be crawled, and at what rate.\n    \n    \n    User-agent: *\n    Disallow: /private/\n    Crawl-delay: 2\n    \n\nA well-designed crawler reads `robots.txt` before crawling any page from a domain, and respects both the disallow directives and the crawl delay. Beyond being courteous, this is legally important: ignoring `robots.txt` can expose a company to legal liability.\n\n**The URL frontier design.** The combination of per-domain queues, politeness controls, and prioritization (some pages are more important to crawl first) is called the **URL frontier**. The URL frontier is the central scheduling data structure for a large-scale crawler.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1598,
+      "out_sha": "f6405c34ec68",
       "note": ""
     },
     {
@@ -4179,11 +4179,11 @@
       "en_title": "Chapter 23: Design a Search Engine — Crawling, Indexing, and Ranking",
       "order": 339,
       "src_chars": 2715,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e977bab74e3d",
       "src": "#### Definition: URL Frontier\n\nThe **URL frontier** is the component of a web crawler that manages which URLs to fetch next, in what order, and at what rate. A well-designed URL frontier has:\n\n  1. **Multiple queues** , typically one per domain or domain group, to enforce per-domain crawl rates\n  2. **A priority queue** that orders URLs by estimated importance (high-importance URLs crawl first)\n  3. **A scheduling layer** that selects which domain queue to pull from next, respecting crawl delays\n\nIn plain language: the URL frontier is the crawler's to-do list, organized so that important work is done first, but no single website is overwhelmed by our requests.\n\n\n#### Prioritizing What to Crawl\n\nNot all web pages are equally important. Wikipedia is updated frequently and linked to by millions of pages; a personal blog last updated in 2008 changes rarely. Crawling frequency should reflect both the value of the content and how often it changes.\n\nA simple priority heuristic: assign higher priority to pages with more inbound links (more popular pages), pages from authoritative domains (known news sites, encyclopedias, government websites), and pages whose content has changed since the last crawl.\n\nHow do we know if content has changed? We store a hash of the page content from the last crawl. When we re-crawl, we compare the hash. If unchanged, skip re-indexing. This is the same content-addressed storage idea we saw in Chapter 10's discussion of blob storage.\n\n\n#### The Crawler as Detective\n\nThread C of this book — the Detective's Discipline — has been about extracting signal from incomplete evidence. The crawler's job is precisely this: starting from a small set of seed URLs, follow the evidence (links) to discover the structure of the web.\n\nBut there is something deeper here. The web graph's link structure is itself evidence about trustworthiness. A page that 10,000 other pages link to is probably more authoritative than a page that nothing links to. The crawler discovers this evidence as it follows links. When we discuss ranking (Section 23.4), we will see how this link evidence is turned into a quality signal. The detective does not just follow clues; the detective records who gave the clues and assesses their credibility.\n\n\n#### Common Misconception\n\nA common misconception is that a web crawler is mostly a networking problem — just send HTTP requests as fast as possible. In reality, the URL frontier's scheduling and politeness logic is more engineering-intensive than the fetching itself. Rate limiting, per-domain queuing, `robots.txt` compliance, duplicate detection, and re-crawl scheduling together constitute the majority of a production crawler's complexity.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 914,
+      "out_sha": "e1cf278b4c36",
       "note": ""
     },
     {
@@ -4191,11 +4191,11 @@
       "en_title": "Chapter 23: Design a Search Engine — Crawling, Indexing, and Ranking",
       "order": 340,
       "src_chars": 2970,
-      "status": "pending",
+      "status": "done",
       "src_sha": "66c895cec742",
       "src": "### 23.2 The Inverted Index — Trading Write Cost for Read Speed\n\nOnce pages are fetched, they must be made searchable. The fundamental data structure is the inverted index. Let's understand why.\n\nSuppose we have four documents:\n\nDoc ID | Content  \n---|---  \n1 | \"distributed systems are hard\"  \n2 | \"systems design requires tradeoffs\"  \n3 | \"distributed computing and consistency\"  \n4 | \"design patterns for reliability\"  \n  \nA user searches for \"distributed systems.\" Naively, we could scan all four documents and find which ones contain both words. With 4 documents, this is trivial. With 10 billion documents, a full-text scan is impossibly slow — even at 1 GB/s disk read speed, scanning 1 petabyte takes 11 days.\n\nThe inverted index inverts the relationship between documents and words. Instead of \"document → words it contains,\" it maps \"word → documents that contain it\":\n\nWord | Posting List (Doc IDs)  \n---|---  \ndistributed | [1, 3]  \nsystems | [1, 2]  \ndesign | [2, 4]  \nhard | [1]  \nconsistency | [3]  \ntradeoffs | [2]  \nreliability | [4]  \n  \nA query for \"distributed systems\" becomes: fetch the posting list for \"distributed\" = [1, 3], fetch the posting list for \"systems\" = [1, 2], and compute the intersection = [1].\n\nThe intersection operation on two sorted lists is O(n + m) where n and m are the posting list lengths. For most words, posting lists are much smaller than the total number of documents. This is where the speed comes from: the inverted index allows us to pay an O(1) lookup per word (the index is a hash map or B-tree), then intersect small lists rather than scanning all documents.\n\n\n#### Definition: Inverted Index\n\nAn **inverted index** is a data structure that maps each unique term (word) in a document corpus to the list of documents that contain that term. Each entry in the list — called a **posting** — typically stores not just the document ID but also the term frequency within that document and the positions at which the term appears.\n\nIn plain language: the inverted index is a lookup table that, for any word, instantly tells you which documents contain it. The indexing cost is paid once when a document is added; the query benefit is paid forever afterward.\n\n\n#### Beyond Simple Term Matching — Posting List Enrichment\n\nA production inverted index stores far more than document IDs in its posting lists. A typical posting contains:\n\n* **Term frequency (TF):** How many times does the term appear in this document? A document that mentions \"distributed systems\" 50 times is likely more relevant than one that mentions it once.\n* **Term position:** Which positions (word indices) does the term appear at? This enables phrase matching (\"distributed systems\" as an exact phrase, not just two separate words).\n* **Field indicator:** Is the term in the title, in a heading, or in the body? Terms in titles carry more weight.\n\nThese enrichments make the posting list significantly larger, but they enable more nuanced ranking.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1413,
+      "out_sha": "71f77d8da76c",
       "note": ""
     },
     {
@@ -4203,11 +4203,11 @@
       "en_title": "Chapter 23: Design a Search Engine — Crawling, Indexing, and Ranking",
       "order": 341,
       "src_chars": 2922,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ce2a961cabcf",
       "src": "#### The Index Pipeline\n\nBuilding the inverted index is not a single-step process. When a crawled page arrives, the index pipeline performs several transformations:\n\n  1. **Parsing:** Extract clean text from raw HTML. Remove HTML tags, JavaScript, CSS.\n  2. **Tokenization:** Split the text into individual tokens (words).\n  3. **Normalization:** Convert to lowercase; remove punctuation. \"Distributed,\" \"distributed,\" and \"DISTRIBUTED\" become the same token.\n  4. **Stop word removal:** Remove very common words that appear in nearly every document and contribute little to relevance: \"the,\" \"is,\" \"and,\" \"a.\" These words would create enormous posting lists for negligible ranking benefit.\n  5. **Stemming or lemmatization:** Reduce words to their root form. \"Running,\" \"ran,\" and \"runs\" may all become \"run.\" This allows the query \"running distributed systems\" to match documents containing \"run distributed system.\"\n  6. **Inverted index update:** For each remaining token, append this document's ID, TF, and position to the token's posting list.\n\nThis pipeline runs for every crawled page. At 10 billion pages, and re-crawling perhaps 10% of the web daily to keep the index fresh, the pipeline must process hundreds of millions of pages per day.\n\n\n#### Index Sharding\n\nNo single machine can hold the full inverted index for 10 billion pages. A typical posting list for a common word like \"systems\" might contain hundreds of millions of document IDs — tens of gigabytes for that single word. The full inverted index for the web is hundreds of terabytes.\n\nAs we learned in Chapter 12, the solution is sharding. For a search index, there are two natural sharding dimensions:\n\n**By term:** Each shard owns a range of terms alphabetically. Shard 1 owns terms A–G; Shard 2 owns H–P; etc. A query for \"distributed systems\" must hit two shards (one for each term), then the results are intersected. This is called **term-based sharding**.\n\n**By document:** Each shard owns a subset of all documents and maintains a full mini-inverted-index for its document subset. A query for \"distributed systems\" hits all shards in parallel; each shard returns its local results; the results are merged. This is called **document-based sharding**.\n\nIn practice, large search engines use document-based sharding because it allows the most natural parallelism: a query goes to all shards simultaneously, each shard produces a result in parallel, and the results are merged. Term-based sharding creates skew problems (some terms are far more common than others, creating hotspot shards) and requires coordinating across multiple shards for multi-word queries.\n\n* * *\n\n\n### 23.3 Relevance Ranking — TF-IDF and Beyond\n\nThe inverted index tells us which documents contain the query terms. Ranking determines which of those documents to show first. This is the hardest part of search — and, arguably, the part where the most business value lives.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1256,
+      "out_sha": "be7bb954b01d",
       "note": ""
     },
     {
