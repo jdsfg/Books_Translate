@@ -2439,11 +2439,11 @@
       "en_title": "Chapter 13: Microservices — Independence and Its Hidden Costs",
       "order": 194,
       "src_chars": 1955,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2db76504ff63",
       "src": "The real advantage of Protocol Buffers is not primarily performance but **contract enforcement** : the `.proto` file is a machine-readable contract shared between client and server. Generated code on both sides ensures they agree on field names, types, and structure. With JSON REST APIs, it is easy for the client and server to silently diverge (a field is renamed on the server; the client still sends the old name; it is silently ignored). Protocol Buffers make this mismatch a compile-time or schema-validation error.\n\n\n### Chapter Summary\n\nMicroservices decompose a monolith into independently deployable services, each owning its own data and communicating through explicit APIs. The benefits are real: independent scaling, independent deployment cadences, independent failure isolation, and organizational alignment with team structure.\n\nThe costs are equally real: operational complexity, network overhead, the fallacies of distributed computing (reliability, latency, bandwidth), and the risk of building a distributed monolith if service boundaries are wrong. Finding the right boundaries requires the detective's discipline — reading organizational structure, scaling needs, failure tolerance, and data ownership as clues.\n\nThe decision between monolith and microservices is not a binary choice but a continuum. A well-structured modular monolith is often the right starting point. Services are extracted when the cost of coupling exceeds the cost of distribution.\n\nIn Chapter 14, we will see what happens to data consistency when services split their databases. The \"database per service\" rule solves the cross-shard query problem from Chapter 12 by eliminating the shared database entirely — but it creates a new problem: when user data lives in the User Service and payment data lives in the Payment Service, and a business operation must be consistent across both, how do you maintain that consistency without distributed transactions?\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 629,
+      "out_sha": "e54e0cf603fb",
       "note": ""
     },
     {
@@ -2451,11 +2451,11 @@
       "en_title": "Chapter 14: Data Partitioning, Replication, and Consistency Models in Practice",
       "order": 195,
       "src_chars": 3123,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3fb40541779d",
       "src": "Chapter 13 drew a firm line: each microservice owns its own database, and no service reaches across that line. The User Service owns user data. The Payment Service owns payment data. The Posts Service owns post data. The line gives each service autonomy and isolation.\n\nBut data does not respect lines drawn by architects. Business operations need data from multiple services. A user views their billing history: that requires both their profile (User Service) and their payment records (Payment Service). A notification is triggered when someone likes a post: the Notification Service needs to know who liked the post (from the Posts Service) and the recipient's email address (from the User Service). The data is separated; the business logic that needs it is not.\n\nAnd underneath this challenge lies a deeper one that has been quietly building since Chapter 7's cache staleness problem: in any system where data is stored in more than one place — replicas, caches, sharded databases, separate service databases — there is always the possibility that different copies disagree about the current value of something. How do distributed systems manage this disagreement? What guarantees can they offer? And what must be sacrificed to offer stronger guarantees?\n\nThese questions sit at the heart of what computer scientists call **distributed consistency** , and understanding them will change how you think about data in large systems.\n\n\n### 14.1 The Fundamental Problem — Two Copies, Two Truths\n\nLet's start with the simplest possible version of the problem.\n\nYou have a database with one record: a counter initialized to 0. You replicate the database to two nodes: Node A and Node B. Both nodes start with the counter at 0.\n\nNow two events happen simultaneously:\n\n* Server 1 sends a \"increment the counter\" write to Node A.\n* Server 2 reads the counter from Node B.\n\nNode A receives the write and updates its counter to 1. But Node B hasn't received this update yet — the replication happens asynchronously. Server 2 reads 0 from Node B.\n\nHow should Server 2 interpret this? It reads 0. Is that the true current value? Or is the true current value already 1, with Node B simply lagging behind?\n\nThe answer depends on your consistency model — the guarantee your system makes about what a read returns relative to a completed write.\n\n\n#### Definition: Consistency Model\n\nA **consistency model** is a contract between a distributed data store and the applications that use it, specifying what values a read operation may return relative to prior write operations. Stronger consistency models are easier to reason about but harder and slower to implement. Weaker consistency models are faster and more available but require the application to tolerate — and handle — observing stale or inconsistent data.\n\nIn plain language: a consistency model is the answer to the question \"if I write a value now, when will a read return that value?\"\n\n\n### 14.2 Strong Consistency — The Intuitive Ideal\n\nThe consistency model most programmers implicitly assume is **strong consistency** (also called linearizability or atomic consistency).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1074,
+      "out_sha": "09edc4be7ef1",
       "note": ""
     },
     {
@@ -2463,11 +2463,11 @@
       "en_title": "Chapter 14: Data Partitioning, Replication, and Consistency Models in Practice",
       "order": 196,
       "src_chars": 2529,
-      "status": "pending",
+      "status": "done",
       "src_sha": "08a35c212c7d",
       "src": "#### Definition: Strong Consistency (Linearizability)\n\nA system is **strongly consistent** (linearizable) if every read returns the most recently written value. There is a single, globally agreed-upon order of all operations. Once a write completes, every subsequent read from any node reflects that write.\n\nIn plain language: the system behaves as if there is exactly one copy of the data, even if there are actually many. A read always returns the latest value. There are no stale reads.\n\nThis is the guarantee provided by a single-node database with no replication. It is also the guarantee provided by some distributed databases at significant cost.\n\nThe cost: to guarantee that a read always returns the most recently written value in a distributed system, the system must coordinate — typically by requiring acknowledgment from multiple nodes before declaring a write complete. This coordination takes time (multiple network round trips) and requires nodes to be reachable (if a node fails, coordination may stall). Strong consistency sacrifices some latency and availability to provide this guarantee.\n\n\n### 14.3 Eventual Consistency — The Pragmatic Compromise\n\nAt the other end of the spectrum is **eventual consistency**.\n\n\n#### Definition: Eventual Consistency\n\nA system provides **eventual consistency** if, in the absence of further updates to a value, all replicas will eventually converge to the same value. There is no guarantee about _when_ convergence happens — only that it will happen if updates stop.\n\nIn plain language: if you stop writing to the system, eventually all nodes will agree. But while writes are ongoing, different nodes may return different values. Reads may be stale.\n\nThis is the model used by the read replicas from Chapter 12. When you write to the primary, replicas will eventually apply the same write — but \"eventually\" might be milliseconds or seconds. A read from a replica during that window returns a stale value.\n\nEventual consistency maximizes availability and performance. A node can serve reads from its local copy without coordinating with other nodes. Writes are acknowledged as soon as the local node processes them, without waiting for replicas to confirm. This is fast.\n\nThe cost: the application must be prepared to see stale data. In Chapter 7, we saw the staleness problem with caches. In Chapter 12, we saw it with read replicas. Eventually consistent systems require the application to reason about what stale reads mean for its logic — and to handle the consequences.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 814,
+      "out_sha": "37d4c9fab651",
       "note": ""
     },
     {
@@ -2475,11 +2475,11 @@
       "en_title": "Chapter 14: Data Partitioning, Replication, and Consistency Models in Practice",
       "order": 197,
       "src_chars": 3093,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7ac30fc282d2",
       "src": "#### Common Misconception\n\nA common mistake is to treat eventual consistency as \"eventual correctness\" — the assumption that the system will inevitably sort itself out and everything will be fine. This is dangerous.\n\nEventual consistency means replicas will converge if writes stop. But writes don't stop in a real system. Two users might write to the same record on different replicas simultaneously (a \"write conflict\"). When the replicas try to merge, they have two different values for the same key. How is the conflict resolved? The answer depends on the conflict resolution strategy, and the wrong strategy can silently lose data.\n\nThe most common conflict resolution strategy in eventually consistent systems is **last-write-wins (LWW)** : the write with the later timestamp wins. This sounds reasonable until you realize that clocks in distributed systems are not perfectly synchronized. Two events that happen at almost the same time may have conflicting timestamps due to clock skew. A write on one node might be timestamped _later_ even if it happened _before_ a write on another node. Last-write-wins can silently discard valid writes.\n\n\n### 14.4 The CAP Theorem — What You Cannot Have\n\nRecall from Chapter 4 that the CAP theorem tells us a distributed system can guarantee at most two of consistency, availability, and partition tolerance — and we saw that partition tolerance is non-negotiable in practice, reducing the real choice to consistency versus availability during a partition. Here we apply that framework directly to replication decisions, seeing how the abstract tradeoff plays out in the concrete mechanics of multi-node data stores.\n\nIn 2000, Eric Brewer conjectured (and was later formally proven) a fundamental limitation of distributed systems. This is the **CAP theorem** :\n\nA distributed data store can provide at most two of the following three guarantees simultaneously:\n\n* **Consistency (C):** Every read returns the most recent write (equivalent to strong consistency / linearizability).\n* **Availability (A):** Every request receives a non-error response (though not necessarily the most recent data).\n* **Partition Tolerance (P):** The system continues operating even when network partitions occur (messages between some nodes are delayed or lost).\n\nIt is worth pausing on CAP's \"C\" — the consistency it refers to is **linearizability** : every read returns the most recently written value, as if the system had a single authoritative copy. This is _not_ the same as ACID's \"C\" from Chapter 5. ACID's consistency means a transaction moves the database from one valid state to another — it is about preserving application-defined integrity constraints (foreign keys, non-negative balances). CAP's consistency means all nodes see the same data at the same moment. The two are named identically but are entirely different guarantees: a database can satisfy ACID consistency on each individual node while being completely non-linearizable across those nodes, and this distinction is one of the most common sources of confusion in distributed systems design.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1060,
+      "out_sha": "61d7c23ebfe9",
       "note": ""
     },
     {
@@ -2487,11 +2487,11 @@
       "en_title": "Chapter 14: Data Partitioning, Replication, and Consistency Models in Practice",
       "order": 198,
       "src_chars": 2154,
-      "status": "pending",
+      "status": "done",
       "src_sha": "83fb0d5fe6d6",
       "src": "#### Definition: Network Partition\n\nA **network partition** is a situation where some nodes in a distributed system cannot communicate with other nodes due to network failure. Nodes are split into groups that can communicate internally but not across the partition.\n\nIn plain language: CAP says you can't have everything. In a network partition — which will occur in any real distributed system — you must choose between **consistency** (return an error or block until communication is restored) and **availability** (return potentially stale data, continue serving).\n\nSince network partitions are a fact of life in distributed systems, every distributed system must choose between being **CP** (consistent when partitioned, but may refuse to serve requests) or **AP** (available when partitioned, but may return stale data).\n\nTraditional relational databases (PostgreSQL, MySQL) are CP: they will refuse reads rather than return stale data. Amazon's DynamoDB and Apache Cassandra are AP: they continue serving reads even during partitions, at the cost of potentially returning stale data.\n\nThe CAP theorem is often misunderstood as \"choose two of three.\" But partition tolerance is not optional in a real distributed system — partitions happen. The real choice is between C and A _during a partition_. During normal operations (no partition), most systems provide both consistency and availability.\n\n\n### 14.5 Replication Factor and Quorum — Tunable Consistency\n\nBetween \"always strongly consistent\" and \"always eventually consistent\" lies a spectrum of configurable options. Distributed databases like Cassandra, DynamoDB, and Riak allow you to configure the consistency level per operation using a mechanism called **quorum**.\n\n\n#### Definition: Replication Factor\n\nThe **replication factor** (or **N**) is the number of nodes that store a copy of each piece of data. With replication factor 3, every write is stored on 3 different nodes.\n\nIn plain language: replication factor is how many backup copies of your data exist. A replication factor of 3 means the data lives on three separate machines simultaneously — any two can fail without data loss.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 773,
+      "out_sha": "c2205479c84a",
       "note": ""
     },
     {
@@ -2499,11 +2499,11 @@
       "en_title": "Chapter 14: Data Partitioning, Replication, and Consistency Models in Practice",
       "order": 199,
       "src_chars": 3278,
-      "status": "pending",
+      "status": "done",
       "src_sha": "031a44c2b9ab",
       "src": "#### Definition: Quorum\n\nA **quorum** is the minimum number of nodes that must participate in a read or write operation before the system considers the operation successful. In a system with N replicas:\n\n* **Write quorum (W):** The number of replicas that must acknowledge a write before it is confirmed.\n* **Read quorum (R):** The number of replicas that must respond to a read before the result is returned (the response with the most recent version is returned).\n\nIn plain language: a quorum is like a majority vote among replicas. A write needs W votes to be confirmed; a read needs R votes to proceed. The clever part is that by choosing W and R carefully, you can guarantee the read and write sets always overlap.\n\nThe key insight: if `W + R > N`, then a read quorum and a write quorum must overlap. At least one node that participated in the most recent write must also participate in the read. That node has the most recent value. Therefore, the read is guaranteed to return the most recent write.\n\nFor example, with N=3 replicas:\n\n* W=3, R=1: A write must be acknowledged by all 3 replicas (strong write, slow) but a read only needs 1 replica (fast). If you can tolerate a write-heavy penalty, reads are fast.\n* W=1, R=3: A write is acknowledged immediately when 1 replica confirms (fast) but a read requires all 3 replicas to respond (slow, and if any replica is down, the read blocks). If you can tolerate a read-heavy penalty, writes are fast.\n* W=2, R=2: The \"classic quorum\" with N=3. A write requires 2 of 3 replicas. A read requires 2 of 3 replicas. Since W+R=4 > N=3, there is guaranteed overlap. This provides strong consistency while tolerating one node failure (the third node can be unavailable without affecting availability).\n* W=1, R=1: Neither quorum requirement is met. Maximum throughput, maximum availability, no consistency guarantees. Reads may return stale data. This is essentially eventual consistency.\n\n\n#### Tunable Consistency in Practice\n\nCassandra, DynamoDB (in various modes), and similar systems allow you to specify consistency level per operation:\n\n* `QUORUM`: W=floor(N/2)+1, R=floor(N/2)+1 — strong consistency by default.\n* `ONE`: W=1 or R=1 — eventual consistency, maximum speed.\n* `LOCAL_QUORUM`: quorum within the local data center only (useful for multi-region deployments where cross-region latency makes global quorum too slow).\n\nThis is **tunable consistency** : the ability to trade consistency for availability and latency on a per-operation basis. Operations where staleness is acceptable use ONE. Operations where staleness is unacceptable use QUORUM.\n\nFor SocialSnap: reading a post's like count (displayed publicly) can use ONE — showing a count that's one second stale is harmless. Writing a payment record must use QUORUM — you need the write to be durable on multiple nodes before telling the user \"payment confirmed.\"\n\n\n### 14.6 Anti-Entropy and Hinted Handoff\n\nEven with quorum writes, eventual consistency systems must handle node failures during writes. What happens if Node B is down when a write arrives? The write achieves quorum on Nodes A and C (2 of 3 — quorum is met), and the client receives confirmation. But Node B missed the write.\n\nWhen Node B recovers, it has stale data. Two mechanisms handle this:\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1284,
+      "out_sha": "5a2a145b498a",
       "note": ""
     },
     {
@@ -2511,11 +2511,11 @@
       "en_title": "Chapter 14: Data Partitioning, Replication, and Consistency Models in Practice",
       "order": 200,
       "src_chars": 3308,
-      "status": "pending",
+      "status": "done",
       "src_sha": "de9a9fe561ce",
       "src": "#### Hinted Handoff\n\nDuring the period Node B is unreachable, Nodes A or C accept writes intended for Node B and store them with a \"hint\" — a note saying \"this write was intended for Node B.\" When Node B comes back online, the hinting node delivers the queued writes. Node B replays them and catches up.\n\nHinted handoff works when nodes are temporarily unavailable (network blip, brief restart). It does not work for extended unavailability — hints are kept for a limited time.\n\n\n#### Definition: Anti-Entropy\n\n**Anti-entropy** is a background repair process that periodically compares data between replicas and propagates any missing or divergent updates. In Cassandra, this is done via the \"repair\" process, which uses a data structure called a **Merkle tree** to efficiently identify which parts of the data differ between replicas.\n\nIn plain language: anti-entropy is the system regularly checking its replicas for disagreements and fixing them. It is the eventual in \"eventual consistency\" — even if hinted handoff fails, anti-entropy eventually brings all replicas into agreement.\n\n\n### 14.7 Vector Clocks — Tracking Causality\n\nLast-write-wins (LWW) conflict resolution is simple but dangerous: it silently discards concurrent writes that happen at nearly the same time. For many applications, this is unacceptable. Amazon's shopping cart famously used a more sophisticated approach: instead of discarding conflicting writes, keep both and let the application (or user) resolve the conflict.\n\nTo know whether two writes are truly concurrent (and thus in conflict) vs. sequentially ordered (and thus the later one is the correct value), distributed systems use **vector clocks**.\n\n\n#### Definition: Vector Clock\n\nA **vector clock** is a data structure that tracks the causal history of an event in a distributed system. It is a list of counters, one per node in the system: `[Node_A: 3, Node_B: 2, Node_C: 1]`. When a node sends a message or performs a write, it increments its own counter. When a node receives a message, it updates its vector clock by taking the maximum of each position.\n\nBy comparing vector clocks, you can determine:\n\n* **Causally ordered:** Write X happened before Write Y if every component of X's vector clock is less than or equal to Y's, with at least one being strictly less. Y \"knows about\" X.\n* **Concurrent:** Write X and Write Y are concurrent if neither X happened before Y nor Y happened before X. They have no causal relationship. This indicates a conflict.\n\nIn plain language: vector clocks let you detect when two events could possibly have been aware of each other. If they couldn't have been aware of each other, they're concurrent and potentially conflicting.\n\nVector clocks are conceptually elegant but operationally complex. In practice, many systems accept the imprecision of LWW with synchronized clocks (Amazon DynamoDB), or use application-level conflict resolution, or design the data model to make conflicts impossible (through append-only designs where only new records are created, never updates).\n\n\n### 14.8 CRDTs — Conflict-Free Data Structures\n\nA more elegant solution to the conflict problem: use data structures that are **designed to merge correctly regardless of order or concurrency**. These are **Conflict-free Replicated Data Types (CRDTs)**.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1223,
+      "out_sha": "436cb81e120f",
       "note": ""
     },
     {
@@ -2523,11 +2523,11 @@
       "en_title": "Chapter 14: Data Partitioning, Replication, and Consistency Models in Practice",
       "order": 201,
       "src_chars": 2342,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8a33f693f9b1",
       "src": "#### Definition: CRDT\n\nA **Conflict-free Replicated Data Type (CRDT)** is a data structure that can be replicated across multiple nodes, updated concurrently and independently on any node, and always merged into a consistent result, without coordination. The data structure's mathematical properties guarantee that all orderings of concurrent updates produce the same final state.\n\nIn plain language: a CRDT is a data structure so carefully designed that you can apply updates in any order and always get the same answer. There are no conflicts to resolve.\n\nExamples:\n\n**G-Counter (grow-only counter):** Each node maintains its own local counter. The value of the G-Counter is the sum of all local counters. Any node can increment its local counter without coordination. To merge two G-Counters, take the maximum of each local counter. This always produces the correct total. SocialSnap's like count on a post could be a G-Counter — any server can record a like increment locally, and the total is eventually computed correctly by merging.\n\n**OR-Set (Observed-Remove Set):** A set that supports both adds and removes, designed so that concurrent add and remove operations resolve deterministically. Two nodes can simultaneously add and remove the same element; the CRDT's merge operation produces a defined, consistent result.\n\nCRDTs trade flexibility for consistency guarantees. Not every data type can be expressed as a CRDT — they work best for data that naturally has additive or associative structure (counters, sets, sequences with append-only operations). For data that requires complex semantics (e.g., \"the balance must never go negative\"), CRDTs may not apply.\n\n\n### 14.9 Multi-Region Replication\n\nAs SocialSnap grows internationally, users in Europe are 150 milliseconds away from the US data center. Every database read from a European user takes 150 ms just for the network round trip. Unacceptable for an interactive application.\n\nThe solution: run databases in multiple geographic regions. A database node in Europe serves European users; a node in the US serves US users. Writes from European users go to the European node; writes from US users go to the US node. The nodes replicate to each other in the background.\n\nThis is **multi-region replication** , and it introduces the consistency challenges in their sharpest form.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 867,
+      "out_sha": "328c96017c3b",
       "note": ""
     },
     {
@@ -2535,11 +2535,11 @@
       "en_title": "Chapter 14: Data Partitioning, Replication, and Consistency Models in Practice",
       "order": 202,
       "src_chars": 2702,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4afb3e6774db",
       "src": "#### The Latency vs. Consistency Tradeoff\n\nIf a European user writes to the European node and a US user simultaneously reads from the US node, the US node might not have the European write yet — cross-region replication has hundreds of milliseconds of lag. The US user sees stale data.\n\nTo avoid this, you could require **global quorum** : a write must be acknowledged by both the European and US nodes before it is confirmed. This guarantees consistency but adds 150–300 ms of latency to every write (waiting for the cross-region acknowledgment). For most applications, this is unacceptably slow.\n\nMost multi-region systems choose eventual consistency across regions and strong (or quorum) consistency within a region. European writes are strongly consistent for European readers (they hit the same regional node), but European writes take some time to appear for US readers.\n\nThis tradeoff is encoded in Cassandra's `LOCAL_QUORUM` consistency level: achieve quorum within the local region (fast, within-region coordination) without requiring acknowledgment from other regions. Reads from another region may see stale data, but reads from the local region are strongly consistent.\n\n\n#### The \"Conflict Resolution at Scale\" Problem\n\nWhat happens when a European user and a US user both update the same record simultaneously? The European node and the US node both accept their respective writes (each achieving local quorum). When the nodes replicate to each other, they discover they have different values for the same record.\n\nThis is a **write conflict**. Resolution options:\n\n* **Last-write-wins:** Use timestamps; the later-timestamped write wins. Simple but dangerous for the reasons discussed above (clock skew in distributed systems).\n* **Application-level conflict resolution:** Return both values to the application and let the application logic decide. Complex but correct.\n* **CRDT-based data model:** Design the data so that conflicts are mathematically impossible (e.g., a counter rather than a set value).\n* **Single-region writes:** All writes go to one designated \"master\" region; all other regions are read-only replicas. This eliminates write conflicts but introduces latency for users who write from non-master regions.\n\nFor SocialSnap: user profile updates (changing your bio) are infrequent and can use last-write-wins without significant consequence — the chance of two simultaneous profile edits to the same user from different regions is negligible. Post like counts can use G-Counter CRDTs — the count always accumulates correctly regardless of conflict. Payment records require single-region writes and strong consistency — you never want a write conflict in financial data.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 938,
+      "out_sha": "1f16b8df9fe5",
       "note": ""
     },
     {
@@ -2547,11 +2547,11 @@
       "en_title": "Chapter 14: Data Partitioning, Replication, and Consistency Models in Practice",
       "order": 203,
       "src_chars": 936,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8db2e84b455c",
       "src": "### 14.10 Tradeoff Matrix Update\n\nStrategy | Benefit | Cost | When to Use  \n---|---|---|---  \n... (previous rows) | ... | ... | ...  \nStrong consistency | Simple reasoning; no stale reads | Higher latency; reduced availability during partitions | Financial data; inventory counts; anything where stale reads cause business problems  \nEventual consistency | Low latency; high availability; continues during partitions | Stale reads; conflict resolution complexity | Social data; like counts; cached data; non-critical reads  \nQuorum reads/writes | Tunable tradeoff between consistency and performance | Configuration complexity; requires understanding of N, R, W | Systems where different operations need different consistency levels  \nMulti-region replication | Low read latency globally; regional resilience | Cross-region write conflicts; replication lag across regions | Global user base; disaster recovery  \n  \n\n### 14.11 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 347,
+      "out_sha": "cf6fed78ed29",
       "note": ""
     },
     {
