@@ -911,11 +911,11 @@
       "en_title": "Chapter 5: Entity-Relationship Modeling",
       "order": 67,
       "src_chars": 1938,
-      "status": "pending",
+      "status": "done",
       "src_sha": "09af18de5c02",
       "src": "#### Cardinality\n\nCardinality specifies _how many_ entity instances on one side may be related to instances on the other side. For binary relationships, three cases:\n\n* **1 : 1 (one-to-one)** — each instance on side A relates to at most one instance on side B, and vice versa. Example: `Person has Passport` (one person has at most one passport; each passport belongs to exactly one person). 1:1 is rare in practice; usually the two entities should be merged into one.\n* **1 : N (one-to-many)** — each instance on side A relates to many (possibly zero) instances on side B, but each instance on side B relates to at most one A. Example: `Instructor teaches Course` — one instructor teaches many courses; each course has exactly one instructor (in our simplified model).\n* **N : M (many-to-many)** — each instance on side A can relate to many instances on side B, and each instance on side B can relate to many A. Example: `Student enrolls in Course` — a student takes many courses; a course has many students.\n\nSide note: \"many\" usually means \"zero or more\", not \"strictly more than one\". Be careful when informal English says \"many\"; in ER, we mean \"any number, possibly zero.\"\n\n\n#### Participation\n\nOrthogonal to cardinality is **participation** — whether every instance on one side must participate in the relationship, or may not.\n\n* **Total participation** — every instance _must_ participate. \"Every course must have an instructor\" → Course has total participation in the Teaches relationship.\n* **Partial participation** — instances may exist without participating. \"A student may have zero enrollments when they first sign up\" → Student has partial participation in the Enrolls relationship.\n\nIn diagrams, cardinality and participation are usually shown with arrow styles, boxes, numbers (\"0..1\", \"1..*\"), or whatever notation the book or tool uses. The specific notation is less important than being precise about the semantics.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 725,
+      "out_sha": "bd78457ee382",
       "note": ""
     },
     {
@@ -923,11 +923,11 @@
       "en_title": "Chapter 5: Entity-Relationship Modeling",
       "order": 68,
       "src_chars": 3474,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ee3f0afb2d50",
       "src": "### 5.4 Modeling the Registrar's System Step by Step\n\nLet's walk through a complete ER modeling pass for the university registration system. This is the forward-engineering exercise promised in the introduction.\n\n**Domain description (English):**\n\n> \"The university has many students and many instructors. Each student is identified by an ID and has a name and an email. Each instructor has an ID, a name, an office, and a phone number.\n> \n> The university offers many courses. Each course has an ID, a title, a number of credits, and a single assigned instructor. Each course is taught by exactly one instructor; each instructor may teach multiple courses.\n> \n> Students enroll in courses. A student can enroll in many courses; a course can have many students. When a student enrolls, the enrollment eventually receives a grade. It is possible for a new student to have no enrollments yet, and a new course to have no students yet.\"\n\n**Step 1: identify entities.**\n\nNouns with independent attributes and identity:\n\n* Student (id, name, email) — entity.\n* Instructor (id, name, office, phone) — entity.\n* Course (id, title, credits) — entity. We haven't yet decided where the instructor_id lives.\n* Enrollment — attribute \"grade\"; gray area as discussed. Provisionally, treat as a relationship with its own attribute.\n\n**Step 2: identify relationships.**\n\n* _Teaches_ — between Instructor and Course. \"Each course is taught by exactly one instructor; each instructor may teach multiple courses.\" → 1:N from Instructor to Course. Course has total participation (every course must have an instructor); Instructor has partial participation (an instructor may teach zero courses this semester).\n* _Enrolls_ — between Student and Course. \"A student can enroll in many courses; a course can have many students.\" → M:N. Enrolls has an attribute `grade` (nullable). Both Student and Course have partial participation.\n\n**Step 3: identify attributes on each entity and relationship.**\n\n* Student: id (key), name, email. email has a UNIQUE constraint; we'll note that separately from the primary key.\n* Instructor: id (key), name, office, phone.\n* Course: id (key), title, credits.\n* Teaches (relationship): no extra attributes beyond the linkage.\n* Enrolls (relationship): grade (nullable).\n\n**Step 4: identify constraints.**\n\n* Course must have an instructor (total participation in Teaches).\n* Credits is in [1, 12] (domain constraint).\n* Email is UNIQUE (a uniqueness constraint on a non-primary-key attribute).\n* Grade, when present, is in a specific set of valid grade strings.\n\n**Step 5: sketch the ER diagram verbally.** Since this book is text-only, here is the structured description:\n    \n    \n    Entities:\n      Student [id*, name, email (UNIQUE)]\n      Instructor [id*, name, office, phone]\n      Course [id*, title, credits]\n    \n    Relationships:\n      Teaches : Instructor ---< Course\n        - Instructor side: partial participation, 1\n        - Course side: total participation, N\n      Enrolls : Student >---< Course\n        - Student side: partial participation, M\n        - Course side: partial participation, N\n        - Attributes on Enrolls: grade (nullable)\n    \n\nThe `*` marks the primary key. `---<` is \"one-to-many\"; `>---<` is \"many-to-many.\" (If you're producing a diagram in a real tool, adopt whatever notation the tool uses — Crow's Foot, UML, Chen notation — and be consistent.)\n\nThis is the whole ER model. The next step converts it to relations.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1766,
+      "out_sha": "432fbf2b425a",
       "note": ""
     },
     {
@@ -935,11 +935,11 @@
       "en_title": "Chapter 5: Entity-Relationship Modeling",
       "order": 69,
       "src_chars": 2850,
-      "status": "pending",
+      "status": "done",
       "src_sha": "48e90b3b1daa",
       "src": "### 5.5 ER-to-Relational Mapping Rules\n\nNow the mechanical part. There are five standard rules. Applied consistently, they turn an ER model into a relational schema with no design judgment required at this point — the judgment all happened in the ER modeling phase.\n\n\n#### Rule 1: Each Strong Entity Becomes a Table\n\nFor each strong entity, create a table with one column per simple attribute. The primary key attribute becomes the primary key of the table. Composite attributes decompose (if you want the pieces queryable) or are stored as a single column (if you want to treat them as opaque). Derived attributes are omitted.\n\nFrom our ER model:\n    \n    \n    Students    (id, name, email)\n    Instructors (id, name, office, phone)\n    Courses     (id, title, credits)\n    \n\nPrimary keys are `id` in each case.\n\n\n#### Rule 2: Multi-Valued Attributes Become Their Own Table\n\nA multi-valued attribute cannot live in a single column. Create a new table with:\n\n* A foreign key back to the owning entity.\n* A column for the multi-valued attribute's value.\n* A primary key that is (owner_key, value).\n\nOur current domain has no multi-valued attributes, but if a Course could have multiple `keyword` tags:\n    \n    \n    CourseKeywords (course_id REFERENCES Courses(id), keyword, PRIMARY KEY (course_id, keyword))\n    \n\n\n#### Rule 3: 1:N Relationships Become a Foreign Key on the \"N\" Side\n\nFor a 1:N relationship between entities A and B (where \"many B's per A\"), add a foreign key to B referencing A's primary key. Any attributes on the relationship also go into B.\n\nFrom our ER: Teaches is 1:N from Instructor to Course. So we add `instructor_id` to Courses:\n    \n    \n    Courses (id, title, credits, instructor_id REFERENCES Instructors(id))\n    \n\nIf Teaches had a `since` attribute (date the instructor first taught that course), it would go into the Courses table:\n    \n    \n    Courses (id, title, credits, instructor_id, since)\n    \n\nTotal participation on the Course side (every course must have an instructor) → `NOT NULL` on `instructor_id`.\n\n\n#### Rule 4: M:N Relationships Become Their Own Table\n\nFor an M:N relationship between A and B, create a new table — called a _junction table_ or _associative table_. Its columns are:\n\n* A foreign key to A's primary key.\n* A foreign key to B's primary key.\n* All attributes of the relationship itself.\n\nThe primary key is the pair of foreign keys (or an extended key if the relationship can repeat, e.g., enrollments across multiple semesters).\n\nFrom our ER: Enrolls is M:N between Student and Course, with attribute `grade`:\n    \n    \n    Enrollments (\n      student_id REFERENCES Students(id),\n      course_id  REFERENCES Courses(id),\n      grade,\n      PRIMARY KEY (student_id, course_id)\n    )\n    \n\nThis is why enrollment is a table, not a column. The M:N nature of the relationship demanded it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1418,
+      "out_sha": "f957e38a8a1a",
       "note": ""
     },
     {
@@ -947,11 +947,11 @@
       "en_title": "Chapter 5: Entity-Relationship Modeling",
       "order": 70,
       "src_chars": 1765,
-      "status": "pending",
+      "status": "done",
       "src_sha": "08f581e743a6",
       "src": "#### Rule 5: Weak Entities Become a Table with a Composite Key\n\nFor a weak entity E whose owner is W:\n\n* Create a table for E.\n* Include all of W's primary key as a foreign key (forming part of E's primary key).\n* Include E's discriminator (the attribute that distinguishes weak entities sharing the same owner).\n* Primary key of E's table = (W's primary key) + E's discriminator.\n\nOur current model has no weak entities. An example from e-commerce:\n    \n    \n    Orders (order_id*, customer_id, date, total)\n    OrderLineItems (\n      order_id    REFERENCES Orders(order_id),\n      line_number,            -- discriminator\n      item_id, quantity, price,\n      PRIMARY KEY (order_id, line_number)\n    )\n    \n\nAn order line item has no identity on its own — \"line item 5\" has no meaning without knowing its order.\n\n\n#### Applying All the Rules: Our Resulting Schema\n\nPutting the five rules together on our university registration ER model, we get:\n    \n    \n    Students (id, name, email UNIQUE)\n    Instructors (id, name, office, phone)\n    Courses (id, title, credits CHECK (1..12), instructor_id REFERENCES Instructors(id) NOT NULL)\n    Enrollments (student_id, course_id, grade, PRIMARY KEY (student_id, course_id))\n    \n\nThis is essentially identical to Chapter 3's schema. The mapping worked.\n\nNotice what the ER process _didn't_ have to choose:\n\n* Surrogate vs natural key — the ER model just says \"id\"; our DDL chose surrogate integer. That's a DDL-stage decision, not an ER-stage decision.\n* Index design — no indexes in the ER; we'll decide those later based on workload (Chapter 10).\n* Storage engine (MySQL InnoDB vs MyISAM; PostgreSQL table vs foreign table) — also a DDL-stage choice.\n\nER is about _shape_. Implementation details live one layer down.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1010,
+      "out_sha": "b1998aef3b4d",
       "note": ""
     },
     {
