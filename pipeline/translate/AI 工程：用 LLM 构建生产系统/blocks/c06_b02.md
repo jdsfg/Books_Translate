@@ -1,0 +1,25 @@
+#### `pytest-evals` — pytest 原生基线
+
+`pytest-evals` 是一个小型库，让你将 eval 案例编写为 pytest 测试函数。每个测试函数接受一个输入，调用你的 LLM 驱动系统，并断言输出的属性。该库用 eval 特定概念扩展 pytest：golden set 作为 fixture、每案例评分、聚合报告、对基线运行的回归比较。
+
+
+    # 示意性；库 API 会演变——在复制前对照当前 pytest-evals 文档验证。
+    # 形态（返回结构化分数字典的 pytest 风格测试）是跨库版本存活的模式。
+    import pytest
+    from pytest_evals import eval_test  # 装饰器名称跨版本不同
+
+    @eval_test(golden_path="goldens/clinical_summary/case_001.json")
+    def test_clinical_summary_case_001(eval_input, eval_reference):
+        output = summarize_clinical_note(eval_input["note"])
+        return {
+            "format_valid": validate_schema(output),
+            "rubric_score": llm_judge_score(output, eval_reference, rubric=CLINICAL_RUBRIC)
+,                                                                                                      "contains_chief_complaint": eval_reference["chief_complaint"] in output,
+        }
+
+
+pytest 发现自然地将其接入 CI。如果你的团队已经使用 pytest，添加 `pytest-evals` 的认知开销接近零。报告是普通 pytest 输出，由库的 eval 聚合步骤增强。
+
+**适配**：任何已经使用 pytest 的团队；希望 eval 套件看起来像测试套件的团队；不想要单独 SaaS 依赖的团队。
+
+**局限**：存储和仪表盘是自带（库将结果写入 JSON 文件；如果你想要仪表盘，你自己构建或管道到其他东西）。大型 golden set（>1000 案例）开始使 pytest 的发现模型紧张。

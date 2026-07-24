@@ -1,0 +1,45 @@
+### 13.3 多轮工具使用和 ReAct 模式
+
+单次工具调用可能不完任务。模型可能需要调用多个工具，有时顺序（第二次调用依赖第一次的结果），有时并行。标准模式是循环：
+
+
+    import json
+
+    def agent_loop(user_message: str, max_iterations: int = 10):
+        messages = [{"role": "user", "content": user_message}]
+        for iteration in range(max_iterations):
+            response = client.messages.create(
+                model="claude-sonnet-4-20260315",
+                tools=tools,
+                messages=messages,
+                max_tokens=2048,
+            )
+            messages.append({"role": "assistant", "content": response.content})
+
+            if response.stop_reason != "tool_use":
+                # 拼接所有文本块；此 stop_reason 下无 tool_use 块。
+                return "".join(b.text for b in response.content if b.type == "text")
+
+            tool_results = []
+            for block in response.content:
+                if block.type == "tool_use":
+                    result = execute_tool(block.name, block.input)
+                    tool_results.append({
+                        "type": "tool_result",
+                        "tool_use_id": block.id,
+                        "content": json.dumps(result),
+                    })
+            messages.append({"role": "user", "content": tool_results})
+
+        raise RuntimeError("agent 未在 max_iterations 内完成")
+
+
+这是 Yao 等的 **ReAct** 模式（2022）：推理（模型的思考文本）、行动（工具调用）、观察（工具结果），然后回到推理。循环持续直到模型产生最终答案或达到迭代上限。
+
+值得了解的变体：
+
+* **并行工具调用**：模型在一个响应中发出多个工具使用块。应用执行所有（通常并行）并在下一条消息中返回所有结果。现代 Anthropic 和 OpenAI API 支持此；延迟收益可能大。
+* **先规划后执行**：模型首先产生结构化计划（一系列预期工具调用），然后逐步执行计划。比纯 ReAct 更结构化；有时在复杂任务上更可靠。
+* **反思**：在工具调用之间，模型被提示反思到目前为止的轨迹。捕获死路；有时过度。
+
+纪律：**大多数生产 agent 使用带并行工具调用的简单 ReAct 循环；超出此的复杂性偶尔合理但更多时候是过早的**。

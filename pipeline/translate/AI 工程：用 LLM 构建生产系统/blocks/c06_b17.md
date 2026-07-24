@@ -1,0 +1,24 @@
+#### 应用题
+
+**Q1.** _选择正确的 eval 工具_。对每个场景，推荐主要 eval 工具并用 2–3 句话论证：(a) 一个 4 人种子阶段创业公司构建写作助手。无受监管数据。工程速度是瓶颈。(b) Beacon Health AI 的临床笔记摘要器管道。PHI 贯穿。需要审计跟踪。(c) Strata Research 的法律科技 RAG 平台。标准 RAG 架构。(d) Helios Customer AI 的企业 agent。多轮、工具增强、200+ 租户。
+
+提示
+
+使用 §5.1 + §5.2 框架。
+
+**答案：**
+
+(a) **`pytest-evals` + `braintrust`**。Pytest 原生意味着快速入门；braintrust 给团队一个利益相关者审查的 UI（写作助手可能有想浏览输出的 PM）。无 PHI = SaaS 可以。
+(b) **`pytest-evals` + `inspect-ai`，带合成 PHI eval 构建**。PHI 排除主 eval 的 SaaS。`inspect-ai` 的审计跟踪纪律匹配监管需求。`pytest-evals` 处理较低风险的 eval（CodeReview Bot、内部工具）。合成 PHI 管道（§5.3）位于两者前面。
+(c) **`ragas` + `pytest-evals`**。`ragas` 是 RAG 专家；Strata 的 eval 是 RAG 形态的。`pytest-evals` 将 `ragas` 生成的分数包装到团队现有 CI 工作流中。
+(d) **`pytest-evals` 上的自定义测试框架，如果 LangChain 技术栈则加 `langsmith`**。Agent 评估需要沙箱执行和任务成功测量；`ragas` 和 `inspect-ai` 都不是为此构建的。如果团队在 LangGraph 上（2026 年多 agent 系统的常见选择），`langsmith` 集成良好。如果在 Pydantic AI 或 Temporal 上，在 `pytest-evals` 上构建带自定义任务成功评分的测试框架。
+
+**AI 协作子问题**：你会如何请 LLM 帮助完成这个练习，你会在它的回答中验证什么？
+
+**答案：** 有用的 prompt：_我在为这四个场景选择 eval 工具：[描述每个]。为每个推荐主要工具并用 2-3 句话论证。_ 你验证 (a) 工具推荐匹配 2026 年工具的实际能力（LLM 在工具路线图上可能过时；交叉检查最新文档），以及 (b) 场景特定约束（PHI、多轮 agent 等）正确映射到工具约束。如果 LLM 为 PHI 场景推荐 SaaS 工具而未提及 BAA/敏感性问题，反驳。
+
+**Q2.** _构建每 PR 比较脚本_。编写绑定工作流 §5.6 中引用的脚本 `scripts/compare_evals.py`。脚本接受两个 eval 结果 JSON 文件（候选、基线）并产生 markdown 报告。它应该：(a) 计算每维度 delta；(b) 标记任何回归超过阈值的维度；(c) 将输出格式化为评论就绪的 markdown 表格；(d) 如果任何门禁失败退出 1，否则退出 0。
+
+提示
+
+eval 结果 JSON 是 `pytest-evals` 的输出。每个案例有 `scores` 字典；跨案例聚合以获得每维度平均。

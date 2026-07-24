@@ -1,0 +1,84 @@
+### 21.7 绑定工作流 #14：漂移检测告警配置
+
+交付物是真实告警配置。Helios 的设置：
+
+
+    # drift_alerts.yaml
+    production_eval:
+      sample_rate_default: 0.05  # 5% 的轨迹被评分
+      per_feature_overrides:
+        customer_support_agent: 0.05
+        high_stakes_refund: 0.15  # 风险关键路径更高采样
+        document_summary: 0.02  # 更低（高量；低风险）
+
+    alerts:
+      # 分布漂移
+      - name: production_eval_mean_drop
+        metric: production_eval.mean_score
+        aggregation: rolling_7d
+        threshold: -0.3  # 在本章混合尺度轴上比 7 天基线绝对下降 0.3（通过率 0-1；忠实度/引用 0-3；语气 0-5）——按轴调优
+        severity: warning
+        routes: [ai_engineering_slack]
+
+      - name: production_eval_catastrophic_drop
+        metric: production_eval.mean_score
+        aggregation: rolling_1d
+        threshold: -0.5
+        severity: critical
+        routes: [ai_engineering_slack, pagerduty_ai_oncall]
+
+      # 按维度漂移
+      - name: production_eval_faithfulness_drop
+        metric: production_eval.dimension_score.faithfulness
+        aggregation: rolling_3d
+        threshold: -0.2  # 在 0-3 尺度上，0.2 是有意义的
+        severity: warning
+        routes: [ai_engineering_slack]
+
+      # 灾难性失败率
+      - name: catastrophic_failure_rate_spike
+        metric: catastrophic_outputs.count_per_hour
+        aggregation: rolling_1h
+        threshold: 3  # 一小时内超过 3 个灾难性输出
+        severity: critical
+        routes: [ai_engineering_slack, pagerduty_ai_oncall, security_oncall]
+
+      # 用户反馈信号
+      - name: thumbs_down_rate_spike
+        metric: user_feedback.thumbs_down_rate
+        aggregation: rolling_24h
+        threshold: 1.5  # 7 天基线的 1.5 倍
+        severity: warning
+        routes: [ai_engineering_slack]
+
+      - name: escalation_rate_spike
+        metric: agent.escalation_rate
+        aggregation: rolling_4h
+        threshold: 1.3  # 7 天基线的 1.3 倍
+        severity: warning
+        routes: [ai_engineering_slack, customer_success_slack]
+
+      # 模型版本特定漂移（升级后金丝雀）
+      - name: model_upgrade_canary_regression
+        metric: production_eval.mean_score
+        filter: model_version == "claude-sonnet-4-20260815"  # 新模型
+        comparison: against model_version == "claude-sonnet-4-20260315"  # 旧模型
+        threshold: -0.2
+        severity: critical
+        routes: [ai_engineering_slack, pagerduty_ai_oncall]
+
+    # Eval 刷新
+    weekly_eval_refresh:
+      cadence: weekly_monday_02:00_utc
+      golden_set_review: required  # 人工审查采样生产案例以纳入
+      rubric_recalibration: monthly
+
+
+此配置的内容：
+
+* **采样率**：按功能可调；高风险路径更高。
+* **多漂移信号**：均值下降、按维度下降、灾难性失败率、用户反馈信号、升级率。
+* **严重性层级**：warning（数小时内调查）vs critical（即时响应）。
+* **告警路由**：按告警类型通知适当团队。
+* **模型升级金丝雀监控**：升级期间回归检测的显式告警。
+* **每周 eval 刷新**：定期对照生产流量审查黄金集。

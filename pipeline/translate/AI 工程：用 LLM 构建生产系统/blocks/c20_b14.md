@@ -1,0 +1,89 @@
+#### 应用题
+
+**Q1.** _为新功能设计追踪 schema_。你正在上线一个 LLM 驱动的代码搜索功能。每个查询可调用 1-3 个工具（file_search、symbol_lookup、content_retrieve）。设计追踪 schema。指定：(a) 轨迹级字段；(b) 每 LLM 调用字段；(c) 每工具调用字段；(d) eval 分数集成。
+
+**答案：**
+
+(a) **轨迹级字段**（示意 schema；生产代码会用 Pydantic `BaseModel` 或 `dataclass` 装饰器——导入 `from datetime import datetime` 和 `from typing import Literal` 适用于以下全部四个 schema）：
+
+    from datetime import datetime
+    from typing import Literal
+
+    class CodeSearchTrace:
+        trace_id: str
+        user_id: str
+        session_id: str  # 会话中的多个查询
+        feature: str = "code_search"
+        started_at: datetime
+        ended_at: datetime
+        total_cost_cents: int
+        total_duration_ms: int
+        outcome: Literal["success", "no_results", "error", "abandoned"]
+        query: str  # 用户的原始查询
+        result_summary: str | None  # 显示给用户的最终响应
+        files_referenced: list[str]  # 涉及了哪些文件
+
+
+(b) **每 LLM 调用字段**：
+
+
+    class LLMCallSpan:
+        span_id: str
+        parent_trace_id: str
+        span_type: Literal["llm_call"]
+        model: str
+        duration_ms: int
+        input_tokens: int
+        output_tokens: int
+        cache_creation_tokens: int  # 未缓存则为 0
+        cache_read_tokens: int
+        cost_cents: float
+        stop_reason: str
+        role: Literal["classify", "plan", "synthesize", "final"]  # agent 循环中的哪步
+        messages: list[dict]  # 发送的消息
+        response_text: str | None  # 如为最终响应
+        tool_use_blocks: list[dict] | None  # 如为中间步骤
+
+
+(c) **每工具调用字段**：
+
+
+    class ToolCallSpan:
+        span_id: str
+        parent_trace_id: str
+        parent_llm_call_span_id: str  # 哪个 LLM 调用调用了此工具
+        span_type: Literal["tool_call"]
+        tool_name: Literal["file_search", "symbol_lookup", "content_retrieve"]
+        args: dict
+        result_summary: str  # 为追踪存储截断的结果
+        result_size_bytes: int
+        duration_ms: int
+        status: Literal["success", "error"]
+        error_message: str | None
+
+
+(d) **Eval 分数集成**：
+
+对采样子集（如 5% 生产追踪），附加 eval 分数：
+
+
+    class EvalScore:
+        trace_id: str
+        eval_run_id: str  # 哪个 eval 运行产生了此分数
+        eval_dimensions: dict[str, float]  # 如 {"relevance": 2.8, "completeness": 3.0, "accuracy": 2.5}
+        aggregate_score: float
+        eval_model: str  # 哪个评判模型
+        eval_at: datetime
+
+
+此 schema 支持：
+
+* 调查个别查询（完整轨迹）
+* 跨查询聚合（每功能仪表板）
+* 质量监控（生产中采样的 eval 分数）
+* 成本归因（每轨迹、每 span）
+* 延迟分析（每 span 时序）
+
+存储：追踪在 Langfuse（或自托管等价物）；eval 分数在通过 trace_id 连接的单独表中。
+
+**AI 协作子问题**：你会如何请 LLM 帮助完成这个练习，你会在它的回答中验证什么？

@@ -1,0 +1,70 @@
+**Q3.** _设计每租户预算强制_。为有 50 个租户、月度预算从 500 美元到 50,000 美元的 SaaS 团队勾画每租户预算强制模式。指定：(a) 数据模型；(b) 检查逻辑；(c) 接近预算时的行动；(d) 达到预算时的行动；(e) 审计追踪。
+
+**答案：**
+
+(a) **数据模型**：
+
+
+    CREATE TABLE tenant_budgets (
+        tenant_id TEXT NOT NULL,
+        month TEXT NOT NULL,  -- 格式 'YYYY-MM'
+        cap_cents BIGINT NOT NULL,
+        spent_cents BIGINT NOT NULL DEFAULT 0,
+        soft_threshold_pct INTEGER NOT NULL DEFAULT 80,  -- 默认 80% 时告警
+        last_alert_at TIMESTAMP,
+        PRIMARY KEY (tenant_id, month)
+    );
+
+    CREATE TABLE tenant_budget_events (
+        event_id BIGSERIAL PRIMARY KEY,
+        tenant_id TEXT NOT NULL,
+        timestamp TIMESTAMP NOT NULL DEFAULT now(),
+        event_type TEXT NOT NULL,  -- 'check', 'soft_alert', 'hard_block', 'override'
+        detail JSONB
+    );
+
+
+(b) **检查逻辑**（调用前执行）：
+
+
+    def check_budget(tenant_id: str, estimated_cost_cents: int) -> BudgetDecision:
+        with db.acquire() as conn:
+            row = conn.execute(
+                "SELECT spent_cents, cap_cents, soft_threshold_pct FROM tenant_budgets WHERE tenant_id=? AND month=?",
+                (tenant_id, current_month()),
+            ).fetchone()
+            if not row:
+                # 租户本月无预算配置；视为无限制
+                log_event(tenant_id, "no_budget_configured")
+                return BudgetDecision(action="proceed")
+
+            spent, cap, soft = row["spent_cents"], row["cap_cents"], row["soft_threshold_pct"]
+            new_total = spent + estimated_cost_cents
+
+            if new_total > cap:
+                log_event(tenant_id, "hard_block", {"spent": spent, "estimated": estimated_cost_cents})
+                return BudgetDecision(action="block", reason="budget_exceeded")
+            elif spent < cap * soft / 100 <= new_total:
+                log_event(tenant_id, "soft_alert", {"spent": spent, "estimated": estimated_cost_cents})
+                return BudgetDecision(action="downgrade", reason="approaching_budget")
+            else:
+                return BudgetDecision(action="proceed")
+
+
+(c) **接近预算时**（软告警）：
+
+* 向租户的客户成功团队发送 Slack 通知（模板消息："租户 X 已使用 80% 月度预算"）。
+* 通过 SaaS 门户向租户管理员发送预算使用通知邮件。
+* 可选将后续调用降级到更便宜层（按租户可配置）。高预算租户默认"继续当前层"；成本敏感租户"降级到更便宜层"。
+
+(d) **达到预算时**（硬阻断）：
+
+* 后续调用返回 HTTP 402 带清晰错误消息："月度推理预算已超出。联系您的客户经理以增加预算。"
+* 租户管理员收到邮件通知。
+* 每日汇总报告发送到内部团队的收入运营，包含被阻断租户完整列表。
+
+(e) **审计追踪**：
+
+* 每次检查、每次告警、每次阻断、每次覆盖记录在 `tenant_budget_events`。
+* 聚合仪表板显示：每租户支出趋势；接近预算的租户；阻断调用率。
+* 合规保留：预算事件保留 7 年（财务审计相关性）。
