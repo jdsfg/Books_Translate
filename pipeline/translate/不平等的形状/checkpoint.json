@@ -247,11 +247,11 @@
       "en_title": "Chapter 2: What We Can Measure, and What We Can't",
       "order": 12,
       "src_chars": 2938,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a1d83e54ef57",
       "src": "Maya and Devon are a few weeks old now, and we are going to do something that may seem cold. We are going to look at their families as numbers. Not because numbers are the truth about a human life. They are not, and this whole book is a long argument that they are not. But you cannot think clearly about inequality if you cannot measure it, and you cannot measure it if you do not first get straight on _what_ you are measuring. People argue past each other about inequality constantly, and a startling amount of the time the reason is that one of them is talking about what people _earn_ while the other is talking about what people _own_. These are different things. They behave differently, they are unequal to different degrees, and confusing them is the first and easiest mistake.\n\nSo this chapter has two jobs. The first is to hand you a small, sturdy toolkit for measuring a distribution without being fooled by it. The second is more important and will last the whole book: to teach you the single habit that separates honest thinking about inequality from the other kind. That habit is learning to hear the difference between three completely distinct kinds of claim, which get blended together in almost every conversation about this subject and which, kept apart, make the subject suddenly tractable.\n\n\n### 2.1 Two balance sheets\n\nBegin with the families.\n\nDevon's parents both work. His mother is a home health aide; his father drives for a delivery company. Between them they bring in a modest but real income, enough most months to cover rent, food, the car, and the phone, with little left over. When the car needs a major repair, it is a crisis that gets paid down over several months on a credit card. They own the car (with a loan still on it), some furniture, the contents of two checking accounts that hover near zero before each payday, and almost nothing else. If both lost their jobs tomorrow, the money in the house would last a few weeks.\n\nMaya's parents also work, at jobs that pay considerably more. But the striking difference between the two families is not really the size of the paychecks. It is what sits _behind_ the paychecks. Maya's parents own their home, and the home is worth far more than the mortgage left on it. They have retirement accounts that have been growing for two decades. They have investments, an emergency fund that could carry the household for many months, and, in the background, Maya's grandparents, who own their own home outright and have made it quietly clear that they will help with college and, someday, leave something behind. If Maya's parents both lost their jobs tomorrow, it would be frightening and serious, and it would also be survivable for a long time, because the family is not living on its income alone. It is living on a _reserve_.\n\nThat contrast is the difference between income and wealth, and it is the central distinction in the measurement of inequality.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 908,
+      "out_sha": "98ae6b636aa2",
       "note": ""
     },
     {
@@ -259,11 +259,11 @@
       "en_title": "Chapter 2: What We Can Measure, and What We Can't",
       "order": 13,
       "src_chars": 1690,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e83657708d2e",
       "src": "#### Definition: Income vs. Wealth\n\n**Income** is a _flow_ : the money a person or household receives over a period of time, usually a year. Wages, salary, profit, interest, rent received, and government benefits are all income. **Wealth** (or _net worth_) is a _stock_ : the total value of everything a household owns (home, savings, investments, business, car) minus everything it owes (mortgage, loans, credit-card debt) at a single moment in time.\n\nIn plain language: income is the water flowing through the pipe; wealth is the water already in the tank. The distinction sounds technical and is in fact the difference between two ways of being secure or insecure. A household can have a decent income and almost no wealth, like Devon's, in which case it is one emergency away from trouble no matter how steadily it works. A household can have modest income and substantial wealth, like a retired couple living carefully off savings, in which case it is cushioned against shocks. Income tells you how a family is doing this year. Wealth tells you how it would withstand a year going wrong, and how much it can pass on when the family's own time is over. For a book about how advantage travels across generations, wealth is the deeper subject, because income mostly dies with the worker while wealth can be handed down.\n\nThere is a further reason wealth matters so much here, and it is empirical, not a matter of opinion: **wealth is far more concentrated than income, in every rich society that has been measured.** This is one of the most robust findings in the whole field, and it is worth stating carefully because we are about to practice the discipline of stating things carefully.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 572,
+      "out_sha": "d0ad4b590be6",
       "note": ""
     },
     {
@@ -271,11 +271,11 @@
       "en_title": "Chapter 2: What We Can Measure, and What We Can't",
       "order": 14,
       "src_chars": 2566,
-      "status": "pending",
+      "status": "done",
       "src_sha": "35881bf2fb60",
       "src": "### 2.2 How to read a distribution without being fooled\n\nBefore we put a number on that concentration, you need three small tools, because numbers about inequality are unusually easy to mislead with, and the misleading is often unintentional.\n\nThe first tool is the difference between the **mean** and the **median**. The mean (the average) is the total divided by the number of people. The median is the middle value: line everyone up from poorest to richest, and the median is the person standing exactly in the middle. For most things in life these two numbers are close. For wealth and income they are not, and the reason is itself a lesson. Imagine a modest neighborhood of a hundred households, and one of them is a billionaire. The _mean_ wealth of that neighborhood is now enormous, because one colossal figure drags the average up. The _median_ household, the one in the middle, is exactly as it was, unaffected by the billionaire next door. Whenever you see \"average wealth\" or \"average income,\" ask whether someone is using the mean to make a skewed distribution sound more comfortable than it is. For anything as lopsided as wealth, the median is almost always the more honest summary of how a typical household actually lives.\n\nThe second tool is the **share** : the slice of the whole pie held by some group. \"The top tenth of households holds such-and-such percent of all wealth\" is a share statement, and shares are how we describe concentration. They have the great virtue of summing to a hundred: if one group's share rises, another's must fall, which keeps the bookkeeping honest.\n\nThe third tool is the **ratio** , which compares two points directly: the typical household here has so many times the wealth of the typical household there. Ratios make gaps vivid and comparable across countries and years, which is why we will lean on them often.\n\nNow we can state the concentration of wealth with some care. In the United States, by the Federal Reserve's accounting, the wealthiest one percent of households holds roughly a _third_ of all household wealth, an amount that has been near its highest level since these figures began in the late 1980s, and that is close to what the entire bottom _ninety_ percent holds put together. The next nine percent holds roughly the remaining third, so that the top tenth holds something like two-thirds of all wealth. Income is unequally distributed too, but nowhere near this steeply: the top tenth's share of income is large but far short of two-thirds. Wealth, in short, is the more concentrated mountain.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 873,
+      "out_sha": "02a5d4832f6d",
       "note": ""
     },
     {
@@ -283,11 +283,11 @@
       "en_title": "Chapter 2: What We Can Measure, and What We Can't",
       "order": 15,
       "src_chars": 2137,
-      "status": "pending",
+      "status": "done",
       "src_sha": "38ab04e2daa9",
       "src": "Notice how that paragraph was built, because the construction is the point. It named the _society_ (the United States). It named the _source type_ (the Federal Reserve's accounting). It carried an _as-of_ sense (near its highest since the late 1980s). And where it could have reached for a falsely precise decimal, it reached instead for direction and rough magnitude: \"roughly a third,\" \"something like two-thirds.\" This is not vagueness for its own sake. It is honesty about what a number can bear. A figure like \"the top one percent holds 30.8 percent\" (to invent a decimal) sounds more authoritative than \"roughly a third,\" but the extra precision is usually fake, because such figures move year to year, differ by source and method, and were never as exact as the decimal pretends. Throughout this book, when a precise figure is genuinely solid and sourced, you will get it. When it is not, you will get the direction and the rough size, which is what an honest analyst actually knows. A confident-sounding decimal with no source behind it is not knowledge. It is decoration, and on this subject it is dangerous decoration.\n\n\n#### Common Misconception\n\nA very common error is to treat income inequality and wealth inequality as the same problem, or to assume that because incomes are \"only\" moderately unequal, the society is fairly egalitarian. The data say otherwise. A society can have a relatively compressed spread of paychecks and still have an enormous gulf in what families own, because wealth accumulates: it compounds, it survives downturns, it earns returns on returns, and above all it is _inherited_. Two workers with identical salaries can be worlds apart if one has a paid-off house and a grandparent's legacy behind her and the other has student debt and nothing behind him. If you measure only income, you will systematically _understate_ how unequal a society's life chances really are, because you will miss the entire reservoir of inherited security that does its work behind the paycheck. This is exactly why this book keeps returning to wealth, and to inheritance, as the deeper engine of the whole machinery.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 695,
+      "out_sha": "026bdd6fafc5",
       "note": ""
     },
     {
@@ -295,11 +295,11 @@
       "en_title": "Chapter 2: What We Can Measure, and What We Can't",
       "order": 16,
       "src_chars": 2418,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3562ced50b4e",
       "src": "### 2.3 The three registers\n\nWe now arrive at the governing habit of the book, the habit of mind that everything else depends on. It is simple to state and surprisingly hard to keep. Almost every sentence anyone utters about inequality is one of three completely different kinds of claim, and confusing them is how the subject turns into a shouting match. Learn to hear which is which, and the noise resolves into something you can actually think about.\n\nThe first kind of claim is a statement about **what is** : a measured, datable, checkable fact about how things are distributed. _The wealthiest tenth of US households holds roughly two-thirds of household wealth, as of the most recent Federal Reserve figures._ This is the kind of claim that has a society, a year, a source, and a method behind it. It can be right or wrong, better or worse measured, but it is the kind of thing evidence can settle. Call this the **IS** register.\n\nThe second kind of claim is a statement about **why** : an account of the _causes_ behind the measured fact. _Wealth is so concentrated because returns on capital outpace wage growth._ Or: _because some people save and invest while others spend._ Or: _because of inheritance._ Or some combination. These are explanations, and here is the crucial thing about them: on most interesting questions of inequality, the causes are _genuinely contested_ among serious, informed people. Several explanations usually carry real weight at once, and how much weight each carries is exactly what experts argue about. Call this the **WHY** register, and stamp it in your memory as the _contested_ register.\n\nThe third kind of claim is a statement about **what ought to be** : a judgment of _value_. _This concentration of wealth is unjust._ Or: _it is the fair result of free choices and should not be disturbed._ Or: _it is too much._ Or: _it is the price of a dynamic society and worth paying._ These are normative claims, claims about right and wrong, fair and unfair, better and worse. Call this the **OUGHT** register. And here is the line this book will not cross: **the OUGHT register is never \"settled.\"** No matter how lopsided the measured facts, no matter how confident any expert sounds, the question of what _ought_ to be done is a question of values that this book hands to you, with the strongest cases on every side laid out as fairly as we can manage, and no verdict attached.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 818,
+      "out_sha": "854a7dda20a6",
       "note": ""
     },
     {
