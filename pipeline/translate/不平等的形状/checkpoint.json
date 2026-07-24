@@ -1747,11 +1747,11 @@
       "en_title": "Chapter 14: Why Are People Poor?",
       "order": 137,
       "src_chars": 1892,
-      "status": "pending",
+      "status": "done",
       "src_sha": "415cdeb504bd",
       "src": "This chapter handles the field's most caricature-prone ideas, and that is its particular difficulty, so you should know it going in. The trouble is not that the subject is obscure, but that it is the one where almost everyone, including very intelligent people, stops thinking and starts signaling. Ask why people are poor and you will rarely get an analysis; you will get a flag run up a pole. One camp answers, before the question is fully out of your mouth, that poverty is caused by the system, by structures that trap people, and that to suggest otherwise is to blame the victim. Another camp answers, just as fast, that poverty is caused by choices and behaviors, by people who do not do what it takes, and that to suggest otherwise is to deny agency and infantilize the poor. Each camp has a real insight. Each, in its reflexive form, is a caricature. And each is convinced the other is not just wrong but morally suspect, which is exactly why honest thinking here is so rare and so necessary.\n\nThis chapter asks you to do the hardest thing the book has yet demanded: to hold the competing explanations of poverty, structural, cultural, and individual, each at its strongest, without letting any of them become either a tract or a sneer, and without crowning a winner. We will handle, in the middle of it, the single most caricatured idea in the entire field, the \"culture of poverty,\" which has been so thoroughly distorted, by its enemies and its self-appointed friends alike, that recovering what it actually says is itself a feat of the sociological eye. Through all of it, one commitment governs: the poor are not a category to be explained but people whose lives we are trying to understand, and any account that forgets their full humanity, whether by treating them as helpless objects of structure or as authors of their own ruin, has already failed, however clever it sounds.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 606,
+      "out_sha": "4fd8a98da0b6",
       "note": ""
     },
     {
@@ -1759,11 +1759,11 @@
       "en_title": "Chapter 14: Why Are People Poor?",
       "order": 138,
       "src_chars": 2981,
-      "status": "pending",
+      "status": "done",
       "src_sha": "81d85e277016",
       "src": "### 14.1 The three families of explanation\n\nThe competing accounts of why people are poor sort, roughly, into three families. We will state each at full strength before weighing them, because the discipline is to give each its best form, the one its serious adherents would recognize, not its enemy's cartoon.\n\nThe **structural** account locates the causes of poverty in the _arrangements of society_ rather than in the poor themselves. On this view, poverty is produced by the economy and its institutions: by the availability and quality of jobs, by wages too low to live on, by the correlated web of disadvantages we mapped in Part 2 (weak schools, unsafe neighborhoods, poor health, no wealth cushion), by discrimination, by the way advantage is hoarded and transmitted at the top (Part 3). Poverty, structurally understood, is not a failure of individuals but a feature of a system that generates a bottom and then assigns people to it, largely by birth. The strongest version of this account is formidable: it points out that poverty rates vary enormously across societies with similar populations, that the same individuals are poor or not depending on the economy they happen to inhabit, and that the children of the poor face the compounding disadvantages of Chapter 7 through no choice of their own. If you want to know why _this society_ has _this much_ poverty, the structural account says, look at the structure, not at the characters of the poor.\n\nThe **individual** account locates the causes in the _characteristics and choices of individuals_ : in human capital (skills, education), in effort, in decisions about work, family formation, and the deferral of gratification, the very factors we steelmanned in Chapter 10. On this view, in a society with real opportunity, the people who end up poor are disproportionately those who, for whatever reason, did not acquire valued skills, did not or could not sustain steady work, or made choices that led to or deepened hardship. The strongest version is not the sneer that the poor are lazy; it is the serious claim that individual differences in skill, effort, and choice are real (Chapter 10 conceded this fully), that they genuinely affect outcomes, and that an account of poverty which erases them denies the poor their agency and cannot explain why, within the same disadvantaged circumstances, some individuals escape and others do not. To deny the individual dimension entirely, this account says, is not compassion; it is a refusal to take poor people seriously as agents.\n\nThe **cultural** account is the most subtle, the most contested, and the most caricatured, and it sits between the other two. It locates part of the explanation in _shared patterns of attitude, expectation, and behavior_ that arise within communities experiencing poverty and that can themselves influence outcomes. This is where the \"culture of poverty\" lives, and it is so routinely distorted that it requires its own careful section.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 934,
+      "out_sha": "e46c140ff7df",
       "note": ""
     },
     {
@@ -1771,11 +1771,11 @@
       "en_title": "Chapter 14: Why Are People Poor?",
       "order": 139,
       "src_chars": 820,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b39a5edfd464",
       "src": "### 14.2 The culture of poverty, as it was actually meant\n\nA word about proportion before we begin, in keeping with the rule we set in Chapter 15 to flag an asymmetry rather than pretend it away. The cultural account gets more room here than the structural or individual one, a full section of its own plus a Common Misconception and a Think Deeper question, and that extra space is _not_ a verdict that it carries more explanatory weight. It is here only because it is the most caricatured of the three in _both_ directions and therefore the one that most needs recovering before it can be weighed at all. The relative weights of the three accounts remain genuinely contested, as 14.3 insists; the uneven page count is a measure of how distorted the cultural account has become, not of how much of poverty it explains.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 266,
+      "out_sha": "fe6be66b13f7",
       "note": ""
     },
     {
@@ -1783,11 +1783,11 @@
       "en_title": "Chapter 14: Why Are People Poor?",
       "order": 140,
       "src_chars": 3108,
-      "status": "pending",
+      "status": "done",
       "src_sha": "885a4749a74e",
       "src": "#### Definition: The Culture of Poverty (Oscar Lewis's concept, accurately stated)\n\nThe **culture of poverty** , as proposed by the anthropologist Oscar Lewis in the 1950s and 1960s, is the claim that prolonged poverty within a particular kind of society can generate a set of _adaptive_ attitudes and behaviors, ways of coping with marginality, insecurity, and the absence of opportunity, and that these adaptations, once formed, can be _transmitted across generations_ and can _outlast the conditions that originally produced them_ , becoming a partial barrier to seizing opportunities even when those opportunities improve. Crucially, in Lewis's own account, the _original cause is structural_ : the adaptations are responses to real conditions of deprivation and exclusion, not evidence of defective character.\n\nIn plain language, and this is the part almost everyone gets wrong: Lewis was _not_ saying \"the poor are lazy or immoral.\" He was a man of the left, and his argument was, in its own intention, a structural one. He observed that living for a long time under conditions of poverty, insecurity, and exclusion tends to produce certain adaptive responses, a focus on the present rather than a future that has repeatedly betrayed you, a distrust of institutions that have failed you, ways of coping that make sense given the conditions. His distinctive and controversial addition was the claim that these adaptations can become _self-perpetuating_ : absorbed by children early, they can persist into a next generation and can make it harder to take advantage of opportunities even if the opportunities improve, so that the culture, born as a _response_ to poverty, becomes a partial, secondary _cause_ of its continuation. The structure came first and remained the root; the culture was its offspring, which then took on a life of its own.\n\nNow see why this idea is so explosive and so easily weaponized in both directions, which is exactly what happened to it. Read by people hostile to the poor, the culture-of-poverty idea was stripped of its structural root and turned into \"the poor have a defective culture, so their poverty is their own fault\", precisely the victim-blaming Lewis did not intend, used to justify abandoning the poor. This over-reading was so common and so damaging that for a long time the entire idea became taboo in serious sociology, treated as inherently reactionary. But the opposite reading is also a distortion: to insist that _no_ cultural or behavioral patterns play _any_ role in the persistence of poverty, that everything is structure and nothing adapts or transmits, is to deny something Lewis got partly right and to make the poor into pure passive objects, which is its own kind of disrespect. The honest position, which took decades for the field to recover, is that culture, understood as adaptation to structural conditions and not as defective character, may play a _real but secondary and structurally-rooted role_ , and that this can be said without either blaming the poor or denying that their responses to their conditions are intelligible and human.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1051,
+      "out_sha": "334554325e4d",
       "note": ""
     },
     {
@@ -1795,11 +1795,11 @@
       "en_title": "Chapter 14: Why Are People Poor?",
       "order": 141,
       "src_chars": 1397,
-      "status": "pending",
+      "status": "done",
       "src_sha": "33928738972a",
       "src": "#### Common Misconception\n\nThe most damaging misconception, and one this book must correct directly because the prompt of even-handedness demands it, is that the \"culture of poverty\" means \"poor people have bad values and deserve their poverty.\" This inverts Lewis's actual claim, which roots the culture in structural deprivation and treats the adaptations as _intelligible responses to real conditions_ , not moral failings. But the symmetric misconception is just as damaging and less often called out: that _any_ attention to behavior or culture in explaining poverty is automatically victim-blaming and must be refused. This second error, in its zeal to protect the poor, ends up denying them agency and intelligibility, treating them as objects buffeted by structure rather than as people who respond, adapt, and sometimes pass on their adaptations, as all humans in all circumstances do. The disciplined view rejects _both_ : it refuses to strip the structural root from the cultural account (which would blame the victim), _and_ it refuses to deny that adaptation and transmission occur (which would deny agency). Note that protecting Lewis from his hostile over-readers and protecting the poor from being denied agency are the _same_ discipline applied evenly, and a reader watching for tilt should see that the shielding cuts both ways here, exactly as it did for Bourdieu in Chapter 9.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 454,
+      "out_sha": "abe58ae48faa",
       "note": ""
     },
     {
@@ -1807,11 +1807,11 @@
       "en_title": "Chapter 14: Why Are People Poor?",
       "order": 142,
       "src_chars": 2565,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4f1e1fb90485",
       "src": "### 14.3 How the three accounts actually fit together\n\nStated separately and at full strength, the three accounts can sound like rivals fighting for the same ground. The most defensible view is that they are better understood as _describing different parts of one interlocking process_ , and seeing how they fit is more illuminating than crowning one.\n\nConsider how they connect rather than compete. The _structural_ account explains the origin and the scale: why a society has a bottom at all, why it is as large as it is, why it falls where it falls, and why the conditions exist that anyone would have to adapt to. The _cultural_ account, in Lewis's structurally-rooted sense, explains a mechanism of _persistence_ : how adaptations to those structural conditions can, once formed, add a layer of stickiness, transmitted to children, that makes escape harder even when conditions improve, without the structure ever ceasing to be the root. The _individual_ account explains the _variation within_ the conditions: why, facing the same structural circumstances and the same community adaptations, some particular people escape and others do not, which is where real differences in skill, effort, and choice (and also luck) do their work. On this reading, the three are not competing answers to \"what causes poverty?\" but answers to three slightly different questions, the origin, the persistence, and the individual variation, and a full picture needs all three.\n\nBut, and this is the honest hard part we will not paper over, _the relative weight of the three remains genuinely contested, and the weighting is where the politics lives_. Even granting that all three operate, serious people disagree sharply about how much each contributes, and the disagreement is not merely empirical. It is partly a matter of which question you think is the important one (the origin, where structure dominates, or the individual variation, where choice matters more) and partly a matter of values (whether you are more worried about excusing a system that produces a bottom or about denying agency to the people in it). This is the apportionment problem of Part 3, met again at its most charged. The book's position is the one it has held throughout: the three accounts are all real and all partial; how to weight them is contested and partly normative; and anyone who tells you the answer is simple, that it is \"all structure\" or \"all choices\", is signaling, not thinking. We describe the parts as honestly as we can and leave the weighting, and the verdict it serves, to you.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 797,
+      "out_sha": "2aac80a58c58",
       "note": ""
     },
     {
@@ -1819,11 +1819,11 @@
       "en_title": "Chapter 14: Why Are People Poor?",
       "order": 143,
       "src_chars": 1773,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c6b6e315910e",
       "src": "### 14.4 Keeping faith with the people\n\nBefore we leave the bottom rungs, the discipline requires something the statistics and the theories cannot supply: a return to the human reality, rendered with respect rather than as a specimen. It is easy, in a chapter full of \"accounts\" and \"mechanisms,\" to forget that we are talking about people living lives as full, as complicated, as dignified, and as ordinary as anyone's, lived under conditions most readers of this book have not faced.\n\nTo be poor is, among many other things, to live with a permanent absence of margin. The non-poor make a thousand small mistakes a year, a missed bill, a car that breaks, a sick day, and absorb them without catastrophe, because they have a cushion. For the poor, the same small mistakes can cascade into disaster, which means poverty imposes a constant, exhausting vigilance, a cognitive and emotional load that the secure never carry and rarely imagine. The \"bad decisions\" that observers sometimes point to are often decisions made under exactly this load, with no margin and no good options, decisions that look different once you understand the constraints they were made within. None of this means individual choices never matter, Chapter 10 stands. It means that judging those choices from the comfort of a cushion, without seeing the conditions they were made in, is both an analytic error and a failure of respect. The structural, cultural, and individual accounts are all, in the end, accounts of _people_ , and the test of any of them is whether it could be stated to a poor person's face without insult and without condescension, recognizing them as a full human agent responding to real conditions. That test, more than any theory, is what keeps the study of poverty honest.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 566,
+      "out_sha": "5ecac4062881",
       "note": ""
     },
     {
@@ -1831,11 +1831,11 @@
       "en_title": "Chapter 14: Why Are People Poor?",
       "order": 144,
       "src_chars": 1810,
-      "status": "pending",
+      "status": "done",
       "src_sha": "87ddbc1b3207",
       "src": "### 14.5 Where Part 5 leaves us, and what comes next\n\nPart 5 has taken us to the bottom rungs and asked the field's most charged question, why are people poor, with the greatest care the book can muster. We saw three families of explanation, structural (the origin and scale), cultural (a mechanism of persistence, in Lewis's structurally-rooted and much-distorted sense), and individual (the variation within conditions), each stated at full strength, each protected from caricature in both directions, none crowned, with the weighting left genuinely contested because it is partly empirical and partly a matter of values. And we insisted, throughout, on the full humanity of the people the theories are about, the one commitment no analysis may abandon.\n\nWe have now studied inequality \"down the ladder\", how position shapes life chances, transmits across generations, and concentrates at the bottom as poverty. Part 6 turns the analysis in a different and even more charged direction: not up and down the ladder, but _across groups_. Why do measured gaps persist between men and women, between racial and ethnic groups, between people of different origins? This is the most politically explosive terrain in the entire field, and it is where every tool the book has built, the is/why/ought registers, the decomposition procedure, the symmetry of measurement and interpretation, the steelman discipline, will be tested simultaneously and at maximum pressure. Chapter 15 begins by installing the single most important tool for that terrain: a disciplined procedure for _reading a gap_ , so that when we turn to the charged gaps of sex and race, we do so with a method rather than a reflex. The ground we are about to cross is where books like this one most often fail. We will try not to.\n\n\n### 14.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 581,
+      "out_sha": "c245c32b9ff3",
       "note": ""
     },
     {
@@ -1843,11 +1843,11 @@
       "en_title": "Chapter 14: Why Are People Poor?",
       "order": 145,
       "src_chars": 2905,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ffded4d8a483",
       "src": "#### Concept Check\n\n**Q1.** State Oscar Lewis's \"culture of poverty\" concept as he actually meant it, and identify the two opposite ways it gets distorted.\n\nHint\n\nWhat did Lewis say the _original cause_ was? Is the culture a defect of character, or an adaptation? And what are the over-reading and the under-reading that distort it?\n\n**Answer:** As Lewis meant it: prolonged poverty in a certain kind of society generates _adaptive_ attitudes and behaviors (coping with marginality, insecurity, absence of opportunity), and these adaptations can be transmitted across generations and _outlast the conditions that produced them_ , becoming a partial barrier to seizing opportunities even when conditions improve. Crucially, the _original cause is structural_ , the adaptations are intelligible responses to real deprivation, not defective character (Lewis was politically on the left and intended a structural argument). The two distortions: (1) the _hostile over-reading_ strips out the structural root and turns it into \"the poor have a defective culture, so poverty is their own fault\", the victim-blaming Lewis did not intend, used to justify abandoning the poor; (2) the _opposite over-correction_ insists that _any_ attention to culture or behavior is automatically victim-blaming and must be refused, which denies the poor agency and intelligibility, treating them as passive objects of structure. The disciplined view rejects both: keep the structural root (against distortion 1) _and_ allow that adaptation and transmission occur (against distortion 2).\n\n**Q2.** The chapter says the three families of explanation answer \"three slightly different questions\" rather than competing for the same ground. Name the question each primarily answers.\n\nHint\n\nOrigin and scale; persistence across generations; variation among individuals in the same conditions.\n\n**Answer:** The **structural** account primarily answers the question of _origin and scale_ : why a society has a bottom at all, how large it is, where it falls, and why the conditions exist that anyone would have to adapt to. The **cultural** account (in Lewis's structurally-rooted sense) primarily answers the question of _persistence_ : how adaptations to those conditions, once formed and transmitted to children, can add a layer of stickiness that makes escape harder even as conditions improve, without the structure ceasing to be the root. The **individual** account primarily answers the question of _variation within the conditions_ : why, facing the same circumstances and community adaptations, some particular people escape and others do not, where real differences in skill, effort, choice, and luck operate. Seeing them as answers to different questions (origin, persistence, variation) shows they can all be real and partial at once, though the chapter stresses that _how to weight them_ remains contested and partly normative.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 988,
+      "out_sha": "be4df62f1461",
       "note": ""
     },
     {
@@ -1855,11 +1855,11 @@
       "en_title": "Chapter 14: Why Are People Poor?",
       "order": 146,
       "src_chars": 2512,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b6b4a1152a59",
       "src": "#### Application Problems\n\n**Q1.** A commentator says: \"Poverty is entirely structural, talking about behavior or culture at all is just blaming the victim.\" Another says: \"Poverty is about choices, the structural stuff is just excuse-making.\" Using the chapter's framework, give the real insight and the caricature in each, and explain why the chapter refuses to crown either.\n\nHint\n\nEach names a real family of explanation but inflates it to \"entirely.\" What does each one's \"entirely\" deny that the other side has right?\n\n**Answer:** The first commentator's _real insight_ : the structural account is genuinely powerful, poverty's origin and scale are shaped by the economy, institutions, and the correlated web of disadvantage, and stripping the structural root from cultural accounts does produce victim-blaming. The _caricature_ : \"entirely structural, any talk of behavior is victim-blaming\" denies agency and intelligibility to the poor and refuses Lewis's structurally-rooted point that adaptation and transmission occur, making poor people pure passive objects. The second commentator's _real insight_ : individual differences in skill, effort, and choice are real (Chapter 10) and genuinely affect who escapes the same conditions; denying them erases the poor's agency. The _caricature_ : \"about choices, structure is excuse-making\" ignores that poverty rates vary enormously across societies for similar populations and that children face compounding disadvantage through no choice, which no amount of individual virtue chose. The chapter refuses to crown either because all three families are real and partial (answering origin, persistence, and variation), and the _weighting_ is genuinely contested, partly empirical and partly a matter of values (which question you think matters, and what you most fear, excusing the system or denying agency). Apply the §14.3 test to each commentator: the word \"entirely\" is the tell that a verdict is being announced rather than reasoned, so both \"entirely structural\" and \"entirely choices\" fail it.\n\n**Q2.** The chapter argues that \"bad decisions\" by poor people are often \"decisions made under a load the secure never carry.\" Connect this to Chapter 10's account of choice, and explain how one can take this point seriously _without_ concluding that individual choices never matter.\n\nHint\n\nDoes explaining the conditions a choice was made under erase the choice? Recall Chapter 10's \"bounded\" agency claim and the difference between explaining and excusing.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 836,
+      "out_sha": "43352abc7af8",
       "note": ""
     },
     {
@@ -1867,11 +1867,11 @@
       "en_title": "Chapter 14: Why Are People Poor?",
       "order": 147,
       "src_chars": 1427,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cbb1ed7c0c1a",
       "src": "**Answer:** Poverty imposes a permanent absence of margin: small mistakes that the secure absorb (a missed bill, a broken car, a sick day) can cascade into catastrophe for the poor, imposing a constant cognitive and emotional load and removing good options, so decisions that look \"bad\" from a cushioned vantage often look different once you see the constraints. This connects to Chapter 10's _bounded_ agency claim: effort and choice are real and matter, but they operate _on an uneven field_ , where the same choice has different costs and consequences from different starting points. Taking the \"load\" point seriously does _not_ mean concluding choices never matter, because explaining the conditions a choice was made under is not the same as denying the choice happened or claiming it was forced. One can hold simultaneously that (a) individual choices are real and genuinely affect outcomes (the individual account stands) and (b) those choices are made under constraints the secure never face, so judging them without seeing the constraints is both an analytic error and a failure of respect. The discipline is to _explain without excusing and acknowledge agency without judging from comfort_ , which is exactly Chapter 10's symmetry, here applied with the added §14.4 face-test: ask whether the account, said directly to the person it describes, would land as recognition rather than as an insult or a pat on the head.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 457,
+      "out_sha": "0ba0f649886d",
       "note": ""
     },
     {
@@ -1879,11 +1879,11 @@
       "en_title": "Chapter 14: Why Are People Poor?",
       "order": 148,
       "src_chars": 2636,
-      "status": "pending",
+      "status": "done",
       "src_sha": "32d7dd565f2c",
       "src": "#### Think Deeper\n\n**Q1.** For decades the \"culture of poverty\" was nearly taboo in serious sociology, treated as inherently reactionary, because of how badly it had been over-read into victim-blaming. Was this taboo a reasonable protective response, or did it cost the field something real? Consider what is gained and lost when a true-but-dangerous idea becomes unspeakable, and how this connects to the book's larger commitment to steelmanning.\n\n**Discussion:** This question is really about a deep tension in intellectual life, between protecting against an idea's misuse and preserving access to whatever truth it contains, and it is worth thinking through carefully because the same tension recurs across the whole charged terrain of inequality.\n\nThe case that the taboo was _reasonable_ : ideas do not exist in a vacuum; they have careers in the real world, and the culture-of-poverty idea had a demonstrably ugly one. Stripped of its structural root, it became a respectable-sounding justification for abandoning the poor, for concluding that since their culture was the problem, nothing structural need be done. Given that track record, treating the idea with extreme suspicion was not mere squeamishness but a defensible response to real harm: when an idea is reliably weaponized in one direction, refusing to lend it scholarly legitimacy can be a reasonable act of harm-prevention, especially for a field whose pronouncements shape policy toward vulnerable people. There is a real argument that some ideas, in some contexts, do more damage than their grain of truth is worth.\n\nThe case that the taboo _cost something real_ : making an idea unspeakable does not make it false, and it carries serious costs. If adaptations to poverty do play a real, structurally-rooted role in its persistence, then refusing to study that role leaves a genuine mechanism unexamined, and may lead to interventions that fail because they ignore it. Worse, a taboo tends to discredit the field's even-handedness: if sociology is seen to suppress an idea because of its political inconvenience rather than its falsity, it loses the trust of exactly the people, across the spectrum, it needs to persuade, and hands ammunition to those who claim the discipline is ideologically captured. And there is a subtler cost: the under-reading that the taboo enforced, \"everything is structure, nothing adapts\", is itself a distortion that denies the poor agency and intelligibility, so the taboo did not achieve neutrality but enforced the _opposite_ error. An unspeakable truth does not disappear; it festers, and its suppression breeds its own caricature.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 993,
+      "out_sha": "a035cdfbf624",
       "note": ""
     },
     {
@@ -1891,11 +1891,11 @@
       "en_title": "Chapter 14: Why Are People Poor?",
       "order": 149,
       "src_chars": 1431,
-      "status": "pending",
+      "status": "done",
       "src_sha": "700a0df8b72f",
       "src": "How this connects to steelmanning: the book's core method is precisely the alternative to the taboo. Instead of making a dangerous idea unspeakable, steelmanning insists on stating it in its _strongest and most accurate_ form, which, for the culture of poverty, means restoring its structural root and presenting it as Lewis meant it, _and_ honestly presenting the critiques (that it understates structural constraint and was over-read into victim-blaming) at their full force. This is harder than a taboo, because it requires holding a dangerous idea carefully rather than refusing to hold it at all, but it is the only approach that neither suppresses a possible truth nor licenses its abuse. The recovery of the culture-of-poverty debate in recent sociology, on terms that keep the structural root and refuse the victim-blaming, is in fact a vindication of the steelman method over the taboo: the field eventually found that the responsible move was not to ban the idea but to state it correctly and argue about it honestly. Whether you think the decades of taboo were a worthwhile protection or a costly error is a judgment you can now make with the trade-off in clear view, and it is a judgment that will recur, with even higher stakes, in the chapters on group gaps just ahead, where the temptation to make certain explanations unspeakable is stronger still, and where the book will again choose the steelman over the taboo.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 476,
+      "out_sha": "170f8d93e320",
       "note": ""
     },
     {
@@ -1903,11 +1903,11 @@
       "en_title": "Chapter 14: Why Are People Poor?",
       "order": 150,
       "src_chars": 2626,
-      "status": "pending",
+      "status": "done",
       "src_sha": "975b4e39fb68",
       "src": "### Chapter Summary\n\nWe took up the field's most charged and most caricatured question, why are people poor, with the governing commitment that the poor are people to be understood, not a category to be explained, and that any account fails the §14.4 face-test if it cannot be said to the person it describes as recognition. Three families of explanation were each stated at full strength: the **structural** (poverty's origin and scale lie in the economy, institutions, and the correlated web of disadvantage, not in the characters of the poor); the **individual** (real differences in skill, effort, and choice, the bounded agency of Chapter 10, genuinely affect who is poor, and erasing them denies the poor their agency); and the **cultural**.\n\nThe cultural account required recovering the **culture of poverty** as Oscar Lewis actually meant it: prolonged poverty generates _adaptive_ responses to real structural deprivation, which can transmit across generations and outlast their original cause, becoming a partial, _structurally-rooted_ barrier to escape, emphatically _not_ \"the poor have defective values and deserve their fate.\" We corrected the distortion in _both_ directions: the hostile over-reading that strips the structural root and blames the victim (which Lewis did not intend), and the over-correction that treats _any_ attention to behavior as victim-blaming and so denies the poor agency, the same even-handed shielding the book gave Bourdieu.\n\nWe saw that the three accounts best fit together as answers to _different questions_ , origin and scale (structural), persistence (cultural), and individual variation (individual), so all can be real and partial at once, while insisting honestly that _the relative weight remains contested and partly normative_ , the apportionment problem of Part 3 at its most charged, with the §14.3 test catching anyone who claims it is \"all structure\" or \"all choices.\" And we returned to the lived reality, poverty as a permanent absence of margin imposing a load the secure never carry, so that \"bad decisions\" must be understood within their constraints without thereby denying that choices matter.\n\nThis completes the study of inequality _down the ladder_. Part 6 turns to gaps _across groups_ , by sex, race, and origin, the terrain where public argument runs hottest and where every tool the book has built will be tested at once. Chapter 15 installs the essential instrument first: a disciplined procedure for _reading a gap_ , so the charged gaps can be met with method rather than reflex, choosing, as this chapter did, the steelman over the taboo.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 890,
+      "out_sha": "1b48125a37b5",
       "note": ""
     },
     {
