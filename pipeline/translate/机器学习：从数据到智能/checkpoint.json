@@ -431,11 +431,11 @@
       "en_title": "Chapter 3: Mathematical Foundations II — Probability and Statistics Essentials",
       "order": 26,
       "src_chars": 2668,
-      "status": "pending",
+      "status": "done",
       "src_sha": "512ce7bb13cc",
       "src": "#### Definition: Random Variable\n\nA **random variable** XXX is a function from a sample space to real numbers. It assigns a numerical value to each outcome.\n\n* **Discrete** random variable: takes values in a countable set (e.g., the number of defects in a product: 0, 1, 2, ...)\n* **Continuous** random variable: takes values in an interval (e.g., house price, temperature)\n\nFor a discrete random variable XXX, the **probability mass function (PMF)** p(x)=P(X=x)p(x) = P(X = x)p(x)=P(X=x) gives the probability of each value.\n\nFor a continuous random variable XXX, the **probability density function (PDF)** f(x)f(x)f(x) satisfies:\n\nP(a≤X≤b)=∫abf(x) dxP(a \\leq X \\leq b) = \\int_a^b f(x) \\, dxP(a≤X≤b)=∫ab​f(x)dx\n\nThe PDF itself is not a probability — it's a density. P(X=x)=0P(X = x) = 0P(X=x)=0 for any specific value; we can only compute probabilities over intervals.\n\n\n#### Definition: Expectation and Variance\n\nThe **expectation** (or mean) of a random variable XXX is:\n\nE[X]=∑xx⋅p(x)(discrete)orE[X]=∫−∞∞x⋅f(x) dx(continuous)\\mathbb{E}[X] = \\sum_x x \\cdot p(x) \\quad \\text{(discrete)} \\qquad \\text{or} \\qquad \\mathbb{E}[X] = \\int_{-\\infty}^\\infty x \\cdot f(x) \\, dx \\quad \\text{(continuous)}E[X]=x∑​x⋅p(x)(discrete)orE[X]=∫−∞∞​x⋅f(x)dx(continuous)\n\nIn plain language, the expectation is the weighted average of possible values, where the weights are probabilities.\n\nThe **variance** measures spread around the mean:\n\nVar(X)=E[(X−E[X])2]=E[X2]−(E[X])2\\text{Var}(X) = \\mathbb{E}[(X - \\mathbb{E}[X])^2] = \\mathbb{E}[X^2] - (\\mathbb{E}[X])^2Var(X)=E[(X−E[X])2]=E[X2]−(E[X])2\n\nThe **standard deviation** is σ=Var(X)\\sigma = \\sqrt{\\text{Var}(X)}σ=Var(X)​, which has the same units as XXX.\n\nKey properties of expectation (used constantly in ML derivations):\n\n* **Linearity** : E[aX+bY]=aE[X]+bE[Y]\\mathbb{E}[aX + bY] = a\\mathbb{E}[X] + b\\mathbb{E}[Y]E[aX+bY]=aE[X]+bE[Y] (always true, even if XXX and YYY are dependent)\n* **Independence** : If XXX and YYY are independent, then E[XY]=E[X]E[Y]\\mathbb{E}[XY] = \\mathbb{E}[X]\\mathbb{E}[Y]E[XY]=E[X]E[Y]\n\n\n### 3.4 Key Probability Distributions\n\nThese distributions appear in ML more often than any others.\n\n\n#### The Bernoulli Distribution\n\nA single binary experiment: success with probability ppp, failure with probability 1−p1-p1−p.\n\nP(X=1)=p,P(X=0)=1−pP(X = 1) = p, \\quad P(X = 0) = 1-pP(X=1)=p,P(X=0)=1−p E[X]=p,Var(X)=p(1−p)\\mathbb{E}[X] = p, \\quad \\text{Var}(X) = p(1-p)E[X]=p,Var(X)=p(1−p)\n\n**Where it appears:** The output of a binary classifier. If a logistic regression model outputs p^=0.7\\hat{p} = 0.7p^​=0.7, it's saying the label yyy is distributed as Bernoulli(0.7).\n\n\n#### The Gaussian (Normal) Distribution\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1273,
+      "out_sha": "b2b97ab206d4",
       "note": ""
     },
     {
@@ -443,11 +443,11 @@
       "en_title": "Chapter 3: Mathematical Foundations II — Probability and Statistics Essentials",
       "order": 27,
       "src_chars": 2141,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8ca0aa4b6a17",
       "src": "#### Definition: Gaussian Distribution\n\nf(x)=1σ2πexp⁡ ⁣(−(x−μ)22σ2)f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} \\exp\\\\!\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)f(x)=σ2π​1​exp(−2σ2(x−μ)2​)\n\nparameterized by mean μ\\muμ and standard deviation σ\\sigmaσ. Written X∼N(μ,σ2)X \\sim \\mathcal{N}(\\mu, \\sigma^2)X∼N(μ,σ2).\n\nIn plain language, the Gaussian is bell-shaped, symmetric around μ\\muμ, with 68% of probability within ±1σ\\pm 1\\sigma±1σ, 95% within ±2σ\\pm 2\\sigma±2σ.\n\n**Where it appears:** _Everywhere._ The central limit theorem says that the average of many independent random variables tends toward a Gaussian, regardless of the original distributions. In linear regression, we assume the noise term ϵ\\epsilonϵ is Gaussian. Neural network weights are typically initialized with Gaussian distributions. Gaussian processes extend Gaussians to function spaces.\n\n\n#### The Categorical Distribution\n\nFor a random variable that takes one of KKK values (class labels), the Categorical distribution assigns probability πk\\pi_kπk​ to class kkk, where ∑kπk=1\\sum_k \\pi_k = 1∑k​πk​=1.\n\n**Where it appears:** The output of a multi-class classifier. The softmax function (Chapter 7) converts any vector of scores into a valid Categorical distribution.\n\n\n#### Common Misconception\n\nStudents often assume \"all real-valued data is approximately Gaussian.\" This is false for many ML datasets. House prices are right-skewed (many affordable houses, a few extremely expensive ones). Text features (word counts) are highly non-Gaussian. Network traffic has heavy tails. Using a Gaussian assumption where it's wrong can lead to models that perform poorly in the tails — precisely where important events (fraud, failures, outliers) tend to occur.\n\n\n### 3.5 Maximum Likelihood Estimation\n\nThis section introduces the single most important principle for deriving ML loss functions.\n\n**The setup:** We have data {x1,x2,…,xm}\\\\{x_1, x_2, \\ldots, x_m\\\\}{x1​,x2​,…,xm​} drawn from some distribution with unknown parameters θ\\thetaθ. We want to estimate θ\\thetaθ.\n\n**Maximum Likelihood:** Choose θ^\\hat{\\theta}θ^ to maximize the probability of observing the data we actually got:\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 791,
+      "out_sha": "80ae5986ddaf",
       "note": ""
     },
     {
@@ -455,11 +455,11 @@
       "en_title": "Chapter 3: Mathematical Foundations II — Probability and Statistics Essentials",
       "order": 28,
       "src_chars": 2925,
-      "status": "pending",
+      "status": "done",
       "src_sha": "10e92f19e51a",
       "src": "#### Definition: Maximum Likelihood Estimation\n\nThe **maximum likelihood estimate** is:\n\nθ^MLE=arg⁡max⁡θP(data∣θ)=arg⁡max⁡θ∏i=1mP(xi∣θ)\\hat{\\theta}_{\\text{MLE}} = \\arg\\max_\\theta P(\\text{data} | \\theta) = \\arg\\max_\\theta \\prod_{i=1}^m P(x_i | \\theta)θ^MLE​=argθmax​P(data∣θ)=argθmax​i=1∏m​P(xi​∣θ)\n\n(assuming examples are independent, so the joint probability is the product of individual probabilities)\n\nIn plain language: find the parameters that make the data you saw most probable.\n\n**Why the log?** The product of many probabilities gets numerically very small (floating-point underflow). Taking the log converts products to sums:\n\nθ^MLE=arg⁡max⁡θ∑i=1mlog⁡P(xi∣θ)\\hat{\\theta}_{\\text{MLE}} = \\arg\\max_\\theta \\sum_{i=1}^m \\log P(x_i | \\theta)θ^MLE​=argθmax​i=1∑m​logP(xi​∣θ)\n\nThe log is a monotone increasing function, so it doesn't change which θ\\thetaθ maximizes.\n\n**Example — Linear Regression as MLE:**\n\nSuppose we model house prices as:\n\nyi=w⊤xi+ϵi,ϵi∼N(0,σ2)y_i = \\mathbf{w}^\\top \\mathbf{x}_i + \\epsilon_i, \\quad \\epsilon_i \\sim \\mathcal{N}(0, \\sigma^2)yi​=w⊤xi​+ϵi​,ϵi​∼N(0,σ2)\n\nThe noise is Gaussian, so P(yi∣xi,w)=N(yi;w⊤xi,σ2)P(y_i | \\mathbf{x}_i, \\mathbf{w}) = \\mathcal{N}(y_i; \\mathbf{w}^\\top \\mathbf{x}_i, \\sigma^2)P(yi​∣xi​,w)=N(yi​;w⊤xi​,σ2).\n\nThe log-likelihood is:\n\nlog⁡P(data∣w)=∑i=1mlog⁡N(yi;w⊤xi,σ2)\\log P(\\text{data} | \\mathbf{w}) = \\sum_{i=1}^m \\log \\mathcal{N}(y_i; \\mathbf{w}^\\top \\mathbf{x}_i, \\sigma^2)logP(data∣w)=i=1∑m​logN(yi​;w⊤xi​,σ2) =∑i=1m[−12log⁡(2πσ2)−(yi−w⊤xi)22σ2]= \\sum_{i=1}^m \\left[ -\\frac{1}{2}\\log(2\\pi\\sigma^2) - \\frac{(y_i - \\mathbf{w}^\\top \\mathbf{x}_i)^2}{2\\sigma^2} \\right]=i=1∑m​[−21​log(2πσ2)−2σ2(yi​−w⊤xi​)2​]\n\nMaximizing this over w\\mathbf{w}w is equivalent to minimizing ∑i=1m(yi−w⊤xi)2\\sum_{i=1}^m (y_i - \\mathbf{w}^\\top \\mathbf{x}_i)^2∑i=1m​(yi​−w⊤xi​)2 — the **mean squared error**.\n\n**Insight:** Minimizing MSE in linear regression is equivalent to maximum likelihood estimation under Gaussian noise. The MSE loss function isn't arbitrary — it follows from a specific probabilistic assumption about the data.\n\n\n### 3.6 Covariance and Joint Distributions\n\n\n#### Definition: Covariance\n\nThe **covariance** between two random variables XXX and YYY is:\n\nCov(X,Y)=E[(X−E[X])(Y−E[Y])]=E[XY]−E[X]E[Y]\\text{Cov}(X, Y) = \\mathbb{E}[(X - \\mathbb{E}[X])(Y - \\mathbb{E}[Y])] = \\mathbb{E}[XY] - \\mathbb{E}[X]\\mathbb{E}[Y]Cov(X,Y)=E[(X−E[X])(Y−E[Y])]=E[XY]−E[X]E[Y]\n\nThe **correlation** normalizes covariance to [−1,1][-1, 1][−1,1]:\n\nρXY=Cov(X,Y)Var(X)⋅Var(Y)\\rho_{XY} = \\frac{\\text{Cov}(X, Y)}{\\sqrt{\\text{Var}(X) \\cdot \\text{Var}(Y)}}ρXY​=Var(X)⋅Var(Y)​Cov(X,Y)​\n\nIn plain language: covariance (and correlation) measures how much two variables move together. Positive covariance means \"when XXX is large, YYY tends to be large.\" Negative covariance means \"when XXX is large, YYY tends to be small.\" Zero covariance means they're uncorrelated (but not necessarily independent!).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1433,
+      "out_sha": "1633f4314c01",
       "note": ""
     },
     {
@@ -467,11 +467,11 @@
       "en_title": "Chapter 3: Mathematical Foundations II — Probability and Statistics Essentials",
       "order": 29,
       "src_chars": 1017,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e6b0ab5047db",
       "src": "#### Definition: Covariance Matrix\n\nFor a random vector X=(X1,X2,…,Xn)\\mathbf{X} = (X_1, X_2, \\ldots, X_n)X=(X1​,X2​,…,Xn​), the **covariance matrix** Σ∈Rn×n\\Sigma \\in \\mathbb{R}^{n \\times n}Σ∈Rn×n has entries:\n\nΣij=Cov(Xi,Xj)\\Sigma_{ij} = \\text{Cov}(X_i, X_j)Σij​=Cov(Xi​,Xj​)\n\nThe diagonal entries are the variances: Σii=Var(Xi)\\Sigma_{ii} = \\text{Var}(X_i)Σii​=Var(Xi​).\n\nThe covariance matrix is always positive semi-definite (as defined in Chapter 2). It captures the _shape_ of the data distribution: how spread out each feature is, and how correlated the features are. We will use it directly in PCA (Chapter 13) to find the directions of maximum variance.\n\nFor a dataset X∈Rm×nX \\in \\mathbb{R}^{m \\times n}X∈Rm×n with mean-centered columns, the **sample covariance matrix** is:\n\nΣ^=1m−1X⊤X\\hat{\\Sigma} = \\frac{1}{m-1} X^\\top XΣ^=m−11​X⊤X\n\nThis is an n×nn \\times nn×n matrix — the same shape as X⊤XX^\\top XX⊤X from Chapter 2. The connection between linear algebra and statistics runs deep.\n\n\n### 3.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 446,
+      "out_sha": "ee2eebf5d979",
       "note": ""
     },
     {
@@ -479,11 +479,11 @@
       "en_title": "Chapter 3: Mathematical Foundations II — Probability and Statistics Essentials",
       "order": 30,
       "src_chars": 3066,
-      "status": "pending",
+      "status": "done",
       "src_sha": "18f220681c86",
       "src": "#### Concept Check\n\n**Q1.** In a disease screening test: 1% of the population has the disease. The test is 95% accurate for positive cases (sensitivity = 95%) and 90% accurate for negative cases (specificity = 90%). If you test positive, what is the probability you actually have the disease?\n\nHint\n\nSet up the calculation with Bayes' theorem: prior P(disease) = 0.01, likelihood P(positive test | disease) = 0.95, likelihood P(positive test | no disease) = 1 - 0.90 = 0.10.\n\n**Answer:** Define events: DDD = has disease, +++ = test positive.\n\nPrior: P(D)=0.01P(D) = 0.01P(D)=0.01, P(not D)=0.99P(\\text{not } D) = 0.99P(not D)=0.99\n\nLikelihoods: P(+∣D)=0.95P(+ | D) = 0.95P(+∣D)=0.95, P(+∣not D)=1−0.90=0.10P(+ | \\text{not } D) = 1 - 0.90 = 0.10P(+∣not D)=1−0.90=0.10\n\nEvidence:\n\nP(+)=P(+∣D)⋅P(D)+P(+∣not D)⋅P(not D)=0.95×0.01+0.10×0.99=0.0095+0.099=0.1085P(+) = P(+|D) \\cdot P(D) + P(+|\\text{not }D) \\cdot P(\\text{not }D) = 0.95 \\times 0.01 + 0.10 \\times 0.99 = 0.0095 + 0.099 = 0.1085P(+)=P(+∣D)⋅P(D)+P(+∣not D)⋅P(not D)=0.95×0.01+0.10×0.99=0.0095+0.099=0.1085\n\nPosterior:\n\nP(D∣+)=P(+∣D)⋅P(D)P(+)=0.95×0.010.1085=0.00950.1085≈0.0876P(D | +) = \\frac{P(+|D) \\cdot P(D)}{P(+)} = \\frac{0.95 \\times 0.01}{0.1085} = \\frac{0.0095}{0.1085} \\approx 0.0876P(D∣+)=P(+)P(+∣D)⋅P(D)​=0.10850.95×0.01​=0.10850.0095​≈0.0876\n\nOnly about **8.76%** — less than 1 in 10 people who test positive actually have the disease. This surprising result arises because the disease is rare (only 1% prior). Most positive tests come from the large group of healthy people producing false positives (10% of 99% = 9.9%). This phenomenon — called the \"base rate fallacy\" — is extremely relevant in medical AI, fraud detection, and any low-prevalence ML task.\n\n**Q2.** Let X∼N(2,9)X \\sim \\mathcal{N}(2, 9)X∼N(2,9) (mean 2, variance 9, standard deviation 3). Compute P(X>5)P(X > 5)P(X>5) and P(−1<X<5)P(-1 < X < 5)P(−1<X<5).\n\n**Answer:** Standardize to Z=(X−2)/3∼N(0,1)Z = (X - 2) / 3 \\sim \\mathcal{N}(0, 1)Z=(X−2)/3∼N(0,1).\n\nP(X>5)=P(Z>(5−2)/3)=P(Z>1)=1−Φ(1)≈1−0.8413=0.1587P(X > 5) = P(Z > (5-2)/3) = P(Z > 1) = 1 - \\Phi(1) \\approx 1 - 0.8413 = 0.1587P(X>5)=P(Z>(5−2)/3)=P(Z>1)=1−Φ(1)≈1−0.8413=0.1587\n\nwhere Φ\\PhiΦ is the standard normal CDF.\n\nP(−1<X<5)=P((−1−2)/3<Z<(5−2)/3)=P(−1<Z<1)=Φ(1)−Φ(−1)=0.8413−0.1587=0.6827P(-1 < X < 5) = P((−1−2)/3 < Z < (5−2)/3) = P(-1 < Z < 1) = \\Phi(1) - \\Phi(-1) = 0.8413 - 0.1587 = 0.6827P(−1<X<5)=P((−1−2)/3<Z<(5−2)/3)=P(−1<Z<1)=Φ(1)−Φ(−1)=0.8413−0.1587=0.6827\n\nThis is the familiar 68% rule: approximately 68% of a Gaussian distribution lies within one standard deviation of the mean.\n\n**Q3.** Define in your own words the difference between P(H∣D)P(H|D)P(H∣D) and P(D∣H)P(D|H)P(D∣H). Give a concrete ML example where confusing the two would lead to a serious error.\n\n**Answer:** P(H∣D)P(H|D)P(H∣D) is the probability of hypothesis HHH given that we observed data DDD — this is what we want to know after seeing evidence. P(D∣H)P(D|H)P(D∣H) is the probability of observing the data assuming hypothesis HHH is true — this is what's easy to compute from the model.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1377,
+      "out_sha": "4719c2050826",
       "note": ""
     },
     {
