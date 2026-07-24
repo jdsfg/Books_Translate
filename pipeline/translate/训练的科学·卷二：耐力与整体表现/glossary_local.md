@@ -26,6 +26,11 @@
 | FTP | 功能性阈值功率（FTP） |
 | HRV | 心率变异性（HRV） |
 | Zone 2 | 二区（Zone 2） |
+| Riegel formula | Riegel 公式 |
+| Tanaka formula | Tanaka 公式 |
+| Karvonen formula | Karvonen 公式 |
+| Cooper test | Cooper 测试 |
+| Rockport test | Rockport 测试 |
 
 ## 保留英文的术语
 
