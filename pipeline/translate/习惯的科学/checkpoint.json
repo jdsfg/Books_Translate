@@ -2875,11 +2875,11 @@
       "en_title": "Chapter 10: Choice Architecture",
       "order": 233,
       "src_chars": 2107,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0d570e549167",
       "src": "**Healthcare.** The current default architecture often optimizes for billable procedures. A user-aligned redesign:\n\n* _Default annual physical with preventive screening_ on a recurring auto-scheduled basis.\n* _Default medication delivery_ (auto-refill of chronic medications with explicit opt-out).\n* _Default end-of-life conversations_ at specific ages, with structured agenda, before crisis.\n\n**The deeper observation:**\n\nEach of these redesigns would substantially shift behavior and outcomes at scale, often without forcing anyone to do anything they didn't want. The opt-out preserves autonomy; the default serves as a recommendation that most users will accept.\n\nThe reason these redesigns haven't happened, mostly, is that the existing defaults serve someone's interests — usually the institutional designer's, sometimes the politically-influential's. Changing the defaults requires either democratic pressure, regulatory action, or institutional leadership willing to prioritize user wellbeing over institutional convenience.\n\n**This is the political layer that the personal-level work in this chapter sits within.** The reader's individual redesign of their own kitchen, phone, and bedroom is real and produces real change. But it is a partial response to a larger pattern of misaligned choice architectures at the institutional level. Both layers matter; both deserve attention.\n\nFor the practical case: focus on the personal layer first, because it's within reach today. But don't pretend the institutional layer doesn't exist. The fact that your phone is engineered against you, your workplace defaults to observation over deep work, your city defaults to driving over walking — these are not natural facts about the world. They are choices that someone made, and that could be unmade. The personal redesign is yours to do today; the institutional redesign is a longer collective project worth supporting where you can.\n\nThis thread will close in Chapter 14, where we return to the question of whose environment you live in and what reclaiming the design rights to it looks like at every layer.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 589,
+      "out_sha": "ac06e8b1d61e",
       "note": ""
     },
     {
@@ -2887,11 +2887,11 @@
       "en_title": "Chapter 10: Choice Architecture",
       "order": 234,
       "src_chars": 3224,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d74c7f417a5b",
       "src": "### Chapter Summary\n\nThis chapter introduced **choice architecture** — Richard Thaler and Cass Sunstein's framework for the deliberate design of choice contexts — as the second major tool in Part III's positive toolkit. The empirical core of the field: **defaults strongly shape behavior** , often more powerfully than economic incentives, information campaigns, or stated preferences. The classic examples (organ donation opt-in vs. opt-out producing 15% vs. 90% rates; auto-enrollment in 401(k) plans moving participation from 49% to 86%) illustrate effects that, on first encounter, surprise most readers.\n\nWe unpacked **why defaults are so powerful** : effort costs of choosing the non-default; status quo as implicit endorsement; loss aversion making default-on options stickier than default-off; decision fatigue and cognitive load encouraging \"skip the thinking\"; and time-on-task accumulation making defaults sticky over time. The combined mechanisms produce the empirical pattern.\n\nWe toured the **choice architectures around the reader's daily life** — kitchen, phone, bedroom, workspace, social media, physical environment — showing that every environment has a choice architecture and the only question is whether it was designed deliberately and for whose benefit. _Most defaults the reader operates under were not chosen by the reader for their benefit;_ the chapter advocated for redesigning the parts within reach.\n\nWe listed **specific high-leverage default changes** — phone in another room, healthy food at eye level, workout clothes laid out, apps deleted, auto-pay/auto-save setups, calendar-blocked focus hours, blank browser homepages — each of which produces behavioral effects disproportionate to the effort of executing them.\n\nWe covered **friction** as the other side of defaults: adding friction in front of unwanted behaviors and removing friction in front of wanted ones. The principle: **15–30 seconds of friction is often enough to dramatically reduce automatic behavior** , and removing 30 seconds of setup is often the difference between doing-it and not-doing-it.\n\nWe continued **Thread C** with the framing that the reader's environment is engineered, but not for them, and that choice architecture is their tool for reclaiming the design rights. We closed with a **two-hour structural audit practice** , recommending that readers identify 5 high-leverage changes and execute them within the week. _Concentration over distribution; consolidation over many simultaneous changes._\n\nChapter 11 continues Part III's toolkit with **tiny wins and substitution** — two related structural moves that work directly on the procedural system. Tiny starts (BJ Fogg's framework, calibrated) makes habit installation easier by lowering the activation energy. Substitution (the only real alternative to suppression for breaking habits) re-links cues to different responses. Together with implementation intentions and choice architecture, these complete the procedural-system-level toolkit; Chapter 12 will then address the calibrated role of identity-based change. With these four chapters of Part III, the reader will have a complete working toolkit for behavior change at the structural level.\n\n* * *",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 986,
+      "out_sha": "40517ce1484a",
       "note": ""
     },
     {
@@ -2899,11 +2899,11 @@
       "en_title": "Chapter 10: Choice Architecture",
       "order": 235,
       "src_chars": 428,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3ee44b7f0ac6",
       "src": "_This week, your assignment is concrete and structural: do the two-hour structural audit, identify 5 high-leverage default changes, and execute them. Specific recommendations are in the chapter (phone in another room, healthy food at eye level, workout clothes laid out, apps deleted, auto-pay setups). The exercise is the chapter; doing the changes is what produces the behavioral shift this chapter has been arguing for._\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 131,
+      "out_sha": "0425ea226bfb",
       "note": ""
     },
     {
@@ -2911,11 +2911,11 @@
       "en_title": "Chapter 11: Tiny Wins and Substitution",
       "order": 236,
       "src_chars": 2524,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a7d698f8f01a",
       "src": "In 2007, a behavioral scientist at Stanford named BJ Fogg started using a peculiar morning ritual to test an idea about behavior change. After every time he went to the bathroom, he would do two pushups. Not ten. Not fifty. _Two._ The pushups were, in any meaningful sense, useless as exercise — two pushups are below the threshold of producing any cardiovascular or muscular benefit. But Fogg was not after exercise. He was testing whether very small actions, anchored to existing reliable cues, would consolidate into habits. They did. Within a few weeks, the two-pushup move was firing automatically after each bathroom visit, without thought. After several months, Fogg was doing 30, 40, sometimes 70 pushups a day — distributed across many small bouts — without ever having \"decided to start an exercise program.\"\n\nFogg developed this approach into a framework he called **Tiny Habits** , and his subsequent book of that name has been one of the most influential in the popular habit-change literature. The framework's central claim is straightforward: **start small enough that the cue-response link can install with high reliability, then let the response scale itself.** The activation energy for two pushups is low; the activation energy for forty minutes of exercise is high; the difference matters more than most people realize.\n\nTiny Habits is genuinely useful. It captures something real about how the procedural system installs behaviors. It is also overclaimed in places, and the chapter will be honest about where Fogg's framing exceeds what the science supports.\n\nThe chapter has a second, equally important focus: **substitution.** Per Chapter 5, the un-erasable nature of habits means you cannot delete the bad-habit circuit; you can only ensure it isn't triggered, or ensure that when triggered, a different response fires. _Substitution is the only real alternative to suppression for breaking a habit_ , and it operates directly on the procedural system in a way that no amount of willpower-based suppression can match.\n\nTogether, tiny starts (for installing new patterns) and substitution (for breaking old ones) complete the procedural-system-level toolkit. Implementation intentions (Chapter 9) and choice architecture (Chapter 10) handle the cue side and the environmental side; tiny starts and substitution handle the response side. With all four, the toolkit is approximately complete — Chapter 12's identity calibration will add an important supporting tool, and Part IV will be about stacking.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 767,
+      "out_sha": "f1b94daabdb8",
       "note": ""
     },
     {
@@ -2923,11 +2923,11 @@
       "en_title": "Chapter 11: Tiny Wins and Substitution",
       "order": 237,
       "src_chars": 3282,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b7f6d9ae161f",
       "src": "### 11.1 Why Tiny Beats Big\n\nConsider two people, both trying to install a new exercise habit.\n\nPerson A says: \"I will exercise for 30 minutes every morning, starting Monday.\" This is the typical popular-self-help approach. The goal is ambitious; the commitment is sincere; the willpower is engaged.\n\nPerson B says: \"After I brush my teeth in the morning, I will do one pushup.\" This is the Tiny Habits approach. The action is comically small; the commitment is trivial; the willpower is barely engaged.\n\nAcross many trials of this comparison, the data is consistent: **Person B installs the habit at much higher rates than Person A.** Person A typically lasts 1–3 weeks before missed days accumulate, the streak breaks, the goal feels unreachable, and the whole project gets abandoned. Person B almost never misses, because one pushup is not difficult — and after several weeks of consistent execution, Person B's daily count has organically scaled to 5, 10, sometimes 30 pushups, often without any deliberate decision to scale.\n\nWhat's going on?\n\n**The procedural system cares about the cue-response link, not the response magnitude.**\n\nRecall Chapter 4: the procedural memory system installs cue-response pairs through repetition in stable contexts. The system encodes \"in this context, this response was performed.\" It does not, in any meaningful sense, encode the _magnitude_ of the response. One pushup activates the same cue-response circuit as twenty pushups; from the dorsal striatum's perspective, the link being installed is the same.\n\nThis means that the work of habit installation — the consolidating of the cue-response pair into automatic procedural pattern — depends on the _consistency_ of execution, not the _magnitude_. One pushup, every day, after brushing teeth, for sixty days will install a robust cue-response link. Forty pushups, three days a week, with frequent missed days, will install a weaker link, because the cue-response repetition is interrupted by the missed days.\n\nOnce the link is installed, scaling is easy. The hard part of going from \"no exercise\" to \"regular exercise\" is not the exercise itself; it is _getting the cue-response chain to fire reliably._ Once it fires reliably, increasing from 1 pushup to 10 pushups is a small adjustment; the cue-response link is already there. _The scaling is downstream of the linking._\n\nThis is the mechanistic reason tiny starts beat big starts. Big starts try to install a strong link with a high-effort response, which creates frequent missed days, which interrupt the consolidation. Tiny starts install a strong link with a low-effort response, which produces consistent execution, which consolidates the link, which then supports any subsequent scaling.\n\nA useful test: which would you bet more on, after 90 days?\n\n* _Person who has done 1 pushup, 90 days in a row._\n* _Person who has done 30 pushups on 30 random days._\n\nThe first person has installed a robust cue-response habit and can plausibly scale to 30 pushups whenever they want. The second person has done more total exercise but has installed no habit; on day 91 they might exercise or might not, randomly, with no procedural pattern supporting consistency. Long-run, the first person is the one who looks like a \"person who exercises.\"\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 988,
+      "out_sha": "a0dc4265d485",
       "note": ""
     },
     {
