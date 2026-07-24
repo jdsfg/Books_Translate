@@ -375,11 +375,11 @@
       "en_title": "Chapter 2: Three Brain Systems — Helen Fisher's Dissociation",
       "order": 25,
       "src_chars": 2176,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a98bd056c7b6",
       "src": "### 2.1 Lust: The First System\n\nBegin with the most ancient of the three. **Lust** is the system that motivates seeking sexual contact. Its currency is testosterone in both men and women, modulated by estrogen in women. Its neural circuits are evolutionarily old, present in some form in every reproductively sexual species. The lust system does not require a particular partner; it activates around a relatively wide range of attraction cues — physical features, voice, scent, situational context, novelty.\n\nTwo features of the lust system are worth naming up front.\n\nFirst, lust is **non-specific**. It is not directed at one person; it can be directed at many, sequentially or even simultaneously. This is not a moral statement; it is a statement about the system's evolved function. The lust system was selected to motivate sexual contact in general, not to motivate sexual contact with one specific other.\n\nSecond, lust is **fluctuating**. It rises and falls with hormones (across the menstrual cycle, across diurnal rhythms, across major life transitions like pregnancy and andropause), with health (illness suppresses it; exercise tends to elevate it), with stress (chronic stress suppresses it via cortisol), and with situational cues (novelty elevates it; domestic familiarity often does not). Long-term partners typically experience considerable fluctuation in their lust toward each other across years and decades, and this fluctuation is not, in itself, a sign of relationship trouble. Chapter 8 will return to this in detail when we examine Esther Perel's erotic-domestic paradox.\n\n\n#### Definition: Lust\n\nLust is the neurochemical system, mediated primarily by testosterone in both sexes (with estrogen modulating in women), that motivates seeking sexual contact. It is non-specific — not directed at any one individual — and it fluctuates with hormonal, health, situational, and life-stage variables.\n\nIn plain language, this means: lust is the engine of sexual interest in general. It is not the engine of \"I love this particular person.\" A different engine handles that. Conflating the two engines is one of the most common sources of relationship confusion.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 707,
+      "out_sha": "6d44e4d22709",
       "note": ""
     },
     {
@@ -387,11 +387,11 @@
       "en_title": "Chapter 2: Three Brain Systems — Helen Fisher's Dissociation",
       "order": 26,
       "src_chars": 3038,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9155aa517a52",
       "src": "### 2.2 Romantic Love: The Second System\n\nThe second system is much narrower and far more dramatic. **Romantic love** — the OCD-like, obsessive, can-think-of-nothing-else state we call \"being in love\" — is mediated primarily by dopamine, with norepinephrine and elevated phenylethylamine (PEA) playing supporting roles, and (importantly) with serotonin in the brain's reward and mood circuits running unusually low.\n\nFisher's signature contribution was to put people who had recently fallen in love into fMRI scanners and look at what their brains were doing. The results were striking. The neural activation patterns of new romantic love resemble two other states with extraordinary specificity:\n\n* **Obsessive-compulsive disorder.** The constant intrusive thoughts about the beloved, the inability to stop checking the phone for messages, the preoccupation that crowds out other concerns — these are not metaphorically OCD-like. The brain's serotonin patterns are similar to those observed in OCD, and the cognitive features are close functional analogs.\n* **Cocaine addiction.** The dopaminergic reward circuit — the ventral tegmental area, the nucleus accumbens, the caudate nucleus — fires in patterns that closely resemble what is observed in cocaine users seeing cocaine cues. The beloved is, neurochemically, functioning as a powerful reward stimulus.\n\nThis is not poetic exaggeration. New romantic love is functionally an addiction. The withdrawal — what we call heartbreak, when the relationship ends or the beloved is unavailable — produces measurable physiological distress that has more in common with substance withdrawal than with grief over the loss of an ordinary friendship.\n\nThree features of romantic love distinguish it sharply from lust.\n\nFirst, romantic love is **specific**. It locks onto one particular person. The lust system might activate around several people in any given week; the romantic-love system locks onto one and treats that one as uniquely important. The specificity is not a choice; it is what the system does.\n\nSecond, romantic love is **time-limited**. Several large studies, in multiple cultures, find that the OCD-like dopamine peak of new romantic love typically lasts somewhere between six months and two years. After that, the intensity invariably declines. Not always to zero — but always away from the OCD-cocaine pattern. This is not because relationships go wrong. It is because **the brain cannot sustain that kind of dopaminergic hyperactivation indefinitely**. The neurochemistry is metabolically expensive and biologically destabilizing; sustained over years it would be incompatible with normal functioning. Romantic love is, by design, a transitional state.\n\nThird, romantic love **does not require sexual contact**. People can be deeply in romantic love with someone they have never had sex with, and they can have years of frequent sex without ever falling into romantic love with the partner. This decoupling further confirms that lust and romantic love are different systems.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1093,
+      "out_sha": "eb77b3f7d81c",
       "note": ""
     },
     {
@@ -399,11 +399,11 @@
       "en_title": "Chapter 2: Three Brain Systems — Helen Fisher's Dissociation",
       "order": 27,
       "src_chars": 3447,
-      "status": "pending",
+      "status": "done",
       "src_sha": "567514ff5cd8",
       "src": "#### Definition: Romantic Love\n\nRomantic love is the dopamine-driven neurochemical state of intense focused preoccupation with a specific person, characterized by obsessive thinking, motivational urgency, emotional dependency on the beloved's signals, and reward-system hyperactivation. fMRI patterns resemble those of OCD and cocaine reward; the state is typically time-limited (months to a few years).\n\nIn plain language: romantic love is the addiction-like, can't-stop-thinking-about-them state of new intense involvement. It is not the same as lust (which can be diffuse and is often unaccompanied by specific preoccupation), and it is not the same as long-term attachment (which we are about to examine and which is biochemically distinct).\n\n\n### 2.3 Attachment: The Third System\n\nThe third system is the deepest and least dramatic. **Attachment** is the slow-built sense of felt safety with a person who has become — through accumulated co-regulation, repair, mutual reliability, and shared time — your _secure base_. Its neurochemistry is dominated by oxytocin and vasopressin, with the dopaminergic urgency of romantic love progressively quieting and the parasympathetic-nervous-system activation patterns of calm contact taking over.\n\nWhere romantic love is the addiction-like, OCD-like, cocaine-like state, attachment is the state of _home_. The brain is calm in the partner's presence in a way that is not about urgency. The body's stress curves run lower. Sleep is better when sleeping next to them. Threat assessment is partially offloaded to the relationship — exactly the Coan-fMRI finding from Chapter 1.\n\nThree features of attachment matter.\n\nFirst, attachment is **slow to build and durable once built**. Romantic love can erupt within weeks; attachment requires years of repeated co-regulation events to consolidate. Once consolidated, however, it is much more stable than either lust or romantic love. People who have been deeply attached to a partner for thirty years can lose their partner and grieve the loss across the rest of their lives — not because of obsessive dopaminergic preoccupation but because the absence is felt as the loss of a piece of one's own physiological infrastructure.\n\nSecond, attachment **strengthens as romantic love declines**. This is critical. When a couple moves out of the OCD-cocaine phase of new romantic love and into something quieter, the cultural script often reads this as a problem — _we're losing it, the magic is gone_. Fisher's framework reads it differently: as romantic love quiets, the attachment system has the metabolic and behavioral space to take over. The two systems operate on roughly opposing logics — one is the urgency of pursuit, the other is the calm of home — and the natural arc of a long-term relationship is for the attachment system to grow as the romantic-love system contracts. _Long-term romantic-passion decline is not relationship failure. It is the parallel, healthy process of attachment-system strengthening._ The decline is the success, viewed correctly.\n\nThird, attachment **does not require continuous co-presence**. Attachment can sustain across distance, across separations, even across periods of conflict, as long as the underlying co-regulating substrate has been built and is being maintained. We saw this in Chapter 1's discussion of Coan's work: the threat-system buffering effect requires high relationship quality, not continuous proximity.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1057,
+      "out_sha": "a5dfe1e8c49c",
       "note": ""
     },
     {
@@ -411,11 +411,11 @@
       "en_title": "Chapter 2: Three Brain Systems — Helen Fisher's Dissociation",
       "order": 28,
       "src_chars": 681,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5956f84332a3",
       "src": "#### Definition: Attachment\n\nAttachment is the oxytocin- and vasopressin-mediated neurochemical state of felt safety, calm, and physiological co-regulation with a specific person who has become a secure base. It is slow to build (years of repeated co-regulation), durable once built, and strengthens over the same period during which the dopaminergic urgency of romantic love declines.\n\nIn plain language: attachment is the _home_ feeling — the body knowing this person is part of its infrastructure. It is what Chapter 1 was actually about, neurochemically. And it is the system that the Harvard Study (Chapter 4) finds is the strongest single predictor of late-life flourishing.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 210,
+      "out_sha": "af4b628b6fd3",
       "note": ""
     },
     {
@@ -423,11 +423,11 @@
       "en_title": "Chapter 2: Three Brain Systems — Helen Fisher's Dissociation",
       "order": 29,
       "src_chars": 2258,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3a7df241cc5c",
       "src": "### 2.4 The Three Systems Can Dissociate\n\nNow to the most important consequence of Fisher's framework. The three systems — lust, romantic love, attachment — are partly independent. They can be present together, or any can be present without the others, or any can be absent while the others are running.\n\nConcretely:\n\n* **You can lust toward A, romantic-love B, be attached to C — three different people.** This sounds exotic but is empirically common. A person in a stable long-term partnership (attachment to C) develops obsessive infatuation with a new colleague (romantic love for B) while simultaneously experiencing periodic sexual interest in unfamiliar others (lust toward A). This is not pathology; it is three systems doing what they do.\n* **You can be deeply attached to someone for whom lust has nearly disappeared.** Long-term partners often describe this. The marriage is calm, secure, mutually supportive; the sexual interest in this specific person has waned. The attachment is intact; the lust system has shifted (often hormonally, often situationally, often because of the very familiarity that built the attachment).\n* **You can be in burning romantic love with someone you know, intellectually, you cannot safely attach to.** Many people have had this experience — the affair partner who is wonderful in moments and impossible as a partner; the unavailable beloved; the relationship that the romantic-love system insists on while the rational mind reads the trajectory clearly. The romantic-love system does not consult the attachment-quality assessment. It locks onto whoever it locks onto.\n* **You can have lust and attachment without ever having experienced romantic love.** Some long-term partnerships are built without an OCD-cocaine phase ever occurring. Lust and attachment combine; romantic love simply is not part of this particular relationship's history. These relationships can be excellent. They are not lesser for missing the dopaminergic spike.\n* **You can be in attachment with no current lust and no romantic love.** Many older couples describe this clearly. The attachment is the deepest part of their life. Sex has become rare or absent. Romantic-love urgency is decades in the past. The relationship is not in trouble.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 713,
+      "out_sha": "a68f17963c3b",
       "note": ""
     },
     {
