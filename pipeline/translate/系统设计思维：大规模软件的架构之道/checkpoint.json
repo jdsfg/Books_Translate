@@ -4359,11 +4359,11 @@
       "en_title": "Chapter 24: Design a Video Streaming Platform — Bytes at Scale",
       "order": 354,
       "src_chars": 3297,
-      "status": "pending",
+      "status": "done",
       "src_sha": "69df2e5cf543",
       "src": "#### CDN Cache Invalidation\n\nWhat happens when a video needs to be removed (copyright takedown, content policy violation) or updated (re-encoded at higher quality)? The platform must invalidate cached copies at every edge server globally.\n\nThis is the cache invalidation problem from Chapter 7, amplified to a global scale. CDN vendors provide purge APIs — you send a request to the CDN's control plane, which propagates a purge command to all edge servers globally. Propagation typically completes within seconds to minutes.\n\nFor video streaming, a simpler approach is URL versioning: rather than invalidating a URL, use a URL that encodes a version or content hash:\n    \n    \n    https://cdn.example.com/movie123/v3/1080p/seg001.ts\n    \n\nWhen the content changes, the new version gets a new URL (`v4`). Old URLs naturally expire from caches via TTL. Players are directed to new URLs via the updated manifest. This avoids the need for explicit cache purging and is consistent with the immutable object storage model we discussed in Chapter 10.\n\n* * *\n\n\n### 24.4 Storage Tiers — Hot, Warm, and Cold\n\nA platform with 500 million videos and 250 petabytes of encoded content cannot store everything in fast, expensive storage. Storage must be tiered by access frequency.\n\nRecall from Chapter 10: storage options lie on a cost-latency curve. Memory is fast and expensive; hard drives are slow and cheap; archival storage (magnetic tape, cold object storage) is extremely cheap and extremely slow. The right strategy matches the storage tier to the expected access frequency.\n\nFor a video platform:\n\n**Hot storage (object storage with high read throughput):** Top 1% of videos (2.5 TB). These videos are accessed millions of times daily. They should also be pre-warmed into CDN edge caches proactively — do not wait for the first cache miss to populate edge caches. When a new movie is released, the platform's distribution system pushes encoded segments to edge caches before the first viewer presses play.\n\n**Warm storage (standard object storage):** The next 9% of videos (approximately 22.5 TB). These are accessed occasionally — hundreds to thousands of times per day. Stored in standard object storage with CDN caching at regional (not edge) tiers.\n\n**Cold storage (archival object storage):** The remaining 90% of videos (approximately 225 TB). These are the long-tail videos accessed only a few times per month or per year. Stored in low-cost, high-latency archival storage. When a cold video is requested, there may be a 2–10 second delay while the bytes are retrieved from cold storage — acceptable for the first viewer, after which the content is cached at a warmer tier.\n\n\n#### The Storage Tier Decision\n\nHow do you decide when to move a video from hot to warm to cold? Monitor access frequency. A video that was in the top 1% last month but received zero views this month should be moved to warm storage. Automated lifecycle policies (common in modern object storage systems) move objects between tiers based on time since last access.\n\nThe financial impact is significant. Cold storage costs roughly 20× less per byte than hot storage. For a platform with 250 petabytes, storing 90% of content in cold storage instead of hot storage saves hundreds of millions of dollars annually.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1077,
+      "out_sha": "5c9a3887be7f",
       "note": ""
     },
     {
@@ -4371,11 +4371,11 @@
       "en_title": "Chapter 24: Design a Video Streaming Platform — Bytes at Scale",
       "order": 355,
       "src_chars": 3293,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f12daf635cab",
       "src": "### 24.5 The Upload Pipeline — Reliability at Scale\n\n500 hours of video uploaded per minute means approximately 8 hours of video uploaded every second. Each upload involves a large file transfer over an unreliable public internet connection.\n\nReliability challenges: a network interruption mid-upload could lose the entire upload, frustrating the creator and wasting the already-transferred bytes.\n\nThe solution is **resumable uploads** : the client breaks the upload into chunks and tracks which chunks have been successfully received. If the upload fails at chunk 47 out of 100, the client resumes from chunk 47 without re-sending chunks 1–46. This requires the server to maintain upload state: which chunks have been received for a given upload session?\n\nOnce the upload completes, the ingestion service triggers the transcoding pipeline: a message is published to a queue (recall Chapter 8's message queues) consumed by transcoding workers. The queue decouples ingestion (which must be fast and reliable) from transcoding (which is compute-intensive and slower). If transcoding is temporarily unavailable, uploads continue — messages accumulate in the queue and are processed when workers recover.\n\n\n#### Why Queuing Here Is Essential\n\nConsider the alternative: the ingestion service calls the transcoding service synchronously. If transcoding is slow (a 4K video might take 30 minutes to transcode), the ingestion service must hold the HTTP connection open for 30 minutes. HTTP connections are finite resources on the ingestion server. A surge in upload volume would exhaust connection resources before exhausting compute — the ingestion service fails not because it's computationally overloaded but because it ran out of connection handles.\n\nThe queue-based decoupling, which we introduced in Chapter 8 for SocialSnap's email notification system, appears here at much larger scale. The principle is the same: asynchronous decoupling with a durable queue makes two systems independently scalable and resilient to each other's failures.\n\n* * *\n\n\n### 24.6 The Full Architecture\n\nAssembling all the pieces, the video streaming architecture has three major subsystems:\n\n**Ingest path (upload and transcoding):**\n\n* Upload service (chunked, resumable uploads) → Queue → Transcoding workers (embarrassingly parallel per video segment) → Encoded segments written to tiered blob storage → Manifest generated and stored\n\n**Distribution path (CDN delivery):**\n\n* Origin object storage → Regional CDN caches → Edge CDN PoPs → Viewer's device → Adaptive bitrate player algorithm\n\n**Control path (metadata and playback startup):**\n\n* When a viewer presses play: API server queries video metadata service (title, available quality levels, DRM if applicable) → Player receives manifest URL → Player requests manifest from CDN edge → ABR streaming begins\n\nThe API servers for the control path are stateless (Chapter 11's stateless imperative), horizontally scaled behind load balancers (Chapter 9). The video metadata (titles, descriptions, view counts) lives in a relational database with read replicas (Chapter 12) for frequent reads. View counts, which update continuously and don't require perfect accuracy, can be stored in a Redis counter (Chapter 7) and periodically flushed to the main database.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1088,
+      "out_sha": "8f6d633aa945",
       "note": ""
     },
     {
@@ -4383,11 +4383,11 @@
       "en_title": "Chapter 24: Design a Video Streaming Platform — Bytes at Scale",
       "order": 356,
       "src_chars": 883,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0aa1ace115ae",
       "src": "#### Tradeoff Matrix for Video Streaming\n\nDesign Choice | Latency | Consistency | Availability | Operational Complexity  \n---|---|---|---|---  \nAdaptive bitrate streaming | Low startup latency via aggressive buffer fill | Eventual (quality switches) | Very high (graceful degradation to lower quality) | High (ABR algorithm tuning)  \nCDN edge caching | Very low for cached content | Eventual (cache TTL) | Very high | Medium (CDN configuration, invalidation)  \nSegmented video files | Low seek latency | N/A | High (segments fetched independently) | Medium (segment generation at transcoding)  \nTiered storage (hot/warm/cold) | Low for hot, high for cold | Consistent | High | Medium (lifecycle policy management)  \nQueue-based transcoding | High (upload-to-available delay) | Eventual | Very high (queue buffers failures) | Medium (queue monitoring)  \n  \n* * *\n\n\n### 24.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 357,
+      "out_sha": "df78e3336a94",
       "note": ""
     },
     {
@@ -4395,11 +4395,11 @@
       "en_title": "Chapter 24: Design a Video Streaming Platform — Bytes at Scale",
       "order": 357,
       "src_chars": 2688,
-      "status": "pending",
+      "status": "done",
       "src_sha": "529dd33fc7fa",
       "src": "#### Concept Check\n\n**Q1.** Why are videos segmented into 2–10 second chunks rather than stored as single large files?\n\n**Answer:** Three reasons: (1) **Seeking:** A viewer jumping to the 90-minute mark of a 2-hour movie can download from the nearest segment boundary, rather than downloading and discarding 90 minutes of video data. (2) **Adaptive bitrate switching:** Quality can only switch between segments, not mid-segment. Shorter segments mean more frequent quality switching opportunities, allowing faster response to changing network conditions. However, shorter segments also increase overhead (more HTTP requests, more manifest entries). 2–10 seconds is the empirically validated range that balances switching frequency against overhead. (3) **Parallel encoding:** Each segment is encoded independently, enabling embarrassingly parallel transcoding across many machines.\n\n**Q2.** What is the role of the manifest file in adaptive bitrate streaming?\n\n**Answer:** The manifest file is the index that tells the player what quality levels are available and where each segment can be found for each quality level. It maps the logical video (a 2-hour movie) to a grid of concrete download URLs: (quality level × time interval) → URL. The player downloads the manifest once at playback start, then uses it to request segments. The ABR algorithm selects which row (quality level) to use for each column (time segment) based on observed bandwidth and buffer health. Without the manifest, the player would not know what quality levels exist or where their segments are stored.\n\n**Q3.** Explain the CDN cache hierarchy with an example. Why maintain a regional tier between edge and origin?\n\n**Answer:** The CDN cache hierarchy is: origin (source of truth) → regional cache (large, central cache serving a region like \"Europe\") → edge servers (many small caches close to users). Example: A viewer in Warsaw requests a video segment. The Warsaw edge server checks its cache — miss. Instead of going directly to origin in California (150ms round trip), it checks the European regional cache in Frankfurt (25ms round trip). Frankfurt has the segment; it returns it to Warsaw and Warsaw caches it. Subsequent viewers in Warsaw, Krakow, and Gdansk all get the segment from the Warsaw edge cache (5–10ms). The regional tier exists because: (1) Edge servers have limited storage and can't cache everything the region might need. (2) Going to origin for every edge miss would create massive origin load and high latency for cache misses. The regional cache absorbs most misses locally within the region.\n\n**Q4.** Why does the transcoding pipeline use a message queue rather than synchronous calls?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 881,
+      "out_sha": "bc43c34d258a",
       "note": ""
     },
     {
@@ -4407,11 +4407,11 @@
       "en_title": "Chapter 24: Design a Video Streaming Platform — Bytes at Scale",
       "order": 358,
       "src_chars": 913,
-      "status": "pending",
+      "status": "done",
       "src_sha": "faa715d6bedf",
       "src": "**Answer:** Three reasons: (1) **Decoupling of timescales:** Uploading completes in minutes; transcoding may take minutes to hours depending on video length and quality levels. Synchronous calling would require holding the upload connection open for hours — impractical. (2) **Independent failure domains:** If the transcoding cluster goes down, uploads continue without error. Messages accumulate in the queue and are processed when transcoding recovers. With synchronous calls, transcoding failures would also fail uploads. (3) **Independent scaling:** Upload load spikes (e.g., a new popular creator announces they're joining the platform) and transcoding load spikes are independent events. The queue absorbs burst upload volume without requiring transcoding to scale instantly — transcoding scales at its own pace. This is the same decoupling principle introduced in Chapter 8 with SocialSnap's email queue.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 263,
+      "out_sha": "deb8c0be358c",
       "note": ""
     },
     {
@@ -4419,11 +4419,11 @@
       "en_title": "Chapter 24: Design a Video Streaming Platform — Bytes at Scale",
       "order": 359,
       "src_chars": 3471,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5b1346bedc5d",
       "src": "#### Application Problems\n\n**Q1.** A video platform's edge CDN in Singapore serves 10 million viewers at peak. The average video segment is 5MB (10 seconds of 1080p). The average viewer requests a new segment every 8 seconds (accounting for ABR buffer management). Estimate the required outbound bandwidth from the Singapore edge cluster, and then estimate how much of the total platform traffic this edge cluster represents if the platform has 100 million simultaneous viewers globally and Singapore serves 5% of them.\n\nHint\n\nCompute bandwidth as: (viewers) × (bytes per second per viewer). Then think about what \"5% of 100 million viewers\" means at the segment request level.\n\n**Answer:** Singapore serves 10 million viewers. Each viewer requests one 5MB segment every 8 seconds = 625 KB/s per viewer. Total bandwidth from Singapore edge: 10 million × 625 KB/s = 6.25 TB/s = 50 Tbps. At the global level: 100 million viewers × 625 KB/s = 62.5 TB/s = 500 Tbps total. Singapore serves 10 million of the 100 million global viewers = 10% of global traffic = 50 Tbps. This illustrates why CDN capacity planning is a massive infrastructure investment: a single regional cluster must provision 50 Tbps, requiring thousands of servers with 100Gbps NICs, and many redundant 100Gbps upstream fiber connections.\n\n**Q2.** Recall from Chapter 7 that caching introduces staleness. The CDN caches video segments with a TTL of 24 hours. A video creator discovers a factual error in their video and uploads a corrected version. Walk through the full series of events needed to replace the cached, incorrect version with the correct version across the global CDN.\n\nHint\n\nConsider what must happen in the transcoding pipeline, the storage layer, and the CDN cache layer. Think about the URL versioning strategy and how the player knows to use the new URL.\n\n**Answer:** Step 1: The creator uploads the corrected video. The upload pipeline ingests it and triggers transcoding. Step 2: Transcoding produces a new set of encoded segments. With URL versioning, these are stored at new URLs: `.../movie123/v2/1080p/seg001.ts` instead of `.../movie123/v1/1080p/seg001.ts`. Step 3: A new manifest is generated, pointing to the v2 segment URLs. The manifest itself gets a new URL or the manifest's URL is the same but points to v2 content. Step 4: The platform's metadata service is updated to reference the new manifest URL. Step 5: For viewers starting a new playback session: they receive the new manifest URL from the API, which points to v2 segments. They never see the old content. Step 6: For viewers mid-session with the old manifest: they continue watching v1 segments until they end the session. Their experience is uninterrupted. The v1 segments remain in CDN caches until their TTLs expire (up to 24 hours), but since v2 URLs are used by all new sessions, v1 cache entries simply age out. If immediate removal is required (e.g., legal takedown), the platform issues an explicit CDN purge API call, which propagates a delete command to all edge servers within minutes.\n\n**Q3.** You are designing the storage tier policy for a video platform. A video receives 90% of its lifetime views within the first 7 days of upload (for short-form content) or the first 14 days (for movies). Design a storage lifecycle policy that balances cost and access latency, given that hot storage costs 0.05 USD/GB/month, warm storage costs 0.01 USD/GB/month, and cold storage costs 0.001 USD/GB/month.\n\nHint",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1287,
+      "out_sha": "b2bbc4bd4a04",
       "note": ""
     },
     {
@@ -4431,11 +4431,11 @@
       "en_title": "Chapter 24: Design a Video Streaming Platform — Bytes at Scale",
       "order": 360,
       "src_chars": 1219,
-      "status": "pending",
+      "status": "done",
       "src_sha": "35219b72b512",
       "src": "Think about the lifecycle of content from the perspective of when it is likely to be requested. Calculate the cost impact of each tier for 1TB of content over 12 months.\n\n**Answer:** Proposed lifecycle policy: Days 0–7: Hot storage (highest expected access frequency; content is viral-candidate; CDN pre-warming justified). Days 8–30: Warm storage (still receiving significant traffic but declining; CDN regional caches serve most traffic). Days 31–365: Cold storage for long-tail content (videos with fewer than 100 views in the past 30 days); warm storage for sustained-popularity content (videos with 100+ daily views maintained). Day 365+: Archive storage for all content. Cost comparison for 1TB of content over 12 months: All hot: 12 × 50 USD = 600 USD. Policy (1 week hot, 3 weeks warm, 11 months cold): 50 USD × 0.25 + 10 USD × 0.75 + 1 USD × 11 = 12.50 USD + 7.50 USD + 11 USD = 31 USD. The tiered policy costs approximately 5% of always-hot storage. At 250PB total content with 90% in cold storage: savings are enormous. The small access latency penalty for cold requests (2–10 seconds) is acceptable because cold content has very few viewers and the platform can cache warmed content after the first access.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 472,
+      "out_sha": "e621df38d979",
       "note": ""
     },
     {
@@ -4443,11 +4443,11 @@
       "en_title": "Chapter 24: Design a Video Streaming Platform — Bytes at Scale",
       "order": 361,
       "src_chars": 2852,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3f6de23c6eff",
       "src": "#### Think Deeper\n\n**Q1.** Video streaming and web search (Chapter 23) both use CDN edge caches, but with very different cache hit rate expectations. Search result pages are unique per query and user; video segments are shared across all viewers of the same content. How does this difference affect CDN design strategy for each system?\n\n**Discussion:** For search, CDN caching applies primarily to static assets (JavaScript, CSS, UI elements) — not the search results themselves, which are highly personalized and change frequently. The CDN serves as an edge server for the static shell of the application; the dynamic content is generated fresh per request from search infrastructure. Cache hit rates for search result pages approach 0% for the content; nearly 100% for static assets. For video, the content itself is perfectly shareable — every viewer requesting \"segment 47 of Movie X in 1080p\" receives identical bytes. The CDN hit rate for popular video is very high (90%+). CDN design reflects this: for search, edge servers primarily handle TCP termination and static asset serving, with minimal content caching. For video, edge servers are primarily large storage caches, with hardware optimized for storage capacity (many large HDDs) rather than compute power. The two systems share CDN infrastructure at major providers (Cloudflare, Akamai) but use it very differently.\n\n**Q2.** Contrast the design philosophy of a video streaming platform (this chapter) with the ride-sharing service previewed for Chapter 25. What happens to every design decision when the latency requirement changes from \"tolerate minutes\" to \"tolerate milliseconds\"?\n\n**Discussion:** Video streaming is tolerant of preparation latency: encoding takes hours, CDN pre-warming takes minutes, even startup takes 2 seconds. The system compensates for these latencies by doing work ahead of time (transcoding, caching) so that when the user presses play, the response feels instant. The system is designed around anticipated demand. Ride-sharing is the opposite: demand cannot be anticipated (rides are requested spontaneously), matching must happen within seconds (a driver's location is only useful if it's current), and state changes must be consistent (two dispatchers must not simultaneously assign the same driver to two different riders). Video streaming optimizes for throughput and cost efficiency; ride-sharing optimizes for latency and consistency. The building blocks (load balancers, databases, caches, queues) appear in both systems, but their configuration is inverted. A video platform's database might tolerate 1-second replication lag with no user-visible effect; a ride-sharing database cannot. A video platform's cache might have a TTL of 24 hours; a ride-sharing platform's location cache might expire in 5 seconds. Same tools, radically different tuning.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 849,
+      "out_sha": "419bfed9631b",
       "note": ""
     },
     {
@@ -4455,11 +4455,11 @@
       "en_title": "Chapter 24: Design a Video Streaming Platform — Bytes at Scale",
       "order": 362,
       "src_chars": 1390,
-      "status": "pending",
+      "status": "done",
       "src_sha": "49861883d340",
       "src": "### Chapter Summary\n\nThis chapter designed a video streaming platform from upload through delivery, making the CDN — briefly mentioned in Chapters 7 and 10 — the central architectural protagonist.\n\nThe **transcoding pipeline** converts raw uploads into streaming-ready, multi-quality, segmented files. It is an embarrassingly parallel batch workload, decoupled from uploads via message queues (Chapter 8's pattern, applied at petabyte scale).\n\n**Adaptive bitrate streaming** puts intelligence in the player: the device continuously monitors bandwidth and buffer health, selecting video quality segments accordingly. This makes the server stateless with respect to streaming sessions, enabling horizontal scaling (Chapter 11).\n\nThe **CDN** makes global delivery economically viable. With top-1% content driving 80% of views, edge-tier caching achieves high hit rates. The cost savings from high CDN hit rates determine the platform's economics. **Storage tiering** (hot/warm/cold) manages the 250-petabyte content library economically by matching storage cost to access frequency.\n\nThe contrast with Chapter 25 is sharp: video is pre-recorded and latency-tolerant, enabling hours of preparation before playback. Chapter 25's ride-sharing is real-time and latency-intolerant — the system cannot prepare anything in advance because demand is spontaneous and location changes every second.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 423,
+      "out_sha": "87c8e64f455e",
       "note": ""
     },
     {
@@ -4467,11 +4467,11 @@
       "en_title": "Chapter 25: Design a Ride-Sharing Service — Real-Time Under Constraint",
       "order": 363,
       "src_chars": 3114,
-      "status": "pending",
+      "status": "done",
       "src_sha": "45cf205d72f1",
       "src": "Chapter 24 ended with a system built on patience. A video streaming platform encodes content hours before it is watched, fills CDN caches in advance, and tolerates 2-second startup latency. The entire architecture is designed around the luxury of preparation.\n\nNow imagine a rider standing on a street corner in a rainstorm, pressing \"Request Ride.\" They expect a driver to appear on their screen within two seconds. They expect a match within thirty seconds. They expect the driver's icon on the map to move smoothly, updating their position every few seconds. And when the trip ends, they expect the charge to their credit card to be exactly correct — not an approximation, not an estimate, not an eventual-consistency best-guess.\n\nRide-sharing is the opposite of video streaming in almost every relevant dimension. The data is not pre-computed; it is created the instant a driver starts their car. The latency requirements are not \"under 2 seconds for startup\" but \"under 100 milliseconds for a driver's location update to propagate to the server.\" The consistency requirements are not \"eventual\" but \"strong\" — specifically for financial transactions, where a driver must be assigned to exactly one rider, and a payment must be deducted exactly once.\n\nThis is a chapter about what happens to system design when time itself becomes the defining constraint.\n\n\n### Detective's Brief\n\n**Client:** Design the core backend of a ride-sharing service at global scale.\n\n**Clues (Requirements):**\n\n* Riders can request a ride; drivers are matched to nearby riders within 30 seconds\n* Riders see nearby available drivers on a map, updated continuously\n* Drivers send location updates every 4 seconds while active\n* ETA (estimated time of arrival) is shown to riders and updated continuously\n* Trip state machine: REQUESTED → ACCEPTED → DRIVER_ARRIVING → IN_TRIP → COMPLETED → BILLED\n* Surge pricing activates automatically when demand in an area exceeds supply\n* Financial transactions (trip billing) must be exactly correct and consistent\n\n**Constraints (Evidence):**\n\n* 5 million active drivers globally, each sending a location update every 4 seconds\n* Location update throughput: 5 million ÷ 4 = **1.25 million writes per second** to the location database\n* 1 million simultaneous active rides at peak\n* The radius for matching a driver to a rider: approximately 5 km\n* Matching must happen within 30 seconds of a ride request\n* Map display must show current driver positions (< 5 second stale is acceptable)\n* Billing must be accurate to the cent; no double-billing; no missed charges\n\n**The Question:** How do you handle 1.25 million location writes per second, match riders to nearby drivers within 30 seconds, and maintain strong consistency for financial transactions — all in the same system?\n\nThe answer is that you do not use \"the same system\" for all three. Location tracking, matching, and billing have fundamentally different consistency, latency, and throughput requirements. As we learned in Chapter 4's CAP theorem: no single design serves all three. This chapter shows how to split the problem.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1116,
+      "out_sha": "a71e8fcfa9ce",
       "note": ""
     },
     {
@@ -4479,11 +4479,11 @@
       "en_title": "Chapter 25: Design a Ride-Sharing Service — Real-Time Under Constraint",
       "order": 364,
       "src_chars": 3117,
-      "status": "pending",
+      "status": "done",
       "src_sha": "345a4802ab40",
       "src": "### 25.1 Geohashing — Turning Space Into Keys\n\nBefore designing the location system, we need a way to represent geographic location in a form that databases and caches can efficiently query. A driver's location is a pair of floating-point coordinates: latitude 37.7749°N, longitude 122.4194°W. Naively, finding all drivers within 5km of a rider requires a range query over both latitude and longitude simultaneously — a 2-dimensional query that most standard databases handle poorly.\n\n**Geohashing** solves this by mapping 2D coordinates into 1D strings, in a way that preserves proximity.\n\n\n#### Definition: Geohash\n\nA **geohash** is a short alphanumeric string that encodes a geographic coordinate pair into a hierarchically structured, proximity-preserving identifier. The string's length determines precision: shorter strings represent larger geographic areas; longer strings represent smaller areas.\n\nThe encoding works by recursively bisecting the geographic space. First, the world is divided into two halves: east (longitude 0°–180°) and west (longitude 180°–0°). A driver in the western hemisphere gets a bit value of 0; eastern, 1. Then each half is bisected north-south, east-west, and so on, alternating latitude and longitude divisions. After 30 bisections, the encoded location identifies a rectangle approximately 1m × 1m.\n\nThe geohash string is the Base32 encoding of these bits. A 6-character geohash identifies an area of approximately 1.2km × 0.6km; a 5-character geohash identifies approximately 4.9km × 4.9km.\n\nIn plain language: geohashing converts \"I am at latitude 37.77, longitude -122.41\" into \"9q8yy\" — a 5-character string that identifies the roughly 5km × 5km cell containing that location. All other locations within that cell share the same 5-character geohash prefix.\n\n\n#### Why Proximity Preservation Matters\n\nThe critical property: two locations that are geographically close tend to share a long common geohash prefix. A driver 1km from a rider is likely in the same 5-character geohash cell. This means \"find all drivers within 5km of a rider\" can be approximated as \"find all drivers with geohash prefix = [rider's geohash]\" — a single key lookup or range scan on the geohash string.\n\nThis is the connection to Chapter 6's key-value stores: driver locations are stored in a key-value store (Redis, or a similar in-memory database) keyed by geohash. Finding nearby drivers is now a key lookup by geohash prefix — O(1) for the lookup itself.\n\n\n#### The Edge Cases of Geohashing\n\nGeohashing has a known limitation: neighboring geographic areas sometimes have completely different geohash values if they are on opposite sides of a major bisection boundary. Two drivers on opposite sides of such a boundary might be 10 meters apart geographically but have different geohash prefixes.\n\nThe standard fix is to query the target cell and all 8 neighboring cells. Since each cell is 5km × 5km and drivers move in 2D space, the rider's candidate drivers are in the center cell plus at most one ring of surrounding cells. This requires 9 key lookups instead of 1 — a small constant overhead.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1144,
+      "out_sha": "eb4a241c3cea",
       "note": ""
     },
     {
@@ -4491,11 +4491,11 @@
       "en_title": "Chapter 25: Design a Ride-Sharing Service — Real-Time Under Constraint",
       "order": 365,
       "src_chars": 3404,
-      "status": "pending",
+      "status": "done",
       "src_sha": "50314cbf172e",
       "src": "#### Common Misconception\n\nA common misconception is that geohashing guarantees that nearby points always share the same prefix. It does not — it only makes it likely. The bisection boundary problem means that any geographic matching system using geohashing must include neighboring cells in its search. Ignoring neighboring cells produces a matching system that occasionally fails to find the nearest driver because they are 10 meters across a bisection boundary.\n\n* * *\n\n\n### 25.2 Location Tracking — 1.25 Million Writes Per Second\n\n1.25 million location updates per second is an enormous write throughput. Recall from Chapter 8 that the location database is mentioned as the destination for high-throughput writes. Now we design it.\n\n\n#### The Write Path\n\nEvery 4 seconds, each active driver's mobile app sends an HTTP request:\n    \n    \n    POST /driver/{driver_id}/location\n    { \"lat\": 37.7749, \"lng\": -122.4194, \"timestamp\": 1714000000 }\n    \n\nThe location update pipeline:\n\n  1. **Load balancer** (Chapter 9): Distribute 1.25M requests/second across API servers\n  2. **API server layer** (stateless, horizontally scaled — Chapter 11): Validate the request, enrich with the driver's computed geohash\n  3. **Location store write:** Write `(driver_id → current_location)` and update the geohash index\n  4. **Publish to location event stream:** Emit the update to an event stream (a Kafka topic — Chapter 8) for consumption by downstream systems (ETA computation, surge pricing calculation, rider map display)\n\nThe location store itself must handle 1.25M writes/second with a write latency under 10ms (to keep the end-to-end update pipeline under 100ms). Standard relational databases cannot handle this throughput directly; even a heavily optimized PostgreSQL installation struggles above 50,000 writes/second on a single node.\n\nThe appropriate technology is an in-memory key-value store (Redis) or a column-family store (Cassandra). Redis can handle 500,000+ operations per second on a single node; a sharded Redis cluster across 10 nodes handles 5M ops/second comfortably. The driver's current location is stored as a simple key-value: `driver:{id}:location → {lat, lng, geohash, timestamp}`.\n\n\n#### The Geohash Index\n\nFor the matching service to find nearby drivers, the system maintains a reverse index: `geohash:{cell} → set of driver IDs in that cell`. When a driver moves from geohash cell A to cell B:\n\n  1. Remove the driver from the set for cell A\n  2. Add the driver to the set for cell B\n  3. Update the driver's location key\n\nWith Redis sorted sets, cells can store driver IDs with their precise coordinates as scores, enabling fine-grained distance ranking within a cell. Redis's native `GEOADD` and `GEORADIUS` commands implement geospatial queries directly over a sorted set encoding of coordinates — effectively a built-in geohash-like spatial index.\n\n\n#### Location Data Freshness\n\nLocation updates are only useful if they are recent. A driver's location from 10 minutes ago is not useful for matching — the driver may have moved miles. The location store should expire entries: if a driver hasn't sent an update in 30 seconds, they are probably offline and should be removed from the available-driver index. Redis TTL (Time-To-Live) on each driver's location key handles this automatically: every update resets the TTL; expiration removes stale drivers from consideration.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1421,
+      "out_sha": "a6f2da6f29ce",
       "note": ""
     },
     {
