@@ -1403,11 +1403,11 @@
       "en_title": "Chapter 12: The Work of the Obvious",
       "order": 108,
       "src_chars": 2073,
-      "status": "pending",
+      "status": "done",
       "src_sha": "044b47e22a0e",
       "src": "Here is a sentence: \"She told him she couldn't, so he asked her sister instead.\" You understood it instantly and completely. But look at what you had to supply to understand it. You decided that \"she,\" \"him,\" and \"her sister\" were three different people and worked out which was which. You filled in _what_ she couldn't do, though the sentence never says. You invented a plausible request out of nothing. You inferred that \"instead\" means he wanted the same thing from the sister that he'd wanted from her. You constructed an entire little story, with motives and a chain of events, from a handful of words that, strictly, specify almost none of it. And you did this in a fraction of a second, without effort, without noticing, and with such confidence that it did not even occur to you that the sentence was radically incomplete.\n\nNow multiply that by everything. Every sentence you hear, every situation you enter, every action you observe is radically incomplete on its face, and you are continuously, instantly, effortlessly filling in the missing context, supplying the assumptions, constructing the orderly sense of \"what is obviously going on\", and you never notice that you are doing it, because the whole point of the work is to produce the feeling that nothing needed doing, that the meaning was simply _there_. This astonishing, invisible labor, the work of making the world seem obvious, is the subject of a whole branch of the study of everyday life, and it was opened by a sociologist who is not Goffman, whose name you must keep distinct from Goffman's, and whose central insight transforms how we see the ordinary world. This Part is about him, and about the hidden work beneath the seen-but-unnoticed.\n\n\n### 12.1 A different lens: Garfinkel and ethnomethodology\n\nSo far our guide has been Goffman, and his lens has been dramaturgical, performance, face, the presentation of self. We now bring in a second thinker with a different and complementary lens, and it is essential to keep the two apart, because students of this material confuse them constantly.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 667,
+      "out_sha": "55eef61e5527",
       "note": ""
     },
     {
@@ -1415,11 +1415,11 @@
       "en_title": "Chapter 12: The Work of the Obvious",
       "order": 109,
       "src_chars": 3275,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f8f53fba20fe",
       "src": "#### Definition: Ethnomethodology\n\n**Ethnomethodology** is the study of the methods ordinary people use to produce and recognize the sense, orderliness, and \"obviousness\" of everyday situations, the tacit, taken-for-granted work by which members of a society continuously accomplish their shared sense of social reality. The term was coined by the sociologist **Harold Garfinkel** , whose central statements appear in his 1967 book _Studies in Ethnomethodology_.\n\nIn plain language: _ethno-_ (people's) _-method-ology_ (methods) is the study of the methods people use to make everyday life make sense. Where Goffman asks \"how do people present selves?\", Garfinkel asks a stranger and more foundational question: \"how do people manage to experience the world as obvious, orderly, and shared at all?\" How does a situation come to seem to everyone present to be the situation it so plainly _is_? Garfinkel's answer is that this obviousness is not given. It is _achieved_ , continuously, by everyone, through methods so practiced and so tacit that the achievement is invisible and the result feels like simple reality.\n\nMark the difference firmly, because it is the most important attribution in this Part. **The breaching experiments and the term \"ethnomethodology\" belong to Garfinkel, not to Goffman.** They are often blurred together, both study everyday interaction, both were active in the same era, but they are different thinkers with different projects. Goffman's dramaturgy studies how we _present_ ourselves within situations whose reality we take for granted; Garfinkel's ethnomethodology studies how we _produce that very taken-for-grantedness_ , the sense of obvious shared reality that Goffman's performers move around within. They fit together beautifully, Garfinkel describes the floor that Goffman's actors stand on, but they are not the same, and crediting Garfinkel's breaching experiments to Goffman (a common error) gets the field's history wrong.\n\n\n### 12.2 The accomplishment of the obvious\n\nGarfinkel's central idea is captured in a single word he used in an unusual way: _accomplishment._\n\n\n#### Definition: Accomplishment\n\nIn ethnomethodology, to say that the orderliness and obviousness of a situation is an **accomplishment** is to say that it is actively, continuously _produced_ by the participants through their ongoing methods, not a pre-given fact they merely encounter, but an achievement they bring off together, moment by moment, and must keep bringing off for it to persist.\n\nIn plain language: the obvious is not lying around waiting to be noticed; it is something people _do._ The sense that \"this is obviously a class, and I'm obviously the student, and that's obviously the teacher, and we're obviously doing a lesson\" is not simply read off the situation, it is accomplished, continuously, by everyone in the room acting in ways that produce and confirm exactly that sense. Stop doing the work, start acting as though you did not know what was going on, and the obviousness evaporates with frightening speed, as we will see in the next chapter.\n\nTo make this concrete, consider three of the tacit methods Garfinkel identified, each of which you are using constantly. They sound technical; they describe things you do every few seconds.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1250,
+      "out_sha": "fba7f1b2e830",
       "note": ""
     },
     {
@@ -1427,11 +1427,11 @@
       "en_title": "Chapter 12: The Work of the Obvious",
       "order": 110,
       "src_chars": 3017,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9e3d118df093",
       "src": "#### Definition: Indexicality\n\n**Indexicality** is the property by which the meaning of almost any expression or action depends on its context, on who said it, when, where, to whom, and against what background of shared understanding. Indexical expressions (\"here,\" \"this,\" \"she couldn't,\" \"the usual\") have no complete, context-free meaning; they are completed by the situation.\n\nIn plain language: words and actions don't carry their full meaning on their backs; the situation fills in the rest. \"It's over there\" means nothing without the scene; \"the usual\" means a specific coffee order only between people with a shared history. Garfinkel's striking claim is that _all_ expression is indexical to some degree, that there is no such thing as a fully self-contained, context-free statement, and so understanding _always_ requires the listener to supply the context, which they do automatically. Our opening sentence (\"she told him she couldn't\") was a pure case: almost pure index, completed entirely by your context-supplying work.\n\n\n#### Definition: The documentary method of interpretation\n\nThe **documentary method of interpretation** is the practice of treating an observed action or appearance as a \"document of\", an instance or expression of, an underlying pattern, while simultaneously using the presumed underlying pattern to interpret the observed action. We read the surface as evidence of a deeper sense, and read the deeper sense back into the surface, in a continuous loop.\n\nIn plain language: we treat what we see as a sign of what is \"really going on,\" and we use our guess about what's really going on to make sense of what we see, each supporting the other. You see someone in a white coat with a stethoscope and read it as \"doctor\" (surface as document of underlying pattern); then you interpret everything else they do in light of \"doctor\" (underlying pattern read back into the surface). This loop is how we construct the orderly sense of a situation out of incomplete cues, and it runs constantly, beneath awareness.\n\n\n#### Definition: The \"et cetera\" principle\n\nThe **\"et cetera\" principle** is the tacit agreement, in any interaction, to fill in the unstated, to let things pass, to supply the obvious missing pieces, and to not demand that everything be spelled out, treating instructions, descriptions, and rules as adequate \"for all practical purposes\" and completing them with assumed shared understanding.\n\nIn plain language: we silently agree to fill in the gaps and not insist that everything be made explicit. No instruction is ever complete (try writing instructions for making a sandwich that a literal-minded alien couldn't botch); we always rely on the reader to supply the \"obvious\" rest, the \"and so on,\" the \"you know what I mean.\" This silent willingness to complete the incomplete, to let the unstated stand, is one of the deep methods that makes shared understanding possible at all. Without it, every interaction would collapse into an infinite demand for clarification.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1063,
+      "out_sha": "4c4e7a82e646",
       "note": ""
     },
     {
@@ -1439,11 +1439,11 @@
       "en_title": "Chapter 12: The Work of the Obvious",
       "order": 111,
       "src_chars": 1892,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ffb93cc2b538",
       "src": "### 12.3 The situation supplies the self\n\nThere is a striking convergence here with everything we have been studying, and it loops Part 4 back to the contested self of Part 3 in a way worth pausing on.\n\nRecall the founding move of the whole book (Chapter 1): the unit is the encounter, not the person. Ethnomethodology gives this a new and sharper edge. If the orderly sense of a situation is something we accomplish, if \"what is going on here, and who is who\" is continuously produced rather than given, then in a real sense _the situation supplies the self._ When you walk into a classroom, the accomplished sense \"this is a class\" hands you the role \"student,\" the appropriate conduct, the relevant version of yourself. You do not import a fixed self into the situation so much as the accomplished situation calls forth the self appropriate to it. The competent member is precisely the one who can read what a situation requires and produce the self it calls for, and who does this so fluently that it feels not like adapting but simply like _being themselves_ in each new place.\n\nThis does not settle the contested question of Part 3, it is not proof that there is no inner self, and we are not reopening the question we deliberately left open. But it adds something real to the picture: whatever the deep truth about the self, it is clear that situations are enormously powerful in calling forth selves, that the same person is reliably different across the situations they accomplish, and that much of what we experience as \"who I am\" is responsive, moment to moment, to the accomplished sense of where I am and what is going on. The self is not only presented (Goffman); it is, in part, _situationally supplied_ , handed to us by the orderly world we are continuously helping to produce. Hold this lightly alongside the open question; it deepens the mystery rather than dissolving it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 573,
+      "out_sha": "2945191f3144",
       "note": ""
     },
     {
