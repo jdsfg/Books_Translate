@@ -607,11 +607,11 @@
       "en_title": "Chapter 6: Dosing Intensity, Base and the Polarized Idea",
       "order": 45,
       "src_chars": 2207,
-      "status": "pending",
+      "status": "done",
       "src_sha": "85267093bb9e",
       "src": "#### Take It Further\n\n**Q1.** A time-crunched friend trains only 3 hours a week and has read that \"80 percent of training should be easy.\" He is about to spend 2 hours 24 minutes of his 3 hours going easy and only about 36 minutes doing anything hard. Using the chapter's honest limits, is strict 80/20 the right call for him? What would you actually advise, and what makes you uncertain?\n\n**Discussion:** This is exactly the case where the chapter's honesty about the polarized model earns its keep, and the right answer is a confident \"it depends, and here is why.\" The 80/20 polarized model was largely studied in athletes doing _high_ weekly volumes, where 20 percent of a large number is still a substantial dose of hard work. Your friend is doing only 3 hours, so 20 percent hard is about 36 minutes a week, which may be too small a hard stimulus to drive much top-end adaptation, while the 2-plus hours of easy work, though good for base, is a limited total volume anyway. So strict 80/20 is probably _not_ the best call for a very time-crunched athlete; a somewhat higher fraction of harder work (nudging toward, say, 70/30, or including some threshold work in a more pyramidal shape) likely gives him more return on his scarce hours. What I would actually advise: keep enough easy work that he is not living in the gray zone and can recover, but do not slavishly protect the 80 percent easy floor at the expense of getting almost no hard stimulus; two genuinely hard sessions plus one easy session might serve him better than the textbook split. What makes me _uncertain_ , and this is the honest part, is that the evidence here is genuinely thin: the optimal distribution for low-volume, time-crunched trainees is not well established, individual response varies (the responder theme from Chapter 3), and his goals matter (base-building for a future marathon argues for more easy volume; general fitness in minimal time argues for more intensity). So the intellectually honest move is to pick a sensible starting distribution, treat it as a hypothesis, and let his log, his recovery, and his progress tell him whether to shift it, which is the estimate-honesty rule applied to programming itself.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 676,
+      "out_sha": "0a2d2a081aec",
       "note": ""
     },
     {
@@ -619,11 +619,11 @@
       "en_title": "Chapter 6: Dosing Intensity, Base and the Polarized Idea",
       "order": 46,
       "src_chars": 1613,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a91f85ce5da4",
       "src": "### Chapter Summary\n\nZones are a ruler; this chapter taught you to spend your week with them. The **aerobic base** , built by a high volume of _easy_ work, is the foundation, because easy high-volume training is the specific dose for the peripheral adaptations (mitochondria, capillaries) that build the engine, and because it is the work you can recover from and therefore do in quantity. That recovery asymmetry, lots of the low-cost easy work, a little of the high-cost hard work, is the logic behind every sane intensity distribution.\n\nThe **polarized model** (roughly 75 to 80 percent easy, little moderate, 15 to 20 percent hard) is a sound default, but the chapter was deliberately honest about its limits: the exact ratio is debated, elite athletes often train pyramidal, threshold-heavy training also works, and the model may not transfer cleanly to time-crunched beginners. What is _not_ controversial is that easy work should dominate and the moderate gray zone is a poor place to live.\n\nThe signature skill was **computing your own intensity distribution** : tally minutes per zone, divide by the total, and compare to the templates, as we did for Jordan's sound 82/5/14 week and his hypothetical gray-zone 40/51/9 disaster. You cannot fix a dose you have not measured. Frequency and duration are the remaining levers, applied in the order base-first, intensity-last. This dose-in-a-week thinking scales up in Chapter 9, where periodization arranges these weeks across a whole training block, and it feeds directly into Chapter 7 next, where we price each of these sessions in real energy.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 501,
+      "out_sha": "451a80fa89d3",
       "note": ""
     },
     {
@@ -631,11 +631,11 @@
       "en_title": "Chapter 7: Energy Out, Expenditure, METs, and the EPOC Question",
       "order": 47,
       "src_chars": 2376,
-      "status": "pending",
+      "status": "done",
       "src_sha": "95ce05426024",
       "src": "Your watch just told you that this morning's run burned \"512 active calories.\" A fitness influencer promises that a certain workout \"torches calories for 48 hours afterward.\" A friend swears that lifting \"revs your metabolism all day.\" How much of any of this is real, and how would you even check?\n\nThis chapter teaches you to price a workout in energy, from the ground up, using a real published formula you can compute for any session. Along the way you will learn where your calories actually go each day, why the tracker number on your wrist is an _estimate with large error_ rather than a measurement, and why the famous \"afterburn\" is real but far smaller than the marketing claims. This is the fourth of the volume's signature landings: your own session's energy cost, computed by hand. It also lays the groundwork for Chapter 12, because you cannot reason about _fueling_ until you can estimate energy _out_.\n\n\n### 7.1 Where your energy goes: the three-part budget\n\nYour total daily energy expenditure is not one thing; it is a sum of a few components, and knowing their relative sizes cures a lot of bad intuition.\n\n* **Resting metabolic rate (RMR).** The energy your body spends just staying alive at rest: running your brain, heart, kidneys, and the constant maintenance of every cell. For most people this is the **largest** slice of the daily total, often around 60 to 70 percent. This surprises people, because it means most of your calories are burned doing nothing at all.\n* **The thermic effect of food (TEF).** The energy spent digesting, absorbing, and processing what you eat, typically around 10 percent of intake. Protein has the highest thermic effect, a fact Chapter 12 will use.\n* **Activity expenditure.** Everything you move for: deliberate exercise plus all the incidental movement of daily life (walking, fidgeting, taking the stairs). This is the most _variable_ slice and the one you most directly control through training.\n\nThe immediate lesson: exercise is only one part of activity, which is only one part of the total, and RMR usually dwarfs it. This is why \"I worked out, so I can eat anything\" logic fails so often, a theme Chapter 12 develops. But activity expenditure is real, trainable, and computable, so let us compute it.\n\n\n### 7.2 The MET: a universal currency for activity\n\nTo price activity, exercise science uses a clever unit.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 824,
+      "out_sha": "8d664d4c8b11",
       "note": ""
     },
     {
@@ -643,11 +643,11 @@
       "en_title": "Chapter 7: Energy Out, Expenditure, METs, and the EPOC Question",
       "order": 48,
       "src_chars": 2868,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5c8bba1a39d6",
       "src": "#### Definition: Metabolic Equivalent (MET)\n\nOne **MET** is the rate of energy expenditure at rest, defined as an oxygen uptake of 3.5 milliliters of oxygen per kilogram of bodyweight per minute (3.5 mL/kg/min), which is roughly 1 kcal per kilogram of bodyweight per hour.\n\nIn plain language, a MET is a multiple of resting metabolism. An activity rated at 4 METs costs four times your resting energy rate; one at 10 METs costs ten times. Published **MET tables** list values for hundreds of activities (slow walking around 3 METs, a brisk run around 10 to 12 METs, easy cycling around 6 METs, and so on), so you can look up roughly how intense an activity is in these universal units. The beauty of the unit is that it already accounts for bodyweight in its definition, so it travels across people.\n\nTo turn METs into calories, use the standard equation, transcribed exactly:\n\nkcal/min=MET×3.5×masskg200 \\text{kcal/min} = \\frac{\\text{MET} \\times 3.5 \\times \\text{mass}_{\\text{kg}}}{200} kcal/min=200MET×3.5×masskg​​\n\nand then total energy is simply that rate times the number of minutes:\n\nkcal=(kcal/min)×minutes \\text{kcal} = (\\text{kcal/min}) \\times \\text{minutes} kcal=(kcal/min)×minutes\n\nWhere does this come from, so it is not a magic formula? Start from the MET definition: an activity at some MET value uses MET×3.5\\text{MET} \\times 3.5MET×3.5 mL of oxygen per kg per minute. Multiply by bodyweight in kg to get total mL of oxygen per minute: MET×3.5×mass\\text{MET} \\times 3.5 \\times \\text{mass}MET×3.5×mass. Now convert oxygen to energy: burning fuel with one liter (1000 mL) of oxygen releases about 5 kcal. So kcal per minute is (MET×3.5×mass)(\\text{MET} \\times 3.5 \\times \\text{mass})(MET×3.5×mass) mL/min, divided by 1000 mL/L to get liters, times 5 kcal/L. That is MET×3.5×mass×5/1000=MET×3.5×mass/200\\text{MET} \\times 3.5 \\times \\text{mass} \\times 5 / 1000 = \\text{MET} \\times 3.5 \\times \\text{mass} / 200MET×3.5×mass×5/1000=MET×3.5×mass/200. The mysterious \"200\" is just 1000/51000 / 51000/5, the two conversions rolled together. Keep the parentheses in your head: the /200/ 200/200 divides the whole numerator, and the minutes multiply _after_ , so never write it in a way that makes /200/200/200 bind to the minutes.\n\n\n#### Worked example: Jordan's run\n\nTake Jordan (70 kg) on a brisk run at about 10 METs for 30 minutes. Rate first:\n\nkcal/min=10×3.5×70200=2450200=12.25 kcal/min \\text{kcal/min} = \\frac{10 \\times 3.5 \\times 70}{200} = \\frac{2450}{200} = 12.25 \\text{ kcal/min} kcal/min=20010×3.5×70​=2002450​=12.25 kcal/min\n\nThen total:\n\nkcal=12.25×30=367.5 kcal \\text{kcal} = 12.25 \\times 30 = 367.5 \\text{ kcal} kcal=12.25×30=367.5 kcal\n\nSo the run costs about **368 kcal**. Every step is reconstructable: MET times 3.5 times mass, over 200, times minutes. Change the MET (a harder run), the mass, or the duration and you can reprice any session.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1021,
+      "out_sha": "53767aebc216",
       "note": ""
     },
     {
@@ -655,11 +655,11 @@
       "en_title": "Chapter 7: Energy Out, Expenditure, METs, and the EPOC Question",
       "order": 49,
       "src_chars": 2887,
-      "status": "pending",
+      "status": "done",
       "src_sha": "26068cd5751b",
       "src": "### 7.3 The honest accounting: trackers and the afterburn\n\nNow the reality check, because this is where marketing runs wild.\n\n**Tracker \"active calories\" are estimates with large error.** Your watch does not measure your oxygen uptake; it _infers_ your energy expenditure from heart rate, motion, and population-average models. Those inferences carry substantial error, often on the order of 10 to 20 percent or more for a given session, and they are worse for activities the model handles poorly (strength training, cycling, anything with an unusual heart-rate-to-effort relationship). The MET method above is _also_ an estimate (MET tables are population averages, and a single value is typically within about 10 to 15 percent of your true burn), at least more _transparent_ than the tracker's black-box inference, and often comparable or a little tighter, precisely because you can see exactly what it assumes and plug in your own mass and duration. The practical stance: treat any single calorie number, from your watch or from a MET calculation, as a _rough estimate_ , useful for relative comparisons and ballpark planning, not as a precise measurement to budget your eating down to the calorie. Your bodyweight trend over weeks (Chapter 12) is far better ground truth than any per-session calorie readout, which is the estimate-honesty rule applied to energy.\n\n**The afterburn (EPOC) is real but small.** After exercise, your metabolism stays slightly elevated for a while as your body restores itself (replenishing energy stores, clearing byproducts, cooling down). This is called excess post-exercise oxygen consumption.\n\n\n#### Definition: EPOC (the \"afterburn\")\n\n**EPOC** (excess post-exercise oxygen consumption) is the extra oxygen your body consumes, above resting levels, in the period _after_ exercise, as it restores itself to a resting state. It corresponds to extra calories burned after the session ends.\n\nHere is the honest magnitude, because the marketing wildly overstates it. Across the research, EPOC typically amounts to only about **6 to 15 percent of the energy cost of the exercise session itself** , and for most real sessions it falls in the roughly 7 percent (easy steady work) to 13 percent (intense work) part of that band. Applying that typical 7-to-13 percent band to Jordan's 368-kcal run gives only about 26 to 48 extra calories in the hours afterward, not a second hidden workout. And the size of EPOC is _itself debated_ , with estimates varying by protocol and measurement method. So when an influencer claims a workout \"torches calories for 48 hours,\" they are inflating a small, real effect into a marketing fantasy. EPOC makes intense exercise slightly more energy-costly per minute than moderate exercise, which is a minor point in its favor, but it does not rewrite your energy budget, and it certainly does not let a workout \"burn all day.\"\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 979,
+      "out_sha": "ef969590c1f8",
       "note": ""
     },
     {
@@ -667,11 +667,11 @@
       "en_title": "Chapter 7: Energy Out, Expenditure, METs, and the EPOC Question",
       "order": 50,
       "src_chars": 2386,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ab105e2b4808",
       "src": "#### Common Misconception\n\n_\"High-intensity workouts burn calories for hours or days afterward, so the afterburn is where the real fat loss happens.\"_\n\nThe afterburn is real, but this claim inflates it beyond recognition. Measured honestly, EPOC is only about 6 to 15 percent of the calories burned _during_ the session (typically the 7-to-13 percent part of that band), so a 368-kcal run buys you roughly 26 to 48 bonus calories afterward, not hundreds and certainly not a multi-day metabolic bonfire. The reason the myth persists is that \"afterburn\" sells workout programs, and a small true effect is easy to exaggerate when few people know the actual numbers. What actually governs energy balance over weeks is the _total_ budget: your resting metabolic rate (the biggest slice), your total daily activity, and your intake, not a modest post-workout bump. So the honest framing, which Chapter 12 builds on, is that intense exercise is worthwhile for many reasons (VO₂max, threshold, time efficiency), but \"the afterburn does the real work\" is not one of them. Chase the training adaptations, and let the energy budget be governed by the big, boring components you can actually measure over time.\n\n\n### 7.4 Now price your own session (signature landing)\n\nYour handoff: take one of your own typical sessions, look up its approximate MET value in a published MET table (or use a reasonable value for the activity and effort), and compute its energy cost with MET×3.5×mass/200×minutes\\text{MET} \\times 3.5 \\times \\text{mass} / 200 \\times \\text{minutes}MET×3.5×mass/200×minutes. Then, if you like, add an honest EPOC estimate of roughly 10 percent on top, and notice how small it is. Compare your computed number to what your watch reports for the same session; the gap between them is a direct, personal demonstration of how much estimation error lives in these numbers. Log the computed cost, and, crucially, do _not_ use it as a license to eat back exactly that many calories (the errors are too large, and Chapter 12 will give you a better way to reason about intake). The point of the exercise is to own the number, and to see its uncertainty with your own eyes, so that you treat every calorie readout, forever after, as the rough estimate it is.\n\n\n### 7.5 Exercises\n\nComputation is central. Work every MET calculation by hand, keeping the \"/200 then times minutes\" order straight.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 826,
+      "out_sha": "56d40cc6a873",
       "note": ""
     },
     {
@@ -679,11 +679,11 @@
       "en_title": "Chapter 7: Energy Out, Expenditure, METs, and the EPOC Question",
       "order": 51,
       "src_chars": 2211,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6bf28665bacb",
       "src": "#### Concept Check\n\n**Q1.** Roughly what fraction of your total daily energy expenditure is your resting metabolic rate, and why does this make the claim \"I exercised, so I can eat whatever I want\" unreliable?\n\n**Answer:** Resting metabolic rate is usually the **largest** component of daily energy expenditure, often around 60 to 70 percent of the total. Exercise is only one part of _activity_ expenditure, which is itself only one slice of the daily total (alongside RMR and the roughly 10 percent thermic effect of food). So a single workout, even a hard one, typically adds a few hundred calories to a daily budget that is dominated by the resting metabolism you cannot see. That is why \"I exercised, so I can eat whatever I want\" is unreliable: the workout's few hundred calories are easily outweighed by a large post-workout meal, and the big components of the budget (RMR and total intake) dominate the outcome over weeks. Chapter 12 turns this into the practical point that you cannot out-exercise a large energy surplus, and that fueling decisions must respect the _whole_ budget, not just the flattering exercise slice.\n\n**Q2.** Explain in plain terms why the \"200\" appears in the MET-to-calories formula. What two conversions is it hiding?\n\nHint\n\nThe formula converts oxygen (in mL/kg/min) first to liters, then to calories using \"about 5 kcal per liter of oxygen.\" What number do those two steps combine into?\n\n**Answer:** The 200 is two unit conversions rolled into one. Starting from MET×3.5×mass\\text{MET} \\times 3.5 \\times \\text{mass}MET×3.5×mass, which is oxygen consumption in _milliliters_ per minute, you first divide by 1000 to convert milliliters to _liters_ , then multiply by about 5 kcal (the energy released when the body burns fuel using one liter of oxygen) to convert liters of oxygen to calories. Those two operations are ×5/1000=/200\\times 5 / 1000 = / 200×5/1000=/200. So the \"200\" is just 1000/51000 / 51000/5, hiding the milliliters-to-liters conversion and the liters-of-oxygen-to-calories conversion at once. Knowing this keeps you from misplacing it: the /200/ 200/200 divides the whole oxygen-rate numerator, and you multiply by minutes _afterward_ to get total calories.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 704,
+      "out_sha": "268b81398ed7",
       "note": ""
     },
     {
