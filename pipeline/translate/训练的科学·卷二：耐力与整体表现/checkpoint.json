@@ -1111,11 +1111,11 @@
       "en_title": "Chapter 11: The Whole Athlete III, Recovery: Sleep and the Trainable Variables",
       "order": 87,
       "src_chars": 1700,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d31b0f6ea00e",
       "src": "### Chapter Summary\n\nRecovery, not the session, is where adaptation happens, so it is a first-class training variable, extending Volume I's stimulus-recovery-adaptation cycle to the depth the whole athlete needs. Training you do not recover from is worse than no training, because it imposes fatigue without banking fitness. Among all recovery levers, **sleep** stands highest: it is a trainable, dose-responsive variable where the science is clear (sleep loss degrades performance and recovery; sleep extension improves them, as in the basketball players who gained about 9 percent in shooting accuracy), the honest range is roughly 7 to 9 hours (athletes often more), held as a range with individual variation that your own log confirms, and it is the highest-return, lowest-cost lever most people are not pulling.\n\nThe chapter sorted the other levers honestly (red line 2): rest and easy days, nutrition and hydration, and managing life stress have real, high value; active recovery is modest; and most recovery _gadgets and supplements_ have evidence far weaker than their marketing, so they must never crowd out the free fundamentals. It named the **medical boundary** (red line 1), the point where persistent fatigue, elevated resting heart rate, or overtraining-like symptoms mean _see a physician_ , not train harder. And instead of a formula, it gave you a **recovery audit** to score yourself, diagnosing where your cheapest, largest gains live. With the whole athlete's recovery understood, Chapter 12 completes the picture with fueling, energy balance, protein, and hydration, the raw materials recovery depends on, before Chapter 13 welds everything into one periodized plan.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 521,
+      "out_sha": "5ae0f86968ad",
       "note": ""
     },
     {
@@ -1123,11 +1123,11 @@
       "en_title": "Chapter 12: The Whole Athlete IV, Fueling: Energy Balance, Protein, Hydration",
       "order": 88,
       "src_chars": 2109,
-      "status": "pending",
+      "status": "done",
       "src_sha": "feeac7c09075",
       "src": "You have built the engine, dosed its training, and learned that recovery is where adaptation happens. Now the raw materials: what the trained body needs to _eat and drink_ to fuel training and rebuild from it. This chapter teaches nutrition the way this whole book teaches everything, as science you understand and as numbers you compute for your own body: your own maintenance energy, your own protein target in grams. By the end you will have the last of the volume's signature landings, your own fueling numbers, ready to fold into the Chapter 13 plan.\n\nBut this chapter also touches the sharpest edge of the book's medical boundary, so we start there, because it governs everything that follows.\n\n\n### 12.1 The boundary that governs this whole chapter\n\nThis book teaches energy balance and protein as **science, for healthy people who want to fuel their training.** It does one thing loudly and without exception: it **never prescribes an aggressive deficit, a \"cut,\" an extreme low-calorie number, a weight-loss target, or anything that could steer a reader toward disordered eating.** The math below computes maintenance energy so you can _fuel adequately_ and reason about a _modest, sustainable_ adjustment if a goal genuinely calls for one. Its default direction leans toward _eating enough_ , not toward restriction.\n\nThis is not boilerplate. Eating and bodyweight are territory where a number can do real harm, and the honest coaching move is a hard boundary: **any thought, question, or pattern that smells of disordered eating, an aggressive deficit, obsessive restriction, a drive toward an extreme low weight, or food as something to be punished and earned, gets one response: see a qualified professional (a physician or a registered dietitian), full stop.** No formula in this chapter is a license to under-eat, and if the numbers below ever start feeling like a target to beat rather than a floor to meet, that is exactly the moment to close the book and talk to a professional. Hold that as the frame for every calculation that follows.\n\n\n### 12.2 Energy balance and estimating maintenance\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 646,
+      "out_sha": "c09af2f4187a",
       "note": ""
     },
     {
@@ -1135,11 +1135,11 @@
       "en_title": "Chapter 12: The Whole Athlete IV, Fueling: Energy Balance, Protein, Hydration",
       "order": 89,
       "src_chars": 1404,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4ba181bb8399",
       "src": "#### Definition: Energy Balance\n\n**Energy balance** is the relationship between the energy you take in (food and drink) and the energy you expend (Chapter 7's total daily expenditure). At _maintenance_ , intake matches expenditure and bodyweight is roughly stable over time.\n\nChapter 7 taught energy _out_ , its three components (resting metabolic rate, the thermic effect of food, and activity) and the MET method for the exercise slice. To reason about fueling, you need an estimate of your total daily expenditure, your **maintenance energy** , the intake that holds your weight steady. The standard approach: estimate your resting metabolic rate from a published equation, then multiply by an activity factor.\n\nThe best-validated resting-metabolic-rate equation for modern populations is the **Mifflin-St Jeor equation** :\n\nRMRmale=10 W+6.25 H−5 A+5 \\text{RMR}_{\\text{male}} = 10\\,W + 6.25\\,H - 5\\,A + 5 RMRmale​=10W+6.25H−5A+5 RMRfemale=10 W+6.25 H−5 A−161 \\text{RMR}_{\\text{female}} = 10\\,W + 6.25\\,H - 5\\,A - 161 RMRfemale​=10W+6.25H−5A−161\n\nwhere WWW is bodyweight in kg, HHH is height in cm, AAA is age in years, and the result is kcal per day. Then multiply RMR by an **activity factor** to get maintenance energy: roughly 1.2 for sedentary, about 1.375 for light activity, about 1.55 for moderate (training several days a week), about 1.725 for very active, higher for extreme training loads.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 472,
+      "out_sha": "5f174f5af03d",
       "note": ""
     },
     {
@@ -1147,11 +1147,11 @@
       "en_title": "Chapter 12: The Whole Athlete IV, Fueling: Energy Balance, Protein, Hydration",
       "order": 90,
       "src_chars": 3491,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8027f23a5667",
       "src": "#### Worked example: Jordan's maintenance energy\n\nTake Jordan: male, 70 kg, 175 cm, 30 years old, training moderately (factor 1.55). First RMR:\n\nRMR=10(70)+6.25(175)−5(30)+5=700+1093.75−150+5=1648.75 kcal/day \\text{RMR} = 10(70) + 6.25(175) - 5(30) + 5 = 700 + 1093.75 - 150 + 5 = 1648.75 \\text{ kcal/day} RMR=10(70)+6.25(175)−5(30)+5=700+1093.75−150+5=1648.75 kcal/day\n\nSo about 1,649 kcal/day at rest. Now maintenance:\n\nMaintenance=1648.75×1.55=2555.6≈2556 kcal/day \\text{Maintenance} = 1648.75 \\times 1.55 = 2555.6 \\approx 2556 \\text{ kcal/day} Maintenance=1648.75×1.55=2555.6≈2556 kcal/day\n\nSo Jordan's estimated maintenance is roughly **2,556 kcal/day** , the intake that should hold his weight steady given his training. Every step is reconstructable: RMR from the equation, times the activity factor.\n\n**Its error, and how you actually calibrate it.** This is an _estimate_ with real error. The Mifflin-St Jeor equation itself is typically within about 10 percent of measured resting metabolism, and the activity factor is a coarse multiplier that can easily be off by more. So treat 2,556 as a _starting hypothesis_ , not a precise number. The real calibration, exactly the estimate-honesty rule, is your **logged bodyweight trend over two to three weeks** : eat around the estimate, average your weight (which fluctuates daily with water and food), and see which way the trend actually moves. If weight is stable, the estimate was good; if it drifts, adjust intake modestly and re-check. Your bodyweight trend is ground truth; the equation is the prediction, and when they disagree, the trend wins. This is also far more reliable than trying to eat back a tracker's per-session \"active calories\" (Chapter 7), which carry too much error to balance the ledger day by day.\n\n**On adjustments (read the boundary again).** If a genuine, healthy goal calls for a change, the book's stance is _modest and sustainable_ only: a small adjustment around maintenance, made slowly, always fueling training. It does not name aggressive-deficit numbers, weight targets, or \"cut\" protocols, and any impulse toward those is the cue to see a professional. The default lean is toward eating _enough_ to fuel the training you worked to design.\n\n\n### 12.3 Protein: the one macronutrient with a clear target\n\nOf the three macronutrients, protein is the one where training changes your needs most clearly and where a well-supported target exists.\n\n\n#### Definition: Protein Target for Training\n\nFor people doing regular resistance and/or endurance training, the consensus **protein target** is roughly **1.6 grams per kilogram of bodyweight per day** , with benefits for muscle adaptation seen across a span up to about **2.2 g/kg/day** and diminishing returns beyond that.\n\nThe evidence here is unusually solid. A large body of research, including a well-known 2018 meta-analysis, found that protein intake supports training-induced gains in muscle up to a breakpoint around **1.6 g/kg/day** , with the confidence interval extending to roughly 2.2 g/kg/day, and little additional benefit beyond that for most people. (As of the mid-2020s, some researchers argue trained lifters may benefit from the upper end or slightly above, so treat 1.6 as a well-supported _floor for training adaptation_ and 1.6 to 2.2 as the useful working range, not a hard ceiling.) Protein also has the highest thermic effect of the macronutrients (Chapter 7) and the greatest satiety per calorie, which is why it is emphasized.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1187,
+      "out_sha": "0e8067028b4d",
       "note": ""
     },
     {
@@ -1159,11 +1159,11 @@
       "en_title": "Chapter 12: The Whole Athlete IV, Fueling: Energy Balance, Protein, Hydration",
       "order": 91,
       "src_chars": 2569,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8dc72b6e79c9",
       "src": "#### Worked example: Jordan's protein grams\n\nTake Jordan at 70 kg. The working range:\n\nRange floor=70×1.6=112 g/day \\text{Range floor} = 70 \\times 1.6 = 112 \\text{ g/day} Range floor=70×1.6=112 g/day Range ceiling=70×2.2=154 g/day \\text{Range ceiling} = 70 \\times 2.2 = 154 \\text{ g/day} Range ceiling=70×2.2=154 g/day\n\nSo Jordan should aim for roughly **112 to 154 grams of protein per day** , with 112 as a solid floor for supporting his training adaptation. Simple, computable, and directly actionable: divide it across meals and hit the floor consistently.\n\nThe individual-variation caveat still applies (needs vary with training volume, age, and goals, and older adults may need toward the higher end), but the target is far more precise than most nutrition advice, and it is the one number worth computing and hitting.\n\n\n### 12.4 Carbohydrate, fat, and the honest truth about timing\n\nProtein has a clear target; carbohydrate and fat are better thought of as **fuel** , and here the default is emphatically _eat enough_.\n\n* **Carbohydrate** is the primary fuel for hard and prolonged effort (recall Chapter 2, the oxidative system leans harder on carbohydrate as intensity rises, and glycogen is finite, which is why marathoners \"hit the wall\"). Endurance training, especially at higher volumes and intensities, _increases_ carbohydrate needs. Under-eating carbohydrate to chase leanness while training hard is a classic way to wreck both performance and recovery. The default is to fuel the work.\n* **Fat** is essential (for hormones, cell membranes, and fat-soluble vitamins) and is the dominant fuel at easy intensities. It should not be cut to extremes.\n* After protein is set and fuel needs are met, the exact carbohydrate-to-fat split within your energy budget is far more a matter of _preference and performance_ than most diet marketing admits; both can fuel training well within sensible ranges.\n\n**Nutrient timing, honestly.** You have heard of the \"anabolic window\", the claim that you must consume protein within a narrow window after training or lose your gains. The honest science is that this window is **far wider and softer than the marketing suggests**. What dominates muscle adaptation is your **total daily protein intake** , hitting your g/kg target across the day; the _timing_ of protein around workouts is a **minor, and genuinely contested, lever** by comparison. Getting adequate protein spread reasonably across your meals matters far more than obsessing over a post-workout window. So hit your daily total; do not stress the stopwatch.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 834,
+      "out_sha": "f39a6ad988aa",
       "note": ""
     },
     {
@@ -1171,11 +1171,11 @@
       "en_title": "Chapter 12: The Whole Athlete IV, Fueling: Energy Balance, Protein, Hydration",
       "order": 92,
       "src_chars": 3458,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2a96949a7030",
       "src": "#### Common Misconception\n\n_\"There's a narrow anabolic window after training, so if I don't get protein within 30 minutes of finishing, I waste the whole session.\"_\n\nThis overstates a minor, contested effect and creates needless anxiety. The evidence is clear that what drives muscle adaptation is your **total daily protein intake** meeting your target (around 1.6 to 2.2 g/kg), spread reasonably across the day. The post-workout \"window\" is much wider and softer than the marketing claims, and its independent effect, once daily total is adequate, is small and debated. You do not waste a session by eating your protein an hour or two later, nor do you rescue a protein-deficient day by nailing a 30-minute window. So the practical advice is calm: hit your daily grams, distribute protein across your meals, and stop treating the stopwatch as a make-or-break variable. This is a case where a real but minor lever got inflated into a source of stress and supplement sales, and the honest framing frees you to focus on the total that actually matters.\n\n\n### 12.5 Hydration, including the danger nobody warns about\n\nHydration matters for performance and recovery, but the honest version includes a danger the \"drink as much as possible\" messaging ignores.\n\nFor most training, sensible practice is enough: drink to thirst plus a bit of common sense around long or hot sessions, and note that urine that is pale (not clear, not dark) is a reasonable rough gauge. Dehydration does impair performance, so do not ignore fluids.\n\nBut there is a real, opposite danger that gets far less attention: **overdrinking**. Drinking _too much_ plain water, especially during very long endurance events, can dangerously dilute the sodium in your blood, a condition called **hyponatremia** that can be serious and, rarely, fatal. It has genuinely harmed endurance athletes who followed \"drink as much as you can\" advice too literally. So the honest guidance is _balanced_ : drink enough to avoid meaningful dehydration, but not so compulsively that you overdrink, and for long events, account for sodium (through electrolyte drinks or food), not just water. The point is that hydration is a two-sided balance, and the reflexive \"more is always better\" is wrong on the overdrinking side.\n\n\n### 12.6 Compute your own fueling numbers (signature landing)\n\nYour handoff, the last of the volume's signature landings. Using the equations above:\n\n  1. Estimate your **maintenance energy** : compute your RMR with the Mifflin-St Jeor equation for your sex, weight, height, and age, then multiply by the activity factor that honestly matches your training. This is your starting-point intake to _fuel_ your training.\n  2. Compute your **protein target** : multiply your bodyweight in kg by 1.6 (floor) and by 2.2 (upper range) to get your daily protein range in grams.\n\nThen log these, and, crucially, calibrate the energy number against your **bodyweight trend over two to three weeks** , not a tracker's daily calorie readout. And read the boundary one more time: these numbers exist to help you _fuel adequately_. If computing them ever tips into restricting, targeting an extreme weight, or anxiety around food, stop and see a professional. The default this book coaches is to eat enough to support the athlete you are building.\n\n\n### 12.7 Exercises\n\nComputation is central. Work the RMR and protein numbers by hand, and keep the medical boundary in view on the judgment questions.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1112,
+      "out_sha": "e6a0399e36d7",
       "note": ""
     },
     {
