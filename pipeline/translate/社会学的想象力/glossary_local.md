@@ -18,6 +18,10 @@
 - agency（能动性）
 - subculture（亚文化）
 - denaturalizing（去自然化）
+- Thomas theorem（托马斯定理）
+- ethnomethodology（常人方法学）
+- stigma（污名）
+- habitus（惯习）
 
 ## 人名
 
