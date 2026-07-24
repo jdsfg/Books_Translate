@@ -1,0 +1,39 @@
+### 3.7 每 token 成本，再来一次：为你刚做的调用定价
+
+你已经在 §2.10 中看到了定价结构。让我们将其具体应用于 §3.1 中的 Beacon CodeReview Bot 调用。
+
+该调用：
+
+
+    response = client.messages.create(
+        model="claude-sonnet-4-20260315",
+        max_tokens=1024,
+        system="You are a code reviewer for Beacon Health AI. Be concise. Flag security iss
+ues with priority. Do not invent file names that are not in the diff.",                            messages=[
+            {"role": "user", "content": "Review this diff:\n```python\nimport os\nDB_PASSWO
+RD = 'changeme'\n```"},                                                                            ],
+        temperature=0,
+    )
+
+
+你可以从 `response.usage` 读取的 token 计数：
+
+* `input_tokens`：约 50（system prompt：约 30；user 消息：约 20；角色标记和结构 token：约 5）
+* `output_tokens`：约 80（模型的审查）
+
+按 Sonnet 4 新输入定价：
+
+* 输入：50 × 3.00 美元 / 1,000,000 = **0.00015 美元**
+* 输出：80 × 15.00 美元 / 1,000,000 = **0.0012 美元**
+* **总计：约 0.00135 美元**
+
+这是 _在上面勾勒的微小输入_ 下单次 PR 审查的成本——30 token 的 system prompt 和 20 token 的 user 消息，这是最小可能的 API 调用。按工程组织每天 80 个 PR，那是 **0.11 美元/天，或约 3.20 美元/月**（在该下限处）。一个现实的 PR 审查实际发送 diff（第 2 章 Q1 使用 1200 缓存 token + 2500 token 的 diff + 800 token 输出，接近每 PR 0.02 美元，或每天 80 PR 约 48 美元/月）；两个数字讲述同一个故事：Beacon Health AI 每月为 CodeReview Bot 的推理支付数十美元。花在构建它上的工程师薪资使两个数字都相形见绌。_成本不是跳过这个功能的正确理由。_
+
+但把数学放大。Beacon 的临床笔记摘要器在客户群中每天做约 10,000 次摘要。每次是更大的调用：约 3K token 输入（口述笔记 + 结构化 system prompt + 检索的患者上下文）和约 800 token 输出。按 Sonnet 4：
+
+* 输入：3000 × 3.00 美元 / 1M = 0.009 美元
+* 输出：800 × 15.00 美元 / 1M = 0.012 美元
+* 每次摘要：0.021 美元
+* 每天：10,000 × 0.021 美元 = **210 美元/天，或 6,300 美元/月**
+
+现在成本重要了。在这个规模上，在 Sonnet 4 和更便宜的替代之间选择是一个真正的决策。第 17 章将在模型之间路由；第 18 章将缓存 prompt 并探索蒸馏。现在，教训是：**读取调用生成的账单**。将每个 `response.usage` 字段视为正在走字的仪表。它确实是。

@@ -1,0 +1,7 @@
+#### 应用题
+
+**Q1.** _构建最小可行生产封装_。从 §3.1 的六行 Hello-world 调用开始，编写一个 Python 函数 `call_llm(prompt: str, system: str, request_id: str) -> dict`，添加生产必需项：基于环境变量的 API key、固定模型版本、显式 max_tokens、temperature=0、在 429 和 5xx 上带指数退避和抖动的重试、request_id / anthropic_request_id / model / input_tokens / output_tokens / duration_ms / stop_reason 的结构化日志，以及类型化返回形状。展示完整函数。
+
+提示
+
+§3.9 的示例覆盖了大部分。给重试 sleep 添加抖动，确保返回 dict 有类型化形状，并展示每个重要字段。

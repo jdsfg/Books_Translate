@@ -1,0 +1,84 @@
+**答案：**
+
+
+    import os
+    import time
+    import random
+    import logging
+    from typing import TypedDict
+    from anthropic import Anthropic, APIError
+
+    logger = logging.getLogger("llm.client")
+    client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+
+    class LLMResponse(TypedDict):
+        text: str
+        input_tokens: int
+        output_tokens: int
+        duration_ms: int
+        anthropic_request_id: str
+        model: str
+        stop_reason: str
+
+    MODEL = "claude-sonnet-4-20260315"
+
+    def call_llm(prompt: str, system: str, request_id: str, max_attempts: int = 5) -> LLMRe
+sponse:                                                                                            last_exc: Exception | None = None
+        for attempt in range(max_attempts):
+            try:
+                t0 = time.monotonic()
+                response = client.messages.create(
+                    model=MODEL,
+                    max_tokens=1024,
+                    system=system,
+                    messages=[{"role": "user", "content": prompt}],
+                    temperature=0,
+                    metadata={"user_id": request_id},
+                )
+                duration_ms = int((time.monotonic() - t0) * 1000)
+
+                result: LLMResponse = {
+                    "text": response.content[0].text,
+                    "input_tokens": response.usage.input_tokens,
+                    "output_tokens": response.usage.output_tokens,
+                    "duration_ms": duration_ms,
+                    "anthropic_request_id": response.id,
+                    "model": response.model,
+                    "stop_reason": response.stop_reason,
+                }
+                logger.info("llm.call.ok", extra={**result, "request_id": request_id})
+                return result
+
+            except APIError as e:
+                last_exc = e
+                if e.status_code == 429 or e.status_code >= 500:
+                    base = float(e.response.headers.get("retry-after", 2 ** attempt))
+                    wait = base + random.uniform(0, 0.5)
+                    logger.warning(
+                        "llm.call.retry",
+                        extra={
+                            "request_id": request_id,
+                            "status": e.status_code,
+                            "attempt": attempt,
+                            "wait_seconds": wait,
+                        },
+                    )
+                    time.sleep(wait)
+                    continue
+                logger.error(
+                    "llm.call.client_error",
+                    extra={"request_id": request_id, "status": e.status_code, "error": str(
+e)},                                                                                                       )
+                raise
+
+        raise RuntimeError(f"llm.call exhausted {max_attempts} attempts for {request_id}") 
+from last_exc                                                                              
+
+这大约是生产级的下限。要扩展：
+
+* 通过在 system prompt 上传递 `cache_control` 添加 prompt 缓存（第 18 章）。
+* 添加超时处理（Anthropic 的 SDK 有 `timeout` 参数；显式设置它）。
+* 在网关层添加每租户预算执行（第 17 章）。
+* 将 `Anthropic` 直接使用替换为路由器（LiteLLM）以实现回退（第 17 章）。
+
+**AI 协作子问题**：你会如何请 LLM 帮助完成这个练习，你会在它的回答中验证什么？

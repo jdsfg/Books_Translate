@@ -1,0 +1,7 @@
+15. **Site Reliability Engineering: How Google Runs Production Systems** — _Beyer, Jones, Petoff, Murphy（编辑）；O'Reilly，2016。_ 此书与 LLM 无关但与 AI 工程继承的运维纪律息息相关。SRE 书中关于 SLO、错误预算、on-call 轮值、事后复盘和优雅降级的章节是 AI ops 所坐的基底。第 19 章（可观测性）直接从 SRE 书借用其插桩词汇，第 21 章（生产 eval 和模型升级）将模型升级框架为金丝雀发布的特例。读 SRE 书为姿态——平静、无指责、量化、反英雄主义——2026 年最好的 AI ops 团队仍在努力达到。Google SRE 网站上的免费 HTML 版本完整且优秀；纸质书放在本书旁的书架上很合适。
+
+### 结语
+
+这十五个是起点，非终点。领域移动快——Vaswani 时代的 Transformer 工作在我 2026 年写此文时已九岁，而 _Lost in the Middle_ 仅两岁——任何具体推荐的半衰期短。追踪此处提及的作者和实验室获取更新：Karpathy 的博客和 YouTube、Lilian Weng 的网站、Simon Willison 的每日产出、Hamel Husain 和 Shreya Shankar 的持续写作、Eugene Yan、Chip Huyen、Anthropic 和 OpenAI 的工程指南、斯坦福 CS329S 后继课程。本书 2027 年第二版将刷新此阅读清单和填充其余章节的 2026 具体内容；不会改变的是清单指向的纪律。
+
+---
