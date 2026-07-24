@@ -191,11 +191,11 @@
       "en_title": "Chapter 1: Why Databases?",
       "order": 7,
       "src_chars": 2875,
-      "status": "pending",
+      "status": "done",
       "src_sha": "97c2f5a857a7",
       "src": "### 1.4 Anatomy of a DBMS: From SQL to Bits and Back\n\nLet's open up the black box. Here is what happens, at a conceptual level, when you type a SQL query and press enter in `psql` or a similar client.\n\n  1. **Parser.** The text of your SQL is turned into an abstract syntax tree (AST). Syntax errors get caught here.\n  2. **Rewriter.** The AST is transformed — views are expanded, subqueries are sometimes unnested, some obviously equivalent rewrites are applied.\n  3. **Optimizer.** The rewritten query is converted into a **query plan**. This is the \"how\" — which operators (scan, join, sort, aggregate) to run and in what order. The optimizer chooses the plan with the lowest estimated cost (Chapter 12).\n  4. **Executor.** The plan is run. It calls into the lower levels of the engine to fetch data.\n  5. **Buffer pool.** The executor needs data from disk? The buffer pool is consulted first — if the page is already in memory, return it directly; otherwise, issue an I/O to load it. When memory runs out, the buffer pool evicts pages using a replacement policy (Chapter 9).\n  6. **Storage manager.** Pages are read from and written to disk (or SSD). Writes go through the **log** first (the WAL) so that recovery is possible (Chapter 17).\n  7. **Transaction manager.** Running underneath all of this, the transaction manager decides when to grant locks (Chapter 15) or issue snapshot visibility decisions (Chapter 16), and when a transaction is allowed to commit.\n\nThat is most of a DBMS. Not all — we are skipping authentication, the network layer, the client protocol, the system catalogs, vacuuming, replication. But if you understand those seven layers, you understand 80% of what makes PostgreSQL PostgreSQL.\n\n\n#### Real Systems at a Glance\n\nFour systems will appear throughout this book. Meet them briefly:\n\n* **PostgreSQL** — a full-featured relational DBMS with MVCC (Chapter 16), extensibility, and strong SQL compliance. Our primary example for the relational world.\n* **MySQL (InnoDB engine)** — a full-featured relational DBMS with clustered B-tree indexes keyed by the primary key (Chapter 10) and a different isolation-level implementation (Chapter 14) from PostgreSQL. Our primary example for \"same goal, different design choices\".\n* **SQLite** — an embedded relational DBMS that lives inside your application process. Uses a B-tree for _everything_ (including the table data, not just indexes). Our example for \"minimalism is a valid design\".\n* **Redis** — a key-value store used as a cache or, less often, as a primary datastore. Single-threaded, in-memory, blazingly fast. Our bridge to the NoSQL world (Chapter 20).\n\nLater we meet Cassandra (Chapter 21), MongoDB (Chapter 20), and DuckDB (Chapter 19). Each embodies a different answer to the question \"what do you want to trade away in exchange for what?\" — and each answer is a chapter of this book.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1296,
+      "out_sha": "7d5860ef3e33",
       "note": ""
     },
     {
@@ -203,11 +203,11 @@
       "en_title": "Chapter 1: Why Databases?",
       "order": 8,
       "src_chars": 3217,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4c7ce8763632",
       "src": "### 1.5 The Central Theme: Every Concept Is a Tradeoff\n\nBefore we go any further, one sentence to hang on the wall:\n\n> **Every major database concept is a tradeoff. The tradeoff IS the lesson.**\n\nThroughout the book, when we introduce a mechanism, we will not just ask \"what does it do?\" We will ask:\n\n* What does it gain?\n* What does it cost?\n* Under what workload is the trade worth it?\n* Under what workload should you reject it?\n\nFor previews:\n\n* **Normalization** (Ch 6) trades query simplicity for update safety. A fully normalized schema has no update anomalies but requires more joins to answer common queries.\n* **Indexes** (Ch 10) trade write speed for read speed. Every index you add must be updated on every `INSERT`, `UPDATE`, and `DELETE`.\n* **Serializable isolation** (Ch 14) trades concurrency for correctness. A SERIALIZABLE system runs as if every transaction ran one at a time, but in exchange loses the performance benefit of overlapping them.\n* **Replication** (Ch 18) trades consistency for availability, sometimes. You can always read _something_ even if part of the cluster is down — but what you read might be stale.\n* **Column stores** (Ch 19) trade point-lookup speed for analytical query speed. Reading one row costs more; summing a column costs less.\n\nA reader who finishes this book remembers not just the definitions but the _tradeoffs_. The definitions decay; the tradeoffs let you think for yourself when a real system surprises you.\n\n\n### Tradeoffs Summary\n\n* **The storage hierarchy trades capacity for speed.** Registers are fast and tiny; HDDs are huge and glacial. Every layer above SSD is volatile, which is why durability forces writes down to slow media — you cannot have fast and durable for free.\n* **A DBMS trades raw file-system flexibility for four guarantees.** You give up \"just open the file and write bytes\" in exchange for a query language, concurrency control, crash recovery, and integrity enforcement. For throwaway data, files win; for anything worth keeping, the four promises justify the overhead.\n* **Counting I/Os instead of CPU cycles trades modeling precision for honesty.** The DRAM-to-disk gap is ~1000×, so a plan that minimizes CPU but adds a single extra page read usually loses. Cost models ignore CPU noise not because CPU is free but because I/O dominates.\n* **The buffer pool trades OS-page-cache simplicity for database-aware control.** The DBMS manages its own cache with policies tuned for query workloads (Chapter 9), rather than delegating to the kernel. The cost is duplicated caching logic; the gain is predictable eviction and write ordering needed for recovery.\n* **The layered DBMS architecture (parser → optimizer → executor → buffer pool → storage) trades monolithic speed for replaceable components.** Each layer can be reasoned about and tuned independently, at the cost of cross-layer coordination when something needs to change end-to-end.\n* **\"Every concept is a tradeoff\" trades the comfort of one right answer for the realism of workload-dependent design.** PostgreSQL, MySQL, SQLite, and Redis make different choices because different workloads reward different choices — not because one team got it wrong.\n\n\n### 1.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1305,
+      "out_sha": "26e79feb0e8c",
       "note": ""
     },
     {
@@ -215,11 +215,11 @@
       "en_title": "Chapter 1: Why Databases?",
       "order": 9,
       "src_chars": 3029,
-      "status": "pending",
+      "status": "done",
       "src_sha": "af88ca08fcc5",
       "src": "#### Concept Check\n\n**Q1.** In your own words, what is the difference between a _database_ and a _DBMS_? Which one does the term \"database\" usually refer to in industry conversation?\n\nHint\n\nGo back to the definition in Section 1.1. Is the data itself software?\n\n**Answer:** A **database** is the organized collection of data. A **DBMS** (Database Management System) is the software that manages that data — parsing queries, enforcing constraints, handling concurrency, ensuring crash recovery, and so on. Strictly speaking, when someone says \"we use PostgreSQL as our database\", they mean \"we use the PostgreSQL DBMS to manage our data.\" In casual industry speech, \"database\" is routinely used to mean the DBMS. That ambiguity is harmless in most conversations, but sharpen it to \"the DBMS\" whenever the distinction matters (e.g., when a colleague says \"the database is slow\" — they almost always mean the DBMS software and its configuration, not the bits on disk).\n\n**Q2.** The storage hierarchy lists CPU registers at ~0.3 ns and HDD at ~10 ms. Roughly how many register operations can a CPU perform in the time it takes to read one page from an HDD? Show your arithmetic.\n\nHint\n\nConvert both times to the same unit and divide.\n\n**Answer:** Convert to seconds: 0.3 ns = 3 × 10⁻¹⁰ s; 10 ms = 10⁻² s. The ratio is 10−23×10−10≈3.3×107\\frac{10^{-2}}{3 \\times 10^{-10}} \\approx 3.3 \\times 10^{7}3×10−1010−2​≈3.3×107 — about 33 million register operations per HDD page read. Even on SSD (say 50 µs = 5 × 10⁻⁵ s), the ratio is still ~167,000 register operations per page read. This is why database cost models count I/Os, not CPU cycles.\n\n**Q3.** Name the four promises a DBMS makes that a file system cannot. For each, give a one-sentence example of what goes wrong without it.\n\n**Answer:**\n\n  1. **Query language.** Without it, every ad-hoc question about your data requires new imperative code; a SQL-like system lets you ask declaratively and lets the engine figure out how.\n  2. **Concurrency control.** Without it, two users editing the same data at once silently overwrite each other's changes — the classic \"lost update\".\n  3. **Crash recovery.** Without it, a power failure mid-transaction leaves the database in an inconsistent state (half-written rows, orphaned references), with no automatic way to roll back.\n  4. **Integrity enforcement.** Without it, typos, deleted parents, and missing foreign keys quietly corrupt the data until someone notices a nonsense report months later.\n\n**Q4.** Which of the following is NOT a reason modern databases use their own buffer pool instead of relying on the OS page cache?\n\n* (a) The database has more knowledge about access patterns than the OS.\n* (b) The database's replacement policy can be tailored to its workload (e.g., LRU-K or 2Q for OLTP buffer pools, which outperform the OS page cache's simple LRU on index-heavy workloads).\n* (c) The OS page cache cannot store any data at all.\n* (d) Writes must be coordinated with the WAL, which is easier if the DBMS owns the buffer.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1294,
+      "out_sha": "b41e9cae156b",
       "note": ""
     },
     {
@@ -227,11 +227,11 @@
       "en_title": "Chapter 1: Why Databases?",
       "order": 10,
       "src_chars": 509,
-      "status": "pending",
+      "status": "done",
       "src_sha": "dcfadb0530c0",
       "src": "**Answer:** (c) is the false statement. The OS absolutely does have a page cache. The real reasons databases manage their own are (a), (b), and (d): the DBMS knows which pages are likely to be reused (e.g., index pages are hotter than data pages), it can pick replacement policies matched to its workload (LRU-K, 2Q, or Clock-Pro variants that outperform the OS's simple LRU on skewed workloads), and it needs tight coordination with the WAL for durability (Chapter 17). The OS page cache knows none of this.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 195,
+      "out_sha": "d03331ee1f49",
       "note": ""
     },
     {
@@ -239,11 +239,11 @@
       "en_title": "Chapter 1: Why Databases?",
       "order": 11,
       "src_chars": 3042,
-      "status": "pending",
+      "status": "done",
       "src_sha": "aecfbdd39a57",
       "src": "#### Application Problems\n\n**Q1.** Consider a single-file, multi-user note-taking app. Two users of the same household share one file, `notes.txt`. Describe four distinct things that go wrong — one per DBMS promise from Section 1.3. Be specific: describe a realistic scenario, not just a category name.\n\nHint\n\nFor each of the four promises, imagine the _simplest_ possible scenario that violates it.\n\n**Answer:**\n\n  1. **Query language.** User A wants \"all notes I wrote in March that mention 'doctor'\". The app has no query layer, so either User A scrolls through the whole file by hand or the app reloads the entire file into memory and scans with a regex each time. As the file grows, this becomes painful and has no way to use an index.\n  2. **Concurrency control.** User A is editing note #37 while User B is appending note #52. Both save at the same time; the editor writes the whole file back. Whichever user saved second overwrites the other user's change entirely. (This is the same \"lost update\" problem we will see in Chapter 13 with bank accounts.)\n  3. **Crash recovery.** User A is halfway through a big paste — maybe 200 notes imported from a different app — when the laptop dies. The file may be truncated, or contain a half-written final note. There is no mechanism to say \"undo everything this import did\" because there was never a transaction boundary. On reopen, the app has no way to know the import was incomplete.\n  4. **Integrity enforcement.** The app stores \"linked notes\" as a field `linked_to: <id>`. User B deletes note #12, but three other notes still say `linked_to: 12`. Nothing in the file system notices or complains. Next time the app tries to follow the link, it crashes, silently drops the link, or shows a ghost note — depending on how carefully the app code handles the error.\n\n**Q2.** The university registration system in Section 1.1 has 10,000 students, 500 courses, and 80,000 enrollments. Each row is roughly 64 bytes. Pages are 8 KB.\n\n(a) How many pages does each table occupy if it is stored as a heap file (rows packed into pages with no wasted space)? (b) If a query asks \"find the title of the course student #4218 is enrolled in for course_id 101\", and we have no indexes, how many pages at worst must be scanned? (c) If the buffer pool has room for 100 pages, does it make a difference to the worst case? Explain.\n\nHint\n\nRows per page = page size ÷ row size. Scanning a heap file means reading every page until the end, because you don't know where your target row is.\n\n**Answer:** (a) Rows per page: 819264=128\\frac{8192}{64} = 128648192​=128 rows per page. So:\n\nTable | Rows | Pages  \n---|---|---  \nStudents | 10,000 | ~79  \nCourses | 500 | ~4  \nEnrollments | 80,000 | ~625  \n  \n(Round up because partial pages still count as a page.)\n\n(b) Worst case, we must find the specific enrollment row for student 4218 in course 101 _and_ then look up the course title for course 101.\n\n* Scan Enrollments: up to 625 pages.\n* Scan Courses to find course 101: up to 4 pages.\n* Total: up to 629 pages.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1253,
+      "out_sha": "918de4aa301f",
       "note": ""
     },
     {
@@ -251,11 +251,11 @@
       "en_title": "Chapter 1: Why Databases?",
       "order": 12,
       "src_chars": 1887,
-      "status": "pending",
+      "status": "done",
       "src_sha": "db0ce7d33165",
       "src": "(c) No, it does not change the _worst case_. The worst case is the first time the query runs and nothing is cached — we still read up to 629 pages from disk. Where the buffer pool helps is _subsequent_ queries: if Courses is small enough to stay fully in the buffer pool (4 pages is trivial), the course-title lookup becomes free on the second and later queries. This is the first hint of why buffer-pool management (Chapter 9) and indexing (Chapter 10) are both essential — one helps repeated queries, the other helps the first query.\n\n**Q3.** A junior engineer on your team says: \"Let's just use JSON files instead of a database. JSON has a schema, it's easy to read, and we don't need to install anything.\" Which of the four DBMS promises does this plan concede, and which (if any) does it keep? Under what narrow circumstances could JSON files genuinely be enough?\n\nHint\n\nTreat each promise independently. Which ones does JSON give you for free? Which ones must you build yourself, poorly?\n\n**Answer:**\n\n* **Query language:** conceded. You will write Python or jq one-off scripts for every question.\n* **Concurrency control:** conceded. File locking is all you have, and it's all-or-nothing.\n* **Crash recovery:** conceded. A crash during save yields a truncated or half-written JSON file, which may not even parse.\n* **Integrity enforcement:** partially kept. JSON has structural schemas (required fields, types, via JSON Schema), but it has no notion of referential integrity between files.\n\n**When JSON is enough:** single-user, mostly-read, small data, no concurrency, no crash-safety requirements. Think: a configuration file, a static dataset shipped with an app, a personal list of 200 bookmarks. The moment your workload gains _any_ of (multiple writers, needing to survive power loss, sub-second query latency over large data, enforced references), JSON stops being enough.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 718,
+      "out_sha": "81f636dfab7f",
       "note": ""
     },
     {
@@ -263,11 +263,11 @@
       "en_title": "Chapter 1: Why Databases?",
       "order": 13,
       "src_chars": 3166,
-      "status": "pending",
+      "status": "done",
       "src_sha": "65470e5c8b20",
       "src": "#### Think Deeper\n\n**Q1.** The storage hierarchy table lists \"tape\" at seconds of access time. Tape is still in wide use in 2026. What specific workloads justify tape over SSD? What does this tell you about how to think about the claim \"storage X is obsolete\"?\n\n**Discussion:** Tape is used for archival and compliance workloads: cold backups, regulatory retention (many jurisdictions require 7–10 years of financial records), and very-large-scale scientific archives (particle physics data, long-term astronomy). The dollar-per-terabyte cost of tape is still an order of magnitude below SSD, and tape _unplugged_ consumes zero power while still retaining data — a property SSDs do not have. So the workload signature where tape wins is: huge total volume, very infrequent reads (maybe never), long retention, cost-sensitive, no latency requirement.\n\nThe deeper lesson: \"obsolete\" in storage usually means \"no longer the right default for the most common workload.\" It rarely means \"no longer useful for any workload.\" Throughout this book, you will meet older mechanisms (B-trees from 1970, 2PL from 1976, WAL from the 1980s) that are still the right answer for their workload. Always ask \"obsolete for whom?\"\n\n**Q2.** A startup builds its MVP on a single PostgreSQL instance. Six months later, usage grows and the founders read a blog post arguing they should \"immediately migrate to a distributed NoSQL system like Cassandra for scale.\" What would you advise them to check before they migrate?\n\n**Discussion:** Several things.\n\nFirst: _is the database actually the bottleneck?_ Many \"database is slow\" problems are really \"we have a missing index\" or \"we have the wrong isolation level\" or \"our ORM issues N+1 queries\" — all fixable without changing the DBMS family. Chapter 12 on query optimization exists precisely because a huge fraction of apparent \"scaling problems\" are fixable at the query-plan level.\n\nSecond: _what properties does the workload need?_ Cassandra gives you horizontal scalability and tunable consistency, but it costs you ad-hoc queries, joins, and strong transactional guarantees (Chapter 21). If the startup needs transactions across multiple entities (a typical ORM-backed CRUD app), Cassandra is the wrong tool — the migration makes scaling slightly easier and everything else enormously harder.\n\nThird: _how far does vertical scaling take us?_ A single modern PostgreSQL server on beefy hardware can handle billions of rows and tens of thousands of transactions per second. Startups that migrate to distributed NoSQL at 10 million rows routinely regret it. Chapter 22's \"polyglot persistence\" covers this exact dilemma.\n\nThe right first move is usually: measure, index, tune. Consider migration only when you have evidence that you are hitting the specific limits (write throughput, data size) of the current system and not some fixable app-level problem. Premature migration is a very expensive form of yak-shaving.\n\n**Q3.** Throughout this chapter we've said \"a DBMS makes four promises\". But one could argue there's a fifth: _performance_. Why have we not listed performance as a promise? What is its relationship to the other four?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1152,
+      "out_sha": "4561f0455700",
       "note": ""
     },
     {
@@ -275,11 +275,11 @@
       "en_title": "Chapter 1: Why Databases?",
       "order": 14,
       "src_chars": 2794,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d3c610ca3050",
       "src": "**Discussion:** Performance is not a promise a DBMS _makes_ in the same way. Correctness (the other four) is binary: either the DBMS preserves integrity under concurrency and crashes, or it does not. Performance is a continuum and is deeply workload-dependent. A DBMS does not promise \"your queries will be fast\"; it promises \"your queries will be correct\" and offers a toolkit (indexes, query planners, buffer pools, replication) that you, the engineer, combine for your workload to get performance.\n\nWhy structure it this way? Because performance is _your_ job as a database user. The DBMS gives you the levers — the right index, the right isolation level, the right storage format. Turning the levers requires understanding the tradeoffs, which is precisely what the rest of this book teaches.\n\nA good test: if a DBMS could honestly say \"yes, your query will always be fast\", you wouldn't need to know any of this. You'd just use it. The reason Chapters 10, 11, 12, 18, 19 exist is that performance is a negotiation between you and the engine, mediated by your knowledge of both.\n\n\n### Chapter Summary\n\nThis chapter motivated the existence of databases from first principles. A DBMS exists to make **four promises** that a file system cannot: a declarative query language, correct concurrent access, crash recovery, and integrity enforcement. Those four promises are the skeleton of the rest of the book.\n\nWe introduced the **storage hierarchy** — registers, cache, DRAM, SSD, HDD, tape — and noted that the ratios between levels (especially DRAM-to-SSD and DRAM-to-HDD) dictate most of the design decisions we will see. Database cost models count I/Os because I/Os dominate wall-clock time by four to six orders of magnitude.\n\nWe met the **DBMS layered architecture** : parser, rewriter, optimizer, executor, buffer pool, storage manager, transaction manager. Every chapter from now on zooms into one of these layers. Chapters 3–8 build out the query language (parser to executor at the SQL level). Chapter 9 opens the buffer pool and storage manager. Chapters 10–12 build the optimizer's toolkit. Chapters 13–17 are the transaction manager's story. And Chapters 18–22 generalize to the distributed and non-relational worlds.\n\nWe also introduced **Thread A (University Registration System)** , the running data example we will return to in every chapter where it helps. We named the **tradeoff theme** : every concept in this book will be framed as what you gain and what you give up, because the tradeoff is the lesson.\n\nNext chapter: we build the university database as CSV files and watch every one of the four promises get broken within half an hour of real use. By the end of Chapter 2, the anomalies will be so obvious that the relational model of Chapter 3 will feel inevitable.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 971,
+      "out_sha": "7d7753bed0fa",
       "note": ""
     },
     {
