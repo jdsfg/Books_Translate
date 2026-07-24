@@ -62,6 +62,8 @@
 | John Bowlby | John Bowlby（约翰·鲍尔比） |
 | B. F. Skinner | B. F. Skinner（B. F. 斯金纳） |
 | Mary Main | Mary Main（玛丽·梅因） |
+| Cindy Hazan | Cindy Hazan（辛迪·哈赞） |
+| Phillip Shaver | Phillip Shaver（菲利普·沙弗） |
 | Gary Chapman | Gary Chapman（加里·查普曼） |
 | Knee | Knee（克尼） |
 | Bessel van der Kolk | Bessel van der Kolk（巴塞尔·范德科尔克） |
