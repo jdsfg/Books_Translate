@@ -2215,11 +2215,11 @@
       "en_title": "Chapter 8: The Willpower Myth",
       "order": 178,
       "src_chars": 3211,
-      "status": "pending",
+      "status": "done",
       "src_sha": "db06b67091b5",
       "src": "* _Cues matter._ The Duhigg-Clear-Fogg emphasis on cue-awareness is correct, even if the specific formulas are loose. Becoming aware of your own cues is the first step in any structural intervention.\n* _Tiny starts work, with caveats._ The Fogg model of starting small is structurally correct: the cue-response link installs through repetition, and the response magnitude is less important than the link itself. We'll see in Chapter 11 where Fogg overclaims.\n* _Identity has a real role, calibrated._ Self-perception theory supports a real but smaller role for identity-based change than Clear's framing suggests. We'll see this in Chapter 12.\n* _Habit-tracking helps._ Visible streaks, calendars, daily logging — these provide salient reward cues that help with the dopamine-prediction-error consolidation in early-phase habits.\n* _Social structure helps._ Accountability partners, group commitments, public stating-of-goals — these add weight to the long-term-goal side of the allocation.\n* _Environmental design helps._ The general principle that \"make the desired behavior easier and the undesired behavior harder\" is correct, even if popular books often present it as a side note rather than the main mechanism.\n* _Sustained effort over time matters._ The popular books are right that change is gradual; they are wrong about the timeline and the mechanism, but the gradual-effort framing is itself reasonable.\n\n**What the book is offering that popular self-help generally isn't:**\n\n* A more accurate mechanistic account of why habits work the way they do.\n* An explicit honest engagement with where popular formulations overclaim.\n* A structural-architecture frame as the primary mechanism rather than as a side note.\n* A calibrated treatment of willpower, identity, and other popular concepts.\n* Specific tools (implementation intentions, choice architecture, substitution) presented in the context of why they work.\n\nThe popular self-help genre has done real good in the world. _Atomic Habits_ , _The Power of Habit_ , _Tiny Habits_ , _Nudge_ , and others have introduced millions of readers to ideas that, if applied even partially, can produce real change. The book is not anti-self-help; it is offering the more rigorous version of what those books were trying to do.\n\nA reasonable summary: **read the popular books for the cues to start paying attention to. Read this book for the mechanism that explains what to do with what you've noticed.** The two are complementary. The popular books got people in the door; this book offers the floor plan.\n\nA note on intellectual posture: this book has been honest where the popular books overclaim, but it has tried to be respectful rather than dismissive. The authors of the popular books have done real work; their ideas have helped real people; the corrections offered here are calibrations, not refutations. _Calibrate, don't dismiss_ is the posture, and it's the right one. The reader who comes out of this book holding the popular books in lower regard than they deserve has misread the chapter. The reader who comes out with a more accurate map, while continuing to credit the popular authors for the rough sketch they provided, has read it correctly.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 990,
+      "out_sha": "a57f11453164",
       "note": ""
     },
     {
@@ -2227,11 +2227,11 @@
       "en_title": "Chapter 8: The Willpower Myth",
       "order": 179,
       "src_chars": 3079,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ba4d8f5dbe2f",
       "src": "### Chapter Summary\n\nThis chapter closed Part II of the book by addressing the most important popular framework that the book has been gesturing against: **willpower as a depletable resource.** We traced the rise of Roy Baumeister's ego-depletion framework in the 1990s and 2000s, its central claim that self-control behaves like a muscle that depletes with use, and the substantial ways the framework swept through both academic and popular discourse. We then traced its fall in the 2010s through the replication crisis: large-scale preregistered studies finding effects much smaller than reported, sometimes near zero; reanalyses suggesting effect sizes in the published literature were inflated by 3× or more; the glucose-as-fuel claim specifically failing to replicate; and a substantial walking-back of the strong claims by the field including by Baumeister himself.\n\nThe modern view of self-control treats it as an **allocation problem** rather than a depletable resource — a moment-to-moment weighting of competing inputs (short-term reward, long-term goal, fatigue, stress, cognitive load, social context) rather than the consumption of a unitary fuel. This view generates substantially different practical advice: structural-environmental intervention rather than willpower-building; managing the inputs to the allocation rather than building character; the slow, sustained architecture of one's life rather than heroic moment-to-moment effort.\n\nWe deflated the related \"21 days to a habit\" myth using the Lally data: median 66 days with range 18–254, and complex behaviors may not become fully automatic at all. The honest expected timeline is months, not weeks; calibrating expectations to this prevents premature quitting.\n\nWe named the **damage** done by the willpower frame: self-blame for structurally-driven failures, misallocated effort toward willpower-building rather than environmental change, stigma against asking for structural support, misunderstanding of populations whose allocation machinery is differently calibrated, and public-policy misalignment that emphasizes information-and-exhortation over infrastructure. The cultural correction is happening but is slow.\n\nWe sketched **what discipline actually looks like** in the calibrated view: architecture sustained, consistent small choices, recognition of predictable allocation shifts and planning around them, patience with slow timelines, and the slip-as-data interpretation applied consistently. This version of discipline is real, but it is much closer to \"good architecture and sustained maintenance\" than to \"heroic strength.\"\n\nWith Part II now complete, the reader has a calibrated understanding of why their previous habit-change attempts have failed: habits don't get erased; context predicts behavior more than character; variable-ratio reinforcement produces uniquely sticky patterns that require architectural intervention; and willpower as popularly understood is not the mechanism it was claimed to be. The structural-architecture frame is what's left, and it is what the data supports.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 844,
+      "out_sha": "b205f39e6ca3",
       "note": ""
     },
     {
@@ -2239,11 +2239,11 @@
       "en_title": "Chapter 8: The Willpower Myth",
       "order": 180,
       "src_chars": 1126,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e3201408ebc8",
       "src": "**Part III gives you the toolkit.** Chapter 9, next, covers **implementation intentions** — Peter Gollwitzer's surprisingly powerful if-then planning technique, possibly the highest-leverage tool in habit science per unit of effort. Chapter 10 covers **choice architecture** — the engineering of defaults and friction, which is what most successful long-term habit change actually relies on. Chapter 11 covers **tiny starts and substitution** — the structural moves that work directly on the procedural system. Chapter 12 covers **identity, calibrated** — what Clear's framing gets right and where it overclaims. With Part II's deflations done, Part III's positive tools land with full weight.\n\n* * *\n\n_This week, for your three-habit diary: review your entries from the past two weeks. Mark any moment where you blamed yourself for \"lack of willpower\" or \"not being disciplined enough.\" For each, re-describe the moment using the allocation framework: what inputs were weighing against the long-term goal? What structural change would have shifted the allocation? Notice the difference in how the reframed moments feel._\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 371,
+      "out_sha": "d7a09ce2664d",
       "note": ""
     },
     {
@@ -2251,11 +2251,11 @@
       "en_title": "Chapter 9: Implementation Intentions",
       "order": 181,
       "src_chars": 2243,
-      "status": "pending",
+      "status": "done",
       "src_sha": "64b4720c5aaf",
       "src": "In the early 1990s, a German social psychologist named Peter Gollwitzer was working on what looked, at the time, like a relatively narrow research question. People often had goals they didn't reach — they intended to lose weight, to study harder, to write the paper, to call their mother — but the gap between intention and behavior was famously wide. Why? And, more practically, was there anything you could do about it?\n\nGollwitzer noticed something that, in retrospect, seems obvious. _Most goal-statements lacked a cue._ \"I will lose weight\" specifies what you want but not when, where, or how the action gets triggered. \"I will exercise more\" similarly. \"I will write more\" similarly. A goal without a cue was a wish, not a plan. The procedural system — the dorsal-striatal cue-response machinery we've spent eight chapters discussing — had nothing to grab onto. The goal lived in declarative memory, the procedural system continued running its own cue-response patterns, and the gap between intention and behavior persisted.\n\nGollwitzer's hypothesis was that converting goal intentions into **if-then plans** — explicit pre-specifications of \"if X situation occurs, then I will do Y\" — would close some of the gap. The if-then format gives the procedural system a cue to recognize and a response to fire. The plan, written down, pre-installs a small fragment of the procedural pattern that the system would otherwise have had to install by repetition.\n\nHe ran experiments. The results were striking enough that, three decades later, **implementation intentions** — Gollwitzer's term — are arguably the most empirically supported, highest-leverage-per-unit-effort tool in habit science. They are also one of the least known to the general public. A self-help book that taught readers to write a few well-chosen if-then plans would, on the data, produce more behavior change than most of the willpower-and-motivation books that sell millions of copies. The technique is fast (you can write one in thirty seconds), free (no apps required), and generalizable across almost every domain of behavior change.\n\nThis chapter teaches the technique, examines why it works, and gives you specific tools for applying it to your three tracked habits.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 687,
+      "out_sha": "1c7192c44845",
       "note": ""
     },
     {
@@ -2263,11 +2263,11 @@
       "en_title": "Chapter 9: Implementation Intentions",
       "order": 182,
       "src_chars": 2557,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5ad41fdf72b4",
       "src": "### 9.1 The Goal-Intention Gap\n\nDecades of research before Gollwitzer had documented what was called the _intention-behavior gap_ : the well-known empirical finding that people's stated intentions only weakly predict their subsequent behavior. Surveys of intentions to exercise, to eat healthily, to study more, to vote, to recycle — across many domains — found that intention typically predicted behavior at correlations between roughly 0.3 and 0.5. This is more than zero (intentions matter a little) but far less than the popular framing suggests (intentions matter mostly).\n\nIn practical terms: if 100 people say \"I plan to exercise three times this week,\" the number who actually do depends much more on contextual variables than on the strength or sincerity of their stated plan. The plan itself, in the way most people make plans, is doing only a small amount of work.\n\nWhy? The decades-of-research answer is that _plans, in their typical form, don't pre-link the behavior to a cue._ \"I plan to exercise this week\" is a goal stated in declarative memory. When the moment to exercise arrives, no cue has been pre-installed to trigger the response. The person has to deliberate, in real time, about whether to exercise, when, where, and how. The deliberation is exactly the bottleneck — it is energy-costly, requires the prefrontal cortex to be online, requires the long-term-goal value to outweigh the short-term reward of _not_ exercising, and is therefore vulnerable to fatigue, stress, cognitive load, and all the other factors we covered in Chapter 8. Most plans fail at the deliberation step.\n\nImplementation intentions close this gap by **pre-specifying the cue and the response**. Instead of \"I plan to exercise more,\" the implementation intention is: \"_If_ it is Monday morning at 7 a.m., _then_ I will put on my running shoes and run for thirty minutes.\" The cue (Monday at 7 a.m.) is now explicit. The response (put on shoes, run) is now explicit. The deliberation is, in a real sense, _pre-completed_ — the person has already deliberated about what to do under that cue, in advance, when conditions for good deliberation were favorable. When the cue arrives, the response can fire without further deliberation.\n\nThis is, structurally, the procedural-system-language version of \"make a plan.\" Most popular plans are declarative (\"I plan to exercise\"); implementation intentions are procedural (\"if X, then Y\"). The procedural system can use the latter; the former is, to it, a foreign language (per Chapter 4). _The format is the leverage._\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 731,
+      "out_sha": "432c49e9dd0a",
       "note": ""
     },
     {
