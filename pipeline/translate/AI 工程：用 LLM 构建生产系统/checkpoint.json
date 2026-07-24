@@ -8015,11 +8015,11 @@
       "en_title": "Appendix D — Anti-Patterns Cheat Sheet",
       "order": 657,
       "src_chars": 1929,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4327b0ccc7c3",
       "src": "#### Anti-pattern 3: Treating LLM outputs as deterministic\n\n**The pattern.** Code reads LLM responses and dispatches on them as if they were stable function returns. No schema validation. No error variants. No confidence calibration. The 99% case works; the 1% case crashes the application or, worse, silently produces a bad result.\n\n**How teams fall into it.** The first prompt the engineer writes happens to produce consistent JSON. They build on that. They don't add validation because it always works in dev. The first time production traffic hits the 1% case — an unusual user input, a model update, a refusal — the code blows up in a way that's hard to attribute.\n\n**Symptoms.** Try/except blocks around `json.loads(llm_response)`. Comments saying _the model usually returns the right format_. Production logs full of `KeyError` and `ValidationError`. Customer reports of features that \"just didn't do anything\" — the LLM emitted a refusal, the code didn't handle it, the feature silently no-op'd.\n\n**The discipline.** Engineer against a stochastic component (Chapter 2). Structured output with discriminated unions: success, error, refusal as distinct variants the type system forces you to handle (Chapter 7). Schema validation at the boundary. Confidence calibration where decisions branch on the LLM's certainty.\n\n**Anchor.** Google AI Overviews (Thread B Failure 2). The \"glue on pizza\" answer was the retrieval layer feeding Reddit content to the model and the model treating it as authoritative — no validation, no source-quality gating, no absurdity detector. Same root failure: the system assumed its inputs and outputs were better-behaved than they were.\n\n**Kill criterion.** If your code can't handle the LLM emitting an unexpected response — wrong schema, refusal, empty answer, hallucinated field — the code isn't production-ready. Production-readiness is defined by behavior on the 1% case, not the 99% case.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 699,
+      "out_sha": "2f3ec941e3fb",
       "note": ""
     },
     {
@@ -8027,11 +8027,11 @@
       "en_title": "Appendix D — Anti-Patterns Cheat Sheet",
       "order": 658,
       "src_chars": 1965,
-      "status": "pending",
+      "status": "done",
       "src_sha": "30cb62589709",
       "src": "#### Anti-pattern 4: Ignoring the cost dimension\n\n**The pattern.** AI features ship without per-feature cost tracking. The bill arrives at end-of-month and surprises someone. The team has no levers — no routing, no caching, no batching, no per-tenant attribution — and so no way to optimize when the cost spikes.\n\n**How teams fall into it.** Inference costs are small at launch. A thousand users at five calls each on a cheap model is rounding-error on the cloud bill. The team is solving correctness, not cost. Then usage grows ten-fold, the team switches to a stronger model for quality, a new feature uses long context, and the bill becomes a finance conversation. By then the system has no cost levers because none were designed in.\n\n**Symptoms.** No per-tenant cost dashboard. No routing layer between the application and the model. Every call goes to the same (usually most expensive) model. The team can't answer _what does this feature cost per active user per day?_ without a spreadsheet and an afternoon. Cost-reduction proposals are met with _we don't know what we'd save._\n\n**The discipline.** Routing as the biggest cost lever (Chapter 17): cheap model first, escalate on uncertainty. Per-feature, per-tenant, per-call cost tracking (Chapter 18). Caching for repeated prompts. Batching where latency permits. Model-upgrade discipline that anticipates the cost shape of new releases.\n\n**Anchor.** Fine-tune deprecation cascade (Thread B Failure 4). A team's GPT-4 fine-tunes became worse than GPT-5 base on the day GPT-5 shipped. Six to eight engineer-weeks of emergency migration followed. Systematic model-upgrade tracking would have anticipated the deprecation date and budgeted the migration; the team had neither.\n\n**Kill criterion.** If you can't say what a feature costs per active user per day — and per active tenant per month — you don't have cost discipline. Building that visibility is a precondition to optimization, not a follow-up to it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 613,
+      "out_sha": "39a965f795c5",
       "note": ""
     },
     {
@@ -8039,11 +8039,11 @@
       "en_title": "Appendix D — Anti-Patterns Cheat Sheet",
       "order": 659,
       "src_chars": 2122,
-      "status": "pending",
+      "status": "done",
       "src_sha": "18f5514d31a3",
       "src": "#### Anti-pattern 5: Trusting LLM-as-judge without validation\n\n**The pattern.** The team uses an LLM to score outputs in their eval (Chapter 4 §4.5). The judge has never been calibrated against human labels. The eval scores look good. The team believes the system is working. Production behavior says otherwise; the eval was scoring what the LLM thinks \"good\" looks like, not what users do.\n\n**How teams fall into it.** LLM-as-judge is too convenient to resist. Hand-grading is slow; an LLM judge scales to thousands of cases for dollars. The first batch of scores looks reasonable on inspection, so the team adopts the judge as the eval gate. They never circle back to validate against humans.\n\n**Symptoms.** Eval scores trend up while user satisfaction is flat or down. The judge agrees with itself across model upgrades — because the judge and the system under test share the same family of biases. New eval cases are written by the same engineer who tunes the judge prompt, creating a feedback loop that gradually drifts away from human judgment.\n\n**The discipline.** Eval discipline (Chapter 4) treats the judge as a hypothesis: it must be validated against humans on a meaningful set before it's allowed to gate anything. Multi-axis RAG eval (Chapter 11) decomposes \"good answer\" into faithfulness, relevance, completeness, and grounding so the judge has explicit criteria rather than a vibe.\n\n**Anchor.** No single canonical failure — this one shows up as correlated-family bias, the recurring shape where the judge and the system under test share training data, training objectives, or family-level stylistic preferences, and the eval is therefore measuring agreement rather than quality. The failure is quiet by design: the team is reassured by the wrong signal.\n\n**Kill criterion.** If your LLM judge hasn't been validated against humans on at least 50 cases with κ ≥ 0.6 agreement (and ideally against humans of different stripes — engineer, domain expert, user), the eval is not production-grade. Treat the judge the way you'd treat any other model: held-out test set, periodic recalibration, drift detection.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 763,
+      "out_sha": "138921ff66b9",
       "note": ""
     },
     {
