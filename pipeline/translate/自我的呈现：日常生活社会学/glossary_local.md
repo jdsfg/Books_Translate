@@ -79,7 +79,7 @@ fraud | 欺诈 |
 negotiation | 协商 |
 hesitation | 迟疑 |
 trajectory | 轨迹 |
-calibrated | 恰到好处的 |
+calibrated | 恰到好处 |
 minimal | 最小化的 |
 catastrophe | 灾难 |
 flicker | 一丝 |
