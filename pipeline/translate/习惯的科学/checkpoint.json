@@ -799,11 +799,11 @@
       "en_title": "Chapter 4: Procedural Memory and Why H.M. Could Still Learn",
       "order": 60,
       "src_chars": 3374,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8cef1ea733b3",
       "src": "### 4.4 Why \"Thinking It Through\" Doesn't Reach the Habit System\n\nNow the structural reason for why so many habit-change attempts fail.\n\nWhen you tell yourself, \"I'm going to stop reaching for my phone every time I have a free moment\" — you are putting a sentence into your declarative-memory system. The hippocampally-mediated network has stored your intention. You know what you want.\n\nWhen the cue appears (a free moment, a sense of mild boredom, a visible phone), the response (reach, unlock, open) fires in the basal-ganglia-mediated procedural-memory system. **That system does not have access to the sentence you stored.** It is a different filing cabinet, in a different part of your brain, that does not communicate with the first one through the channel of words. The sentence in declarative memory might as well, from the procedural system's point of view, be in a foreign language. The procedural system speaks context. It knows: this cue, this response. The sentence it would receive in language — even the most strongly worded sentence, even one repeated a hundred times — does not change that.\n\nThis is the structural reason that **trying harder doesn't work.** Trying harder is more language. The system that needs to be reached doesn't take language as input.\n\nWhat does the procedural system take as input? Three things, primarily:\n\n  1. **The cue itself.** What is in the environment when the response fires? If the cue is removed, the response will not fire. If the cue is changed (e.g., to a different physical setup, a different time, a different pre-condition), the response will be more interruptible.\n\n  2. **The response that follows the cue.** If, when the cue appears, a different response is executed instead, the cue-response pairing weakens (the old response) and a new one strengthens. This is **substitution** , which we'll cover in detail in Chapter 11. It is one of the few moves that operate directly on the procedural system.\n\n  3. **Repetition in stable contexts.** New patterns install through repetition. There is no shortcut. You cannot install a new procedural pattern by deciding to install it; you can only set up the cue-response repetition and let the system consolidate, over time, what is being practiced.\n\n**Notice what is not on this list: language, intention, motivation, or willpower.** None of these reach the procedural system directly. They can shape the conditions under which the procedural system gets practiced (you can use willpower to put yourself in a setting where the new response is being repeated), but they don't directly modify the system's contents. The modifications happen through the system's own input channels.\n\nThis sounds like bad news, and in some ways it is. It is also liberating, in a particular way. Once you understand that \"trying harder\" is structurally insufficient, you stop blaming yourself for its insufficiency. The blame, if any, should go to a culture that has spent a hundred years promoting \"discipline\" as the solution to habit problems — without explaining that discipline was never operating on the right system. We'll see in Chapter 8 that this cultural mistake has empirical consequences: the willpower-as-muscle theory failed to replicate in large studies, and the field has substantially walked back the strong claims. But the popular culture is still selling the old story.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 970,
+      "out_sha": "42653500b341",
       "note": ""
     },
     {
@@ -811,11 +811,11 @@
       "en_title": "Chapter 4: Procedural Memory and Why H.M. Could Still Learn",
       "order": 61,
       "src_chars": 1908,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bec5f54f180b",
       "src": "For now: notice that the relief of not having to \"try harder\" is real. You don't. You can't. The work has to happen through different channels, and the rest of the book is about those channels.\n\n\n#### Common Misconception: \"I just need to be more aware\"\n\nA close cousin of \"I just need to try harder\" is \"I just need to be more aware\" — the belief that increased mindfulness or attention to the moment will, by itself, allow you to interrupt unwanted habits.\n\nThere is something to this, but it is more limited than the popular framing suggests. Here is the precise version:\n\n* **Increased awareness can sometimes catch a habit _during_ the response,** especially in the early phase before the chunk fully consolidates. If you notice the hand reaching for the phone _while the hand is reaching_ , you can sometimes interrupt the reach. This is real and worth practicing. But it gets harder as the habit matures, because the chunk runs faster than your introspection.\n\n* **Increased awareness cannot, by itself, remove the cue.** The cue is in the environment, not in your mind. No amount of mindfulness will move the phone out of the bedroom, declutter the kitchen, or delete the app. Those are environmental interventions; awareness is a cognitive one.\n\n* **Increased awareness does not install a new chunk.** Even if you successfully interrupt the old response in the moment, you have not yet installed the new response in its place. Repetition of the new response in the cue's slot is what installs the new chunk; awareness is the precursor, not the substitute.\n\nSo mindfulness practices are useful adjuncts, especially in the early stages of breaking a habit. They are not a complete solution. The complete solution involves cue removal, substitution, and (often) friction or default changes — environmental moves that do not depend on your in-the-moment awareness. We'll see specific tools in Part III.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 549,
+      "out_sha": "e72389a8668a",
       "note": ""
     },
     {
@@ -823,11 +823,11 @@
       "en_title": "Chapter 4: Procedural Memory and Why H.M. Could Still Learn",
       "order": 62,
       "src_chars": 2488,
-      "status": "pending",
+      "status": "done",
       "src_sha": "abcd428974b6",
       "src": "### 4.5 The Other Half of the Dissociation\n\nHenry Molaison was the first half of the double dissociation: declarative memory devastated, procedural memory intact. The other half — declarative memory intact, procedural memory impaired — has been documented in several patient populations, most prominently in people with damage to the basal ganglia.\n\nPatients with **Huntington's disease** progressively lose neurons in the dorsal striatum (among other regions). In the early stages of the disease, before the damage is severe, these patients can show a striking pattern: they can verbally report what they intend to do; they can describe procedures in detail; they remember facts and events. But they have difficulty _executing_ skills that should have been automatic, and they have difficulty _learning_ new procedural patterns. The body is not cooperating in the way the mind expects.\n\nPatients with certain forms of **Parkinson's disease** , where dopamine signaling in the basal ganglia is disrupted, show a related pattern. They can remember the rules of a task. They can describe what should happen. But the chunked execution that healthy people rely on — the smooth automatization of practiced sequences — is impaired. Many of them can still walk, but the walk has a quality of being deliberately controlled rather than automatic; gait becomes harder when attention is divided.\n\nIn patients with damage to specific basal ganglia regions, researchers can observe almost pure procedural-memory impairment: declarative memory measures look normal; the patient can articulate what they should do; but skill-learning measures (like our mirror-tracing task, or sequence-learning paradigms) are severely impaired. This is the cleanest version of the second dissociation.\n\nThe pattern matters because it confirms that **procedural memory is not just \"the part of declarative memory that you can't put into words yet.\"** It is a substantively different system, with different anatomy, different developmental dynamics, and different vulnerabilities. The two systems can be damaged independently in opposite directions.\n\nFor the practical purposes of this book, the takeaway is: **when you are working on a habit, you are working on a system that is genuinely separate from the system that does your reasoning, planning, and language.** The intervention has to match the system. Reasoning, planning, and language can shape the conditions; they don't directly modify the procedural contents.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 731,
+      "out_sha": "43047b6382ba",
       "note": ""
     },
     {
@@ -835,11 +835,11 @@
       "en_title": "Chapter 4: Procedural Memory and Why H.M. Could Still Learn",
       "order": 63,
       "src_chars": 2232,
-      "status": "pending",
+      "status": "done",
       "src_sha": "efe0fdf7c537",
       "src": "### 4.6 The \"Speak English to Someone Who Speaks Mandarin\" Frame\n\nHere is a frame that many readers have found useful for internalizing why \"trying harder\" fails:\n\n**Imagine that the habit system speaks Mandarin, and you have been trying, very loudly, to instruct it in English.**\n\nYou're a fluent English speaker. You compose your sentences perfectly. You speak slowly and clearly, and when the system doesn't seem to be listening, you speak louder and more emphatically. You explain again, in different words, why what you want is so important. You try moral arguments, threats, pleas. None of it works. The system continues doing what it has always done.\n\nThe problem is not that your Mandarin-speaking interlocutor is stubborn or stupid. The problem is that the system genuinely does not understand the language you have been using. The volume is irrelevant. The eloquence is irrelevant. The moral force is irrelevant. The system is waiting for input in the language it speaks, which is _context_. Change the room. Change what's on the table. Change who is in the room. Change the time. Change what just happened. _Those_ are sentences in Mandarin. The system will respond to those.\n\nThis frame, though it is a metaphor, is not very far from the literal anatomical truth. The procedural system is connected to the declarative system in some ways (both are in the same brain), but the channel of communication is not language. The procedural system was built by evolution before our species had language, and it operates on the inputs it had then: cue, context, response, reinforcement. Adding language to the human brain, much later in evolution, did not retrofit a language interface onto the older procedural system. Language is layered on top, and it modulates some operations, but the procedural system continues to take its instructions in its native vocabulary of context and repetition.\n\nWhen you internalize this — really sit with it for a few weeks — your relationship to your own habit-change attempts shifts. You stop scolding yourself in English when the system isn't responding. You start asking, \"what is the cue, and how do I rearrange the context?\" You start, in a sense, learning to speak Mandarin to yourself.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 593,
+      "out_sha": "db0431a4a7ee",
       "note": ""
     },
     {
@@ -847,11 +847,11 @@
       "en_title": "Chapter 4: Procedural Memory and Why H.M. Could Still Learn",
       "order": 64,
       "src_chars": 2281,
-      "status": "pending",
+      "status": "done",
       "src_sha": "79f8435dd35d",
       "src": "### 4.7 H.M. Lived in a World Designed for Procedural Living\n\nA small detail from the H.M. literature that is worth knowing because it foreshadows Chapter 13.\n\nDespite his profound declarative-memory loss, H.M. had a relatively stable, functional life for many decades after his surgery. He lived first with his parents, then in a nursing home, working through the day on simple tasks, interacting with caregivers, and (by all reports) maintaining a gentle, polite disposition. He could not remember the people who took care of him. He could not remember what he had had for breakfast. He could not remember anything new about his own life.\n\nHow was this possible? How does a person live, day to day, with no episodic memory?\n\nThe answer, which Brenda Milner and her colleagues documented over decades, is that H.M.'s life was carefully scaffolded by his environment. **His routines were stable, his caregivers were consistent, and the structural cues of his daily life supported him.** When he woke up, the same morning routine cues fired the same procedural responses (washing, dressing, eating). When the dining bell rang, the procedural response of going to the dining room fired. The rhythm of his day was carried not by his memory of it but by the cues placed in his environment by people who understood his condition.\n\nThis is, in a sense, an extreme version of what we are all doing every day. Most of our daily behavior is being carried by environmental cues that fire procedural responses, with our declarative selves only loosely involved. H.M.'s life made this visible because the declarative side was almost entirely absent — but the procedural side, given the right environmental scaffolding, was sufficient for a recognizable life.\n\nWhen we get to Chapter 13 and talk about \"stacking the big habits,\" we'll come back to this. The lesson of H.M., and of the patients with severe declarative impairment whose daily structure is maintained through carefully engineered context, is that **a life can be substantially carried by procedural memory if the context is carefully designed.** This is good news for the rest of us. We do not need to remember to do the right things, if we have arranged our context such that the right things will be done by procedural default.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 695,
+      "out_sha": "8d83544f9d85",
       "note": ""
     },
     {
