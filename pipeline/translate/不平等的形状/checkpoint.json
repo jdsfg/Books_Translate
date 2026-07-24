@@ -1375,11 +1375,11 @@
       "en_title": "Chapter 11: How Much Movement?",
       "order": 106,
       "src_chars": 1908,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fa91e710007d",
       "src": "Every class society tells a story about itself, and it is always, at heart, the same story. It is the story of the person who started with nothing and rose, the immigrant's grandchild who became a professor, the kid from the rough neighborhood who built the company, the rags that became riches. The story matters enormously, far more than its frequency might suggest, because it is the moral engine of the whole arrangement. It is what lets a class society say, in good conscience, that its inequalities are acceptable: yes, the rungs are unequal, but anyone can climb them, so where you end up is, in the end, up to you. The promise of _mobility_ is the promise that redeems the inequality. Take it away, and a class society starts to look uncomfortably like the caste system it congratulates itself on having escaped.\n\nSo the question of this chapter is not sentimental but central: _how much movement actually happens?_ Not how much we believe happens, not how many inspiring stories we can name, but how much, measured. This is where Part 3's tangle of inheritance and merit, which we could not fully untangle, finally yields a hard number. We still will not be able to say _why_ position passes down, the structure-versus-merit apportionment stays contested. But we can measure, with real precision, _how much_ it passes down, and the measuring delivers some of the most surprising and most contested findings in the whole field, surprising to people on every side, because the data refuse to confirm anyone's preferred story whole.\n\n\n### 11.1 Two questions hiding in one word\n\nThe first task is to notice that \"mobility\" means two quite different things, and that mixing them is the source of endless confusion. A society can score high on one and low on the other at the same time, and arguments about whether \"there is still mobility\" often turn out to be two people measuring two different things.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 658,
+      "out_sha": "8496ceac8eaf",
       "note": ""
     },
     {
@@ -1387,11 +1387,11 @@
       "en_title": "Chapter 11: How Much Movement?",
       "order": 107,
       "src_chars": 1740,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b826c186cedb",
       "src": "#### Definition: Absolute vs. Relative Mobility\n\n**Absolute mobility** asks whether people are doing better, in real terms, than their parents did, whether a child earns more, or has a higher standard of living, than the parents did at the same age. It can be high for almost everyone at once, because it depends on overall growth: if the whole society gets richer, nearly everyone can out-earn their parents without anyone changing their _rank_.\n\n**Relative mobility** asks whether people change their _position_ relative to others, whether a child born near the bottom of their generation's ladder tends to move up the ladder, or stay near the bottom, compared to children born higher. It is a zero-sum question of _rank_ : for someone to move up in rank, someone else must move down, so relative mobility cannot be high for everyone at once.\n\nIn plain language: absolute mobility is \"am I better off than my parents were?\" and relative mobility is \"did I change my place in line?\" The distinction is everything. Imagine an escalator: if the whole escalator rises, everyone ends up higher than where their parents stood (high absolute mobility) even though no one has changed their position _on the escalator_ (zero relative mobility). Conversely, the escalator could be standing still in real terms while people scramble up and down its steps, swapping ranks (high relative mobility, low absolute). The rags-to-riches story actually invokes _relative_ mobility, a genuine change of rank, the bottom rising to the top. But much of what makes a society feel mobile in good times is _absolute_ mobility, the rising escalator, which can mask near-total stickiness of rank. Keep the two apart, and a great deal of confused argument resolves.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 608,
+      "out_sha": "c19d91c90c48",
       "note": ""
     },
     {
@@ -1399,11 +1399,11 @@
       "en_title": "Chapter 11: How Much Movement?",
       "order": 108,
       "src_chars": 2740,
-      "status": "pending",
+      "status": "done",
       "src_sha": "42653dcf859c",
       "src": "### 11.2 The fading of the absolute promise\n\nStart with absolute mobility, because its story is the clearest and, in recent decades, the most sobering. Across the mid-century rich world, broadly, absolute mobility tended to be high: where economies grew fast and the gains were widely shared, most children could expect to live better than their parents had. This was the lived experience that made the promise feel true, not because people were changing rank, but because the escalator was rising fast enough that most reached a height their parents never had. Just how high that expectation ran is something we can pin down for one case in particular, the United States, where the numbers are unusually precise.\n\nA widely cited 2017 study by the economist Raj Chetty and colleagues, comparing United States children's earnings to their parents' at the same age, put a startling number on how this has changed. Of children born around 1940, roughly _ninety percent_ went on to earn more, in real terms, than their parents had. Of children born around 1980, only about _half_ did. Read that as the fading of a promise: for the 1940 cohort, out-earning your parents was nearly a certainty; for the 1980 cohort, it had become close to a coin flip. The escalator, in other words, slowed dramatically. This is one of the most-cited findings in the recent study of inequality, and it is worth stating carefully in our disciplined way: it concerns _absolute_ mobility (doing better than your parents), in the _United States_ , comparing two specific birth cohorts, from a study of linked income records. It does not, by itself, say anything about _rank_ mobility, and it does not tell us _why_ the escalator slowed, which is contested, though it is closely tied to two things we can measure separately: how fast the economy grew, and how the growth was _distributed_. When growth is slower and its gains flow disproportionately to the top, fewer children at the middle and bottom clear the bar their parents set, even if the society as a whole is still, on average, richer.\n\nThat last point is the bridge between mobility and the inequality we measured back in Part 0, and it is worth pausing on. Absolute mobility depends not only on _how much_ an economy grows but on _who gets_ the growth. A society could grow handsomely in total and still see most children fail to out-earn their parents, if the growth pooled at the top. So the fading of absolute mobility is not simply a story about a slowing economy; it is partly a story about the _distribution_ of what growth there was. This is the first hint of a connection we will make central in the next chapter: that the _level of inequality_ and the _amount of mobility_ may not be independent.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 868,
+      "out_sha": "4afa1a376ac6",
       "note": ""
     },
     {
@@ -1411,11 +1411,11 @@
       "en_title": "Chapter 11: How Much Movement?",
       "order": 109,
       "src_chars": 3401,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a54144fea484",
       "src": "### 11.3 The stickiness of rank\n\nNow turn to relative mobility, the change of rank that the rags-to-riches story actually promises, and here the findings are more stable over time but, to many people, more surprising in their level.\n\nThe honest headline is that rank is _sticky_ , in every society measured, though stickier in some than others. Children born near the top of the income ladder tend, on average, to end up near the top; children born near the bottom tend, on average, to end up near the bottom. The movement is real, plenty of people do change rank, sometimes dramatically, but it is _limited_ , and the limits are larger than the rags-to-riches story implies. The extremes are especially sticky: being born into the very top or the very bottom is the strongest predictor of where you will end up, because the top has the most resources to hold its position and the bottom faces the deepest correlated disadvantages of Chapter 7's web. The middle is more fluid; the ends are more fixed.\n\n\n#### Definition: Rank Persistence (the stickiness of position)\n\n**Rank persistence** is the degree to which children's positions in the income distribution track their parents'. High persistence (stickiness) means a child's rank is strongly predicted by the parents' rank, so the ladder tends to reproduce itself across generations; low persistence (fluidity) means a child's rank is only weakly tied to the parents', so where you start predicts little about where you finish. No real society shows either perfect persistence (a caste) or perfect fluidity (a lottery); all sit somewhere between, and _where_ they sit is both measurable and strikingly variable across societies.\n\nIn plain language: rank persistence measures how much the apple stays near the tree. The crucial finding for our purposes is twofold. First, persistence is _substantial everywhere_ , no measured society comes close to the fluid ideal where birth predicts nothing. Second, and this is what makes the comparative chapter ahead so important, persistence _varies a great deal across societies_ : in some, a child's birth rank predicts adult rank quite strongly; in others, much more weakly. The rungs are stickier in some societies than others, which means stickiness is not a law of nature but a feature of how a society is arranged, exactly the lesson the place-and-schools channel of Chapter 8 foreshadowed.\n\n\n#### Common Misconception\n\nA frequent and consequential error is to treat _any_ mobility as proof that the promise is kept, \"look, people do rise, so the system is open,\" or to treat the _stickiness_ as proof the promise is a lie, \"the poor stay poor, so it's all rigged.\" Both misread the data, in the now-familiar way. The truth is a _level_ , not a yes-or-no: there is real movement _and_ substantial stickiness, simultaneously, and the honest questions are _how much_ of each and _how a society compares_ to others and to its own ideals. Pointing at the risers proves only that persistence is not total (which no one claims); pointing at the stuck proves only that fluidity is not total (which no one claims either). The interesting facts live in the magnitudes: how sticky, compared to what, and changing in which direction. This is the same discipline we applied to the health gradient and the schooling gap, refusing to let either the optimist or the pessimist collapse a measured level into a slogan.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1299,
+      "out_sha": "c37b28b31770",
       "note": ""
     },
     {
@@ -1423,11 +1423,11 @@
       "en_title": "Chapter 11: How Much Movement?",
       "order": 110,
       "src_chars": 1782,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f55ef35c38e0",
       "src": "### 11.4 Maya, Devon, and the meaning of the number\n\nBring it back to the two lives, with the now-practiced care. Maya, born near the top, faces good odds of staying there; Devon, born near the bottom, faces long odds of reaching it. That is what rank persistence means. But persistence is not a wall. Some children born where Devon was born _do_ climb all the way, and some born where Maya was born _do_ fall, and these are not freak exceptions but real and countable people, the very people the mobility statistics are built from. The number tells you the odds, not the outcome. Devon's long odds are real, and they are not a sentence; the possibility of rising is also real, and it is not a guarantee. Both halves are true at once, and a thinker who can hold only one of them has not understood mobility.\n\nThere is something else the two lives reveal, which the aggregate numbers can obscure. Mobility is usually measured in rank or income, but it is _lived_ as something richer and stranger. A person who rises from Devon's start to Maya's destination does not simply arrive; they often carry the marks of the journey, the sense of belonging fully to neither world, the cultural capital of Chapter 9 acquired late and imperfectly, the family left partly behind. And a person who stays at the bottom is not merely a statistic of low mobility but a life lived under the weight of the correlated disadvantages we mapped. The numbers are essential, they discipline our thinking and puncture our myths, but they are a measurement of something that is, at ground level, a matter of human biographies, and we should never let the precision of the statistic make us forget the texture of the life it counts. The escalator metaphor is clean; riding it, or being stuck beside it, is not.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 644,
+      "out_sha": "05e768a21b4e",
       "note": ""
     },
     {
@@ -1435,11 +1435,11 @@
       "en_title": "Chapter 11: How Much Movement?",
       "order": 111,
       "src_chars": 1745,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f1e468527fa6",
       "src": "### 11.5 The question the numbers raise\n\nPart 4's first chapter has put a hard number on the soft promise. Absolute mobility, doing better than your parents, was nearly guaranteed in the mid-twentieth-century rich world and has faded sharply in recent decades, in close connection to how slowly economies grew and how unequally the growth was shared. Relative mobility, changing your rank, shows real but limited movement, with substantial and stable stickiness everywhere, stickiest at the extremes, and, crucially, _varying a great deal across societies_. We have, at last, a measured grip on _how much_ position passes down, even though _why_ it passes down remains the contested apportionment of Part 3.\n\nThat variation across societies is the thread the next chapter pulls, and it leads to one of the most discussed and most contested patterns in the field. If stickiness varies across societies, we can ask: _what do the more mobile societies have in common, and what do the less mobile ones share?_ The answer, when researchers plotted it, produced a striking picture: the societies with the _highest inequality_ tend to be the societies with the _lowest mobility_ , a relationship now famous under a literary nickname, the Great Gatsby Curve. It is a genuine and fairly robust pattern, and it is also a minefield of causal confusion, constantly misread as proving that inequality _causes_ immobility when the honest state of the evidence is far more careful. Chapter 12 takes up the curve, the cross-society comparison it rests on, and the discipline required to say exactly what it does and does not show, a perfect test of everything Part 4 has taught about separating a measured pattern from its contested cause.\n\n\n### 11.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 631,
+      "out_sha": "2ccd736584d9",
       "note": ""
     },
     {
@@ -1447,11 +1447,11 @@
       "en_title": "Chapter 11: How Much Movement?",
       "order": 112,
       "src_chars": 2614,
-      "status": "pending",
+      "status": "done",
       "src_sha": "15e85cc93d72",
       "src": "#### Concept Check\n\n**Q1.** Explain the difference between absolute and relative mobility using the escalator image, and give an example of a society that could have high absolute but low relative mobility.\n\nHint\n\nWhat happens if the whole escalator rises but no one changes their step? Which kind of mobility is that?\n\n**Answer:** _Absolute mobility_ asks whether people are doing better in real terms than their parents (am I better off than my parents were?); it can be high for nearly everyone at once if the whole society grows. _Relative mobility_ asks whether people change their _rank_ relative to others (did I change my place in line?); it is zero-sum, since for one to rise in rank another must fall. The escalator image: if the whole escalator rises, everyone ends up higher than their parents stood (high absolute mobility) even though no one changes their step _on_ the escalator (zero relative mobility). A society in a long economic boom where the income _ranking_ stays fixed but everyone's real standard of living climbs above their parents' would have high absolute but low relative mobility, common in mid-twentieth-century rich economies. The rags-to-riches story actually promises _relative_ mobility (a real change of rank), while good times often deliver mainly _absolute_ mobility, which can mask sticky ranks.\n\n**Q2.** State the US finding on absolute mobility across the 1940 and 1980 birth cohorts, and explain why the chapter says it is partly a story about the _distribution_ of growth, not only its speed.\n\nHint\n\nRoughly what fraction of each cohort out-earned their parents? And can a society grow overall yet still have most children fail to clear their parents' bar?\n\n**Answer:** Of US children born around 1940, roughly _ninety percent_ went on to out-earn their parents in real terms; of those born around 1980, only about _half_ did, the absolute-mobility \"promise\" fading from near-certainty to roughly a coin flip (a finding from a large study of linked income records, comparing children to parents at the same age). It is partly about the _distribution_ of growth because absolute mobility depends not only on _how much_ an economy grows but on _who gets_ the growth: a society can grow handsomely in total yet still see most children fail to out-earn their parents if the gains pool at the top, so fewer middle and bottom children clear their parents' bar. Thus the fading reflects both slower growth and more top-skewed distribution of what growth occurred, which is the first hint that a society's _level of inequality_ and its _mobility_ may be connected (Chapter 12).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 882,
+      "out_sha": "4c210d232afa",
       "note": ""
     },
     {
@@ -1459,11 +1459,11 @@
       "en_title": "Chapter 11: How Much Movement?",
       "order": 113,
       "src_chars": 2951,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f42b6cde96b9",
       "src": "#### Application Problems\n\n**Q1.** A politician says: \"Our country still has plenty of mobility, look at all the people who've risen from poverty to wealth.\" A critic replies: \"No, the poor stay poor, the system is rigged.\" Using the chapter's treatment of mobility as a _level_ , explain what each is getting right, what each is missing, and what question they _should_ be arguing about.\n\nHint\n\nDoes the existence of risers disprove stickiness? Does stickiness disprove the existence of risers? What do the magnitudes, and cross-society comparison, actually let you ask?\n\n**Answer:** Each captures a true half and misreads it as the whole. The politician is right that real movement exists, people genuinely do rise, which proves persistence is _not total_ (no one claims it is). But pointing at risers does not show the promise is _kept_ , because substantial stickiness can coexist with many risers. The critic is right that rank is _sticky_ , especially at the extremes, which proves fluidity is _not total_ (no one claims that either). But stickiness does not make it \"all rigged,\" since real movement does occur. Both err by collapsing a measured _level_ into a yes-or-no slogan. What they _should_ argue about is the _magnitude_ : how sticky is rank, exactly; how does it compare to other societies and to the country's own ideals; and is it rising or falling? Those are the answerable, meaningful questions, and they require the comparative data of Chapter 12, not duelling anecdotes.\n\n**Q2.** The chapter says rank persistence is \"stickiest at the extremes.\" Explain why the very top and very bottom are stickier than the middle, connecting your answer to mechanisms from Part 3 (Chapters 7-9).\n\nHint\n\nWhat does the top have the most of to hold its place? What correlated bundle does the bottom face? Recall the \"web\" of life chances.\n\n**Answer:** The extremes are stickier because the mechanisms of reproduction are strongest there. The _top_ has the most of every advantage that holds position: the largest direct wealth transfers (Chapter 8), access to the best neighborhoods and schools and the most powerful networks, and the deepest reserves of cultural capital (Chapter 9), so it can buffer shocks and pass advantage down most reliably. The _bottom_ faces the deepest version of Chapter 7's correlated \"web\" of disadvantages, poor health, weak schooling, insecurity, and unsafe surroundings reinforcing one another, plus the absence of the wealth cushion that turns risks into opportunities, so escaping requires overcoming many interlocking obstacles at once. The _middle_ has neither the top's fortress of advantages nor the bottom's web of disadvantages, so smaller pushes move middle children up or down more easily, making the middle more fluid and the ends more fixed. This shows mobility data and the Part 3 machinery are two views of the same thing: persistence is high exactly where the transmission mechanisms are strongest.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1047,
+      "out_sha": "52c666ba1f63",
       "note": ""
     },
     {
@@ -1471,11 +1471,11 @@
       "en_title": "Chapter 11: How Much Movement?",
       "order": 114,
       "src_chars": 2986,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2dd924b9c586",
       "src": "#### Think Deeper\n\n**Q1.** The rags-to-riches story is, the chapter argues, \"the moral engine\" that lets a class society accept its inequalities. Suppose mobility were measured to be quite low, much lower than the society believes. Would that, by itself, show the inequality is unjust? Consider the question from the angle of someone who thinks opportunity is what matters, and from the angle of someone who thinks the _outcomes_ matter regardless of mobility.\n\n**Discussion:** This question connects the measured findings of this chapter to the normative arguments waiting in Part 7, and it shows, once again, that a striking fact does not by itself deliver a verdict, though it powerfully reshapes the argument.\n\nFor someone who believes _opportunity_ is what matters, what makes inequality acceptable or not, low measured mobility is highly relevant but still not automatically decisive. This person's core idea is that unequal _outcomes_ are fair if everyone had a fair _chance_ to reach the better positions, the race can have winners and losers as long as the starting line is fair. Low mobility is troubling for them because it _suggests_ the starting line is not fair: if birth strongly predicts destination, it looks like chances were not equal. But notice the inference has a gap. Low mobility is consistent with unequal opportunity, but it is _also_ consistent, in principle, with equal opportunity plus unequal _use_ of it, if (the agency side of Chapter 10 would insist) people from different starts genuinely made different choices and developed different skills, some persistence could reflect transmitted _merit_ rather than transmitted _advantage_. So even the opportunity-focused person cannot read \"low mobility\" directly as \"unjust\"; they must combine it with a judgment about _why_ mobility is low, which is exactly the contested apportionment of Part 3. The fact reshapes their argument and raises the burden on the system, but it does not close the case by itself.\n\nFor someone who believes the _outcomes_ matter regardless of mobility, the mobility data are almost beside the point. This person holds that what matters morally is how people at the bottom actually live, whether they have enough, whether the gaps are too large, not whether the particular individuals at the bottom could have been different ones. On this view a society with high mobility but desperate conditions at the bottom (a fair race to a cruel finish) is not redeemed by its fairness of opportunity, and a society with low mobility but decent conditions everywhere is not condemned by its stickiness. Mobility, for them, measures the _fairness of the sorting_ , but they care about the _quality of the positions_ , which is a different question. So they would say the rags-to-riches story is a distraction: it focuses moral attention on whether you _can_ escape the bottom rather than on _how bad the bottom is_ , and a humane society should attend to the latter regardless of the former.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 892,
+      "out_sha": "ec70793fcd41",
       "note": ""
     },
     {
@@ -1483,11 +1483,11 @@
       "en_title": "Chapter 11: How Much Movement?",
       "order": 115,
       "src_chars": 2707,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0ac2ae4c4d44",
       "src": "The deep lesson is that \"how much mobility is there?\" and \"is the inequality just?\" are _different questions_ , linked but not identical, and how much the mobility finding bears on the justice verdict depends on a prior value commitment, whether you locate justice in _opportunity_ or in _outcomes_ (or in some combination), which is itself contested and which we will meet head-on in Part 7 as the clash between equality of opportunity and equality of outcome. The mobility number is a crucial input to that argument. It is not the argument. Whichever way the data come out, the verdict still requires you to decide what you think justice is about, and that decision is yours.\n\n\n### Chapter Summary\n\nWe confronted the rags-to-riches story, the \"moral engine\" that lets a class society accept its inequalities, by asking how much movement actually happens. The key distinction is between **absolute mobility** (doing better in real terms than your parents, which can be high for everyone at once if the economy grows, the rising escalator) and **relative mobility** (changing your _rank_ , which is zero-sum). Confusing them drives much muddled argument; the rags-to-riches story actually promises _relative_ mobility, while good times often deliver mainly _absolute_.\n\nOn absolute mobility, the US finding is sobering: roughly ninety percent of the 1940 birth cohort out-earned their parents, but only about half of the 1980 cohort did, the promise fading from near-certainty to a coin flip, in close connection not only to slower growth but to the top-skewed _distribution_ of the growth that occurred, the first hint that inequality and mobility are linked. On relative mobility, **rank persistence** is _substantial everywhere_ (no society approaches the fluid ideal), stickiest at the _extremes_ (where Part 3's transmission mechanisms are strongest), and, crucially, _varies a great deal across societies_ , so stickiness is an arrangement, not a law of nature. We held off both the optimist's and the pessimist's slogans, insisting mobility is a measured _level_ , not a yes-or-no, and we kept Maya and Devon's odds probabilistic and their journeys human.\n\nThe cross-society variation is the thread Chapter 12 pulls: the societies with the highest _inequality_ tend to have the lowest _mobility_ , the **Great Gatsby Curve** , a robust pattern endlessly misread as proving inequality _causes_ immobility. Taking it up will test everything Part 4 has taught about separating a measured pattern from its contested cause, and it connects back to Part 3's still-open apportionment question and forward to Part 7's clash between opportunity and outcome as rival ideas of what justice requires.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1036,
+      "out_sha": "8c98fd295291",
       "note": ""
     },
     {
