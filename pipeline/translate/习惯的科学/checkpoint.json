@@ -511,11 +511,11 @@
       "en_title": "Chapter 3: How a Habit Forms",
       "order": 36,
       "src_chars": 1635,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b50f445689f2",
       "src": "There is a sentence that almost everyone in the developed world has heard, on a podcast or in a Twitter thread or on the back of a self-help book: _cue, routine, reward._ Charles Duhigg popularized the formula in _The Power of Habit_ , and it is genuinely useful. It captures something real about what habits are made of. Many people who had never thought clearly about their own behavior, after reading Duhigg's book, started noticing the cues that triggered their bad habits, and that noticing was the start of real change.\n\nSo the formula has done the world a service. It is also a first cut, and a decade of subsequent neuroscience has filled in a more precise version of the same story. The precise version is more useful, because it explains things the simple version doesn't. It explains why a long-time smoker can sincerely say \"I don't even enjoy it anymore\" and yet keep smoking. It explains why a notification ping has the strange power that it does. It explains why the hundredth time you eat your favorite food is less exciting than the second. It explains why mature habits don't depend on enjoyment. The precise version is a story about a chemical you have heard a great deal of misinformation about, and a particular technical concept — _dopamine prediction error_ — that came from monkeys, in the 1990s, and has reorganized how the field thinks about reinforcement.\n\nThis is the chapter where the story turns from descriptive (\"there are habits\") to mechanistic (\"here is the mechanism that makes them\"). We'll keep using Duhigg's framing where it's useful and replace it with the more precise framing where it isn't.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 570,
+      "out_sha": "97675e434bb5",
       "note": ""
     },
     {
@@ -523,11 +523,11 @@
       "en_title": "Chapter 3: How a Habit Forms",
       "order": 37,
       "src_chars": 2808,
-      "status": "pending",
+      "status": "done",
       "src_sha": "069eb6a2977e",
       "src": "### 3.1 The Useful First Cut\n\nCharles Duhigg's _The Power of Habit_ , published in 2012, organized its analysis around what he called the **habit loop** : a _cue_ (something in the environment that triggers a behavior), a _routine_ (the behavior itself), and a _reward_ (the outcome that reinforces the loop).\n\nThe framing was useful because it pushed millions of readers to start asking questions they had never asked. _What is the cue for my afternoon snack?_ (Often: a particular feeling, a particular time, a particular sight in the kitchen.) _What is the routine?_ (The walk to the cabinet, the unwrapping, the eating.) _What is the reward?_ (Often not what you'd expect — sometimes the actual taste; sometimes the small break in the afternoon; sometimes a brief release from a building stress.) Naming the parts of the loop made the whole loop visible. Once visible, it became modifiable.\n\nWe can credit this. The book has done a lot of good. Many people first started thinking clearly about their habits because of Duhigg's framing.\n\nThe framing also has limits, and the limits matter. The cue-routine-reward formula leaves out the dynamics of what changes inside the loop over time. Specifically, it does not explain:\n\n* Why a behavior, performed for the hundredth time, often feels less rewarding than it did the second.\n* Why a mature habit can persist after the reward has been removed.\n* Why mature smokers, mature gamblers, mature compulsive scrollers all report a similar phenomenology — _I don't really enjoy it anymore. But I can't stop._\n* Why some cues have such disproportionate power (the smartphone notification, the slot machine bell) compared to others.\n\nThe simple loop suggests: cue triggers routine; routine produces reward; reward keeps the loop going. This implies that as the reward fades, the loop should fade too. But the actual phenomenology of mature habits is the opposite: the _reward_ often fades while the _cue's grip_ gets stronger. We need a model that explains this. The model lives one level deeper, in the chemistry of how the brain learns reward.\n\n\n### 3.2 What Dopamine Actually Is\n\nAlmost everything you have read in popular media about dopamine is a little wrong. Dopamine is not \"the pleasure chemical.\" Dopamine does not \"make you feel good.\" A \"dopamine hit\" is, mostly, a misnomer.\n\nWhat dopamine actually does, in the parts of the brain we care about for habit formation, is a specific computational job: **it signals the difference between what you expected and what actually happened.** It is, technically, a _prediction error_ signal.\n\nThis is the work of Wolfram Schultz, a neuroscientist whose monkey experiments in the 1980s and 1990s redrew the map of reward learning. The story is worth telling because the experimental design is unusually elegant.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 969,
+      "out_sha": "c3ccba3466ed",
       "note": ""
     },
     {
@@ -535,11 +535,11 @@
       "en_title": "Chapter 3: How a Habit Forms",
       "order": 38,
       "src_chars": 2462,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c47690ec5296",
       "src": "#### The Schultz Experiments\n\nSchultz trained monkeys on a simple task. A light comes on (the **cue**). A few seconds later, a small drop of juice is delivered (the **reward**). The monkey learns the relationship: when the light comes on, juice will follow. After enough repetitions, the monkey reliably anticipates the juice the moment the light appears.\n\nWhile this is happening, Schultz is recording from individual neurons in a part of the monkey's brain called the _ventral tegmental area_ — a small structure deep in the midbrain that is the source of much of the brain's dopamine. He is watching, in essence, dopamine neurons fire.\n\nWhat he saw fundamentally changed how the field thinks about reward. Three findings, all in the same simple experimental paradigm:\n\n**Finding 1: At first, the dopamine spike happens at the reward.** When the monkey is naive — has not yet learned the cue-reward relationship — the juice arrives unexpectedly and the dopamine neurons fire briskly at the moment of juice delivery. This makes intuitive sense. Reward → dopamine.\n\n**Finding 2: As the monkey learns, the dopamine spike moves backward in time, from the reward to the cue.** After many trials, the monkey has learned the relationship. Now the dopamine spike no longer happens at the juice. It happens _at the light_. The juice itself, when it arrives on schedule, produces no dopamine spike at all. The cue has acquired the dopamine response that used to belong to the reward.\n\n**Finding 3: When the cue appears but the reward fails to arrive, the dopamine signal goes negative.** If the light comes on but the juice doesn't follow, the dopamine neurons, at the time the juice should have arrived, _dip below baseline_. They produce a negative signal. The monkey's brain has explicitly registered \"expected reward, did not get it.\"\n\nThree findings, one elegant paradigm. The pattern they reveal is the **prediction error** structure of dopamine.\n\n> **[Figure 3.1: Dopamine Prediction Error Across Learning]** Three time-series panels showing dopamine neuron firing rate aligned to (a) cue onset and (b) reward delivery. Panel 1: untrained monkey — flat at cue, spike at reward. Panel 2: trained monkey, reward delivered — spike at cue, flat at reward. Panel 3: trained monkey, reward omitted — spike at cue, dip below baseline at the omitted-reward moment. The figure should make the _temporal migration_ of the dopamine spike (reward → cue) visible at a glance.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 830,
+      "out_sha": "ea968e40a460",
       "note": ""
     },
     {
@@ -547,11 +547,11 @@
       "en_title": "Chapter 3: How a Habit Forms",
       "order": 39,
       "src_chars": 3299,
-      "status": "pending",
+      "status": "done",
       "src_sha": "51be70a11f8e",
       "src": "#### Definition: Dopamine Prediction Error\n\nA **dopamine prediction error** is a brief change in dopamine signaling that encodes the difference between expected reward and actual reward.\n\n* **Reward exceeds expectation** (a positive prediction error): dopamine spikes upward.\n* **Reward equals expectation** (no prediction error): dopamine is flat.\n* **Reward falls short of expectation** (a negative prediction error): dopamine drops below baseline.\n\nIn plain language: dopamine is not a \"yes-this-feels-good\" signal. It is an \"this-is-better-than-expected\" signal. Once your expectations have caught up with reality, the reward produces no more dopamine. The system has learned the prediction; there's no more error to signal.\n\nThis is one of the most important findings in 20th-century neuroscience, and it is also one of the most regularly mistranslated when it reaches popular discourse. Almost every popular invocation of \"a dopamine hit\" or \"the dopamine reward system\" treats dopamine as if it tracked pleasure or reward magnitude. It does neither, exactly. It tracks _prediction error_. Once you understand this, several otherwise-puzzling features of habit fall into place.\n\n\n### 3.3 Why Earned Rewards Stop Feeling Exciting\n\nYou probably have an example you can think of without much effort. A favorite restaurant where the first visit was magical and the tenth visit is just dinner. A new pair of shoes that you couldn't stop looking at for the first week and now don't notice. A promotion you were thrilled to get and that, six months in, just feels like work. A relationship in which the first kisses were electric and the comparable kiss now is sweet but quiet.\n\nPopular discourse calls this \"hedonic adaptation\" and treats it as a slightly tragic feature of human psychology. But notice what's actually going on at the dopamine level.\n\nThe first time at the restaurant, the food was significantly better than your prior expectations. _Reward exceeded expectation_ : positive prediction error, dopamine spike, strong feeling of \"this is great.\" The tenth time, your expectations have caught up to reality. The food is exactly as good as you expect. _Reward equals expectation_ : no prediction error, no dopamine spike, no feeling of newness. The food is just as good as it was. Your _enjoyment_ of the food, in the sense of the sensory experience, is unchanged. What has changed is the _prediction error_ , which is what the dopamine system tracks. The dopamine system has learned that this restaurant produces this level of food, and it has stopped firing about it.\n\nThis is not a bug. It is the dopamine system doing exactly what it evolved to do: it allocates the limited resource of \"this is significant; pay attention\" to _new information_ , not to confirmed predictions. From the dopamine system's perspective, the tenth meal at the favorite restaurant is no longer informative.\n\nBut notice what this does to the simple cue-routine-reward picture. In the simple picture, the reward keeps firing the loop. In the actual mechanism, **after enough repetitions, the reward stops firing dopamine entirely** — because there's no prediction error anymore. The dopamine has migrated to the _cue_. This has enormous implications for how mature habits operate, and for how to break them.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1008,
+      "out_sha": "6cfad27348ac",
       "note": ""
     },
     {
@@ -559,11 +559,11 @@
       "en_title": "Chapter 3: How a Habit Forms",
       "order": 40,
       "src_chars": 2141,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8873f41af6f3",
       "src": "#### Common Misconception: \"Dopamine equals pleasure\"\n\nThe single most common popular misconception about the brain is that dopamine \"is\" pleasure or that \"dopamine hits\" are the engine of feeling good. This is wrong in a way that matters.\n\nThere are at least two reasons the misconception is wrong. First, as we just saw, dopamine signals prediction error, not raw reward magnitude. The same reward, repeated, produces decreasing dopamine signals — even though, in any meaningful sense, the reward is just as good as it was. _Pleasure stays roughly constant; dopamine fades._\n\nSecond, the brain has at least two distinct systems in what's loosely called \"reward.\" Behavioral neuroscientists distinguish between **wanting** (sometimes called _incentive salience_ , primarily mediated by dopamine signaling) and **liking** (the actual hedonic experience of pleasure, mediated by different circuits including opioid systems in specific small brain regions). Wanting and liking can come apart. You can want something intensely without liking it (the classic case of addiction, where the drug is wanted desperately and the actual experience has degraded to neutrality or even displeasure). You can like something without wanting it (a casual pleasure that you don't feel pulled toward seeking out).\n\nThe popular phrase \"dopamine hit\" conflates wanting and liking. They are not the same. The conflation matters because almost every modern \"addictive\" technology — slot machines, social media feeds, mobile games — is engineered to maximize _wanting_ , not _liking_. The user reports lower and lower satisfaction over time and yet finds it harder and harder to put the phone down. The system is doing exactly what it was designed to do: building wanting (cue-locked dopamine prediction error) without needing to produce continuing liking. We will see this in detail in Chapter 7.\n\nFor now, the move is just to **decouple \"wanting\" and \"liking\" in your mental model.** A behavior that you keep doing despite no longer enjoying it is not a logical contradiction; it is a wanting-system override of a liking-system that has long since fallen silent.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 690,
+      "out_sha": "984e8a0aa67a",
       "note": ""
     },
     {
@@ -571,11 +571,11 @@
       "en_title": "Chapter 3: How a Habit Forms",
       "order": 41,
       "src_chars": 2465,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f4cf58e1b70a",
       "src": "### 3.4 The Mature Habit: Cue-Locked, Reward-Indifferent\n\nNow we can put the pieces together and see why mature habits behave the way they do.\n\n**Early phase of habit formation.** A new behavior is performed. A reward follows. The reward exceeds expectation (no prior expectation existed), so dopamine fires at the reward. The dopamine signal reinforces the cue → response → reward sequence. Repeat. Each repetition strengthens the link.\n\n**Mid phase.** The behavior has been performed enough times in the same context that the brain starts to predict the reward. Dopamine begins to fire earlier — partway between cue and reward. The reward itself, now expected, starts to produce a smaller dopamine signal.\n\n**Mature phase.** The cue has fully acquired the dopamine response. _Dopamine fires at the cue._ The behavior is now strongly entrained as a response to the cue. The reward, when it arrives, produces little or no dopamine — it's exactly what was expected. The habit runs on cue.\n\nThis is the structure of every mature habit you have. The smoker's hand reaches for the cigarette when the cue appears (after lunch, with this friend, during this drive). The dopamine fires at the cue, not at the cigarette. The cigarette itself, by year ten, produces a much smaller subjective reward than it did in year one — but the _cue's_ grip has gotten correspondingly stronger. _The behavior runs because the cue says it should run._ The reward could be removed entirely and the behavior would persist for a long time.\n\nThis explains the long-time-smoker phenomenology directly. _I don't even enjoy it anymore, but I can't stop._ This is not denial, not weakness, not lack of self-knowledge. It is an accurate description of the dopamine-reorganization that has happened across years of repetition. The wanting system has migrated to the cue; the liking system has fallen silent; and the behavior runs on the cue alone.\n\nIt also explains a related fact that nicotine-replacement-therapy researchers have known for decades: the actual nicotine craving is not the hardest part of quitting. The hardest part is the cue exposure — the post-lunch moment, the drink with that friend, the drive home — where the dopamine system has built a thirty-thousand-trial expectation that the cigarette is coming. The cue triggers the wanting system in full force. The actual nicotine, by this point, is contributing relatively little. We will see this with extra clarity in Chapter 5.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 723,
+      "out_sha": "fd7b341dc70d",
       "note": ""
     },
     {
@@ -583,11 +583,11 @@
       "en_title": "Chapter 3: How a Habit Forms",
       "order": 42,
       "src_chars": 2944,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c3cf5384ffc7",
       "src": "### 3.5 The Notification Ping, Re-Examined\n\nThread C: every chapter shows a real case of _your behavior is being engineered_. The notification ping is one of the cleanest examples of dopamine prediction error being exploited at scale.\n\nConsider the design of a typical smartphone notification. A red badge appears on the icon. A small sound plays. A vibration pulses through the phone. The icon may glow or animate.\n\nEach of these features has been chosen, in modern app design, with at least some awareness of the dopamine architecture. The badge is **unpredictable in time** (the cue can appear at any moment), which keeps the system in maximum-prediction-error mode. The sound is brief and salient — short enough not to annoy, salient enough to capture attention. The vibration produces a peripheral somatic cue that often registers below conscious awareness. The numeric count on the badge creates a \"task-not-completed\" signal that the brain wants to clear.\n\nWhat does the dopamine system do with this? It treats the notification as a cue. After enough repetitions in which the notification is followed by something at least intermittently rewarding (a message from a friend, a like, a piece of news, a discount), the dopamine response migrates to the cue. The notification itself becomes the dopamine event. _You are now wanting your phone._ Not the contents of any particular notification — the notification cue itself.\n\nThe key design feature, which we'll examine in Chapter 7, is that the rewards behind the notifications are **intermittent and unpredictable**. Most notifications are not particularly rewarding (a routine email, a calendar reminder, a low-quality social-media item). A few are highly rewarding (a message from someone important, a piece of news that turns out to matter, an unexpected bit of social acknowledgment). The intermittent reinforcement schedule produces, in behavioral science, the strongest and most extinction-resistant patterns of behavior known. Variable-ratio reinforcement is the design of slot machines. It is also the design of every notification system on every modern app, and it is not an accident.\n\nThe point for this chapter, narrowly: when you find yourself reflexively reaching for your phone the instant you hear the notification sound, that reflexive reach is not a moral failure. It is the dopamine prediction-error mechanism doing exactly what it evolved to do, in an environment that has been deliberately engineered to maximize the cue's grip. The system is not broken. The system has been hijacked.\n\nWe will see in Chapters 9–11 the specific moves to release the cue's grip. For now: notice that the popular advice \"just put your phone down\" is acting on the wrong system. The phone-down decision is goal-directed-system; the phone-reach is dopamine-prediction-error-from-cue. They live in different parts of your brain. The fix is not to argue with the cue; it is to remove the cue.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 859,
+      "out_sha": "43d15fa7dc63",
       "note": ""
     },
     {
@@ -595,11 +595,11 @@
       "en_title": "Chapter 3: How a Habit Forms",
       "order": 43,
       "src_chars": 2367,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ce09bf77a70c",
       "src": "### 3.6 What This All Implies for Habit Change\n\nThe mechanism we've laid out has three implications that will shape everything in Part III.\n\n**Implication 1: You cannot break a habit by removing the reward.** The reward has already done its work. By the time you notice you have a habit you want to change, the dopamine signal has migrated to the cue, and the cue is doing the maintaining. Removing the reward (e.g., trying to make the cigarette less enjoyable, trying to make the social media feed less interesting) is acting on a part of the mechanism that, for mature habits, isn't doing much anymore. The habit will persist.\n\n**Implication 2: The cue is the leverage point.** Every effective intervention in mature habit change targets the cue, in one of three ways:\n\n* **Remove the cue** (don't have the cigarettes; delete the app; redesign the environment).\n* **Weaken the cue with friction** (put the cigarettes in a drawer in the basement; turn off notifications; lock the app behind a delay).\n* **Re-link the cue to a different response** (when the cue appears, do something else; this is **substitution** , which we'll see in Chapter 11).\n\nThese are the three structural moves. Almost all good habit-change advice is some version of one of these three. Almost all bad habit-change advice is some version of \"want it more.\"\n\n**Implication 3: The early phase of any new habit needs the reward to be salient and at least a little surprising.** If you are trying to _build_ a new habit, you need the prediction error to fire — the early reinforcement has to be more than expected, not less. This is why, paradoxically, some of the strongest advice for building new habits involves making the reward _visible_ : tracking the new behavior on a calendar where you can see your streak grow, telling someone about it so the social acknowledgment registers, savoring the result rather than rushing past it. Each of these increases the prediction error early in the consolidation phase, which gets the dopamine fired and the cue-response link installed faster. We'll see specific tools in Chapters 9 and 11.\n\nThe deep point: **mature habits run on cue, but new habits are still being installed by reward.** Different phases need different interventions. This is one of the reasons most habit change fails — the change strategy is mismatched to the phase of the habit.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 734,
+      "out_sha": "4d4c33b3bd21",
       "note": ""
     },
     {
