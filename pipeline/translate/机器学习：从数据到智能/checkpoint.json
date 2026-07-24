@@ -1259,11 +1259,11 @@
       "en_title": "Chapter 10: Ensemble Methods — Wisdom of the Crowd",
       "order": 95,
       "src_chars": 3007,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b31ed5e17d04",
       "src": "**The role of the tree.** We cannot take an unconstrained step −ηg-\\eta \\mathbf{g}−ηg in function space because this would just memorize the negative gradient values at training points and generalize nowhere. Instead, we fit a shallow tree hth_tht​ to minimize ∑i(ht(xi)−(−gi))2\\sum_i (h_t(\\mathbf{x}_i) - (-g_i))^2∑i​(ht​(xi​)−(−gi​))2 — finding the best approximation to the negative gradient _within the restricted space of decision trees_. Adding η⋅ht\\eta \\cdot h_tη⋅ht​ to FFF is thus a projected gradient descent step: steepest descent in function space, projected onto the subspace of functions representable by a single tree.\n\n**The squared loss case: residuals as negative gradients.** For L(yi,F(xi))=12(yi−F(xi))2L(y_i, F(\\mathbf{x}_i)) = \\frac{1}{2}(y_i - F(\\mathbf{x}_i))^2L(yi​,F(xi​))=21​(yi​−F(xi​))2, the functional gradient is:\n\ngi=∂∂F(xi)12(yi−F(xi))2=−(yi−F(xi))=F(xi)−yig_i = \\frac{\\partial}{\\partial F(\\mathbf{x}_i)} \\frac{1}{2}(y_i - F(\\mathbf{x}_i))^2 = -(y_i - F(\\mathbf{x}_i)) = F(\\mathbf{x}_i) - y_igi​=∂F(xi​)∂​21​(yi​−F(xi​))2=−(yi​−F(xi​))=F(xi​)−yi​\n\nSo the negative gradient is −gi=yi−F(xi)-g_i = y_i - F(\\mathbf{x}_i)−gi​=yi​−F(xi​), which is exactly the **residual** of the current ensemble. Fitting a new tree to the residuals (as in the classical boosting description for squared loss) is precisely a steepest descent step in function space. The general gradient boosting algorithm replaces this with the negative gradient of an arbitrary differentiable loss — making gradient boosting a direct generalization of residual fitting to non-MSE objectives such as log-loss, Huber loss, or quantile loss.\n\n\n### Chapter Summary\n\nEnsemble methods combine many weak learners to produce a strong learner, dramatically reducing variance while maintaining or improving bias.\n\nKey ideas:\n\n* **Bagging** trains models on bootstrap samples and averages; reduces variance proportionally to the number of uncorrelated models\n* **Random forests** add feature subsampling to further decorrelate trees; robust, fast, requires minimal tuning\n* **Gradient boosting** trains trees sequentially, each correcting the previous ensemble's errors; state-of-the-art on tabular data but requires careful regularization\n* **OOB error** provides a free generalization estimate for random forests\n* **Early stopping** is essential for gradient boosting to avoid overfitting\n\n**Thread A checkpoint (A4):** Gradient boosting (XGBoost) achieves R2=0.87R^2 = 0.87R2=0.87, RMSE = 23,800 USD on the house price dataset — the best result yet, beating linear regression by 10,700 USD RMSE. Random forest achieves a strong intermediate result (R2=0.83R^2 = 0.83R2=0.83). The clear lesson: ensemble methods substantially outperform single models on this dataset. But interpretability decreases: the XGBoost model is an ensemble of 800 trees and cannot be directly inspected.\n\nIn Chapter 11, we explore Support Vector Machines — a fundamentally different approach based on finding the maximum-margin boundary.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1106,
+      "out_sha": "eaada31f25dd",
       "note": ""
     },
     {
@@ -1271,11 +1271,11 @@
       "en_title": "Chapter 11: Support Vector Machines — Maximum Margin Classifiers",
       "order": 96,
       "src_chars": 2708,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b7a6538b8f31",
       "src": "Consider a binary classification problem where two classes are perfectly separable by a straight line. There are infinitely many lines that separate them — so which one should we choose?\n\nLogistic regression might choose a line that barely separates the classes, passing close to some training examples. A small perturbation in the data could move those examples to the wrong side. Intuitively, we want a line that is as _far as possible_ from both classes — a boundary that has the most \"room\" before misclassifying anything.\n\nThis is the central idea of Support Vector Machines: find the maximum-margin classifier. The resulting algorithm turns out to be elegant, theoretically well-founded, and — through a remarkable trick called the kernel — extendable to non-linear boundaries in infinite-dimensional feature spaces.\n\n\n### 11.1 The Maximum Margin Classifier\n\nImagine class +1 points and class -1 points separated by a hyperplane w⊤x+b=0\\mathbf{w}^\\top \\mathbf{x} + b = 0w⊤x+b=0. The **margin** is the width of the \"street\" between the two classes — twice the distance from the separating hyperplane to the nearest point.\n\n\n#### Definition: Hard-Margin SVM\n\nFor linearly separable data with labels yi∈{−1,+1}y_i \\in \\\\{-1, +1\\\\}yi​∈{−1,+1}, the **hard-margin SVM** finds the maximum-margin hyperplane:\n\nmin⁡w,b12∥w∥2subject toyi(w⊤xi+b)≥1∀i\\min_{\\mathbf{w}, b} \\frac{1}{2}\\|\\mathbf{w}\\|^2 \\quad \\text{subject to} \\quad y_i(\\mathbf{w}^\\top \\mathbf{x}_i + b) \\geq 1 \\quad \\forall iw,bmin​21​∥w∥2subject toyi​(w⊤xi​+b)≥1∀i\n\nIn plain language: find the smallest-norm weight vector w\\mathbf{w}w such that all examples are correctly classified with a margin of at least 1 (scaled by ∥w∥\\|\\mathbf{w}\\|∥w∥). The margin is 2/∥w∥2/\\|\\mathbf{w}\\|2/∥w∥, so minimizing ∥w∥2\\|\\mathbf{w}\\|^2∥w∥2 maximizes the margin.\n\nThe examples that lie exactly on the margin boundary (yi(w⊤xi+b)=1y_i(\\mathbf{w}^\\top \\mathbf{x}_i + b) = 1yi​(w⊤xi​+b)=1) are called **support vectors** — they are the only training examples that determine the decision boundary. Move a non-support-vector, and the boundary doesn't change. This is a dramatic contrast to logistic regression, where all training examples affect the decision boundary.\n\n**Geometric interpretation:** The margin hyperplanes w⊤x+b=+1\\mathbf{w}^\\top \\mathbf{x} + b = +1w⊤x+b=+1 and w⊤x+b=−1\\mathbf{w}^\\top \\mathbf{x} + b = -1w⊤x+b=−1 define a \"channel\" of width 2/∥w∥2/\\|\\mathbf{w}\\|2/∥w∥. The SVM finds the widest possible channel that separates the classes.\n\n\n### 11.2 Soft-Margin SVM: Handling Non-Separable Data\n\nReal data is almost never perfectly linearly separable. Some examples may be outliers or mislabeled. The hard-margin SVM would fail to find any solution.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1089,
+      "out_sha": "789e7f688b22",
       "note": ""
     },
     {
@@ -1283,11 +1283,11 @@
       "en_title": "Chapter 11: Support Vector Machines — Maximum Margin Classifiers",
       "order": 97,
       "src_chars": 2277,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8264fba1e346",
       "src": "#### Definition: Soft-Margin SVM\n\nThe **soft-margin SVM** allows some examples to violate the margin (or even be misclassified) by introducing **slack variables** ξi≥0\\xi_i \\geq 0ξi​≥0:\n\nmin⁡w,b,ξ12∥w∥2+C∑i=1mξi\\min_{\\mathbf{w}, b, \\boldsymbol{\\xi}} \\frac{1}{2}\\|\\mathbf{w}\\|^2 + C\\sum_{i=1}^m \\xi_iw,b,ξmin​21​∥w∥2+Ci=1∑m​ξi​ subject toyi(w⊤xi+b)≥1−ξi,ξi≥0∀i\\text{subject to} \\quad y_i(\\mathbf{w}^\\top \\mathbf{x}_i + b) \\geq 1 - \\xi_i, \\quad \\xi_i \\geq 0 \\quad \\forall isubject toyi​(w⊤xi​+b)≥1−ξi​,ξi​≥0∀i\n\nThe parameter C>0C > 0C>0 controls the tradeoff:\n\n* **Large CCC**: Heavily penalize violations → small margin, few violations (closer to hard-margin)\n* **Small CCC**: Allow more violations in exchange for a wider margin (more regularized)\n\nThe connection to regularization from Chapter 6: small CCC corresponds to large λ\\lambdaλ in Ridge regression — more tolerance for training errors in exchange for smaller weights and better generalization.\n\nThe soft-margin SVM can be rewritten (its \"hinge loss\" formulation):\n\nmin⁡w12∥w∥2+C∑i=1mmax⁡(0,1−yi(w⊤xi+b))\\min_\\mathbf{w} \\frac{1}{2}\\|\\mathbf{w}\\|^2 + C\\sum_{i=1}^m \\max(0, 1 - y_i(\\mathbf{w}^\\top \\mathbf{x}_i + b))wmin​21​∥w∥2+Ci=1∑m​max(0,1−yi​(w⊤xi​+b))\n\nThis is a regularized loss with the **hinge loss** ℓ(z)=max⁡(0,1−z)\\ell(z) = \\max(0, 1-z)ℓ(z)=max(0,1−z), which is zero when the example is correctly classified with margin ≥ 1.\n\n\n#### Common Misconception\n\nStudents often think SVMs always outperform logistic regression because SVMs maximize the margin. In practice, on most real datasets, the difference is small after proper regularization. The SVM's real advantage is the kernel trick (next section), which gives access to non-linear boundaries efficiently.\n\n\n### 11.3 The Kernel Trick: Infinite Feature Spaces\n\nThe SVM objective can be rewritten using only **dot products** between data points. This is the key observation that enables the kernel trick.\n\nThe dual formulation of the SVM (via Lagrange multipliers) involves:\n\nmax⁡α∑iαi−12∑i,jαiαjyiyjxi⊤xj\\max_{\\boldsymbol{\\alpha}} \\sum_i \\alpha_i - \\frac{1}{2}\\sum_{i,j} \\alpha_i \\alpha_j y_i y_j \\mathbf{x}_i^\\top \\mathbf{x}_jαmax​i∑​αi​−21​i,j∑​αi​αj​yi​yj​xi⊤​xj​\n\nThe data appears only through dot products xi⊤xj\\mathbf{x}_i^\\top \\mathbf{x}_jxi⊤​xj​.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1024,
+      "out_sha": "8b988ba7ca3f",
       "note": ""
     },
     {
@@ -1295,11 +1295,11 @@
       "en_title": "Chapter 11: Support Vector Machines — Maximum Margin Classifiers",
       "order": 98,
       "src_chars": 2948,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f09e1f47abcc",
       "src": "#### Definition: Kernel Function\n\nA **kernel** k(x,x′)k(\\mathbf{x}, \\mathbf{x}')k(x,x′) implicitly computes the dot product in a (possibly infinite-dimensional) feature space ϕ(x)\\phi(\\mathbf{x})ϕ(x):\n\nk(x,x′)=⟨ϕ(x),ϕ(x′)⟩k(\\mathbf{x}, \\mathbf{x}') = \\langle \\phi(\\mathbf{x}), \\phi(\\mathbf{x}') \\ranglek(x,x′)=⟨ϕ(x),ϕ(x′)⟩\n\nBy replacing every xi⊤xj\\mathbf{x}_i^\\top \\mathbf{x}_jxi⊤​xj​ in the SVM dual with k(xi,xj)k(\\mathbf{x}_i, \\mathbf{x}_j)k(xi​,xj​), we obtain an SVM in a much richer feature space — without ever computing ϕ(x)\\phi(\\mathbf{x})ϕ(x) explicitly.\n\n**Common kernels:**\n\n**Linear kernel:** k(x,x′)=x⊤x′k(\\mathbf{x}, \\mathbf{x}') = \\mathbf{x}^\\top \\mathbf{x}'k(x,x′)=x⊤x′ — standard dot product; equivalent to linear SVM.\n\n**Polynomial kernel:** k(x,x′)=(x⊤x′+c)dk(\\mathbf{x}, \\mathbf{x}') = (\\mathbf{x}^\\top \\mathbf{x}' + c)^dk(x,x′)=(x⊤x′+c)d — corresponds to all polynomial features up to degree ddd. With d=2d=2d=2 and 2D inputs, the feature space includes: [1,x1,x2,x12,x22,x1x2][1, x_1, x_2, x_1^2, x_2^2, x_1 x_2][1,x1​,x2​,x12​,x22​,x1​x2​] — all without computing 6 features explicitly.\n\n**RBF (Radial Basis Function) kernel:** k(x,x′)=exp⁡(−γ∥x−x′∥2)k(\\mathbf{x}, \\mathbf{x}') = \\exp(-\\gamma\\|\\mathbf{x} - \\mathbf{x}'\\|^2)k(x,x′)=exp(−γ∥x−x′∥2) — corresponds to an infinite-dimensional feature space. It measures similarity based on Euclidean distance: examples nearby in input space get high kernel value, distant examples near zero. The parameter γ\\gammaγ controls how quickly similarity drops with distance.\n\n\n#### Why the Kernel Trick Is Brilliant\n\nConsider the RBF kernel. Its corresponding feature space ϕ(x)\\phi(\\mathbf{x})ϕ(x) is infinite-dimensional — explicitly computing it would require infinite computation. But k(x,x′)k(\\mathbf{x}, \\mathbf{x}')k(x,x′) is just e−γ∥x−x′∥2e^{-\\gamma\\|\\mathbf{x}-\\mathbf{x}'\\|^2}e−γ∥x−x′∥2 — a simple computation. The SVM dual only needs kernel values, never the actual features. We get the power of infinite features with the cost of finite computation.\n\nThis is one of the most elegant ideas in all of machine learning: working implicitly in an infinite-dimensional space by computing only inner products.\n\n**The kernel matrix (Gram matrix):** All pairwise kernel values Kij=k(xi,xj)K_{ij} = k(\\mathbf{x}_i, \\mathbf{x}_j)Kij​=k(xi​,xj​) form the **kernel matrix** K∈Rm×mK \\in \\mathbb{R}^{m \\times m}K∈Rm×m. This matrix must be positive semi-definite for the optimization to be well-posed — which is guaranteed for any valid kernel function (Mercer's theorem).\n\n\n### 11.4 Making Predictions\n\nAfter training, predictions use:\n\ny^(x)=sign ⁣(∑i=1mαiyik(xi,x)+b)\\hat{y}(\\mathbf{x}) = \\text{sign}\\\\!\\left(\\sum_{i=1}^m \\alpha_i y_i k(\\mathbf{x}_i, \\mathbf{x}) + b\\right)y^​(x)=sign(i=1∑m​αi​yi​k(xi​,x)+b)\n\nOnly support vectors have αi>0\\alpha_i > 0αi​>0 — others have αi=0\\alpha_i = 0αi​=0 and don't contribute. This sparsity makes SVM prediction fast: only support vectors matter.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1325,
+      "out_sha": "88ac1b6f0747",
       "note": ""
     },
     {
@@ -1307,11 +1307,11 @@
       "en_title": "Chapter 11: Support Vector Machines — Maximum Margin Classifiers",
       "order": 99,
       "src_chars": 607,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bbf8a6a7864e",
       "src": "### 11.5 SVM for Regression: Support Vector Regression\n\nSVMs can also be used for regression. **Support Vector Regression (SVR)** fits a function that has at most ϵ\\epsilonϵ deviation from the true values on training data — errors smaller than ϵ\\epsilonϵ are ignored, larger ones are penalized:\n\nmin⁡w,b12∥w∥2+C∑imax⁡(0,∣yi−y^i∣−ϵ)\\min_{\\mathbf{w}, b} \\frac{1}{2}\\|\\mathbf{w}\\|^2 + C\\sum_i \\max(0, |y_i - \\hat{y}_i| - \\epsilon)w,bmin​21​∥w∥2+Ci∑​max(0,∣yi​−y^​i​∣−ϵ)\n\nThis creates a \"tube\" of width 2ϵ2\\epsilon2ϵ around the prediction; only points outside the tube are support vectors.\n\n\n### 11.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 291,
+      "out_sha": "99d0cfde7e41",
       "note": ""
     },
     {
