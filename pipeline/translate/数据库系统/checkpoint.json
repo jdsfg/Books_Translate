@@ -779,11 +779,11 @@
       "en_title": "Chapter 4: SQL Fundamentals",
       "order": 56,
       "src_chars": 1763,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0be9702e97c7",
       "src": "### Tradeoffs Summary\n\n* **DDL rigidity trades schema flexibility for machine-checked structure.** Declaring a column `INTEGER NOT NULL` means a future program cannot insert `\"n/a\"`; it also means adding a new required attribute is a migration, not a dictionary update. Rigid types are why rows stay sane years later.\n* **Declarative SQL trades fine-grained control for optimizer freedom.** You describe _what_ , not _how_ ; the engine picks scan order, join algorithm, and index usage. You lose the ability to hand-tune every plan, and gain plans that improve as statistics and hardware change without code edits.\n* **Each index trades write throughput for read speed.** Every `INSERT`, `UPDATE`, or `DELETE` must maintain every index on the table. A wisely chosen index on a foreign key pays for itself on reads; a speculative index on a rarely queried column silently taxes every write.\n* **Transaction scope (BEGIN/COMMIT boundaries) trades concurrency for atomicity.** A short transaction holds fewer locks but may split a logical operation across commits; a long one guarantees all-or-nothing but starves other writers. The atomic unit must be as small as correctness allows, not smaller.\n* **`DISTINCT` and `GROUP BY` trade CPU work (usually a sort or hash) for duplicate-free output.** When the duplicates are real signal (for `AVG`, `COUNT`) keep them; when they are accidental from a join, `DISTINCT` is the right fix — but recognize you just paid for a sort.\n* **Outer joins trade plan simplicity for null-preserving output.** A `LEFT JOIN ... WHERE x IS NULL` is how \"rows with no match\" is expressed, but it also means every later predicate on the right-hand columns must be null-aware. Many subtle bugs live in this conversion.\n\n\n### 4.10 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 720,
+      "out_sha": "14440be54456",
       "note": ""
     },
     {
@@ -791,11 +791,11 @@
       "en_title": "Chapter 4: SQL Fundamentals",
       "order": 57,
       "src_chars": 3298,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9ad1452e1813",
       "src": "#### Concept Check\n\n**Q1.** Rewrite each of these in SQL: (a) Count the number of courses that have exactly 4 credits. (b) Find the student with the largest id number. (c) Find all enrollments with no grade assigned. (d) Find all students whose name starts with 'B' or 'C'.\n\nHint\n\n(c) requires the null-aware test. (d) either two conditions joined by OR or a pattern.\n\n**Answer:** (a) `SELECT COUNT(*) FROM Courses WHERE credits = 4;` (b) `SELECT * FROM Students ORDER BY id DESC LIMIT 1;` (c) `SELECT * FROM Enrollments WHERE grade IS NULL;` (d) `SELECT * FROM Students WHERE name LIKE 'B%' OR name LIKE 'C%';` — or equivalently, `WHERE substring(name, 1, 1) IN ('B', 'C');`. Both are correct; the first often uses an index, the second rarely does.\n\n**Q2.** What is the difference between these two queries? Which one is likely to return more rows?\n    \n    \n    -- Query A\n    SELECT s.name FROM Students s JOIN Enrollments e ON s.id = e.student_id;\n    \n    -- Query B\n    SELECT s.name FROM Students s LEFT JOIN Enrollments e ON s.id = e.student_id;\n    \n\nHint\n\nWhat happens to students with zero enrollments in each case?\n\n**Answer:** Query A returns one row per enrollment — so a student with five enrollments appears five times, and students with zero enrollments don't appear at all. Query B returns one row per enrollment _plus_ one row per enrollmentless student (with null `e`-columns). Query B is at least as big as Query A — strictly larger if there are any students with zero enrollments.\n\nNeither is \"right\" in general — it depends on the question. For \"names of students who are enrolled in something\" use DISTINCT on Query A. For \"names of students, enrolled or not\" use Query B. For \"count of enrollments per student\", you almost certainly want Query B wrapped in a `GROUP BY + COUNT`.\n\n**Q3.** Why does this query fail?\n    \n    \n    SELECT student_id, course_id, COUNT(*)\n    FROM Enrollments\n    GROUP BY student_id;\n    \n\n**Answer:** `course_id` is neither in the `GROUP BY` nor inside an aggregate. After grouping by `student_id` alone, each row of the output corresponds to one student — with many courses. SQL cannot tell which course_id to return, so it rejects the query.\n\nFixes, depending on intent:\n\n* If you want to count enrollments per student: drop `course_id`. `SELECT student_id, COUNT(*) FROM Enrollments GROUP BY student_id;`\n* If you want counts grouped by (student, course): add `course_id` to the `GROUP BY`. (This is equivalent to the enrollments table itself, since (student_id, course_id) is the primary key — so `COUNT(*)` is always 1.)\n* If you want one _representative_ course_id per student: `SELECT student_id, MAX(course_id), COUNT(*) FROM Enrollments GROUP BY student_id;`\n\n**Q4.** In the `Orders` schema from Chapter 3's Exercise 3.9 Q1:\n    \n    \n    Customers, Items, Orders, OrderItems\n    \n\nWrite the SQL to find \"for each customer, the total value of their orders, sorted by total descending\". Total value = sum of (price_snapshot × quantity) across their order items.\n\n**Answer:**\n    \n    \n    SELECT c.id, c.name, SUM(oi.price_snapshot * oi.quantity) AS total_value\n    FROM Customers c\n    JOIN Orders o     ON o.customer_id = c.id\n    JOIN OrderItems oi ON oi.order_id = o.id\n    GROUP BY c.id, c.name\n    ORDER BY total_value DESC;\n    ",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1974,
+      "out_sha": "45044928ada7",
       "note": ""
     },
     {
@@ -803,11 +803,11 @@
       "en_title": "Chapter 4: SQL Fundamentals",
       "order": 58,
       "src_chars": 214,
-      "status": "pending",
+      "status": "done",
       "src_sha": "611a57b1b773",
       "src": "Note that we're using an inner join, so customers with no orders don't appear. If we wanted them too (with `total_value = 0`), use a `LEFT JOIN` from `Customers` and `COALESCE(SUM(...), 0)` to replace null with 0.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 124,
+      "out_sha": "f48e27f80ffe",
       "note": ""
     },
     {
@@ -815,11 +815,11 @@
       "en_title": "Chapter 4: SQL Fundamentals",
       "order": 59,
       "src_chars": 3469,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0475ac966e74",
       "src": "#### Application Problems\n\n**Q1.** Write SQL for: \"For each course, the average grade (as a GPA on a 4.0 scale) among students who have been graded. Ignore ungraded enrollments. Include only courses with at least 5 graded enrollments.\"\n\nUse this grade-to-GPA mapping (you may hardcode it in a `CASE` expression):\n    \n    \n    A+=4.0, A=4.0, A-=3.7, B+=3.3, B=3.0, B-=2.7,\n    C+=2.3, C=2.0, C-=1.7, D+=1.3, D=1.0, D-=0.7, F=0.0\n    \n\nHint\n\nUse `CASE` inside `AVG`. Use `HAVING` for the \"at least 5\" filter.\n\n**Answer:**\n    \n    \n    SELECT\n      c.id,\n      c.title,\n      AVG(CASE e.grade\n            WHEN 'A+' THEN 4.0 WHEN 'A'  THEN 4.0 WHEN 'A-' THEN 3.7\n            WHEN 'B+' THEN 3.3 WHEN 'B'  THEN 3.0 WHEN 'B-' THEN 2.7\n            WHEN 'C+' THEN 2.3 WHEN 'C'  THEN 2.0 WHEN 'C-' THEN 1.7\n            WHEN 'D+' THEN 1.3 WHEN 'D'  THEN 1.0 WHEN 'D-' THEN 0.7\n            WHEN 'F'  THEN 0.0\n          END) AS avg_gpa,\n      COUNT(e.grade) AS n_graded\n    FROM Courses c\n    JOIN Enrollments e ON e.course_id = c.id\n    WHERE e.grade IS NOT NULL\n    GROUP BY c.id, c.title\n    HAVING COUNT(e.grade) >= 5\n    ORDER BY avg_gpa DESC;\n    \n\nNotes:\n\n* `AVG` automatically skips NULL values, so even without the explicit `WHERE e.grade IS NOT NULL`, ungraded enrollments wouldn't contribute to the average. But the `WHERE` also keeps them out of `COUNT(e.grade)` — actually `COUNT(e.grade)` already skips nulls, so the `WHERE` is optional here. Including it is harmless and clarifies intent.\n* The `CASE` expression is a common way to inline a lookup table when the lookup is small. For large lookups, put the mapping in a real table (e.g., `GradePoints(grade, points)`) and `JOIN`.\n* A real system would extract the GPA mapping into a view or a proper table so it's not duplicated across queries. Chapter 8 covers views.\n\n**Cross-chapter connection:** this query uses three Thread A tables. Without indexes, at scale (80,000 enrollments, 500 courses), the query does a hash aggregation over the join result — roughly 80,000 hash probes plus 500 output groups. Chapter 11 will reveal the execution plan.\n\n**Q2.** The university wants a roster: \"For Dr. Chen's course 'Introduction to Databases', list all enrolled students with their grade (or `(pending)` if the grade is null). Order by student name.\"\n\nHint\n\n`COALESCE` replaces nulls with a given value.\n\n**Answer:**\n    \n    \n    SELECT s.name, s.email, COALESCE(e.grade, '(pending)') AS grade\n    FROM Students s\n    JOIN Enrollments e ON s.id = e.student_id\n    JOIN Courses     c ON e.course_id = c.id\n    JOIN Instructors i ON c.instructor_id = i.id\n    WHERE i.name = 'Dr. Chen'\n      AND c.title = 'Introduction to Databases'\n    ORDER BY s.name;\n    \n\nThis is almost identical to the example in Section 4.7 — the only changes are an extra output column with `COALESCE` for the grade, and the enrollment join now provides the grade. `COALESCE(x, y, z)` returns the first of `x, y, z` that is not null; with two arguments it's \"x if not null, else y.\"\n\n**Q3.** Consider this insert of a batch of new enrollments:\n    \n    \n    BEGIN;\n    INSERT INTO Enrollments (student_id, course_id, grade) VALUES\n      (1001, 201, NULL),\n      (1002, 201, NULL),\n      (1003, 201, NULL),\n      (1099, 201, NULL),  -- student 1099 does not exist\n      (1005, 201, NULL);\n    COMMIT;\n    \n\nWhat happens? Which rows end up in the table? If we change `BEGIN`/`COMMIT` to auto-commit (remove them), does the answer change?\n\nHint",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 2259,
+      "out_sha": "06b3b1e5d401",
       "note": ""
     },
     {
@@ -827,11 +827,11 @@
       "en_title": "Chapter 4: SQL Fundamentals",
       "order": 60,
       "src_chars": 1814,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3b42324e6a48",
       "src": "The foreign key constraint on `student_id` is triggered when the 1099 row is inserted. What happens to the rest of the batch?\n\n**Answer:** The foreign key constraint on `Enrollments.student_id` rejects the 1099 row. In most SQL databases, a multi-row `INSERT` is a _single statement_ , so it either succeeds entirely or fails entirely — there's no partial result. The 1099 row fails, the whole `INSERT` fails, and the other four rows are not inserted.\n\nBecause we're in a `BEGIN ... COMMIT` transaction, the failure rolls back the whole transaction — no rows are added. If we then `COMMIT`, the commit is a no-op (or some clients error on \"commit after failed statement\"; PostgreSQL errors).\n\nIf we remove `BEGIN ... COMMIT` and run in auto-commit mode: each statement is its own transaction, so the `INSERT` still fails atomically on the 1099 row, and still no rows are inserted.\n\nThe answer would change if we issued five _separate_ `INSERT` statements instead of one batch:\n    \n    \n    INSERT INTO Enrollments VALUES (1001, 201, NULL);\n    INSERT INTO Enrollments VALUES (1002, 201, NULL);\n    INSERT INTO Enrollments VALUES (1003, 201, NULL);\n    INSERT INTO Enrollments VALUES (1099, 201, NULL);  -- fails\n    INSERT INTO Enrollments VALUES (1005, 201, NULL);\n    \n\nIn auto-commit mode, the first three succeed, the fourth fails, the fifth succeeds. Now the `Enrollments` table has four new rows.\n\nIn an explicit transaction, if we handle the error (catch it, continue), the same pattern applies — but on `COMMIT`, we commit those four rows. If we let the error propagate and end with `ROLLBACK`, no rows commit.\n\nThe deeper point: transaction boundaries matter, and \"insert this batch atomically\" vs \"insert these one at a time\" is a real design decision. Chapter 13 will make the atomicity story precise.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 893,
+      "out_sha": "e1ca1cbe6d51",
       "note": ""
     },
     {
@@ -839,11 +839,11 @@
       "en_title": "Chapter 4: SQL Fundamentals",
       "order": 61,
       "src_chars": 3192,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d106ac602c35",
       "src": "#### Think Deeper\n\n**Q1.** Why does SQL's `ORDER BY` clause evaluate _after_ `SELECT`, but `GROUP BY` evaluates _before_? What would break if the order were swapped?\n\n**Discussion:** `GROUP BY` must operate on source data — it's partitioning rows before they are summarized. If `GROUP BY` ran after `SELECT`, the `SELECT` would have already collapsed the rows (with aggregates) or reshaped them in ways that obscure the grouping keys. You can't group aggregates by an aggregate key that no longer exists.\n\n`ORDER BY`, in contrast, is about presentation — sorting the _output_. It's perfectly sensible to say \"compute the output rows, then sort them by the computed values.\" This is why `ORDER BY` can use `SELECT`-list aliases (`ORDER BY avg_gpa DESC`) but `WHERE` and `GROUP BY` cannot — those run before aliases exist.\n\nIf the orders were swapped, you'd get bizarre failures. `ORDER BY avg_gpa DESC` followed by `SELECT AVG(grade) AS avg_gpa` would fail because `avg_gpa` hasn't been computed when `ORDER BY` runs. SQL's logical evaluation order is a carefully designed pipeline where each stage can reference only stages before it.\n\nThis is also why `WHERE` cannot reference aggregates and `HAVING` can: `WHERE` runs before aggregation, so aggregates don't exist yet; `HAVING` runs after aggregation, so they do. The constraint is not arbitrary — it's a direct consequence of the pipeline shape.\n\n**Q2.** Consider \"find students with no enrollments.\" There are at least three ways to write this in SQL. List them, and discuss which is likely most performant and why.\n\n**Discussion:** Three common forms:\n\n  1. **LEFT JOIN and check for NULL:**\n         \n         SELECT s.id, s.name FROM Students s\n         LEFT JOIN Enrollments e ON s.id = e.student_id\n         WHERE e.student_id IS NULL;\n         \n\n  2. **NOT IN:**\n         \n         SELECT id, name FROM Students\n         WHERE id NOT IN (SELECT student_id FROM Enrollments);\n         \n\n  3. **NOT EXISTS:**\n         \n         SELECT id, name FROM Students s\n         WHERE NOT EXISTS (\n           SELECT 1 FROM Enrollments e WHERE e.student_id = s.id\n         );\n         \n\nAll three produce the same result (in spirit; see caveat below). Which is fastest depends on the optimizer, but typical behavior:\n\n* **LEFT JOIN anti-join** and **NOT EXISTS** both tend to be optimized into an _anti-join_ — a join algorithm specifically designed to return left rows with no match on the right. These are usually tied for best performance.\n* **NOT IN** is the most dangerous. If `Enrollments.student_id` can ever be NULL, `NOT IN` silently returns _zero rows_ (because `x NOT IN (NULL)` evaluates to `UNKNOWN`, filtered out). This is a subtle correctness bug. Performance-wise, `NOT IN` forces the optimizer to materialize the inner set and sometimes can't use an anti-join strategy.\n\nRecommended default: `NOT EXISTS`. It is always correct under nulls, is usually optimized well, and reads naturally (\"keep s only if no matching e exists\").\n\n**Cross-chapter connection:** Chapter 8 will cover `EXISTS`/`NOT EXISTS` in depth and explain exactly when the optimizer converts them to anti-joins. Chapter 11 covers the anti-join algorithm itself.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1594,
+      "out_sha": "be7d3757c275",
       "note": ""
     },
     {
@@ -851,11 +851,11 @@
       "en_title": "Chapter 4: SQL Fundamentals",
       "order": 62,
       "src_chars": 3198,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8656cb25d6e9",
       "src": "**Q3.** A senior engineer says: \"Always write your SQL to take advantage of the query optimizer — you don't need to understand how the query executes.\" A junior engineer replies: \"But if I don't understand the execution, how do I know when the optimizer is going to fail me?\" Who's right, and what does each perspective capture?\n\n**Discussion:** Both are right, partially.\n\nThe senior engineer's point is _mostly_ true: the optimizer in a mature DB (PostgreSQL, MySQL, SQL Server, Oracle) is genuinely sophisticated — it handles most queries well enough that hand-tuning is counterproductive. Spending your career hand-writing execution plans is a waste; the optimizer does it better, and it adjusts as data sizes change. Premature optimization of query execution is a real anti-pattern.\n\nThe junior engineer's point is true for the _hard_ 5% of queries. When a query is slow, the optimizer has picked a plan. To fix it, you need to understand (a) what plan it picked (`EXPLAIN ANALYZE`), (b) why the plan is bad (missing index? stale statistics? incorrect join order?), and (c) how to nudge it toward a better plan (add an index, rewrite the query in an equivalent form, update statistics, add a hint).\n\nThe resolution: **write SQL declaratively, but learn to read execution plans.** In day-to-day work you treat the database as a black box (\"tell it what you want\"). When something is slow, you open the box and diagnose. The skill is knowing when to look — mostly, not; occasionally, absolutely.\n\nThis is the central philosophy of Chapters 11 and 12: the optimizer is powerful _and_ imperfect, and real engineers need to understand both sides.\n\n\n### Chapter Summary\n\nThis chapter turned the relational model of Chapter 3 into a working language. **DDL** defines the schema, **DML** operates on the data, and `SELECT`'s logical evaluation order (FROM → WHERE → GROUP BY → HAVING → SELECT → DISTINCT → ORDER BY → LIMIT) determines correctness regardless of how the engine actually executes the query.\n\n**Joins** follow foreign keys; the five types (INNER, LEFT/RIGHT/FULL OUTER, CROSS) control how unmatched rows are handled. The most common bug is silently downgrading a LEFT JOIN to an INNER JOIN by putting a right-side filter in `WHERE` instead of `ON`. **GROUP BY / HAVING** is the aggregation mechanism: every non-aggregated `SELECT` column must appear in `GROUP BY`, and `HAVING` filters groups while `WHERE` filters rows. **NULL** permeates every query — handle it explicitly with `IS NULL` and `COALESCE`, because `=` and `!=` silently drop null rows.\n\nWe previewed **transactions** (Chapter 13) and **indexes** (Chapter 10) enough that the rest of the book's SQL examples make sense. Thread A milestone: \"what courses is Alice enrolled in?\" is now one SQL statement instead of a Python script per question. Thread B foreshadowed: the same joins will soon become a \"20-minute query\" whose cost Chapters 10–12 explain.\n\nNext chapter: good SQL needs good _schemas_. Chapter 5 introduces Entity-Relationship (ER) modeling — deciding what the relations should be _before_ we write DDL. Chapter 6 formalizes when a schema is structurally safe via functional dependencies and normal forms.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1319,
+      "out_sha": "05eba49f2b6b",
       "note": ""
     },
     {
