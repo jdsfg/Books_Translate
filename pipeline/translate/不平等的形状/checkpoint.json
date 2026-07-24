@@ -559,11 +559,11 @@
       "en_title": "Chapter 4: Weber — Class, Status, and Life Chances",
       "order": 38,
       "src_chars": 2038,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e321faf35a7a",
       "src": "#### Concept Check\n\n**Q1.** Use Weber's three dimensions to explain why the impoverished aristocrat and the scrap-metal millionaire cannot be cleanly ranked as one \"higher\" than the other.\n\nHint\n\nEach is high on one dimension and low on another. Which is which?\n\n**Answer:** The two men rank oppositely on two of Weber's three dimensions. The millionaire is high in **class** (great economic resources, strong market situation) but low in **status** (the social honor, lifestyle, and acceptance the old name commands, which his money cannot buy, at least not yet). The aristocrat is the reverse: high in **status** (deference, access, prestige attached to the name) but low in **class** (little wealth or productive capital). Because class and status are distinct dimensions that can move independently, there is no single ruler on which one simply outranks the other; the question \"who is higher?\" has no answer until you specify _higher in what_. This is exactly the case a one-axis (Marxian) map cannot represent.\n\n**Q2.** Define _life chances_ , and explain why the word \"chances\" is described as load-bearing.\n\nHint\n\nDoes position determine outcomes, or shape probabilities? What follows from that difference?\n\n**Answer:** Life chances are the _probabilities_ , given one's position in the social structure, of obtaining valued things (health, long life, education, security, safety) and avoiding harmful ones. The word \"chances\" is load-bearing because the concept is about _odds, not fates_ : position tilts the probabilities, often dramatically, but does not determine any individual's outcome. A low-positioned child can flourish and a high-positioned one can fall; what differs is the likelihood. This probabilistic meaning is essential because losing it produces two opposite errors, a fatalism that treats the disadvantaged as doomed, and a denial that treats rare success as proof the odds are equal. Every later chapter that reports a gradient is describing distributions across many lives, not prophesying any single life.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 774,
+      "out_sha": "13742ed924a4",
       "note": ""
     },
     {
@@ -571,11 +571,11 @@
       "en_title": "Chapter 4: Weber — Class, Status, and Life Chances",
       "order": 39,
       "src_chars": 3163,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b9e4578a1a3c",
       "src": "#### Application Problems\n\n**Q1.** For each case, say which of Weber's three dimensions are high and which low, and explain what a one-axis map would miss: (a) a beloved schoolteacher with a modest salary; (b) a wealthy business owner from a group that faces social exclusion; (c) a low-paid but tightly organized group of workers who reliably swing elections in their district.\n\nHint\n\nMap each onto class (money/market), status (honor), and party (organized power) separately.\n\n**Answer:** (a) The schoolteacher is middling-to-low in **class** (modest salary) but high in **status** (respect, honor) in the community; a one-axis economic map would rank the teacher low and miss the real esteem and influence the position carries. (b) The business owner is high in **class** (wealth) but low in **status** (denied social honor through exclusion); a money-only map would call this person simply \"high\" and miss that economic success has _failed to convert_ into honor, a central feature of their actual situation, and one we will return to in Part 6. (c) The organized workers are low in **class** but high in **party** (organized power); an income map would rank them near the bottom and entirely miss that they wield real collective power. Each case shows a dimension coming apart from the others, which is precisely what Weber's map captures and a single ladder cannot.\n\n**Q2.** A Marxist critic says: \"Weber's three dimensions are a snapshot illusion. Watch them over three generations and you'll see money quietly buying honor and power. Old money is just new money that lasted.\" State the strongest version of this reply, then state the strongest Weberian response.\n\nHint\n\nThink about the millionaire's grandchildren, and also about cases where honor or power resisted money for a long time.\n\n**Answer:** The strongest Marxist reply: the apparent independence of the three dimensions is a single-moment artifact. Over time, economic position tends to _convert into_ status and power, buying education, association, prestige, and influence, so that the scrap-metal millionaire's grandchildren may well sit in the drawing rooms that excluded him. Seen across generations, money looks like the master variable slowly bending honor and power to itself, which restores something like Marx's primacy of the economic axis. The strongest Weberian response: the conversion is real but neither automatic, complete, nor one-directional. Status orders have repeatedly _resisted_ money for long stretches (excluded prosperous groups, honored impoverished ones), and organized power has been seized by the economically subordinate and lost by the economically dominant. If money simply bought the other two, those persistent cases could not occur. The honest verdict is that _both_ capture part of the truth: economic position does tend to convert over the long run (Marx's strength), but the other dimensions have enough independent traction that treating them as mere reflections misreads many real situations (Weber's strength). Which emphasis fits best is contested and varies by society and era, exactly the kind of question the book holds open rather than settling.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1116,
+      "out_sha": "ec567fed39dc",
       "note": ""
     },
     {
@@ -583,11 +583,11 @@
       "en_title": "Chapter 4: Weber — Class, Status, and Life Chances",
       "order": 40,
       "src_chars": 2424,
-      "status": "pending",
+      "status": "done",
       "src_sha": "892816078f4f",
       "src": "#### Think Deeper\n\n**Q1.** The concept of life chances says position shapes the _odds_ of nearly everything. Suppose someone responds: \"But I know plenty of people who started at the bottom and made it, and plenty born rich who threw it away. Doesn't that prove position doesn't really matter?\" What is wrong with this inference, and what _would_ count as evidence that position matters, or that it does not?\n\n**Discussion:** This question targets the single most common reasoning error in all of inequality talk, and learning to answer it cleanly is one of the most useful skills the book can give you.\n\nThe error is treating _individual cases_ as evidence about _probabilities_. The existence of people who rose from the bottom and people who fell from the top is fully _consistent_ with position mattering enormously, because life chances are odds, not fates. A weighted coin that comes up heads seventy percent of the time still comes up tails plenty; pointing at the tails does not show the coin is fair. So anecdotes of mobility, however true and however inspiring, cannot by themselves show that position does not matter, any more than anecdotes of failure can show it determines everything. Both kinds of story are exactly what you would expect to see _whatever_ the underlying odds are, which is why neither settles anything.\n\nWhat _would_ count as evidence? Distributions, not anecdotes. To find out whether position matters, you compare _rates_ across positions: of children born at the bottom, what fraction reach the top, and how does that compare to children born at the top? If the rates are wildly different (if a child born high is many times more likely to end up high than a child born low), position matters, regardless of how many individual exceptions exist. If the rates were nearly identical across starting positions, that would be real evidence that position does _not_ much shape outcomes. This is exactly the measurement Part 4 undertakes, and the comparison is the only honest way to answer the question. Notice the discipline this imposes in _both_ directions: the optimist cannot wave away the gradient with success stories, and the pessimist cannot deny individual agency by pointing at the gradient. The gradient and the exceptions are both real, and only the gradient tells you about the odds. Keeping the probability and the anecdote in separate hands is the whole of clear thinking here.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 704,
+      "out_sha": "e0e5a2c162e2",
       "note": ""
     },
     {
@@ -595,11 +595,11 @@
       "en_title": "Chapter 4: Weber — Class, Status, and Life Chances",
       "order": 41,
       "src_chars": 2031,
-      "status": "pending",
+      "status": "done",
       "src_sha": "982c1ac18376",
       "src": "### Chapter Summary\n\nWe met Max Weber's reply to Marx: not a rejection of the economic axis but an insistence that it is one of _three_ distinct dimensions. **Class** (economic market situation), **status** (social honor), and **party** (organized power) often line up but can move independently, and the cases where they diverge, the rich man denied honor, the poor man rich in prestige, the low-income group wielding organized power, are exactly the ones a single Marxian ladder misreads. Weber's map is messier than Marx's and fits the modern world better; we also saw that it sharpens Chapter 1's systems, with caste as the supremacy of fixed _status_ and the class society as the dominance of the _economic_ dimension.\n\nThe chapter's center was **life chances** : the _probabilities_ , given one's position, of getting valued things and avoiding harmful ones. This is the rigorous form of the unequal odds Maya and Devon faced at birth, and the word \"chances\" is load-bearing, because life chances are odds, not fates, with wide variation inside every rung. We guarded hard against the misreading that turns odds into destiny, in both directions, since confusing distribution with individual fate is the commonest error in the whole subject.\n\nWe weighed Weber and Marx as genuine rivals rather than crowning either: Weber captures the irreducible logic of honor and organized power; Marx captures the possibility that the economic axis is, over the long run, the master variable that converts into the others. Each sees what the other blurs, and a skilled analyst keeps both eyes open. Finally we saw why _life chances_ carries the book: Parts 2 through 4 are, respectively, the measuring of life chances, the inheritance of life chances, and the fluidity of life chances. In Chapter 5 we complete the conceptual map with the gradational view of class, the occupational ladder that surveys actually measure, and we discover that the very choice among these definitions quietly shapes everything the data will show.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 783,
+      "out_sha": "505eb670ff8e",
       "note": ""
     },
     {
