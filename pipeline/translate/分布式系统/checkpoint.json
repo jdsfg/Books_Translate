@@ -167,11 +167,11 @@
       "en_title": "Chapter 1: Distributed Systems Lie to Themselves",
       "order": 3,
       "src_chars": 1311,
-      "status": "pending",
+      "status": "done",
       "src_sha": "46ed43540b96",
       "src": "### 1.4 What This Book Is Not\n\nThis book is not a survey of every paper in the field. It is not a reimplementation tutorial for any single database. It is not a Kubernetes book and it is not a blockchain book. The reference for the foundational material is Kleppmann's _Designing Data-Intensive Applications_ ; if you have not read it, read it after this one, or in parallel.\n\nWhat this book is: an operating manual for the working distributed-systems engineer in 2026. The systems named by name (Spanner, CockroachDB, FoundationDB, DynamoDB, Cassandra, Aurora DSQL, TigerBeetle, vLLM, SGLang, NVIDIA NIM) are the systems you will actually deploy or evaluate this year. The protocols named (Raft, Paxos, HotStuff, Narwhal-Bullshark, Percolator, Calvin) are the ones currently running in production. The failure modes named (metastable, gray, cascading) are the ones currently writing post-mortems.\n\nThe book is also, deliberately, a book about a particular thing that has changed in the last two years: AI-assisted code generation. Distributed code is the worst category for LLM generation, and Chapter 27 returns to this in full. For now, hold the observation: if there is one part of a codebase where you should not trust generated output without verification, it is the part that crosses a network boundary.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 565,
+      "out_sha": "79bf87778b34",
       "note": ""
     },
     {
@@ -179,11 +179,11 @@
       "en_title": "Chapter 1: Distributed Systems Lie to Themselves",
       "order": 4,
       "src_chars": 3024,
-      "status": "pending",
+      "status": "done",
       "src_sha": "15e9a0c642c0",
       "src": "#### What this book deliberately does not cover\n\nSeveral adjacent topics are out of scope. Each is real and worth study; each has its own canonical references; each would distort this book's focus if included.\n\n* **Storage-engine internals at depth** : LSM-tree compaction tuning, Bloom-filter sizing, B+ tree write-amplification optimization, page-cache behavior, fsync ordering. We touch these where they affect distributed-systems reasoning (Chapter 12) but do not develop the single-node depth. References: Kleppmann's _DDIA_ chapters 3-4 (foundations); the RocksDB tuning guide (operational depth); Pavlo & Aslett's CMU 15-721 lectures (academic depth).\n* **Network observability at depth** : eBPF-based service-mesh observability, OpenTelemetry collector pipeline tuning, log/metric/trace storage backends. Chapter 20 covers what tracing tells you about distributed-systems behavior; the pipeline machinery is the topic of Series IV Vol 3 (Observability). References: Sridharan _Distributed Systems Observability_ (O'Reilly, 2018); the Cilium / Hubble docs for eBPF; the OpenTelemetry Collector documentation.\n* **Federated learning and privacy-preserving computation** : differential privacy, secure multi-party computation, homomorphic encryption applied to distributed ML. These are distributed-systems-adjacent in 2026 but constitute their own discipline. References: Mohri's _Federated Learning_ (2023); Kairouz et al. \"Advances and Open Problems in Federated Learning\" (2021); the OpenMined community materials; Dwork & Roth _The Algorithmic Foundations of Differential Privacy_ (2014).\n* **Quantum-network protocols** : quantum key distribution, entanglement-distribution protocols, quantum-classical hybrid consensus. As of 2026, these are research topics, not production reality; the engineer reading this book should not need them in the next 5 years. References: Wehner, Elkouss, Hanson \"Quantum internet: A vision for the road ahead\" (_Science_ , 2018); the QED-C industry consortium reports.\n* **Single-system administration** : Linux kernel tuning, container runtime internals, hypervisor selection. These are the substrate on which distributed systems run but the substrate's specifics are out of scope. References: Bovet & Cesati _Understanding the Linux Kernel_ (3rd ed.); Love _Linux System Programming_ ; Brendan Gregg's _Systems Performance_ (2nd ed., 2020).\n* **Application-layer protocols at depth** : REST API design (covered in _Software at Scale_ Series IV Vol 1, _APIs_), gRPC schema evolution, OpenAPI tooling. Chapter 19 mentions service discovery; the protocols themselves are out of scope. References: Newman _Building Microservices_ (2nd ed., 2021); Richardson & Ruby _RESTful Web Services_ ; the official gRPC and OpenAPI specifications.\n\nThe discipline of _staying scoped_ is itself a distributed-systems skill. A book that tries to cover everything is unhelpful in production; a book scoped to the questions the working engineer must ask is useful. This book is scoped to the latter.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1475,
+      "out_sha": "edc6e105e0d6",
       "note": ""
     },
     {
@@ -191,11 +191,11 @@
       "en_title": "Chapter 1: Distributed Systems Lie to Themselves",
       "order": 5,
       "src_chars": 1299,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8a71bd59f302",
       "src": "### 1.5 Reading the Book\n\nThe book proceeds in nine parts. Part I (Chapters 1 through 3) sets up the mental model. Part II (Chapters 4 through 6) introduces broadcast and replication primitives. Part III (Chapters 7 through 10) is consensus. Part IV (Chapters 11 through 14) is distributed databases. Part V (Chapters 15 through 17) is eventual consistency and CRDTs. Part VI (Chapters 18 through 19) is coordination. Part VII (Chapters 20 through 23) is operating distributed systems at scale. Part VIII (Chapters 24 through 26) is distributed LLM inference, which is a 2026 sub-discipline. Part IX (Chapters 27 through 28) synthesizes the book. Chapter 29 is a Postscript on the 2027-2030 horizon, sitting outside the nine-part structure but recommended at the end of any reading path; it identifies which named systems and primitives will likely evolve and which aspects of the mental model are durable.\n\nEach chapter is meant to support roughly four to five working sessions with the Socratopia companion. You read it once for the structure. The companion reads it with you, asks questions, watches you work through examples, and probes the misconceptions documented in each chapter. The questions at the end of each chapter are not summative tests. They are starting points for those sessions.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 429,
+      "out_sha": "6fdc3dd3f65f",
       "note": ""
     },
     {
@@ -203,11 +203,11 @@
       "en_title": "Chapter 1: Distributed Systems Lie to Themselves",
       "order": 6,
       "src_chars": 2875,
-      "status": "pending",
+      "status": "done",
       "src_sha": "09bed25d55c2",
       "src": "#### How to use this book based on your role\n\nDifferent readers will get the most value from different paths through the material.\n\n* **Complete newcomer to distributed systems** : read in order, Chapter 1 → Chapter 29 (Chapter 29 is the forward-look Postscript). Plan 4-5 Socratopia sessions per chapter; expect 12-16 weeks for the full arc. Do the Concept Check exercises after each chapter; the Application Problems after Part III; the Think Deeper questions at end of each Part.\n\n* **Backend / infrastructure engineer with DDIA background** : skim Chapters 2 (CAP/PACELC restatement) and 5 (replication) which overlap with DDIA. Read Chapters 3 (HLC adds to DDIA's clocks chapter), 6 (multi-region not deeply in DDIA), 9 (Raft developed beyond DDIA), 10 (BFT, beyond DDIA), 11 (the diagnostic method), 13 (modern transactions including saga §13.6.5), 14 (NewSQL landscape), 24-26 (LLM inference, not in DDIA), 27-29 (synthesis + 2027-2030 forward look). Plan 2-3 sessions per chapter; ~6 weeks.\n\n* **SRE / operations engineer** : priority order is Part VII (Ch.20-23), then Ch.27 §27.10 (AI-assisted review of distributed code), then Ch.28 (synthesis showing how it all fits). Then loop back to Ch.11 (diagnostic method for any new system you're handed) and Ch.6 (latency budgets). Plan ~4 weeks for the SRE-focused subset.\n\n* **AI infrastructure engineer (vLLM / SGLang / inference platforms)** : start with Part VIII (Ch.24-26), then Ch.27 (LLM-generated code review), then loop back to Chapters 1-3 (mental model) + 9 (Raft, since inference clusters use it for coordination state). The diagnostic method (Ch.11) generalizes from databases to inference systems. Plan ~3 weeks for the inference-focused subset.\n\n* **Distributed-systems instructor** : use Ch.1 §1.1-1.3 (three lies) as the framing for the entire course. Use the cold-hook chapters of Thread C (Ch.2, 3, 4, 18, 21, 22) as discussion-leading examples. Use Ch.27 §27.10 (AI-assisted reviewing) as a contemporary capstone discussion. The 12 binding workflows (Ch.28 §28.7) can each anchor a week of a semester course.\n\n* **Reference user (already know the field, looking up specifics)** : Appendix A (reading list by chapter) is your index; Appendix B (5-database CAP reference), Appendix C (glossary), Appendix D (six lies card), Appendix E (case studies), Appendix F (decision tree by workload) are designed for one-page lookups. Ch.11 (diagnostic method) and Ch.14 (NewSQL matrix) are the most often re-consulted body chapters.\n\n* **PR reviewer auditing AI-generated distributed code** : read Ch.27 first (the six lies and the checklist), then Ch.18 (fencing tokens), Ch.21 (retry budgets and circuit breakers), Ch.13 §13.6.5 (saga). Keep Appendix D (six lies card) at hand during reviews. Read Ch.27 §27.10 (three-layer architecture, rubber-stamping anti-pattern) before establishing team review policy.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1204,
+      "out_sha": "220ee9adf79c",
       "note": ""
     },
     {
