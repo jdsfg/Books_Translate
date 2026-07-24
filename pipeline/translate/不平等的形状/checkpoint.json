@@ -307,11 +307,11 @@
       "en_title": "Chapter 2: What We Can Measure, and What We Can't",
       "order": 17,
       "src_chars": 3060,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5b67a0332959",
       "src": "#### Definition: The Is / Why / Ought Distinction\n\nEvery claim about inequality belongs to one of three registers:\n\n* **IS** (the measured): a checkable, datable fact about how things are distributed. Settle it with evidence.\n* **WHY** (the contested): an account of the causes behind the fact. Usually contested among serious people; several explanations may carry weight at once.\n* **OUGHT** (the open): a judgment of value about whether the arrangement is fair or right. Never \"settled\" by facts alone; belongs to the reader.\n\nIn plain language: _what is the case_ , _why it is the case_ , and _whether it should be the case_ are three different questions, and the commonest way thinking about inequality goes wrong is to let one of them sneak in wearing another's clothes. A value judgment that rides in disguised as a fact (\"the obscene concentration of wealth\") has smuggled an OUGHT into an IS. A contested cause presented as if it were the measurement (\"the gap is caused by discrimination,\" stated as flatly as the gap's size) has dressed a WHY as an IS. We are going to catch these moves, in ourselves and in others, for the rest of the book.\n\nWatch how the three registers take a single number apart cleanly. Take the wealth concentration we just described. The IS: the top tenth of US households holds roughly two-thirds of household wealth, per recent Federal Reserve figures. Settled enough to build on. The WHY: _why_ is it so concentrated? Here the honest answer is a list of contending explanations, each with real support, none commanding the field, including the compounding of returns, the role of inheritance, differences in saving and investing behavior, the structure of housing and asset markets, and policy choices about taxation, and serious people weight these very differently. Contested, and we will treat it as contested. The OUGHT: is this concentration _too much_ , _unjust_ , _fine_ , _the price of dynamism_? That is a question of values, and you will get the strongest arguments on several sides in Part 7, and no answer from me. Three registers, one number, kept rigorously apart. That is the whole method.\n\nA warning, though, so the method does not curdle into its own opposite. Keeping the registers apart does _not_ mean hedging everything into grey mush. The IS register contains real, solid, knowable facts, and you are allowed, in fact required, to state them plainly and with conviction. That wealth is far more concentrated than income, in every rich society measured, is not a matter on which \"scholars disagree.\" It is about as settled as such things get, and a book that mumbled it into \"some argue that wealth may be somewhat concentrated\" would be worse than useless, it would be cowardly. The neutrality this book practices is a _scalpel_ , applied precisely at the contested causes and at the leap from is to ought. It is not a fog rolled over the whole landscape. State what is measured like you mean it. Go genuinely open only where the honest answer is genuinely open. Knowing the difference is the skill.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1111,
+      "out_sha": "9a91e576817f",
       "note": ""
     },
     {
@@ -319,11 +319,11 @@
       "en_title": "Chapter 2: What We Can Measure, and What We Can't",
       "order": 18,
       "src_chars": 1739,
-      "status": "pending",
+      "status": "done",
       "src_sha": "64920a9eab84",
       "src": "### 2.4 What the numbers cannot reach\n\nWe end with a confession the numbers force on us. Everything in this chapter, the balance sheets, the shares and ratios, the registers, is a way of getting a grip on inequality from the outside. None of it touches what inequality _feels like_ from the inside, and that interior is where the subject actually lives. The gap between Maya's family and Devon's is, on the page, a difference in net worth. In the lived world it is a difference in how a parent sleeps at night, in whether a sick day is an inconvenience or a catastrophe, in what a child learns to expect from the future before they are old enough to name the expectation. A number can mark that difference. It cannot convey it.\n\nThis is why the book will keep moving between the two. We will be ruthless about measuring, because soft thinking helps no one and because on this charged subject the facts are constantly distorted in every direction. And we will keep returning to the lives, because a person is not a data point and a society that forgets this has lost the very thing worth studying. Hold both. The discipline of the number and the honesty of the life are not enemies. They are the two eyes that, together, give the sociological eye its depth.\n\nIn the next chapter we begin the real argument, the one even the experts cannot agree on, starting with the most basic question of all, the one we have been quietly assuming we could answer: when we sort people into \"higher\" and \"lower,\" what exactly is the _class_ we are sorting them by? You will find that even this, the ground floor of the whole building, is contested, and that the contest is not a flaw in the field but the most revealing thing about it.\n\n\n### 2.5 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 559,
+      "out_sha": "4f08a5e06ce8",
       "note": ""
     },
     {
@@ -331,11 +331,11 @@
       "en_title": "Chapter 2: What We Can Measure, and What We Can't",
       "order": 19,
       "src_chars": 1947,
-      "status": "pending",
+      "status": "done",
       "src_sha": "400d73b7701c",
       "src": "#### Concept Check\n\n**Q1.** Devon's family and a retired couple living carefully off savings have roughly the same yearly income. In what sense are they not in the same economic position at all? Use the income/wealth distinction.\n\nHint\n\nIncome is a flow; wealth is a stock. Which household has a tank behind the pipe?\n\n**Answer:** They may have similar _income_ (flow), but they differ sharply in _wealth_ (stock). Devon's family lives essentially on its paychecks, with near-zero net worth and only a few weeks' cushion if the income stopped. The retired couple has little or no earned income but a substantial reserve of savings, which is precisely what they are living on. So the two households have opposite structures: one is income-with-no-wealth, the other is wealth-with-little-income. They face entirely different exposures to a shock, different security, and different ability to pass anything on. Measuring only income would make them look identical and miss the most important fact about each.\n\n**Q2.** Why does the chapter say the _median_ is usually a more honest summary of \"typical\" wealth than the _mean_?\n\nHint\n\nThink about what one billionaire does to each number in a neighborhood of a hundred households.\n\n**Answer:** Because wealth is highly skewed: a small number of very large fortunes pull the _mean_ (the average) far above what a typical household holds, while leaving the _median_ (the middle household) untouched. In a hundred-household neighborhood with one billionaire, the mean wealth is enormous and describes no one; the median still describes the actual household in the middle. For any lopsided distribution, the mean can make things sound far more comfortable than they are for the typical person, so the median is the more faithful summary of ordinary experience. (The mean is not \"wrong,\" it answers a different question, total divided by count; it is just easy to misuse as if it described a typical life.)\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 635,
+      "out_sha": "8b7b3354e17c",
       "note": ""
     },
     {
@@ -343,11 +343,11 @@
       "en_title": "Chapter 2: What We Can Measure, and What We Can't",
       "order": 20,
       "src_chars": 2594,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e78146cb8329",
       "src": "#### Application Problems\n\n**Q1.** Sort each of the following into the IS, WHY, or OUGHT register: (a) \"The top one percent of US households holds roughly a third of household wealth.\" (b) \"Wealth is so concentrated because capital earns returns faster than wages grow.\" (c) \"This level of concentration is unjust and should be reduced.\" (d) \"This concentration is the fair fruit of free exchange and should not be touched.\" For (c) and (d), what does the book say its own job is?\n\nHint\n\nOne is a measured fact, one is a contested cause, and two are competing value judgments.\n\n**Answer:** (a) is **IS** : a measured, sourced, datable fact (named society, Federal Reserve accounting, current era). (b) is **WHY** : a causal account, and a contested one, since several explanations carry weight at once. (c) and (d) are both **OUGHT** : opposing value judgments about whether the concentration is just. The book's job with (c) and (d) is _not_ to pick the winner. It is to lay out the strongest version of each (and of the others on the field) as fairly as possible, attribute each to its school of thought, and hand the verdict to the reader. Note that (c) and (d) cannot both be settled by pointing at fact (a); they are answers to a different kind of question. This is the entire method in one exercise.\n\n**Q2.** A news headline reads: \"Average household wealth hits record high.\" A friend concludes the typical family is doing better than ever. Using two tools from this chapter, explain why the friend may be wrong, and what you would want to know instead.\n\nHint\n\n\"Average\" is doing suspicious work here. What would you rather see, and what register confusion might be hiding in \"doing better\"?\n\n**Answer:** Two problems. First, the _mean/median_ tool: \"average\" almost certainly means the mean, which a small number of very large fortunes can pull up even while the typical (median) household stagnates or falls. Record-high _mean_ wealth is fully compatible with a _median_ household that is no better off, if the gains are concentrated at the top. To know how the typical family is doing, you want the _median_ , not the mean, and ideally the _shares_ held by different slices, which would reveal whether the gains went to the top tenth or were spread broadly. Second, a register check: \"doing better than ever\" can quietly slide from an IS claim (median wealth rose) toward an evaluative gloss; keep the measured claim and any value judgment separate. What you would want: median household wealth over time, and the change in wealth _shares_ by group, both with their as-of and source.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 941,
+      "out_sha": "b9a6d58ce8ff",
       "note": ""
     },
     {
@@ -355,11 +355,11 @@
       "en_title": "Chapter 2: What We Can Measure, and What We Can't",
       "order": 21,
       "src_chars": 2463,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9270bbd22b8f",
       "src": "#### Think Deeper\n\n**Q1.** The chapter insists that the OUGHT register is \"never settled,\" even when the measured facts are lopsided and even when most experts lean one way. Is that too strong? Could there be cases where the facts are so extreme that the value judgment really is settled? Argue both sides.\n\n**Discussion:** This is a genuinely deep question in moral philosophy, and the chapter's stance deserves to be pressed rather than swallowed.\n\nThe case _for_ the chapter's strong line: facts and values are different kinds of claim, and no pile of IS statements logically forces an OUGHT (the old observation that you cannot derive \"ought\" from \"is\" without smuggling in a value premise somewhere). Even granting every measured fact about concentration, people who share _all_ the facts can still reasonably disagree about justice, because they weight liberty, desert, need, and equality differently, and those weightings are not themselves facts about the world. On a charged subject, a book that declared the value question settled would simply be imposing one weighting and calling it knowledge, which is exactly the failure this book is built to avoid.\n\nThe case _against_ , or at least the pressure on it: some will say that at the extremes, the distinction gets thin. If a measured arrangement involved, say, mass starvation beside vast surplus, is it really \"open\" whether that is unjust, or are we just being squeamish? A serious answer is that even here, what feels settled is usually a value premise so widely shared (that preventable suffering matters) that we forget it is a premise. The disagreement reappears the moment you ask the _next_ question, which is always contested: settled _that_ something is bad does not settle _why_ it happened, _who_ if anyone is responsible, or _what_ should be done, and those are where real people actually divide. So the honest position is probably this: the book's strong line is right about the questions this book actually engages (is this distribution just? how much is too much? what should change?), which are genuinely and permanently contested, while conceding that a few near-universal value premises operate quietly in the background. That concession does not license a verdict on any of the live questions ahead. If anything it sharpens the duty: precisely because a little shared moral ground exists, it is tempting to over-claim from it, and the discipline is to notice when you are doing so.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 834,
+      "out_sha": "cb610bb275c5",
       "note": ""
     },
     {
@@ -367,11 +367,11 @@
       "en_title": "Chapter 2: What We Can Measure, and What We Can't",
       "order": 22,
       "src_chars": 1984,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ebefa0d54cd3",
       "src": "### Chapter Summary\n\nWe turned Maya's and Devon's families into numbers in order to build two things: a toolkit and a habit. The toolkit distinguishes **income** (a flow, what you receive over a year) from **wealth** (a stock, what you own minus what you owe at a moment), and the chapter argued that wealth is the deeper subject for a book about inequality, because it compounds, cushions shocks, and above all is _inherited_ , while income mostly dies with the worker. We noted the robust empirical finding, stated plainly because it is settled, that **wealth is far more concentrated than income in every rich society measured** , and we practiced reading a distribution with three tools (mean vs. median, shares, ratios) and stating figures with their _society, source, and as-of_ , reaching for direction and rough magnitude rather than fake precision.\n\nThe habit is the heart of the book: the **is / why / ought** distinction. Every claim about inequality is a measured fact (**IS** , settle with evidence), a contested causal account (**WHY**), or an open value judgment (**OUGHT** , never settled by facts, handed to the reader). We watched a single number, the concentration of wealth, come cleanly apart into all three, and we warned against the opposite failure: keeping the registers apart must never become an excuse to hedge measured reality into mush. Neutrality is a scalpel at the contested causes and the is-to-ought leap, not a fog over the whole page.\n\nThis connects back to Chapter 1's central claim that inequality is a feature of durable _positions_ , since wealth is exactly the substance that lets positions persist across generations. And it points forward: in Chapter 3 we open the real argument by asking what, exactly, the \"class\" is that we have been sorting people by. We will find that even the ground floor is contested, beginning with Karl Marx's startling answer that class is not a rung on an income ladder at all, but a _relationship_.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 738,
+      "out_sha": "f9af8ee88159",
       "note": ""
     },
     {
