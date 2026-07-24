@@ -2399,11 +2399,11 @@
       "en_title": "Chapter 22: Practical Machine Learning — From Notebook to Production",
       "order": 190,
       "src_chars": 1933,
-      "status": "pending",
+      "status": "done",
       "src_sha": "98f571a9c1d1",
       "src": "#### Application Problems\n\n**Q1.** You're building a churn prediction model for a subscription service. The dataset has: user age (many NaN), subscription duration (complete), monthly spend (some NaN), last login date (complete), and number of support tickets (complete). The churn rate is 8%. Describe your complete preprocessing pipeline.\n\nHint\n\nThink about each feature individually, then consider the class imbalance.\n\n**Answer:**\n\n**Feature preprocessing:**\n\n_User age (many NaN):_\n\n  1. Add missingness indicator feature: `age_is_missing` (binary)\n  2. Impute missing ages with median age from training set\n  3. Potentially discretize into age groups (18–24, 25–34, etc.) if linear effects seem unlikely\n\n_Monthly spend (some NaN):_\n\n  1. Add `spend_is_missing` indicator\n  2. Impute with median or train a KNN imputer using subscription duration and support tickets\n  3. Log-transform: `log(1 + spend)` (spend is likely right-skewed)\n\n_Last login date:_\n\n  1. Convert to `days_since_last_login` (relative to reference date)\n  2. Apply log-transform (or quantile transform) for the right-skewed distribution\n\n_Subscription duration:_\n\n  1. No missing values — check for outliers (negative durations, impossibly long durations)\n  2. Keep as-is or apply log-transform if heavily skewed\n\n_Support tickets:_\n\n  1. Integer count — usually left-skewed (most users have 0). Keep as-is or apply x\\sqrt{x}x​ or log⁡(1+x)\\log(1+x)log(1+x)\n\n**Train/validation/test split:** Stratified split (maintains 8% churn rate in each split). Temporal split if user cohort information is available — predict churn for users acquired later using users acquired earlier.\n\n**Class imbalance (8% churn):** Not extreme, but worth addressing. Use `class_weight='balanced'` in the model, or subsample majority class to ~20% churn rate. Evaluate with AUC and F1 (not accuracy).\n\n**Normalization:** StandardScaler fit on training set, applied to all splits.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 810,
+      "out_sha": "036d3af0ceeb",
       "note": ""
     },
     {
@@ -2411,11 +2411,11 @@
       "en_title": "Chapter 22: Practical Machine Learning — From Notebook to Production",
       "order": 191,
       "src_chars": 2329,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6f44db662246",
       "src": "#### Think Deeper\n\n**Q1.** Hyperparameter tuning with cross-validation is a form of supervised learning — you're \"learning\" the best hyperparameters from the validation error signal. This suggests that with many hyperparameters and many evaluations, the hyperparameter search itself could overfit to the validation set. How would you detect this, and what practical limits should you put on your search?\n\n**Discussion:** Yes, **hyperparameter overfitting** (also called \"researcher degrees of freedom\" or \"cherry-picking\") is a real problem. If you tune 20 hyperparameters with 1,000 evaluations, some combination will achieve excellent validation performance by random chance — not because it generalizes.\n\n**Detecting it:** If validation error after tuning is much better than expected, and test error reverts toward the pre-tuning level, overfitting has occurred.\n\n**Practical limits:**\n\n  1. **Nested cross-validation:** Use an outer CV loop to estimate the generalization of the entire pipeline (including hyperparameter selection) without touching the test set. The outer fold evaluates the selected hyperparameters on genuinely held-out data.\n\n  2. **Prior-constrained search:** Don't tune hyperparameters you don't have a principled reason to vary. Pre-compute a reasonable default range from domain knowledge or published literature.\n\n  3. **Simple models first:** Before 1,000 evaluations of gradient boosting, try a 10-evaluation grid of the most important hyperparameter (learning rate for gradient boosting, or regularization strength for linear models). Most gains come from the first few well-chosen evaluations.\n\n  4. **Separate the final test:** Never tune based on test set performance; the test set remains locked until a single final evaluation.\n\n  5. **Report variance:** A single hyperparameter configuration evaluated on 5 CV folds gives error estimates with uncertainty. Report the mean ± standard deviation. A model with slightly worse mean but lower variance may generalize better than one with a slightly better mean.\n\nThe meta-lesson: the principles of avoiding overfitting that apply to ML models apply to the ML _process_ itself. Every decision (what features to include, which model to try, what hyperparameters to tune) is a degree of freedom that can lead to overfitting if not properly managed.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 731,
+      "out_sha": "852cba568e79",
       "note": ""
     },
     {
@@ -2423,11 +2423,11 @@
       "en_title": "Chapter 22: Practical Machine Learning — From Notebook to Production",
       "order": 192,
       "src_chars": 1227,
-      "status": "pending",
+      "status": "done",
       "src_sha": "40cbee18399f",
       "src": "### Chapter Summary\n\nPractical ML is as much engineering as science. Key topics:\n\n* **Feature engineering** : scaling, encoding categorical features, transforming skewed distributions, creating interaction terms; essential even with powerful models\n* **Missing data** : impute using training-set statistics only; add missingness indicators; understand the mechanism (MCAR/MAR/MNAR)\n* **Class imbalance** : class weights (simplest), SMOTE oversampling (for numeric features), threshold tuning; always use appropriate metrics (AUC, F1, recall)\n* **Hyperparameter tuning** : random search beats grid search; Bayesian optimization is most efficient; always tune on validation, not test\n* **Experiment management** : log code, data, hyperparameters, and random seeds; use MLflow/W&B for reproducibility\n\n**Thread A complete:** The full progression from 34,500 USD to 21,200 USD RMSE illustrates that no single technique drives all the improvement. Better models, better regularization, and better features all contributed.\n\nChapter 23 introduces Reinforcement Learning — a completely different learning paradigm where there is no labeled dataset at all, only interaction with an environment and feedback in the form of rewards.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 441,
+      "out_sha": "b6aacb785f45",
       "note": ""
     },
     {
@@ -2435,11 +2435,11 @@
       "en_title": "Chapter 23: Reinforcement Learning — Learning from Rewards",
       "order": 193,
       "src_chars": 3141,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c41544207e49",
       "src": "Every model we have studied so far required a dataset of labeled examples. The training signal was always the same: here is an input, here is the correct output, minimize the discrepancy. Reinforcement learning abandons this assumption entirely. There is no dataset. There is no teacher providing correct labels. There is only an **agent** interacting with an **environment** , receiving **rewards** , and trying to figure out — through trial and error — how to behave to maximize those rewards over time.\n\nThis paradigm sounds different because it is different. A chess engine does not learn from labeled boards annotated with the right move. It plays millions of games against itself, receives +1 for winning and −1 for losing, and gradually discovers that certain sequences of moves are good. A robot arm does not learn to grasp objects from demonstrations of correct grasps. It tries, drops the object, tries again, and slowly discovers the motor commands that produce a reliable grip.\n\n\n### 23.1 The Reinforcement Learning Setup\n\n\n#### The Agent-Environment Loop\n\nAt every timestep ttt, the agent:\n\n  1. Observes the current **state** sts_tst​\n  2. Selects an **action** ata_tat​ according to its **policy** π\\piπ\n  3. Receives a **reward** rtr_trt​ from the environment\n  4. Transitions to a new state st+1s_{t+1}st+1​\n\nThis loop continues until the episode ends (or forever, for continuing tasks).\n\n**Goal:** Find a policy π\\piπ that maximizes the expected cumulative reward.\n\n\n#### Definition: Markov Decision Process\n\nThe standard formalization of RL is the **Markov Decision Process (MDP)** :\n\nAn MDP is a tuple (S,A,P,R,γ)(S, A, P, R, \\gamma)(S,A,P,R,γ) where:\n\n* SSS: set of states\n* AAA: set of actions\n* P(s′∣s,a)P(s' | s, a)P(s′∣s,a): transition probability — probability of reaching state s′s's′ from state sss after taking action aaa\n* R(s,a)R(s, a)R(s,a): expected reward for taking action aaa in state sss\n* γ∈[0,1)\\gamma \\in [0, 1)γ∈[0,1): **discount factor** — how much to weight future rewards vs. immediate rewards\n\nThe **Markov property** : the next state depends only on the current state and action, not on the history. This is the key assumption that makes MDPs tractable.\n\n\n#### Return and Discounting\n\nThe agent's objective is to maximize the **return** — the discounted sum of future rewards:\n\nGt=rt+γrt+1+γ2rt+2+⋯=∑k=0∞γkrt+kG_t = r_t + \\gamma r_{t+1} + \\gamma^2 r_{t+2} + \\cdots = \\sum_{k=0}^\\infty \\gamma^k r_{t+k}Gt​=rt​+γrt+1​+γ2rt+2​+⋯=k=0∑∞​γkrt+k​\n\nThe discount factor γ\\gammaγ serves two purposes:\n\n  1. **Mathematical** : ensures the sum converges (for γ<1\\gamma < 1γ<1 and bounded rewards)\n  2. **Behavioral** : encodes time preference — a reward now is worth more than a reward later\n\nAt γ=0\\gamma = 0γ=0: myopic agent, cares only about immediate reward. At γ→1\\gamma \\to 1γ→1: far-sighted agent, treats all future rewards equally.\n\nIn practice: γ=0.99\\gamma = 0.99γ=0.99 is common for tasks requiring long-horizon planning; γ=0.9\\gamma = 0.9γ=0.9 for shorter-horizon tasks.\n\n\n### 23.2 Value Functions\n\nTo make decisions, the agent needs to estimate how good states and actions are in the long run.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1211,
+      "out_sha": "ac8bcf124b73",
       "note": ""
     },
     {
@@ -2447,11 +2447,11 @@
       "en_title": "Chapter 23: Reinforcement Learning — Learning from Rewards",
       "order": 194,
       "src_chars": 3241,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1b7e00685987",
       "src": "#### State Value Function\n\nVπ(s)=Eπ[Gt∣st=s]=Eπ[∑k=0∞γkrt+k∣st=s]V^\\pi(s) = \\mathbb{E}_\\pi\\left[G_t \\mid s_t = s\\right] = \\mathbb{E}_\\pi\\left[\\sum_{k=0}^\\infty \\gamma^k r_{t+k} \\mid s_t = s\\right]Vπ(s)=Eπ​[Gt​∣st​=s]=Eπ​[k=0∑∞​γkrt+k​∣st​=s]\n\nVπ(s)V^\\pi(s)Vπ(s) is the expected return when starting in state sss and following policy π\\piπ. A state with high VπV^\\piVπ is a good state to be in.\n\n\n#### Action Value Function (Q-function)\n\nQπ(s,a)=Eπ[Gt∣st=s,at=a]Q^\\pi(s, a) = \\mathbb{E}_\\pi\\left[G_t \\mid s_t = s, a_t = a\\right]Qπ(s,a)=Eπ​[Gt​∣st​=s,at​=a]\n\nQπ(s,a)Q^\\pi(s, a)Qπ(s,a) is the expected return when starting in state sss, taking action aaa, and then following policy π\\piπ thereafter.\n\nThe Q-function is more useful for control: once we know Q(s,a)Q(s, a)Q(s,a) for all actions, we can act greedily:\n\nπ(s)=arg⁡max⁡aQ(s,a)\\pi(s) = \\arg\\max_a Q(s, a)π(s)=argamax​Q(s,a)\n\n\n#### The Bellman Equation\n\nThe key recursive relationship, derived from the definition of GtG_tGt​:\n\nVπ(s)=∑aπ(a∣s)∑s′P(s′∣s,a)[R(s,a)+γVπ(s′)]V^\\pi(s) = \\sum_a \\pi(a|s) \\sum_{s'} P(s'|s,a)\\left[R(s,a) + \\gamma V^\\pi(s')\\right]Vπ(s)=a∑​π(a∣s)s′∑​P(s′∣s,a)[R(s,a)+γVπ(s′)]\n\nIn plain language: the value of state sss equals the expected immediate reward plus the discounted value of the next state.\n\nFor the optimal value function V∗(s)=max⁡πVπ(s)V^*(s) = \\max_\\pi V^\\pi(s)V∗(s)=maxπ​Vπ(s), the **Bellman optimality equation** is:\n\nV∗(s)=max⁡a∑s′P(s′∣s,a)[R(s,a)+γV∗(s′)]V^*(s) = \\max_a \\sum_{s'} P(s'|s,a)\\left[R(s,a) + \\gamma V^*(s')\\right]V∗(s)=amax​s′∑​P(s′∣s,a)[R(s,a)+γV∗(s′)]\n\nFor the optimal Q-function:\n\nQ∗(s,a)=∑s′P(s′∣s,a)[R(s,a)+γmax⁡a′Q∗(s′,a′)]Q^*(s, a) = \\sum_{s'} P(s'|s,a)\\left[R(s,a) + \\gamma \\max_{a'} Q^*(s', a')\\right]Q∗(s,a)=s′∑​P(s′∣s,a)[R(s,a)+γa′max​Q∗(s′,a′)]\n\nThe Bellman equations are the foundation of most RL algorithms. If we could solve them exactly, we'd have the optimal policy. The challenge is that for large state spaces, exact solution is intractable — which is where learning comes in.\n\n\n### 23.3 Q-Learning: Learning the Optimal Q-Function\n\n\n#### Tabular Q-Learning\n\nFor environments with discrete, enumerable states and actions, we can store Q(s,a)Q(s, a)Q(s,a) in a table and update it incrementally from experience.\n\n**Algorithm: Q-Learning**\n\nInitialize Q(s,a)Q(s, a)Q(s,a) arbitrarily (e.g., all zeros); set learning rate α\\alphaα, discount γ\\gammaγ.\n\nFor each episode:\n\n  1. Observe initial state sss\n  2. Choose action aaa using ε\\varepsilonε-greedy policy (below)\n  3. Execute aaa, observe reward rrr and next state s′s's′\n  4. **Q-update:**\n\nQ(s,a)←Q(s,a)+α[r+γmax⁡a′Q(s′,a′)−Q(s,a)]Q(s, a) \\leftarrow Q(s, a) + \\alpha \\left[r + \\gamma \\max_{a'} Q(s', a') - Q(s, a)\\right]Q(s,a)←Q(s,a)+α[r+γa′max​Q(s′,a′)−Q(s,a)]\n\n  5. Set s←s′s \\leftarrow s's←s′; repeat\n\nThe bracketed term is the **TD error** (temporal difference error): the difference between the observed target r+γmax⁡a′Q(s′,a′)r + \\gamma \\max_{a'} Q(s', a')r+γmaxa′​Q(s′,a′) and the current estimate Q(s,a)Q(s, a)Q(s,a).\n\nThis update is remarkable: the target r+γmax⁡a′Q(s′,a′)r + \\gamma \\max_{a'} Q(s', a')r+γmaxa′​Q(s′,a′) is itself computed from QQQ (a \"bootstrap\" update). Yet the algorithm converges to the optimal Q-function under mild conditions.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1382,
+      "out_sha": "53f5da4b27dc",
       "note": ""
     },
     {
