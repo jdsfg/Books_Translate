@@ -49,7 +49,6 @@ Bayesian | 贝叶斯 |
 Bayesian prior | 贝叶斯先验 |
 multicollinearity | 多重共线性 |
 variance | 方差 |
-bias | 偏差 |
 confidence interval | 置信区间 |
 p-value | p 值 |
 hypothesis | 假设 |
