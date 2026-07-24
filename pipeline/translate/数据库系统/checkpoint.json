@@ -107,11 +107,11 @@
       "en_title": "导读",
       "order": 0,
       "src_chars": 2585,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c2d149133add",
       "src": "> 本导读整理自 Socratopia 网站本书介绍页：https://www.socratopia.app/library/database-systems-en\n\nMost database courses teach you what SQL does. This book teaches you why the database does it that way — and why any other way would be worse. The difference matters the moment you face a slow query you can't explain, a transaction that silently loses data under concurrent load, or a schema that worked fine at 10,000 rows and fails at 10 million.\n\nThree storylines weave through all 23 chapters: a university registration system that keeps breaking in instructive ways; the four-table JOIN above, which sheds 99% of its runtime chapter by chapter as you add indexes, update statistics, and understand the optimizer; and a bank account with $1,000 that gets withdrawn twice because two concurrent transactions read the same balance simultaneously. None of these are contrived — by the end, they are the same problems your production system will have.\n\nThe book is unusually honest about failure modes. Every \"Common Misconception\" section documents a real mistake engineers make — not strawmen. The chapters on transactions and MVCC are particularly unsparing: writing BEGIN / COMMIT is not enough; the wrong isolation level lets anomalies through even in a well-structured transaction. The chapter on normalization explains when to deliberately not normalize. The final chapter walks through a complete data architecture for a realistic AI-learning platform — schema, indexes, isolation levels, caching, replication, analytics pipeline, GDPR deletion — and asks you to defend every choice, tradeoff by tradeoff.\n\nBy the last chapter, the 20-minute query that opened the book is no longer a mystery. You know exactly why it was slow, exactly what the optimizer was doing wrong, and exactly which facts about storage, indexes, statistics, and join algorithms produced the speedup. That understanding is portable to any relational engine — and to any new engine you encounter afterward.\n\n**Target audience**：CS undergraduates (juniors/seniors) taking a database systems course; software engineers who have used ORMs and SQL but never understood what is underneath; backend engineers who want to reason about database performance with confidence.\n\n**Prerequisites**：Basic programming ability. Familiarity with data structures (arrays, trees, hash tables). SQL knowledge is helpful but not required — taught from scratch in Chapter 4.\n\n**Study hours**：90–110 hours (roughly 4 hours per chapter, plus exercise work). Readers who engage deeply with exercises and Socratic dialogue should expect 110+ hours.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 962,
+      "out_sha": "7838eaa9a155",
       "note": ""
     },
     {
@@ -119,11 +119,11 @@
       "en_title": "Introduction",
       "order": 1,
       "src_chars": 2697,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0cdbbf1a752b",
       "src": "Most introductions to database systems teach you how to use a database. This one teaches you how to reason about one.\n\nThe difference matters. If you have ever written an ORM query that worked beautifully on 10,000 rows and fell over on 10,000,000; if you have ever read about \"eventual consistency\" and nodded, but could not confidently say what it actually gives up; if you have ever heard \"just add an index\" and wondered which one, on which columns, in what order — this book is for you. It is a book about the _why_. Every chapter is organized around the tradeoffs a database designer has to make, and why those tradeoffs exist at all.\n\n**The central conviction of the book:** every database feature is a tradeoff. Normalization trades query cost for update simplicity. Indexes trade write throughput for read speed. Strict isolation trades concurrency for correctness. MVCC trades memory for lock-free reads. Replication trades consistency for availability. Columnar storage trades point-lookup latency for scan bandwidth. LSM trees trade read amplification for sequential writes. No engine is strictly better than another — each occupies a point on some tradeoff curve, and the job of a database engineer is to know which point fits which workload.\n\n**What you will find in this book:**\n\nThe twenty-three chapters progress through a deliberate arc.\n\nThe opening chapters (1-2) establish the problem: what happens to information when we try to manage it with ad-hoc files and application logic? You will see, concretely, how a small university registration system fails at 100 students and breaks at 10,000.\n\nThe relational core (Chapters 3-8) builds the foundation: relations, SQL (both fundamental and advanced), ER modeling, normalization, and the relational algebra that underlies every query planner.\n\nThe engine chapters (9-12) take you inside: storage layouts, buffer pools, B+ tree indexes, query processing algorithms (nested-loop, sort-merge, hash joins), and the cost-based query optimizer that chooses between them.\n\nThe concurrency chapters (13-17) are where most engineers' mental models are weakest and where real systems fail most subtly. We build up transactions, ACID, isolation levels, two-phase locking, multi-version concurrency control, and crash recovery through ARIES — always starting from a concrete failure and showing what the mechanism prevents.\n\nThe scale chapters (18-23) extend to distributed systems (CAP and replication), columnar stores for analytics (OLAP), document and key-value stores, wide-column stores and LSM trees, polyglot persistence, and a capstone design review that uses every concept the book has built.\n\n**Three storylines run throughout:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1007,
+      "out_sha": "dc6d68e13386",
       "note": ""
     },
     {
@@ -131,11 +131,11 @@
       "en_title": "Introduction",
       "order": 2,
       "src_chars": 3362,
-      "status": "pending",
+      "status": "done",
       "src_sha": "56f52cdb392b",
       "src": "* **Thread A — The University Registration System.** A small database of students, courses, and enrollments that grows in complexity across the book. The same domain is re-examined through each new lens: CSV files in Chapter 2, normalized tables in Chapter 6, indexed for performance in Chapter 10, transacted in Chapter 13, recovered after crash in Chapter 17, scaled to millions of learners in Chapter 23.\n* **Thread B — The Join That Didn't Come Back.** A single 20-minute query that we return to again and again — through relational algebra, indexing, join algorithms, cost-based optimization, and columnar storage — watching it shrink from 20 minutes to 2 seconds to 100 milliseconds as we apply each new idea.\n* **Thread C — Two Users, One Account.** A bank account and two concurrent withdrawals. This tiny scenario threads through every concurrency control chapter, revealing lost updates, dirty reads, write skew, lock conflicts, snapshot isolation, and partition-tolerance tradeoffs — all on the same 1000 USD balance.\n\n**How to use this book:**\n\nEach chapter contains:\n\n* **Definitions** boxes that give the precise technical statement of each new concept.\n* **Common Misconception** boxes that call out the places where intuition betrays engineers most often.\n* **SQL examples throughout** — not confined to the SQL chapters. Indexing shows `EXPLAIN ANALYZE`. Transactions show `BEGIN/COMMIT`. MVCC shows version chains. Storage chapters show how a `SELECT` becomes page reads.\n* **Tradeoffs Summary** at the end of every chapter — the point of the book condensed to 4–7 bullets.\n* **Exercises in three tiers** : _Concept Check_ questions that verify you absorbed the definitions; _Application Problems_ that ask you to apply concepts to realistic situations; _Think Deeper_ problems that reach across chapters and do not have a single clean answer.\n* **Hint blocks** on the harder exercises — Socratic nudges, not answers.\n\n**A note on exercise answers.** Chapters 1–7 include inline worked answers for every exercise, because the foundational material (relations, SQL, ER, normalization) rewards immediate verification. From Chapter 8 onward, exercises are posed without inline answers — the material has more defensible approaches, and working through problems Socratically (with the Socratopia AI companion, a study partner, or a workshop group) is where the learning actually happens. The AI companion has access to reference solutions and can guide you toward them step by step rather than hand them over. Resist the urge to look up \"the answer\"; the path _is_ the point.\n\nMathematical notation uses `\\(…\\)` for inline math and `\\[…\\]` for display math, compatible with standard LaTeX renderers.\n\n**A note on real systems:**\n\nThe book refers constantly to real database engines — PostgreSQL (MVCC, extensibility), MySQL/InnoDB (clustered B+ trees, next-key locking), SQLite (embedded simplicity), Redis (in-memory data structures), Cassandra (wide-column + LSM), DuckDB (embedded columnar), MongoDB (documents), ClickHouse and Snowflake (columnar OLAP), Spanner and CockroachDB (distributed SQL). The goal is not vendor expertise but _system literacy_ : when you finish this book, you should be able to open the documentation for any production database, recognize the design decisions, and predict the tradeoffs they imply.\n\n**Prerequisites:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1466,
+      "out_sha": "4b6a05225843",
       "note": ""
     },
     {
@@ -143,11 +143,11 @@
       "en_title": "Introduction",
       "order": 3,
       "src_chars": 963,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f114247cac76",
       "src": "You need basic programming ability and familiarity with data structures at the level of a typical undergraduate data structures course (arrays, trees, hash tables, Big-O). SQL knowledge helps but is not required — Chapter 4 teaches it from scratch. No prior database experience is assumed; no operating systems course is assumed.\n\n**Why this book exists:**\n\nDatabase systems are not a mystery. Every mechanism in a modern DBMS was designed by engineers solving a specific problem, and the design decisions are almost always the right ones for the tradeoffs they targeted. But the reasoning is rarely explained in the places most engineers first encounter databases (tutorials, ORMs, \"pick this database\" blog posts). By the end of this book, you should see the whole landscape — row stores and column stores, B+ trees and LSM trees, 2PL and MVCC, synchronous and asynchronous replication — as a single coherent map of tradeoffs, not a bag of unrelated tools.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 322,
+      "out_sha": "73dcd95d6be1",
       "note": ""
     },
     {
