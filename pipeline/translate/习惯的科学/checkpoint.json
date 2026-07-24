@@ -2575,11 +2575,11 @@
       "en_title": "Chapter 9: Implementation Intentions",
       "order": 208,
       "src_chars": 400,
-      "status": "pending",
+      "status": "done",
       "src_sha": "774f514ef571",
       "src": "_This week, your assignment is concrete: write implementation intentions for each of your three tracked habits, using the format guidance from this chapter. Write them in your diary or on an index card. Re-read each morning. In each daily diary entry, mark whether the cue arrived and whether the response fired. At week's end, refine the plans based on what you observed. This is the practice._\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 98,
+      "out_sha": "c9d2404803b0",
       "note": ""
     },
     {
@@ -2587,11 +2587,11 @@
       "en_title": "Chapter 10: Choice Architecture",
       "order": 209,
       "src_chars": 2552,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2e06922e9472",
       "src": "In 1996, two researchers studying organ donation policies in Europe noticed something that did not quite fit the standard economic theory of choice. Across countries with broadly similar populations, similar economies, similar healthcare systems, and similar attitudes toward organ donation in surveys, the actual rates of organ donation varied enormously. In some countries, more than 90% of citizens were registered organ donors. In neighboring countries, with people who looked, in survey data, indistinguishable from their cross-border neighbors, the rate was 15%.\n\nWhen the researchers looked at what differed between the high-rate and low-rate countries, the answer was almost embarrassingly small. In the high-rate countries, the organ donation form on the driver's license application was _opt-out_ : you were a donor by default, and you had to check a box to be removed from the registry. In the low-rate countries, the same form was _opt-in_ : you were not a donor by default, and you had to check a box to be added.\n\nThat was the entire difference. Same populations. Same broad attitudes. A 6× difference in actual donation rates, produced by a single design choice about what the default was. Not whether donation was _allowed_. Not how donation was _promoted_. Not what _incentives_ were offered. Just the default.\n\nThis finding — and many others like it that emerged in the following two decades — is the empirical core of the field that economists Richard Thaler and legal scholar Cass Sunstein would eventually call **choice architecture** : the deliberate design of the contexts in which choices are made, with full awareness that the design itself shapes what gets chosen. Their 2008 book _Nudge_ introduced the framework to a broad audience and made \"default\" and \"nudge\" terms in popular discourse. The framework has since shaped public policy in dozens of countries and is taught in business schools, public-health programs, and policy schools worldwide.\n\nFor our purposes, choice architecture is the chapter's-worth answer to a single question that has been building since Chapter 1: **how, specifically, do you redesign your own environment to make desired behaviors easy and undesired behaviors hard?** Implementation intentions (Chapter 9) handled the cues you can't remove. Choice architecture is about removing, weakening, or restructuring the cues you can.\n\nThe chapter is in some ways the most action-oriented in the book. Once you can see the levers, the redesigns mostly write themselves. The challenge is mostly seeing.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 759,
+      "out_sha": "58dd2ab8b641",
       "note": ""
     },
     {
@@ -2599,11 +2599,11 @@
       "en_title": "Chapter 10: Choice Architecture",
       "order": 210,
       "src_chars": 2561,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d02659f7b5c3",
       "src": "### 10.1 The Terrifying Power of Defaults\n\nLet's start with the most striking finding from the choice-architecture literature, because it deserves a moment of full appreciation.\n\nIn organ donation, opt-in vs. opt-out produces 15% vs. 90% donation rates in similar populations.\n\n> **[Figure 10.1: The Power of Defaults — Two Canonical Cases]** Two paired bar charts. (a) Organ donation participation: opt-in countries near 15%, opt-out countries near 90%. (b) U.S. 401(k) plan participation: opt-in employees ~49%, auto-enrollment-with-opt-out employees ~86%. Same populations, same financial situations — only the default differs. The figure should make the magnitude of the default effect viscerally obvious.\n\nIn 401(k) retirement saving in the United States, switching workplace plans from opt-in (employees must enroll) to auto-enrollment with opt-out (employees are enrolled by default and can withdraw) raises participation rates from roughly 49% to roughly 86%. The same employees, with the same financial situation, with the same access to the same retirement plan, save very differently depending on which choice is the default.\n\nIn car insurance in some U.S. states, the default level of liability coverage at policy purchase strongly predicts what level of coverage drivers end up with — even though they could change it freely. In countries that defaulted to higher coverage, more drivers had higher coverage, and vice versa.\n\nIn medical contexts, defaults around treatment options, screening tests, follow-up appointments, and prescription decisions consistently produce 20–60 percentage-point differences in actual selections, depending on the domain.\n\nIn school settings, default options for cafeteria food (where the salad bar is, what's on the kids' menu by default, whether dessert is opt-in or opt-out) produce measurable differences in what students eat — sometimes large enough to affect health outcomes at the population level.\n\nIn philanthropic contexts, default donation amounts, default opt-in to recurring donations, and default round-up-to-the-nearest-dollar features have produced order-of-magnitude differences in giving.\n\nThe pattern is robust across domains, populations, and stakes. **The default is one of the strongest predictors of choice — often stronger than economic incentives, stronger than information campaigns, stronger than personal preferences as expressed in surveys.**\n\nWhy? The full answer involves several mechanisms, and they're worth understanding because they tell you what makes a \"good\" choice architecture.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 777,
+      "out_sha": "66ea7c1ea519",
       "note": ""
     },
     {
@@ -2611,11 +2611,11 @@
       "en_title": "Chapter 10: Choice Architecture",
       "order": 211,
       "src_chars": 2897,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c12eb59f667a",
       "src": "### 10.2 Why Defaults Are So Powerful\n\nDefaults work for several converging reasons, and each one is large enough that, even individually, it would predict substantial effects.\n\n**Reason 1: Effort.** Choosing the non-default requires action. Action requires attention, time, sometimes deliberation, sometimes physical effort. The habit system, as we covered in Chapter 2, is allergic to effort — its whole design is to minimize energy cost. When choosing the non-default requires effort and choosing the default requires nothing, the habit system reliably prefers the default. This is not laziness in the moral sense; it is the design of the system.\n\n**Reason 2: Status quo as endorsement.** People often interpret defaults as implicit recommendations. _If this is the default, the people who designed it probably know what they're doing; the default is probably the right choice for most people; I should probably take it._ This interpretation is sometimes accurate, sometimes wildly wrong, but the cognitive shortcut is common. Defaults carry a small cloak of authority that affects choice.\n\n**Reason 3: Loss aversion.** When the default is something you have, opting out feels like a loss; when the default is something you don't have, opting in feels like an acquisition. People are roughly twice as sensitive to losses as to equivalent gains (this is a well-established finding from prospect theory in behavioral economics). So a default-on benefit, which would feel like a loss to opt out of, holds onto people more strongly than a default-off benefit holds opt-in interest.\n\n**Reason 4: Decision fatigue and cognitive load.** Modern life presents many choices, and each one has some cognitive cost. People often prefer not to think about choices they don't have to think about, especially in domains where they don't feel expert (retirement planning, organ donation, insurance coverage). Defaults let you skip the thinking — and the deferred thinking, in many cases, never happens.\n\n**Reason 5: The default has the time-on-task.** When you're \"in\" something by default, you experience it. When you're \"out\" by default, you don't. The experience itself accumulates: you become familiar with what the default is doing, you build relationship with it, you become reluctant to leave something you've been part of. This makes defaults stickier over time.\n\nTogether, these mechanisms produce the empirical pattern: defaults are strong, often dominantly so, in shaping behavior across many domains.\n\nThe implication for our purposes: **the highest-leverage move in self-redesign is changing your defaults.** Not \"trying to choose better\" — that's leaving the default in place and asking the goal-directed system to fight it many times per day. _Changing the default._ What is automatic, what is the path of least resistance, what is what-happens-if-you-do-nothing — those are the leverage points.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 843,
+      "out_sha": "d90331158dae",
       "note": ""
     },
     {
@@ -2623,11 +2623,11 @@
       "en_title": "Chapter 10: Choice Architecture",
       "order": 212,
       "src_chars": 842,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c1be6501b959",
       "src": "#### Definition: Choice Architecture\n\n**Choice architecture** is the design of the context in which choices are made — including defaults, friction, options-presentation, salience, and physical or digital arrangement. The choice architect is anyone who designs such a context, deliberately or by accident. _Every environment has a choice architecture; the only question is whether it was designed deliberately and for whose benefit._\n\nIn plain language, this means: every time you make a choice, the way the choice was presented to you shapes your decision in ways you may not notice. The kitchen layout shapes what you eat. The phone setup shapes what you check. The street layout shapes whether you walk or drive. These were all designed by someone, often without your awareness — and you can redesign the parts that are within your reach.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 248,
+      "out_sha": "e9cdfcebb822",
       "note": ""
     },
     {
