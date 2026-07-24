@@ -539,27 +539,15 @@
       "note": ""
     },
     {
-      "id": "c03_b11",
-      "en_title": "Chapter 3: Back-of-the-Envelope Estimation — The Art of Roughly Right",
-      "order": 35,
-      "src_chars": 1712,
-      "status": "pending",
-      "src_sha": "d7932dfc47c2",
-      "src": "### Chapter Summary\n\nBack-of-the-envelope estimation is not about finding the correct number. It is about finding a number that is **correct enough** to make good architectural decisions, using only information you can gather in minutes.\n\nThe tools:\n\n* **Latency numbers:** Know the order of magnitude for L1 cache (1 ns), RAM (100 ns), SSD (150 μs), HDD (10 ms), and network (0.5–150 ms). These are the speed limits of your world.\n* **Powers of 2 and 10:** Your counting system for storage and throughput.\n* **QPS estimation:** Start from users → DAU → actions per user per day → requests per second → peak multiplier.\n* **Storage estimation:** Start from data per user → users → time horizon → overhead multiplier.\n* **Bandwidth estimation:** QPS × average response size → peak multiplier.\n* **Fermi estimation:** Break the unknown into estimable components, multiply, and sanity-check against intuition.\n\nWe applied these to SocialSnap and found that at 1 million users, the load is modest — a single well-configured server suffices. The numbers tell you when to add complexity, and equally importantly, when not to.\n\nThe **SocialSnap 1M estimation** established our baseline: 190 peak QPS, 12 MB/s read bandwidth, 600 GB storage over 5 years. These numbers will change dramatically as SocialSnap grows — and the changes will drive every architectural decision we make in the chapters ahead.\n\nIn Chapter 4, we tackle the deepest theoretical result in distributed systems: the CAP theorem. Now that you have the tools to estimate real numbers, Chapter 4 will show you the fundamental constraint that governs what you can and cannot guarantee once those numbers require you to run across multiple machines.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
-      "note": ""
-    },
-    {
       "id": "c04_b01",
       "en_title": "Chapter 4: Consistency, Availability, and the CAP Theorem",
       "order": 36,
       "src_chars": 2875,
-      "status": "pending",
+      "status": "done",
       "src_sha": "68d77919080b",
       "src": "In Chapter 3, we built the habit of estimation — the skill of knowing how large your system needs to be before committing to an architecture. Now suppose your estimates say you need ten database servers to handle the load. Ten servers, distributed across a datacenter. Maybe two datacenters, for geographic redundancy.\n\nHere is a question those ten servers cannot escape: what happens when they cannot talk to each other?\n\nNetworks fail. Not hypothetically — regularly. Switches malfunction. Cables get unplugged. Software bugs cause network partitions. In any sufficiently large distributed system, at any given moment, some components cannot communicate with some other components. This is not a failure mode you can engineer away. It is a physical reality of building systems across multiple machines.\n\nSo the question becomes: what does your system promise users when the network fails? Can it still serve requests? Can it guarantee those requests see current data? As we will see, you cannot always do both.\n\nThis chapter formalizes that tension into one of the most important theoretical results in distributed systems: the CAP theorem. We will then go beyond CAP to a more practical framework — PACELC — that captures the tradeoffs that actually matter in day-to-day system design.\n\n\n### 4.1 The Three Properties\n\nBefore we state the theorem, we need to sharpen the definitions of three properties that will appear in it.\n\n\n#### Consistency (in the CAP sense)\n\nThis definition is narrower than the \"consistency\" we discussed in Chapter 2. In the CAP theorem, consistency has a specific technical meaning:\n\n\n#### Definition: Linearizability (CAP Consistency)\n\n**Linearizability** means that every read returns the most recent write, or an error. More precisely: the system behaves as if there is a single copy of the data, and all operations happen atomically in some sequential order that respects the real-time ordering of operations.\n\nIn plain language: if you write a value and then read it (or anyone reads it, anywhere in the system), you always see the write reflected. The system looks like it has one authoritative copy of every piece of data, even if it is physically stored on many machines.\n\nLinearizability is the strongest consistency guarantee. It is also expensive. We will see why shortly.\n\n\n#### Availability (in the CAP sense)\n\n\n#### Definition: Availability (CAP)\n\n**Availability** means that every request to a non-failed node receives a response (not an error). The response might not be the latest value, but it is not an error.\n\nIn plain language: the system always responds. It might give you old data, but it does not say \"I don't know, try again.\"\n\nNote the subtlety: availability does not mean correct data. It means you get a response. A node that is working perfectly fine (not failed) must respond to requests.\n\n\n#### Partition Tolerance\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 985,
+      "out_sha": "d4253746af5b",
       "note": ""
     },
     {
@@ -567,11 +555,11 @@
       "en_title": "Chapter 4: Consistency, Availability, and the CAP Theorem",
       "order": 37,
       "src_chars": 2840,
-      "status": "pending",
+      "status": "done",
       "src_sha": "dd0336e4ee64",
       "src": "#### Definition: Partition Tolerance\n\n**Partition tolerance** means the system continues to operate when network partitions occur — that is, when messages between nodes are delayed arbitrarily or lost entirely.\n\nIn plain language: the system keeps running even when some nodes cannot talk to other nodes.\n\nNow here is the critical observation: **in any real distributed system, you must be partition tolerant.** Networks partition. This is not optional. You cannot build a distributed system that guarantees zero network partitions — that would require a perfectly reliable network, which does not exist. Therefore, the real choice in CAP is between Consistency and Availability in the presence of partitions.\n\n\n### 4.2 The CAP Theorem\n\n\n#### Definition: The CAP Theorem\n\n**The CAP theorem** (Brewer's theorem, 2000, proved by Gilbert and Lynch, 2002) states: in a distributed system, it is impossible to simultaneously guarantee all three of the following properties: **Consistency, Availability, and Partition Tolerance.**\n\nIn plain language: when machines in a distributed system cannot talk to each other (a network partition), you must choose — either stop responding to preserve correctness, or keep responding and risk returning stale data. You cannot do both.\n\nBecause partition tolerance is mandatory in any real distributed system, the practical corollary is:\n\n> **During a network partition, you must choose: Consistency or Availability.**\n\nLet's make this concrete. Imagine SocialSnap has two database nodes — let's call them North and South — that replicate data between each other. A user's follower count is stored on both. The network partition means North and South cannot communicate.\n\n**Option A: Choose Consistency (sacrifice Availability)**\n\nWhen the partition happens, North refuses to serve reads and writes, because it cannot confirm that South has the same data. A user who happens to be routed to North gets an error: \"Service unavailable.\" North is technically still running — it's not failed — but it refuses to answer rather than risk returning stale data.\n\nSouth does the same. Both nodes go silent.\n\nThis is Consistency: the system never returns incorrect data. But it is unavailable during the partition.\n\n**Option B: Choose Availability (sacrifice Consistency)**\n\nWhen the partition happens, both North and South continue serving requests. A user updates their profile on North. A different user reads that profile from South. South doesn't have the update yet (the partition is blocking it). The second user sees old data.\n\nThis is Availability: the system always responds. But it may return stale or inconsistent data during the partition.\n\n**There is no Option C.** You cannot have a distributed system that responds with correct current data when nodes cannot communicate. That would require telepathy.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1079,
+      "out_sha": "9aec7d4e6d71",
       "note": ""
     },
     {
@@ -579,11 +567,11 @@
       "en_title": "Chapter 4: Consistency, Availability, and the CAP Theorem",
       "order": 38,
       "src_chars": 3352,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6ab3313f4178",
       "src": "#### What CAP Does Not Say\n\nCAP is often misunderstood. Three common misreadings:\n\n**Misreading 1: \"I must choose exactly 2 of 3.\"** The theorem does not say you can have any two. It says that during a partition, you sacrifice either C or A. When the partition resolves, you can have all three. So CAP describes behavior during partition events, not steady-state behavior.\n\n**Misreading 2: \"Availability means 100% uptime.\"** In the CAP theorem, availability has a specific definition (every non-failed node responds). It does not mean your service achieves five nines of uptime. A service can be highly available (99.99% uptime) and still sacrifice CAP-availability during partitions.\n\n**Misreading 3: \"Consistency means eventual consistency.\"** In CAP, consistency means linearizability — the strong form. Many systems are not linearizable but still provide useful consistency guarantees (like \"eventually all nodes agree\"). These systems sacrifice CAP-consistency, but they are not \"inconsistent\" in the everyday sense.\n\n\n#### Common Misconception\n\nMany engineers believe CAP is the primary design tradeoff for distributed systems. This is only partially true. CAP describes behavior during network partitions. But in practice, most systems experience many more than just partition events — they experience latency variations, load spikes, and partial failures that are not clean binary partitions. For these common situations, CAP gives incomplete guidance.\n\nThis is where PACELC comes in.\n\n\n### 4.3 PACELC — The Tradeoff That Matters More in Practice\n\nIn 2012, Daniel Abadi proposed PACELC as an extension of CAP that captures the tradeoff engineers actually face most of the time.\n\nPACELC reads as: **PA/ELC** — \"if there is a Partition, choose between Availability and Consistency; Else (when the system is operating normally), choose between Latency and Consistency.\"\n\n\n#### Definition: PACELC\n\n**PACELC** extends CAP by adding that even in the absence of partitions, distributed systems must trade off between **Latency** and **Consistency** :\n\n* **P → A/C:** During a partition, sacrifice Availability or Consistency (same as CAP)\n* **ELC:** Else (during normal operation), sacrifice Latency or Consistency\n\nIn plain language: even when the network is working fine, strong consistency costs latency. To guarantee every read sees the latest write, you must coordinate across all replicas before returning — and coordination takes time. If you skip the coordination to respond faster, you sacrifice consistency.\n\n\n#### Why Latency vs Consistency Is the Everyday Tradeoff\n\nPartitions are relatively rare. What is common is latency variability.\n\nSuppose you have a database with three replicas. A write must be committed to all three before returning success. Replica 2 is on a slow network connection and takes 50ms longer than the others. In order to return a consistent response, you must wait for the slowest replica. Your median write latency just jumped by 50ms.\n\nAlternatively: you return success as soon as two of three replicas confirm (a quorum). Replica 3 gets the update eventually. Most reads will see the latest write; occasionally, a read routed to Replica 3 before it syncs will see stale data.\n\nThis is a latency vs consistency tradeoff — and you face it every time you design a replication strategy, not just during partitions.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1351,
+      "out_sha": "ee2bac559b92",
       "note": ""
     },
     {
@@ -591,11 +579,11 @@
       "en_title": "Chapter 4: Consistency, Availability, and the CAP Theorem",
       "order": 39,
       "src_chars": 3434,
-      "status": "pending",
+      "status": "done",
       "src_sha": "039942833876",
       "src": "#### Classifying Real Systems with PACELC\n\nSystem | P choice | EL choice | Notes  \n---|---|---|---  \nPostgreSQL with synchronous replication | C | C | Refuses writes during partition; waits for all replicas to confirm  \nCassandra (default settings) | A | L | Serves requests during partition; accepts writes with one node confirmation  \nDynamoDB | A | L | Eventual consistency by default; strongly consistent reads available at higher latency cost  \nZookeeper | C | C | Used for coordination; sacrifices availability for correctness  \nMySQL with async replication | A | L | Accepts writes immediately; replicas lag behind  \n  \nPACELC forces you to answer two questions about your system design, not one.\n\n\n### 4.4 Consistency Models — A Spectrum\n\nReal systems don't just choose \"strong\" or \"eventual\" consistency — they choose a point on a spectrum. Understanding this spectrum lets you match the consistency level to what your users actually need.\n\nThe spectrum from strongest to weakest:\n\n\n#### Linearizability (Strictest)\n\nAs defined above: all operations appear to execute atomically at a single point in time, in an order consistent with real-time ordering. If operation A completes before operation B starts, A's effects are visible when B executes.\n\nCost: requires coordination between all replicas for every operation. Very slow in geographically distributed systems.\n\nExample use case: distributed locks, leader election. Any situation where two processes must agree on a single value.\n\n\n#### Sequential Consistency\n\nAll operations appear to execute in some sequential order, and that order is the same as seen by all nodes. However, the sequential order need not respect real-time ordering — a write that completes before another starts might appear \"after\" it in the sequential order.\n\nCost: slightly cheaper than linearizability because you don't need wall-clock coordination.\n\n\n#### Causal Consistency\n\nOperations that are causally related appear in the same order on all nodes. If you see a reply to a post, you also see the original post (since the reply causally depends on the post). Causally unrelated operations can appear in different orders on different nodes.\n\nCost: need to track causality (often with vector clocks — Chapter 14). Cheaper than sequential consistency.\n\nExample use case: comment threads (a reply must appear after the original comment). Social feeds where one action causes another.\n\n\n#### Read-Your-Writes Consistency\n\nAfter you write a value, you will always read that value back when you query (from any node). Other users may see stale data, but you always see your own updates immediately.\n\nCost: relatively cheap — the system needs to route your reads to the replica that has your write, or wait for your write to propagate before letting you read.\n\nExample use case: profile updates (after I update my bio, I should see my new bio immediately, even if my friend sees the old one for a few seconds).\n\n\n#### Eventual Consistency (Weakest Useful Guarantee)\n\nGiven no new writes, all replicas will eventually converge to the same value. How long \"eventually\" takes is not specified. There is no guarantee about what you see in the meantime.\n\nCost: cheapest to implement. Any replica can respond to any request without coordination.\n\nExample use case: social media \"like\" counts (it's okay if you see 1,000 likes and your friend sees 999 for a moment), DNS records, content delivery networks.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1221,
+      "out_sha": "3482841a101e",
       "note": ""
     },
     {
@@ -603,11 +591,11 @@
       "en_title": "Chapter 4: Consistency, Availability, and the CAP Theorem",
       "order": 40,
       "src_chars": 2590,
-      "status": "pending",
+      "status": "done",
       "src_sha": "874132a8cc80",
       "src": "#### Choosing a Consistency Model\n\nThe right model depends on the user-visible consequences of inconsistency. Ask yourself: what is the worst-case outcome if a user reads stale data?\n\n* **Stale like count:** Annoying but acceptable → eventual consistency\n* **Stale shopping cart:** User might lose items they added → read-your-writes consistency\n* **Stale inventory count:** You might oversell → at least causal consistency, possibly sequential\n* **Stale bank balance:** Someone might overdraft → linearizability\n\nThe cost (in latency and availability) scales with the strength of the guarantee. Match the guarantee to what you actually need — paying for linearizability when eventual consistency would work is expensive and unnecessary.\n\n\n### 4.5 What \"Eventual Consistency\" Really Means for Your Users\n\nEventual consistency is the most commonly misunderstood term in distributed systems. It sounds reassuring — data will eventually be consistent. But \"eventual\" could mean milliseconds or minutes, and real incidents have involved inconsistencies that lasted hours.\n\nConcrete examples of what eventual consistency looks like to users:\n\n**Example 1: Stale social feed.** You post \"I got the job!\" on SocialSnap. Your friend, whose request is routed to a different replica, refreshes their feed and doesn't see your post. They refresh again 3 seconds later and see it. This is acceptable eventual consistency.\n\n**Example 2: Conflicting shopping carts.** You have DynamoDB (eventually consistent) storing your cart. You add a laptop on your phone, then immediately switch to your laptop browser and add a keyboard. Both additions were written to different nodes before replication. When the nodes sync, who wins? Without conflict resolution logic, you might lose one of the items. This is unacceptable eventual consistency.\n\n**Example 3: Deleted content re-appearing.** A user deletes a post. The delete propagates to most replicas. But a replica that was partitioned comes back online with the old data. Your anti-entropy process eventually removes the post again — but for 30 seconds, the deleted post was visible. This might be acceptable (deleted post briefly re-appearing) or catastrophic (deleted photo in a healthcare system).\n\nThe lesson: \"eventual consistency\" is not a level of consistency, it is the _absence_ of a consistency guarantee. It transfers the responsibility for handling inconsistencies from the database to your application. You must explicitly design for what happens when two replicas disagree, how long inconsistency is acceptable, and how conflicts are resolved.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 892,
+      "out_sha": "6e8a311cd4ff",
       "note": ""
     },
     {
@@ -615,11 +603,11 @@
       "en_title": "Chapter 4: Consistency, Availability, and the CAP Theorem",
       "order": 41,
       "src_chars": 2239,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6a0a13e3f098",
       "src": "### 4.6 Applying the Framework to SocialSnap\n\nBut how do you actually translate these theoretical tradeoffs into concrete database choices for a real product?\n\nLet's use the CAP/PACELC framework to make concrete decisions for SocialSnap as it scales.\n\n**SocialSnap's component inventory:**\n\n* User authentication (login, tokens)\n* Posts (creating, reading, feeds)\n* Follower relationships\n* Direct messages\n* Like counts\n\nFor each, let's choose the appropriate consistency model:\n\nComponent | Consistency Level | Justification  \n---|---|---  \nAuthentication tokens | Linearizability | A revoked token being seen as valid = security incident  \nUser profile (name, bio) | Read-your-writes | User should see their own edits; others can see 2-3s old data  \nPost feed | Eventual consistency | Slightly stale feed is fine; we want maximum availability  \nFollower relationships | Causal consistency | If I follow you, I should see your posts in my feed (causal dependency)  \nDirect messages | Read-your-writes at minimum | I should see messages I sent immediately  \nLike counts | Eventual consistency | 999 vs 1000 likes matters less than availability  \nPayment records | Linearizability | Correctness non-negotiable  \n  \nThis analysis reveals an important point: a single system often needs different consistency levels for different types of data. This is why complex systems often use multiple database technologies — each tuned to the consistency requirements of its data type.\n\n\n### 4.7 The Tradeoff Matrix Update\n\nAdding to our Tradeoff Matrix from Chapter 2, the CAP/PACELC framework contributes a major expansion:\n\nDesign Choice | Latency | Throughput | Consistency | Availability | Durability | Complexity  \n---|---|---|---|---|---|---  \n**Linearizable consistency** | ↑↑ High cost | ↓ Reduces | ↑↑ Maximum | ↓ Reduces (partition → refuse) | ↔ | ↑ Coordination logic  \n**Eventual consistency** | ↓ Low cost | ↑ High | ↓ Weakest | ↑↑ Maximum | ↔ | ↑ Conflict resolution logic  \n**Read-your-writes** | ↓ Low cost for reads | ↑ Good | ↔ Middle ground | ↑ Good | ↔ | ↑ Sticky routing or version tracking  \n**Causal consistency** | ↓ Moderate cost | ↑ Good | ↔ Middle ground | ↑ Good | ↔ | ↑↑ Vector clocks or similar  \n  \n\n### 4.8 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1001,
+      "out_sha": "a4853ffb11f7",
       "note": ""
     },
     {
@@ -627,11 +615,11 @@
       "en_title": "Chapter 4: Consistency, Availability, and the CAP Theorem",
       "order": 42,
       "src_chars": 3493,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e67961911635",
       "src": "#### Concept Check\n\n**Q1.** In your own words, state the CAP theorem and explain why partition tolerance is not optional in real distributed systems.\n\n**Answer:** The CAP theorem states that a distributed system cannot simultaneously guarantee Consistency (every read returns the most recent write), Availability (every non-failed node responds to requests), and Partition Tolerance (the system continues operating despite network partitions where some nodes cannot communicate with others).\n\nPartition tolerance is not optional because networks fail. Any distributed system that spans multiple machines — which is every scaled system — will experience network failures where some machines cannot reach others. These failures could be caused by a switch failure, a cable being cut, a software bug in a network router, or deliberate isolation (e.g., during datacenter maintenance). There is no engineering technique that can guarantee a real network never partitions. A theoretical system that assumes no partitions can happen would have to be a single machine with no network dependencies — which is not a distributed system. Therefore, real distributed systems must tolerate partitions, and the practical choice reduces to: during a partition, do you preserve Consistency or Availability?\n\n**Q2.** What is the difference between CAP-consistency (linearizability) and the \"C\" in ACID (database transactions)? Why does this distinction matter?\n\n**Answer:** These are two different concepts that unfortunately share the letter C:\n\n**ACID consistency** means that database transactions maintain the integrity constraints of the database — a transaction moves the database from one valid state to another. For example, a bank transfer transaction that subtracts 100 USD from one account and adds it to another leaves the database in a valid state (no money created or destroyed). This is mostly an application-level concern — the application defines what \"valid\" means, and the database enforces the constraints.\n\n**CAP consistency (linearizability)** means that in a distributed system, all reads see the most recent write, as if there were a single copy of the data. This is a replication concern — it's about what happens when data is spread across multiple nodes.\n\nThe distinction matters because:\n\n  1. A single-node database with ACID transactions can be both ACID-consistent and linearizable.\n  2. A distributed database can have ACID transactions on each individual node but not be linearizable across nodes (because the nodes might disagree).\n  3. Many NoSQL databases sacrifice CAP-consistency (linearizability) but still maintain some form of ACID consistency within a single node.\n\nEngineers who conflate these two meanings often make architectural mistakes — for example, assuming that a database labeled \"ACID\" will behave correctly in a distributed multi-master setup.\n\n**Q3.** How does PACELC extend CAP, and why is the \"ELC\" (Else: Latency vs Consistency) part often more practically important than the partition behavior?\n\n**Answer:** PACELC extends CAP by recognizing that network partitions, while important to design for, are relatively rare events. What is common is the everyday tradeoff that distributed systems face even during normal operation: to guarantee strong consistency, every read/write must coordinate across replicas, which costs latency. To reduce latency, you relax consistency.\n\nThe \"ELC\" part (Else: Latency vs Consistency) matters more in practice because:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1130,
+      "out_sha": "0d57ee767d08",
       "note": ""
     },
     {
@@ -639,11 +627,11 @@
       "en_title": "Chapter 4: Consistency, Availability, and the CAP Theorem",
       "order": 43,
       "src_chars": 942,
-      "status": "pending",
+      "status": "done",
       "src_sha": "78cb2b21e1db",
       "src": "  1. **Partitions are rare; latency pressure is constant.** A partition might happen a few times per year. But every single request, every millisecond of every day, faces the latency-vs-consistency tradeoff.\n  2. **Users feel ELC, not partition behavior.** If your service is unavailable for 30 seconds during a partition event, users notice and are frustrated. But they also notice (and leave) if every request takes 300ms instead of 50ms because you're synchronously coordinating three replicas.\n  3. **Many real-world systems are latency-sensitive.** Google, Amazon, and Netflix have all written about how adding 100ms to page load time reduces user engagement significantly. For these companies, the ELC tradeoff (paying latency for consistency) is a direct business metric.\n\nThe CAP partition behavior tells you what your system does in an emergency. The PACELC ELC tradeoff tells you how your system performs every minute of every day.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 350,
+      "out_sha": "ac26f1c2d2f3",
       "note": ""
     },
     {
@@ -651,11 +639,11 @@
       "en_title": "Chapter 4: Consistency, Availability, and the CAP Theorem",
       "order": 44,
       "src_chars": 3435,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3f0d3e580f7d",
       "src": "#### Application Problems\n\n**Q1.** Consider a multi-player online game with a global leaderboard showing the top 100 players by score. Players update their scores thousands of times per second. What consistency model would you choose for the leaderboard, and why? What user experience results from your choice?\n\nHint\n\nThink about what the user actually sees and whether staleness is harmful. Compare the cost (latency, throughput) of strong consistency for a write-heavy workload with thousands of updates per second.\n\n**Answer:** Choose **eventual consistency** for the leaderboard.\n\n**Reasoning:** The leaderboard is updated thousands of times per second across potentially millions of players worldwide. Strong consistency would require all updates to be serialized and confirmed across global replicas before acknowledging. With transcontinental round-trip times of 150ms+, this would mean at best ~7 leaderboard updates per second globally — completely infeasible.\n\nMore importantly, the user impact of eventual consistency is minimal: if a player updates their score and it takes 2-3 seconds to appear on the global leaderboard, that's acceptable. Leaderboard users understand they're seeing a snapshot, not a real-time feed. The difference between \"you're ranked #42\" and \"you're ranked #43 for the next 3 seconds\" is not meaningful.\n\n**User experience with eventual consistency:** Players will sometimes see slightly stale rankings. A player's score update might not appear immediately on another player's leaderboard view. Two players looking at the leaderboard simultaneously might see slightly different rankings. None of this causes harm or confusion — it's expected behavior for any global leaderboard.\n\n**Contrast with a payment or inventory system:** If the leaderboard were tracking inventory (\"only 10 units left!\"), eventual consistency would cause overselling. The user experience harm is concrete and financial. This is why choosing a consistency model requires understanding user-visible consequences, not just abstract consistency theory.\n\n**Q2.** (Connects to Chapter 3 estimation concepts) You are building a social platform that must synchronously replicate writes to 3 nodes across two datacenters (for durability and disaster recovery). One datacenter is in Virginia, one is in Oregon. A write completes only when all 3 replicas confirm. Estimate the minimum write latency and explain how this constrains your architecture.\n\nHint\n\nUse the latency numbers from Chapter 3. The distance between Virginia and Oregon is approximately 2,500 miles. How long does a packet take to travel that distance? Remember the write must wait for the slowest replica.\n\n**Answer:**\n\n**Network latency estimate:** Light travels at 186,000 miles/second in vacuum; in fiber optic cable, roughly 124,000 miles/second (due to the refractive index of glass). Distance Virginia to Oregon: ~2,500 miles.\n\nOne-way travel time: 2,500 / 124,000 ≈ 0.02 seconds = **20ms one-way**\n\nRound-trip time (write + acknowledgment): **~40ms** for the transcontinental leg alone.\n\n**Full write latency breakdown:**\n\n* Local network within datacenter: ~0.5ms\n* Processing on each replica: ~2ms\n* Virginia → Oregon → Virginia round trip: ~40ms\n* Total minimum write latency: ~42ms\n\nWith synchronous replication, every write waits for the slowest replica. If the Oregon replica takes 42ms, every write takes at least 42ms.\n\n**Architectural constraints:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1203,
+      "out_sha": "5603766ae3c2",
       "note": ""
     },
     {
@@ -663,11 +651,11 @@
       "en_title": "Chapter 4: Consistency, Availability, and the CAP Theorem",
       "order": 45,
       "src_chars": 3296,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8152c6c0eab8",
       "src": "  1. **Write throughput is capped.** With one synchronous connection and 42ms per write, maximum throughput ≈ 1/0.042 ≈ 24 writes/second on that connection. You can parallelize (multiple connections), but each individual write takes 42ms.\n  2. **SLO implications.** If your p99 write latency SLO is 20ms, this architecture violates it by definition — geography alone costs 42ms.\n  3. **The fix:** Either accept the latency (if strong consistency across regions is non-negotiable), use asynchronous replication (accepting that Oregon might be slightly behind), or write to local replicas only (two in Virginia) and sync to Oregon asynchronously. This is a direct CAP/PACELC tradeoff: cross-region synchronous consistency costs 42ms in every write operation.\n\nThis uses the estimation methodology from Chapter 3 (latency numbers, physics of light in fiber) to derive a concrete architectural constraint — a design that sounds reasonable in the abstract is actually infeasible for low-latency SLOs.\n\n**Q3.** A bank operates a money transfer service backed by a strongly consistent database. During a 2-minute network partition between its two data centers, all transfer requests are rejected with an error: \"Service temporarily unavailable.\" A competing bank's transfer service remains available throughout the same 2-minute window — but later, during reconciliation, it discovers that 12 transfers were double-processed (the same transfer executed twice). Both banks apply corrective journal entries to fix the double-processing errors.\n\nUsing the CAP and PACELC frameworks, analyze both designs. Which design is more appropriate for a banking context, and why? Under what circumstances, if any, would the competitor's approach be justified?\n\nHint\n\nMap each bank's behavior during the partition to the CAP choice (C vs A). Then think about the PACELC \"ELC\" dimension: what does each bank trade during normal (non-partition) operation? The answer is not simply \"correctness always wins in banking\" — think about what kinds of banking products might legitimately tolerate eventual consistency.\n\n**Answer:**\n\n**CAP analysis:**\n\n**Bank A (your bank):** During the partition, it chose **Consistency over Availability**. Non-failed nodes refused to serve requests rather than risk processing transfers with potentially stale or divergent state. This is the CP design — it stops responding to preserve correctness.\n\n**Bank B (competitor):** During the partition, it chose **Availability over Consistency**. Both data centers continued accepting transfers independently. Without the ability to coordinate, some transfers were processed twice (a write conflict). The bank chose to resolve the inconsistency after the fact through reconciliation. This is the AP design.\n\n**PACELC analysis:**\n\nEven outside of partition events, Bank A's synchronous replication (required to maintain linearizability) adds latency to every write — every transfer must be confirmed by both data centers before returning success. Bank A trades **Latency for Consistency** (the EL→C choice). Bank B likely uses asynchronous replication during normal operation, providing lower write latency at the cost of a short window where the two data centers may diverge (the EL→L choice).\n\n**Which is appropriate for core money transfers?**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1131,
+      "out_sha": "8a5a06846d72",
       "note": ""
     },
     {
@@ -675,11 +663,11 @@
       "en_title": "Chapter 4: Consistency, Availability, and the CAP Theorem",
       "order": 46,
       "src_chars": 1313,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7f2d7769a3a4",
       "src": "For core consumer money transfers, **Bank A's design is more appropriate.** The harm from a double-processed transfer is concrete and severe: a customer's account may be debited twice, third parties may receive duplicate payments, and legal obligations may be violated. Even if reconciliation eventually fixes the error, the customer experience during those hours of incorrect state is damaging and potentially triggers regulatory scrutiny. The 2-minute outage, while frustrating, is a known and bounded failure mode — users understand \"try again later.\" Double-charging is not.\n\n**When Bank B's approach might be justified:** Not all banking products are equal. Consider a prepaid loyalty card or a low-value peer-to-peer payment app (transferring amounts under 5 USD between friends). Here, the harm from a double-processed transaction is low, reconciliation is fast and cheap, and availability during a network outage may genuinely matter more to users than a 2-minute error message. Financial products with explicit eventual-consistency guarantees and low transaction limits — or where the business model depends on zero downtime — can justify the AP choice if the reconciliation system is robust. The key constraint is that the **maximum possible harm from an inconsistency must be bounded and acceptable.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 385,
+      "out_sha": "6d55acc58917",
       "note": ""
     },
     {
@@ -687,11 +675,11 @@
       "en_title": "Chapter 4: Consistency, Availability, and the CAP Theorem",
       "order": 47,
       "src_chars": 3323,
-      "status": "pending",
+      "status": "done",
       "src_sha": "12570774221a",
       "src": "#### Think Deeper\n\n**Q1.** You are consulting for a startup building a collaborative document editor (like Google Docs). Users can simultaneously edit the same document from different locations. Sketch out the consistency requirements for this use case using the PACELC framework. Which consistency model(s) apply, and what does the \"eventual\" part of eventual consistency mean in this context?\n\n**Discussion:** A collaborative document editor is a fascinating case because it needs different consistency models for different aspects of the application.\n\n**For cursor positions and presence indicators** (showing where other users are typing): Eventual consistency is appropriate. If your cursor briefly appears one line off on your colleague's screen, the impact is negligible. Low latency is critical — seeing your own cursor move must feel instant. The ELC choice is firmly L (latency): respond fast, accept brief inconsistency.\n\n**For the document content itself** : Neither strong consistency nor simple eventual consistency is quite right. If two users simultaneously type at the same position, you cannot just take one and discard the other — you would lose data. But requiring linearizability would mean the document becomes unresponsive during any network hiccup. The real answer is a specialized consistency model: **Operational Transformation (OT)** or **Conflict-free Replicated Data Types (CRDTs)** , which allow both users to type simultaneously and automatically merge the results in a deterministic way. This is neither \"consistent\" nor \"eventually consistent\" in the CAP sense — it is a higher-level application-specific consistency mechanism built on top of eventual consistency.\n\n**For saved document state** (explicit saves or auto-saves): Read-your-writes consistency at minimum. After you save, you should see your saved version if you reopen the document. Other users can see a slightly older version temporarily, but you should always see your own recent save.\n\n**During a partition (the P part of PACELC)** : A collaborative editor typically chooses Availability — users can keep editing even if the server connection is lost (offline editing), with conflicts resolved when the connection returns. This is an explicit AP choice: never block the user's ability to edit, resolve conflicts asynchronously.\n\nThe \"eventual\" part of eventual consistency here means: both users' edits will eventually be reflected in the merged document state, possibly in a transformed form that preserves both users' intent. \"Eventually\" is typically milliseconds to seconds, not hours — but the system makes no strict timing guarantee.\n\n**Q2.** The CAP theorem proved that you cannot have all three of Consistency, Availability, and Partition Tolerance. But real systems choose their tradeoffs more finely than \"pick two.\" What does this suggest about the limitations of the CAP theorem as a design tool?\n\n**Discussion:** The CAP theorem is a binary result: during a partition, you either have consistency or availability, period. But real systems have many design dimensions that CAP collapses:\n\n**Granularity:** A system might be linearizable for some operations (account balance reads) and eventually consistent for others (like counts) — within the same service. CAP doesn't model per-operation consistency choices.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1137,
+      "out_sha": "e4629b73295f",
       "note": ""
     },
     {
@@ -699,11 +687,11 @@
       "en_title": "Chapter 4: Consistency, Availability, and the CAP Theorem",
       "order": 48,
       "src_chars": 2731,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3e6c051735ea",
       "src": "**Degree of availability:** CAP's \"availability\" means every non-failed node responds. But in practice, degraded availability (responding slowly, or responding to some operations but not others) is often the right engineering choice during a partition. CAP doesn't have a \"partially available\" option.\n\n**Partition severity:** Not all partitions are equal. A partition that lasts 50ms is qualitatively different from one that lasts 5 hours. CAP treats them identically.\n\n**The \"C\" choice is also a spectrum:** CAP's consistency is all-or-nothing (linearizable or not). But the consistency spectrum (causal, monotonic read, read-your-writes, eventual) has many useful points between the extremes.\n\nThis is why PACELC is more useful as a day-to-day design tool — it captures the continuous latency-consistency tradeoff that exists even without partitions, and it is more amenable to the \"this operation needs strong consistency, that one doesn't\" thinking that real systems require. CAP is a beautiful theoretical result that proves something important is impossible. PACELC is a practical design framework for navigating around that impossibility.\n\n\n### Chapter Summary\n\nThe CAP theorem establishes a fundamental limit: in a distributed system, you cannot simultaneously guarantee Consistency (linearizability), Availability (every node responds), and Partition Tolerance (the system works despite network failures). Because real networks partition, the practical choice is: during a partition, sacrifice consistency or availability.\n\nPACELC extends CAP with the insight that matters more day-to-day: even when there is no partition (the \"else\" case), distributed systems must trade off between Latency and Consistency. Every synchronous replication step adds latency; skipping it risks inconsistency.\n\nThe **consistency spectrum** (linearizable → sequential → causal → read-your-writes → eventual) gives you a toolkit: different components of the same system can use different consistency models based on the user-visible consequences of inconsistency. For SocialSnap, we mapped each component to its appropriate level — a direct example of matching engineering rigor to user impact.\n\nThe **Tradeoff Matrix** gained its most important rows in this chapter: the consistency vs. latency vs. availability tradeoffs are the axis along which the rest of the book's architectural decisions will be plotted.\n\nIn Chapter 5, we turn from theory to implementation: the relational database. The relational model has dominated data storage for 50 years, and for good reason. Understanding why — and understanding its limits — is the foundation for every database decision you will ever make. SocialSnap is about to get its first database.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 915,
+      "out_sha": "3e4cf4572213",
       "note": ""
     },
     {
@@ -5231,5 +5219,6 @@
       "note": ""
     }
   ],
-  "retry_queue": []
+  "retry_queue": [],
+  "total": 425
 }
