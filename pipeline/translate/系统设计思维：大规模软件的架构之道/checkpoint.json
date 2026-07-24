@@ -2247,11 +2247,11 @@
       "en_title": "Chapter 12: Database Scaling — Replicas, Shards, and the Pain of Distributed Transactions",
       "order": 178,
       "src_chars": 1186,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0b66b5a89220",
       "src": "There are two places the username lives: the users table and every post row.\n\n**Answer:** Pseudocode:\n    \n    \n    1. UPDATE users SET username = 'new_name' WHERE user_id = 42;  // On user's shard\n    2. For each shard (0..7):\n         UPDATE posts SET author_username = 'new_name' WHERE user_id = 42;\n    3. Invalidate Redis cache entries for user 42 (see Chapter 7).\n    \n\nFailure scenarios:\n\nFailure 1: The application crashes after Step 1 but before completing all shards in Step 2. The `users` table shows the new username, but some shards' `posts` table still shows the old username. Users now see the old username on old posts and the new username on new posts — inconsistency. This is a partial update failure.\n\nFailure 2: Step 2 is slow (user 42 has millions of posts). During the window when Step 2 is running, some shards are updated and some are not. Queries that span shards return posts with mixed username values. Readers see an inconsistent snapshot of the system.\n\nBoth failures illustrate why denormalization is a maintenance burden: what was a single atomic operation with a normalized schema becomes a multi-step, cross-shard process with windows of inconsistency.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 570,
+      "out_sha": "a61841715631",
       "note": ""
     },
     {
@@ -2259,11 +2259,11 @@
       "en_title": "Chapter 12: Database Scaling — Replicas, Shards, and the Pain of Distributed Transactions",
       "order": 179,
       "src_chars": 2886,
-      "status": "pending",
+      "status": "done",
       "src_sha": "edaef9bdb8ee",
       "src": "#### Think Deeper\n\n**Q1.** A colleague argues: \"With sharding, we should always shard by the primary key. It gives the most even distribution and eliminates hot shards.\" Evaluate this argument. When is it correct, and when does it lead to problems?\n\n**Discussion:** The argument is partially correct but ignores access patterns. Sharding by primary key with a good hash function does produce an even distribution. But the purpose of sharding is not just to distribute data evenly — it is to ensure that the most common queries touch as few shards as possible.\n\nConsider a social network where the most common query is \"fetch all posts by this user.\" If posts are sharded by post_id (the primary key), a single user's posts are scattered across all shards. Every time a user's feed is fetched, the query must fan out to all shards. If instead posts are sharded by user_id, all posts by a given user are on one shard — the most common query is a single-shard operation.\n\nThe colleague's advice optimizes for data distribution at the expense of query locality. The correct principle is: shard by the attribute that makes the most common queries single-shard. For social data, this is usually the user who owns the data.\n\n**Q2.** NewSQL databases like CockroachDB and Google Spanner promise SQL semantics with horizontal scalability. If they solve the distributed transaction problem, why doesn't everyone just use NewSQL?\n\n**Discussion:** NewSQL solves the distributed transaction problem, but it doesn't eliminate the laws of physics. Distributed coordination takes time — clock synchronization, consensus protocols (like Paxos or Raft), network round trips across nodes. A simple read or write that takes 1 millisecond on a single-node database may take 5–20 milliseconds on a NewSQL system under the same load.\n\nFor many workloads, this latency is acceptable and the operational simplicity of not having to manage sharding manually is well worth it. But for latency-sensitive operations (real-time games, high-frequency trading, interactive UI actions where every millisecond matters), the overhead of distributed coordination may be unacceptable.\n\nAdditionally, NewSQL systems are more complex to operate than traditional relational databases. They require specialized knowledge to tune, debug, and administer. The operational complexity trades some of the management burden of manual sharding for a different kind of complexity.\n\nThe answer is not \"everyone should use NewSQL\" or \"nobody should use NewSQL\" — it is that every choice involves tradeoffs. NewSQL is appropriate when you need both ACID transactions and horizontal scale, and when you can tolerate its latency and operational complexity. For workloads that are mostly read-heavy (use replicas), or whose writes are naturally shardable with minimal cross-shard transactions, traditional sharding may be simpler and faster.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 942,
+      "out_sha": "b440b89c67de",
       "note": ""
     },
     {
@@ -2271,11 +2271,11 @@
       "en_title": "Chapter 12: Database Scaling — Replicas, Shards, and the Pain of Distributed Transactions",
       "order": 180,
       "src_chars": 1983,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8aab714ec954",
       "src": "### Chapter Summary\n\nThis chapter confronted the data layer bottleneck that Chapter 11's compute scaling revealed. When application servers scale horizontally, they amplify the load on the database — the one component that could not be trivially replicated because it holds the system's unique state.\n\nRead replicas address the read-heavy majority of database workloads by routing reads to copies of the primary. The cost is replication lag — replicas may serve slightly stale data, requiring careful routing decisions for operations that must read fresh data.\n\nSharding addresses both write bottlenecks and storage limits by partitioning data across multiple independent database instances. Hash-based sharding distributes data evenly; range-based sharding enables range queries. The cost is cross-shard queries (which require fan-out and merging), resharding complexity (changing shard count is expensive), and the loss of cross-table joins.\n\nDistributed transactions — operations that must be atomic across multiple shards — are the deepest pain of sharded systems. Two-phase commit provides a protocol but introduces blocking and latency. NewSQL databases internalize this complexity but at the cost of increased latency and operational complexity. The best strategy is to design your data model so that co-located data eliminates most cross-shard transactions.\n\nDenormalization is the companion to sharding: by duplicating data, you eliminate joins at the cost of update complexity and windows of inconsistency.\n\nIn Chapter 13, we will see how microservices take the \"database per service\" principle to its logical extreme — instead of sharding one database across many machines, you give each service its own database entirely. This solves some of Chapter 12's cross-shard query problems while creating new ones. And you will notice a pattern: nearly every solution in distributed systems solves one problem while introducing a new version of the same fundamental tension.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 575,
+      "out_sha": "5d8447915fd0",
       "note": ""
     },
     {
@@ -2283,11 +2283,11 @@
       "en_title": "Chapter 13: Microservices — Independence and Its Hidden Costs",
       "order": 181,
       "src_chars": 1378,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e68bdb4a3b76",
       "src": "In Chapter 12, SocialSnap sharded its database to handle the volume of writes. The cross-shard query problem emerged immediately: querying data that spans multiple shards requires fan-out logic in the application code, and cross-shard joins are effectively impossible within a single SQL query. The team found themselves writing application code to do what the database used to do automatically.\n\nBut consider: what if the problem is not the sharding strategy but the sharing itself? What if the very act of multiple, unrelated features competing for the same database — the same tables, the same indexes, the same connection pool, the same CPU — is the root cause of fragility?\n\nThis is the intuition behind microservices. Instead of one large application with one large database, you have many small services, each with its own data store, each deployed independently, each scaled according to its own demand. A spike in photo uploads doesn't affect the messaging service. A database schema change for the payments feature doesn't require a company-wide deployment freeze. The team working on user profiles doesn't need to coordinate with the team working on search.\n\nThat is the promise. The reality is more complicated — and the complications are worth understanding precisely, because they determine whether microservices will save your organization or slowly strangle it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 377,
+      "out_sha": "1a0d5f20e66e",
       "note": ""
     },
     {
@@ -2295,11 +2295,11 @@
       "en_title": "Chapter 13: Microservices — Independence and Its Hidden Costs",
       "order": 182,
       "src_chars": 3404,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6af10273fcf7",
       "src": "### 13.1 The Monolith and Its Discontents\n\nBefore understanding microservices, understand what they are replacing.\n\nSocialSnap started as a monolith: one codebase, one process, one database. This is not a slur — monoliths are the natural starting point for almost every successful system. A monolith is easy to develop (one repository, one deployment, one development environment), easy to test (you can run the whole system locally), and easy to reason about (function calls cross module boundaries instantly; there is no network; failures are local).\n\nOver time, the monolith grows. New features are added. The codebase expands from 10,000 lines to 100,000 to one million. New engineers join; they add code without fully understanding the existing structure. Module boundaries that were clearly defined at the start become blurry. A change to the payment module requires understanding its interactions with the user module, the notification module, and the analytics module. The codebase has become a **big ball of mud** : no clear internal structure, everything loosely coupled in theory and tightly coupled in practice.\n\nThe symptoms of a problematic monolith are specific:\n\n* **Slow builds and deploys:** A one-line change anywhere requires building and testing and deploying the entire application. What was a five-minute deploy is now forty-five minutes.\n* **Organizational friction:** Fifty engineers working on one codebase constantly merge conflicts. The \"deploy train\" (coordinating releases across teams) becomes a weekly ceremony that slows everyone down.\n* **Scaling inflexibility:** The notification feature uses 10% of CPU; the image processing feature uses 70%. You cannot scale them independently — you scale the whole monolith, paying for extra notification capacity you don't need.\n* **Technology lock-in:** The whole monolith must use the same language, the same framework, the same database. If image processing would benefit from a GPU-optimized runtime, too bad.\n\nNot every monolith reaches this state — small teams with disciplined modular design can maintain healthy monoliths indefinitely. But past a certain scale of codebase and team, these friction points become real.\n\nMicroservices are one answer to these friction points. But they introduce new ones.\n\n\n### 13.2 Defining the Microservice\n\n\n#### Definition: Microservice\n\nA **microservice** is a small, independently deployable service that implements a bounded piece of business functionality. It owns its own data store, exposes a well-defined API (typically HTTP/REST or gRPC), runs as its own process (or set of processes), and is deployed, scaled, and monitored independently of other services.\n\nIn plain language: a microservice is a small program that does one thing, has its own database, and talks to the outside world only through a defined interface. If it were a person, it would be a specialist — not a generalist who knows everything, but an expert in one domain who gives answers via a well-defined protocol.\n\nThe \"micro\" in microservices is about scope, not size. A microservice might be thousands of lines of code. What makes it \"micro\" is that it encapsulates a coherent, bounded business concept: the User Service knows everything about users; the Payment Service knows everything about payments; the Notification Service knows everything about notifications. Neither reaches into the other's database.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1099,
+      "out_sha": "fb58b9826a90",
       "note": ""
     },
     {
@@ -2307,11 +2307,11 @@
       "en_title": "Chapter 13: Microservices — Independence and Its Hidden Costs",
       "order": 183,
       "src_chars": 2739,
-      "status": "pending",
+      "status": "done",
       "src_sha": "512c43ecb203",
       "src": "#### The \"Database Per Service\" Rule\n\nThis is the most important — and most constraining — rule of microservices architecture: **each service owns its own data and no other service may read from or write to that data store directly.**\n\nIf the Payment Service needs to know a user's email address (to send a payment confirmation), it does not query the User Service's database. It calls the User Service's API, which returns the email address. The User Service is the single source of truth for user data; no service bypasses it.\n\nWhy this rule? Because the moment Service B starts reading directly from Service A's database, Service A can no longer change its schema without potentially breaking Service B. The database becomes a shared dependency — a coupling point that undermines the independence microservices were meant to provide. You have a microservices architecture in deployment but a monolith in data access. This antipattern has a name: the **distributed monolith** (discussed below).\n\n\n### 13.3 Finding Service Boundaries — The Detective's Discipline\n\nThe most critical and most underappreciated skill in microservices architecture is identifying where the boundaries between services should be. A bad boundary is worse than no boundary at all: you end up with the operational complexity of microservices without the independence.\n\n\n#### Conway's Law\n\nIn 1967, Mel Conway observed: \"Any organization that designs a system will produce a design whose structure is a mirror image of the organization's communication structure.\" This is **Conway's Law** , and it is one of the most empirically reliable observations in software engineering.\n\nIf your company has a user team, a payments team, and a notifications team — and these teams communicate with each other primarily through formal interfaces (PRDs, APIs, tickets) rather than daily conversation — your system will naturally decompose into User, Payment, and Notification services. The communication patterns of your organization will be reflected in the communication patterns of your software.\n\nConway's Law is descriptive, not prescriptive. It explains why forcing a technology-driven decomposition that doesn't match the organization often fails. If the \"users\" feature and the \"payments\" feature are owned by the same team of five engineers, forcing them into separate microservices adds overhead without providing the organizational independence that was supposed to justify it.\n\nThe corollary to Conway's Law, sometimes called the \"Inverse Conway Maneuver,\" is to design your organization to match the architecture you want. If you want a clean separation between User and Payment services, form separate teams with separate ownership. The architecture will follow.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 850,
+      "out_sha": "e4caa308833e",
       "note": ""
     },
     {
@@ -2319,11 +2319,11 @@
       "en_title": "Chapter 13: Microservices — Independence and Its Hidden Costs",
       "order": 184,
       "src_chars": 3054,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f8c953275831",
       "src": "#### Behavioral Clues for Service Boundaries\n\nBeyond organizational structure, there are behavioral clues that suggest natural service boundaries. Think of this as detective work: the right boundaries are already present in the system's behavior; you are finding them, not inventing them.\n\n**Clue 1: Independent scalability needs.** If one feature's traffic grows at 10x the rate of everything else, it is a candidate for its own service. SocialSnap's image upload feature requires far more compute (thumbnail generation, object storage uploads) than the messaging feature. Separating them allows image upload workers to scale independently of the messaging workers.\n\n**Clue 2: Independent failure tolerance.** Some features are core — if the User Service fails, nobody can log in, and the whole application is down. Other features are supplementary — if the \"Trending Topics\" feature fails, the core experience still works. Isolating supplementary features into their own services allows the core to remain available when supplementary services fail. This is the bulkhead pattern (discussed in Chapter 16).\n\n**Clue 3: Independent deployment cadence.** The Payment Service goes through a lengthy compliance review before every deploy. The Notification Service deploys twelve times a day. Tying these together in a monolith means the Notification Service is held hostage to the Payment Service's compliance cycle. Separating them lets each deploy at its natural cadence.\n\n**Clue 4: Data ownership boundaries.** Which team is the authoritative source of truth for which data? User profile data is owned by the user team. Payment records are owned by the payments team. No other team should write directly to another team's data. These ownership lines are natural service boundaries.\n\n**Clue 5: Transactional coherence.** Data that must be atomically consistent together belongs together. If updating a \"post\" always requires atomically updating a \"post_tags\" table, these belong in the same service. If splitting them apart requires a distributed transaction (as we saw in Chapter 12), the boundary is probably wrong.\n\n\n#### Common Misconception\n\nA common mistake is to decompose by technical layer rather than business domain: a \"database service,\" a \"cache service,\" a \"business logic service.\" This is not microservices — this is distributing the layers of a monolith across network boundaries. Each \"request\" now requires a round-trip through all three services, and they are so tightly coupled that they must deploy together anyway. The operational complexity of microservices is gained with none of the independence.\n\nThe correct decomposition is **vertical slicing** by business domain: each service owns its domain from API to data storage. The User Service handles user logic, user storage, and user APIs. The Payment Service handles payment logic, payment storage, and payment APIs.\n\n\n### 13.4 Communication Between Services\n\nOnce services are separated, they must communicate. There are two fundamental approaches: synchronous and asynchronous.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 946,
+      "out_sha": "14096613fbdf",
       "note": ""
     },
     {
@@ -2331,11 +2331,11 @@
       "en_title": "Chapter 13: Microservices — Independence and Its Hidden Costs",
       "order": 185,
       "src_chars": 2498,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a35227270695",
       "src": "#### Synchronous Communication — HTTP and gRPC\n\nIn **synchronous communication** , Service A makes a request to Service B and waits for Service B to respond before continuing. This mirrors the familiar function call model of a monolith, just over a network.\n\nThe two dominant protocols are HTTP/REST (Service A sends an HTTP request to Service B's URL) and gRPC (Service A calls a function generated from a shared contract definition, which serializes arguments using Protocol Buffers and sends them over HTTP/2).\n\ngRPC is typically faster (Protocol Buffers are more compact than JSON), provides strong contracts (the `.proto` file defines the interface, and generated code for both client and server ensures agreement), and supports bidirectional streaming. HTTP/REST is simpler and more universally supported (any HTTP client can call any REST API without special tooling).\n\nThe critical property of synchronous communication: **Service A's availability depends on Service B's availability.** If Service B is down, Service A's request fails. If Service B is slow, Service A's request is slow. This creates **temporal coupling** between services.\n\nImagine a chain: Service A calls Service B, which calls Service C, which calls Service D. If the probability that each service is available is 99% independently, the probability that a chain of four services is all available simultaneously is `0.99 × 0.99 × 0.99 × 0.99 ≈ 96%`. This is the **cascading failure** problem: the more services in a synchronous chain, the lower the overall availability.\n\n\n#### Asynchronous Communication — Message Queues\n\nIn **asynchronous communication** , Service A sends a message to a queue (recall Chapter 8's message queues). Service B reads from the queue and processes the message independently. Service A does not wait for Service B to finish.\n\nThe critical property of asynchronous communication: **Service A's availability does not depend on Service B's availability.** If Service B is down, messages accumulate in the queue and are processed when Service B recovers. Service A can continue operating.\n\nThe tradeoff: asynchronous communication means Service A cannot immediately receive a result from Service B. It is fire-and-forget. This is fine for operations where the result is not immediately needed (sending a notification, generating a report, processing a payment in the background) but unsuitable for operations that require an immediate response (looking up a user's profile to display on screen).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 889,
+      "out_sha": "b15f56088347",
       "note": ""
     },
     {
