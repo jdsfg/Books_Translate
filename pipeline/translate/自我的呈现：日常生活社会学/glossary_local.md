@@ -17,7 +17,6 @@ back stage | 后台 |
 impression management | 印象管理 |
 the team | 表演团队 |
 face-work | 面子工夫 |
-face | 面子 |
 breaching experiments | 破坏性实验 |
 spoiled identity | 被损毁的身份 |
 stigma | 污名 |
