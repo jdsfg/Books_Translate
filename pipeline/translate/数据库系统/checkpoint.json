@@ -1631,11 +1631,11 @@
       "en_title": "Chapter 8: Advanced SQL — Subqueries, Views, and Window Functions",
       "order": 127,
       "src_chars": 3237,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9ea50d8f289a",
       "src": "### 8.10 Thread B Check-In\n\nRecall the stubborn 20-minute query:\n    \n    \n    SELECT s.name, c.title, i.name\n    FROM Students s JOIN Enrollments e ON s.id = e.student_id\n    JOIN Courses c ON e.course_id = c.id\n    JOIN Instructors i ON c.instructor_id = i.id\n    WHERE s.year = 4;\n    \n\nWith the tools of this chapter, we can _rephrase_ the question but not yet fix it. For example:\n    \n    \n    SELECT s.name, c.title, i.name\n    FROM Students s\n    WHERE s.year = 4\n      AND EXISTS (SELECT 1 FROM Enrollments e\n                  JOIN Courses c ON e.course_id = c.id\n                  JOIN Instructors i ON c.instructor_id = i.id\n                  WHERE e.student_id = s.id);\n    \n\nThis existence form returns fewer columns (losing `title` and `name`, which we actually want), but it shows how `EXISTS` trades information for speed when we only care \"is there?\" The real fix still waits for storage (Chapter 9), indexes (Chapter 10), and join algorithms (Chapter 11). Advanced SQL alone does not make queries fast. It makes them _expressible_. Speed is an engineering problem, not a syntax problem.\n\n\n### Tradeoffs Summary\n\n* **Correlated subqueries trade plan efficiency for expressive clarity.** A correlated `(SELECT MAX(gpa) ... WHERE dept_id = s.dept_id)` reads naturally but, if the optimizer cannot decorrelate it, runs once per outer row. When you can write it as a join or a window function, do so; when you can't, accept the nested plan.\n* **`NOT EXISTS` vs `NOT IN` trades surprise-freeness for terseness.** `NOT IN` silently returns zero rows when the subquery contains any NULL; `NOT EXISTS` handles NULLs correctly. They are not interchangeable — prefer `NOT EXISTS` whenever the inner column is nullable.\n* **Views trade query abstraction for performance opacity.** A non-materialized view is a macro the optimizer expands and pushes predicates into — cheap and transparent. A materialized view trades storage and staleness for precomputed results; pick materialization only when the freshness budget and refresh cost both fit the workload.\n* **CTEs trade readability for (sometimes) an optimization fence.** Modern PostgreSQL inlines non-recursive CTEs; older engines and some dialects treat them as an optimization barrier that forces materialization. A clean query with a 10× slowdown is still a slow query.\n* **Window functions trade one mandatory sort for row-level context alongside aggregates.** `MAX(gpa) OVER (PARTITION BY dept_id)` gives every row its department's top GPA without collapsing rows — paid for by at least one sort or one hash per partition, unless a covering index pre-sorts the data.\n* **Recursive CTEs trade memory footprint for transitive-closure expressiveness.** You can compute a 30-level prerequisite tree in one query, but the engine must keep growing the working set every iteration. For deep hierarchies, schema-side help (closure tables, materialized paths) beats unbounded recursion.\n* **`EXPLAIN` trades \"SQL as pure declaration\" for mechanical honesty.** Reading a plan means you are no longer thinking only in terms of what the query asks — you are thinking about what the engine does. That is the cost of performance work, and there is no way around it.\n\n\n### 8.11 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1539,
+      "out_sha": "70f9f2d46c31",
       "note": ""
     },
     {
@@ -1643,11 +1643,11 @@
       "en_title": "Chapter 8: Advanced SQL — Subqueries, Views, and Window Functions",
       "order": 128,
       "src_chars": 3191,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1ae8edba5799",
       "src": "#### Concept Check\n\n  1. Give a single sentence that distinguishes a scalar subquery from a table subquery. Where in a SELECT statement can each appear?\n  2. Explain in your own words why `WHERE x NOT IN (subquery)` can silently return zero rows when the subquery contains NULLs.\n  3. Why must a derived table in FROM have an alias, but a subquery in IN does not?\n  4. State the difference between `ROW_NUMBER()`, `RANK()`, and `DENSE_RANK()` using a small example: six students with GPAs 3.9, 3.9, 3.8, 3.7, 3.7, 3.5.\n  5. Describe one situation where a view improves maintainability and one situation where a view degrades performance.\n  6. What is the default frame for a windowed aggregate when ORDER BY is present but ROWS BETWEEN is omitted?\n\n\n#### Application Problems\n\n  7. Rewrite the following correlated subquery as a join:\n         \n         SELECT s.id, s.name\n         FROM Students s\n         WHERE s.gpa = (SELECT MAX(gpa) FROM Students WHERE dept_id = s.dept_id);\n         \n\nState whether the rewrite is equivalent in all cases, and what happens if two students in a department tie for the top GPA.\n\n  8. Write two SQL statements that both answer \"list every course that currently has zero enrollments,\" one using `NOT EXISTS` and one using `LEFT JOIN ... WHERE ... IS NULL`. Which is safer when `Enrollments.course_id` is nullable, and why?\n\nHint\n\nThink about what each form actually checks. `NOT EXISTS` tests whether any matching row exists for this course; `LEFT JOIN ... IS NULL` tests that the joined right side produced no match. Now ask: what does each form do when `Enrollments.course_id` itself is NULL for some row?\n\n  9. Write a single SQL query using a window function that, for each student, shows their current GPA alongside their best GPA ever recorded (assume a `gpa_history(student_id, term, gpa)` table). Use `MAX(gpa) OVER (PARTITION BY student_id)`.\n\n  10. A view `recent_enrollments` is defined as `SELECT * FROM Enrollments WHERE term >= '2025-Fall'`. A query `SELECT * FROM recent_enrollments WHERE student_id = 42` runs. Does the engine scan all of Enrollments or only rows from 2025-Fall onward? Explain the predicate pushdown.\n\n  11. A `CREATE MATERIALIZED VIEW` takes eight hours to refresh over a 200 GB transactional database. Propose two strategies to keep the view reasonably fresh without an eight-hour daily outage.\n\nHint\n\nWhat part of the 200 GB actually changes between refreshes? If only a small fraction does, the question becomes how to avoid recomputing the rest. Consider partitioning by time and swapping partitions, or maintaining the view incrementally as writes arrive.\n\n  12. Using the schema `Orders(order_id, customer_id, order_date, amount)`, write a window query that returns, for each order, the running total of that customer's spending across orders, ordered by date. Then modify it to a **7-day sliding window sum** instead.\n\nHint\n\nBoth forms share the same `PARTITION BY customer_id ORDER BY order_date`. The difference is in the frame clause: the default frame for a running total is `ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`. For the 7-day window, you need a RANGE-based frame measured in time, not in rows.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1645,
+      "out_sha": "76b462e321eb",
       "note": ""
     },
     {
@@ -1655,11 +1655,11 @@
       "en_title": "Chapter 8: Advanced SQL — Subqueries, Views, and Window Functions",
       "order": 129,
       "src_chars": 2542,
-      "status": "pending",
+      "status": "done",
       "src_sha": "38adc72da4f0",
       "src": "#### Think Deeper\n\n  13. The optimizer will usually decorrelate a correlated subquery. Construct a correlated subquery that _cannot_ be decorrelated automatically — one where the outer row and inner aggregation genuinely require nested execution. What structural feature blocks decorrelation?\n\nHint\n\nDecorrelation replaces \"run once per outer row\" with a group-by-then-join. What kind of inner expression defeats that rewrite? Consider non-equi correlations (inequalities on the outer row) or aggregations whose grouping key depends on an arbitrary expression of the outer row.\n\n  14. Consider two queries that return the same rows:\n         \n         SELECT s.* FROM Students s WHERE s.id IN (SELECT student_id FROM Enrollments);\n         \n\nvs\n         \n         SELECT DISTINCT s.* FROM Students s JOIN Enrollments e ON e.student_id = s.id;\n         \n\nDescribe a situation where they differ in cost by more than 10×, and explain which operator in the plan causes the gap.\n\n  15. A developer argues: \"We should replace all aggregate queries with window functions because they return row-level information too.\" Name two costs of that policy — one in execution time, one in readability — that should make you push back.\n\n  16. A materialized view backs a live dashboard. The underlying tables change at 100 writes/second. You have three options: (a) refresh the view every 60 seconds on a timer, (b) refresh incrementally on each write, (c) keep the view as a regular non-materialized view. Sketch the cost/freshness tradeoff for each and name the scenario that would make you pick each one.\n\n  17. Recursive CTEs can compute transitive closures, but deeply recursive chains can blow up memory. Propose a design choice (schema or query-shape) that lets a very deep recursion — say a course-prerequisite tree 30 levels deep — still terminate quickly. Hint: think about what state the engine must keep between iterations.\n\nHint\n\nA recursive CTE re-derives the closure every time the query runs. What if the closure were stored instead of derived? Look up \"closure table\" or \"materialized path\" patterns, and compare the write-side cost (every edge change updates many rows) against the read-side win (one indexed lookup).\n\n  18. Window functions require at least one sort. Indexes can sometimes eliminate that sort. Sketch the condition under which a B-tree index on `(dept_id, gpa DESC)` would eliminate the sort for a query that partitions by `dept_id` and orders by `gpa DESC`. We will see the mechanism in Chapter 10; try to reason it now.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 969,
+      "out_sha": "5eaff199eedf",
       "note": ""
     },
     {
@@ -1667,11 +1667,11 @@
       "en_title": "Chapter 8: Advanced SQL — Subqueries, Views, and Window Functions",
       "order": 130,
       "src_chars": 1039,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ea6fa48bcf56",
       "src": "### Chapter Summary\n\nThis chapter added the three instruments that make SQL analytically complete. **Subqueries** compose queries as values, tables, or rows; correlated subqueries reference the outer row, and modern optimizers usually decorrelate them. **EXISTS** , **IN** , and **JOIN** look interchangeable but diverge on NULL semantics and on stopping behavior — pick by intent, verify by plan. **CTEs** package named subqueries and enable recursion; whether they impose an optimization fence depends on your engine's version. **Views** abstract and gate access, and materialized views trade staleness for read speed. **Window functions** compute across related rows without collapsing, and cost at least one sort per unique OVER clause.\n\nEvery construct here is a logical statement about what to compute. How fast the engine computes it is the subject of Chapters 9–12: storage, indexes, join algorithms, and the optimizer. Thread B's 20-minute join will not get faster through syntax alone. The next chapter opens the engine box.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 351,
+      "out_sha": "a927acb46a3b",
       "note": ""
     },
     {
