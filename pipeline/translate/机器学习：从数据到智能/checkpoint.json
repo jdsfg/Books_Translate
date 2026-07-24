@@ -2459,11 +2459,11 @@
       "en_title": "Chapter 23: Reinforcement Learning — Learning from Rewards",
       "order": 195,
       "src_chars": 3359,
-      "status": "pending",
+      "status": "done",
       "src_sha": "939cc3bd6465",
       "src": "#### Exploration vs. Exploitation\n\nA pure exploitation agent always picks arg⁡max⁡aQ(s,a)\\arg\\max_a Q(s, a)argmaxa​Q(s,a). If initial Q-values are inaccurate, the agent gets stuck exploiting suboptimal actions and never discovers better ones.\n\n**ε \\varepsilonε-greedy policy:**\n\n* With probability ε\\varepsilonε: choose a random action (**explore**)\n* With probability 1−ε1-\\varepsilon1−ε: choose arg⁡max⁡aQ(s,a)\\arg\\max_a Q(s, a)argmaxa​Q(s,a) (**exploit**)\n\n**Annealing schedule:** Start with ε=1.0\\varepsilon = 1.0ε=1.0 (pure exploration), decay to ε=0.01\\varepsilon = 0.01ε=0.01 over training. Early on, the Q-values are unreliable — explore widely. Later, when Q-values are accurate — exploit.\n\n\n#### Why Q-Learning Is Off-Policy\n\nQ-learning is **off-policy** : the update target uses max⁡a′Q(s′,a′)\\max_{a'} Q(s', a')maxa′​Q(s′,a′), which corresponds to the greedy policy — not the ε\\varepsilonε-greedy policy being executed. This means Q-learning learns the optimal policy even while behaving non-optimally (using ε\\varepsilonε-greedy). This is a key advantage: data from any behavior policy (even random) can improve the optimal Q-function estimate.\n\n\n### 23.4 Deep Q-Networks (DQN)\n\nTabular Q-learning breaks down when the state space is large or continuous. Atari games, for instance, have a state space of 210×160×3210 \\times 160 \\times 3210×160×3 pixel images — far too large for a table.\n\n**Idea:** Replace the Q-table with a neural network Q(s,a;θ)Q(s, a; \\theta)Q(s,a;θ) that approximates the Q-function for any state.\n\n\n#### DQN Algorithm (Mnih et al., 2015)\n\nDQN extends Q-learning with two critical innovations:\n\n**1\\. Experience Replay**\n\nInstead of updating the network on each transition immediately, store transitions (s,a,r,s′)(s, a, r, s')(s,a,r,s′) in a **replay buffer**. Sample random mini-batches to train.\n\nWhy this helps: Sequential transitions are highly correlated. Training on correlated data breaks the i.i.d. assumption of SGD, destabilizing learning. Random mini-batches from the buffer break the correlation.\n\n**2\\. Target Network**\n\nMaintain two networks: the **online network** Q(s,a;θ)Q(s, a; \\theta)Q(s,a;θ) (updated every step) and a **target network** Q(s,a;θ−)Q(s, a; \\theta^-)Q(s,a;θ−) (updated periodically by copying θ−←θ\\theta^- \\leftarrow \\thetaθ−←θ every CCC steps).\n\nCompute the TD target using the target network:\n\ny=r+γmax⁡a′Q(s′,a′;θ−)y = r + \\gamma \\max_{a'} Q(s', a'; \\theta^-)y=r+γa′max​Q(s′,a′;θ−)\n\nWhy this helps: Without a target network, we're chasing a moving target — the update to θ\\thetaθ changes both the current estimate and the target simultaneously, causing oscillation. Freezing the target network for CCC steps stabilizes training.\n\n**DQN Update:**\n\nL(θ)=E(s,a,r,s′)∼buffer[(y−Q(s,a;θ))2]L(\\theta) = \\mathbb{E}_{(s,a,r,s') \\sim \\text{buffer}}\\left[\\left(y - Q(s, a; \\theta)\\right)^2\\right]L(θ)=E(s,a,r,s′)∼buffer​[(y−Q(s,a;θ))2]\n\nDQN achieved human-level performance on 49 Atari games using raw pixel input — a landmark result demonstrating that deep learning could solve RL problems at scale.\n\n\n### 23.5 Policy Gradient Methods\n\nQ-learning learns a value function and derives a policy implicitly (π(s)=arg⁡max⁡aQ(s,a)\\pi(s) = \\arg\\max_a Q(s,a)π(s)=argmaxa​Q(s,a)). An alternative: **directly parameterize the policy** πθ(a∣s)\\pi_\\theta(a|s)πθ​(a∣s) and optimize it with gradient ascent.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1406,
+      "out_sha": "4c4fa21ab0ba",
       "note": ""
     },
     {
@@ -2471,11 +2471,11 @@
       "en_title": "Chapter 23: Reinforcement Learning — Learning from Rewards",
       "order": 196,
       "src_chars": 1882,
-      "status": "pending",
+      "status": "done",
       "src_sha": "475f4865af2a",
       "src": "#### Definition: Policy Gradient (REINFORCE)\n\nFor a stochastic policy πθ(a∣s)\\pi_\\theta(a|s)πθ​(a∣s), the objective is:\n\nJ(θ)=Eτ∼πθ[G(τ)]J(\\theta) = \\mathbb{E}_{\\tau \\sim \\pi_\\theta}\\left[G(\\tau)\\right]J(θ)=Eτ∼πθ​​[G(τ)]\n\nwhere τ=(s0,a0,r0,s1,a1,r1,…)\\tau = (s_0, a_0, r_0, s_1, a_1, r_1, \\ldots)τ=(s0​,a0​,r0​,s1​,a1​,r1​,…) is a trajectory and G(τ)G(\\tau)G(τ) is the total return.\n\nThe **policy gradient theorem** gives us:\n\n∇θJ(θ)=Eτ∼πθ[∑t=0T∇θlog⁡πθ(at∣st)⋅Gt]\\nabla_\\theta J(\\theta) = \\mathbb{E}_{\\tau \\sim \\pi_\\theta}\\left[\\sum_{t=0}^T \\nabla_\\theta \\log \\pi_\\theta(a_t|s_t) \\cdot G_t\\right]∇θ​J(θ)=Eτ∼πθ​​[t=0∑T​∇θ​logπθ​(at​∣st​)⋅Gt​]\n\n**REINFORCE algorithm:**\n\n  1. Sample a trajectory τ\\tauτ by running the current policy\n  2. Compute returns GtG_tGt​ for each timestep\n  3. Update: θ←θ+α∑t∇θlog⁡πθ(at∣st)⋅Gt\\theta \\leftarrow \\theta + \\alpha \\sum_t \\nabla_\\theta \\log \\pi_\\theta(a_t|s_t) \\cdot G_tθ←θ+α∑t​∇θ​logπθ​(at​∣st​)⋅Gt​\n\n**Intuition:** If Gt>0G_t > 0Gt​>0 (the trajectory was good), increase the probability of the actions taken. If Gt<0G_t < 0Gt​<0 (bad trajectory), decrease their probability. The log-probability gradient ∇θlog⁡πθ(at∣st)\\nabla_\\theta \\log \\pi_\\theta(a_t|s_t)∇θ​logπθ​(at​∣st​) points in the direction of increasing action ata_tat​'s probability.\n\n\n#### The Variance Problem\n\nREINFORCE has extremely high variance. The return GtG_tGt​ can vary enormously across trajectories even for the same action, making the gradient estimate noisy and learning slow.\n\n**Baseline subtraction:** Replace GtG_tGt​ with Gt−b(st)G_t - b(s_t)Gt​−b(st​) where b(st)b(s_t)b(st​) is a baseline (usually the state value function V(st)V(s_t)V(st​)). This does not change the expected gradient but dramatically reduces variance.\n\nThe quantity At=Gt−V(st)A_t = G_t - V(s_t)At​=Gt​−V(st​) is called the **advantage** : how much better is this action compared to average?\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 826,
+      "out_sha": "5c0174035cde",
       "note": ""
     },
     {
@@ -2483,11 +2483,11 @@
       "en_title": "Chapter 23: Reinforcement Learning — Learning from Rewards",
       "order": 197,
       "src_chars": 3186,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3a0708dc0832",
       "src": "### 23.6 Actor-Critic Methods\n\nActor-critic methods combine policy gradients with value function learning:\n\n* **Actor:** The policy πθ(a∣s)\\pi_\\theta(a|s)πθ​(a∣s) — decides what action to take\n* **Critic:** The value function Vϕ(s)V_\\phi(s)Vϕ​(s) — evaluates how good the current state is\n\nThe critic computes the advantage estimate, which the actor uses to update the policy:\n\nθ←θ+αθ∇θlog⁡πθ(at∣st)⋅At\\theta \\leftarrow \\theta + \\alpha_\\theta \\nabla_\\theta \\log \\pi_\\theta(a_t|s_t) \\cdot A_tθ←θ+αθ​∇θ​logπθ​(at​∣st​)⋅At​ ϕ←ϕ−αϕ∇ϕ(rt+γVϕ(st+1)−Vϕ(st))2\\phi \\leftarrow \\phi - \\alpha_\\phi \\nabla_\\phi \\left(r_t + \\gamma V_\\phi(s_{t+1}) - V_\\phi(s_t)\\right)^2ϕ←ϕ−αϕ​∇ϕ​(rt​+γVϕ​(st+1​)−Vϕ​(st​))2\n\nThe actor-critic framework underlies most modern RL algorithms including A3C, PPO (Proximal Policy Optimization), and SAC (Soft Actor-Critic).\n\n**PPO** (Schulman et al., 2017) is particularly widely used. It addresses a stability problem in policy gradient: large updates can cause the policy to change drastically, collapsing performance. PPO clips the policy update ratio to stay within a trust region:\n\nLCLIP(θ)=Et[min⁡(rt(θ)At, clip(rt(θ),1−ε,1+ε)At)]L^{\\text{CLIP}}(\\theta) = \\mathbb{E}_t\\left[\\min\\left(r_t(\\theta)A_t,\\; \\text{clip}(r_t(\\theta), 1-\\varepsilon, 1+\\varepsilon)A_t\\right)\\right]LCLIP(θ)=Et​[min(rt​(θ)At​,clip(rt​(θ),1−ε,1+ε)At​)]\n\nwhere rt(θ)=πθ(at∣st)/πθold(at∣st)r_t(\\theta) = \\pi_\\theta(a_t|s_t) / \\pi_{\\theta_\\text{old}}(a_t|s_t)rt​(θ)=πθ​(at​∣st​)/πθold​​(at​∣st​) is the probability ratio.\n\nPPO is the algorithm behind many breakthrough RL results, including AlphaGo Zero and ChatGPT's RLHF training (Chapter 21).\n\n\n### 23.7 Key Challenges in RL\n\n\n#### Sample Efficiency\n\nRL algorithms typically require many more interactions with the environment than supervised learning requires labeled examples. AlphaGo trained on millions of self-play games; training an Atari agent from scratch takes hundreds of millions of frames.\n\n**Approaches:** Model-based RL (learn a world model, plan inside it); off-policy methods (reuse past experience); imitation learning (bootstrap from demonstrations).\n\n\n#### Reward Shaping\n\nThe reward function is specified by the designer, not learned from data. Poor reward design leads to unintended behavior — reward hacking, where the agent finds unexpected ways to maximize reward that violate the designer's intent.\n\n**Classic example:** Boat racing game where the agent was rewarded for score. The optimal strategy discovered: spin in circles collecting bonus tiles instead of actually completing laps.\n\n**Implication for LLMs:** RLHF (Chapter 21) uses human preferences as reward signal. This helps align the model with human intent but can also lead to reward hacking (the model learns to produce responses that _seem_ helpful to raters but are not actually accurate).\n\n\n#### Partial Observability\n\nThe Markov property assumes the agent observes the full state. Real environments are often **partially observable** (POMDPs): the agent sees only observations oto_tot​ that provide incomplete information about the true state sts_tst​. The classic solution is to use recurrent networks (LSTMs) to maintain a belief state over history.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1376,
+      "out_sha": "bd534601d87e",
       "note": ""
     },
     {
@@ -2495,11 +2495,11 @@
       "en_title": "Chapter 23: Reinforcement Learning — Learning from Rewards",
       "order": 198,
       "src_chars": 463,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ef8b5d90f54a",
       "src": "#### Sparse Rewards\n\nIf reward is only received at the end of a long episode (e.g., +1 for winning chess, 0 otherwise), early exploration is essentially random and it may take millions of episodes before any positive signal is received.\n\n**Approaches:** Reward shaping (add intermediate rewards), curriculum learning (progressively harder tasks), hindsight experience replay (relabel failed trajectories as if different goals were intended).\n\n\n### 23.8 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 161,
+      "out_sha": "460a894991ad",
       "note": ""
     },
     {
@@ -2507,11 +2507,11 @@
       "en_title": "Chapter 23: Reinforcement Learning — Learning from Rewards",
       "order": 199,
       "src_chars": 3364,
-      "status": "pending",
+      "status": "done",
       "src_sha": "34fc0f9f2381",
       "src": "#### Concept Check\n\n**Q1.** An agent operates in a simple 3-state chain: states {A,B,C}\\\\{A, B, C\\\\}{A,B,C} with CCC being the terminal state. The rewards are: R(A,right)=0R(A, \\text{right}) = 0R(A,right)=0, R(B,right)=+10R(B, \\text{right}) = +10R(B,right)=+10 (terminal). With discount γ=0.9\\gamma = 0.9γ=0.9 and starting in AAA, what is the return G0G_0G0​ for taking action \"right\" in both states?\n\n**Answer:** The trajectory is A→B→CA \\to B \\to CA→B→C with rewards r0=0r_0 = 0r0​=0 (at AAA), r1=10r_1 = 10r1​=10 (at BBB, terminal).\n\nG0=r0+γr1=0+0.9×10=9G_0 = r_0 + \\gamma r_1 = 0 + 0.9 \\times 10 = 9G0​=r0​+γr1​=0+0.9×10=9\n\nIf instead the agent is at BBB:\n\nG1=r1=10G_1 = r_1 = 10G1​=r1​=10\n\nSo starting from AAA, the discounted return is 9 (not 10), reflecting that the reward comes one step later.\n\n**Q2.** Write the Q-learning update for the following transition: (s=\"A\",a=\"right\",r=0,s′=\"B\")(s = \\text{\"A\"}, a = \\text{\"right\"}, r = 0, s' = \\text{\"B\"})(s=\"A\",a=\"right\",r=0,s′=\"B\"). Current estimates: Q(\"A\",\"right\")=5Q(\\text{\"A\"}, \\text{\"right\"}) = 5Q(\"A\",\"right\")=5, Q(\"B\",\"right\")=9Q(\\text{\"B\"}, \\text{\"right\"}) = 9Q(\"B\",\"right\")=9. Use α=0.1\\alpha = 0.1α=0.1, γ=0.9\\gamma = 0.9γ=0.9.\n\n**Answer:**\n\nTD target: r+γmax⁡a′Q(s′,a′)=0+0.9×9=8.1r + \\gamma \\max_{a'} Q(s', a') = 0 + 0.9 \\times 9 = 8.1r+γmaxa′​Q(s′,a′)=0+0.9×9=8.1\n\nTD error: 8.1−5=3.18.1 - 5 = 3.18.1−5=3.1\n\nUpdate: Q(\"A\",\"right\")←5+0.1×3.1=5.31Q(\\text{\"A\"}, \\text{\"right\"}) \\leftarrow 5 + 0.1 \\times 3.1 = 5.31Q(\"A\",\"right\")←5+0.1×3.1=5.31\n\nThe estimate moves slightly toward the observed target (8.1) from the current estimate (5). With repeated updates, it will converge to the true Q-value.\n\n**Q3.** Why does experience replay in DQN help training stability? Give two reasons.\n\n**Answer:**\n\n  1. **Breaks temporal correlations:** Consecutive experience tuples (st,at,rt,st+1)(s_t, a_t, r_t, s_{t+1})(st​,at​,rt​,st+1​) are highly correlated — the same region of state space visited repeatedly in sequence. Training on correlated data violates SGD's i.i.d. assumption and leads to oscillating or diverging updates. Random sampling from a buffer breaks this correlation.\n\n  2. **Improves data efficiency:** Each experience tuple can be used multiple times (sampled from the buffer repeatedly), rather than being discarded after a single gradient step. This is especially valuable when environment interactions are expensive (real robots, slow simulators).\n\n**Q4.** An agent uses an ε\\varepsilonε-greedy policy with ε=0.2\\varepsilon = 0.2ε=0.2. The Q-values for state sss are Q(s,left)=3.0Q(s, \\text{left}) = 3.0Q(s,left)=3.0, Q(s,right)=7.0Q(s, \\text{right}) = 7.0Q(s,right)=7.0, Q(s,up)=5.0Q(s, \\text{up}) = 5.0Q(s,up)=5.0. What is the probability of selecting each action?\n\n**Answer:**\n\nWith ε=0.2\\varepsilon = 0.2ε=0.2, the agent:\n\n* Explores (picks a random action uniformly among all 3 actions) with probability 0.20.20.2\n* Exploits (picks arg⁡max⁡aQ(s,a)=right\\arg\\max_a Q(s,a) = \\text{right}argmaxa​Q(s,a)=right) with probability 0.80.80.8\n\nProbability of each action:\n\nP(right)=0.8+0.23=0.8+0.06‾≈0.867P(\\text{right}) = 0.8 + \\frac{0.2}{3} = 0.8 + 0.0\\overline{6} \\approx 0.867P(right)=0.8+30.2​=0.8+0.06≈0.867 P(left)=0.23≈0.06‾P(\\text{left}) = \\frac{0.2}{3} \\approx 0.0\\overline{6}P(left)=30.2​≈0.06 P(up)=0.23≈0.06‾P(\\text{up}) = \\frac{0.2}{3} \\approx 0.0\\overline{6}P(up)=30.2​≈0.06",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1367,
+      "out_sha": "ade978d8fa61",
       "note": ""
     },
     {
