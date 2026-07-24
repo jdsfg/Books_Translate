@@ -1651,11 +1651,11 @@
       "en_title": "Chapter 7: The Dopamine Trap",
       "order": 131,
       "src_chars": 1792,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4a0fe6cdd4dc",
       "src": "#### Common Misconception: \"I keep checking my phone because I'm bored / undisciplined / weak\"\n\nThe most common popular interpretation of compulsive phone use is some version of \"I'm bored and have nothing better to do\" or \"I'm too undisciplined\" or \"I'm weak.\"\n\nThese are all wrong, and importantly so. The correct interpretation:\n\n* **You keep checking your phone because the variable-ratio reinforcement schedule, deployed at scale, produces the strongest behavioral pattern known to behavioral science.** Your dopamine system is firing on every check, regardless of whether the check produces actual reward. The pattern is cue-locked and prediction-error-driven.\n\n* **The asymmetry between you and the system is severe.** The platforms have hundreds of millions of dollars and teams of PhDs whose explicit job is to refine the variable-schedule deployment. Your evolved dopamine system is on the receiving end of an engineering project optimized against you. You are not weak; you are outflanked.\n\n* **The fix is not to be more disciplined.** The fix is to _break the variable schedule_. The structural moves — delete the app, remove the cue, add friction — work because they target the schedule at the architectural level. Trying to use the app \"moderately\" or \"responsibly\" leaves the schedule intact, which is why such attempts almost universally fail.\n\nThis reframe matters because it shifts the locus of intervention. **You cannot win the in-the-moment fight** — the variable-ratio dopamine response is too fast and too strong for goal-directed-system interruption. **You can win the architectural fight** — by removing the schedule from your environment, you remove the dopamine event, and the behavior collapses. The work is at the architecture level, where it has been all along.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 566,
+      "out_sha": "46595fa20750",
       "note": ""
     },
     {
@@ -1663,11 +1663,11 @@
       "en_title": "Chapter 7: The Dopamine Trap",
       "order": 132,
       "src_chars": 2829,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3ef8ba48a11d",
       "src": "### 7.5 Why Some Things Are Especially Hard to Quit\n\nVariable-ratio reinforcement explains, with unusual cleanness, why certain behaviors are uniquely hard to break. The list includes, but is not limited to:\n\n* **Gambling.** The defining example. Slot machines, sports betting, lottery tickets — all variable-ratio.\n* **Social media.** Variable-ratio at scale, with personalized algorithmic timing.\n* **Email.** Especially work email, where messages are mostly routine but occasionally critical or rewarding.\n* **Dating apps.** Each swipe is a press; matches are variable-ratio rewards.\n* **Some video games.** Particularly games with loot boxes, randomized rewards, or unpredictable progression. The \"loot box\" debate in game design is, at heart, a debate about variable-ratio reinforcement deployed against minors.\n* **Compulsive shopping.** Especially online shopping with sales, flash deals, and limited-time offers, which add variable-magnitude reward to the cue structure.\n* **Compulsive checking.** Stock prices, news, sports scores. Each check is a press; the actual change in the world is variable.\n\nWhat these have in common is the variable-ratio reward structure. The cue (lit screen, app icon, notification) fires the dopamine response toward the possibility of reward; most checks yield nothing of interest, but a few yield something rewarding; the schedule is unpredictable; the behavior pattern, once installed, is extraordinarily persistent.\n\nCompare to behaviors that are _not_ especially hard to break:\n\n* **Reading a book.** The reward is roughly constant per page (some interest, some progress). No variable schedule. The dopamine system doesn't enter the addictive pattern.\n* **Cooking a meal.** Predictable reward (a finished meal). Goal-directed behavior dominates.\n* **Walking outside.** The reward is steady (the experience of being outdoors). No schedule manipulation.\n* **Conversation with a present friend.** The \"reward\" is steady engagement, not variable-ratio surprise. The dopamine pattern is different and not addictive in the same way.\n\nThe contrast is informative. **The behaviors that are uniquely hard to break are, almost without exception, ones where a variable-ratio reward schedule has been deployed.** This is not coincidence; this is the schedule's signature.\n\nFor your three-habit diary: any bad habit you've identified that has a variable-reward structure is, by the framework of this chapter, going to be especially hard to break. _And it is also a habit where the architectural intervention (delete the app, remove the cue, break the schedule) is especially powerful._ The same property that makes it sticky also makes the architectural cue removal a high-leverage move — because the variable schedule depends on cue exposure, and cutting cue exposure breaks the schedule entirely.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 840,
+      "out_sha": "bc8df0fde2b1",
       "note": ""
     },
     {
@@ -1675,11 +1675,11 @@
       "en_title": "Chapter 7: The Dopamine Trap",
       "order": 133,
       "src_chars": 2974,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fd07f612be4a",
       "src": "### 7.6 Thread A: H.M. and Why He Never Developed Addictions\n\nThe Henry Molaison thread continues, with one of its most striking inverse cases.\n\nAcross the decades that researchers studied H.M., one observation accumulated quietly in the literature: **H.M. never developed addictions.** Not to any substance. Not to any behavior. Despite being placed in environments where many people would develop habituated cue-locked patterns (institutional settings with stable routines, with various forms of intermittent rewards, with consistent contextual cues), H.M. did not show the pattern.\n\nWhy?\n\nRecall the structure of addiction as we've built it up so far:\n\n* A **cue** appears. (A bottle, a syringe, a slot machine, a phone, an emotional state.)\n* The **dopamine response** fires at the cue, anticipating reward.\n* The **response** follows the cue (drink, inject, press, check, eat).\n* The **reward** , intermittent and variable, follows.\n* Over many repetitions, the cue-locked dopamine response strengthens, and the behavior becomes increasingly automatic.\n* Eventually, the reward fades from the dopamine signal entirely, and the cue alone drives the behavior.\n\nThis whole structure depends on two things working together: the procedural memory system (the dorsal striatum, which encodes the cue-response pair) AND the declarative memory system (the hippocampally-mediated memory of past rewards, which builds up the expectation that drives the dopamine prediction-error response).\n\nH.M.'s declarative memory system was destroyed. He could not form new memories of past rewards. Each \"trial\" was, in a sense, the first one — he could not consciously remember the previous time the slot machine paid off, or the previous good feeling from the substance, or the previous interesting thing on the equivalent of a content feed. **The expectations that drive the cue-locked dopamine response could not be built up.**\n\nThis is the insight that the H.M. inverse case provides: **addiction requires the cooperation of declarative and procedural memory.** The procedural side (cue-response automaticity) does the running; the declarative side (memory of past rewards, anticipation of future ones) does the building of expectations. Take out either, and the system as we know it does not function. H.M. lacked the declarative side; he could not develop the addictive expectation; the behavioral pattern of addiction did not install.\n\nThis inverse case is rare and clinically extreme — most readers will not have severe declarative impairment — but it is informative for the rest of us in three ways.\n\nFirst, it confirms that **the addictive pattern is not just about cues and responses.** It is about the building of _expectations_ over time, mediated by a memory system that integrates past experience into future prediction. The simple Pavlovian cue-response framework is too simple; the full picture requires the prediction-error machinery and the memory system that supports it.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 899,
+      "out_sha": "0f0d81c62109",
       "note": ""
     },
     {
@@ -1687,11 +1687,11 @@
       "en_title": "Chapter 7: The Dopamine Trap",
       "order": 134,
       "src_chars": 1607,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b959f70fa96f",
       "src": "Second, it suggests why **early intervention** in habit formation matters so much. Once the expectations have been built up — once the declarative memory of \"the slot machine sometimes pays off big\" or \"Instagram sometimes shows me something amazing\" or \"this drink takes the edge off\" has consolidated — the dopamine system has the foundation it needs to fire the cue-locked response. Before the expectations have consolidated, the system has less to fire on. _The young user who has not yet built up the addictive expectations is in a different state than the experienced user who has._ This is one reason age-of-first-exposure matters, in many addiction literatures, more than later exposure does.\n\nThird, it suggests, by inverse, why **memory-load reduction** can sometimes help break addictions. In some clinical work on addiction, interventions that reduce or disrupt the recall of past rewards (prolonged abstinence in a different context, deliberate cognitive interventions to \"rewrite\" the memory of the substance) have shown effectiveness. These are not directly using H.M.'s case, but they are operating in the spirit of \"if the declarative expectation is weakened, the cue-locked dopamine response weakens too.\" We are not anywhere near a clinical solution based on this principle, but the H.M. case suggests where the solution might eventually live.\n\nFor the practical-toolkit purposes of this book, the H.M. case mostly serves as a striking illustration of the architecture. The everyday intervention remains: **break the cue exposure** , which is what the rest of Part III's tools are about.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 464,
+      "out_sha": "c378189ac89a",
       "note": ""
     },
     {
@@ -1699,11 +1699,11 @@
       "en_title": "Chapter 7: The Dopamine Trap",
       "order": 135,
       "src_chars": 3264,
-      "status": "pending",
+      "status": "done",
       "src_sha": "61facfd7b2fa",
       "src": "### 7.7 The Way to Win Is Not to Fight\n\nA final point that follows directly from the chapter's framework, and that overturns most people's first instinct about what to do.\n\nWhen confronted with a variable-ratio reinforcement schedule that they don't like — too much social media, too much email-checking, too much gambling, too much compulsive shopping — most people's first instinct is to _fight in real time_. Resolve to use the app less. Set a daily time limit. Be more disciplined. Will themselves to put the phone down. Decide that today they will be different.\n\nIn the data, almost all of these strategies fail. The reason is structural, and the chapter's framework explains it precisely: **variable-ratio reinforcement is a schedule that produces strong behavior, and fighting the schedule in real time is fighting at the level the schedule is designed to win.** The app's design team is professionally optimizing the schedule against your real-time resistance. Your in-the-moment willpower is competing with millions of dollars of A/B-tested design refinement, and the design has empirically been selected for being able to overcome your willpower. _You will lose this fight, even if you are unusually disciplined, because the fight has been pre-engineered to be unwinnable at this layer._\n\nThe way to win is not to fight at this layer. **The way to win is to break the schedule.** Specifically:\n\n  1. **Remove the cue.** Delete the app. Cancel the account. Move the phone to another room. Put friction between yourself and the schedule (e.g., a website blocker that requires a 30-second wait before access). Each of these breaks the variable-ratio engine by removing your access to the spinning lever.\n\n  2. **Replace with a non-variable behavior in the same slot.** When the cue would have appeared, have a fixed-reward alternative ready: read a book (steady reward), cook (predictable reward), call a friend (relational reward), walk outside (sensory reward). The cue gets re-paired with a non-variable response, which competes for the same time but doesn't activate the dopamine-trap pattern.\n\n  3. **Prevent re-exposure.** Once the schedule has been broken for a while, do not re-establish it casually. The variable-ratio schedule is fast to re-install in someone with the dormant circuit (per Chapter 5); a single week of \"I'll just check briefly\" can reignite the full pattern. Be cautious about re-entry, especially in high-cue contexts.\n\nThe general principle: **architectural intervention beats real-time intervention.** The architecture is the layer where you have leverage; the real-time layer is where the variable schedule has leverage. Move your effort to the architecture, and you can win without ever having to be heroic in the moment.\n\nThis is also why most \"use it more responsibly\" approaches to apps that have hooked you fail. _The app cannot be used responsibly by someone whose dopamine system has been trained on its variable schedule, because the schedule re-engages the moment the cue reappears._ The intermediate position — keep the app but use it less — is structurally unstable. The stable positions are: don't have the app, or have the app and use it heavily. The middle is where the variable schedule does its strongest work.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 984,
+      "out_sha": "50027142d951",
       "note": ""
     },
     {
