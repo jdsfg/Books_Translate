@@ -691,11 +691,11 @@
       "en_title": "Chapter 7: Energy Out, Expenditure, METs, and the EPOC Question",
       "order": 52,
       "src_chars": 2813,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f537441706f1",
       "src": "#### Compute It\n\n**Q1.** A 60 kg cyclist rides at 8 METs for 45 minutes. Compute (a) the rate in kcal/min and (b) the total energy cost. (c) Then estimate the EPOC bonus at an honest 10 percent, and state what the total-including-afterburn is.\n\nHint\n\nRate =MET×3.5×mass/200= \\text{MET}\\times 3.5\\times\\text{mass}/200=MET×3.5×mass/200; total =rate×minutes= \\text{rate}\\times\\text{minutes}=rate×minutes; EPOC ≈0.10×total\\approx 0.10\\times\\text{total}≈0.10×total.\n\n**Answer:** (a) Rate:\n\nkcal/min=8×3.5×60200=1680200=8.4 kcal/min \\text{kcal/min} = \\frac{8 \\times 3.5 \\times 60}{200} = \\frac{1680}{200} = 8.4 \\text{ kcal/min} kcal/min=2008×3.5×60​=2001680​=8.4 kcal/min\n\n(b) Total:\n\nkcal=8.4×45=378 kcal \\text{kcal} = 8.4 \\times 45 = 378 \\text{ kcal} kcal=8.4×45=378 kcal\n\n(c) EPOC at 10 percent: 0.10×378=37.80.10 \\times 378 = 37.80.10×378=37.8 kcal, so about 38 extra calories afterward, and the total including a generous afterburn is roughly 378+38=416378 + 38 = 416378+38=416 kcal. Notice how small the afterburn is (about 38 calories, a few bites of food), which is exactly the point: the session cost is the real number, and EPOC is a minor add-on, not a hidden second workout.\n\n**Q2.** Two sessions burn the same number of calories during exercise: a 400-kcal easy steady run and a 400-kcal intense interval session. Using the honest EPOC ranges from the chapter (about 7 percent for easy work, about 13 percent for intense work), compute the afterburn for each and the difference. Is the difference large enough to change how you would plan your training?\n\nHint\n\nEasy EPOC ≈0.07×400\\approx 0.07\\times 400≈0.07×400; intense EPOC ≈0.13×400\\approx 0.13\\times 400≈0.13×400. Subtract.\n\n**Answer:** Easy session afterburn: 0.07×400=280.07 \\times 400 = 280.07×400=28 kcal. Intense session afterburn: 0.13×400=520.13 \\times 400 = 520.13×400=52 kcal. The difference is 52−28=2452 - 28 = 2452−28=24 kcal in favor of the intense session. So even comparing easy versus intense at equal session cost, the _extra_ afterburn from going intense is only about 24 calories, roughly a small piece of fruit. That is not remotely large enough to plan your training around; you should choose intensity based on the _adaptations_ you want (VO₂max, threshold, base) per Chapter 6, not to chase a 24-calorie afterburn advantage. This is the concrete refutation of the \"afterburn is where fat loss happens\" myth: even the _difference_ between easy and hard afterburn is trivial next to the session cost and the daily budget.\n\n**Q3 (now do it for your own body).** Take one of your own typical training sessions, look up or estimate its MET value, and compute its energy cost with the MET formula for your bodyweight and the session's duration. Then compare your computed number to what your watch or app reported for the same session.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1104,
+      "out_sha": "bc61b7525e91",
       "note": ""
     },
     {
@@ -703,11 +703,11 @@
       "en_title": "Chapter 7: Energy Out, Expenditure, METs, and the EPOC Question",
       "order": 53,
       "src_chars": 2944,
-      "status": "pending",
+      "status": "done",
       "src_sha": "274b4133f7df",
       "src": "**Answer:** The answer is _your_ session's computed cost, correct for your mass, the activity's MET value, and the duration, using MET×3.5×mass/200×minutes\\text{MET}\\times 3.5\\times\\text{mass}/200\\times\\text{minutes}MET×3.5×mass/200×minutes. The instructive part is the comparison: your computed number and your watch's number will almost certainly differ, often by 10 to 20 percent or more, because both are estimates built on population-average models and neither measured your actual oxygen uptake. That gap is the lesson. It is a personal, hands-on demonstration that a calorie readout is a rough estimate, not a measurement, which is why the chapter warns against eating back an exact tracker number and why Chapter 12 will have you steer fueling by your bodyweight trend over weeks instead. Log your computed cost, note the gap from your watch, and carry the healthy skepticism forward.\n\n\n#### Take It Further\n\n**Q1.** A weight-loss app instructs a user to eat back exactly the \"active calories\" their watch reports each day, on the theory that this keeps them at maintenance plus a planned deficit. Using this chapter, explain the flaw in this plan, and describe a more robust way to manage energy over time. (This previews Chapter 12's approach and its safety boundary.)\n\n**Discussion:** The plan has a fundamental flaw: it treats an _estimate with large error_ as if it were a _precise measurement_ , and then compounds that error daily. The watch's \"active calories\" can be off by 10 to 20 percent or more for any given day, and those errors do not reliably cancel out; if the watch systematically overestimates the user's burn (common for many devices and activities), then eating back the full reported number silently erases the intended deficit, and the user is baffled when the scale does not move. Even the underlying MET-based estimates share this error, so the problem is not the brand of watch but the false precision of the whole approach. A more robust method, which Chapter 12 develops, is to stop trying to balance the ledger day by day on estimated numbers and instead **steer by ground truth over time** : estimate maintenance energy as a starting point, make a _modest_ adjustment, and then watch the _actual_ trend, your bodyweight averaged over a couple of weeks, and your performance and hunger, adjusting intake based on which way the trend actually moves. That is the estimate-honesty rule again: the calorie math is a starting prediction, but your logged bodyweight trend is the real feedback, and it wins when they disagree. One crucial safety note that Chapter 12 makes loudly: this reasoning is about _modest, sustainable_ adjustments only. Chasing an aggressive deficit by trusting under-reported burn, or by slashing intake, is exactly the kind of thinking that can tip toward disordered eating, and the honest coaching move there is not a spreadsheet but a referral to a physician or registered dietitian.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 909,
+      "out_sha": "18c141792572",
       "note": ""
     },
     {
@@ -715,11 +715,11 @@
       "en_title": "Chapter 7: Energy Out, Expenditure, METs, and the EPOC Question",
       "order": 54,
       "src_chars": 1626,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8b86ba1cdc47",
       "src": "### Chapter Summary\n\nYou learned to price a workout in real energy. Your daily energy budget has three parts, resting metabolic rate (usually the biggest, around 60 to 70 percent), the thermic effect of food (about 10 percent), and the variable, trainable activity expenditure, of which exercise is only a piece. That structure alone explains why you cannot easily out-exercise your intake, a theme Chapter 12 develops.\n\nTo compute activity energy, the **MET** gives a universal currency (multiples of resting metabolism), and the transcribed formula kcal/min=MET×3.5×mass/200\\text{kcal/min} = \\text{MET} \\times 3.5 \\times \\text{mass} / 200kcal/min=MET×3.5×mass/200, times minutes, converts it to calories, as we worked for Jordan's 368-kcal run. We derived the formula from the MET definition so the \"200\" is no longer magic (it is just 1000/51000/51000/5, rolling two conversions together). The **signature landing** was pricing your own session by hand.\n\nThe honest accounting is the chapter's spine: tracker calories are **estimates with large error** , not measurements, and the famous **EPOC afterburn** is real but small (about 6 to 15 percent of session cost, and itself debated), nowhere near the \"torches calories for 48 hours\" marketing. So treat every calorie number as a rough estimate, and let your bodyweight trend, not a per-session readout, be your ground truth, exactly the estimate-honesty rule from Chapter 1. This energy-out accounting is the necessary setup for Chapter 12's energy _balance_ and fueling, and it feeds Chapter 8 next, where we turn the engine's output into a pace on the road.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 573,
+      "out_sha": "b0e614187a82",
       "note": ""
     },
     {
@@ -727,11 +727,11 @@
       "en_title": "Chapter 8: Pacing, Spending the Engine Wisely",
       "order": 55,
       "src_chars": 3199,
-      "status": "pending",
+      "status": "done",
       "src_sha": "af7b046d3aa3",
       "src": "Two runners line up for a 10-kilometer race with identical fitness. One goes out fast, feeling great, banking time in the first two kilometers. The other holds back, running the opening kilometers a touch slower than goal pace. By kilometer eight the first runner is unraveling, legs full of concrete, watching their pace collapse; the second runner cruises past them and finishes well ahead. Same engine, different result. The difference was not fitness. It was **pacing** , the skill of spending the engine wisely across the whole effort.\n\nThis chapter turns the abstractions of the last few chapters, zones, thresholds, the engine's output, into something concrete: a pace on the road. You will learn why going out too fast is physiologically self-sabotaging, how to translate your zones and threshold into paces, and how to estimate goal paces for different distances using a real published formula. This is the fifth signature landing: your own goal paces, computed from a test you can actually run.\n\n\n### 8.1 Why even or negative pacing wins\n\nThe runner who blew up did something specific and physiological. Going out faster than sustainable pushes the effort _above threshold_ early (recall Chapter 4), which recruits the fast, glycolytic system prematurely and accumulates fatigue-linked byproducts you then carry for the rest of the race. You cannot un-spend that. The energy went into going too fast early, and the bill comes due as a forced slowdown late, almost always a _net loss_ : the time you banked early is smaller than the time you bleed late.\n\nThe physiologically efficient strategy is **even pacing** (holding a steady, sustainable effort throughout) or **negative pacing** (running the second half slightly faster than the first). Both keep you at or just below your sustainable ceiling for as long as possible, spending the anaerobic reserve only at the end when there is no \"later\" left to pay it back. Even the world's best distance performances are almost always run with remarkably even pacing, not heroic early surges. The lesson is counterintuitive but firm: **discipline in the first half is what makes a fast second half possible.**\n\n\n#### Common Misconception\n\n_\"To get a good time, bank as much time as you can early while you feel fresh, because you'll inevitably slow down later anyway.\"_\n\nThis feels logical and it reliably produces worse times. The flaw is that \"banking time\" early by running above your sustainable pace is not free: it pushes you above threshold, recruits glycolysis prematurely, and accumulates fatigue that forces a _larger_ slowdown later than the time you supposedly banked. You are not saving time; you are borrowing it at a punishing interest rate. The \"you'll slow down anyway\" part is a self-fulfilling prophecy, you slow down _because_ you went out too fast, not despite good pacing. Runners who pace evenly do not experience the same catastrophic late-race collapse, because they never incurred the early debt. The correct mental model is not a bank you draw down but a _steady burn_ you sustain, spending your small anaerobic reserve only in the final stretch. Fix the opening pace and the \"inevitable\" collapse largely disappears.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1017,
+      "out_sha": "b5525ae1bf16",
       "note": ""
     },
     {
@@ -739,11 +739,11 @@
       "en_title": "Chapter 8: Pacing, Spending the Engine Wisely",
       "order": 56,
       "src_chars": 2828,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a738aa5822c4",
       "src": "### 8.2 From zones and threshold to a pace\n\nYour zones (Chapter 5) and threshold (Chapter 4) are defined by heart rate and effort, but on the road you often want a _pace_ (minutes per kilometer or per mile). Translating between them is straightforward in principle: each zone corresponds to a range of paces for you, and your **threshold pace** , the pace you can hold at that comfortably-hard sustainable ceiling, is the key anchor.\n\nYour different training paces sit in a sensible ordering around threshold pace:\n\n* **Easy / base pace** is well _slower_ than threshold pace (comfortably conversational, the bulk of your week per Chapter 6). For many runners this is roughly a minute or more per kilometer slower than threshold.\n* **Threshold pace** is the comfortably-hard pace holdable for perhaps 30 to 60 minutes.\n* **Shorter-race paces** (5K, and faster interval work) are _faster_ than threshold pace, sustainable only for shorter durations.\n* **Longer-race paces** (half-marathon, marathon) are _slower_ than threshold pace, because you must hold them far longer.\n\nThe exact offsets are individual (this is why you calibrate against your log), but the ordering is universal and immediately useful: if you find yourself running your \"easy\" days at threshold pace, you are in the gray zone Chapter 6 warned against, and if you try to race a marathon at 5K pace you will detonate. Knowing where each pace sits relative to threshold is how you keep each session honest.\n\n\n### 8.3 Estimating goal paces from a field test\n\nHere is the compute-it. Suppose you run a test race or hard time trial at one distance. How do you estimate your goal pace for a _different_ distance? The most widely used tool is a real published formula from Pete Riegel (1977), built by analyzing race data across distances from sprints to ultras.\n\n\n#### Definition: Riegel's Endurance Formula\n\nRiegel's formula predicts your time T2T_2T2​ at a target distance D2D_2D2​ from a known time T1T_1T1​ at distance D1D_1D1​:\n\nT2=T1×(D2D1)1.06 T_2 = T_1 \\times \\left( \\frac{D_2}{D_1} \\right)^{1.06} T2​=T1​×(D1​D2​​)1.06\n\nThe exponent **1.06** is the heart of it. If performance held perfectly across distance, the exponent would be exactly 1 (double the distance, double the time, same pace). The fact that it is _greater than_ 1 encodes **fatigue** : longer races are run at proportionally slower paces, because glycogen depletion, accumulating fatigue, and heat build up over distance. Riegel found 1.06 fit the data across a wide range of distances. (Honestly: the exponent varies a little by runner, roughly 1.08 for beginners who fade more over distance and 1.04 for advanced runners who hold pace better, and the prediction is most accurate when your test distance is at least half the target, so a 10K predicts a marathon far better than a 5K does.)\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 982,
+      "out_sha": "e6d86ff9a261",
       "note": ""
     },
     {
@@ -751,11 +751,11 @@
       "en_title": "Chapter 8: Pacing, Spending the Engine Wisely",
       "order": 57,
       "src_chars": 2522,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e10e609c2307",
       "src": "#### Worked example: from a 5K time to longer paces\n\nSuppose a runner races 5 km in 25 minutes 0 seconds. That is T1=25×60=1500T_1 = 25 \\times 60 = 1500T1​=25×60=1500 seconds over D1=5D_1 = 5D1​=5 km, a pace of 1500/5=3001500 / 5 = 3001500/5=300 s/km, which is 5:00 per km.\n\n**Predict the 10K time.** Here D2=10D_2 = 10D2​=10:\n\nT2=1500×(105)1.06=1500×21.06 T_2 = 1500 \\times \\left( \\frac{10}{5} \\right)^{1.06} = 1500 \\times 2^{1.06} T2​=1500×(510​)1.06=1500×21.06\n\nNow 21.06≈2.0852^{1.06} \\approx 2.08521.06≈2.085, so T2≈1500×2.085=3127T_2 \\approx 1500 \\times 2.085 = 3127T2​≈1500×2.085=3127 seconds, which is about **52:07**. The 10K pace is 3127/10=312.73127 / 10 = 312.73127/10=312.7 s/km, about **5:13 per km** , slightly slower than the 5K pace of 5:00, exactly as the fatigue exponent predicts.\n\n**Predict the half-marathon (21.1 km).** Here D2=21.1D_2 = 21.1D2​=21.1:\n\nT2=1500×(21.15)1.06=1500×(4.22)1.06 T_2 = 1500 \\times \\left( \\frac{21.1}{5} \\right)^{1.06} = 1500 \\times (4.22)^{1.06} T2​=1500×(521.1​)1.06=1500×(4.22)1.06\n\nAnd (4.22)1.06≈4.60(4.22)^{1.06} \\approx 4.60(4.22)1.06≈4.60, so T2≈1500×4.60=6901T_2 \\approx 1500 \\times 4.60 = 6901T2​≈1500×4.60=6901 seconds, about **1:55:01**. The half-marathon pace is 6901/21.1≈3276901 / 21.1 \\approx 3276901/21.1≈327 s/km, about **5:27 per km** , slower still, because it must be held for far longer.\n\nNotice the pattern the formula produces: 5:00 at 5K, 5:13 at 10K, 5:27 at the half. Pace slows as distance grows, and now you can put numbers on exactly how much. These become your _goal paces_ , the paces you practice and target, and you check a planned session against them.\n\n\n### 8.4 Checking a session against your zones\n\nPacing works in both directions. Not only can you set a goal pace, you can _check_ whether a session you ran matched its intended zone. Suppose your easy zone (Chapter 5) corresponds to roughly 6:10 to 6:30 per km (about 70 to 90 seconds per km slower than a 5:00 threshold pace), and you look back at an \"easy\" run and see you averaged 5:20 per km. That pace is far faster than your easy zone allows; you ran your easy day in the threshold gray zone, the Chapter 6 mistake. The fix is to _slow down_ next time, using the talk test as the enforcement mechanism. Conversely, if an interval session's \"hard\" reps came in slower than your target 5K pace, they were not hard enough to drive the intended top-end adaptation. Pace is a concrete, loggable check on whether your intended intensity distribution is the one you actually executed.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 951,
+      "out_sha": "cebd0eb8c985",
       "note": ""
     },
     {
@@ -763,11 +763,11 @@
       "en_title": "Chapter 8: Pacing, Spending the Engine Wisely",
       "order": 58,
       "src_chars": 1248,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2daf42c63384",
       "src": "### 8.5 The honest limits: pace is not destiny\n\nEvery pacing model in this chapter is a _guide_ , not a guarantee, and the estimate-honesty rule applies with full force. Riegel's formula is a population-average prediction that assumes you paced both efforts well and that the two distances sit in a similar training state; it says nothing about your bad day. Real paces shift with **terrain** (hills wreck flat-ground pace targets), **heat and humidity** (which push heart rate up and pace down for the same effort, exactly the Chapter 4 conflict), **altitude** , **wind** , and **accumulated fatigue**. So a predicted goal pace is a starting hypothesis, and your logged efforts, how a pace actually felt, what heart rate it cost, whether you could hold it, are the ground truth that refines it. This is why serious runners pace hard efforts by _effort and heart rate_ in adverse conditions rather than stubbornly chasing a pace number that was computed for a cool, flat, fresh day. The number predicts; your body, and your log, decide.\n\n\n### 8.6 Exercises\n\nComputation is central; work the Riegel predictions by hand (a calculator with an exponent key helps). Keep times in seconds while computing, then convert to minutes and seconds at the end.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 411,
+      "out_sha": "092daa90837d",
       "note": ""
     },
     {
