@@ -1799,11 +1799,11 @@
       "en_title": "Chapter 16: Deep Learning Foundations — Convolutional Neural Networks",
       "order": 140,
       "src_chars": 3494,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f2c7996d324a",
       "src": "#### Concept Check\n\n**Q1.** An input image is 32×32×332 \\times 32 \\times 332×32×3 (RGB). A convolutional layer uses 16 filters of size 5×55 \\times 55×5, stride 1, no padding. What is the output size? How many parameters in this layer (including bias)?\n\n**Answer:**\n\nOutput spatial dimensions: (32−5+1)×(32−5+1)=28×28(32 - 5 + 1) \\times (32 - 5 + 1) = 28 \\times 28(32−5+1)×(32−5+1)=28×28.\n\nOutput channels: 16 (one per filter).\n\nOutput size: 28×28×1628 \\times 28 \\times 1628×28×16.\n\nParameters: Each filter has 5×5×3=755 \\times 5 \\times 3 = 755×5×3=75 weights + 1 bias = 76 per filter. Total: 16×76=1,21616 \\times 76 = 1,21616×76=1,216 parameters.\n\nCompare to a fully-connected layer from input 32×32×3=3,07232 \\times 32 \\times 3 = 3,07232×32×3=3,072 to output 28×28×16=12,54428 \\times 28 \\times 16 = 12,54428×28×16=12,544: that would require 3,072×12,544+12,544=38,525,9683,072 \\times 12,544 + 12,544 = 38,525,9683,072×12,544+12,544=38,525,968 parameters. The convolutional layer uses 1,216 parameters — **31,686× fewer**.\n\n**Q2.** A 2×22 \\times 22×2 max pooling layer is applied to a 4×44 \\times 44×4 feature map. What is the output size? What value does the top-left output contain?\n\n**Answer:** Output size: 2×22 \\times 22×2 (each dimension halved).\n\nFor the top-left 2×22 \\times 22×2 region of the input, the output is the maximum of those 4 values.\n\nIf the top-left 2×22 \\times 22×2 region of the input is (1532)\\begin{pmatrix} 1 & 5 \\\\\\ 3 & 2 \\end{pmatrix}(13​52​), the output is max⁡(1,5,3,2)=5\\max(1, 5, 3, 2) = 5max(1,5,3,2)=5.\n\n**Q3.** Explain in plain language why a CNN trained on ImageNet can be successfully fine-tuned for medical image classification, even though medical images look nothing like natural photos.\n\n**Answer:** The early layers of a CNN (trained on any large image dataset) learn low-level features: edges, gradients, textures, color patterns. These are universal properties of images — they appear in medical scans, satellite images, and natural photos alike. The later layers learn task-specific features (dog faces, cat bodies), which are not transferable.\n\nTransfer learning strategy: take a pre-trained CNN, freeze the early layers (which have learned universal features), and fine-tune only the later layers on medical images. The model starts with good edge and texture detectors rather than random weights. This requires far less labeled medical data (which is expensive to obtain) than training from scratch.\n\nEven though radiographs and natural photos have different appearance statistics, the _low-level structure_ of both is captured by oriented edge detectors and texture filters. The network's early layers are reusable across domains.\n\n**Q4.** A CNN has three convolutional layers, each with a 3×33 \\times 33×3 filter and stride 1, followed by no pooling. What is the effective receptive field size of a neuron in the final convolutional layer (i.e., how many pixels in the input image does it depend on)? Show your reasoning.\n\n**Answer:** The receptive field grows by F−1=3−1=2F - 1 = 3 - 1 = 2F−1=3−1=2 pixels per side with each additional convolutional layer.\n\n* After layer 1: receptive field = 3×33 \\times 33×3 (directly covers a 3×33 \\times 33×3 patch)\n* After layer 2: each neuron sees a 3×33 \\times 33×3 region in layer 1's output, each of which covered 3×33 \\times 33×3 input pixels — but overlapping. Effective receptive field = 3+2=5×53 + 2 = 5 \\times 53+2=5×5\n* After layer 3: effective receptive field = 5+2=7×75 + 2 = 7 \\times 75+2=7×7",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1326,
+      "out_sha": "07c02f4ddf21",
       "note": ""
     },
     {
@@ -1811,11 +1811,11 @@
       "en_title": "Chapter 16: Deep Learning Foundations — Convolutional Neural Networks",
       "order": 141,
       "src_chars": 614,
-      "status": "pending",
+      "status": "done",
       "src_sha": "673a93f432f1",
       "src": "The general formula for LLL layers of F×FF \\times FF×F convolutions with stride 1 is: receptive field =L×(F−1)+1=3×2+1=7= L \\times (F - 1) + 1 = 3 \\times 2 + 1 = 7=L×(F−1)+1=3×2+1=7. Each additional layer adds F−1F - 1F−1 to each side of the receptive field.\n\nThis is why deep networks with many small (3×33 \\times 33×3) filters are preferred over shallow networks with large (7×77 \\times 77×7) filters: 3 layers of 3×33 \\times 33×3 achieve the same receptive field as one 7×77 \\times 77×7 filter, but with fewer parameters (3×9=273 \\times 9 = 273×9=27 vs. 494949 weights per channel pair) and more non-linearity.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 236,
+      "out_sha": "5d19bf452964",
       "note": ""
     },
     {
@@ -1823,11 +1823,11 @@
       "en_title": "Chapter 16: Deep Learning Foundations — Convolutional Neural Networks",
       "order": 142,
       "src_chars": 3001,
-      "status": "pending",
+      "status": "done",
       "src_sha": "58eefef7d9d6",
       "src": "#### Application Problems\n\n**Q1.** You have a dataset of 10,00010,00010,000 images of skin lesions (benign vs. malignant), each 256×256256 \\times 256256×256 RGB. You have a pre-trained ResNet-50 trained on ImageNet. Describe your training strategy for this binary classification problem, justifying each choice.\n\nHint\n\nConsider the dataset size, the domain distance between ImageNet and medical images, and the risk of overfitting.\n\n**Answer:**\n\n**Step 1 — Transfer learning strategy:** With 10,000 images (much smaller than ImageNet's 1.2M), train from scratch would overfit severely. Use ResNet-50 pre-trained on ImageNet.\n\n**Step 2 — Architecture modification:** Remove ResNet-50's final 1000-class softmax layer. Add: Global Average Pooling → Dense(256, ReLU) → Dropout(0.5) → Dense(1, sigmoid). The sigmoid gives the probability of malignancy.\n\n**Step 3 — Training in stages:**\n\n* Stage 1 (3–5 epochs): Freeze all ResNet-50 weights; train only the new head layers. High learning rate (10−310^{-3}10−3). The head learns to extract binary features from the pre-trained ResNet features.\n* Stage 2 (20+ epochs): Unfreeze the last 2–3 ResNet blocks; train with a much lower learning rate (10−510^{-5}10−5). The pre-trained features are gently adjusted for the medical domain.\n\n**Step 4 — Data augmentation:** Lesion images should be augmented with: random horizontal/vertical flips, random rotation (full 360°), random color jitter (lesions vary in color). This effectively multiplies the training set and reduces overfitting.\n\n**Step 5 — Evaluation:** Use AUC as primary metric (not accuracy — the two classes may be imbalanced). Report sensitivity and specificity at a clinically meaningful threshold (e.g., achieve at least 95% sensitivity, then maximize specificity).\n\n**Q2.** You want to build an emotion recognition model from facial images. Your training set is 50,000 labeled images across 7 emotion classes (happy, sad, angry, fearful, disgusted, surprised, neutral). Should you train from scratch or use transfer learning from a face recognition model? Justify your answer and describe any risks specific to this task.\n\n**Answer:** **Transfer learning from a face recognition model** is strongly preferred.\n\n**Justification:** A face recognition model has learned to detect facial landmarks, feature asymmetries, muscle activations, and expression-related textures — exactly the visual features that carry emotional information. These representations are far more relevant to emotion recognition than ImageNet features (which learned about objects, not faces). Starting from a face-recognition backbone means the model already knows the relevant facial anatomy; fine-tuning adapts those representations to the emotion classification task.\n\nWith 50,000 examples and 7 classes, training a deep CNN from scratch risks underfitting or slow convergence. Transfer learning provides a strong initialization that achieves competitive accuracy with far fewer epochs.\n\n**Risks specific to this task:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1118,
+      "out_sha": "13845f96f01a",
       "note": ""
     },
     {
@@ -1835,11 +1835,11 @@
       "en_title": "Chapter 16: Deep Learning Foundations — Convolutional Neural Networks",
       "order": 143,
       "src_chars": 2527,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5f042d9a2e16",
       "src": "  1. **Demographic bias:** If the face recognition model was trained predominantly on one demographic, its facial feature representations may encode demographic-specific patterns that correlate with but don't generalize across demographics. Emotion expression varies culturally and individually — validate separately by demographic group.\n  2. **Label subjectivity:** Emotion labels assigned by annotators (via crowdsourcing) encode annotator cultural backgrounds and biases. \"Neutral\" in one culture may appear \"unfriendly\" to annotators from another.\n  3. **Posed vs. spontaneous emotions:** Most training datasets contain posed expressions; real-world deployment involves spontaneous micro-expressions that look different.\n\n\n#### Think Deeper\n\n**Q1.** CNNs assume translation equivariance — a cat in the upper-right is detected as reliably as a cat in the lower-left. What types of visual tasks would violate this assumption, and what architectural modifications could address them?\n\n**Discussion:** Translation equivariance fails for:\n\n  1. **Absolute position matters:** Distinguishing a face with eyes on top from an upside-down face requires knowing where in the image things are. CNNs with global average pooling lose all positional information.\n\n  2. **Counting precisely:** \"Are there exactly 3 objects?\" requires knowing which regions are separate objects, not just detecting their local features anywhere.\n\n  3. **Spatial relationships:** \"Is the ball inside the box or outside?\" requires reasoning about relative positions that may be lost after pooling.\n\n  4. **Fine-grained detection with exact localization:** Medical analysis (\"is this lesion at the center of the optic disc?\") requires precise spatial coordinates.\n\n**Architectural solutions:**\n\n* **Positional encodings:** Add explicit position information to feature maps (used in transformers, Chapter 20; also applicable to CNNs).\n* **Deformable convolutions:** Allow filter shapes to deform based on learned offsets, modeling geometric transformations explicitly.\n* **Feature Pyramid Networks (FPN):** Multi-scale feature extraction that preserves spatial information at multiple resolutions.\n* **Object detection heads (YOLO, Faster R-CNN):** Explicitly predict bounding box coordinates alongside class labels, combining the translation-invariant feature extraction of CNNs with explicit spatial prediction.\n* **Transformer-based vision models (ViT):** Treat images as patches and use attention, which naturally handles arbitrary spatial relationships.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 855,
+      "out_sha": "b4aa963287b9",
       "note": ""
     },
     {
@@ -1847,11 +1847,11 @@
       "en_title": "Chapter 16: Deep Learning Foundations — Convolutional Neural Networks",
       "order": 144,
       "src_chars": 1045,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7c6e280508df",
       "src": "### Chapter Summary\n\nConvolutional neural networks exploit two properties of images: local structure (nearby pixels are related) and translation invariance (features should be detected regardless of position).\n\nKey ideas:\n\n* **Convolution** : slide a filter across the image; weight sharing reduces parameters by orders of magnitude\n* **Pooling** : reduce spatial dimensions; max pooling provides local translation invariance\n* **Feature hierarchy** : early layers detect edges, middle layers detect textures, late layers detect objects — this hierarchy emerges from training\n* **Landmark architectures** : LeNet → AlexNet → VGG → ResNet, each advancing what's possible\n* **Transfer learning** : pre-trained CNN features transfer across domains; fine-tuning requires far less labeled data\n\nChapter 18 will cover the techniques (batch normalization, dropout, residual connections) that make very deep CNNs trainable. But first: Chapter 17 introduces a completely different neural architecture for sequential data — Recurrent Neural Networks.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 421,
+      "out_sha": "6e0a28041fb2",
       "note": ""
     },
     {
