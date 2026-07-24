@@ -4935,11 +4935,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 402,
       "src_chars": 2701,
-      "status": "pending",
+      "status": "done",
       "src_sha": "575b87b0daff",
       "src": "Chapter 27 showed how technical forces drive the evolution of a system: rising latency, overwhelmed databases, deployment bottlenecks — each problem demanding a specific engineering response. But systems are not shaped only by load profiles and latency requirements. They are shaped by the people who build them, the teams they belong to, the communication structures those teams form, and the cultural norms that govern how failure is treated.\n\nA system designed by a heroic single engineer is a different system than one designed by 8 teams in 8 offices across 3 time zones, even if the specifications are identical. Conway's Law is not a law of physics — it is a law of human organization, and it is just as powerful.\n\nThis chapter closes the book with the human layer of system design: the organizational dynamics that shape architecture, the cultural practices that make systems resilient to failure, the emerging technologies that are reshaping infrastructure, and the final completed Tradeoff Matrix — everything the book has taught, compressed into one reference card.\n\nAnd then SocialSnap's engineers, who have been with us since Chapter 1, get a final word.\n\n* * *\n\n\n### 28.1 Conway's Law — The Mirror of Organization\n\nIn 1967, Melvin Conway observed that organizations designing systems are constrained to produce designs that mirror their communication structures. He was writing about software compilers, but the observation applies universally.\n\nConsider: a team of 8 engineers working in the same room, sharing a whiteboard, can design a system with deeply integrated components where state flows freely between layers. Everyone knows the system; coordination is easy.\n\nNow imagine the same system is redesigned by 8 teams of 10 engineers, each team in a different city, communicating via weekly meetings and asynchronous Slack messages. The same specification — but the result will be very different. Components will be more separated, interfaces will be more explicit, integration points will be more clearly documented. Not because the second group is more skilled (they may be less), but because the cost of sharing state across team boundaries is high. Teams naturally minimize inter-team dependencies to reduce coordination overhead.\n\nConway's Law: the system's modularity will tend to match the organization's modularity.\n\n\n#### Definition: Conway's Law\n\n**Conway's Law** states: \"Any organization that designs a system (in the broad sense used here) will produce a design whose structure is a copy of the organization's communication structure.\"\n\nIn plain language: the software mirrors the org chart. Teams own components, and components communicate the way teams communicate.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 847,
+      "out_sha": "4143ea5176f5",
       "note": ""
     },
     {
@@ -4947,11 +4947,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 403,
       "src_chars": 2157,
-      "status": "pending",
+      "status": "done",
       "src_sha": "93c7eebda40f",
       "src": "#### The Inverse Conway Maneuver\n\nIf Conway's Law is a description, the Inverse Conway Maneuver is a prescription: deliberately structure your organization to mirror the architecture you want.\n\nIf you want a microservices architecture with clean service boundaries, organize teams around those service boundaries first — before writing the code. Each team owns one service, has clear API contracts with other teams, and deploys independently. The architecture that emerges will match the organizational structure you set up.\n\nSocialSnap used this deliberately at v6: before decomposing the monolith into microservices, the CTO reorganized teams around the anticipated service boundaries. The Feed Team, User Team, Notification Team, and Post Team were established. Then, each team's first project was extracting their service from the monolith. The resulting services mapped cleanly to team boundaries — because the team structure was designed to produce exactly that architecture.\n\nThe maneuver has a corollary for identifying architectural problems: if a system has chronic integration issues at a particular interface — bugs that span two components, performance problems that require changes in both, security incidents that breach a supposedly clean boundary — investigate whether the team structure crosses that same boundary. Messy architecture at the interface between two components often reflects messy team communication across the same boundary.\n\n\n#### Common Misconception\n\nA common misconception about Conway's Law is that it is a bug — something to be overcome. In fact, it is a useful signal. Architectural boundaries that feel natural and are easy to maintain typically reflect real organizational boundaries. Architectural boundaries that are constantly violated, where every feature requires changes on both sides, typically reflect artificial divisions that don't match the organization's actual structure. Conway's Law, read backwards, can diagnose organizational misalignment.\n\n* * *\n\n\n### 28.2 On-Call, Post-Mortems, and Blameless Culture\n\nSystems fail. The question is not whether failure will happen, but what happens when it does.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 691,
+      "out_sha": "be59f43d2db2",
       "note": ""
     },
     {
@@ -4959,11 +4959,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 404,
       "src_chars": 3289,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6000fff8b75a",
       "src": "#### On-Call Engineering\n\nEvery production system above a certain scale requires someone to be reachable when things go wrong. **On-call rotation** is the organizational practice of designating which engineers are responsible for responding to production incidents during a given period.\n\nAn effective on-call system has:\n\n**Tiered escalation:** The first responder (on-call engineer) handles the incident or escalates to a domain expert within 15 minutes. Clear escalation paths prevent the on-call engineer from being stuck alone for hours.\n\n**Runbooks:** Documented procedures for known failure modes. When the database replica falls behind, the runbook says: step 1, check lag query; step 2, review slow query log; step 3, restart replica if lag > 30 minutes. Runbooks convert tacit knowledge (in the head of the engineer who last debugged this problem) into explicit knowledge (accessible to any on-call engineer at 3am).\n\n**SLO-based alerting:** Alerts fire when user-facing service level objectives are at risk, not when individual metrics cross arbitrary thresholds. An alert \"p99 latency > 500ms for 5 consecutive minutes\" is actionable and user-relevant. An alert \"CPU > 80%\" may be alarming but tells the on-call engineer nothing about whether users are actually experiencing degraded service.\n\n**On-call hygiene:** The on-call burden must be sustainable. Engineers who are paged 5 times per night cannot function effectively the next day. A well-run on-call rotation limits actionable pages to 2–3 per on-call shift; non-actionable noise is aggressively eliminated.\n\n\n#### Blameless Post-Mortems\n\nWhen a system incident occurs, there is a natural human impulse to find someone at fault. The engineer who deployed the bad code. The operations team who didn't notice the warning signs. This impulse is understandable, but it produces terrible outcomes.\n\n**Why blame harms systems:** If engineers fear being blamed for outages, they will avoid taking risks. Risk-avoidance means slower development, fewer experiments, and less innovation. Engineers who were present during an incident — and therefore have the deepest understanding of what happened — will not share their knowledge fully if they fear personal consequences. The organization loses the learning.\n\n**Blameless post-mortems** are a cultural practice pioneered by SRE teams (Site Reliability Engineering, a discipline developed at Google). The principle: post-mortems analyze systems and processes, not individuals. The question is never \"who caused this?\" but \"what conditions made this failure possible?\"\n\nA good post-mortem answers:\n\n  1. What happened? (Timeline of events, as detailed as possible)\n  2. What was the user impact? (Duration, scope, number affected)\n  3. What was the root cause? (Often multiple contributing factors, not a single cause)\n  4. What would have caught this earlier? (Detection improvements)\n  5. What would have prevented this? (Preventive changes)\n  6. What are the action items? (Specific, assigned, dated changes to systems or processes)\n\nThe post-mortem is shared widely within the organization, and the action items are tracked to completion. The goal is institutional learning: every incident makes the system safer, because every incident's lessons are encoded into the system.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1230,
+      "out_sha": "064364bd2368",
       "note": ""
     },
     {
@@ -4971,11 +4971,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 405,
       "src_chars": 2179,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4373175b904b",
       "src": "#### Five Whys — The Detective's Tool for Root Cause\n\nThe \"Five Whys\" technique asks \"why?\" repeatedly, drilling down through symptoms to underlying causes:\n\n**Incident:** The payment service was unavailable for 8 minutes.\n\n* Why? The database connection pool was exhausted.\n* Why? A slow query was holding connections for 60 seconds each.\n* Why? A database index was dropped by a migration script.\n* Why? The migration script was tested on staging but staging had a smaller dataset, so the query ran fast.\n* Why? Staging and production have different data volumes; the query planning behavior differs.\n\n**Root cause:** Staging environment does not reflect production data volume, causing performance differences to go undetected.\n\n**Action item:** Load staging with production-representative data volumes; add query performance regression tests.\n\nThe Five Whys is the detective's discipline (Thread C) applied to system failures: follow the evidence through successive causes until you reach the true origin.\n\n* * *\n\n\n### 28.3 Serverless Computing — The Future of Abstraction\n\nThroughout this book, the infrastructure discussion has centered on servers: we deploy our services on servers (physical or virtual), manage those servers, scale them horizontally, monitor their health. Serverless computing represents a different model: what if you could write a function and run it without thinking about servers at all?\n\n\n#### Definition: Serverless (Function-as-a-Service)\n\n**Serverless** (also called Function-as-a-Service or FaaS) is a cloud execution model where the developer deploys individual functions (not entire services), and the cloud provider handles all infrastructure: server allocation, scaling, load balancing, and maintenance. The developer pays only for the time their code is executing, not for idle server time.\n\nIn plain language: you write a function, upload it to AWS Lambda or Google Cloud Functions. When a request comes in, the cloud provider runs your function on whatever infrastructure it needs, scales automatically to handle more requests, and charges you per millisecond of execution time. You never provision a server or configure a load balancer.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 831,
+      "out_sha": "dbbcdb192ba1",
       "note": ""
     },
     {
@@ -4983,11 +4983,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 406,
       "src_chars": 2214,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bb5c913f0b43",
       "src": "#### The Tradeoffs of Serverless\n\nServerless is not strictly better than traditional server-based deployment — it is a different point on the tradeoff curve:\n\n**Benefits:**\n\n* Zero operational overhead for server management\n* Automatic scaling from 0 to millions of requests\n* Pay-per-use (no cost when there are no requests)\n* Forced isolation: each function is a clean, stateless unit\n\n**Costs:**\n\n* Cold start latency: when a function hasn't been invoked recently, the cloud provider must start a new container — a delay of 100ms–2 seconds, depending on the runtime and package size. This is unacceptable for latency-sensitive paths.\n* Execution time limits: AWS Lambda functions can run for at most 15 minutes. Long-running workloads (video transcoding, machine learning training) don't fit the model.\n* Limited control over runtime: you cannot configure the kernel, network stack, or hardware. For specialized performance requirements, this is a constraint.\n* Vendor lock-in: serverless functions are deeply tied to a specific cloud provider's APIs, event models, and trigger mechanisms. Migrating to a different provider requires rewriting the integration layer.\n* Observability challenges: tracing a request across 5 serverless functions invoked serially requires careful distributed tracing setup — the same challenge as microservices, without the same control over the runtime.\n\n**When serverless is appropriate:** Low-traffic APIs and webhooks (the \"pay nothing at idle\" benefit is most valuable here); event-driven data processing (process a file when it's uploaded to S3); scheduled tasks (run a cleanup job every night at midnight); rapid prototyping (deploying a new feature without provisioning infrastructure).\n\n**When serverless is inappropriate:** Latency-sensitive APIs (cold start latency is a problem); long-running workloads; stateful processing; systems requiring fine-grained performance tuning.\n\nFor SocialSnap, serverless is appropriate for: image processing (resize a photo when it's uploaded), scheduled data exports, and webhook handlers for third-party integrations. It is inappropriate for: the feed service (latency-sensitive), the matching service, and the billing service.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 813,
+      "out_sha": "59eea3f71461",
       "note": ""
     },
     {
@@ -4995,11 +4995,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 407,
       "src_chars": 2055,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4943defb331c",
       "src": "### 28.4 Edge Computing — Bringing Code to the Data\n\nCDNs (Chapter 7, Chapter 24) place static content close to users. **Edge computing** takes this further: it places compute close to users.\n\nRather than routing all requests to a central data center, edge computing runs application logic at the CDN's edge nodes — the same servers serving cached content. A request from Tokyo can be handled by JavaScript/WebAssembly code running in a Tokyo edge server, with sub-millisecond latency.\n\nThis is possible because modern CDN providers (Cloudflare Workers, AWS Lambda@Edge, Fastly Compute) offer programmable edge execution environments. Code deployed to these environments runs in isolated containers at hundreds of edge locations globally.\n\n**Edge computing use cases:**\n\n* **A/B testing and feature flags:** Determine which version of the UI to show based on a user cookie — at the edge, with zero round-trip to the origin.\n* **Request authentication:** Validate JWT tokens at the edge before forwarding requests to origin. Unauthenticated requests are rejected in the nearest city, reducing origin load.\n* **Personalization:** Inject user-specific content (username, language preference) into cached pages at the edge.\n* **Latency-sensitive applications:** For real-time applications (multiplayer games, collaborative editing), running game state or document synchronization at the edge reduces latency by 50–100ms compared to origin-based processing.\n\n**Edge computing limitations:** Edge nodes have limited resources — small amounts of memory, limited compute. They are not suitable for computationally intensive tasks. They also cannot access private databases directly (databases are at origin); they can only access data that's been replicated to the edge (caches, KV stores distributed to edge).\n\nFor SocialSnap, edge computing is used for: JWT validation, bot detection, and rendering the initial page shell (the empty HTML that the JavaScript framework populates), allowing browsers to begin rendering before any origin requests complete.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 797,
+      "out_sha": "d1778926d88b",
       "note": ""
     },
     {
@@ -5007,11 +5007,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 408,
       "src_chars": 1839,
-      "status": "pending",
+      "status": "done",
       "src_sha": "82150bf90d52",
       "src": "### 28.5 AIOps — Machine Learning in Operations\n\nThe systems described in this book generate enormous volumes of observational data: millions of log lines per second, thousands of metrics updated every few seconds, distributed traces for every request. The human capacity to monitor and reason about this volume is limited.\n\n**AIOps** (Artificial Intelligence for IT Operations) applies machine learning to operations problems:\n\n**Anomaly detection:** Rather than alerting when a metric crosses a fixed threshold, ML models learn the normal behavior of each metric (including seasonal patterns, day-of-week variation, and trend lines) and alert only when behavior deviates significantly from the predicted normal. This reduces false positive alert rates dramatically.\n\n**Root cause correlation:** When an incident occurs, dozens of metrics change simultaneously. ML models can identify which metric change was primary (cause) and which were secondary (effect) by analyzing causal patterns learned from historical incidents.\n\n**Capacity prediction:** Forecast future resource consumption based on historical trends and known events (product launches, marketing campaigns). Provision capacity before it's needed, not after the system is at 95% utilization.\n\n**Automated remediation:** For known failure patterns with known remediations, trigger automated responses — restart a service, increase a connection pool size, failover a database — without human intervention. Reduces mean time to resolution.\n\nThe engineer's role in an AIOps-augmented system shifts from \"watch dashboards for problems\" to \"define what normal looks like, validate automated responses, and investigate novel failure modes that the ML model doesn't recognize.\" Human judgment remains irreplaceable for novel situations; ML handles the known patterns at scale.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 586,
+      "out_sha": "f45e7db307a5",
       "note": ""
     },
     {
@@ -5019,11 +5019,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 409,
       "src_chars": 2276,
-      "status": "pending",
+      "status": "done",
       "src_sha": "13752fc27c34",
       "src": "### 28.6 Infrastructure as Code — Systems That Describe Themselves\n\nThroughout this book, the focus has been on application architecture. But where does the infrastructure — the servers, load balancers, databases, networks — come from?\n\n**Infrastructure as Code (IaC)** is the practice of defining and managing infrastructure through machine-readable configuration files, treated with the same discipline as application code: version-controlled, code-reviewed, tested, and automatically applied.\n\n**Terraform** (from HashiCorp) is the most widely used IaC tool. A Terraform file describes the desired state of infrastructure:\n    \n    \n    resource \"aws_db_instance\" \"socialsnap_postgres\" {\n      engine         = \"postgres\"\n      engine_version = \"14.0\"\n      instance_class = \"db.r5.xlarge\"\n      allocated_storage = 500\n      multi_az      = true\n      backup_retention_period = 7\n    }\n    \n\nApplying this configuration creates a PostgreSQL database on AWS with the specified parameters. Changing the `instance_class` and re-applying upgrades the instance. The configuration file is the authoritative description of infrastructure state.\n\n**Benefits of IaC:**\n\n* **Reproducibility:** Any infrastructure can be recreated identically in a new environment (e.g., a staging environment that mirrors production) by running the same configuration.\n* **Auditability:** All infrastructure changes are code changes — they go through code review and leave a version history. \"Who changed the database size and when?\" is answered by `git log`.\n* **Disaster recovery:** If a data center fails, IaC allows rebuilding the entire infrastructure in a different region within hours, not days.\n* **Drift detection:** IaC tools can compare the actual state of infrastructure against the declared configuration and alert when they diverge (an engineer manually changed something without going through the IaC pipeline).\n\nSocialSnap's full infrastructure — 200 application servers, 40 database instances, 15 Redis clusters, 8 Kafka clusters, load balancers, VPCs, DNS configurations — is described in approximately 15,000 lines of Terraform configuration files. Any engineer can create an isolated SocialSnap environment for testing by running `terraform apply` and waiting 20 minutes.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1054,
+      "out_sha": "71ce074d22b3",
       "note": ""
     },
     {
@@ -5031,11 +5031,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 410,
       "src_chars": 2774,
-      "status": "pending",
+      "status": "done",
       "src_sha": "50b3db66e36e",
       "src": "### 28.7 Technology Evaluation Framework — The Detective's Final Tool\n\nThroughout the book, the detective's discipline has been the meta-skill: approach every design problem by gathering clues (requirements), forming hypotheses (design candidates), and committing to the least-wrong answer. The same discipline applies when evaluating new technologies.\n\nA new database, framework, protocol, or infrastructure service appears every month. Engineering teams must evaluate them without either dismissing everything new (conservatism that leads to technical stagnation) or adopting everything new (hype-driven engineering that creates operational chaos).\n\n**The Technology Evaluation Framework:**\n\n  1. **What problem does it solve?** If the technology doesn't solve a problem you actually have, the evaluation ends here.\n\n  2. **How does it solve the problem differently from what you already have?** If your existing solution is 80% of the way there, the switching cost must be justified by the remaining 20%.\n\n  3. **What are the failure modes?** Every technology fails. The relevant question is: how does it fail? What are the recovery procedures? Has the failure mode been observed at production scale, or only theorized?\n\n  4. **What is the operational model?** Who manages it? How is it upgraded? What monitoring does it require? Technologies with simple operational models are preferred over complex ones, all else equal.\n\n  5. **What is the exit strategy?** If you adopt this technology and it proves to be the wrong choice in 2 years, how do you migrate away? Technologies with no exit strategy impose a permanent lock-in cost.\n\n  6. **Who else is running this at scale?** Novel technologies without production deployments at relevant scale carry unknown risk. Prefer technologies that have been battle-tested by others who were willing to publish their learnings (case studies, conference talks, post-mortems).\n\nThis framework is not a checklist that produces a binary yes/no answer. It is a structured set of questions that forces the evaluator to gather evidence before committing — the detective's method applied to technology adoption.\n\n* * *\n\n\n### 28.8 The Completed Tradeoff Matrix — The Full Reference Card\n\nFrom its introduction in Chapter 2 with three seed rows, through every building block, scaling pattern, reliability mechanism, and case study, the Tradeoff Matrix has grown into a complete reference for system design thinking. This is the final version — the entire book compressed into one table.\n\n**How to use this matrix:** Each row represents a design decision or component. When designing a system, scan the relevant rows to understand the full cost of each choice. No row is unconditionally good or bad — every choice involves a tradeoff.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 845,
+      "out_sha": "b1e826f07844",
       "note": ""
     },
     {
@@ -5043,11 +5043,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 411,
       "src_chars": 1267,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1af174204119",
       "src": "#### Part I: Foundations\n\nPattern / Concept | Latency Impact | Consistency Impact | Availability Impact | Operational Complexity  \n---|---|---|---|---  \n**Caching** (Ch 7) | Dramatically lower read latency (cache hit) | Eventual — cached data may be stale | Higher (reads still succeed if DB is slow) | Medium — cache invalidation is hard  \n**Synchronous calls** (Ch 2) | Low for fast dependencies; high for slow ones | Strong — caller always sees latest state | Lower — caller fails if callee fails | Low initially, high under failure  \n**Replication** (Ch 2) | Lower read latency with replicas | Eventual (async replicas); strong (sync) | Higher — reads survive primary failure | Medium — replication lag monitoring needed  \n**Strong consistency** (Ch 4 ACID) | Higher — write coordination required | Strong — all readers see latest write | Lower — partition causes unavailability | Medium  \n**Eventual consistency** (Ch 4 BASE) | Lower — writes/reads need no coordination | Eventual — reads may return stale data | Higher — partitions don't block operations | Medium — conflict resolution needed  \n**Causal consistency** (Ch 4) | Medium — causal metadata overhead | Causal — \"you see your own writes\" guaranteed | High | High — vector clocks or similar  \n  \n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 751,
+      "out_sha": "6cdb2ca96aae",
       "note": ""
     },
     {
@@ -5055,11 +5055,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 412,
       "src_chars": 2875,
-      "status": "pending",
+      "status": "done",
       "src_sha": "92d40572ca1f",
       "src": "#### Part II: Building Blocks\n\nPattern / Concept | Latency Impact | Consistency Impact | Availability Impact | Operational Complexity  \n---|---|---|---|---  \n**Relational DB (PostgreSQL)** (Ch 5) | Medium — ACID overhead on writes | Strong (ACID) | Medium — single primary is a bottleneck | Medium  \n**B-tree indexes** (Ch 5) | Lower read latency; higher write latency | N/A | N/A | Low — automatic maintenance  \n**Document store (MongoDB)** (Ch 6) | Low for document-level operations | Eventual (default); configurable | High (replica sets) | Medium  \n**Key-value store (Redis)** (Ch 6, 7) | Very low (in-memory) | Eventual (async replication) | High (cluster mode) | Low–Medium  \n**Column-family store (Cassandra)** (Ch 6) | Low (write-optimized) | Tunable (N/W/R quorum) | Very high (masterless) | High  \n**Cache-aside** (Ch 7) | Lower reads (cache hit); original DB latency (miss) | Eventual (TTL staleness) | High — reads survive cache failure | Medium — manual invalidation  \n**Write-through cache** (Ch 7) | Higher write latency (writes to cache + DB) | Strong — cache always current after write | Medium — write fails if either cache or DB fails | Medium  \n**Write-behind cache** (Ch 7) | Lower write latency (async DB write) | Eventual — DB may be behind cache | Risk of data loss if cache fails before DB write | High — failure recovery needed  \n**Message queue (point-to-point)** (Ch 8) | Higher for producer (async delivery) | At-least-once or exactly-once (configurable) | High — queue buffers failures | Medium  \n**Pub-sub messaging** (Ch 8) | Higher (async) | Eventual (consumers process at own pace) | Very high — decoupled failure domains | Medium–High  \n**Kafka distributed log** (Ch 8) | Low (sequential disk writes) | Ordered within partition; eventual across consumers | Very high — replicated, durable | High — Zookeeper/KRaft, partition management  \n**Round-robin load balancing** (Ch 9) | No latency overhead | N/A | High | Low  \n**Least-connections load balancing** (Ch 9) | Lower for slow backend avoidance | N/A | High | Low  \n**Consistent hashing (load balancer)** (Ch 9) | No latency overhead; cache-affinity benefit | N/A | High (minimal remapping on change) | Medium  \n**REST API** (Ch 9) | Medium (HTTP overhead) | Stateless — no shared state | High — stateless scaling | Low  \n**gRPC API** (Ch 9) | Low (binary, multiplexed HTTP/2) | Stateless | High | Medium — protobuf schema management  \n**Rate limiting** (Ch 9) | Added latency for rate-limited requests | N/A | Protects availability of service | Medium  \n**Block storage (SSD/HDD)** (Ch 10) | Low SSD, Medium HDD | Durable | Medium | Low  \n**Object storage (S3)** (Ch 10) | Medium (network round-trip) | Eventual (strong optional) | Very high (11 nines durability) | Low  \n**Cold/archival storage** (Ch 10) | High (minutes to retrieve) | Durable | High | Low (cost-optimized)  \n  \n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1728,
+      "out_sha": "3df159625376",
       "note": ""
     },
     {
@@ -5067,11 +5067,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 413,
       "src_chars": 2382,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7834abfde9d3",
       "src": "#### Part III: Scaling Patterns\n\nPattern / Concept | Latency Impact | Consistency Impact | Availability Impact | Operational Complexity  \n---|---|---|---|---  \n**Horizontal scaling** (Ch 11) | No latency cost; enables more parallelism | Requires stateless design | High — failures affect 1/N of traffic | Medium — orchestration needed  \n**Stateless services** (Ch 11) | No latency cost | N/A (state externalized) | Very high — any server handles any request | Low per server; medium for external state store  \n**Vertical scaling** (Ch 11) | Lower latency (faster hardware) | N/A | Low — single machine SPOF | Low  \n**Read replicas** (Ch 12) | Lower read latency | Eventual (replication lag) | Higher for reads | Medium — failover configuration  \n**Database sharding** (Ch 12) | Lower write latency (distributed writes) | Strong within shard; difficult cross-shard | High — shard failure affects 1/N of data | High — cross-shard queries, resharding pain  \n**Consistent hashing (DB)** (Ch 12, 26) | No latency cost; minimal migration | N/A | High — minimal disruption on topology change | Medium  \n**Microservices** (Ch 13) | Higher for inter-service calls; lower overall (independent scaling) | Strong within service; eventual across | High — partial failure instead of total | Very high — service mesh, distributed tracing  \n**Service mesh** (Ch 13) | Slight overhead (sidecar proxy) | N/A | Very high (circuit breakers, retry) | Very high — Istio/Linkerd operational burden  \n**API gateway** (Ch 13, 9) | Small overhead | N/A | Medium — SPOF if not clustered | Medium  \n**CQRS** (Ch 8, 14) | Lower read latency (optimized read models) | Eventual (read model may lag write model) | High | High — two models to maintain  \n**Event sourcing** (Ch 8, 14) | Higher for event replay queries | Strong (event log is source of truth) | Very high (log is append-only, durable) | Very high — event schema evolution  \n**Two-phase commit (2PC)** (Ch 12) | Very high (two network round trips) | Strong (distributed ACID) | Low — any participant failure blocks commit | Very high — coordinator failure risk  \n**Saga pattern** (Ch 14) | Medium (sequential compensations) | Eventual (with compensating transactions) | High | High — compensating transaction design  \n**Circuit breaker** (Ch 16) | No overhead when closed; fast fail when open | N/A | Very high — isolates failures | Medium  \n  \n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1294,
+      "out_sha": "aad33f35f1ef",
       "note": ""
     },
     {
@@ -5079,11 +5079,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 414,
       "src_chars": 1709,
-      "status": "pending",
+      "status": "done",
       "src_sha": "04c4175a6626",
       "src": "#### Part IV: Reliability and Operations\n\nPattern / Concept | Latency Impact | Consistency Impact | Availability Impact | Operational Complexity  \n---|---|---|---|---  \n**Graceful degradation** (Ch 16) | No latency overhead | Partial — some features return stale/empty | Very high — core functions survive | Medium — fallback logic needed  \n**Health checks** (Ch 16) | No latency overhead | N/A | High — load balancers route around failures | Low  \n**Bulkhead pattern** (Ch 16) | No latency overhead | N/A | Very high — failure contained to one pool | Medium  \n**Retry with backoff** (Ch 16) | Higher under failure (retry latency) | May cause duplicate operations (non-idempotent) | Higher — recovers from transient failures | Low — must handle idempotency  \n**Idempotency keys** (Ch 16, 25) | Tiny overhead (key check) | Strong — exactly-once semantics | N/A | Low  \n**Distributed tracing** (Ch 17) | Tiny overhead (trace context propagation) | N/A | N/A | High — instrumentation across all services  \n**Canary deployment** (Ch 18) | No latency overhead | N/A | Very high — rollback is instant | Medium — traffic splitting mechanism  \n**Feature flags** (Ch 18) | Tiny overhead (flag check) | N/A | Very high — instant enable/disable | Low–Medium  \n**Blue-green deployment** (Ch 18) | No latency overhead | N/A | Very high — instant cutover | Medium — double infrastructure cost during transition  \n**SLI/SLO/SLA** (Ch 19) | N/A (measurement, not design pattern) | N/A | Forces explicit availability targets | Medium — monitoring infrastructure  \n**Chaos engineering** (Ch 19) | N/A (testing practice) | N/A | Improves confidence in availability | High — requires discipline and rollback expertise  \n  \n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 975,
+      "out_sha": "b0809330fb97",
       "note": ""
     },
     {
@@ -5091,11 +5091,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 415,
       "src_chars": 3064,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9e75ea95482e",
       "src": "#### Part V: Case Study Patterns\n\nPattern / Concept | Latency Impact | Consistency Impact | Availability Impact | Operational Complexity  \n---|---|---|---|---  \n**URL shortening (redirect)** (Ch 20) | Very low (key lookup + redirect) | Eventual (short URL → long URL mapping) | Very high (read-heavy, cacheable) | Low  \n**Rate limiter (token bucket)** (Ch 20) | Tiny overhead | Strong (must not over-allow) | High | Medium — distributed state for per-user counts  \n**Inverted index (search)** (Ch 23) | Very low query latency (precomputed) | Eventual (indexing delay before new docs appear) | High (replicated shards) | High — shard management, re-indexing  \n**TF-IDF ranking** (Ch 23) | No query latency overhead (scores precomputed) | N/A | N/A | Medium — score recomputation on corpus changes  \n**PageRank** (Ch 23) | No query latency overhead (batch computation) | Eventually consistent (re-computed periodically) | N/A | High — distributed graph computation  \n**Web crawler / URL frontier** (Ch 23) | N/A | Eventual (web is crawled continuously) | High (distributed crawler) | High — politeness, dedup, priority queuing  \n**Video transcoding pipeline** (Ch 24) | High (offline batch; not real-time) | Eventual (delay from upload to availability) | High (queue buffers failures) | High — codec configuration, parallel workers  \n**Adaptive bitrate streaming (ABR)** (Ch 24) | Very low (client-side algorithm) | N/A (no consistency requirement) | Very high (degrades gracefully) | Medium (manifest and segment management)  \n**CDN edge caching** (Ch 7, 24) | Very low for cache hits; medium for misses | Eventual (TTL or explicit invalidation) | Very high | Medium  \n**Geohashing** (Ch 25) | Very low (key lookup by prefix) | Eventual (spatial index updated async) | High | Low  \n**Sloppy quorum + hinted handoff** (Ch 26) | Low (write to any W nodes) | Eventual (canonical node may not have latest) | Very high (write always succeeds) | Medium  \n**Merkle tree anti-entropy** (Ch 26) | No query latency impact | Eventually consistent (background repair) | High (self-healing replicas) | Medium  \n**Gossip protocol** (Ch 26) | No latency overhead | Eventually consistent (propagation delay) | Very high (no central coordinator SPOF) | Low  \n**Fan-out on write** (Ch 22) | Very low read (precomputed) | Eventual (fan-out latency before feed is fresh) | High (reads always available) | Medium–High (fan-out infrastructure)  \n**Fan-out on read** (Ch 22) | High read (compute at read time) | Strong (always current at read) | Medium (read requires multiple fetches) | Low  \n**Hybrid fan-out** (Ch 22) | Low (combined precomputed + on-demand) | Eventual for regular users; near-real-time for celebrities | High | High — threshold management, two code paths  \n**Consistent hashing + virtual nodes** (Ch 26) | No latency cost | N/A | Very high (minimal disruption on change) | Medium  \n**N/W/R quorum (distributed KV)** (Ch 26) | Tunable (W=1, R=1 is fastest) | Tunable (W + R > N = strong; ≤ N = eventual) | Tunable (lower W/R = higher availability) | Medium  \n  \n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1653,
+      "out_sha": "0ae0f7971f0c",
       "note": ""
     },
     {
@@ -5103,11 +5103,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 416,
       "src_chars": 1350,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3663c94d253c",
       "src": "#### Part VI: Organizational and Meta-Level\n\nPattern / Concept | Latency Impact | Consistency Impact | Availability Impact | Operational Complexity  \n---|---|---|---|---  \n**Microservice decomposition (Conway's Law)** (Ch 13, 28) | Higher inter-service; enables independent scaling | Eventual across services | Higher — partial failures isolate | Very high — service ownership model needed  \n**Blameless post-mortems** (Ch 28) | N/A | N/A | Improves over time (learns from failures) | Low — process discipline only  \n**Infrastructure as Code** (Ch 28) | N/A | Deterministic infrastructure state | Very high (reproducible environments) | Medium — IaC tool learning curve  \n**Serverless (FaaS)** (Ch 28) | Cold start penalty (100ms–2s) | Stateless (no shared in-function state) | Very high (auto-scaling) | Very low for code; lock-in risk  \n**Edge computing** (Ch 28) | Very low (code runs near user) | Limited (no access to central DB) | Very high | Medium — edge deployment pipeline  \n**Strangler fig migration** (Ch 27) | No latency impact | N/A | Very high (gradual; always reversible) | High — parallel systems must be maintained  \n**Canary + feature flags (deployment)** (Ch 18, 27) | No latency impact | N/A | Very high | Medium  \n**Technical debt (intentional)** (Ch 27) | N/A | N/A | N/A | Grows over time without active management  \n  \n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 849,
+      "out_sha": "3943f45752aa",
       "note": ""
     },
     {
@@ -5115,11 +5115,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 417,
       "src_chars": 2311,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5a8f0f2ecebb",
       "src": "### 28.9 The Detective Team — How Good Communication Produces Good Architecture\n\nThread C — the Detective's Discipline — has been about approaching design problems with rigor: gather evidence, form hypotheses, test against constraints, commit to the least-wrong answer. We have applied this to individual design decisions throughout the book.\n\nBut a detective working alone makes mistakes. They miss evidence they weren't looking for. They have blind spots from their prior experience. The best investigations are collaborative: each investigator brings a different perspective, notices different clues, and challenges the others' hypotheses.\n\nSystem design is the same. A system designed by a single brilliant engineer is almost always inferior to a system designed by a thoughtful team. Not because no individual can be brilliant, but because:\n\n**Different engineers have different experience.** The engineer who has operated a Cassandra cluster at scale knows failure modes that the engineer who has only read the documentation does not. The engineer who has debugged the caching bug (SocialSnap v2) carries an intuition about cache invalidation complexity that no textbook fully conveys.\n\n**Good design requires adversarial challenge.** A design that is presented, agreed to, and implemented without serious challenge will contain assumptions that seemed obvious to the designer but are wrong. A team that has a culture of respectful, rigorous design review — where \"I don't think this handles the case where...\" is welcomed, not resented — produces better designs.\n\n**Communication is architecture.** As Conway's Law shows, the way teams communicate shapes what they build. Teams that communicate openly across boundaries (between the database team and the application team, between operations and development) build systems with clean interfaces and shared understanding. Teams that silo communication build systems with implicit, fragile dependencies.\n\nThe detective team's success depends on:\n\n* Shared vocabulary (Part I of this book built this vocabulary)\n* Mutual respect (blameless post-mortems extend this respect to failure)\n* Documented reasoning (the Tradeoff Matrix captures decisions and their rationale)\n* Intellectual honesty (the willingness to say \"I don't know\" and \"I was wrong\")\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 739,
+      "out_sha": "0c2939e45dea",
       "note": ""
     },
     {
@@ -5127,11 +5127,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 418,
       "src_chars": 3005,
-      "status": "pending",
+      "status": "done",
       "src_sha": "89db63a0fae7",
       "src": "### 28.10 SocialSnap's Last Chapter — A Team Grows Up\n\nIt is time for a final visit to SocialSnap.\n\nThe platform is four years old. It has 15 million daily active users, a feed that serves 100 million views per day, a distributed key-value store that handles 100 million operations per second, and an engineering team of 80 people.\n\nThe original two founders — Amara and Chen — are still at the company, though neither writes application code daily anymore. Amara leads the platform engineering team; Chen leads the data infrastructure team. They both still participate in architecture reviews, though their primary contribution is now the institutional memory they carry: they remember why the sharding key was chosen the way it was, they remember the 6-hour maintenance window that cost them users, they remember every significant design decision and the context that made it right at the time.\n\nThe engineering team is organized into 8 service teams, each with 8–12 engineers and a tech lead. Each team maintains its own service, its own database (service-owned data, following the microservices principle), and its own on-call rotation. When a service fails, the owning team is paged — not a central operations team. This creates accountability and expertise: the engineers who built the service are the engineers who maintain it.\n\nOnboarding a new engineer takes two weeks. The first week is spent reading: the syllabus of services, the Tradeoff Matrix, the last six months of post-mortems. The second week is spent pairing with a senior engineer on their first on-call rotation. By the end of the second week, the new engineer has participated in at least one production incident — not as a decision-maker, but as an observer, watching how the team reasons under pressure.\n\nThe Tradeoff Matrix lives in a shared document that is never \"final.\" Every significant architecture decision gets a new row. The team's architecture lead reviews it quarterly, trimming obsolete rows and adding context to rows that represent choices the team is considering revisiting.\n\nSocialSnap still uses PostgreSQL for its primary user and post data. It still uses Redis for its caches. It still uses Kafka for its event backbone. The technologies from 2020 still run in 2024 — because technologies that were right for the problem don't become wrong just because time passes. The engineering team has learned to be conservative about adopting new technologies (the framework is always applied) and aggressive about evolving specific components when evidence demands it.\n\nThe next challenge on the roadmap: a machine learning recommendation system that requires an entirely new data pipeline — a stream processing layer that can serve model features in real time. The team has formed a working group of six engineers to investigate candidate technologies. They have been asked to produce a Tradeoff Matrix comparison of three options by the end of the month.\n\nThe detective's work continues.\n\n* * *\n\n\n### 28.11 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1044,
+      "out_sha": "5522f2861139",
       "note": ""
     },
     {
@@ -5139,11 +5139,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 419,
       "src_chars": 3157,
-      "status": "pending",
+      "status": "done",
       "src_sha": "91a50bfd77dc",
       "src": "#### Concept Check\n\n**Q1.** State Conway's Law in your own words and give a concrete example from either SocialSnap's history or a system you know.\n\n**Answer:** Conway's Law: the communication structure of an organization tends to be reflected in the design of the software it builds. Systems have interfaces where teams have interfaces. Concrete example from SocialSnap: when the engineering team was 8 people in one room, the system was a monolith — everyone communicated freely, so the code was deeply integrated. When the team grew to 50 people across multiple offices, the system decomposed into services — because the high cost of cross-team communication forced the teams to define explicit interfaces at the boundaries of their responsibilities. The service interfaces (REST APIs between services) mirror the team interfaces (API contracts between team-owned systems). Another concrete example: if a company's billing team and product team rarely talk, the billing system and the product system will typically have a poorly designed integration — each side has only a fuzzy understanding of the other's constraints and requirements. Integration bugs appear at the interface that matches the communication gap.\n\n**Q2.** What are the key differences between serverless (FaaS) and traditional server-based deployment? For which of the following use cases would you choose serverless, and why? (a) Image thumbnail generation triggered by S3 upload, (b) the SocialSnap feed API endpoint, (c) a nightly reporting job.\n\n**Answer:** Key differences: Server-based: persistent infrastructure, pay for idle time, full control over runtime, no cold start, unlimited execution duration, stateful sessions possible. Serverless: ephemeral per-invocation, pay per execution, managed runtime, cold start penalty, 15-minute max execution (AWS Lambda), stateless. (a) Image thumbnail generation: **Serverless is ideal.** Event-driven (S3 upload triggers the function), short execution time (seconds per image), variable and bursty load (uploads cluster after content announcements), stateless (each image processed independently). No cold start problem because exact latency doesn't matter — the user isn't waiting synchronously. (b) Feed API endpoint: **Server-based is appropriate.** Cold start latency (100ms–2s) would be catastrophically bad for an endpoint that must respond in < 200ms. High, sustained request volume makes per-invocation pricing more expensive than reserved capacity. The feed service also benefits from warm in-process caches that serverless cannot maintain across cold starts. (c) Nightly reporting job: **Serverless is ideal.** Runs once daily, so no idle cost between runs. Predictable short execution time (< 15 minutes assuming report generation is fast). No latency requirements. Event-driven (scheduled trigger). Low operational overhead — no server to maintain.\n\n**Q3.** The completed Tradeoff Matrix has many rows for patterns that SocialSnap's architecture uses simultaneously. Pick two rows that represent conflicting tradeoffs — where improving one axis on one row makes the same axis worse on another row — and explain the tension.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1099,
+      "out_sha": "2204956f44ba",
       "note": ""
     },
     {
@@ -5151,11 +5151,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 420,
       "src_chars": 2858,
-      "status": "pending",
+      "status": "done",
       "src_sha": "350320d96f20",
       "src": "**Answer:** Example: **Redis key-value store (eventual consistency, very low latency)** and **ACID relational database (strong consistency, higher latency)**. The tension: SocialSnap uses Redis for its timeline cache (Chapter 22) — eventual consistency is acceptable for the feed. The same data (post content) lives in PostgreSQL — strong consistency is required for the post to be durable and correct. These coexist because they serve different requirements, but maintaining consistency between them is an operational burden: when a post is deleted in PostgreSQL, the Redis timeline must be invalidated. If this invalidation fails (race condition, network error), Redis serves a deleted post to users for up to TTL seconds. The tradeoffs of the two systems are directly in tension: Redis's speed comes from not waiting for durability acknowledgment; PostgreSQL's correctness comes from exactly that wait. The system's correctness depends on the consistency of data flow between them — exactly the cache invalidation problem Chapter 7 described as one of the two hardest problems in computer science.\n\n**Q4.** What makes a post-mortem \"blameless\" and why does this cultural choice produce better engineering outcomes than blame-focused incident reviews?\n\n**Answer:** A blameless post-mortem focuses on system conditions and process failures, not individual mistakes. It asks \"what conditions made this failure possible?\" not \"who made this mistake?\" Blameless: \"The deploy script failed silently because there was no alerting on deploy exit codes, and the engineer wasn't notified that the service was down.\" Blame-focused: \"The engineer deployed broken code to production on Friday afternoon.\" Why blameless produces better outcomes: (1) Engineers who fear blame conceal information. In a blame culture, the engineer who made the mistake is motivated to minimize or obscure their role in the post-mortem. In a blameless culture, they are the most valuable contributor — they have the most detailed knowledge of what happened. Full information leads to better root cause analysis. (2) Blame fixes individuals, not systems. Firing or punishing an engineer for a mistake does not prevent the next engineer from making the same mistake under the same conditions. Fixing the system (adding silent-failure alerts, requiring two-engineer deploys for critical services) actually prevents recurrence. (3) Blame culture discourages risk. Engineers who fear blame avoid taking actions (deploying, experimenting, investigating new solutions) that could lead to mistakes. This creates a conservative, slow-moving engineering culture that is ultimately less competitive. (4) Blameless culture improves the signal-to-noise ratio of institutional learning: all incidents get full documentation, which builds a better body of organizational knowledge about system behavior.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 912,
+      "out_sha": "09f47a7d0370",
       "note": ""
     },
     {
@@ -5163,11 +5163,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 421,
       "src_chars": 2389,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ad259076ad6f",
       "src": "#### Application Problems\n\n**Q1.** You are the CTO of a startup with 10 engineers and a monolithic application. You are planning to grow to 60 engineers over the next 2 years. Using Conway's Law and the Inverse Conway Maneuver, design the organizational and architectural evolution plan.\n\nHint\n\nStart from the target architecture you want at 60 engineers and work backwards. What team structure would naturally produce that architecture? When should you create each team?\n\n**Answer:** Target architecture at 60 engineers: 6 services (Auth, User, Product/Core, Notifications, Analytics, Platform/Infra) with 10 engineers per team. Work backwards: Phase 1 (0–6 months, 10 → 20 engineers): Do not decompose yet. Add engineers to the monolith team. Establish one discipline: every new feature must have an explicit service interface specification, even if that interface is currently in-process. This creates architectural habits. Define \"future service boundaries\" in documentation before implementation. Phase 2 (6–12 months, 20 → 35 engineers): Extract the first two services: Auth and Notifications (both are low-risk, clearly bounded). Organize two teams of 6 engineers around these services. The remaining 23 engineers own the core monolith. With these two services separated, the teams can deploy independently. Phase 3 (12–18 months, 35 → 50 engineers): Extract User Service and Analytics Service. Teams form around these services. Core monolith is now smaller. Establish service mesh and distributed tracing before further decomposition — observability must lead decomposition. Phase 4 (18–24 months, 50 → 60 engineers): Extract final two services. All 6 teams established. Decommission the original monolith (or keep a minimal \"core\" service). Key timing principle: team formation must precede service extraction. Never split a service before you have a team ready to own it.\n\n**Q2.** Using the Technology Evaluation Framework from Section 28.7, evaluate whether SocialSnap should adopt a new time-series database (e.g., InfluxDB or TimescaleDB) for storing metrics and monitoring data, currently stored in PostgreSQL. Apply all six questions from the framework.\n\nHint\n\nThink about the specific access patterns for metrics data. How does metrics data differ from SocialSnap's user and post data? What makes time-series databases different from relational databases for this use case?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 897,
+      "out_sha": "75059dcd50b0",
       "note": ""
     },
     {
@@ -5175,11 +5175,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 422,
       "src_chars": 2435,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0bf439652805",
       "src": "**Answer:** 1\\. What problem does it solve? PostgreSQL is showing strain when querying SocialSnap's 18 months of metrics data at high cardinality (100+ metrics × 1000+ servers × 1-second resolution). Queries for \"p99 latency of API endpoint X over the past 30 days\" take 30 seconds. Time-series databases are optimized for exactly this access pattern: range queries on timestamped data with high write rates. Yes — this is a real, observed problem. 2. How is it different from PostgreSQL? Time-series DBs use columnar storage with time-based compression (metrics repeat patterns; compression ratios of 10–50× are common). They have built-in downsampling (automatically store 1-second data for the past week, 1-minute data for the past 3 months, 1-hour for the past 2 years). They support time-window functions natively. PostgreSQL requires custom TimescaleDB extension or manual partitioning to achieve these. 3. Failure modes? InfluxDB v1 had known stability issues in multi-node configurations. TimescaleDB is a PostgreSQL extension — failure modes are well-understood. Prefer TimescaleDB for familiarity. 4. Operational model? TimescaleDB runs on PostgreSQL — SocialSnap's team already operates PostgreSQL. Minimal new operational expertise required. InfluxDB requires new tooling. TimescaleDB wins on operational continuity. 5. Exit strategy? TimescaleDB data is stored in PostgreSQL; data is accessible via standard SQL. Migrating away to a different store requires ETL but is tractable. Good exit strategy. 6. Who runs this at scale? TimescaleDB is used at scale by several large companies. Post-mortems and case studies are publicly available. Recommendation: adopt TimescaleDB. It solves a real problem, has acceptable failure modes, uses familiar operations, and has a clear exit strategy.\n\n**Q3.** SocialSnap experiences a 45-minute outage when a database migration accidentally drops an index on the `posts` table, causing every feed query to perform a full table scan. Using the Five Whys technique, trace the root cause. Then write the action items section of the post-mortem, ensuring each action item addresses a systemic condition rather than assigning individual blame.\n\nHint\n\nStart from the user-visible symptom (feed API timeouts) and ask \"why?\" at each layer. For action items, think about process gaps — what automated checks or review steps were missing — rather than \"the engineer should have been more careful.\"",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 887,
+      "out_sha": "c521b8ee440f",
       "note": ""
     },
     {
@@ -5187,11 +5187,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 423,
       "src_chars": 2536,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8994b91ccd49",
       "src": "**Answer:** Five Whys trace: Symptom: Feed API p99 latency exceeded 10 seconds; the load balancer's health checks timed out; 15 million users saw blank feeds for 45 minutes. Why? Feed queries were running full table scans on the `posts` table, exhausting database CPU. Why? The index `posts_user_id_created_at_idx` was missing — the migration script included a `DROP INDEX` statement that was not intended. Why? The migration was written to drop a duplicate index, but the author confused the index name with the primary feed query index. Why? The two indexes had similar names (`posts_user_id_idx` and `posts_user_id_created_at_idx`), and the migration was written without cross-referencing the production query plan. Why? SocialSnap's staging environment does not run `EXPLAIN ANALYZE` regression tests; the migration was only tested for syntax correctness, not for query plan impact. Root cause: No automated query plan regression testing exists in the CI/CD pipeline; staging does not validate that critical index-backed queries remain efficient after migrations. Post-mortem action items: (1) **Add query plan regression tests to CI/CD** (owner: Platform team, due: 2 weeks): for every database migration, the pipeline runs `EXPLAIN ANALYZE` on the 10 highest-traffic queries and fails the migration if any query plan changes from index scan to sequential scan. (2) **Enforce index naming convention** (owner: Database team, due: 1 week): standardize index names to encode the covered columns and purpose (e.g., `posts_by_user_chronological_idx`) to make naming confusion impossible. (3) **Require two-engineer review for all migrations that drop objects** (owner: Engineering leads, due: immediately): migrations containing `DROP INDEX`, `DROP TABLE`, or `DROP COLUMN` require a second approval from a senior engineer before merging. (4) **Add pre-migration dry-run in production** (owner: Platform team, due: 3 weeks): implement a migration shadow mode that runs the migration SQL against a read-only replica and reports query plan changes before the migration reaches the primary. Note what these action items do not do: they do not name the engineer who wrote the migration, and they do not propose additional training for that individual. The conditions that made this mistake possible — similar index names, no plan regression tests, no two-engineer review for destructive operations — existed before this engineer touched the migration and would have caused the same outcome for any engineer working under those conditions.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 949,
+      "out_sha": "786da9924190",
       "note": ""
     },
     {
@@ -5199,11 +5199,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 424,
       "src_chars": 2224,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f7c7bdfadbf2",
       "src": "#### Think Deeper\n\n**Q1.** The book's final thread — the detective team — argues that good communication is the foundation of good architecture. But communication is also expensive: more meetings, more documentation, more coordination. How do you balance the communication needed for good architecture against the productivity cost of that communication?\n\n**Discussion:** This is one of the fundamental tensions of software engineering at scale, and there is no clean answer. The key insight from Conway's Law is that you cannot avoid the cost — you can only choose where it is paid. If teams do not communicate, they build components with implicit, undocumented dependencies that cause integration failures and incidents. The communication cost is paid later, in production, at much higher stakes. If teams over-communicate, they create bureaucratic overhead that slows decision-making, frustrates engineers, and can paradoxically produce lower-quality work because meetings substitute for thinking. The resolution is structural: use architectural choices to minimize the need for continuous communication. Stable, well-documented interfaces between services mean the teams on either side do not need to coordinate for every change — only for interface changes. Event-driven architecture (using Kafka) reduces direct team-to-team communication further: the notification team subscribes to events without needing to coordinate with the post team on every new event type. Communication needs decrease when interfaces are explicit and stable. The investment in interface documentation, API versioning, and event schema management pays dividends in reduced ongoing coordination. The post-mortem practice contributes here too: institutional memory (documented in post-mortems and ADRs — Architecture Decision Records) means that new team members don't need to ask senior engineers \"why did we do it this way?\" for every decision. The communication happened once, was documented, and now propagates to future engineers without real-time coordination.\n\n**Q2.** Looking back over all 28 chapters, what is the single most important intellectual habit — beyond knowing specific technologies — that a system designer should cultivate?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 664,
+      "out_sha": "6104bf94125d",
       "note": ""
     },
     {
@@ -5211,11 +5211,11 @@
       "en_title": "Chapter 28: The Human Side of System Design — Conway's Law, Culture, and the Future",
       "order": 425,
       "src_chars": 3196,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8fdbbc701743",
       "src": "**Discussion:** Many answers are defensible, but the most compelling case is for **thinking in tradeoffs rather than solutions.** Every chapter has shown that there is no correct architecture, only appropriate choices given specific constraints. The engineer who asks \"should we use a relational database or a document store?\" is asking the wrong question. The right question is: \"What are the access patterns, consistency requirements, and scale parameters of this system, and which storage model fits those parameters best given the cost of each?\" This habit — starting from requirements and constraints, not from preferred technologies — is Thread B (the Tradeoff Matrix) applied as a thinking style. It is also Thread C (the Detective's Discipline) applied as an epistemological stance: gather evidence before concluding. This habit is more durable than any specific knowledge because technologies change (the databases of 2030 will not be the databases of today) but the requirement to reason carefully about tradeoffs does not. An engineer who cultivates this habit will be able to evaluate genuinely new technologies on their merits, adapt to architectural shifts, and communicate design decisions in a way that survives the departure of their institutional memory. The Tradeoff Matrix is not just a reference card — it is a representation of this thinking habit made explicit.\n\n\n### Chapter Summary\n\nThis chapter closed the book by examining the human layer of system design.\n\n**Conway's Law** explains why organizations and architectures mirror each other. The **Inverse Conway Maneuver** turns this observation into a prescription: design your organization to match the architecture you want to build. SocialSnap's team restructuring before the microservices migration was a deliberate application of this principle.\n\n**Blameless post-mortems** and on-call culture determine how teams learn from failure. The culture that treats failures as system problems — not individual failures — accumulates learning at a compound rate, making each successive system more resilient.\n\n**Serverless** and **edge computing** represent the frontier of abstraction: serverless removes infrastructure management entirely (at the cost of cold starts and execution limits); edge computing brings computation close to users (at the cost of limited resource access). Both are appropriate for specific use cases, neither for all.\n\nThe **Completed Tradeoff Matrix** is the book's summary: every pattern, building block, and design choice mapped to its cost across latency, consistency, availability, and operational complexity. Use it as a reference and, more importantly, as a model for how to think about any new pattern you encounter.\n\nSocialSnap's final chapter is its most human: 80 engineers, 8 teams, and a founding pair who still remember the Python function on a laptop. The system grew not by grand design but by accumulated specific solutions to specific observed problems — each one the result of a detective gathering clues, a team reviewing tradeoffs, and engineers committing to the least-wrong answer available.\n\nThe detective's work — and the engineering work — is never finished.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1030,
+      "out_sha": "181412027bf2",
       "note": ""
     }
   ],
