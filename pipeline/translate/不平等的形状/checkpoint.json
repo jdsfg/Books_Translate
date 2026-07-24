@@ -1915,11 +1915,11 @@
       "en_title": "Chapter 15: How to Read a Gap",
       "order": 151,
       "src_chars": 2180,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2eeee141b6c6",
       "src": "We are about to enter the terrain of gaps between groups, by sex, by race, by origin, where careful people lose their footing, where the same numbers are wielded as weapons by opposing camps, where a single statistic can be made to prove almost anything depending on how it is framed. This chapter does one specific job before we set foot there: it builds the tool that makes the crossing survivable, a disciplined procedure for _reading a gap_ , the decomposition of a gross gap into an explained portion and a residual, and the rules for interpreting each honestly. We will learn it on deliberately neutral ground, where no one's politics are engaged, so that when we apply it to the charged gaps in the next two chapters, we bring a method rather than a reflex.\n\nHere is the problem the tool solves. Someone announces a gap: members of Group A earn, on average, more than members of Group B. Immediately, two stories rush in. One says the gap proves Group B is being treated unfairly. The other says the gap reflects real differences in what the two groups do. Both stories claim the same number, and the number, by itself, supports neither. The gap is a _starting point for analysis, not a conclusion_ , and almost every public fight about group inequality is, at bottom, a fight in which people skip the analysis and leap straight to the conclusion their politics prefers. This chapter teaches the analysis. Once you have it, a \"gap\" headline becomes a question to be worked through rather than a conclusion to be accepted, and you can say what the number does and does not establish before anyone tells you what it means.\n\n\n### 15.1 A gap, and what is inside it\n\nLet us work with a completely neutral example, chosen precisely because you have no stake in it. Imagine a large company with two divisions, the Northern division and the Southern division, and suppose we observe that workers in the Northern division earn, on average, twenty percent more than workers in the Southern division. There it is: a measured gap. What can we conclude from it?\n\nThe honest first answer is: almost nothing yet, because the gap is _gross_ , and a gross gap is a question, not an answer.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 694,
+      "out_sha": "cbca265927b2",
       "note": ""
     },
     {
@@ -1927,11 +1927,11 @@
       "en_title": "Chapter 15: How to Read a Gap",
       "order": 152,
       "src_chars": 3116,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c752a2aae7ab",
       "src": "#### Definition: The Gross Gap\n\nThe **gross gap** (also called the raw or unadjusted gap) is the simple difference in average outcomes between two groups, with nothing accounted for. It compares the groups _as wholes_ , making no attempt to ask whether the groups differ in other measurable ways that bear on the outcome. It is the headline number, and it is real, but it is the _beginning_ of analysis, because it lumps together every possible reason the groups might differ.\n\nIn plain language: the gross gap is the difference you see before you have asked a single follow-up question. The Northern workers earn twenty percent more, but we have not yet asked whether the two divisions differ in anything that would affect pay. Do they do the same kinds of work? Have the workers been there the same number of years? Do they have the same qualifications? Are they the same ages? Until we ask, the twenty percent is a fact in search of an explanation, and the cardinal error, the one that corrupts the whole subject, is to treat the gross gap _as if it were already_ an explanation, to hear \"twenty percent more\" and immediately conclude \"therefore the Southern workers are being treated unfairly\" or \"therefore the Northern workers are simply more productive.\" Neither follows. Not yet.\n\nSo we do the next thing, which is to _decompose_ the gap: to ask how much of it is associated with measurable differences between the groups, and how much is left over once those are accounted for.\n\n\n#### Definition: The Decomposition of a Gap\n\nTo **decompose** a gap is to separate it into two parts: an **explained portion** , the part of the gap that is statistically associated with measurable differences between the groups (in our example, differences in job type, experience, qualifications, hours, age), and a **residual** (or unexplained portion), the part of the gap that _remains_ after those measurable factors are accounted for. The decomposition answers the question: if the two groups looked the same on all the measured factors, how much of the gap would still be there?\n\nIn plain language: decomposing a gap means peeling off the part you can attribute to measurable differences and looking at what is left underneath. Suppose, in our neutral example, we find that the Northern division does more specialized work requiring more training, that its workers average ten more years of experience, and that they work longer hours. When we account for all of that, suppose the twenty-percent gap shrinks to, say, a five-percent residual: five percent of the gap remains even after comparing workers who are similar on every factor we could measure. We have now learned something real. Fifteen of the twenty percentage points were \"explained\" (associated with measurable differences in work, experience, and hours); five points are a residual we cannot account for with our measured factors. The gross gap has become an explained portion plus a residual, and this is enormous progress, because the explained portion and the residual are completely different kinds of object and demand completely different thinking.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 997,
+      "out_sha": "d9dc0e40ee0a",
       "note": ""
     },
     {
@@ -1939,11 +1939,11 @@
       "en_title": "Chapter 15: How to Read a Gap",
       "order": 153,
       "src_chars": 2419,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b381440ba9fe",
       "src": "### 15.2 The two traps, and the discipline that avoids them\n\nNow comes the part that separates honest analysis from motivated reasoning, and it has two halves, because there are two opposite ways to misuse a decomposition, one favored by each political camp.\n\nThe first trap concerns the _residual_ , and it is the trap of the side eager to find unfair treatment. Having found a five-percent residual, the unexplained part, it is tempting to declare: \"There it is, that five percent is discrimination.\" This does not follow, and the reason is precise. The residual is _unexplained_ , which means exactly that: it is the part we could not account for _with the factors we measured_. It is not \"the part caused by discrimination.\" It could be discrimination. It could also be the result of factors we did not or could not measure, differences in some unmeasured aspect of the work, in unmeasured productivity, in preferences, in things we simply did not have data on. The residual is a _measure of our ignorance_ , not a measure of discrimination. To call the residual \"discrimination\" is to assume that everything we failed to measure is discrimination, which is an assumption, not a finding.\n\nThe second trap also concerns the _residual_ , and it is the mirror-image trap of the side eager to deny unfair treatment. Having found that most of the gap (fifteen of twenty points) was \"explained\" by measurable factors, it is tempting to declare: \"See, the gap is mostly explained, so there is no real unfairness, just differences in what people do.\" This does not follow either, and for two reasons. First, the residual that remains is still unexplained, and discrimination could be a large part of it. Second, and more subtly, _the \"explained\" portion may not be innocent_. To say the gap is \"explained\" by, say, the Northern workers having more experience and more specialized roles is only to push the question back a step: _why_ do the groups differ in experience and role? If members of Group B were, for instance, systematically steered away from the specialized roles or pushed out before accumulating experience, then the \"explained\" portion is not evidence of fairness at all; it is discrimination operating _through_ the measured factors rather than around them. Calling a portion \"explained\" tells you it is _associated with a measured factor_ ; it does not tell you the factor itself is fair or freely chosen.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 695,
+      "out_sha": "d9cd9892822f",
       "note": ""
     },
     {
@@ -1951,11 +1951,11 @@
       "en_title": "Chapter 15: How to Read a Gap",
       "order": 154,
       "src_chars": 1512,
-      "status": "pending",
+      "status": "done",
       "src_sha": "df55f4fe080f",
       "src": "#### Definition: Apportionment as Measurement vs. Apportionment as Argument\n\n**Apportionment as measurement** is the legitimate, careful work of decomposing a gap into an explained portion and a residual, stating honestly what each is (and is not) and what was measured. **Apportionment as argument** is the illegitimate move of using the decomposition to smuggle in a verdict: treating the residual _as_ discrimination, or treating the explained portion _as_ proof of fairness. The first is analysis; the second is advocacy wearing the costume of analysis. The tilt in charged debates lives not in the decomposition itself but in how its parts are interpreted, which reading gets the air-time, the order, and the evidential weight.\n\nIn plain language: the decomposition is honest; what people _do_ with it usually is not. Both camps take the same legitimate procedure and abuse it in opposite directions, one inflating the residual into \"discrimination,\" the other inflating the explained portion into \"fairness.\" The discipline is to refuse both inflations and to report what the decomposition actually shows: a portion associated with measured factors (whose own fairness is a further question) and a residual (which is our ignorance, and which contains discrimination _and_ unmeasured legitimate factors in unknown proportion). Notice this is the \"symmetry of measurement and interpretation\" from Chapter 10, now given an operating procedure. Neither side may attach its preferred verdict to the arithmetic.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 530,
+      "out_sha": "05dc665b3223",
       "note": ""
     },
     {
@@ -1963,11 +1963,11 @@
       "en_title": "Chapter 15: How to Read a Gap",
       "order": 155,
       "src_chars": 2190,
-      "status": "pending",
+      "status": "done",
       "src_sha": "66400d2d2b7b",
       "src": "### 15.3 Reading the residual honestly: two clusters, equal standing\n\nSince the residual is where the fight is fiercest, we need a disciplined way to think about what is inside it. The honest framing is that the residual contains (at least) two broad clusters of possible explanations, and that the decomposition _does not adjudicate between them_.\n\nOn one side is what we can call the **discrimination cluster** : the possibility that members of one group are treated differently for reasons unrelated to their productivity, including not only direct, conscious discrimination but also subtler and structural forms, biased evaluation, unequal access to the networks and opportunities of Part 3, historical legacies that shaped the present. On the other side is the **non-discrimination cluster** : the possibility that the residual reflects factors we simply could not measure, unmeasured differences in the work, in productivity, in preferences and choices, in things no dataset captured. These two clusters are _both_ live readings of the _same residual number_ , and here is the crucial discipline: _the decomposition gives them equal standing._ It does not, cannot, tell you that the residual is \"really\" mostly discrimination or \"really\" mostly unmeasured legitimate factors. The residual is consistent with both, and apportioning it between them is an _interpretation_ , contested, not a measurement.\n\nTwo further points keep this honest. First, the two clusters are _containers_ , not a claim that there are exactly two explanations or that the truth is a fifty-fifty split between them. They are a way of organizing the live possibilities so that neither side's readings get to outnumber the other's by being enumerated in more detail, which is a subtle way tilt creeps in (list five flavors of discrimination and one vague \"unmeasured factors,\" and you have rigged the page). Second, and this is essential for not sliding into \"nothing can be known,\" _some things in the residual region can be measured directly, in specific settings, even though the residual's overall composition cannot._ This is the distinction that will matter most in the next chapter, so we install it now.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 742,
+      "out_sha": "d5d3f056d4de",
       "note": ""
     },
     {
@@ -1975,11 +1975,11 @@
       "en_title": "Chapter 15: How to Read a Gap",
       "order": 156,
       "src_chars": 1414,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3ec85ed6387a",
       "src": "#### Common Misconception\n\nA widespread error, in both directions, is to confuse \"discrimination has been measured in some settings\" with \"the residual is discrimination,\" or to confuse \"the residual's composition is unknown\" with \"discrimination has never been shown.\" Both are wrong, and the truth is precise. Discrimination _can_ be measured directly in carefully designed studies, for instance, sending out otherwise-identical applications that differ only in a name or a group marker and observing different callback rates. Such studies can establish, cleanly, that discrimination _occurs_ and is real in those settings, that is a measured IS. But the _share_ of any real-world _aggregate_ gap that discrimination accounts for is a different question, and it is _not_ directly measured, because aggregate gaps mix discrimination with all the unmeasured factors, and no audit study apportions the real-world residual. So the disciplined statement has two parts that must both be held: discrimination is _real and measured in specific settings_ (do not deny it), _and_ its _share of any aggregate gap is a contested interpretation, not a measured quantity_ (do not assume it). Attaching \"measured\" to either the existence claim or the share claim while ignoring the other is the most common way this subject goes wrong. The existence of discrimination is settled; its weight in any particular gross gap is not.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 441,
+      "out_sha": "67e0ff5caaee",
       "note": ""
     },
     {
@@ -1987,11 +1987,11 @@
       "en_title": "Chapter 15: How to Read a Gap",
       "order": 157,
       "src_chars": 2199,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2b9126817a70",
       "src": "### 15.4 The procedure, assembled\n\nLet us now assemble the whole procedure into a single disciplined sequence you can apply to any gap, charged or not. When you meet a claim that \"Group A and Group B differ by X,\" ask, in order:\n\nFirst, _is X the gross gap or an adjusted one?_ Establish whether you are looking at the raw difference or one that has already accounted for some factors, because the two are wildly different numbers and people switch between them mid-argument constantly. State the gross gap plainly, as a measured fact, with its as-of, society, and source. It is real; do not hedge it into nothing.\n\nSecond, _what does the decomposition show?_ Separate the explained portion (associated with measured factors) from the residual (what remains). Report both honestly.\n\nThird, _for the explained portion, are the explaining factors themselves fair or freely chosen?_ Do not assume \"explained\" means \"innocent.\" Ask why the groups differ on those factors, because discrimination and constraint can operate _through_ them, and whether the differences are freely chosen is itself contested (the Chapter 10 symmetry).\n\nFourth, _for the residual, hold the two clusters at equal standing._ Recognize it as the region of our ignorance, containing both a discrimination cluster and a non-discrimination cluster, neither of which the decomposition adjudicates. Note separately what _has_ been measured directly (discrimination occurs in tested settings) and what has _not_ (its share of this aggregate gap).\n\nFifth, _mark the IS/OUGHT crossing._ Even when you have done all the above, you have described _what is_ and debated _why_ ; whether any of it is _unjust_ is a further, normative question the decomposition does not touch. Keep it separate.\n\nThis is the instrument. It looks elaborate written out, but with practice it becomes a single habit of mind, the refusal to let a gross gap masquerade as a conclusion. In the next two chapters we apply it to the gaps that matter most and inflame most, and you will see that the procedure does not tell you what to conclude, it tells you what you are _allowed_ to conclude from what, which is exactly the discipline these subjects so badly lack.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 762,
+      "out_sha": "d4fabc42f25e",
       "note": ""
     },
     {
@@ -1999,11 +1999,11 @@
       "en_title": "Chapter 15: How to Read a Gap",
       "order": 158,
       "src_chars": 1583,
-      "status": "pending",
+      "status": "done",
       "src_sha": "97aefd8395c5",
       "src": "### 15.5 Why method, not reflex\n\nWe have built the gap-reading procedure on neutral ground, the Northern and Southern divisions, precisely so that you absorbed the _method_ before any group you care about entered the room. That sequencing is deliberate and important, because the moment a real, charged group appears, the pull toward reflex becomes almost irresistible, and the only defense is a method you already trust because you learned it where you had no stake.\n\nCarry the instrument into Part 6's two chapters. Chapter 16 applies it to the pay gap between women and men, where the gross figure (women earning, in recent United States data, something like eighty to eighty-four cents for every dollar men earn, full-time and year-round) is a figure routinely quoted as a slogan and routinely misread as a same-work comparison, and where the decomposition, the explained portion, the contested residual, the two clusters at equal standing, the IS/OUGHT crossing, is the only way to think about it without joining a tribe. Chapter 17 applies it to gaps by race and origin, including the racial wealth gap, where a crucial wrinkle appears: some group gaps are settled _measurements_ that must be reported plainly without faking a debate over whether they exist, even as their _causes_ run through the full contested decomposition. The instrument we have just built is what lets us tell the difference between a measurement to be stated and a cause to be debated, which is the whole game on this terrain. We have the method. Now we use it where it is hardest.\n\n\n### 15.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 555,
+      "out_sha": "8717823e5917",
       "note": ""
     },
     {
@@ -2011,11 +2011,11 @@
       "en_title": "Chapter 15: How to Read a Gap",
       "order": 159,
       "src_chars": 2899,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ca5cb22fe577",
       "src": "#### Concept Check\n\n**Q1.** Explain the difference between a _gross gap_ and a _residual_ , using the Northern/Southern division example. Why is the gross gap \"a question, not an answer\"?\n\nHint\n\nThe gross gap accounts for nothing; the residual is what is left after measured factors. What does the twenty percent lump together before you ask any follow-up?\n\n**Answer:** The _gross gap_ is the simple difference in average outcomes with nothing accounted for, in the example, Northern workers earning twenty percent more than Southern workers, full stop. It is \"a question, not an answer\" because it lumps together _every_ possible reason the two groups might differ (job type, experience, qualifications, hours, age) without distinguishing among them, so it cannot by itself support any explanation. The _residual_ is what remains _after_ accounting for measurable differences: if differences in work, experience, and hours explain fifteen of the twenty points, the residual is the remaining five points, the part that persists even when comparing workers similar on every measured factor. The gross gap is the headline; the residual is the result of analysis. The cardinal error is treating the gross gap as if it were already an explanation (\"twenty percent more, therefore unfair\" or \"therefore more productive\"), when in fact it is the raw material analysis must work on.\n\n**Q2.** State the two opposite \"traps\" in interpreting a decomposition, and name the discipline (from Chapter 10) that they violate.\n\nHint\n\nOne camp inflates the residual; the other inflates the explained portion. What do they each wrongly assume?\n\n**Answer:** _Trap 1 (inflating the residual)_ : declaring the unexplained residual _is_ discrimination. This fails because the residual is \"unexplained,\" meaning unaccounted-for by _measured_ factors, so it is a measure of our _ignorance_ , not of discrimination; it could be discrimination or unmeasured legitimate factors. _Trap 2 (inflating the explained portion)_ : declaring that because most of the gap is \"explained\" by measured factors, there is no unfairness. This fails for two reasons: the residual can still contain large discrimination, and the \"explained\" factors may not be innocent, if a group was steered away from high-paying roles or pushed out before gaining experience, discrimination operates _through_ the measured factors, so \"explained\" does not mean \"fair.\" Both traps violate Chapter 10's **symmetry of measurement and interpretation** : each takes a legitimate piece of the decomposition (the residual, the explained portion) and attaches its preferred _verdict_ to the _arithmetic_ , smuggling a contested interpretation in on the authority of a measurement. The discipline is to report what the decomposition shows and refuse to let either side attach a verdict to the numbers, \"apportionment as measurement,\" not \"apportionment as argument.\"\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1023,
+      "out_sha": "4eda34de17b0",
       "note": ""
     },
     {
@@ -2023,11 +2023,11 @@
       "en_title": "Chapter 15: How to Read a Gap",
       "order": 160,
       "src_chars": 3296,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a93f6a188e95",
       "src": "#### Application Problems\n\n**Q1.** A decomposition of a pay gap between two groups finds that most of the gap is \"explained\" by the fact that one group is concentrated in lower-paying occupations. A commentator concludes: \"So the gap is about occupational choice, not discrimination.\" Apply step three of the procedure to show why this conclusion is premature.\n\nHint\n\n\"Explained by occupation\" pushes the question back a step. _Why_ are the groups in different occupations? Is \"explained\" the same as \"freely chosen\" or \"fair\"?\n\n**Answer:** Step three asks: for the explained portion, are the explaining factors themselves fair or freely chosen? Here the explaining factor is occupational concentration, but \"explained by occupation\" only pushes the question back: _why_ is one group concentrated in lower-paying occupations? The conclusion \"about choice, not discrimination\" assumes the occupational sorting was freely chosen, but that is exactly what has not been shown. If the group was steered away from higher-paying fields, discouraged, excluded, or pushed out, then the occupational difference is _discrimination operating through_ the measured factor, and the \"explained\" portion is not evidence of fairness at all. Calling a portion \"explained\" tells you only that it is _associated with a measured factor_ (occupation); it does not tell you the factor is innocent. The commentator has committed trap two and apportionment-as-argument: inflating the explained portion into proof of fairness. The disciplined statement is that the gap is associated with occupational differences _whose own origin and freedom are themselves contested_ , which is a very different claim from \"it's just choice.\"\n\n**Q2.** Distinguish these two statements and explain why both must be held at once: (a) \"Discrimination is real and has been measured.\" (b) \"The share of this gross pay gap caused by discrimination is unknown.\" How can both be true?\n\nHint\n\nWhat do audit studies (identical applications differing only by a name) measure? What do they _not_ measure about a real-world aggregate gap?\n\n**Answer:** Both are true because they are about _different things_. Statement (a) refers to what carefully designed studies _can_ establish: by sending otherwise-identical applications that differ only in a name or group marker and observing different callback rates, researchers can cleanly measure that discrimination _occurs_ in those settings, a measured IS, and denying it is wrong. Statement (b) refers to a different quantity: the _share_ of a real-world _aggregate_ gap attributable to discrimination. This is not directly measured, because aggregate gaps mix discrimination with all the unmeasured factors in the residual, and no audit study apportions that real-world residual. So one can know _that_ discrimination is real (existence, measured in specific settings) without knowing _how much_ of any particular gross gap it drives (share, a contested interpretation). Holding both prevents the two opposite errors: using (a) to claim the whole residual is discrimination (overreach), and using the uncertainty in (b) to deny discrimination exists at all (denial). The existence of discrimination is settled; its weight in any given gross gap is not, and a disciplined analysis states both plainly.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1037,
+      "out_sha": "205b6de46c0b",
       "note": ""
     },
     {
@@ -2035,11 +2035,11 @@
       "en_title": "Chapter 15: How to Read a Gap",
       "order": 161,
       "src_chars": 2947,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e5b981cf04fe",
       "src": "#### Think Deeper\n\n**Q1.** The chapter says the residual contains two \"clusters\" (discrimination and non-discrimination) held at \"equal standing,\" and warns that listing many detailed flavors of one cluster and only a vague catch-all for the other is \"a subtle way tilt creeps in.\" Why is the _structure of how possibilities are presented_ , not just the claims themselves, a place where bias hides? Can you think of how an author could be scrupulously factual in every individual sentence yet still tilt the overall picture through presentation?\n\n**Discussion:** This question reaches something important and often missed: that bias operates not only at the level of false claims but at the level of _framing, emphasis, and structure_ , and that a text can be true in every sentence and tilted in its whole.\n\nStart with why presentation matters. When a reader encounters a list of possible explanations, they absorb not just the content of each item but the _impression created by the set_ : how many possibilities are offered on each side, how vividly each is described, which comes first, which gets evidence attached and which is waved at. A residual that is \"really\" of unknown composition can be made to _feel_ mostly-discrimination by listing five specific, vividly-described, evidence-backed forms of discrimination (direct bias, structural exclusion, network effects, historical legacy, biased evaluation) followed by a single pale \"or possibly some unmeasured factors.\" Every sentence might be individually accurate, discrimination really can take all five forms, unmeasured factors really are vague, and yet the _cumulative impression_ is that the residual is mostly discrimination, which the evidence does not establish. The tilt lives in the asymmetry of _treatment_ , not in any false statement. The same trick works in reverse: list five specific legitimate factors (experience nuances, hour patterns, role differences, risk preferences, effort) and dismiss discrimination as \"a claim some make,\" and you have tilted the other way, again without lying.\n\nThis is why the chapter insists on the _containers_ framing and equal standing: it is a structural defense against a structural bias. By treating the residual as two clusters of roughly equal presentational weight, rather than as an enumerated list where one side can be padded, the procedure tries to prevent the air-time, order, and vividness from doing covert argumentative work. Note that this is genuinely hard and never perfectly achievable, _some_ asymmetry is often unavoidable (one cluster may have more measured instances to cite), and the honest move is to _flag_ the asymmetry rather than pretend it away (\"we can cite specific audit studies for discrimination's existence but have no comparable direct measure of the unmeasured legitimate factors, precisely because they are unmeasured, this evidentiary asymmetry does not mean discrimination is the larger share\").",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 998,
+      "out_sha": "4a239f93aa09",
       "note": ""
     },
     {
@@ -2047,11 +2047,11 @@
       "en_title": "Chapter 15: How to Read a Gap",
       "order": 162,
       "src_chars": 1398,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d1bb4f039496",
       "src": "Can an author be factual in every sentence yet tilt the whole? Absolutely, and recognizing this is one of the most sophisticated forms of critical reading. Beyond padding one cluster, an author can tilt through: which studies they choose to cite (all real, all selected to lean one way); which gross gap they lead with (the largest or smallest); whether they present the explained portion or the residual first (order shapes which feels like \"the real story\"); which examples they make vivid and which they leave abstract; and which side's claims get the qualifying \"contested\" and which get stated flat. Each choice can be individually defensible and collectively decisive. This is exactly why this book has tried to make its _procedure_ explicit and symmetric rather than relying on case-by-case good intentions: a stated, even-handed method is harder to tilt than ad-hoc judgment, and it lets _you_ , the reader, check whether the method was followed. When you read the next two chapters, and indeed any treatment of group gaps anywhere, watch not only whether each claim is true but whether the _structure_ gives the two clusters equal standing, whether the explained portion's innocence is examined, and whether the IS/OUGHT crossing is marked. A treatment can pass every fact-check and still fail the framing test, and the framing test is where most real bias on this subject actually lives.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 472,
+      "out_sha": "dc6f4575af13",
       "note": ""
     },
     {
@@ -2059,11 +2059,11 @@
       "en_title": "Chapter 15: How to Read a Gap",
       "order": 163,
       "src_chars": 2462,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f344510fa8ad",
       "src": "### Chapter Summary\n\nBefore entering the charged terrain of group gaps, we built the essential instrument, a disciplined procedure for _reading a gap_ , on neutral ground (a company's Northern and Southern divisions) so the method would be learned without stake. The core insight: a **gross gap** (the raw, unadjusted difference, accounting for nothing) is _a question, not an answer_ , and the cardinal error is treating it as if it were already an explanation. We **decompose** the gap into an **explained portion** (associated with measurable differences) and a **residual** (what remains after those are accounted for).\n\nWe then identified the two opposite **traps** , one per political camp: inflating the _residual_ into \"discrimination\" (wrong, because the residual is a measure of our _ignorance_ , containing both discrimination and unmeasured legitimate factors), and inflating the _explained portion_ into \"fairness\" (wrong, because the residual can still contain discrimination, and the explaining factors may not be innocent, discrimination can operate _through_ measured factors like occupation or experience, so \"explained\" ≠ \"fair\" ≠ \"freely chosen\"). Both violate Chapter 10's symmetry; the distinction is **apportionment as measurement** (legitimate analysis) versus **apportionment as argument** (smuggling a verdict). We learned to read the residual as two **clusters** at _equal standing_ , a discrimination cluster and a non-discrimination cluster, both live readings of the same number, with the decomposition adjudicating neither; and we drew the crucial distinction that discrimination is _real and measured in specific settings_ (its existence is settled) while its _share of any aggregate gap is a contested interpretation_ (not measured).\n\nWe assembled the full five-step procedure (gross or adjusted? what does the decomposition show? are the explained factors themselves fair? hold the residual's two clusters at equal standing; mark the IS/OUGHT crossing), and the Think Deeper showed that bias hides in _presentation and structure_ , not only in false claims, which is why an explicit symmetric method beats case-by-case good intentions. This instrument is what lets us, in Chapters 16 and 17, apply method rather than reflex to the pay gap and to gaps by race and origin, including the wrinkle that some group gaps are settled measurements to be stated plainly while their causes run the full contested decomposition.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 843,
+      "out_sha": "0150e2a3ff81",
       "note": ""
     },
     {
