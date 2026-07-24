@@ -659,11 +659,11 @@
       "en_title": "Chapter 4: Reliable, Atomic, and Causal Broadcast as Primitives",
       "order": 44,
       "src_chars": 2639,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ac83c0ef163f",
       "src": "The Crescent payment system in Chapter 1 needed its two coordinator nodes to agree on a single outcome. They did not. The reason: each coordinator made an independent commit decision and sent its own decision downstream, with no protocol that forced the two coordinators to agree on an order or even to know about each other's decision. The missing primitive is atomic broadcast — the property that all correct receivers deliver all messages in the same total order, with no receiver missing what another receiver sees.\n\nAtomic broadcast is the foundation of consensus. This chapter builds the hierarchy of broadcast properties that make consensus possible: from best-effort broadcast (what TCP gives you) up through reliable, uniform reliable, causal, and finally atomic broadcast. Each layer is strictly stronger; each layer closer to what replicating state machines actually need.\n\nTo see why even a small step up the hierarchy matters, consider what happens when the primitive is wrong. An LLM, asked to implement event distribution across a microservice fleet, produces:\n    \n    \n    def broadcast(event):\n        for replica in replicas:\n            client.send(replica, event)\n    \n\n> Illustrative pseudocode; the bug is the choice of primitive (best-effort instead of atomic), not the syntax.\n\nThe model has assumed that `client.send()` either succeeds and the message arrives, or fails and the caller knows. In TCP terms, this is _at-most-once_ if the caller does not retry, and _at-least-once_ if it does. Neither is what the application wants. The application wants _all replicas, in the same order, all-or-nothing_. That is atomic broadcast, and it is equivalent to consensus.\n\n\n### 4.1 Why Broadcast Primitives Matter\n\nThe reason these abstractions exist is that the building blocks of distributed systems are not \"I send a message and it arrives.\" The building blocks are \"I want a group of nodes to act in concert despite some of them being silent, slow, or wrong.\" Broadcast is the right name for that primitive because it captures the idea that a single logical event must reach a set of recipients, even though the underlying network only knows about point-to-point links.\n\nAtomic broadcast is exactly what was missing from the Crescent system in Chapter 1. The two coordinators each broadcast \"I am committing\" without an atomic property, and the result was two independent commits. If the system had used atomic broadcast (which they later did, via a Raft commit log; Chapter 9), the second coordinator's commit would have been ordered after the first, and the second commit would have observed the first and aborted.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 892,
+      "out_sha": "93a6baeb5fe5",
       "note": ""
     },
     {
@@ -671,11 +671,11 @@
       "en_title": "Chapter 4: Reliable, Atomic, and Causal Broadcast as Primitives",
       "order": 45,
       "src_chars": 2642,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6deb886725f7",
       "src": "### 4.2 Best-Effort Broadcast\n\nThe weakest broadcast primitive: each correct sender sends the message to each correct receiver via point-to-point links. If a link drops the message, the message is lost. If the sender crashes mid-broadcast, some receivers may have received and others may not.\n\nBest-effort broadcast is what TCP plus a for-loop gives you. It is sometimes adequate (cache invalidation hints, where missing one is acceptable) and almost always wrong for state replication.\n\nProperties:\n\n* **Validity** : if the sender is correct and the receiver is correct, the receiver eventually delivers the message.\n* **No-creation** : no message is delivered that was not sent.\n* **No-duplication** : each message is delivered at most once.\n\nWhat is missing: any guarantee about ordering, about delivery under failure, or about agreement between receivers.\n\n\n### 4.3 Reliable Broadcast\n\nThe next layer up. The property added is _agreement_ : if any correct receiver delivers a message, then all correct receivers eventually deliver it.\n\nThe classical implementation is _flooding_. When a process receives a message it has not seen before, it re-broadcasts it to every other process. This ensures that as long as at least one correct receiver got the message, the message will reach all correct receivers via re-broadcasting.\n\nPseudocode for the simplest version:\n    \n    \n    on receive(msg, sender):\n        if msg not in delivered:\n            delivered.add(msg)\n            for peer in all_processes:\n                if peer != sender:\n                    send(peer, msg)\n            upper_layer.deliver(msg)\n    \n\nProperties (in addition to best-effort properties):\n\n* **Agreement** : if any correct process delivers, all correct processes deliver.\n* **Validity** : a message broadcast by a correct sender is eventually delivered by all correct processes.\n\nWhat reliable broadcast does _not_ guarantee:\n\n* **Order** : two messages can be delivered in different orders at different receivers.\n* **Behavior if the sender crashes mid-broadcast** : if the sender crashes after sending to one receiver and before sending to the others, the message will reach all correct receivers only if at least one of the original receivers re-broadcasts. If the only receiver that got it also crashes before re-broadcasting, the message is lost.\n\nThe cost of reliable broadcast via flooding is O(N2)O(N^2)O(N2) messages per broadcast in a fully connected topology. There are gossip-based variants that achieve probabilistic reliability with O(Nlog⁡N)O(N \\log N)O(NlogN) messages on average; Bimodal Multicast (Birman et al.) is the canonical example.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1107,
+      "out_sha": "d94ea369ebba",
       "note": ""
     },
     {
@@ -683,11 +683,11 @@
       "en_title": "Chapter 4: Reliable, Atomic, and Causal Broadcast as Primitives",
       "order": 46,
       "src_chars": 3272,
-      "status": "pending",
+      "status": "done",
       "src_sha": "00763580091c",
       "src": "### 4.4 Uniform Reliable Broadcast\n\nThe next layer fixes the \"sender crashes after only one receiver got the message\" gap. Uniform reliable broadcast adds: _if any process (correct or not) delivers a message, all correct processes deliver it._\n\nThe strengthening from \"any correct receiver delivers\" to \"any process at all delivers\" forces the system to ensure delivery even if the receiver that first got the message crashes before re-broadcasting.\n\nA simple implementation: a process delivers a message only after it has confirmed that a majority of processes have _received_ it. The acknowledgment round adds latency but ensures that if the message disappears (sender crashes, one receiver crashes), some surviving correct process still has it and will re-broadcast.\n    \n    \n    on broadcast(msg):\n        for peer in all_processes:\n            send(peer, msg)\n    \n    on receive(msg, sender):\n        if msg not in received:\n            received.add(msg)\n            for peer in all_processes:\n                send(peer, ACK(msg))\n    \n    on receive(ACK(msg), sender):\n        acks[msg].add(sender)\n        if len(acks[msg]) > N/2 and msg not in delivered:\n            delivered.add(msg)\n            upper_layer.deliver(msg)\n    \n\nProperties (in addition to reliable broadcast):\n\n* **Uniformity** : if _any_ process delivers a message (correct or faulty), then all correct processes deliver it.\n\nThis is the property that prevents the \"the only receiver crashed\" failure mode of plain reliable broadcast.\n\n\n### 4.5 Causal Broadcast\n\nReliable broadcast does not preserve order. Causal broadcast adds: _if message m1m_1m1​ is broadcast before m2m_2m2​ (in happens-before), then no correct process delivers m2m_2m2​ before m1m_1m1​._\n\nThe standard implementation uses vector clocks (Chapter 3). Each broadcast carries the vector of the sender, and a receiver delays delivery of a message until all causally preceding messages have been delivered.\n    \n    \n    # Each process maintains V[1..N], initially all zero.\n    on broadcast(msg):\n        V[self] += 1\n        send_to_all(msg, V)\n    \n    on receive(msg, V_msg, sender):\n        buffer.add((msg, V_msg, sender))\n        try_deliver_from_buffer()\n    \n    def try_deliver_from_buffer():\n        while True:\n            deliverable = None\n            for (msg, V_msg, sender) in buffer:\n                # Deliverable if all messages causally preceding have been delivered.\n                if V_msg[sender] == V[sender] + 1 and all(V_msg[i] <= V[i] for i in others):\n                    deliverable = (msg, V_msg, sender)\n                    break\n            if deliverable is None:\n                return\n            # Deliver\n            buffer.remove(deliverable)\n            V[deliverable.sender] += 1\n            upper_layer.deliver(deliverable.msg)\n    \n\nProperties (in addition to reliable broadcast):\n\n* **Causal order** : if broadcast(m1) → broadcast(m2), then every correct process delivers m1 before m2.\n\nThe cost: each broadcast carries an N-entry vector. As with vector clocks generally, this scales poorly for large N. For systems with small fixed N (a 3-node Raft cluster, a 5-node Cassandra coordinator group), the cost is negligible. For 10,000-node fleets, alternative compressions are needed.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1992,
+      "out_sha": "6a7afc0e898e",
       "note": ""
     },
     {
@@ -695,11 +695,11 @@
       "en_title": "Chapter 4: Reliable, Atomic, and Causal Broadcast as Primitives",
       "order": 47,
       "src_chars": 1577,
-      "status": "pending",
+      "status": "done",
       "src_sha": "abc4ff7a1952",
       "src": "#### Common Misconception\n\nCausal broadcast preserves _causal_ order but does not enforce a _total_ order. Two concurrent messages (neither happens-before the other) can be delivered in different orders at different receivers. For applications where concurrent messages do not interact (independent updates to different keys), causal is sufficient. For applications where any two messages might interact (e.g., updating shared state), atomic broadcast is needed.\n\n\n### 4.6 Atomic (Total-Order) Broadcast\n\nThe strongest of the four. Atomic broadcast adds: _all correct processes deliver messages in the same total order._\n\nThe total order is consistent with causal order (if it were not, it would not be useful), but goes further: it imposes an order even on concurrent messages.\n\nAtomic broadcast is equivalent to consensus. Given atomic broadcast, you can solve consensus (each process broadcasts its proposal; the first proposal delivered is the decided value). Given consensus, you can implement atomic broadcast (use one consensus instance per message slot). Chandra and Toueg proved this equivalence formally.\n\nThe implementation of atomic broadcast is therefore the implementation of consensus. We name the algorithms here (Paxos, Raft, ZAB, HotStuff) and develop them in Part III.\n\nProperties (in addition to causal broadcast):\n\n* **Total order** : all correct processes deliver messages in the same order.\n\nThe cost: any atomic broadcast protocol is bounded below by the cost of consensus, which (under partial synchrony) requires multiple message rounds per decision.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 524,
+      "out_sha": "7c18fac5ffc4",
       "note": ""
     },
     {
@@ -707,11 +707,11 @@
       "en_title": "Chapter 4: Reliable, Atomic, and Causal Broadcast as Primitives",
       "order": 48,
       "src_chars": 3428,
-      "status": "pending",
+      "status": "done",
       "src_sha": "01359764d43a",
       "src": "### 4.7 The Layered Picture — Workflow 2: Broadcast-Primitive Pseudocode\n\n> **Workflow 2 (input → output)** : given a message that should reach N processes, produce a broadcast primitive that satisfies the application's correctness requirement at the lowest cost. The output is one of {best-effort, reliable, uniform reliable, causal, atomic} with the corresponding pseudocode (§4.2-§4.6). Variations: best-effort for cache-invalidation hints; reliable for CRDT op delivery; uniform reliable for configuration; atomic (= consensus) for state machine replication. The skill being trained: never default to atomic \"to be safe\"; identify the application's actual correctness property, then pick the weakest sufficient layer.\n\nThe broadcast hierarchy as a layered architecture:\n    \n    \n    graph TD\n        A[\"Best-effort broadcast<br/>(TCP + for-loop)\"] -->|\"+ agreement<br/>(re-broadcasting)\"| B[Reliable broadcast]\n        B -->|\"+ uniformity<br/>(ack round before deliver)\"| C[Uniform reliable broadcast]\n        C -->|\"+ causal order<br/>(vector clocks)\"| D[Causal broadcast]\n        D -->|\"+ total order<br/>(consensus)\"| E[\"Atomic broadcast<br/>= Consensus\"]\n        style A fill:#f9f9f9\n        style E fill:#fff4e6\n    \n\nEquivalent ASCII fallback (for plain-text contexts):\n    \n    \n    Best-effort broadcast       (TCP plus a for-loop)\n        |\n        + agreement (re-broadcasting on receipt)\n        v\n    Reliable broadcast\n        |\n        + uniformity (ack round before delivery)\n        v\n    Uniform reliable broadcast\n        |\n        + causal order (vector clocks)\n        v\n    Causal broadcast\n        |\n        + total order (consensus)\n        v\n    Atomic broadcast == Consensus\n    \n\nEach layer adds one property. Each layer is implemented in terms of the layer below it. The classical reference here is Cachin, Guerraoui, and Rodrigues, _Introduction to Reliable and Secure Distributed Programming_ (2nd ed., 2011), which develops each layer with full pseudocode and correctness proofs.\n\n\n### 4.8 Which Layer Does Your Application Need?\n\nThe right layer is the weakest that satisfies the application's correctness requirement, because each stronger layer costs more.\n\nApplication | Required layer | Reason  \n---|---|---  \nDNS update propagation | best-effort | losing one is acceptable; eventual convergence via TTL  \nCache invalidation hints | best-effort | losing one causes a stale read, not corruption  \nConfiguration propagation | uniform reliable | every replica must eventually have the same config  \nDistributed state machine replication | atomic | every replica must execute the same commands in the same order  \nInventory commit | atomic (or equivalent transaction) | overselling is unacceptable  \nChat messages within a room | causal (or stronger) | replies must follow originals  \nCounter increments (CRDT) | reliable | order does not matter; just delivery  \n  \nThe economic argument matters. Atomic broadcast costs at least one consensus round per message. For a system processing 100,000 events per second, the difference between best-effort (no coordination) and atomic broadcast (consensus per event) is the difference between feasible and infeasible.\n\nThe discipline: identify the _correctness property_ the application needs, then pick the weakest broadcast layer that provides it. Do not default to atomic broadcast \"to be safe.\" The cost will be paid by every operation, forever.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1880,
+      "out_sha": "e8e5e55174f7",
       "note": ""
     },
     {
@@ -719,11 +719,11 @@
       "en_title": "Chapter 4: Reliable, Atomic, and Causal Broadcast as Primitives",
       "order": 49,
       "src_chars": 1803,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7f8f1d27cf0d",
       "src": "#### Common Misconception\n\nA common error is to assume that strong eventual consistency (CRDTs, Chapter 16) \"replaces\" the need for the broadcast hierarchy. It does not. CRDTs need reliable broadcast (every replica must eventually see every operation), but they tolerate any _order_ (the data structure converges regardless). So CRDTs are an example of an application that needs the agreement property of reliable broadcast without the ordering property of atomic broadcast. The cost savings is real: a CRDT-based counter can scale to throughputs that a Raft-replicated counter cannot.\n\n\n### 4.9 The 2026 Production Reality\n\nIn 2026 production systems, the broadcast primitives appear under different names but with the same semantics:\n\n* **Kafka** provides total-order broadcast within a topic partition. The leader for the partition orders writes; replicas apply in the same order. This is atomic broadcast scoped to one partition.\n* **NATS JetStream** provides at-least-once delivery with stream-based ordering. Closer to causal-or-better depending on configuration.\n* **etcd** provides total-order replication via Raft. Atomic broadcast of state-machine commands.\n* **Redis Streams** provide ordered delivery within a stream; consumer groups provide at-least-once.\n* **CockroachDB's Rangefeed** provides causally-ordered change events with a closed-timestamp guarantee.\n\nThe right question when choosing a system is not \"which broadcast layer does this provide?\" but \"what is the strongest property this provides for the operations I care about?\" The PACELC framing of Chapter 2 generalizes: every component pays cost proportional to the strongest guarantee it offers, and getting weaker guarantees from a stronger system is usually not possible (the cost is already baked in).\n\n\n### 4.10 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 682,
+      "out_sha": "3888b95bd14d",
       "note": ""
     },
     {
@@ -731,11 +731,11 @@
       "en_title": "Chapter 4: Reliable, Atomic, and Causal Broadcast as Primitives",
       "order": 50,
       "src_chars": 3275,
-      "status": "pending",
+      "status": "done",
       "src_sha": "db22b762847a",
       "src": "#### Concept Check\n\n**Q1.** List the five broadcast primitives in order of strength, and state the property each adds over the previous.\n\nHint\n\nBest-effort, reliable, uniform reliable, causal, atomic. Properties: agreement, uniformity, causal order, total order.\n\n**Answer:** From weakest to strongest:\n\n  1. **Best-effort broadcast** : validity (sender correct, receiver correct → delivery) and no-creation. Adds nothing over point-to-point sends in a loop.\n  2. **Reliable broadcast** : adds _agreement_ — if any correct process delivers, all correct processes deliver.\n  3. **Uniform reliable broadcast** : adds _uniformity_ — if any process (correct or not) delivers, all correct processes deliver. Closes the gap where a single receiver crashes after receiving but before re-broadcasting.\n  4. **Causal broadcast** : adds _causal order_ — if broadcast(m1) happens-before broadcast(m2), then every correct process delivers m1 before m2.\n  5. **Atomic broadcast** : adds _total order_ — all correct processes deliver messages in the same total order (which is consistent with causal order).\n\nAtomic broadcast is equivalent to consensus.\n\n**Q2.** Why is atomic broadcast equivalent to consensus? Sketch the reduction in both directions.\n\nHint\n\nGiven atomic broadcast → consensus: have each process broadcast its proposal; decide on the first delivered. Given consensus → atomic broadcast: run one consensus instance per message slot.\n\n**Answer:** _Atomic broadcast → consensus._ Suppose we have atomic broadcast. Each process broadcasts its proposal value. By the total-order property, all correct processes deliver these broadcasts in the same order. Each process decides on the value contained in the first broadcast it delivers. By total order, all correct processes deliver the same first broadcast, hence decide the same value. This satisfies agreement (all decide same), validity (the value is one that was proposed), and termination (assuming the broadcast layer terminates).\n\n_Consensus → atomic broadcast._ Suppose we have a consensus primitive that decides a single value. To implement atomic broadcast, run one instance of consensus per message slot. To broadcast a message, propose it in the next available slot. All processes see the same decided values in slot order, which gives total-order delivery.\n\nThe equivalence, proved formally by Chandra and Toueg in their 1996 failure-detectors paper, implies that atomic broadcast is \"as hard as\" consensus and inherits its limits (FLP impossibility under pure asynchrony, partial synchrony required for termination).\n\n**Q3.** Give an application where reliable broadcast is sufficient and atomic broadcast is overkill. Justify the cost saving.\n\nHint\n\nCRDTs need every replica to see every operation but tolerate any order.\n\n**Answer:** CRDT-based G-Counter increment. To increment the counter on NNN replicas, each \"increment\" operation must eventually reach every replica (reliable broadcast: agreement). The order of increments does not affect the final counter value (the CRDT merge is commutative). Atomic broadcast would force every increment through a consensus round, costing one round-trip to a quorum per increment. Reliable broadcast (gossip-based) lets increments propagate asynchronously and converge.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1349,
+      "out_sha": "5a78cd8b75eb",
       "note": ""
     },
     {
@@ -743,11 +743,11 @@
       "en_title": "Chapter 4: Reliable, Atomic, and Causal Broadcast as Primitives",
       "order": 51,
       "src_chars": 1378,
-      "status": "pending",
+      "status": "done",
       "src_sha": "043ea4426b5e",
       "src": "Cost saving: for a counter handling 100,000 increments per second, atomic broadcast would require 100,000 consensus rounds per second, each touching a quorum of replicas. The system would be bottlenecked at the consensus throughput (typically thousands per second per group). The CRDT approach with reliable broadcast scales out by adding replicas, with no coordination cost per operation.\n\n**Q4.** Why is best-effort broadcast insufficient for state machine replication?\n\nHint\n\nState machine replication requires all replicas to apply the same operations in the same order, even if some replicas are temporarily unreachable.\n\n**Answer:** State machine replication requires two properties: (a) all replicas eventually apply the same set of operations (agreement), and (b) they apply them in the same order (total order). Best-effort broadcast provides neither. Under best-effort, a partition can cause some replicas to receive an operation while others do not, and even if all eventually receive, they may apply in different orders. After two divergent orders are applied, the replicas have inconsistent state, and there is no protocol-level way to reconcile them.\n\nAtomic broadcast provides both properties and is therefore the right primitive for state machine replication. Raft (Chapter 9) is an implementation of atomic broadcast for the state-machine-replication use case.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 413,
+      "out_sha": "e70f69c311eb",
       "note": ""
     },
     {
@@ -755,11 +755,11 @@
       "en_title": "Chapter 4: Reliable, Atomic, and Causal Broadcast as Primitives",
       "order": 52,
       "src_chars": 3214,
-      "status": "pending",
+      "status": "done",
       "src_sha": "112acc0cea68",
       "src": "#### Application Problems\n\n**Q1.** A team is implementing event distribution for a microservice fleet using a message broker that provides at-least-once delivery and per-topic ordering. Which broadcast layer does this give them? What additional discipline does their application code need?\n\nHint\n\nPer-topic ordering at the broker is atomic broadcast within the topic. At-least-once means each consumer may see duplicates.\n\n**Answer:** The broker provides atomic broadcast within a topic partition (per-topic ordering). Across topics or partitions, it provides only what the application enforces. At-least-once delivery means each consumer may receive the same message multiple times under retry conditions.\n\nApplication discipline needed:\n\n(a) **Idempotency** in every message handler. Receiving the same message twice should produce the same end state as receiving it once. This is typically achieved with an idempotency key per message, checked against a database before applying.\n\n(b) **Cross-topic ordering** if the application reasons about events across topics. The broker provides ordering within a partition only; events in different partitions of the same topic are not ordered. The application must either keep related events in the same partition (partition key = entity ID) or accept that cross-partition order is undefined.\n\n(c) **Consumer rebalancing semantics**. If consumers rebalance (e.g., during a deploy), an in-flight message may be reprocessed by a different consumer. Idempotency handles this; lack of idempotency causes double-processing.\n\nThe Crescent payment system from Chapter 1 is exactly this pattern: Kafka provides per-partition ordering, and the application must be idempotent per partition key (typically the transaction ID). The double-charge bug happened because the idempotency check was not strongly consistent.\n\n**Q2.** Write pseudocode for a reliable broadcast implementation using flooding. Trace through a 4-node example where one receiver crashes after receiving the message but before re-broadcasting. Does the message still reach all other correct receivers?\n\nHint\n\nWith flooding, the sender sends to all peers. As long as at least one peer beyond the crashed one received and re-broadcasts, the message reaches all.\n\n**Answer:** Pseudocode:\n    \n    \n    delivered = set()\n    \n    def broadcast(msg):\n        flood(msg, sender=self)\n    \n    def flood(msg, sender):\n        if msg in delivered:\n            return\n        delivered.add(msg)\n        upper_layer.deliver(msg)\n        for peer in all_processes:\n            if peer != sender and peer != self:\n                send(peer, msg, sender=self)\n    \n    def on_receive(msg, sender):\n        flood(msg, sender)\n    \n\nFour-node example: P1, P2, P3, P4. P1 broadcasts m.\n\n* P1 sends m to P2, P3, P4.\n* P2 receives m, adds to delivered, sends m to P3, P4 (skipping P1).\n* P3 receives m (from P1 first, say), adds to delivered, sends m to P2, P4.\n* P4 receives m, etc.\n\nNow suppose P2 receives m and crashes before re-broadcasting. P3 and P4 still receive m directly from P1, and they re-broadcast to each other (no-op since both already have it). All correct receivers (P3, P4) have delivered. Agreement satisfied.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1508,
+      "out_sha": "583af4d72bf7",
       "note": ""
     },
     {
@@ -767,11 +767,11 @@
       "en_title": "Chapter 4: Reliable, Atomic, and Causal Broadcast as Primitives",
       "order": 53,
       "src_chars": 2168,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9a7ea9af7e70",
       "src": "Now suppose P1 crashes after sending only to P2, and P2 then crashes before re-broadcasting. Now P3 and P4 do not receive m. Reliable broadcast fails this case. Uniform reliable broadcast would prevent it by requiring P2 to wait for acknowledgment from a majority before \"delivering\" upward; under this rule, P2's local delivery would not have happened, so the \"either all or none\" agreement is maintained.\n\n**Q3.** Causal broadcast is implemented with vector clocks. For a 1000-node system, the vector is 1000 entries per message. Identify two strategies to make this practical for larger N.\n\nHint\n\nCompress sparse vectors. Partition into smaller groups where vectors are bounded by group size.\n\n**Answer:** Two strategies:\n\n(a) **Dotted version vectors (DVV)** or sparse vectors. If most entries are zero (most processes have not contributed recent messages), store only the non-zero entries. Riak used a similar technique. The cost is the bookkeeping to detect when an entry can be dropped (the process is \"caught up\" enough that its entry is implied). This works well when contributions are bursty and clustered by process.\n\n(b) **Hierarchical / grouped causal broadcast**. Partition the processes into groups (e.g., by region or by tenant). Each message carries a per-group vector (group-size entries) plus a per-region summary. Cross-group causality is tracked at a coarser granularity. This is what scalable gossip-based systems do; the trade-off is that cross-group causality is approximate, not exact.\n\nA third option for some applications: drop causal broadcast in favor of _causal+ consistency_ via per-key version vectors. Each key has a vector of contributors to that key; the vector grows with the number of writers per key, not with the system size. This is the CRDT pattern; the broadcast layer becomes \"reliable\" and the causality lives in the data type. Yjs and Automerge (Chapter 16) use this approach.\n\nFor most 2026 systems, the right answer is to ask whether the application truly needs causal broadcast for _all_ messages, or whether causal can be scoped to per-entity or per-room operations. The former is rarely true; the latter usually fits.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 788,
+      "out_sha": "afaab914248e",
       "note": ""
     },
     {
@@ -779,11 +779,11 @@
       "en_title": "Chapter 4: Reliable, Atomic, and Causal Broadcast as Primitives",
       "order": 54,
       "src_chars": 3441,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fd6fcc131b54",
       "src": "#### Think Deeper\n\n**Q1.** Defend or refute: \"Atomic broadcast is too expensive for modern high-throughput systems; CRDTs make the entire broadcast hierarchy obsolete.\"\n\n**Discussion:** The claim has merit for workloads where CRDTs apply. The G-Counter example shows that an entire class of operations (commutative state updates) does not need atomic broadcast and can scale far higher with reliable broadcast plus CRDT semantics.\n\nThe refutation: CRDTs work only for data types and operations that genuinely commute. Sets, counters, registers, and certain map types have CRDT formulations. Operations that conflict (the inventory commit, the unique-username-claim, the payment-commit) cannot be expressed as CRDTs because the conflict resolution is the application's business logic, not the data type's.\n\nA system architecture that relies on CRDTs for the operations where they apply (counters, view tracking, collaborative documents) and atomic broadcast for the operations where they do not (inventory, payments, leader election) gets the best of both. Yjs-based collaborative editors use CRDTs for the document body and a strongly consistent server for the access-control metadata. CockroachDB uses Raft (atomic broadcast) for the row-level commit log but accepts higher-than-Raft throughputs via batching.\n\nSo: CRDTs do not make the broadcast hierarchy obsolete; they expand the set of operations where weaker broadcast is sufficient. The hierarchy itself still describes the cost structure: the operations that need atomic broadcast still pay for it.\n\n**Q2.** An LLM is asked to design a \"high-availability\" event distribution system. It produces a design that uses best-effort broadcast with retry on the sender side. Identify three failure modes the design has that the engineer who would use this code should know about.\n\n**Discussion:**\n\n(a) **No uniformity under sender failure.** If the sender crashes mid-broadcast, some receivers got the message and others did not. The retry-on-sender path is dead. Without uniform reliable broadcast (acknowledge round) or atomic broadcast (consensus), the partial delivery is permanent.\n\n(b) **No agreement under receiver failure.** If receiver X crashed during the broadcast and missed the message, and sender's retry logic does not re-send to recovered nodes, X will never get the message after recovery. Agreement requires re-delivery on recovery, typically via persistent acknowledgment tracking on the sender or a tombstone-based gossip layer.\n\n(c) **No ordering across senders.** If two senders broadcast events that should be ordered (e.g., a \"create\" and a \"delete\" for the same entity), receivers may see them in different orders. The system has no notion of which broadcast logically came first. Causal broadcast or atomic broadcast would address this; best-effort cannot.\n\nThe honest design depends on what the system needs to be available _for_. If the events are independent hints (cache invalidations) where loss is acceptable, the design is fine. If the events form a sequence (state changes that must be applied in order), the design is dangerously underspecified.\n\nThe LLM-generated design did not name its assumptions, so the reader must reverse-engineer them from the code. This is the recurring problem with AI-generated distributed code (Chapter 27): the absence of a stated correctness property makes the code's failure modes invisible until they happen in production.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1111,
+      "out_sha": "414935258455",
       "note": ""
     },
     {
@@ -791,11 +791,11 @@
       "en_title": "Chapter 4: Reliable, Atomic, and Causal Broadcast as Primitives",
       "order": 55,
       "src_chars": 1537,
-      "status": "pending",
+      "status": "done",
       "src_sha": "15e7fa976d0d",
       "src": "### Chapter Summary\n\nThe broadcast hierarchy gives distributed systems engineers a structured vocabulary for the question \"what does it mean to send a message to a group?\" Best-effort gives you a for-loop. Reliable adds agreement (any correct receiver delivers implies all correct receivers deliver). Uniform reliable closes the gap when a receiver crashes after delivery. Causal adds happens-before-respecting order. Atomic adds total order across all correct processes.\n\nAtomic broadcast is equivalent to consensus, and the protocols implementing it (Raft, Paxos, ZAB, HotStuff) are the subject of Part III. The Crescent multi-region payment fix from Chapter 1 used a Raft-replicated commit log, which is atomic broadcast applied to the coordinator-state-machine.\n\nEach layer costs more than the one below. The discipline is to identify the weakest layer that satisfies the application's correctness requirement and use that. Atomic broadcast as a default \"to be safe\" produces systems that pay consensus latency on every operation. CRDTs (Chapter 16) are the most striking modern example of an application class that genuinely does not need atomic broadcast and can scale far higher with reliable broadcast plus convergent data types.\n\nChapter 5 takes the next step: now that we know how to broadcast reliably and order events, we apply these primitives to replication. Sync, async, semi-sync, leader-based, leaderless, quorum reads and writes. The properties of each, the failure modes, and the production systems that use each.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 502,
+      "out_sha": "e3bd4dbeeb1c",
       "note": ""
     },
     {
