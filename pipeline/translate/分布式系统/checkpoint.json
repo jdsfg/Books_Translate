@@ -395,11 +395,11 @@
       "en_title": "Chapter 2: The Eight Fallacies, CAP, and PACELC",
       "order": 22,
       "src_chars": 3207,
-      "status": "pending",
+      "status": "done",
       "src_sha": "275dec585db6",
       "src": "The slogan also misleads by suggesting \"consistency\" is the loose database sense. CAP's consistency is linearizability, a much stronger property than transactional consistency or eventual consistency.\n\n**Q3.** State PACELC. For each of (a) Spanner, (b) CockroachDB, (c) DynamoDB, (d) Cassandra with QUORUM reads/writes, give the PACELC classification.\n\nHint\n\nPACELC: if Partition then Availability vs Consistency; Else then Latency vs Consistency. Each system is one of PA/EL, PA/EC, PC/EL, PC/EC.\n\n**Answer:** PACELC: under Partition, choose Availability or Consistency; Else (no partition), choose Latency or Consistency.\n\n(a) Spanner: PC/EC. Under partition, prefers consistency (the partitioned-out replicas refuse writes). Without partition, still consistent at the cost of commit-wait latency (the 7 ms TrueTime cost).\n\n(b) CockroachDB: PC/EC. Under partition, the minority side refuses writes for affected keys. Without partition, commit latency includes quorum round-trip to replicas, which can be tens of milliseconds for cross-region deployments.\n\n(c) DynamoDB: PA/EL. Under partition, serves possibly-stale reads from any replica. Without partition, reads are low-latency because they do not coordinate. (DynamoDB also offers strongly consistent reads at higher latency on request, which is a per-operation PACELC choice, not a global one.)\n\n(d) Cassandra with QUORUM reads/writes: PC/EC for those specific operations. The QUORUM level requires majority of replicas to ack, so it refuses writes on the minority side of a partition, and pays quorum latency without partition. With LOCAL_QUORUM the picture changes; with ONE it becomes PA/EL. Cassandra is per-request, so the PACELC classification is per-operation.\n\n**Q4.** A team is choosing between Spanner and DynamoDB for a flash-sale inventory system that will see 100,000 purchase requests per second for 60 seconds during a sale. The requirement is that no item is ever oversold. Using PACELC, walk through the decision.\n\nHint\n\n\"No item is ever oversold\" is a linearizability requirement on the decrement-inventory operation. DynamoDB's default consistency is eventual; can it be coerced to linearizable for this operation, and what does that cost?\n\n**Answer:** The \"no oversold\" requirement on the inventory decrement is a linearizability requirement. Under PACELC, both options can satisfy the requirement, but at different costs.\n\nSpanner: linearizable by default. Each inventory decrement pays commit-wait latency (about 7 ms baseline, plus quorum round-trip). At 100,000 requests per second, Spanner needs enough shards (sharding the inventory across items) to spread the load. If the sale is for a single hot item, all decrements hit one shard and you are bounded by that shard's commit throughput, which is the limiting factor.\n\nDynamoDB: eventually consistent by default. For \"no oversell\" you need conditional writes (`ConditionExpression`) plus strongly consistent reads. Conditional writes are atomic per-item at the partition layer; they will not oversell. The cost is the per-write conditional-check latency, which is higher than a normal eventual write but lower than Spanner's cross-region commit because it is single-region.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1286,
+      "out_sha": "9bf107851f63",
       "note": ""
     },
     {
@@ -407,11 +407,11 @@
       "en_title": "Chapter 2: The Eight Fallacies, CAP, and PACELC",
       "order": 23,
       "src_chars": 743,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f1e0bf050177",
       "src": "PACELC says: both are PC under partition for this operation. The Else case favors DynamoDB on latency for the conditional-write path, especially if Spanner is multi-region. The Spanner case is cleaner if you need other strongly consistent reads in the same transaction (cart-and-inventory together).\n\nDecision: if the sale is single-region and the only consistency requirement is per-item decrement, DynamoDB conditional writes win on latency and cost. If the sale spans regions or the system needs multi-item transactions (e.g., decrement inventory and increment user-purchases atomically), Spanner is the cleaner answer. A real team would also consider operational maturity, on-call expertise, and what the rest of the company already runs.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 269,
+      "out_sha": "66a73c258b19",
       "note": ""
     },
     {
@@ -419,11 +419,11 @@
       "en_title": "Chapter 2: The Eight Fallacies, CAP, and PACELC",
       "order": 24,
       "src_chars": 3447,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3627c3e97ef8",
       "src": "#### Application Problems\n\n**Q1.** You are evaluating a system that the documentation calls \"AP.\" Read the documentation more carefully and identify three operations the system performs that are actually linearizable (i.e., it is not \"AP\" for those). Then identify the latency cost.\n\nHint\n\nMost \"AP\" systems have a metadata path that needs linearizability: leader election, cluster membership, configuration. DynamoDB, for instance, has linearizable conditional writes.\n\n**Answer:** Most \"AP\" systems are AP only for their data plane; their control plane needs strong consistency to function at all. Worked example for DynamoDB:\n\n(a) Conditional writes via `ConditionExpression` are linearizable at the partition level. Cost: per-write latency includes a synchronous quorum check, which is higher than a default eventual put.\n\n(b) Strongly consistent reads via `ConsistentRead=true` are linearizable. Cost: higher latency than eventual reads (DynamoDB documents roughly 2x), and they consume more capacity units.\n\n(c) Stream metadata (cluster topology, shard assignment) is managed by a strongly consistent control plane invisible to the user. The user does not pay latency on it directly, but operations during a control-plane change can see brief unavailability.\n\nFor Cassandra: lightweight transactions (LWT) using `IF NOT EXISTS` or `IF` clauses are linearizable via Paxos. Cost: dramatically higher latency than non-LWT writes (often 4x to 10x), because the Paxos round-trip happens per-write.\n\nFor Riak: strong-consistency buckets (when enabled) are linearizable. Cost: each operation pays a coordination round-trip; throughput drops by an order of magnitude compared to eventual buckets.\n\nThe lesson: every \"AP\" system has a CP corner. Knowing which operations sit in which corner is more useful than the system-level label.\n\n**Q2.** Your colleague claims \"we use CockroachDB, so we are linearizable for free.\" Identify three operations or configurations in CockroachDB that are _not_ linearizable by default, and explain when this matters.\n\nHint\n\nCockroachDB has `AS OF SYSTEM TIME`, follower reads, and the default `SNAPSHOT` isolation level used to be weaker than serializable in older versions. Each has a non-linearizable corner.\n\n**Answer:**\n\n(a) `AS OF SYSTEM TIME` reads are bounded-staleness reads from any replica. They are not linearizable; they explicitly return data from a past consistent snapshot. They are very fast (no leader hop) and useful for analytics. Misuse: using them for inventory checks or balance reads in a transaction that needs the latest state.\n\n(b) Follower reads via `AS OF SYSTEM TIME follower_read_timestamp()` read from the nearest replica with bounded staleness. Same trade-off as above. Useful for global low-latency reads of slowly-changing data.\n\n(c) The transaction priority interaction with `CONCURRENTLY` operations can produce subtle non-linearizable behavior across statements in different sessions if you misread the isolation guarantees. CockroachDB defaults to serializable isolation, which is the strongest of the SQL isolation levels, but serializable is not the same as linearizable across sessions; serializable orders transactions in some valid order, while linearizable orders them consistent with real-time. For many workloads the difference does not matter; for \"the read in session B begins after the write in session A returns to session A\" expectations, the difference can matter.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1333,
+      "out_sha": "4fcae0349d87",
       "note": ""
     },
     {
@@ -431,11 +431,11 @@
       "en_title": "Chapter 2: The Eight Fallacies, CAP, and PACELC",
       "order": 25,
       "src_chars": 3101,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ba0a4bbce612",
       "src": "When it matters: any read where the application logic assumes \"I am seeing the latest data\" must use a fresh read at the leader, not a follower read and not `AS OF SYSTEM TIME`. The error of using a stale read where a linearizable read is needed is a class of bug that linearizable-by-default systems do not prevent automatically.\n\n**Q3.** Walk through the counter-leaderboard-inventory workload from §2.4 and explain why each one's consistency requirement is what it is. Then propose a single system that could serve all three. What are the trade-offs of choosing one system versus three specialized systems?\n\nHint\n\nSpanner can serve all three (linearizable for inventory, eventual via stale reads for counter, causal-ish via session reads for leaderboard). The trade-off is operational simplicity versus latency cost.\n\n**Answer:**\n\n_Counter:_ eventual is fine because the user-visible cost of inconsistency (the displayed view count is off by a few seconds) is much less than the system cost of linearizable counting (every increment must coordinate). A CRDT-based counter or eventually-consistent put-with-merge serves this workload at near-zero coordination cost.\n\n_Leaderboard:_ causal because two players' submissions have a causal relationship if one player saw the other's score before submitting. All viewers should eventually see the same ordering, but a few seconds of disagreement is acceptable. Stronger-than-eventual but weaker-than-linearizable.\n\n_Inventory:_ linearizable because overselling is unacceptable. The cost (per-decrement coordination) is paid because the alternative is worse.\n\nOne system that serves all three: Spanner. Use strongly consistent transactions for inventory, eventual-consistency stale reads for the counter, and bounded-staleness reads for the leaderboard. The trade-off:\n\n* Pro: one operational footprint, one query language, one access-control model.\n* Pro: cross-workload transactions become trivial (decrement inventory and update leaderboard atomically).\n* Con: Spanner's commit-wait latency is paid on every write, even on the workloads that do not need it.\n* Con: throughput per shard is bounded by the consensus round-trip, so the counter cannot scale as high on Spanner as on a CRDT-based counter.\n\nThree specialized systems (Redis for counter, Cassandra for leaderboard, Spanner for inventory) achieve higher peak throughput on each workload at the cost of operational complexity, cross-system consistency problems, and the engineering cost of three separate observability and on-call playbooks. The right answer depends on scale, team size, and how much cross-workload work the application does.\n\n**Q4.** Pick a system in your stack and write a one-page PACELC profile for it, naming what it does under partition and what it costs in normal operation. Be specific about which operations are linearizable and which are not.\n\nHint\n\nUse the table format from §2.3. For each operation type the system supports, name its PACELC classification.\n\n**Answer:** This is the exercise the rest of Part IV will train you on. A worked example for Redis Cluster:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1082,
+      "out_sha": "b874a3bb0e06",
       "note": ""
     },
     {
@@ -443,11 +443,11 @@
       "en_title": "Chapter 2: The Eight Fallacies, CAP, and PACELC",
       "order": 26,
       "src_chars": 1063,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e365abe22601",
       "src": "Redis Cluster: under partition, the partitioned-out nodes refuse writes for hash slots they no longer own (configurable via `cluster-require-full-coverage`). Normal-operation reads from a replica are not linearizable; they are eventually consistent with the master. Writes to the master are not durable until replicated; under failover, recently-acknowledged writes can be lost (this is documented; see the Jepsen Redis analysis for the details, Chapter 18).\n\nPer operation:\n\nOperation | Partition | Normal-op cost  \n---|---|---  \nMaster write | PC (write fails minority) | L (single-node) but not durable  \nReplica read | PA (serves stale) | L (very fast)  \n`SET NX EX` (lock) | PA (lock can be split) | L, but unsafe under partition (Chapter 18)  \nLua script | PC (atomic on one master) | L per master, but scoped to one slot  \n  \nThe PACELC profile makes it clear which operations are safe under which conditions, and where the system's defaults will surprise you. This is the level of detail Chapter 11 will teach you to produce for any system in 30 minutes.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 432,
+      "out_sha": "79077bffbc50",
       "note": ""
     },
     {
@@ -455,11 +455,11 @@
       "en_title": "Chapter 2: The Eight Fallacies, CAP, and PACELC",
       "order": 27,
       "src_chars": 3152,
-      "status": "pending",
+      "status": "done",
       "src_sha": "37b50edd97ca",
       "src": "#### Think Deeper\n\n**Q1.** Defend or refute: \"CAP is obsolete in 2026; PACELC is the only framing engineers need.\" Use evidence from at least two production systems.\n\n**Discussion:** Both framings have a place. CAP names the choice the system designer must make about the rare-but-real partition case. PACELC names the choice the application user pays every day. Neither alone is sufficient.\n\nThe defense of \"CAP is obsolete\" goes: in modern cloud deployments, partitions are short (seconds, not hours), and the latency-vs-consistency choice in normal operation dominates user experience. For 99.9% of seconds, PACELC is what matters; CAP only enters during incident response.\n\nThe refutation: when a partition does occur, the CAP behavior is what determines whether your system silently corrupts data, refuses requests cleanly, or serves stale answers. The choice has to be made in advance. Production systems that did not think through CAP have caused outages large enough to be named after them.\n\nA useful synthesis: CAP is the worst-case behavior; PACELC is the everyday behavior. Both belong in any serious system evaluation, with PACELC getting more design attention because it dominates everyday cost, and CAP getting more design attention for safety-critical workloads where the partition-case behavior is itself the requirement.\n\nWorked example: Spanner is PC/EC. Spanner's design pays heavy normal-operation latency (commit-wait) so that under partition, it remains consistent. For Google ads (the original Spanner workload), this trade is correct because monetary data must be exactly right under all conditions. For a social-feed product, the same trade would be wrong; the partition behavior should be \"show what we have,\" not \"refuse to serve.\"\n\n**Q2.** An LLM, asked \"should I pick a CP or AP database for my online store,\" outputs a confident recommendation in three paragraphs. Without specifying which the model picked, identify the questions the model failed to ask, and explain why getting the answer \"right\" without asking them is a luckier outcome than getting the answer \"wrong.\"\n\n**Discussion:** The questions the model failed to ask include:\n\n* What operations does the store perform? Inventory commit and payment commit need linearizability; product browsing and review reading do not.\n* What is the deployment footprint? Single-region versus multi-region changes the latency profile dramatically.\n* What is the team's operational maturity? A team that has not run a distributed database before will get more value from a managed PostgreSQL than from any \"ideal\" distributed system, because operational failures will dominate.\n* What is the read/write ratio? A 1000:1 read/write workload tolerates very different storage choices than a 1:1.\n* What is the cost budget? Spanner is expensive; DynamoDB is cheap on small workloads and expensive on hot keys; CockroachDB is cheaper than Spanner but needs operational expertise.\n* What does the team need to integrate with? An ecosystem of existing Postgres-based tooling makes a Postgres-compatible system (Aurora DSQL, CockroachDB, Neon) cheaper to adopt than a NoSQL alternative.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1138,
+      "out_sha": "2e72227e19e2",
       "note": ""
     },
     {
@@ -467,11 +467,11 @@
       "en_title": "Chapter 2: The Eight Fallacies, CAP, and PACELC",
       "order": 28,
       "src_chars": 2493,
-      "status": "pending",
+      "status": "done",
       "src_sha": "83da1de626cf",
       "src": "A model that gives an answer without asking any of this is, at best, lucky. The right answer for a single-region Shopify-style store is probably PostgreSQL + read replicas; the right answer for a Stripe-style global payment system is probably Spanner or TigerBeetle. The right reasoning path goes through the questions. An answer without the reasoning path is a value the team cannot defend, cannot extend, and cannot debug when the workload changes.\n\nThe deeper observation: distributed-systems decisions are not the kind of decision where you can outsource the reasoning. The reasoning _is_ the decision. An LLM-generated answer that happens to be correct gives the team no understanding of why, no ability to evaluate a future change, and no defense when the assumptions shift.\n\n\n### Chapter Summary\n\nDeutsch's Eight Fallacies name the single-machine intuitions that produce most distributed-systems bugs. The fallacies are not a checklist to memorize; they are the categories of assumption to audit in every piece of distributed code. Chapter 21 will revisit the network-reliability fallacy as cascading failures; Chapter 18 will revisit the security and \"one administrator\" fallacies as lock-and-coordination bugs.\n\nCAP, precisely stated, says that under network partition you cannot have both linearizability and availability. The slogan version (\"pick two\") is misleading because partition tolerance is not a choice. CAP's \"consistency\" is linearizability, a much stronger property than the loose database sense of the word.\n\nPACELC extends CAP to the case CAP ignores: when there is no partition. PACELC names the trade-off between latency and consistency in normal operation, which is what your application pays every day. The PACELC profile of a system is more practically useful than its CAP label.\n\nThe counter-leaderboard-inventory workload from §2.4 will return throughout the book. Each represents a point on the consistency spectrum: counter (eventual fine), leaderboard (causal needed), inventory (linearizable required). Knowing which workload needs which consistency is a more useful skill than knowing which database is \"CP\" or \"AP.\"\n\nChapter 3 takes the first lie, time, and develops the protocols (Lamport, vector, HLC, TrueTime) that let you reason about ordering across machines without lying. The Spanner commit-wait latency we mentioned in this chapter has its full explanation in Chapter 3; the CockroachDB HLC-based MVCC has its full explanation in Chapter 13.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 865,
+      "out_sha": "fbdb197626a5",
       "note": ""
     },
     {
