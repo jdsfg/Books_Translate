@@ -7859,11 +7859,11 @@
       "en_title": "Appendix C — Glossary",
       "order": 644,
       "src_chars": 1761,
-      "status": "pending",
+      "status": "done",
       "src_sha": "457c1d56745f",
       "src": "### J\n\n**Jailbreak** : A prompt or input designed to make the model bypass its safety training. The 2026 baseline is to assume jailbreaks succeed and defend at the output and tool layers (Ch 23, §23.3).\n\n**JSON schema** : A formal description of the expected JSON shape, used to drive constrained decoding. The contract between prompt and downstream code (Ch 7, §7.2).\n\n**Judge model** : The LLM used to score outputs in LLM-as-judge eval. Should be different (and usually stronger) than the model being judged (Ch 5, §5.5).\n\n**Judge rotation** : Periodically swapping the judge model to avoid correlated-family bias and detect drift in scoring (Ch 5, §5.6).\n\n\n### K\n\n**Kappa** : Cohen's kappa. Measures inter-rater agreement adjusted for chance. Used to validate that human raters (or LLM judges) agree on a rubric (Ch 4, §4.5).\n\n**KG-RAG** : Knowledge-graph RAG. Retrieval augmented with traversals of a structured graph over entities and relations. Wins where queries require multi-hop reasoning (Ch 11, §11.3).\n\n**Knowledge graph RAG** : See _KG-RAG_ (Ch 11, §11.3).\n\n**Kong AI Gateway** : Enterprise API gateway with AI-specific features (model routing, prompt templates, semantic caching). Strong for organizations already on Kong (Ch 17, §17.3).\n\n**Krippendorff's alpha** : Inter-rater agreement coefficient generalized across rater counts and scale types. Preferred over kappa when raters or items vary (Ch 4, §4.5).\n\n**KV cache** : The stored key/value tensors from prior tokens in an attention computation. Re-used across decoding steps; what makes streaming cheap (Ch 2, §2.5).\n\n**Key management** : Storing, rotating, and scoping provider API keys. The most common source of credential leaks in AI systems; centralize at the gateway (Ch 17, §17.6).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 789,
+      "out_sha": "08615f460ad2",
       "note": ""
     },
     {
@@ -7871,11 +7871,11 @@
       "en_title": "Appendix C — Glossary",
       "order": 645,
       "src_chars": 2287,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7ee9346fbbd7",
       "src": "### L\n\n**Langfuse** : Open-source LLM observability platform with strong tracing, eval integration, and prompt management. Common default for self-hosted observability (Ch 19, §19.3).\n\n**LangGraph** : Graph-based agent orchestration framework from LangChain. State machines for agent workflows (Ch 15, §15.4).\n\n**Late interaction** : Retrieval method (e.g., ColBERT, ColPali) that defers similarity computation to token-level pairs at query time. More accurate than bi-encoders, more expensive (Ch 12, §12.3).\n\n**Latency budget** : The end-to-end time allowed for a user-facing response, decomposed by stage (network, retrieval, LLM, post-processing). Allocate explicitly (Ch 20, §20.2).\n\n**Length bias** : LLM judges systematically prefer longer responses. Mitigated by length-controlled rubrics or pairwise prompts (Ch 5, §5.6).\n\n**LiteLLM** : Open-source proxy that normalizes 100+ provider APIs behind an OpenAI-compatible interface. The build-it-yourself gateway baseline (Ch 17, §17.3).\n\n**Llama** : Meta's open-weight model family, the de facto reference for open-source AI through 2026 (Ch 22, §22.1).\n\n**llama.cpp** : C++ inference engine optimized for CPU and consumer GPUs. Powers most local AI tooling (Ch 22, §22.6).\n\n**LLM-as-judge** : Using an LLM to score outputs against a rubric. Cheaper than human eval, but subject to position, length, and family bias (Ch 5, §5.5).\n\n**Logit** : The pre-softmax score the model assigns to each possible next token. Direct logit access enables custom samplers and confidence proxies (Ch 2, §2.5).\n\n**Long-term memory** : Agent memory that persists across sessions, typically stored externally (vector store, KG, SQL) and retrieved on demand (Ch 14, §14.5).\n\n**LoRA** : Low-Rank Adaptation. Fine-tuning that learns small rank-decomposition matrices alongside frozen base weights. The dominant cost-efficient fine-tuning method (Ch 22, §22.3).\n\n**Lost in the middle** : The empirical finding that LLMs attend less to content in the middle of long contexts. Argues for putting the most important material at the start or end (Ch 8, §8.5).\n\n**Latent space** : The high-dimensional vector space where embeddings live. Operationally, \"moving through latent space\" means changing embeddings via query rewriting or fine-tuning (Ch 10, §10.1).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 992,
+      "out_sha": "884da8e7229a",
       "note": ""
     },
     {
