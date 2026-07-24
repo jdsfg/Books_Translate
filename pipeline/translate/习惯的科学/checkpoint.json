@@ -1591,11 +1591,11 @@
       "en_title": "Chapter 7: The Dopamine Trap",
       "order": 126,
       "src_chars": 1421,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0d8802791614",
       "src": "#### Definition: Variable-Ratio Reinforcement\n\n**Variable-ratio reinforcement** is a schedule in which the reward arrives after a variable number of behavioral repetitions, averaging around some target value but unpredictable on any specific trial. The behavior pattern produced is the strongest, most persistent, and most extinction-resistant in the behavioral-science literature.\n\nIn plain language: under VR reinforcement, you don't know when the next reward is coming. Maybe this press. Maybe the next. Maybe twenty presses from now. The uncertainty itself is the engine. Each repetition contains the _possibility_ of reward, which produces a small dopamine signal regardless of whether the reward actually arrives — because, per Chapter 3, the dopamine system signals prediction error, and the unresolved possibility is itself a state in which the prediction has not been confirmed or disconfirmed.\n\nThis is the key insight: **on variable-ratio schedules, the \"maybe\" is itself the reward.** You are not pressing the lever to get the eventual juice. You are pressing the lever because each press contains the chance of juice, and the chance produces dopamine. The actual juice, when it comes, produces less dopamine than you'd expect — its arrival is, on average, just a confirmation of the chance. The dopamine is fired by the chance.\n\nOnce you internalize this, a great deal of modern behavior makes sudden sense.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 423,
+      "out_sha": "f8a06e8621a2",
       "note": ""
     },
     {
@@ -1603,11 +1603,11 @@
       "en_title": "Chapter 7: The Dopamine Trap",
       "order": 127,
       "src_chars": 3248,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0b439b0c8123",
       "src": "### 7.2 The Slot Machine\n\nThe slot machine is the canonical implementation of variable-ratio reinforcement, and it has been refined for over a century into one of the most behaviorally sticky devices ever built.\n\nThe mechanism is simple. The user pulls a lever (or, increasingly, presses a button). A randomized internal mechanism produces an outcome. Most outcomes are losses (no reward). A small fraction are small wins (a few coins back). A smaller fraction are medium wins. A very small fraction are large wins (the jackpot). The schedule is variable-ratio: the user cannot predict when the next win will come.\n\nSeveral specific design features have been refined over the years to maximize the behavioral grip:\n\n* **Near-miss design.** Many losing outcomes are designed to _almost_ be a win — two cherries and a near-cherry, for instance. The near-miss produces a stronger dopamine response than a clear loss, because the prediction error is smaller and the system briefly registers \"almost!\" Modern slot machines are calibrated to produce a specific frequency of near-misses, because the data shows it sustains play.\n\n* **Variable reward magnitudes.** Wins of different sizes (small, medium, large, jackpot) increase the variability in the reward distribution, which strengthens the variable-ratio effect. The user is not waiting for a single reward type; they are waiting for _any_ reward, of _any_ size.\n\n* **Audio and visual celebration of every win.** Every win, regardless of size, plays a celebratory sound and visual effect. Small wins (which often are mathematically losses, when you account for the cost of the spin) feel like wins. The dopamine system registers a positive event. _The user is being trained to feel like they are winning more often than they actually are._\n\n* **Loss disguised as wins (LDW).** Modern slot machines often pay out, on a given spin, an amount that is less than the cost of the spin — but they celebrate the partial payback as a \"win\" with the same audio and visual effects. The user's brain, which doesn't do detailed accounting in real time, registers it as a win. Hours of play can pass with the user feeling like they're \"ahead\" while their bank account is being slowly drained.\n\n* **No clocks, no windows, no natural lighting.** As we noted in Chapter 2 (the casino), the surrounding environment is engineered to remove any contextual cues that would prompt the user to leave. The slot machine itself is part of a larger ambient-context engineering project.\n\nThe result, in psychological terms: a user can sit at a slot machine for hours, in a state that researchers sometimes call the \"machine zone\" — a dissociated, present-only state in which time disappears, surroundings disappear, and the only reality is the next press. The dopamine system is firing on every press. The wanting is overwhelming. The actual liking, if measured, is often quite low — players asked about their experience often describe it as numb, automatic, even unpleasant. **Wanting and liking, as we saw in Chapter 3, have come apart.** The wanting is firing on the cue (the press, the lit screen, the spinning reels); the liking has long since faded. The behavior continues anyway, because the wanting is what's driving it.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 943,
+      "out_sha": "c2ac0f60fbc8",
       "note": ""
     },
     {
@@ -1615,11 +1615,11 @@
       "en_title": "Chapter 7: The Dopamine Trap",
       "order": 128,
       "src_chars": 434,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4c540bf9aad2",
       "src": "Slot machines are a specific commercial product that affects, in a major way, a relatively small number of people (people with gambling disorders, who are the casinos' most lucrative customers and the ones whose lives are most affected by the design). The reason we're spending time on the mechanism is that **the same design principles, scaled to mobile devices, now affect billions of people, including most readers of this book.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 121,
+      "out_sha": "e8d07e3207b5",
       "note": ""
     },
     {
@@ -1627,11 +1627,11 @@
       "en_title": "Chapter 7: The Dopamine Trap",
       "order": 129,
       "src_chars": 3244,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cf3e6a50fd44",
       "src": "### 7.3 The Phone in Your Pocket\n\nOpen any major social media or content app on your phone. Pull-to-refresh. New content appears. Sometimes interesting content. Sometimes boring content. Sometimes an emotionally charged post. Sometimes a notification from a friend. Sometimes an ad. Sometimes an unexpected piece of news. The pattern of what appears, on any given pull, is unpredictable.\n\nThis is variable-ratio reinforcement on a mobile device. The \"lever\" is your finger. The \"machine\" is the app. The \"reward\" is whatever the algorithm has decided to surface for you, in this moment, calibrated to keep you engaged. The schedule is variable: the algorithm explicitly randomizes some of what you see, ensures that occasional high-reward content is mixed in, and adjusts the timing of \"good\" content based on your engagement metrics.\n\nSpecific features that mirror the slot machine:\n\n* **Pull-to-refresh.** A gesture explicitly modeled on the slot-machine lever pull. The user makes a discrete action; the system produces an unpredictable outcome. The interface designer who introduced pull-to-refresh in social media apps has discussed, in public, his subsequent regret about how directly the design borrowed from gambling.\n\n* **Variable reward magnitudes.** Content varies in emotional intensity. A boring update; an interesting article; an emotionally moving post; an unexpected piece of news; a message from someone you care about. The variability is itself part of the reinforcement architecture.\n\n* **Notifications as variable cues.** The notification is the cue. Most notifications are not particularly rewarding (a routine email, a calendar reminder, an algorithmic suggestion). A few are highly rewarding (a message from someone important, an unexpected like or comment, a piece of news that turns out to matter). The intermittent reinforcement schedule is doing the work.\n\n* **Numerical badges that register as task-incompletion signals.** The red number on the icon creates an unfinished-task signal that the brain wants to clear, similar to the visual hooks used in casino design.\n\n* **Algorithmic timing.** The platforms, of course, control when notifications and content arrive. They have data on when each user is most responsive, most engaged, most likely to open the app. They time deliveries accordingly. This is a level of variable-schedule sophistication that even Skinner could not have imagined — fully personalized, real-time-calibrated, machine-learning-optimized variable reinforcement.\n\n* **Streak and engagement features.** Snapchat streaks, Duolingo daily reminders, fitness app rings — each adds a discrete \"completion\" structure on top of the underlying variable-ratio engine, layering fixed-interval pressure onto variable-ratio engagement.\n\nThe result, in behavioral terms, is exactly what Skinner's pigeons would have predicted: high rate, high persistence, high resistance to extinction. People check their phones hundreds of times a day. They cannot easily stop checking. They keep checking even when the recent rewards have been low. The pattern is not weakness; it is the predictable output of a reinforcement schedule that, in pigeons, produces thousands of lever-presses long after the reward has ended.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 977,
+      "out_sha": "f806bf59e651",
       "note": ""
     },
     {
@@ -1639,11 +1639,11 @@
       "en_title": "Chapter 7: The Dopamine Trap",
       "order": 130,
       "src_chars": 2623,
-      "status": "pending",
+      "status": "done",
       "src_sha": "91ddac0cc89a",
       "src": "### 7.4 Why Variable Schedules Are Uniquely Powerful\n\nIt's worth being precise about _why_ variable-ratio reinforcement is so much stronger than the alternatives. The mechanism comes back to dopamine prediction error, from Chapter 3.\n\nRecall: dopamine signals the difference between expected reward and actual reward. Larger surprises produce larger dopamine signals. Once expectations have caught up to reality, the surprises go away and the dopamine system goes quiet.\n\nUnder fixed-ratio reinforcement (e.g., reward every 10 presses), the dopamine system quickly learns to predict the reward. Press 10, get reward. Press 9, no reward. Press 11, no reward. The expectation is precise, and the dopamine signal — once the schedule is learned — concentrates around the predictable reward and goes quiet on the other presses. Importantly, _the system can stably predict the reward_ , which means that on most presses the dopamine is flat. The behavior is maintained, but the moment-to-moment dopamine signal is modest.\n\nUnder variable-ratio reinforcement, the dopamine system _cannot_ stably predict when the reward will come. Each press is, in a sense, an unresolved trial. The expectation has not been confirmed or disconfirmed; the next press could be the one. **The unresolved possibility itself produces a low-grade dopamine signal** , because the expected future reward has not yet been reset. The behavior is maintained, and the dopamine signal is firing continuously. Each press is, in a small way, exciting.\n\nThis is the structural reason VR schedules produce so much behavior. The dopamine is firing not at the reward (which arrives unpredictably and is now small relative to expectation when it does come, because the system has learned the schedule's distribution) but at the cue and the press itself. **The \"maybe\" is the dopamine event.** You are not playing the slot machine to win; you are playing it because each press contains the chance of winning, and the chance produces dopamine.\n\nThis also explains why variable-ratio schedules are _resistant to extinction_. When the reward stops arriving entirely, the system needs many disconfirmations before it concludes \"the reward isn't coming anymore.\" Under fixed-ratio, the disconfirmations come quickly (every 10 presses, no reward — clear signal). Under variable-ratio, the system was already used to many presses without reward; the absence of reward, for many presses, looks just like the normal pattern. The pigeon keeps pressing for thousands of presses. The user keeps checking the phone for thousands of checks, even when most of them are unrewarding.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 745,
+      "out_sha": "6b84732ef130",
       "note": ""
     },
     {
