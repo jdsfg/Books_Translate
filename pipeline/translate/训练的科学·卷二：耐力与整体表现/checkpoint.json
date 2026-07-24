@@ -875,7 +875,7 @@
       "src_sha": "49482f7c2e13",
       "src": "#### Compute It\n\n**Q1.** You are laying out a macrocycle of **24 weeks** toward a goal race. You build it from mesocycles that are each **4 weeks** long, and every mesocycle ends with **1 deload week**. (a) How many mesocycles fit in the macrocycle? (b) How many deload weeks does that give across the whole macrocycle, and how many \"loading\" (non-deload) weeks remain? (c) If you decided the final mesocycle before the race should be a 3-week taper block (2 loading weeks + 1 deload) instead of a full 4-week block, how would the total week count change, and what would you adjust elsewhere to keep the macrocycle at 24 weeks?\n\nHint\n\nDivide the macrocycle length by the mesocycle length for (a). Each mesocycle contributes exactly 1 deload week. For (c), a 3-week block frees 1 week that must be absorbed somewhere.\n\n**Answer:** (a) With 4-week mesocycles in a 24-week macrocycle: 24/4=624 / 4 = 624/4=6 mesocycles. (b) Each mesocycle ends with 1 deload week, so 6 mesocycles give **6 deload weeks** , leaving 24−6=1824 - 6 = 1824−6=18 loading weeks. (c) Replacing the last 4-week mesocycle with a 3-week taper block removes 1 week, so the six blocks now total 5×4+3=235 \\times 4 + 3 = 235×4+3=23 weeks. To keep the macrocycle at 24 weeks you would add that freed week back somewhere useful, for example extending an early base mesocycle to 5 weeks (giving more low-intensity volume where it does the most good), so the blocks read 5+4+4+4+4+3=245 + 4 + 4 + 4 + 4 + 3 = 245+4+4+4+4+3=24. This is exactly the micro-inside-meso-inside-macro calendar arithmetic (Chapter 9's nested vocabulary) that the Chapter 13 capstone will have you lay out session by session; the point is that a periodized plan is _countable_ , and deloads are scheduled weeks, not afterthoughts.\n\n**Q2.** Match each scenario to the most fitting periodization model (linear, undulating, or block), and justify: (a) A beginner runner with a goal race eight months away who currently has almost no aerobic base. (b) A busy recreational athlete who wants to maintain strength and endurance year-round with no single peak, training the same few days each week. (c) An advanced athlete who needs a big, focused jump in high-intensity aerobic power before a key competition.\n\nHint\n\nWhich model builds a broad foundation first then sharpens (good with lots of runway)? Which touches every quality each week (good for year-round maintenance)? Which concentrates one quality hard (good for a focused advanced jump)?",
       "out_chars": 837,
-      "out_sha": "c138dc1fe068",
+      "out_sha": "cd266917065d",
       "note": ""
     },
     {
@@ -943,11 +943,11 @@
       "en_title": "Chapter 10: The Whole Athlete II, Fatigue, Deloads, and Concurrent Training",
       "order": 73,
       "src_chars": 1782,
-      "status": "pending",
+      "status": "done",
       "src_sha": "420c1da3298d",
       "src": "### 10.4 The practical levers: sequencing and separating\n\nThe interference effect is not something you passively suffer; it is something you _arrange around_. Three levers, all of which the Chapter 13 capstone uses:\n\n* **Sequencing (which comes first).** When you must do both in one session, do the quality you care about _most_ first, while fresh. If strength is your priority, lift first and do endurance after (or better, later); doing hard endurance right before lifting is the worst case for strength. If endurance is the priority, the reverse.\n* **Separating (spread them out).** The single most effective lever: put hard lifting and hard endurance on _different days_ , or at least many hours apart. Separation is what makes the interference effect largely disappear, so a well-arranged week can carry substantial amounts of both engines with minimal interference.\n* **Managing total load.** Keep an eye on the _sum_ of stress across both engines. Two hard engines competing for the same finite recovery (Chapter 9) means your deload and your easy days must account for _everything_ , not just one engine. A week that looks reasonable for running alone plus reasonable for lifting alone can be too much _combined_.\n\nThese three levers are the rules Chapter 13 will follow when it schedules Volume I's lifts and this volume's runs into a single microcycle. The takeaway to carry forward: the two engines can coexist in one plan, and the art is in the arrangement, sequencing by priority, separating the hard work, and managing the combined load so total fatigue stays inside your recovery budget.\n\n\n### 10.5 Exercises\n\nMostly reasoning, with one quantitative illustration of the fitness-fatigue subtraction. The applied problems rehearse the capstone's scheduling decisions.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 572,
+      "out_sha": "32af9744d166",
       "note": ""
     },
     {
@@ -955,11 +955,11 @@
       "en_title": "Chapter 10: The Whole Athlete II, Fatigue, Deloads, and Concurrent Training",
       "order": 74,
       "src_chars": 2586,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d264919b4bf5",
       "src": "#### Concept Check\n\n**Q1.** Using the fitness-fatigue model, explain how it is possible to finish a hard three-week training block feeling flat and performing _worse_ , then perform at a personal best a week later after doing much _less_ training. What actually changed in that easier week?\n\n**Answer:** The fitness-fatigue model says your readiness is the _difference_ between two after-effects: fitness (builds slowly, fades slowly) and fatigue (builds fast, fades fast). During a hard three-week block, both terms rise, but fatigue rises more in the short term, so at the end of the block your fitness is genuinely higher yet it is _masked_ by even higher fatigue, and your visible performance is flat or worse, that is readiness = fitness − fatigue with a large fatigue term. In the easier week that follows, you do much less training, so the fatigue term drains away (it fades faster than fitness), while the fitness you built stays largely intact. With fatigue now low and fitness still high, the subtraction flips: readiness jumps, and you post a personal best. Crucially, _nothing new was built_ in the easy week; you did not gain fitness by training less. You simply _revealed_ the fitness that was already there by letting the fatigue clear. This is the entire rationale for the deload, and it is why \"train harder, never rest\" is self-defeating: it keeps the fatigue term permanently elevated so your fitness never gets to show.\n\n**Q2.** State the interference effect precisely. Name two conditions that make it _worse_ and two that make it _better or negligible_ , and give the one-sentence practical verdict for a general athlete who wants to train both engines.\n\n**Answer:** The **interference effect** is that training endurance and strength concurrently can blunt strength and (especially) power gains compared to training strength alone, while generally not blunting endurance gains. Conditions that make it **worse** : high endurance volume; running as the endurance mode (versus cycling); and doing the two close together, especially hard endurance right before lifting. Conditions that make it **better or negligible** : separating the sessions by many hours or onto different days; being a beginner (who improves at nearly everything); using cycling instead of running; and keeping endurance volume moderate. The practical verdict for a general athlete: the interference effect is a _manageable tax, not a veto_ , so train both, keep endurance volume reasonable, and separate your hard lifting from your hard endurance work rather than avoiding endurance entirely.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 789,
+      "out_sha": "db6854e76744",
       "note": ""
     },
     {
@@ -967,11 +967,11 @@
       "en_title": "Chapter 10: The Whole Athlete II, Fatigue, Deloads, and Concurrent Training",
       "order": 75,
       "src_chars": 2510,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7057db13993d",
       "src": "#### Compute It\n\n**Q1.** Model an athlete's readiness with the fitness-fatigue subtraction readiness=fitness−fatigue\\text{readiness} = \\text{fitness} - \\text{fatigue}readiness=fitness−fatigue, both in arbitrary \"units.\" At the end of a hard three-week block, their accumulated **fitness after-effect is +10** and their accumulated **fatigue after-effect is +18**. (a) Compute their readiness at the end of the block, and say what it predicts about their performance. (b) They then take a deload week. Because fatigue fades faster than fitness, by the end of the deload the fatigue after-effect has drained to **+4** while fitness has only slipped to **+9**. Compute the new readiness. (c) By how much did readiness change, and what is the striking thing about _how_ that change was produced?\n\nHint\n\nReadiness is just fitness minus fatigue at each moment. Compute it before and after, then subtract the two readiness values for the change.\n\n**Answer:** (a) End of block: readiness=10−18=−8\\text{readiness} = 10 - 18 = -8readiness=10−18=−8 units. A negative readiness predicts _worse_ visible performance than baseline, even though real fitness (+10) is at its highest, because the large fatigue term is masking it. This is the \"fitter but flat\" state the chapter describes. (b) End of deload: readiness=9−4=+5\\text{readiness} = 9 - 4 = +5readiness=9−4=+5 units. (c) Readiness changed by 5−(−8)=+135 - (-8) = +135−(−8)=+13 units. The striking thing is _how_ : the athlete did **less** training during the deload, yet readiness rose sharply, not because any new fitness was built (fitness actually fell slightly, from 10 to 9), but because the fatigue term drained away and _revealed_ the fitness that was already there. This is the whole rationale for the deload, quantified: you cash in accumulated fitness by shedding fatigue, and the numbers show why \"train harder, never rest\" keeps readiness suppressed by holding the fatigue term high.\n\n**Q2.** A recreational athlete wants to get noticeably stronger while also maintaining decent running fitness. They currently do a hard leg-strength session and a hard interval run _back to back in the same session, running first_ , four days a week. Using this chapter's three levers, redesign their approach and explain why each change helps.\n\nHint\n\nConsider sequencing (which quality is the priority, and which should come first while fresh?), separating (should the hard run and hard lift share a session?), and total load (is four hard combined days sustainable?).",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 770,
+      "out_sha": "14492520eeeb",
       "note": ""
     },
     {
@@ -979,11 +979,11 @@
       "en_title": "Chapter 10: The Whole Athlete II, Fatigue, Deloads, and Concurrent Training",
       "order": 76,
       "src_chars": 2680,
-      "status": "pending",
+      "status": "done",
       "src_sha": "77e00f24d147",
       "src": "**Answer:** Three changes, one per lever. (1) **Separating** , the biggest fix: stop doing the hard run and hard lift in the same session. Put hard lifting and hard running on _different days_ , which is what makes the interference effect largely disappear; stacked in one session is close to the worst case. (2) **Sequencing** : since strength is the stated priority, on any day that must combine the two, lift _first_ while fresh rather than running first; running first pre-fatigues the legs and is the worst case for strength gains. (Better still, given change 1, they rarely need to combine them at all.) (3) **Managing total load** : four hard _combined_ days a week is likely too much total stress for their finite recovery (Chapter 9), so reduce the number of genuinely hard days and make the rest easy-endurance or rest, ensuring the combined load of both engines fits inside their recovery budget, with a deload built in at the block's end. The result: hard lifting and hard running separated across the week, lifting prioritized and done fresh, and total load managed so both engines progress instead of both being compromised by fatigue and interference.\n\n**Q3.** A lifter who has never run before adds three easy jogs a week and panics that it will \"kill their gains.\" Given what this chapter says about beginners and about endurance modality and volume, how worried should they actually be, and what small adjustments (if any) would you suggest?\n\n**Answer:** They should barely worry, and this is a case where the honest conditions of the interference effect are reassuring. First, they are a **beginner** at endurance, and interference is minimal or absent in beginners, who tend to improve at nearly everything at once. Second, **three easy jogs** is _low_ endurance volume at _low_ intensity, and interference scales with endurance volume and intensity, so a modest amount of easy running is close to the least-interfering dose possible. Third, if they remain concerned, the small adjustments are exactly the chapter's levers: keep the jogs **easy** (Chapter 6 base pace, which also limits muscle damage and fatigue), **separate** them from the hard lifting days rather than stacking them right before leg work, and, if they ever want to add more cardio volume later, consider **cycling** over running to reduce the eccentric muscle damage that competes with strength recovery. But at three easy jogs a week as a beginner, no meaningful \"gains-killing\" should be expected, and the substantial cardiovascular-health and endurance benefits far outweigh the negligible interference. The fear is the inflated myth; the reality is a manageable non-issue at this dose.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 830,
+      "out_sha": "a272ed4d6b67",
       "note": ""
     },
     {
@@ -991,11 +991,11 @@
       "en_title": "Chapter 10: The Whole Athlete II, Fatigue, Deloads, and Concurrent Training",
       "order": 77,
       "src_chars": 2417,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cc99d0acd0a2",
       "src": "#### Take It Further\n\n**Q1.** The fitness-fatigue model treats fatigue as something to _shed_ at the right time rather than to accumulate as proof of hard work. Yet many dedicated athletes take pride in always feeling tired and rarely resting, treating fatigue as a badge of commitment. Argue why this instinct, though understandable, is a trap, and describe how an athlete could restructure their mindset (and their log-reading) to escape it.\n\n**Discussion:** The instinct is understandable, because fatigue _feels_ like evidence that you worked hard, and our culture equates suffering with virtue. But the fitness-fatigue model shows why treating chronic fatigue as a badge is a trap: readiness is fitness _minus_ fatigue, so an athlete who keeps fatigue permanently elevated never lets their hard-won fitness _show_ , and worse, chronic under-recovery eventually suppresses the fitness term itself (via stalled adaptation and, at the extreme, overtraining and injury or illness). So the always-tired athlete is not maximizing anything; they are hiding their own fitness behind a wall of fatigue and risking a breakdown that costs far more training than any rest day would. The specific self-deception is confusing _input_ (how much stress I imposed) with _outcome_ (how much fitness I revealed and can express). Escaping it requires two reframes. First, a _mindset_ shift: define hard work not as \"how destroyed I feel\" but as \"how much fitness I built _and can display_ ,\" which makes strategic rest a form of hard work's payoff rather than its betrayal. Deloads and easy days become the moves that _cash in_ the training, not laziness. Second, a _log-reading_ shift: instead of tracking effort as a badge, track the fatigue signals this chapter named, drifting performance, elevated resting heart rate, poor sleep, foul mood, and treat a cluster of them as a _signal to deload_ , not to push. The athlete who reads those signals and rests on purpose will consistently out-perform the one who wears fatigue as a medal, because they will actually get to express the fitness they built. And if the fatigue signals persist despite sensible rest, the same log-reading points them to the medical boundary rather than to another hard session. This is the estimate-honesty rule turned inward: your training plan predicts, but your fatigued body, read honestly through the log, decides when to push and when to back off.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 746,
+      "out_sha": "51a383ff95fd",
       "note": ""
     },
     {
@@ -1003,11 +1003,11 @@
       "en_title": "Chapter 10: The Whole Athlete II, Fatigue, Deloads, and Concurrent Training",
       "order": 78,
       "src_chars": 1660,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cdd9cacdbbe7",
       "src": "### Chapter Summary\n\nThis chapter gave you the specific rules that sequencing (Chapter 9) needs. The **fitness-fatigue model** refines Volume I's supercompensation: every hard session deposits both fitness (slow to build, slow to fade) and fatigue (fast to build, fast to fade), and your readiness is their _difference_. That is why you can be fitter yet perform worse under accumulated fatigue, and why a **deload** (scheduled at the block level here, extending Volume I's weekly deload) lets fatigue drain and reveals the hidden fitness. Your log, drifting performance, elevated resting heart rate, poor sleep, is the early-warning system for when to deload, and, past a point, the medical boundary where persistent fatigue needs a professional rather than more training.\n\nThe chapter's centerpiece was the **interference effect** : training both engines concurrently modestly blunts strength and especially power gains (but not endurance), an effect that is real but far smaller than the \"cardio kills gains\" myth, and highly conditional, worse with running, high volume, and stacked sessions, and largely gone when the sessions are separated or the athlete is a beginner. So it is a manageable tax, not a veto. You manage it with three **levers** , sequencing hard work by priority, separating hard lifting from hard endurance, and managing the combined load, which are precisely the rules Chapter 13 will use to fit both engines into one week. Before that capstone, Chapter 11 completes the recovery picture with the biggest lever of all, sleep, and the trainable recovery variables that let all of this training actually turn into adaptation.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 483,
+      "out_sha": "82de0892a7ff",
       "note": ""
     },
     {
@@ -1015,11 +1015,11 @@
       "en_title": "Chapter 11: The Whole Athlete III, Recovery: Sleep and the Trainable Variables",
       "order": 79,
       "src_chars": 2046,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5b09d794ee7b",
       "src": "Here is a fact that reorganizes how you should think about training: **the training session does not make you fitter. Recovery does.** The session is the stimulus, the signal that tells your body to adapt, but the actual building, denser mitochondria, a stronger heart, repaired and remodeled muscle, happens _between_ sessions, during recovery. Chapter 10 showed how fatigue must be shed to reveal fitness; this chapter is about the process that turns training stress into adaptation in the first place, and about the single most powerful, most neglected lever you have over it: sleep.\n\nVolume I taught the stimulus-recovery-adaptation cycle. This chapter pays off the \"recovery\" half at the depth the whole athlete needs, and it does something the fitness industry rarely does honestly: it sorts the recovery methods that have real evidence from the ones that are mostly marketing. There is no formula to compute here. Instead, the chapter ends with a **recovery audit** you score for yourself, because recovery is something you assess and improve, not calculate.\n\n\n### 11.1 Recovery is where adaptation happens\n\nRecall Volume I's cycle: you apply a training **stimulus** , you **recover** , and during that recovery you **adapt** to a slightly higher level. The order is not negotiable. Skip or shortchange the recovery, and the stimulus never fully converts to adaptation; you accumulate the fatigue (Chapter 10) without banking the fitness. This is why an athlete who trains brilliantly but recovers poorly is often out-progressed by one who trains a little less but recovers well. The training you do not recover from is not just wasted, it is a net negative, digging a fatigue hole that eventually stalls or breaks you.\n\nThat reframing makes recovery a _first-class training variable_ , something to plan and improve deliberately, not an afterthought you get to if there is time. And among all the recovery levers, one stands so far above the rest that it deserves its own section.\n\n\n### 11.2 Sleep: the biggest lever, and it is trainable\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 607,
+      "out_sha": "7defa80f6bfe",
       "note": ""
     },
     {
