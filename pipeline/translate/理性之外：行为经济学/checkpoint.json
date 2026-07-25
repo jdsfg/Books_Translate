@@ -3303,11 +3303,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 267,
       "src_chars": 3270,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c2c05cd6b793",
       "src": "### Opening Scenario\n\nConsider three people making a financial decision.\n\nThe first is a retirement planner, age 35, who has just discovered automatic enrollment in her employer's 401(k). She is enrolled at 3% by default. She knows she should increase her contribution rate. She has thought about this at least a dozen times. Each time, other priorities intervene — the grocery bill, a car repair, the current project at work — and she returns to 3%. She is not uninformed. She is not irrational in the sense of failing to understand compound interest. She is human: present-biased, inertia-prone, and genuinely overwhelmed by competing demands on her attention.\n\nThe second is an experienced bond trader, 42 years old, who has spent two decades managing fixed-income portfolios. When a bond she owns drops in price, she neither panics nor holds rigidly from loss aversion. She has learned — through repeated experience with real consequences — to evaluate positions against current market data rather than purchase price. In her domain of expertise, ecological rationality has been trained: heuristics calibrated by experience in a stable, information-rich environment.\n\nThe third is a smallholder farmer in rural Ethiopia, 28 years old, harvesting his first adequate crop in three years after drought. He knows he should set aside money for fertilizer at planting time. He knows the price of fertilizer will rise, that his harvest cash will be spent if not committed. He wants to commit it now. But no financial product exists in his village to lock in that decision. His present bias is identical to the retirement planner's. His institutional environment provides none of the scaffolding that compensates for it.\n\nOne mechanism. Three contexts. Three radically different outcomes determined by institutional architecture.\n\nThis is what behavioral economics has established: that humans share predictable cognitive architecture, and that the environments and institutions we build around that architecture determine whether our biases lead to bad outcomes or are compensated and redirected toward good ones.\n\n\n### 22.1 Thread A Final Synthesis: The Retirement Savings Story\n\nThread A has traced the retirement savings problem across 21 chapters. Here is what we know:\n\n\n#### The Behavioral Causes of Undersaving\n\nFive behavioral mechanisms combine to produce chronic undersaving:\n\nMechanism | Chapter | Effect on Retirement Savings  \n---|---|---  \n**Present bias** | Ch. 8 | Future retirement is distant; contribution costs are immediate  \n**Status quo bias** | Ch. 7 | Opt-in defaults produce low enrollment; people stay with whatever is set  \n**Loss aversion** | Ch. 3, 7 | Salary reduction for contributions feels like a loss; gains from future saving are insufficient compensation  \n**Mental accounting** | Ch. 9 | Current paycheck is in the \"spending account\"; future retirement is abstract  \n**Hyperbolic discounting** | Ch. 8 | Each specific future date looks reasonable to wait one more period  \n  \nThese mechanisms reinforce each other. A worker who would prefer to save for retirement — whose stated long-run preferences include adequate retirement income — is systematically prevented from implementing those preferences by her own cognitive architecture.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 947,
+      "out_sha": "0ae3bef9c8c9",
       "note": ""
     },
     {
@@ -3315,11 +3315,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 268,
       "src_chars": 2940,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d7e52931d553",
       "src": "#### The Behavioral Solutions\n\nEach mechanism has a corresponding behavioral tool:\n\nMechanism | Behavioral Tool | Policy Form  \n---|---|---  \n**Present bias** | Pre-commitment before raise | SMarT program  \n**Status quo bias** | Opt-out default | Automatic enrollment  \n**Loss aversion** | Increase from new money | SMarT (no current salary reduction)  \n**Mental accounting** | Pre-deduction (never in hand) | Payroll withholding  \n**Hyperbolic discounting** | Automatic escalation | Annual rate increase  \n  \nThe full system — automatic enrollment + SMarT escalation — addresses all five mechanisms simultaneously. This is why the evidence is strong: participation rates from 30-50% to 85-95%; four-fold contribution increases from SMarT participants; effects that persist years later.\n\n\n#### The Thread A Lesson\n\nThe retirement savings story illustrates the most important principle of behavioral economics applied to policy:\n\n> **The goal is not to change people; it is to design institutions that help people implement their own preferences.**\n\nThe worker who wants to save but cannot overcome present bias is not being manipulated by automatic enrollment. She is being given an institutional structure that her own preferences call for. This is the behavioral policy ideal: preference-consistent architecture that reduces the gap between what people want and what they do.\n\n\n### 22.2 Thread B Final Synthesis: The Verdict on the Rational Agent Model\n\nThread B has asked, in every chapter, what the rational agent model predicts and where humans depart from it. Here is the summary verdict.\n\n\n#### What the Rational Agent Model Gets Right\n\nThe rational agent model is not wrong. It is incomplete.\n\n**Where rational agent predictions are good:**\n\n* In information-rich, incentive-aligned markets with experienced, sophisticated participants (professional asset management, commodity trading, high-stakes auctions), markets approach rational efficiency remarkably well\n* For simple, familiar, repeated decisions with clear feedback, learning drives behavior toward rationality\n* At the aggregate level, markets often aggregate information efficiently even when individual decisions are biased — because systematic biases cancel across traders, and arbitrage corrects persistent mispricings\n* For one-shot high-stakes decisions where people take time to deliberate, rational analysis often dominates\n\n**Where rational agent predictions are systematically wrong:**\n\n* In novel environments without feedback (retirement savings, health insurance, climate policy)\n* In emotionally charged situations (loss, regret, fairness violations)\n* In complex multi-attribute decisions where deliberation is too costly\n* In situations designed by marketers, financial product designers, or governments to exploit cognitive limitations\n* Across time: preference reversals, present bias, and inconsistent intertemporal choice are robust and consequential\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 913,
+      "out_sha": "9a69f62c7192",
       "note": ""
     },
     {
@@ -3327,11 +3327,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 269,
       "src_chars": 3413,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f5cfd9f7a738",
       "src": "#### The Revised Picture: Homo Sapiens Economicus\n\nThe human decision-maker is neither the perfectly rational Homo Economicus nor the hopelessly biased, manipulable automaton of the most pessimistic behavioral interpretation. A more accurate picture:\n\n**Conditionally rational:** People are rational under conditions that favor rationality (familiarity, clear feedback, low cognitive load, aligned incentives, adequate deliberation time) and systematically biased under conditions that undermine it.\n\n**Adaptively heuristic:** Heuristics are tools, not errors. They often succeed in the environments for which they are adapted. They fail predictably in novel, complex, or exploitative environments — which include many modern institutions.\n\n**Institutionally dependent:** Decision quality is as much a function of institutional architecture as of individual cognition. The same person, given better defaults, simpler information, and well-timed commitment opportunities, makes substantially better decisions.\n\n**Socially embedded:** Decisions are made in social contexts that fundamentally shape preferences and judgments. Fairness concerns, social norms, reciprocity, and identity are not irrational noise — they are constitutive features of human motivation.\n\n**Thread B Final Answer:** The rational agent model is a useful limiting case and a valuable analytical tool. It is not an accurate descriptive model of human decision-making in most real-world contexts. Behavioral economics provides the corrections — not a replacement, but an enrichment that makes the model more useful precisely because it is more honest.\n\n\n#### Common Misconception\n\n**Misconception:** Behavioral economics proves that humans are fundamentally irrational — that our biases are so pervasive and systematic that we cannot be trusted to make good decisions for ourselves.\n\n**Reality:** The word \"irrational\" implies a global judgment; behavioral economics documents domain-specific, predictable departures from one particular model of rationality under one particular set of conditions. The same people who exhibit present bias in retirement savings also successfully navigate complex social relationships, acquire language, raise children, build careers, and cooperate in institutions. Humans are remarkably capable agents who deploy fast, often well-adapted cognitive tools in most everyday domains. The documented biases are real and consequential — but they are concentrated in specific environments: novel, complex, emotionally charged, or designed to exploit cognitive limitations. The Thread B Final Answer names this precisely: _conditionally rational_ , not globally irrational. The practical implication is not pessimism about human agency but a focused commitment to designing the specific environments where human cognition systematically struggles — retirement savings, health insurance, complex financial products — so that those environments support rather than exploit the cognitive architecture we actually have.\n\n\n### 22.3 Thread C Final Synthesis: A Framework for Scientific Literacy in Behavioral Economics\n\nThread C has tracked the evidential quality of behavioral economics findings throughout the book. The replication crisis — centered on ego depletion but extending more broadly — revealed that behavioral economics, like all sciences, requires ongoing critical evaluation rather than uncritical acceptance.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 941,
+      "out_sha": "3c6a8f285936",
       "note": ""
     },
     {
@@ -3339,11 +3339,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 270,
       "src_chars": 2602,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1a932f7c3dad",
       "src": "#### The Evidence Hierarchy\n\nBased on the evidential quality reviewed across all chapters, here is an approximate hierarchy:\n\n**Tier 1 — Robust, replicated, consequential:**\n\n* Loss aversion and the endowment effect (in relevant contexts)\n* Default effects and status quo bias (especially in retirement savings)\n* Present bias and the gap between stated and revealed time preferences\n* Social preferences: fairness concern and conditional cooperation\n* Framing effects on risky choice\n\n**Tier 2 — Well-established but with important moderators:**\n\n* Anchoring effects (strong in favorable conditions; magnitude varies)\n* Availability heuristic (robust as a mechanism; application-specific in scale)\n* Mental accounting (robust in consumer contexts; cultural variation documented)\n* Overconfidence (domain-specific and heterogeneous; gender findings mixed in replications)\n\n**Tier 3 — Contested or context-limited:**\n\n* Ego depletion (largely failed to replicate; motivational account partially survives)\n* Hot hand fallacy (debate continues; sports-specific evidence murkier than originally presented)\n* Many individual \"nudge\" studies (effect sizes in the literature are likely inflated; field effects smaller)\n\n\n#### The 6-Step Evaluation Framework\n\nWhen you encounter a behavioral economics claim — in an academic paper, a policy proposal, a news article, or a management consulting report — apply this framework:\n\n**Step 1 — Identify the task environment:** Laboratory task or field study? Novel context or repeated decision? High or low stakes?\n\n**Step 2 — Check the information format:** Were probabilities presented as frequencies or percentages? Were outcomes framed as gains or losses from an explicit reference point?\n\n**Step 3 — Assess replication quality:** Has the finding replicated in independent labs? What is the effect size in the most rigorous replications (not the original)?\n\n**Step 4 — Identify the relevant population:** WEIRD or cross-cultural? Expert or novice? What is the match between the study sample and the target population?\n\n**Step 5 — Evaluate the benchmark:** What is the heuristic or behavior being compared to? Is the benchmark feasible for real-world actors, or is it the unconstrained rational agent?\n\n**Step 6 — Check for mechanism evidence:** Is there evidence about why the effect occurs? Does the mechanism make predictions about when the effect should and should not appear?\n\nThis framework will not tell you which findings to believe. It will help you assign calibrated credence rather than uncritical acceptance or dismissal.\n\n\n### 22.4 Emerging Frontiers\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 828,
+      "out_sha": "b4335830d9b6",
       "note": ""
     },
     {
@@ -3351,11 +3351,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 271,
       "src_chars": 1177,
-      "status": "pending",
+      "status": "done",
       "src_sha": "37a0ecd5cbd0",
       "src": "#### Neuroeconomics\n\nNeuroeconomics uses brain imaging and neuroscience methods to examine the neural underpinnings of economic decisions. Key findings:\n\n* Distinct neural systems are involved in immediate reward processing versus future reward evaluation — providing biological grounding for the β-δ model's two-system intuition (though the mapping is not precise)\n* Loss aversion correlates with amygdala activation — suggesting that the emotional response to losses is processed differently from equivalent gains\n* Social preferences (fairness, punishment) involve circuits associated with emotional processing, not only cold calculation\n* Individual variation in key behavioral biases (risk aversion, patience) correlates with individual variation in brain structure and function\n\n**What neuroeconomics can and cannot do:** It can identify correlates of behavioral patterns and suggest mechanism hypotheses. It cannot, by itself, determine whether a behavior is rational or irrational — that requires a normative benchmark, and neuroscience is silent on normativity. Neuroeconomics is most valuable as a source of mechanism hypotheses that can then be tested behaviorally.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 324,
+      "out_sha": "5ecc3df80079",
       "note": ""
     },
     {
@@ -3363,11 +3363,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 272,
       "src_chars": 1782,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2e97ac99f1a6",
       "src": "#### Where the Field Is Heading\n\nThe formal language of behavioral economics — prospect theory, the β-δ model, inequality aversion functions, probability weighting functions — is proving useful well beyond its original domain of consumer and financial choice. Computational psychiatry is one frontier: researchers are applying these tools to characterize how clinical conditions alter decision-making. Depression can be modeled as a blunted prediction error signal — reduced learning from positive outcomes combined with heightened sensitivity to negative ones, which maps cleanly onto loss aversion asymmetry at the neurobiological level. Addiction fits the β-δ model precisely: in the acute craving state, temporal discounting approaches the extreme (near-infinite present bias), while the long-run preference for abstinence that the addicted person also holds corresponds to the δ parameter that governs long-run valuation. These mappings do not reduce psychiatric conditions to economic problems — they provide a shared mathematical vocabulary that makes clinical patterns more precisely describable, and potentially more precisely treatable. Neuroeconomics is a related frontier: brain imaging studies find that distinct neural systems are involved in immediate versus future reward processing, that loss aversion correlates with amygdala activation, and that individual variation in key behavioral parameters correlates with measurable variation in brain structure and function. What neuroeconomics can and cannot do is worth stating honestly: it can identify neural correlates and suggest mechanism hypotheses, but it cannot resolve normative questions about rationality — a behavior's neural substrate tells us nothing about whether that behavior is a bias or an adaptation.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 448,
+      "out_sha": "82f5fb1a7acd",
       "note": ""
     },
     {
@@ -3375,11 +3375,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 273,
       "src_chars": 1867,
-      "status": "pending",
+      "status": "done",
       "src_sha": "53c4dfbd1a87",
       "src": "The interaction between behavioral economics and algorithmic decision-making is perhaps the most consequential frontier for the coming decades. Recommendation systems, credit algorithms, hiring software, content ranking, and medical AI increasingly shape the choice environments in which people operate — and they do so using detailed knowledge of human behavioral patterns. Many of these systems are designed, intentionally or not, to exploit the very biases behavioral economics has documented. Social media feeds that exploit availability heuristic (vivid, emotionally arousing content surfaces first), purchase recommendation systems that exploit present bias (buy now, pay later), and financial products with embedded anchors (suggested payment amounts that anchor below the full balance) are all behavioral economics in application — but in the service of the system's operator, not the user. At the same time, behavioral economics offers tools for improving human-algorithm collaboration. Research on decision support systems shows that presenting algorithmic recommendations with natural frequency formats for uncertainty (rather than confidence percentages) improves both accuracy and calibration. Studies of \"algorithm aversion\" — the tendency to reject correct algorithmic recommendations after observing a single algorithm error, while tolerating equivalent human errors — reveal a systematic bias with real consequences for medical diagnosis, hiring, and criminal sentencing. And work on human oversight of AI systems shows that framing algorithmic recommendations as \"a second opinion\" rather than \"the system's decision\" changes both acceptance rates and the quality of human deliberation around them. The behavioral economics of AI is not yet a mature subfield, but it is one of the most urgent applications of the frameworks this book has developed.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 466,
+      "out_sha": "83cec14363e7",
       "note": ""
     },
     {
@@ -3387,11 +3387,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 274,
       "src_chars": 3426,
-      "status": "pending",
+      "status": "done",
       "src_sha": "76900933662e",
       "src": "### 22.5 Applying Behavioral Economics Responsibly\n\nBehavioral economics has traveled from laboratory demonstrations of human irrationality to global policy application in four decades. The field has produced genuine insights and genuine policy improvements. It has also generated hype, oversimplification, and misapplication. Three principles, drawn from everything in this book, capture what responsible application requires.\n\n**Diagnose before prescribing, and test what you prescribe.** The most common misapplication of behavioral economics is reaching for a behavioral tool without first establishing that the problem is behavioral. If people are not saving because their income covers only necessities, auto-enrollment at 3% of salary will not help. If people are not enrolling in a healthcare program because there is no program within a reasonable distance, simplifying the enrollment form will not help. The diagnosis must come first: map where people actually drop out or make errors, identify the specific barrier (present bias? friction? social disconnection? resource constraint?), and then choose an intervention that targets that barrier. Once chosen, test it: pre-register the hypotheses, run controlled experiments where possible, report effect sizes honestly including null results and failures. Field effects are consistently smaller than lab effects — a 30-40% attenuation is typical. Do not promise more than the evidence supports.\n\n**Serve the people being nudged, not the people doing the nudging.** The ethical core of behavioral policy is alignment between the intervention and the interests of those affected. The legitimacy criteria from Chapter 18 — transparent design, alignment with chooser's interests, meaningful freedom of exit, targeting genuine preference-behavior gaps — are not bureaucratic formalities. They are the operational definition of the difference between a nudge and a manipulation. Sludge is the anti-pattern: friction added to processes in the service of the designer at the expense of the user. The availability heuristic exploited by social media feeds, the anchoring embedded in \"suggested minimum payment\" on credit card bills, the complexity deliberately added to cancellation processes — all of these are behavioral economics used against the people it touches. Knowing the field's tools makes one capable of both of these uses. Choosing consistently to serve the person being designed for, rather than the institution doing the designing, is the fundamental ethical commitment of responsible behavioral practice.\n\n**Stay humble about what behavioral tools can and cannot do.** Behavioral interventions work within existing choice environments; they do not fix inadequate environments. They cannot substitute for adequate wages, accessible healthcare, functional infrastructure, or fair market regulation. The temptation to deploy a nudge as a cheaper substitute for structural change is real and persistent, and it is the most common political misuse of the field. The appropriate posture is complementarity: good systems need both good options and good defaults. Behavioral economics helps with the defaults; it cannot create the options. Acknowledging this honestly — including when the evidence calls for structural change rather than behavioral refinement — is what distinguishes a practitioner of behavioral economics from a purveyor of cheap policy substitutes.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 837,
+      "out_sha": "e0977265774f",
       "note": ""
     },
     {
@@ -3399,11 +3399,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 275,
       "src_chars": 2277,
-      "status": "pending",
+      "status": "done",
       "src_sha": "20f29981bcbb",
       "src": "### 22.6 Closing Reflection\n\nThe title of this book is _When Humans Don't Compute: An Introduction to Behavioral Economics_. It is drawn from the contrast between the rational agent — a computational optimizer maximizing expected utility over all possible outcomes — and the actual human being who decides under cognitive constraints, emotional influences, and social pressures.\n\nBut the book's thesis is not that humans don't compute. It is that humans compute differently — with faster, more social, more reference-dependent, and more contextually embedded processes than the rational agent model describes.\n\nThis is not a defect to be corrected. It is the architecture of a species that evolved in small social groups, managing scarce resources in uncertain environments, relying on fast pattern recognition and social coordination rather than cold optimization. The remarkable thing is not that we fail to be rational agents — it is that we function as well as we do given the complexity of the modern world we have built.\n\nThe task of behavioral economics is not to make humans more like rational agents. It is to build environments, institutions, and policies that work with human cognition rather than against it — that compensate for our systematic limitations while respecting our autonomy and leveraging our genuine strengths.\n\nWhen we succeed at that design problem, it looks like automatic enrollment that gets nearly everyone into retirement savings. It looks like a commitment savings account that lets a farmer in Kenya implement her own harvest-time intention. It looks like a natural frequency format that helps a patient understand what a positive test result actually means.\n\nWhen we fail, it looks like a financial product designed to exploit present bias, a lottery that monetizes probability weighting, or a nudge deployed by a government to avoid the harder structural work.\n\nThe difference is not in the behavioral science. It is in whose interests the science serves, and whether the people it affects have been given an honest account of what is being done and why.\n\nThat is the final lesson of this book: behavioral economics is a tool. Like all tools, its value depends on the purposes to which it is put and the integrity with which it is applied.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 688,
+      "out_sha": "0f831422cfbe",
       "note": ""
     },
     {
@@ -3411,11 +3411,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 276,
       "src_chars": 2121,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6b743adb8695",
       "src": "### Chapter Summary\n\nThis chapter synthesized the three threads that have run through the book. Thread A traced the retirement savings problem from its behavioral causes — five interlocking mechanisms — through the institutional solutions that address each one, culminating in the automatic enrollment plus SMarT system as behavioral economics' clearest applied success. Thread B delivered its verdict: the rational agent model is incomplete, not wrong — a useful limiting case that behavioral economics enriches rather than replaces, producing the more accurate and more honest picture of conditionally rational, adaptively heuristic, institutionally dependent, and socially embedded human decision-making. Thread C concluded with the six-step evaluation framework and an evidence hierarchy that distinguishes Tier 1 robust findings from Tier 2 established-with-moderators findings from Tier 3 contested-or-context-limited findings — the scientific literacy toolkit the book has been building throughout.\n\nThe chapter closed with the field's emerging frontiers — neuroeconomics, computational psychiatry, and the behavioral economics of algorithmic decision-making — and with three core principles for applying behavioral economics responsibly: diagnose before prescribing and test what you prescribe; serve the people being nudged, not the nudgers; and stay humble about what behavioral tools can and cannot do.\n\nThread A is concluded: behavioral causes mapped to behavioral solutions, with institutional design as the key lever. Thread B is concluded: _Homo Sapiens Economicus_ — the conditionally rational, adaptively heuristic, institutionally dependent, socially embedded agent — as the revised model that is both more accurate and more useful than either the perfectly rational Homo Economicus or the hopelessly biased caricature of the most pessimistic behavioral interpretation. Thread C is concluded: the six-step evaluation framework and evidence hierarchy provide the tools for ongoing critical engagement with the field's claims, as those claims continue to be tested, revised, and extended.\n\n\n### Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 548,
+      "out_sha": "7e9a9ad406bc",
       "note": ""
     },
     {
@@ -3423,11 +3423,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 277,
       "src_chars": 2953,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bce7e7306c3f",
       "src": "#### Concept Check\n\n**Q1.** Summarize the five behavioral mechanisms that cause undersaving for retirement. For each mechanism, name the corresponding behavioral tool that addresses it.\n\n_Answer:_ **Present bias** — Future contributions feel costly now while retirement benefit is distant and discounted; addressed by **pre-commitment before a raise** (SMarT program), which locks in the saving decision before present-biased temptation can divert it. **Status quo bias** — People remain with whatever is set by default and experience opting in as effortful; addressed by **opt-out default enrollment** (automatic enrollment), making participation the path of least resistance. **Loss aversion** — Reducing take-home pay for retirement contributions feels like a loss; addressed by **increasing contributions only from new money** (SMarT ties increases to raises, so no current salary is reduced). **Mental accounting** — Money in the current paycheck is in the \"spending\" mental account; money never seen is not lost; addressed by **payroll withholding before the money reaches the worker** , removing it from the spending account before mental accounting can allocate it. **Hyperbolic discounting** — Each specific contribution increase can always be deferred one more period; addressed by **automatic annual escalation** , which makes the increase the default and removes the repeated decision.\n\n**Q2.** What is \"conditional rationality\" as described in the Thread B synthesis? Under what conditions do humans approximate rational agent behavior, and under what conditions do they depart systematically from it?\n\n_Answer:_ Conditional rationality is the view that humans are not universally rational nor universally biased, but approach rationality under conditions that favor it and depart from it predictably under conditions that undermine it. **Conditions favoring rational behavior:** familiar decisions with clear feedback (learning drives calibration); high stakes with adequate time for deliberation; information-rich environments with experienced participants (professional financial markets); repeated decisions where errors are costly and correctable; aligned incentives. **Conditions producing systematic bias:** novel environments without clear feedback (retirement saving, health insurance, climate); emotionally charged situations (loss, regret, fairness violations, ego threat); complex multi-attribute decisions where deliberation is too costly; environments designed by marketers or product designers to exploit cognitive limitations; decisions made under time pressure, cognitive load, or scarcity-induced bandwidth constraints. The policy implication: rather than asking whether people are rational, ask what conditions they are operating under — and design environments that push conditions toward those favoring better decisions.\n\n**Q3.** What is neuroeconomics, and what can it and cannot it contribute to behavioral economics?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 845,
+      "out_sha": "7307ff86767f",
       "note": ""
     },
     {
@@ -3435,11 +3435,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 278,
       "src_chars": 3337,
-      "status": "pending",
+      "status": "done",
       "src_sha": "20795e91484e",
       "src": "_Answer:_ Neuroeconomics uses brain imaging and neuroscience methods (fMRI, EEG, lesion studies, pharmacological manipulations) to examine the neural underpinnings of economic decisions. **What it can contribute:** It identifies neural correlates of behavioral patterns (e.g., amygdala activation correlated with loss aversion) that suggest mechanism hypotheses; it grounds computational models (β-δ, prospect theory) in biological substrates; it identifies individual variation in behavioral biases related to neural structure and function; it reveals how clinical conditions (depression, addiction, anxiety) alter the neural basis of decision-making, enabling more precise description and potentially more targeted treatment. **What it cannot contribute:** Neuroscience is silent on normativity — knowing that a behavior is produced by the amygdala does not tell you whether it is rational or irrational. Whether a brain state constitutes a \"bias\" requires a normative standard, and that standard must come from economic theory or ethics, not neuroscience. Neuroeconomics also faces methodological challenges: fMRI spatial resolution is limited; reverse inference (inferring cognitive processes from brain regions) is unreliable; sample sizes are typically small. It is most valuable as a source of testable mechanism hypotheses, not as the final arbiter of what behavioral economics claims.\n\n**Q4.** Summarize the three core principles for applying behavioral economics responsibly from Section 22.5. Which do you think is most commonly violated in practice, and why?\n\n_Answer:_ The three core principles are: (1) _Diagnose before prescribing, and test what you prescribe_ — identify the actual behavioral barrier before choosing an intervention, and subject the intervention to rigorous evaluation with honest reporting of effect sizes including failures. (2) _Serve the people being nudged, not the nudgers_ — the ethical line between a legitimate nudge and a manipulation runs through transparency, alignment with the chooser's interests, and meaningful freedom of exit; sludge is the anti-pattern. (3) _Stay humble about what behavioral tools can and cannot do_ — behavioral interventions work within choice environments; they cannot substitute for adequate wages, accessible services, or structural market regulation.\n\n**Most commonly violated in practice:** The third principle — treating behavioral tools as substitutes for structural change — is the most systemically violated, because the political incentive structure strongly favors cheap behavioral interventions over costly structural ones. A government facing a complex social problem (childhood obesity, retirement undersaving, energy overconsumption) can deploy a nudge quickly, cheaply, and without political conflict. The same government would need legislative effort, industry opposition management, and budget commitments to address structural causes. The result is a predictable pattern: behavioral tools get deployed as the primary response to problems that require structural solutions as well, and their modest effect sizes get overstated to justify the policy choice. Addressing this requires institutional commitment to reporting behavioral and structural evidence side-by-side, and to explicitly stating when behavioral tools are insufficient on their own.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 857,
+      "out_sha": "d36644c5e898",
       "note": ""
     },
     {
@@ -3447,11 +3447,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 279,
       "src_chars": 2775,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0809b501c4c8",
       "src": "#### Application Problems\n\n**Q1.** A government minister reads a news article about behavioral economics and proposes the following: \"We will solve our country's obesity epidemic by placing vegetable displays at eye level in supermarkets and requiring restaurants to list calorie counts on menus. This is a behavioral economics approach and will be cheaper and more effective than nutrition subsidies or food advertising regulations.\" Evaluate this proposal against the three principles from Section 22.5.\n\n_Answer:_ Against the three principles: **Principle 1 (Diagnose before prescribing, and test what you prescribe):** The proposal jumps to behavioral tools without diagnosing whether the primary drivers of obesity are attentional (eye-level placement), informational (calorie counts), or structural (food prices, geographic access, marketing). If people cannot afford healthy food, eye-level placement will not help — the wrong barrier has been targeted. Calorie labeling has a mixed evidence base; effects are larger for people who are already health-conscious and smaller for low-income populations who face access constraints. Eye-level placement evidence is mostly from cafeteria settings with limited external validity. The claim \"cheaper and more effective\" is not supported by the evidence; field evidence on calorie labeling shows small average effects. **Principle 2 (Serve the people being nudged):** Eye-level placement and calorie counts are relatively transparent and align with consumers' expressed preferences for healthier eating. These are relatively defensible on ethical grounds — they are information provision and salience adjustment, not coercion. **Principle 3 (Stay humble about what behavioral tools can and cannot do):** This is where the minister's proposal most seriously fails. The proposal explicitly positions behavioral interventions as a _substitute_ for structural ones — \"cheaper and more effective than nutrition subsidies or food advertising regulations.\" This is the most common political misuse of behavioral economics. Behavioral tools can improve decision-making at the margin; they cannot address structural barriers including food price differentials, geographic food deserts, or the marketing budgets of ultra-processed food manufacturers. The responsible proposal would position eye-level placement and calorie counts as complements to structural interventions, with honest acknowledgment of their limited effect sizes.\n\n**Q2.** Design a comprehensive behavioral intervention for a community college system trying to increase student completion rates. Students commonly enroll, complete one or two semesters, and then drop out — often intending to return but never doing so. Apply the full behavioral toolkit from this book.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 709,
+      "out_sha": "e6d747dfefc0",
       "note": ""
     },
     {
@@ -3459,11 +3459,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 280,
       "src_chars": 2788,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d359d23ec1ab",
       "src": "_Answer:_ **Step 1 — Diagnose the behavioral barriers.** A journey map of the student experience reveals multiple behavioral barriers: enrollment requires multiple steps (barrier: friction + attention); financial aid application is complex (barrier: complexity + present bias about paperwork costs); course selection is overwhelming (barrier: choice overload); each semester's registration feels like a fresh decision (barrier: present bias + status quo bias works against re-enrollment); unexpected financial emergencies cause dropout (barrier: liquidity shocks + mental accounting treating school as the \"flexible\" expense); students who fall behind feel shame and disengage rather than seeking help (barrier: identity threat). **Step 2 — Match interventions to barriers.** (a) **Simplification:** Streamline the application, financial aid, and registration processes to remove unnecessary steps. One-page FAFSA-equivalent, mobile-accessible. (b) **Default re-enrollment:** Auto-register returning students for the next semester's courses, with opt-out. Remove the annual decision to re-enroll by making continuation the default. (c) **Pre-commitment:** At enrollment, have students complete a detailed plan for all semesters through graduation, with explicit commitment (\"I intend to graduate by [date]\"). Implementation intentions (specific plans) improve follow-through. (d) **Emergency savings fund:** Small hardship grants for unexpected financial emergencies reduce the rate at which financial shocks trigger dropout. This is structural but small-scale. (e) **Social norms and belonging:** Regular messaging about completion rates among students who \"took time off\" (most do not return). Peer mentor programs (former students who returned after stopping out). (f) **Progress salience:** Periodic emails showing credits completed toward degree, framed as \"You are 47% of the way to your degree\" (goal gradient effect — increasing motivation as completion approaches). (g) **Proactive outreach:** Identify early warning signals (missed classes, grade drops) and make proactive outreach (text messages, advisor calls) before problems compound. (h) **Reduce identity threat:** Frame help-seeking as a smart strategy (all successful students use support services) rather than as an admission of failure.\n\n**Q3.** You are teaching a course on behavioral economics and a student argues: \"After reading this book, I'm not sure behavioral economics is a coherent field. It documents biases in labs that often don't replicate, proposes policies that are contested on both ethical and empirical grounds, and is now being challenged by the ecological rationality framework that says the biases might not even be biases. Maybe we should just go back to standard economics.\" How do you respond?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 843,
+      "out_sha": "7962f58c22b6",
       "note": ""
     },
     {
@@ -3471,11 +3471,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 281,
       "src_chars": 1879,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fa602e1d75c6",
       "src": "_Answer:_ The student has engaged seriously with the book and deserves a serious answer — not defensiveness. Here is an honest response: The student is right that behavioral economics has real problems: replication failures (ego depletion), inflated effect sizes in the published literature, ethical contestation, and a genuine theoretical challenge from ecological rationality. These are not minor difficulties. But the conclusion — revert to standard economics — does not follow, because standard economics has its own serious failures: it cannot explain equity premium puzzles, disposition effects, gift exchange in labor markets, cooperation in public goods games, or the robust gap between WTA and WTP in real markets. These are not laboratory artifacts; they appear in real markets with high stakes. The replication crisis is a scientific health crisis, not a terminal illness. The appropriate response is better science: pre-registration, larger samples, adversarial collaboration, honest reporting of effect sizes. The ecological rationality critique enriches rather than defeats behavioral economics — it identifies the conditions under which heuristics succeed, not merely where they fail, which is more complete knowledge. And the policy applications — retirement savings defaults, natural frequency formats for medical communication, commitment savings for development — have produced real improvements in real people's decisions that standard economics either would not have predicted or would not have addressed (because it attributes no role to decision architecture). The field is young, imperfect, and actively correcting its errors. The alternative is not a perfect standard economics; it is a slightly different set of imperfections. The right stance is to remain engaged, critical, and honest — which is what Thread C has tried to model throughout this book.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 473,
+      "out_sha": "78782ce26d30",
       "note": ""
     },
     {
@@ -3483,11 +3483,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 282,
       "src_chars": 3401,
-      "status": "pending",
+      "status": "done",
       "src_sha": "11d3c2ae1c55",
       "src": "#### Think Deeper\n\n**Q1.** The closing reflection argues that behavioral economics is a tool, and its value depends on the purposes to which it is put. But who decides the purposes? In a democracy, choices about which behavioral tools governments deploy are ultimately political. Does behavioral economics have anything to say about how these political decisions should be made, or must it remain silent on that question?\n\n_Answer:_ Behavioral economics has partial relevance to this question — it can say something, but not everything. What it can say: (1) The process by which nudge policies are decided is itself subject to behavioral analysis. Political decision-making is affected by the same cognitive biases that affect individual decision-making — availability bias (vivid failures of behavioral policy will be more salient than aggregate statistical benefits), loss aversion (politicians fear backlash from visible paternalism more than they value diffuse benefits to many individuals), status quo bias (existing regulatory frameworks are the default). Behavioral insights can improve policy process design. (2) Transparency requirements — publicly disclosing which nudges are deployed, with what evidence, targeting what behavior — are a behavioral economics contribution to democratic accountability. Disclosed nudges may be less effective in some domains but are more compatible with democratic deliberation. (3) Behavioral economics can inform how policy options are presented to citizens and legislators, improving the quality of democratic deliberation (frequency formats for risk communication, visualizations of long-run consequences). What it cannot say: Behavioral economics has no privileged claim over the normative question of whose preferences should govern when preferences conflict. Should governments prioritize aggregate welfare? Individual autonomy? Distributional equity? These are ethical and political questions that behavioral science informs but cannot resolve. The field is sometimes tempted to smuggle in normative conclusions — \"people's 'true' long-run preferences are what should be served\" — under the guise of technical analysis. This should be resisted. Behavioral economists can clarify tradeoffs, model consequences of different policy choices, and identify the empirical facts — but the normative judgment about which tradeoffs to accept belongs to democratic deliberation, not to technical experts.\n\n**Q2.** Imagine explaining behavioral economics to someone who has never studied economics — a curious teenager, a family member, or a friend. In three paragraphs, what is the most important thing you would want them to understand? Use plain language and a concrete example.\n\n_Answer:_ **Paragraph 1:** Standard economics assumes people make decisions like very smart calculators — they gather all available information, weigh every option, and choose whatever is best for them in the long run. Behavioral economics discovered that real people don't work that way, and that's not because we're stupid. Our brains evolved to make fast, good-enough decisions in a world of limited time and information. We use shortcuts and rules of thumb, we care deeply about fairness and what other people do, and we're much better at feeling what's happening right now than at imagining what we'll want in 20 years. None of this is a flaw — it's how humans actually work.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 884,
+      "out_sha": "d7dddb4eaeee",
       "note": ""
     },
     {
@@ -3495,11 +3495,11 @@
       "en_title": "Chapter 22: Synthesis — When Humans Don't Compute, and When They Do",
       "order": 283,
       "src_chars": 1514,
-      "status": "pending",
+      "status": "done",
       "src_sha": "23980fbbf441",
       "src": "**Paragraph 2:** Here's a concrete example. Imagine you start a new job. Your employer offers a retirement savings plan, but you have to actively sign up for it. Research shows that when people have to sign up, only about 40% do — even though almost everyone says they want to save for retirement. Now imagine the same employer says: \"You're automatically enrolled at 5% of your salary. You can opt out any time you want.\" Suddenly, 90% of people stay enrolled. Same plan. Same people. Same knowledge. The only thing that changed is the default. Behavioral economics explains this: our tendency to stick with whatever is set up by default (it feels like the \"normal\" option) is stronger than our tendency to actively seek out what's best for us.\n\n**Paragraph 3:** The most important takeaway is this: the design of our choices matters as much as the choices themselves. When a retirement account requires you to fill out three forms and mail them to HR, most people won't do it — not because they don't care about retirement, but because the friction of the process defeats their intention. When enrollment is automatic, most people end up saving. This is why behavioral economics isn't just academic — it changes how we design policies, services, and products. Good design helps people do what they actually want to do. Bad design (or predatory design) can exploit the same human tendencies to push people toward choices they'll regret. Understanding behavioral economics helps you see which is which.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 413,
+      "out_sha": "b8424f6f12c8",
       "note": ""
     }
   ],
