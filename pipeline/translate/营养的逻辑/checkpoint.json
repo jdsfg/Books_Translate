@@ -215,11 +215,11 @@
       "en_title": "Chapter 1: The Digestive Journey — From Mouth to Absorption",
       "order": 10,
       "src_chars": 3063,
-      "status": "pending",
+      "status": "done",
       "src_sha": "96304ff6d6b8",
       "src": "#### Concept Check\n\n**1.1** A friend claims that because she has \"bad digestion,\" food she eats contributes fewer calories to her weight. Is there any scientific basis for this claim?\n\n**Answer:** There is a small scientific basis for this, but it's much more limited than your friend probably means. Malabsorption conditions (celiac disease, exocrine pancreatic insufficiency, certain types of inflammatory bowel disease) can genuinely reduce caloric absorption — but these are medical conditions requiring treatment, not minor \"bad digestion.\" In otherwise healthy people, the human digestive system extracts calories from food with remarkable efficiency. What varies is not total caloric extraction but rather bioavailability of specific nutrients. If your friend has true malabsorption, she would likely have noticeable symptoms (fatty stool, weight loss, deficiency symptoms). In the absence of a diagnosed condition, \"bad digestion\" in the colloquial sense (bloating, irregular bowel movements, discomfort) typically doesn't meaningfully reduce caloric absorption.\n\n**1.2** Why does stomach acid (pH 1.5–3.5) not damage the stomach itself?\n\n**Answer:** The stomach wall is protected by a thick layer of alkaline mucus secreted by goblet cells in the stomach lining. This mucus forms a physical and chemical barrier between the acidic contents and the epithelial cells. The mucus layer has a pH gradient — nearly neutral at the cell surface, highly acidic at the lumen (interior). Additionally, stomach cells that are damaged by acid are rapidly replaced (the stomach lining completely renews itself every 3–5 days). When this protection fails — due to H. pylori bacterial infection (which degrades mucus), excessive NSAID use (which inhibits mucus production), or other factors — stomach ulcers result. This is a direct consequence of stomach acid eroding the now-unprotected lining.\n\n**1.3** Explain why bile is produced by the liver but stored in the gallbladder, and what happens when the gallbladder is surgically removed.\n\n**Answer:** Bile is produced continuously by liver hepatocytes as a byproduct of cholesterol metabolism and red blood cell breakdown. The body doesn't need bile continuously — only when dietary fat is present in the small intestine. The gallbladder acts as a reservoir, concentrating bile and releasing it in a controlled bolus when fat is detected (triggered by the hormone CCK — cholecystokinin). When the gallbladder is removed (cholecystectomy, often due to gallstones), bile flows continuously from the liver into the small intestine rather than being stored and released in pulses. This means fat digestion continues — but less efficiently and in a more continuous, dilute fashion. People without a gallbladder are often advised to eat smaller, more frequent meals and reduce very high-fat meals, because the sudden influx of large amounts of fat cannot be matched by a large bolus of concentrated bile.\n\n**1.4** A classmate says that calcium from milk is better absorbed than calcium from plant foods. Is this always true?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 917,
+      "out_sha": "6c29677c43b1",
       "note": ""
     },
     {
@@ -227,11 +227,11 @@
       "en_title": "Chapter 1: The Digestive Journey — From Mouth to Absorption",
       "order": 11,
       "src_chars": 784,
-      "status": "pending",
+      "status": "done",
       "src_sha": "74c84344c575",
       "src": "**Answer:** Not always. While milk calcium (~30% bioavailability) is often cited as a benchmark, some plant foods can match or exceed this. Kale, bok choy, and broccoli have calcium bioavailability of 40–64% — higher than milk — because they contain low levels of oxalates and phytates (the compounds that bind calcium and prevent absorption). In contrast, spinach has high calcium content on a label (~245mg per 100g cooked) but very low bioavailability (~5%) because spinach is extremely high in oxalates. So the statement is a generalization that hides important variation. The relevant comparison is not \"plant vs. animal\" but rather the specific plant and its oxalate/phytate content. This is an excellent example of why nutrient content on a label tells only part of the story.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 286,
+      "out_sha": "597982b04042",
       "note": ""
     },
     {
@@ -239,11 +239,11 @@
       "en_title": "Chapter 1: The Digestive Journey — From Mouth to Absorption",
       "order": 12,
       "src_chars": 3085,
-      "status": "pending",
+      "status": "done",
       "src_sha": "97294d8ad041",
       "src": "#### Application Problems\n\n**1.5** You read that carrots are a good source of beta-carotene (a precursor to vitamin A). You eat a large serving of raw carrots with nothing else. Based on what you learned in this chapter, estimate how much vitamin A you actually absorbed. What would you change to maximize absorption?\n\n**Answer:** Vitamin A is fat-soluble, which means it requires dietary fat to be properly absorbed — specifically, fat triggers bile release, which creates the fatty environment needed for fat-soluble nutrient absorption through the lacteals. Beta-carotene from raw carrots has relatively low bioavailability (approximately 10–28%) even with fat present, because raw carrot cell walls trap the carotenoids inside. Without dietary fat at this meal, absorption is even lower — possibly as little as 3–5%. To maximize absorption: (1) cook the carrots — heat breaks down cell walls and releases carotenoids; (2) eat them with a fat source — even a small amount of olive oil, butter, or hummus dramatically improves absorption. Studies show that beta-carotene absorption from carrots eaten with a fat source (like salad dressing) can be 3–4 times higher than from carrots eaten alone. This is a practical application of the fat-soluble vitamin principle.\n\n**1.6** A friend is iron-deficient and has been told to eat more spinach because it's \"high in iron.\" Using the bioavailability concepts from this chapter, explain why this advice is partially misleading, and suggest a more effective strategy.\n\n**Answer:** The advice is partially misleading because spinach contains non-heme iron (the less bioavailable plant form) AND spinach is particularly high in oxalates, which further inhibit iron absorption. While spinach contains about 2.7mg iron per 100g cooked, its actual bioavailable iron is very low (perhaps 1–7% even before oxalate inhibition, and likely less than 1% given spinach's high oxalate content). Better strategies include: (1) Choose lower-oxalate plant iron sources: lentils (~3.3mg/100g, ~5–12% bioavailability), kidney beans, tofu, pumpkin seeds, or fortified cereals are better plant iron sources than spinach. (2) Pair plant iron with vitamin C: ascorbic acid (vitamin C) reduces ferric iron (Fe³⁺) to ferrous iron (Fe²⁺), which is much better absorbed. A glass of orange juice with lentil soup can increase iron absorption by 2–3 fold. (3) Avoid coffee/tea with iron-rich meals: tannins in tea and coffee chelate iron and dramatically reduce absorption. (4) Cook in cast iron: a small amount of iron leaches into acidic foods (like tomato sauce) cooked in cast iron. This chapter's bioavailability lesson — labels show what's in food, not what your body actually gets — is directly applicable here.\n\n**1.7** This chapter uses the phrase \"Thread 3 (energy balance)\" and mentions that bioavailability affects how many calories you extract from food. A raw food enthusiast claims that raw vegetables have more nutrients than cooked vegetables, so cooking destroys nutrition. Evaluate this claim using what you know about digestion and bioavailability.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1036,
+      "out_sha": "f8c813d4a45c",
       "note": ""
     },
     {
