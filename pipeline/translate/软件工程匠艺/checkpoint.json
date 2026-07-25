@@ -531,11 +531,11 @@
       "en_title": "Chapter 3: Local Git Craft",
       "order": 35,
       "src_chars": 2029,
-      "status": "pending",
+      "status": "done",
       "src_sha": "28be450919dc",
       "src": "### 3.4 `git reflog` as undo\n\nThe reflog records every state your `HEAD` and your branches have been in, locally. Two retention windows matter, and the second one is the one that bites: `gc.reflogExpire` defaults to **90 days** for entries still reachable from a ref, while `gc.reflogExpireUnreachable` defaults to **30 days** for entries that have become unreachable (which is exactly what happens to commits orphaned by `reset --hard` or rebase). So the safety net for the operations this chapter is teaching you to recover from (destructive operations that produce unreachable commits) is the 30-day window, not the 90-day one. After 30 days plus a `git gc`, the orphans are gone. Recover early.\n\nThe canonical save:\n    \n    \n    # I just did something terrible, like reset --hard to the wrong commit\n    $ git reflog\n    # shows last N states of HEAD with their hashes\n    # d1f3a91 HEAD@{0}: reset --hard 9a7c2d3  <- the mistake\n    # 4e2c8b5 HEAD@{1}: commit: WIP good stuff <- where I want to be\n    # ...\n    \n    $ git reset --hard HEAD@{1}\n    # recovered\n    \n\nThe reflog is local to your machine; it does not sync to remotes. So a force-pushed branch you have lost on the remote can sometimes be recovered from your reflog if you have a recent local copy.\n\n\n#### The reflog discipline\n\nThe discipline is: **before any destructive operation, consult the reflog or note the current commit.** A destructive operation includes `reset --hard`, `checkout` of a different branch with uncommitted changes, `rebase` that you might want to undo, and any `--force` push. Practically:\n    \n    \n    # Before the dangerous operation, capture a label\n    $ git log --oneline -n 1\n    # abc1234 my current state\n    \n    # Do the dangerous thing\n    $ git rebase -i HEAD~10\n    \n    # If it went wrong:\n    $ git reset --hard abc1234\n    \n\nThe label `abc1234` is just one hash; it costs nothing to copy; it saves you when you need it. With practice, you do this reflexively before any operation you have not done a thousand times.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 992,
+      "out_sha": "e14d50640d39",
       "note": ""
     },
     {
@@ -543,11 +543,11 @@
       "en_title": "Chapter 3: Local Git Craft",
       "order": 36,
       "src_chars": 2700,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a534bfefda50",
       "src": "### 3.5 Interactive rebase as storytelling\n\nA push-ready PR branch should tell a coherent story. The story is sometimes the order in which the commits actually happened; more often, it is a _cleaned-up_ version where the dead ends, the WIPs, the typo-fix commits are absent.\n\nInteractive rebase is the tool for the cleanup. The command `git rebase -i HEAD~10` opens an editor with the last 10 commits listed and a verb in front of each:\n    \n    \n    pick a1b2c3d Extract Permission type\n    pick d4e5f6a fix typo in Permission\n    pick b7c8d9e Add PermissionService\n    pick c1d2e3f WIP getting tests to pass\n    pick f4a5b6c Wire PermissionService into AccessGuard\n    pick g7h8i9j fix the actual bug from the WIP\n    pick j0k1l2m address review comments\n    \n\nYou change the verbs to reshape the history:\n\n* `pick` keeps the commit as is.\n* `reword` keeps the commit, opens its message for editing.\n* `squash` merges the commit into the previous one, prompts for combined message.\n* `fixup` like squash but discards the commit message.\n* `edit` stops at the commit so you can amend it.\n* `drop` removes the commit entirely.\n* Move lines around to reorder commits.\n\nThe cleaned-up version of the above might be:\n    \n    \n    pick a1b2c3d Extract Permission type\n    fixup d4e5f6a   # typo fix folded silently into Extract\n    pick b7c8d9e Add PermissionService\n    fixup c1d2e3f   # WIP folded into PermissionService\n    pick f4a5b6c Wire PermissionService into AccessGuard\n    fixup g7h8i9j   # bug fix folded into Wire\n    fixup j0k1l2m   # review comments folded into Wire\n    \n\nThree commits, three concepts, clean story. The story is what reviewers and future bisects see.\n\n\n#### The storytelling principle\n\nThe principle is: **your published history is a finished essay, not a working draft.** Your reflog has the working draft; that is fine. Once you push, the published history is what your team reads. Treat it accordingly.\n\nSome teams have a stronger version of this principle: every PR must be rebased and squash-merged so that `main` has one commit per PR. This is reasonable; it is also slightly hostile to bisecting (you lose the within-PR commits and only see PR-level granularity). Other teams preserve every PR commit; this is also reasonable. The team's choice should be explicit (Chapter 4); the individual's discipline within their own branch is universal.\n\n\n### 3.6 The AI-Layer: directing the agent in Git\n\nIn 2026, an AI agent operating in agent-PR mode (Chapter 22) makes its own commits. The commits are sometimes atomic, often not. The commit messages are sometimes useful, often templated. The discipline of this chapter applies to agent commits as much as to your own.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1422,
+      "out_sha": "529722199c10",
       "note": ""
     },
     {
@@ -555,11 +555,11 @@
       "en_title": "Chapter 3: Local Git Craft",
       "order": 37,
       "src_chars": 1988,
-      "status": "pending",
+      "status": "done",
       "src_sha": "91177f0a4956",
       "src": "#### The four AI Git habits worth establishing\n\n  1. **Configure the agent's commit message template.** Most agent runtimes accept a system instruction that includes a commit-message format. Specify the imperative mood, a 50-character subject line, a body that explains why, and a footer with the relevant ticket ID. Without this, the agent defaults to a generic style that does not match your team.\n  2. **Have the agent commit per atomic change, not at the end of the session.** Instruct the agent (in CLAUDE.md / AGENTS.md, Chapter 22) to commit after each independently-buildable change rather than producing one large commit at the end. The agent will usually comply; the discipline must be specified.\n  3. **Run`git diff` between the last human commit and the agent's HEAD before merging.** This is the _review for fit_ job from Chapter 1, §1.2. Even if you trust the agent on each individual commit, the _aggregate_ may produce a shape you did not intend. Skim the cumulative diff before merging.\n  4. **Treat the agent's`git log` as something to clean up before pushing.** Use interactive rebase to reword vague messages, squash WIPs, drop dead-end attempts. The agent's working history is not your published history.\n\n\n#### Catching Thread C lies via Git history\n\nThe agent's commit history is a useful surface for catching Thread C lies (Chapter 15):\n\n* A flurry of small fixup commits in the same file (`fix off-by-one`, `fix import path`, `fix typo`) is a sign of Lie #5 (subtle boundary errors) or Lie #6 (hallucinated APIs); review extra carefully.\n* A commit that touches many files for \"consistency\" without a clear purpose is a sign of Lie #2 (over-abstraction) or Lie #3 (inconsistent style).\n* A commit message that says \"improved error handling\" without specifying which errors and how is a sign of Lie #4 (missing or wrong-granularity error handling).\n\nReading the agent's commit history is itself a craft skill, and it is the first review pass you do on agent work.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 828,
+      "out_sha": "671f9ad92c33",
       "note": ""
     },
     {
@@ -567,11 +567,11 @@
       "en_title": "Chapter 3: Local Git Craft",
       "order": 38,
       "src_chars": 2378,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e1526f1d1729",
       "src": "### 3.7 A worked example: bisecting a regression\n\nThe following bisect is a working example from a fictional Trellis incident, illustrative of the discipline.\n\nThe bug: as of last Tuesday, the lead-scoring API returns 500 errors for about 0.3% of requests, all for accounts in the EU region.\n\nStep 1: write a failing test that reproduces the bug.\n    \n    \n    // src/scoring/__tests__/regression.test.ts\n    test('EU account scoring should not 500', async () => {\n      const account = await createAccount({ region: 'EU', plan: 'enterprise' });\n      const response = await api.score(account.id);\n      expect(response.status).toBe(200);\n      expect(response.body.score).toBeDefined();\n    });\n    \n\nThe test fails on `HEAD`.\n\nStep 2: confirm the test passes on a known-good commit. The release tag from two months ago, `v2.18.0`, is suspected as the last good version.\n    \n    \n    $ git checkout v2.18.0\n    $ npm install\n    $ npm test -- regression.test.ts\n    # passes\n    $ git checkout main\n    \n\nStep 3: bisect.\n    \n    \n    $ git bisect start\n    $ git bisect bad HEAD\n    $ git bisect good v2.18.0\n    $ git bisect run npm test -- regression.test.ts\n    \n\nGit binary-searches through approximately 240 commits in about 8 steps, each step taking 30-60 seconds. After 6 minutes, the output:\n    \n    \n    abc1234 is the first bad commit\n    commit abc1234\n    Author: Priya Mehta\n    Date: 6 weeks ago\n        feat(scoring): use cached region-tax-rate for performance\n    \n        Cache region tax rates for 5 minutes. Reduces tax-table\n        lookups by ~80% for batch scoring jobs.\n    \n        Refs: TRELLIS-2018\n    \n\nStep 4: read the commit. The cache key is by region; the cache invalidation runs on a 5-minute timer. The bug, on inspection: the EU tax-rate table was updated in a recent ETL job, and the cache holds stale rates for 5 minutes. For 0.3% of requests (those hitting the cache at the wrong moment), the stale rate causes a downstream multiplication overflow and a 500. Bisect found the introducer; reading the commit found the cause; the fix is a cache invalidation on tax-rate updates.\n\nTotal time: about twenty minutes of engineer time, six of which were the automated bisect itself. Compare to the \"scroll through the codebase looking for what changed\" alternative, which is hours of attention and a not-guaranteed result.\n\n\n### 3.8 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1442,
+      "out_sha": "fbeac7efe41e",
       "note": ""
     },
     {
