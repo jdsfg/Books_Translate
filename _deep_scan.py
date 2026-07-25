@@ -1,55 +1,34 @@
 import re, os, glob, sys
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
-blocks_dir = r'pipeline\translate\睡眠的科学\blocks'
+blocks_dir = r'pipeline\translate\古老的认知疗法——斯多葛主义的现代诠释\blocks'
 
 # Comprehensive whitelist of acceptable English terms
 whitelist = set()
 # Acronyms/abbreviations
-acronyms = ['HPA','SOC','HRV','SSRI','SSRIs','SNRIs','CAR','CRH','BDNF','GABA','PTSD','CBT','MBSR','HIIT','MICT','EMDR','ACE','CVD','CHD','CRP','HDL','LDL','NHS','CDC','IARC','DNA','RNA','fMRI','MRI','THC','REM','NREM','IBS','ANDA','UCLA','WEIRD','LGBT','TED','HOME','APP','BMI','EPA','DHA','ALA','UPF','SSB','EPOC','CB1','CB2','ACTH','DHEA','SAM','PVN','SCN','SES','GSL','CPAP','EEG','EMG','EOG','ECG','OSA','UARS','PLMS','RLS','DLMO','PER','CRY','BMAL','CLOCK','VIP','GABA','orexin','melatonin','adenosine','cortisol','leptin','ghrelin','insulin','glucose','APOE','TNF','IL-6','IL-1','CRP','PSQI','ESS','AASM','CBT-I','CBD','THC','NREM','REM','SWS','WASO','TST','SOL','SE','AHI','ODI','SpO2','pH','CO2','O2','NAD','NADH','FAD','FADH2','ATP','ADP','AMP','cAMP','GTP','GDP','GMP','mRNA','tRNA','rRNA','siRNA','miRNA','piRNA','lncRNA','snoRNA','snRNA','circRNA','PCR','RT-PCR','qPCR','ELISA','RIA','HPLC','GC-MS','LC-MS','NMR','ESR','EPR','UV','IR','CD','MS','MS-MS','FRET','BRET','Y2H','Co-IP','ChIP','ChIP-seq','RNA-seq','WGS','WES','GWAS','SNP','CNV','SV','INDEL','MHC','HLA','TCR','BCR','Ig','CD','IL','IFN','TNF','TGF','EGF','FGF','PDGF','VEGF','IGF','HGF','NGF','BDNF','GDNF','NT-3','NT-4','CNTF','LIF','IL-6','IL-11','IL-31','IL-17','IL-23','IL-12','IL-4','IL-5','IL-13','IL-9','IL-10','TGF-beta','IFN-alpha','IFN-beta','IFN-gamma','TNF-alpha','LT-alpha','LT-beta','BAFF','APRIL','RANKL','RANK','OPG','TRAIL','FasL','Fas','CD40L','CD40','OX40L','OX40','ICOSL','ICOS','PD-L1','PD-1','CTLA-4','LAG-3','TIM-3','TIGIT','VISTA','B7-H3','B7-H4','IDO','TDO','LAG','TIM','TIGIT','VISTA']
+acronyms = ['HPA','SOC','HRV','SSRI','SSRIs','SNRIs','CAR','CRH','BDNF','GABA','PTSD','CBT','MBSR','HIIT','MICT','EMDR','ACE','CVD','CHD','CRP','HDL','LDL','NHS','CDC','IARC','DNA','RNA','fMRI','MRI','THC','REM','NREM','IBS','ANDA','UCLA','WEIRD','LGBT','TED','HOME','APP','BMI','EPA','DHA','ALA','UPF','SSB','EPOC','CB1','CB2','ACTH','DHEA','SAM','PVN','SCN','SES','GSL','CPAP','EEG','EMG','EOG','ECG','OSA','UARS','PLMS','RLS','DLMO','PER','CRY','BMAL','CLOCK','VIP','orexin','melatonin','adenosine','cortisol','leptin','ghrelin','insulin','glucose','APOE','TNF','IL-6','IL-1','CRP','PSQI','ESS','AASM','CBT-I','CBD','THC','NREM','REM','SWS','WASO','TST','SOL','SE','AHI','ODI','SpO2','pH','CO2','O2','NAD','NADH','FAD','FADH2','ATP','ADP','AMP','cAMP','GTP','GDP','GMP','mRNA','tRNA','rRNA','siRNA','miRNA','piRNA','lncRNA','snoRNA','snRNA','circRNA','PCR','RT-PCR','qPCR','ELISA','RIA','HPLC','GC-MS','LC-MS','NMR','ESR','EPR','UV','IR','CD','MS','MS-MS','FRET','BRET','Y2H','Co-IP','ChIP','ChIP-seq','RNA-seq','WGS','WES','GWAS','SNP','CNV','SV','INDEL','MHC','HLA','TCR','BCR','Ig','CD','IL','IFN','TNF','TGF','EGF','FGF','PDGF','VEGF','IGF','HGF','NGF','BDNF','GDNF','NT-3','NT-4','CNTF','LIF','IL-6','IL-11','IL-31','IL-17','IL-23','IL-12','IL-4','IL-5','IL-13','IL-9','IL-10','TGF-beta','IFN-alpha','IFN-beta','IFN-gamma','TNF-alpha','LT-alpha','LT-beta','BAFF','APRIL','RANKL','RANK','OPG','TRAIL','FasL','Fas','CD40L','CD40','OX40L','OX40','ICOSL','ICOS','PD-L1','PD-1','CTLA-4','LAG-3','TIM-3','TIGIT','VISTA','B7-H3','B7-H4','IDO','TDO','LAG','TIM','TIGIT','VISTA','USD','GDP','NPV','CPI','CEO','R&D','SOP','MBA','CFP','IRA','ETF','ROC','SEC','FDA','SQL','API','CSV','JSON','HTML','CSS','HTTP','URL','PDF','DOI','MIT','NBER','APA','WHO','IMF','OECD','WTO','NASA','NOAA','EPA','FAA','FTC','CFPB','DOL','IRS','FINRA','SIPC','FDIC','OPM','CBO','GAO','GSE','DFID','FCDO','LSHTM','MPH','PhD','MAR','ipRGC','MSLT','PLMD','SNRI','BORB','ADHD','REBT','DBT','ACT']
 for a in acronyms:
     whitelist.add(a.lower())
 
 # Names (proper nouns)
 names_text = """sapolsky frankl selye marmot mcewen cannon karasek eisenberger weiss antonovsky
 walker matthew cartwright dement kleitman aserinsky rechtshaffen siegel hobson mccarley
-borbely achermann daan wirzjustice czeisler kronauer moore wehr rosenthal tamarkin lewy
-wurtman zhdanova mishima toh piggins foster hattar berson provencio rollag menaker
-krieger bittman richter halberg pittendrigh minors waterhouse monk blake campbell
-murphy campbell murphy tobler borbely amzica steriade mccormick connors huguenard
-steriade amzica nuñez contreras timofeev steriade glaze hennig rector pandi-perumal
-horne ostberg horne reinberg minors waterhouse monk folkard touitou benzinger
-bremer moruzzi magoun lindsley starzl bonvallet rossi zanchetti dement wolpert
-mccarley hobson mccarley pace-schott stickgold walker walker stickgold
-maquet laureys schwartz maquet phillips peigneux laureys maquet
-rasch born gais plihal born diekelmann landolt achermann borbely
-moller kayser buxton spiegel kerkhof van cauter knutson spiegel leprult van cauter
-spiegel leprult van cauter leprult spiegel leprult van cauter
-tassi muzet prinzz foerster zulley wever kronauer czeisler allan kronauer
-czelsler kronauer czeisler allen kronauer czeisler moore wehr rosenthal tamarkin lewy wurtman
-walker matthew cartwright dement kleitman aserinsky rechtshaffen siegel hobson mccarley
-borbely achermann daan wirzjustice czeisler kronauer moore wehr rosenthal tamarkin lewy
-wurtman zhdanova mishima toh piggins foster hattar berson provencio rollag menaker
-krieger bittman richter halberg pittendrigh minors waterhouse monk blake campbell
-murphy campbell murphy tobler borbely amzica steriade mccormick connors huguenard
-steriade amzica nuñez contreras timofeev steriade glaze hennig rector pandi-perumal
-horne ostberg horne reinberg minors waterhouse monk folkard touitou benzinger
-bremer moruzzi magoun lindsley starzl bonvallet rossi zanchetti dement wolpert
-mccarley hobson mccarley pace-schott stickgold walker walker stickgold
-maquet laureys schwartz maquet phillips peigneux laureys maquet
-rasch born gais plihal born diekelmann landolt achermann borbely
-moller kayser buxton spiegel kerkhof van cauter knutson spiegel leprult van cauter
-spiegel leprult van cauter leprult spiegel leprult van cauter
-tassi muzet prinzz foerster zulley wever kronauer czeisler allan kronauer
-czelsler kronauer czeisler allen kronauer czeisler moore wehr rosenthal tamarkin lewy wurtman
-veasey guilleminault dement moruzzi magoun lindsley starzl bonvallet rossi zanchetti
-dement wolpert mccarley hobson mccarley pace-schott stickgold walker walker stickgold
-maquet laureys schwartz maquet phillips peigneux laureys maquet
-rasch born gais plihal born diekelmann landolt achermann borbely
-moller kayser buxton spiegel kerkhof van cauter knutson spiegel leprult van cauter
-tassi muzet prinzz foerster zulley wever kronauer czeisler allan kronauer
-czelsler kronauer czeisler allen kronauer czeisler moore wehr rosenthal tamarkin lewy wurtman
-veasey guilleminault"""
+epictetus musonius seneca marcus aurelius zeno cleanthes chrysippus
+aristo herillus persaeus sphaerus aristocles panaetius posidonius
+cato cicero plutarch gellius aulus gellius
+aurelius commodus verus antoninus pius
+diogenes laertius stobaeus athenaeus galen
+raphael socrates plato aristotle epicurus pyrrho
+cognitive behavioral therapy
+kahneman tversky thaler sunstein ariely loewenstein prelec simon herbert allais ellsberg markowitz
+sharpe fama french shiller stiglitz akerlof smith vernon wansink carney bitss osf
+beck ellis burns barlow linehan hayes
+wilson james maultsby leahy
+hadot long seddon stephens irvine becker
+nussbaum graver cooper procopé engberg-pedersen
+sellars gill bastianini long
+brunt inwood brennan frede
+"""
 for n in names_text.split():
     whitelist.add(n.lower())
 
@@ -62,432 +41,28 @@ apatheia ataraxia prosochē prosoche melete thanatou
 theorein praktikos physike logos prosochesthai
 mênis mêtis kleos nostos hamartia catharsis peripeteia anagnorisis
 contrapasso terza rima inferno purgatorio paradiso
-homo economicus"""
+homo economicus
+prokopton prosochē
+phantasiai synkatathesis
+hormē aphormē
+telos skopos
+katorthoma kathēkon
+adiaphora proēgmena apoproēgmena
+arete physis logos
+oikeiosis allotriosis
+pathos eupatheiai
+doxa epistēmē
+aisthēsis noēsis
+sophia phronēsis
+enkrateia akrasia
+"""
 for p in philosophical.split():
     whitelist.add(p.lower())
 
-# Technical terms commonly kept in English
-tech_terms = """app api url html css http https pdf doi json csv sql
-python javascript java kotlin swift rust golang ruby php
-git github gitlab docker kubernetes
-ai ml llm gpt bert transformer
-cpu gpu ram ssd hdd usb hdmi
-wifi bluetooth nfc gps rfid
-ios android windows macos linux
-excel powerpoint word
-mb kb gb tb pb
-api sdk ide cli gui
-oauth jwt ssl tls
-rest graphql grpc
-sql nosql mongodb postgresql mysql redis
-aws azure gcp
-saas paas iaas
-cdn dns vpn
-ci cd devops
-agile scrum kanban
-tdd bdd ddd
-solid dry kiss yagni
-srp ocp lsp isp dip
-mvc mvvm mvp
-orm sql ddl dml dcl tcl
-crud aciD base cap
-paxos raft gossip
-mapreduce spark hadoop kafka
-sharding replication partitioning
-consistency availability partition
-bac cap erp
-nudge boost default opt-out opt-in
-heuristic bias framing anchoring
-prospect utility endowment
-sunk cost opportunity
-mental accounting
-ego depletion willpower
-choice architecture
-libertarian paternalism
-status quo
-loss aversion
-risk seeking
-present bias
-time discounting
-hyperbolic discounting
-bounded rationality
-satisficing
-dual process
-system fast slow
-take best
-representativeness
-availability
-affect
-overconfidence
-herding
-disposition
-momentum
-value growth
-size quality
-volatility
-beta alpha
-sharpe ratio
-drawdown
-compound
-inflation deflation
-recession depression
-bubble crash
-bull bear
-sentiment
-efficient market
-random walk
-prospect theory
-expected utility
-nudge nudges
-choice overload
-paradox
-anomaly anomalies
-irrational rationality
-behavioral behaviour
-cognitive emotion
-social economic
-financial finance
-money monetary
-individual collective
-public private personal
-general specific particular
-positive negative neutral
-active passive
-short long medium
-high low middle
-large small
-old new young
-good bad better best worse worst
-right wrong correct
-true false real
-important relevant
-possible impossible
-likely unlikely certain uncertain
-expected unexpected
-common rare
-simple complex
-easy difficult hard soft
-strong weak
-fast slow quick rapid
-early late
-past present future
-current previous next
-initial final
-direct indirect
-explicit implicit
-conscious unconscious
-internal external
-objective subjective
-absolute relative
-fixed variable
-static dynamic
-linear nonlinear
-local global
-single multiple
-total partial
-full empty
-open closed
-free paid
-safe risky
-fair unfair
-normal abnormal
-healthy unhealthy
-natural artificial
-physical mental
-male female
-adult child
-urban rural
-developed developing
-rich poor
-advantage disadvantage
-increase decrease
-improve worsen
-maximize minimize
-overestimate underestimate
-overweight underweight
-gain loss
-reward punishment
-success failure
-winner loser
-buyer seller
-leader follower
-teacher student
-doctor patient
-employer employee
-manager worker
-producer consumer
-investor investment
-saver saving savings
-spender spending
-borrower lender borrowing lending
-insurer insured insurance
-advisor advice
-planner planning
-retirement retiree
-salary wage income
-expense expenses
-budget budgeting
-tax taxes taxable
-deduction credits
-exemption exemptions
-mortgage rent
-property real estate
-portfolio diversification rebalancing
-allocation
-equity equities
-index indices
-benchmark benchmarks
-expense ratio
-management fee fees
-commission commissions
-load no-load
-factor factors
-momentum value growth
-size quality
-volatility beta alpha
-sharpe ratio
-drawdown drawdowns
-compounding compound
-inflation deflation
-recession depression
-bubble bubbles
-crash crashes
-bull bear
-sentiment optimism pessimism
-overconfidence herding
-disposition effect
-endowment effect
-status quo bias
-sunk cost
-opportunity cost
-mental accounting
-framing effect
-anchoring effect
-availability heuristic
-representativeness heuristic
-affect heuristic
-loss aversion
-risk aversion
-risk seeking
-ambiguity aversion
-present bias
-time discounting
-hyperbolic discounting
-self control
-ego depletion
-willpower
-default defaults
-opt-out opt-in
-choice architecture
-libertarian paternalism
-asymmetric paternalism
-nudge nudges
-boost boosts
-choice overload
-paradox
-anomaly anomalies
-efficient market
-hypothesis
-random walk
-prospect theory
-expected utility
-bounded rationality
-satisficing
-heuristics
-dual process
-system
-fast slow
-thinking
-homo economicus
-take best
-representativeness
-availability
-affect
-overconfidence
-herding
-disposition
-momentum
-value growth
-size quality
-volatility
-beta alpha
-sharpe ratio
-drawdown
-compound
-inflation deflation
-recession depression
-bubble crash
-bull bear
-sentiment
-efficient market
-random walk
-prospect theory
-expected utility
-nudge nudges
-choice overload
-paradox
-anomaly anomalies
-irrational rationality
-behavioral behaviour
-cognitive emotion
-social economic
-financial finance
-money monetary
-individual collective
-public private personal
-general specific particular
-positive negative neutral
-active passive
-short long medium
-high low middle
-large small
-old new young
-good bad better best worse worst
-right wrong correct
-true false real
-important relevant
-possible impossible
-likely unlikely certain uncertain
-expected unexpected
-common rare
-simple complex
-easy difficult hard soft
-strong weak
-fast slow quick rapid
-early late
-past present future
-current previous next
-initial final
-direct indirect
-explicit implicit
-conscious unconscious
-internal external
-objective subjective
-absolute relative
-fixed variable
-static dynamic
-linear nonlinear
-local global
-single multiple
-total partial
-full empty
-open closed
-free paid
-safe risky
-fair unfair
-normal abnormal
-healthy unhealthy
-natural artificial
-physical mental
-male female
-adult child
-urban rural
-developed developing
-rich poor
-advantage disadvantage
-increase decrease
-improve worsen
-maximize minimize
-overestimate underestimate
-overweight underweight
-gain loss
-reward punishment
-success failure
-winner loser
-buyer seller
-leader follower
-teacher student
-doctor patient
-employer employee
-manager worker
-producer consumer
-investor investment
-saver saving savings
-spender spending
-borrower lender borrowing lending
-insurer insured insurance
-advisor advice
-planner planning
-retirement retiree
-salary wage income
-expense expenses
-budget budgeting
-tax taxes taxable
-deduction credits
-exemption exemptions
-mortgage rent
-property real estate
-portfolio diversification rebalancing
-allocation
-equity equities
-index indices
-benchmark benchmarks
-expense ratio
-management fee fees
-commission commissions
-load no-load
-factor factors
-momentum value growth
-size quality
-volatility beta alpha
-sharpe ratio
-drawdown drawdowns
-compounding compound
-inflation deflation
-recession depression
-bubble bubbles
-crash crashes
-bull bear
-sentiment optimism pessimism
-overconfidence herding
-disposition effect
-endowment effect
-status quo bias
-sunk cost
-opportunity cost
-mental accounting
-framing effect
-anchoring effect
-availability heuristic
-representativeness heuristic
-affect heuristic
-loss aversion
-risk aversion
-risk seeking
-ambiguity aversion
-present bias
-time discounting
-hyperbolic discounting
-self control
-ego depletion
-willpower
-default defaults
-opt-out opt-in
-choice architecture
-libertarian paternalism
-asymmetric paternalism
-nudge nudges
-boost boosts
-choice overload
-paradox
-anomaly anomalies
-efficient market
-hypothesis
-random walk
-prospect theory
-expected utility
-bounded rationality
-satisficing
-heuristics
-dual process
-system
-fast slow
-thinking"""
-for t in tech_terms.split():
-    whitelist.add(t.lower())
-
-# Common English words (4+ chars) that should NOT appear in Chinese prose
-common_words = """that with from into onto upon over under about
+# Common English words that should NOT appear in Chinese prose
+# (4+ chars) - these are NOT whitelisted and will be flagged
+# Short words and connectors
+connectors = """that with from into onto upon over under about
 their there these those they them his her its
 our your their my me him us
 some many much more most less few fewer
@@ -662,7 +237,7 @@ saver saving savings
 spender spending
 borrower lender borrowing lending
 insurer insured insurance
-advisor adviser advice
+advisor advice
 planner planning
 retirement retiree
 salary wage income
@@ -677,14 +252,12 @@ property real estate
 portfolio diversification rebalancing
 allocation
 equity equities
-fixed income
 index indices
 benchmark benchmarks
 expense ratio
 management fee fees
 commission commissions
 load no-load
-active passive
 factor factors
 momentum value growth
 size quality
@@ -872,8 +445,32 @@ attractive
 east
 western
 best
-take"""
-for w in common_words.split():
+take
+aftermath
+brain
+top-down
+largely
+literally
+meaningful
+mild
+profile
+promising
+reflexive
+ripple
+ripples
+sharp
+session
+sleep
+steeply
+substantial
+timing
+trade
+triumph
+wave
+down
+confident
+"""
+for w in connectors.split():
     whitelist.add(w.lower())
 
 files = sorted(glob.glob(os.path.join(blocks_dir, '*.md')))
