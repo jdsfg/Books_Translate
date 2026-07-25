@@ -4511,11 +4511,11 @@
       "en_title": "Chapter 12: The Practice — and a Society That Lets You See",
       "order": 370,
       "src_chars": 1435,
-      "status": "pending",
+      "status": "done",
       "src_sha": "65e9ddbe2cd5",
       "src": "_External verification_ — have outside observers noticed substantive changes in your reasoning? _Specific updates to specific beliefs_ — have you, since reading, updated specific positions in response to specific evidence? _Implemented structural practices_ — are you now keeping prediction logs, conducting pre-mortems, deepening epistemic-friend relationships, participating in forecasting communities? _Calibration data over time_ — if you have been tracking predictions, what does the data show?\n\nFor most readers, the honest answer to most of these is some version of \"no\" or \"I haven't done that specifically.\" This is not foolishness; it is what the framework predicts most readers will do.\n\nThe honest claim about what reading the book has accomplished, for most readers: I have engaged with a framework, gained vocabulary and meta-knowledge, and done some inventory work that surfaced specific patterns in my own data. I have not yet implemented the structural practices the framework recommends as the mechanism of actual reduction. The felt sense that I have become clearer-sighted is what the system supplies for someone who has done this kind of reading; the actual reduction will depend on whether I implement the practices sustainably over years.\n\nThis is harder to hold than the felt clarity; it is also more accurate. The book's value depends on what the reader does after closing it, and that choice is the reader's.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 407,
+      "out_sha": "145861452bcf",
       "note": ""
     },
     {
@@ -4523,11 +4523,11 @@
       "en_title": "Chapter 12: The Practice — and a Society That Lets You See",
       "order": 371,
       "src_chars": 260,
-      "status": "pending",
+      "status": "done",
       "src_sha": "02dd6d382e4e",
       "src": "#### Application Problems\n\n**Q1.** Conduct the personalized diagnosis from section 12.1 on the following 14 inventory entries written by Aiden, age 42, a marketing director. Aiden has done the inventory honestly for two weeks. The entries are summarized below.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 83,
+      "out_sha": "39f6764e0139",
       "note": ""
     },
     {
@@ -4535,11 +4535,11 @@
       "en_title": "Chapter 12: The Practice — and a Society That Lets You See",
       "order": 372,
       "src_chars": 3490,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6f2ee2d450ea",
       "src": "| # | Action | Line 2 (inner reason) | Line 3 (outsider alternative) | Line 4 (more comfortable)  \n---|---|---|---|---  \n1 | Snapped at my wife about dinner timing | I was hungry and tired from a long day | I had spent an hour stewing about a colleague's email and brought it home | Line 2  \n2 | Skipped the gym for the third day in a row | Schedule was too packed | I prioritized two hours of news scrolling over the gym | Line 2  \n3 | Gave a junior teammate harsh feedback on a deck | The deck genuinely needed substantial revision | I was annoyed she got recognition from the VP last week | Line 2  \n4 | Voted no on the team's proposed strategy in the meeting | The strategy had real flaws I articulated | I felt pre-committed because I'd been skeptical in private; voting yes would mean updating publicly | Line 2  \n5 | Took credit in front of leadership for a campaign idea | I was the one who first articulated it in a meeting | The idea came from a Slack thread my report had started two weeks earlier | Line 2  \n6 | Dismissed my mother's concern about my drinking | She's overreacting to two glasses of wine | I drank four glasses, not two, and the concern wasn't only about volume | Line 2  \n7 | Forwarded a partisan article to a friend with \"told you so\" | The article confirmed something I'd been right about | The article was from a source I'd dismiss as unreliable if it contradicted me | Line 2  \n8 | Avoided the awkward conversation with my report about her performance | The timing wasn't right | I find that specific conversation uncomfortable and have avoided it for six weeks | Line 2  \n9 | Bought new running shoes despite already having a recent pair | The new pair has better arch support | The purchase was after a frustrating workday and I shopped to feel better | Line 3 (mildly)  \n10 | Argued with my wife that we should not visit her parents this month | Travel is expensive right now | I find her parents stressful and have been delaying since November | Line 2  \n11 | Gave 200 USD to a friend's GoFundMe | I genuinely care about the cause | I gave to match what a colleague gave; the cause was secondary | Line 2  \n12 | Praised the consultant the CEO hired | The work was actually solid | Saying anything else would create friction with the CEO | Line 2  \n13 | Defended a policy position to a coworker who pushed back | I have substantive reasons for my position | All my closest professional friends hold the same position; updating would be socially costly | Line 2  \n14 | Skipped writing the family Christmas letter (now mid-January) | I haven't had time | I find the letter genre embarrassing and have been finding reasons to skip it for three years | Line 2  \n  \n(a) Answer all five questions of section 12.1's diagnosis using these specific entries. (b) Identify the three or four recurrent motivated-reasoning patterns that emerge from Aiden's data. (c) Recommend, with specifics, the single structural tool Aiden should prioritize implementing in the next month, naming the entries that motivate the recommendation. (d) What does Aiden's data show about how representative he is of the patterns the book has been describing — is this data unusual, or is it what the framework predicts an honest two-week inventory would surface?\n\nHint\n\nThe data is concrete; the diagnosis can be specific. The exercise is to do for Aiden what you would do for yourself if you had done the inventory.\n\n**Answer:** **(a) The five questions answered against Aiden's data.**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1158,
+      "out_sha": "944947774f45",
       "note": ""
     },
     {
@@ -4547,11 +4547,11 @@
       "en_title": "Chapter 12: The Practice — and a Society That Lets You See",
       "order": 373,
       "src_chars": 3162,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d362027b01b1",
       "src": "_Question 1 (How often did line 2 and line 3 differ substantially?)_ In 13 of 14 entries (#9 is the partial exception, where line 3 is qualitatively similar but adds a specific affective trigger), line 3 offers a substantively different interpretation of the action than line 2. The practice was producing the cognitive move it was designed to produce; the inventory data is honest.\n\n_Question 2 (Which categories showed the largest gaps?)_ Grouping the entries: _interpersonal moments with family_ (#1, #6, #10, #14) show large gaps centered on displacement and avoidance — the inner reason locates causation in others or in circumstance, the outsider's alternative locates it in Aiden's own unprocessed material. _Professional moments involving status or credit_ (#3, #5, #12, #13) show large gaps centered on self-presentation and group alignment. _Political and ideological reactions_ (#7) shows the standard tribal-belief signature. _Self-management_ (#2, #9, #14) shows displacement of comfort-seeking onto justifying narratives. The category with the most concentrated activity is _professional moments involving status or credit_ — four of fourteen entries fall here, with consistent patterns. _Family interpersonal moments_ is the second-most active.\n\n_Question 3 (Which of line 2 and line 3 almost always felt more comfortable?)_ Line 2 in 13 of 14 entries. The single exception (#9) had Aiden noting line 3 felt mildly more comfortable, likely because the outsider's alternative (\"I shopped to feel better\") was less self-flattering but did not threaten any large self-image stake. The pattern across the remaining 13 entries is the diagnostic positive: motivated reasoning has been operating in Aiden's daily judgments at high frequency.\n\n_Question 4 (Which specific motivated-reasoning patterns recurred?)_ See part (b) below for the substantive analysis.\n\n_Question 5 (What kinds of evidence did Aiden specifically seek out for confirming positions, and what kinds did he specifically avoid?)_ Entry #7 is direct evidence of the pattern — Aiden forwards an article from a source he would reject if it contradicted him. Entry #13 names the structural feature explicitly: his closest professional friends hold the same position; updating would be socially costly. Entries #6 and #10 show evidence-avoidance about his drinking and about the in-law relationship, respectively — both involve information Aiden has had access to but has filtered out. The selective-engagement pattern is most active around (a) political/ideological topics where his social network is aligned, (b) topics where the truth would require uncomfortable behavior change.\n\n**(b) The three recurrent patterns.**\n\n_Pattern 1: Self-serving displacement of cause._ Visible in entries #1, #2, #5, #8, #10, #14. Across very different domains, Aiden's inner reason consistently relocates causation from his own choices or affective state to circumstance (\"packed schedule,\" \"the timing wasn't right,\" \"travel is expensive,\" \"haven't had time\"). The outsider's alternative consistently relocates it back. This is the architecture's default move — the most pervasive pattern in his data.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 992,
+      "out_sha": "a630e3d9137e",
       "note": ""
     },
     {
@@ -4559,11 +4559,11 @@
       "en_title": "Chapter 12: The Practice — and a Society That Lets You See",
       "order": 374,
       "src_chars": 3368,
-      "status": "pending",
+      "status": "done",
       "src_sha": "86f6bc3332ae",
       "src": "_Pattern 2: Status- and credit-protective reasoning in professional contexts._ Visible in entries #3, #5, #12, #13. Aiden's professional behavior is being shaped by status considerations he is not consciously naming. The harsh feedback to the junior teammate followed her receiving recognition; the credit-taking buried his report's prior contribution; the praise for the CEO's consultant was friction-avoidance; the defended policy position is socially costly to update. Each individual entry could be read innocently; the pattern across four entries is structural.\n\n_Pattern 3: Tribal/belonging-coupled belief and avoidance of disconfirming social signals._ Visible in entries #7, #13, and indirectly in #6 (his mother is from a different generational/cultural frame, and her concern is dismissed in part because acknowledging it would require Aiden to update against his peer group's drinking norms). Aiden's information environment and social network are reinforcing positions in ways he is not auditing.\n\nA fourth, weaker pattern: _Dissonance-driven defense of past procrastination_ (#8, #14, possibly #2), where prior avoidance has accumulated into a position that requires continued avoidance to maintain.\n\n**(c) Recommended structural tool for the next month.** Aiden should implement a _weekly status-and-credit review_ targeting Pattern 2, the most concentrated and actionable pattern in his data. Specifically: every Friday afternoon, Aiden spends 20 minutes reviewing the past week's professional interactions and asking three specific questions in writing: (i) Where did I take credit, explicitly or by omission, for work that originated with a direct report or peer? (ii) Where did I give critical feedback whose timing was correlated with the recipient's recent recognition or success? (iii) Where did I praise or defer whose function was friction-avoidance with someone above me? He logs the answers in a private document and, at the end of each month, takes the log to one trusted colleague (not in his reporting line, not someone whose career he affects) for an outside read.\n\nThis tool is recommended over alternatives for three reasons. First, the data shows Pattern 2 is the most concentrated _and_ the most consequential — these behaviors are damaging Aiden's relationships with his report (entry #5), with his junior teammate (#3), and with his standing as a manager whose feedback can be trusted to be substantive rather than retaliatory. Second, the entries (#3, #5, #12) provide concrete material the review can address — Aiden does not need to learn to recognize the pattern in the abstract; he needs to systematically look for it in the form it has already taken. Third, the trusted-colleague step provides the external check the chapter has emphasized as the structural complement to internal review; Aiden's introspection alone, even after two weeks of inventory, has not produced behavior change in this category, and the framework predicts it will not without an outside reader. The other patterns warrant attention but should be sequenced: addressing Pattern 1 (self-serving displacement) requires Aiden to develop the observational discipline that the Pattern 2 work will be partly building, and Pattern 3 (tribal belief) is most effectively addressed through epistemic-friend relationships that take longer than a month to cultivate.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 939,
+      "out_sha": "e8c4795b2dbd",
       "note": ""
     },
     {
