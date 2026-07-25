@@ -611,11 +611,11 @@
       "en_title": "Chapter 3: The College Personal Essay (US Common App)",
       "order": 44,
       "src_chars": 3936,
-      "status": "pending",
+      "status": "done",
       "src_sha": "14590dabb7f0",
       "src": "> When I was fourteen, my father asked me to help him at the cash register of his pho restaurant on a Tuesday afternoon, and I learned that I had been wrong about a regular customer named Mr. Davis.\n> \n> Mr. Davis had eaten lunch at our restaurant four days a week for as long as I could remember. He always ordered the same thing: small beef pho, no onions, extra lime. He paid in cash. He sat at the same table by the window. He was, as far as I knew, a quiet man in late middle age who liked our pho and did not like to chat. I had served him hundreds of times. I had not exchanged twenty words with him over a decade.\n> \n> The Tuesday I worked the register, Mr. Davis came in at his usual time, ordered his usual order, paid his usual five dollars in singles, and then said to me, _Tell your father the new sriracha is too sweet._\n> \n> I had not known he had opinions about the sriracha. I had not known he had opinions about anything. I told my father.\n> \n> My father said, _Of course it is too sweet. He is right._ Then my father told me, in Vietnamese while we were closing, that Mr. Davis had eaten at our restaurant since the second month it was open. He had been a regular for nineteen years. He had never once not paid. He had once, during the 2012 wildfires, brought my father a case of bottled water without explanation. My father had returned the case. Mr. Davis had brought a different case the next day, and my father had given up.\n> \n> I asked my father what Mr. Davis did. My father did not know. I asked my father if he had ever been to Mr. Davis's house. My father had not. I asked my father what they talked about. My father said, _The pho. The weather. His knee. My back._\n> \n> The next Tuesday I served Mr. Davis. I asked him, while pouring his iced tea, how his knee was. Mr. Davis looked at me as if I had crossed a small line. Then he said, _Bad. The new doctor is worse than the old one._ I asked him about the old doctor. He told me. The conversation lasted perhaps four minutes. Mr. Davis paid and left.\n> \n> I had been wrong about Mr. Davis. I had assumed, for ten years of serving him pho, that his quietness meant he had no relationship with us. The opposite was true. His quietness was the relationship. He had been our most loyal customer in a way I had not been able to read because I was looking for the wrong signals.\n> \n> Vietnamese has an idea, _tình nghĩa_ , that does not translate cleanly to English. It is something between loyalty, gratitude, and a quiet long-term obligation that does not require expression. My grandmother, who taught me the word, used it most often about people who had done something kind a long time ago and were owed a corresponding kindness for the rest of one's life.\n> \n> Mr. Davis had been practicing _tình nghĩa_ in our restaurant for nineteen years without anyone in my family naming it. My father had been receiving it in the same register without ever asking who Mr. Davis was outside the restaurant. The transaction did not need expression. The expression I would have wanted — chatting, asking after his weekend, treating him like an old friend — would have ruined what was actually there.\n> \n> I have thought about Mr. Davis often since. I am about to leave for college, where I will meet hundreds of people whose quietness I might mistake for absence. I think I will be slower to read people from the surface than I used to be. I think I will sit longer in not-understanding. The word _tình nghĩa_ has a stricter rule for me now than I had ten years ago: it is something you owe to people you do not yet know that you owe.\n> \n> Mr. Davis still comes to the restaurant on Tuesdays. He still orders small beef pho, no onions, extra lime. We have, over the past three years, learned to talk about his knee, the weather, my college applications, his old doctor, my brother's basketball team. He has not mentioned the sriracha again. We have not changed it back.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1278,
+      "out_sha": "6f5b86f28945",
       "note": ""
     },
     {
@@ -623,11 +623,11 @@
       "en_title": "Chapter 3: The College Personal Essay (US Common App)",
       "order": 45,
       "src_chars": 1597,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a3904f1153db",
       "src": "Notes on what this essay is doing:\n\n* **Move 1** : written for Janet on her sofa. The first sentence places Janet inside a specific scene with a question. Janet reads on.\n* **Move 2** : one Specific Story (the Tuesday afternoon at the cash register, expanded into a longer arc with Mr. Davis). Not three stories crammed into one essay.\n* **Move 3** : the opening sentence gives the reader a specific scene with a small surprise (_I had been wrong about a regular customer named Mr. Davis_). The reader wants to find out how.\n* **Move 4** : many Specific Objects — the small beef pho, no onions, extra lime, the cash register, the iced tea, the case of bottled water, the 2012 wildfires.\n* **Move 5** : connections are mostly restrained. _I had been wrong about Mr. Davis_ is connection. _I have thought about Mr. Davis often since_ is connection. The Vietnamese word _tình nghĩa_ is connection that does its work without overstatement.\n* **Move 6** : the AI test passes. The exact characters of Mr. Davis, the case of bottled water during the 2012 wildfires, the four-minute conversation about the old doctor, the bilingual closing — these are not generic; an AI given a bare prompt would not produce this combination.\n\nThis essay is not exceptional in any obvious way. The candidate is not a recruited athlete or a national award winner. The story is a small story about a small relationship. _And yet:_ Janet, on her sofa at 9:14 PM, will remember this candidate two weeks later. She will remember Mei as _the kid with Mr. Davis and the sriracha._ That is enough. That is the goal of this form.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 600,
+      "out_sha": "159e34ac83b0",
       "note": ""
     },
     {
@@ -635,11 +635,11 @@
       "en_title": "Chapter 3: The College Personal Essay (US Common App)",
       "order": 46,
       "src_chars": 936,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f64a89432bc4",
       "src": "#### A Second Sample: Different Background, Same Discipline\n\nMei's essay draws on cultural heritage, language, and family. A note about whether you need that kind of material: **you don't.** The Specific Object Test does not require an immigrant grandmother or a heritage-language home. It requires a specific life, lived attentively. Below is a second complete sample that demonstrates the principles using a candidate with no immigrant-family material — the kind of candidate whose personal-essay anxiety often runs _I don't have anything interesting to write about._\n\nThe candidate is Ben, a high school senior in Marshalltown, Iowa (population 27,000). His father runs a feed store; his mother is a school nurse. He has been a serious bird-watcher since age nine. Common App prompt: _Some students have a background, identity, interest, or talent that is so meaningful they believe their application would be incomplete without it._",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 309,
+      "out_sha": "bbe7cce6a00d",
       "note": ""
     },
     {
@@ -647,11 +647,11 @@
       "en_title": "Chapter 3: The College Personal Essay (US Common App)",
       "order": 47,
       "src_chars": 3585,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5606c72db35e",
       "src": "> The sandhill cranes come through Marshall County in mid-October. There are a hundred and twenty thousand of them, give or take, and they stop on the same set of cornfields every year before continuing south. I learned this in fifth grade from a man named Roger Linnenbrink, who is sixty-eight, retired from Iowa State, and parks his Subaru on the gravel turnout north of County Road E63 every fall morning between October 12 and November 4. I started parking next to him when I was thirteen.\n> \n> Roger keeps two notebooks in his glove compartment. One is for the cranes — count, time, weather, wind direction. The other is for everyone who pulls over to ask him what he is looking at. By the time I was fifteen I had read both. I asked him once why he kept the second notebook. He said, _Because most of them never come back._\n> \n> Roger has been counting cranes in the same fields for thirty-one years. The count he recorded the morning I first met him was 14,847 birds. The count he recorded last October 19, the morning I told him I had been admitted to Iowa State through rolling admission, was 9,213. The thirty-one-year average is somewhere around 12,000. Roger does not extrapolate. He keeps the numbers and lets the numbers speak.\n> \n> The first morning I tried to count without Roger, I was sixteen and the fog had come in over the corn before dawn. Roger had been at a funeral in Des Moines. I drove out with his old binoculars and a thermos. I counted 3,140 birds in the south field by 8:15. When the fog lifted at 9:40 I counted again and got 4,520. I had been double-counting groups as they rose and resettled in the fog. My notebook entry that morning reads, in pencil: _3,140 fog count, 4,520 clear count, see Roger. Probably 4,520. Probably not._ I drove out to his house that evening and showed him the page. He read it twice and said, _Write down what you saw and the conditions you saw it in. The numbers fix themselves over a few seasons._ That sentence is the first entry I made, when I got home, in the second notebook — not the bird notebook — about a person.\n> \n> What I learned from Roger is not what I expected to learn. I expected to learn about birds. I did learn about birds — that sandhills mate for life and remember field locations across generations, that the average bird in the flock is older than I am, that the migration route shifted west by about thirty miles in the 1990s for reasons that are still debated. But the deeper lesson was about the second notebook. Most of the people Roger met in those thirty-one years asked him what he was looking at, listened to his answer for ninety seconds, and drove on. The few who came back came back many times. _The cranes are the test_ , Roger told me once. _The people who come back are the ones who do not need the cranes to be more than they are._\n> \n> I have kept my own notebook since I was fifteen. It is mostly the cranes — same fields, same dates. But there are also entries for the people who pulled over: Mr. Hesseltine, a retired pilot who knew the cranes' migration patterns from above and who taught me the word _thermals;_ a woman from Cedar Rapids who came every year to scatter her sister's ashes in the same field and who never asked the bird questions, only sat in her car; the high school biology teacher who started bringing her freshmen on a field trip the year I was a sophomore. These notebook entries, more than my AP Biology grades, are why I want to study ornithology and conservation. The cranes will be there or they will not be there. The notebook is the thing I can keep.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1268,
+      "out_sha": "2c7c0e7c938f",
       "note": ""
     },
     {
