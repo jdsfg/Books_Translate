@@ -363,11 +363,11 @@
       "en_title": "Chapter 2: The Code You'll Maintain — Reading Old Code as the First Skill",
       "order": 21,
       "src_chars": 2908,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3bbd1ff64fd5",
       "src": "#### The dead conditional\n\nA conditional whose predicate can no longer be true. Often introduced for a feature that was rolled back, a migration that completed, or a vendor that no longer exists. The branch is still there, the test (if any) is still there, and removing it is a yak-shave that no one has gotten around to.\n\nDiagnostic: instrument the predicate for a week and observe; if the branch is never taken, it is dead. Remove with confidence after one production cycle.\n\n\n#### The load-bearing comment\n\nA comment that warns against doing something obvious, with a reason that is easy to forget. For example:\n    \n    \n    # DO NOT use a HashMap here — order matters for downstream consumers\n    # (see incident-2023-09-14)\n    ordered_events = []\n    \n\nThe comment is load-bearing because removing the comment without removing the constraint leads to a recurrence of incident-2023-09-14. Some teams add an automated test for the constraint; many do not. The comment is the only protection. Treat it as such.\n\n\n#### The migration scar\n\nA piece of code that was once two pieces of code, merged during a migration, and now bears the marks of both ancestors. Symptoms: a function that takes two arguments of the same type with different validation logic on each, a class with two `__init__` paths, a Bash script with a `case` statement covering \"old format\" and \"new format\" three years after everyone supposedly moved off the old format.\n\nMigration scars often look like over-engineering to a new reader. They are usually not over-engineering; they are the surface of a completed migration whose old format still lives in someone's backup, or whose old API is still called by an undocumented downstream consumer. Touch with care.\n\n\n#### The author's worry\n\nA piece of code that does more than it strictly needs to, with elaborate guards, defensive nulls, redundant validation. Diagnostic question: _what was the author worried about?_ The answer is usually a real production incident or a class of bug they had been bitten by. `git log` will usually confirm or deny within five minutes.\n\nIf the author's worry is still valid, leave the code in place. If the worry is no longer valid (the upstream service no longer returns null, the validation is now done at the boundary, the bug class has been eliminated by a type system upgrade), the defensive code is now dead weight and can be removed. The point is to _check_ rather than to assume.\n\n\n### 2.5 Building a mental model\n\nThe goal of reading is not to remember the code; it is to build a mental model that lets you reason about the code without having it open. A working engineer at Trellis with three years of tenure can answer questions like \"If we change the lead-scoring threshold from 0.7 to 0.8, what breaks?\" without opening a file, because the model lives in their head.\n\nHow do you build the mental model deliberately rather than by accident?\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1103,
+      "out_sha": "d644dac6d623",
       "note": ""
     },
     {
@@ -375,11 +375,11 @@
       "en_title": "Chapter 2: The Code You'll Maintain — Reading Old Code as the First Skill",
       "order": 22,
       "src_chars": 2891,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c12bd17d6949",
       "src": "#### The three-pass technique\n\nFor a new codebase, three reading passes produce a usable mental model:\n\n  1. **The breadth pass.** Read every directory name and every top-level file name. Goal: know what _exists_. Time: 30 minutes to 2 hours depending on size. Output: a one-page sketch of the codebase's territory.\n  2. **The depth pass.** Pick three or four core modules (chosen by reading the top-level entry points) and read each in full. Goal: know how the _core_ works. Time: 1-3 days. Output: a few diagrams in your notebook.\n  3. **The query-driven pass.** For each subsequent question you face, read whatever the question routes you to. Goal: extend the model as needed. Time: ongoing. Output: increasingly broad coverage.\n\nMost engineers skip directly to pass 3 because the manager hands them a ticket and asks them to fix the bug. The result is a mental model with deep coverage of a few unrelated files and no skeleton connecting them. With passes 1 and 2 first, every later query slots into a frame.\n\n\n#### The notebook discipline\n\nKeep a notebook (paper, Markdown file, Obsidian vault, whatever fits your habits) for each codebase you maintain. Record:\n\n* **The vocabulary.** What does the codebase call its core concepts? Are \"Lead\" and \"Account\" different types? Is there a \"Customer\" anywhere? Vocabulary inconsistencies are _bugs_ in the team's shared mental model; surface them in code review (Chapter 15).\n* **The puzzles.** Lines or patterns you do not yet understand. Revisit them when you learn more. After three months, an empty puzzle list means you have a complete model (or you have stopped paying attention; verify which).\n* **The land mines.** Code that looks innocuous but that you now know has hidden consequences. The `legacyRoundScore` function from §2.3 is a land mine. Document them so that the next engineer (and your future self) avoids stepping on them.\n\nThe notebook is the externalized half of your mental model. The internal half is in your head; the external half compounds across colleagues, across hires, across job changes.\n\n\n### 2.6 Reading AI-generated code\n\nIn 2026, a significant fraction of the code you read was generated by AI. Reading AI-generated code is a different skill from reading human-written code, and the differences are worth naming.\n\n\n#### What is the same\n\nThe reading order is the same. Tests first, entry points next, core models third, details last. Even if every line was generated by an agent, the structural reading order still applies.\n\n`git blame` still helps, with one caveat. If the commit was created by an agent in agent-PR mode (Chapter 22), the _author_ in `git blame` may be the agent's service account. The commit message may be terse or templated. Some teams configure their agents to include a \"Co-authored-by: human reviewer\" trailer, which restores partial intent. Others do not, and the blame is hollow.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1086,
+      "out_sha": "d64a8d58dd13",
       "note": ""
     },
     {
@@ -387,11 +387,11 @@
       "en_title": "Chapter 2: The Code You'll Maintain — Reading Old Code as the First Skill",
       "order": 23,
       "src_chars": 1154,
-      "status": "pending",
+      "status": "done",
       "src_sha": "678001a8ea33",
       "src": "#### What is different\n\nAI-generated code has a characteristic _texture_ that human code rarely has:\n\n* **Local correctness, global inconsistency.** The function does what the docstring says, but it imports a different utility than the rest of the codebase uses for the same purpose.\n* **Plausible names.** The names sound right (`processOrder`, `validateInput`, `computeMetrics`) but they are sometimes too generic, hiding the actual domain concept the codebase uses elsewhere.\n* **Over-explanatory comments.** Comments that restate what the code says, rather than explaining why.\n* **Defensive code for impossible cases.** Null checks for inputs that the type system guarantees are non-null, retry logic for synchronous local calls.\n* **Confident-looking error handling that swallows errors.** `try { ... } catch (e) { console.error(e); return null; }` is a Thread C (Chapter 15) red flag.\n\nReading AI-generated code requires _more_ skepticism than reading human-generated code, not less. Human code is often wrong about the requirement; AI code is often wrong about the codebase context. Both need careful reading. The difference is the failure mode.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 481,
+      "out_sha": "1de4a90add1b",
       "note": ""
     },
     {
@@ -399,11 +399,11 @@
       "en_title": "Chapter 2: The Code You'll Maintain — Reading Old Code as the First Skill",
       "order": 24,
       "src_chars": 3040,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2b5e7a8db381",
       "src": "### 2.7 When to stop reading and start writing\n\nA reading session that never converts to a writing session is procrastination dressed up as diligence. Reading has a job: produce a clear mental model that justifies a specific writing action.\n\nThe signal that you have read enough is one of these three:\n\n  1. **You can predict the failure mode.** You can say \"this code will fail if X happens, because of the line at file Y.\" If you can predict it, you have understood it.\n  2. **You can describe the change in one sentence.** Not \"make the lead-scoring better\" but \"subtract 0.05 from pre-2021 accounts in the Tuesday batch reconciliation, conditional on the migration epoch.\" If the description is one sentence and concrete, you have understood the problem.\n  3. **You can write the test before the fix.** If you can write the test that would have failed before your fix and that will pass after your fix, you understand the change well enough to make it.\n\nAsher's day-eight test (six lines) and fix (five lines) were the product of seven days of reading. The seven days are not lost time; they are the only reason the six-line fix was correct.\n\n* * *\n\n**Thread B —`calculateRefund`, stage 1: first draft**\n\nA function we will follow through this book lives in the Helix billing service. Its first draft, written in 2025 in a hurry by a junior engineer between sprints, looked like this:\n    \n    \n    def calculate_refund(order_id):\n        order = db.query(\"SELECT * FROM orders WHERE id = %s\", (order_id,))[0]\n        amount = order['total']  # full refund, the only case we have today\n        db.execute(\"INSERT INTO refunds (order_id, amount) VALUES (%s, %s)\",\n                   (order_id, amount))\n        return {'order_id': order_id, 'amount': amount, 'status': 'OK'}\n    \n\nFifty-five lines if you include the surrounding helpers (omitted here). One function. No tests. No types. The status field is a string, not an enum; the amount comes from a raw row dict; the database call and the business logic and the result construction are interleaved. The engineer who wrote it knew it was rough; they shipped it because the deadline was tighter than the polish.\n\nReading this first draft now, the reader can apply this chapter's archaeology patterns: there is no load-bearing comment (the engineer had not yet been bitten); there is no migration scar (the function is too new to have one); there is one author's worry, namely the `[0]` index, which will throw if the order does not exist. The author worried about the right thing but did not yet have the vocabulary to make the worry explicit.\n\nWe will return to `calculate_refund` four more times: after its first review (Chapter 15) catches what the author missed; after its first bug (Chapter 19) reveals a concurrency edge case the staging environment never produced; after its first refactor (Chapter 10) splits it into testable seams; and five years later (Chapter 23) when the disciplines of this book have compounded across the function's lifetime.\n\n* * *\n\n\n### 2.8 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1264,
+      "out_sha": "ab96d7755e9f",
       "note": ""
     },
     {
