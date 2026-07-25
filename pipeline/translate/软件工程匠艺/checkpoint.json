@@ -3771,11 +3771,11 @@
       "en_title": "Chapter 23: The Working Engineer's Craft Mental Model + Where Craft Is Going",
       "order": 305,
       "src_chars": 1280,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9f3a3beb448e",
       "src": "### 23.6 A closing exhortation\n\nThe reader who has finished this book has read about a lot of disciplines. The temptation is to try to adopt them all at once. This produces overwhelm and abandonment.\n\nThe discipline this book most wants to leave you with: _adopt one at a time_. Pick the discipline you find most compelling; practice it on the next month of work; integrate it into your reflexes. Then pick another. Over a year, you can deeply internalize five or six disciplines; over a career, you internalize all of them and continuously refine.\n\nThe working engineer's craft mental model is not built in a week. It is built in years of deliberate practice, one discipline at a time, with feedback from real codebases and real teammates. The book is the map; the practice is the journey.\n\nCarmen Ortiz at Currents said something at the end of the joint migration that the team adopted as a slogan: \"Craft is what you do when no one is watching.\" The agent is not watching; the metrics are not watching; the manager is not watching. You are watching. The discipline you apply when no one is watching is the craft you bring to the work; that craft is what compounds over years and what makes you the kind of engineer the rest of the team wants to work with.\n\n\n### 23.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 390,
+      "out_sha": "272a811687bc",
       "note": ""
     },
     {
@@ -3783,11 +3783,11 @@
       "en_title": "Chapter 23: The Working Engineer's Craft Mental Model + Where Craft Is Going",
       "order": 306,
       "src_chars": 3220,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fd04d8d7a479",
       "src": "#### Concept Check\n\n**Q1.** A friend three years into their engineering career asks for your honest advice: \"I want to invest in becoming a better engineer over the next 5 years. I have limited time; maybe 4 focused hours per week beyond my actual job. Which of the seven compounding disciplines (§23.1) should I invest in first, second, third? Why that order specifically for someone at year three of their career?\"\n\nHint\n\nSome disciplines are prerequisites for others. Some pay back faster. Your friend has limited bandwidth; sequence matters.\n\n**Answer:**\n\nRecommended order for a year-3 engineer with 4 hours/week:\n\n**First: Reading old code + code review as discipline (~3 months).** These are the foundation skills (Chapters 2 + 15). A year-3 engineer is reading more code than they are writing; investing in reading skill compounds on every PR they review and every new module they explore. Practice: pick one open-source codebase to read for 30 minutes each week; in their day job, apply the Thread C checklist (Appendix D) on every AI-generated PR. Returns are immediate: better reviews, better mental models, less time lost to \"what does this do?\"\n\n**Second: Tests as spec + refactoring under test (~3 months).** Once reading is sharper, the next skill is the prerequisite for safe change. Practice: on every new function, write the failing test first (even if the team does test-after); for legacy refactor work, write characterization tests before changing anything. These two disciplines compound on each other; better testing makes safer refactoring; safer refactoring teaches sharper testing.\n\n**Third: ADRs + naming as design (~3 months).** Now the engineer has read enough code and changed enough code to know which decisions matter. Practice: write one ADR per quarter for a decision the team made; in every PR, rename one misleading name. These two are slower-payoff than the first six months — the leverage is on future readers, not on the engineer doing the work today — but they are what separates a year-5 engineer from a year-3 engineer with the same hours logged.\n\n**Fourth: AI as collaborator + version-control craft (~3 months and ongoing).** These are skills that compound _with_ the other five; doing them first without the foundation produces volume without quality. By month 10, the engineer's review and refactoring instincts can keep up with the speed an AI workflow produces, and their commit history can support the disciplined Git work that makes the rest of the team's life easier.\n\nThe order is **reading → testing → reasoning about decisions → AI collaboration**. Each builds on the prior. The mistake to avoid: investing in AI collaboration first (it is shiniest, it feels modern, it shows the fastest \"look, I shipped a thing\"). Without the foundation, AI collaboration produces unreviewed-plausibility debt (Chapter 19); fast output the engineer cannot maintain. With the foundation, AI collaboration is a force multiplier on durable skills.\n\nAt year 8 your friend will look back and notice that the disciplines they invested in early are the ones now feeling like reflexes; the disciplines they put off are the ones still feeling like work. That observation is the compounding.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1074,
+      "out_sha": "71542c79762a",
       "note": ""
     },
     {
@@ -3795,11 +3795,11 @@
       "en_title": "Chapter 23: The Working Engineer's Craft Mental Model + Where Craft Is Going",
       "order": 307,
       "src_chars": 3472,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3df87e1be4b8",
       "src": "**Q2.** Open your last merged PR. Apply the three-year question to each substantive change in it: in 2029, when an engineer (possibly not you) debugs this code at 2am during an incident, will they thank you or curse you? For each _thank_ or _curse_ , identify the specific feature of your code that produced the answer. Then propose one concrete change you could make to a future similar PR; _not_ this one, going forward; that would shift at least one curse into a thank-you.\n\nHint\n\nThe three-year question is a personal audit, not a theoretical exercise. Pick the actual PR.\n\n**Answer:** This is an open exercise; the answer is yours. A common pattern from working engineers who do this honestly:\n\n**Likely thank-yous in a well-written PR:**\n\n* A test that names a specific edge case (e.g., `test_refund_with_currency_mismatch`); at 2am the test name tells the engineer what the function is supposed to do.\n* A clear name on a function (`validate_refund_eligibility` rather than `check`); the engineer reads the call site and knows the intent.\n* An ADR linked from the PR description; when the 2am engineer wonders \"why is this so complicated?\", the ADR has the answer.\n\n**Likely curses:**\n\n* A magic number with no constant name (`if days_late > 30` rather than `if days_late > LATE_FEE_THRESHOLD_DAYS`); the 2am engineer has to guess whether 30 is a business rule or just a default.\n* A function called `process` or `handle` or `data`; semantic generic, no signal about purpose.\n* A bug fix with no test; the 2am engineer is debugging a regression; they cannot tell if the regression hit _this_ fix or something else.\n* An \"ad hoc\" workaround with no comment explaining what was being worked around; the 2am engineer is tempted to \"clean it up\" and re-introduce the original bug.\n\n**One concrete change for future PRs** : pick one of your common curses and commit to fixing it on the next PR. For most engineers, \"name one generic variable\" or \"add one explanatory comment near a non-obvious workaround\" is the highest-leverage change to start with. You can practice all the disciplines this book describes by improving one habit at a time across PRs. The three-year question is the personal audit that surfaces which habit to improve next.\n\nThe book's argument compressed into one practice: every PR is a letter to a 2029 engineer who may be you. Write accordingly.\n\n**Q3.** Why does the chapter argue that the \"10x engineer\" framing becomes obsolete in 2026-2028?\n\nHint\n\nWhat multiplies what?\n\n**Answer:** The 10x engineer framing assumed that some engineers were 10× more productive than others, primarily through typing speed and code-mechanics expertise. AI multiplies everyone's mechanics; the gap that came from mechanics shrinks.\n\nThe gap that remains is in skills that AI cannot multiply: strategic judgment, architectural taste, domain expertise, review discipline, communication. These are real but less amenable to the \"10x\" framing because their gains are harder to attribute to one person.\n\nThe future engineer who is genuinely outstanding is one whose specs are sharper, whose reviews catch more issues, whose architectural decisions are better, whose teams ship more sustainably. The variance still exists but the shape changes from \"fast typist\" to \"wise director.\" \"10x\" is not the right vocabulary for the latter.\n\n**Q4.** What is \"discipline over dogma,\" and how does the book apply it?\n\nHint\n\nEvery rule has its reasoning and its when-to-break-it.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1352,
+      "out_sha": "f41194acceea",
       "note": ""
     },
     {
@@ -3807,11 +3807,11 @@
       "en_title": "Chapter 23: The Working Engineer's Craft Mental Model + Where Craft Is Going",
       "order": 308,
       "src_chars": 786,
-      "status": "pending",
+      "status": "done",
       "src_sha": "89f8f64e2dbb",
       "src": "**Answer:** Discipline over dogma is the principle that every rule comes with its reasoning and its when-to-break-it clause. The book applies it by treating every discipline as context-dependent: TDD when appropriate (Chapter 8), feature flags when justified (Chapter 4), patterns when applicable (Chapters 12-13), rewrites when rarely (Chapter 21).\n\nThe opposite (dogma over discipline) is the failure mode: applying every rule universally, treating exceptions as moral failings, and producing engineers who follow recipes rather than think.\n\nThe deeper purpose: engineering is judgment-bound. Rules are heuristics that guide judgment; they are not substitutes for it. The engineer who knows the rules deeply enough to know when to break them is the engineer the book aims to produce.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 232,
+      "out_sha": "19364e8f21aa",
       "note": ""
     },
     {
@@ -3819,11 +3819,11 @@
       "en_title": "Chapter 23: The Working Engineer's Craft Mental Model + Where Craft Is Going",
       "order": 309,
       "src_chars": 2848,
-      "status": "pending",
+      "status": "done",
       "src_sha": "65f416ce8529",
       "src": "#### Application Problems\n\n**Q5.** Take your last quarter of work and audit it against the seven disciplines. For each discipline, rate your practice on a scale of 1-5. What is the lowest-rated discipline? What is one habit you could adopt to raise it?\n\nHint\n\nThe lowest score is the highest leverage.\n\n**Answer:** This is an open exercise. Common findings:\n\n* High in coding mechanics (refactoring, version-control); lower in the more strategic disciplines (ADRs, naming as design, AI direction).\n* The lowest-rated is often the one the engineer has not consciously practiced.\n* A specific habit: for whichever discipline is lowest, commit to applying it once per PR for the next month. The habit becomes reflexive after a few weeks of intentional practice.\n\nThe deeper lesson: improvement in the lowest-rated discipline produces the most leverage because the other disciplines are already mostly in place; raising the floor is more valuable than raising the ceiling.\n\n**Q6.** Choose one discipline from §23.1 to invest in deeply over the next quarter. Write a plan: what specific habits will you adopt, how will you measure progress, who will give you feedback?\n\nHint\n\nA specific plan is more durable than a vague intent.\n\n**Answer:** This is an open exercise. A reasonable plan structure:\n\n* **Discipline chosen** : e.g., naming as design.\n* **Habits to adopt** : in every PR I open, identify at least one name that could be improved and rename it; in every PR I review, comment on at least one naming decision; once a month, lead a small renaming workshop with a teammate.\n* **Progress measurement** : track the renames per PR; track the team's general code-clarity perception (survey monthly).\n* **Feedback source** : a senior engineer who reviews my PRs and gives feedback on naming quality.\n\nThe plan is specific enough to execute; the measurement is concrete enough to evaluate. Adjust at the end of the quarter based on what worked.\n\n**Q7.** Lead a synthesis discussion with your team. Identify the disciplines your team practices well and the ones it neglects. What is the team's plan for the disciplines it neglects?\n\nHint\n\nTeam-level discussion produces team-level commitment.\n\n**Answer:** This is an open exercise. Common findings:\n\n* Teams typically practice 3-5 disciplines well and 2-4 poorly.\n* The neglected ones often correlate (a team that does not do ADRs also does not do strong reviews because both require deliberate process).\n* The team's plan should address the disciplines that block other improvements: a team that does not do ADRs is making decisions that will be re-debated; addressing ADRs unblocks better debt management, better onboarding, better review.\n\nThe team-level discussion produces commitment that individual-level commitment cannot. The disciplines compound at the team level; the practice is collective.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 895,
+      "out_sha": "43924009f759",
       "note": ""
     },
     {
@@ -3831,11 +3831,11 @@
       "en_title": "Chapter 23: The Working Engineer's Craft Mental Model + Where Craft Is Going",
       "order": 310,
       "src_chars": 3117,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a94d75180b04",
       "src": "#### Think Deeper\n\n**Q8.** Argue: \"By 2030, the craft disciplines this book describes will be largely automated; humans will direct AI at a higher abstraction level.\" Counter-argue: \"The craft disciplines are not automatable because they require human judgment about what good means; they will remain human work.\"\n\n**Discussion:** Pro-automation: AI has improved rapidly; many tasks that seemed irreducibly human in 2020 are now automated; by 2030, more will be. The craft disciplines (review, naming, ADR-writing) involve judgment but the judgment may be learnable from training data; future AI may handle them well.\n\nPro-human: judgment is grounded in _context_ that the AI does not have: the team's history, the customer's needs, the company's strategy, the engineer's experience. Even a future AI with broader context will not have the human's lived understanding of the team's decisions. The craft disciplines remain human because the judgment is human.\n\nThe synthesis: some craft work will automate over time; some will remain human. The automated portion expands the human's leverage; the human concentrates on the part that cannot be automated. The trajectory is one of _concentration_ , not _replacement_. Engineers who internalize the craft disciplines are positioned to ride the wave: as more of the lower-level work automates, their leverage on the higher-level work increases.\n\nThe 2030-honest position: AI will be more capable; the craft disciplines will be more leveraged, not less; the working engineer's value continues to compound. Investing in the disciplines now is investing in a long career.\n\n**Q9.** Trace the book's argument from start to finish. How does each chapter contribute to the synthesis?\n\n**Discussion:**\n\n* **Chapter 1** establishes the frame: AI changed the equation; the disciplines that compound have shifted.\n* **Chapter 2** opens the practice: reading old code is the foundation skill.\n* **Chapters 3-4** are version-control craft: local and team.\n* **Chapters 5-8** are testing: the foundation of all later disciplines.\n* **Chapters 9-11** are refactoring: how to improve code safely under test.\n* **Chapters 12-14** are patterns and architecture: the vocabulary and frame.\n* **Chapters 15-16** are review and team workflow: how the code becomes maintainable across the team.\n* **Chapters 17-18** are documentation and naming: how decisions and concepts persist.\n* **Chapters 19-21** are debt and migrations: how to manage the inevitable accumulation.\n* **Chapter 22** is the AI workflow: how to integrate the AI collaborator.\n* **Chapter 23** is the synthesis: the seven compounding disciplines and where craft is going.\n\nEach chapter builds on its predecessors. The synthesis is what emerges when all the chapters are internalized: a working engineer who has the seven compounding disciplines as reflexes, who applies them across diverse codebases and team contexts, who continues to compound their value over years.\n\nThe book's structure is the dependency order. The reader who reaches this chapter has the foundation; the practice over the next career years builds on it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1042,
+      "out_sha": "402d744ae53e",
       "note": ""
     },
     {
@@ -3843,11 +3843,11 @@
       "en_title": "Chapter 23: The Working Engineer's Craft Mental Model + Where Craft Is Going",
       "order": 311,
       "src_chars": 2492,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f9fb055b5669",
       "src": "### Chapter Summary\n\nThe seven compounding disciplines (§23.1): tests as spec, refactoring under test, naming as design, ADRs, code review, version-control craft, AI as collaborator. These compound over a career; the depreciating skills (API memorization, mechanics) do not.\n\nThe three protagonists converge (§23.2) in the joint migration project. Asher (legacy, Strangler Fig), Aki (AI workflow, hexagonal), Carmen (team, async): different emphases, same disciplines.\n\nThe working engineer's craft mental model (§23.3): the three-year question, code as liability, the bottleneck moved, the codebase outlives the model, discipline over dogma, long-term thinking, vocabulary as multiplier.\n\nWhere craft is going (§23.4): AI-pair-programming as default, tests-as-spec as canonical, review focused on intent, the 10x engineer myth's obsolescence, sustained codebases as the differentiator. The compounding/depreciating barbell deepens.\n\nThe book's argument in one paragraph (§23.5): craft in 2026 is the set of disciplines that minimize the cost of reviewing, integrating, and maintaining code, which is the cost that did not collapse when AI lowered the cost of writing.\n\nThe closing exhortation (§23.6): adopt one discipline at a time; practice deliberately; integrate over years. Craft is what you do when no one is watching.\n\nThe book closes here. The disciplines are the map; the practice is the journey. The reader who internalizes the disciplines over the next five years will be the kind of engineer the next decade rewards; the reader who does not will see their value erode as AI eats the depreciating skills. The choice is yours; the time is now; the disciplines are the way.\n\n\n#### Three Takeaways\n\n  1. **Pick one of the seven compounding disciplines and practice it deliberately for the next month.** Not all seven; one. Whichever felt most undeveloped during your read. After a month, pick the next. Over a year you internalize five or six; over a career you internalize all seven and refine continuously.\n  2. **Schedule a quarterly self-audit against the disciplines.** Twenty minutes per quarter. Where am I strong? Where am I weak? What is one habit I will add next quarter? The audit is the discipline that prevents drift.\n  3. **Read this book again in 2028.** The tools will be different; the disciplines will not. Mentally substitute whatever your team is using; the framework holds. If a section reads stale, it is mine, not yours; the disciplines are what compound.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 806,
+      "out_sha": "5c6a95c57154",
       "note": ""
     },
     {
