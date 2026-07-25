@@ -4751,11 +4751,11 @@
       "en_title": "Coda: What This Book Is Not",
       "order": 390,
       "src_chars": 2847,
-      "status": "pending",
+      "status": "done",
       "src_sha": "55218e47630b",
       "src": "**The structural-tools prescription has a class precondition.** Prediction tracking, pre-mortems, pre-commitments, epistemic friendships, adversarial collaboration, sustained engagement with forecasting communities — these practices presuppose a meaningful amount of discretionary time, cognitive bandwidth, and (in some cases) money. They also presuppose a social environment in which an epistemic friend is plausibly available rather than structurally absent. A single parent working two jobs cannot do Wei and Lina's prediction protocol on a stake-relevant question, because the bandwidth required is bandwidth they do not have. A worker in a hierarchical workplace where disagreeing with the boss carries real career cost cannot take an epistemic-friend stance toward the boss. The framework's tools are calibrated to readers with a specific structural position; the book does not adequately acknowledge how much of its prescription is, in effect, advice for the same demographic that has historically been overrepresented in cognitive-science readership. A book serious about lower-resource readers would have to do work this book has not done: stripped-down protocols that fit ten-minute weekly slots, structural compensations that operate without an epistemic friend (because none is available), workplace-specific advice for environments where dissent carries real cost. Those versions of the framework are real possibilities; they are not in this book.\n\n**The framework's cultural specificity is largely unmarked, and the consequences are concrete.** The cases, examples, and stylistic register of this book are recognizably American-professional-class. The historical illustrations (Coughlin, Long, FTX, EA), the named protagonists (Naomi, Hassan, Sofia, Aiden), the assumed information environment (Twitter/X, Reddit, Substack), and the assumed institutional landscape (peer review, courts, prediction markets, regulatory agencies) all reflect a particular cultural location. Three specific consequences are worth naming, because they are not just acknowledgments-of-style but structural limits on the framework's translatability.\n\n_The \"epistemic friend\" prescription presupposes individualist friendship norms._ In cultural contexts where close personal relationships are organized primarily around extended family, religious community, or guild-like professional networks rather than around chosen-individual peer friendship, the relationship-form the book describes may simply not be available in the same shape. The functional equivalent — someone outside one's tribe whose challenge one will accept — may be a respected elder, a religious confessor, an in-law, a teacher, or a structured advisory role rather than a peer friend in the American-professional sense. The framework's logic carries; the specific prescription does not.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 806,
+      "out_sha": "f1745de420ff",
       "note": ""
     },
     {
@@ -4763,11 +4763,11 @@
       "en_title": "Coda: What This Book Is Not",
       "order": 391,
       "src_chars": 2441,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7651625f0dd8",
       "src": "_The \"tribal truth\" diagnostic (Chapter 7) presupposes that the holder can imagine standing outside their tribal identity for the purpose of analysis._ In cultural contexts where individual identity is more thoroughly constituted by collective belonging (extended-family-honor cultures, strongly religious communities where doctrinal commitment is non-negotiable for membership, contexts where dissent has serious material consequences for one's family), the book's diagnostic question can be psychologically or socially impossible to ask in the form the book recommends. The deeper question — _what would I think if I were not embedded in this group?_ — may be useful as an internal exercise but cannot translate into the structural practice the book recommends without imposing a culturally specific notion of the autonomous reasoner.\n\n_The \"structural institutions\" the book treats as compensating mechanisms (peer review, courts, regulatory agencies, prediction markets) presuppose a particular kind of state and a particular degree of institutional independence._ In contexts where these institutions are weak, captured, or organized on different principles, the book's recommendation to \"support the institutions that produce reliable knowledge across difference\" lands in a different political environment with different stakes. The framework's tools designed for one institutional landscape do not translate cleanly into landscapes built differently.\n\nThe honest version of the book would either (a) be explicit at the outset about the cultural location it is written for, or (b) provide adapted protocols and worked examples for the major non-American-professional-class contexts its readers might inhabit. This Coda does the first; the second is genuine work for future versions or for translators and adaptors.\n\n**The framework was written before AI-driven self-deception became its own category.** §12.3a addresses this directly; the relevant point here is that the bulk of the book's framework was designed for the cognitive landscape that existed before large language models could generate, on demand, sincere-sounding personalized rationalizations for any position the user holds. This is not a small extension of the territory the book covers; it may be a phase shift. The book's tools may need to be substantially redesigned for the AI-saturated cognitive environment. The book does not pretend to have done this redesign.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 640,
+      "out_sha": "e542154bea7d",
       "note": ""
     },
     {
@@ -4775,11 +4775,11 @@
       "en_title": "Coda: What This Book Is Not",
       "order": 392,
       "src_chars": 1199,
-      "status": "pending",
+      "status": "done",
       "src_sha": "295322376b10",
       "src": "### What Follows\n\nThe book asks for calibrated agreement, not full agreement. The recommendation is to take seriously the parts that are well-supported (the existence of motivated reasoning, the limits of awareness as a remedy, the value of externalizing judgments through structural tools), to hold the more theoretical claims as working hypotheses, to recognize the domains and demographics the book does not adequately serve, and to bring the same skepticism to this book that it asks the reader to bring to their own confident reasoning. An epistemic friend, applied to the framework itself, is the most consistent application of the framework.\n\nThe Coda is short by design. It is not the place to develop alternative frameworks for the limits it names; it is the place to name them clearly so that what the book does claim, and where, can be held with the calibration the framework's own standards require. The reader who has read this far is now in a position to do the only thing the framework can finally recommend: to use what works, where it works, with full acknowledgment of where it does not.\n\n* * *\n\n_The book ends here. The practice — if it is going to happen — begins tomorrow._\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 335,
+      "out_sha": "dfac5f81c680",
       "note": ""
     },
     {
@@ -4787,11 +4787,11 @@
       "en_title": "Further Reading",
       "order": 393,
       "src_chars": 2369,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4e5e8e65c050",
       "src": "This is not an exhaustive bibliography. The book has quoted, paraphrased, and built on the work of many researchers and writers; the citations below are limited to the load-bearing sources for each chapter's central claims, plus a small number of recommended next-step readings for readers who want to engage the underlying literature directly. The framing is selective by design: the goal is to help a reader who finishes this book know where to read further, not to demonstrate the breadth of the literature.\n\n\n### Chapter 1 — The Interpreter\n\n* Gazzaniga, Michael S. _The Mind's Past_ (1998), Berkeley: University of California Press. The accessible introduction to the Interpreter framework from its primary developer.\n* Gazzaniga, Michael S. _Who's in Charge? Free Will and the Science of the Brain_ (2011), New York: HarperCollins. The source for the closing reflection paraphrased in Chapter 12 and the Coda.\n* Gazzaniga, Michael S., and LeDoux, Joseph E. _The Integrated Mind_ (1978). The original technical exposition of split-brain findings, including the chicken-claw / shovel demonstration discussed in §1.1.\n* For the contemporary status of split-brain findings — including work that complicates strong claims of hemispheric independence — see Pinto, Y. et al. (2017), \"Split brain: divided perception but undivided consciousness,\" _Brain_ , 140(5), 1231–1237. This is the empirical work referenced in the Coda's caveat on the Gazzaniga framework.\n\n\n### Chapter 2 — Trivers and the Evolutionary Argument\n\n* Trivers, Robert. Foreword to Richard Dawkins, _The Selfish Gene_ (1976), Oxford: Oxford University Press. The original three-and-a-half-page foreword that contains the argument the chapter is built on.\n* Trivers, Robert. _The Folly of Fools: The Logic of Deceit and Self-Deception in Human Life_ (2011), New York: Basic Books. The full development of the argument across thirty-five years.\n* Trivers, Robert. _Wild Life: Adventures of an Evolutionary Biologist_ (2015), New Brunswick: Biosocial Research Publications. The autobiographical work cited in §2.4 for Trivers's own self-deceptions.\n* Von Hippel, William, and Trivers, Robert (2011), \"The evolution and psychology of self-deception,\" _Behavioral and Brain Sciences_ , 34(1), 1–56. The peer-review article that responded to Trivers's framework with both supporting and critical commentary.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1356,
+      "out_sha": "460fe25b50d3",
       "note": ""
     },
     {
@@ -4799,11 +4799,11 @@
       "en_title": "Further Reading",
       "order": 394,
       "src_chars": 3045,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c842eb68c799",
       "src": "### Chapter 3 — Festinger and the Self-Serving Distortions\n\n* Festinger, Leon, and Carlsmith, James M. (1959), \"Cognitive consequences of forced compliance,\" _Journal of Abnormal and Social Psychology_ , 58(2), 203–210. The original 1 USD / 20 USD paper. N=71 — the small sample size cited in the Coda.\n* Festinger, Leon. _A Theory of Cognitive Dissonance_ (1957), Stanford: Stanford University Press. The book-length development.\n* Tavris, Carol, and Aronson, Elliot. _Mistakes Were Made (But Not by Me)_ (2007, revised 2020), New York: Houghton Mifflin Harcourt. The accessible synthesis of dissonance-engine work for general readers.\n* Schacter, Daniel L. _The Seven Sins of Memory_ (2001), Boston: Houghton Mifflin. The accessible introduction to autobiographical reconstruction and related distortions.\n* Loftus, Elizabeth F. _The Myth of Repressed Memory_ (1994). The foundational work on memory reconstruction by one of the leading researchers.\n* For the convergent-function reading of FAE / hindsight bias / self-serving bias / autobiographical reconstruction as facets of one editorial process: there is no single source that takes this position; the synthesis is the book's own. The component biases each have extensive literatures of their own.\n\n\n### Chapter 4 — Pronin and the Bias Blind Spot\n\n* Pronin, Emily, Lin, Daniel Y., and Ross, Lee (2002), \"The bias blind spot: Perceptions of bias in self versus others,\" _Personality and Social Psychology Bulletin_ , 28(3), 369–381. The original empirical paper. Effect size d ≈ 0.3–0.5, as cited in the Coda.\n* Pronin, Emily (2007), \"Perception and misperception of bias in human judgment,\" _Trends in Cognitive Sciences_ , 11(1), 37–43. The accessible review.\n\n\n### Chapter 5 — Confirmation Bias and the Wason Task\n\n* Wason, P. C. (1968), \"Reasoning about a rule,\" _Quarterly Journal of Experimental Psychology_ , 20(3), 273–281. The original selection-task paper.\n* Nickerson, Raymond S. (1998), \"Confirmation bias: A ubiquitous phenomenon in many guises,\" _Review of General Psychology_ , 2(2), 175–220. The standard comprehensive review.\n* For the algorithmic-feed amplification discussion: see the broader literature on recommender systems and engagement optimization (Zuboff, Tufekci, Vaidhyanathan have written extensively for general readers).\n\n\n### Chapter 6 — Kahan and the Smart-People Problem\n\n* Kahan, Dan M., Peters, Ellen, Dawson, Erica Cantrell, and Slovic, Paul (2017), \"Motivated numeracy and enlightened self-government,\" _Behavioural Public Policy_ , 1(1), 54–86. The motivated-numeracy paper. The Coda notes that the magnitudes vary across replications.\n* Kahan, Dan M. (2013), \"Ideology, motivated reasoning, and cognitive reflection,\" _Judgment and Decision Making_ , 8(4), 407–424. An earlier paper introducing identity-protective cognition.\n* For the historical Coughlin/Long material in §6.4: Brinkley, Alan. _Voices of Protest: Huey Long, Father Coughlin, and the Great Depression_ (1982), New York: Knopf, is the standard scholarly treatment of both figures.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 2060,
+      "out_sha": "aec94a86841a",
       "note": ""
     },
     {
