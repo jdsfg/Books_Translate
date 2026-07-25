@@ -2015,11 +2015,11 @@
       "en_title": "Chapter 17: Career Transitions — The Financial Playbook",
       "order": 160,
       "src_chars": 1123,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c47bdcbb6879",
       "src": "At some point in your career, you'll face one of these questions: Should I quit to start my own thing? Should I change careers entirely? Can I retire yet? Am I about to lose my job — how do I negotiate my exit?\n\nThese decisions are among the highest-stakes financial choices you'll ever make — each one rewrites the INCOME variable in the wealth equation for years or decades. Yet most people make them based on gut feeling, frustration, or fantasy rather than financial analysis.\n\nThis chapter gives you the financial framework for each transition, so the numbers support your decision rather than sabotaging it.\n\n\n### 17.1 Quitting to Start a Business — The Financial Runway\n\nThe romance of entrepreneurship is powerful: be your own boss, pursue your passion, build something that matters. But the financial reality is harsh — roughly 50% of small businesses fail within five years, and most founders experience significant income reduction for 1-3 years before their business becomes profitable (if it ever does).\n\nThis doesn't mean don't start a business. It means: calculate your financial runway before you take off.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 305,
+      "out_sha": "f2f4c5d3642f",
       "note": ""
     },
     {
@@ -2027,11 +2027,11 @@
       "en_title": "Chapter 17: Career Transitions — The Financial Playbook",
       "order": 161,
       "src_chars": 3290,
-      "status": "pending",
+      "status": "done",
       "src_sha": "23276ab48dce",
       "src": "#### Definition: Financial Runway\n\nFinancial runway is the amount of time you can survive without income from the new venture — calculated by dividing your liquid savings by your monthly burn rate (essential expenses).\n\nRunway (months)=Liquid SavingsMonthly Essential Expenses\\text{Runway (months)} = \\frac{\\text{Liquid Savings}}{\\text{Monthly Essential Expenses}}Runway (months)=Monthly Essential ExpensesLiquid Savings​\n\nIn plain language, this means: if you have 60,000 USD in savings and your essential expenses are 4,000 USD/month, your runway is 15 months. If your business doesn't generate income within 15 months, you're in trouble.\n\n**How much runway do you need?** Most business advisors recommend 12-24 months. Less than 12 months creates desperate decision-making (taking bad clients, cutting corners, launching too early). More than 24 months is ideal but rarely realistic.\n\n**Building your runway:**\n\n  1. While still employed, calculate your monthly burn rate (essentials only — the \"Needs\" from Chapter 6).\n  2. Build savings equal to 12-18 months of burn rate. This is ABOVE your regular emergency fund — the emergency fund is for emergencies, not business funding.\n  3. Reduce fixed costs before quitting: downsize housing, eliminate subscriptions, pay off high-interest debt. Every 100 USD/month you cut adds ~2.5 months to your runway if you have 60,000 USD saved.\n  4. Keep health insurance. COBRA or marketplace plans are expensive but non-negotiable — one medical emergency without insurance can bankrupt both you and the business.\n\n**Decision Exercise: The Startup Leap**\n\nYou earn 85,000 USD/year, have 90,000 USD in savings (including a 20,000 USD emergency fund), and monthly expenses of 5,000 USD. You want to quit and launch a software consulting business. Your best estimate: the business will take 6-9 months to generate 3,000 USD/month and 12-18 months to replace your salary.\n\nShould you quit now? If not, what would you need to change?\n\n**Analysis:** Available runway: 90,000 USD - 20,000 USD (keep emergency fund) = 70,000 USD. At 5,000 USD/month: 14 months of runway. This is in the acceptable range (12-18 months), but barely. If the business takes 18 months to break even (common for optimistic estimates to be wrong), you'd exhaust your runway.\n\nImprovements: (1) Reduce expenses to 3,500 USD/month (20 months of runway). (2) Start the business as a side project while employed (Chapter 5's point about side income). Get your first 2-3 clients before quitting — this validates the business AND provides initial revenue. (3) Save an additional 6 months of expenses (30,000 USD) before quitting (total runway: 20 months at 5,000 USD/month). (4) Have a \"reentry plan\" — at what point do you return to employment if the business isn't working? Set this milestone in advance, when you're thinking clearly, not under financial pressure.\n\nThread C comparison: the 70,000 USD \"spent\" on runway, if invested in the boring portfolio at 7% for 20 years instead, would grow to approximately 271,000 USD. The business needs to eventually generate enough additional lifetime income to exceed this opportunity cost. For a successful consulting business, this is very achievable. For a speculative venture with uncertain prospects, the opportunity cost matters more.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1093,
+      "out_sha": "cc2956a0ae68",
       "note": ""
     },
     {
@@ -2039,11 +2039,11 @@
       "en_title": "Chapter 17: Career Transitions — The Financial Playbook",
       "order": 162,
       "src_chars": 2343,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c319e2e566ca",
       "src": "### 17.2 Changing Careers — Navigating the Income Dip\n\nCareer changes are increasingly common — the average person changes careers (not just jobs) 3-7 times over their working life. The financial challenge: most career changes involve a temporary income reduction.\n\n**The Income Dip Framework:**\n\n  1. **Quantify the dip.** What's your expected salary in the new career versus your current one? How long until you reach or exceed your current level?\n\n  2. **Calculate the total cost.** If you take a 15,000 USD/year pay cut for 3 years, the total cost is 45,000 USD — plus the opportunity cost of that money not being invested.\n\n  3. **Evaluate the long-term trajectory.** A 15,000 USD/year cut that leads to a career with 15% annual growth (versus 3% in your current field) pays for itself in approximately 5-7 years — and then outearns the original career for decades.\n\n  4. **Consider non-financial costs.** A career you hate has hidden costs: stress-related health problems, reduced creativity, lower performance (limiting advancement), and quality-of-life impact. These are real, even if hard to quantify.\n\n**Example:** Maria earns 70,000 USD as an operations manager. She wants to transition to data science, which requires a 6-month bootcamp (15,000 USD) and an entry-level role at 60,000 USD. Data science roles grow to 90,000-120,000 USD within 3-5 years.\n\nFinancial analysis: Total investment: 15,000 USD bootcamp + 35,000 USD in lost income during bootcamp (6 months at 70,000 USD/year) + 10,000 USD/year pay cut for ~2 years = 70,000 USD total. Recovery: once she exceeds 70,000 USD in the new career (likely by year 3), the investment starts paying back. Over a 25-year remaining career, the data science path likely earns 500,000-1,000,000 USD more than staying in operations — a massive return on a 70,000 USD investment. This is Chapter 5's human capital investment framework in action.\n\n\n#### Common Misconception\n\n**\"I can't afford to change careers.\"** For many people, the real question is: \"Can I afford NOT to?\" If your current career has limited growth potential, staying may feel \"safe\" but costs you decades of higher earning potential. The income dip is temporary; the career trajectory is permanent. Run the numbers over 20 years, not 2 years. The short-term cost often pales in comparison to the long-term benefit.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 840,
+      "out_sha": "1adbad232926",
       "note": ""
     },
     {
@@ -2051,11 +2051,11 @@
       "en_title": "Chapter 17: Career Transitions — The Financial Playbook",
       "order": 163,
       "src_chars": 2854,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4e962cbe3a03",
       "src": "### 17.3 Retirement — When Can You Actually Stop Working?\n\n\"When can I retire?\" is really a math question: **When do your investments generate enough income to cover your expenses indefinitely?**\n\n**The 4% Rule (A Starting Point)**\n\nThe most widely cited retirement guideline: you can withdraw 4% of your portfolio annually with a high probability that your money lasts 30+ years.\n\nRetirement Portfolio Needed=Annual Expenses×25\\text{Retirement Portfolio Needed} = \\text{Annual Expenses} \\times 25Retirement Portfolio Needed=Annual Expenses×25\n\nIf your annual expenses are 50,000 USD, you need 50,000 USD × 25 = 1,250,000 USD.\n\nIf your annual expenses are 40,000 USD, you need 40,000 USD × 25 = 1,000,000 USD.\n\nThe 4% rule is based on historical stock and bond returns. It assumes a diversified portfolio (our boring portfolio!) and accounts for inflation. It's not perfect — it was designed for a 30-year retirement and may need adjustment for earlier retirees — but it provides a useful first approximation.\n\n**Your \"Freedom Number\"**\n\nThe portfolio needed for retirement is your \"freedom number.\" Knowing it transforms retirement from a vague aspiration into a specific target:\n\nAnnual Expenses | Freedom Number (25×)  \n---|---  \n30,000 USD | 750,000 USD  \n40,000 USD | 1,000,000 USD  \n50,000 USD | 1,250,000 USD  \n60,000 USD | 1,500,000 USD  \n80,000 USD | 2,000,000 USD  \n  \nTwo observations: (1) Reducing expenses matters TWICE — it lowers the freedom number AND increases the savings rate that builds toward it. A person who reduces annual expenses from 60,000 USD to 40,000 USD reduces their freedom number by 500,000 USD AND saves an additional 20,000 USD/year toward reaching it. (2) Social Security (or your country's equivalent) reduces the amount your portfolio needs to cover. If Social Security provides 20,000 USD/year, you only need your portfolio to cover the remaining 30,000 USD — reducing your freedom number from 1,250,000 USD to 750,000 USD.\n\nThread A — final capstone: How does starting early affect when you reach your freedom number?\n\nAssume 50,000 USD/year expenses, freedom number 1,250,000 USD, savings rate 20%, 7% returns:\n\n* Start at 25: reach freedom number at approximately age 53\n* Start at 35: reach freedom number at approximately age 60\n* Start at 45: reach freedom number at approximately age 73\n\nStarting at 25 potentially gives you 12 more years of freedom than starting at 35, and 20 more years than starting at 45. This is the ultimate expression of Thread A: time is the most valuable resource in the wealth equation.\n\n**Decision Exercise: Am I Ready to Retire?**\n\nYou're 58, with 900,000 USD in retirement accounts, 200,000 USD in a paid-off home, and annual expenses of 45,000 USD. Social Security at 62 would provide 18,000 USD/year; at 67, 25,000 USD/year. Can you retire now?\n\nBefore reading on, calculate.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1107,
+      "out_sha": "8c14519a36d8",
       "note": ""
     },
     {
@@ -2063,11 +2063,11 @@
       "en_title": "Chapter 17: Career Transitions — The Financial Playbook",
       "order": 164,
       "src_chars": 2944,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6491de922823",
       "src": "**Analysis:** Annual expenses: 45,000 USD. If retiring at 58, you need to cover expenses entirely from portfolio for 4-9 years before Social Security starts. At 4% withdrawal: 900,000 USD × 4% = 36,000 USD/year — short of 45,000 USD by 9,000 USD/year. Three options: (1) Reduce expenses to 36,000 USD (very tight). (2) Work part-time for 15,000-20,000 USD/year for 4 years until Social Security at 62 covers the gap (18,000 USD + 36,000 USD = 54,000 USD > 45,000 USD). (3) Wait until 62, use Social Security + 4% withdrawal = 18,000 USD + 36,000 USD = 54,000 USD/year — comfortable. (4) Wait until 67 for higher Social Security: 25,000 USD + 36,000 USD = 61,000 USD/year — very comfortable. The recommended path: work part-time or in a consulting role from 58-62, using only minimal portfolio withdrawals. Claim Social Security at 67 (waiting increases the annual benefit by ~8%/year from 62 to 67). This preserves the portfolio for later years when healthcare costs increase.\n\n\n### 17.4 Severance Negotiation — When the Employer Decides\n\nSometimes the transition isn't your choice. Layoffs, restructuring, and terminations happen. If they happen to you, knowing how to negotiate your exit can be worth tens of thousands of dollars.\n\n**What's Negotiable (Most People Don't Know This):**\n\n* Severance pay (typically offered at 1-4 weeks per year of service, but negotiable)\n* Extended health insurance (COBRA continuation, sometimes company-paid)\n* Accelerated vesting of stock options or retirement contributions\n* Outplacement services (career coaching, resume help)\n* Non-compete clause modification (reducing the scope or duration)\n* Positive reference agreement\n* Unemployment benefit eligibility (ensure the termination is classified to allow claims)\n\n**Negotiation Principles (from Chapter 5, applied to exits):**\n\n  1. Don't sign anything immediately. You typically have 21 days (sometimes more) to review a severance agreement. Use this time.\n  2. Quantify everything. A month of extra health insurance is worth 1,500-2,500 USD. A month of extra severance is worth one month's salary. Know the dollar value of each item.\n  3. Leverage is higher than you think. Employers offering severance want something in return — usually a release of legal claims. Your signature on that release has value; negotiate accordingly.\n  4. Consider consulting an employment attorney. For severance packages above 10,000-15,000 USD, a 500-1,000 USD legal consultation can identify negotiating points worth multiples of the fee.\n\n\n#### Common Misconception\n\n**\"I should be grateful for any severance and just sign.\"** Severance is a business transaction, not a favor. The company is offering money in exchange for your agreement not to sue. This means you have leverage. Professional, respectful negotiation is expected and appropriate — it's not \"ungrateful\" to ensure you receive fair value for the legal rights you're surrendering.\n\n\n### 17.5 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1055,
+      "out_sha": "58c15ecbf4ff",
       "note": ""
     },
     {
@@ -2075,11 +2075,11 @@
       "en_title": "Chapter 17: Career Transitions — The Financial Playbook",
       "order": 165,
       "src_chars": 3314,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f1040c538cbd",
       "src": "#### Concept Check\n\n**Q1.** Calculate the financial runway: 45,000 USD in savings (above emergency fund), monthly essential expenses of 3,200 USD. Is this enough to launch a business?\n\n**Answer:** Runway: 45,000 USD ÷ 3,200 USD = 14.1 months. This is within the recommended 12-18 month range. It provides enough time for most businesses to reach initial revenue — but leaves little margin for error. Recommendations: reduce monthly expenses if possible (each 200 USD cut adds ~1.6 months), start generating revenue before quitting (validate the business while still employed), and have a clear milestone for reassessment (if no revenue by month 9, evaluate whether to continue or reenter employment).\n\n**Q2.** Using the 4% rule, calculate the freedom number for someone with 35,000 USD in annual expenses who expects 15,000 USD/year from Social Security.\n\n**Answer:** Annual expenses to cover from portfolio: 35,000 USD - 15,000 USD = 20,000 USD. Freedom number: 20,000 USD × 25 = 500,000 USD. This is a much more achievable target than it would be without Social Security. At a 20% savings rate on a 60,000 USD income (12,000 USD/year saved), investing at 7%, it takes approximately 22 years to reach 500,000 USD. Starting at 30, this person could reach their freedom number by age 52. Social Security dramatically reduces the portfolio needed — which is why it's important to factor it into retirement planning rather than planning as if it doesn't exist.\n\n**Q3.** A career change involves a 20,000 USD/year pay cut for the first 3 years, then exceeds the original salary by 10,000 USD/year afterward. Calculate the total cost of the income dip and the \"payback period\" when cumulative extra earnings equal the cumulative lost earnings.\n\nHint\n\nTotal cost of income dip: 20,000 USD × 3 = 60,000 USD. Then you earn 10,000 USD/year extra. How many years until the 10,000 USD/year \"extra\" totals 60,000 USD?\n\n**Answer:** Total cost of income dip: 20,000 USD × 3 years = 60,000 USD. After year 3, extra earnings: 10,000 USD/year. Payback: 60,000 USD ÷ 10,000 USD = 6 years after the dip ends, or 9 years from the career change start. After the payback point, every year produces 10,000 USD+ in net additional income. Over a 20-year remaining career from that point: 10,000 USD × 20 = 200,000 USD net additional earnings beyond the break-even. Including compound growth on the earlier-received salary: substantially more. The career change, despite feeling costly in years 1-3, is an excellent financial decision viewed over a full career.\n\n**Q4.** Why does reducing expenses help retirement planning in TWO ways?\n\n**Answer:** (1) It reduces the freedom number — lower annual expenses means you need less savings to sustain yourself (the 25× multiplier works in your favor). 10,000 USD/year less in expenses = 250,000 USD less needed in retirement savings. (2) It increases the savings rate — money not spent on expenses can be saved and invested, accelerating the path to the freedom number. Combined, a 10,000 USD/year expense reduction both reduces the target by 250,000 USD AND adds 10,000 USD/year to the savings building toward that reduced target. This double effect is why lifestyle optimization is the single most powerful lever in retirement planning — more impactful than chasing higher investment returns.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1199,
+      "out_sha": "6b66e05fbe20",
       "note": ""
     },
     {
@@ -2087,11 +2087,11 @@
       "en_title": "Chapter 17: Career Transitions — The Financial Playbook",
       "order": 166,
       "src_chars": 3443,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fb8d59bf77c5",
       "src": "#### Application Problems\n\n**Q1.** Two people both earn 75,000 USD/year and want to retire with 50,000 USD/year in expenses. Person A saves 15% (11,250 USD/year). Person B saves 30% (22,500 USD/year). Both invest at 7%. Starting from zero, how many years does each take to reach their freedom number (1,250,000 USD)? What does this tell you about the power of savings rate for retirement timing?\n\nHint\n\nUse the future value of an annuity formula or estimate: at 7%, approximate years to reach the target for each annual savings amount.\n\n**Answer:** Person A (11,250 USD/year at 7%): Reaches 1,250,000 USD in approximately 38 years. Starting at 25: retires at 63. Person B (22,500 USD/year at 7%): Reaches 1,250,000 USD in approximately 27 years. Starting at 25: retires at 52. Person B retires 11 YEARS earlier — not because they earned more or got better investment returns, but because they saved a larger percentage of their income. Additionally, Person B has lower expenses (52,500 USD vs 63,750 USD) because their lifestyle is calibrated to spending less, which means they might actually need a LOWER freedom number. The savings rate is the retirement accelerator — it simultaneously builds the portfolio faster AND (if the savings come from reduced spending) lowers the target.\n\n**Q2.** You're considering starting a freelance business. Your current salary is 65,000 USD. You estimate 3 months with zero income, then 12 months averaging 3,000 USD/month, then growth to 7,000 USD+/month. You have 50,000 USD in savings above your emergency fund. Monthly expenses are 4,000 USD. Model the financial trajectory over 2 years: will your runway last? When do you break even versus your current salary?\n\n**Answer:** Runway: 50,000 USD ÷ 4,000 USD = 12.5 months. Month-by-month cash flow:\n\nMonths 1-3: Zero income. Cash spent: 4,000 USD × 3 = 12,000 USD. Savings: 38,000 USD. Months 4-15: 3,000 USD/month income - 4,000 USD/month expenses = -1,000 USD/month deficit. Cash spent: 1,000 USD × 12 = 12,000 USD. Savings: 26,000 USD. Month 16+: Income grows to 7,000 USD/month. Surplus: 3,000 USD/month.\n\nRunway survives: 26,000 USD remaining at month 15 is comfortable. The business becomes cash-flow positive (income > expenses) at around month 10-12 (when income hits 4,000 USD/month). Total salary replacement (65,000 USD/year = 5,417 USD/month) happens around month 18-20 when income exceeds 5,417 USD/month.\n\nBreak-even analysis: total income deficit over 15 months ≈ 24,000 USD. At 3,000 USD/month surplus from month 16+, it takes about 8 additional months to recoup the deficit. Full break-even versus staying employed: approximately month 24 (year 2).\n\nThread C: the 50,000 USD in the boring portfolio would become ~57,200 USD in 2 years at 7%. The business needs to produce more than 7,200 USD in net value over those 2 years to justify the switch — which is likely if it reaches 7,000 USD+/month. But if the business fails at month 12, you've spent 24,000 USD and lost 3,500 USD in foregone investment growth (27,500 USD total cost). This is the risk/reward tradeoff from Chapter 4 applied to career decisions.\n\n**Q3.** You're laid off from a 95,000 USD/year position after 8 years. The company offers 2 weeks of severance per year of service (16 weeks = ~29,000 USD pre-tax). Using the negotiation principles from this chapter, identify at least three items you might negotiate for additional value, and estimate the dollar value of each.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1366,
+      "out_sha": "05094632cc90",
       "note": ""
     },
     {
@@ -2099,11 +2099,11 @@
       "en_title": "Chapter 17: Career Transitions — The Financial Playbook",
       "order": 167,
       "src_chars": 1449,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5f228855423f",
       "src": "**Answer:** (1) Extended severance: Ask for 3 weeks per year instead of 2 (24 weeks = ~43,800 USD). Value of request: additional 14,800 USD. Justification: 8 years of service, specialized knowledge, smooth transition period. (2) COBRA continuation: Company pays health insurance for the severance period (16-24 weeks). If COBRA costs 1,800 USD/month for family coverage, 6 months of paid COBRA = 10,800 USD. (3) Accelerated vesting: If you have unvested 401(k) matching or stock options, negotiate for immediate vesting. Could be worth 5,000-20,000 USD+ depending on the program. (4) Non-compete modification: If the severance includes a non-compete clause, negotiate to narrow its scope (specific competitors only, reduced duration from 12 months to 6). This has indirect financial value — a broad non-compete can limit your job options and extend unemployment. (5) Outplacement services: Professional career coaching and resume services (3,000-5,000 USD value). (6) Written reference commitment: A positive reference letter from your manager or HR director. Harder to quantify but can significantly speed job search.\n\nTotal potential value of negotiation: 33,000-50,000 USD+ above the initial offer. Even achieving half of these requests would add 15,000-25,000 USD to the initial 29,000 USD package. A 30-minute phone call with an employment attorney (250-500 USD) to review the agreement could be the highest-ROI \"investment\" in this situation.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 518,
+      "out_sha": "b783fe1d477d",
       "note": ""
     },
     {
@@ -2111,11 +2111,11 @@
       "en_title": "Chapter 17: Career Transitions — The Financial Playbook",
       "order": 168,
       "src_chars": 2691,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d040291523e0",
       "src": "#### Think Deeper\n\n**Q1.** The 4% rule was developed based on US market history. Several financial researchers have raised concerns that it may be too optimistic given lower expected future returns and longer retirements. How would you adjust your retirement planning to account for this uncertainty?\n\n**Discussion:** Adjustments: (1) Use 3-3.5% instead of 4% for a more conservative estimate. At 3.5%, the freedom number multiplier is ~28.6× instead of 25×. For 50,000 USD/year expenses: 1,430,000 USD instead of 1,250,000 USD. (2) Build flexibility into spending. A \"variable withdrawal\" strategy — reducing withdrawals during market downturns and increasing them during good years — historically survives longer than a fixed 4%. (3) Diversify income sources in retirement: Social Security, part-time work, rental income, and portfolio withdrawals — so no single source bears the full burden. (4) Plan for a longer retirement. The 4% rule was designed for 30 years. If you retire at 50, you might need 40-50 years. Using 3% withdrawal addresses longer horizons. (5) Keep some flexibility to return to work (part-time consulting, teaching) if market conditions threaten your portfolio early in retirement. The general principle: in the face of uncertainty, build in extra margin. It's better to have \"too much\" saved (worst case: you leave a larger inheritance) than too little (worst case: you run out of money at 85).\n\n**Q2.** The gig economy and remote work have created new possibilities for \"semi-retirement\" — working part-time or freelance while drawing down savings more slowly. How does this change the retirement math?\n\n**Discussion:** Semi-retirement dramatically changes the equation. If you can earn 20,000 USD/year from part-time work while \"retired,\" your portfolio needs to cover only 30,000 USD instead of 50,000 USD — reducing the freedom number from 1,250,000 USD to 750,000 USD (a 500,000 USD difference that might mean retiring 10+ years earlier). Additional benefits: (1) Social engagement and purpose (major factors in retirement well-being). (2) Cognitive stimulation. (3) Flexibility — if markets drop, increase work hours temporarily. (4) Healthcare — earning income may help cover insurance before Medicare eligibility. The concept of \"retirement\" as a binary switch (working → not working) is increasingly outdated. A gradual transition — reducing hours over several years — may be both financially optimal and psychologically healthier. Thread A final thought: the person who started saving at 25 might be able to semi-retire at 45, fully retire at 55, or work by CHOICE (not necessity) at 65. The person who started at 45 has fewer options. Time buys freedom.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 896,
+      "out_sha": "9000e3d074f2",
       "note": ""
     },
     {
@@ -2123,11 +2123,11 @@
       "en_title": "Chapter 17: Career Transitions — The Financial Playbook",
       "order": 169,
       "src_chars": 1026,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b58f24d41355",
       "src": "### Chapter Summary\n\nCareer transitions — starting a business, changing careers, retiring, and navigating layoffs — are among the most consequential financial decisions you'll make. The financial runway calculation determines whether entrepreneurship is reckless or calculated. The income dip analysis reveals that career changes are often excellent investments when viewed over a full career. The 4% rule and freedom number transform retirement from a vague aspiration into a specific, achievable target.\n\nThread A capstone: starting to save at 25 versus 35 can mean retiring a full decade earlier — the ultimate \"power of starting early.\"\n\nThread C: every career transition's opportunity cost should be compared against boring portfolio returns, ensuring you're making transitions for the right reasons.\n\nIn Chapter 18, we tackle the most emotionally complex financial topic: money and relationships — combining finances with a partner, teaching kids about money, and navigating the financial dimensions of family life.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 280,
+      "out_sha": "e980fbd4bfbd",
       "note": ""
     },
     {
