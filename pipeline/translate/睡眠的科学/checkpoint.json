@@ -3251,11 +3251,11 @@
       "en_title": "Chapter 13: What Helps and What Doesn't",
       "order": 265,
       "src_chars": 526,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e7dcf64e9c44",
       "src": "**Diary instruction for Chapter 13** : Look at your diary and list every caffeine intake after 2 PM in the past two weeks. For each, estimate the residual at your bedtime using the 5-6 hour half-life rule (§13.1). The pattern is informative: chronic late caffeine is one of the most common causes of \"chronic insomnia\" that resolves without any intervention beyond moving the last caffeine earlier in the day. Many readers, looking at their list, will see the obvious culprit. The intervention follows from the diagnosis.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 165,
+      "out_sha": "105b86c8230e",
       "note": ""
     },
     {
@@ -3263,11 +3263,11 @@
       "en_title": "Chapter 14: Building a Sleep Life — and a Sleep-Aware Society",
       "order": 266,
       "src_chars": 2179,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6c3a2467df17",
       "src": "You have, by now, two weeks of sleep diary.\n\nTwo weeks of bedtimes and wake times, of sleep latencies and morning alertness scores, of caffeine timestamps and alcohol notes and exercise logs and (perhaps) dream fragments. The numbers are imprecise. Your estimates of when you fell asleep are best guesses. Your alertness scores are subjective. The data is messier than a polysomnogram and less precise than a wearable's gloss. But it is _yours_. It describes your actual sleep over fourteen actual nights, in the actual life you actually lead.\n\nIt is also, by now, more than a record. Across thirteen chapters you have learned to read it. Through Process S and Process C. Through chronotype and the asymmetric night. Through architecture and consolidation and emotional reprocessing. Through CBT-I and OSA screening and substance evaluation. Each chapter has handed you a lens; each lens reveals something the others did not.\n\nThis chapter is where the lenses converge. We will read the diary five different ways — through five different frameworks — and produce a personalized portrait of your sleep that no general sleep advice could produce. This is what Thread B, the diary, was for. By the end of this chapter you will have something most adults never have: a calibrated, evidence-grounded read of your own sleep, with specific levers identified.\n\nWe will then step back. Sleep is not just a personal matter. The schedules of school and work, the cultural narrative around productivity, the policies governing shift work and adolescent academics — all of these shape what sleep is possible, in ways that affect millions of people simultaneously. The book has tried to teach individual sleep science; the social-scale implications follow from the science but require collective response.\n\nFinally, we will close. The Italian family will return one last time. The animal kingdom will close its thread, with human infants — half of whose sleep is REM. And you will be invited to write a letter to yourself, three months out from now, describing how you intend to live with your sleep going forward.\n\nThis is the synthesis chapter. It is also, by design, the conclusion.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 640,
+      "out_sha": "196e7543a28c",
       "note": ""
     },
     {
@@ -3275,11 +3275,11 @@
       "en_title": "Chapter 14: Building a Sleep Life — and a Sleep-Aware Society",
       "order": 267,
       "src_chars": 3410,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0c0b89438f94",
       "src": "### 14.1 Reading Your Diary the First Way: Chronotype\n\nIn Chapter 4 we introduced the chronotype spectrum. Most people are intermediate; about a quarter are larks; about a quarter are owls. Chronotype is at least 40-50% heritable.\n\nLook at your diary entries from days where you had no alarm — most likely Saturday and Sunday mornings, perhaps a vacation or weekend without commitments. What was your _spontaneous_ wake time on those days?\n\nThis is your body's natural wake time, untouched by social schedule. It is the most direct evidence of your chronotype.\n\nIf your spontaneous wake time on free mornings is:\n\n* **Before 7 AM** : you are a morning type (lark). Your circadian rhythm runs early. You probably feel sharpest in the morning and fade in the late evening. A 10 PM bedtime is natural for you. Working environments that match this rhythm (early starts, early finishes) suit you well; environments that demand evening alertness fight your biology.\n\n* **7-9 AM** : you are an intermediate type, the most common chronotype. Your circadian rhythm is roughly aligned with the conventional industrial schedule. You can adapt to either earlier or later patterns with modest effort.\n\n* **9-10 AM** : you are a moderate evening type. Your natural bedtime is around midnight; your natural wake is mid-morning. The conventional 9 AM start time pushes you slightly. You feel sharper in the late morning, afternoon, and evening.\n\n* **After 10 AM** : you are an extreme evening type (owl). Your natural bedtime is 1 AM or later; your natural wake is late morning. The conventional schedule fights your biology severely. You feel groggy for the first 3-4 hours of mornings, hit your peak in the afternoon and evening, and could productively work until midnight or later.\n\nNow compare your _weekday_ wake time to your _weekend_ (free-morning) wake time. The difference is your **social jetlag**.\n\nA gap of less than one hour suggests you are well-aligned. Your weekday schedule roughly matches your biology.\n\nA gap of one to two hours suggests moderate misalignment. You are paying a chronic biological cost for fitting into a schedule that doesn't quite match you.\n\nA gap of three or more hours suggests substantial misalignment. You are running a chronic experiment in fighting your own circadian rhythm. The metabolic, cardiovascular, and mood costs are real, even if the felt experience is just \"I hate Mondays.\"\n\nFor most owls reading this, the gap is at least two hours. The cultural assumption that \"everyone should wake at 7 AM\" treats this gap as a personal failure. It is not. It is a biological mismatch that can be measured and that produces measurable consequences.\n\nWhat can be done? Three things, in order of feasibility:\n\nFirst, _manipulate light exposure to nudge the chronotype_. Bright morning light advances the circadian phase; dim evening light supports normal melatonin onset. An owl who gets bright morning light (preferably outdoor, even in winter) and dim evening light can shift their chronotype by perhaps 30-60 minutes within their personal range. Not into being a lark, but into a less-extreme owl.\n\nSecond, _negotiate the social schedule when possible_. Many work environments now allow flexible hours. Owls often benefit from negotiating later starts (with later ends correspondingly). If a 10 AM start instead of 8 AM is possible, the cumulative weekly benefit can be substantial.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1078,
+      "out_sha": "2e44e1b0f456",
       "note": ""
     },
     {
@@ -3287,11 +3287,11 @@
       "en_title": "Chapter 14: Building a Sleep Life — and a Sleep-Aware Society",
       "order": 268,
       "src_chars": 1624,
-      "status": "pending",
+      "status": "done",
       "src_sha": "32639a89b0de",
       "src": "Third, _accept your chronotype if neither of the above is possible_. If you must work the conventional schedule and your light exposure is constrained, accept that you are operating against your biology and minimize other costs. Don't add late caffeine to \"stay awake\"; it will worsen the night that is already misaligned. Don't add evening alcohol to \"relax\"; the architecture cost is greater for an already-strained schedule.\n\nFor most readers, the diary's chronotype reveal is itself useful. Many readers discover they are more of an owl, or more of a lark, than they had appreciated. Naming the chronotype is the first step toward respecting it.\n\n\n#### Common Misconception\n\nMany readers will be tempted to conclude from short weekday-recorded sleep durations that they are \"just a short sleeper\" — someone whose biology genuinely needs only 5 or 6 hours. True short sleepers exist, but they are rare: studies of populations claiming this trait, when followed up with vacation-week sleep without alarms, find that the great majority sleep substantially longer when given the chance, indicating chronic deprivation rather than genuine short-sleeper genotype. Estimates of the genuine short-sleeper population are typically 1–3 percent. The simplest test is the vacation test: a stretch of 5–7 days with no alarms, where the body settles into its natural duration. If your spontaneous sleep duration in this condition is 8 or 9 hours, you have been running a chronic deficit, not expressing a short-sleeper genotype. The label is appealing because it converts a deficit into a trait; the biology rarely cooperates.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 464,
+      "out_sha": "cb64c6dc2b91",
       "note": ""
     },
     {
@@ -3299,11 +3299,11 @@
       "en_title": "Chapter 14: Building a Sleep Life — and a Sleep-Aware Society",
       "order": 269,
       "src_chars": 2088,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6337cdefa321",
       "src": "### 14.2 Reading Your Diary the Second Way: Sleep Efficiency\n\nIn Chapter 11 we computed sleep efficiency: time asleep divided by time in bed.\n\nCompute this for each night of your diary. Take the average over the two weeks. The number is informative.\n\nIf your average is **above 90%** : your sleep is biologically efficient. The bed-sleep association is healthy; conditioning is good; the major variable is duration rather than quality. Continue what you are doing.\n\nIf your average is **85-90%** : your sleep is reasonably efficient with some room for improvement. Look at the lower nights in particular and identify any patterns (late caffeine, alcohol, stress days). Small adjustments can move you to consistently above 90%.\n\nIf your average is **75-85%** : you have a meaningful sleep efficiency problem. This is in the territory where insomnia patterns can be present even if you don't think of yourself as having insomnia. Look at the diary carefully: are you spending excessive time in bed waiting for sleep? Are you having long latencies frequently? Are middle-of-night awakenings common? CBT-I principles (Chapter 11) will likely help: stimulus control (bed for sleep only, get out of bed if not sleeping), consistent wake time, possibly a period of sleep restriction.\n\nIf your average is **below 75%** : this is consistent with chronic insomnia. The diary is showing you what may be a clinical issue. Active treatment — CBT-I, ideally with a trained therapist or via a validated online program, possibly self-help materials — is warranted. Don't dismiss this as \"I just sleep poorly\"; that framing accepts a degraded state that is treatable.\n\nIf your numbers vary widely — some nights above 90%, others below 70% — look at what distinguishes the nights. Is it caffeine? Alcohol? Stress? An irregular schedule? Travel? The variance tells you about which factors most affect your sleep, which is itself useful diagnostic information.\n\nThe efficiency number is one of the most useful single metrics from your diary. Most adults don't know their sleep efficiency. You now do.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 653,
+      "out_sha": "8b59dac23217",
       "note": ""
     },
     {
@@ -3311,11 +3311,11 @@
       "en_title": "Chapter 14: Building a Sleep Life — and a Sleep-Aware Society",
       "order": 270,
       "src_chars": 2175,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b9a5f09012e7",
       "src": "### 14.3 Reading Your Diary the Third Way: Caffeine Pattern\n\nIn Chapter 13 we covered caffeine's mechanism: it antagonizes adenosine receptors with a 5-6 hour half-life, masking sleep pressure rather than removing it.\n\nLook at the past two weeks' caffeine entries. List every caffeinated drink and its time. For each, estimate the residual at your normal bedtime.\n\nQuick reference:\n\n* 100 mg of caffeine at 2 PM has roughly 50 mg at 8 PM, 25 mg at 2 AM.\n* 100 mg of caffeine at 4 PM has roughly 50 mg at 10 PM, 25 mg at 4 AM.\n* 100 mg of caffeine at 6 PM has roughly 70 mg at 10 PM, 50 mg at midnight.\n\nMost coffee drinks contain 80-150 mg per cup. Many sodas and energy drinks contain 30-100 mg. Tea typically contains 40-70 mg per cup.\n\nIf your bedtime residual is **below 25 mg consistently** : caffeine is unlikely to be a major factor in your sleep difficulties, if any.\n\nIf your bedtime residual is **25-50 mg some nights** : you may be experiencing measurable but moderate caffeine effects on your sleep. Modest improvements in your sleep architecture would follow from moving the latest caffeine 1-2 hours earlier.\n\nIf your bedtime residual is **above 50 mg consistently** : you are likely experiencing substantial caffeine effects on your sleep. The \"I sleep fine with coffee in the afternoon\" claim is, on polysomnography, almost always wrong even when the user feels it is right. Moving your latest caffeine to before noon would likely produce noticeable improvement in sleep onset, sleep architecture, and morning alertness.\n\nFor many readers, this exercise reveals a high bedtime residual that they had not connected to their sleep complaints. The 4 PM coffee, the 6 PM diet soda, the after-dinner espresso — each is a deposit into the bedtime adenosine-receptor occupancy. Removing them, even one at a time, can produce noticeable sleep improvement within a week.\n\nConsider a personal experiment: for two weeks, no caffeine after 12 noon. Track your sleep latency, alertness on waking, and middle-of-night awakenings. Compare to the previous two weeks. For most readers with any sleep complaints, the improvement is meaningful. For some, it is dramatic.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 810,
+      "out_sha": "70688a040314",
       "note": ""
     },
     {
@@ -3323,11 +3323,11 @@
       "en_title": "Chapter 14: Building a Sleep Life — and a Sleep-Aware Society",
       "order": 271,
       "src_chars": 3378,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3576b1d2ef64",
       "src": "### 14.4 Reading Your Diary the Fourth Way: Alcohol Cost\n\nIn Chapter 13 we covered alcohol's effect on sleep architecture: faster onset, but suppressed REM, fragmented late-night sleep, reduced spindles.\n\nLook at the past two weeks' alcohol entries. For each night with alcohol, note: amount, timing of last drink, and your morning alertness on the following day.\n\nIf you have at least 4-5 alcohol nights and 4-5 alcohol-free nights, you can make a useful comparison. Average your morning alertness on alcohol nights vs. alcohol-free nights. Most readers find a measurable difference favoring alcohol-free nights, often by 1-2 points on the 10-point scale.\n\nAlso look at sleep architecture markers (latency, awakenings if you noticed any). Alcohol nights typically show shorter latency (consistent with sedation) and either more awakenings or \"felt unrested\" mornings (consistent with REM suppression and late-night fragmentation).\n\nFor occasional, moderate drinking (one drink with dinner, finishing 4+ hours before bed), the architectural cost is usually small. For heavier or later drinking (multiple drinks, finishing within 2-3 hours of bed, regular weekday occurrence), the cost is meaningful and accumulates.\n\nSpecific recommendations from this:\n\nIf you regularly drink 2+ drinks within 2-3 hours of bedtime, consider eliminating evening alcohol for a two-week trial. Track sleep quality, morning alertness, mood, cognitive performance. Most readers who do this discover their sleep was worse than they realized; many feel substantially better after the trial. The improvement is real and well-documented; the personal experiment lets you verify it.\n\nIf you drink occasionally and lightly (a glass of wine with dinner, finishing 4+ hours before bed), the cost is real but small. You can probably continue without major sleep impact. Be aware that occasional heavier drinking will produce architecture costs you'll feel the next day.\n\nIf you don't drink, this section doesn't apply to you.\n\nThe cultural mythology around \"a drink helps me relax and sleep\" is worth interrogating personally. Many readers have absorbed this assumption without testing it. The diary plus a two-week experiment is the test.\n\n\n#### Common Misconception\n\nA widespread belief is that \"I'll just sleep in on the weekend to make up for it.\" We saw the partial truth of this in Chapter 8: catch-up sleep recovers some of the deficit, but not all. Three issues together undercut the strategy. First, late-night architectural functions — particularly the REM-rich late cycles that consolidation and emotional processing depend on — are unevenly compensated; weekend sleep is often less REM-dense than uninterrupted natural sleep would have been. Second, the act of sleeping in 2–3 hours later on weekends produces social jetlag every Monday morning — the body now has to re-entrain across an effective time-zone shift it did not need. Third, the metabolic and cardiovascular costs of weekday short sleep do not fully reverse with weekend extension, even when total weekly hours add up. Some recovery, yes; complete reset, no. The cleanest pattern is consistent sleep duration across all seven days of the week. The cultural intuition that \"I'll sleep when I get a chance\" treats sleep like a piggy bank where deposits and withdrawals balance cleanly. The body's accounting is not that simple.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 952,
+      "out_sha": "b0d7acf102c5",
       "note": ""
     },
     {
@@ -3335,11 +3335,11 @@
       "en_title": "Chapter 14: Building a Sleep Life — and a Sleep-Aware Society",
       "order": 272,
       "src_chars": 2081,
-      "status": "pending",
+      "status": "done",
       "src_sha": "56f3ad83f5aa",
       "src": "### 14.5 Reading Your Diary the Fifth Way: The Hidden Sleep Disorder\n\nIn Chapter 12 we covered OSA — common, often undiagnosed, with the patient typically unaware they have it.\n\nLook at your diary for the following warning signs:\n\n  1. _Bed partner reports_ : have you asked? If yes, were any of the following noted: loud snoring, breathing pauses, gasping or snorting? If any are present, the probability of OSA is meaningfully elevated.\n\n  2. _Daytime drowsiness despite \"adequate\" sleep_ : do you fall asleep watching TV? In meetings? While reading? On the couch in the afternoon? Frequent unintentional sleep during low-stimulus daytime activities is a strong signal.\n\n  3. _Morning headaches_ : occasional or frequent? Headaches that improve through the morning are suggestive.\n\n  4. _Recent hypertension or weight gain_ : especially if either has become harder to manage with standard interventions.\n\n  5. _Cognitive concerns_ : noticeable decline in sharpness, memory, or executive function over the past few years, particularly without other explanations.\n\n  6. _Anatomical risk_ : thick neck, set-back jaw, family history of sleep apnea, obesity.\n\nIf you have any of the bed-partner signals (snoring, witnessed apneas, gasping), evaluation is warranted regardless of the other factors. If you have multiple of the indirect signals (drowsiness, headaches, cognitive concerns) consistently, evaluation is warranted.\n\nOSA evaluation is straightforward: a home sleep apnea test or in-laboratory polysomnography, ordered by a primary care physician or sleep specialist. The diagnosis, if positive, leads to treatment (CPAP) that can substantially improve life. The diagnosis, if negative, rules out a meaningful contributor.\n\nThe reader who has OSA and doesn't know it is bearing a substantial chronic cost — cardiovascular, cognitive, metabolic — that could be substantially reduced with treatment. The diagnosis is the gateway. If your diary suggests possible OSA, pursue it. The cost of evaluation is small; the cost of missed diagnosis can be very large over years.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 644,
+      "out_sha": "3e8a51b159a2",
       "note": ""
     },
     {
@@ -3347,11 +3347,11 @@
       "en_title": "Chapter 14: Building a Sleep Life — and a Sleep-Aware Society",
       "order": 273,
       "src_chars": 3305,
-      "status": "pending",
+      "status": "done",
       "src_sha": "185091197dda",
       "src": "### 14.6 Now Step Back: Sleep at the Social Scale\n\nUntil this point, the chapter has been personal. The diary, the chronotype, the efficiency, the substances, the disorders — all are about _you_ and your individual sleep. But sleep is not just an individual matter. The schedules within which sleep happens are largely social: when school starts, when work begins, when shifts are scheduled, what counts as a productive culture.\n\nThe most striking social-scale issue is **adolescent school start times**. We saw in Chapter 4 that puberty produces a measurable phase delay in adolescent circadian rhythm — natural bedtime around midnight, natural wake around 8-9 AM. We also saw that most high schools start at 7:30 AM or earlier. The mismatch is biological; the consequences are measurable.\n\nMultiple studies have shown that schools shifting to start times of 8:30 AM or later produce improvements in attendance, academic performance, mental health indicators, and (notably) reduced rates of teen drowsy-driving accidents. The evidence has been clear for over a decade. Most school districts have not changed. The reasons (bus schedules, cost, cultural inertia, decisions made by adults whose own teen years are not in mind) have been discussed earlier in the book.\n\nWhat can a reader do? If you have teenagers, recognize that their morning grogginess is biology, not laziness. Support them in getting adequate sleep within the constraints they face. Advocate, if you have the energy, for later start times in your local schools. The data is on your side; the cultural inertia is the obstacle.\n\nA second issue is **shift work and circadian disruption**. Roughly 15-20% of adults in industrial societies do shift work at some point in their careers — healthcare, transportation, manufacturing, security, hospitality, and many other industries. The biological cost of chronic circadian misalignment is meaningful: elevated cardiovascular risk, increased rates of metabolic syndrome, IARC Group 2A classification for cancer risk, mood disturbance, accident rates.\n\nFor shift workers, partial mitigations include: maintaining consistent schedules within a given shift period (rather than rotating frequently), using bright light during the work shift and minimizing it after, using blackout curtains and melatonin (if needed) to support daytime sleep, careful caffeine management, regular medical monitoring. None of these abolishes the cost, but they reduce it.\n\nSociety-level issues include: providing better support for shift workers, recognizing the cost in compensation and benefits, considering whether some currently-shift-work tasks could be restructured to be less biologically demanding, treating shift-work-related health issues as occupational rather than individual.\n\nA third issue is **the cultural narrative around sleep**. The \"I'll sleep when I'm dead\" attitude — implicit in many high-pressure professional environments — treats sleep as a luxury to be sacrificed for productivity. The book has tried to assemble the evidence for a different view: sleep is, on the evidence, not a luxury but a biologically required function, and the productivity gained by curtailing it is in large part illusory once the costs to consolidation, emotional regulation, and long-term health are accounted for.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 971,
+      "out_sha": "0e150090199a",
       "note": ""
     },
     {
@@ -3359,11 +3359,11 @@
       "en_title": "Chapter 14: Building a Sleep Life — and a Sleep-Aware Society",
       "order": 274,
       "src_chars": 3307,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a96618818e20",
       "src": "Cultures that have shifted toward respecting sleep — by making sleep visible in workplaces, by treating chronic short sleep as a health concern rather than a badge of honor, by adjusting schedules to match biology rather than convention — show better long-term outcomes in the available data, both for individuals and for organizations. The shift is slow but real. Some industries have begun to recognize that fatigue-related accidents are not \"individual mistakes\" but systemic failures of scheduling.\n\nFor the reader who has worked through the book, the question becomes how the framework gets applied. The reader now has a more detailed model of sleep than most people they will encounter, which can be used in straightforward ways: in personal decisions, in supporting family members through decisions about teenagers, shift work, or chronic disease management, and — for those with the platform and the energy — in advocating for changes that respect biology rather than fight it.\n\nThe book has tried to provide, alongside the science, a sensibility — a way of treating sleep as a vital function rather than as a luxury. The sensibility, if it transfers, can be useful in small concrete ways: a teenager who is supported through their phase-delayed years, a family member who is evaluated for OSA, a workplace conversation that takes fatigue seriously. These are the kinds of applications the framework was built for.\n\n* * *\n\n\n### 14.7 The Italian Family, Final Note\n\nWe close with the Italian family.\n\nWe have met them five times. In Chapter 1, as the opening hook — the inherited prion disease that destroys the thalamus and makes sleep biologically impossible. In Chapter 3, with their EEGs showing the architectural failure: entry into N1 preserved, descent to deep stages destroyed. In Chapter 6, with the feedback loop: thalamic damage prevents N3, N3 absence prevents glymphatic clearance, accumulating waste damages the thalamus further. In Chapter 12, as the contrast to OSA: their architecture is structurally destroyed; OSA's architecture is suppressed but treatable. In Chapter 13, as the proof that no current drug initiates sleep: nothing helps them, because nothing yet invented does what natural sleep does.\n\nThe family teaches one final lesson, and it is the simplest one of all.\n\n**Sleep is not a luxury. It is a non-negotiable biological necessity.**\n\nThe family did not lose sleep gradually, by accumulation. They lost it suddenly, by a structural lesion in the thalamus. And when they lost it, they died — not in a year, not in five years, but in months. The body cannot maintain itself without the daily coordinated state of sleep. The Italian family is the empirical proof.\n\nMost readers of this book will not face FFI. The reader's sleep machinery is intact. Whatever curtailment, fragmentation, or architectural disruption you have been imposing on yourself is _self-imposed_ in a way the FFI patients' is not. You can choose differently. You have machinery to deploy; the FFI patients do not.\n\nThis is the deepest gift of the FFI thread: it shows what happens when sleep is impossible, so we can see what we have when sleep is possible. The reader who walks away from this book with one durable belief — _sleep is non-negotiable_ — has gotten the most important thing.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 977,
+      "out_sha": "5e11ab3fe1b3",
       "note": ""
     },
     {
