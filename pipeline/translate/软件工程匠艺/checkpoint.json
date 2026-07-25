@@ -1419,11 +1419,11 @@
       "en_title": "Chapter 9: The 12 Refactorings That Pay for Themselves",
       "order": 109,
       "src_chars": 1137,
-      "status": "pending",
+      "status": "done",
       "src_sha": "31ea3511c535",
       "src": "Martin Fowler's _Refactoring_ (1999, 2nd ed. 2018) catalogues over sixty refactorings. The book is excellent reference material; it is poor pedagogy for the working engineer in 2026 because the sixty are not equally useful. About a dozen pay for themselves so often that they should be reflexive; the other fifty are situational; many are niche.\n\nThis chapter teaches the twelve refactorings that, in our experience across many codebases, account for the majority of valuable real-world refactoring work. Each is taught with a real-shape before/after, the signal that should trigger it, and the AI-Layer note about what the agent can and cannot do.\n\nAsher Goldman at Trellis applied all twelve in the first quarter of 2026. The cumulative effect on a particular subsystem: 3,200 lines of legacy code became 2,400 lines with the same behavior; the test suite became more robust (mutation score rose from 51% to 73%); the time to add a new feature in that subsystem dropped from days to hours. The investment was about three weeks of dedicated refactoring effort across the quarter; the payoff continued accruing for the rest of the year.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 392,
+      "out_sha": "1e4135d09c18",
       "note": ""
     },
     {
@@ -1431,11 +1431,11 @@
       "en_title": "Chapter 9: The 12 Refactorings That Pay for Themselves",
       "order": 110,
       "src_chars": 2394,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cbd8e75c784f",
       "src": "### 9.1 Refactoring 1: Extract Function\n\n**Signal** : a function is more than 30-50 lines, or contains multiple comments separating logical sections, or has comments like `# now compute the discount` that read like function names.\n\n**Before** :\n    \n    \n    def process_order(order, customer):\n        # Validate the order\n        if not order.items:\n            raise InvalidOrderError(\"no items\")\n        if order.total < 0:\n            raise InvalidOrderError(\"negative total\")\n        for item in order.items:\n            if item.quantity <= 0:\n                raise InvalidOrderError(f\"invalid quantity for {item.sku}\")\n    \n        # Compute discount\n        discount = 0\n        if customer.tier == 'enterprise':\n            discount += 0.10\n        if order.total > 1000:\n            discount += 0.05\n        if customer.is_grandfathered:\n            discount += 0.03\n    \n        # Apply discount\n        order.total = order.total * (1 - discount)\n    \n        # Save and notify\n        save_order(order)\n        notify_customer(customer, order)\n    \n\n**After** :\n    \n    \n    def process_order(order, customer):\n        validate_order(order)\n        discount = compute_discount(order, customer)\n        order.total = order.total * (1 - discount)\n        save_order(order)\n        notify_customer(customer, order)\n    \n    def validate_order(order):\n        if not order.items:\n            raise InvalidOrderError(\"no items\")\n        if order.total < 0:\n            raise InvalidOrderError(\"negative total\")\n        for item in order.items:\n            if item.quantity <= 0:\n                raise InvalidOrderError(f\"invalid quantity for {item.sku}\")\n    \n    def compute_discount(order, customer):\n        discount = 0\n        if customer.tier == 'enterprise':\n            discount += 0.10\n        if order.total > 1000:\n            discount += 0.05\n        if customer.is_grandfathered:\n            discount += 0.03\n        return discount\n    \n\nThe benefit: `process_order` now reads as a list of steps, each named in domain language; the validation and discount logic are independently testable.\n\n**AI-Layer** : AI agents perform Extract Function reliably. The risk is that the agent extracts too eagerly, producing many tiny functions that fragment readability. The human's judgment is needed for the _granularity_ : when does extracting reduce clarity rather than improve it?\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1874,
+      "out_sha": "d8f554f1fb82",
       "note": ""
     },
     {
@@ -1443,11 +1443,11 @@
       "en_title": "Chapter 9: The 12 Refactorings That Pay for Themselves",
       "order": 111,
       "src_chars": 2591,
-      "status": "pending",
+      "status": "done",
       "src_sha": "25a6b08fad83",
       "src": "### 9.2 Refactoring 2: Inline Function\n\n**Signal** : a function adds no semantic value beyond what its body would have. The function name and the body are basically the same, or the function is called only once and the call site is no clearer than the inlined body.\n\n**Before** :\n    \n    \n    def is_premium_customer(customer):\n        return customer.tier == 'enterprise'\n    \n    def get_pricing(customer, product):\n        if is_premium_customer(customer):\n            return product.enterprise_price\n        return product.standard_price\n    \n\nIf `is_premium_customer` is called only from `get_pricing` and the function name does not clarify the call site:\n\n**After** :\n    \n    \n    def get_pricing(customer, product):\n        if customer.tier == 'enterprise':\n            return product.enterprise_price\n        return product.standard_price\n    \n\nThe benefit: one less function to read; the condition is now visible inline.\n\nThis refactoring is the inverse of Extract Function. The point is _direction_ : Extract Function consolidates repeated logic into a named unit; Inline Function un-wraps a unit that did not earn its name.\n\n**AI-Layer** : AI agents perform Inline Function safely when the function has one caller. They are less reliable when the function has multiple callers; inlining changes the codebase shape in ways the agent may not fully consider.\n\n\n### 9.3 Refactoring 3: Rename\n\n**Signal** : a name is misleading, generic, or out of date. Common offenders: `data`, `info`, `process`, `handle`, `manager`, `helper`. Less common but more dangerous: a name that was accurate when written and is now wrong because the surrounding code evolved.\n\n**Before** :\n    \n    \n    def process(data):\n        \"\"\"Apply tax to the order total.\"\"\"\n        return data * 0.08\n    \n\n**After** :\n    \n    \n    def apply_tax(amount):\n        return amount * 0.08\n    \n\nThe benefit: the function's purpose is now visible at the call site; the parameter name matches what is actually passed.\n\nRename is the most underrated refactoring. Chapter 18 (Naming as Design) is dedicated to it. In this chapter, the point is mechanical: in 2026 with rename tools in every IDE and most agents, the operation is cheap and the value is high.\n\n**AI-Layer** : AI agents perform Rename safely when the rename is purely mechanical (a function or variable in a single language). They fail when the name is also encoded outside the codebase (in serialized formats, in external configuration, in the database schema). The human's job is to scope the rename: code-only is safe; cross-system requires more care.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1300,
+      "out_sha": "b5e763a51593",
       "note": ""
     },
     {
@@ -1455,11 +1455,11 @@
       "en_title": "Chapter 9: The 12 Refactorings That Pay for Themselves",
       "order": 112,
       "src_chars": 3047,
-      "status": "pending",
+      "status": "done",
       "src_sha": "61ea7c60e629",
       "src": "### 9.4 Refactoring 4: Move\n\n**Signal** : a function is in the wrong file or module. It uses more of another module's data than of its current module's. It belongs conceptually to a different domain.\n\n**Before** (in `src/orders.py`):\n    \n    \n    def is_customer_eligible_for_discount(customer):\n        if customer.tier == 'enterprise':\n            return True\n        if customer.is_grandfathered:\n            return True\n        return False\n    \n\nThe function takes only a `customer`; it uses nothing from `orders`. It belongs in `customers.py`.\n\n**After** (in `src/customers.py`):\n    \n    \n    def is_eligible_for_discount(customer):\n        if customer.tier == 'enterprise':\n            return True\n        if customer.is_grandfathered:\n            return True\n        return False\n    \n\nThe benefit: the function is now near related code; future readers find it where they look for customer logic.\n\n**AI-Layer** : AI agents perform Move reliably for function-level moves within a language. Cross-module moves with import updates are usually handled correctly; cross-language moves (e.g. Python helper to a Rust crate) require human direction.\n\n\n### 9.5 Refactoring 5: Replace Conditional with Polymorphism\n\n**Signal** : a long chain of conditionals (`if/elif/else` or `switch`) on a type tag, with the same chain repeated in multiple places.\n\n**Before** :\n    \n    \n    def compute_shipping_cost(order):\n        if order.shipping_type == 'standard':\n            return 5.99\n        elif order.shipping_type == 'express':\n            return 14.99\n        elif order.shipping_type == 'overnight':\n            return 29.99\n        elif order.shipping_type == 'free':\n            return 0\n        raise ValueError(f\"Unknown shipping type: {order.shipping_type}\")\n    \n    def get_shipping_label(order):\n        if order.shipping_type == 'standard':\n            return \"Standard (5-7 business days)\"\n        elif order.shipping_type == 'express':\n            return \"Express (2-3 business days)\"\n        # ... and so on\n    \n\n**After** :\n    \n    \n    class ShippingType(Protocol):\n        def cost(self) -> float: ...\n        def label(self) -> str: ...\n    \n    class StandardShipping:\n        def cost(self): return 5.99\n        def label(self): return \"Standard (5-7 business days)\"\n    \n    class ExpressShipping:\n        def cost(self): return 14.99\n        def label(self): return \"Express (2-3 business days)\"\n    \n    # ... and so on\n    \n\nThe benefit: the conditional logic is replaced by polymorphism; adding a new shipping type means adding one class, not modifying every conditional.\n\nThis refactoring is often over-applied (Chapter 13). The signal is _the same chain repeated in many places_ ; one isolated conditional may not need polymorphism. The trade-off is added abstraction for added flexibility; weigh by how often the chain repeats.\n\n**AI-Layer** : AI agents perform this refactoring competently but tend to over-eagerly apply it. The human's judgment is needed: is the chain repeated enough to justify the abstraction?\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 2032,
+      "out_sha": "b0b441f62210",
       "note": ""
     },
     {
