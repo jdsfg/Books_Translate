@@ -1215,11 +1215,11 @@
       "en_title": "Chapter 7: Test Doubles + The Repository Pattern",
       "order": 92,
       "src_chars": 542,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e6dcf1243177",
       "src": "**My recommendation to the staff engineer:** \"You're right that we don't need it everywhere. Let's add it for the one entity where testing is most painful (probably `Customer`) and see if the testing speedup is real. If yes, expand. If no, don't expand.\"\n\nThe general rule (§7.3): Repository pays off when (a) testing is painful enough that fakes matter, or (b) the codebase will outlive a single ORM choice, or (c) business logic should read as business logic. Below those thresholds, the ORM is the Repository; the staff engineer is right.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 240,
+      "out_sha": "9157f0cf9af3",
       "note": ""
     },
     {
@@ -1227,11 +1227,11 @@
       "en_title": "Chapter 7: Test Doubles + The Repository Pattern",
       "order": 93,
       "src_chars": 3238,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2dea755d5e3c",
       "src": "#### Application Problems\n\n**Q5.** Identify a mock-heavy test file in your codebase. Pick one mock and rewrite the test using a fake instead. Compare the resulting test for readability and brittleness.\n\nHint\n\nThe fake usually requires writing or finding an in-memory implementation; the upfront cost is balanced by the reduced brittleness.\n\n**Answer:** This is an open exercise. A common finding: the mock-based test is shorter (5-10 lines of mock setup), but each assertion encodes call structure. The fake-based test is longer (10-20 lines for the fake plus 5 for the test), but each assertion is about outcome. After the rewrite, the test reads more naturally as a description of behavior, and a behavior-neutral refactor of the production code does not break it.\n\nThe investment in the fake is amortized: the same fake serves many tests. After three or four tests use the fake, the per-test cost is lower than the mock-based equivalent.\n\n**Q6.** Implement an in-memory Repository for one entity in your codebase. Use it in at least three tests. Report the test code before and after.\n\nHint\n\nStart with the simplest interface (find, save) and add methods as tests need them.\n\n**Answer:** This is an open exercise. A reasonable in-memory Repository for a Customer entity:\n    \n    \n    class InMemoryCustomerRepository:\n        def __init__(self):\n            self._customers: dict[str, Customer] = {}\n        def find(self, cid: str) -> Optional[Customer]:\n            return self._customers.get(cid)\n        def save(self, customer: Customer) -> None:\n            self._customers[customer.id] = customer\n        def find_by_region(self, region: str) -> list[Customer]:\n            return [c for c in self._customers.values() if c.region == region]\n        def delete(self, cid: str) -> None:\n            self._customers.pop(cid, None)\n    \n\nBefore: three tests with three separate Mock setups. After: three tests that share one fake. The before is longer per test and brittle; the after is shorter per test and robust.\n\nThe fake itself is about 15 lines. It is also itself testable: write a few tests that verify the fake's behavior matches the contract (find returns None for missing IDs, save-then-find returns the saved customer, etc.). This is a small investment that pays off across the test suite.\n\n**Q7.** Take an AI-generated test that uses mocks. Apply the §7.6 redirection: rewrite the test using a fake or spy where appropriate. Update the CLAUDE.md with the test-double preference. Run the AI again on a similar test; verify it now uses the fake.\n\nHint\n\nThe CLAUDE.md update is the durable fix; the rewrite is the immediate one.\n\n**Answer:** This is an open exercise. The CLAUDE.md update looks like the §7.6 example. After the update, prompt the AI with the same test request; the test should now construct fakes from `tests/fakes/` rather than `Mock()` objects. If the AI does not comply, strengthen the CLAUDE.md with more specific instructions (e.g. \"use InMemoryCustomerRepository from tests/fakes/customer_repo.py for all tests of OrderService\").\n\nThe durable lesson: AI behaviors that violate a team convention are a CLAUDE.md gap. The fix is the CLAUDE.md update, not endless review-and-rewrite of individual PRs.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1656,
+      "out_sha": "9a9b43bfc16a",
       "note": ""
     },
     {
@@ -1239,11 +1239,11 @@
       "en_title": "Chapter 7: Test Doubles + The Repository Pattern",
       "order": 94,
       "src_chars": 3356,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bfa74995bbf0",
       "src": "#### Think Deeper\n\n**Q8.** Defend or refute the position: \"All tests should use real or in-memory implementations; mocks should be banned from the codebase.\" What is the strongest counter-example?\n\n**Discussion:** For the ban: mocks produce brittleness; fakes produce robustness; if every test uses fakes, the refactoring discipline of Chapter 10 is dramatically smoother; the prohibition is simple and enforceable.\n\nAgainst the ban: some dependencies cannot reasonably be faked. Vendor SDKs (Stripe, Twilio, large cloud SDKs) are too complex to re-implement; the test must use a mock or a thin wrapper. Some tests are _about_ the interaction protocol (retry behavior, circuit-breaker behavior); the call structure is the subject of the test, and mocking is the natural expression.\n\nThe strongest counter-example: testing a circuit-breaker's behavior across many failure scenarios. The breaker's job is to count failures and open after a threshold. Without a mock that can be configured to fail N times then succeed, the test must construct a real failing service, which is impractical and slow. Mocks are essential here.\n\nThe synthesis: the right rule is \"fakes by default, mocks when justified, justification documented.\" Banning mocks outright is too strong; making them the default is too weak. Carmen's Currents adopted exactly this rule: PRs with new `Mock()` constructions require a one-line justification in the test docstring.\n\n**Q9.** Trace the relationship between Chapter 5 (test pyramid), Chapter 6 (mutation testing), and this chapter (test doubles). How do the three disciplines compose? Where do they conflict?\n\n**Discussion:**\n\nCompositions:\n\n* **Test pyramid + test doubles** : the pyramid's pressure is for fast unit tests at the bottom. Fast unit tests require lightweight isolation, which is what test doubles provide. Without doubles, unit tests are slow (they hit real dependencies); without the pyramid, the team does not invest in doubles. The two compound.\n* **Mutation testing + test doubles** : mutation testing reveals when tests with weak doubles miss bugs. A mock that returns `None` for all calls produces tests that catch nothing; mutation testing surfaces this as low mutation scores even at high coverage. Mutation testing thus disciplines the doubles choice: weak doubles produce weak mutation scores.\n* **Pyramid + mutation testing** : the pyramid's shape is the input; the mutation score is the output of each layer. A good pyramid with good doubles produces strong mutation scores at the unit layer; a bad pyramid or bad doubles produces weak scores even at high coverage.\n\nTensions:\n\n* **Fake fidelity versus speed** : high-fidelity fakes (sqlite, redis-memory-server) catch more bugs but slow down the unit tests, fighting the pyramid's speed pressure. The resolution is to use lower-fidelity fakes for unit tests and higher-fidelity for integration tests; the pyramid distributes the fidelity-cost trade-off across layers.\n* **Mock-based test brittleness versus completeness** : mocks let you verify protocols (good for mutation testing on interaction-heavy code) but produce brittle tests (bad for refactoring under test, Chapter 10). The two pressures pull in opposite directions; the resolution is to localize mocks to the small number of protocol-specific tests where they belong and use fakes everywhere else.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1156,
+      "out_sha": "7fc74ff15c25",
       "note": ""
     },
     {
@@ -1251,11 +1251,11 @@
       "en_title": "Chapter 7: Test Doubles + The Repository Pattern",
       "order": 95,
       "src_chars": 2818,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f5af877a1735",
       "src": "The general lesson: the disciplines are not independent. Adopting one without the others produces partial benefits and unexpected costs; adopting all three together produces the test suite that the rest of this book assumes you have.\n\n\n### Chapter Summary\n\nThe five test doubles (§7.1) are a spectrum, and choosing the right level is part of the craft. Dummies satisfy signatures; stubs return canned values; fakes have working logic with shortcuts; spies record interactions; mocks add expectations. Stubs and spies are simple and safe; fakes are the workhorses for stateful dependencies; mocks are the right tool for a narrow class of protocol-specific tests but are over-used in practice.\n\nThe Repository pattern (§7.3) makes fakes ergonomic by giving each entity a small interface that test implementations can satisfy. Even with an ORM, an explicit Repository pays off in test substitutability, interface stability, and domain-language clarity. In-memory implementations (§7.4) range from hand-rolled fakes to sqlite and redis-memory-server; the right fidelity depends on the layer (unit tests want speed, integration tests want fidelity).\n\nMocking hurts (§7.5) when it over-specifies call structure, drifts from reality, or lies through silent defaults. The fixes are using fakes for stateful behavior, contract-testing mocks against real interfaces periodically, and preferring strict mocks that fail on unexpected calls.\n\nThe AI-Layer (§7.6) is that LLMs over-mock by default; the CLAUDE.md instruction is the durable fix; the gradual migration to fakes is the codebase-level fix. The Helix and Trellis examples illustrate both the cost of mocking (the 47-test refactor) and the payoff of fakes (the comparable refactor that broke zero tests).\n\nChapter 8 takes the test discipline to its strategic question: when to TDD and when to test-after. With Chapters 5, 6, and 7 in place, the team has the tools to choose; without them, the choice is academic because the tests would not be good enough either way.\n\n\n#### Three Takeaways\n\n  1. **Write one in-memory Repository this week.** Pick the most-mocked entity in your test suite. Build the in-memory version (15–30 lines). Use it in three tests. Compare to the mock version for readability and brittleness. Then expand to more tests as you touch them.\n  2. **Make new`Mock()` constructions require a one-line justification in the test.** Not \"ban mocks\"; too strong. But making them require explicit reasoning shifts the default toward fakes without imposing a rule no one will follow.\n  3. **Add a \"Test doubles\" section to your CLAUDE.md.** Specify: fakes by default for stateful dependencies, stubs for canned values, spies for side effects, mocks only when justified. The agent's defaults shift toward your defaults; review noise drops within a sprint.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1032,
+      "out_sha": "c2fcd9af958b",
       "note": ""
     },
     {
