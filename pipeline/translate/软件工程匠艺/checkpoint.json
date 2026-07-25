@@ -1467,11 +1467,11 @@
       "en_title": "Chapter 9: The 12 Refactorings That Pay for Themselves",
       "order": 113,
       "src_chars": 1257,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8976ab664c5e",
       "src": "### 9.6 Refactoring 6: Replace Magic Number with Constant\n\n**Signal** : a literal value appears in code with no obvious meaning. The reader has to guess what `0.08` or `1024` represents.\n\n**Before** :\n    \n    \n    def calculate_total(subtotal):\n        return subtotal * 1.08\n    \n    def is_file_too_large(path):\n        return os.path.getsize(path) > 1024 * 1024 * 10\n    \n\n**After** :\n    \n    \n    SALES_TAX_RATE = 0.08\n    MAX_UPLOAD_SIZE_BYTES = 10 * 1024 * 1024\n    \n    def calculate_total(subtotal):\n        return subtotal * (1 + SALES_TAX_RATE)\n    \n    def is_file_too_large(path):\n        return os.path.getsize(path) > MAX_UPLOAD_SIZE_BYTES\n    \n\nThe benefit: the meaning is named at the place where it lives; future maintainers can find and update the constant in one place.\n\nA subtlety: not every literal needs a constant. `0` and `1` rarely need names; `len(items) > 0` does not need `MIN_ITEMS_FOR_PROCESSING = 1`. The signal is _unexplained_ ; if the meaning is obvious, leave the literal.\n\n**AI-Layer** : AI agents are excellent at this refactoring and tend to apply it too eagerly. The human's judgment is needed for the _naming_ : a poorly-named constant is worse than a magic number, because it suggests a meaning that may be wrong.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 735,
+      "out_sha": "2d17f2292ea6",
       "note": ""
     },
     {
@@ -1479,11 +1479,11 @@
       "en_title": "Chapter 9: The 12 Refactorings That Pay for Themselves",
       "order": 114,
       "src_chars": 2679,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6c53fedf9fac",
       "src": "### 9.7 Refactoring 7: Extract Class\n\n**Signal** : a class has too many responsibilities. Its methods divide into clear sub-groups, with each sub-group using a different subset of the class's fields.\n\n**Before** :\n    \n    \n    class Customer:\n        def __init__(self, id, name, email, address_line1, address_line2,\n                     city, state, postal_code, country):\n            self.id = id\n            self.name = name\n            self.email = email\n            self.address_line1 = address_line1\n            self.address_line2 = address_line2\n            self.city = city\n            self.state = state\n            self.postal_code = postal_code\n            self.country = country\n    \n        def get_full_address(self):\n            return f\"{self.address_line1}\\n{self.address_line2}\\n{self.city}, {self.state} {self.postal_code}\\n{self.country}\"\n    \n        def is_us_address(self):\n            return self.country == 'US'\n    \n        def get_display_name(self):\n            return self.name\n    \n        def is_email_verified(self):\n            return self.email_verified  # assume this field exists\n    \n\n**After** :\n    \n    \n    class Address:\n        def __init__(self, line1, line2, city, state, postal_code, country):\n            self.line1 = line1\n            self.line2 = line2\n            self.city = city\n            self.state = state\n            self.postal_code = postal_code\n            self.country = country\n        def get_full(self):\n            return f\"{self.line1}\\n{self.line2}\\n{self.city}, {self.state} {self.postal_code}\\n{self.country}\"\n        def is_us(self):\n            return self.country == 'US'\n    \n    class Customer:\n        def __init__(self, id, name, email, address):\n            self.id = id\n            self.name = name\n            self.email = email\n            self.address = address\n        def get_display_name(self):\n            return self.name\n        def is_email_verified(self):\n            return self.email_verified\n    \n\nThe benefit: each class has focused responsibilities; addresses can be tested and changed independently of customer identity.\n\n**AI-Layer** : AI agents extract classes when prompted but rarely identify the opportunity unprompted. The human spots the cohesion problem; the agent executes the mechanical split.\n\n\n#### A note on the remaining five\n\nYou have now seen seven refactorings in detail. The remaining five (§§9.8-9.12) follow the same Signal / Before / After / AI-Layer structure but are presented more tightly: the discipline of the format is the same; the prose around each does not need to be. Read them at speed; the patterns are the point, not the example chrome around them.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 2023,
+      "out_sha": "05d53c16b5eb",
       "note": ""
     },
     {
@@ -1491,11 +1491,11 @@
       "en_title": "Chapter 9: The 12 Refactorings That Pay for Themselves",
       "order": 115,
       "src_chars": 2488,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8fe128080713",
       "src": "### 9.8 Refactoring 8: Replace Inheritance with Composition\n\n**Signal** : a class inherits to share implementation, not because it _is-a_ the parent. Symptoms: methods inherited but unused, methods overridden to do nothing, multiple inheritance with no clear hierarchy.\n\n**Before / After** :\n    \n    \n    # Before: Robot is-not-an Animal but inherits to share eat/sleep stubs\n    class Animal:\n        def eat(self): pass\n        def sleep(self): pass\n    class Dog(Animal):\n        def bark(self): pass\n    class Robot(Animal):\n        def beep(self): pass\n        def eat(self): pass     # overridden to do nothing\n        def sleep(self): pass   # overridden to do nothing\n    \n    # After: composition via has-a (no inheritance)\n    @dataclass\n    class Mortal:\n        def eat(self): pass\n        def sleep(self): pass\n    @dataclass\n    class Dog:\n        mortal: Mortal\n        def bark(self): pass\n    @dataclass\n    class Robot:\n        def beep(self): pass    # Robot doesn't compose Mortal; it isn't one\n    \n\nHas-a beats is-a when the relationship is implementation-sharing. Inheritance for shared implementation is a Chapter 13 anti-pattern; this refactoring is the fix.\n\n**AI-Layer** : agents reach for inheritance because tutorial code teaches it; CLAUDE.md should prefer composition explicitly.\n\n\n### 9.9 Refactoring 9: Introduce Parameter Object\n\n**Signal** : 5+ parameters with conceptual groupings inside them.\n\n**Before / After** :\n    \n    \n    # Before: wall of parameters\n    def create_order(customer_id, item_skus, item_quantities, shipping_line1,\n                     shipping_line2, shipping_city, shipping_state, shipping_postal,\n                     shipping_country, payment_method, payment_token, billing_address):\n        ...\n    \n    # After: parameter object groups by concept\n    @dataclass\n    class Address:\n        line1: str; line2: str; city: str; state: str; postal_code: str; country: str\n    @dataclass\n    class Payment:\n        method: str; token: str\n    @dataclass\n    class OrderRequest:\n        customer_id: str\n        items: list[OrderItem]\n        shipping_address: Address\n        payment: Payment\n        billing_address: Address\n    \n    def create_order(request: OrderRequest): ...\n    \n\nThe signature stops growing; each grouping becomes a named domain concept reusable elsewhere.\n\n**AI-Layer** : agents over-apply this; a 3-parameter function does not need a wrapper. Threshold is roughly 5–7 parameters or 2–3 grouped concepts.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1683,
+      "out_sha": "c80e08962218",
       "note": ""
     },
     {
@@ -1503,11 +1503,11 @@
       "en_title": "Chapter 9: The 12 Refactorings That Pay for Themselves",
       "order": 116,
       "src_chars": 2562,
-      "status": "pending",
+      "status": "done",
       "src_sha": "801f9e3ff86d",
       "src": "### 9.10 Refactoring 10: Replace Loop with Pipeline\n\n**Signal** : a loop builds a list by filtering and transforming, with intermediate accumulators.\n\n**Before / After** :\n    \n    \n    # Before\n    def get_active_enterprise_emails(customers):\n        result = []\n        for c in customers:\n            if c.tier == 'enterprise' and c.is_active and c.email:\n                result.append(c.email.lower())\n        return result\n    \n    # After (Python comprehension)\n    def get_active_enterprise_emails(customers):\n        return [c.email.lower() for c in customers\n                if c.tier == 'enterprise' and c.is_active and c.email]\n    \n    \n    \n    // After (TypeScript)\n    const getActiveEnterpriseEmails = (customers) =>\n      customers\n        .filter(c => c.tier === 'enterprise' && c.isActive && c.email)\n        .map(c => c.email.toLowerCase());\n    \n\nThe declarative pipeline reads as the data flow itself. Language-dependent: pipelines fit Python/JS/Rust/Scala; older C and embedded environments may stay with the loop form.\n\n**AI-Layer** : agents produce the pipeline form by default; no special prompting needed.\n\n\n### 9.11 Refactoring 11: Combine Functions into Class\n\n**Signal** : multiple functions take the same data and operate on it in related ways. The data threads through a chain of functions; a class would co-locate it.\n\n**Before / After** :\n    \n    \n    # Before: data passed through standalone functions\n    def parse_csv(text): ...\n    def filter_csv(rows, column, value): ...\n    def csv_to_json(rows): ...\n    \n    rows = parse_csv(text)\n    rows = filter_csv(rows, 'region', 'EU')\n    result = csv_to_json(rows)\n    \n    # After: methods on a class, chainable\n    class CsvProcessor:\n        def __init__(self, text):\n            self._rows = [r.split(',') for r in text.split('\\n')]\n        def filter(self, column, value):\n            header, *data = self._rows\n            idx = header.index(column)\n            self._rows = [header] + [r for r in data if r[idx] == value]\n            return self\n        def to_json(self):\n            header, *data = self._rows\n            return [dict(zip(header, r)) for r in data]\n    \n    result = CsvProcessor(text).filter('region', 'EU').to_json()\n    \n\nData and operations co-locate; intermediate variables disappear. **Watch out** : if the operations are _unrelated_ , the class is artificial. The signal is _related operations on shared data_.\n\n**AI-Layer** : agents apply this when prompted but rarely identify the opportunity. Human spots the cohesion; agent does the split.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1792,
+      "out_sha": "e509d6fc7455",
       "note": ""
     },
     {
