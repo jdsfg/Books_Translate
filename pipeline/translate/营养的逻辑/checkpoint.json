@@ -2963,11 +2963,11 @@
       "en_title": "Chapter 19: The Supplement Industry — Evidence vs. Hope",
       "order": 239,
       "src_chars": 2544,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4aaefba6b9c6",
       "src": "#### Think Deeper\n\n**19.8** The supplement industry argues that individual health optimization is impossible with one-size-fits-all RCT evidence and that personalized nutrition (based on genetics, microbiome, blood biomarkers) makes supplements more rational. Evaluate the current state of evidence for this argument.\n\n**Answer:** The argument has intellectual appeal but currently outpaces the evidence.\n\nSupporting elements: Genetic variation in nutrient metabolism is real (MTHFR variants affecting folate; FADS1/2 affecting omega-3 conversion; vitamin D receptor polymorphisms). The Weizmann Institute personalized nutrition study showed that individuals have highly variable glycemic responses to identical foods, suggesting one-size-fits-all recommendations may be suboptimal. Blood biomarker testing does identify individuals with deficiency who would benefit from supplementation.\n\nProblems with the current implementation: (1) Most direct-to-consumer genetic nutrition tests provide recommendations based on associations that lack RCT validation — knowing you have an MTHFR variant may suggest methylfolate supplementation, but whether this improves outcomes over standard folic acid in non-deficient individuals has not been established in RCTs. (2) Microbiome testing for supplement guidance has low test-retest reliability and clinical actionability gaps (Chapter 16). (3) \"Personalized nutrition\" marketing is used to justify expensive supplement protocols that go far beyond the actual evidence for any individual variant. (4) The data needed to genuinely optimize individual nutrition — prospective tracking of multiple biomarkers over time with personalized interventions evaluated for clinical outcomes — does not yet exist at the scale needed for validation.\n\nThe honest conclusion: personalized nutrition is a scientifically credible direction of travel; the current commercial implementations largely run years ahead of validating evidence. The basic principle (test for documented deficiencies and supplement those; do not supplement everything on speculative grounds) already represents a form of personalized supplementation that requires no expensive testing beyond standard clinical blood work.\n\n**19.9** The placebo effect in supplement research: given that many supplements show measurable benefit in open-label or poorly blinded studies that disappears under rigorous double-blinding, should placebo effects from supplements be considered a legitimate health benefit? What are the ethical and practical implications?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 701,
+      "out_sha": "de9d8d2cf6f0",
       "note": ""
     },
     {
@@ -2975,11 +2975,11 @@
       "en_title": "Chapter 19: The Supplement Industry — Evidence vs. Hope",
       "order": 240,
       "src_chars": 2042,
-      "status": "pending",
+      "status": "done",
       "src_sha": "836f3776f369",
       "src": "**Discussion:** This is a genuinely contested question in bioethics and clinical practice. Arguments that placebo effects are legitimate health benefits: (1) Placebo responses involve real measurable physiological changes — endogenous opioid release, changes in cortisol and inflammation markers, altered perception of pain and fatigue. These are not imaginary; they are biological effects with clinical value. (2) If a person genuinely feels better taking a supplement (reduced fatigue, improved mood, better sleep) — even if this effect is placebo-mediated — their quality of life is meaningfully improved. From a patient welfare standpoint, subjective wellbeing matters. (3) Some clinicians argue that \"open-label placebo\" (telling patients it is a placebo and giving it anyway) produces significant symptom improvement in conditions like IBS, suggesting even transparent placebo use has value. Arguments against treating placebo as justification: (1) Recommending supplements known to lack active efficacy is deceptive when consumers believe they are buying pharmacologically active products. Marketing a product as scientifically supported when its effects are placebo-mediated constitutes misleading commercial speech. (2) If people believe a supplement is managing a condition, they may forgo evidence-based treatments — opportunity cost of placebo use can be substantial. (3) Habituation: as placebo effects wane, consumers escalate to higher doses, more expensive products, or stronger claims. (4) Not all placebos are benign — drug interactions, contamination (Chapter 19 §19.5), and opportunity costs apply. Practical synthesis: Placebo effects are real biological phenomena with genuine subjective value. But the ethical framework for placebo use requires honesty — if a clinician recommends a supplement knowing its likely mechanism is primarily placebo, this should be disclosed. The supplement industry's use of placebo effects without disclosure is ethically different from open-label placebo use in clinical contexts.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 663,
+      "out_sha": "ac658f92c7b5",
       "note": ""
     },
     {
@@ -2987,11 +2987,11 @@
       "en_title": "Chapter 19: The Supplement Industry — Evidence vs. Hope",
       "order": 241,
       "src_chars": 1855,
-      "status": "pending",
+      "status": "done",
       "src_sha": "03b8c92a0b92",
       "src": "### Chapter Summary\n\n* The US dietary supplement industry operates under DSHEA 1994, which does not require pre-market efficacy or safety proof — supplements can be sold until proven harmful, the reverse of the pharmaceutical standard.\n* The dominant historical pattern in supplement RCTs: observational associations between higher nutrient levels and lower disease risk consistently fail to replicate when the isolated nutrient is supplemented in non-deficient populations, often showing no benefit and occasionally showing harm (beta-carotene, vitamin E at high doses).\n* Thread 2: Supplement claims should be evaluated for: RCT vs. observational evidence; whether populations studied are similar to the consumer; funding sources; clinical vs. surrogate endpoint measurement; and replication by independent research.\n* Supplements with genuine evidence for specific situations: vitamin D for deficiency, folic acid in early pregnancy, B12 for vegans and adults over 50, iron for documented deficiency, algal DHA/EPA for vegans, creatine for resistance training, specific probiotic strains for specific GI conditions.\n* Most superfood supplements (turmeric, adaptogens, NAD+ precursors, collagen) have promising mechanistic or animal model data but insufficient or inconsistent human clinical trial evidence for the health claims made.\n* Quality control is a critical independent concern — third-party certification (USP, NSF, Informed Sport) is the minimum quality standard for any supplement; contamination with undisclosed pharmaceuticals is a documented real risk in certain categories.\n* The key decision framework: supplement when evidence clearly supports it for your documented situation; approach most supplements marketed for prevention in healthy, well-nourished adults with skepticism proportional to the gap between claims and evidence.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 571,
+      "out_sha": "5cfbdb524621",
       "note": ""
     },
     {
@@ -2999,11 +2999,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 242,
       "src_chars": 3336,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2a44459f5b88",
       "src": "You have now read nineteen chapters of nutrition science. You understand how digestion works, how each macronutrient is metabolized, why fat was wrongly demonized, how to evaluate a clinical trial, why the microbiome matters, what ultra-processed food does that its nutrients don't explain, and why most supplements don't perform as promised. You are better equipped than the vast majority of people to evaluate nutrition claims.\n\nAnd yet, nutrition misinformation is still everywhere you will look. It predates social media and will outlast it. Understanding why it persists — and how to systematically resist it — is as important as any single fact about nutrients.\n\nThis final chapter has two tasks: examining how nutrition misinformation is structured and why it is so effective, and then integrating everything this book has covered into a coherent framework for eating well in a complex world.\n\n* * *\n\n\n### 20.1 Why Nutrition Is Uniquely Vulnerable to Misinformation\n\nNutrition sits at the intersection of several conditions that make a field especially susceptible to misinformation:\n\n**Everyone eats.** Nutrition is universally relevant. Unlike cardiac electrophysiology or quantum computing, everyone has personal experience and a personal stake in nutritional claims. This lowers the psychological threshold for believing something about food.\n\n**Nutritional epidemiology is methodologically complex.** Measuring what people eat reliably is enormously difficult. Diets are multidimensional, change over time, and interact with other lifestyle factors. This produces a literature with real contradictions and reversals (Chapter 2: carbs are fine, Chapter 7: maybe not; Chapter 6: fat is bad, Chapters 4 and 10: depends on the fat type). These contradictions are real, and they create genuine public confusion that misinformation exploits.\n\n**Interventions take decades to study.** The relationship between diet today and cancer risk in thirty years cannot be studied with the rapid feedback loops available in, for example, software testing. The temporal gap between cause and effect means that short-term testimonials are emotionally available while long-term evidence is remote and abstract.\n\n**Personal experience feels like evidence.** \"I tried this diet and I felt better\" is a powerful statement because it is true as a personal experience. It is not good scientific evidence (no control group, no blinding, confirmation bias, regression to the mean, placebo effect) but it is emotionally compelling and the person genuinely experienced what they describe.\n\n**The food industry and wellness industry both have financial incentives to produce and amplify selective information.** The sugar industry funded research to deflect attention to fat (Chapter 9). The supplement industry funds research that systematically produces more positive results than independent studies (Chapter 19). The wellness economy benefits from a state of perpetual nutritional anxiety that keeps consumers purchasing new products and programs.\n\n**Social identity and nutrition are entangled.** For many people, dietary choices are part of their identity — vegan, paleo, carnivore, clean eater. Challenges to dietary claims become personal identity challenges, triggering motivated reasoning and social defense rather than open evaluation.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1012,
+      "out_sha": "f1595333de79",
       "note": ""
     },
     {
@@ -3011,11 +3011,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 243,
       "src_chars": 2427,
-      "status": "pending",
+      "status": "done",
       "src_sha": "33cc9d4f4858",
       "src": "### 20.2 The Architecture of Nutrition Misinformation\n\nNutrition misinformation is not random. It follows recognizable patterns:\n\n**The single-cause narrative** : Complex chronic diseases with multifactorial causes are attributed to one villain — fat, sugar, gluten, lectins, seed oils. This is psychologically satisfying (simple explanation) and marketable (eliminating the villain becomes a purchase decision). Every chapter in this book has challenged single-cause narratives.\n\n**The hero food or miracle nutrient** : The flip side of the villain — one food or compound that reverses disease, extends lifespan, or \"unlocks\" health. Acai berry, resveratrol, MCT oil, collagen. Each era of wellness media produces its own; each fails to live up to its claims under rigorous testing.\n\n**Extrapolation from extreme to normal** : Evidence from severely deficient or diseased populations is extrapolated to healthy well-nourished individuals. Evidence from athletic performance optimization is extrapolated to sedentary populations. Evidence from animal models is extrapolated to humans.\n\n**The \"doctors don't want you to know\" frame** : Positions the information as suppressed truth uncovered by the communicator, against the establishment. This is an efficient conspiracy frame that makes contradictory evidence (from the establishment) confirmatory rather than disconfirmatory.\n\n**Testimonials as proof** : Personal stories and before-and-after photos as evidence for dietary interventions — effective because they are vivid, memorable, and emotionally engaging. They are epistemically weak because they have no comparison group, no blinding, no randomization, no long-term follow-up, and are heavily filtered for positive outcomes.\n\n**The appeal to nature** : Natural = good, processed/synthetic = bad. This heuristic has some truth (Chapter 17 on ultra-processed food) but is unreliable as a universal principle. Arsenic is natural; aspirin is synthetic; the relationship between naturalness and safety is not linear.\n\n**Dose elision** : The key toxicological principle is that dose makes the poison — almost any substance causes harm at sufficient dose and most substances are safe at low doses. Nutrition misinformation frequently ignores dose, claiming that trace amounts of a substance found in a food are \"toxic\" or that high doses of something found naturally in another food are safe because they're \"natural.\"\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 720,
+      "out_sha": "0b8a45e82246",
       "note": ""
     },
     {
@@ -3023,11 +3023,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 244,
       "src_chars": 2539,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6ee00c9da543",
       "src": "### 20.3 Thread 2 — \"How to Read Nutrition Research\": The Complete Framework\n\nThread 2 has been building since Chapter 2. Here is the integrated framework for evaluating any nutrition claim:\n\n**Step 1: What type of study is this?**\n\n* _Mechanistic/in vitro_ : Shows a mechanism in cells or test tubes. Lowest position in the evidence hierarchy for human outcomes. Does not tell us whether the effect occurs in whole humans at relevant doses.\n* _Animal model_ : Higher than in vitro but poor track record of human translation.\n* _Observational/epidemiological_ : Can establish associations; cannot establish causation. Subject to confounding, reverse causation, and recall bias. Results should generate hypotheses for RCTs.\n* _RCT_ : The gold standard for establishing causation if well-designed. Limitations: controlled conditions may not reflect real-world diet; short duration; selected populations; funding bias.\n* _Systematic review/meta-analysis_ : Most powerful when synthesizing multiple RCTs; limited by the quality of included studies and heterogeneity across studies.\n\n**Step 2: What was actually measured?**\n\n* Surrogate endpoints (biomarkers) vs. clinical endpoints (disease incidence, mortality). A supplement may move a biomarker without affecting disease outcomes.\n\n**Step 3: Who was studied, and is that like you?**\n\n* Deficient populations, clinical patients, specific ethnic groups, athletes, elderly — all may respond differently than a healthy middle-aged adult.\n\n**Step 4: How large and precise is the effect?**\n\n* Relative risk and absolute risk are both important. A 25% reduction in relative risk from 0.4% to 0.3% absolute risk (a difference of 0.1 percentage point per year) sounds large but is clinically small. The number needed to treat (NNT) makes this concrete.\n\n**Step 5: Who funded it?**\n\n* Industry-funded studies systematically produce more favorable results. This is not conspiracy theory — it is a documented statistical phenomenon with consistent magnitude across fields.\n\n**Step 6: Has it been replicated?**\n\n* A single study, even a large RCT, should not overturn established knowledge. Replicated findings across multiple independent studies with different designs and populations are robust.\n\n**Step 7: What is the prior probability?**\n\n* Does the claim fit within a plausible biological framework? Extraordinary claims require extraordinary evidence. A supplement claiming to reverse aging requires stronger replicated evidence than a supplement claiming to prevent a specific deficiency.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 833,
+      "out_sha": "7290cf5bf914",
       "note": ""
     },
     {
@@ -3035,11 +3035,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 245,
       "src_chars": 1869,
-      "status": "pending",
+      "status": "done",
       "src_sha": "597bc9850ee1",
       "src": "### 20.4 Thread 1 — \"The Fat Question\": Resolution\n\nThread 1 began in Chapter 4 with the first appearance of fat science — the essential fatty acids, the basic chemistry. It deepened in Chapter 6 with the historical narrative: how the Seven Countries Study, saturated by methodological flaws and sugar industry manipulation, produced a scientific consensus that damaged public health for decades. Chapter 10 brought the resolution to the dietary cholesterol question (the egg was innocent). Chapter 12 examined fat metabolism during exercise. Chapter 14 revisited fat quality in plant-based diets.\n\nHere is the integrated resolution:\n\n**Dietary fat is not the villain.** Total fat intake is not the relevant variable for cardiovascular health. The type of fat matters:\n\n* Trans fats (artificial): definitively harmful; appropriately removed from the food supply\n* Saturated fat: increases LDL cholesterol; the relationship to cardiovascular outcomes is real but context-dependent (what replaces it, what form of LDL it produces, individual response variation)\n* Monounsaturated fat: neutral to beneficial (Mediterranean diet evidence, Chapter 6)\n* Polyunsaturated fat — omega-6: neutral to beneficial when replacing saturated fat\n* Polyunsaturated fat — omega-3 (EPA/DHA): cardiovascular and neurological benefits, especially in deficiency or high-risk populations\n\n**The lesson about scientific correction** : Thread 1 is also a story about how science eventually corrects itself — messily, slowly, at enormous public health cost, through the work of researchers willing to challenge dominant paradigms despite commercial and institutional resistance. The correction of the fat hypothesis took approximately 30-40 years from early evidence of its problems to mainstream acknowledgment. This timeline should produce humility about current nutritional paradigms.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 573,
+      "out_sha": "fd5804fc052f",
       "note": ""
     },
     {
@@ -3047,11 +3047,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 246,
       "src_chars": 1924,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e87087b9b561",
       "src": "### 20.5 Thread 3 — \"Energy Balance, Reframed\": The Complete Model\n\nThread 3 has traced the evolution of a simple idea — calories in, calories out — into a sophisticated understanding of metabolic regulation.\n\n**The progression:**\n\n* Chapter 1: Basic model. Energy balance fundamentally governs body weight.\n* Chapter 5: First complications. Adaptive thermogenesis. Hormonal regulation. Macronutrient composition affects thermogenesis (TEF).\n* Chapter 7: Macronutrient effects on satiety and adherence.\n* Chapter 12: Exercise and compensatory mechanisms — why exercise alone is ineffective for weight loss.\n* Chapter 13: The sophisticated model. Set point theory. Persistent hormonal disruption after weight loss. Pharmacological interventions (GLP-1 agonists). The psychology of eating.\n* Chapter 15: Lifespan variation. Energy needs are not constant — they reflect age, growth status, pregnancy, body composition, and activity level.\n\n**The complete model:** Energy balance is a fundamental physiological principle, but the human body actively defends a set range of body weight through interlocking hormonal, neurological, and behavioral compensation mechanisms. \"Calories in, calories out\" is true but incomplete because both sides of the equation are not independently controllable — the brain responds to caloric restriction by reducing metabolic rate and increasing hunger signals, making sustained large energy deficits physiologically very difficult. Different dietary patterns affect satiety, food reward, and eating behavior independently of caloric content. Environmental food cues, social context, stress, and sleep all affect caloric intake through neural pathways. Effective long-term weight management requires strategies that work with these systems (high protein and fiber for satiety, behavioral strategies, adequate sleep, sustainable change) rather than simply overriding them through willpower.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 585,
+      "out_sha": "dd4d251d1557",
       "note": ""
     },
     {
@@ -3059,11 +3059,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 247,
       "src_chars": 2338,
-      "status": "pending",
+      "status": "done",
       "src_sha": "87f60ba2346d",
       "src": "### 20.6 What the Evidence Consistently Shows: The Convergent Picture\n\nNineteen chapters of evidence, three threads, multiple contested debates — and yet a remarkably consistent picture emerges at the dietary pattern level:\n\n**The evidence consistently supports:**\n\n  1. **Predominantly whole, minimally processed foods** : vegetables, fruits, legumes, whole grains, nuts, seeds, eggs, unprocessed or minimally processed animal products. The specific macronutrient composition of such a diet (low-carb or high-carb, plant-based or omnivore) matters less than the quality of foods.\n\n  2. **Abundant dietary fiber** : associated with gut microbiome health, cardiovascular risk reduction, glycemic control, and lower colorectal cancer risk. Achievable through vegetables, fruits, legumes, and whole grains.\n\n  3. **Adequate protein** : supports muscle mass maintenance, satiety, and healthy aging. Distribution across meals matters for older adults; quality (essential amino acid completeness) matters more for plant-based diets.\n\n  4. **Healthy fat sources** : olive oil, nuts, fatty fish or algal omega-3, avocado. Avoid trans fats; manage saturated fat intake. Total fat intake in context of overall dietary quality.\n\n  5. **Minimal ultra-processed food** : the strongest single dietary pattern predictor of adverse health outcomes in contemporary epidemiology; avoiding it largely addresses added sugar, excess sodium, harmful fat types, and low fiber simultaneously.\n\n  6. **Caloric appropriateness** : matching intake to metabolic needs at each life stage, adjusted for activity, age, and physiological state.\n\n  7. **Global dietary diversity** : multiple traditional dietary patterns achieve excellent health outcomes through different macronutrient compositions and food combinations — the Mediterranean diet, the traditional Japanese diet, well-planned plant-based diets, and others. No single \"optimal\" food pattern exists.\n\n**The evidence is weak or mixed for:**\n\n* Specific \"superfoods\" providing unique health benefits beyond their general nutritional profile\n* Most supplement use in non-deficient healthy adults\n* Extreme dietary restrictions (very low-fat, very low-carb) as universally superior to more balanced approaches\n* Precise nutrient timing for general health (relevant for athletes, less so for most people)\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 766,
+      "out_sha": "5b38daf188dd",
       "note": ""
     },
     {
@@ -3071,11 +3071,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 248,
       "src_chars": 1319,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5efabf57ff3f",
       "src": "### 20.7 A Framework for Navigating Nutrition Claims Going Forward\n\nGiven the perpetual flux of nutrition media, here is a decision framework for any claim you encounter after finishing this book:\n\n**Red flags** (claims that should immediately raise skepticism):\n\n* A single food or nutrient \"causes\" or \"cures\" a major disease\n* \"Studies show...\" without specifying the study type, population, or effect size\n* Results from cell culture or mouse studies described as directly applicable to humans\n* Testimonials as the primary evidence\n* \"What your doctor won't tell you\" or similar suppressed-truth framing\n* New, dramatic findings that contradict a large established evidence base without strong replication\n* Products being sold alongside the claim\n\n**Green flags** (signs that a claim has stronger foundations):\n\n* Multiple independent RCTs or large prospective cohorts replicating the same finding\n* Effect sizes reported in absolute, not just relative, terms\n* The claim fits within established biological mechanisms\n* Independent sources (not product-funded) report the finding\n* Scientific consensus organizations (WHO, national public health bodies) have reviewed and incorporated the finding\n* The claim aligns with known dietary patterns that produce good health outcomes (Mediterranean, WFPB, etc.)\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 423,
+      "out_sha": "5d196578e997",
       "note": ""
     },
     {
@@ -3083,11 +3083,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 249,
       "src_chars": 2331,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bac03bbaf5c8",
       "src": "### 20.8 Practical Eating in a Complex World\n\nThis book has deliberately avoided specific meal plans or prescriptive eating rules. The evidence base does not support the idea that one specific eating pattern is universally optimal — dietary needs vary by age, activity level, health status, genetic background, cultural context, and personal preference. What the evidence does support is the convergent set of principles in section 20.6.\n\nTranslating evidence to practice:\n\n**What to eat most** : vegetables (especially colorful and diverse), fruits, legumes (lentils, beans, chickpeas), whole grains (oats, brown rice, whole grain bread, quinoa), nuts and seeds, eggs, fish (especially fatty fish), and minimally processed dairy or plant-based equivalents if desired.\n\n**What to eat less** : ultra-processed foods, added sugar (especially in beverages), highly refined grains, processed meats (regular consumption associated with colorectal cancer risk), and trans fats.\n\n**What to drink** : Water first. Unsweetened tea and coffee are associated with neutral to positive health outcomes in large cohorts. Alcohol: evidence shows a dose-response relationship with several cancers; the \"J-curve\" for cardiovascular disease is contested and may reflect methodological artifacts; if consumed, moderation (1 drink/day for women, 2 for men) is the current conservative guidance, with the recognition that from a pure risk standpoint, less is better.\n\n**How to eat** : Preparing more food at home is associated with better dietary quality and lower caloric intake. Eating with others is associated with better dietary choices and psychological wellbeing. Slowing eating pace reduces overconsumption. Minimizing food distractions (phones, television) while eating may improve dietary awareness.\n\n**What not to stress about** : Individual meals, occasional treats, minor deviations from ideal food choices, whether you ate at exactly the right time around your workout, whether a specific food contains a trace amount of something concerning. The overwhelming evidence base for dietary patterns operates on habitual patterns over years and decades — not on individual decisions. A dietary pattern that is good 80-90% of the time and sustainable for years is far more valuable than a perfect plan followed for weeks then abandoned.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 690,
+      "out_sha": "20bb0587a0d9",
       "note": ""
     },
     {
@@ -3095,11 +3095,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 250,
       "src_chars": 2392,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0a52ea6b7581",
       "src": "### 20.9 What This Means for Your Plate\n\nYou now have what no single dietary rule or protocol can give you: **a framework for reasoning about food**. The most important outcome of this book is not any specific dietary recommendation but the ability to encounter a nutrition claim — in a headline, on a package, from a friend, in a documentary — and evaluate it rather than simply accept or reject it.\n\nSome principles to carry forward:\n\n  1. **Context matters more than isolated facts.** A food is not good or bad in isolation; its impact depends on what else is eaten, how much, by whom, and in what dietary pattern context.\n\n  2. **Nutrition science is a process, not a set of final answers.** The reversals and corrections throughout this book are features of a self-correcting scientific enterprise, not evidence that nutrition scientists are incompetent. The fact that understanding has improved — fat is not the simple villain it was once portrayed as; dietary cholesterol is not the cardiovascular risk it was claimed to be; ultra-processed food is more dangerous than its nutrients suggest — means the field is working. The process is slow and messy, but it is genuine.\n\n  3. **Certainty is a red flag.** The nutrition communicators who express the most certainty about specific dietary rules are often those who have departed most completely from the evidence base. Genuine experts in nutrition science are more likely to hedge, to acknowledge uncertainty, and to distinguish between well-established and provisional findings.\n\n  4. **Your body has substantial nutritional intelligence.** Humans evolved successfully on a remarkable range of dietary patterns across different environments. Extreme nutritional anxiety is unlikely to be health-promoting in itself. Eating a varied, predominantly whole-food diet consistently, while maintaining a good relationship with food, is the foundation. The details matter less than the pattern.\n\n  5. **The social, cultural, and psychological dimensions of eating are real.** Food is not only biochemistry. It is culture, family, pleasure, celebration, and memory. A nutritional framework that is correct but that destroys the social joy of eating has not optimized health in the full sense. The best dietary pattern is one that is nutritionally sound, pleasurable, sustainable, and embedded in a life well-lived.\n\n* * *\n\n\n### 20.10 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 696,
+      "out_sha": "829483822573",
       "note": ""
     },
     {
@@ -3107,11 +3107,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 251,
       "src_chars": 2671,
-      "status": "pending",
+      "status": "done",
       "src_sha": "688c919531ca",
       "src": "#### Concept Check\n\n**20.1** Identify the misinformation pattern in the following claim: \"This new study shows that eating a handful of almonds daily reduces cancer risk by 30%.\"\n\n**Answer:** Multiple patterns: (1) \"Reduces cancer risk by 30%\" presents a relative risk reduction without the absolute risk baseline — 30% of a small absolute risk (e.g., going from 1% to 0.7%) is clinically different from 30% of a large risk. (2) Single study referenced without context on study type, population, confounding factors, or replication. (3) \"New study\" framing implies this is definitive when a single new study should rarely overturn established understanding. (4) Implicit hero food narrative: almonds as a cancer-preventing agent, rather than nuts as part of an overall dietary pattern. (5) No consideration of whether almond eaters differ from non-almond eaters in other dietary and lifestyle ways (healthy user bias/confounding). The claim should prompt questions: observational or RCT? What type of cancer? What was the absolute risk reduction? Who funded it? Has it been replicated?\n\n**20.2** Complete the Thread 3 summary: explain in your own words how the energy balance model evolved across the chapters.\n\n**Answer:** Energy balance started as a simple accounting principle (Chapter 1): consume more calories than you burn and weight increases; consume fewer and weight decreases. This is biologically accurate but incomplete. Progressive chapters revealed the complications: metabolic rate is not fixed — it responds to caloric restriction by decreasing (adaptive thermogenesis), making sustained energy deficits harder to maintain (Chapter 5, 13). Different macronutrients affect the \"calories out\" side differently through the thermic effect of food and satiety (Chapters 5, 7). Exercise increases calories burned directly but also triggers compensatory reductions in non-exercise activity and appetite increases, which partially or wholly offset the exercise expenditure (Chapter 12). After weight loss, hormones (leptin, ghrelin) persistently push toward weight regain for years, explaining why weight maintenance after loss is so difficult (Chapter 13). And the model must always be calibrated to life stage: energy requirements vary dramatically with growth, pregnancy, aging, and body composition change (Chapter 15). The complete model recognizes that energy balance is fundamentally true but that both sides of the equation are regulated by complex biological systems that resist the simplistic \"eat less, move more\" framing.\n\n**20.3** What is the key insight of Thread 1's resolution, and what does it teach us about the process of scientific correction?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 799,
+      "out_sha": "b4407bf83b38",
       "note": ""
     },
     {
@@ -3119,11 +3119,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 252,
       "src_chars": 3047,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b5283c273128",
       "src": "**Answer:** The key insight is that dietary fat was wrongly demonized as a category — not all fats are harmful, and total fat intake is not the primary cardiovascular risk variable. The relevant variable is fat type: trans fats are definitively harmful; saturated fat has a real but context-dependent effect; unsaturated fats (mono- and poly-) are neutral to beneficial. The low-fat dietary era, based on a flawed evidence base partly corrupted by sugar industry manipulation, produced an inadvertent public health disaster — fat was replaced with refined carbohydrates, processed foods, and industrial sugar in a wave of \"low-fat\" products that did not improve health outcomes and may have worsened them. The scientific correction took 30-40 years: the flaws in the Seven Countries Study were identified in the 1970s, but the alternative narrative did not achieve mainstream acceptance until the 2010s, with the PREDIMED trial and meta-analyses of saturated fat. The lesson: scientific consensus can be wrong, correction takes a long time, industry influence can extend the error, and the willingness to follow evidence even when it contradicts mainstream consensus is a core scientific virtue. This should produce appropriate humility about any current nutritional consensus and appropriate respect for the process that eventually produces correction.\n\n**20.4** List three \"red flag\" patterns for nutrition misinformation and apply each to a real example from media or popular nutrition culture.\n\n**Answer (examples):**\n\n(1) **Single-cause narrative** : \"Sugar is the cause of all chronic disease.\" Real example: the proliferation of content framing sugar as the singular cause of obesity, cancer, aging, and chronic disease following the publication of books like _Sugar: The Bitter Truth_. While excess added sugar is genuinely problematic (Chapters 9, 17), attributing all chronic disease causation to a single nutrient ignores multifactorial disease etiology and the evidence that overall dietary pattern matters more than any single component.\n\n(2) **Testimonials as proof** : \"I cured my autoimmune disease with [specific elimination diet].\" Real example: common in inflammatory bowel disease, Hashimoto's thyroiditis, and psoriasis communities. Individual remissions in autoimmune conditions can occur spontaneously (these are relapsing-remitting conditions), confusing personal experience of an elimination diet with the intervention causing the remission. Without a control group and blinding, coincidental remission during a dietary change is indistinguishable from dietary causation.\n\n(3) **Extrapolation from animal models** : Claims that resveratrol, NMN, or rapamycin \"extends lifespan\" based on mouse studies. Real examples: extensive media coverage of Sinclair's work on NAD+ precursors and lifespan extension in mice, generalized to claims about human anti-aging. As discussed in Chapter 19, mouse model results on lifespan extension have a poor track record of human translation at relevant doses through oral supplementation.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 894,
+      "out_sha": "073ef0f165fe",
       "note": ""
     },
     {
@@ -3131,11 +3131,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 253,
       "src_chars": 3419,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c94aec13ea8c",
       "src": "#### Application Problems\n\n**20.5** A colleague shares a social media post: \"New Harvard research: People who drink 3 cups of coffee per day have 40% lower risk of Alzheimer's disease. Time to start drinking more coffee!\" Perform a full Thread 2 evaluation of this claim.\n\n**Answer:** Step-by-step Thread 2 evaluation:\n\n**Study type** : \"Research\" is vague. Most nutritional epidemiology from large cohorts is prospective cohort data, which is observational. We cannot establish causation. Key confounders: coffee drinkers may have higher socioeconomic status (affecting healthcare access and lifestyle), different sleep patterns, or consume it alongside other protective habits.\n\n**What was measured** : Alzheimer's disease diagnosis as an endpoint is clinically meaningful — better than a surrogate biomarker.\n\n**Population** : What population? Age, ethnicity, geographic location? Coffee consumption effects may differ by metabolizer phenotype (CYP1A2 genetic variation affects caffeine metabolism speed and may affect outcome association direction).\n\n**Effect size** : \"40% lower risk\" is a relative risk reduction — the absolute risk reduction (actual percentage points in annual or lifetime Alzheimer's incidence) is not given. If baseline lifetime Alzheimer's risk is 10% and the RR is 0.6, absolute reduction is ~4 percentage points. If baseline is 2%, absolute reduction is ~0.8 percentage points. The clinical significance depends heavily on the absolute numbers.\n\n**Funding** : Not mentioned in the post. Should be checked in the actual paper — industry-funded studies from coffee producers have documented positive results bias.\n\n**Replication** : Some prospective cohort studies do suggest coffee consumption is associated with lower dementia risk; this is a moderately replicated association but not established at the level of confident causal inference. No RCT of coffee and Alzheimer's incidence has been conducted (and ethically, one likely cannot be, due to the long lag time and inability to blind caffeine intake).\n\n**Prior probability** : Caffeine and coffee polyphenols have biological plausibility (anti-inflammatory effects, neurological effects of caffeine). The association is biologically plausible.\n\n**Conclusion** : This appears to reflect a real and modestly replicated epidemiological association, but the \"time to start drinking more coffee\" causal recommendation is not supported by observational data. Coffee in moderation has a generally favorable safety profile, so the behavioral recommendation is not harmful, but the evidence does not support that increasing coffee consumption in a non-coffee drinker will reduce Alzheimer's risk by 40%.\n\n**20.6** Design a \"nutrition literacy\" lesson for a high school class that teaches the Thread 2 framework using a specific recent nutrition headline as the case study. Include the learning objectives and the key questions you would ask students to evaluate the claim.\n\n**Answer:** Learning objectives: Students will be able to identify the study type from a news report, explain why observational studies cannot establish causation, identify the key confounders relevant to the specific claim, calculate or request absolute risk data from a relative risk claim, and identify the funding source and its potential influence.\n\nSample headline: \"Eating red meat daily increases heart disease risk by 18%, study finds.\"\n\nQuestions for students:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1023,
+      "out_sha": "327636127ae6",
       "note": ""
     },
     {
@@ -3143,11 +3143,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 254,
       "src_chars": 3102,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f28e2a8728ed",
       "src": "  1. What type of study is this? (Likely a large cohort or meta-analysis of observational studies)\n  2. What does \"18% higher risk\" mean? Is this absolute or relative risk? (Relative risk — the absolute risk change may be small)\n  3. Who eats more red meat? Are there ways people who eat more red meat differ from those who eat less, independent of the meat? (SES differences, cooking methods, ultra-processed vs. unprocessed meat, total dietary pattern)\n  4. Who funded this study? What might their interests be?\n  5. Have other studies found the same thing? (Yes, the association is fairly replicated for processed red meat; less consistent for unprocessed red meat)\n  6. Does the study distinguish between processed red meat (bacon, sausage, hot dogs) and unprocessed red meat (steaks, roasts)? (This is a critical distinction — the evidence is stronger for processed)\n  7. What would it take to make this claim causal? (An RCT randomizing people to different meat consumption over decades — practically impossible)\n  8. What action, if any, does this evidence warrant?\n\nThis exercise teaches students to read behind the headline to the evidence quality, identify the specific claim being made, and distinguish association from causation.\n\n**20.7** A friend who follows a carnivore diet (exclusively meat and animal products) says: \"I've been doing this for six months and I've never felt better — lost 20 pounds, sleep is amazing, inflammation is gone. The science is clear that plants are full of toxins and humans are meant to eat meat.\" Using all threads and evidence from this book, construct a balanced, evidence-based response.\n\n**Answer:** A balanced response acknowledges what is likely true and what is overclaimed:\n\n**What's likely true** : Weight loss of 20 pounds in six months on a carnivore diet is plausible. Very high protein diets suppress appetite through multiple mechanisms (thermic effect, satiety hormones, Chapter 13). Elimination of ultra-processed foods, refined carbohydrates, and sugar — which are all excluded from a strict carnivore diet — removes major sources of dietary harm (Chapter 17). The felt improvement in wellbeing may be real and attributable to these factors. For some individuals, particularly those with specific food sensitivities, elimination diets produce genuine relief.\n\n**What's overclaimed or unsupported** : \"The science is clear that plants are full of toxins\" — plant compounds like lectins, phytates, and oxalates do exist and can inhibit some nutrient absorption in large quantities or for specific individuals with conditions like lectin sensitivity. The claim that they are harmful to most people at typical dietary levels is not supported. Most plant antinutrients are reduced by cooking; the massive prospective cohort evidence consistently shows higher plant food consumption associated with better health outcomes and lower all-cause mortality. The idea that humans evolved to eat exclusively meat conflicts with paleoanthropological evidence showing highly varied diets across different human groups; there is no single ancestral diet.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 933,
+      "out_sha": "ddc131e42e32",
       "note": ""
     },
     {
@@ -3155,11 +3155,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 255,
       "src_chars": 1067,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bcbd58d8d1ab",
       "src": "**Long-term concerns with carnivore diets** : The absence of dietary fiber removes the substrate for gut microbiome health (Chapter 16), SCFA production, and colorectal cancer protection. Very high saturated fat intake (especially from processed meats) has demonstrated adverse effects on LDL (Chapter 10). The absence of vitamin C and other plant nutrients creates genuine deficiency risk over time. Long-term RCT or prospective cohort evidence for carnivore diets is completely absent — the diet is too recent and too extreme for studies.\n\n**The frame to offer** : Your friend's experience is real and the improvements may be real. But six months of subjective wellbeing is not sufficient evidence to conclude the diet is safe long-term or that \"the science is clear.\" Multiple mechanisms could explain the improvements (caloric restriction, ultra-processed food elimination, high protein) without requiring that plants are harmful. The long-term evidence for predominantly whole-food, plant-rich diets is far more robust than for any animal-product-only approach.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 317,
+      "out_sha": "82c668939ce0",
       "note": ""
     },
     {
@@ -3167,11 +3167,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 256,
       "src_chars": 3011,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b0184c6286bd",
       "src": "#### Think Deeper\n\n**20.8** You have now read the complete journey of nutrition science from digestion to misinformation. In your assessment, what is the single most important conceptual shift that differentiates informed nutrition thinking from popular nutrition culture?\n\n**Answer (model answer):** The most important shift is from **reductionist thinking about individual nutrients to pattern-based thinking about whole diets over time**. Popular nutrition culture constantly seeks the active ingredient — the one nutrient to optimize, the one food to eliminate, the one compound that explains everything. This reductionist frame produced the low-fat era (eliminate fat), the low-carb era (eliminate carbs), the sugar era (eliminate sugar), and the carnivore and vegan movements (eliminate entire food groups). Each captures a fragment of real evidence and extrapolates it into a universal solution. The evidence consistently shows that no single nutrient or food is the primary determinant of health, that dietary patterns as a whole predict outcomes better than any single component, and that multiple traditional patterns achieve excellent health through different food compositions. The informed frame: evaluate the overall quality and composition of the habitual diet; minimize ultra-processed foods; eat abundant plant diversity; ensure adequate protein, fiber, and key micronutrients; and trust that a varied whole-food diet meeting these criteria will provide what the body needs without micromanaging every food decision. The meta-skill that distinguishes informed from uninformed nutrition thinking is recognizing the difference between a study finding and a dietary prescription, between an association and a cause, and between a short-term personal experience and robust long-term population evidence.\n\n**20.9** Looking across the three storylines (Thread 1: the fat question; Thread 2: how to read nutrition research; Thread 3: energy balance reframed), what common theme unites all three arcs?\n\n**Answer:** The common theme is **complexity resisting reduction**. In each thread, a simpler model that seemed adequate was progressively replaced by a more complex and accurate picture:\n\nThread 1 started with \"dietary fat causes heart disease\" — a simple cause-effect model that was compelling, widely adopted, and productively wrong. The resolution revealed that fat type matters, that overall dietary pattern matters, that industry manipulation influenced the simplistic consensus, and that correction required decades of work against institutional momentum.\n\nThread 2 progressively revealed how each study type captures only a partial view of nutritional reality — observational studies see associations but not causes; RCTs establish causation but in controlled conditions that don't match real diets; animal models illuminate mechanisms but translate poorly to humans. The complete picture of any nutritional question requires convergence across multiple evidence types, not any single study.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 878,
+      "out_sha": "8d3bcd43cac6",
       "note": ""
     },
     {
@@ -3179,11 +3179,11 @@
       "en_title": "Chapter 20: Nutrition Misinformation and Putting It All Together",
       "order": 257,
       "src_chars": 2894,
-      "status": "pending",
+      "status": "done",
       "src_sha": "47a6b9c1c6ae",
       "src": "Thread 3 began with a mechanistic simplicity (energy balance) that is fundamentally true but operationally inadequate. The full model requires understanding adaptive thermogenesis, hormonal regulation, behavioral compensation, lifespan variation, and the neurological systems governing appetite and reward. The \"eat less, move more\" prescription is not wrong — it is incomplete, and its incompleteness is the primary reason calorie-reduction approaches to weight management have historically failed in long-term maintenance.\n\nThe unifying theme: nutrition, like all biology, is complex — more complex than the simplifications needed to generate a dietary guideline, a marketable claim, or a satisfying narrative. Intellectual integrity in nutrition science requires holding this complexity rather than collapsing it into false simplicity. The best nutrition thinking acknowledges uncertainty, updates on evidence, and maintains a stable foundation of robust findings while treating peripheral claims with calibrated skepticism.\n\n* * *\n\n\n### Chapter Summary\n\n* Nutrition is uniquely vulnerable to misinformation because everyone eats, the evidence base contains genuine contradictions, personal experience feels like evidence, and financial incentives for misinformation are substantial.\n* Nutrition misinformation follows recognizable patterns: single-cause narratives, hero food/miracle nutrient claims, extrapolation from extreme populations, suppressed-truth framing, testimonial evidence, and appeal to nature.\n* Thread 2 complete framework: evaluate claim type (in vitro → animal → observational → RCT → meta-analysis), outcome measured (surrogate vs. clinical), population similarity, effect size in absolute terms, funding source, and replication.\n* Thread 1 resolution: fat type matters more than total fat; dietary fat was wrongly demonized; the scientific correction took 30-40 years and illustrates both the self-correcting nature of science and its painful slowness in the face of entrenched consensus and industry influence.\n* Thread 3 complete model: energy balance is a true but incomplete principle; the body actively defends set weight through hormonal and behavioral systems; effective long-term approaches work with these systems rather than against them; energy needs vary dramatically across the lifespan.\n* The convergent evidence consistently supports whole, minimally processed foods; abundant dietary fiber; adequate protein; healthy fat sources; minimal ultra-processed food; and caloric appropriateness for life stage — achieved through many possible dietary patterns.\n* The most important conceptual shift: from reductionist nutrient-specific thinking to pattern-based thinking about habitual diets over time — and the meta-skill of evaluating claims using the Thread 2 framework rather than accepting or rejecting them based on authority or familiarity.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 826,
+      "out_sha": "d21fbdc5a52f",
       "note": ""
     }
   ],
