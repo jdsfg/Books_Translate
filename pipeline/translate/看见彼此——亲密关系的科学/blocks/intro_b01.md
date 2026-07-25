@@ -1,4 +1,4 @@
-> 本导读整理自 Socratopia 网站本书介绍页：https://www.socratopia.app/library/relationships-en
+> 本导读整理自 Socratopia 网站本书介绍页： 
 
 大多数关系类书籍都在教你“更好地沟通”“找到对的人”或“先修炼自己”。本书——《看见彼此——亲密关系的科学》（The Science of Relationships）——则认为这些框架都搞错了核心问题。这一判断建立在 Harvard Study of Adult Development（哈佛成人发展研究）80 年的数据、James Coan（詹姆斯·科恩）的便携式 fMRI 研究、Sarah Hrdy（萨拉·赫迪）的合作繁殖（cooperative breeding）生物学，以及 John Gottman（约翰·戈特曼）爱情实验室对数百万次日常互动编码的基础之上。关系首先不是一种感觉、一种契合，也不是一项技能。它是一种能力：看两个神经系统能否共同调节（co-regulate）。性、冲突、养育、金钱、沟通——所有这些都发生在更下游的位置。本书是对实证记录的一次审慎综合，并刻意与最流行的通俗心理学框架保持距离：Five Love Languages（爱的五种语言）坦陈其经验基础薄弱；Gottman 著名的“90% 离婚预测”被如实校准到真实却小得多的效应；Esther Perel（埃丝特·佩雷尔）的洞见则被视为临床经验，而非实验发现。
 
