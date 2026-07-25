@@ -2591,11 +2591,11 @@
       "en_title": "Chapter 8: The Limits of Awareness and Effort",
       "order": 210,
       "src_chars": 3273,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1203333d075f",
       "src": "### 8.1 The Empirical Picture: What the Studies Actually Show\n\nA reader unfamiliar with the debiasing literature might assume, reasonably, that the field has accumulated robust evidence that awareness produces reduced bias. The popular framing — _learn about cognitive biases and you will think more clearly_ — has been so widely repeated that it has come to feel like established knowledge. The actual literature tells a substantially different story.\n\nThe first relevant finding is that _knowledge of a bias does not reliably reduce susceptibility to it on subsequent measurement._ Studies that teach subjects about a specific bias — confirmation bias, anchoring, hindsight bias — and then measure their performance on tasks that elicit that bias typically find that educated subjects perform similarly to controls. The educated subjects can articulate the bias accurately; they have learned the material. They simply do not, in the moment of the task, deploy the knowledge in a way that improves performance. The bias operates upstream of the conscious access to the knowledge; the knowledge sits in declarative memory while the bias continues to shape cognitive output through channels the knowledge does not interrupt.\n\nThe second relevant finding is that _debiasing training studies tend to show small effects in lab conditions and dramatically smaller effects outside the lab._ Training programs typically produce some measurable improvement on tasks that closely resemble the training material, especially when administered immediately after the training. The improvement degrades substantially as time passes, as the task drifts from the training format, and as the measurement context shifts from the lab to anything resembling real life. Generalization is, on the empirical record, weak. Persistence is weak. Practical impact in subjects' actual decision-making is very weak.\n\nThe third relevant finding is that _people who have been trained on bias reduction often become more confident in their judgments without becoming more accurate._ This is one of the more uncomfortable findings in the literature. The training succeeds in producing the felt sense of having done careful work; the felt sense translates into elevated confidence in subsequent judgments; the actual quality of the judgments does not reliably improve. Trained subjects sometimes perform _worse_ than untrained subjects, because their elevated confidence causes them to override partly correct intuitions or commit more strongly to conclusions that were not actually well-supported.\n\nThe fourth relevant finding is that _the best debiasing results have been achieved through structural interventions rather than awareness training._ Interventions that change the structure of the decision-making environment — checklists, predetermined criteria, written predictions, external review processes — produce more durable improvements than interventions that try to teach the decision-maker to reason better. The improvements come from the structure operating on the decisions, not from the decision-maker becoming a better reasoner. This pattern, replicated across many domains (medical diagnosis, financial decision-making, hiring, scientific evaluation), is what Part IV will develop in detail.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 856,
+      "out_sha": "44b3a5820e08",
       "note": ""
     },
     {
@@ -2603,11 +2603,11 @@
       "en_title": "Chapter 8: The Limits of Awareness and Effort",
       "order": 211,
       "src_chars": 2451,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f299e4befa1f",
       "src": "Taken together, these four findings produce a picture sharply different from the popular framing. The actual pattern is closer to _learn about biases, retain the knowledge, continue to be subject to the biases, often with increased confidence in one's reduced susceptibility to them._\n\n\n#### Definition: The Awareness-Doesn't-Cure-Bias Finding\n\nThe awareness-doesn't-cure-bias finding is the empirical pattern, robust across many studies and many specific biases, that explicit knowledge of a cognitive bias does not, on average, reliably reduce one's susceptibility to it in subsequent cognition — and that training programs designed to produce such reduction typically produce small lab effects with weak transfer and persistence.\n\nIn plain language: knowing about confirmation bias does not, on the empirical evidence, make people less subject to confirmation bias when they encounter situations that elicit it. Knowing about hindsight bias does not make people more accurate at remembering past predictions. The knowledge sits in one part of the mind; the bias operates in another part; the two do not connect in the way the popular framing assumed they would.\n\n\n#### Common Misconception\n\nThe common reaction, even among readers who have just read about these findings, is _but surely careful awareness produces some benefit, even if not the dramatic transformation the popular framing promised._ The chapter is not arguing awareness is useless. It enables retrospective identification of cognitive failures, supplies vocabulary for discussion, and prompts seeking structural interventions. In narrow conditions — when the bias is specific, the corrective is well-defined, the situation closely resembles training material, and the stakes motivate sustained vigilance — awareness can produce some real reduction.\n\nWhat awareness does not do, on the empirical evidence, is produce substantial general reduction in susceptibility across the kinds of consequential cognition that matter most in everyday life. The conditions under which awareness produces measurable benefit are narrow; the conditions under which most consequential cognition occurs are broader. The reader hoping that reading this book will translate into substantial general improvement is, on the empirical record, mostly going to be disappointed. The reader who has come to recognize that structural interventions are needed in the cases that matter most is in the right place.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 653,
+      "out_sha": "104c3a3c4a59",
       "note": ""
     },
     {
@@ -2615,11 +2615,11 @@
       "en_title": "Chapter 8: The Limits of Awareness and Effort",
       "order": 212,
       "src_chars": 2711,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a50eb1fc36d5",
       "src": "### 8.2 Why Awareness Doesn't Cure Bias: The Mechanism\n\nThe mechanism behind the pattern is consistent with everything Parts I and II have established. Walk through the cognitive system as it processes the situation of _I have learned about bias X and am about to face a task that might elicit bias X._\n\nAt the upstream layer, the situation is processed by the same biased mechanisms that produce the bias in the first place. Confirmation bias's selective seeking happens before conscious awareness; the holder does not consciously decide which evidence to look for — what gets surfaced has already been pre-selected. Knowledge that confirmation bias exists does not give access to the upstream selection; it gives only access to the selected evidence and a label one could apply to the process. The label cannot reach back upstream and change the selection.\n\nAt the conscious-evaluation layer, the holder may attempt to deploy the knowledge. _I should look for disconfirming evidence,_ they think. The thinking happens; some additional searching may occur. But the additional searching is itself shaped by the same upstream mechanisms, which produce sincere feelings of having looked carefully when in fact the search has remained largely within the confirming direction. The introspective sense of having applied the bias-reducing instruction is a standard output; it is not, on average, an accurate report of what the search actually did.\n\nAt the conclusion layer, the holder reaches a conclusion that may be slightly different from what it would have been without the bias-awareness instruction. The difference is typically small, depends on the situation closely matching the training material, and degrades quickly as conditions shift. The conclusion is then consciously evaluated as having been the result of careful bias-aware reasoning; the felt sense of having reasoned well is what the holder takes away.\n\nAt the meta-level, the holder accumulates a sense of being a person who has done bias-reduction work. This sense becomes part of the autobiographical novel from §3.5–3.6. The protagonist is now someone who has read about biases, understands them, and has therefore reduced their own susceptibility. The dissonance engine defends this protagonist; the bias blind spot from Chapter 4 ensures the defense is invisible from inside; the smart-people problem from Chapter 6 supplies analytical tools to construct sophisticated accounts of why the protagonist is, in their specific case, an exception to the awareness-doesn't-cure-bias finding. The cognitive system has, in effect, absorbed the awareness training into its standard pattern of producing sincere stories about being a careful reasoner.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 691,
+      "out_sha": "271f3b903c2b",
       "note": ""
     },
     {
@@ -2627,11 +2627,11 @@
       "en_title": "Chapter 8: The Limits of Awareness and Effort",
       "order": 213,
       "src_chars": 863,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b9fb714e4399",
       "src": "#### Common Misconception\n\nA reader might think _but I am paying attention to this very explanation, and the attention I am paying must produce some benefit._ This is the same defensive pattern operating on the reading in real time. The thought is exactly what the framework predicts. The felt sense of careful attention is a standard output; it reinforces the impression that careful attention is producing benefit; the actual underlying cognition continues to operate as it has been.\n\nThe honest position, on encountering this chapter: _the felt sense that engagement is producing reduced susceptibility is a standard output; the empirical evidence is that this felt sense is not strongly correlated with actual reduction; the reasonable response is to redirect effort from introspective bias-reduction to structural interventions that have empirical support._\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 207,
+      "out_sha": "6f7188872088",
       "note": ""
     },
     {
@@ -2639,11 +2639,11 @@
       "en_title": "Chapter 8: The Limits of Awareness and Effort",
       "order": 214,
       "src_chars": 3059,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e104ac57719c",
       "src": "### 8.3 Performative Versus Substantive Objectivity\n\nA specific distinction is worth introducing here, because it captures one of the most common patterns the awareness-doesn't-cure-bias finding produces.\n\n_Performative objectivity_ is the practice of doing what an objective reasoner would do — articulating considerations on multiple sides, naming one's biases, citing relevant literature, qualifying conclusions with appropriate caveats — in ways that produce the appearance of objective reasoning. The performance can be entirely sincere; the practitioner is not engaged in pretense. It produces the felt sense of being objective, social signals that one is being objective, recognition from others.\n\nWhat performative objectivity often does _not_ produce is _substantive objectivity_ — the underlying cognition that actually tracks the situation more accurately than biased cognition would. The substantive cognition is shaped by the same machinery as before; the performance is added on top without substantially altering it. The result: practitioners produce performance-rich, performance-sophisticated reasoning whose conclusions are not measurably more accurate than the conclusions of reasoners who do not engage in the performance.\n\nThe distinction matters because it is one of the cleanest ways to see what awareness training actually produces in most cases. Training people to produce performative objectivity is straightforward; the training takes; the trained practitioners do produce the performance. Training people to produce substantive objectivity is much harder, and on the empirical evidence, awareness-based training rarely accomplishes it. The training accomplishes the performance; the underlying cognition continues to operate as before; the performance is mistaken — by the practitioner and by observers — for the substantive achievement.\n\nThe structural alternatives that work do not depend on performance. Prediction tracking does not require articulating considerations on multiple sides; it requires writing down a specific prediction and checking it against the outcome. Pre-mortems do not require named biases; they require imagining failure and identifying its causes. Epistemic friends do not require qualified conclusions; they require honest engagement with someone whose machinery is running differently. Each structural tool produces accuracy through mechanisms that bypass the performance entirely; the accuracy is in the structure, not in the practitioner's performance.\n\nThe distinction also has a diagnostic use. When evaluating whether someone (including oneself) is reasoning substantively or performatively on a consequential question, the test is not whether the reasoning looks careful — the appearance is a standard output. The test is whether structural artifacts accompany the reasoning: written predictions, conducted pre-mortems, consulted epistemic friends, decision rules established in advance. If only performance is present, the framework predicts the reasoning is more performative than substantive.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 748,
+      "out_sha": "38b301e829e1",
       "note": ""
     },
     {
