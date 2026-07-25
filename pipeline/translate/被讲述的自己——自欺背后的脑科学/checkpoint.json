@@ -71,11 +71,11 @@
       "en_title": "导读",
       "order": 0,
       "src_chars": 2624,
-      "status": "pending",
+      "status": "done",
       "src_sha": "030ebf96111d",
       "src": "> 本导读整理自 Socratopia 网站本书介绍页：https://www.socratopia.app/library/self-deception-en\n\nThis book is for the reader who has already finished Kahneman, Haidt, Galef, or Ariely and feels intellectually equipped but practically unchanged. It begins with one moment in a Caltech lab in the early 1960s — a split-brain patient asked why he picked a shovel card from an array, who instantly answers \"to clean out the chicken coop\" and means it sincerely, even though the speaking half of his brain has never seen the snowy scene that prompted the choice. From that moment, Michael Gazzaniga extracted what he called the Interpreter: the cognitive system that manufactures coherent reasons for whatever has just happened, whether or not those reasons are causally accurate. The book argues this system is running in your brain right now, and that — because the reasons it produces feel exactly like real reasons from the inside — there is no introspective check that can catch it.\n\nWhat sets this book apart from its bookshelf neighbors is its refusal of the consoling narrative. Awareness of cognitive bias does not, on the empirical evidence, substantially reduce one's susceptibility to it. Worse, identifying as a careful thinker — what the book names the rationalist trap — produces a particular blind spot harder to catch than the ordinary kind. The book points to specific recent cases (FTX, EA's post-collapse reckoning, the Zizian splinter) where exactly this trap played out at scale, and it follows Kahan's smart-people finding to its uncomfortable conclusion: on identity-charged topics, more analytical capacity produces more sophisticated motivated reasoning, not less. Mercier and Sperber's argument — that reason did not evolve to find truth but to convince others — is treated as load-bearing rather than provocative.\n\nWhat it offers in place of false reassurance is a structural framework. Three running threads weave through twelve chapters: Gazzaniga's career-long honest admission that fifty years of studying the Interpreter has not made him better at seeing through his own stories; a two-week self-deception inventory the reader keeps nightly, which becomes the most personal teaching instrument the book deploys; and the design of modern algorithmic information environments, which the framework reads as systematically calibrated to feed exactly the appetites the architecture produces. Part IV's tools are the ones the empirical record actually supports — prediction tracking after Tetlock, pre-mortems after Klein, pre-commitments, and the rare and difficult relationship the book calls an \"epistemic friend.\"",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1161,
+      "out_sha": "d37ea52f50ac",
       "note": ""
     },
     {
@@ -83,11 +83,11 @@
       "en_title": "导读",
       "order": 1,
       "src_chars": 1812,
-      "status": "pending",
+      "status": "done",
       "src_sha": "920013269632",
       "src": "The book closes with a Coda titled What This Book Is Not — naming where its load-bearing claims are weakest (Festinger's small-N studies, Pronin's modest effect sizes, Tetlock's superforecaster selection effects), where its theoretical commitments are contested (Mercier-Sperber, Trivers, even Gazzaniga's Interpreter post-Pinto 2017), and which entire phenomena it does not adequately address (collective and mass-scale self-deception, the protective-illusions literature, the class precondition of structural tools, the cultural specificity of \"epistemic friendship,\" and the AI-saturated environment that arrived too late for the framework). You will not finish this book \"clear-sighted\" — the book is explicit that the felt sense of having become clear-sighted from reading is itself one of the system's standard outputs. What you may walk away with, if you do the inventory and adopt one or two structural tools, is a calibrated practice for the rest of your life.\n\n**Target audience**：Intelligent general adult readers who have read Kahneman, Haidt, Galef, or Ariely and feel intellectually equipped but practically unchanged. Also: managers and leaders making consequential decisions; therapists and coaches wanting an evidence-based framework; readers in rationalist / EA / forecasting communities who want a calibrated view; voters and citizens trying to navigate modern information environments.\n\n**Prerequisites**：None. No psychology, neuroscience, or behavioral-science background required. The one real prerequisite is willingness to do the two-week self-deception inventory honestly — and to feel uncomfortable when patterns emerge.\n\n**Study hours**：30–40 hours of focused reading; 12 chapters; designed to sustain 2–4 sessions of Socratic dialogue per chapter, for ~25–48 total companion sessions.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 766,
+      "out_sha": "eeb43f7aab39",
       "note": ""
     },
     {
@@ -95,11 +95,11 @@
       "en_title": "Introduction",
       "order": 2,
       "src_chars": 3003,
-      "status": "pending",
+      "status": "done",
       "src_sha": "11b67a8e152e",
       "src": "This book is about a peculiar fact: the brain you use to think with is also the brain that constructs sincere stories about why you do what you do, and the stories are not always — perhaps not often — accurate accounts of what is actually happening. The system that produces the stories is not a defect; it is what the brain is for, in a specific sense the book will develop. But its outputs cost us, on the questions that matter most, in ways the standard self-help framing of \"be more careful\" or \"think more clearly\" cannot fix.\n\nThe book is for the reader who has read Kahneman, Haidt, Galef, Ariely, or similar treatments of cognitive bias and feels intellectually equipped but operationally unchanged. The sense that one knows about the patterns without becoming less subject to them is, on the empirical evidence, exactly what awareness-based remediation produces — and exactly what this book will trace to its structural source. The book does not promise transformation; it promises a more accurate framework for what cognition is actually doing, and a set of structural practices that the empirical evidence supports as producing modest but real improvements in calibration on the questions that matter.\n\nThe book has three intellectual commitments worth naming up front.\n\nFirst, _the architectural framing_. Self-deception is not a moral failing, a character defect, or something individual willpower can fix. It is a feature of the social-cognitive architecture, present in every reader and in the author. The voice throughout is descriptive and matter-of-fact; readers who feel chastised by the prose have been failed by it; readers who feel recognized have been served.\n\nSecond, _the structural-tools thesis_. As in the parallel arguments that habits are about context rather than willpower and that motivation belongs to the situation, this book argues you cannot will yourself to clear sight; you can only design conditions that increase the probability of clear sight, occasionally. Every chapter of Part III builds toward this; every chapter of Part IV embodies it.\n\nThird, _honest engagement with the cognitive-bias canon_. Kahneman's work popularized real findings; the book credits this substantively while arguing that listing biases without integration has produced a generation of readers who feel intellectually equipped but operationally unchanged. Julia Galef's _The Scout Mindset_ contains real insights; the book credits these while noting where the framework overpromises trainability. The \"backfire effect\" as originally claimed has been substantially walked back by replication; the book corrects. Dunning-Kruger is real but smaller than popular framings; the book gives the precise version. Naive rationalism — treating \"rationality\" as identity — is one of the specific traps the book dissects in Chapter 8. The aim throughout is calibrated tools and an accurate map, not point-scoring against any tradition.\n\nThe book is structured in four parts across twelve chapters.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1193,
+      "out_sha": "98817ecb2808",
       "note": ""
     },
     {
