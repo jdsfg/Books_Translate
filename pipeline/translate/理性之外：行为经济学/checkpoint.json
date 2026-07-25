@@ -3183,11 +3183,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 257,
       "src_chars": 3193,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a848152645dd",
       "src": "#### Common Misconception\n\n**Misconception:** Gigerenzer's ecological rationality framework proves that cognitive biases are not real — they are just misidentified adaptations, and behavioral economics has been building a catalogue of phantom errors.\n\n**Reality:** Gigerenzer's critique is targeted and specific: it argues that _some_ apparent biases reflect format mismatch (disappear when information is presented as natural frequencies) or unfair benchmarking (disappear when compared to feasible alternatives rather than an impossible rational agent). This is a valuable corrective, but it does not extend to all behavioral economics findings. Loss aversion, status quo bias, present bias, and the endowment effect are robustly documented in ecologically valid settings — real markets, real employers' retirement plans, real households' savings decisions. The conjunction fallacy's frequency-format sensitivity is real and important; it does not mean loss aversion is also a frequency-format artifact. The appropriate response to Gigerenzer's critique is more nuanced research — identifying which findings depend on format, which replicate in ecologically valid contexts, and which environmental conditions determine whether a heuristic helps or harms. The catalogue is not phantom. It needs better annotation.\n\n\n### 21.5 Implications for Behavioral Economics and Policy\n\n\n#### Rethinking the Bias Catalogue\n\nThe ecological rationality critique suggests that the behavioral economics \"bias catalogue\" should be read with more nuance:\n\n  1. **Document both failure and success conditions** : For each heuristic, identify the environmental conditions where it succeeds and where it fails — not only the conditions where it produces errors\n  2. **Test in ecologically valid contexts** : Replications in real-world settings are more informative than laboratory demonstrations of failure\n  3. **Consider frequency formats** : If a bias disappears when information is presented in frequency format, the policy implication may be \"present information as frequencies\" rather than \"override the heuristic\"\n\n\n#### Implications for Choice Architecture\n\nIf many heuristics are ecologically rational, then choice architecture that overrides them may sometimes worsen outcomes:\n\n* A default that exploits status quo bias may help in retirement savings (where status quo bias conflicts with long-run preferences) but hurt in situations where the default does not align with individual needs (one-size-fits-all health plan defaults)\n* Simplification nudges are more clearly justified: they align with how heuristics work (low-information processing) rather than overriding them\n\n**Thread A final appearance:** Automatic enrollment in retirement savings survives both critiques. From the heuristics-and-biases view: status quo bias causes suboptimal enrollment without defaults; defaults fix this. From the ecological rationality view: the retirement savings environment is novel (no evolutionary history with 401(k) plans), information is complex, and deliberate optimization is difficult — making default architecture a useful scaffold for a situation where ecologically adapted heuristics do not apply.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 879,
+      "out_sha": "e087a48c10b4",
       "note": ""
     },
     {
@@ -3195,11 +3195,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 258,
       "src_chars": 2202,
-      "status": "pending",
+      "status": "done",
       "src_sha": "95198c277140",
       "src": "### 21.6 Thread C Culmination: How to Read Behavioral Research\n\nThroughout this book, Thread C has tracked the replication status and evidential quality of behavioral economics research. The ecological rationality debate adds a final meta-level consideration: the theoretical framework used to interpret a finding shapes which results count as evidence of what.\n\n**An integrated guide to reading behavioral research:**\n\n**Step 1 — Identify the task environment:** Is this a laboratory task designed to isolate a bias, a field study in a natural environment, or a large-scale policy deployment? Laboratory tasks may not generalize; field evidence is stronger but context-specific.\n\n**Step 2 — Check the information format:** Was probability information presented as percentages or as frequencies? Were outcomes presented as gains or losses from an explicit reference point? Format effects can produce or eliminate apparent biases.\n\n**Step 3 — Assess replication quality:** Has the finding replicated in different labs and cultural contexts? What is the effect size in the most rigorous replications (not the original)? Ego depletion (Chapter 12) is the cautionary case; loss aversion and status quo bias are the robust cases.\n\n**Step 4 — Identify the relevant environment:** Is the claimed bias documented in an environment similar to where the policy intervention will be applied? A bias documented in undergraduate students may not apply to experienced market traders; a finding from a US sample may not apply without modification to rural Kenya.\n\n**Step 5 — Evaluate the benchmark:** What is the heuristic being compared to? If the comparison is to an unconstrained Bayesian optimizer, the ecological rationality critique applies. If the comparison is to a feasible alternative (a simpler choice, a different information format), the critique is weaker.\n\n**Step 6 — Check for mechanism evidence:** Is there evidence about why the bias occurs, not only that it occurs? Mechanistic understanding strengthens both the reliability of the finding and the design of effective interventions. Ego depletion's crisis partly reflected the absence of a well-supported mechanism (the glucose hypothesis failed).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 644,
+      "out_sha": "d7ee6f4e319f",
       "note": ""
     },
     {
@@ -3207,11 +3207,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 259,
       "src_chars": 2553,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8e388166e453",
       "src": "### Chapter Summary\n\nThe ecological rationality framework, developed by Gigerenzer and colleagues, poses the most fundamental challenge to the behavioral economics research program: it argues that heuristics should be evaluated against feasible alternatives in real environments, not against an impossible rational agent benchmark, and that many \"biases\" are well-adapted cognitive tools in the environments where they evolved.\n\nThe challenge is partially successful: it has identified real problems in how behavioral research is designed (format dependence, unfair benchmarking) and has generated genuine insights about when simple heuristics outperform complex procedures. It is partially unsuccessful: many core behavioral economics findings — loss aversion, status quo bias, present bias — are robustly documented in ecologically valid contexts and cannot be explained away as laboratory artifacts.\n\nThe synthesis is: heuristics are often ecologically rational, sometimes fail systematically in novel or exploitative environments, and the design of good decision environments (choice architecture) should work with the grain of cognitive adaptation rather than against it.\n\n**Chapter 22** completes the book with a synthesis of all three threading plans, neuroeconomics and computational psychiatry as emerging frontiers, and a final framework for applying behavioral economics responsibly.\n\nThread A makes its final chapter appearance here: automatic enrollment in retirement savings survives both theoretical critiques intact. From the heuristics-and-biases view, status quo bias causes suboptimal enrollment in the absence of defaults, and the default corrects it. From the ecological rationality view, 401(k) plans are a genuinely novel environment — no evolutionary or cultural history prepared human heuristics for this decision — so default architecture provides scaffolding where ecological adaptation does not. Thread B reaches the deepest level of the rational-versus-human debate: ecological rationality is not a defense of full rationality, but it relocates the benchmark from the impossible rational agent to the more defensible question of ecological fit, producing a richer and more honest model of human judgment than either extreme offers. Thread C culminates with the six-step evaluation guide — the book's most integrated methodological tool for reading behavioral research claims, now enriched by the meta-level question of which theoretical framework is appropriate given the environmental context of the claim.\n\n\n### Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 660,
+      "out_sha": "40cb373b43a9",
       "note": ""
     },
     {
@@ -3219,11 +3219,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 260,
       "src_chars": 2819,
-      "status": "pending",
+      "status": "done",
       "src_sha": "318f3b6d25d5",
       "src": "#### Concept Check\n\n**Q1.** What is ecological rationality, and how does it differ from the rationality concept used in the heuristics-and-biases research tradition?\n\n_Answer:_ Ecological rationality is the property of a decision process that is well-matched to the statistical structure of the environment in which it operates. A process is ecologically rational if it produces good outcomes in the environments where it is typically used — regardless of how it performs in other environments or against a theoretical unconstrained optimizer. This contrasts with the rationality concept in the heuristics-and-biases tradition, which uses the rational agent model (or Bayesian probability theory) as the benchmark. In that tradition, a judgment is \"irrational\" if it violates formal probability axioms or expected utility theory — standards that apply universally regardless of environmental context. The key difference: ecological rationality is environment-relative (a heuristic may be rational in one environment and not in another), while the heuristics-and-biases benchmark is environment-independent (a violation of Bayes' theorem is an error regardless of environment). Gigerenzer argues the environment-independent benchmark is inappropriate because the rational agent is not a feasible alternative for humans operating in real-world conditions.\n\n**Q2.** Explain the Take-the-Best heuristic. In what environmental conditions does it outperform multiple regression, and why?\n\n_Answer:_ Take-the-Best (TTB) is a simple rule for comparing two options: (1) search cues in order of validity (how often each cue predicts the correct answer); (2) if the most valid cue discriminates between options, choose the option it favors and stop; (3) if not, move to the next cue and repeat. TTB uses only one cue in most comparisons — it ignores all other available information. Multiple regression, by contrast, uses all available cues and weights each according to its contribution to prediction. TTB outperforms multiple regression in conditions characterized by: (a) small training samples — regression estimates become unstable and noisy with few observations, while TTB's frugality insulates it from estimation error; (b) high environmental uncertainty — when outcomes are noisy and unpredictable, complex models overfit noise, while simple rules generalize better; (c) few highly valid cues — when one or two cues carry most of the predictive information, ignoring other cues wastes little and avoids overfitting. The general principle is \"less is more\" under uncertainty and small samples: frugality provides robustness at the cost of within-sample optimality, and robustness matters more when generalizing to new cases.\n\n**Q3.** What is the genuine disagreement between Kahneman and Gigerenzer? What do they agree on?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 808,
+      "out_sha": "471c43b2418f",
       "note": ""
     },
     {
@@ -3231,11 +3231,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 261,
       "src_chars": 2800,
-      "status": "pending",
+      "status": "done",
       "src_sha": "11eec8a91784",
       "src": "_Answer:_ **The genuine disagreement** is about the normative benchmark for evaluating human decision-making. Kahneman uses the rational agent model (or Bayesian statistics) as the reference: deviations from this benchmark are \"biases\" and \"errors.\" Gigerenzer uses ecological fit as the reference: the question is whether a decision process works well in the environments where humans actually operate. This difference in benchmark produces different conclusions about the same empirical findings. **Points of agreement:** (1) People do not optimize in the way the rational agent model specifies — both accept that human cognition departs from textbook rationality. (2) Heuristics are the primary tools of human cognition in most everyday decisions — both accept this. (3) The performance of heuristics depends on the environment — both accept this, though Kahneman's System 1/System 2 framework acknowledges ecological validity of intuition more explicitly in later work. (4) Domain-specific expertise substantially improves judgment — both accept this. The debate is not about whether heuristics are used (yes) or whether they sometimes fail (yes), but about what their use and failure implies about human rationality.\n\n**Q4.** Why does presenting probability information as natural frequencies (e.g., \"7 out of 100\") rather than as probabilities (e.g., \"7%\") reduce many classic judgment biases? What does this imply for policy?\n\n_Answer:_ Natural frequencies are the format in which humans encountered probabilistic information throughout evolutionary history — counting events that occurred out of events that were observed. Probability notation (percentages, decimals) is a recent cultural invention that requires explicit translation into the cognitive format humans naturally process. When information is presented as natural frequencies, the computations required for correct Bayesian reasoning become simpler and more transparent. For the conjunction fallacy: \"How many of 100 people like Linda are bank tellers? How many are bank tellers and feminists?\" — it is immediately obvious that the second number cannot exceed the first. For base-rate neglect in medical diagnosis: \"10 out of 1000 patients have the disease; 9 of those 10 test positive; 89 of the 990 without the disease also test positive\" — the posterior probability calculation is more transparent. The policy implication: many apparent \"biases\" in medical, legal, and financial contexts may reflect format mismatch, not stable cognitive errors. The intervention is to present information in natural frequency format rather than designing choice architecture to override the bias. This is a more respectful and often more effective response — it improves the information environment rather than bypassing deliberate judgment.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 750,
+      "out_sha": "99980cc51849",
       "note": ""
     },
     {
@@ -3243,11 +3243,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 262,
       "src_chars": 2429,
-      "status": "pending",
+      "status": "done",
       "src_sha": "55bbbac58239",
       "src": "#### Application Problems\n\n**Q1.** A pharmaceutical company is presenting cancer screening results to patients. It states: \"This screening test has a 95% sensitivity (it detects 95% of true cancers) and a 5% false positive rate. If you test positive, what is the probability that you have cancer?\" Most patients wildly overestimate this probability. Apply both the heuristics-and-biases interpretation and the ecological rationality interpretation to this finding, and recommend a policy response.\n\n_Answer:_ **Heuristics-and-biases interpretation:** Patients exhibit base-rate neglect — they focus on the 95% sensitivity and largely ignore the base rate of cancer in the population. If cancer occurs in 1% of the screened population, a positive test has only a ~16% probability of indicating true cancer (by Bayes' theorem: 0.95 × 0.01 ÷ (0.95 × 0.01 + 0.05 × 0.99) ≈ 0.16). The representativeness heuristic makes a positive test feel strongly diagnostic because the test is \"almost always right.\" Policy implication: patients need better information or counseling to override this bias. **Ecological rationality interpretation:** The information is presented in a format (percentages and conditional probabilities) that is not the format humans naturally process. The \"bias\" may largely reflect format mismatch. When the same information is presented as natural frequencies — \"Of 1,000 people screened, 10 have cancer; 9 of these 10 will test positive; 50 of the 990 without cancer will also test positive\" — patients can much more easily see that a positive test accompanies cancer in only 9 of 59 positive results (~15%). Policy implication: require probability information to be presented as natural frequencies in medical communication. **Recommended policy:** The frequency format is well-supported empirically as the more effective communication approach. The policy response should be primarily to reform how test results are communicated (natural frequencies, visual representations like icon arrays), not only to add counseling. This is a case where Gigerenzer's format argument produces a clear, actionable, evidence-based policy recommendation.\n\n**Q2.** You are designing a choice architecture for a health insurance enrollment system. Apply the ecological rationality framework to evaluate whether using a \"smart default\" (assigning each employee to the plan that best matches their predicted needs) is appropriate.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 689,
+      "out_sha": "0c19c283c58d",
       "note": ""
     },
     {
@@ -3255,11 +3255,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 263,
       "src_chars": 1811,
-      "status": "pending",
+      "status": "done",
       "src_sha": "14edc54d8fce",
       "src": "_Answer:_ The ecological rationality framework asks: does this default match the individual's heuristic processes to the actual decision environment? **Analysis:** Health insurance selection is a domain where: (a) the relevant information (actuarial risk, coverage details, provider networks) is complex, technical, and not naturally available to individuals; (b) individuals have limited experience making this choice (typically once per year at most); (c) the stakes are significant but the outcomes (claims, coverage gaps) are delayed and uncertain; (d) rational optimization is genuinely difficult and requires expertise most employees lack. This is not an environment where ecologically adapted heuristics should produce good outcomes, because there is no evolutionary or experiential history that would calibrate heuristics for 21st-century health insurance markets. In this case, status quo bias works against the individual (sticking with a suboptimal plan by default) and a smart default improves outcomes. **But:** The smart default should be transparent (employees should know they were assigned to a plan and why), easily reversible (opt-out should be clearly communicated), and based on openly disclosed criteria (the algorithm should be explainable). This satisfies the ethical criteria from Chapter 18 while using choice architecture in a domain where it is genuinely beneficial. The ecological rationality framework does not argue against defaults in novel, complex, high-stakes domains with no natural heuristic adaptation — it argues for matching decision tools to decision environments, and a default is appropriate here.\n\n**Q3.** Construct the strongest possible version of Gigerenzer's critique of the endowment effect research. Then evaluate whether this critique is ultimately convincing.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 467,
+      "out_sha": "b84cd54d265a",
       "note": ""
     },
     {
@@ -3267,11 +3267,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 264,
       "src_chars": 2038,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e88bc5dcaeda",
       "src": "_Answer:_ **Strongest version of the critique:** The endowment effect is documented primarily in laboratory settings where subjects are given a mug or other object and asked for their WTA and WTP. These are artificial exchange contexts with no real market history, where the \"correct\" answer is genuinely ambiguous. In societies with extensive market exchange — where people regularly trade goods — the endowment effect is substantially reduced or absent (as research on hunter-gatherer societies and experienced traders shows). The ecologically rational interpretation: ownership creates a presumption of value that is adaptive in real exchange economies, because the costs of transacting (search, negotiation, verification) justify some premium for retaining owned goods. The \"error\" documented in the laboratory is a heuristic operating outside its adapted environment. Furthermore, professional traders who have extensive experience with markets show substantially reduced endowment effects, consistent with learning to calibrate the heuristic to market contexts. **Evaluation:** The critique is partially convincing. It is true that market experience reduces the endowment effect, and this is consistent with the ecological rationality account. However: (1) the endowment effect is documented in real markets too — home sellers exhibit it (houses are priced relative to purchase price, not market value); real estate agents advising clients set lower prices than their own homes; labor markets show WTA > WTP for wages. (2) The ownership premium may be adaptive as a starting point but systematically excessive in specific exchange contexts where it produces welfare losses. (3) The policy relevance does not depend on whether the effect is \"truly irrational\" — WTA > WTP creates predictable, exploitable market failures regardless of its evolutionary origins. The critique appropriately completes the picture — the endowment effect is context-sensitive and reduced by experience — but does not eliminate its practical significance.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 569,
+      "out_sha": "dcc30b6a5d6e",
       "note": ""
     },
     {
@@ -3279,11 +3279,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 265,
       "src_chars": 2663,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3a21ba403027",
       "src": "#### Think Deeper\n\n**Q1.** Gigerenzer argues that the laboratory is the wrong place to test heuristics because laboratory tasks are specifically designed to violate the statistical regularities that make heuristics adaptive. Is this a legitimate methodological critique or a circular defense of heuristics? How would you design research to adjudicate between the two positions?\n\n_Answer:_ The critique is partially legitimate but risks circularity. It is legitimate in pointing out that many laboratory tasks present information in formats (percentages, decontextualized probabilities) that are ecologically unusual, and that performance improves dramatically when ecologically valid formats are used. This is an empirical finding, not just a theoretical argument. The risk of circularity arises if \"ecological rationality\" is defined post-hoc: after observing that a heuristic fails in environment X but succeeds in environment Y, one could always define X as \"ecologically invalid\" and Y as \"ecological.\" This makes the theory unfalsifiable. **Research designs to adjudicate:** (1) Pre-register predictions about which environments will favor simple heuristics vs. complex algorithms, based on the structural conditions (sample size, noise level, cue validity) — then test whether those predictions hold. If TTB is predicted to outperform regression in small-N, high-noise environments and not otherwise, test this prediction prospectively. (2) Use large-scale naturalistic data: track real decisions made with natural information formats and measure outcomes. If heuristics are ecologically rational, experts operating in stable domains should show good performance relative to algorithmic alternatives. (3) Test transfer: if a heuristic is ecologically adapted to domain A, it should transfer to structurally similar domain B without relearning. If it requires domain-specific experience for every domain, the ecological rationality explanation is weaker. (4) Measure the costs of error: in environments where heuristic errors are predicted, quantify the welfare cost and compare it to the cost of the alternative. A heuristic can be ecologically suboptimal but practically close enough not to matter. The field needs more of this structure — prospective, falsifiable tests — rather than retrospective assignment of findings to the appropriate side.\n\n**Q2.** This chapter represents Thread C's culmination — the book's sustained engagement with how to evaluate behavioral economics evidence. Based on everything you have learned, what is the most honest one-paragraph summary of what behavioral economics has established, and what remains genuinely uncertain?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 715,
+      "out_sha": "a2539b2f1351",
       "note": ""
     },
     {
@@ -3291,11 +3291,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 266,
       "src_chars": 1684,
-      "status": "pending",
+      "status": "done",
       "src_sha": "41c8ddb3c027",
       "src": "_Answer:_ Behavioral economics has established, with strong convergent evidence across laboratories, field experiments, and real markets, that: human decision-making departs systematically from the rational agent model in ways that are predictable, reproducible, and consequential; specifically, that loss aversion (the asymmetric weighting of losses relative to equivalent gains), status quo bias (the tendency to remain with defaults and current states), present bias (the disproportionate weighting of immediate costs and benefits), and the influence of reference points and framing on choice are robust features of human judgment observed across cultures, settings, and stakes. Choice architecture — particularly defaults — can reliably improve decision outcomes in domains where the architecture is well-matched to individuals' stated long-run preferences. What remains genuinely uncertain includes: the degree to which these findings generalize to populations and cultures not yet studied; the mechanisms underlying many effects (loss aversion's neural basis remains contested; ego depletion's mechanism has largely failed); whether effect sizes from academic studies translate to real-world policy deployments (field effects are consistently smaller); and the normative question of when behavioral interventions improve welfare versus reflect contestable paternalistic values. The research program has produced genuine insights about human cognition and has improved some policies — but it requires the same scientific standards it applies to other claims: pre-registration, replication, honest reporting of effect sizes, and humility about the limits of its own evidence.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 408,
+      "out_sha": "15b509a26461",
       "note": ""
     },
     {
