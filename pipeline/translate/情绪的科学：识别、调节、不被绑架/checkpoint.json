@@ -4271,11 +4271,11 @@
       "en_title": "Appendix A: The 6 Moves and 12 Emotions Reference Card",
       "order": 347,
       "src_chars": 2917,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e3f297bef360",
       "src": "A two-page summary of the book's central practical content. Pin to a wall, save to a phone, return to in difficult moments.\n\n\n### The 6 Moves\n\n| # | Move | One-line description  \n---|---|---  \n1 | Pause | 3–10 seconds between input and action; required for the rest  \n2 | Granular labeling | Pick the most precise word; broad labels close response options  \n3 | Reappraise context | Ask whether a different reading fits the evidence better  \n4 | Distinguish emotion from action urge | Name the urge; the gap between urge and action is where skill lives  \n5 | Notice meta-emotion | Ask what you feel about feeling this; the meta-layer often dominates  \n6 | Build emotion architecture | Sleep, food, movement, contact, vocabulary, attention; the long game  \n  \n_A note on the numbering_ : 1–6 reflects the pedagogical order in which the moves are introduced and is convenient for review, but it is not a strict execution sequence. In practice, Move 6 (architecture) operates continuously in the background, ahead of any specific moment; Move 1 (pause) opens the window in which Moves 2–4 then run, often almost simultaneously rather than in strict order; Move 5 (meta-emotion) can be invoked at any point and is sometimes the first move that registers in difficult moments. Treat the numbering as a learning order, not as a checklist for the moment of action.\n\n\n### The 12 Emotions\n\n| # | Emotion | Core information | Granular labels  \n---|---|---|---  \n1 | Anger | A boundary signal; what value was crossed? | Frustration, indignation, resentment, exasperation, contempt  \n2 | Anxiety | Diffuse future threat; calibrate to evidence | Worry, apprehension, dread, foreboding, agitation  \n3 | Sadness | A signal of loss; needs witnessing not fixing | Grief, disappointment, longing, sorrow, melancholy, hollowness, saudade  \n4 | Joy | Value alignment; savor, do not lock in | Contentment, delight, joy, amusement, eudaimonia  \n5 | Shame | \"I am bad\" vs guilt's \"I did bad\" | Embarrassment, mortification, humiliation, self-loathing, toxic shame  \n6 | Jealousy | A values map, sometimes a self-attack | Benign envy, malicious envy, relational jealousy, comparison-fatigue, schadenfreude  \n7 | Disgust | Sometimes wise, often inherited | Revulsion, aversion, contempt, indignation, squeamishness  \n8 | Fear | Specific present threat; respect the signal, examine for over-calibration | Wary, alert, frightened, terrified, dread  \n9 | Loneliness | A distinct neurological state; not the same as solitude | Acute, chronic, existential, relational, cultural  \n10 | Contempt | Hierarchy claim; relationship-killer; refuse the small acts | Disdain, scorn, sarcasm, snobbery, self-righteousness  \n11 | Gratitude | The body recognizing it has been given to | Appreciation, thankfulness, indebtedness, wonder, eudaimonia  \n12 | Awe | Vastness plus need for accommodation | Wonder, reverence, ecstasy, the sublime, transcendence  \n  ",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1113,
+      "out_sha": "e32afdb3e564",
       "note": ""
     },
     {
@@ -4283,11 +4283,11 @@
       "en_title": "Appendix A: The 6 Moves and 12 Emotions Reference Card",
       "order": 348,
       "src_chars": 2514,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e649e60909ba",
       "src": "### Emotions This Card Does Not Cover\n\nThe twelve emotions above are the book's primary set. Several emotions that matter were named but not treated in dedicated chapters: **hope** , **compassion** , **surprise** , **pride** , **embarrassment** , **guilt** (distinguished from shame), **wonder** and **reverence** (treated as relatives of awe), and the **mixed states** that pair two of the twelve (jealousy + contempt, shame + anger, gratitude + sadness). The framework transfers: each takes a body state, a concept, and a context, and each yields to the same six moves. A reader for whom one of these uncovered emotions is central can apply the framework directly and supplement with the primary sources in Appendix C.\n\n\n### The 5 Lessons That Recur Across All 12\n\n  1. Emotions are constructed (body state + concept + context), not given.\n  2. Granularity is the most actionable single intervention.\n  3. Action urges are not actions; the gap is where skill lives.\n  4. Meta-emotion often does most of the work.\n  5. Architecture shapes everything.\n\n\n### Gross's 5 Families of Emotion Regulation\n\n  1. Situation selection (which situations to enter)\n  2. Situation modification (changing features once in)\n  3. Attentional deployment (where to look)\n  4. Cognitive change (reappraisal)\n  5. Response modulation (after the emotion has arisen)\n\nEarlier interventions tend to be more effective; all five have their place.\n\n\n### The Emergency Sequence (when overwhelmed)\n\n  1. Pause. Take three slow exhales.\n  2. Body. Where do I feel this? What is it doing?\n  3. Label. What is the most precise word?\n  4. Urge. What does this emotion want me to do? Name it specifically.\n  5. Choice. Given the urge, what action would fit my values?\n  6. Architecture (later). What loaded the body state? Sleep, food, contact, time.\n\n\n### When to Seek Help\n\nIf any of the following persist for two weeks or more, consider professional evaluation:\n\n* Sustained low mood that does not lift even briefly\n* Loss of interest in things that normally produce pleasure\n* Significant sleep disruption or appetite change\n* Concentration difficulties affecting work\n* Hopelessness or thoughts of self-harm\n* Severe anxiety interfering with daily functioning\n* Trauma material surfacing that the practices cannot contain\n* Substance use as a coping strategy that has crossed into dependency\n* Severe relational difficulty (abuse, sustained chronic contempt, breakdown of trust)\n\nSee Appendix D for fuller detail on professional support.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 827,
+      "out_sha": "fa2880b9f930",
       "note": ""
     },
     {
@@ -4295,11 +4295,11 @@
       "en_title": "Appendix B: The 30-Day Emotion Architecture Experiment",
       "order": 349,
       "src_chars": 3339,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8a099b910969",
       "src": "This appendix presents in detail the 30-day experiment introduced in Chapter 16. The protocol is moderate, designed to be sustainable, and intended to produce data about the reader's own architecture rather than to enforce a particular ideal.\n\n\n### Before You Begin\n\nRead this appendix once through. Plan a start date that works with your schedule (avoid major life disruptions during the 30 days where possible). Set up a simple log: a paper notebook, a notes app, or a spreadsheet. Tell one person you trust that you are doing this; the social accountability supports the practice. Allow yourself to be imperfect; the goal is honest engagement, not flawless compliance.\n\n\n### The Six Architectural Inputs Plus Daily Move Practice\n\nThe protocol layers two distinct things. The first six items below are the **architectural inputs** from Chapter 16 — the long-game conditions that shape what emotions arise and how readily the moves work. The seventh item is the daily practice of one of the **Six Moves** from Appendix A. The architectural inputs are conditions; the moves are actions taken within those conditions. Both sets number six, by accident rather than design; do not conflate them. The seventh item in the protocol below is the move practice running alongside the six inputs, not a seventh input.\n\nEach item has a daily protocol and a daily log entry. The protocol is moderate by design; readers running tighter discipline can extend, but starting with the moderate version increases the chance the practice becomes sustainable.\n\n\n#### 1\\. Sleep\n\n**Daily protocol** :\n\n* Bedtime within a 30-minute window most nights (e.g., between 10:30 and 11:00 p.m.)\n* At least 7 hours in bed\n* Phone-free first hour after waking\n* Phone-free last hour before bed\n* Caffeine cutoff at 2 p.m.\n* Alcohol limited to weekends only or eliminated\n* Bedroom kept cool (around 18°C / 65°F)\n* Bright light exposure within 30 minutes of waking; reduced bright light exposure in the evening\n\n**Daily log** :\n\n* Bedtime\n* Wake time\n* Subjective sleep quality (1–5)\n* Caffeine intake (yes/no, when)\n* Alcohol intake (yes/no, how much)\n\n\n#### 2\\. Nutrition\n\n**Daily protocol** :\n\n* Three regular meals per day at roughly consistent times\n* Protein and vegetables in each meal\n* Hydration (water available throughout the day; aim for adequate but not excessive intake)\n* Reduce ultra-processed foods\n* No food in the hour before bed where possible\n\n**Daily log** :\n\n* Brief notes on meals (no detailed tracking; just enough to notice patterns)\n* Hunger patterns (any periods of acute hunger? any periods of overeating?)\n* Hydration (adequate / inadequate)\n\n\n#### 3\\. Movement\n\n**Daily protocol** :\n\n* At least 30 minutes of moderate movement, 4 days per week\n* Outdoor time during the movement when possible\n* Variety welcome: walking, cycling, swimming, classes, sports\n* Not vigorous exercise within 3 hours of bedtime\n\n**Daily log** :\n\n* Type\n* Duration\n* Outdoor / indoor\n* Subjective energy after (1–5)\n\n\n#### 4\\. Social Contact\n\n**Daily protocol** :\n\n* At least 3 substantive contacts per week with people who matter to you\n* Phone-free during these contacts when possible\n* Substantive means more than transactional: actual conversation about something that matters\n\n**Daily log** :\n\n* Who, what kind of contact, duration\n* Subjective quality (1–5)\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1096,
+      "out_sha": "2efef8f007b1",
       "note": ""
     },
     {
@@ -4307,11 +4307,11 @@
       "en_title": "Appendix B: The 30-Day Emotion Architecture Experiment",
       "order": 350,
       "src_chars": 2641,
-      "status": "pending",
+      "status": "done",
       "src_sha": "51fb6c96d3c3",
       "src": "#### 5\\. Vocabulary\n\n**Daily protocol** :\n\n* Once a day, when noticing any emotion, find the most precise word for it\n* Use the granular labels from the 12 emotion chapters as a starting library\n* Borrow words from other languages where they fit\n\n**Daily log** :\n\n* A few sample emotion-naming entries per week (not every emotion needs to be logged)\n* Any new words learned or used\n\n\n#### 6\\. Time and Attention\n\n**Daily protocol** :\n\n* Phone-free first hour and last hour of the day (overlap with sleep protocol)\n* Phone-free meals\n* One additional phone-free hour during the day (a walk, a meal alone, a focused work block)\n* Identify one specific time-sink and reduce it (a specific app, a specific habit)\n\n**Daily log** :\n\n* What you did during the reclaimed phone-free time\n* Specific time-sink reduced today\n\n\n#### 7\\. Practice from the Book\n\n**Daily protocol** :\n\n* One of the 6 moves applied deliberately during the day\n* Vary which move across the 30 days\n* Note both the move applied and the situation it was applied in\n\n**Daily log** :\n\n* Which move\n* What situation\n* What happened\n\n\n### Weekly Check-In (every 7 days)\n\nTake 15 minutes at the end of each week to review the log. Answer three questions:\n\n  1. Which inputs were easy to maintain this week? Which were hard?\n  2. Did anything in your emotional life shift this week?\n  3. What single change would make next week's practice easier?\n\nThe weekly check-in adjusts the practice gradually. Some readers find that a particular input does not fit their life and can be substituted with a different practice that addresses the same architectural need (e.g., substituting team sport for solo gym sessions, or substituting reading for screen-time reduction in a specific form).\n\n\n### End-of-30-Days Evaluation\n\nOn day 31, take 30 minutes for a structured review. Read through the log. Answer:\n\n  1. Which inputs produced the most noticeable shifts in mood, energy, or emotional life?\n  2. Which inputs were hardest to maintain? Was the difficulty structural (does not fit my life) or developmental (would become easier with continued practice)?\n  3. Did any patterns in my emotional life shift across the 30 days? Reactivity? Granularity? Sleep quality? Sense of meaning?\n  4. What two or three inputs do I want to keep doing for the next 90 days?\n  5. Was anything in this experiment difficult or unwelcome in ways that warrant attention beyond the architecture (relational difficulties, persistent low mood, trauma material surfacing)?\n\nThe evaluation is the experiment's central value: the data about yourself produced by the 30 days is the result, not the protocol itself.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 853,
+      "out_sha": "9b1c07e708a2",
       "note": ""
     },
     {
@@ -4319,11 +4319,11 @@
       "en_title": "Appendix B: The 30-Day Emotion Architecture Experiment",
       "order": 351,
       "src_chars": 3336,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b80455b633d9",
       "src": "### Common Patterns Reported by Readers\n\nA few patterns common in readers who have completed similar experiments.\n\n**Sleep is usually the highest-impact input.** Most readers, addressing sleep across 30 days, notice substantial improvement in mood, energy, and emotional regulation. The improvement is often larger than expected.\n\n**Phone reduction is harder than it sounds.** The phone is more habituating than most readers realize; the reduction often takes the full 30 days to settle into.\n\n**Social contact is harder to schedule than expected.** Most readers underestimate how much advance planning is required for substantive contact in modern life.\n\n**The vocabulary practice grows on its own.** Once started, the granular labeling tends to continue without explicit effort across the 30 days.\n\n**The architectural inputs interact.** Better sleep makes movement easier; better movement supports sleep; better social contact supports both. Improvements compound.\n\n**The end-of-30 review is often where the largest insights arise.** The day-by-day work is sometimes invisible; the cumulative pattern visible at day 31 is often surprising.\n\n\n### Beyond Day 30\n\nThe protocol is designed as an experiment, not as a permanent practice. Expect to keep some inputs as ongoing practice and to drop others. The smaller sustainable practice does more, in aggregate, than the unsustainable full protocol; the integration into ordinary life is the actual work.\n\nMany readers report that:\n\n* Sleep changes become permanent within the 30 days\n* Phone reduction becomes part of life with sustained reduced use\n* Movement becomes a default 3–4 days per week\n* Social contact becomes more deliberately scheduled\n* Vocabulary continues to expand across years\n* Time and attention practices vary; some sustain, others fade\n\nPlan for an annual repeat of the protocol (or a modified version). The annual rhythm allows the architecture to be re-evaluated as life conditions change.\n\n\n### Modifications for Specific Conditions\n\n**For caregivers (parents of young children, caregivers of elderly relatives)** : the full protocol may not be feasible. Modify by reducing ambition: even small improvements in sleep timing, brief regular movement, occasional substantive contact with adults, and modest phone reduction matter. The architectural inputs are even more important under high-load conditions; the practice has to fit the conditions.\n\n**For readers with intensive work demands** : the time-and-attention work often has to come first. Identify which work hours are actually productive and which are diminishing returns; reclaim some of the diminishing-return time for the architectural inputs.\n\n**For readers in chronic mental health difficulty** : the protocol is an adjunct to professional treatment, not a replacement. Discuss with your clinician how to integrate the practice with whatever treatment is in place. The architecture often supports clinical work; the clinical work often makes the architecture more accessible.\n\n**For readers in conditions of structural constraint** (poverty, multiple jobs, caregiving without support): the architectural framework still applies, but the implementation has to be adapted. Even small improvements within the constraints matter; the work may need to address the constraints themselves where possible.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 943,
+      "out_sha": "4db3eb19989b",
       "note": ""
     },
     {
@@ -4331,11 +4331,11 @@
       "en_title": "Appendix B: The 30-Day Emotion Architecture Experiment",
       "order": 352,
       "src_chars": 3167,
-      "status": "pending",
+      "status": "done",
       "src_sha": "dcac17015aff",
       "src": "### Recovery Protocol: When the Experiment Goes Off the Rails\n\nMost readers do not complete this protocol cleanly the first time. A more honest description of what tends to happen: the first three to five days go well; somewhere in the second week the protocol becomes harder to sustain (a difficult day at work, a sick child, a social event that broke the bedtime, a holiday weekend that broke everything); the reader misses several days; the reader then experiences a particular failure mode the literature on behavior change is well aware of — the \"what-the-hell effect,\" in which the broken streak is taken as evidence that the whole project has failed and the rest of the protocol is abandoned. This is the most common way the experiment ends, and it is preventable.\n\n**A deliberate Recovery Protocol** , designed to be invoked at the moment the streak first breaks, rather than as an emergency rebuild after the project has collapsed:\n\n  1. **Notice the break without amplifying it.** A missed day, even a missed three days, is information about which inputs are robust under your real conditions and which are not. It is not evidence about whether you can do the protocol. The narrative move \"I broke the streak; the project is ruined\" is a meta-emotional move (Move 5 from Chapter 2 territory) that has nothing to do with the protocol's actual effectiveness. Name it as such and let it pass without acting on it.\n\n  2. **Distinguish recoverable from non-recoverable inputs.** Sleep, nutrition, movement, and contact are recoverable on the next day; the previous day's missed sleep does not affect today's bedtime decision, except as data about what created the difficulty. Vocabulary and time-and-attention practices recover within hours of restarting. Treat each day as a fresh opportunity rather than a continuation of a broken streak.\n\n  3. **Pick one input to restart, not all six.** Trying to restore the full protocol after a multi-day break is the failure mode most likely to produce a second collapse. Pick the single highest-leverage input for your situation (for most readers, this is sleep) and re-establish only that one for the next two or three days. The other inputs will partly come back on their own as the chosen input stabilizes; the ones that do not can be restored individually after the first one is reliable again.\n\n  4. **Run the architectural diagnosis.** What conditions produced the break? A specific work crunch? A travel period? A relationship event? A medical issue? An accumulation of small load? The break is data about which conditions exceed your protocol's robustness. The protocol will need to be more flexible during similar periods; this is information for the next iteration, not a personal failure.\n\n  5. **Reset expectations toward sustainable rather than perfect.** A reader who completes 80% of the protocol's days for two months is doing more architectural work than a reader who completes 100% for ten days and abandons it. The 80%-of-two-months reader is also better positioned to integrate the practice into ongoing life. Sustained adequate practice is the goal, not a clean completion of the 30 days as written.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 836,
+      "out_sha": "0c925e2c1e5c",
       "note": ""
     },
     {
@@ -4343,11 +4343,11 @@
       "en_title": "Appendix B: The 30-Day Emotion Architecture Experiment",
       "order": 353,
       "src_chars": 1298,
-      "status": "pending",
+      "status": "done",
       "src_sha": "141c576056d1",
       "src": "  6. **If two or more recovery attempts have failed in a row** , treat the protocol itself as the issue rather than the reader. The protocol may be too ambitious for current conditions. Build a smaller version: two or three inputs at modest levels for thirty days. Smaller protocols that succeed compound; larger protocols that fail repeatedly do not.\n\n  7. **The exit option is also legitimate.** Some readers, after a failed attempt, conclude that the architectural-experiment frame is not useful for them right now. This is fine. The framework is one tool among several; readers can return to it later, in different conditions, or find their own version of architectural attention without the protocol structure. The book has framework value beyond the experiment.\n\nThe goal of this Recovery Protocol is not to prevent breaks. Breaks are normal. The goal is to prevent the specific failure mode in which a breakable streak gets converted into \"the whole project has failed\" — a narrative move that ends many otherwise-promising attempts. A reader who treats breaks as routine information, restarts one input at a time, and adjusts expectations toward sustainability ends up with much more practice across a year than a reader who runs perfect 30-day protocols followed by months of nothing.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 358,
+      "out_sha": "33e883cf9c83",
       "note": ""
     },
     {
@@ -4355,11 +4355,11 @@
       "en_title": "Appendix C: Reading List With Honest Takes",
       "order": 354,
       "src_chars": 1152,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5f25f2a35f70",
       "src": "This appendix lists books that the reader who has finished this one might engage with next, with honest assessments of each. The takes are opinionated; readers should weigh their own judgment alongside.\n\n\n### Foundational\n\n**Lisa Feldman Barrett,_How Emotions Are Made_ (2017)**. The book that introduced the constructed-emotion view to general readers. Long, dense in places, occasionally repetitive, but the central thesis is genuinely important and the book is the closest thing to a primary source for the framework underlying much of this book. Worth the effort. Some specific claims are contested in the academic literature; the broad framework holds well.\n\n**Antonio Damasio,_Descartes' Error_ (1994), _The Feeling of What Happens_ (1999), and _Looking for Spinoza_ (2003)**. Older but still useful. _Descartes' Error_ is the foundational popular statement of the somatic-marker hypothesis the book draws on in Chapter 10; the later two books refine and extend it. Damasio's neuroscience-of-feeling framework is one of the predecessors to the construction view. The writing is sometimes denser than it needs to be; the ideas are worth the work.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 474,
+      "out_sha": "103128cc7d13",
       "note": ""
     },
     {
@@ -4367,11 +4367,11 @@
       "en_title": "Appendix C: Reading List With Honest Takes",
       "order": 355,
       "src_chars": 2944,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4363dad95014",
       "src": "### On Specific Emotions\n\n**Carol Tavris,_Anger: The Misunderstood Emotion_ (1989, updated 2018)**. The book that named the catharsis myth thirty years before mainstream psychology caught up. Still excellent, particularly because the cultural momentum she pushed against in 1989 still partly persists today. The 2018 update is worth seeking out.\n\n**Lisa Feldman Barrett,_Seven and a Half Lessons About the Brain_ (2020)**. Shorter and more accessible than _How Emotions Are Made_. A useful supplement.\n\n**Joseph LeDoux,_Anxious_ (2015) and _The Deep History of Ourselves_ (2019)**. LeDoux at his most careful and most public. The careful distinction between fear circuits and fear feelings, developed across both books, is essential for understanding modern anxiety treatment.\n\n**George Bonanno,_The Other Side of Sadness_ (2009) and _The End of Trauma_ (2021)**. Bonanno's resilience research, presented with care for general readers. _The Other Side of Sadness_ is especially valuable as a corrective to the dominant 5-stages narrative. _The End of Trauma_ is more recent and more contested in places, but worth reading.\n\n**Brené Brown,_Daring Greatly_ (2012) and _Atlas of the Heart_ (2021)**. _Daring Greatly_ introduced the popular version of Brown's shame-and-vulnerability work. _Atlas of the Heart_ is a granularity reference: 87 emotion concepts mapped with care. Both have the popular-book quality of being more prescriptive than the underlying research strictly supports; the core distinctions hold up.\n\n**Robert Emmons,_Thanks!_ (2007)**. The popular distillation of his gratitude research. Modest in its claims, careful in its presentation, useful for readers who want to deepen the gratitude practice.\n\n**Dacher Keltner,_Awe_ (2023) and _Born to Be Good_ (2009)**. _Awe_ is the recent popular synthesis of his research line; _Born to Be Good_ is older and broader. Both are worth reading; _Awe_ is especially good as a companion to Chapter 14 of this book.\n\n**John Cacioppo and William Patrick,_Loneliness_ (2008)**. The dense but rewarding scientific summary of Cacioppo's loneliness research. Some material has been refined in the years since; the core is still essential.\n\n**John Gottman,_The Seven Principles for Making Marriage Work_ (1999, updated 2015)**. The popular version of the marital research. Holds up well as a practical guide; the predictive accuracy claims should be held more loosely than the book presents them.\n\n\n### Emotion Regulation Specifically\n\n**James Gross (editor),_Handbook of Emotion Regulation_ (2nd ed. 2013)**. Academic, not for general readers, but the field's reference text. For readers who want to engage with the primary literature, this is the entry point.\n\n**Susan David,_Emotional Agility_ (2016)**. A practical book on emotion regulation drawing on Gross's framework and on acceptance-and-commitment therapy. Useful as a complement; some specific claims outpace the underlying research.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1478,
+      "out_sha": "225ee35732d7",
       "note": ""
     },
     {
@@ -4379,11 +4379,11 @@
       "en_title": "Appendix C: Reading List With Honest Takes",
       "order": 356,
       "src_chars": 2470,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e2f479304baa",
       "src": "### Adjacent Frameworks\n\n**Robert Sapolsky,_Why Zebras Don't Get Ulcers_ (3rd ed. 2004)**. The classic on stress, with implications for emotion that are more important than the book's title suggests. Long, comprehensive, occasionally dated in specific claims, but still the best single source on the physiology of chronic stress. Sapolsky's _Behave_ (2017) is a longer continuation.\n\n**Matthew Walker,_Why We Sleep_ (2017)**. A widely-read book on sleep. Important caveat: Walker has been criticized for over-stating specific claims, with some scientific reviewers finding errors. The basic framing (sleep matters, sleep deprivation has costs) is correct; specific dramatic claims should be checked against more careful sources. Read with appropriate skepticism while taking the broad message seriously.\n\n**Daniel Kahneman,_Thinking, Fast and Slow_ (2011)**. Not specifically about emotion, but the dual-process framework Kahneman popularized has shaped how many readers think about emotion and reason. Important caveat: several specific findings cited in the book, particularly from priming research, have failed to replicate. The broader framework has held up better. Worth reading with awareness of which sections rely on contested findings.\n\n**Ethan Kross,_Chatter_ (2021)**. A useful book on rumination and self-talk, drawing on Kross's research on self-distancing. Practical and accessible.\n\n**Susan Cain,_Quiet_ (2012) and _Bittersweet_ (2022)**. _Quiet_ is on introversion; _Bittersweet_ is on melancholy and longing. Both useful as cultural correctives to dominant Western framings.\n\n\n### Contemplative and Philosophical\n\n**Jon Kabat-Zinn,_Full Catastrophe Living_ (1990, updated 2013)**. The foundational book on mindfulness-based stress reduction. Long, comprehensive, occasionally over-long; the core practices are well-supported and worth engaging with.\n\n**Pema Chödrön,_When Things Fall Apart_ (1997)**. A short book on Buddhist approaches to difficult emotions. Useful as a complement to the secular framework of this book; the specific religious framing is less central than the practical recommendations.\n\n**Marcus Aurelius, _Meditations_. The Stoic classic. Many translations available; Gregory Hays's translation (2002) is widely recommended for readability.\n\n**Massimo Pigliucci,_How to Be a Stoic_ (2017)**. A modern philosophical introduction to Stoicism, with appropriate distinctions from pop-Stoicism. Useful for readers drawn to the tradition.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1146,
+      "out_sha": "9e66253c48d9",
       "note": ""
     },
     {
@@ -4391,11 +4391,11 @@
       "en_title": "Appendix C: Reading List With Honest Takes",
       "order": 357,
       "src_chars": 2206,
-      "status": "pending",
+      "status": "done",
       "src_sha": "474fda18b9a4",
       "src": "### To Approach With Caution\n\nA few books that are widely cited but warrant care.\n\n**Daniel Goleman,_Emotional Intelligence_ (1995)**. Foundational for the EQ movement. The construct has had serious validity issues in the academic literature. Worth reading for historical context; the specific predictive claims should be held loosely.\n\n**Bessel van der Kolk,_The Body Keeps the Score_ (2014)**. Influential and widely-read on trauma. The basic framing (trauma affects the body and not only the mind) is well-supported. Specific mechanism claims and specific intervention recommendations vary in their evidence base; some have substantial support, some are weaker than the book's confident presentation suggests. Read alongside more academic sources.\n\n**Most popular self-help books on emotional life**. The category is large and varies widely in quality. Apply the calibration this book has been recommending: take the basic framings seriously where they are supported, hold strong specific claims loosely, prefer authors with academic credentials whose popular work stays close to the underlying research.\n\n\n### A Note on This Book's Limits\n\nThis book has covered a particular framework (emotion as construction; six moves; six architectural inputs) in particular forms. Other frameworks are valid and have their own contributions. The reading list above includes works from several frameworks; reading across them produces a richer understanding than committing to any one.\n\nThe book has also had specific blind spots: most of the research cited is from WEIRD samples; the cultural perspective is largely modern Western; many specific traditions (religious, philosophical, indigenous) have not been integrated. Readers with commitments to other traditions can usually find compatible material in those traditions; the framework here is one starting point among several.\n\nFinally, the field is still in motion. Recommendations made today will not all hold in five years; some specific claims will be refined or revised as research continues. Readers should expect to update their understanding as the field develops, rather than treating any single book (including this one) as a finished framework.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 731,
+      "out_sha": "b1e724f5b21a",
       "note": ""
     },
     {
@@ -4403,11 +4403,11 @@
       "en_title": "Appendix D: When to Seek Professional Help",
       "order": 358,
       "src_chars": 3241,
-      "status": "pending",
+      "status": "done",
       "src_sha": "93ab43efdf4e",
       "src": "The book has been useful, the reader hopes, for ordinary emotional life and for many of the difficulties that show up in it. The book is not therapy, and some difficulties are larger than self-help can address. This appendix lists concrete red flags that warrant professional evaluation, describes the main forms of professional help available, and addresses common barriers to seeking help.\n\n\n### When to Seek Help\n\nIf any of the following persist for two weeks or more, consider professional evaluation. The threshold is lower than most readers think; seeking evaluation is appropriate at any of these markers, regardless of whether one's life \"looks adequate from outside.\"\n\n\n#### Mood-related markers\n\n* Sustained low mood that does not lift even briefly\n* Loss of interest in things that normally produce pleasure (anhedonia)\n* Persistent hopelessness; a felt sense that nothing will improve\n* Significant sleep disruption: insomnia, hypersomnia, or sleep that is not restorative regardless of duration\n* Significant appetite change (more or less than usual) sustained over weeks\n* Concentration difficulties affecting work or relationships\n* Energy that is much lower than usual, persistently, not just on hard days\n* Thoughts of self-harm or suicide\n* Thoughts that life is not worth living, even passively\n\nIf any of these persist, an evaluation by a primary care physician or mental health professional is appropriate. The threshold for the last two markers is immediate: any active thoughts of suicide or self-harm warrant prompt professional contact. Crisis lines exist in most countries; in the United States, 988 is the Suicide and Crisis Lifeline.\n\n\n#### Anxiety-related markers\n\n* Severe anxiety interfering with daily functioning (work, relationships, basic activities)\n* Panic attacks, particularly if recurrent\n* Avoidance of important situations or activities due to anxiety\n* Persistent intrusive thoughts that the reader cannot interrupt\n* Compulsive behaviors that the reader does not feel able to stop\n* Sustained physical symptoms of anxiety (heart palpitations, breathing difficulties, gastrointestinal symptoms) without clear medical cause\n* Fear that has become disproportionate to the actual current circumstances and is not responding to the practices in this book\n\nAnxiety disorders have effective treatments; the field has good evidence-based approaches for most forms. Early treatment typically produces better outcomes than waiting.\n\n\n#### Trauma-related markers\n\n* Intrusive memories or flashbacks of past events that interfere with current functioning\n* Severe avoidance of reminders of past difficult experiences\n* Hypervigilance, exaggerated startle response, or feeling constantly \"on edge\"\n* Numbing or dissociation, particularly if recurrent\n* Difficulty maintaining relationships or trust due to past experiences\n* The practices in this book bringing up trauma material that you cannot contain on your own\n\nTrauma work benefits from clinicians trained in evidence-based trauma treatments (trauma-focused cognitive-behavioral therapy, prolonged exposure, eye-movement desensitization and reprocessing, somatic experiencing approaches). The work is generally more reliable than self-directed practice.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 879,
+      "out_sha": "3141ce7d58f8",
       "note": ""
     },
     {
@@ -4415,11 +4415,11 @@
       "en_title": "Appendix D: When to Seek Professional Help",
       "order": 359,
       "src_chars": 3089,
-      "status": "pending",
+      "status": "done",
       "src_sha": "58771b70650a",
       "src": "#### Grief markers (Prolonged Grief)\n\n* Grief that has remained essentially unchanged for over a year\n* Persistent intense yearning, longing, or preoccupation with the deceased\n* Severe difficulty engaging with daily life that has not lifted\n* Identity disturbance or persistent meaninglessness following the loss\n* Avoidance of reminders that has become extensive\n\nProlonged grief disorder is a recognized clinical condition with specific treatments. Most grief is not in this category; some is, and benefits from professional support.\n\n\n#### Substance use markers\n\n* Substance use as a coping strategy that has crossed into dependency\n* Tolerance: needing more to achieve the same effect\n* Withdrawal symptoms when not using\n* Use continuing despite negative consequences (relational, professional, health)\n* Difficulty stopping or moderating despite intention to do so\n* Drinking that has become daily, particularly in larger quantities than reflective use would warrant\n\nSubstance use disorders are a clinical category with effective treatments. Help is available; the threshold for seeking it is lower than most readers think.\n\n\n#### Relational markers\n\n* Severe relational difficulty: abuse, sustained chronic contempt, breakdown of trust that does not respond to repair attempts\n* Recurring patterns in relationships that the reader recognizes but cannot change\n* Difficulty maintaining any close relationships across time\n* Long-term partnership patterns that have become destructive (the Four Horsemen at high frequency, repeated breakdowns and reconciliations)\n\nCouples therapy with a clinician trained in evidence-based approaches (Gottman Method, Emotionally Focused Therapy, integrative behavioral couple therapy) is often more effective than self-directed work for established patterns. For abuse situations specifically, individual support and safety planning are typically appropriate before any couples work.\n\n\n#### Eating-related markers\n\n* Restriction of food intake to a degree that affects health or functioning\n* Binge episodes that the reader feels unable to control\n* Compensatory behaviors (vomiting, laxative use, excessive exercise) following eating\n* Weight changes that are not intentional\n* Preoccupation with food, weight, or body image that interferes with daily life\n\nEating disorders are a serious clinical category with specific treatments. The threshold for seeking help is low; early intervention is more effective than waiting until the pattern is severe.\n\n\n#### Other patterns warranting professional support\n\n* Persistent identity confusion or instability\n* Severe self-criticism or self-loathing that has not responded to the practices in this book\n* Sustained shame patterns from family-of-origin or other developmental sources\n* Difficulty regulating emotions that has been long-standing and that the practices have not addressed\n* Patterns that the reader's loved ones have expressed concern about\n* Any difficulty that has been present for months and is not improving\n\n\n### Forms of Professional Help\n\nA brief orientation to what is available.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 848,
+      "out_sha": "ddc85be1c64f",
       "note": ""
     },
     {
@@ -4427,11 +4427,11 @@
       "en_title": "Appendix D: When to Seek Professional Help",
       "order": 360,
       "src_chars": 3166,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2d285f4ef575",
       "src": "#### Psychotherapy\n\nSeveral evidence-based approaches exist for most common difficulties.\n\n* **Cognitive-behavioral therapy (CBT)** : well-supported for anxiety, depression, OCD, PTSD, and many other conditions. Generally short to medium term (12–20 sessions for many conditions). Focused on specific patterns of thought and behavior.\n* **Acceptance and commitment therapy (ACT)** : a third-wave CBT variant emphasizing acceptance of difficult emotions and commitment to values-based action. Increasingly well-supported across multiple conditions.\n* **Dialectical behavior therapy (DBT)** : developed for borderline personality disorder, also useful for emotion regulation difficulties broadly. Includes specific skills training and group components.\n* **Psychodynamic therapy** : longer-term, focused on patterns and their origins. Less standardized; quality varies by clinician.\n* **Trauma-focused therapies** : trauma-focused CBT, prolonged exposure, EMDR, somatic experiencing, internal family systems. Specific to trauma; the field has multiple approaches with different evidence bases.\n* **Couples therapy** : Gottman Method, Emotionally Focused Therapy, integrative behavioral couple therapy. Specific to relational work.\n\nThe choice among these depends on the specific difficulty, the reader's preferences, and clinician availability. Most evidence-based approaches produce meaningful improvement when applied competently; the choice between them often matters less than the quality of the clinician and the fit with the client.\n\n\n#### Psychiatric Medication\n\nFor some conditions (moderate to severe depression, several anxiety disorders, bipolar disorder, OCD, certain trauma-related conditions), medication is well-established as effective treatment, often more so than psychotherapy alone for severe cases. The decision involves weighing potential benefits against side effects with a prescribing clinician.\n\nCommon categories include selective serotonin reuptake inhibitors (SSRIs) for depression and anxiety; benzodiazepines for acute anxiety (with significant tolerance and dependence concerns for chronic use); mood stabilizers for bipolar disorder; specific medications for ADHD, OCD, and other conditions.\n\nThe combination of medication and psychotherapy is often more effective than either alone for moderate to severe conditions. The integration is best worked out with a psychiatrist or with a primary care physician working with a therapist.\n\n\n#### Crisis Resources\n\nFor acute crises (active suicidal thoughts, severe acute anxiety, acute substance withdrawal, acute trauma response), crisis resources exist in most countries.\n\nIn the United States: 988 Suicide and Crisis Lifeline (call or text). Crisis Text Line: text HOME to 741741. Emergency department in person for acute crises.\n\nIn the United Kingdom: Samaritans 116 123. NHS 111. Emergency department.\n\nIn other countries: most have national suicide prevention lines; an internet search for \"[country] crisis line\" usually finds the relevant resource.\n\nFor non-crisis support that does not require waiting for therapy availability, peer support lines and warmlines are often available.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 969,
+      "out_sha": "66beb288caee",
       "note": ""
     },
     {
@@ -4439,11 +4439,11 @@
       "en_title": "Appendix D: When to Seek Professional Help",
       "order": 361,
       "src_chars": 3422,
-      "status": "pending",
+      "status": "done",
       "src_sha": "da6b57be3e2b",
       "src": "### Common Barriers to Seeking Help\n\nA few patterns that often prevent readers from seeking help that would benefit them.\n\n**\"I'm not sick enough\"** : the threshold for seeking help is lower than most readers think. Many people who would benefit from professional support do not seek it because they feel their difficulties are \"not bad enough.\" Treatment effectiveness is generally higher when initiated earlier; waiting until the difficulty is severe is rarely an advantage.\n\n**\"I should be able to handle this myself\"** : the framing treats seeking help as a personal failure. The framing is wrong; mental health difficulties have biological and contextual contributors that self-help cannot fully address. Seeking help is a competence, not a failure.\n\n**Stigma** : cultural shame around mental health remains real in many contexts. The shame is partly cultural inheritance and partly the reader's own meta-emotional reaction. Naming both is part of the work; seeking help despite the shame is the appropriate response.\n\n**Cost and access** : in some contexts, professional help is genuinely difficult to access due to cost, insurance, or availability. Sliding-scale therapists, community mental health centers, online platforms, and graduate-trainee clinics often offer reduced-cost options. In countries with national health systems, the relevant pathways for accessing care are usually available through primary care physicians.\n\n**\"It won't help\"** : the felt sense of hopelessness can itself prevent the reader from seeking help that would address the hopelessness. This is one of the more common patterns in depression specifically; the reader's pessimism about treatment is partly a symptom of the condition the treatment would address. Seeking help despite the felt sense is the right move.\n\n**Difficulty finding the right clinician** : not every clinician is a good fit for every client. Some readers try one therapist, find it does not work, and conclude that therapy does not work. A poor fit with one clinician is information about that fit, not about therapy in general. Trying a different clinician, or a different modality, is often appropriate.\n\n**The fear that therapy will produce \"too much\"** : some readers worry that therapy will surface material they cannot handle. Good clinicians are trained to work at a pace the client can tolerate; the work does not require breaking open all of life at once. The fear is understandable; it should not be the reason to forgo support.\n\n\n### A Note on This Book and Therapy\n\nThe book has been an effort to provide useful framework and practical tools for emotional life. It is not therapy. Some of what the book describes is consistent with what therapy provides; some is not. The relationship between the book's practices and any specific therapeutic work is for the reader and their clinician to integrate.\n\nFor some readers, the book will be sufficient. For some, it will be a useful supplement to therapy. For some, it will reveal the need for professional support that they had not previously recognized. All three are reasonable outcomes.\n\nIf, after reading the book, the reader finds that any of the markers in this appendix apply to them, the appropriate next step is professional evaluation. The book is a starting point; professional support is sometimes the next move; both can be part of a sustained engagement with emotional life across years.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 926,
+      "out_sha": "a55dae2b6d0c",
       "note": ""
     },
     {
@@ -4451,11 +4451,11 @@
       "en_title": "Appendix E: Confidence Audit and Emotion Glossary",
       "order": 362,
       "src_chars": 3064,
-      "status": "pending",
+      "status": "done",
       "src_sha": "864e3508ed00",
       "src": "This appendix collects two reference resources scattered across the book: a consolidated confidence audit of the major claims, and a glossary of the emotion words the book has practiced.\n\n\n### Part 1: Confidence Audit\n\nThe book has flagged the strength of evidence behind specific claims as it goes. This audit consolidates those calibrations in one place. (Chapter 15 §15.4 walks through the same calibration with explanation; this appendix is the lookup-card version. If a label below is unclear, the §15.4 discussion explains why the label sits where it does.)\n\nThree categories: **Well-replicated** (treat as solid working knowledge), **Mixed or qualified** (the picture is contested or the specific number is uncertain, even where the broad direction holds), and **Practical heuristic** (useful in many readers' lives but not strictly proven, included because the practical value is high and the cost of being wrong is low).\n\n\n#### Well-replicated\n\n* **Affect labeling reduces emotional intensity, slightly but reliably.** Lieberman's \"name it to tame it\" line of research; small effect, robust across many studies.\n* **Granularity correlates with mental health outcomes.** Barrett's and Kashdan's work; the relationship is robust and large enough to matter.\n* **Sleep loss degrades emotion regulation.** Multiple lines of evidence; the effect is large enough that most readers can detect it in their own lives within a few days.\n* **Loneliness is associated with mortality risk at the population level.** Holt-Lunstad's meta-analyses; the effect size is comparable to other established public-health risks.\n* **Catharsis (expressing anger to release it) does not reduce anger.** Tavris's review; the catharsis hypothesis has been falsified across many studies.\n* **Chronic suppression has cardiovascular and relational costs.** Gross's research on suppression as a regulation strategy; the costs are well-documented.\n* **The construction view (emotion = body state + concept + context) has substantial empirical support.** Specific neural-pattern claims are contested; the broad framework is increasingly the consensus view in affective science.\n\n\n#### Mixed or qualified\n\n* **The specific 2.9013 positivity ratio.** The number was retracted; broaden-and-build theory in modified form survives.\n* **The 90%+ predictive accuracy of Gottman's Four Horsemen.** Specific number is contested; the broader framing of contempt as relationship-corrosive has held up.\n* **Strong evolutionary-sex-difference claims about jealousy.** The basic finding (some sex differences exist) is real; the strongest claims about magnitude and universality have been tempered.\n* **Basic-emotions universality (Ekman).** The strong universality claim has not held up; people across cultures recognize broadly similar emotions when forced-choice options are given, but the categories are not as universal as the original claim implied.\n* **Specific facial-feedback claims (smiling makes you happier, etc.).** The dramatic versions have failed to replicate; smaller effects may exist.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 974,
+      "out_sha": "34f30fb984b2",
       "note": ""
     },
     {
@@ -4463,11 +4463,11 @@
       "en_title": "Appendix E: Confidence Audit and Emotion Glossary",
       "order": 363,
       "src_chars": 3196,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6d970dcca9fd",
       "src": "#### Practical heuristic\n\n* **The six moves as a sequence (pause → label → reappraise → distinguish urge → notice meta → architecture).** No single study has tested the sequence as a unit; each component has some support; the bundle is offered as practice.\n* **Architecture as the highest-leverage intervention.** Reasonable inference from the components (sleep, contact, movement, vocabulary, attention all have strong individual evidence); the claim that architecture _together_ outweighs in-the-moment moves is plausible but not formally tested.\n* **The 30-day experiment as a useful starting protocol.** No specific evidence the 30-day duration is optimal; the protocol assembles components with individual evidence and the duration is chosen to be realistic.\n* **Granular labels for each emotion family (the five-to-seven words per chapter).** The specific words and distinctions are drawn from the relevant research and from the practical experience of clinicians and writers; they are useful, not empirically validated as a set.\n\nA reader who tracks these calibrations leaves the book with sturdier knowledge than a reader who treats every claim as equally settled. The audit also models the broader habit: in any popular psychology book, ask which claims are which.\n\n\n### Part 2: Emotion Word Glossary\n\nThe roughly sixty to seventy emotion words practiced across the book, grouped by family. Each gloss is one or two lines; the chapters develop each in detail.\n\n\n#### Anger family (Ch. 3)\n\n* **Frustration** : a goal blocked, often by circumstance rather than person.\n* **Indignation** : anger with a moral claim attached; \"this is wrong.\"\n* **Resentment** : long-stored anger that has not been processed.\n* **Exasperation** : low-grade fatigue-anger at repeated minor obstacles.\n* **Contempt** (also Ch. 12): hierarchical anger; \"I am above this.\"\n\n\n#### Anxiety family (Ch. 4)\n\n* **Worry** : cognitive future-rehearsal, often verbal.\n* **Apprehension** : low-grade dread before a known event.\n* **Dread** : heavier, often somatic, often about the unwelcome but inevitable.\n* **Foreboding** : a felt sense that something bad is coming, without specific content.\n* **Agitation** : anxiety with motoric overflow; cannot sit still.\n\n\n#### Sadness family (Ch. 5)\n\n* **Grief** : sadness specifically about loss; slow, often non-linear.\n* **Disappointment** : loss of an expected good.\n* **Longing** : sadness for what is absent but not necessarily lost.\n* **Sorrow** : deep, often dignified, often about something larger than oneself.\n* **Melancholy** : a sadness that has settled into the texture of life rather than spiking.\n* **Hollowness** : depleted-low; less sharp than grief, more empty than melancholy.\n* **Saudade** (Portuguese): longing for what was or what might have been; bittersweet.\n\n\n#### Joy family (Ch. 6)\n\n* **Contentment** : a steady low-affect positive state; the body at home.\n* **Delight** : small, sharp, situation-specific joy.\n* **Joy** : the broader positive activation; what the family is named for.\n* **Amusement** : joy with humor's particular structure; the surprise of recognition.\n* **Eudaimonia** : the satisfaction of living in alignment with one's values.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1113,
+      "out_sha": "98e21eb3122b",
       "note": ""
     },
     {
@@ -4475,11 +4475,11 @@
       "en_title": "Appendix E: Confidence Audit and Emotion Glossary",
       "order": 364,
       "src_chars": 3024,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b88792cec941",
       "src": "#### Shame family (Ch. 7)\n\n* **Embarrassment** : brief, public, often-comic; the social exposure of a small failure.\n* **Mortification** : stronger embarrassment; the wish to disappear.\n* **Humiliation** : imposed shame from another, often coercive.\n* **Self-loathing** : shame that has consolidated into a steady self-relation.\n* **Toxic shame** : chronic shame that has merged with identity; \"I am bad\" rather than \"I did bad.\"\n* **Xiūchǐ / xiūkuì** (Chinese): culturally-marked shame inflected by relational obligation; not directly translated by English \"shame.\"\n\n\n#### Jealousy family (Ch. 8)\n\n* **Benign envy** : comparative pain plus admiration; motivates emulation.\n* **Malicious envy** : comparative pain plus the wish to bring the other down.\n* **Relational jealousy** : fear of losing a specific relationship to a rival.\n* **Comparison fatigue** : the weariness of chronic upward comparison, often algorithmically-induced.\n* **Schadenfreude** (German): pleasure at another's misfortune; often a sign of accumulated envy.\n\n\n#### Disgust family (Ch. 9)\n\n* **Revulsion** : somatic disgust at the sensory.\n* **Aversion** : milder disgust; turning-away.\n* **Squeamishness** : low-grade physical disgust with a learned component.\n* **Moral disgust** : disgust at acts or people, with substantial cultural shaping.\n\n\n#### Fear family (Ch. 10)\n\n* **Wary** : low-grade alertness to possible threat.\n* **Alert** : heightened attention without panic.\n* **Frightened** : clear fear at a specific present threat.\n* **Terrified** : overwhelming fear; the body's full alarm response.\n\n\n#### Loneliness family (Ch. 11)\n\n* **Acute loneliness** : present-tense, situation-bound; resolves with contact.\n* **Chronic loneliness** : extended, with documented health effects.\n* **Existential loneliness** : the felt sense of separateness that persists across relationships.\n* **Relational loneliness** : feeling unseen within existing relationships.\n* **Cultural loneliness** : feeling unseen by one's broader cultural context.\n\n\n#### Contempt family (Ch. 12)\n\n* **Disdain** : dismissive low-grade contempt.\n* **Scorn** : contempt expressed.\n* **Sarcasm** : contempt disguised as humor.\n* **Snobbery** : contempt organized around a category claim (taste, class, education).\n* **Self-righteousness** : contempt directed at moral inferiors as the contemptor sees them.\n\n\n#### Gratitude family (Ch. 13)\n\n* **Appreciation** : noticing the good without strong activation.\n* **Thankfulness** : gratitude directed at a specific giver.\n* **Indebtedness** : gratitude with an unwelcome obligation attached.\n* **Wonder** : gratitude blending into awe at the larger context.\n\n\n#### Awe family (Ch. 14)\n\n* **Wonder** : the lighter end of awe; curiosity at the strange.\n* **Reverence** : awe with a moral or spiritual structure.\n* **Ecstasy** : awe at high intensity; the self temporarily de-centered.\n* **The sublime** : awe with a component of the threatening; vast and dangerous.\n* **Transcendence** : awe that has reorganized the sense of self.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1123,
+      "out_sha": "c5e3d410a756",
       "note": ""
     },
     {
@@ -4487,11 +4487,11 @@
       "en_title": "Appendix E: Confidence Audit and Emotion Glossary",
       "order": 365,
       "src_chars": 809,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5bbf7ce78480",
       "src": "#### Mixed and adjacent (named but not given full chapters)\n\n* **Hope** : future-oriented positive affect; closely related to but distinct from optimism.\n* **Compassion** : care for another's suffering; close cousin of empathy with a specifically prosocial action component.\n* **Surprise** : brief affective response to violated expectations; sometimes positive, sometimes not.\n* **Pride** : positive self-evaluation; healthy when context-appropriate, corrosive when chronic.\n* **Guilt** : distinguished from shame as \"I did bad\" rather than \"I am bad.\"\n* **Ambivalence** : holding two distinct emotions about the same object simultaneously.\n\nThe list is not exhaustive. Each reader, with practice, develops words specific to their own life and culture. The list above is a starting point, not a ceiling.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 266,
+      "out_sha": "d5fe8a81f49f",
       "note": ""
     },
     {
@@ -4499,11 +4499,11 @@
       "en_title": "Appendix F: Log Review Protocol",
       "order": 366,
       "src_chars": 1245,
-      "status": "pending",
+      "status": "done",
       "src_sha": "66b13f021cd5",
       "src": "Thread B asked you, across the chapters, to record specific moments from your own emotional life. By the time you reach Chapter 18 you have, ideally, two foundational entries from Part I plus twelve emotion-specific entries — a small personal corpus that contains more information about your own emotional patterns than any external assessment could produce. The question this appendix answers is what to do with that corpus.\n\nThe default outcome, if no review structure exists, is that the log entries accumulate and then sit unread. This is the same failure mode that affects most personal-data projects (food logs, exercise logs, mood-tracking apps) and it is the most common reason structured self-observation fails to produce the change it could. The remedy is not more entries; it is a deliberate review rhythm that turns entries into pattern recognition.\n\nThis appendix gives a Monthly Review Protocol (15–20 minutes), a Quarterly Review Protocol (45–60 minutes), and an Annual Review Protocol (2–3 hours). The cadences nest: a monthly review feeds the next quarterly; the quarters feed the annual. A reader who runs only the monthly version still gets most of the value; the longer versions deepen what the monthly review begins.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 371,
+      "out_sha": "87c4177783b2",
       "note": ""
     },
     {
@@ -4511,11 +4511,11 @@
       "en_title": "Appendix F: Log Review Protocol",
       "order": 367,
       "src_chars": 2658,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c35878a360d6",
       "src": "### Monthly Review Protocol (15–20 minutes)\n\nSchedule one date per month. The first Sunday of each month works well for most readers; pick a day and time that you are likely to keep, and put it in the calendar with a recurring entry.\n\nOpen your log and read the entries you made in the past month, in order. Then answer the following six questions in writing. Your answers do not have to be long; one to three sentences each is enough.\n\n  1. **Which emotion category appeared most frequently this month?** Not all emotions get equal attention; some readers' months are dominated by anxiety, others by anger, others by sadness. Notice which one is on top. If the same one has been on top for several months, that is information.\n\n  2. **Which granular labels did I use most precisely, and which am I still defaulting to broad ones?** A reader who is using \"frustrated\" instead of \"angry\" is doing the granularity work. A reader who is still using \"bad\" or \"stressed\" as the default is signalling that the vocabulary work has not yet installed for that emotion family. The move is simple: pick one broad label that recurred and choose two granular alternatives to try over the next month.\n\n  3. **Which moves did I run reliably, and which did I forget to run?** Across the entries, the pause is usually the move readers run most reliably; meta-emotion is often the move that gets missed. Notice your pattern. The next month's experiment is to deliberately run the most-missed move in three specific situations.\n\n  4. **Which architectural inputs were strong this month, and which were depleted?** Sleep, food, movement, contact, vocabulary, time. The log entries often reveal the architecture under each emotional moment if read for that signal. A reader whose anger entries cluster on poorly-slept days has identified an actionable pattern.\n\n  5. **What did I attempt that did not work?** This is the question most readers skip and the one that produces the most learning. A move that did not land, an action urge that won, a recovery that took longer than expected. Name one specific failure honestly. The naming converts it from rumination material into data.\n\n  6. **What is one specific intention for the next month?** Not a resolution; a small, concrete experiment. \"Run Move 5 explicitly in the next three meetings that activate me.\" \"Restart the Wednesday walk.\" \"Try the gratitude-letter prompt with one specific person.\" The intention should be small enough that you will actually do it.\n\nClose the review by writing the date of the next monthly review at the top of a new log page. The continuity is part of what makes the practice compound.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 791,
+      "out_sha": "8c76fcd6560c",
       "note": ""
     },
     {
@@ -4523,11 +4523,11 @@
       "en_title": "Appendix F: Log Review Protocol",
       "order": 368,
       "src_chars": 2328,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8d74bf7ea6ae",
       "src": "### Quarterly Review Protocol (45–60 minutes)\n\nEvery three months, run a longer version of the review. The natural quarters work well: end of March, end of June, end of September, end of December. The longer review reads across the previous three monthly reviews together and asks larger questions.\n\nRead all three monthly reviews in order, then your log entries from the same period. Then answer:\n\n  1. **What patterns recur across all three months that no single monthly review surfaced?** Some patterns are visible only at the quarterly scale. A specific relationship that produces difficulty in every month's entries; a specific time of week that recurs as architecturally depleted; a specific cognitive frame that keeps appearing.\n\n  2. **What has shifted across the quarter?** A reader doing the work usually shifts in measurable small ways across three months: one granular label is now reliable that was not in month one; one move runs without effort that previously required attention; one architectural input has stabilized. Name what has actually changed.\n\n  3. **What has not shifted?** Equally important. Patterns that have remained constant across three months of attention may be patterns that need a different intervention than the monthly experiments have provided. Some require professional support; some require a longer time horizon; some require addressing structural conditions the monthly review cannot reach.\n\n  4. **Where am I on the calibration ladder for the practices?** The book introduced a confidence calibration (Appendix E Part 1). The same calibration applies to your own practice: which moves do you treat as reliable in your hands; which are mixed; which feel unproven? Updating this honestly across quarters keeps the practice grounded.\n\n  5. **What does the next quarter need?** Three months is enough time for substantive work on one or two specific patterns. Pick the one or two highest-leverage patterns from the review and commit to focused practice on them for the coming quarter. Most readers' progress comes from sustained focus on a small number of patterns rather than from broad attention to many.\n\nThe quarterly review also includes an architectural reset. Re-read Appendix B if you have run the 30-day experiment, and decide whether any input warrants renewed attention.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 665,
+      "out_sha": "cb798fccf933",
       "note": ""
     },
     {
@@ -4535,11 +4535,11 @@
       "en_title": "Appendix F: Log Review Protocol",
       "order": 369,
       "src_chars": 3059,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c059e28ac8b2",
       "src": "### Annual Review Protocol (2–3 hours)\n\nOnce a year, on a date you choose and keep (your birthday, the calendar new year, the anniversary of your first log entry, whatever holds), run a full annual review. The annual review reads across all twelve monthly reviews, the four quarterly reviews, and the year's log entries. It is the most demanding of the three protocols and the most rewarding.\n\nThe annual review is best done in a setting that supports reflection: a long quiet block, a notebook rather than a screen, ideally outside or in a place that is not your usual work setting. Some readers do this with a trusted friend or partner running a parallel review and then comparing notes; the social structure helps the review actually happen.\n\nSix annual questions:\n\n  1. **What does the year of entries actually show?** Read the entries as if they were written by someone else and you were doing a careful character study. What kind of person does this writing describe? What do they care about? What recurs? What surprises them? The exercise of stepping outside your own perspective produces a particular kind of seeing that the inside view cannot.\n\n  2. **Which emotions did I work with most, and which did I avoid?** The pattern of attention across twelve emotion families is informative. Some readers spend the year deeply in three or four; others spread attention thinly. Both patterns can be valid. The avoided emotions are usually informative — sometimes about life conditions (the year contained little sadness because it contained little loss), sometimes about avoidance (the year contained little shame because shame entries did not get written even when shame happened).\n\n  3. **Which moves became reliable across the year?** A year is long enough that some moves install. Notice which ones. The reliable moves are tools you have. The unreliable ones are the work for next year.\n\n  4. **What did the architecture do across the year?** Sleep, nutrition, movement, contact, vocabulary, attention. Some inputs trend up across the year; some fluctuate; some trend down. The year-scale view is the right scale for architectural change; the inputs do not shift in days or weeks at this scale.\n\n  5. **What needs professional support?** Some patterns persist across a year of attention. The book has been clear that some difficulties exceed self-help. The annual review is the right point to be honest with yourself about whether any of the patterns warrant a clinician, a therapist, a coach, a doctor, a community, a structural change. Naming this is itself the work.\n\n  6. **What is the next year for?** Years organize themselves around themes whether or not the reader chooses one. A year of getting through; a year of deepening one specific practice; a year of architectural rebuild; a year of relational work; a year of grief; a year of expansion. Naming a theme for the coming year, with full awareness that life will modify it, gives the next twelve months an organizing question that makes the entries easier to write and more useful to review.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 869,
+      "out_sha": "6f5b72b0f85b",
       "note": ""
     },
     {
@@ -4547,11 +4547,11 @@
       "en_title": "Appendix F: Log Review Protocol",
       "order": 370,
       "src_chars": 1530,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5447fe0f6e20",
       "src": "Close the annual review by writing a short letter to your future self, to be opened at the next annual review. The letter should include: what you hope this year to look like, what specifically you intend to keep practicing, what you suspect will be hardest, and one thing you want yourself to remember if you forget. Seal it (or save it in a file with a future-date filename) and do not read it again until the next annual review. Reading the previous year's letter at the start of the new annual review is, for most readers who do it, the single most informative element of the practice.\n\n* * *\n\n\n### A Final Note\n\nThe reviews are an investment whose payoff compounds across years. A reader who runs the protocol for one year gets useful pattern recognition. A reader who runs it for five years has a record of their own emotional development at a level of detail that almost no one accumulates outside specific therapeutic settings. The record itself becomes a resource — for understanding past difficulties, for noticing growth that has otherwise gone unnoticed, for orienting in years when orientation is hard to find.\n\nThe work is also fully optional. Some readers find the structure useful; others find that the structure becomes burden and that a freer relationship to the log serves them better. Both can be valid. The practice should fit your actual life, not your idea of what a practice should look like.\n\nIf you do nothing else: re-read your log once a year, and let what you read change what you do next.\n\n* * *\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 422,
+      "out_sha": "8a1ab011015f",
       "note": ""
     }
   ],
