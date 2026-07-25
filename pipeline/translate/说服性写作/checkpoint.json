@@ -2147,11 +2147,11 @@
       "en_title": "Chapter 14: Writing Personal Essays with AI",
       "order": 172,
       "src_chars": 2331,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fe308509fe46",
       "src": "Since ChatGPT's release, admissions offices report a recognizable \"AI essay sound\": fluent, organized, and vague. The sound has, paradoxically, made specific human moments more valuable, not less.\n\nThis is the chapter on writing personal essays in the post-2023 reality. AI is widely used. Admissions readers know it is widely used. Many readers have developed strong intuitions about which essays were AI-drafted. The candidate's question is no longer _should I use AI?_ (the answer is almost certainly yes, in some capacity) but _how do I use AI in a way that does not produce the AI essay sound?_\n\nThis chapter answers that question.\n\n\n### 14.1 Vignette: Theo Tries ChatGPT for the Third Supplement\n\nTheo, in the senior year of college, working on the supplements from Chapter 4, is on the third \"why this school\" supplement of a long evening. Theo opens ChatGPT and asks: _Write a 250-word \"why Northwestern\" supplement for a cognitive science applicant interested in language and bilingualism._\n\nChatGPT produces:\n\n> Northwestern University has long stood out to me as a beacon of academic excellence and innovation, particularly in the field of cognitive science. The university's renowned faculty, vibrant intellectual community, and commitment to interdisciplinary research make it the ideal place for me to pursue my passion for understanding language and bilingualism. I am especially drawn to Northwestern's Cognitive Science Program, which offers a unique combination of psychology, linguistics, and neuroscience that aligns perfectly with my academic interests.\n> \n> [The essay continues for another 175 words in the same register.]\n\nTheo reads the output. It is competent. It is also exactly the kind of essay every other applicant who has used ChatGPT for the same prompt has produced. It is the AI essay sound: fluent, organized, vague. Theo recognizes it instantly.\n\nTheo does not paste the output into the application. Instead, Theo uses the AI differently — for brainstorming what specific features of Northwestern matter to Theo, for catching weak transitions in Theo's own draft, for sentence-level clarity. The AI is useful for these tasks. It is not useful for generating the heart of the essay.\n\nThis chapter is about using AI for the tasks it does well and refusing to use it for the tasks it does poorly.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1519,
+      "out_sha": "b1041090eb0b",
       "note": ""
     },
     {
@@ -2159,11 +2159,11 @@
       "en_title": "Chapter 14: Writing Personal Essays with AI",
       "order": 173,
       "src_chars": 3376,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f68113c1aa43",
       "src": "### 14.2 What Admissions Readers Actually Do With AI Detection\n\nAdmissions readers in 2024 and beyond are reading in an environment where AI-generated essays are common. Their detection is not formal — most admissions offices do not run AI-detection software, partly because the software is unreliable and partly because the offices have decided not to. The detection is informal, pattern-based, and human.\n\nA reader's process for evaluating possible AI involvement:\n\n  1. **Read the essay normally.** Form an impression.\n  2. **Notice if the prose is suspiciously fluent and suspiciously vague.** AI-generated prose tends toward the median register: smooth sentences, predictable transitions, vague specifics. Human-generated prose tends toward more variation — some sentences awkward, some surprising, some specifically-yours.\n  3. **Notice if the essay contains specific moments that surprise.** Specifically-human essays contain at least three Specific Objects that the AI would not generate. AI-generated essays contain few or none.\n  4. **Notice if the voice is consistent across the application.** A candidate's essay, supplements, and short answers should sound like the same person. AI-generated essays often sound like a different person from the candidate's interview, recommendations, or short answers.\n  5. **Decide.** Most readers do not formally flag suspected AI use. They downgrade the essay's weight in their overall evaluation.\n\nThe asymmetry: AI use is harder for readers to prove, but it is easier for readers to _suspect._ Suspected AI use lowers the essay's weight even when the suspicion is informal.\n\nThe universal pattern in §2.10 already names specifics, voice, and the AI median register. From the reader's side, the AI Test adds two form-specific checks:\n\n  1. **Cross-document voice consistency.** The voice in the personal essay matches the voice in the short answers and in the recommender's direct quotes of the candidate. AI-written documents tend to homogenize toward a register the other documents do not match.\n  2. **Polish-versus-baseline mismatch.** Suspiciously polished prose from an applicant whose other materials are less polished is a flag. Readers calibrate against the candidate's known writing level.\n\nThe form-specific AI tells readers actively look for:\n\n  1. **Predictable transitions.** _Furthermore, in addition, moreover, ultimately._ AI loves these.\n  2. **Generic wisdom in the closing register.** _Through this experience, I learned the importance of [virtue]._\n\n\n### 14.3 What AI Is Good At\n\nAI is good at certain writing tasks. Refusing to use AI for these tasks, out of principle, costs the candidate without protecting them from the AI essay sound.\n\n\n#### Brainstorming Specific Stories\n\nAI is good at helping the candidate generate options. _I am writing a college essay about my grandmother. Brainstorm 15 specific scenes from a grandmother-grandchild relationship that I might have experienced._ The AI's list will include obvious options and a few unexpected ones. The candidate picks the ones that match their actual memory; the AI's output is a memory-prompt, not a draft.\n\n\n#### Catching Weak Transitions\n\nAI is good at flagging weak prose. _Here is my draft. Identify the three weakest transitions and explain why._ The AI's diagnosis is often useful (and the candidate can ignore the parts that are not).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1215,
+      "out_sha": "9f4cd876dfe2",
       "note": ""
     },
     {
@@ -2171,11 +2171,11 @@
       "en_title": "Chapter 14: Writing Personal Essays with AI",
       "order": 174,
       "src_chars": 3399,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6d65b796523d",
       "src": "#### Sentence-Level Clarity\n\nAI is good at simplifying convoluted sentences. _Rewrite this sentence in shorter, clearer prose without changing the meaning._ The AI's output is typically a useful clarification (which the candidate can adopt or modify).\n\n\n#### Identifying Cliché\n\nAI is good at recognizing cliché. _Identify the clichéd phrases in this draft._ The AI is reliably accurate at this — it knows the cliché list. The candidate then revises.\n\n\n#### Editing for Word Count\n\nAI is good at compression. _Cut this 300-word paragraph to 200 words without losing the specifics._ The AI's output is a serviceable compression that the candidate can refine.\n\n\n#### Reading the Prompt for Subtext\n\nAI can help the candidate read scholarship or admission prompts more carefully. _Here is the Truman scholarship's stated criteria. Identify the implicit weight of each criterion based on similar scholarships._ The AI's interpretation is a useful starting point.\n\n\n### 14.4 What AI Is Bad At\n\nAI is bad at certain writing tasks. Using AI for these tasks produces the AI essay sound and degrades the application.\n\n\n#### Generating Specific Memories\n\nAI does not have the candidate's memories. Asking AI to _write a paragraph about a meaningful moment in my life_ produces a generic moment in a generic life. The candidate's actual specific memory is not retrievable from a prompt.\n\n\n#### Generating the Heart of an Essay\n\nThe essay's central scene, central story, central claim — these come from the candidate. AI can help draft _around_ them but cannot generate them. A candidate who lets AI generate the central content of an essay produces an essay with a hollow center.\n\n\n#### Calibrating Voice\n\nAI's default voice is the median register. The candidate's voice is non-median. AI can imitate a voice if given enough samples, but the imitation is not reliable for the genre. The candidate's voice is something the candidate writes, not something AI generates.\n\n\n#### Surviving the AI Test\n\nBy definition, AI cannot generate prose that survives the AI test. The test asks for content AI could not have produced; AI's output cannot satisfy this.\n\n\n### 14.5 The Brainstorm-Edit-Only Workflow\n\nThe chapter's recommended workflow for using AI in personal essay writing:\n\n\n#### Step 1: Write the First Draft Without AI\n\nThe first draft should be entirely yours. AI is not consulted. The draft is messy, possibly long, possibly weak. That is fine. The first draft's job is to surface what the candidate actually has to say.\n\n\n#### Step 2: Use AI for Diagnostic Feedback\n\nAfter the first draft, use AI to diagnose weaknesses: weak transitions, clichéd phrases, unclear sentences, vague claims. _Read this draft and identify the three weakest moments and explain why._ The AI's diagnosis is a starting point; the candidate evaluates it.\n\n\n#### Step 3: Use AI for Specific Editorial Help\n\nFor the diagnosed weaknesses, use AI for editorial help: _rewrite this sentence in shorter, clearer prose;_ _suggest three alternative transitions for this paragraph;_ _identify clichéd phrases._ The candidate adopts what serves the essay and rejects what does not.\n\n\n#### Step 4: Do Not Use AI for Generating Content\n\nThe new content, replacements for cut sections, new examples, new specifics, comes from the candidate. AI does not generate the content; AI helps the candidate refine the content the candidate generates.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1574,
+      "out_sha": "a82416c35b33",
       "note": ""
     },
     {
@@ -2183,11 +2183,11 @@
       "en_title": "Chapter 14: Writing Personal Essays with AI",
       "order": 175,
       "src_chars": 3416,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f4a7b13104b0",
       "src": "#### Step 5: Final Pass for Voice\n\nRead the revised draft aloud. If a sentence does not sound like the candidate, rewrite it in the candidate's voice. AI's editorial suggestions sometimes drift toward median register; the candidate's final pass restores voice.\n\nThe workflow distinguishes between AI as editor (good) and AI as author (bad). The candidate is the author throughout. The AI is a tool the author uses for specific tasks.\n\n\n### 14.6 The Heart Test\n\nA diagnostic for whether the AI has crossed the line from editor to author:\n\n> Read your draft. Identify the three sentences that most carry the essay's meaning — the sentences without which the essay would not exist.\n> \n> For each of these three sentences, ask: did I write this from my own memory, or did AI generate this?\n\nIf the answer is _I wrote it,_ the essay's heart is yours. If the answer is _AI generated it,_ the essay's heart is not yours. The candidate should rewrite from the candidate's own memory.\n\nThe heart test is not about avoiding AI. It is about ensuring that the _content_ of the essay — the specific memories, the idiosyncratic phrasings, the moments only the candidate can describe — comes from the candidate. Editorial help around the heart is fine; AI generation of the heart is not.\n\n\n### 14.7 Disclosure\n\nSome institutions have published policies on AI use in application essays. The policies vary:\n\n* **Forbidden.** The institution prohibits AI involvement in the personal essay. Candidates should not use AI for any part of the writing process beyond, perhaps, basic copy-editing tools (which are debatable). The candidate who uses AI in violation of the policy faces consequences if detected.\n* **Permitted; please disclose.** The institution allows AI use but asks candidates to disclose the extent of involvement. The candidate's disclosure should be honest and specific.\n* **Silent.** The institution has not published a policy. The candidate should default to the brainstorm-edit-only workflow; this workflow is consistent with most reasonable interpretations of legitimate AI use.\n\nCandidates should check each institution's policy at the time of application. Policies are evolving; the policy in 2024 may differ from the policy in 2026.\n\nThe honest disclosure convention: if asked, the candidate should describe the extent of AI involvement specifically. _I used AI to identify clichéd phrases and to suggest sentence-level revisions; the content and structure of the essay are mine_ is honest. _I did not use AI_ when AI was used for any part is dishonest and detectable through other signals.\n\n\n### 14.8 The 6 Moves Applied\n\nThe 6 Moves apply to AI-assisted writing, but Move 6 (survive the AI test) becomes the central discipline.\n\n\n#### Move 6 in the AI Era\n\nThe AI test is not just a diagnostic. It is the discipline of writing in a world where the median register is generated for free. The candidate's task is to write _above_ the median register, with specifics, voice, and surprise, while using AI for the editorial tasks where AI is genuinely useful.\n\nA practical reformulation of Move 6 for the AI era:\n\n> After completing a draft, identify the three sentences that contain content AI could not generate (specific memories, specific phrasings, specifically-yours specifics). If you cannot identify three, the essay has not yet survived. Revise toward more specifics until at least three are identifiable.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1084,
+      "out_sha": "7c2679ebc89c",
       "note": ""
     },
     {
@@ -2195,11 +2195,11 @@
       "en_title": "Chapter 14: Writing Personal Essays with AI",
       "order": 176,
       "src_chars": 2260,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8c72b1a910a0",
       "src": "### 14.9 A Worked Example\n\nConsider a candidate, Lin, writing a college essay about her summer job at a hardware store. Her first draft, written without AI:\n\n> Last summer, I worked at the family hardware store on Maple Street. The job taught me about responsibility, customer service, and the importance of hard work. Every day, I helped customers find what they needed and learned to handle difficult situations with patience and grace. By the end of the summer, I had developed valuable skills that I will carry with me to college.\n\nThis is a weak first draft. Lin uses AI for diagnostic feedback. She prompts: _Identify the three weakest moments in this draft and explain why._ The AI responds:\n\n>   1. _The job taught me about responsibility, customer service, and the importance of hard work._ This is generic and lists virtues without specifics.\n>   2. _Helped customers find what they needed and learned to handle difficult situations with patience and grace._ This describes a generic customer-service job; nothing specific to your hardware store appears.\n>   3. _Developed valuable skills that I will carry with me to college._ This is a generic-summary sentence with no specific content.\n> \n\nThe AI's diagnosis is correct. Lin does not ask the AI to rewrite. She rewrites herself, drawing on her actual memory of the summer. Her revised opening:\n\n> By the third week at the hardware store, I had learned that the customers who knew exactly what they wanted were the easy ones. The hard ones were the people who came in with a problem, a leaking pipe, a sticking door, an electric outlet that worked sometimes, and did not know what they needed. My grandfather, who had run the store since 1971, taught me how to ask: _what is the leak doing now? when did the door start sticking? when does the outlet not work?_ The answer was almost always in the third question.\n\nThis is Lin's content. The AI did not generate it. The AI's diagnostic feedback helped Lin see that her first draft was generic; the rewrite came from Lin's actual memory.\n\nThe brainstorm-edit-only workflow is visible here. AI as diagnostician: useful. AI as author: refused. The essay survives the AI test because the third-week-at-the-hardware-store memory is Lin's, not generated.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 985,
+      "out_sha": "f37a9063f720",
       "note": ""
     },
     {
@@ -2207,11 +2207,11 @@
       "en_title": "Chapter 14: Writing Personal Essays with AI",
       "order": 177,
       "src_chars": 2435,
-      "status": "pending",
+      "status": "done",
       "src_sha": "116edf3a5d0b",
       "src": "### 14.10 Common Pitfalls\n\n**Pitfall 1: AI-drafted personal essay.** The candidate prompts AI to write the essay. The AI produces the AI essay sound. The candidate submits without recognizing the diagnostic signature. The essay reads as median.\n\n**Pitfall 2: AI-rewritten generic version.** The candidate writes a real first draft and then asks AI to _make it more polished._ The AI smooths out the candidate's voice into median register. The polish removes the specificity. The essay loses what made it specifically the candidate's.\n\n**Pitfall 3: AI-generated specific scenes.** The candidate asks AI for _a specific scene about working at a hardware store._ The AI generates a plausible scene that is not the candidate's memory. The candidate uses the scene. Readers detect the gap between the scene and the candidate's actual life.\n\n**Pitfall 4: AI-revised disclosure.** The candidate writes a true essay; uses AI extensively for editing; states _I did not use AI._ The dishonesty is detectable through inconsistencies between the polished essay and the candidate's other materials.\n\n**Pitfall 5: AI-suggested clichés.** Some AI tools, asked to _make a sentence more impactful_ without specific instruction, default to clichéd phrasing — impactful-sounding-by-default is what the training distribution rewards. The candidate adopts the suggestion. The essay becomes more clichéd, not less.\n\n**Pitfall 6: Voice drift.** AI-suggested edits drift the voice toward median register. The candidate adopts the edits without a voice-restoring final pass. The essay loses the candidate's voice.\n\n\n### 14.11 Cultural and ESL Calibration\n\nESL writers face a particular AI dilemma. AI can substantially clean up sentence-level prose for non-native English writers — clarifying syntax, fixing idiomatic errors, smoothing transitions. The candidate's first instinct may be to use AI heavily for this work.\n\nThe recommendation: use AI for sentence-level clarity but preserve the candidate's voice and specifics. ESL writers' English may have small awkwardnesses that AI removes; some of those awkwardnesses are voice signals worth preserving. The brainstorm-edit-only workflow applies, with the modification that ESL writers may use AI for somewhat more sentence-level help than native speakers.\n\nThe honesty stake is the same: AI use should be at the level the institution permits and at the level the candidate would honestly describe if asked.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 809,
+      "out_sha": "5269e099d749",
       "note": ""
     },
     {
@@ -2219,11 +2219,11 @@
       "en_title": "Chapter 14: Writing Personal Essays with AI",
       "order": 178,
       "src_chars": 2637,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6efe053e59a8",
       "src": "### 14.12 The Future of AI in Personal Persuasive Writing\n\nThe chapter is written in late 2024 / early 2025. AI capability is advancing rapidly. Several trends are visible:\n\n  1. **Detection improves but lags generation.** AI-detection software is unreliable; human pattern recognition is more reliable but slow. The candidate's risk of being identified as AI-using is lower than the risk of being suspected.\n  2. **Programs are diverging on policy.** Some programs are tightening; some are loosening; some are rewriting prompts to be less easily AI-generated.\n  3. **Specifically-human writing becomes more valuable, not less.** As AI generation becomes universal, the differential value of specifically-human writing rises. The candidate who writes in their actual voice with their actual memory has an increasingly larger advantage over AI-drafted competition.\n  4. **Hybrid forms emerge.** Some applications now require real-time written exercises during interviews, video statements with prompts revealed at the moment of recording, or other forms that AI cannot easily fake. Candidates should prepare for these forms by practicing the same disciplines this book teaches: specifics, voice, surprise.\n\nThe chapter's longer view: the principles in this book, specificity, voice, the 6 Moves, the Specific Object Test, become _more_ important in the AI era, not less. They are the principles that distinguish specifically-human writing from AI-drafted writing. The candidate who has internalized them is positioned to write well across whatever specific forms the application landscape adopts in the next decade.\n\nA stronger version of the same claim, which the chapter wants the reader to leave with: the writing discipline this book teaches pays for itself on the candidate's side independent of what readers do. Writing from specific objects in motion produces a clearer mind, a more accurate self-account, and a better candidate — for whatever process actually decides outcomes, even processes that have shifted away from essays toward interviews, portfolios, or work samples. AI's trajectory is uncertain. The candidate's incentive to write specifically is not. Write specifically for yourself first; the genre's readers are the second-order beneficiaries.\n\n\n### 14.13 Reader Draft Prompt\n\nTake a draft of any application essay you have been writing. Run the heart test on it: identify the three sentences that most carry the essay's meaning. For each, ask: _did I write this from my own memory, or did AI generate this?_\n\nIf any of the three are AI-generated, rewrite from your own memory. Save the result.\n\n\n### 14.14 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 864,
+      "out_sha": "d4ab9982b4af",
       "note": ""
     },
     {
@@ -2231,11 +2231,11 @@
       "en_title": "Chapter 14: Writing Personal Essays with AI",
       "order": 179,
       "src_chars": 1384,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c1f2feec9611",
       "src": "#### Concept Check\n\n**Q1.** What is the AI essay sound, and how do readers detect it?\n\n**Answer:** The AI essay sound is fluent, organized, and vague — competent prose with no specificity. Readers detect it through pattern recognition: smooth sentences, predictable transitions, generic wisdom, absence of Specific Objects, and inconsistency between the polished essay and the candidate's other (less polished) materials.\n\n**Q2.** What are the tasks AI is good at in personal essay writing?\n\n**Answer:** Brainstorming specific stories (for memory-prompting); catching weak transitions; sentence-level clarity; identifying cliché; editing for word count; reading prompt subtext. Each of these is editorial assistance that supports the candidate's authorship.\n\n**Q3.** What is the heart test?\n\n**Answer:** Identify the three sentences in your draft that most carry the essay's meaning. For each, ask: did I write this from my own memory, or did AI generate this? The heart of the essay must be yours; AI may help around it.\n\n**Q4.** What is the brainstorm-edit-only workflow?\n\n**Answer:** Step 1: Write the first draft without AI. Step 2: Use AI for diagnostic feedback. Step 3: Use AI for specific editorial help on diagnosed weaknesses. Step 4: Do not use AI to generate new content. Step 5: Final pass for voice — read aloud and rewrite anything that drifted toward median register.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 491,
+      "out_sha": "393cfaf02969",
       "note": ""
     },
     {
@@ -2243,11 +2243,11 @@
       "en_title": "Chapter 14: Writing Personal Essays with AI",
       "order": 180,
       "src_chars": 3478,
-      "status": "pending",
+      "status": "done",
       "src_sha": "34f8b6b79828",
       "src": "#### Application Problems\n\n**Q1. Diagnose this draft for AI involvement.**\n\n> My time as a volunteer at the local hospital has been one of the most transformative experiences of my life. Through interacting with patients from diverse backgrounds, I have developed a profound appreciation for the human condition and the importance of compassionate care. Furthermore, I have learned the value of perseverance through challenging situations, which has shaped my desire to pursue a career in medicine. Ultimately, this experience has prepared me to make meaningful contributions to the field of healthcare.\n\nIdentify the markers that suggest AI involvement and identify the specific revisions needed.\n\nHint\n\nThe draft contains multiple AI-tic phrases and zero Specific Objects.\n\n**Answer:** Markers of AI involvement: predictable transitions (_Furthermore_ \\+ a generic-summary close); generic wisdom (_profound appreciation for the human condition; importance of compassionate care_); zero Specific Objects (no patient described, no moment shown, no specific scene); the _transformative experience_ opener; the _meaningful contributions_ close.\n\nRevisions needed: replace the abstract claims with specific memories — a particular patient interaction, a particular moment, a particular conversation. The candidate should write from actual memory of the volunteer work, not from an AI's idea of what hospital volunteering produces.\n\n**Q2. Run the heart test.**\n\nA candidate's essay opens:\n\n> The smell of cinnamon and burned coffee in my grandmother's kitchen at 5:30 in the morning, the radio set to the AM Spanish-language station, the sound of her metal spatula scraping the bottom of the pan — these are the textures of the only Saturday mornings in my childhood that ever felt unhurried.\n\nDid the candidate write this from memory, or could AI have generated it? Defend your answer.\n\nHint\n\nThe Specific Object Test applies. Are the specifics retrievable from a generic prompt?\n\n**Answer:** The opening is most likely written from memory, not AI-generated. Evidence: the specifics are improbably particular (_5:30 AM,_ _cinnamon and burned coffee,_ _AM Spanish-language station,_ _metal spatula,_ _unhurried Saturday mornings_) — the cluster suggests retrieval from a candidate's actual sensory memory rather than an AI's plausible imagination. The voice has rhythm (_these are the textures of the only Saturday mornings..._) that AI does not typically produce on a generic prompt. The combination of specifics is non-modal — most AI-drafted hospital volunteer essays would not have anywhere this many concrete sensory details.\n\nThe opening passes the heart test. If the candidate then uses AI for editorial work on the rest of the essay (transitions, sentence-level clarity, word count), the heart remains the candidate's, and the AI involvement is editorial rather than authorial.\n\n**Q3. Demonstrate the workflow.**\n\nTake this short paragraph and apply the brainstorm-edit-only workflow to revise it:\n\n> I learned a lot from my time at the school newspaper. As editor-in-chief, I had to manage a team of writers and ensure that we produced quality content. This taught me valuable lessons about leadership, teamwork, and meeting deadlines. These skills will serve me well in college and beyond.\n\nStep 1: identify what is wrong (this is the diagnostic step). Step 2: rewrite using your own memory or invented plausible specifics. Show both the diagnostic and the revision.\n\nHint",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 2304,
+      "out_sha": "c3e4f47db412",
       "note": ""
     },
     {
@@ -2255,11 +2255,11 @@
       "en_title": "Chapter 14: Writing Personal Essays with AI",
       "order": 181,
       "src_chars": 1341,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d095fe1aabb8",
       "src": "The original commits multiple AI essay sound markers.\n\n**Answer:**\n\n**Diagnostic (Step 2 of the workflow):** Generic claims (_I learned a lot, valuable lessons_); zero Specific Objects (no specific issue, decision, or person); abstract virtues listed (_leadership, teamwork, meeting deadlines_); generic forward-looking close (_serve me well in college and beyond_).\n\n**Revision (using invented plausible specifics):**\n\n> The week before the issue with the cafeteria-budget exposé was supposed to ship, our staff writer for the piece, Maya, fifteen, her first investigative piece, came to me at 9 PM on a Tuesday and said she could not get the cafeteria director to confirm a number we needed. The number was either 48,000 USD or 148,000 USD; the difference would change what the piece said about the cafeteria's spending priorities. We spent an hour drafting an alternative version of the piece that did not need the number, and then Maya emailed the director one more time at 10:15. The director called back at 10:32. The number was 148,000 USD. The piece ran the next morning.\n\nThe revision uses one specific scene with specific characters (Maya), specific times (Tuesday at 9 PM; 10:15; 10:32), specific stakes (the budget number), and specific outcome. The reader infers the leadership and teamwork lessons rather than being told them.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 471,
+      "out_sha": "1f64d253401e",
       "note": ""
     },
     {
@@ -2267,11 +2267,11 @@
       "en_title": "Chapter 14: Writing Personal Essays with AI",
       "order": 182,
       "src_chars": 2823,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1e738be56e90",
       "src": "#### Think Deeper\n\n**Q1.** The chapter argues that the candidate should not use AI to generate content but should use AI for editorial help. Is this distinction stable, or does it collapse at the margin?\n\n**Discussion:** The distinction is partly real and partly contestable. At one extreme, a candidate who has AI write the entire essay has used AI for content; at the other, spell-check is editorial. The stable middle is the brainstorm-edit-only workflow. The contestable margin: AI suggesting a substantial structural reorganization or new framing — content or editorial? The defensible position is that structural and framing decisions remain the candidate's; AI may suggest options, but the choice and implementation are the candidate's. Editorial help that does not touch framing or content (clarifying sentences, catching cliché, suggesting transitions) is on the editorial side. In cases of doubt, err toward the candidate's authorship.\n\n**Q2.** The chapter speculates that specifically-human writing becomes more valuable as AI generation becomes universal. Is this speculation likely to hold over a 10-year horizon?\n\n**Discussion:** Yes, the speculation likely holds — but for one specific reason. Not that AI will fail to mimic specifically-human writing (it probably will mimic it eventually) and not that readers will hold the line on close reading (many won't). The case that holds is the candidate's own side: the discipline of writing from specific objects in motion produces a clearer mind, a more accurate self-account, and a better candidate for whatever process actually decides outcomes — even processes that have shifted away from essays toward interviews, portfolios, or work samples. The writing discipline pays for itself on the candidate's side independent of what the genre's readers do, and that is the durable case. Write specifically — for yourself first.\n\n**Q3.** Some institutions are silent on AI policy. Should the candidate adopt the most restrictive interpretation, the most permissive interpretation, or something in between?\n\n**Discussion:** The chapter recommends the brainstorm-edit-only workflow as a defensible middle. It does not violate the most restrictive policies in spirit (the candidate remains the author); it is consistent with most reasonable interpretations of permitted use; it produces essays that survive the AI test. A candidate adopting it at silent institutions is unlikely to be flagged and is positioned to disclose honestly if asked. The maximally permissive interpretation — letting AI generate the entire essay — risks both detection and misalignment with the institution's likely intent. The maximally restrictive interpretation costs the candidate without protecting them; it is unsustainable as AI integrates into writing software. The middle is correct.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 829,
+      "out_sha": "7d16c124a024",
       "note": ""
     },
     {
@@ -2279,11 +2279,11 @@
       "en_title": "Chapter 14: Writing Personal Essays with AI",
       "order": 183,
       "src_chars": 876,
-      "status": "pending",
+      "status": "done",
       "src_sha": "861028433b3c",
       "src": "### Chapter Summary\n\nWriting personal essays in the AI era requires a discipline. AI is widely used, widely detected, and most useful in editorial roles rather than authorial ones. The brainstorm-edit-only workflow keeps the candidate as author while using AI for the tasks AI does well: diagnosing weaknesses, catching cliché, clarifying sentences, suggesting transitions, compressing for word count.\n\nThe heart test is the diagnostic that distinguishes editorial assistance from authorial substitution. The three sentences that carry the essay's meaning must be the candidate's, written from the candidate's memory.\n\nThe next chapter (Chapter 15) opens Part III. Across the twelve forms in Part II, durable patterns emerge: specificity over abstraction, story over thesis, truth over polish. Part III names the patterns and turns them into a forward-looking discipline.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 264,
+      "out_sha": "b56d26774edc",
       "note": ""
     },
     {
