@@ -1515,11 +1515,11 @@
       "en_title": "Chapter 9: The 12 Refactorings That Pay for Themselves",
       "order": 117,
       "src_chars": 2655,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f0304e19d2dc",
       "src": "### 9.12 Refactoring 12: Decompose Conditional\n\n**Signal** : the _what_ (condition) and the _how_ (branch action) are tangled together; the reader must understand both at once.\n\n**Before / After** :\n    \n    \n    # Before: condition logic + branch logic mixed\n    def schedule_refund(order, current_date):\n        if (order.status == 'completed' and\n            (current_date - order.completed_at).days < 30 and\n            not order.has_been_refunded and\n            order.payment_method != 'gift_card'):\n            refund = order.total - (order.partial_refund_amount or 0)\n            if order.customer.tier != 'enterprise':\n                refund = refund * 0.95\n            return process_refund(order, refund)\n        return None\n    \n    # After: named predicate, named action\n    def schedule_refund(order, current_date):\n        if not is_eligible_for_refund(order, current_date):\n            return None\n        return process_refund(order, compute_refund_amount(order))\n    \n    def is_eligible_for_refund(order, current_date):\n        return (order.status == 'completed'\n                and (current_date - order.completed_at).days < 30\n                and not order.has_been_refunded\n                and order.payment_method != 'gift_card')\n    \n    def compute_refund_amount(order):\n        base = order.total - (order.partial_refund_amount or 0)\n        return base * 0.95 if order.customer.tier != 'enterprise' else base\n    \n\nCondition and action each get a name; both are testable independently; `schedule_refund` becomes a clean three-step process.\n\n**AI-Layer** : agents apply this well. Risk: over-decomposition; a simple `if x > 0` does not need a named predicate.\n\n\n### 9.13 Applying the twelve as a discipline\n\nThe twelve refactorings form a working engineer's reflex set. After a few months of deliberate practice, you apply them without thinking: you see the signal, you apply the refactoring, you run the tests, you commit.\n\n\n#### The deliberate-practice phase\n\nFor the first two-three months of practicing the twelve:\n\n  1. **Keep a paper or note of the twelve.** Refer to it during refactoring sessions.\n  2. **For each PR you open** , ask: which of the twelve could apply to the code I changed? Apply at least one if applicable; commit it as a separate refactoring commit.\n  3. **In code review** , suggest one of the twelve to authors. Be specific: \"Consider Extract Function on the validation block.\"\n  4. **In your notebook (Chapter 2)** , record interesting applications: the signal, the refactoring, the result.\n\nAfter two-three months, the list moves from your paper into your head, and the practice becomes reflexive.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1670,
+      "out_sha": "461698211649",
       "note": ""
     },
     {
@@ -1527,11 +1527,11 @@
       "en_title": "Chapter 9: The 12 Refactorings That Pay for Themselves",
       "order": 118,
       "src_chars": 917,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e6de950243d0",
       "src": "#### The AI-Layer pattern\n\nFor each refactoring, the AI-Layer note specified what AI does well and what humans must direct. The general pattern:\n\n* **AI excels at mechanical execution.** Once the refactoring is identified, the AI applies it across many sites quickly. Renames, extracts, inlines, moves at the file level: all fast.\n* **AI is unreliable at identifying when the refactoring applies.** The signal recognition is human work; the agent rarely says \"this code has the X smell, you should apply Y.\"\n* **AI is unreliable at granularity.** The agent tends to over-apply Extract Function (producing many tiny functions) and Replace Conditional with Polymorphism (producing many small classes). The human's judgment is needed for the granularity.\n\nThe 2026 workflow: human identifies, AI executes, human reviews. This is faster than humans doing both ends and safer than letting AI do both.\n\n\n### 9.14 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 316,
+      "out_sha": "7ed8ec776022",
       "note": ""
     },
     {
@@ -1539,11 +1539,11 @@
       "en_title": "Chapter 9: The 12 Refactorings That Pay for Themselves",
       "order": 119,
       "src_chars": 3163,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cb52fbae8753",
       "src": "#### Concept Check\n\n**Q1.** Reading a 180-line file `csv_utils.py`, you find:\n\n* one function `process_csv(text)` that internally has three labeled sections (`# parse`, `# validate`, `# transform`) totalling 95 lines;\n* five top-level functions `parse_csv_rows`, `find_csv_column`, `filter_csv_by_value`, `csv_to_json`, `validate_csv_schema` that each take a `rows: list[list[str]]` argument and operate on it differently.\n\nWhich of the twelve refactorings would you apply to each, and in what order? Why?\n\nHint\n\nOne pattern is _cohesion within a single function_ (extraction); the other is _cohesion across functions that share data_ (combination).\n\n**Answer:**\n\n* For `process_csv(text)`: apply **Extract Function** (Refactoring 1). The three labeled sections are candidates that already name themselves. Pull each out as `_parse_csv`, `_validate_csv`, `_transform_csv`. After extraction, `process_csv` reads as a three-step pipeline; each helper is independently testable.\n* For the five top-level functions all taking `rows`: apply **Combine Functions into Class** (Refactoring 11). The shared `rows` data threading through five separate functions is the signal. Wrap in a `CsvProcessor` class that owns the rows; methods become `parse`, `find_column`, `filter_by`, `to_json`, `validate_schema`. Calls become chainable: `CsvProcessor(text).filter_by('region', 'EU').to_json()`.\n\nOrder matters: do **Combine first** , then **Extract within each method as needed**. The Combine surfaces the shared concept (`CsvProcessor`); methods then become natural homes for extracted helpers. Doing Extract first on the five functions before Combining produces a mess of orphan helpers; Combining first organizes them.\n\nThe deeper point: the two refactorings address _different cohesion problems_. Extract solves cohesion _within_ a single function (sections that should be named). Combine solves cohesion _across_ functions (shared data that wants a home). When a file has both problems; as this one does; they compose, not compete.\n\n**Q2.** Replace Conditional with Polymorphism is often over-applied. When is it the wrong choice?\n\nHint\n\n§9.5's \"added abstraction for added flexibility\" trade-off.\n\n**Answer:** It is the wrong choice when: (a) the conditional appears in only one place (no repetition to consolidate); (b) the cases are stable and unlikely to grow (no need to enable extension); (c) the case logic is small and the polymorphism adds more boilerplate than it removes; (d) the language has good alternative constructs (sum types, pattern matching, lookup tables) that fit the problem better.\n\nA common 2026 alternative is a lookup table: `SHIPPING_COSTS = {'standard': 5.99, 'express': 14.99, ...}` is shorter than a polymorphic class hierarchy and clearer for purely data-driven cases. Polymorphism is appropriate when each case has _behavior_ that varies, not just data. Conflating the two is the over-application failure mode.\n\n**Q3.** Inline Function is the inverse of Extract Function. When would you inline a function that someone else extracted?\n\nHint\n\nExtraction is justified when the name adds clarity; inlining is justified when the name does not.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1414,
+      "out_sha": "673702768568",
       "note": ""
     },
     {
@@ -1551,11 +1551,11 @@
       "en_title": "Chapter 9: The 12 Refactorings That Pay for Themselves",
       "order": 120,
       "src_chars": 3312,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0cef75461ea5",
       "src": "**Answer:** Inline when: (a) the extracted function is called only once and the call site is no clearer than the inlined body; (b) the function's name is misleading (the body does more or less than the name suggests); (c) the function's body is shorter than its declaration overhead (a one-line function named with three words may not earn its weight); (d) the function's existence implies a stable abstraction that has not materialized (e.g. a function named `applyDiscount` that does one thing and is only called once).\n\nThe discipline is to ask whether the function-as-a-name _adds information_. If the name is a synonym for the body's mechanics, the function is fog; inline it. If the name introduces a domain concept that the call site cannot express without it, keep the function.\n\n**Q4.** Your team has a 4-year-old codebase. You are reviewing a PR that fixes a bug in a function called `process(data)` and includes 25 changed lines plus 14 new test cases. The reviewer comments: \"Nice fix. While you're here, would you also rename `process` to `compute_eligibility_score`? You'll need IDE help to update the 87 call sites, but it's two minutes of mechanical work.\" The PR author replies: \"That's scope creep, and renames are cosmetic; let's do that in a separate PR if we ever need to.\" Who is right? What is the _quantitative_ case for or against the rename being part of this PR?\n\nHint\n\nA name is read many more times than it is written. Multiply across the codebase's lifetime.\n\n**Answer:** The reviewer is right; the author is undervaluing the rename in a specific way that is easy to fall into.\n\nThe quantitative case: the function is called 87 times. Every reader of every one of those 87 sites pays a small cognitive tax to translate \"`process(data)`\" into \"what does this actually compute?\" Suppose the tax is 3 seconds per read for someone familiar with the codebase, and 15 seconds for a new engineer who has to follow the function definition to confirm what it does. Suppose the codebase will exist for 3 more years with 6 engineers averaging 2 reads of any given call site per year. That is `87 × 6 × 2 × 3 = 3,132 seconds` ≈ **52 minutes of cumulative reader tax** in the optimistic case (familiar readers only). Add new-engineer reads and the number climbs to several hours.\n\nThe cost of the rename today: ~2 minutes of mechanical work plus 5 minutes of review.\n\nThe author's \"scope creep\" framing misses that this _is_ a Boy Scout Rule case (Chapter 20): a small improvement on code you are already touching, aligned with the substantive change. It would be scope creep only if it were a _large_ refactor or _unrelated_ to the function the PR is fixing. Renaming a function whose bug you are fixing, while you have the IDE tools open and the test suite green, is the canonical Boy Scout improvement.\n\nThe author's \"renames are cosmetic\" framing is wrong in the deeper sense: names are read more than they are written. The asymmetry between writer-cost and reader-cost is what makes naming the most underrated refactoring. Chapter 18 develops this in detail; the reviewer in this scenario is applying it correctly.\n\nA defensible compromise: the rename can be a separate commit _within the same PR_ ; atomic, separately revertable, but landing together with the fix. Best of both arguments.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1083,
+      "out_sha": "984e9905b065",
       "note": ""
     },
     {
