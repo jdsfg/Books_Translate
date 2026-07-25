@@ -1067,11 +1067,11 @@
       "en_title": "Chapter 6: The PhD Statement of Purpose",
       "order": 82,
       "src_chars": 2416,
-      "status": "pending",
+      "status": "done",
       "src_sha": "dc0bc72c71e0",
       "src": "Faculty in graduate-program admissions have estimated that roughly 70 percent of PhD statements of purpose sent to humanities departments are formulaic to the point of being indistinguishable. The other 30 percent get read carefully.\n\nThis is the central asymmetry of the form. The PhD statement of purpose (SOP) is, on paper, a one-document task. In practice, it is a high-stakes apprenticeship application: a committee of faculty is deciding whether to bring the candidate into a five-to-seven-year mentoring relationship that will end in a credential they will personally vouch for. The committee reads the SOP not only for evidence of preparation but for evidence that this candidate is someone they want to spend that long working with.\n\nThis chapter is about writing the document that lands in the 30 percent.\n\n\n### 6.1 Vignette: Theo Drafts a PhD SOP\n\nTheo is now in the senior year of college. After the master's-program statements from Chapter 5, Theo is also applying directly to PhD programs in cognitive science, on the advice of two undergraduate research mentors who have suggested that Theo's research record may be strong enough to skip the master's at certain programs.\n\nTheo's first draft of the PhD SOP opens:\n\n> I have always been fascinated by the human mind. Throughout my undergraduate career, I have pursued this fascination through coursework in cognitive science, psychology, and computer science, while also conducting hands-on research in three different laboratories.\n\nTheo sends the draft to Professor Ramirez, the senior faculty mentor who has supervised Theo's honors thesis. Professor Ramirez returns it on a Sunday with a one-line note: _Drop the personal opener — at this level, the reader is already asking what your dissertation will be about, and you have eight minutes to tell them._\n\nTheo, by now familiar with this kind of feedback, cuts. But Theo also misunderstands the second half of the comment until Professor Ramirez clarifies on Monday morning: _PhD committees expect the SOP to read as a polished piece of academic prose written by someone preparing to become an academic. They are not reading a first impression. They are reading a writing sample of the kind of prose this candidate will produce as a graduate student._\n\nTheo realizes the SOP is closer to an academic article, in compressed form, than to a personal statement. The genre's rules tighten accordingly.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 738,
+      "out_sha": "bcd278f4c8e2",
       "note": ""
     },
     {
@@ -1079,11 +1079,11 @@
       "en_title": "Chapter 6: The PhD Statement of Purpose",
       "order": 83,
       "src_chars": 3159,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c777b5bd1b24",
       "src": "### 6.2 What PhD Committees Actually Do\n\nThe PhD admissions committee is structurally different from the master's admissions committee at most institutions. The PhD committee at a research-intensive university typically consists of two to five faculty members in the candidate's subfield, plus the program director. The committee meets multiple times during the cycle. Each statement is read by at least two faculty before any decision; finalists are read by the full committee.\n\nReading time is longer than for master's statements. A PhD SOP is typically read in 10–20 minutes by the first reader, with second readers spending 5–10 minutes on a focused re-read. Faculty take notes. They sometimes flag specific sentences for committee discussion. They sometimes flag specific paragraphs as evidence of strong (or weak) writing.\n\nStacked on the universal pattern in §2.10, PhD faculty specifically weigh:\n\n  1. **A research direction specific enough to suggest the next two papers.** A question is not enough. The faculty reader is asking, _can I imagine this candidate's first publication?_ If yes, the SOP is doing serious work. If no, the SOP is too vague.\n  2. **Methodological depth, not just awareness.** A behavioral candidate who has run subjects, designed paradigms, and worked with messy data is differently prepared from a candidate who has read about behavioral methods. Faculty distinguish between the two within minutes.\n  3. **A faculty fit built on the faculty's _recent_ work.** Not the highly cited paper from a decade ago. The current line of work. The thing the faculty member is actually thinking about right now.\n  4. **A future-colleague signal.** Faculty are asking whether they want to spend five to seven years with this person. It is a combination of voice, judgment, and intellectual posture — the candidate reads as a future colleague rather than as a strong undergraduate.\n\nThe form-specific failure modes are:\n\n  1. **An undergraduate-essay register.** Personal narrative, emotional reflection, inflated language about the field. The PhD SOP is professional prose addressed to a professional audience.\n  2. **Faculty fit anchored on decade-old highly cited papers.** Signals the candidate has not engaged with the current state of the faculty member's work.\n  3. **Confidence that the dissertation is already figured out.** Faculty know dissertations evolve over years; a candidate who claims certainty is either naive or padding.\n\n\n### 6.3 Genre Conventions\n\nThe PhD SOP has the tightest conventions of any form in this book. Departures from convention are read as departures from preparation.\n\n\n#### The Compressed-Article Structure\n\nA successful PhD SOP reads like a compressed academic article: introduction (research direction), methods (what the candidate has done), findings (what the candidate's work has produced and what questions it has opened), fit (named faculty engaging with current work), and conclusion (specific plans plus honest acknowledgment of evolution). The proportions vary by field, but the structure is recognizable across cognitive science, English literature, history, computer science, philosophy.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1010,
+      "out_sha": "470d40438434",
       "note": ""
     },
     {
@@ -1091,11 +1091,11 @@
       "en_title": "Chapter 6: The PhD Statement of Purpose",
       "order": 84,
       "src_chars": 3355,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e60dca9d40e0",
       "src": "#### The First Paragraph Convention\n\nThe first paragraph states the research direction in concrete form _and_ anchors it to specific prior work. It is not a personal anchor. It is not a topic. It is a research direction with at least one specific paper or project mentioned by name.\n\nA standard variant:\n\n> The research direction I propose to pursue in graduate school is [X]. The direction emerged from [specific prior project], in which [specific finding]. The next question this raises is [Y], and answering it will require [methodological approach].\n\nThis four-sentence template is not mandatory but is widely successful. It compresses the essentials into a paragraph the reader can absorb quickly.\n\n\n#### The Evidence Convention\n\nThe body of the SOP develops two to three pieces of independent evidence. Each piece should be a _project_ that the candidate owned (not a class assignment), with specific methods, results, and intellectual takeaways. The evidence is presented in research-paper register: _We collected data on N participants;_ _I implemented X using framework Y;_ _The result was Z, which suggests W and is inconsistent with V._\n\n\n#### The Faculty Fit Convention (PhD Variant)\n\nThe faculty fit paragraph is more demanding for PhD applications than for master's applications. The candidate must:\n\n* Name two to four faculty members.\n* For each, engage with at least one _recent_ (within the last three to five years) paper or project.\n* Connect the engagement to the candidate's own work.\n* Suggest a possible collaboration or a question the candidate would pursue under that faculty's mentorship.\n\nThe depth required is roughly one full paragraph per faculty named, or three to five sentences if naming three faculty in 1,200 words.\n\n\n#### The Methodological-Honesty Convention\n\nA PhD SOP should acknowledge what the candidate does _not_ yet know how to do. Faculty respect honesty and recognize naivety in candidates who claim methodological mastery they have not earned. A two-sentence acknowledgment — _My methodological preparation includes X and Y; I have begun Z but have not yet [specific deeper task in Z]_ — signals readiness for the actual learning that will happen in graduate school.\n\n\n#### The Closing Convention\n\nThe closing of a PhD SOP is concrete plans plus honest acknowledgment of evolution. _I expect to spend the first two years on [X], then transition to [Y]. The specific shape of [Y] will depend on what [X] produces; I expect the question to refine substantially during that period._ The closing should also acknowledge that the candidate has chosen this program for specific reasons, briefly stated.\n\n\n### 6.4 The 6 Moves Applied\n\n\n#### Move 1: The Reader\n\nThe faculty member reading on a Saturday afternoon between writing their own paper and fetching their child from soccer. The reader has read four other SOPs this morning, two of which were variants of the same vague enthusiasm and one of which was promising. The reader is looking for the next promising one.\n\n\n#### Move 2: The Research Direction\n\nMove 2 in the PhD SOP is _find the specific research direction._ The direction must be specific enough to suggest the next two papers but broad enough that the candidate's actual interests can fit within it. Too narrow (a single experiment) signals no breadth. Too broad (a topic) signals no specificity.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 941,
+      "out_sha": "5140b6f36f0a",
       "note": ""
     },
     {
@@ -1103,11 +1103,11 @@
       "en_title": "Chapter 6: The PhD Statement of Purpose",
       "order": 85,
       "src_chars": 1380,
-      "status": "pending",
+      "status": "done",
       "src_sha": "416aae60ead9",
       "src": "#### Move 3: The Hook\n\nThe hook is the research direction stated concretely in the first two sentences. There is no other acceptable hook in this register. Personal anecdotes, surprising claims, scene-openings — these are tools of the undergraduate genre. The PhD SOP opens with research.\n\n\n#### Move 4: Show With Specifics\n\nThe specifics in a PhD SOP are: paper titles, project descriptions, methods, results, faculty names, recent faculty papers, methodological tools, data sets, sample sizes. The Specific Object Test in this register requires academic specifics.\n\n\n#### Move 5: Connect Specifics to Claims\n\nThe claim being supported is _I am ready to begin the apprenticeship of becoming a researcher in this field._ The specifics support the claim by demonstrating, not asserting, intellectual independence. The Restrained Connection in this register is academic restraint: state the work, state the result, state what it suggests, do not over-claim what it learned you.\n\n\n#### Move 6: Survive the AI Test\n\nPhD SOPs are vulnerable to AI generation in the same way master's statements are. The AI test is harsher: _would the SOP read identically if the candidate's specific paper-in-revision and specific 38% finding and specific faculty-paper-engaged-with were swapped for any other set of these things?_ If yes, the AI test fails. The remedy is concrete academic specifics.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 587,
+      "out_sha": "1080a6c9282d",
       "note": ""
     },
     {
