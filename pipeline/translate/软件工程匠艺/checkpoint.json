@@ -219,11 +219,11 @@
       "en_title": "Chapter 1: Why Craft Matters More in 2026",
       "order": 9,
       "src_chars": 1023,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1840f8dbbefd",
       "src": "### 1.6 A working engineer's three-year question\n\nThe single most useful framing in this book, applied to any technical decision you face, is the **three-year question** :\n\n> What happens to this code in three years?\n\nThree years is long enough that the original author may be gone, the original AI model is retired, the dependencies have shifted, and at least one major refactor has happened nearby. Three years is short enough that the code is probably still in production rather than retired.\n\nEvery chapter in this book applies the three-year question to its discipline. Chapter 5 asks: _what happens to this test suite in three years?_ Chapter 9 asks: _what happens to this refactored function in three years?_ Chapter 17 asks: _what happens to this README in three years?_ The discipline lives or dies by the answer.\n\nTry it now. Open the last PR you merged. Ask: in three years, when someone debugs this code at 2am, will they thank you or curse you? The honest answer is the beginning of craft.\n\n\n### 1.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 368,
+      "out_sha": "7c08484bd295",
       "note": ""
     },
     {
@@ -231,11 +231,11 @@
       "en_title": "Chapter 1: Why Craft Matters More in 2026",
       "order": 10,
       "src_chars": 2374,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f36f0500ae0d",
       "src": "#### Concept Check\n\n**Q1.** A team lead at a startup says: \"We don't have time for craft. We're pre-revenue, we're moving fast, we'll clean up later.\" The codebase is six months old, 80,000 lines, with 40% AI-generated code and 8% test coverage. Drawing on this chapter's argument, give the honest response. Why is \"we'll clean up later\" specifically dangerous in the 2026 context, more so than in 2016?\n\nHint\n\nConsider what changed between 2016 and 2026 about the cost-of-writing curve, and how that interacts with the cost-of-maintenance curve.\n\n**Answer:** \"Clean up later\" was always a dangerous claim, but in 2026 it is dangerous in a specific new way: the codebase has grown faster than human-led codebases used to grow. At 80,000 lines in six months, the team has effectively produced what a 2016 team might produce in 18-24 months, but they have not had 18-24 months to absorb the code into anyone's head. So the \"later\" cleanup is harder, not easier, because: (1) the codebase is large enough that no one holds it in their head; (2) much of it was AI-generated, so the local author may not remember why each part exists; (3) at 8% coverage, the safety net for refactoring is missing, so cleanup is dangerous. The 2016 version of \"clean up later\" might have worked because the codebase was small enough to triage. The 2026 version usually does not, because the codebase outran the team's ability to remember it.\n\nThe principled response is: the team should slow line production now, raise test coverage to at least 50% (Chapter 5), institute the code review discipline (Chapter 15), and apply the three-year question to every PR. They will produce fewer lines per week, but the lines will be lines they can still maintain in 2028.\n\n**Q2.** Sort the following 2026 engineering activities into \"compounds over a career\" and \"depreciates over a career.\" For each, give your reasoning.\n\n(a) Memorizing the React 18 hooks API. (b) Writing characterization tests for a legacy module before refactoring it. (c) Naming a domain concept after a workshop with the product team. (d) Filling in a CRUD endpoint from a Linear ticket via Claude Code. (e) Writing an ADR for the choice of database driver. (f) Setting up a new repository's CI pipeline by copying from a template.\n\nHint\n\nApply the rule from §1.3: does the activity require context outside the local 500-line window?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 915,
+      "out_sha": "887ec8332566",
       "note": ""
     },
     {
@@ -243,11 +243,11 @@
       "en_title": "Chapter 1: Why Craft Matters More in 2026",
       "order": 11,
       "src_chars": 3412,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7886b93343ef",
       "src": "**Answer:** (a) **Depreciates.** API memorization was always low-leverage; in 2026 the AI knows the API and you do not need to. Knowing that hooks _exist_ and what kinds of problems they solve is compounding; memorizing the exact signatures is not. (b) **Compounds.** Characterization testing requires holding the legacy system's behavior in your head, deciding which behaviors to lock in, and judging which are accidental versus essential. AI cannot do this without you. The skill is reusable across every legacy codebase you will ever touch. (c) **Compounds.** Domain naming requires understanding the business, the product, and the codebase simultaneously. It is the act that crystallizes design (Chapter 18). AI cannot do this from inside the codebase alone. (d) **Depreciates.** The CRUD endpoint is precisely the kind of work that AI does well in 2026. Doing it by hand is fine when you start, but spending career time getting fast at it is wasted time; AI will be faster. (e) **Compounds.** ADRs encode design judgment for future maintainers (Chapter 17). The skill of writing an ADR that ages well requires knowing what will and will not matter in three years; that judgment compounds. (f) **Depreciates.** Template-based pipeline setup is automatable and increasingly automated. Knowing what a good pipeline contains is compounding; knowing the exact YAML incantation is not.\n\n**Q3.** The chapter claims that \"the code persists; the model that wrote it does not.\" What is the operational implication for a team that uses AI heavily today? Name three concrete practices the team should adopt now, before model transitions force them to.\n\nHint\n\nThink about what a human-maintainable codebase looks like in §1.4, Part 3, and reason backward to the practices that produce it.\n\n**Answer:** Three concrete practices:\n\n  1. **Treat AI-generated code as a draft, not a deliverable.** Every AI-generated PR should go through human review with the explicit question: \"If the model that wrote this is gone in two years, can a human maintain this from the code alone?\" If the answer is no, the code must be revised before merge.\n  2. **Write ADRs for non-obvious decisions made during AI sessions.** When an AI conversation produces a decision (which library to use, which pattern to apply, why this abstraction), capture the _reasoning_ in an ADR (Chapter 17). The conversation history will be lost; the ADR persists.\n  3. **Maintain a CLAUDE.md or AGENTS.md file at the project root** (Chapter 22) that captures the codebase's conventions, anti-patterns to avoid, and design principles. This file serves both future AI sessions and future humans; it is the codebase's institutional memory.\n\n**Q4.** A junior engineer asks: \"If AI is so good at writing code, why should I bother learning to code well? Shouldn't I just learn to prompt well?\" Give a response that is honest about both halves of the question.\n\nHint\n\nRefer to the second common misconception in §1.3.\n\n**Answer:** Prompting well is necessary but not sufficient. Prompting produces a first draft; the rest of the engineer's job is reviewing, integrating, and maintaining that draft. You cannot review code you cannot read. You cannot integrate code into a system you do not understand. You cannot maintain code whose patterns are invisible to you. So learning to code well is the foundation on which prompting well is built, not the alternative to it.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1198,
+      "out_sha": "90c8c0025ce9",
       "note": ""
     },
     {
@@ -255,11 +255,11 @@
       "en_title": "Chapter 1: Why Craft Matters More in 2026",
       "order": 12,
       "src_chars": 397,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d83a7b2bd689",
       "src": "The honest version of the junior's question is: \"How should I split my learning time between coding skills and AI-collaboration skills?\" The answer, in 2026, is something like 60% coding skills and 40% AI-collaboration skills for the first two years of a career, then gradually rotating toward 40/60 as the coding skills become automatic and the AI-collaboration skills become the differentiator.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 125,
+      "out_sha": "361469d2375b",
       "note": ""
     },
     {
@@ -267,11 +267,11 @@
       "en_title": "Chapter 1: Why Craft Matters More in 2026",
       "order": 13,
       "src_chars": 3449,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bc587d7cf046",
       "src": "#### Application Problems\n\n**Q5.** Take a PR you have merged in the last two weeks. Apply the three-year question (§1.6) to each substantive change. For each change, predict whether a maintainer in 2029 will thank you or curse you, and explain why. If you do not have a recent PR, use the following synthetic one: _a 300-line PR that adds a new internal API endpoint, includes a single happy-path integration test, and uses a new utility library`nano-validator` introduced in this PR for the first time_.\n\nHint\n\nFor each change, list what the 2029 maintainer will know and not know. The gap is the curse.\n\n**Answer:** For the synthetic PR, the 2029 maintainer will not know: (a) why `nano-validator` was chosen over the validator already in the codebase (if there was one), (b) whether the happy-path test was the only path tested because the others were impossible or because we did not bother, (c) whether the new endpoint duplicates existing functionality. They will curse you for these gaps.\n\nWhat would earn thanks: (a) an ADR (Chapter 17) for the `nano-validator` choice explaining the alternatives considered, (b) explicit tests for the unhappy paths or an explicit comment that no unhappy paths exist for this endpoint, (c) a one-line PR description noting which existing endpoint (if any) this resembles and why a new one was needed. None of this takes more than fifteen minutes today; all of it saves hours in 2029.\n\nThe application of the three-year question to your own recent PR follows the same pattern: identify the gaps that the 2029 maintainer will have, then ask which of those gaps a fifteen-minute investment now can close.\n\n**Q6.** Reframe your team's last sprint retrospective in 2026-equation language. List the sprint's activities and estimate the percentage of time spent on (a) writing new code, (b) reviewing code (yours and others'), (c) maintaining existing code (debugging, refactoring, dependency updates, on-call). If the split differs significantly from the 20/40/40 ratio sketched in §1.4, what does that tell you?\n\nHint\n\nA 60% writing split in 2026 is a signal worth investigating; a 20% reviewing split is a different signal.\n\n**Answer:** This is a self-reflection exercise; the answer depends on the team. A high writing percentage (above 40%) in a 2026 team suggests one of three things: (a) the team is in a greenfield phase where most of the codebase does not yet exist, (b) the team is not yet using AI effectively (so writing is still slow), or (c) the team is producing code faster than it can review or maintain, which is the dangerous pattern from Q1. A high reviewing percentage (above 50%) suggests heavy AI use without yet having calibrated review depth; this is the _learning_ phase and is healthy if temporary. A high maintenance percentage (above 60%) suggests technical debt has accumulated and is now consuming team velocity (Chapter 19); the team needs a debt-reduction sprint.\n\nThe exercise is not to hit 20/40/40 exactly. It is to know which split you are running, and to know whether that split is appropriate to your codebase's stage.\n\n**Q7.** Choose a function in your codebase that was written with significant AI assistance. Read it line by line and answer: which of the three jobs from §1.2 (reviewing for fit, integrating across boundaries, maintaining over years) would benefit most from a human-only rewrite of this function? Where did the AI do well, and where did the AI miss?\n\nHint",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1191,
+      "out_sha": "9c9fe630a300",
       "note": ""
     },
     {
@@ -279,11 +279,11 @@
       "en_title": "Chapter 1: Why Craft Matters More in 2026",
       "order": 14,
       "src_chars": 1142,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0d6e0ac20217",
       "src": "Look for inconsistencies with surrounding code style, hallucinated or misused library APIs, missing edge case handling, or over-abstraction. These are the canonical AI-generated-code defects (Chapter 15, Thread C).\n\n**Answer:** This is an open exercise; the answer depends on the function. A common finding: the AI did well at the local logic and the happy-path tests, did poorly at consistency with surrounding style (used different naming conventions, imported a different validator than the rest of the codebase uses, structured error handling differently from neighboring modules). The fix is usually a small refactor for consistency rather than a rewrite. The lesson, however, is that the inconsistency cost real review time and real cognitive load for the next maintainer; the AI's \"win\" of writing fast was partially eaten by the review.\n\nThe Thread C lies from the syllabus (lies #1, #3, #4, #5) are the usual suspects: untested edge cases, inconsistent style, missing error handling, off-by-one near boundaries. Note which lies your specific function exhibits; you will see the same lies in Chapter 15 with concrete review guidance.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 356,
+      "out_sha": "da5fb6109aa9",
       "note": ""
     },
     {
@@ -291,11 +291,11 @@
       "en_title": "Chapter 1: Why Craft Matters More in 2026",
       "order": 15,
       "src_chars": 3244,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c940e14d7101",
       "src": "#### Think Deeper\n\n**Q8.** Defend or refute the following position: _AI is a craft amplifier. Engineers with strong craft skills get dramatically better with AI; engineers with weak craft skills get faster at producing weak code. The result is widening rather than narrowing skill gaps in the profession._\n\n**Discussion:** A defense of the position argues that craft skill (reviewing, naming, refactoring, architectural taste) is precisely the kind of skill AI does not yet replicate. An engineer who reviews well multiplies their effective output via AI; an engineer who reviews poorly multiplies their _bad_ output via AI. So the gap between the top quartile and the bottom quartile widens, not narrows. Evidence supporting the position: 2025-2026 reports from large engineering organizations showing top performers' productivity increasing 2-3× with AI, while bottom performers' productivity stays flat or declines.\n\nA refutation argues that AI is a leveler: junior engineers now have access to senior-quality first drafts, instant explanations of unfamiliar code, and an always-available pair-programming partner. This narrows rather than widens the gap, because the floor has risen faster than the ceiling. Evidence supporting the refutation: rapid skill acquisition by junior engineers in 2024-2025 cohorts, and the rise of \"AI-native\" engineers who reach senior productivity in two years rather than five.\n\nThe synthesis (and the more useful answer) is that both effects are happening simultaneously. AI raises the floor (junior engineers get better fast) _and_ raises the ceiling (senior engineers with good craft compound faster). The gap may not widen or narrow uniformly; it may bifurcate. The middle of the distribution thins as engineers either invest in compounding skills or fall behind. This is consistent with the _barbell_ hypothesis in §1.4 Part 2.\n\nThe right follow-up question for any working engineer: which side of the bifurcation are you investing in?\n\n**Q9.** Consider the analogy: in 1880, learning to read a map and navigate by stars was a craft skill; in 2026, almost no one can navigate by stars, and GPS handles the work. Was this a craft loss or a craft transition? Apply the analogy to programming in 2026 and 2030. Where does it hold and where does it break?\n\n**Discussion:** The analogy holds in one important way: the _bottleneck_ moved. Navigation by stars was the bottleneck of nautical travel in 1880; by 2026 the bottleneck is fuel logistics, route planning, weather modeling, and traffic management. Star-navigation skills were not destroyed; they became niche. So a working \"navigator\" in 2026 still exists, but the job is different.\n\nThe analogy breaks in one important way: GPS is a stable, well-understood tool with a predictable failure mode (loss of signal). AI in 2026 is a fast-evolving tool with unpredictable failure modes (hallucination, over-abstraction, plausibility without correctness). A navigator who trusts GPS blindly fails only when the signal drops; an engineer who trusts AI blindly fails whenever the AI is confidently wrong, which is far more often. So the analogy under-predicts the value of craft in 2026, because AI failures are more frequent and more subtle than GPS failures.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1084,
+      "out_sha": "c47c798830dc",
       "note": ""
     },
     {
@@ -303,11 +303,11 @@
       "en_title": "Chapter 1: Why Craft Matters More in 2026",
       "order": 16,
       "src_chars": 2727,
-      "status": "pending",
+      "status": "done",
       "src_sha": "58a8ed933a4a",
       "src": "The forward-looking question: as AI becomes more reliable (as GPS did), will craft become less necessary? The honest answer is _partially yes, partially no_. The \"reviewing for fit\" and \"integrating across boundaries\" jobs are likely to remain human for the rest of this decade, because they require system-wide context that no current AI can hold. The \"writing first drafts\" job is increasingly AI's. The barbell deepens.\n\n\n### Chapter Summary\n\nThe 2026 craft equation: AI has collapsed the cost of writing code, but the cost of reviewing, integrating, and maintaining code is unchanged. Craft, in 2026, is the set of disciplines that minimize the cost of the second category. The bottleneck moved from typing to reviewing; the disciplines that compound moved with it. **Code is a liability; the asset is what it does for users.**\n\nThree jobs the AI cannot do well (and which therefore define craft work in 2026): reviewing for fit, integrating across boundaries, maintaining over years. Each requires context outside the local 500-line window. Each compounds over a career. Chapter 2 takes the maintenance claim seriously and operationalizes it as a reading discipline: 90% of an engineer's career is reading code, not writing it, and reading is the skill the next 22 chapters depend on. Later, Chapter 19 will quantify the cost of failing this discipline through the lens of technical debt, and Chapter 23 will synthesize the seven compounding disciplines this book covers into a working engineer's mental model.\n\nThe three-year question is the chapter's portable tool: _in three years, when someone debugs this code at 2am, will they thank you or curse you?_ Every later chapter applies it to its discipline. If you remember nothing else from this chapter, remember the three-year question and the equation that produced it. The rest of the book teaches the disciplines that make the answer \"thank you.\"\n\n\n#### Three Takeaways\n\n  1. **Apply the three-year question to your last merged PR.** Open it now. For each substantive change, predict whether the 2029 maintainer will thank you or curse you. The gaps are the disciplines worth investing in next.\n  2. **Sort one of your weekly activities into the compounding column or the depreciating column.** If it lives on the right side (typing boilerplate, memorizing syntax, filling CRUD templates), let AI take it and invest the freed time in the left side (reading old code, naming, ADRs, code review).\n  3. **Treat every line of code as a liability, not an asset.** When the agent suggests adding 200 lines and the function only needs 20, the right answer is the smaller code, not the more impressive diff. The asset is what users get; the lines are what you maintain.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 920,
+      "out_sha": "d68899baaa28",
       "note": ""
     },
     {
