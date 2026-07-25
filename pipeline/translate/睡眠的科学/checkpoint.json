@@ -2651,11 +2651,11 @@
       "en_title": "Chapter 12: Sleep Apnea — The Silent Killer",
       "order": 215,
       "src_chars": 932,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fb958fb45ccf",
       "src": "#### Common Misconception\n\nSnoring is often dismissed as \"just annoying, not dangerous.\" This is partly true — many snorers do not have OSA, and benign snoring (no breathing pauses, no daytime drowsiness, no oxygen desaturation) is mostly a problem for the bed partner. But the dismissal is dangerous when applied universally. Loud, chronic snoring, particularly when interrupted by silences and gasps, is the single most reliable bedside indicator of OSA. Snoring is the sound of turbulent airflow through a partially collapsed airway; the apnea is what happens when the airway collapses fully. The transition from \"snorer\" to \"OSA patient\" is often gradual, and the patient is the last to know. A spouse who comments on snoring should be taken seriously, especially if they have ever noticed the snoring stop and start with gasps. The cost of evaluation is small; the cost of missed diagnosis can be very large over years.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 259,
+      "out_sha": "ec21867db164",
       "note": ""
     },
     {
@@ -2663,11 +2663,11 @@
       "en_title": "Chapter 12: Sleep Apnea — The Silent Killer",
       "order": 216,
       "src_chars": 2800,
-      "status": "pending",
+      "status": "done",
       "src_sha": "31abe7b90a2f",
       "src": "### 12.5 Diagnosis and Treatment\n\nDiagnosis of OSA is straightforward in principle: an overnight sleep study. There are two formats:\n\n* _In-laboratory polysomnography_ : full overnight recording in a sleep lab, with EEG, EOG, EMG, breathing measurements, oxygen saturation, and video monitoring. The gold standard, though more expensive and inconvenient.\n* _Home sleep apnea test (HSAT)_ : portable device that records breathing, oxygen saturation, and limited other parameters at home over one or several nights. Less detailed but cheaper and more accessible. Validated for diagnosing moderate-to-severe OSA in patients with high pre-test probability.\n\nEither can establish the diagnosis. The output is the apnea-hypopnea index (AHI), which classifies severity.\n\nTreatment is highly effective for most patients. The gold standard is **CPAP** (Continuous Positive Airway Pressure), a device that delivers pressurized air through a mask, holding the airway open and preventing collapse.\n\nCPAP works:\n\n* It almost completely eliminates apnea episodes when used consistently.\n* It restores normal sleep architecture, including N3 and REM.\n* It reverses much of the cardiovascular damage in weeks to months.\n* It improves daytime alertness, often dramatically. Many patients describe the first weeks on CPAP as \"discovering what being well-rested feels like for the first time in years.\"\n* Long-term, it reduces cardiovascular event rates and may slow cognitive decline (tier b — observational evidence is consistent).\n\nThe challenge is **adherence**. CPAP is uncomfortable, especially initially. The mask is awkward; the air pressure feels strange; some users develop skin irritation or claustrophobia. Adherence rates vary widely; many patients stop using CPAP after a few weeks despite the medical benefit.\n\nStrategies to improve adherence:\n\n* _Mask fitting_. Different mask types (nasal pillows, nasal masks, full-face masks) work for different anatomies and preferences. Trying multiple types to find the best fit is essential.\n* _Pressure settings_. Auto-titrating CPAP machines (APAP) adjust pressure during the night and are often more comfortable than fixed-pressure CPAP. Gradual ramp-up at sleep onset can also help.\n* _Humidification_. Built-in heated humidifiers in modern CPAPs reduce the dry-air discomfort that drives many users away.\n* _Mental framing_. Patients who understand what CPAP is doing — restoring their actual sleep, not just suppressing snoring — are more likely to persist through the adjustment period.\n* _Partner support_. Couples often improve simultaneously: the OSA patient gets better sleep; the partner stops being woken by snoring and apneas. Recognizing the couple-level benefit can support adherence.\n\nAlternative treatments for patients who cannot tolerate CPAP:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 872,
+      "out_sha": "118d3e2d4c36",
       "note": ""
     },
     {
@@ -2675,11 +2675,11 @@
       "en_title": "Chapter 12: Sleep Apnea — The Silent Killer",
       "order": 217,
       "src_chars": 1093,
-      "status": "pending",
+      "status": "done",
       "src_sha": "394799279167",
       "src": "* _Mandibular advancement devices_ (oral appliances that hold the lower jaw forward) can help mild-to-moderate OSA in selected patients. Less effective than CPAP for severe cases.\n* _Positional therapy_ (devices or techniques to prevent supine sleeping) helps positional OSA where collapse occurs primarily on the back.\n* _Weight loss_ , when applicable, can substantially reduce OSA severity. Sometimes resolves it entirely in patients with mild-to-moderate OSA who lose substantial weight.\n* _Surgical interventions_ (uvulopalatopharyngoplasty, hypoglossal nerve stimulation) are options for selected patients but are second-line.\n* _Hypoglossal nerve stimulation_ (an implanted device that activates the nerve controlling tongue position during sleep) is a newer treatment for patients with moderate-to-severe OSA who cannot tolerate CPAP.\n\nFor most patients, CPAP remains the gold standard. The technology has improved substantially over the past decade — modern machines are smaller, quieter, and more comfortable than earlier generations. The adherence gap is real but shrinking.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 333,
+      "out_sha": "da06c4096a69",
       "note": ""
     },
     {
@@ -2687,11 +2687,11 @@
       "en_title": "Chapter 12: Sleep Apnea — The Silent Killer",
       "order": 218,
       "src_chars": 2984,
-      "status": "pending",
+      "status": "done",
       "src_sha": "395b125b9623",
       "src": "### 12.6 OSA and FFI: Two Failures of Sleep Architecture\n\nRecall the Italian family with FFI — the prion disease that destroys the thalamus and prevents descent into N3. They cannot sleep; their brain's sleep machinery has been structurally destroyed; the disease is fatal within months because the wash cycle (Chapter 6) cannot run and the brain literally cannot maintain itself.\n\nOSA is, in a different way, also a failure of sleep architecture. The architecture is structurally intact — the thalamus is healthy, the cortex can produce all the normal sleep stages, the brainstem can generate REM. But the architecture is _fragmented_ by the repeated apnea-driven arousals. The patient enters NREM, begins descending toward N3, has an apnea, gets arousal-driven back to lighter sleep, settles, has another apnea, and so on, hundreds of times per night. The architecture exists; it cannot be deployed.\n\nThe contrast is illuminating. FFI is the architecture being _destroyed_ ; OSA is the architecture being _prevented_. In both cases, the consequences are severe — because in both cases, the brain is not getting the actual functions of sleep, regardless of whether the patient appears to be sleeping.\n\nThe crucial difference: OSA is _treatable_. The architecture is intact and can be deployed once the airway-collapse problem is resolved. FFI patients have nothing to deploy; their machinery is gone. CPAP, for an OSA patient, can restore architecture that has been suppressed for years — and the body's restorative work (cardiovascular healing, metabolic improvement, cognitive recovery) follows. FFI patients have no analog; once the thalamus is destroyed, no intervention can restore the function.\n\nThis is why the two cases together teach a useful lesson. Sleep architecture is not optional. When it cannot be deployed — for whatever reason — the body suffers in predictable ways. When it can be restored, recovery is often dramatic. CPAP is, in this sense, one of the more effective interventions in modern medicine: it doesn't cure the underlying anatomical tendency to airway collapse, but it allows the architecture to be deployed, which produces extensive secondary healing.\n\nFor the reader who suspects OSA: this is treatable. The barrier is mostly diagnosis (which requires asking the question and getting the sleep study) and adherence to CPAP (which requires getting through the adjustment period). Both barriers are surmountable. The benefits, for patients with significant OSA, are typically dramatic.\n\n* * *\n\n\n### 12.7 Beyond OSA: Other Disorders to Know\n\nOSA is the most common sleep disorder a primary-care setting will encounter, but it is far from the only one. Three others are common enough, and distinct enough in mechanism, that an informed reader should be able to recognize them. Each represents a different kind of sleep failure; each is treatable to different degrees; and each is meaningfully misdiagnosed as something else when not on the differential.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 891,
+      "out_sha": "6b59eed9c62c",
       "note": ""
     },
     {
@@ -2699,11 +2699,11 @@
       "en_title": "Chapter 12: Sleep Apnea — The Silent Killer",
       "order": 219,
       "src_chars": 3347,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a4c4f30af6b6",
       "src": "#### Narcolepsy\n\nNarcolepsy is a chronic neurological disorder of the sleep-wake control system. The defining feature is **excessive daytime sleepiness** — not the ordinary tiredness of a poor night, but a profound, intrusive sleepiness that overrides volition. Patients fall asleep in conversations, while eating, while driving, in meetings. The sleep is often brief (a \"sleep attack\" of a few minutes) and refreshing, but the cycle repeats throughout the day.\n\nNarcolepsy comes in two main forms. **Type 1 narcolepsy (NT1)** is caused by destruction of the orexin (also called hypocretin) neurons in the lateral hypothalamus — a small population of cells, perhaps 70,000 in a healthy adult brain, that normally maintain stable wakefulness and gate the boundary between wake and REM. When these cells are lost, the wake-sleep boundary becomes leaky. NT1 patients have characteristic features:\n\n* _Cataplexy_ : brief loss of muscle tone triggered by strong emotion (laughter is the classic trigger), ranging from buckling knees to complete collapse. The patient remains conscious throughout. Cataplexy is essentially REM atonia intruding into wakefulness — a fragment of the REM machinery firing at the wrong time.\n* _Sleep paralysis_ (we met it in Chapter 10) and _hypnagogic hallucinations_ (vivid dream-like imagery on falling asleep), both also reflecting REM intrusion into wake transitions.\n* _Disrupted nocturnal sleep_ : despite excessive daytime sleepiness, patients often have fragmented, non-restorative night sleep.\n* Onset is most common in adolescence or young adulthood; the orexin neuron loss is now thought to be autoimmune, sometimes triggered by infection (notably the H1N1 flu epidemic and certain pandemic-era vaccines associated with it produced a measurable rise in NT1 incidence).\n\n**Type 2 narcolepsy (NT2)** has the daytime sleepiness without cataplexy, and orexin levels are typically preserved. The mechanism is less well understood and the diagnosis is less specific.\n\nDiagnosis involves an overnight sleep study followed by a Multiple Sleep Latency Test (MSLT), in which the patient takes scheduled naps during the day. Very short sleep latencies (under 8 minutes on average) and rapid REM entry (sleep-onset REM in two or more naps) suggest narcolepsy. CSF orexin measurement is increasingly used to confirm NT1.\n\nTreatment is symptomatic. Stimulants (modafinil, armodafinil) and the older amphetamine class help with daytime sleepiness; pitolisant (a histamine-system agent) and solriamfetol are newer options. Sodium oxybate (taken at night) consolidates nocturnal sleep and reduces daytime symptoms. Cataplexy is treated with antidepressants, which suppress REM and thus reduce REM-intrusion phenomena. The orexin neurons themselves cannot currently be replaced; treatment manages the consequences.\n\nNarcolepsy is rare (roughly 1 in 2,000 in most populations) but important because it is often misdiagnosed for years. Patients are commonly told they are lazy, depressed, or just sleep-deprived. The historical average delay from symptom onset to correct diagnosis has been around a decade. Readers who recognize the cluster — chronic excessive daytime sleepiness with sleep attacks, sometimes cataplexy, sometimes sleep paralysis — should consider narcolepsy on the differential and pursue specialist evaluation.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1011,
+      "out_sha": "297f850614dd",
       "note": ""
     },
     {
@@ -2711,11 +2711,11 @@
       "en_title": "Chapter 12: Sleep Apnea — The Silent Killer",
       "order": 220,
       "src_chars": 2528,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f383129a91c3",
       "src": "#### Restless Legs Syndrome (RLS) and Periodic Limb Movement Disorder (PLMD)\n\nRestless legs syndrome is a sensorimotor disorder characterized by uncomfortable sensations in the legs — variously described as crawling, tingling, electric, deeply restless — that occur at rest, are worse in the evening and at night, and are partially or fully relieved by movement. The patient cannot keep their legs still; the urge to move can dominate the bedtime hours and substantially delay sleep onset.\n\nRLS has a strong genetic component (it runs in families) and is associated with iron deficiency, kidney disease, pregnancy (particularly third-trimester onset), and certain medications (some antidepressants, antihistamines, dopamine antagonists). The mechanism appears to involve dopaminergic dysfunction in specific brain pathways and disturbed iron metabolism in the brain (separate from peripheral iron status, though peripheral iron deficiency exacerbates symptoms).\n\n**Periodic Limb Movement Disorder (PLMD)** is closely related: repetitive, stereotyped movements of the legs (typically dorsiflexion of the foot and toes, sometimes with knee flexion) occurring during sleep, every 20–40 seconds, in clusters lasting minutes. Most RLS patients also have PLMD, but PLMD can occur without conscious RLS symptoms. The bed partner often notices the kicking; the patient may not.\n\nBoth disorders fragment sleep and reduce its restorative function. Daytime fatigue, impaired concentration, and mood symptoms follow chronically.\n\nDiagnosis is largely clinical for RLS — the sensory description is characteristic. PLMD is detected on a sleep study showing the periodic movements. Treatment includes:\n\n* _Iron supplementation_ , if ferritin is low. The threshold is higher than in general medicine: ferritin below roughly 75 ng/mL warrants supplementation in RLS patients, even though \"normal\" general thresholds are lower.\n* _Avoiding triggers_ : caffeine, alcohol, certain medications.\n* _Pharmacological treatment_ for moderate to severe cases. Alpha-2-delta ligands (gabapentin enacarbil, pregabalin) are increasingly preferred as first-line. Dopamine agonists (pramipexole, ropinirole) work but have a substantial risk of _augmentation_ — paradoxical worsening of symptoms and earlier evening onset over months to years — which has shifted modern prescribing patterns away from them.\n\nFor pregnant patients with new-onset RLS (a common occurrence), iron status should be checked and addressed; the symptoms typically resolve postpartum.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 796,
+      "out_sha": "1661a4b37daf",
       "note": ""
     },
     {
@@ -2723,11 +2723,11 @@
       "en_title": "Chapter 12: Sleep Apnea — The Silent Killer",
       "order": 221,
       "src_chars": 2054,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d9b82e64e9f6",
       "src": "#### Idiopathic Hypersomnia\n\nIdiopathic hypersomnia is a less well-defined disorder characterized by chronic excessive daytime sleepiness _without_ the specific features of narcolepsy: no cataplexy, normal orexin, no sleep-onset REM on MSLT, and often longer rather than shorter nocturnal sleep with profound difficulty waking — sometimes called \"sleep drunkenness.\" The patient often sleeps 9–11 hours at night and still feels unrefreshed.\n\nThe mechanism is poorly understood. It is a diagnosis of exclusion — other causes of hypersomnia (sleep apnea, narcolepsy, depression, medications, chronic short sleep) must be ruled out first. Treatment is similar to narcolepsy (modafinil, methylphenidate, sometimes pitolisant), often with less dramatic response. The condition is chronic and currently has no known cause to address.\n\nFor the reader, the key teaching is recognition: a person with persistent excessive daytime sleepiness despite long nighttime sleep, with no apnea on a sleep study and no narcolepsy features, may have idiopathic hypersomnia. The diagnosis is uncommon but real, and patients are often dismissed as lazy or depressed before it is recognized.\n\n\n#### Why These Three Matter\n\nEach of these disorders has a different mechanism (orexin neuron loss; dopaminergic and iron-related dysfunction; unknown), a different presentation, and a different treatment. What they share is that the symptom — excessive daytime sleepiness or fragmented sleep — looks similar from the outside to fatigue, depression, or \"just being a bad sleeper.\" Without specific evaluation, all three are commonly misdiagnosed for years.\n\nA reader who recognizes the patterns — the sleep attacks of narcolepsy, the evening leg sensations of RLS, the unrefreshing long sleep of idiopathic hypersomnia — has a meaningful diagnostic vocabulary that most non-specialist physicians do not routinely apply. This is a place where being informed about sleep medicine produces real clinical value, for the reader or for someone they care about.\n\n* * *\n\n\n### 12.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 616,
+      "out_sha": "1cc1495a43a4",
       "note": ""
     },
     {
@@ -2735,11 +2735,11 @@
       "en_title": "Chapter 12: Sleep Apnea — The Silent Killer",
       "order": 222,
       "src_chars": 3246,
-      "status": "pending",
+      "status": "done",
       "src_sha": "11e39c535409",
       "src": "#### Concept Check\n\n**Q1.** Describe what happens during a single apnea event in OSA. Why does the patient typically not remember these events?\n\nHint\n\nThe chapter described the mechanism of airway collapse and the brain's response.\n\n**Answer:** A single apnea event:\n\n  1. _Airway collapse_. During sleep, especially REM, the muscles holding the upper airway open relax. In susceptible patients, the relaxation is severe enough that the airway closes (or substantially narrows in hypopnea).\n  2. _No air movement_. With the airway closed, no breathing occurs for some seconds — typically 10-30 seconds, sometimes longer in severe cases.\n  3. _Oxygen desaturation_. Blood oxygen levels begin to drop. The brain detects this through chemoreceptors monitoring blood gases.\n  4. _Sympathetic activation_. The body's stress response kicks in: heart rate rises, blood pressure spikes, muscles partially activate.\n  5. _Brief arousal_. The activation produces a partial arousal — the brain shifts toward wakefulness enough to restore airway muscle tone, but not enough for conscious wakefulness.\n  6. _Airway reopens_. With muscle tone restored, the airway opens. Air rushes in, often producing the characteristic gasp or snort.\n  7. _Oxygen recovery and return to sleep_. Within seconds, oxygen levels recover and the patient settles back into sleep.\n\nThe patient typically doesn't remember these events because:\n\n* The arousal is brief — typically a few seconds — and stays in the lightest sleep stages without crossing the threshold to conscious wakefulness.\n* Memory consolidation requires a sustained wake state with normal cognitive processing. The brief partial arousal of an apnea doesn't meet that threshold.\n* Even when fragments of consciousness are momentarily present, they are not encoded for later recall.\n\nSo the patient experiences \"going to bed at 11 and waking at 7\" with no memory of the 30-100+ interruptions per hour. The continuity of the felt experience is illusory; the architecture has been catastrophically fragmented while consciousness was effectively absent.\n\nThis is why bed partner reports are so important. The partner _sees_ the apneas — the silences, the gasps, the patient's breathing patterns — that the patient cannot observe in themselves.\n\n**Q2.** Why is OSA often called \"the silent killer\"? What features of the disorder make it particularly dangerous?\n\nHint\n\nWhat does \"silent\" mean in this context, and what makes the consequences \"kill\"?\n\n**Answer:** \"Silent\" refers to the patient's typical lack of awareness of the disorder:\n\n* The apnea events themselves don't register as conscious memories.\n* Daytime drowsiness is normalized as a baseline rather than recognized as a symptom.\n* Snoring is treated as a familiar nuisance rather than a warning sign.\n* Cognitive impairment is gradual and attributed to age or other factors.\n* Most patients with OSA are undiagnosed for years or decades.\n\nSo the disorder progresses without the patient knowing. This is unlike most diseases that produce awareness through symptoms. OSA produces _signs visible to others_ (snoring, apneas, fatigue) more than symptoms felt by the patient.\n\n\"Killer\" refers to the substantial cardiovascular and other risks of untreated OSA:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 995,
+      "out_sha": "45cf208c4955",
       "note": ""
     },
     {
@@ -2747,11 +2747,11 @@
       "en_title": "Chapter 12: Sleep Apnea — The Silent Killer",
       "order": 223,
       "src_chars": 2737,
-      "status": "pending",
+      "status": "done",
       "src_sha": "095ad7318ad4",
       "src": "* Hypertension and resistant hypertension.\n* Atrial fibrillation, with risk of stroke.\n* Heart failure from chronic strain.\n* Sudden cardiac death, particularly in early morning hours.\n* Stroke risk, both from atrial fibrillation and from atherosclerosis acceleration.\n* Drowsy driving accidents (one of the leading causes of motor vehicle fatalities).\n\nThe combination — silent progression with serious consequences — is what makes OSA particularly dangerous. The patient doesn't know they have it; they are accumulating cardiovascular and other damage; eventually some manifestation (heart attack, stroke, accident) brings the disease to attention. By that point, years of damage have accumulated.\n\nThe contrast with conditions that produce strong symptoms is striking. Type 2 diabetes is \"silent\" in similar ways — gradual progression without obvious symptoms — and is also a substantial public health concern. OSA shares this profile: prevalent, consequential, often undiagnosed.\n\nThis is why screening matters. Conditions that produce their own warning signals can be identified by patients reporting them. Conditions that are silent require active screening, asking the right questions, watching for the right signs in others (especially bed partners). OSA is a clear case for active screening in adults with risk factors (snoring, witnessed apneas, daytime drowsiness, hypertension, obesity).\n\n**Q3.** What is CPAP, and how does it work? Why is adherence an important issue?\n\nHint\n\nWhat is CPAP doing mechanically, and what makes it hard to use?\n\n**Answer:** CPAP (Continuous Positive Airway Pressure) is a treatment device for OSA. It consists of:\n\n* A machine that pressurizes ambient air to a prescribed level (typically 5-15 cm H₂O).\n* A flexible hose connecting the machine to a mask.\n* A mask that covers the nose, the mouth, or both, sealing to the face.\n\nHow it works:\n\nThe pressurized air, delivered through the mask, holds the upper airway open mechanically. Even when the airway muscles relax during sleep, the positive pressure prevents collapse. As long as the mask is in place and the machine is running, the patient cannot have an apnea — the airway physically cannot close because of the positive pressure inside.\n\nThe result, when used consistently:\n\n* Apnea events are nearly eliminated.\n* Sleep architecture is restored to near-normal.\n* Daytime alertness recovers.\n* Cardiovascular markers improve over weeks to months.\n* Long-term outcomes (event rates, mortality) are substantially better than untreated OSA.\n\nFor most OSA patients, CPAP is dramatically effective. Many describe the first weeks on CPAP as \"discovering what being rested feels like for the first time in years.\"\n\nWhy adherence is challenging:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 827,
+      "out_sha": "fa0ee9ee5d06",
       "note": ""
     },
     {
@@ -2759,11 +2759,11 @@
       "en_title": "Chapter 12: Sleep Apnea — The Silent Killer",
       "order": 224,
       "src_chars": 3484,
-      "status": "pending",
+      "status": "done",
       "src_sha": "034cc32065d4",
       "src": "* _Mask discomfort_. The mask is on the face all night. It can cause skin irritation, claustrophobic feelings, or simple awkwardness.\n* _Air pressure sensation_. The continuous pressurized air takes adjustment. Some users feel they cannot exhale freely, especially with higher pressures.\n* _Sound and complexity_. Modern CPAPs are quiet, but not silent. The setup, cleaning, and maintenance add daily complexity.\n* _Travel inconvenience_. The machine has to come along on every trip.\n* _Couples adjustments_. The mask and noise are different from the patient's usual sleep configuration. The bed partner adjusts too, though usually positively (no more snoring).\n* _Initial worsening of feel_. Some users report feeling worse in the first week as they adjust, before improvement begins. This produces dropouts.\n\nAdherence rates vary widely in studies. Many patients stop using CPAP within months despite the medical benefits.\n\nWhy adherence matters:\n\n* The benefits of CPAP require _consistent_ use. Wearing it 3-4 nights per week is much less beneficial than 6-7 nights. Compliance must be near-daily for most of the cardiovascular and cognitive benefits.\n* The condition typically progresses without treatment. Adherence today reduces damage today; non-adherence allows damage to accumulate.\n* A non-adherent patient is, in effect, an untreated patient. The diagnosis without treatment doesn't prevent the consequences.\n\nStrategies to improve adherence (covered in the chapter):\n\n* Mask fitting trials to find the right type.\n* Auto-titrating machines (APAP) that adjust pressure during the night.\n* Heated humidification to reduce dry-air discomfort.\n* Patient education to maintain motivation through the adjustment period.\n* Partner support and recognition of the couple-level benefits.\n\nFor patients who cannot tolerate CPAP after good-faith effort, alternative treatments exist: oral appliances (for mild-moderate cases), positional therapy, weight loss when applicable, hypoglossal nerve stimulation in selected patients. None is as effective as CPAP for severe OSA, but the alternatives can be meaningful for patients who genuinely cannot use CPAP.\n\nThe deeper teaching: the gold-standard treatment is highly effective when used consistently, but adherence is the rate-limiting step. This is true for many medical interventions — pharmacological and otherwise — and the gap between efficacy and effectiveness is largely an adherence gap.\n\n**Q4.** Compare OSA and FFI as failures of sleep architecture. What is similar, and what is critically different?\n\nHint\n\nThe chapter framed both as architecture problems but with different mechanisms and prognoses.\n\n**Answer:** Similarities:\n\n* Both produce severe disruption of sleep architecture.\n* Both result in the brain not receiving the normal functions of sleep — N3-mediated wash cycle, declarative consolidation, REM-mediated emotional processing — even when the patient may appear to be sleeping or attempting to sleep.\n* Both produce systemic consequences far beyond sleep itself, including cognitive impairment.\n* Both teach that the architecture of sleep is not optional — when it fails to function, the body suffers in predictable ways.\n\nCritical differences:\n\n_Mechanism_ :\n\n* FFI: thalamic destruction by prion. The structural machinery for generating N3 is gone.\n* OSA: airway collapse during otherwise-normal sleep. The architecture machinery is intact but cannot be deployed because of repeated arousal interruptions.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1057,
+      "out_sha": "0357411f59af",
       "note": ""
     },
     {
