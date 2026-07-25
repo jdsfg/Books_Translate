@@ -1563,11 +1563,11 @@
       "en_title": "Chapter 11: Social Preferences II — Reciprocity, Trust, and Cooperation",
       "order": 122,
       "src_chars": 3210,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bd73fff3b994",
       "src": "#### Application Problems\n\n**Q1.** A company is designing an employee wellness program. One option is a pure incentive program: employees receive 200 USD in bonus pay for completing an annual health screening. A second option is a norm-based program: employee testimonials, company health leaderboards, and social recognition for completing the screening (no cash reward). Considering crowding out and social preferences theory, predict which program will have higher long-term compliance and explain your reasoning.\n\nHint\n\nConsider whether completing a health screening is primarily intrinsically motivated (it's the right thing to do for your health and your team), and how each program frames the behavior.\n\n**Answer:** The long-term prediction is ambiguous but the social preferences framework raises concerns about the incentive program.\n\nIf health screening compliance is primarily intrinsically motivated — employees do it because they care about their health or feel a mild civic obligation — the 200 USD incentive may crowd out the intrinsic motivation by reframing screening as a paid task. Once the incentive is established, employees may view completion as \"working for 200 USD\" rather than as a health-conscious choice. If the program is then discontinued or the payment reduced, compliance may drop below its pre-incentive baseline.\n\nThe norm-based program maintains the intrinsic framing (doing the right thing, being part of a healthy community) and adds social recognition without monetizing the behavior. Social proof (leaderboards showing what peers do) activates conditional cooperation — employees who see high participation rates will want to participate to conform to the social norm. This may produce somewhat lower short-run compliance than a 200 USD payment, but more stable long-run compliance and compliance that is not contingent on the ongoing monetary payment.\n\nThe optimal design may combine elements: framing the screening as a community norm and using social recognition, with a modest incentive that is large enough to remove access barriers (e.g., covering time off costs) but not so dominant that it crowds out intrinsic motivation. The evidence from health behavior research generally supports norm-based and social proof interventions as more cost-effective per additional screening than pure monetary incentives.\n\n**Q2.** In a village community, a shared irrigation system serves 100 farmers. Each farmer benefits from the system being maintained, but maintenance is time-consuming and unpopular. Without coordination, each farmer prefers to free-ride on others' maintenance. The village has two options: (A) assign a rotating mandatory maintenance duty (everyone must contribute some hours), or (B) rely on voluntary contributions with social praise/shaming for those who contribute or fail to contribute. Using the framework of strong reciprocity and conditional cooperation, analyze when each system is more likely to succeed.\n\nHint\n\nConsider the composition of the community (proportion of conditional cooperators vs. free-riders) and how each system handles the punishment problem.\n\n**Answer:** Both systems can work, but they suit different community compositions.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 883,
+      "out_sha": "012859b0affb",
       "note": ""
     },
     {
@@ -1575,11 +1575,11 @@
       "en_title": "Chapter 11: Social Preferences II — Reciprocity, Trust, and Cooperation",
       "order": 123,
       "src_chars": 3159,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1c474bbb353e",
       "src": "**Mandatory rotation (Option A)** works when: (1) The community has difficulty monitoring who is contributing voluntarily; (2) Free-riders are hard to identify; (3) Strong reciprocity / punishment by third parties is weak or socially costly (antagonistic punishment would damage community relationships). The mandatory rotation removes the free-rider problem by making contribution compulsory — it doesn't rely on intrinsic motivation or social punishment. The weakness: some contributors who value their autonomy may resent compulsion and work inefficiently, and the system requires administrative capacity to enforce rotation.\n\n**Voluntary contribution with social incentives (Option B)** works when: (1) Contributions are visible and easily monitored; (2) The community has a high proportion of conditional cooperators (most people will contribute if they see others contributing); (3) Strong reciprocity norms are present — community members are willing to shame non-contributors; (4) The social cost of shaming non-contributors is acceptable (the community has norms supporting norm enforcement). The weakness: if free-riders constitute a large minority and conditional cooperators respond to their defection by reducing contributions, the system can spiral toward low maintenance. Antisocial punishment (shaming people who contribute) would be catastrophic.\n\nThe sustainable equilibrium under Option B depends critically on having enough \"strong reciprocators\" who will punish defectors even at personal cost. Cross-cultural evidence suggests this capacity exists in most human communities but is stronger in market-integrated societies with established norms of impersonal exchange. For isolated rural communities without strong civic norms, Option A (mandatory rotation with administrative enforcement) may be more robust.\n\n**Q3.** (Cross-reference to Chapter 10) In Chapter 10, we saw that inequality aversion motivates rejection in the ultimatum game even at personal cost. In this chapter, we see that strong reciprocity motivates costly punishment of norm violations. Are these the same psychological motive expressed in different contexts, or distinct motives that happen to produce similar behavior?\n\n**Answer:** They are related but distinguishable. The key difference is what triggers the response.\n\n**Inequality aversion** (Chapter 10): The trigger is a distributional outcome that deviates from equality. The responder in the ultimatum game who rejects a 1 USD offer on 100 USD is responding to the outcome (extreme inequality). They might respond the same way regardless of the proposer's intention — even if the 1 USD offer was due to error or constraint rather than deliberate unfairness.\n\n**Reciprocity / strong reciprocity** (Chapter 11): The trigger is a perceived intention or act of kindness or unkindness. Reciprocity is sensitive to whether the behavior was intended, whether it was a norm violation, and whether the actor \"deserves\" punishment. Reciprocal punishment of the proposer in the ultimatum game may be triggered not by the unequal outcome per se, but by the perceived choice to offer so little — a deliberate unfair act.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 874,
+      "out_sha": "17f674ad0593",
       "note": ""
     },
     {
@@ -1587,11 +1587,11 @@
       "en_title": "Chapter 11: Social Preferences II — Reciprocity, Trust, and Cooperation",
       "order": 124,
       "src_chars": 693,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2c010f4702c4",
       "src": "Distinguishing experimentally: a key test is whether responders respond differently to low offers that come from a computuerm (constrained by random draw) versus low offers from a human who chose to offer little. Research shows that responders punish low human offers much more than equivalent low computer offers — the same distributional outcome, but the intentionality matters for the reciprocity response. Inequality aversion alone would not predict this difference; reciprocity (responding to intentions) does. This suggests that while both motives may contribute to observed game behavior, they are psychologically distinct and can be disentangled with appropriate experimental designs.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 186,
+      "out_sha": "fd8a403072bb",
       "note": ""
     },
     {
@@ -1599,11 +1599,11 @@
       "en_title": "Chapter 11: Social Preferences II — Reciprocity, Trust, and Cooperation",
       "order": 125,
       "src_chars": 2215,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fc761ddf06f4",
       "src": "#### Think Deeper\n\n**Q1.** Strong reciprocity — paying to punish strangers who violated norms — is costly to the individual. Why would evolution produce such a costly behavior? What collective benefit could have sustained strong reciprocity in ancestral environments?\n\n**Discussion:** This is an evolutionary biology and game theory question embedded in behavioral economics. The puzzle: if punishment is costly, mutant \"non-punishers\" who free-ride on others' punishment should be at a selective advantage, and strong reciprocity should be evolutionarily unstable.\n\nSeveral mechanisms have been proposed to explain how strong reciprocity can be maintained:\n\n_Group selection_ : Groups with more strong reciprocators cooperate better and outcompete groups with fewer. If between-group competition is strong enough, the group-level advantage of having strong reciprocators can outweigh the individual-level cost of punishment. This remains controversial among evolutionary biologists.\n\n_Cultural group selection_ : Even if biological selection alone cannot maintain strong reciprocity, cultural selection (groups with punishment-sustaining norms outperforming others) may be faster and more flexible. Cultural transmission of punishment norms may be the key mechanism.\n\n_Reputation and second-order punishment_ : In groups where non-punishers can be identified and sanctioned by others (second-order punishment), the cost of being seen as a non-punisher can exceed the cost of punishing. If community members expect each other to punish, failing to punish invites social costs. This can sustain a punishment equilibrium without requiring group selection.\n\n_Signal of commitment_ : Costly punishment may serve as a credible signal of one's type — only genuine cooperators and norm-followers would pay to punish, making punishment a reliable signal that deters exploitation by would-be defectors. The costly signal maintains its credibility precisely because it is costly.\n\n**Q2.** The childcare late pickup study suggests that introducing a fine can reduce prosocial behavior by crowding out guilt. Should policymakers avoid monetary fines in favor of norm-based interventions? What are the limits of this conclusion?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 608,
+      "out_sha": "48e9a7e39866",
       "note": ""
     },
     {
@@ -1611,11 +1611,11 @@
       "en_title": "Chapter 11: Social Preferences II — Reciprocity, Trust, and Cooperation",
       "order": 126,
       "src_chars": 3120,
-      "status": "pending",
+      "status": "done",
       "src_sha": "afa639ea2f83",
       "src": "**Discussion:** The crowding out finding raises important questions for regulatory design. Norm-based interventions (social pressure, public commitment, shame) can sustain cooperation without displacing intrinsic motivation — but they have limits: (1) _Scale_ : norm-based interventions rely on social monitoring and enforcement, which works well in small communities but poorly in large anonymous markets. A parking garage serving thousands of anonymous drivers cannot rely on social shaming; fines are the practical alternative. (2) _Unconditional defectors_ : some individuals have no intrinsic motivation to cooperate and will not respond to social norms. Monetary penalties may be necessary to discipline this subpopulation without affecting the majority who are intrinsically motivated. (3) _Reversibility_ : once monetary incentives have been introduced and intrinsic motivation has been crowded out, removing the incentive may not restore the pre-incentive baseline. Policymakers who have already monetized cooperative behavior may be locked in to maintaining monetary incentives. (4) _Stakes_ : for high-stakes compliance (environmental regulations, financial fraud), relying on intrinsic motivation is risky. Monetary penalties and criminal sanctions are appropriate precisely because some violations are motivated by large financial gains that intrinsic motivation cannot counterbalance. The policy lesson is not \"never use money\" but \"be aware of which behaviors are intrinsically motivated and design incentives that complement rather than replace that motivation.\"\n\n\n#### Thread A — Saving for Retirement\n\nThread A: Social preferences and social norms shape retirement savings behavior in ways that go beyond individual cognition. Research on peer effects in savings — most prominently studies of retirement plan enrollment by Beshears, Choi, Laibson, and Madrian (2015) and related work — finds that workers' contribution decisions are meaningfully influenced by what they believe their colleagues are contributing. When employees are shown that their peers typically contribute 6% of salary, those who were previously contributing less frequently increase their contributions toward that social reference point. This is positive reciprocity applied to savings norms: if \"people like me\" save at a certain rate, the social norm creates a pull toward conformity.\n\nThe implication extends the Thread A story beyond automatic enrollment and SMarT. Even among workers already enrolled, social norm communication can increase contribution adequacy — addressing not just participation (Chapter 7's status quo bias solution) but the adequacy problem (Chapter 16). Crowding out is not a concern here: social norm information about savings is not a monetary incentive and does not reframe saving as a commercial transaction. It reinforces intrinsic social motivation to behave in a way consistent with one's community. This makes peer savings comparison a useful complement to structural enrollment design — helping workers who are enrolled but undercontributing to calibrate their savings toward community norms.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 874,
+      "out_sha": "af912a9090e4",
       "note": ""
     },
     {
@@ -1623,11 +1623,11 @@
       "en_title": "Chapter 11: Social Preferences II — Reciprocity, Trust, and Cooperation",
       "order": 127,
       "src_chars": 1776,
-      "status": "pending",
+      "status": "done",
       "src_sha": "21cef38f43bc",
       "src": "### Chapter Summary\n\nThis chapter examined reciprocity, trust, and cooperation — behavioral phenomena that standard game theory predicts should not survive in one-shot anonymous interactions but that appear robustly in experimental and field data.\n\nThe **trust game** demonstrates positive reciprocity: investors trust strangers, and trustees honor that trust, enabling the multiplication of resources. **Strong reciprocity** (altruistic punishment) shows that people pay to punish norm violators even at personal cost and with no future benefit — a finding that cannot be rationalized by strategic self-interest. **Public goods games** reveal conditional cooperation: many people cooperate if they believe others will, and punishment mechanisms sustain cooperation at high levels by disciplining free-riders.\n\n**Crowding out** demonstrates that external incentives can undermine intrinsic motivation for prosocial behavior — a counterintuitive finding that implies monetary incentives should be designed carefully to complement, not displace, norm-based cooperation.\n\nThread C: these results show both universals (some cooperation capacity in all studied societies) and cross-cultural variation (punishment norms, thresholds, and the presence of antisocial punishment vary substantially). The variation is consistent with humans having evolved general reciprocity capacities that are culturally calibrated.\n\nChapter 12 turns to a specific and prominent self-control theory — ego depletion — and provides an extended case study in scientific failure: a high-profile behavioral finding that attracted enormous attention, spawned interventions, and then substantially failed to replicate. This is Thread C's central case study in how to read behavioral research critically.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 493,
+      "out_sha": "cc29511f0689",
       "note": ""
     },
     {
@@ -1635,11 +1635,11 @@
       "en_title": "Chapter 12: Self-Control Failure — Ego Depletion and the Limits of Willpower",
       "order": 128,
       "src_chars": 3187,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f979b21a6561",
       "src": "In 1998, a fascinating study appeared in psychology journals. Participants were brought into a lab where freshly baked cookies were placed alongside a bowl of radishes. Half the participants were asked to eat only the radishes — tempting but resisting the cookies. The other half were free to eat either. Then all participants attempted to solve an unsolvable puzzle and their persistence was measured.\n\nThe result: radish-resisting participants gave up on the puzzle much sooner than cookie-eating participants. The interpretation: resisting the cookies depleted some resource — \"willpower\" — that participants later needed for persistence. Act of self-control → reduced capacity for subsequent self-control.\n\nThis is the ego depletion hypothesis. For over a decade, it was one of the most cited and celebrated findings in social psychology, spawning hundreds of follow-up studies, practical recommendations, and connections to broader theories of self-control. Then, beginning around 2015, the edifice began to crack. High-powered replications failed. The effect that had seemed rock-solid proved elusive. Ego depletion became one of the most high-profile casualties of the replication crisis in psychology.\n\nThis chapter does two things: it reviews the ego depletion hypothesis and what might have been true about it, and it uses ego depletion as a case study in how behavioral science can go wrong — and what that teaches about reading behavioral research critically.\n\n\n### 12.1 The Ego Depletion Hypothesis\n\n\n#### Definition: Ego Depletion\n\nThe **ego depletion hypothesis** proposes that self-control draws on a limited, consumable resource — sometimes metaphorically described as \"willpower\" or \"mental energy.\" When this resource is depleted by one act of self-control, subsequent acts of self-control become harder, because the resource is temporarily exhausted.\n\nThe hypothesis has intuitive appeal: people often report that dieting is harder after a stressful day at work, that they make worse decisions when tired, and that moral lapses seem to cluster with exhaustion. Ego depletion offered a neuropsychological story for these experiences: self-control shares a common resource with decision-making, attention, and task persistence, and exerting self-control depletes that shared resource.\n\n**The proposed mechanism (original version):** The resource was initially proposed to be glucose — blood sugar consumed by effortful cognitive activities. Supporting evidence: studies showed that consuming a sugary drink after a depletion task appeared to restore self-control performance. This added biological plausibility to the hypothesis.\n\n**The experimental paradigm:** Typical ego depletion studies have two phases. Phase 1 (depletion task): participants either exert self-control (suppress an emotion, cross out specific letters in text, resist tempting food) or perform an easy version of the task. Phase 2 (dependent measure): all participants attempt a second task requiring self-control (persistence on a puzzle, resisting temptation, decision-making accuracy). The ego depletion prediction: depleted participants perform worse on Phase 2 than non-depleted participants.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 955,
+      "out_sha": "e569a72e646a",
       "note": ""
     },
     {
@@ -1647,11 +1647,11 @@
       "en_title": "Chapter 12: Self-Control Failure — Ego Depletion and the Limits of Willpower",
       "order": 129,
       "src_chars": 2427,
-      "status": "pending",
+      "status": "done",
       "src_sha": "76bb74217835",
       "src": "### 12.2 The Replication Crisis\n\nStarting around 2012–2015, several large-scale replication attempts yielded null or very small effects. The most decisive was a massive pre-registered multi-lab replication involving 23 labs and over 2,000 participants — designed to detect even a small ego depletion effect with very high statistical power. The result: the overall effect was essentially zero. The study that had seemed to replicate in dozens of single-lab studies did not replicate in a properly powered multi-lab experiment.\n\n\n#### Thread C — The Replication Challenge (Central Case Study)\n\nThread C central case: ego depletion is the prototype for understanding how a behavioral finding can appear robust and fail to replicate. What went wrong?\n\n**Explanation 1: Publication bias.** The original literature was populated by studies that found significant effects. Studies that found no effect were more likely to be filed away unpublished (the \"file drawer problem\"). A meta-analysis that only sees published positive results will systematically overestimate the true effect size. When the field moved toward pre-registered replications — where results must be reported regardless of outcome — the estimated effect size collapsed.\n\n**Explanation 2: Small sample sizes and false positives.** Many original ego depletion studies used samples of 30-50 participants per condition. With small samples, random sampling error produces large apparent effect sizes by chance. If only statistically significant results are published, the published literature consists disproportionately of studies that happened to have lucky random draws. The published effect size is the maximum of a noisy distribution, not the true effect.\n\n**Explanation 3: Researcher degrees of freedom.** The ego depletion paradigm allowed many choices: which depletion task, which dependent measure, how long the Phase 2 task runs, whether to include covariates. Researchers could try multiple variants and report the one that worked. This \"p-hacking\" inflates apparent effects without requiring any intent to deceive — just normal scientific exploration in the absence of pre-specified analysis plans.\n\n**Explanation 4: The glucose mechanism was wrong.** The glucose-restoration effect — consuming sugar restores willpower — itself failed to replicate in carefully controlled studies. If the mechanism never existed, any effects attributed to it are suspect.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 756,
+      "out_sha": "2be113a0f282",
       "note": ""
     },
     {
@@ -1659,11 +1659,11 @@
       "en_title": "Chapter 12: Self-Control Failure — Ego Depletion and the Limits of Willpower",
       "order": 130,
       "src_chars": 2500,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5c33b82ec7c8",
       "src": "### 12.3 What (If Anything) Survives?\n\nEgo depletion's core hypothesis — willpower is a limited resource that depletes with use — is now considered much weaker than originally thought. But several related concepts survive and deserve separate evaluation.\n\n**Cognitive load** is better supported than ego depletion: performing a demanding cognitive task (holding information in working memory, solving complex problems) does impair subsequent performance on other demanding tasks. This effect is smaller and more situation-specific than the broad ego depletion claim, but it is real and replicates.\n\n**Decision fatigue** has a more mixed record. Studies of Israeli judges showed that parole decisions deteriorated (became more likely to reject applications) later in the day and after meals, consistent with depletion-like effects. This has been partially replicated and partially questioned — the Israeli judges study in particular has been criticized for not adequately controlling for case type appearing at different times. The finding is plausible but contested.\n\n**Self-regulatory fatigue** (the subjective experience of feeling depleted) appears real: people report feeling less able to exert self-control when tired or stressed, and these reports predict some behavioral outcomes. Whether this reflects a genuine biological depletion or a motivational state (believing you are depleted reduces effort) is unclear.\n\n**The motivational account** offers an alternative to depletion: self-control failures after prior exertion may reflect decreased motivation to exert effort rather than a literal resource depletion. Under this view, ego depletion is not about running out of something — it is about changing the cost-benefit calculation of exertion. This account predicts that sufficient incentives can \"restore\" performance that appears depleted — and some evidence supports this.\n\n\n#### Definition: Decision Fatigue\n\n**Decision fatigue** is the impairment of decision quality that occurs after making many decisions over an extended period. Unlike ego depletion's broad claim about a common willpower resource, decision fatigue refers specifically to the decline in deliberate, considered decision-making from the accumulation of decision demands over time.\n\nIn plain language: making many decisions in a row leaves you making worse decisions later — not necessarily because you ran out of \"willpower,\" but because deliberate reasoning becomes more costly as cognitive resources are occupied.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 782,
+      "out_sha": "89b9ecc15245",
       "note": ""
     },
     {
@@ -1671,11 +1671,11 @@
       "en_title": "Chapter 12: Self-Control Failure — Ego Depletion and the Limits of Willpower",
       "order": 131,
       "src_chars": 2935,
-      "status": "pending",
+      "status": "done",
       "src_sha": "af57d77eef80",
       "src": "### 12.4 Lessons for Behavioral Economics Research\n\nThe ego depletion story is not merely an embarrassment — it is a valuable lesson in how to read behavioral research. Several principles emerge:\n\n**Principle 1: Effect size and sample size matter, not just statistical significance.** A p-value of 0.05 from a study of 30 participants tells you much less than a p-value of 0.05 from a study of 500 participants. With 30 participants, random sampling variation can easily produce false positives. With 500, it cannot. Evaluate the sample size, not just the significance.\n\n**Principle 2: Pre-registration is the gold standard.** Pre-registered studies specify the hypothesis, methods, and analysis plan before collecting data. They cannot be p-hacked. When evaluating a finding, ask: was it pre-registered? If not, treat the result as exploratory — a hypothesis worth testing — not as established evidence.\n\n**Principle 3: Replication across labs matters more than multiple studies from one lab.** A finding replicated in 20 studies from the same lab may just reflect a single researcher's consistent methodological choices. A finding replicated in 10 different labs with different methodologies is much stronger evidence.\n\n**Principle 4: Mechanisms add credibility.** A finding that comes with a specific, testable mechanistic account is more credible than a purely descriptive effect. The glucose mechanism for ego depletion initially added credibility — but when the mechanism failed to replicate, it weakened the overall account.\n\n**Principle 5: Effect sizes in the lab overestimate effects in the field.** This is the ecological validity point from Chapter 6. Lab ego depletion effects, even when real, would likely be much smaller in naturalistic settings where people have access to coffee, rest, and external structure.\n\n**Principle 6: Initial excitement is not evidence.** A finding that attracts enormous scientific and popular attention is not thereby more likely to be true — it is more likely to have been published and publicized because it was surprising and interesting, which does not correlate with replicability.\n\n\n#### Thread B — Rational vs. Human Agent\n\nThis chapter takes an unusual angle on Thread B. The ego depletion hypothesis was proposed as an explanation for why people fail at self-control — as a psychological mechanism underlying the gaps from the rational agent model documented in Chapter 8 (present bias, procrastination). Even the explanation for behavioral economic phenomena turned out to be subject to behavioral economic critique: researchers were susceptible to confirmation bias, publication-seeking, and selective reporting — the same cognitive tendencies that behavioral economics attributes to consumers. The scientist studying biases is not immune to biases. This meta-level observation is important for understanding how the field corrects itself through pre-registration and replication.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 920,
+      "out_sha": "371da58b1713",
       "note": ""
     },
     {
@@ -1683,11 +1683,11 @@
       "en_title": "Chapter 12: Self-Control Failure — Ego Depletion and the Limits of Willpower",
       "order": 132,
       "src_chars": 1806,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bcf4989d835e",
       "src": "### 12.5 Practical Implications — With Epistemic Humility\n\nDespite the replication failures, some practical implications survive in modified form.\n\n**Managing cognitive demands.** Environments that reduce the number and difficulty of decisions can support better decision quality over time, regardless of whether the mechanism is \"ego depletion\" or simply \"cognitive load.\" Simplifying choice environments (fewer options, better defaults) is valuable not because it addresses \"willpower resource depletion\" specifically but because it reduces the cognitive burden on decision-makers.\n\n**High-stakes decisions in the morning.** If decision quality declines over extended periods of decision-making (for whatever mechanism), scheduling the most important decisions earlier in the day or after breaks may improve outcomes. The practical recommendation survives even if the mechanistic account has changed.\n\n**Glucose and blood sugar.** The specific claim that consuming sugar restores self-control performance is poorly supported. However, maintaining adequate overall blood sugar and metabolic health does support cognitive function generally — the practical implication (don't make important decisions while hungry) has plausibility, just not through the specific glucose-willpower mechanism that ego depletion proposed.\n\n**Structural, not motivational, solutions to self-control problems.** The behavioral economics of self-control (Chapter 8's commitment devices, Chapter 7's defaults) does not depend on ego depletion. Whether self-control failures are caused by present bias, ego depletion, or some other mechanism, the structural solution — remove the choice, pre-commit to a plan, design the environment to support the desired behavior — is robust to the mechanistic uncertainty.\n\n\n### 12.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 526,
+      "out_sha": "f5000e84a1cd",
       "note": ""
     },
     {
@@ -1695,11 +1695,11 @@
       "en_title": "Chapter 12: Self-Control Failure — Ego Depletion and the Limits of Willpower",
       "order": 133,
       "src_chars": 3142,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f99c2a3d21ad",
       "src": "#### Concept Check\n\n**Q1.** What is the ego depletion hypothesis? What evidence originally supported it?\n\n**Answer:** The ego depletion hypothesis proposes that self-control draws on a limited, consumable resource. Exerting self-control depletes this resource, leaving less available for subsequent self-control tasks. The hypothesis was originally supported by a large body of studies showing a \"sequential depletion\" pattern: participants who exerted self-control in Phase 1 (resisting temptation, suppressing emotions, making effortful decisions) performed worse on Phase 2 tasks requiring self-control (puzzle persistence, resisting temptation), compared to participants who did an easier version of Phase 1.\n\nAdditional support came from: (1) The proposed glucose mechanism — studies found that consuming a sugary drink appeared to restore Phase 2 performance for depleted participants. (2) Meta-analyses aggregating many studies that found consistent, statistically significant effects. (3) Intuitive plausibility — the finding matched everyday experience of feeling \"decision-tired.\" (4) Publication in prestigious journals and replication across apparently different paradigms.\n\n**Q2.** What is the replication crisis in behavioral economics/psychology? What methodological problems caused many findings to be questioned?\n\n**Answer:** The replication crisis refers to the finding that many published results in psychology (and behavioral economics) do not replicate when repeated by independent research teams using the same methods. The crisis became prominent around 2012–2015 when large-scale replication projects found that many well-known findings could not be reproduced.\n\nKey methodological problems:\n\n  1. _Publication bias_ : journals published positive (significant) results and rejected null results, so the literature misrepresented the true distribution of effects.\n\n  2. _Small sample sizes_ : studies with 30-50 participants per condition have very high type I error rates (false positives) — random noise can easily generate apparent effects that don't reflect true population effects.\n\n  3. _Researcher degrees of freedom (p-hacking)_ : researchers could try many analytic choices and report only the significant ones, inflating false-positive rates without conscious deception.\n\n  4. _Lack of pre-registration_ : without specifying hypotheses and analysis plans in advance, it was impossible to distinguish pre-specified tests from post-hoc exploratory analyses presented as confirmatory.\n\n  5. _Single-lab studies_ : effects specific to one lab's particular methodology appeared replicated across that lab's studies but failed in other labs.\n\n**Q3.** Distinguish between ego depletion, cognitive load, and decision fatigue. Which is best supported by current evidence?\n\n**Answer:**\n\n* _Ego depletion_ : the hypothesis that a single common resource (sometimes called \"willpower\" or linked to glucose) underlies all forms of self-control, and that depleting it in one domain reduces capacity in all subsequent domains. This is the most broad and the least supported by current evidence after the replication failures.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 835,
+      "out_sha": "f82dad068337",
       "note": ""
     },
     {
@@ -1707,11 +1707,11 @@
       "en_title": "Chapter 12: Self-Control Failure — Ego Depletion and the Limits of Willpower",
       "order": 134,
       "src_chars": 3290,
-      "status": "pending",
+      "status": "done",
       "src_sha": "68fd89f899ae",
       "src": "* _Cognitive load_ : the impairment of performance on demanding cognitive tasks when working memory or attentional resources are simultaneously occupied by another task. Much better supported — holding 7 digits in working memory while solving a verbal reasoning problem reduces verbal reasoning performance. This is a specific, task-level constraint, not a global \"willpower\" resource.\n\n* _Decision fatigue_ : decline in decision quality after making many decisions over an extended period, potentially due to accumulated cognitive demand or declining motivation to exert deliberative effort. Better supported than ego depletion for specific high-stakes decision contexts (like judicial decisions), but some flagship studies have been contested.\n\nBest supported: cognitive load has the most robust evidence. Decision fatigue has plausible but debated evidence. Ego depletion's broad resource-depletion account is currently the least well-supported.\n\n**Q4.** What is publication bias, and how does it affect the validity of meta-analyses of behavioral findings?\n\n**Answer:** Publication bias occurs when studies with significant (positive) results are more likely to be submitted and published than studies with null results. This creates a biased sample of published literature — the file drawer is full of null results that never saw daylight.\n\nEffect on meta-analyses: a meta-analysis that aggregates only published studies will systematically overestimate effect sizes, because it is analyzing a biased sample. If a true effect is zero (or small), published studies that happened to find a significant result by chance will dominate the meta-analysis sample, producing an apparently large, consistent effect that reflects the selection of lucky studies rather than a real phenomenon.\n\nDetection methods: Funnel plots (graphing effect size vs. sample size) should show a symmetric distribution if there is no publication bias — small studies have wide variance and large studies have narrow variance, forming a symmetric funnel around the true effect. Asymmetric funnels (small studies always showing large effects, large studies showing small effects) are a signature of publication bias. The Egger test formalizes this asymmetry detection. Meta-analyses that fail to correct for publication bias — especially in areas with many small studies — should be read with extra caution.\n\n**Q5.** What practical recommendations about decision-making and self-control are robust even after the ego depletion replication failure?\n\n**Answer:** Several practical recommendations survive, although the mechanistic justification has changed from \"replenishing a specific willpower resource\" to broader cognitive management:\n\n  1. _Schedule demanding decisions when freshest_ : cognitive performance on deliberate, effortful tasks is generally better when cognitive resources are not competing (in the morning for most people, or after breaks). This is supported by cognitive load research independent of ego depletion.\n\n  2. _Simplify choice environments_ : reducing the number and difficulty of decisions people face reduces overall cognitive demand, supporting better decision quality. This recommendation doesn't require ego depletion — it follows from cognitive load and nudge theory (Chapter 15).",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1013,
+      "out_sha": "891f66bcdcb2",
       "note": ""
     },
     {
@@ -1719,11 +1719,11 @@
       "en_title": "Chapter 12: Self-Control Failure — Ego Depletion and the Limits of Willpower",
       "order": 135,
       "src_chars": 566,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c6937ff96131",
       "src": "  3. _Pre-commitment and structural solutions_ : Commitment devices (Chapter 8) and defaults (Chapter 7) remove repeated decision points, which is valuable regardless of whether the mechanism is ego depletion or present bias. The structural approach is more robust than \"willpower management.\"\n\n  4. _Avoid important decisions when hungry or tired_ : biological states that impair cognitive function (hunger, sleep deprivation, stress) genuinely reduce deliberative capacity. This is supported by physiology independent of the specific glucose-willpower connection.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 192,
+      "out_sha": "93dfddbc19fe",
       "note": ""
     },
     {
@@ -1731,11 +1731,11 @@
       "en_title": "Chapter 12: Self-Control Failure — Ego Depletion and the Limits of Willpower",
       "order": 136,
       "src_chars": 3361,
-      "status": "pending",
+      "status": "done",
       "src_sha": "549c6570ff75",
       "src": "#### Application Problems\n\n**Q1.** A behavioral economics consultancy published a white paper recommending that companies reduce employee decision-making burden by pre-automating routine choices (expense categories, meeting schedules, email responses). The white paper cites ego depletion research as the primary justification. Given the replication crisis, how should you evaluate this recommendation? Is it worth implementing?\n\nHint\n\nSeparate the empirical claim (ego depletion is real) from the policy recommendation (reduce decision burden). The recommendation might be worth implementing even if the primary justification has been weakened.\n\n**Answer:** The recommendation should be evaluated separately from the specific ego depletion justification.\n\nEvaluating the empirical claim: the white paper's citation of ego depletion research as primary justification is now questionable — the core ego depletion effect has not survived large-scale pre-registered replication. A consultant who relies solely on ego depletion evidence is citing shaky ground.\n\nHowever, evaluating the recommendation independently: reducing employee decision burden has support from multiple other sources. (1) Cognitive load research (well-supported): automating routine choices reduces working memory and attention demands, freeing cognitive resources for more important decisions. (2) Opportunity cost of attention: time spent on routine decisions is time not spent on high-value tasks — the recommendation makes sense purely from time-allocation reasoning. (3) Nudge theory (Chapter 15): default automation can improve decision quality by ensuring that routine decisions are made consistently with pre-specified preferences rather than varying with mood or contextual noise. (4) Error reduction: automated decisions on routine matters reduce variance — human-made routine decisions are noisier and more error-prone than consistent automation.\n\nRecommendation: implement the policy, but with a corrected justification. The value is not \"replenishing willpower\" but \"reducing cognitive load, freeing attention for important decisions, and reducing error in routine choices.\" The recommendation survives even though its original justification doesn't.\n\n**Q2.** A nutrition researcher proposes a study to test whether eating a healthy breakfast increases worker productivity in the afternoon (defined as accuracy on a standardized cognitive task). She plans to recruit 40 participants per condition. Based on the lessons of the ego depletion replication crisis, what methodological advice would you give before she begins data collection?\n\nHint\n\nConsider sample size, pre-registration, analysis plan, and replication strategy.\n\n**Answer:**\n\n  1. _Increase sample size_ : 40 participants per condition is likely underpowered. For a behavioral effect of moderate size (Cohen's d ≈ 0.3), a well-powered study requires approximately 180 participants per condition for 80% power at p < 0.05. With 40 per condition, false positive rates are high. Recommend N ≥ 150 per condition.\n\n  2. _Pre-register the study_ : before collecting any data, register the primary hypothesis, inclusion/exclusion criteria, primary outcome measure (the cognitive task), and the analysis plan on a public registry (AsPredicted.org, OSF.io). This prevents post-hoc analytic flexibility from inflating results.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 974,
+      "out_sha": "b60720413826",
       "note": ""
     },
     {
