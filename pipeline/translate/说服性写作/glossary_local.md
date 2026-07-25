@@ -35,8 +35,6 @@ GPA | GPA |
 GRE | GRE |
 TOEFL | TOEFL |
 IELTS | IELTS |
-SAT | SAT |
-ACT | ACT |
 CV | CV |
 ESL | ESL |
 AI | AI |
