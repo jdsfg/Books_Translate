@@ -1403,11 +1403,11 @@
       "en_title": "Chapter 9: Sugar — Separating Evidence from Alarm",
       "order": 109,
       "src_chars": 3039,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a849c69846f6",
       "src": "### 9.3 Fructose Metabolism: The Liver's Special Problem\n\nOf the three main dietary sugars, fructose is metabolized differently from glucose and has generated the most controversy.\n\n**Glucose** enters cells throughout the body via insulin-facilitated transport (GLUT4) and is oxidized for energy or stored as glycogen. The load is distributed across muscles, brain, liver, and other organs.\n\n**Fructose** is primarily taken up by the liver via a different transporter (GLUT5), which is not regulated by insulin and does not respond to satiety signals. When fructose arrives at the liver in large amounts (as it does when consuming sugar-sweetened beverages), it undergoes:\n\n  1. **De novo lipogenesis (DNL):** Conversion of fructose to fatty acids → exported as VLDL triglycerides → raised blood triglycerides\n  2. **Hepatic fat accumulation:** Some fatty acids remain in the liver → non-alcoholic fatty liver disease (NAFLD) progression\n  3. **Uric acid production:** Fructose metabolism produces uric acid as a byproduct → associated with gout and potentially blood pressure elevation\n  4. **Bypasses normal satiety signaling:** Fructose does not stimulate insulin or leptin (the key \"fullness\" hormones), and does not suppress ghrelin (the hunger hormone) to the same extent as glucose\n\nThis mechanism explains the concern about added sugar — particularly high-fructose sources like sugar-sweetened beverages — in driving NAFLD and metabolic syndrome.\n\n**The fruit question:** Whole fruit contains fructose, and this seems to create a contradiction. Why is fruit healthy if fructose is harmful?\n\nThe answer lies in dose and matrix:\n\n* A medium orange provides ~12g of fructose; a 12-oz Coke provides ~24g. Double the dose.\n* The fructose in an orange arrives with ~2.4g of fiber (which slows gastric emptying and fructose absorption), water (increasing volume and satiety), and vitamins and polyphenols (with their own metabolic effects).\n* The rapid delivery of large fructose doses (particularly in liquid form) overwhelms hepatic processing capacity and drives DNL. Slow delivery does not.\n* Large epidemiological studies consistently show that whole fruit consumption is associated with _lower_ risk of type 2 diabetes and cardiovascular disease — the opposite of what \"fructose is bad\" would predict if dose and matrix didn't matter.\n\n\n#### Common Misconception\n\n**\"Because fruit contains sugar, eating fruit raises health risks similar to consuming sugar-sweetened beverages.\"**\n\nMultiple large prospective studies (including the Nurses' Health Studies) show the opposite: 2–3 servings of whole fruit per day is associated with reduced risk of type 2 diabetes and cardiovascular disease. Fruit juice — which removes fiber — shows a positive association with diabetes risk in some studies. The fiber, water content, dose difference, and slower absorption rate from whole fruit create a fundamentally different metabolic situation from sugar-sweetened beverages. Context matters: an apple is not a can of Coke with vitamins.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 920,
+      "out_sha": "e3b3da3265ca",
       "note": ""
     },
     {
@@ -1415,11 +1415,11 @@
       "en_title": "Chapter 9: Sugar — Separating Evidence from Alarm",
       "order": 110,
       "src_chars": 2603,
-      "status": "pending",
+      "status": "done",
       "src_sha": "79f103447dd4",
       "src": "### 9.4 The Evidence Linking Added Sugar to Disease\n\n**Obesity:**\n\nThe mechanistic case for sugar-driven obesity is built on: (1) sugar-sweetened beverages fail to trigger appropriate satiety responses, leading to overconsumption of total calories; (2) hepatic fructose processing promotes fat storage via DNL; (3) liquid calories don't compensate for solid food intake in most people.\n\nThe experimental evidence: systematic reviews consistently show that sugar-sweetened beverage (SSB) consumption is associated with weight gain in observational studies. Meta-analyses of intervention trials find that adding SSBs increases weight and removing them reduces weight, with a dose-response relationship. This is among the more consistent dietary findings — SSBs appear to be the single greatest added-sugar driver of obesity.\n\n**Type 2 Diabetes:**\n\nProspective cohort studies consistently show that SSB consumption predicts type 2 diabetes independently of weight. A 2010 meta-analysis found that consuming 1–2 SSBs per day was associated with a 26% greater risk of developing Type 2 diabetes compared to consuming less than one per month. The mechanism may involve both the direct metabolic effects of excess fructose on insulin signaling and indirect effects through body weight.\n\n**Cardiovascular disease:**\n\nA 2014 JAMA Internal Medicine study (Quanhe Yang et al.) found that US adults who consumed 17–21% of their calories from added sugar had a 38% greater risk of cardiovascular disease mortality compared to those who consumed 8% or less. The association was present across all weight categories — suggesting an effect independent of obesity.\n\n**Non-alcoholic fatty liver disease:**\n\nThe fructose-NAFLD link is particularly well-supported mechanistically and epidemiologically. A 2018 systematic review found that both fructose and total added sugar intake were associated with NAFLD progression in adults. This is distinct from alcohol-related liver disease but shares similar pathology (hepatic fat accumulation, inflammation, fibrosis).\n\n**How strong is the evidence?**\n\nMost of the evidence is observational, not RCT — deliberately randomizing people to different sugar intakes for years is not ethically or practically feasible for disease endpoints like T2DM and cardiovascular mortality. The observational evidence is consistent and large, plausible mechanisms exist, and where interventional evidence is possible (SSB interventions), it supports the observational findings. The strength is moderate-to-strong for SSBs specifically; somewhat weaker for all added sugar as a category.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 792,
+      "out_sha": "fb8ac700b3b7",
       "note": ""
     },
     {
@@ -1427,11 +1427,11 @@
       "en_title": "Chapter 9: Sugar — Separating Evidence from Alarm",
       "order": 111,
       "src_chars": 2889,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7b08d8102ff1",
       "src": "### 9.5 Industry Funding and the Sugar Research Foundation: Full Circle\n\nThe documented intervention of the Sugar Research Foundation (covered in Chapter 6) had lasting consequences. After it became public in 2016, a subsequent analysis by researchers at the University of California San Francisco found that industry funding was associated with significantly more favorable conclusions about sugar in nutrition studies — a consistent pattern in the post-2000 era, not just the 1960s.\n\nA 2013 analysis of systematic reviews examining SSB and metabolic disease found that reviews funded by the beverage industry were 5 times more likely to find no positive association between SSB consumption and metabolic outcomes than independently funded reviews.\n\nThis does not mean every industry-funded sugar study is wrong. But it means that when evaluating sugar research, asking \"who funded this?\" is not paranoia — it is appropriate scientific skepticism.\n\n* * *\n\n\n### 9.6 What This Means for Your Plate\n\n**1\\. Sugar-sweetened beverages are the single most evidence-based dietary target for reduction.** A 500ml (16oz) bottle of Coca-Cola, fruit punch, sweetened iced tea, or sports drink delivers 50–60g of added sugar with no satiety, no fiber, and no nutritional value. Eliminating or dramatically reducing SSBs is the highest-leverage single food change most people can make.\n\n**2\\. Read ingredient lists to identify hidden added sugar.** The sugar content on a nutrition label is total sugar (including naturally occurring). The \"added sugars\" line (now required in the US) specifically shows added sugar. Alternatively, the ingredient list shows which sugar-containing ingredients were added.\n\n**3\\. Whole fruit is not the enemy.** Eat it freely within a balanced caloric intake. The epidemiological evidence is strongly positive for whole fruit.\n\n**4\\. \"Natural\" sugar alternatives (honey, agave, coconut sugar) are not meaningfully healthier than table sugar.** Use them for flavor, not because you believe they're better for you metabolically.\n\n**5\\. Context of total diet matters.** A teaspoon of honey in your tea is not a health crisis. The problem is chronic high intake — 80–90g per day, which is the US average. The WHO target of <10% of calories (50g for 2,000 kcal) is achievable without eliminating all sweet foods.\n\n**6\\. Be specifically alert to \"low-fat\" products compensated with sugar.** This was the main failure mode of the low-fat era. A low-fat muffin or yogurt is not a health improvement over a full-fat version if the fat was replaced with added sugar.\n\n> **Reflection prompt:** Audit your typical daily beverages. How much added sugar comes from drinks alone — coffee with syrup, juice, sports drinks, flavored waters? How does that compare to the WHO target of 50g/day? What one change would reduce your liquid sugar intake most significantly?\n\n\n### 9.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 912,
+      "out_sha": "8078644e8451",
       "note": ""
     },
     {
@@ -1439,11 +1439,11 @@
       "en_title": "Chapter 9: Sugar — Separating Evidence from Alarm",
       "order": 112,
       "src_chars": 3307,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d8a903239feb",
       "src": "#### Concept Check\n\n**9.1** Explain why \"a calorie is a calorie\" may not fully apply to the comparison between 150 calories from a glass of orange juice and 150 calories from a whole orange.\n\n**Answer:** While both sources provide approximately 150 calories, they differ in several ways that affect metabolic response: (1) Fiber: A medium orange contains ~2.4g of fiber; orange juice has negligible fiber (removed during pressing). The fiber in the whole orange slows gastric emptying and glucose/fructose absorption, blunting the glycemic response. (2) Satiety signals: The orange triggers satiety through volume, chewing (orosensory factors), and fiber-induced gut hormone release (PYY, GLP-1). Orange juice bypasses these satiety signals — liquid calories are not \"registered\" as food by the brain as effectively as solid calories. This means consuming 150 calories of OJ is less likely to reduce subsequent food intake than eating a whole orange. (3) Absorption speed: OJ delivers its sugars rapidly; the whole orange delivers them more slowly. Rapid delivery of fructose overwhelms hepatic processing differently than slow delivery. (4) Micronutrients: Roughly comparable in both. (5) The practical difference: Most studies show that adding whole fruit to the diet does not cause weight gain (satiety compensates), while adding equivalent liquid fruit calories tends to increase total caloric intake because satiety compensation is incomplete. \"A calorie is a calorie\" describes energy equivalence; it doesn't describe the full physiological impact of how that calorie is packaged and delivered.\n\n**9.2** A food company markets its product as \"sweetened only with honey, a natural ingredient.\" Using what you know about sugar metabolism and the distinction between natural and added sugar, evaluate this claim.\n\n**Answer:** The claim exploits the common misconception that \"natural\" means \"metabolically different.\" Evaluation: (1) Honey is approximately 38% fructose, 31% glucose, and 17% water, with trace amounts of antioxidants, pollen, and enzymes. It has a negligible fiber content. (2) Sucrose (white table sugar) is 50% fructose, 50% glucose. The fructose and glucose content is remarkably similar. (3) The trace antioxidants in honey are present in amounts so small relative to the sugar content that they have no measurable health effect at typical consumption quantities. (4) The metabolic response — blood glucose rise, insulin response, hepatic fructose processing — is essentially identical between honey and equivalent doses of table sugar. (5) \"Natural\" is an unregulated marketing term (at least in the US and EU food labeling context) — it does not indicate a health benefit. (6) The FDA now requires added sugars to be listed on nutrition facts labels; honey added to a product counts as added sugar regardless of its \"natural\" origin. Verdict: The claim is technically accurate (honey is a natural ingredient) but misleading because it implies a health benefit that is not supported by evidence. A person choosing this product because they believe honey is healthier than sugar is being misled by marketing, not nutritional science.\n\n**9.3** Why is the evidence linking sugar-sweetened beverages to disease considered stronger than the evidence linking total added sugar to disease?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 961,
+      "out_sha": "ca75d9c239a2",
       "note": ""
     },
     {
@@ -1451,11 +1451,11 @@
       "en_title": "Chapter 9: Sugar — Separating Evidence from Alarm",
       "order": 113,
       "src_chars": 1537,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ea8936183850",
       "src": "**Answer:** Several factors make SSBs a more specific and better-evidenced target than added sugar as a category: (1) Exposure measurement: SSB consumption can be measured more precisely than total added sugar intake. Researchers can count servings of beverages; measuring all added sugar requires detailed dietary recall and is more subject to measurement error. (2) Dose: SSBs deliver large, concentrated doses of sugar (often 30–60g per serving) in liquid form, creating a distinctive metabolic challenge (rapid absorption, no satiety compensation) that distinguishes them from added sugar in solid foods at smaller doses. (3) Intervention evidence: It is feasible to conduct SSB-specific intervention trials (add or remove beverages). Such trials consistently show dose-response effects on weight and metabolic markers. Equivalent solid food sugar interventions are harder to design and interpret. (4) Causal consistency across study designs: The SSB association with type 2 diabetes, obesity, and cardiovascular disease holds up across observational studies, metabolic controlled trials, and policy natural experiments (sugar taxes reducing SSB consumption and improving metabolic outcomes). (5) Biological plausibility: The specific satiety bypass mechanism (liquid calories, no fiber, no chewing) is well-established. Conclusion: SSBs represent a specific, high-dose, easily identified, and well-studied exposure. Total added sugar is a broader and more heterogeneous category with more measurement error and greater confounding.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 440,
+      "out_sha": "3e794127596e",
       "note": ""
     },
     {
@@ -1463,11 +1463,11 @@
       "en_title": "Chapter 9: Sugar — Separating Evidence from Alarm",
       "order": 114,
       "src_chars": 2364,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d28414bfb66f",
       "src": "#### Application Problems\n\n**9.4** A parent wants to reduce her children's sugar intake. She switches them from regular soda to apple juice, believing juice is healthier \"because it's from fruit.\" Evaluate this switch and suggest a better alternative.\n\n**Answer:** This switch from soda to juice is a common parental decision that reflects the \"fruit is good → fruit juice is good\" reasoning, but the metabolic reality doesn't fully support it. Comparison: 12oz regular apple juice: ~39g sugar (natural fructose and glucose from fruit), 0g fiber, essentially no fat or protein, 170 kcal. 12oz regular Coke: ~39g added sugar (sucrose/HFCS), 0g fiber, 140 kcal. The total sugar content and fiber content are nearly identical. Apple juice provides vitamins (particularly Vitamin C and some potassium) that Coke lacks, which is a genuine advantage. However, the satiety bypass mechanism is the same — liquid calories, rapid sugar absorption, no fiber to slow it. Large epidemiological studies (including a 2019 JAMA Oncology study) found that fruit juice consumption was associated with cancer risk at levels comparable to SSBs — a controversial finding but reflective of the metabolic similarity. The American Academy of Pediatrics actually recommends limiting juice to 4–6oz for children 1–6 years and 8–12oz for older children. Better alternatives: (1) Water — the evidence-based gold standard for hydration with no caloric or sugar concerns. (2) Sparkling water (unsweetened) — for children who want something \"special.\" (3) Diluted juice (half juice, half water) — reduces sugar by 50% while maintaining some palatability and vitamin benefit. (4) Whole fruit — same nutrients as juice with fiber intact and satiety signals functioning. The switch from soda to juice represents a modest improvement in micronutrient delivery but not a meaningful improvement in sugar intake or metabolic risk.\n\n**9.5** A 2020 meta-analysis (published in a peer-reviewed journal) finds no association between added sugar intake and Type 2 diabetes risk. Upon investigation, you discover the meta-analysis was funded by the International Sugar Association and includes only short-term trials (≤6 months) measuring glucose tolerance, not long-term observational studies of T2DM incidence. How would you evaluate this meta-analysis and place it in the context of the existing evidence?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 602,
+      "out_sha": "2aa2315d5f0b",
       "note": ""
     },
     {
@@ -1475,11 +1475,11 @@
       "en_title": "Chapter 9: Sugar — Separating Evidence from Alarm",
       "order": 115,
       "src_chars": 2105,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3a99b531178e",
       "src": "**Answer:** This meta-analysis should be evaluated with significant caution for several specific reasons: (1) Industry funding: As established in this chapter, industry funding of sugar research is associated with 5× higher likelihood of finding null or favorable results compared to independently funded research. This is not definitive proof of bias but is a documented pattern requiring heightened scrutiny. (2) Study design selection: Limiting to short-term trials measuring glucose tolerance rather than long-term observational studies measuring T2DM incidence is a significant methodological choice. Type 2 diabetes takes years to decades to develop — 6-month glucose tolerance changes are a surrogate marker, and a crude one. The long-term prospective cohort studies (Nurses' Health Study, EPIC, Health Professionals Follow-up Study) with 10–20+ years of follow-up showing SSB associations with T2DM are arguably more relevant for this question. A meta-analysis that excludes these data is answering a different question than \"does added sugar cause T2DM.\" (3) Publication bias: Short-term industry-funded trials are likely to find null results because the dose may be insufficient and the duration too short. (4) How to weigh this: Against this meta-analysis, place: multiple large independent prospective cohort studies consistently showing SSB associations with T2DM; mechanistic evidence from fructose metabolism studies; ecological evidence from sugar tax studies showing metabolic improvements. A single meta-analysis — particularly one with clear funding concerns and methodological limitations — does not overturn a consistent body of evidence. The appropriate conclusion: this study adds to the evidence base but is a low-weight data point given the funding source and the narrow scope of evidence included.\n\n**9.6** Mexico implemented a 10% excise tax on sugar-sweetened beverages in 2014, the first large-scale natural experiment of its kind. How would you use this policy change to answer causal questions about SSB consumption and health that observational studies cannot fully answer?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 532,
+      "out_sha": "185176348363",
       "note": ""
     },
     {
@@ -1487,11 +1487,11 @@
       "en_title": "Chapter 9: Sugar — Separating Evidence from Alarm",
       "order": 116,
       "src_chars": 1813,
-      "status": "pending",
+      "status": "done",
       "src_sha": "890f42c8710f",
       "src": "**Answer:** The Mexican sugar tax creates a natural experiment — a policy change that varies SSB exposure across the population in a way that approximates (though doesn't perfectly achieve) random assignment. How to use this: (1) Difference-in-differences analysis: Compare outcomes in Mexico before and after the tax to outcomes in a comparable control country (e.g., Colombia, which didn't implement a sugar tax in 2014) during the same period. Any differences beyond what occurred in the control country can be more confidently attributed to the tax. (2) Within-country dose-response: Different socioeconomic groups consume different amounts of SSBs and have different price sensitivity. Lower-income households are more price-sensitive and reduced consumption more in response to the tax. If SSB consumption drives metabolic disease, you would predict greater metabolic improvements in lower-income households post-tax. (3) Outcomes to track: Short-term (1–3 years): SSB purchases (well-measured through sales data), weight/BMI trends in national surveys, T2DM diagnoses, dental caries rates in children. Longer-term: cardiovascular mortality, T2DM prevalence, NAFLD rates. (4) The existing evidence from this natural experiment is promising: A 2016 study found that purchases of taxed beverages in Mexico fell by an average of 6% in the first year (with higher reductions in lower-income households). A subsequent analysis found modest but real improvements in metabolic markers in children. Limitations of natural experiments: not perfectly random (richer households can absorb the price increase, other policies may have changed simultaneously, cross-border purchasing or substitution to untaxed beverages). But they provide causal evidence that purely observational studies cannot, at a population scale.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 484,
+      "out_sha": "af30b5d252b6",
       "note": ""
     },
     {
@@ -1499,11 +1499,11 @@
       "en_title": "Chapter 9: Sugar — Separating Evidence from Alarm",
       "order": 117,
       "src_chars": 2471,
-      "status": "pending",
+      "status": "done",
       "src_sha": "557b77da0e57",
       "src": "#### Think Deeper\n\n**9.7** The chapter establishes that added sugar (particularly from SSBs) is associated with metabolic disease, but also notes that traditional Japanese and Okinawan diets include some sugar consumption without the same disease burden. What factors — beyond the sugar itself — might explain why these populations historically had lower metabolic disease despite not consuming zero sugar?\n\n**Discussion:** This is a complex confounding question that illustrates why single-nutrient explanations always require broader context. Factors that might explain lower metabolic disease in traditional Japanese/Okinawan populations despite some sugar consumption: (1) Total sugar dose: Traditional Okinawan diets contained far less added sugar than modern Western diets. The WHO target of <10% of calories from added sugar was likely met or exceeded in the negative direction in traditional Okinawan eating. The comparison isn't \"they ate sugar and were healthy\" — it's \"they ate very little sugar relative to Western populations.\" (2) Physical activity: Traditional agricultural and community life involved substantially more physical activity than modern sedentary occupations. Higher physical activity improves insulin sensitivity and glucose disposal, buffering the metabolic effects of sugar. (3) Total dietary pattern: High fiber (sweet potatoes, seaweed, fermented vegetables, legumes), low saturated fat, high omega-3 (from fish), caloric moderation (Hara hachi bu — eat until 80% full principle) — all factors that modulate metabolic disease risk independently. (4) Caloric restriction: Traditional Okinawan intake was genuinely below what Western populations consume. Caloric restriction dramatically improves metabolic parameters regardless of macronutrient composition. (5) Gut microbiome differences: Dietary diversity, fermented foods, and lower antibiotic exposure may produce a more metabolically beneficial microbiome. The lesson: sugar is not consumed in isolation, and its effects are modulated by the entire lifestyle and dietary context. The Japanese/Okinawan example doesn't exonerate high added sugar intake — it illustrates that multiple lifestyle factors collectively determine metabolic outcomes.\n\n**9.8** A wellness influencer claims that \"fructose is a liver toxin that causes fatty liver disease, regardless of dose.\" Evaluate the accuracy of this claim using what you know about fructose metabolism and the concept of dose-response.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 654,
+      "out_sha": "af9fc4bc1ee1",
       "note": ""
     },
     {
@@ -1511,11 +1511,11 @@
       "en_title": "Chapter 9: Sugar — Separating Evidence from Alarm",
       "order": 118,
       "src_chars": 1610,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4e2015a4fd00",
       "src": "**Answer:** The claim contains a kernel of truth dramatically overstated. Fructose is metabolized in the liver by fructokinase, which does not have the feedback regulation that glucose metabolism has — meaning the liver cannot slow fructose uptake when energy is adequate. At high doses, liver fructose metabolism can contribute to de novo lipogenesis (fat synthesis), elevated triglycerides, and potentially non-alcoholic fatty liver disease (NAFLD). However, calling fructose \"a liver toxin\" regardless of dose ignores the dose-response relationship fundamental to toxicology. (1) At low doses (from whole fruit), fructose is accompanied by fiber, water, and phytochemicals; the dose delivered per serving is small and the liver processes it without accumulation. Epidemiological data show no association between whole fruit consumption and NAFLD — in fact, several studies show the opposite. (2) At high doses (from SSBs and fructose-rich processed foods), particularly in the context of caloric surplus, fructose can contribute to hepatic lipid accumulation. The dose and caloric context are the critical variables. (3) \"Toxin regardless of dose\" is inconsistent with how any molecule — including water, vitamin A, and oxygen — actually behaves in the body. The WHO recommendation to limit added sugar to <10% of energy (with benefit at <5%) is supported by evidence; the claim that small amounts of fruit-derived fructose are liver-toxic is not. This is a case where legitimate mechanistic concerns about high-dose fructose are extrapolated into an absolute claim that exceeds what the evidence supports.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 952,
+      "out_sha": "6d48ced8e5f3",
       "note": ""
     },
     {
