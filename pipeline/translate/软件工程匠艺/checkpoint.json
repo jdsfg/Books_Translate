@@ -867,11 +867,11 @@
       "en_title": "Chapter 5: The Test Pyramid Honestly + Coverage + Snapshot Testing",
       "order": 63,
       "src_chars": 3352,
-      "status": "pending",
+      "status": "done",
       "src_sha": "028d9e5eb438",
       "src": "#### The assertion-strength heuristic\n\nA useful one-question review filter: _what would the test catch?_ For each test, name a bug that the test catches and that would otherwise reach production. If you cannot name such a bug, the test may be a coverage filler.\n\nExamples:\n\n* A test that calls `divide(10, 2)` without assertion: catches _nothing_. Coverage filler.\n* A test that calls `divide(10, 2)` and asserts the result is `5`: catches changes to the basic algorithm. Real test.\n* A test that calls `divide(10, 0)` and asserts the result is a `ZeroDivisionError`: catches a behavior change in the error path. Real test.\n* A test that calls `divide(0.1 + 0.2, 0.3)` and asserts the result is exactly `1.0`: catches _nothing_ useful and _introduces_ a flaky test, because floating-point math does not produce exactly `1.0`. Anti-test.\n\nThe AI-generated suite typically contains a mix of all four. The reviewer's job is to identify which is which and to keep only the second and third categories.\n\n\n#### A workflow for reviewing AI test PRs\n\nAki's workflow at Helix, applied to the opening vignette:\n\n  1. **Run the suite locally; confirm it passes.** Quick sanity check.\n  2. **Read the diff with the AI-Layer questions in mind.** For each new test: what does it catch? Is the assertion strong? Does it duplicate another?\n  3. **Run mutation testing (Chapter 6) on the changed module.** The mutation score tells you whether the tests genuinely test or merely cover. If the mutation score is low compared to coverage, the tests are weak.\n  4. **Comment with specific deletions and replacements.** Not \"these are weak\"; rather \"delete tests A, B, C (duplicates of D), strengthen E and F, keep the rest.\"\n  5. **Re-request review after the author addresses the comments.**\n\nThe workflow scales because steps 3 and 4 are the slow ones; once you have mutation-score data, the comment is mechanical. Without mutation testing, the review is judgment-based and depends entirely on the reviewer's skill.\n\n\n### 5.5 Building a useful unit test layer\n\nThe unit-test layer is the largest by count, and the easiest to get wrong by writing tests that do not test. Several disciplines compound:\n\n\n#### The arrange-act-assert structure\n\nA unit test has three sections:\n    \n    \n    def test_calculate_refund_partial():\n        # Arrange: set up the inputs and state\n        order = make_order(total=100, currency='USD')\n        refund_request = RefundRequest(amount=30)\n    \n        # Act: invoke the function under test\n        result = calculate_refund(order, refund_request)\n    \n        # Assert: verify the result\n        assert result.amount == 30\n        assert result.currency == 'USD'\n        assert result.status == RefundStatus.PARTIAL\n    \n\nThe structure makes the test readable: the reader can see at a glance what is being tested, what inputs, and what outputs. A test that mixes arrange and act, or that does multiple acts, is hard to read and hard to debug when it fails.\n\n\n#### One assertion per concept, not one assertion per test\n\nA test should verify one _concept_ , which may require multiple assertions. The `test_calculate_refund_partial` example above has three assertions, all verifying aspects of the same concept (the refund result). This is fine. A test that asserts ten unrelated things is testing too many concepts and should be split.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1475,
+      "out_sha": "79dbe1384a78",
       "note": ""
     },
     {
@@ -879,11 +879,11 @@
       "en_title": "Chapter 5: The Test Pyramid Honestly + Coverage + Snapshot Testing",
       "order": 64,
       "src_chars": 2860,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f0146afb9ca7",
       "src": "#### Naming tests by behavior, not by function\n\nA test name should describe the behavior being tested, not just the function being called:\n\n* Bad: `test_calculate_refund_1`, `test_calculate_refund_2`, etc.\n* Better: `test_calculate_refund_partial`, `test_calculate_refund_full`.\n* Best: `test_partial_refund_returns_correct_amount_and_partial_status`.\n\nThe longer name is more useful when the test fails in CI: the failure message includes the name, and a descriptive name tells you what was tested without opening the file.\n\n\n#### Common Misconception (revisited)\n\nA second misconception worth surfacing: \"unit tests should test only single functions, not multiple-function flows.\" The strict view of unit testing (each test exercises one function with all dependencies mocked) often produces brittle tests with weak coverage of real behavior. A pragmatic unit test exercises a small _behavior_ , which may involve calling several internal functions; the unit boundary is the public API of the module, not the function. This is sometimes called \"sociable\" unit testing as opposed to \"solitary\" unit testing; both have their place; the sociable variant is usually more valuable in practice.\n\n\n### 5.6 The integration test layer\n\nIntegration tests verify that pieces work together. They are slower than unit tests but catch the bugs that unit tests miss: wrong interface assumptions, mismatched data formats, ordering bugs, transaction bugs.\n\nThe discipline for integration tests:\n\n* **Use real implementations where feasible.** An in-memory database (sqlite, Postgres-in-Docker, redis-memory-server) is far closer to production than a mock. Chapter 7 develops this further.\n* **Isolate state between tests.** Each test must start from a known state; tests that share mutable state are a source of flakiness.\n* **Choose targets carefully.** Integration tests are expensive; not every internal interface needs one. Focus on interfaces where the unit tests cannot catch realistic bugs (database queries, HTTP calls, message queue interactions).\n* **Keep them under a budget.** A 30-minute integration test suite is hard to run on every commit; a 5-minute suite is feasible. The budget forces prioritization.\n\n\n### 5.7 The end-to-end test layer\n\nEnd-to-end tests verify that the system as a whole behaves correctly from the outside: a real HTTP request hits a real (test) server, exercises the real (test) database, and returns the expected response. Or a real browser drives a real (test) UI through a real (test) flow.\n\nThese tests are slow, flaky, and irreplaceable for the few critical paths. The discipline is _severity-based_ : identify the half-dozen flows that absolutely must work (login, checkout, the core data ingest pipeline, the primary user dashboard), end-to-end-test them, and stop. Do not end-to-end test every feature; the cost is not worth it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1092,
+      "out_sha": "173c5cafa9fa",
       "note": ""
     },
     {
@@ -891,11 +891,11 @@
       "en_title": "Chapter 5: The Test Pyramid Honestly + Coverage + Snapshot Testing",
       "order": 65,
       "src_chars": 2100,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0bd960fde8b5",
       "src": "#### Flakiness as a category\n\nEnd-to-end tests are the major source of flaky tests. Flakiness has three causes worth distinguishing:\n\n* **Real flakiness in the system under test.** A race condition in production code that surfaces in some test runs. Fix the race; the test will stop flaking.\n* **Test-environment flakiness.** Network timing, container startup ordering, browser rendering delays. Mitigate by retry-on-failure, but retries hide real flakiness; budget the retries.\n* **Test brittleness.** The test depends on details that change incidentally (UI text, exact timing, internal IDs). Rewrite the test to depend on stable invariants only.\n\nA flaky-test policy: a test that flakes more than three times in a week is automatically marked skipped and assigned to its author for investigation within one sprint. This avoids the \"everyone retries until it passes\" failure mode where the test signal is lost.\n\n\n### 5.8 Working example: pyramid for a fictional service\n\nImagine a Helix subsystem: an HTTP API exposing pricing computations. The API has three endpoints, each invoking the same `PricingService`, which depends on a `RuleEngine` and a `CustomerRepository`.\n\nA defensible pyramid for this subsystem:\n\nLayer | Approximate count | What is tested  \n---|---|---  \nUnit | 80 tests | `PricingService` methods, `RuleEngine` methods, individual helper functions, error paths  \nIntegration | 20 tests | `PricingService` with real `CustomerRepository` (in-memory DB); rule evaluation against real rule files  \nE2E | 5 tests | HTTP request to each endpoint; the critical happy path of the most important rule combinations  \n  \nTotal: 105 tests. Unit tests run in 10 seconds; integration in 60 seconds; E2E in 3 minutes. Full suite under 4 minutes.\n\nIf the team adopts AI-assisted test generation and the suite grows to 400 tests over six months, the right response is not celebration. The right response is mutation testing (Chapter 6) to find which of the 295 new tests actually improve the mutation score; the others are duplicates or coverage filler and should be deleted.\n\n\n### 5.9 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 894,
+      "out_sha": "e56d1b85f5c7",
       "note": ""
     },
     {
@@ -903,11 +903,11 @@
       "en_title": "Chapter 5: The Test Pyramid Honestly + Coverage + Snapshot Testing",
       "order": 66,
       "src_chars": 3392,
-      "status": "pending",
+      "status": "done",
       "src_sha": "668378d3beb1",
       "src": "#### Concept Check\n\n**Q1.** A team reports their test suite has 95% line coverage. You join the team and want to know whether the suite is actually good. What do you ask, and what do you measure?\n\nHint\n\nCoverage is the input; assertion strength is the output.\n\n**Answer:** Ask: (a) what is the branch coverage, not just line coverage? (b) when was the last time a real bug surfaced in production that the suite missed? (c) what is the mutation score on the most critical module? Measure: (a) run a mutation testing tool (Chapter 6) on a representative module; if the mutation score is dramatically below the coverage number (e.g. coverage 95%, mutation kill 40%), the tests are coverage filler; (b) inspect a random sample of recent tests for the assertion-strength heuristic from §5.4 (what would this test catch?); (c) look at the test file structure: are they arrange-act-assert? Are the names descriptive? Are there obvious duplicates?\n\nA 95% coverage suite that has all of (a) high mutation score, (b) recent production incidents fixed by adding tests, (c) clean test code, is a good suite. A 95% coverage suite that fails any of these is suspect.\n\n**Q2.** When is snapshot testing appropriate, and when is it the wrong tool?\n\nHint\n\n§5.3's four where-it-earns conditions and three failure modes.\n\n**Answer:** Appropriate when the output is large, structurally complex, deterministic, and there is a culture of reading snapshot diffs before approving them. Examples: React component rendering, parser output, stable API response payloads.\n\nWrong tool when: outputs are small (assert directly), outputs are non-deterministic (the team adds filters that become unmaintainable), or the team approves snapshot updates without reading them (the snapshot then certifies whatever happens, defeating its purpose).\n\nThe deep test: imagine a teammate's PR changes a snapshot. Will the team read the diff and notice if the change was wrong? If yes, snapshots are working. If no, snapshots are pure ritual; remove them and write real assertions.\n\n**Q3.** Explain the inverted-pyramid antipattern. Why does it usually arise, and what should the team do about it?\n\nHint\n\n§5.1's discussion of why teams arrive at the inversion.\n\n**Answer:** The inverted pyramid (many E2E tests, few unit tests) arises because: (a) the product feels \"real\" only when E2E tested, (b) the team has expertise in E2E tooling (Selenium, Cypress) but not in unit-testing the underlying code, (c) unit-testing infrastructure was never built or is hard to use. The consequence is a slow CI pipeline, flaky tests, and bugs that surface far from the cause.\n\nThe team should: (a) inventory current tests, classifying each as U/I/E2E, (b) identify the categories that are most over-represented at the top, (c) for each E2E test, ask whether the bug it catches could be caught by an integration or unit test instead; if yes, write the lower-pyramid version and consider removing the E2E test, (d) invest in unit-testing infrastructure (fixtures, factories, fast DB) so that new tests default to the bottom of the pyramid.\n\nThe transition typically takes a quarter. The metric to watch is the count and percentage at each layer; the goal is monotonic shift toward the pyramid shape.\n\n**Q4.** What is the assertion-strength heuristic (§5.4), and how does it complement coverage metrics?\n\nHint\n\nThe heuristic asks one question per test.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1155,
+      "out_sha": "c6d4d22fbffa",
       "note": ""
     },
     {
@@ -915,11 +915,11 @@
       "en_title": "Chapter 5: The Test Pyramid Honestly + Coverage + Snapshot Testing",
       "order": 67,
       "src_chars": 786,
-      "status": "pending",
+      "status": "done",
       "src_sha": "59731079e2cf",
       "src": "**Answer:** The heuristic: for each test, ask \"what bug would this catch that would otherwise reach production?\" If you cannot name a specific bug, the test may be a coverage filler.\n\nIt complements coverage because coverage measures line execution while the heuristic measures assertion value. A test that executes lines but asserts nothing strong scores well on coverage and badly on the heuristic. The heuristic is qualitative (per-test judgment), so it does not scale to \"I will measure my entire 1,000-test suite this way\"; instead, sample a representative subset and gauge the suite's overall character.\n\nThe combined picture: coverage tells you where the tests _are_ ; the heuristic tells you whether the tests are _worth being there_. Both are necessary; neither is sufficient.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 255,
+      "out_sha": "e8b459670ea2",
       "note": ""
     },
     {
