@@ -2711,11 +2711,11 @@
       "en_title": "Chapter 8: The Limits of Awareness and Effort",
       "order": 220,
       "src_chars": 3020,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ce69790aa160",
       "src": "### 8.7 Why the Trap Is Worse Than Ordinary Biases\n\nThe chapter has called the rationalist trap and its parallels _worse than ordinary biases_. This deserves explicit defense.\n\nOrdinary biases operate on specific topics through specific mechanisms. Each is a specific kind of cognitive distortion in a specific cognitive layer. The biases are detectable in retrospect on specific topics where the holder has the opportunity to compare the held belief to external evidence; the corrections, even if modest and slow, are at least conceptually possible through structural intervention.\n\nIdentity-around-rationality biases operate at a meta-level. The bias is not about any specific topic; it is about the practitioner's underlying claim to be-someone-who-reasons-well. The defenses sustain this claim across all topics where the practitioner reasons, with sophistication proportional to analytical capacity. The defense is not concentrated in any specific topic where it could be detected and corrected; it is diffused across all the practitioner's reasoning.\n\nThis produces several specific differences from ordinary biases. First, the meta-level operation makes the bias harder to detect on any specific topic. Specific updates are permitted as long as the meta-claim is preserved (_on this specific question I was wrong, but I was reasoning carefully_); the meta-claim itself is structurally protected. Second, the analytical sophistication of the defense makes the meta-bias more elaborate than ordinary biases. The same tools that make the practitioner impressive when reasoning about external topics make the defenses harder to penetrate when the topic is themselves. Third, the social structure of communities organized around careful reasoning often reinforces the meta-bias rather than checking it. The community can become a structural reinforcer of the trap rather than a corrective. Fourth, the consequences of the meta-bias can be more severe than the consequences of ordinary biases — errors compounding across many topics, life decisions whose downstream effects are large and irreversible.\n\nThis is not a hypothetical concern. The clearest publicly documented case is the FTX collapse of November 2022 and the effective altruism community's reckoning with it.\n\nSam Bankman-Fried, the founder of the cryptocurrency exchange FTX, was an explicit affiliate of effective altruism. His public statements before the collapse — interviews, podcast appearances, blog posts on EA-adjacent forums — repeatedly framed his risk-taking through the vocabulary of expected-value calculation, longtermist priorities, and Kelly-criterion-style aggressive bet-sizing. The framing was not casual; it was the frame within which his decisions were defended as careful rather than reckless. In November 2022, FTX collapsed in days. U.S. federal prosecutors charged SBF with multi-billion-dollar customer-fund misappropriation, and a 2023 jury convicted him on seven counts. He was sentenced to 25 years in federal prison in 2024.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 835,
+      "out_sha": "b40121f8e462",
       "note": ""
     },
     {
@@ -2723,11 +2723,11 @@
       "en_title": "Chapter 8: The Limits of Awareness and Effort",
       "order": 221,
       "src_chars": 3085,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a580c87decb3",
       "src": "The mixture of conscious deception and self-deception in his case will be debated for a long time and probably never fully resolved; both were almost certainly present, and the case does not require a clean ratio between them to be informative. What the public record makes clear is that for years before the collapse, sophisticated reasoning chains — his own, and those of his lieutenants and many in the surrounding community — had protected what turned out to be catastrophically wrong decisions about customer funds and risk management. The reasoning was cogent at the level of premise-to-conclusion logic; it was not cogent at the level of \"is the holder applying it to the actual situation rather than to a self-flattering simplification of it.\" Ordinary cognitive defenses (basic risk aversion, regulatory paranoia, common-sense moral discomfort with the stated practices) might have flagged the patterns earlier; the rationalist-flavored framing supplied analytical cover that allowed the practices to continue.\n\nEqually instructive is the EA community's own post-collapse reckoning. The 2023 _Time_ magazine investigation and EA Forum post-mortem discussions documented that warnings about SBF — about his behavior, his risk practices, and earlier business conduct — had been raised within the community as far back as 2018, and had been discounted. The discounting often invoked exactly the reasoning patterns the trap predicts: appeals to the importance of the work being done, appeals to the calibration of the people involved, appeals to the cost-benefit analysis of pursuing internal investigations versus pursuing external impact. The trap operated not just in SBF himself but at the level of the community's collective epistemics. This is the harder lesson, and the more general one. A community committed to careful reasoning produced, through what each participant experienced as careful reasoning, a sustained discounting of available signals that, in retrospect, should have been heeded.\n\nOther documented instances exist — including the Zizian case (a small splinter group whose 2022–2025 trajectory has been documented in long-form journalism), and a number of community-internal disputes that have been written about from within the rationalist and EA spheres. The shape is consistent: identity around careful reasoning supplies sophisticated cover that ordinary defenses would not have offered. The FTX case is foregrounded here because the public record is the most extensive and the consequences were large enough to remove ambiguity about whether the trap can produce serious downstream harm.\n\nThese cases are not a blanket indictment of the rationalist or EA communities, which have also produced substantial intellectual contributions and serious institutional efforts, including significant reform efforts within EA itself in the wake of the collapse. They are evidence that the trap is real, not hypothetical, and that its worst-case consequences can be large enough to matter. The pattern is the technical claim; the FTX-EA case is the existence proof.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 878,
+      "out_sha": "dcc0baffc0d3",
       "note": ""
     },
     {
@@ -2735,11 +2735,11 @@
       "en_title": "Chapter 8: The Limits of Awareness and Effort",
       "order": 222,
       "src_chars": 2890,
-      "status": "pending",
+      "status": "done",
       "src_sha": "09761fc03f46",
       "src": "### 8.8 What This Chapter Is and Is Not Asking\n\nThe chapter is asking the reader to take seriously that both halves of its argument apply to them. Awareness alone does not produce reduction; effort organized around being-a-careful-reasoner produces a specific trap. The honest response is structural and collective practice — the content of Part IV — applied selectively to questions where the stakes warrant.\n\nThe chapter is asking the reader to be specifically suspicious of any framing that lets them feel _I see through what most people don't_. The framing is itself the trap operating. The empirical evidence does not support the existence of a class of people who, by virtue of having read carefully, see through what most people don't. There are no such heroes. There are people who have built specific structural compensations in specific domains where they have applied the practice; their compensations are domain-specific and modest.\n\nThe chapter is asking the reader to apply this to their reading of this very book. _If, after reading the chapters before this one, you have come to feel that you see your cognition more clearly than you did before, suspect the feeling._ The actual change, if any, will be in specific structural practices over years, not in a felt clearer-sightedness from the reading itself.\n\nWhat the chapter is _not_ asking:\n\nThe chapter is not asking the reader to abandon the project of careful reasoning. Careful reasoning is, where it works, valuable. The chapter is asking for the reasoning without the identity — for the practice without the protagonist principle defending the practice as central to who one is.\n\nThe chapter is not asking the reader to become a quietist who declines to express views. Express views; take positions; argue for them where the situation warrants. The chapter is asking for the expression and argument without the identity-investment that makes any specific position-update threatening.\n\nThe chapter is not asking the reader to dismiss rationalist communities or other identity-around-rationality contexts. The communities have produced real contributions; the critique is conditional on the credit. The chapter is asking the reader to recognize that _participation_ in such communities, while valuable, also produces the specific trap, and to apply structural compensations within such participation rather than relying on the community's collective identity to protect them.\n\nThe chapter is not asking the reader to be perfect at avoiding the trap. The cognitive defenses continuously operate; the trap continuously presents itself; even the calibrated practitioner falls into it sometimes. The asking is for the practice of _recognizing_ the trap when it operates, of bounding its operation through structural tools where the stakes warrant, of holding one's own claims to careful reasoning with calibrated humility.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 762,
+      "out_sha": "e77ccf496fd2",
       "note": ""
     },
     {
@@ -2747,11 +2747,11 @@
       "en_title": "Chapter 8: The Limits of Awareness and Effort",
       "order": 223,
       "src_chars": 3113,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e5d33034d2cc",
       "src": "### Chapter Summary\n\nThe empirical evidence on debiasing through awareness is sharply different from the popular framing. Knowledge of a bias does not reliably reduce susceptibility to it; debiasing training shows small lab effects with poor transfer; trained subjects often become more confident without becoming more accurate; structural interventions outperform awareness-based interventions in tested cases. The popular promise — _learn about biases, become less biased_ — is not, on the empirical record, what actually happens.\n\nThe mechanism is consistent with everything Parts I and II have established. The cognitive system operates upstream of conscious access to bias-knowledge; the knowledge sits in declarative memory while the bias continues shaping cognition through channels the knowledge does not interrupt. The distinction between _performative objectivity_ (looking like an objective reasoner) and _substantive objectivity_ (actually reasoning more accurately) clarifies what awareness-based training accomplishes in most cases: the training produces the performance; the substance continues to operate as before. The structural alternatives — prediction tracking, pre-mortems, pre-commitments, epistemic friends, adversarial collaboration, institutional structures — produce accuracy through mechanisms that bypass performance entirely.\n\nGazzaniga's honest report — that fifty years of studying the Interpreter has not made him less subject to it, only aware that it is operating — is the model for the calibrated position. Awareness gives the meta-knowledge; the meta-knowledge is the precondition for structural practice; structural practice is what produces the modest reductions; the reductions accumulate slowly over years on the specific questions where the practice has been applied.\n\nThe chapter's second half established a further uncomfortable claim: the natural response of _trying harder_ — building identity around being-a-careful-reasoner, joining communities organized around the project — produces a specific trap that is _worse_ than ordinary biases. The trap operates at the meta-level on the practitioner's identity itself, with analytical sophistication enlisted in identity-defense and the defense diffused across all the practitioner's reasoning rather than concentrated in any specific topic. The trap is harder to detect, more elaborate, often reinforced by community structure, and capable of producing extreme conclusions ordinary defenses would have prevented. The FTX collapse, EA's post-collapse reckoning, and the Zizian splinter case are public instances of the pattern.\n\nThe chapter is not asking the reader to abandon careful reasoning, decline to express views, or dismiss rationalist communities. It is asking for the practice without the identity-investment; for structural compensations within community participation; for the reading of this book to produce structural practice rather than identity. The framework applies to the author and to anyone who has done the work the book describes; there is no outside vantage point from which to claim exemption.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 811,
+      "out_sha": "dab0886a24d1",
       "note": ""
     },
     {
@@ -2759,11 +2759,11 @@
       "en_title": "Chapter 8: The Limits of Awareness and Effort",
       "order": 224,
       "src_chars": 909,
-      "status": "pending",
+      "status": "done",
       "src_sha": "29760782f7a0",
       "src": "For tonight: write the inventory entry in the usual four-line format. Then add at most one additional question: _what is one specific structural move I could actually do in the next month?_ (Examples: write down a prediction with a date; schedule a structured conversation with someone outside my tribe; start a forecasting log.) Note the answer if one comes. If not, just note the question. Observation, not architecture analysis.\n\n**Chapter 9** closes Part III with the deepest argument: Mercier and Sperber's claim that reason did not evolve to find truth but to convince others, with the implication that individual reasoning is structurally unreliable as a truth-tracker and that the collective and adversarial structures of Part IV are what genuine accuracy requires. By the end of Part III, the case for structural and collective tools — Part IV's content — will be overdetermined.\n\n\n### 8.9 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 298,
+      "out_sha": "400f359da10f",
       "note": ""
     },
     {
