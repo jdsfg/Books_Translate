@@ -3131,11 +3131,11 @@
       "en_title": "Chapter 9: The Limits of Reason — Mercier & Sperber",
       "order": 255,
       "src_chars": 3460,
-      "status": "pending",
+      "status": "done",
       "src_sha": "215f3c3558ac",
       "src": "### 9.4 Why Scientific Institutions Work Even Though Scientists Are Biased\n\nThe framework has a particular implication for understanding why some institutions produce reliable knowledge while others do not. The implication clarifies what makes Part IV's structural tools work, and it is worth being precise about.\n\nScientific institutions, on the framework, work _not because individual scientists are unbiased_. The framework predicts that individual scientists, on questions where they have stakes (their theoretical commitments, their research programs, their reputations), will produce sincere arguments for their positions and will be poor at finding flaws in their own reasoning. This is what scientists actually do; the empirical record of how individual science is conducted bears out the framework's prediction. Individual scientists are not, in any meaningful sense, exempt from the cognitive defenses every other reasoner has.\n\nScientific institutions work because they _structure reasoning so that the asymmetric capacities can compensate for individual bias_. Specifically:\n\n_Peer review uses the evaluation-of-others capacity to check individual production-for-self_. A scientist produces a paper arguing for their conclusions; reviewers, who do not share the scientist's stakes in the specific conclusions, evaluate the paper using their flaw-finding capacity. The reviewers find flaws the scientist did not find in their own work; the scientist must address the flaws (or have the paper rejected). The cross-checking produces conclusions that are more reliable than the scientist's individual conclusions would have been, because the reviewers are doing what individual reasoners are good at (finding flaws in others' arguments) rather than asking the scientist to do what individual reasoners are bad at (finding flaws in their own).\n\n_Replication uses independent evaluation across multiple investigators with different stakes_. A finding is published; other researchers, with different theoretical commitments and research programs, attempt to reproduce it. If the finding survives replication by researchers who would have benefited from showing it does not replicate, the cross-checking provides evidence of robustness that no single investigator's confidence could provide. The replication structure assumes individual investigators will be biased; it produces reliable conclusions despite the bias by aggregating across investigators whose biases run in different directions.\n\n_Adversarial commentary norms make it acceptable for scientists to publicly criticize each other's work_. The norms assume that scientists will find flaws in each other's reasoning more readily than in their own; the norms institutionalize the cross-checking. Without the norms, scientists would suppress public criticism (the social cost would be too high); with the norms, the criticism happens, the criticized scientist must respond, and the collective output benefits from the engagement.\n\n_Pre-registration and transparent methods bound the system's selective interpretation_. When a scientist must commit, in advance, to specific hypotheses and analytical methods, the dissonance engine cannot later silently revise the methods to produce favorable results. The pre-commitment is a structural compensation against the standard operation; it works because it removes the option of ex-post rationalization that individual reasoning would otherwise produce.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 912,
+      "out_sha": "6ff67898214f",
       "note": ""
     },
     {
@@ -3143,11 +3143,11 @@
       "en_title": "Chapter 9: The Limits of Reason — Mercier & Sperber",
       "order": 256,
       "src_chars": 2670,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ad9f2940ac41",
       "src": "These features together make scientific institutions work, on the framework, _despite the cognitive system rather than by transcending it_. The institutions assume the underlying machinery is operating in every individual participant; they design around the operation rather than asking participants to transcend it. The cross-checking does the work that individual reasoning cannot. The collective output is more accurate than any individual's reasoning would have been.\n\nThis is also why scientific knowledge accumulates over time even though individual scientists do not, on average, become substantially less biased over their careers. The institutional structure compensates for the individual bias; the accumulation happens through the structural cross-checking, not through individual scientists getting better at finding their own flaws. The process is slow, sometimes painful, often resisted by the individual scientists whose work is being criticized, and requires substantial institutional infrastructure to maintain. It is also what produces the only kind of reliable knowledge the framework predicts is possible on contested empirical questions: knowledge that has survived adversarial cross-checking by investigators with diverse stakes.\n\nThe same logic applies to other institutions that produce reliable outputs: courts (adversarial process plus appellate review), constitutional democracy (separation of powers, electoral accountability, free press), prediction markets (aggregation across diverse participants with skin in the game), good journalism (editorial cross-checking, fact-checking, source verification). Each of these is structurally designed assuming individual participants are biased, with the structure compensating for the bias through cross-checking that takes advantage of the asymmetric capacities the framework identifies.\n\nThe implication for what the practitioner can do as an individual is, again, not to try harder to be unbiased (which the framework predicts will fail) but to participate in and design structures that take advantage of the cross-checking. Joining a forecasting community, finding an epistemic friend, working with people who hold cross-positions on questions one cares about, participating in adversarial collaboration on specific questions — these are the individual-scale versions of the institutional designs that scientific institutions implement at larger scale. The same logic applies; the same kinds of cross-checking produce the same kinds of partial calibration; the practitioner's role is to participate in the structures and to design them where they do not yet exist for the questions that matter.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 646,
+      "out_sha": "f2e95aaa2189",
       "note": ""
     },
     {
@@ -3155,11 +3155,11 @@
       "en_title": "Chapter 9: The Limits of Reason — Mercier & Sperber",
       "order": 257,
       "src_chars": 2875,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c4217022928c",
       "src": "### 9.5 The Closure of Part III\n\nWith this chapter, Part III closes. Part III is now two chapters long; its argument has been:\n\n**Chapter 8** established two negative results in tandem. First, _awareness of biases does not, on the empirical evidence, reliably reduce them_ — knowledge sits in declarative memory while the underlying machinery continues to operate through channels the knowledge does not reach. Second, _effortful identity-investment in being-a-careful-reasoner does not solve the problem and often makes it worse_ — the identity provides an additional stake the cognitive defenses protect with the full repertoire of tools, with sophistication proportional to the practitioner's analytical capacity. The natural twin responses to recognizing the architecture (try to see it clearly; try harder to overcome it) both fail, by mechanisms internal to the architecture itself.\n\n**Chapter 9** (this chapter) has established the deepest result: _reason itself, as a cognitive capacity, did not evolve to find truth. It evolved to convince others._ Individual reasoning is structurally unreliable as a truth-tracker on stake-relevant questions, by design; the truth-tracking happens through collective and adversarial structures that take advantage of asymmetric individual capacities.\n\nTogether, Chapters 8 and 9 close off the standard responses to the architecture: awareness fails, effort fails, the underlying cognitive system is not even built for the truth-tracking task that awareness and effort were trying to perform. The cumulative effect of Part III is to overdetermine the case for structural and collective tools. The remaining option, the one the empirical evidence supports and the framework predicts, is structural and collective.\n\nPart IV opens this option. Chapter 10 introduces the structural tools that work at the individual scale: prediction tracking, pre-mortems, pre-commitments. Chapter 11 introduces the relational and institutional tools: epistemic friends, adversarial collaboration, forecasting communities, institutional structures. Chapter 12 synthesizes the entire book into a practice and addresses the political endpoint where individual practice meets structural society. By the end of Part IV, the reader will have not just the framework but the specific tools the framework recommends, with concrete implementation guidance for applying them to the questions that matter most.\n\nFor tonight's inventory, return to the four-line format from Chapter 1 and add one chapter-specific question:\n\n  1. The judgment.\n  2. The inner reason.\n  3. The outsider's alternative.\n  4. Which felt more comfortable to believe.\n\n_Plus:_ Looking at one moment from today, did your reasoning feel forward-running (premises to conclusion), or can you see signs that the conclusion was already in place and the reasoning was constructed to support it?\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 804,
+      "out_sha": "95afc3a52a30",
       "note": ""
     },
     {
@@ -3167,11 +3167,11 @@
       "en_title": "Chapter 9: The Limits of Reason — Mercier & Sperber",
       "order": 258,
       "src_chars": 2917,
-      "status": "pending",
+      "status": "done",
       "src_sha": "84fda6267d42",
       "src": "### Chapter Summary\n\nMercier and Sperber's argument closes Part III: reason did not evolve to find truth; it evolved to convince others. The argument explains the empirical pattern that has been documented throughout Parts II and III — confirmation bias, motivated reasoning, the dissonance engine, the rationalist trap — as the predictable behavior of a cognitive system optimized for sincere social persuasion rather than for individual truth-finding. The system is good at producing arguments for positions one has taken, good at finding flaws in others' arguments, and notably bad at finding flaws in arguments one has produced oneself. The asymmetry is not a defect; it is what selection optimized for.\n\nThree lines of evidence support the framework: individual failure on tasks like the Wason selection that two-person discussion can solve; the asymmetry between arguing-for and evaluating-soundness in the same individual; the wildly different performance of the same person on the same question depending on whether they are arguing for a position, evaluating an opposing argument, or evaluating their own past reasoning. Each pattern is what selection-for-persuasion would predict; each is what the data shows.\n\nThe implications are stark. Individual reasoning on stake-relevant questions is not a reliable truth-finding tool, by structural design. The felt sense of careful reasoning is what the cognitive system supplies and does not distinguish accurate truth-tracking from sincere argument-construction. The conviction that one has considered opposing arguments fairly is, on the framework, generally the evaluation-of-others capacity producing sincere reports of flaw-finding rather than the careful engagement-with-merits the popular framing assumes. The experience of having reasoned to a conclusion is often, in the high-stakes domain, the experience of having sincerely produced an argument for a position the system had pre-flagged.\n\nThe positive implication is the basis for Part IV. Truth-tracking, when it happens, happens through collective and adversarial structures that take advantage of the asymmetric individual capacities. Scientific institutions work not because individual scientists are unbiased but because peer review, replication, adversarial commentary, and pre-registration structurally compensate for individual bias. The same logic applies to courts, constitutional democracy, prediction markets, good journalism. At the individual scale, prediction tracking, epistemic friend relationships, adversarial collaboration, and participation in forecasting communities are the practitioner-level versions of the same logic. They work because they do not depend on the practitioner's individual reasoning to find truth; they depend on cross-checking that uses the asymmetric capacities each individual has, with the collective output exceeding what any individual could produce alone.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 752,
+      "out_sha": "3dbfa9e28669",
       "note": ""
     },
     {
@@ -3179,11 +3179,11 @@
       "en_title": "Chapter 9: The Limits of Reason — Mercier & Sperber",
       "order": 259,
       "src_chars": 1016,
-      "status": "pending",
+      "status": "done",
       "src_sha": "572192cd0cfd",
       "src": "Part III is now complete. The standard individual responses to the architecture have all been examined and found insufficient: awareness fails, effort fails, the cognitive system is not even built for individual truth-tracking. The case for structural and collective tools is overdetermined. **Chapter 10** opens Part IV by introducing the first set of structural tools: prediction tracking, pre-mortems, pre-commitments. These are individual-scale practices that take advantage of the asymmetric capacities by externalizing the production output (writing predictions down) so that future reality can do the evaluation that individual introspection cannot. **Chapter 11** then introduces the relational and institutional tools that operate at larger scales. **Chapter 12** synthesizes the entire book into a sustainable practice and addresses how the practice connects to the broader political question of what kind of society lets people see clearly.\n\nFor tonight: do the section 9.5 inventory.\n\n\n### 9.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 279,
+      "out_sha": "bf45aaa0f1f5",
       "note": ""
     },
     {
