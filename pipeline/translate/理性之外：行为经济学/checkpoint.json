@@ -183,11 +183,11 @@
       "en_title": "Chapter 1: The Rational Agent and Why It Matters",
       "order": 7,
       "src_chars": 720,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9741e6dbf27f",
       "src": "**Answer:** A model need not be descriptively accurate at the individual level to generate useful aggregate predictions. Several mechanisms can produce rational-looking outcomes even with individually irrational agents: (1) competitive markets reward and select for more rational behavior, punishing consistent errors; (2) aggregation can average out individual errors; (3) arbitrage by sophisticated actors can eliminate mispricing caused by less rational investors. Moreover, the model provides a disciplined benchmark — by specifying precisely what a rational person would do, it makes deviations visible and measurable. Behavioral economics could not have developed without the rational agent model as a clear foil.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 232,
+      "out_sha": "8daa39259296",
       "note": ""
     },
     {
@@ -195,11 +195,11 @@
       "en_title": "Chapter 1: The Rational Agent and Why It Matters",
       "order": 8,
       "src_chars": 3318,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f2ab6612aa4f",
       "src": "#### Application Problems\n\n**Q1.** A friend tells you: \"I always choose the safe option when the stakes are high, but I like to gamble for fun when the amounts are small.\" Is this behavior consistent with the rational agent model? What might explain it?\n\nHint\n\nThink about whether the utility function can accommodate varying risk preferences at different wealth levels, and whether \"stakes\" in the rational model refers to absolute amounts or some other measure.\n\n**Answer:** This behavior is potentially consistent with the rational agent model. A utility function that is concave (risk averse) in the region of large wealth changes but relatively linear (near-risk neutral) in the region of small gambles can rationalize preferring safe options for high-stakes decisions while tolerating gambles for low-stakes entertainment. Additionally, a rational person might legitimately derive entertainment utility from gambling — the \"fun\" is part of the payoff, not just the money. The rational model does not predict uniform risk aversion; it only requires that the utility function be consistent. Where behavioral economics would push back: if the same _pattern_ of choices cannot be rationalized by any consistent utility function, that is when we have a genuine anomaly.\n\n**Q2.** The Allais paradox involves reducing probabilities proportionally from Problem 1 to Problem 2. Construct a small numerical example using three prizes (say, 0 USD, 1 USD, and 4 USD) and three probabilities, showing that a preference for A over B in one problem, combined with a preference for D over C in the other, violates the independence axiom.\n\nHint\n\nThe independence axiom says: if A is preferred to B, then for any lottery Z and any probability p, the mixed lottery (A with probability p, Z with probability 1-p) is preferred to (B with probability p, Z with probability 1-p). Try constructing your two problems so that one is a mixing of the other with a fixed third lottery.\n\n**Answer:** Let the three prizes be 0 USD, 1 USD, and 4 USD. Consider:\n\n* Lottery A: 1 USD with certainty (probability 1)\n* Lottery B: 4 USD with probability 0.8, 0 USD with probability 0.2\n* Lottery Z: 0 USD with certainty\n\nNow construct Problem 1 by mixing A and B each with Z at probability 0.5:\n\n* Problem 1, Option C: (A at 0.5) + (Z at 0.5) = 1 USD with prob 0.5, 0 USD with prob 0.5\n* Problem 1, Option D: (B at 0.5) + (Z at 0.5) = 4 USD with prob 0.4, 0 USD with prob 0.6\n\nIndependence axiom says: if you prefer A to B, you must prefer C to D. But many people, seeing Problem 1 in isolation, prefer D over C (40% chance of 4 USD looks attractive compared to 50% chance of 1 USD). If those same people would prefer A to B in isolation (the certain 1 USD beats the risky 4 USD / 0 USD gamble), they have violated independence. The Allais paradox is exactly this structure scaled up to realistic dollar amounts.\n\n**Q3.** A regulatory body is deciding whether to require nutritional labeling on restaurant menus. A staff economist argues: \"Under the rational agent model, labels shouldn't affect behavior — people already know roughly how many calories their food contains, and if they didn't care, they'd have found out.\" A behavioral economist disagrees. Construct the behavioral economist's argument, using at least two concepts from this chapter.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1263,
+      "out_sha": "6552f3c5215c",
       "note": ""
     },
     {
@@ -207,11 +207,11 @@
       "en_title": "Chapter 1: The Rational Agent and Why It Matters",
       "order": 9,
       "src_chars": 1127,
-      "status": "pending",
+      "status": "done",
       "src_sha": "31bfd7faa562",
       "src": "**Answer:** The behavioral economist would challenge the claim that people \"already know\" or have optimally acquired information. First, _ambiguity_ : people may face genuine uncertainty (ambiguity, not just risk) about caloric content, and the certainty provided by a label reduces this ambiguity in a way that changes choices — even if the expected caloric content is unchanged. Second, _salience_ : the rational agent model assumes all relevant information is processed equally, but real people are influenced by how prominently information is presented. A calorie count prominently displayed at the point of choice may shift behavior even when the same information in a food database would not — this is a failure of the rational model's assumption that information processing is cost-free and complete. Third, the rational model assumes people already know what they \"want\" to eat in light of health goals; behavioral evidence suggests people have inconsistent preferences between a cool moment (wanting to be healthy) and the moment of temptation (wanting the burger). Labels may activate the more reflective preference.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 322,
+      "out_sha": "33414c859f04",
       "note": ""
     },
     {
@@ -219,11 +219,11 @@
       "en_title": "Chapter 1: The Rational Agent and Why It Matters",
       "order": 10,
       "src_chars": 3371,
-      "status": "pending",
+      "status": "done",
       "src_sha": "05eca73efa86",
       "src": "#### Think Deeper\n\n**Q1.** Some economists argue that behavioral economics is \"just applied psychology\" and doesn't need to be a separate field within economics. Others argue that economics needed behavioral corrections badly and behavioral economics is rightly changing the field. What would constitute evidence that behavioral economics has genuinely contributed something that psychology alone could not have provided?\n\n**Discussion:** Behavioral economics' distinctive contribution is not the psychological facts themselves (which psychologists discovered) but the economic machinery applied to them. Economists bring three things psychologists typically do not: (1) _welfare analysis_ — the ability to say whether a behavioral pattern makes people better or worse off in a meaningful sense; (2) _equilibrium reasoning_ — asking not just how individuals behave but how markets and institutions emerge when many such individuals interact; (3) _mechanism design_ — using knowledge of behavioral patterns to construct incentive structures that steer behavior toward better outcomes (like the SMarT program we will encounter in Chapter 16). A pure psychology of heuristics and biases tells you that people are present-biased; behavioral economics tells you how to design a retirement plan that accounts for present bias and produces better retirement outcomes. The latter requires both the psychological insight and the economic toolkit.\n\n**Q2.** The rational agent model has been challenged empirically for decades, yet it remains the foundation of most mainstream economics textbooks and policy analysis. Why might a model persist even after substantial evidence against it? What does this tell us about how science works in practice?\n\n**Discussion:** Several factors explain the persistence of a challenged model. First, _replacement problem_ : a model is not abandoned until there is a better model to replace it. Behavioral economics offers many documented deviations from rationality but has been slower to produce a single unified alternative with the rational model's tractability and generality. Second, _domain dependence_ : the rational model may be more accurate in some domains (competitive financial markets, repeated high-stakes decisions) than others (one-time medical choices, retirement planning), so abandonment feels premature. Third, _tractability_ : the rational model generates closed-form solutions; behavioral models often do not. Applied economists resist switching to models that cannot produce clean policy prescriptions. Fourth, _sociological factors_ : paradigms persist partly because trained economists are invested in the existing framework and teaching infrastructure is sticky. This does not mean the rational model is wrong to persist — it may genuinely be the best available benchmark in many contexts. It does mean that science in social domains moves more slowly than pure experimental findings might suggest, and that the accumulation of anomalies alone is rarely sufficient to displace a paradigm.\n\n**Q3.** Behavioral economics assumes that there is a \"right\" answer to decision problems — that the Allais paradox choices are _violations_ of rationality, not just different but valid preferences. But is this assumption defensible? Could someone argue that preferring certainty is not a bias but a perfectly legitimate preference?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1145,
+      "out_sha": "c8c035160f95",
       "note": ""
     },
     {
@@ -231,11 +231,11 @@
       "en_title": "Chapter 1: The Rational Agent and Why It Matters",
       "order": 11,
       "src_chars": 2980,
-      "status": "pending",
+      "status": "done",
       "src_sha": "570d1fe018d5",
       "src": "**Discussion:** This is one of the deepest methodological debates in behavioral economics. The critique goes: expected utility theory is a _normative_ theory (how people _should_ choose) as well as a descriptive one. When we call Allais paradox choices \"irrational,\" we are applying a normative standard. But why should the independence axiom be normatively compelling? Some philosophers of decision theory argue that it is not — that preferring certainty for its own sake is a legitimate value that a consistent person could hold, and that calling this a \"bias\" smuggles in a normative view about how people ought to value certainty. Defenders of the behavioral program respond that: (1) when people are shown the logical structure of the Allais paradox — that their choices imply a formal inconsistency — many report wanting to revise their choices, suggesting the independence axiom does represent something they endorse on reflection; and (2) the patterns observed in the Allais paradox also appear in domains where they clearly cause harm (like people buying lottery tickets instead of insurance), so the normative force of calling them errors is supported by the welfare consequences. The tension between descriptive findings and normative standards remains live in the field.\n\n\n### Chapter Summary\n\nThis chapter introduced the rational agent model — the foundation of standard economics — and the opening challenges to it. The rational agent has complete and consistent preferences, maximizes utility, updates beliefs correctly, and maintains time-consistent preferences. This model is useful precisely because it is precise: it generates falsifiable predictions and provides a disciplined benchmark for policy analysis.\n\nThe Allais and Ellsberg paradoxes showed that real people systematically violate the model's core axioms. The Allais paradox reveals a certainty effect — overweighting of certain outcomes relative to probable ones. The Ellsberg paradox reveals ambiguity aversion — dislike of unknown probabilities beyond the dislike of known risk. These patterns are not random errors but systematic deviations that motivate an alternative research program.\n\nBehavioral economics is that research program. It combines psychological insights with economic tools to build more accurate models of actual behavior. Its ambition is not merely to document deviations but to understand their mechanisms and use that understanding to improve predictions and policy.\n\nAs we move through this book, we will track three running themes: the comparison between rational-agent predictions and human behavior (Thread B), the behavioral story of retirement savings as a policy domain where all these insights converge (Thread A), and the epistemological question of which behavioral findings are truly robust and which require more scrutiny (Thread C). Chapter 2 builds the expected utility framework formally before Chapter 3 dismantles and rebuilds it through prospect theory.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 877,
+      "out_sha": "94c6268b2418",
       "note": ""
     },
     {
