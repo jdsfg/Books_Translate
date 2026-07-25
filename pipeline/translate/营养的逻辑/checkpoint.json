@@ -515,11 +515,11 @@
       "en_title": "Chapter 3: Protein — Beyond Muscle, the Full Story",
       "order": 35,
       "src_chars": 1868,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5035d0109ef1",
       "src": "### 3.6 The High-Protein-Damages-Kidneys Myth\n\nAlmost every discussion of high protein intake eventually surfaces the concern: \"But won't eating too much protein damage your kidneys?\"\n\nThis concern has a basis in medical reality — but it applies to a very specific population.\n\n**For people with existing chronic kidney disease (CKD),** high protein intake genuinely does accelerate disease progression. The kidneys filter nitrogenous waste products (primarily urea) from protein metabolism, and impaired kidneys cannot handle this load efficiently. Protein restriction is a legitimate therapeutic approach for CKD.\n\n**For people with healthy kidneys,** the evidence for protein-induced harm is very weak. Multiple systematic reviews and long-term studies in healthy individuals (including athletes consuming 2–3+ g/kg/day for years) have not found impaired kidney function compared to lower-protein controls. A 2016 review by Antonio et al. specifically examined bodybuilders eating very high protein diets (>3g/kg/day) for over a year and found no markers of kidney damage.\n\nThe biological explanation: healthy kidneys adapt to higher protein loads by increasing filtration rate (GFR). This adaptation is called \"hyperfiltration,\" and while it was once thought to be harmful, current evidence suggests it is a normal physiological adaptation, not a pathological response — similar to how muscles adapt to exercise load.\n\n**Caveats:** This doesn't mean unlimited protein is consequence-free. Very high protein diets can displace other nutritious foods and may increase kidney stone risk in susceptible individuals (particularly those with a history of calcium oxalate stones). The nuanced answer: there is no compelling evidence that high protein intake (up to ~3g/kg/day) damages healthy kidneys, but this does not mean \"maximizing protein is always better.\"\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 587,
+      "out_sha": "2c2243a14669",
       "note": ""
     },
     {
@@ -527,11 +527,11 @@
       "en_title": "Chapter 3: Protein — Beyond Muscle, the Full Story",
       "order": 36,
       "src_chars": 2239,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d201cd9cd67f",
       "src": "### 3.7 What This Means for Your Plate\n\nProtein is genuinely important — but \"more is always better\" is not what the evidence shows. Here are evidence-based takeaways:\n\n**1\\. Most people in wealthy countries already meet the RDA for protein.** Average American protein intake is approximately 90g/day — already above the RDA for most people. Protein deficiency in Western countries is rare except in elderly individuals and people with eating disorders.\n\n**2\\. If you are active, older, or deliberately losing weight, target higher protein intake.** Aim for 1.2–1.6g/kg as a reasonable evidence-based range. No need to exceed 2g/kg for most people.\n\n**3\\. Spread protein throughout the day.** Protein synthesis is maximized when amino acids are available throughout the day rather than front-loaded in one or two meals. Each meal containing 20–40g of protein is more effective for muscle protein synthesis than one meal with 80g. This is particularly relevant for older adults.\n\n**4\\. Protein source matters beyond muscle.** Animal proteins deliver complete amino acid profiles and highly bioavailable iron, zinc, and B12. Plant proteins deliver fiber and phytochemicals that animal proteins do not. Diverse sources — a mix of legumes, whole grains, dairy or eggs, fish or meat — provide complementary benefits.\n\n**5\\. Don't dismiss plant proteins.** Global populations from South Asia to East Asia maintain protein adequacy and good health on predominantly plant-based protein diets. The keys: variety of plant protein sources, somewhat higher total intake, and attention to micronutrients (B12, zinc, iron).\n\n**6\\. Protein is the most satiating macronutrient.** If you find yourself hungry shortly after meals, increasing protein content (rather than just adding more food) is often the most effective strategy. A 20–30g protein breakfast (eggs, Greek yogurt, lentil soup) is substantially more satiating than an equal-calorie carbohydrate-heavy breakfast.\n\n> **Reflection prompt:** How does protein feature in your typical breakfast? If it's primarily carbohydrate-based, how might adding protein change your hunger levels before lunch? What plant protein sources have you never tried that might be worth exploring?\n\n\n### 3.8 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 710,
+      "out_sha": "794e48c82ef7",
       "note": ""
     },
     {
@@ -539,11 +539,11 @@
       "en_title": "Chapter 3: Protein — Beyond Muscle, the Full Story",
       "order": 37,
       "src_chars": 2800,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cbbcca76123b",
       "src": "#### Concept Check\n\n**3.1** Why are the 9 essential amino acids called \"essential,\" and what are two consequences of deficiency in a single essential amino acid?\n\n**Answer:** The 9 essential amino acids (histidine, isoleucine, leucine, lysine, methionine, phenylalanine, threonine, tryptophan, valine) are called \"essential\" because the human body lacks the enzymatic pathways to synthesize them from other molecules. They must be obtained from the diet because the body cannot make them in sufficient quantities. Two consequences of deficiency: (1) Limiting synthesis of all proteins requiring that amino acid. Protein synthesis is an all-or-nothing process for any given protein — if even one essential amino acid is missing, that protein cannot be made. If tryptophan is deficient, serotonin production falls (since serotonin is synthesized from tryptophan). Immune proteins requiring the deficient amino acid will also be reduced. (2) Protein-energy malnutrition syndromes. In severe cases, specifically kwashiorkor (protein deficiency even when total calories may be adequate) is characterized by edema (water retention, partly from reduced albumin), poor immune function, muscle wasting, and impaired growth in children. Lysine deficiency specifically impairs collagen synthesis (collagen requires lysine for its cross-linking structure) and reduces height growth in children.\n\n**3.2** What is DIAAS and why is it considered superior to the older PER (Protein Efficiency Ratio) and PDCAAS methods?\n\n**Answer:** DIAAS (Digestible Indispensable Amino Acid Score) measures both (1) the complete amino acid profile of a protein relative to a human reference pattern (based on human amino acid requirements), and (2) the digestibility of each amino acid specifically from that food, measured at the end of the small intestine (ileal digestibility). This is superior to older methods for several reasons: PER (Protein Efficiency Ratio) measured weight gain in rats relative to protein consumed, which does not correlate well with human protein needs because rat amino acid requirements differ from human requirements. PDCAAS (Protein Digestibility-Corrected Amino Acid Score) used the same amino acid reference as DIAAS but used fecal digestibility rather than ileal digestibility, which overestimates true absorption because bacteria in the large intestine can synthesize amino acids that appear in fecal analysis but were never actually absorbed by the human. DIAAS corrects for this by measuring amino acids at the end of the small intestine (before bacterial synthesis), giving a more accurate measure of what the human actually absorbs.\n\n**3.3** Explain the concept of protein turnover and why it matters for understanding dietary protein needs even in people who are not trying to build muscle.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 823,
+      "out_sha": "4a60dd75156f",
       "note": ""
     },
     {
@@ -551,11 +551,11 @@
       "en_title": "Chapter 3: Protein — Beyond Muscle, the Full Story",
       "order": 38,
       "src_chars": 1244,
-      "status": "pending",
+      "status": "done",
       "src_sha": "72794ef5fc19",
       "src": "**Answer:** Protein turnover is the continuous cycle of protein synthesis and protein breakdown that occurs in all living tissues. The body synthesizes and degrades approximately 300–400g of protein daily — far more than any person eats. Most of the amino acids released during protein breakdown are recycled back into new protein synthesis. However, some amino acids are irreversibly lost through oxidation for energy, excretion as urea, and other metabolic pathways. These losses must be replaced by dietary protein. This matters even for non-athletes because: (1) Gut epithelial cells (the lining of the intestine) turn over every 3–5 days, requiring continuous new protein synthesis. (2) Red blood cells live about 120 days; the bone marrow continuously produces new ones from protein (hemoglobin). (3) Immune cells, liver enzymes, and many other proteins have short half-lives (hours to days). (4) In illness, surgery, or injury, protein catabolism accelerates and dietary protein needs increase significantly to support repair and immune response. The RDA of 0.8g/kg represents the minimum to offset these inevitable losses in healthy people — not an amount that supports optimal immune function, healthy aging, or recovery from illness.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 376,
+      "out_sha": "56cd6ca764ce",
       "note": ""
     },
     {
@@ -563,11 +563,11 @@
       "en_title": "Chapter 3: Protein — Beyond Muscle, the Full Story",
       "order": 39,
       "src_chars": 3370,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c555f607d8a8",
       "src": "#### Application Problems\n\n**3.4** A vegan athlete (body weight 75kg, doing 5 days/week strength training) asks about protein intake. Construct a full day's eating plan that achieves 1.6g/kg of protein entirely from plant sources. Show your work.\n\n**Answer:** Target: 75kg × 1.6g/kg = 120g protein from plant sources. A realistic day's plan:\n\nMeal | Food | Protein  \n---|---|---  \nBreakfast | 1 cup (180g) firm tofu scramble | ~20g  \nBreakfast | 2 slices whole wheat toast | ~6g  \nLunch | 1 cup (200g cooked) lentil dal | ~18g  \nLunch | 1 cup (180g cooked) brown rice | ~5g  \nSnack | 1/4 cup (40g) hemp seeds | ~13g  \nSnack | 2 tbsp peanut butter | ~8g  \nDinner | 1.5 cups (250g cooked) edamame | ~22g  \nDinner | 1 cup (170g cooked) quinoa | ~8g  \nEvening | 1 cup (240ml) soy milk | ~7g  \nEvening | 1 oz (28g) pumpkin seeds | ~9g  \n**Total** |  | **~116g** ✓  \n  \nThis plan achieves approximately 116g protein (close to the 120g target) from diverse plant sources that complement each other's amino acid profiles. Key points: (1) Tofu and edamame (soy protein) are complete proteins — excellent for vegans. (2) Hemp seeds are another near-complete plant protein. (3) The combination of lentils + rice creates complementary amino acid profiles (rice is high in methionine, lentils are high in lysine). (4) This is a high volume of food — plant protein requires eating more total food than animal protein to reach the same protein target, which is why some strength athletes prefer to include small amounts of animal protein for efficiency. The plan is achievable but requires planning.\n\n**3.5** Compare protein digestion and absorption between a 25g whey protein shake and 25g of protein from cooked lentils. What would you predict about the speed of amino acid appearance in the bloodstream, and what are the downstream implications for muscle protein synthesis?\n\n**Answer:** Whey protein is a \"fast\" protein — it is rapidly digested and absorbed. After a whey protein shake, blood amino acid levels peak within 60–90 minutes. This rapid peak, particularly of leucine (the primary trigger for muscle protein synthesis via the mTOR pathway), efficiently stimulates a burst of muscle protein synthesis. However, the spike is brief — amino acid levels return to baseline within 2–3 hours, limiting the duration of the anabolic stimulus. Lentil protein is a \"slow\" protein — digestion is slowed by: (1) fiber content (soluble and insoluble fiber slows gastric emptying), (2) the food matrix (protein is bound within cell walls that must be broken down), and (3) lower digestibility (lentil DIAAS ~0.59 vs. whey ~1.25). Blood amino acids rise more slowly (peak at 2–3 hours) but remain elevated longer. The leucine peak is lower in absolute terms, which means the per-gram muscle protein synthesis stimulus is less potent. Downstream implications: For maximizing muscle protein synthesis in the short term (e.g., post-workout), whey protein (or another fast, complete protein) produces a stronger, faster anabolic signal. For overall day-long protein synthesis and satiety, slower-digesting plant proteins may provide a more sustained amino acid supply. Practically: post-workout timing with a fast, complete protein is most important for athletes prioritizing muscle gain; for general health, the total daily protein and amino acid profile matters more than absorption rate.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1227,
+      "out_sha": "9d5ba9f1589e",
       "note": ""
     },
     {
