@@ -2307,11 +2307,11 @@
       "en_title": "Chapter 14: Hexagonal Architecture and Functional Core / Imperative Shell",
       "order": 183,
       "src_chars": 2837,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b5574a1b6696",
       "src": "### 14.5 The Repository pattern as FC/IS in practice\n\nChapter 7's Repository pattern is exactly the driven-port abstraction in hexagonal terms. Application code (the core) depends on the `CustomerRepository` interface; the SQL implementation is the adapter; tests use the in-memory implementation.\n\nThe chain of compounding disciplines:\n\n* Test doubles (Chapter 7) → Repository pattern → driven ports → hexagonal architecture → functional core + imperative shell.\n\nEach level builds on the previous. An engineer who has internalized the lower levels recognizes the higher levels as the natural conclusion. An engineer who skips levels finds the higher levels arbitrary or over-engineered.\n\nThis is why the chapter sequence matters: testing first (Chapters 5-8), then refactoring (9-11), then patterns sensibly applied (12-13), then architectural frame (this chapter). The order is the dependency order; each chapter builds on its predecessors.\n\n\n### 14.6 The AI-Layer: agents and architectural shape\n\nLLMs in 2026 know hexagonal architecture and FC/IS from training data. They can generate code that follows the shapes when asked. They are unreliable at:\n\n* **Recognizing when the shape is appropriate.** The agent applies hexagonal to small scripts where it is overkill, or it generates flat code with tangled I/O for systems where hexagonal would help. The judgment of whether the codebase justifies the shape is human work.\n* **Maintaining the shape over time.** The agent in agent-PR mode might add code that violates the shape (a driven port called from a pure function, side effects inside the functional core). The PR review (Chapter 15) is where this is caught.\n* **Naming ports and adapters consistently.** The agent may generate port names like `IDatabase` or `DataAccessLayer` that do not follow the team's naming convention; the CLAUDE.md should specify the convention.\n\n\n#### The CLAUDE.md for architectural shape\n\nA CLAUDE.md entry that codifies the team's architectural preferences:\n    \n    \n    ## Architectural shape\n    \n    We use Hexagonal Architecture for our backend services:\n    - Business logic lives in `src/core/`.\n    - Ports (Protocols) are defined in `src/core/ports/`.\n    - Adapters live in `src/adapters/<system>/`.\n    - Tests of the core use in-memory adapters from `tests/fakes/`.\n    \n    Within the core:\n    - Decision logic should be pure functions in `src/core/decisions/`.\n    - Orchestrators are in `src/core/orchestrators/` and use the gather/decide/act pattern.\n    \n    When adding a new external system, add a port first (in `src/core/ports/`),\n    then an in-memory fake (in `tests/fakes/`), then the production adapter.\n    \n\nThe instruction guides agent-generated code toward the shape. Agents follow the convention when it is specified; they generate inconsistent code when it is not.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1501,
+      "out_sha": "257b1d1234a4",
       "note": ""
     },
     {
@@ -2319,11 +2319,11 @@
       "en_title": "Chapter 14: Hexagonal Architecture and Functional Core / Imperative Shell",
       "order": 184,
       "src_chars": 1462,
-      "status": "pending",
+      "status": "done",
       "src_sha": "476d14fbd68a",
       "src": "#### Refactoring legacy code into the shape\n\nThe opening vignette (Helix's 300-line method) is a common starting point. The refactoring sequence:\n\n  1. **Identify the I/O at the edges.** Find every database call, HTTP call, file read, queue operation. Each is a candidate for an adapter.\n  2. **Define ports** for each I/O capability the core needs. Name them after the capability, not the system.\n  3. **Inject the adapters** into the core class via the constructor.\n  4. **Replace direct I/O calls with port calls.** Mechanical refactor; tests pass throughout if characterization tests (Chapter 10) are in place.\n  5. **Find the decision logic and extract it as pure functions.** This is the FC/IS step, usually a separate PR.\n  6. **Move tests** from integration-heavy to core-unit-heavy as the shape emerges.\n\nAki's refactor of the pricing subsystem took approximately three weeks distributed across two months. The agent did much of the mechanical work in step 4 (port introduction) and step 5 (pure function extraction); Aki directed and reviewed. The test suite came down by roughly an order of magnitude in runtime during the refactor (the §14.4 illustrative example puts numbers on it); the bug rate dropped in the following quarter. Before opening the agent for any of this work, Aki did what she always did: she wrote a small failing test for the next step's intended outcome and ran it first, so the agent had a target rather than a vague direction.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 542,
+      "out_sha": "8c6786375ff9",
       "note": ""
     },
     {
@@ -2331,11 +2331,11 @@
       "en_title": "Chapter 14: Hexagonal Architecture and Functional Core / Imperative Shell",
       "order": 185,
       "src_chars": 76,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d69d11d72bad",
       "src": "### 14.7 Working example: an order processing module under hexagonal + FC/IS",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 34,
+      "out_sha": "30e3beda253e",
       "note": ""
     },
     {
@@ -2343,11 +2343,11 @@
       "en_title": "Chapter 14: Hexagonal Architecture and Functional Core / Imperative Shell",
       "order": 186,
       "src_chars": 3563,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e9d14c124a19",
       "src": "A complete real-shape example, sketched:\n    \n    \n    # src/core/ports/customer_port.py\n    class CustomerPort(Protocol):\n        def find(self, cid: str) -> Optional[Customer]: ...\n    \n    # src/core/ports/payment_port.py\n    class PaymentPort(Protocol):\n        def charge(self, c: Customer, amount: Decimal) -> ChargeResult: ...\n    \n    # src/core/ports/inventory_port.py\n    class InventoryPort(Protocol):\n        def reserve(self, sku: str, qty: int) -> bool: ...\n        def release(self, sku: str, qty: int) -> None: ...\n    \n    # src/core/ports/audit_port.py\n    class AuditPort(Protocol):\n        def log(self, event: str, data: dict) -> None: ...\n    \n    # src/core/decisions/order_decision.py (pure function)\n    def decide_order(customer: Customer,\n                     items: list[OrderItem],\n                     current_date: date) -> OrderDecision:\n        \"\"\"Pure decision: given the customer, items, and date, what should happen?\"\"\"\n        if customer.is_blocked:\n            return OrderDecision(kind='reject', reason='customer_blocked')\n        if not items:\n            return OrderDecision(kind='reject', reason='empty_order')\n        total = sum(item.price * item.quantity for item in items)\n        discount = compute_discount(customer, total)\n        final = total * (1 - discount)\n        return OrderDecision(\n            kind='accept',\n            total=total,\n            discount=discount,\n            final_amount=final,\n            items=items,\n        )\n    \n    # src/core/orchestrators/order_orchestrator.py (imperative shell)\n    class OrderOrchestrator:\n        def __init__(self, customers: CustomerPort, payment: PaymentPort,\n                     inventory: InventoryPort, audit: AuditPort):\n            self._customers = customers\n            self._payment = payment\n            self._inventory = inventory\n            self._audit = audit\n    \n        def place_order(self, customer_id: str, items: list[OrderItem]) -> OrderResult:\n            # Gather\n            customer = self._customers.find(customer_id)\n            if not customer:\n                return OrderResult(status='error', error='customer_not_found')\n    \n            # Decide (pure)\n            decision = decide_order(customer, items, current_date=date.today())\n    \n            # Act\n            if decision.kind == 'reject':\n                self._audit.log('order_rejected', {'customer_id': customer_id, 'reason': decision.reason})\n                return OrderResult(status='rejected', reason=decision.reason)\n    \n            for item in decision.items:\n                if not self._inventory.reserve(item.sku, item.quantity):\n                    # rollback and reject\n                    for prev_item in decision.items[:decision.items.index(item)]:\n                        self._inventory.release(prev_item.sku, prev_item.quantity)\n                    return OrderResult(status='rejected', reason='inventory_unavailable')\n    \n            charge_result = self._payment.charge(customer, decision.final_amount)\n            if charge_result.status != 'success':\n                for item in decision.items:\n                    self._inventory.release(item.sku, item.quantity)\n                return OrderResult(status='rejected', reason='payment_failed')\n    \n            self._audit.log('order_placed', {\n                'customer_id': customer_id,\n                'amount': str(decision.final_amount),\n                'items': len(decision.items),\n            })\n            return OrderResult(status='success', total=decision.final_amount)\n    ",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 3389,
+      "out_sha": "3f004e5f94e9",
       "note": ""
     },
     {
@@ -2355,11 +2355,11 @@
       "en_title": "Chapter 14: Hexagonal Architecture and Functional Core / Imperative Shell",
       "order": 187,
       "src_chars": 394,
-      "status": "pending",
+      "status": "done",
       "src_sha": "270d612e2077",
       "src": "The pure `decide_order` function is testable with hundreds of property-based test cases. The `OrderOrchestrator` is testable with in-memory adapters at component level. The HTTP route that invokes `place_order` is testable at the route level. Each layer has its own tests; the layers compose; the whole system is well-tested without an integration test for every behavior.\n\n\n### 14.8 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 165,
+      "out_sha": "1f21390ff0a4",
       "note": ""
     },
     {
