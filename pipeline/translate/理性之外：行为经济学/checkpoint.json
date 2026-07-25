@@ -1203,11 +1203,11 @@
       "en_title": "Chapter 9: Mental Accounting — How We Organize Our Money",
       "order": 92,
       "src_chars": 2153,
-      "status": "pending",
+      "status": "done",
       "src_sha": "140930da9bd9",
       "src": "#### Definition: House Money Effect\n\nThe **house money effect** is the tendency to take more financial risk with recently gained money (perceived as \"found\" or \"windfall\" wealth) than with pre-existing wealth, even though both are equivalent from a wealth perspective.\n\n**Mechanism via mental accounting** : The 300 USD in winnings is coded in a separate mental account from the original 500 USD stake. The reference point for the winnings account is 0 USD (the account started empty). Within this account, any bet with the 300 USD is evaluated as either a gain (if the bet wins) or a return to zero (if the bet loses) — the \"loss\" is bounded by the account's starting point of zero, not by the original stake. This psychological isolation reduces the felt cost of losing, producing higher risk taking.\n\nThe house money effect explains stock market behavior: investors who are well above their purchase price often take more risk with their \"paper gains\" than they would with new investments of the same size. It also appears in consumer spending: tax refunds and year-end bonuses are spent more freely than equivalent amounts from regular income — the irregular income is coded as \"found money\" with a separate, more permissive spending reference point.\n\n\n### 9.4 The Sunk Cost Fallacy\n\nA related and widely important mental accounting phenomenon is the sunk cost fallacy: the tendency to allow irrecoverable past expenditures to influence current decisions, even though standard economics says only future costs and benefits should matter.\n\n**Classic demonstration.** You have two theater tickets: one purchased for 100 USD, one received free. The day of the performance arrives and you feel mildly ill — not too sick to attend, but not feeling great. Which ticket-holder is more likely to attend the performance?\n\nResearch consistently finds that people who paid 100 USD are more likely to attend than people with the free ticket — even though both are equally ill, and both will receive the same experience from attending. The 100 USD is sunk: it cannot be recovered whether you attend or not. Yet it pulls the paid-ticket-holder toward attendance.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 660,
+      "out_sha": "ba55dca3b979",
       "note": ""
     },
     {
@@ -1215,11 +1215,11 @@
       "en_title": "Chapter 9: Mental Accounting — How We Organize Our Money",
       "order": 93,
       "src_chars": 2870,
-      "status": "pending",
+      "status": "done",
       "src_sha": "94f5e38f4a93",
       "src": "#### Definition: Sunk Cost Fallacy\n\nThe **sunk cost fallacy** is the tendency to factor in irrecoverable past expenditures when making current decisions, even though rational decision-making considers only future costs and benefits. Resources already spent cannot be recovered, so they should not affect optimal choices.\n\n**Mental accounting mechanism** : The paid-ticket-holder has an open \"theater\" mental account: debit 100 USD, credit = attending the performance. As long as the account is \"open\" (the performance has not occurred), there is pressure to close it — to realize the planned benefit. Attending the performance closes the account and registers the benefit against the cost. Not attending leaves the account with an unrecovered loss. The sunk cost creates account-closing motivation.\n\n**Consequences.** Sunk cost fallacy affects decisions at every scale:\n\n* _Business_ : continuing to invest in a failing project because of prior investment (\"we've already spent 10M USD on this\")\n* _Military_ : continuing wars beyond the point of strategic wisdom because of the casualties already suffered (\"we can't let their deaths be in vain\")\n* _Personal_ : finishing a bad meal because you paid for it; completing a boring book because you're halfway through; staying in a bad relationship because of the years already invested\n* _Finance_ : holding a losing stock until it returns to the purchase price (closing the loss account), rather than selling and reallocating to a better investment\n\n\n### 9.5 Mental Accounting and the Credit Card Effect\n\nStandard economics predicts that how you pay for something should not affect how much you value it or how much you spend. A credit card, cash, and check all reduce wealth by the same amount per dollar spent.\n\nBehavioral research finds otherwise. People spend more with credit cards than with cash for the same purchase amounts. The mechanism: cash spending is psychologically vivid (you see the money leave your wallet); credit card spending is abstract (a number changes on a statement you'll see later). Mental accounting treats cash from your wallet as debiting a salient, present-tense account. Credit card debt is deferred — it goes into a separate, future account that is less emotionally immediate.\n\n**Decoupling** : Payment and consumption are temporally and psychologically decoupled in credit card transactions. The enjoyment of the purchase (the restaurant meal) is salient and present; the pain of payment (the bill at month-end) is diffuse and future. Mental accounting segregates these into separate accounts, reducing the pain of purchase and facilitating more spending.\n\nThis has implications for policy: removing frictions in payment (contactless payments, one-click online ordering) reduces the mental accounting cost of spending, potentially increasing over-spending for present-biased consumers.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 864,
+      "out_sha": "9ff6bf8615c1",
       "note": ""
     },
     {
@@ -1227,11 +1227,11 @@
       "en_title": "Chapter 9: Mental Accounting — How We Organize Our Money",
       "order": 94,
       "src_chars": 2755,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7475423387db",
       "src": "#### Thread B — Rational vs. Human Agent\n\n**Standard theory predicts:** A dollar from any source — wages, winnings, tax refunds, inheritance — is worth exactly the same and should be treated identically in decision-making. The rational agent cares only about total wealth and future income streams, not about the label attached to any specific dollar. Sunk costs, by definition, cannot affect the optimal forward-looking decision.\n\n**Humans do:** Maintain elaborate psychological ledgers in which dollars from different sources are non-fungible, sunk costs influence continuing decisions, and the mental account structure determines spending and risk-taking behavior in ways that systematically violate the fungibility principle. The concert experiment, the house money effect, the sunk cost fallacy, and the credit card effect are all manifestations of the same underlying architecture: money is organized into categories, and those categories carry their own accounting rules.\n\n\n### 9.6 Monthly Budgets as Mental Accounts\n\nThe practical significance of mental accounting is most visible in household budgeting. People commonly divide their monthly income into categorical spending budgets — food, entertainment, clothing, transportation. These categories create within-budget spending patterns that violate fungibility.\n\n**Budget exhaustion** : When the entertainment budget is exhausted (a concert, two dinners), a person may decline a friend's invitation to a cheap movie they would have enjoyed, because the entertainment account is depleted. Meanwhile, their savings account has ample reserves that they choose not to tap. From a fungibility standpoint, they should reallocate — the movie would produce more utility than leaving the money in savings. The mental account structure prevents this reallocation.\n\n**Budget underutilization** : People with unspent end-of-period budget often spend on items they wouldn't have purchased otherwise — they \"use up\" the budget before it resets. The \"December spending surge\" in organizational budgeting (spending remaining funds so next year's allocation isn't reduced) is a corporate version of this individual behavior.\n\n**Interaction with present bias (Chapter 8)** : Mental accounts and present bias compound each other. A present-biased person is already inclined to consume today; mental account structures that make \"entertainment\" funds feel earmarked for spending (rather than saving) reinforce present-biased consumption. Conversely, the retirement savings mental account — where money is psychologically \"locked\" — partially counteracts present bias by making the reallocation from savings to consumption feel like a different kind of action (account crossing) with associated psychological costs.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 768,
+      "out_sha": "5cd0a41d36a7",
       "note": ""
     },
     {
@@ -1239,11 +1239,11 @@
       "en_title": "Chapter 9: Mental Accounting — How We Organize Our Money",
       "order": 95,
       "src_chars": 905,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fce1702b9940",
       "src": "#### Thread A — Saving for Retirement\n\nThread A: The retirement savings account functions as a critical mental account structure. When money is labeled \"retirement savings\" and held in a 401(k), it is psychologically separated from the current consumption budget. This mental separation reduces the temptation to spend it on current consumption — crossing a mental account boundary requires extra psychological justification that in-budget spending does not. This is why the mere existence of a 401(k) account with automatic enrollment increases retirement wealth independently of the tax advantages: the mental account structure does the same work as a commitment device (Chapter 8). Chapter 16 will show how plan design — separate accounts for employer match, separate sub-accounts for \"Save More Tomorrow\" increments — exploits mental accounting to increase effective saving rates.\n\n\n### 9.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 272,
+      "out_sha": "7875fda2c2b8",
       "note": ""
     },
     {
@@ -1251,11 +1251,11 @@
       "en_title": "Chapter 9: Mental Accounting — How We Organize Our Money",
       "order": 96,
       "src_chars": 2896,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3e78d30acdf8",
       "src": "#### Concept Check\n\n**Q1.** Define mental accounting and explain why it violates the economic principle of fungibility.\n\n**Answer:** Mental accounting is the cognitive categorization of money and transactions into separate psychological accounts, with rules governing spending within each account that treat money from different accounts as non-interchangeable.\n\nIt violates fungibility because the economic principle of fungibility holds that money is perfectly interchangeable — a dollar is a dollar regardless of its source, history, or label. Under fungibility, total wealth is what matters for decisions. Mental accounting violates this by treating dollars in different accounts as qualitatively different, with spending from one account carrying different psychological costs than equivalent spending from another. The concert scenario demonstrates this: the same 200 USD decision produces different behavior depending on whether the lost 200 USD was the concert allocation (high psychological cost to rebuy, depletion of the concert account) or general cash (lower psychological cost, concert account still intact). The economic reality is identical; the mental accounting reality differs dramatically.\n\n**Q2.** What is hedonic editing? Using the prospect theory value function from Chapter 3, predict whether a person would prefer to learn about two gains (50 USD and 50 USD) separately or as a combined single gain (100 USD).\n\n**Answer:** Hedonic editing is the tendency to combine or separate outcomes to maximize total subjective value, using the shape of the prospect theory value function.\n\nFrom Chapter 3: the gain domain of the value function is concave — the subjective value of gains increases at a decreasing rate. This means v(50)+v(50)>v(100)v(50) + v(50) > v(100)v(50)+v(50)>v(100): the total subjective value of two separate 50 USD gains exceeds the value of one 100 USD gain, because the first 50 USD is on the steeper part of the curve and adds more subjective value than the second 50 USD in a combined 100 USD gain.\n\nTherefore, hedonic editing predicts that a person would prefer to learn about the two gains separately. Two separate 50 USD gains provide more total pleasure (two \"first-50 USD\" experiences) than one 100 USD gain (one \"first-50 USD\" experience plus a less impactful \"second-50 USD\" experience). This is why prize structures, bonuses, and good news are often delivered as multiple smaller announcements rather than one large one.\n\n**Q3.** Explain the sunk cost fallacy and the mental accounting mechanism that produces it.\n\n**Answer:** The sunk cost fallacy is the tendency to let irrecoverable past expenditures influence current decisions, when rational decision-making requires considering only future costs and benefits. A cost is \"sunk\" once spent — it cannot be recovered regardless of the current decision, so it should be economically irrelevant.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 952,
+      "out_sha": "b4091681c340",
       "note": ""
     },
     {
@@ -1263,11 +1263,11 @@
       "en_title": "Chapter 9: Mental Accounting — How We Organize Our Money",
       "order": 97,
       "src_chars": 3326,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a00fbe289e48",
       "src": "The mental accounting mechanism: purchases open a mental account with a debit (the cost) and a planned credit (the benefit). The account remains \"open\" until the benefit is realized. Not realizing the planned benefit leaves the account with an unresolved loss, which the loss-averse value function makes psychologically painful. Completing the activity (attending the theater, finishing the bad meal, completing the failing project) closes the account and allows the cost to be \"written off\" against the received benefit. The sunk cost creates pressure to close the account — which manifests as continued engagement with an activity beyond what future-looking rationality would recommend.\n\n**Q4.** What is the house money effect, and how does mental accounting explain risk-taking with windfall gains?\n\n**Answer:** The house money effect is the tendency to take more financial risk with recently received gains (perceived as \"found money\") than with pre-existing wealth of equivalent amount.\n\nMental accounting explanation: Recent gains — casino winnings, tax refunds, unexpected bonuses — are often coded in a separate mental account with a reference point of zero (the account didn't exist before the gain). Within this separate account, the potential loss of the windfall is bounded by the account's starting value of zero — losing the windfall returns you to zero in that account, not to a negative position. This loss is less painful than an equivalent loss from the pre-existing wealth account, where the reference point is the existing balance. The segregated mental account structure reduces the subjective cost of losing the windfall, increasing risk tolerance.\n\nThe house money effect also connects to prospect theory: if the windfall is coded in the gain domain of the value function, further risks taken with it are in the gain domain (risk averse territory). But the concave gain domain means subsequent gains add less value — making gamblers willing to risk the windfall for a chance at an even larger gain while the diminishing marginal value of additional gains reduces the subjective downside of losing.\n\n**Q5.** How does decoupling — temporal separation of payment and consumption — affect spending behavior? Give an example from consumer finance.\n\n**Answer:** Decoupling separates the psychological experiences of payment and consumption in time. When payment and enjoyment are simultaneous (paying cash for a meal, watching the waiter process your card), the pain of payment and the pleasure of consumption are experienced together — and the \"pain of paying\" reduces net enjoyment, creating a spending brake. When payment is decoupled from consumption (credit card, monthly subscription), the pleasure of consumption is experienced independently of the (deferred) pain of payment, and spending increases.\n\nExample from consumer finance: research on restaurant tipping finds that credit card users tip significantly more than cash users for identical meals. With cash, the payment is immediate and salient; the diner feels the money leaving their wallet when calculating the tip. With a credit card, payment is deferred; the psychological pain of adding to a credit card bill is diffuse and separated from the enjoyment of the meal. The decoupling reduces the felt cost of generosity, producing larger tips.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 893,
+      "out_sha": "a9d4abac3418",
       "note": ""
     },
     {
@@ -1275,11 +1275,11 @@
       "en_title": "Chapter 9: Mental Accounting — How We Organize Our Money",
       "order": 98,
       "src_chars": 341,
-      "status": "pending",
+      "status": "done",
       "src_sha": "49b57e6cb50f",
       "src": "A second example: subscription services exploit decoupling by charging monthly fees that are automatic and rarely re-evaluated, while the enjoyment of the service occurs on a different schedule (when you watch a show, not when the bill arrives). Consumers accumulate more subscriptions than they would if they had to pay explicitly per use.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 83,
+      "out_sha": "e6b9a09595ee",
       "note": ""
     },
     {
@@ -1287,11 +1287,11 @@
       "en_title": "Chapter 9: Mental Accounting — How We Organize Our Money",
       "order": 99,
       "src_chars": 3385,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f2bc98d22c57",
       "src": "#### Application Problems\n\n**Q1.** A friend receives a 3,000 USD tax refund and uses it to buy a new television, saying \"it's found money — I might as well enjoy it.\" Their credit card carries a 3,000 USD balance at 20% annual interest. From a standard economic perspective, what is wrong with this decision? How does mental accounting explain it?\n\nHint\n\nConsider the opportunity cost of using the refund for the television versus the credit card balance. Then think about how different mental accounts might make these two uses feel psychologically different.\n\n**Answer:** From a standard economic perspective: the credit card balance costs 20% annual interest. Paying down 3,000 USD in credit card debt generates a guaranteed 20% return (the interest avoided). Buying a television has a much lower effective return (the utility derived from the television, which for most consumer goods is well below 20% of purchase price per year). The optimal decision is to pay the credit card balance and only buy the television if the friend can still afford it after doing so.\n\nThe mental accounting explanation: the tax refund occupies a \"windfall\" mental account with a zero reference point. It feels like found money — unexpected income that doesn't come from the usual income stream. Spending it on something enjoyable closes the windfall account with a satisfying credit (the television). The credit card debt, meanwhile, occupies a separate \"ongoing debt\" mental account. The idea of moving money from the windfall account to the debt account feels like a transfer between accounts — a less emotionally satisfying use of found money. The television is a cleaner, more satisfying closure of the windfall account than debt reduction, even though debt reduction has the higher economic return.\n\nThis is a manifestation of non-fungibility: if the friend treated all dollars equally, the 20% guaranteed return on debt repayment would obviously dominate. Mental accounting makes the refund and the debt feel like separate financial domains, preventing the optimal reallocation.\n\n**Q2.** A pharmaceutical company prices a cancer drug at 1,000 USD per month and offers a coupon program that makes the drug effectively free for patients who apply. Alternatively, they could price the drug at 0 USD for patients with private insurance (billing insurers a fixed amount) and let insurers pass through costs via premiums. From the mental accounting perspective, predict which pricing structure leads to higher patient adherence (taking the drug as prescribed), and explain why.\n\nHint\n\nConsider which mental account the drug cost debits under each structure, and how the salience of the cost affects ongoing behavior.\n\n**Answer:** The 0 USD direct cost (insurer-billed) structure will likely produce higher adherence than the coupon program.\n\nMental accounting analysis: Under the coupon program, the patient experiences a 1,000 USD monthly cost that is then discounted to 0 USD. Even with the coupon, the patient must apply the coupon, see the 1,000 USD price, process the discount, and potentially experience friction in the transaction. The 1,000 USD is salient — it enters the patient's awareness as a large number even if ultimately not paid. This salience activates the \"medical expense\" mental account and can create decision points where the patient questions whether to fill the prescription.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1003,
+      "out_sha": "1f42e21f2304",
       "note": ""
     },
     {
@@ -1299,11 +1299,11 @@
       "en_title": "Chapter 9: Mental Accounting — How We Organize Our Money",
       "order": 100,
       "src_chars": 3489,
-      "status": "pending",
+      "status": "done",
       "src_sha": "44a590a68883",
       "src": "Under the 0 USD direct cost structure, no explicit cost appears in the patient's direct experience. The cost is embedded in insurance premiums, which are typically deducted automatically and are not evaluated on a per-medication basis. The drug is psychologically \"free\" in every salient interaction — no sticker price, no coupon application, no moment of cost confrontation. The absence of an active cost prompt reduces the probability of any period of non-adherence triggered by cost evaluation.\n\nThe broader principle: behavioral adherence is influenced not just by the final out-of-pocket cost but by the salience and cognitive processing required at each interaction point. Reducing friction and cost salience at the point of consumption increases adherence even when the economic reality (the patient's wealth effect from drug costs) is similar across structures.\n\n**Q3.** (Cross-reference to Chapter 8) Present bias (Chapter 8) predicts that people procrastinate on saving. Mental accounting (Chapter 9) might create either a savings obstacle (earmarking money as \"for spending\") or a savings facilitator (earmarking money as \"for retirement\"). Describe a mechanism by which mental accounting could either strengthen or weaken the tendency toward undersaving, and suggest an intervention that exploits mental accounting to increase saving.\n\n**Answer:** Mental accounting can cut both ways on saving.\n\n**Savings obstacle** : If a household's mental account structure earmarks most income into spending categories — food, entertainment, clothing, transportation — then the money is psychologically pre-committed to consumption before the saving decision arrives. The act of designating money as \"savings\" requires actively moving money out of an existing spending category into a new account, which feels like a loss from the spending account (loss aversion) and requires deliberate effort (present bias compounds this). Mental accounts that default to consumption reinforce the tendency to undersave.\n\n**Savings facilitator** : If a dedicated \"retirement savings\" mental account is established — especially through automatic enrollment that pre-commits income to savings before it enters the spending budget — the saving decision is made once (at enrollment) and money is psychologically separated from the spending pool. Spending the retirement savings requires crossing a mental account boundary (\"taking money from retirement\") which carries psychological costs beyond the dollar amount. This is the facilitative mechanism: the mental account structure acts as a commitment device.\n\n**Intervention exploiting mental accounting** : \"Round-up\" savings programs (automatically rounding purchases to the nearest dollar and saving the difference) exploit mental accounting by coding savings as a small \"rounding error\" from each transaction — too small to register in any consumption account as a real debit, but cumulatively significant over time. The framing as a rounding residual prevents the saving from triggering the \"cost now, benefit later\" evaluation that present bias would defeat. A second intervention: label retirement sub-accounts with specific goals (\"vacation at 65,\" \"healthcare cushion,\" \"grandchildren's college\") rather than generic \"retirement savings\" — specific-goal accounts reduce the likelihood of early withdrawal because withdrawal requires overriding the specific purpose, which triggers a more deliberate evaluation than withdrawing from a generic fund.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 963,
+      "out_sha": "b0cac96afef0",
       "note": ""
     },
     {
@@ -1311,11 +1311,11 @@
       "en_title": "Chapter 9: Mental Accounting — How We Organize Our Money",
       "order": 101,
       "src_chars": 3362,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d6b966c34c1f",
       "src": "#### Think Deeper\n\n**Q1.** Mental accounting violates fungibility and produces sunk cost fallacies, house money effects, and other deviations from rational choice. Yet mental accounting may also serve important functions — budgeting, self-control, planning. Could it be that mental accounting is an adaptive response to the self-control problems described in Chapter 8? What would this imply for whether mental accounting is a \"bias\" or a \"feature\"?\n\n**Discussion:** This is a deep question about the distinction between bias and adaptation. Consider: a person with present bias and insufficient willpower who does not use mental accounting will systematically overspend from their total wealth in every period, leaving nothing for important future needs. Mental accounting — by creating strict categorical budgets with psychologically enforced limits — provides a self-control structure that a pure expected-utility maximizer doesn't need but a present-biased person may desperately benefit from.\n\nThe sunk cost fallacy, on this view, is not purely irrational. A commitment to \"not wasting sunk costs\" may be a precommitment device: if people know they will feel compelled to use things they paid for, they think more carefully before spending. This creates a countervailing force against overconsumption and impulse purchases — the knowledge that you'll feel obligated to use whatever you buy makes you more careful about what you buy.\n\nMental accounting serves the function of a budgeting system — which is an external self-control technology for people who lack the willpower to implement optimal consumption plans. The question of whether it is a \"bias\" or \"feature\" may be less about its logical structure (it violates fungibility, period) and more about its consequences: for people with strong self-control and accurate beliefs about their preferences, mental accounting is likely a net cost (introducing rigidity where flexibility would be better). For present-biased agents who face genuine self-control challenges, the rigidity of mental accounting may be an asset that increases overall welfare compared to the \"unaccounted\" alternative.\n\n**Q2.** The sunk cost fallacy is taught as a classic error in economics courses. But consider its social function: communities, organizations, and relationships may depend on people honoring commitments even when the \"rational\" forward-looking calculation would say to abandon them. Is the sunk cost fallacy always bad, or are there domains where it is socially beneficial to factor in past investments?\n\n**Discussion:** This question challenges the purely negative valuation of the sunk cost fallacy. Consider:\n\n_Relationship commitment_ : A person who says \"I've invested 5 years in this relationship, so I should honor that commitment\" is factoring in a sunk cost. From a forward-looking perspective, only future expected utility should matter. But from a social and evolutionary perspective, the disposition to honor commitments based on past investment builds reputation, trust, and the possibility of long-term cooperation. If people were purely forward-looking, they would defect from any relationship the moment future expected utility tips negative — producing a society of very short-term relationships with little room for trust. The sunk cost commitment can function as a credible signal of loyalty.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 935,
+      "out_sha": "4cda0085738c",
       "note": ""
     },
     {
@@ -1323,11 +1323,11 @@
       "en_title": "Chapter 9: Mental Accounting — How We Organize Our Money",
       "order": 102,
       "src_chars": 990,
-      "status": "pending",
+      "status": "done",
       "src_sha": "141f87c2eab5",
       "src": "_Organizational persistence_ : When teams commit to projects and factor in sunk costs in their evaluation of whether to continue, they may have a lower chance of abandoning projects at the first setback. In environments where projects require sustained effort over a long period and early obstacles are temporary, the sunk cost fallacy may increase the probability of reaching the payoff. The organizations that always abandon when forward-looking EV turns negative may systematically give up on projects that would have recovered.\n\n_Cultural institutions_ : Maintaining cultural practices, languages, and traditions often requires incurring costs beyond what pure forward-looking utility maximization would justify. The \"sunk cost\" of cultural inheritance — the investment of generations — creates moral pressure to continue that may preserve valuable social capital. The rational-agent model has no good theory of cultural transmission; sunk cost psychology may be part of the mechanism.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 257,
+      "out_sha": "14ee5763d442",
       "note": ""
     },
     {
@@ -1335,11 +1335,11 @@
       "en_title": "Chapter 9: Mental Accounting — How We Organize Our Money",
       "order": 103,
       "src_chars": 3025,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b33811f420e3",
       "src": "### Chapter Summary\n\nMental accounting is the cognitive organization of money and transactions into separate psychological accounts that are treated as non-fungible. Key manifestations include: the concert ticket experiment (demonstrating non-fungibility across accounts); hedonic editing (combining or separating outcomes to maximize subjective value); the house money effect (elevated risk-taking with windfall gains coded to a separate account); the sunk cost fallacy (past irrecoverable expenditures influence current decisions via open account closure pressure); and the credit card effect (decoupled payment reduces spending friction).\n\nThread B: mental accounting violates the rational agent model's core assumption of fungibility — that a dollar is a dollar regardless of source or account. The rational agent cares only about total wealth and future income; mental accounting creates an elaborate ledger of earmarked funds that regularly prevents welfare-maximizing reallocation.\n\nThread A: mental accounts around retirement savings can function as self-control devices, complementing automatic enrollment by making retirement funds psychologically inaccessible for current consumption without crossing a mental account boundary. This compounding of enrollment nudges with mental account structure is one reason the automatic enrollment approach outperforms financial education alone in improving retirement adequacy.\n\n**Thread C — The Replication Challenge:** Mental accounting offers a useful contrast with a nearby body of research that has fared far less well: behavioral priming. In the 2000s, researchers reported dramatic behavioral effects from subtle environmental cues — people briefly exposed to images of money became more self-sufficient and less helpful to others; people exposed to words associated with the elderly subsequently walked more slowly. If real, these effects would suggest that mental context shapes behavior with a reach and automaticity that would dwarf mental accounting effects. Large-scale pre-registered replications in the 2010s largely failed to reproduce these priming effects. The money-priming and social-priming literatures did not survive rigorous replication. By contrast, the core mental accounting findings reviewed in this chapter — credit card decoupling, sunk cost effects, budget constraints across accounts — have shown substantially more durable replication records. The contrast is instructive: proximity in topic (both concern how psychological framing shapes financial behavior) does not imply similarity in evidential quality. Thread C will return to this theme in Chapter 12 with the ego depletion case.\n\nChapter 10 shifts from individual decision-making to social interactions, asking: how do people value outcomes not just for themselves but relative to others? The answer reveals that fairness, reciprocity, and social comparison profoundly reshape economic behavior in ways the rational agent model — which considers only own payoffs — entirely misses.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 858,
+      "out_sha": "d214d7b42c16",
       "note": ""
     },
     {
@@ -1347,11 +1347,11 @@
       "en_title": "Chapter 10: Social Preferences I — Fairness, Ultimatum Games, and Inequality Aversion",
       "order": 104,
       "src_chars": 3096,
-      "status": "pending",
+      "status": "done",
       "src_sha": "76d5d9544811",
       "src": "Two people are chosen to split 100 USD. One person — the proposer — decides how to divide it. The other — the responder — can either accept the split (both players receive their shares) or reject it (both players receive nothing). What split does the proposer offer? What offers does the responder accept?\n\nIf both players are rational, self-interested, and this information is common knowledge, the game has a clear prediction. The responder prefers any positive amount to nothing — even 1 USD beats 0 USD. Anticipating this, the proposer should offer the smallest possible positive amount (say, 1 USD) and keep 99 USD. The responder accepts.\n\nThis is the equilibrium of the **ultimatum game** under standard game theory. It is almost never what actually happens. Proposers typically offer between 30% and 50% of the stake. Responders frequently reject offers below 20%, even when rejection means receiving nothing. The game reveals that people care about more than their own payoff — they care about fairness, relative outcomes, and the motivations of others.\n\n\n### 10.1 The Ultimatum Game: Design and Results\n\nThe ultimatum game is one of the most-replicated experiments in behavioral economics. The design is deliberately simple:\n\n  1. Two players are randomly paired.\n  2. The proposer is given a stake (say, 100 USD) and must propose a split (proposer gets x USD, responder gets 100-x USD).\n  3. The responder accepts or rejects.\n  4. If accepted: both players receive the proposed split. If rejected: both receive 0 USD.\n  5. The game is played once (to prevent reputation effects). Players are anonymous.\n\nThe anonymity and one-shot nature rule out strategic generosity: there is no future interaction, no reputation to build, no reciprocity across rounds. Whatever the proposer offers reflects their preferences in this isolated moment.\n\n**Typical results:**\n\n* Most offers cluster between 40-50% of the stake (near-equal splits)\n* Very few proposers offer less than 20%\n* Responders reject offers below 20-30% at rates of 40-60%\n* The rejection rate declines continuously as the offer rises above 20%\n\nThese results are inconsistent with pure self-interest. Under self-interest, responders should accept any positive amount (strictly prefer 1 USD to 0 USD) and proposers should offer the minimum. Neither prediction is supported.\n\n\n#### Thread B — Rational vs. Human Agent\n\n**Standard theory predicts (backward induction):** Step 1: Responder will accept any positive amount, since some money > no money. Step 2: Proposer, knowing this, offers the minimum positive amount. Equilibrium: proposer keeps 99 USD, responder receives 1 USD. Both are better off than if the game hadn't been played.\n\n**Humans do:** Proposers offer substantially more than the minimum (showing generosity or anticipation of rejection). Responders reject low offers (sacrificing money to punish an unfair proposer). Both behaviors require that utility be defined over more than own payoff — it must also depend on relative shares, the proposer's perceived intentions, or some intrinsic value placed on fairness.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1036,
+      "out_sha": "71f8ca14dc9e",
       "note": ""
     },
     {
@@ -1359,11 +1359,11 @@
       "en_title": "Chapter 10: Social Preferences I — Fairness, Ultimatum Games, and Inequality Aversion",
       "order": 105,
       "src_chars": 2079,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c0b962e3a2d4",
       "src": "### 10.2 The Dictator Game — Separating Generosity from Strategic Calculation\n\nA skeptic might argue: proposers offer 40-50% not because they care about fairness, but because they rationally anticipate rejection and make strategic offers. If proposers knew responders would accept anything, they'd offer 1 USD.\n\nThe dictator game tests this. In the dictator game, the proposer simply decides the split — the responder has no choice. There is no rejection; the split is implemented unconditionally. If proposers are purely strategically motivated, they should offer 0 USD in the dictator game (nothing to gain from generosity when rejection is impossible). If they genuinely care about fairness or others' welfare, they should still offer positive amounts.\n\n**Results:** Most dictators give positive amounts — typically 20-30% of the stake. This cannot be strategic calculation. It reflects genuine preferences for the welfare of others, for equal outcomes, or for adhering to a perceived fairness norm.\n\nThe dictator game establishes that at least some proposer generosity in the ultimatum game is not purely strategic. Real people have what economists call **social preferences** : preferences that include the welfare, payoffs, or treatment of other people as inputs to their own utility.\n\n\n#### Definition: Social Preferences\n\n**Social preferences** are preferences that depend not only on one's own payoff but also on the payoffs, well-being, or treatment of others. They include preferences for fairness (equal distributions are valued), altruism (others' welfare positively enters utility), and reciprocity (rewarding cooperation and punishing defection).\n\nIn plain language: people care not just about what they get, but about how it compares to what others get, and whether the process that produced the distribution was fair.\n\n\n### 10.3 Models of Social Preferences\n\nSeveral economic models have been developed to formalize social preferences. The best-established is the **inequality aversion model** , which provides a tractable formalization of fairness preferences.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 712,
+      "out_sha": "91df855f9cd0",
       "note": ""
     },
     {
@@ -1371,11 +1371,11 @@
       "en_title": "Chapter 10: Social Preferences I — Fairness, Ultimatum Games, and Inequality Aversion",
       "order": 106,
       "src_chars": 2784,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9d304c15e0f2",
       "src": "#### Definition: Inequality Aversion\n\nAn agent exhibits **inequality aversion** if they dislike unequal outcomes — both when they are disadvantaged (earning less than their partner) and when they are advantaged (earning more than their partner). The key feature: the disutility from disadvantageous inequality is greater than the disutility from advantageous inequality.\n\nThe inequality aversion utility function for player iii with payoff xix_ixi facing partner with payoff xjx_jxj is:\n\nU_i(x_i, x_j) = x_i - \\alpha_i \\max(x_j - x_i, 0) - \\beta_i \\max(x_i - x_j, 0)\n\nwhere:\n\n* \\alpha_i \\geq 0: disutility from disadvantageous inequality (envy)\n* \\beta_i \\geq 0: disutility from advantageous inequality (guilt)\n* \\beta_i < \\alpha_i: being on the short end hurts more than being on the long end\n\nIn plain language: your utility is your own payoff, minus a penalty for being treated unfairly (less than the other person), minus a smaller penalty for treating others unfairly (getting more than them).\n\n**Applying to the ultimatum game.** A responder with high \\alpha_i (strong envy / sense of unfairness) will reject offers where x_j - x_i is large — because the penalty from disadvantageous inequality exceeds the gain from accepting. A proposer with positive \\beta_i (guilt from advantageous inequality) will offer above the minimum even knowing rejection is possible — because keeping 99 USD when the partner gets 1 USD generates a guilt-based disutility.\n\n**Predictions.** Inequality aversion predicts:\n\n* Positive offers in the dictator game (proposers dislike giving nothing even when not forced)\n* Rejection of very unequal offers in the ultimatum game (responders prefer equality to an unfair split)\n* The specific rejection threshold varies with \\alpha_i — people with high envy reject lower offers; those with low envy accept\n\n\n#### Common Misconception\n\n**Misconception:** Rejecting a positive offer in the ultimatum game is irrational, because any money is better than none — a rational person should accept 1 USD rather than walk away with 0 USD.\n\n**Reality:** This is only true if you assume utility depends solely on own monetary payoff — which behavioral evidence clearly shows it does not. Under the inequality aversion model, a responder who rejects a 1 USD offer on a 100 USD stake may be doing exactly what maximizes their utility: the cost to their own payoff (x_i = 1) is outweighed by the reduction in the disutility term from large inequality (\\alpha_i \\max(x_j - x_i, 0) where x_j - x_i = 99). The rejection is _rational given the actual utility function_ — the mistake is in assuming the utility function only contains x_i. Calling this \"irrational\" is a category error: it conflates a narrow model of rationality (maximize own money) with rationality itself.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1041,
+      "out_sha": "5f13d63c2e07",
       "note": ""
     },
     {
