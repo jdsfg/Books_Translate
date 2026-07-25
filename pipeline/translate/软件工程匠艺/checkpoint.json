@@ -579,11 +579,11 @@
       "en_title": "Chapter 3: Local Git Craft",
       "order": 39,
       "src_chars": 3347,
-      "status": "pending",
+      "status": "done",
       "src_sha": "dd69230c51ad",
       "src": "#### Concept Check\n\n**Q1.** A teammate's PR contains a single commit titled \"fix payment bug + small refactor + extract helper\" with 380 lines across 11 files, half of which are unit tests for a new util function unrelated to the payment fix. You are reviewing it. Three weeks from now a regression test fails and someone needs to bisect to find when it started failing. What specific problems will this commit's shape cause for the future bisect, and what would you ask the author to change before merging today?\n\nHint\n\nApply §3.1's three properties (single change, buildable, descriptive message) and §3.3's failure modes.\n\n**Answer:** Three problems the bisect will hit when it lands on this commit:\n\n  1. **Surface area is too large.** The bisect tells you \"the bug started somewhere in these 380 lines across 11 files.\" That is no better than not bisecting; you still have to read 380 lines to find the actual cause. An atomic commit shrinks the surface to one conceptual change (usually 30–80 lines).\n  2. **Mixed concerns confuse the diagnosis.** Bisect lands on a commit that does three things; the actual bug-causing change is one of them. You cannot tell which without reading the whole diff.\n  3. **Revert is at the wrong granularity.** When the bisect finishes, \"revert this commit\" reverts the payment fix _and_ the refactor _and_ the helper. You may need to manually un-revert the parts you want to keep, which is slow and error-prone.\n\nAsk the author to split: one commit for the payment fix (with a test of the bug), one commit for the small refactor, one commit for the extracted helper. Each commit should leave the tree buildable so future bisects do not have to skip midpoints. The split takes 10 minutes today; the bisect saves hours later, the first time it is needed.\n\n**Q2.** A teammate proposes that \"we should always squash all PR commits into one before merging, because main should have one commit per feature.\" Defend or refute the proposal using the §3.5 storytelling principle.\n\nHint\n\nThink about who reads `main`'s history and for what purpose.\n\n**Answer:** The proposal has some merit and some cost. The merit: a one-commit-per-PR `main` history is easy to scan with `git log --oneline`, and reverts at the PR granularity are simple. The cost: bisect granularity drops to the PR level. A 1,500-line PR squashed into one commit gives bisect a much larger surface area than the same 1,500 lines split into seven atomic commits.\n\nA defensible compromise is the _merge-commit-with-preserved-history_ option: the PR is merged with a merge commit, but the individual commits within the PR are preserved on `main`. `git log --first-parent` then shows the PR-level history (one entry per merge); `git log` without that flag shows full granularity for bisect. This gives both views.\n\nThe strong version of the proposal (always squash) trades bisectability for tidiness. For a team that bisects often, this is a poor trade. For a team that never bisects (because the test suite catches regressions before merge, or because the codebase is small), it may be fine. The choice should be explicit; the dogma is not.\n\n**Q3.** When is rebase the right choice and when is merge the right choice? Give a specific scenario for each.\n\nHint\n\n§3.2's practical rule lists four cases. Pick one rebase case and one merge case.\n\n**Answer:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1413,
+      "out_sha": "0c2d970fc221",
       "note": ""
     },
     {
@@ -591,11 +591,11 @@
       "en_title": "Chapter 3: Local Git Craft",
       "order": 40,
       "src_chars": 2972,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5ec35e7bf0c8",
       "src": "Rebase scenario: You are working on a feature branch alone; you have made eight commits, four of which are WIP or fixup; `main` has moved on by twelve commits since you branched. Before opening a PR, you rebase onto `main` and use interactive rebase to clean up your eight commits into three atomic commits with polished messages. Reviewer sees a clean three-commit PR on top of current `main`; bisects work cleanly; no merge commits clutter the history.\n\nMerge scenario: Your team operates a release branch (`release-2.7`) that has diverged from `main` for two weeks; bug fixes have landed on both branches. You merge `main` into `release-2.7` to bring the release in line with the latest fixes, producing a merge commit. The merge commit honestly records that the two streams of work were parallel and have been reconciled; rebasing `release-2.7` onto `main` would rewrite hashes that other engineers have based work on and would break their environments.\n\n**Q4.** Three scenarios. For each, say whether `git reflog` will save you, and if so what command sequence to run:\n\n(a) Forty minutes ago you ran `git reset --hard HEAD~5` to throw away some experimental work, then realized one of the commits you discarded had a fix you actually wanted. No `git gc` has run since.\n\n(b) Yesterday you force-pushed your `feature/x` branch to overwrite a teammate's force-push of the same branch (you didn't realize they had work there). Their work is no longer on the remote, and your local never had it.\n\n(c) An hour ago you saved a file with extensive edits but had not yet run `git add`. You then ran `git checkout main` and lost the edits to the working-tree restore.\n\nHint\n\nThe reflog is _your local_ HEAD history, not a remote backup or a working-tree journal.\n\n**Answer:**\n\n(a) **Yes, reflog saves you.** Run `git reflog`, find the HEAD@{N} just before the `reset --hard`, then `git reset --hard HEAD@{N}` (or cherry-pick the specific commit you want back). The orphaned commits are still in the object store; the reflog points to them. You have 30 days before `gc.reflogExpireUnreachable` cleans them up.\n\n(b) **No, your reflog cannot help.** Your reflog records _your_ HEAD's history. The teammate's commits never touched your local repo; your reflog has no entries for them. They might recover from their own reflog if their local still has the work; otherwise the commits are gone. (This is why force-push on shared branches is the moment to ask the team, not the reflog.)\n\n(c) **No.** Uncommitted working-tree changes never enter the Git object store. The reflog tracks HEAD movements; it does not journal file contents. The edits are lost. (Some editors keep their own undo history that may help; check VS Code's local history, JetBrains' local history. But Git itself cannot help.)\n\nThe general rule: the reflog rescues _committed_ work that has become unreachable from any branch ref. It does not rescue uncommitted work, and it does not rescue someone else's work.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1370,
+      "out_sha": "0efb74c72a73",
       "note": ""
     },
     {
@@ -603,11 +603,11 @@
       "en_title": "Chapter 3: Local Git Craft",
       "order": 41,
       "src_chars": 3363,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bd01737ae5f2",
       "src": "#### Application Problems\n\n**Q5.** Take a recent PR you have merged (or use the synthetic PR below). Examine its commit history. Could it be split into more atomic commits? Could messages be rewritten to better state the why? Produce a `git rebase -i` plan that would improve the history.\n\nSynthetic PR: a single commit titled \"Add user permissions feature\" containing: a new `Permission` type, a new `PermissionService` class with read and write methods, changes to `AccessGuard` to consume the service, changes to three existing routes to enforce permissions, a typo fix in a comment in an unrelated file, and 23 new tests.\n\nHint\n\nLook for independent conceptual changes that could be reviewed and reverted separately.\n\n**Answer:** A reasonable split:\n    \n    \n    pick a1b2c3d Extract Permission type into src/auth/types.ts\n    pick d4e5f6a Add PermissionService (read methods only)\n    pick b7c8d9e Add PermissionService write methods\n    pick c1d2e3f Inject PermissionService into AccessGuard\n    pick f4a5b6c Enforce permissions in /api/leads\n    pick g7h8i9j Enforce permissions in /api/accounts\n    pick j0k1l2m Enforce permissions in /api/users\n    drop k0l1m2n   # the unrelated typo fix belongs in its own PR\n    \n\nEight conceptual changes (or seven, dropping the typo). Each can be reviewed, bisected, and reverted independently. Each message states what changed and why. The typo fix is dropped because it does not belong in this PR; it should be a separate one-commit PR. The rebase produces a history that, six months from now, makes \"when did we add write permissions for the users API?\" answerable in one `git log --oneline | grep` instead of requiring a deep dive.\n\n**Q6.** A production bug has appeared. The test `test_payout_rounding_eu` started failing yesterday on `main`, and the last known good version is the tag `v3.8.0` from six weeks ago. Walk through the bisect you would run. What are the inputs, what are the expected commands, and what would you do if the bisect lands on a commit that does not build?\n\nHint\n\n§3.3's basic workflow plus the failure mode discussion.\n\n**Answer:** The bisect:\n    \n    \n    $ git bisect start\n    $ git bisect bad HEAD\n    $ git bisect good v3.8.0\n    $ git bisect run npm test -- test_payout_rounding_eu\n    \n\nExpected: Git binary-searches the range, runs the test at each midpoint, marks each as good or bad, and after roughly 8-10 steps reports the first bad commit. Total wall-clock time depends on test speed; for a 30-second test, the bisect completes in 5-8 minutes.\n\nIf a midpoint commit does not build: bisect run will exit with a non-zero code, and Git may interpret that as \"bad\" or may mark the commit as `skip`. The fix is to detect the build failure explicitly in the bisect command and exit 125 (the special \"skip this commit\" code):\n    \n    \n    $ git bisect run sh -c 'npm install || exit 125; npm run build || exit 125; npm test -- test_payout_rounding_eu'\n    \n\nThis skips non-buildable midpoints rather than misclassifying them, and bisect continues with the buildable neighbors. If too many commits in the range are non-buildable, the bisect may return inconclusive; at that point, the deeper fix is to enforce buildability per commit going forward (§3.1's atomic-commit discipline). For the current bisect, you fall back to reading the commits in the unresolved range manually.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1734,
+      "out_sha": "669fb50ab0bd",
       "note": ""
     },
     {
@@ -615,11 +615,11 @@
       "en_title": "Chapter 3: Local Git Craft",
       "order": 42,
       "src_chars": 1464,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5e498745dcc1",
       "src": "**Q7.** Set up your editor and shell so that the atomic-commit and notebook disciplines from this chapter and Chapter 2 are habitual rather than effortful. Describe (a) the keybinding or alias you would add to make `git add -p` one keystroke, (b) the commit-message template you would put in `~/.gitmessage`, (c) the shell alias you would add for `git log --oneline --graph --decorate`.\n\nHint\n\nAliases reduce the friction; the friction is what kills the discipline.\n\n**Answer:** Three concrete configurations:\n\n(a) A Git alias for partial staging:\n    \n    \n    $ git config --global alias.ap \"add --patch\"\n    # now `git ap file.ts` enters patch mode\n    \n\nOr a shell alias:\n    \n    \n    alias ga=\"git add --patch\"\n    \n\n(b) A commit-message template at `~/.gitmessage`:\n    \n    \n    # Subject: imperative mood, <= 50 chars, no trailing period\n    #\n    # Why this change is needed (not what it does; the diff shows that).\n    # Wrap at 72 chars.\n    #\n    # Refs: TICKET-123\n    \n\nAnd enable it:\n    \n    \n    $ git config --global commit.template ~/.gitmessage\n    \n\n(c) A pretty log alias:\n    \n    \n    $ git config --global alias.lg \"log --oneline --graph --decorate --all\"\n    # now `git lg` shows the graph\n    \n\nThe point is not the specific commands but the principle: reduce friction on the disciplines you want to be habits. An engineer who has to type 30 characters to do partial staging will not partial-stage; an engineer who types `git ap` will.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 809,
+      "out_sha": "3cd7ac5e017e",
       "note": ""
     },
     {
@@ -627,11 +627,11 @@
       "en_title": "Chapter 3: Local Git Craft",
       "order": 43,
       "src_chars": 2047,
-      "status": "pending",
+      "status": "done",
       "src_sha": "10398d838f7a",
       "src": "#### Think Deeper\n\n**Q8.** Argue for and against the position that \"in 2026, with AI agents making commits, the atomic-commit discipline is more important than ever.\" What changes about commits when an agent makes them?\n\n**Discussion:** For the position: agents produce code much faster than humans, so a given session produces more commits in less time; the _volume_ of history requiring review and maintenance has gone up, and the per-commit clarity has to compensate. An agent that emits 30 commits in an hour with vague messages produces an unreadable history; an agent that emits 30 atomic commits with clear messages produces a readable one. The discipline is therefore _more_ important because the alternative is worse.\n\nAgainst the position: agents are inconsistent about message quality and atomicity; expecting the discipline to scale to agent output may be unrealistic; perhaps the right approach is to _squash_ agent commits into one human-reviewed commit at the end of the session, abandoning atomicity in exchange for a cleaner reviewer experience. In this view, the discipline shifts from \"commits as you go\" to \"commits at session end, after human review.\"\n\nThe synthesis: both views have merit and the right answer depends on the agent's trustworthiness in a given codebase. For a well-tuned agent in a codebase with a strong CLAUDE.md (Chapter 22), atomic agent commits are achievable and the discipline scales. For an unfamiliar agent or a new codebase, squashing at session end and producing one human-curated commit may be safer. Most teams in 2026 land somewhere between: agents commit per atomic change, humans rebase-interactive before pushing, the published history is a curated story even though the working history was agent-driven.\n\n**Q9.** Trace the chain of dependencies between Git craft (this chapter) and the other compounding disciplines named in Chapter 1 (testing, refactoring, naming, code review, ADRs). For each of those disciplines, name one specific way Git craft enables or constrains it.\n\n**Discussion:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 715,
+      "out_sha": "8d093e193887",
       "note": ""
     },
     {
@@ -639,11 +639,11 @@
       "en_title": "Chapter 3: Local Git Craft",
       "order": 44,
       "src_chars": 3479,
-      "status": "pending",
+      "status": "done",
       "src_sha": "aff239a1177c",
       "src": "* **Testing** : Bisect requires the test suite to be reliable enough to use as a binary decision oracle. So Git craft _requires_ test-suite craft; the two compound together. Chapter 6's mutation testing makes the test suite a sharper decision oracle, which makes bisects faster.\n* **Refactoring** : Atomic commits are a refactoring enabler. The Fowler refactorings (Chapter 9) are most safely applied in small, reviewable, revertable steps; the atomic commit is the natural granularity for each step. Without atomic commits, refactoring is risky because the commit-level revert is at the wrong granularity.\n* **Naming** : A commit message is itself an act of naming. The discipline of writing imperative, specific, atomic messages exercises the same skill as naming functions and types well. Engineers who write good commit messages also tend to write good function names; the skills correlate strongly.\n* **Code review** : A PR with seven atomic commits is seven small reviews; a PR with one giant commit is one large review. The reviewing engineer's mental load (Chapter 15) is dramatically lower with atomic commits; the discipline of Git craft is therefore a gift to the team's reviewing capacity.\n* **ADRs** : A well-written commit message that explains _why_ a change was made is a micro-ADR (Chapter 17). For decisions too small for a full ADR but too important for an empty commit message, the message is the only persisted explanation. Git craft is therefore the substrate on which lightweight decision documentation lives.\n\nThe compounding is multi-directional: Git craft enables the other disciplines, and the other disciplines reward Git craft with their accumulated value. An engineer who invests in all of them simultaneously sees the compound interest in the second year; an engineer who invests in only one sees flat returns.\n\n\n### Chapter Summary\n\nLocal Git craft is the substrate on which most of the rest of this book stands. The atomic-commit discipline (§3.1) is the foundation: every later technique (bisect, review, revert) is more powerful with atomic commits and less powerful without. Rebase and merge are tools for different jobs (§3.2); the dogma against either is wrong. `git bisect` (§3.3) turns hours of debugging into minutes, but only when the commits are atomic and the tests are deterministic; the reflog (§3.4) is the safety net that makes destructive operations recoverable; interactive rebase (§3.5) is the storytelling tool that turns a working draft of commits into a published essay.\n\nIn 2026 with AI agents making commits (§3.6), the discipline scales by being specified to the agent in CLAUDE.md / AGENTS.md (Chapter 22) and enforced via human rebase before push. Reading the agent's commit history is itself a Thread C catching tool: small flurries of fixups signal Lies #5 and #6, multi-file consistency-only commits signal Lies #2 and #3.\n\nChapter 4 takes these local skills to the team level: branching doctrine, Conventional Commits, semantic versioning, feature flags, the agent-PR workflow. The local skills compound when the team adopts them; the team skills compound when the locals are already in place. Reading old code (Chapter 2) becomes easier with good local Git craft because `git blame` and `git log` work; refactoring under test (Chapter 10) becomes safer because bisect can find the regression that the refactor introduced; the disciplines stack. The investment is one of the highest-return investments in this book.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1236,
+      "out_sha": "35c13002cc87",
       "note": ""
     },
     {
@@ -651,11 +651,11 @@
       "en_title": "Chapter 3: Local Git Craft",
       "order": 45,
       "src_chars": 843,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b50715e50cc9",
       "src": "#### Three Takeaways\n\n  1. **Try`git add -p` as your default for the next sprint.** Stage hunk by hunk rather than `git add .`; commit each conceptual change separately. Painful for one PR, reflexive after three. If it costs more than it saves after a sprint, drop it — but most engineers who try find it sticks.\n  2. **Configure your shell aliases for the disciplines you want to be habits.** `git ap` for partial staging, `git lg` for the pretty graph, `~/.gitmessage` for the commit-message template. Friction is what kills the habit; aliases remove the friction.\n  3. **The next time you have a regression of unknown origin, reach for`git bisect run` before reaching for the debugger.** Write the failing test, name the last known-good tag, walk away while Git binary-searches. The answer arrives in minutes; the alternative is hours.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 355,
+      "out_sha": "23579ac12396",
       "note": ""
     },
     {
