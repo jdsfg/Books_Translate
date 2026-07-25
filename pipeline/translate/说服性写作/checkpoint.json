@@ -863,11 +863,11 @@
       "en_title": "Chapter 4: College Supplements (Why Us / Why You / Why This Major)",
       "order": 65,
       "src_chars": 3321,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e7742d9ce694",
       "src": "#### Application Problems\n\n**Q1. Diagnose this opening.**\n\n> Stanford has captured my imagination since I was a young child. Its commitment to academic excellence, its world-class faculty, and its vibrant student community make it the ideal place for me to pursue my passion for computer science.\n\nRun the 6 Moves and identify the pitfalls.\n\nHint\n\nThis opening commits at least three of the named pitfalls.\n\n**Answer:** Move 1 failed (no school-specific work signaled). Move 2 failed (no Specific Fact about Stanford; the named features apply to any selective school). Move 3 failed (the _captured my imagination since I was a young child_ phrasing is on the implicit do-not list). Move 4 failed (zero Specific Objects). Move 6 failed (an AI given the prompt _write a Why-Stanford supplement for a CS applicant_ would produce exactly this).\n\nPitfalls committed: brochure echo (_vibrant student community, world-class faculty, academic excellence_); the \"perfect fit\" close (here in the opening as _the ideal place for me_); the always-having claim (_captured my imagination since I was a young child_).\n\n**Q2. Rewrite this supplement using two specific Stanford facts.**\n\nA candidate is applying to Stanford as a prospective CS major. They have done a summer Python project building a small recommendation engine for their school library. Write a 200-word _why Stanford_ supplement that uses at least two specific Stanford-only facts (you may invent plausible specific facts: a specific course code with title, a specific faculty member's research direction, a specific feature of Stanford's CS curriculum). The supplement should pass all six moves.\n\nHint\n\nThe candidate's library-project vignette is reusable. The Stanford facts are not.\n\n**Answer:**\n\n> Stanford CS 224W (_Machine Learning with Graphs_) is the course I would not be ready for if I applied next year, and I want the year of preparation it would take. My summer recommendation engine for my school library did the easy part, content-based filtering on book metadata, and broke when I tried to model what 320 patrons borrowed in what sequence over two years. The graphs version is what I could not figure out. Professor Leskovec's lecture notes (which I have read in pieces, mostly the parts I could mostly understand) are the closest thing I have found to a textbook for the question I was actually trying to ask. Stanford's CURIS program is the second reason I am applying: I want to do, with someone else's supervision, the kind of project I tried to do alone last summer. I would bring back to the library, both the Stanford library and my school library, whatever recommendation engine the next attempt produces. I would also like to take the metadata I have already collected to a faculty member who would know what to do with it.\n\nThis passes all six moves: Move 1 (Janet reads the candidate as having done specific work), Move 2 (the Specific Story is the broken recommendation engine), Move 3 (CS 224W is a Specific Fact placed in motion), Move 4 (six Specific Objects: 224W, 320 patrons, Professor Leskovec's lecture notes, CURIS, the school library, the metadata), Move 5 (the reciprocal-fit sentence about bringing the engine back), Move 6 (the broken-engine vignette is not generic).\n\n**Q3. Insert one Specific Object that you actually hold.**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1197,
+      "out_sha": "937c535feb2d",
       "note": ""
     },
     {
@@ -875,11 +875,11 @@
       "en_title": "Chapter 4: College Supplements (Why Us / Why You / Why This Major)",
       "order": 66,
       "src_chars": 2010,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1145c0d93800",
       "src": "Below is a generic supplement opening — the kind that could belong to any candidate. Rewrite it so that one Specific Object you (the reader) genuinely own, have used, have read, or have built in the past year anchors the opening. The Object should be nameable in a phrase (\"a green plastic Saturday-school radio,\" \"the second-edition copy of _Norwegian Wood_ my aunt mailed me\"). Keep the rewrite to about 80 words.\n\n> Princeton's emphasis on undergraduate research and small-class discussion is what draws me. I have always loved the intersection of literature and history, and I am looking for a program that lets me explore both rigorously. Princeton's reputation for producing thoughtful, engaged graduates makes it the natural place for me to spend the next four years.\n\nHint\n\nPick an Object that is on your desk, in your bag, or in your phone's photo roll right now. The Object should carry your fingerprints — something a different candidate could not have written about. If the Object is a book, name the edition and what page you are stuck on. If a tool, name the project it has been on.\n\n**Answer:** Answers will vary; the discipline is in whether the Object is genuinely yours. A passing rewrite:\n\n> The history of the Atlantic slave trade I am currently reading — Marcus Rediker's _The Slave Ship,_ the copy with the brittle library-sale sticker still on the spine — has me stuck on the chapter about the ship's surgeons, because I do not yet have the vocabulary to argue with it. Princeton's HIS 388 with Professor Sandra Greene is where I would learn the vocabulary. I would also bring back to Princeton's Africana Studies reading room the marginalia I have been keeping in the back of the Rediker.\n\nThe rewrite earns the read because the Object (the specific Rediker copy, with its sale sticker) is one this candidate alone could have placed on the page. The next round of revision should add a second Princeton-specific fact; the Object has done the harder work of making the opening _theirs_.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 655,
+      "out_sha": "47381fda58f9",
       "note": ""
     },
     {
@@ -887,11 +887,11 @@
       "en_title": "Chapter 4: College Supplements (Why Us / Why You / Why This Major)",
       "order": 67,
       "src_chars": 2848,
-      "status": "pending",
+      "status": "done",
       "src_sha": "787d7f4bab75",
       "src": "#### Think Deeper\n\n**Q1.** The chapter argues that the supplement is often the deciding factor between two comparable applicants. Yet many applicants treat the supplements as last-minute work. Explain the gap. Why do candidates underweight a form that admissions readers weight so heavily?\n\n**Discussion:** Several explanations are partly true. The personal essay is more emotionally salient — it feels like the _real_ essay, while supplements feel like paperwork. Candidates overestimate the marginal effect of the personal essay and underestimate the supplements'. By the eighth or twelfth supplement, cognitive bandwidth has run out. High school counselors often emphasize the personal essay disproportionately, reinforcing the misallocation. The chapter's claim is empirical: at the margin, in committee, the supplements decide. The candidate who allocates effort to match the deciding factor outperforms peers who allocate by emotional salience.\n\n**Q2.** Recycling supplements is officially discouraged. In practice, almost all candidates do some recycling. Where is the line between _reasonable recycling_ and _paste-and-swap betrayal_?\n\n**Discussion:** The line is roughly: reuse content about _yourself_ that does not change between schools (a vignette about Saturday tutoring, a paragraph about your intellectual orientation). Do not reuse content about the _school_ that should change between schools (specific courses, faculty members, programs). The deeper test: if you remove school names from the recycled portion, does it still read coherently? If yes, it is reasonable recycling. If the recycled portion contains course codes or faculty names that have to be swapped, it is paste-and-swap and likely to be detected. The book's stronger claim: the school-specific paragraph should be written from scratch each time, no exceptions.\n\n**Q3.** The \"why this major\" supplement is a curiosity test. Some majors are easier to demonstrate curiosity for than others. A candidate applying as a CS major can point to coding projects; a candidate applying as a history major has fewer obvious props. How should the candidate for a less-prop-heavy major demonstrate curiosity?\n\n**Discussion:** Reading is the universal prop. A candidate who has read three books about a historical period and can articulate what each one missed has demonstrated curiosity. So has one who has visited an archive, read a primary source in translation, written an unassigned research paper, or attended a free public lecture. Every academic discipline has _some_ artifact a curious 17-year-old can produce. The candidate who has not produced one is not yet ready to claim the major; the candidate who has should describe it specifically. The \"why this major\" supplement is partly a filter — it surfaces who has done their own work and who has only filled out forms.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 895,
+      "out_sha": "a4fea720f655",
       "note": ""
     },
     {
@@ -899,11 +899,11 @@
       "en_title": "Chapter 4: College Supplements (Why Us / Why You / Why This Major)",
       "order": 68,
       "src_chars": 990,
-      "status": "pending",
+      "status": "done",
       "src_sha": "702ee1106aae",
       "src": "### Chapter Summary\n\nThe supplement is the form most candidates underweight and most admissions readers weight heavily. Its convention is specificity: specific facts about the school that the candidate could only have learned by doing real research, paired with specific facts about the candidate that connect to those facts. Brochure language is the dominant pitfall; the AI test is harsher for supplements than for the personal essay.\n\nThe recycling matrix allows reasonable reuse of personal vignettes while keeping school-specific paragraphs fresh per school. The reciprocal-fit convention asks the candidate to claim what they would bring to the school's community, not only what the school would do for them.\n\nThe next chapter (Chapter 5) treats the graduate personal statement, where Janet is replaced by a graduate-program faculty committee with a different reading question altogether: not _who is this person?_ but _what research direction is this person prepared to pursue?_\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 304,
+      "out_sha": "37c036804bbd",
       "note": ""
     },
     {
@@ -1019,11 +1019,11 @@
       "en_title": "Chapter 5: The Graduate School Personal Statement",
       "order": 78,
       "src_chars": 1804,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b20c6a633e16",
       "src": "#### Concept Check\n\n**Q1.** What is the central reorientation between the undergraduate essay and the graduate statement?\n\n**Answer:** The reader's question shifts from _who is this person?_ to _what research direction is this person prepared to pursue?_ Graduate readers read for evidence of a research orientation; childhood anchors and emotional vulnerability are out of place. The graduate statement is a research document with the candidate behind it, not a personal narrative with intellectual gestures.\n\n**Q2.** Why is the statement _I am interested in cognitive neuroscience_ insufficient as a graduate research interest?\n\n**Answer:** It is a topic, not a question. Topics are too broad to indicate readiness for graduate-level research. A question is more specific (e.g., _I want to understand whether the bilingual advantage in attentional control is robust across socioeconomic strata_). The question may turn out to be wrong or may be revised; what matters is that the candidate can articulate one.\n\n**Q3.** What four questions should each piece of evidence in a graduate statement answer?\n\n**Answer:** (1) What was the question being investigated? (2) What did the candidate specifically do? (3) What was the result, and what did the candidate learn (including from what did not work)? (4) How does this lead to the candidate's current research interest?\n\n**Q4.** Why is the over-confident closing a pitfall in graduate statements?\n\n**Answer:** Graduate committees know that two-year and six-year research predictions are rarely accurate. A candidate who claims certainty about exactly what they will work on for years signals naivety about how research evolves. The Restrained Connection from Chapter 2 applies: state plans concretely while acknowledging the specific question will evolve.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 601,
+      "out_sha": "67bc87c37e40",
       "note": ""
     },
     {
@@ -1031,11 +1031,11 @@
       "en_title": "Chapter 5: The Graduate School Personal Statement",
       "order": 79,
       "src_chars": 3438,
-      "status": "pending",
+      "status": "done",
       "src_sha": "247499699d27",
       "src": "#### Application Problems\n\n**Q1. Convert undergraduate to graduate register.**\n\nA candidate's draft graduate statement opens:\n\n> Ever since I was a child, I have been fascinated by the human brain. Watching my grandmother decline from Alzheimer's disease over the past decade has shaped my understanding of memory and identity in profound ways. As an undergraduate, I have pursued these interests through coursework in psychology, neuroscience, and philosophy.\n\nRewrite this opening in the graduate register. You may invent plausible specifics consistent with a candidate interested in memory research who has worked in a behavioral neuroscience lab and has co-authored a poster.\n\nHint\n\nThe childhood-anchor opening must go. Replace with a research question and a specific prior project.\n\n**Answer:**\n\n> The question I am applying to study is how spatial reorganization of memory traces during sleep is altered in early-stage Alzheimer's, and whether the alteration precedes overt cognitive decline. The question came into focus during my senior thesis in Professor Reinhart's lab, where I helped run a polysomnography study of 24 participants in the early-MCI stage and 24 age-matched controls. We found a 38% reduction in slow-wave sleep coherence between hippocampal and prefrontal sites in the MCI group, replicating recent work from the Stickgold lab but in a cohort of slightly earlier disease progression. The grandmother-with-Alzheimer's anchor (which is true; my grandmother was diagnosed when I was eleven) is not why I am applying to graduate school. The 38% finding, and what it does and does not yet imply, is.\n\nThe rewrite preserves the personal anchor as a brief acknowledgment in the second-to-last sentence rather than as the opening. The opening is the research question and the senior-thesis evidence. The candidate's identity remains visible without dominating the document.\n\n**Q2. Diagnose the fit paragraph.**\n\n> I would be honored to work with the distinguished faculty at MIT, including Professor X, Professor Y, and Professor Z, all of whom have made significant contributions to the field. I look forward to engaging with cutting-edge research and contributing to the vibrant intellectual community at MIT.\n\nIdentify the pitfalls and rewrite the paragraph using two specific faculty engagements.\n\nHint\n\nThe current version commits the faculty-name-drop pitfall and the brochure-echo pitfall.\n\n**Answer:** Pitfalls: faculty-name-drop without engagement (X, Y, Z named but no specific reason); brochure echo (_distinguished faculty, significant contributions to the field, cutting-edge research, vibrant intellectual community_); inflated language (_I would be honored_); generic closing.\n\nA rewrite (using specific made-up faculty for illustration):\n\n> I would most want to work with Professor Tenenbaum, whose 2020 paper on probabilistic program induction frames a question I have been pursuing in my honors thesis on category learning under sparse data. The hierarchical-Bayesian framework his lab uses would give me the machinery to test the specific generalization question my behavioral data raise. I am also drawn to Professor Saxe's work on the developmental origins of theory of mind; her use of fMRI in 4- to 8-year-olds is exactly the methodological orientation I would like to learn, and the question of how Bayesian frameworks scale to younger participants is one I expect to encounter in my own work.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1164,
+      "out_sha": "6a89e2508966",
       "note": ""
     },
     {
@@ -1043,11 +1043,11 @@
       "en_title": "Chapter 5: The Graduate School Personal Statement",
       "order": 80,
       "src_chars": 3115,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bc5ee2013130",
       "src": "The rewrite engages with two faculty members specifically, names a paper and a methodological framework for one and a developmental application for the other, and connects each to the candidate's prior work. The reader can verify that the candidate has done the engagement.\n\n\n#### Think Deeper\n\n**Q1.** The chapter argues that a personal anchor (e.g., a grandmother with Alzheimer's) belongs as a brief acknowledgment, not as the opener, in a graduate statement. Some statements successfully open with a personal scene. What makes a personal opener work in this register, when it works?\n\n**Discussion:** A personal opener can work in a graduate statement when it is _very brief_ (one to three sentences), _specifically tied to a research question,_ and _immediately followed_ by the research question in concrete form. The opener is not narrative; it is a hook that says _here is the personal entry point to a question I will now describe in research terms._ The pattern is: scene (one sentence), connection (one sentence), research question (one to two sentences). What does not work: a paragraph of personal narrative without the research question following immediately. The reader needs to know within the first 60 seconds that the document is a research document; longer personal narratives delay this signal.\n\n**Q2.** The chapter recommends naming exactly two to three faculty in the fit paragraph. Why not name one (showing focus) or five (showing thoroughness)?\n\n**Discussion:** One signals over-reliance on a single advisor. Graduate-level work usually requires distributed mentorship; a candidate who has identified only one possible advisor signals they have not yet imagined the program's actual structure (multiple committee members, breadth requirements, methodological cross-pollination). Five signals lack of focus or padding. Two to three is the range that signals _I have done the work to identify specific fit and have selected the most relevant among them._ The deeper observation: the number itself is less important than the specificity of engagement with each. One faculty named with deep engagement is better than five named with shallow engagement.\n\n**Q3.** Honest acknowledgment of uncertainty (e.g., _my research interest may shift; I do not yet know if I will pursue a PhD_) is a recommended convention in the closing. Could honesty about uncertainty be misread as lack of commitment? When does honesty cross into self-undermining?\n\n**Discussion:** The line falls roughly here: honest acknowledgment of _intellectual_ uncertainty (the question may evolve; the methods may shift; the eventual specialization is not yet set) signals research maturity. Self-undermining acknowledgment of _commitment_ uncertainty (_I might decide graduate school isn't for me;_ _I haven't really thought about whether I'm a good fit_) signals the wrong thing. The chapter's recommended honesty is the first kind. It does not say _I might not finish._ It says _I expect the specific question to evolve; I will use the program to find out._ The committee reads the first as maturity and the second as warning.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 900,
+      "out_sha": "8ff9bf0687e5",
       "note": ""
     },
     {
@@ -1055,11 +1055,11 @@
       "en_title": "Chapter 5: The Graduate School Personal Statement",
       "order": 81,
       "src_chars": 857,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cc961d346bb1",
       "src": "### Chapter Summary\n\nThe graduate personal statement is a research document with the candidate behind it, not a personal narrative with intellectual gestures. The reader is Professor Lay on a Saturday morning, looking for a research direction and evidence the candidate is prepared to pursue it.\n\nThe 6 Moves recalibrate to the graduate register: Move 2 finds a research story; Move 3's hook is the research question; Move 4's specifics are paradigms, papers, methods, and results; Move 6's AI test is harsher because graduate statements are highly vulnerable to AI generation.\n\nThe next chapter (Chapter 6) treats the PhD statement of purpose, where the genre tightens further: the same conventions plus the apprenticeship logic of doctoral admission, where committees are choosing future colleagues and the candidate must signal future-colleague fit.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 267,
+      "out_sha": "2bcf5c981362",
       "note": ""
     },
     {
@@ -1175,11 +1175,11 @@
       "en_title": "Chapter 6: The PhD Statement of Purpose",
       "order": 91,
       "src_chars": 3346,
-      "status": "pending",
+      "status": "done",
       "src_sha": "51578c6dcd26",
       "src": "#### Application Problems\n\n**Q1. Diagnose this opening.**\n\n> Throughout my undergraduate career, I have developed a deep passion for understanding the complex dynamics of climate science. From my freshman year, when I took my first introductory course on climate change, I have been captivated by the urgent questions our planet faces, and I have pursued these questions through coursework, internships, and research opportunities.\n\nRun the 6 Moves and identify the pitfalls.\n\nHint\n\nThe opening commits multiple pitfalls of the undergraduate-register type.\n\n**Answer:** Move 1 failed (faculty reader registers undergraduate-register). Move 2 failed (no specific research direction; _climate science_ is a topic). Move 3 failed (the _deep passion_ and _captivated by urgent questions_ register is wrong-genre). Move 4 failed (zero specifics — no projects, no methods, no findings). Move 6 failed (an AI given the prompt _write a PhD SOP for a climate science applicant_ would produce this).\n\nPitfalls: undergraduate-register; CV-in-prose (the _coursework, internships, research opportunities_ enumeration); inflated-language (_deep passion, urgent questions our planet faces_).\n\n**Q2. Rewrite using the four-sentence template.**\n\nThe candidate has worked on a senior thesis using machine learning to predict regional precipitation patterns under different emissions scenarios, working with Professor Chen's lab. They produced a model that improved on baseline accuracy by 14% in the U.S. Southwest. Rewrite the opening paragraph using the four-sentence template.\n\nHint\n\nLead with the research direction. Anchor to the senior thesis. Name the next question. Sketch the methodological approach.\n\n**Answer:**\n\n> The research direction I propose to pursue is the integration of machine-learning regional climate models with land-surface process modeling to improve precipitation prediction at the basin scale, with attention to model performance under emissions scenarios outside the training distribution. The direction emerged from my senior thesis, completed last spring, in which I built a transformer-based regional precipitation model that improved baseline RMSE by 14% in the U.S. Southwest under RCP 4.5 but degraded substantially (RMSE +21% over baseline) under RCP 8.5 in the same region — a degradation that suggests the model is learning patterns specific to the training-distribution forcing rather than generalizable physical relationships. The next question this raises is whether physics-informed constraints on the model's hidden representations can recover generalization to high-warming scenarios while preserving the basin-scale accuracy gains, and the proposed dissertation would test this through a series of architectural ablations and out-of-distribution evaluations on the CMIP6 ensemble. Methodologically, this requires expertise I am beginning to develop in physics-informed neural networks (I have implemented a basic version for a course project; not yet at research scale) combined with the regional-modeling background I have built in Professor Chen's lab.\n\nThe rewrite states the research direction, anchors to the senior thesis with specific findings (14% improvement; RMSE +21% under RCP 8.5), articulates the next question, and sketches the methodological approach with honest acknowledgment of methodological gaps.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1051,
+      "out_sha": "60e659690d96",
       "note": ""
     },
     {
@@ -1187,11 +1187,11 @@
       "en_title": "Chapter 6: The PhD Statement of Purpose",
       "order": 92,
       "src_chars": 2810,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e5de8e85c7a4",
       "src": "#### Think Deeper\n\n**Q1.** The chapter argues that PhD committees are evaluating future colleagues, not just future students. Where does this evaluation actually happen in the SOP, beyond the explicit content?\n\n**Discussion:** The future-colleague evaluation happens in four places. _Voice_ — the prose's confidence, judgment, and intellectual posture as a writer of academic English in the field. _Methodological honesty_ — the acknowledgments of what the candidate has not yet learned, which signal the self-awareness colleagues need. _Engagement with recent faculty work_ — reading the faculty as current colleagues rather than as cited authorities. _Plan-evolution acknowledgment_ — the recognition that the dissertation will evolve, which signals comfort with how research actually proceeds. Each is read as a future-colleague signal even though the SOP never says _I will be a good colleague._\n\n**Q2.** Some PhD applicants have done one major research project; others have done several. The chapter recommends two to three pieces of evidence. What does the candidate with only one major project (typically the senior thesis) do?\n\n**Discussion:** A single major project, developed in depth, can carry the SOP. The candidate should expand the senior-thesis paragraph to cover the original question, the methodological development (including paradigms tried that did not work), the result, what was learned beyond the thesis's expected scope, and what the candidate has begun to think since. Supplementary evidence can include a coursework project that supplied methodological tools, a summer experience that opened a different research question, or a sustained reading project — each described briefly. The candidate with one project does not need to invent additional projects; they need to develop the one project deeply enough to demonstrate the breadth of their thinking around it.\n\n**Q3.** The chapter recommends acknowledging that the dissertation will evolve. Some applicants worry this signals lack of commitment to the proposed direction. Where does this recommendation come from?\n\n**Discussion:** The recommendation comes from how dissertations actually develop. Faculty advisers know that the dissertation a candidate proposes in their SOP is the proposal; the actual dissertation is what the candidate produces over five to seven years of work. A candidate who refuses to acknowledge evolution signals either naivety (they have not thought about how research evolves) or rigidity (they will resist the necessary revision). Faculty want neither. The recommendation is not to be vague about the proposal, be specific about what the proposal currently is, but to acknowledge that the proposal is a plan, and plans interact with reality. The acknowledgment is itself a signal of research maturity.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 779,
+      "out_sha": "fc145eb6ba72",
       "note": ""
     },
     {
@@ -1199,11 +1199,11 @@
       "en_title": "Chapter 6: The PhD Statement of Purpose",
       "order": 93,
       "src_chars": 932,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e759c5034e0f",
       "src": "### Chapter Summary\n\nThe PhD SOP is the most demanding genre in this book. It is professional academic prose addressed to a committee of faculty who are deciding whether to enter a five-to-seven-year mentoring relationship with the candidate. The 6 Moves operate in academic register: research direction as hook, evidence as specifics, faculty engagement as fit, methodological honesty as restraint.\n\nThe 70/30 ratio is the central reality of the form. Most SOPs are formulaic and indistinguishable. The candidate who writes a specific research direction anchored to specific work, who engages with specific recent faculty work, and who acknowledges honestly what they have and have not yet learned writes a document in the 30 percent.\n\nThe next chapter (Chapter 7) treats the MBA and professional school essay, where the reader's question shifts again — from research direction to career arc and post-program goal specificity.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 288,
+      "out_sha": "40e053aa08c5",
       "note": ""
     },
     {
