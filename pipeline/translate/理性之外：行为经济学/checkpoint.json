@@ -1983,11 +1983,11 @@
       "en_title": "Chapter 14: Behavioral Finance II — Investor Psychology and Corporate Decisions",
       "order": 157,
       "src_chars": 3138,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cf8d7e446d5f",
       "src": "### 14.3 Myopic Loss Aversion and Corporate Investment\n\nCorporate managers face pressure from shareholders and analysts to deliver consistent, positive quarterly earnings. This creates a form of institutional myopic loss aversion: managers sacrifice long-run investment (in R&D, capital expenditures, or human capital) to deliver short-run earnings that meet market expectations.\n\nThe mechanism: managers are evaluated and compensated based on short-term earnings. Falling short of earnings expectations creates a visible, painful \"loss\" relative to the expectation reference point. Exceeding expectations creates a gain — but a smaller psychological increment than the equivalent loss. This asymmetric evaluation structure creates pressure to sacrifice long-run investment for short-run earnings smoothness.\n\n**Evidence.** Research finds that corporate R&D investment decreases when firms are at risk of missing earnings forecasts, and that managers explicitly acknowledge making short-run investment cutbacks to manage quarterly earnings. This is myopic loss aversion applied to managerial behavior: the reference point is the analysts' earnings expectation, and the pain of missing it (loss domain) exceeds the satisfaction of beating it by an equivalent amount (gain domain).\n\n\n### 14.4 Market Bubbles and Behavioral Finance\n\nThe behavioral finance framework — overconfidence, representativeness, myopic loss aversion, social comparison — provides a rich account of market bubbles: extended periods of asset price inflation driven by investor sentiment rather than fundamentals.\n\nA market bubble has several behavioral ingredients:\n\n**Extrapolation and representativeness.** Investors extrapolate recent price appreciation, expecting the trend to continue. The representativeness heuristic (Chapter 5) makes a long run of positive returns look like the prototype of \"a fundamentally strong asset\" — causing continued buying and further price appreciation.\n\n**Social proof and herding.** When prices are rising and everyone around you is making money, it feels irrational not to participate. Social norms of financial success create pressure to join the crowd, even when fundamental analysis suggests overvaluation.\n\n**Overconfidence in \"new paradigm\" thinking.** Bubbles often feature narrative justifications that \"this time is different\" — that fundamentals have shifted in ways that justify the high prices. The internet era bubble featured stories about how traditional valuation metrics were obsolete for the \"new economy.\" Housing bubble narratives featured the belief that house prices never fall nationally. Overconfidence that one understands why \"this time is different\" justifies participation despite high valuations.\n\n**Limits to arbitrage in bubbles.** Even sophisticated investors who recognize a bubble may participate rather than bet against it. Shorting an overvalued asset is costly and risky — the bubble can inflate further before it pops, wiping out a short position before the correction arrives. As economist John Maynard Keynes observed: \"The market can remain irrational longer than you can remain solvent.\"\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 899,
+      "out_sha": "12dae1af1ebd",
       "note": ""
     },
     {
@@ -1995,11 +1995,11 @@
       "en_title": "Chapter 14: Behavioral Finance II — Investor Psychology and Corporate Decisions",
       "order": 158,
       "src_chars": 1932,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d0f1eae111ca",
       "src": "#### Thread B — Rational vs. Human Agent\n\nThis chapter shows that behavioral biases operate not just among retail investors but at every level of the financial system: individual investors (disposition effect, overconfidence), corporate executives (CEO overconfidence, short-termism), and market-level dynamics (bubbles, equity premium). The rational agent model's claim that professional actors in competitive markets are effectively rational has been substantially challenged by the evidence. The firms that hire Nobel laureate economists to manage their portfolios, the CEOs who attended elite business schools, the analysts who process vast amounts of financial data — all exhibit systematic behavioral biases that affect prices and corporate decisions.\n\n\n### 14.5 Behavioral Corporate Finance: A Summary\n\nThe behavioral finance approach to corporate finance identifies several systematic biases in managerial decision-making:\n\nBias | Manifestation | Consequence  \n---|---|---  \nOverconfidence | Excess investment, overpayment in M&A, preference for debt | Value destruction in acquisitions, excess leverage  \nLoss aversion relative to earnings benchmark | Cut R&D to meet quarterly earnings target | Under-investment in long-run growth  \nAnchoring to past stock price | Reluctance to issue equity when stock is below historical high | Suboptimal capital structure  \nFraming of shareholder expectations | Investing based on \"meeting guidance\" rather than NPV | Short-termism  \nMyopic evaluation of projects | Reject positive-NPV long-horizon projects that show early losses | Under-investment in innovation  \n  \nThe policy response to behavioral corporate finance includes: compensation structures that align managers with long-run value (not short-term stock price), board oversight that creates checks on overconfident CEOs, and institutional investor activism that can counteract short-termism pressure.\n\n\n### 14.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 656,
+      "out_sha": "6cfd1d794810",
       "note": ""
     },
     {
@@ -2007,11 +2007,11 @@
       "en_title": "Chapter 14: Behavioral Finance II — Investor Psychology and Corporate Decisions",
       "order": 159,
       "src_chars": 3469,
-      "status": "pending",
+      "status": "done",
       "src_sha": "88815b8ba4ad",
       "src": "#### Concept Check\n\n**Q1.** What is the equity premium puzzle? How does myopic loss aversion resolve it?\n\n**Answer:** The equity premium puzzle is the observation that historical equity returns have exceeded risk-free returns by approximately 7% annually — far more than standard risk-aversion theory predicts (roughly 0.35% premium would suffice for plausibly calibrated risk aversion). The puzzle: why do investors require such a large premium to hold equities if their risk aversion is at normal levels?\n\nMyopic loss aversion resolves it through two components: (1) Loss aversion: losses feel roughly twice as bad as equivalent gains. (2) Narrow bracketing / myopia: investors evaluate their portfolio too frequently — monthly or quarterly — rather than over their actual investment horizon (decades, for retirement savers).\n\nResolution: equities are volatile. In any short evaluation period, there is a substantial probability of nominal losses. Loss aversion amplifies the felt discomfort of these frequent nominal losses. Even though equities almost surely outperform over long horizons, frequent evaluation forces investors to experience the short-run volatility as a stream of painful losses. The premium required to compensate for this frequent loss experience is much larger than the premium required to compensate for the long-run risk alone. With evaluation frequency roughly monthly and loss aversion coefficient of 2.25, behavioral calculations produce an implied equity premium of 6-7% — matching the historical observation.\n\n**Q2.** How is CEO overconfidence measured using option exercise behavior? Why is this a useful revealed-preference measure?\n\n**Answer:** CEO overconfidence is measured by whether CEOs hold their employee stock options past the point where standard rationality would advise exercising them. Specifically: when an executive's stock options are deep in the money (the stock price substantially exceeds the exercise price) and the options are vested (exercisable), a rational, diversifying executive should exercise the options, sell the acquired shares, and diversify their personal wealth. Holding in-the-money options instead concentrates the CEO's personal wealth in company stock and exposes them to company-specific risk they could have eliminated.\n\nAn overconfident CEO believes their company stock is undervalued (they have private information that the stock will rise further). Therefore, holding rather than exercising feels rational to them — they are waiting for the \"real\" value to be recognized. The option-holding behavior reveals the overconfidence: the CEO is willing to bear undiversified company-specific risk because they believe the stock will appreciate.\n\nThis is useful as a revealed-preference measure because: it is based on actual decisions with real financial stakes (not surveys or self-reports); it requires no self-assessment of confidence; and it can be measured consistently across CEOs using observable options data. It avoids the common criticism of behavioral measures that they are subjective or context-specific.\n\n**Q3.** What is CEO overconfidence, and what are its three major corporate finance consequences?\n\n**Answer:** CEO overconfidence is the systematic tendency of chief executives to overestimate the expected returns on their firm's investments, the likelihood of success in acquisitions, and the precision of their private information about firm prospects.\n\nThree major consequences:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 984,
+      "out_sha": "e1efb469e3b7",
       "note": ""
     },
     {
@@ -2019,11 +2019,11 @@
       "en_title": "Chapter 14: Behavioral Finance II — Investor Psychology and Corporate Decisions",
       "order": 160,
       "src_chars": 3279,
-      "status": "pending",
+      "status": "done",
       "src_sha": "585b4ebda70a",
       "src": "  1. _Excessive investment_ : Overconfident CEOs invest more than the rational NPV calculation would support — they overestimate project returns and underestimate risks. Investment levels exceed the value-maximizing level, destroying shareholder value.\n\n  2. _Overvalued acquisitions_ : Overconfident CEOs are more likely to make acquisitions and pay higher premiums. They believe their private information about synergies justifies the price when it typically does not — the winner's curse. Acquirer stock prices fall on average when overconfident CEOs announce deals.\n\n  3. _Preference for debt over equity financing_ : Overconfident CEOs believe their firm's stock is undervalued. Issuing equity at what they perceive as a too-low price would dilute existing shareholders unfairly. Therefore, they prefer debt financing, leading to higher leverage ratios than optimal capital structure would prescribe. Higher leverage increases financial distress risk.\n\n**Q4.** Explain the mechanism by which market bubbles form using behavioral finance concepts from this chapter and the earlier behavioral toolkit.\n\n**Answer:** Market bubbles form through the compound interaction of several behavioral mechanisms:\n\n  1. _Extrapolation_ (representativeness, Chapter 5): Initial price appreciation creates a trend. Representativeness causes investors to see this trend as evidence of fundamental quality, expecting it to continue. Momentum in buying drives further appreciation.\n\n  2. _Social proof and herding_ : Rising prices and visible gains by friends and colleagues create social pressure to participate. Not participating feels like missing out — an opportunity cost that is vivid and socially salient.\n\n  3. _Overconfidence in \"this time is different\" narratives_ : Each bubble features a narrative that rationalizes the high prices as fundamentally justified. Investors confident in the narrative participate despite high valuations.\n\n  4. _Limits to arbitrage_ : Sophisticated investors who recognize the bubble face fundamental risk (the bubble may inflate further before it pops), noise trader risk (sentiment-driven buyers can push prices further), and career risk (underperforming while refusing to participate can cost them their job). These limits prevent rational arbitrage from popping the bubble early.\n\n  5. _Myopic loss aversion in reverse_ : During a bubble, frequent evaluation shows gains. The gain domain of the value function (concave, risk averse) would normally produce selling — but during a bubble, social proof and fear of missing out override the normal risk aversion, sustaining participation.\n\n**Q5.** How does managerial short-termism relate to loss aversion? What structural features of corporate governance could reduce it?\n\n**Answer:** Managerial short-termism arises when managers face strong pressure to deliver earnings that meet or exceed analyst forecasts. The analyst forecast becomes a reference point: earning above it is a gain; falling short is a loss. Loss aversion makes the shortfall (loss) much more painful than the equivalent beat (gain) is pleasurable. Managers therefore sacrifice long-run investments — R&D, training, capital spending with long payback periods — to smooth earnings and avoid the painful \"miss.\"\n\nStructural remedies:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 953,
+      "out_sha": "0a3b18b045db",
       "note": ""
     },
     {
@@ -2031,11 +2031,11 @@
       "en_title": "Chapter 14: Behavioral Finance II — Investor Psychology and Corporate Decisions",
       "order": 161,
       "src_chars": 994,
-      "status": "pending",
+      "status": "done",
       "src_sha": "551450cb4532",
       "src": "  1. _Long-horizon compensation_ : Replace quarterly earnings bonuses with long-duration equity awards (stock or options with 5-10 year vesting). This aligns managerial incentives with long-run stock performance rather than short-run earnings smoothness.\n\n  2. _Reduce analyst coverage and earnings guidance_ : Some firms have eliminated quarterly earnings guidance, removing the specific reference point that creates loss aversion pressure. Without a specific consensus forecast to miss, the behavioral distortion is reduced.\n\n  3. _Longer board tenure and evaluation cycles_ : Boards that evaluate CEO performance over 3-5 year windows rather than quarterly reduce the managerial pressure to optimize short-run metrics.\n\n  4. _Institutional investor engagement_ : Large institutional investors (pension funds, sovereign wealth funds) with genuinely long horizons can explicitly lobby against short-termism by expressing preferences for long-run investment over short-run earnings management.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 284,
+      "out_sha": "ac66b7997d82",
       "note": ""
     },
     {
@@ -2043,11 +2043,11 @@
       "en_title": "Chapter 14: Behavioral Finance II — Investor Psychology and Corporate Decisions",
       "order": 162,
       "src_chars": 3453,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1b6c5cf7b4b4",
       "src": "#### Application Problems\n\n**Q1.** A 35-year-old worker has 200,000 USD in their 401(k) and plans to retire at 65. Their financial advisor suggests allocating 80% to equities (consistent with a 30-year horizon) and 20% to bonds. The worker checks their portfolio weekly and feels anxious every time equities decline. How does myopic loss aversion explain this worker's discomfort, and what advice would behavioral finance give about portfolio management and monitoring frequency?\n\nHint\n\nConsider how frequently checking creates frequent reference points, how many of those evaluations will show nominal losses, and how loss aversion amplifies the felt discomfort relative to the objective risk profile.\n\n**Answer:** Myopic loss aversion analysis: equities with an 80% allocation will show weekly nominal declines roughly 40-45% of the time (approximately half of all weeks show a loss in a diversified equity portfolio). Each of these weekly declines, evaluated with a loss aversion coefficient of 2.25, produces discomfort 2.25 times as large as the equivalent weekly gain produces pleasure. Over the course of a year (52 evaluations), the worker experiences roughly 22-23 uncomfortable loss weeks and 29-30 comfortable gain weeks — but the asymmetric amplification means the total discomfort substantially exceeds the total pleasure, making the 80/20 portfolio feel much more unattractive than its 30-year expected performance would justify.\n\nBehavioral finance advice:\n\n  1. _Reduce monitoring frequency dramatically_ : Instead of weekly, check the portfolio quarterly or annually. Less frequent evaluation means fewer observations that happen to show losses; the positive long-run expected return dominates more of the evaluation periods. A worker who checks annually (30 evaluations over 30 years, virtually all positive for an 80/20 portfolio with a 30-year horizon) will experience the equity allocation as much more comfortable.\n\n  2. _Reframe the loss experience_ : Rather than evaluating week-by-week (\"I lost 3,000 USD this week\"), think in terms of long-run wealth trajectory (\"my expected retirement wealth at 65 is [X], and this week's fluctuation moved that by 0.5%\"). The reference point matters — annual contribution rate and target retirement wealth are more appropriate reference points than last week's balance.\n\n  3. _Automate investment decisions_ : Target-date funds or automatic rebalancing remove the periodic decision of \"should I change my allocation?\" This prevents the loss-aversion-driven impulse to sell equities after drops (which would lock in losses and miss the recovery).\n\n**Q2.** A pharmaceutical company's CEO is considering two R&D projects. Project A: invest 50M USD in a compound with 60% probability of success, generating 200M USD in revenues if successful. Project B: invest 50M USD in a portfolio of 10 compounds with independent probabilities, each with a 60% chance of success, generating 20M USD in revenues if successful. The expected value of both projects is identical. The CEO is asked to evaluate the options based on quarterly earnings reports that the market closely watches. How does myopic loss aversion affect the CEO's preference, and which project should the board prefer?\n\nHint\n\nConsider the short-run earnings variance of each project, how quarterly misses trigger loss aversion in the CEO, and what the board's longer-run interest is.\n\n**Answer:** Myopic loss aversion analysis for the CEO:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1119,
+      "out_sha": "6dac017a6c33",
       "note": ""
     },
     {
@@ -2055,11 +2055,11 @@
       "en_title": "Chapter 14: Behavioral Finance II — Investor Psychology and Corporate Decisions",
       "order": 163,
       "src_chars": 3437,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8a62cf637b16",
       "src": "Project A has a large single-bet structure: either 200M USD revenue arrives (60% chance) or nothing (40% chance). In the short run, before success is known, the project shows 50M USD in costs with no offsetting revenues — several quarters of \"misses\" on earnings forecasts if analysts are tracking R&D spending. The 40% chance of complete failure means the CEO faces a 40% probability of a 50M USD sunk cost with no return — a highly visible loss that would be attributed to the CEO's decision.\n\nProject B (portfolio) diversifies across 10 independent compounds. With 60% probability of success each, by the law of large numbers the portfolio nearly always generates revenue (20M USD × number of successes, expected value ≈ 120M USD). The quarterly earnings trajectory is smoother — multiple compounds may be in different phases, some providing revenue while others are still in trials. The 40% chance of any individual compound failing is largely invisible because other compounds offset it. The CEO faces much less earnings volatility and much smaller probability of a high-visibility single-compound failure.\n\nGiven loss aversion relative to earnings forecasts: the CEO will prefer Project B (lower earnings variance, fewer visible failures) even if Projects A and B have the same expected value. The CEO is managing the reference point of \"meeting earnings guidance,\" and Project B is less likely to produce a large miss.\n\nThe board should prefer Project B for the same reason from the firm's perspective: holding other factors equal, the diversified R&D portfolio produces the same expected value with lower variance — which is welfare-superior for a risk-averse firm. But the board should also be aware that the CEO's behavioral preference for B may not always align with long-run value maximization — if Project A has higher expected value in other scenarios, myopic loss aversion could cause the CEO to incorrectly prefer B. Compensation structures that reward long-run risk-adjusted value, not quarterly earnings, would align CEO incentives with the board's long-run interest.\n\n**Q3.** (Cross-reference to Chapter 3 and Chapter 9) Prospect theory (Chapter 3) predicts loss aversion; mental accounting (Chapter 9) predicts the house money effect (more risk-taking with windfall gains). How might these two effects interact in the behavior of an investor who has made very large gains in a stock market bubble? Does loss aversion predict caution or risk-taking?\n\n**Answer:** This is a genuinely complex integration question. The two effects can predict opposite behaviors, and their interaction depends on how the investor mentally accounts for their gains.\n\n**House money effect prediction** (Chapter 9): If the investor mentally separates their large bubble gains from their \"real\" wealth, the gains are coded in a separate \"house money\" account with a reference point of zero. Within this account, further risk-taking is in the gain domain of the value function — but the concave gain domain normally predicts risk aversion. However, the key feature is that the reference point for the house money account is zero, not the peak bubble price. If the bubble deflates somewhat, the investor is still above zero in their \"house money\" account and does not experience a loss — they just experience a smaller gain. This reduces loss aversion relative to a world where all wealth is integrated and reference-pointed at the peak price.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 910,
+      "out_sha": "8877e4e8620f",
       "note": ""
     },
     {
@@ -2067,11 +2067,11 @@
       "en_title": "Chapter 14: Behavioral Finance II — Investor Psychology and Corporate Decisions",
       "order": 164,
       "src_chars": 1040,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2b7ba463e2a9",
       "src": "**Loss aversion prediction** (Chapter 3): If the investor integrates all wealth and uses the current (bubble) price as their reference point, any subsequent decline is a loss. Loss aversion predicts risk-seeking behavior in the loss domain — they hold rather than selling, hoping to recover the reference point price. This is the disposition effect applied to bubble deflation.\n\n**Combined prediction** : The house money effect reduces the felt pain of bubble deflation (gains are in a separate account with a zero reference point), while loss aversion relative to the bubble peak price encourages holding. The net behavioral prediction: investors in bubbles tend to hold too long (both because house money effect reduces the urgency of taking action and because loss aversion to the peak price reference discourages selling at a loss). This matches observed behavior in historical bubbles: investors who could have exited early instead held their bubble assets long past the point where a rational evaluation would have triggered selling.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 525,
+      "out_sha": "4d26f0448d4c",
       "note": ""
     },
     {
@@ -2079,11 +2079,11 @@
       "en_title": "Chapter 14: Behavioral Finance II — Investor Psychology and Corporate Decisions",
       "order": 165,
       "src_chars": 2927,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d8a9d1ae47b6",
       "src": "#### Think Deeper\n\n**Q1.** The equity premium puzzle is often cited as evidence that investors are myopically loss averse. But another interpretation is that the standard consumption-based asset pricing model is simply wrong — perhaps investors face greater background risk, liquidity constraints, or incomplete markets that the model ignores. How would you design a research program to distinguish between these explanations?\n\n**Discussion:** Distinguishing behavioral (myopic loss aversion) from structural (incomplete markets, background risk) explanations requires evidence that specifically favors one mechanism.\n\nEvidence supporting the behavioral account: (1) If evaluation frequency affects portfolio choice — investors who check their portfolios more often hold fewer equities — this supports myopic loss aversion rather than incomplete markets (market structure doesn't change with evaluation frequency). Studies of pension fund investment behavior do find that funds that show members performance statements more frequently have lower equity allocations. (2) Experiments that exogenously vary evaluation frequency (randomly assigning investors to monthly vs. annual statements) and find equity allocation differences support the behavioral mechanism. (3) If loss aversion coefficients estimated independently from other data (not equity premium) predict the correct equity premium quantitatively, this adds credibility to the specific behavioral mechanism.\n\nEvidence supporting structural accounts: (1) If the equity premium is larger in countries or periods with greater financial market underdevelopment (less complete markets, greater liquidity risk), this supports structural accounts. (2) If the premium tracks background income risk — workers in more volatile industries require a higher premium — this suggests incomplete markets play a role. (3) If wealthy investors (who face fewer liquidity constraints) hold more equities at any given market condition, this supports the constraint-based explanation.\n\nThe most defensible conclusion is that both mechanisms contribute. Complete resolution requires structural models that separately calibrate behavioral parameters (loss aversion, evaluation frequency) and structural parameters (market completeness, liquidity), then test the combined model's quantitative predictions against data.\n\n**Q2.** Overconfident CEOs destroy value through excessive acquisitions and investment, but they may also create value in some ways — overconfident founders may be more persistent in the face of early failure, more willing to pursue bold strategies, and more effective at inspiring confidence in employees. Does the evidence suggest that overconfidence is uniformly harmful for corporate performance, or might some degree of overconfidence be beneficial?\n\n**Discussion:** The research on CEO overconfidence is nuanced on this question. Some findings suggest mixed effects:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 808,
+      "out_sha": "88b9643aefe0",
       "note": ""
     },
     {
@@ -2091,11 +2091,11 @@
       "en_title": "Chapter 14: Behavioral Finance II — Investor Psychology and Corporate Decisions",
       "order": 166,
       "src_chars": 1596,
-      "status": "pending",
+      "status": "done",
       "src_sha": "932f62697aca",
       "src": "_Beneficial overconfidence_ : (1) In highly innovative, high-uncertainty industries (technology, biotech), overconfident CEOs invest more in R&D and take bolder strategic positions — which, when they win, produce spectacular value. The variance of outcomes is higher under overconfident leadership, meaning both more spectacular successes and more spectacular failures. In winner-take-all markets, the extra variance may be worth the average cost. (2) Overconfident leaders communicate more certainty about strategy, which can improve execution by reducing employee uncertainty and increasing commitment. (3) For founder-led companies in early stages, overconfidence about the venture's potential may be necessary to persist through the valley of death — many eventually successful companies would have been abandoned by a more Bayesian founder.\n\n_Harmful overconfidence_ : In mature, competitive industries with smaller variance in outcomes, overconfidence is more consistently harmful. Excess acquisitions, excess leverage, and excess investment without commensurate returns are more damaging when there is no asymmetric upside from bold strategy.\n\nThe practical implication for boards: rather than selecting for or against overconfident CEOs as a type, boards should try to match leadership style to company context (bold overconfidence in early-stage innovation; calibrated rationality in mature execution) and create governance structures that check overconfidence where it is harmful (acquisition approval processes, external advisors) while preserving it where it benefits (R&D strategy).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 499,
+      "out_sha": "593911da3180",
       "note": ""
     },
     {
