@@ -1,0 +1,16 @@
+# DONE flag — 明智决策：不确定世界中的理性思考
+
+- 书名：明智决策：不确定世界中的理性思考
+- 分支：cursor/decision-making-translate-a63c（base: translate/decision-making）
+- 总块 / done-total：285 / 285（100%）
+- 本次返修：清理 c02_b10 的英文残留；润色 c16_b03、c26_b03、c26_b06、c26_b11 与 c27_b15 的直译问题；将 intro 的 `regression to the mean` 统一为“均值回归”；将 c05_b04 的 `epistemic humility` 统一为“认识谦逊”。
+- 核验：
+  - `python3 pipeline/translate_book.py status "sources/明智决策：不确定世界中的理性思考.md"`：285 / 285，pending=0，failed=0
+  - `python3 pipeline/translate_book.py assemble "sources/明智决策：不确定世界中的理性思考.md"`：成功
+  - `python3 pipeline/translate_book.py verify "sources/明智决策：不确定世界中的理性思考.md" --glossary "pipeline/translate/glossary_social.md"`：ERROR=0，WARN=6
+  - `python3 pipeline/translate_book.py verify "sources/明智决策：不确定世界中的理性思考.md" --glossary "pipeline/translate/明智决策：不确定世界中的理性思考/glossary_local.md"`：ERROR=0，WARN=53
+
+## 剩余 WARN 说明
+
+- 共享术语库的 6 项为上下文词义的字符串误报：`incentive` 在 c02_b08 中是“让她开心的社交动机”；`capital` 在 c04_b02、c16_b07、c18_b07 中分别属于专名或风险投资语境；`bias` 在 c04_b08 中作“偏移”动词；`institution` 在 c19_b09 中指“学术机构”。这些位置若强行替换为共享术语会损害中文准确性。
+- 本地术语库的大部分 WARN 是格式或词性误报：正文一贯采用“系统 1 / 系统 2”，而库内条目无空格；泛指的 `framing` 被翻作“框定”而非专门术语“框架效应”；`likelihood`、`value of information`、`pre-commitment` 等在对应块中不作本书的技术术语使用。c16_b02 的“快速且节俭启发式”与库中“快速且节俭的启发式”仅差结构助词。均未为消除 WARN 而牺牲源文语义或中文行文。

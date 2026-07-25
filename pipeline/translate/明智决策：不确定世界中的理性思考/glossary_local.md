@@ -66,3 +66,41 @@ endowment effect | 禀赋效应
 mental accounting | 心理账户
 hyperbolic discounting | 双曲线贴现
 present bias | 现时偏差
+value of information | 信息价值 | VOI
+expected value of sample information | 抽样信息的期望值 | EVSI
+option value | 期权价值 |
+real options | 实物期权 |
+explore-exploit tradeoff | 探索-利用权衡 |
+multi-armed bandit | 多臂老虎机 |
+secretary problem | 秘书问题 |
+Type 1 decision | Type 1 决策 | 单向门/不可逆
+Type 2 decision | Type 2 决策 | 双向门/可逆
+one-way door | 单向门 |
+two-way door | 双向门 |
+minimum viable commitment | 最小可行承诺 |
+reversibility | 可逆性 |
+sensitivity analysis | 敏感性分析 |
+backward induction | 后向归纳 |
+prospective hindsight | 前瞻性后见之明 |
+red team | 红队 |
+automation bias | 自动化偏差 |
+hallucination | 幻觉 | LLM 生成虚假内容
+large language model | 大语言模型 | LLM
+affective forecasting | 情感预测 |
+regret minimization | 后悔最小化 |
+efficient market hypothesis | 有效市场假说 | EMH
+disposition effect | 处置效应 |
+FOMO | FOMO | 错失恐惧
+absolute risk reduction | 绝对风险降低 | ARR
+relative risk reduction | 相对风险降低 | RRR
+number needed to treat | 需治疗人数 | NNT
+shared decision making | 共享决策制定 |
+strategic commitment | 战略承诺 |
+epistemic humility | 认识谦逊 |
+irreducible uncertainty | 不可约的不确定性 |
+need for cognitive closure | 认知闭合需要 |
+reference class forecasting | 参照类预测 |
+decision journal | 决策日志 |
+pre-commitment | 预先承诺 |
+fast-and-frugal heuristics | 快速且节俭的启发式 |
+Dunning-Kruger | 邓宁-克鲁格 |
