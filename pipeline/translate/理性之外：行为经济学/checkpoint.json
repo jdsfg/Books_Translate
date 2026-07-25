@@ -2703,11 +2703,11 @@
       "en_title": "Chapter 18: The Ethics of Nudging",
       "order": 217,
       "src_chars": 471,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3a453cb90229",
       "src": "The practical implication: nudges that survive disclosure — where users understand and approve of the design — are much harder to characterize as manipulation. The manipulation concern is most valid for nudges that are hidden, that serve the nudger's interests rather than the user's, or that exploit preferences the user would not endorse on reflection. Transparent, user-serving nudges with easy opt-out are better characterized as helpful design than as manipulation.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 113,
+      "out_sha": "a8e23af7c8be",
       "note": ""
     },
     {
@@ -2715,11 +2715,11 @@
       "en_title": "Chapter 18: The Ethics of Nudging",
       "order": 218,
       "src_chars": 3428,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bdcfe17e9339",
       "src": "#### Application Problems\n\n**Q1.** A mobile phone company designs its subscription cancellation process as follows: customers must navigate 8 menu screens on the phone app before reaching cancellation, then enter their full account information, then speak to a \"customer service representative\" who offers three counter-offers before accepting the cancellation, and the cancellation takes effect after 60 days with charges continuing until then. Meanwhile, subscription sign-up takes one click. Analyze this from a sludge perspective. What regulatory remedies would address the problem?\n\nHint\n\nIdentify each element of sludge in the design, whose interests each element serves, and what \"proportionality\" standards might govern the relationship between opt-in and opt-out friction.\n\n**Answer:** Sludge analysis:\n\nEach element of the cancellation process is a deliberate sludge feature:\n\n  1. _8 menu screens before reaching cancellation_ : excessive navigation that increases abandonment rates (people give up before reaching the cancellation page). This serves the company (retained subscribers) at the expense of users (forced to continue paying for something they decided to cancel).\n\n  2. _Full account information re-entry_ : artificial barrier — the company already has the account information. Requiring re-entry is not technically necessary; it is friction added to increase abandonment.\n\n  3. _Mandatory customer service interaction_ : converting a digital process (which users prefer) into a human interaction (which many users find aversive, time-consuming, and socially obligating) is sludge. The retention script offers are counteroffers designed to change the user's decision — not information provision, but pressure.\n\n  4. _60-day cancellation delay with continued charges_ : converts the cancellation decision into a long period of continued payment. This exploits present bias (the cost is in the future) and loss aversion (the charge feels like a new loss each billing cycle rather than a cancellation choice).\n\nRegulatory remedies:\n\n  1. _Proportionality rule_ : require that the cancellation process be no more burdensome than the sign-up process. If sign-up is one click, cancellation must be achievable in one click. FTC guidelines in the US have moved in this direction.\n  2. _Prohibition of mandatory retention calls_ : cancellation must be achievable entirely digitally, without mandatory human interaction.\n  3. _Immediate cancellation_ : cancellations take effect within the current billing period, with pro-rated refund where appropriate. A 60-day delay with charges is effectively a sludge tax on the decision to cancel.\n  4. _Disclosure requirements_ : all subscription terms, including cancellation procedures, must be prominently displayed at sign-up — not buried in terms and conditions.\n\n**Q2.** A government behavioral insights unit proposes nudging people toward lower-calorie food choices in supermarkets by placing healthy foods at eye level (more salient) and less healthy foods at lower shelves (less salient). A food industry lobbying group argues this is government overreach — the supermarket should be free to arrange its shelves however it wants. How should the government respond to this objection?\n\nHint\n\nConsider who currently designs supermarket shelf arrangement, what interests that design serves, and whether \"no government intervention\" is the same as \"neutral arrangement.\"",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 943,
+      "out_sha": "7fa65d3efdfd",
       "note": ""
     },
     {
@@ -2727,11 +2727,11 @@
       "en_title": "Chapter 18: The Ethics of Nudging",
       "order": 219,
       "src_chars": 3345,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b5270f2a6115",
       "src": "**Answer:** The government has several strong responses to the overreach objection.\n\n**Response 1 — No arrangement is neutral:** Supermarket shelves are already arranged by choice architects. Currently, those architects are the retailers and food manufacturers who pay \"slotting fees\" to place their products at eye level and at checkout. The current arrangement actively promotes whatever products generate the most shelf-fee revenue — typically higher-margin, processed foods. The objection that government intervention \"interferes with neutral arrangement\" is false: the current arrangement is itself a deliberate intervention, serving the interests of food manufacturers rather than consumers.\n\n**Response 2 — Externalities justify intervention:** The health consequences of food choices include externalities (healthcare costs) that the private market does not fully price. Government action in public health is already well-established for similar market failures (requiring nutrition labels, banning trans fats, food safety regulations). Nudge-based shelf arrangement is a lighter-touch intervention than these, using only salience without restriction.\n\n**Response 3 — Consumer welfare standard:** The relevant question for a consumer protection framework is not \"who gets to arrange the shelves?\" but \"does the current arrangement serve consumers?\" If current arrangements systematically exploit imperfect attention and availability heuristics to push consumers toward choices that are harmful to them (and which research shows they regret), government intervention to rebalance the arrangement toward consumer welfare is within the scope of standard consumer protection.\n\n**Response 4 — Transparency:** A regulatory approach that specifies principles for arrangement (healthy foods must not be systematically less salient than unhealthy ones) rather than mandating specific arrangements preserves significant flexibility for retailers while addressing the consumer welfare concern. This is a lighter-touch intervention than mandating which products may be sold.\n\n**Q3.** (Cross-reference to Chapter 15) Chapter 15 argued that \"there is no neutral choice architecture.\" Chapter 18 distinguishes legitimate nudges from harmful manipulation. How do these two claims interact? Does the impossibility of neutrality imply that all behavioral influence is equally legitimate?\n\n**Answer:** The two claims interact as follows: the inevitability of influence (Chapter 15) establishes that some behavioral influence is inescapable. The ethical framework (Chapter 18) establishes that not all behavioral influence is equally legitimate. These claims are complementary, not contradictory.\n\nThe inference \"neutrality is impossible, therefore all influence is equally legitimate\" is a non sequitur. The impossibility of zero influence does not imply that there is no meaningful distinction between beneficial influence and harmful manipulation. Consider: it is also true that a physician has inevitable influence over a patient's medical decisions (through the information they provide, the options they present, the tone of their recommendations). The impossibility of physician neutrality does not imply that a physician who recommends treatments to profit from kickbacks is as legitimate as one who recommends based on evidence and patient welfare.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 918,
+      "out_sha": "05a0ef2f06b4",
       "note": ""
     },
     {
@@ -2739,11 +2739,11 @@
       "en_title": "Chapter 18: The Ethics of Nudging",
       "order": 220,
       "src_chars": 732,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4e4b1a3c2b70",
       "src": "The ethical framework in Chapter 18 gives content to what distinguishes legitimate from illegitimate influence even given the impossibility of neutrality: (1) transparency — can the influence be disclosed and still endorsed? (2) alignment with chooser's interests — does the influence serve the chooser or the influencer? (3) preference-behavior gap targeting — does the influence address a genuine gap between what the person wants and what they do? (4) meaningful freedom of exit — can the person who objects actually choose otherwise?\n\nThe impossibility of neutrality is a reason to be intentional and ethical about choice design, not a license to ignore the ethical distinctions between designs that help and designs that harm.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 193,
+      "out_sha": "a73b47d30a72",
       "note": ""
     },
     {
@@ -2751,11 +2751,11 @@
       "en_title": "Chapter 18: The Ethics of Nudging",
       "order": 221,
       "src_chars": 3398,
-      "status": "pending",
+      "status": "done",
       "src_sha": "52ff4258a0ac",
       "src": "#### Think Deeper\n\n**Q1.** Behavioral economics has revealed that human preferences are not always consistent, stable, or well-defined. Libertarian paternalism appeals to \"people's true preferences\" to justify nudging — but if preferences are unstable and constructed by context, what does \"true preference\" even mean? Can behavioral economics coherently justify nudging by appeal to authentic preferences it has also shown to be unreliable?\n\n**Discussion:** This is the deepest philosophical challenge to libertarian paternalism, raised by philosophers and economists who take the behavioral evidence seriously. The standard argument for nudging appeals to a distinction between \"true,\" \"reflective,\" or \"considered\" preferences (what people would choose under ideal deliberation) and \"revealed,\" \"behavioral,\" or \"contextually contaminated\" preferences (what people actually choose under cognitive limitations). Nudges are justified by aligning choices with the former against the latter.\n\nBut behavioral economics shows that even \"reflective\" preferences are constructed rather than discovered — how people respond to hypothetical questions about their preferences depends on framing, sequencing, and context. There may be no \"pure\" preference to appeal to. If true preferences are themselves context-dependent constructions, the nudge-to-true-preference framework has no stable foundation.\n\nSeveral partial responses: (1) _Procedural coherence_ : instead of appealing to \"true preferences,\" justify nudges by procedural standards — nudges are legitimate when they are transparent, reversible, endorsed in retrospect, and consistent across framings. This procedural approach does not require identifying stable true preferences. (2) _Multiple preference elicitation_ : aggregate across many elicitations (different frames, different times, different modes) to get a more robust estimate of preference direction, even if no single elicitation is definitive. (3) _Welfare outcomes_ : abandon the preference framework entirely and justify nudges by observable welfare metrics (retirement wealth, health outcomes) that the nudged behavior improves. This is a paternalism that appeals to wellbeing rather than preferences, which is more honest but also more openly paternalistic. (4) _Revealed endorsement_ : nudges that recipients endorse after implementation (ex post approval) have met a legitimizing standard even without stable ex ante preferences.\n\nNone of these fully resolves the philosophical challenge. The honest acknowledgment: libertarian paternalism's philosophical foundations are more contested than its proponents often acknowledge.\n\n**Q2.** If nudges and sludge are two sides of the same choice architecture coin — both use friction and salience to influence behavior — is the distinction between them primarily ethical (whose interests are served) or is there a more fundamental behavioral distinction? Could a \"benevolent sludge\" exist — sludge that protects people from their own impulsive choices?\n\n**Discussion:** The ethical distinction (whose interests are served) is real and important. But there is also a structural distinction: nudges reduce friction for beneficial actions while sludge adds friction to thwart desired actions. A true symmetry would require \"benevolent sludge\" — friction added to deter harmful impulsive choices.\n\nExamples of arguably benevolent sludge:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 967,
+      "out_sha": "e85d102102c4",
       "note": ""
     },
     {
@@ -2763,11 +2763,11 @@
       "en_title": "Chapter 18: The Ethics of Nudging",
       "order": 222,
       "src_chars": 3385,
-      "status": "pending",
+      "status": "done",
       "src_sha": "046f4faf35e9",
       "src": "* _Cooling-off periods for major purchases_ : requiring a 3-day waiting period before finalizing a large purchase (a house, a car, a major appliance) adds friction that prevents impulsive decisions. This sludge is designed to protect the buyer from their own present-biased impulse purchasing.\n* _Social media deactivation friction_ : platforms that make it harder to delete content (asking \"are you sure?\" multiple times) might be providing benevolent friction that prevents impulsive actions people would regret.\n* _Waiting periods for firearms purchases_ : the behavioral economics of violence and impulsive harm suggests that waiting periods (adding friction to the purchase) may prevent some cases of impulsive violence. This is sludge-for-safety.\n\nThe \"benevolent sludge\" concept blurs the simple nudge/sludge distinction. What makes sludge problematic is not friction per se, but friction that prevents desired actions, serves the designer's interests at the user's expense, and disproportionately harms the vulnerable. Friction that prevents regretted actions, serves the user's long-run interests, and is applied equally across populations looks more like a commitment device (Chapter 8) than harmful sludge. The ethical evaluation is context-dependent: what action is being deterred, who designed the friction, who is harmed by it, and whose interests does it serve?\n\n\n### Chapter Summary\n\nThe ethics of nudging requires careful analysis that moves beyond both blanket endorsement and blanket rejection.\n\n**The case for nudging** rests on three arguments: choice architecture is unavoidable; nudges can serve genuine preference-behavior gaps rather than override preferences; and they produce behavioral change cost-effectively.\n\n**The case against nudging** raises three serious objections: manipulation (bypassing rational deliberation); infantilization (reducing autonomous decision-making capacity); and government overreach (concentrating power in the nudging authority).\n\nA framework of **five criteria** distinguishes legitimate from illegitimate behavioral influence: transparent design, alignment with chooser's interests, targeting genuine preference-behavior gaps, meaningful freedom of exit, and evidence-based design and evaluation.\n\n**Sludge** — the dark twin of nudging — uses the same architectural principles to harm users: adding friction to actions users want to take, in service of the designer's interests. Sludge analysis is an important regulatory tool for identifying where administrative burden disproportionately harms the vulnerable.\n\nNudging is one tool among several: education, incentives, and mandates each have appropriate domains. The \"nudge first\" principle recommends starting with the least intrusive effective intervention.\n\nThread A: auto-enrollment is the paradigm case for ethical nudge design — transparent, preference-gap targeting, easy opt-out, and extensively evaluated. It sits on the legitimate end of the spectrum, though concerns about adequacy defaults and low-income employees deserve continued attention.\n\nChapter 19 widens the behavioral policy lens beyond nudging to examine how behavioral insights are being applied in government more broadly — behavioral insights units, tax compliance, environmental policy, and the emerging critique that behavioral policy is sometimes used as a substitute for structural reform.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 904,
+      "out_sha": "e4867910b176",
       "note": ""
     },
     {
@@ -2775,11 +2775,11 @@
       "en_title": "Chapter 19: Behavioral Policy Beyond the Nudge",
       "order": 223,
       "src_chars": 2572,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2f2ed161e223",
       "src": "### Opening Scenario\n\nIn 2010, the United Kingdom quietly established a small team inside the Cabinet Office. The Behavioural Insights Team — nicknamed the \"Nudge Unit\" — had a mandate to apply behavioral science to make government services better, faster, and cheaper. One of its first experiments redesigned a letter sent to people who owed unpaid taxes. The original letter was bureaucratic and threatening. The new version added a single sentence: \"Nine out of ten people in your local area pay their taxes on time.\" Within weeks, payment rates in the tested group jumped by several percentage points, costing almost nothing to implement.\n\nWithin a decade, similar behavioral insights units (BITs) had been established in over 200 governments and intergovernmental organizations worldwide — from Australia to Chile to the World Bank. What had started as academic theory had become a global policy movement.\n\nBut critics were watching. Some asked: if nudges are so cheap and effective, does that let governments off the hook from doing the harder structural work — fixing institutions, redistributing income, enforcing regulations? Are behavioral insights units a tool of genuine policy reform, or a convenient substitute for it?\n\nThis chapter examines behavioral policy at scale: how BITs operate, where behavioral insights genuinely improve policy, and where structural interventions are the more appropriate — or more honest — answer.\n\n\n### 19.1 Behavioral Insights Units: From Lab to Government\n\n\n#### What a BIT Does\n\nA behavioral insights unit applies behavioral science systematically to government services and policy design. Unlike academic research, BITs operate under real-world constraints: they must produce actionable results quickly, work with existing administrative systems, and be politically defensible.\n\n**Core functions of a typical BIT:**\n\nFunction | Description  \n---|---  \n**Diagnosis** | Identify where behavioral barriers prevent policy goals from being achieved  \n**Redesign** | Apply behavioral tools (defaults, simplification, social norms, timing) to remove barriers  \n**Testing** | Run randomized controlled trials or quasi-experiments to measure effects  \n**Scaling** | Roll out effective interventions across the relevant population  \n**Learning** | Document what works, share findings across agencies  \n  \nThe BIT approach is explicitly empirical: interventions are tested before scaling. This distinguishes it from traditional policy design, which often assumes a rational agent model and then wonders why implementation falls short.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 790,
+      "out_sha": "705f33d4f6ae",
       "note": ""
     },
     {
@@ -2787,11 +2787,11 @@
       "en_title": "Chapter 19: Behavioral Policy Beyond the Nudge",
       "order": 224,
       "src_chars": 3408,
-      "status": "pending",
+      "status": "done",
       "src_sha": "18ec160f8ffd",
       "src": "#### The Diagnosis-First Principle\n\nEffective BITs begin by mapping the behavioral journey of a citizen trying to complete a task — applying for benefits, enrolling in a program, filing taxes, signing up for a health screening. They ask: where do people drop out? Where do they make errors? Where does friction accumulate?\n\n**Common behavioral barriers BITs identify:**\n\n* **Attention failures** : People don't notice information that matters\n* **Present bias** : Benefits are distant, costs are immediate (enrollment today, benefit in months)\n* **Friction** : Too many steps, confusing forms, hard-to-reach offices\n* **Social disconnection** : People don't know what others like them do\n* **Identity threat** : Applying for help signals weakness; non-enrollment follows\n* **Complexity** : Multi-part eligibility criteria exceed working memory capacity\n\nOnce the behavioral barrier is identified, the intervention can be targeted. Addressing the wrong barrier — simplifying a form that people aren't reading because they don't know the program exists — wastes resources.\n\n\n#### The RCT Standard\n\nBITs have popularized randomized controlled trials (RCTs) in government. Rather than rolling out a policy change and hoping it works, a BIT will test the change with a subset of the population, compare outcomes to a control group, and only scale if the evidence supports it.\n\n**Thread C Check:** This is the most rigorous application of the experimental standard to policy that exists. But field RCTs have their own limitations: they measure average treatment effects, which may obscure large variation across subgroups; they often measure short-run behavior, not long-run change; and they are subject to the same publication pressures that affect academic research. Evidence from well-run field RCTs is strong — but it is not infallible.\n\n\n### 19.2 Behavioral Tax Policy\n\n\n#### Sin Taxes and Behavioral Assumptions\n\nTraditional economic analysis of excise taxes on alcohol, tobacco, or sugar treats them as Pigouvian corrections: people underestimate the costs they impose on others (secondhand smoke, healthcare systems) or on their future selves, so taxes internalize the true social cost.\n\nBehavioral economics adds a layer: people also systematically underestimate internalities — the costs they impose on their own future selves. A smoker who would prefer to quit but cannot may be imposing costs on their future self via present bias. A Pigouvian tax that corrects both external and internal costs could be welfare-improving even from the taxpayer's own perspective.\n\n**The internality logic:**\n\n> If a smoker with β = 0.5 (strong present bias) places 50% too little weight on future health costs, then a tax that corrects for this internality would make the smoker better off by their own long-run preferences — even if they resist it in the moment.\n\nThis argument is more ethically complex than standard Pigouvian logic. It requires assuming that the behavioral agent's \"true\" preferences are their long-run preferences, not their present-biased ones — the same philosophical question raised in Chapter 18's discussion of paternalism.\n\n**Thread B:** The rational agent model treats sin taxes purely as external cost correction. The behavioral model adds internal cost correction, which expands the justification for taxation — but requires contested assumptions about which preferences are \"authentic.\"\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1052,
+      "out_sha": "79d0260f4105",
       "note": ""
     },
     {
@@ -2799,11 +2799,11 @@
       "en_title": "Chapter 19: Behavioral Policy Beyond the Nudge",
       "order": 225,
       "src_chars": 3129,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ce824ffe5ca4",
       "src": "#### Mental Accounting and Tax Refunds\n\nTax refunds create a predictable mental accounting pattern. People in many countries receive a large annual refund check (rather than smaller monthly adjustments), which they tend to treat as a windfall gain rather than their own money being returned.\n\nResearch findings on tax refund behavior:\n\n* Refund recipients spend a higher proportion on durable goods and irregular expenditures compared to equivalent regular income\n* Households with high present bias are more likely to over-withhold deliberately, using the tax system as a forced savings mechanism\n* Low-income households disproportionately use refund-linked financial products (refund anticipation loans), paying substantial fees to access money a few weeks earlier — a costly manifestation of present bias\n\n**Policy application:** Programs that allow taxpayers to direct refunds into savings accounts at the point of filing have shown modest but consistent effects on savings rates, particularly among lower-income households. This is Thread A logic applied at the tax filing moment.\n\n\n#### Commitment Savings Accounts\n\nSeveral countries have experimented with tax-advantaged commitment savings accounts that incorporate behavioral design:\n\n* **Lock-in mechanisms** : Funds cannot be withdrawn before a target date or event without a penalty\n* **Round-number anchoring** : Target amounts are suggested in salient round numbers\n* **Automatic enrollment** : Workers are enrolled by default with opt-out\n\nThe combination of commitment (addressing present bias), defaults (addressing inertia), and salient framing (addressing attention) has shown substantially stronger effects than standard savings accounts that offer tax advantages alone.\n\nThe behavioral insight: financial incentives alone often fail to overcome present bias. People know a retirement account is beneficial; they still don't fund it. Structural behavioral features — commitment, automation, defaults — close the gap between knowing and doing.\n\n\n### 19.3 Behavioral Environmental Policy\n\n\n#### Carbon Pricing and Salience\n\nStandard economics recommends carbon pricing as the efficient response to climate externalities. Behavioral economics adds that the form of the price — how visible, how immediate, how labeled — matters for behavior independently of the amount.\n\n**Salience effects in energy pricing:**\n\n* Bills that display charges in physical units (kilowatt-hours, gallons) show stronger conservation responses than equivalent charges buried in a total dollar amount\n* Real-time electricity displays — showing current consumption visibly in the home — produce 3-5% reductions, even without changing the price\n* Carbon taxes presented as \"carbon fees\" with visible rebates to consumers show higher public acceptance than identical taxes framed as government revenue\n\nThe implication: a technically optimal carbon price may fail to change behavior if it is not salient. And a lower carbon price, made highly visible at the point of consumption (e.g., a carbon label on each purchase), may produce behavioral change that a higher invisible price does not.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 945,
+      "out_sha": "be96f69f5625",
       "note": ""
     },
     {
@@ -2811,11 +2811,11 @@
       "en_title": "Chapter 19: Behavioral Policy Beyond the Nudge",
       "order": 226,
       "src_chars": 1968,
-      "status": "pending",
+      "status": "done",
       "src_sha": "56f7ab4c947a",
       "src": "#### Green Defaults\n\nEnvironmental choices are subject to the same default effects documented in retirement savings. Research findings:\n\n* Opt-out green energy tariffs (renewable electricity as the default) increase green energy enrollment to 70-90% of households, compared to 3-7% under opt-in systems\n* Hotel towel reuse defaults (framed as the standard practice, with opt-out) increase reuse by 20-30% compared to opt-in requests\n* Cafeteria food ordering defaults (vegetarian as the standard option) reduce meat consumption substantially, with most customers not noticing the change\n\n**Thread B:** A rational agent treats defaults as irrelevant because they can costlessly opt out. A human agent exhibits status quo bias: the default feels like the norm, the opt-out feels like a departure. Environmental policy can exploit this asymmetry systematically.\n\n\n#### Social Norm Campaigns\n\nThe Opower energy reports analyzed in Chapter 17 represent the largest-scale deployment of social norm messaging in environmental policy. The findings carry important lessons:\n\n* **Effect size** : 1.5-2% average reduction in energy consumption — small per household, meaningful at scale (millions of customers)\n* **Heterogeneity** : Boomerang effect in light users; injunctive norms (\"most neighbors approve of saving energy\") dampen the boomerang\n* **Persistence** : Effects persist over years, not just the weeks after receiving a report\n* **Additive with price** : Social norm effects are additive with price effects, not substitutes — higher prices plus social norm information produce more conservation than either alone\n\n**Thread C:** The Opower evidence is among the stronger bodies of evidence in applied behavioral economics. The scale of the deployments, the consistent replication across utilities and countries, and the long time series all strengthen confidence. Effect sizes are small but stable.\n\n\n### 19.4 When Structural Interventions Outperform Behavioral Ones\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 636,
+      "out_sha": "ee55fbf09e7f",
       "note": ""
     },
     {
