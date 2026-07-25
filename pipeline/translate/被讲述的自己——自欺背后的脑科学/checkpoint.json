@@ -1871,11 +1871,11 @@
       "en_title": "Chapter 6: Motivated Reasoning and the Smart-People Problem",
       "order": 150,
       "src_chars": 2699,
-      "status": "pending",
+      "status": "done",
       "src_sha": "78035285b490",
       "src": "#### Common Misconception\n\nA reader, having read this far, might think: _the chapter has been arguing that nothing works — not awareness, not careful reading, not analytical capacity. So the conclusion must be either nihilism (give up on accurate reasoning altogether) or hypocrisy (the book itself depends on careful reasoning to be valid)._ Neither follows.\n\nThe chapter is not arguing that nothing works. It is arguing that _individual analytical reasoning on identity-charged topics_ is not a reliable mechanism for tracking accuracy. This is a narrow claim. It is consistent with several things that do work.\n\nFirst, individual analytical reasoning works well on topics where identity is not at stake. The chapter's Q1 in the inventory continues to be useful in domains where the cognitive system has no large stake. The system does not have stakes in everything; on most ordinary cognitive tasks, analytical reasoning does what it appears to do.\n\nSecond, _collective_ analytical reasoning, structured to take advantage of the differing identity stakes of different participants, can be much more reliable than individual analytical reasoning. This is the basis of peer review, adversarial collaboration, prediction markets, and other institutional structures that Chapter 11 will return to. The participants in such structures still have individual identity stakes; the structure is designed so that the differing stakes cancel out at the level of the collective output. This is why scientific knowledge accumulates over time even though individual scientists are subject to motivated reasoning.\n\nThird, _structural tools_ operating on individual reasoning — pre-commitments, prediction tracking, written records that the dissonance engine cannot revise — work by reducing the system's ability to instrumentalize analytical capacity. They do not eliminate the underlying mechanism; they bound its operation in specific ways that make some kinds of distortion harder to produce.\n\nSo the conclusion is not nihilism. It is calibration. _Individual analytical reasoning is reliable in some domains and unreliable in others; the unreliable domains are precisely the ones where the stakes for accuracy are largest; the response is not to abandon analytical reasoning but to combine it with structural and collective tools in the unreliable domains._ This is the position the rest of the book occupies, and it is consistent with itself: the book's claims, if they hold, hold because they have been refined through collective scientific inquiry across decades, not because any individual researcher (including Kahan, including the author of this book) was uniquely uncontaminated by these distortions.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 725,
+      "out_sha": "ecf3316b81d7",
       "note": ""
     },
     {
@@ -1883,11 +1883,11 @@
       "en_title": "Chapter 6: Motivated Reasoning and the Smart-People Problem",
       "order": 151,
       "src_chars": 864,
-      "status": "pending",
+      "status": "done",
       "src_sha": "52cbbe5d3477",
       "src": "The hypocrisy worry is similar. The book itself depends on reasoning, but on collective and structural reasoning, not on the individual analytical capacity of any single reasoner. The empirical claims have been replicated; the framework has been refined through criticism; the converging findings come from researchers who started from different prior commitments. None of this guarantees that the book is right; the book may be wrong in specific places. But the book's claims rest on the kind of reasoning the chapter argues works, not on the kind it argues fails. This is internally consistent. It is also why the book asks to be read with structural skepticism — checked against the reader's own data, against converging research, against the reader's own observations — rather than with the felt persuasion that any individual reasoner's analysis can produce.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 225,
+      "out_sha": "2ad9e75c147f",
       "note": ""
     },
     {
@@ -1895,11 +1895,11 @@
       "en_title": "Chapter 6: Motivated Reasoning and the Smart-People Problem",
       "order": 152,
       "src_chars": 3306,
-      "status": "pending",
+      "status": "done",
       "src_sha": "971bdb7f4622",
       "src": "### 6.4 The Specific Techniques: How Identity-Charged Media Works\n\nIt is worth being concrete about how the smart-people problem operates in modern political media, because the abstract analysis can sound distant from anything most readers actually encounter. Rather than name particular contemporary commentators — which would invite readers to score them by their own political alignment, missing the structural point entirely — this section examines the specific techniques the format uses, with one historical illustration where the structure can be analyzed without the reader's own current identity stakes activating.\n\n**Three techniques common to identity-charged commentary, regardless of political direction.**\n\n_Affect-first sequencing._ A typical segment opens with an emotional framing — _here is something outrageous; here is something concerning_ — and then supplies the analytical framework that justifies the emotion. The emotion is not a response to the analysis; the emotion is the entry point that the analysis is then constructed to support. This sequence reverses the explicit framing the audience experiences (\"the host explained the situation, and the seriousness became clear\"), and the reversal is invisible from inside.\n\n_Asymmetric scrutiny._ Evidence consistent with the framing is presented quickly and without challenge; evidence inconsistent with it is either omitted, presented as a controversial claim by the opposing tribe, or framed as having a hidden agenda. The asymmetry is rarely detectable to a viewer aligned with the framing because each individual omission or characterization seems reasonable on its own terms; the pattern is visible only when one tracks the full set across many segments.\n\n_Parasocial intimacy._ The host speaks to the audience as a trusted ally addressing trusted allies. First-person plural (\"we know,\" \"they want us to believe\") and direct address (\"you can see what's happening here\") create the felt experience of being inside a confidence rather than receiving a media product. Trust calibrated to interpersonal intimacy is then attached to claims that would, in a different context, be evaluated more skeptically.\n\nThese three techniques are not used by one political direction more than another. They are the common toolkit of segments designed to produce sincere conviction in audiences whose identity stakes align with the framing. The same toolkit, deployed in opposite political directions, produces sincere conviction in opposite audiences. Both audiences experience their preferred commentary as obviously the more reasonable one; both are right that the commentary they prefer is internally cogent; both are subject to the smart-people problem in proportion to their analytical capacity, deployed by the cognitive system in service of their existing stake.\n\n**A historical illustration: Father Charles Coughlin and Huey Long, mid-1930s American populist radio.**\n\nThe technique-based pattern is clearest in cases where the audience's current identity stakes are not engaged. Two figures in the same brief window — roughly 1934 to Long's assassination in September 1935 — illustrate it from opposite political directions, broadcasting to overlapping but politically distinct American audiences during the depths of the Depression.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 930,
+      "out_sha": "ebc746f181e2",
       "note": ""
     },
     {
@@ -1907,11 +1907,11 @@
       "en_title": "Chapter 6: Motivated Reasoning and the Smart-People Problem",
       "order": 153,
       "src_chars": 2899,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9c82605effbe",
       "src": "Father Charles Coughlin's nationally syndicated Sunday broadcasts (CBS until 1931, his own network thereafter) used all three techniques. Affect-first sequencing: programs opened with named villains and indignation rather than with thesis statements (\"the bankers,\" \"the international conspiracy,\" specific public officials). Asymmetric scrutiny: monetary policy claims that aligned with his framing were presented as obvious; opposing claims were framed as the work of corrupt or alien interests. Parasocial intimacy: a Catholic priest speaking from his Royal Oak shrine directly into Catholic working-class American homes, addressing listeners as fellow members of a beleaguered moral community. By 1934, audience estimates ranged from perhaps 10 to 30 million weekly listeners — the lower end is what cautious historians defend, the higher end was Coughlin's own claim, and the actual figure has never been reliably established. The political content of his framing moved from early support of Roosevelt through anti-banking populism to overtly antisemitic and pro-fascist positions by the late 1930s.\n\nHuey Long, broadcasting from a redistributive-populist position on the political left, used the same three techniques in the opposite direction. Affect-first sequencing: addresses opened with concrete grievances against named wealthy individuals and the emotional framing of \"Share Our Wealth\" as moral redress, with policy details supplied in service of the grievance. Asymmetric scrutiny: economic claims supporting his redistribution program were presented as common sense; opposing analysis was characterized as the self-interest of the wealthy. Parasocial intimacy: a folksy direct address to \"the common man\" and \"you\" as fellow victims of an economic order designed to exclude them. Long's broadcasts mobilized followers in the millions and an organized national movement that contemporaries believed could plausibly mount a third-party challenge to Roosevelt before Long's assassination in September 1935 ended that possibility.\n\nThe political content of the two men was opposed: Coughlin's framing identified bankers and international elites as the enemy from a religious-traditionalist position that became openly antisemitic and pro-fascist by the late 1930s; Long's framing identified the same bankers from a redistributive-populist position on the left. The audiences mostly did not overlap. The techniques used to produce sincere conviction in each audience were nearly identical. Each audience experienced its preferred broadcaster as the truth-teller in an environment of corrupt elites and lying mainstream media; each audience experienced the other broadcaster (when they encountered him at all) as a demagogue. Both audiences were composed of people no less intelligent than today's audiences. The technique was the active ingredient; the political content was the variable.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 822,
+      "out_sha": "962404224667",
       "note": ""
     },
     {
@@ -1919,11 +1919,11 @@
       "en_title": "Chapter 6: Motivated Reasoning and the Smart-People Problem",
       "order": 154,
       "src_chars": 2557,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e1a1ae6ddee1",
       "src": "The historical illustration earns its place in the chapter for one specific reason: it lets the reader see the structure without their own identity stakes activating. _Of course Coughlin's audience was caught up; of course Long's audience was caught up; of course the techniques worked._ The reader who can analyze 1930s populist radio with structural calm and then resist applying the same analysis to whatever contemporary commentary they most respect is doing exactly what the framework predicts most readers will do — exempting their own present case from the general pattern they have just intellectually accepted on a safer historical case. The point of the illustration is not the history; it is the gap between how easily the reader analyzes Coughlin's audience and how strongly the reader resists analyzing themselves the same way. That gap is the framework operating in real time.\n\n**Why this matters for the structural intervention from Chapter 5.**\n\nThe intervention of _consume diverse sources_ is necessary but insufficient. The smart-people problem adds a further constraint: the diverse consumption must be done in conditions that do not let the analytical capacity simply construct sophisticated reasons why the cross-spectrum sources are wrong. Reading the opposing commentator's transcript and noticing what is wrong with their argument is _not_ the same as engaging with their strongest argument as they would summarize it; the first is motivated reasoning operating on the structural exposure, and the cognitive system will do it indefinitely. The second is structurally harder and produces more update.\n\nThis is also why the political polarization of the modern era is so resistant to argumentative intervention. Each side, as analytical capacity has spread (as education levels have risen, as access to information has grown), has become more sophisticated at producing sincere accounts of why their side is right and the other side is wrong. The polarization is not ignorant; it is exquisitely informed and exquisitely reasoned. The reasoning is, on both sides, in service of identity. There is no version of _more education_ or _more information_ that fixes this. What can occasionally help is structural — exposure to opposing views in conditions that bound motivated reasoning, prediction tracking that creates external accountability, epistemic friendships that provide outside views the analytical capacity cannot subvert, institutional designs that aggregate across identity-stakes to produce more accurate collective outputs.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 674,
+      "out_sha": "945fd63a6b72",
       "note": ""
     },
     {
