@@ -1335,11 +1335,11 @@
       "en_title": "Chapter 8: TDD vs Test-After — The Honest Debate",
       "order": 102,
       "src_chars": 3433,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1d8933f1983e",
       "src": "### 8.7 The mechanics of TDD: a worked example\n\nConsider a real-shape problem at Trellis: implementing a `calculate_late_fee(invoice, current_date)` function. The spec, as the engineer understands it: 5% of the unpaid balance, charged once per 30 days late, capped at 25% of the invoice total.\n\nTDD cycle 1:\n    \n    \n    # Red\n    def test_no_fee_when_not_late():\n        invoice = Invoice(total=100, due_date=date(2026, 5, 1), paid=0)\n        fee = calculate_late_fee(invoice, current_date=date(2026, 5, 1))\n        assert fee == 0\n    # Test fails: function doesn't exist.\n    \n    # Green\n    def calculate_late_fee(invoice, current_date):\n        return 0\n    # Test passes. The implementation is trivially correct for this case.\n    \n    # Refactor: nothing to refactor yet.\n    \n\nTDD cycle 2:\n    \n    \n    # Red\n    def test_fee_when_30_days_late():\n        invoice = Invoice(total=100, due_date=date(2026, 5, 1), paid=0)\n        fee = calculate_late_fee(invoice, current_date=date(2026, 5, 31))\n        assert fee == 5  # 5% of 100\n    # Test fails: function returns 0.\n    \n    # Green\n    def calculate_late_fee(invoice, current_date):\n        days_late = (current_date - invoice.due_date).days\n        if days_late < 30:\n            return 0\n        return invoice.total * 0.05\n    # Test passes.\n    \n    # Refactor: extract a constant for clarity.\n    LATE_FEE_RATE = 0.05\n    def calculate_late_fee(invoice, current_date):\n        days_late = (current_date - invoice.due_date).days\n        if days_late < 30:\n            return 0\n        return invoice.total * LATE_FEE_RATE\n    # Tests still pass.\n    \n\nTDD cycle 3:\n    \n    \n    # Red\n    def test_fee_compounds_monthly():\n        invoice = Invoice(total=100, due_date=date(2026, 5, 1), paid=0)\n        fee = calculate_late_fee(invoice, current_date=date(2026, 7, 30))\n        assert fee == 15  # 5% × 3 (May, June, July periods)\n    # Test fails: function returns 5.\n    \n    # Green\n    def calculate_late_fee(invoice, current_date):\n        days_late = (current_date - invoice.due_date).days\n        if days_late < 30:\n            return 0\n        months_late = days_late // 30\n        return invoice.total * LATE_FEE_RATE * months_late\n    # Test passes.\n    \n    # Refactor: nothing yet.\n    \n\nTDD cycle 4:\n    \n    \n    # Red\n    def test_fee_capped_at_25_percent():\n        invoice = Invoice(total=100, due_date=date(2026, 1, 1), paid=0)\n        fee = calculate_late_fee(invoice, current_date=date(2026, 12, 31))\n        assert fee == 25  # 364 days late → 12 periods × 5% = 60, capped at 25% of 100 = 25\n    # Test fails: function returns 55.\n    \n    # Green\n    def calculate_late_fee(invoice, current_date):\n        days_late = (current_date - invoice.due_date).days\n        if days_late < 30:\n            return 0\n        months_late = days_late // 30\n        fee = invoice.total * LATE_FEE_RATE * months_late\n        return min(fee, invoice.total * 0.25)\n    # Test passes.\n    \n    # Refactor: extract the cap constant; consider extracting fee calculation.\n    LATE_FEE_RATE = 0.05\n    LATE_FEE_CAP_RATE = 0.25\n    \n    def calculate_late_fee(invoice, current_date):\n        days_late = (current_date - invoice.due_date).days\n        if days_late < 30:\n            return 0\n        months_late = days_late // 30\n        fee = invoice.total * LATE_FEE_RATE * months_late\n        cap = invoice.total * LATE_FEE_CAP_RATE\n        return min(fee, cap)\n    ",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 2879,
+      "out_sha": "abab28371b07",
       "note": ""
     },
     {
@@ -1347,11 +1347,11 @@
       "en_title": "Chapter 8: TDD vs Test-After — The Honest Debate",
       "order": 103,
       "src_chars": 474,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1bdf1e1cc0be",
       "src": "After four cycles, the function handles all four cases that the engineer thought of. A property-based test (Chapter 6) might surface additional cases (negative paid amounts, zero invoice totals, very-far-future dates); a mutation test would reveal whether the assertions are strong enough. But the core implementation is built incrementally, with the tests as the spec, and the engineer never holds more than a few minutes of work in their head at once.\n\n\n### 8.8 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 134,
+      "out_sha": "017619187758",
       "note": ""
     },
     {
@@ -1359,11 +1359,11 @@
       "en_title": "Chapter 8: TDD vs Test-After — The Honest Debate",
       "order": 104,
       "src_chars": 3361,
-      "status": "pending",
+      "status": "done",
       "src_sha": "effe6f6ecd5e",
       "src": "#### Concept Check\n\n**Q1.** A teammate says: \"I do TDD! I write all the test cases for a feature first, then I write the implementation, then I run the tests.\" Is this TDD? Why or why not? If you wanted to coach them toward the canonical practice, what specific change in their workflow would you suggest, and why does that change matter?\n\nHint\n\nTDD has three parts: test-first, _plus_ one-at-a-time, _plus_ minimum-implementation. Which is the teammate missing?\n\n**Answer:** Not quite TDD; it is _test-first_ without the cycle. The teammate is missing the _one-at-a-time_ and _minimum-implementation_ parts. Writing all tests then all code is the \"draw the whole owl, then write tests\" pattern; it loses TDD's main benefits.\n\nThe specific change: ask them to write _one_ failing test, then write _the minimum code to make it pass_ (even if obviously incomplete), then write the _next_ failing test, and so on. The \"minimum code to pass\" rule is the crucial one; it prevents over-engineering. When the test asks for \"return 0 for zero days late\", the implementation returns `0`. The test gets greener; you write the next test. The implementation grows incrementally, driven by the tests, not by anticipation.\n\nWhy does this matter? Three reasons:\n\n* **Cognitive load stays small.** One test = one decision. Writing 20 tests at once requires holding 20 specs in your head simultaneously.\n* **The implementation evolves to match the tests, not the engineer's prediction.** Over-engineering is the natural failure mode of test-first-without-cycle.\n* **The refactor step has a job.** With one test passing and the minimum code in place, the refactor step has a small concrete improvement to make. With all 20 tests already written, the refactor step turns into \"rewrite the whole thing.\"\n\nThe cycle is the discipline, not the order.\n\n**Q2.** Give a task type for which TDD is well-suited and a task type for which it is poorly suited. Justify each.\n\nHint\n\nThe §8.6 matrix categorizes tasks.\n\n**Answer:** Well-suited: a pure function with a known spec, like the `calculate_late_fee` example. The test is precise (one input, one expected output); the cycle is fast (write test, write code, refactor, repeat); the test-first discipline forces clarification of the spec (what happens at exactly 30 days? at 25.5%?). The friction is low; the value is high.\n\nPoorly-suited: visual UI work for a new product feature where the spec is \"make it look right.\" Writing tests for \"looks right\" is harder than writing the UI and iterating visually. The test-first cycle would consume effort on test mechanics that does not advance the visual goal. Test-after with visual regression tooling is the natural fit.\n\nThe principle: TDD fits where the test is a precise spec; it does not fit where the spec is emergent, visual, or exploratory.\n\n**Q3.** Aki and a junior engineer are pairing on a new pricing rule. Aki writes 8 failing tests for the rule's behavior, then opens Claude Code and asks the agent to make them pass. The junior asks: \"Wait, is this TDD or is this just prompting?\" Aki says it is TDD. The junior is unconvinced because Aki did not write the implementation. Who is right, and what is the deeper point the junior may be missing about what \"TDD\" actually is?\n\nHint\n\nRecall §8.5 and the position taken in §8.5 about tests-as-spec being TDD-with-a-different-driver.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1153,
+      "out_sha": "3b4afc6e2f82",
       "note": ""
     },
     {
@@ -1371,11 +1371,11 @@
       "en_title": "Chapter 8: TDD vs Test-After — The Honest Debate",
       "order": 105,
       "src_chars": 2805,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3063ace34392",
       "src": "**Answer:** Aki is right; the junior is confusing _labor distribution_ with _discipline_. TDD's core is red-green-refactor: write a failing test, write the minimum to make it pass, then refactor. The discipline says nothing about _who_ writes the \"green\" step. In classical TDD, the same engineer who wrote the test also writes the implementation. In tests-as-spec, the human writes the test (red), the agent produces the implementation (green), and the human reviews/iterates (refactor). The cycle is preserved; only the labor moves.\n\nThe deeper point the junior may be missing: TDD's value was never that the engineer's fingers typed both the test and the implementation. Its value was the _thinking discipline_ of stating the spec precisely before producing the code, plus the _iteration cycle_ of small failing-then-passing steps. Both are preserved in tests-as-spec; arguably _more_ preserved, because the agent's implementation is fast enough that the cycle can run many times in an hour.\n\nWhat is _not_ preserved: the engineer's hands-on familiarity with the implementation. The agent wrote the code; the human read and approved it. This is real cost; it shifts where the engineer's mental model lives. For routine work this is fine. For genuinely novel logic where the engineer needs to deeply understand the implementation, classical TDD (where the human writes the code) may still be the right choice.\n\nThe junior's instinct — that tests-as-spec is \"different\" from TDD — is half right (different _who_) and half wrong (same _what_). Help them see that the discipline is the cycle, not the typing.\n\n**Q4.** Defend or refute: \"TDD makes refactoring safe.\" When is the claim true, and when is it false?\n\nHint\n\nRefactoring safety depends on test quality, not on when the tests were written.\n\n**Answer:** The claim is partially true. TDD tends to produce tests at the right granularity and with the right decoupling (because the tests force testable design, §8.3 Part 2). Such tests do make refactoring safer; the test suite catches behavior changes without false alarms for structural changes.\n\nBut the safety comes from the _test quality_ , not from the _order_ of test-writing. Test-after engineers who write equally good tests achieve equal refactoring safety. TDD's correlation with safe refactoring is mediated by test quality; the discipline is one path to good tests, not the only path. The claim \"TDD makes refactoring safe\" is misleading if it suggests that the safety is automatic; the safety is earned by the tests, not by the order.\n\nThe claim is false in cases where TDD produces low-quality tests anyway. An engineer who does TDD but writes tests that over-couple to implementation produces fragile tests; refactoring under those tests is unsafe regardless of when they were written.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 873,
+      "out_sha": "e7dcc5d7b4c6",
       "note": ""
     },
     {
