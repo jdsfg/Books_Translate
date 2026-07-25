@@ -711,11 +711,11 @@
       "en_title": "Chapter 4: Team Branching Doctrine",
       "order": 50,
       "src_chars": 2480,
-      "status": "pending",
+      "status": "done",
       "src_sha": "11c17fecfe1f",
       "src": "#### PR templates\n\nA PR template guides the author to write what reviewers need. A useful template includes:\n    \n    \n    ## What\n    One sentence describing the change.\n    \n    ## Why\n    What problem does this solve? Link to ticket, ADR, or incident.\n    \n    ## How\n    Brief overview of the approach. Anything non-obvious about the implementation.\n    \n    ## Testing\n    What was tested? What was not?\n    \n    ## Risk\n    What could go wrong? What rollback plan?\n    \n    ## Flag\n    Behind a feature flag? Which one?\n    \n\nA template is not bureaucracy; it is a forcing function for the author to think about reviewer needs before writing the description. Skipping a section is a signal; an empty \"Risk\" section in a 1,000-line database migration is a red flag.\n\n\n#### Review SLAs\n\nA team that cares about ship velocity needs explicit review SLAs. Carmen's Currents SLA, after her transition:\n\n* **First review response** : 4 business hours during local working hours.\n* **Author response to review comments** : 1 business day.\n* **Re-review after author response** : 4 business hours.\n* **Hard limit** : a PR open for more than 5 business days is escalated to the team lead.\n\nThe SLAs are not punitive; they prevent the dead-PR-syndrome where work sits unreviewed for two weeks, the author loses context, and the merge happens carelessly. Currents publishes the SLAs in the team's onboarding doc and tracks aggregate compliance monthly. Carmen's own review comments under this SLA always open with the same shape — a bolded label (`**Blocking**`, `**Suggestion**`, `**Nit**`, `**Praise**`) before any prose, so the author knows the required action from the first character. It is the habit she most asks new hires to adopt; she finds it disciplines her own thinking as much as the author's response.\n\n\n#### Common Misconception\n\nA common misconception is \"review SLAs slow me down because they interrupt my own work.\" The mistake assumes that reviewing is overhead. In a team that ships features through PRs, reviewing _is_ the work; an engineer who never reviews is not pulling their share, and an engineer who reviews promptly is enabling the team's velocity. The slowdown perception is real (interrupting deep work to review) but the alternative (PRs piling up) slows the team more in aggregate than the reviewer is slowed individually. The discipline is to batch reviews twice per day rather than reactively; this keeps the SLA without thrashing the reviewer's day.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 991,
+      "out_sha": "58b7b4fc32f3",
       "note": ""
     },
     {
@@ -723,11 +723,11 @@
       "en_title": "Chapter 4: Team Branching Doctrine",
       "order": 51,
       "src_chars": 2625,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f396ade542f1",
       "src": "### 4.6 The agent-commits-PR workflow\n\nIn 2026, agent mode (Cursor agent, Claude Code, Devin, v0) is increasingly the implementer; the human is increasingly the reviewer and director. The workflow that emerged in 2025-2026:\n\n  1. A human writes a spec, a failing test, or a clear ticket description.\n  2. The agent works on a branch, makes commits, writes tests, runs the test suite locally.\n  3. The agent opens a PR with a description matching the team's template.\n  4. The human reviews the PR, requests changes, or merges.\n  5. The agent responds to review comments by pushing more commits.\n  6. The PR merges when the human is satisfied.\n\nThis workflow inverts the traditional flow: the human is no longer the author of the code, they are the reviewer and final-decision-maker. The implications are deep:\n\n* **Review skill becomes the bottleneck.** A team that ships ten agent-PRs per engineer per day needs reviewers who can review ten PRs per day without quality degradation. This is harder than it sounds (Chapter 15).\n* **Agent identity matters.** The Git author of the agent's commits should be distinct (e.g. a service account named `claude-agent[bot]`) so that `git blame` reveals whether a line was human-authored or agent-authored. This information is valuable during maintenance.\n* **The CLAUDE.md / AGENTS.md file becomes load-bearing** (Chapter 22). The agent learns the codebase's conventions from this file; without it, the agent's PRs are full of style inconsistencies (Thread C Lie #3).\n* **The agent's commit messages need explicit specification.** Without instruction, the agent defaults to a generic style; with instruction (in the CLAUDE.md), the agent matches Conventional Commits and the team's scope vocabulary.\n\n\n#### Configuring the agent for Currents\n\nCarmen's CLAUDE.md at Currents includes:\n    \n    \n    # Commit conventions\n    Use Conventional Commits format.\n    Allowed types: feat, fix, refactor, test, docs, chore, perf, ci.\n    Allowed scopes: auth, billing, scoring, ingest, api, db, infra.\n    \n    # PR conventions\n    Open one PR per atomic change.\n    Target trunk; do not branch off feature branches.\n    Use the PR template at .github/pull_request_template.md.\n    Behind a feature flag if user-visible.\n    \n    # Testing\n    Write tests in pytest. Use the existing fixtures in `tests/conftest.py`.\n    Do not introduce new test frameworks.\n    \n    # Style\n    Match the surrounding file. Do not reformat existing code.\n    \n\nThis file is read at the start of every agent session. The agent's PRs at Currents look like the team's other PRs; without the file, they would not.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1439,
+      "out_sha": "e90d82e23e8c",
       "note": ""
     },
     {
@@ -735,11 +735,11 @@
       "en_title": "Chapter 4: Team Branching Doctrine",
       "order": 52,
       "src_chars": 1958,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cf56fdfeb56b",
       "src": "### 4.7 A working example: Trellis adopts trunk-based\n\nTrellis adopted trunk-based development in early 2025, after years of GitHub Flow. The transition was the kind of multi-team change that takes a quarter and several incidents to land. The illustrative timeline:\n\n* **Week 1** : Asher and two other staff engineers wrote a proposal. The proposal was a single ADR (Chapter 17) explaining the current pain (long-running branches drifting from `main`, large merge conflicts, slow CI on PR branches) and the proposed change.\n* **Week 2-3** : Discussion. The most contentious point: trunk-based requires feature flags, and Trellis had only ad-hoc feature flags. The team agreed to adopt LaunchDarkly as a prerequisite.\n* **Week 4-6** : LaunchDarkly integration. A small team built the SDK wrapper and the flag-lifecycle process.\n* **Week 7-10** : Migration. Teams converted long-running branches into trunk-based work behind flags. CI was tightened to run on every `main` commit, with a one-hour SLA on green builds. PR sizes shrank intentionally; the team published a target of < 400 lines.\n* **Week 11-12** : The first incident. A flag misconfiguration deployed a half-finished feature to 100% of users. Post-mortem produced a new rule: flags default to off in production, and rollout requires a two-step approval (Carmen-style review SLA applied to flag changes too).\n\nBy Week 16, the model was stable. PR sizes were averaging 250 lines; review turnaround was averaging 6 hours; CI was green on `main` 95% of the time; the on-call burden dropped because incident-causing PRs were smaller and revertable.\n\nThe lesson Asher took: the model did not work because it was the right model; it worked because the team committed to the prerequisites (feature flags, fast CI, small PRs) and adjusted when the model surfaced new failure modes. The right model imposed without the prerequisites is worse than the wrong model with the prerequisites.\n\n\n### 4.8 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 772,
+      "out_sha": "5b7815ecf8b9",
       "note": ""
     },
     {
@@ -747,11 +747,11 @@
       "en_title": "Chapter 4: Team Branching Doctrine",
       "order": 53,
       "src_chars": 3076,
-      "status": "pending",
+      "status": "done",
       "src_sha": "65e081a1b845",
       "src": "#### Concept Check\n\n**Q1.** Your team currently runs Git Flow with weekly releases. You believe trunk-based would be a better fit. Apply §4.1's decision criteria honestly: when would you recommend the change, and when would you recommend staying?\n\nHint\n\nThe decision table in §4.1 lists six properties. Score your team on each.\n\n**Answer:** Recommend trunk-based if: the team's CI is fast (< 15 minutes for the full suite) and reliable (green > 95% on `main`), the team is willing to adopt feature flags pervasively (and has a flag service), the team can shrink typical PRs to under 400 lines, and the product is continuously deployed (not versioned-installable).\n\nRecommend staying on Git Flow if: the product is versioned and installable (mobile app, on-prem software, library) where multiple versions are in production simultaneously, the team has weak CI that cannot support trunk's per-commit pipeline pressure, or the team is in a regulatory environment that requires explicit release branches (some financial-services teams).\n\nThe pure middle case (a SaaS team shipping weekly with moderate CI and resistance to feature flags) is the best candidate for GitHub Flow rather than either of the extremes. Choosing trunk-based for this team without first investing in CI and flags will produce friction that the team blames on trunk-based when the cause is the missing prerequisites.\n\n**Q2.** Compare Conventional Commits with the alternative of free-form commit messages. What does the team gain and lose?\n\nHint\n\n§4.2's three downstream benefits and two failure modes.\n\n**Answer:** Gain: queryable history (`git log --grep=^feat`), automatic changelog generation, automatic version bumps via semantic-release, lower cognitive load on what to write (the format prompts the author). Lose: some expressiveness (the format constrains what you write), some flexibility (a commit that is part feat and part fix has to be split or the type chosen approximately), some adoption friction (the team has to learn the vocabulary).\n\nThe trade-off is favorable for most teams shipping libraries or products with changelogs. For internal-only services where the changelog is irrelevant, the gain is smaller; the format then is mostly a style choice rather than a functional one. Most 2026 teams adopt the format anyway because it integrates with toolchains and because consistency across teams has value when engineers move between codebases.\n\n**Q3.** A teammate adds a feature flag for a small change and rolls it out to 100% on the same day, then leaves the flag in place \"for future use.\" Why is this a problem? What should the team's flag lifecycle have prevented?\n\nHint\n\n§4.4's flag-rot problem.\n\n**Answer:** The flag is now dead code: a runtime conditional that always takes the same branch. It adds cost (the flag is evaluated on every request, paying a network or cache lookup) and confusion (the \"off\" branch is unreachable but still present in the code, where it will mislead future readers). Multiplied across hundreds of such flags over years, the codebase becomes unreadable.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1090,
+      "out_sha": "7755857221f6",
       "note": ""
     },
     {
