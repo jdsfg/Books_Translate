@@ -3491,11 +3491,11 @@
       "en_title": "Chapter 10: Structural Honesty — Predictions, Pre-mortems, Pre-commitments",
       "order": 285,
       "src_chars": 1763,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4d885550e05f",
       "src": "The tool also has a particular self-correcting feature. As the practitioner accumulates calibration data, they can notice specific patterns in their forecasting failures: systematic over-confidence on certain types of questions, systematic under-confidence on others, specific blind spots that show up repeatedly in their predictions. The pattern recognition is itself supported by the data rather than by introspection; the practitioner can see, in their accumulated record, that their 80% predictions came true 60% of the time on a particular topic, that their predictions about timing were systematically too aggressive, that their predictions about technical questions were better-calibrated than their predictions about political questions. This pattern recognition then feeds back into improved future predictions: the practitioner can adjust their confidence levels on the topics where the data shows systematic miscalibration. The adjustment is not introspective; it is data-driven; the data is what makes the improvement reliable.\n\n\n#### Definition: Prediction Tracking\n\nPrediction tracking is the structural practice of writing down specific testable predictions about future outcomes, with explicit probability levels and dates, and then systematically comparing the predictions to actual outcomes when they arrive, using the accumulated calibration data to improve future predictions.\n\nIn plain language, this means: write what you think will happen, specifically and probabilistically. Date the writing. When the future arrives, look at what actually happened and compare to what you wrote. Over time, you will have a record of how well-calibrated your predictions actually are, which is information the felt sense of being calibrated cannot supply.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 441,
+      "out_sha": "47d61c5cdbc5",
       "note": ""
     },
     {
@@ -3503,11 +3503,11 @@
       "en_title": "Chapter 10: Structural Honesty — Predictions, Pre-mortems, Pre-commitments",
       "order": 286,
       "src_chars": 2658,
-      "status": "pending",
+      "status": "done",
       "src_sha": "380e4429da34",
       "src": "#### How to Implement Prediction Tracking\n\nThe practice has been refined over decades of forecasting tournament experience; specific implementation guidance is available and has been tested.\n\n_Choose questions that matter to you and that have specific resolvable outcomes._ Forecasting works best on questions where the outcome will be unambiguous when it arrives. \"Will the candidate I am supporting win the election by more than 5 percentage points?\" is more trackable than \"Will my candidate's policies be successful?\" The first has a clear answer; the second requires interpretation that the dissonance engine can subsequently revise. Pick questions of the first kind; on questions of the second kind, work to translate them into specific resolvable subquestions before predicting.\n\n_State predictions with specific probability levels._ Not \"I think this will probably happen\" but \"70% chance this will happen.\" The probabilistic form forces the specificity that standard introspective predictions resist. If you find probabilistic statement difficult, start with a coarse scale (10%, 30%, 50%, 70%, 90%) and refine over time; the practice itself will improve the precision.\n\n_Write predictions in a place you will return to._ A dedicated document, a spreadsheet, a structured notebook, or a forecasting platform like Metaculus or Manifold. The medium matters less than the discipline of returning to the same place to record predictions and outcomes. Email-to-self with specific subject lines works; sticky notes do not (they get lost). The infrastructure should be friction-free enough that you actually use it.\n\n_Date each prediction and specify a resolution date._ When will you check this prediction against reality? The date should be when the outcome will be unambiguous; for some predictions, this is days, for others, years. Vague resolution dates produce vague review; specific dates produce specific review.\n\n_Set a regular schedule for review._ Once a month, once a quarter, once a year — pick a cadence and stick to it. Review predictions whose resolution dates have passed; record the actual outcomes; compute calibration where you have enough predictions to do so meaningfully. The review is what produces the calibration data; without the review, the writing alone does not produce the benefit.\n\n_Pay specific attention to systematic patterns._ Are you systematically over-confident? Under-confident? Better on certain topics than others? Better at short-term predictions than long-term? The pattern recognition is what allows the tool to improve your future predictions; without it, the tool produces data without producing calibration.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 728,
+      "out_sha": "01ea4abbcabe",
       "note": ""
     },
     {
@@ -3515,11 +3515,11 @@
       "en_title": "Chapter 10: Structural Honesty — Predictions, Pre-mortems, Pre-commitments",
       "order": 287,
       "src_chars": 1474,
-      "status": "pending",
+      "status": "done",
       "src_sha": "48e50bb118df",
       "src": "### 10.2 Pre-mortems\n\nThe second structural tool is the pre-mortem, developed and popularized by the cognitive psychologist Gary Klein. The practice operates by inverting the temporal frame in which the practitioner imagines a project or decision: instead of looking forward from the present and imagining how the project might succeed, the practitioner is asked to imagine that the project has already failed, and to look backward from the imagined failure to identify what caused it.\n\nThe structural insight is that the architecture's forecasting on prospective decisions is biased toward optimism — toward imagining the project succeeding, toward downplaying risks, toward identifying paths to success more easily than paths to failure. This bias is not random; it is the production capacity from the previous chapter operating in service of the position the practitioner has taken (the project should proceed). Asked to forecast the project's prospects, the production capacity produces sincere arguments for the project's likely success. The pre-mortem inverts this. By assuming the project has already failed, the production capacity is asked to do what it does well — produce sincere arguments for a position — but the position is now \"the project failed\" rather than \"the project will succeed.\" The inversion engages the same capacity in service of identifying failure modes; the failure modes that emerge are often ones the prospective forecasting did not surface.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 371,
+      "out_sha": "6e989eae7ea5",
       "note": ""
     },
     {
@@ -3527,11 +3527,11 @@
       "en_title": "Chapter 10: Structural Honesty — Predictions, Pre-mortems, Pre-commitments",
       "order": 288,
       "src_chars": 3023,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7a17e7804539",
       "src": "#### How Pre-mortems Work\n\nThe mechanism is the same one Mercier and Sperber's framework predicts. The production capacity is good at producing sincere arguments for whatever position the practitioner has taken; the practitioner's normal forecasting takes the position \"the project will succeed,\" and the production capacity supplies cogent reasons. The pre-mortem asks the practitioner to take a different position — \"the project has failed\" — and the production capacity supplies cogent reasons for that position too, identifying specific failure paths that the optimistic position would not have identified.\n\nWhat does this look like in practice? Imagine a team about to launch a new product. The team is enthusiastic; they have invested in the project; they expect it to succeed. Asked for risk assessment, the team produces a list of risks but the list is sparse and the listed risks have ready mitigations. The team's optimistic position is doing its work; the production capacity is producing reasons supporting the position; risks are acknowledged but downplayed because the active assumption is success.\n\nThe pre-mortem proceeds differently. The facilitator asks the team to imagine that it is now twelve months later. The product launched; the launch failed; the team is conducting a post-mortem to understand what went wrong. Now the team is asked to write down, individually, all the plausible reasons why the failure might have occurred. The change in framing is structural: the team is no longer producing arguments for \"the launch will succeed\" but for \"the launch failed.\" The production capacity, doing its standard work, produces failure modes — specific, concrete, often ones that the optimistic forecasting had not surfaced.\n\nThe empirical evidence on pre-mortems is encouraging. Projects whose teams have conducted pre-mortems identify failure risks at substantially higher rates than projects whose teams have only conducted prospective risk assessments. The identified risks can then be mitigated, addressed, or used to inform the decision about whether to proceed at all. The pre-mortem produces information that the optimistic forecasting did not, and the information is actionable.\n\n\n#### Definition: Pre-mortem\n\nA pre-mortem is the structural practice of imagining, before a decision is made or a project is launched, that the decision or project has already failed; the practitioner then identifies the specific reasons why the failure might have occurred. The practice exploits the production capacity's facility at producing sincere arguments for whichever position is assumed, by deliberately assuming a failure position to surface failure modes that prospective optimism would not have surfaced.\n\nIn plain language, this means: imagine the project has failed; figure out why. The \"imagine it failed\" framing changes what your mind produces; what it produces are failure modes you would not otherwise have noticed, because your normal forecasting is biased toward seeing the project succeed.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 783,
+      "out_sha": "921a37ea2e4b",
       "note": ""
     },
     {
@@ -3539,11 +3539,11 @@
       "en_title": "Chapter 10: Structural Honesty — Predictions, Pre-mortems, Pre-commitments",
       "order": 289,
       "src_chars": 3391,
-      "status": "pending",
+      "status": "done",
       "src_sha": "bd577194a78e",
       "src": "#### How to Implement Pre-mortems\n\nThe practice can be done individually or in groups; the implementation differs slightly between the two.\n\nFor individual pre-mortems on personal decisions:\n\n_Choose a decision that matters and that you are about to make or have recently made._ The pre-mortem works best on decisions where the outcome is not yet fully determined; for decisions already made, the pre-mortem can still surface risks that should affect implementation.\n\n_Set aside specific time — typically thirty to sixty minutes — for the practice._ Pre-mortems do not work as a quick exercise; they require sustained imagination and detailed work.\n\n_Write down the decision in clear form._ What are you about to do? What outcomes are you expecting? Be specific about the timeframe and the specific success criteria.\n\n_Now imagine you are at the future date when the decision's outcome would be evaluated, and the decision has failed._ Failed means: the expected positive outcomes did not materialize; the decision in retrospect looks like a mistake; you wish you had done something different. The failure should be substantial enough to be uncomfortable to imagine.\n\n_Write down all the plausible reasons the failure might have occurred._ Be detailed and specific. Generic risks are not useful; specific scenarios with concrete causal chains are. Push yourself to produce at least ten reasons; the first five will likely be obvious, the next five often surface things you would not otherwise have noticed.\n\n_For each identified failure mode, ask: what is the probability it actually occurs, and what could be done to mitigate or detect it before it produces irreversible damage?_ The pre-mortem's value is not just in identifying the failure modes but in informing what to do about them.\n\n_Use the output to inform the decision or its implementation._ The decision might be modified, the implementation might be adjusted, contingency plans might be developed, or in some cases the decision might be abandoned because the failure modes are too severe and not adequately mitigated.\n\nFor group pre-mortems on team decisions:\n\n_All the above applies, with adjustments for the group dynamic._ The facilitator should ensure that participants write down failure modes individually before discussing them as a group; this prevents groupthink from constraining the imagination. After individual writing, the group can discuss and refine the identified modes collectively.\n\n_The facilitator should explicitly invite specific kinds of failure modes that groups often overlook._ Failures of execution; failures of assumption; failures of stakeholder support; failures of timing; failures of competitive response; failures of integration with existing systems. Each category produces specific failure modes the group might not surface without prompting.\n\n_The facilitator should ensure that the discussion of failure modes does not become an opportunity for tribal positioning within the group._ Members who had reservations about the project should not use the pre-mortem to defeat the project through accumulated risk-listing; members who supported the project should not use the pre-mortem to dismiss serious risks as unlikely. The facilitator's role is to keep the discussion oriented toward identifying real failure modes rather than toward winning the political argument about whether to proceed.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 903,
+      "out_sha": "c015d1f55922",
       "note": ""
     },
     {
