@@ -467,11 +467,11 @@
       "en_title": "Chapter 4: Risk — What It Actually Means",
       "order": 31,
       "src_chars": 2671,
-      "status": "pending",
+      "status": "done",
       "src_sha": "04cd3cccfd07",
       "src": "Here's a question that reveals whether you truly understand risk: which is riskier — putting 10,000 USD in the stock market or putting 10,000 USD under your mattress?\n\nMost people say the stock market. And they're wrong — at least if \"risk\" means what it should mean.\n\nIn Chapter 3, we saw that 10,000 USD in cash loses purchasing power every year to inflation. At 3% inflation, your mattress money has the buying power of about 5,500 USD after 20 years. The stock market might bounce around wildly — up 25% one year, down 15% the next — but over 20 years, it has historically turned 10,000 USD into roughly 38,000 USD to 40,000 USD (at ~7% average annual return).\n\nSo which is riskier? The answer depends entirely on what you mean by \"risk\" — and most people's definition is dangerously incomplete.\n\n\n### 4.1 Redefining Risk\n\nThe common definition of risk is: \"the chance of losing money.\"\n\nBy this definition, the stock market is risky (prices go down sometimes) and a savings account is safe (the balance never decreases). This definition is intuitive, simple, and wrong.\n\nHere's a better definition:\n\n**Risk is the chance of not having the money you need, when you need it.**\n\nThis definition changes everything. Under this definition:\n\n* A 25-year-old putting retirement savings in a savings account is taking a HUGE risk — because after 40 years of inflation, that money won't cover retirement expenses. The \"safe\" choice almost guarantees failure.\n* A 70-year-old putting all savings in stocks is also taking a huge risk — because a market crash could cut their living expenses right when they need the money and don't have time to wait for recovery.\n* A person with no emergency fund is taking a risk regardless of their investments — because any unexpected expense could force them into high-interest debt.\n\nRisk isn't about what happens to the NUMBER on your account. It's about what happens to your LIFE if that number isn't sufficient when you need it.\n\n\n#### Definition: Risk (Financial)\n\nFinancial risk is the probability that your actual financial outcome will be worse than what you need. It encompasses not just the chance of losing money, but also the chance of not growing money enough, losing purchasing power to inflation, or not having access to money when it's needed.\n\nIn plain language, this means: risk is personal. The same investment can be \"risky\" for one person and \"safe\" for another, depending on when they need the money and what they need it for. A 30-year-old's retirement portfolio and a 65-year-old's retirement portfolio should look different — not because the investments themselves changed, but because the PEOPLE's risks changed.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 857,
+      "out_sha": "bfe9a11e1b34",
       "note": ""
     },
     {
@@ -479,11 +479,11 @@
       "en_title": "Chapter 4: Risk — What It Actually Means",
       "order": 32,
       "src_chars": 1782,
-      "status": "pending",
+      "status": "done",
       "src_sha": "24b075961b16",
       "src": "### 4.2 Volatility Is Not Risk\n\nThis distinction is so important it deserves its own section.\n\n**Volatility** means prices bounce around. The stock market might be up 20% one year and down 15% the next. That bouncing is uncomfortable — it's scary to watch your account balance drop — but it's not the same as risk.\n\n**Risk** means you permanently lose money or don't have enough when you need it.\n\nHere's the critical difference: volatility is temporary. If you have time, prices recover. The stock market has experienced numerous crashes — 1929, 1987, 2000, 2008, 2020 — and has recovered from every single one. An investor who held through the 2008 financial crisis (when stocks dropped ~50%) and waited just 5 years had fully recovered and then some.\n\nRisk, on the other hand, is about being forced to sell during volatility — needing your money when prices are down. If you MUST sell during a crash (because you need the money for living expenses, or you panic-sell), then volatility BECOMES risk. Otherwise, it's just noise.\n\nThis leads to a simple but powerful framework:\n\nMoney you need... | Volatility feels like... | Actual risk level  \n---|---|---  \nWithin 1 year | Dangerous | High (don't invest in stocks)  \nIn 1–5 years | Uncomfortable | Moderate (limited stock exposure)  \nIn 5–10 years | Manageable | Moderate (balanced portfolio)  \nIn 10+ years | Irrelevant | Low (volatility works itself out)  \n  \nThe farther away your need for the money, the less volatility matters. This is why young people should generally invest more aggressively in stocks — they have decades for volatility to smooth out. And it's why people approaching retirement should shift toward more stable investments — because they'll need the money soon and can't afford a crash at the wrong time.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 588,
+      "out_sha": "b9f50c36a407",
       "note": ""
     },
     {
@@ -491,11 +491,11 @@
       "en_title": "Chapter 4: Risk — What It Actually Means",
       "order": 33,
       "src_chars": 1943,
-      "status": "pending",
+      "status": "done",
       "src_sha": "957ac0a9e89e",
       "src": "#### Common Misconception\n\n**\"The stock market is too risky for me.\"** When people say this, they usually mean \"I don't want to see my balance go down.\" That's a preference about volatility, not a statement about risk. For someone with 20+ years until retirement, NOT investing in stocks is the greater risk — because bonds and savings accounts are unlikely to grow enough to fund retirement. The \"safe\" choice of avoiding stocks often leads to the unsafe outcome of running out of money. This is what happened to many conservative investors who kept everything in savings accounts during decades of low interest rates — their \"safe\" money couldn't keep pace with their rising cost of living. We'll build specific portfolio strategies based on time horizon in Chapter 11.\n\n**Decision Exercise: The Market Drop**\n\nIt's 2025. You invested 50,000 USD in a stock index fund. The market drops 30%, and your balance shows 35,000 USD. You feel sick. Your three options:\n\nA) Sell everything — \"cut your losses\" B) Do nothing — wait for recovery C) Invest MORE — \"buy on sale\"\n\nBefore reading on, which do you choose?\n\n**Analysis:** The correct answer depends entirely on when you need the money. If you need it within a year (for a house down payment, for instance), you probably shouldn't have had it in stocks in the first place — and selling might be the least bad option. If you don't need it for 10+ years, the answer is B or C. Historically, every major market drop has recovered. Selling during a crash locks in a loss that was otherwise temporary. Option C (buying more during a downturn) is mathematically optimal — you're buying the same investments at a 30% discount — but psychologically very difficult. This is why automation (setting up automatic investments that continue regardless of market conditions) is so powerful: it removes the emotional decision. We'll develop this in Chapter 6 (automation) and Chapter 11 (asset allocation).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 599,
+      "out_sha": "41913a89faac",
       "note": ""
     },
     {
@@ -503,11 +503,11 @@
       "en_title": "Chapter 4: Risk — What It Actually Means",
       "order": 34,
       "src_chars": 2571,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e8d3f005ae6b",
       "src": "### 4.3 The Four Types of Financial Risk\n\nRisk isn't just one thing. Here are the four main types that affect your personal finances:\n\n**1\\. Market Risk (Volatility Risk)** What it is: Investment prices going up and down. When it matters: When you need to sell during a downturn. Mitigation: Match investment timeline to when you need the money. Diversify (Chapter 9).\n\n**2\\. Inflation Risk** What it is: The gradual loss of purchasing power. When it matters: Always — especially for long-term savings in low-return accounts. Mitigation: Invest in assets that historically outpace inflation (stocks, real estate). Don't keep more cash than you need for emergencies.\n\nAs we saw in Chapter 3, 41,000 USD in a savings account at 0.5% becomes only 24,000 USD in real purchasing power after 20 years of 3% inflation. Inflation is the \"silent\" risk — it never shows up as a negative number in your account, but it's steadily eroding your wealth.\n\n**3\\. Concentration Risk** What it is: Having too much money in one investment. When it matters: When that single investment fails. Mitigation: Diversify across many investments (Chapter 9). Never put more than 5-10% of your portfolio in any single stock.\n\nReal example: Enron employees who kept most of their retirement savings in Enron stock lost everything when the company collapsed in 2001. The stock went from 90 USD to 0 USD. Thousands of retirements were wiped out — not because the stock market crashed, but because these employees had one company as both their employer AND their retirement savings.\n\n**4\\. Liquidity Risk** What it is: Not being able to access your money when you need it. When it matters: Emergencies, unexpected job loss, medical expenses. Mitigation: Keep an emergency fund in easily accessible accounts (Chapter 15). Don't lock all your money in illiquid investments (like real estate or long-term CDs).\n\n\n#### Definition: Diversification\n\nDiversification means spreading your investments across many different assets so that the failure of any single one doesn't devastate your portfolio. It's the financial version of \"don't put all your eggs in one basket.\"\n\nIn plain language, this means: if you own 500 different stocks (through an index fund), and one company goes bankrupt, you lose 0.2% of your portfolio — annoying but not catastrophic. If you own only that one stock, you lose everything. Diversification doesn't eliminate risk — it transforms catastrophic risk (total loss) into manageable risk (temporary fluctuations). We'll build a diversified portfolio step by step in Chapters 9–11.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 808,
+      "out_sha": "a881ffbec3d5",
       "note": ""
     },
     {
@@ -515,11 +515,11 @@
       "en_title": "Chapter 4: Risk — What It Actually Means",
       "order": 35,
       "src_chars": 2735,
-      "status": "pending",
+      "status": "done",
       "src_sha": "69367cd87ee8",
       "src": "### 4.4 Risk Tolerance vs. Risk Capacity\n\nHere's a distinction that financial advisors sometimes blur, to the detriment of their clients:\n\n**Risk tolerance** is how much volatility you can EMOTIONALLY handle. Can you sleep at night when your portfolio drops 20%? Some people can; some people can't.\n\n**Risk capacity** is how much volatility you can FINANCIALLY handle. Based on your timeline, income stability, expenses, and goals, how much can your portfolio drop without actually derailing your financial plans?\n\nThese are different, and they sometimes conflict.\n\nA 25-year-old with 40 years until retirement has HIGH risk capacity — their timeline is so long that even major crashes will recover. But if they're temperamentally anxious, they might have LOW risk tolerance — and panic-sell during a downturn, converting temporary volatility into permanent loss.\n\nConversely, a 60-year-old with a pension and Social Security might have MODERATE risk capacity (they have guaranteed income to fall back on) but HIGH risk tolerance from decades of investing experience.\n\nThe practical takeaway: your investment strategy should be based primarily on risk capacity (objective, based on your timeline and financial situation) but adjusted for risk tolerance (subjective, based on your personality). If you can't sleep at night, a mathematically optimal portfolio that you'll abandon during a crash is worse than a slightly less aggressive portfolio that you'll stick with.\n\nThis is why we said in Chapter 1 that understanding your own psychology is a financial skill. We'll explore this much more in Chapter 8.\n\n**Decision Exercise: Matching Risk to Timeline**\n\nYou have three financial goals:\n\n  1. A vacation next summer (3,000 USD needed in 8 months)\n  2. A house down payment (40,000 USD needed in 5 years)\n  3. Retirement (500,000 USD+ needed in 30 years)\n\nFor each goal, where should the money be kept?\n\nBefore reading on, make your allocations.\n\n**Analysis:** Goal 1 (8 months): Savings account or money market fund. Zero stock exposure. You cannot afford ANY volatility on money you need this soon — even a small market dip could ruin your vacation budget. Goal 2 (5 years): A conservative mix — perhaps 40% stocks, 60% bonds. Some growth potential, but limited downside. You have time to recover from a small dip but not from a major crash. Goal 3 (30 years): Aggressively invested — perhaps 80-90% stocks when you're young, gradually shifting toward bonds as retirement approaches. Over 30 years, stock market volatility is irrelevant noise; inflation risk (from being too conservative) is the real danger. This matching of investment risk to time horizon is the core of asset allocation, which we'll develop fully in Chapter 11.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 878,
+      "out_sha": "c57a1f1d0176",
       "note": ""
     },
     {
@@ -527,11 +527,11 @@
       "en_title": "Chapter 4: Risk — What It Actually Means",
       "order": 36,
       "src_chars": 1806,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d379f8016b8a",
       "src": "### 4.5 The Risk You Can't Avoid\n\nHere's an uncomfortable truth: there is no risk-free option.\n\n* Invest in stocks? Market risk.\n* Keep money in bonds? Inflation risk (bonds often barely outpace inflation).\n* Keep money in cash? Inflation risk (guaranteed loss of purchasing power).\n* Invest in real estate? Concentration and liquidity risk.\n* Put it under your mattress? Inflation risk plus theft risk.\n\nEvery financial choice carries risk. The question isn't \"how do I avoid risk?\" — it's \"which risks am I CHOOSING, and do they match my situation?\"\n\nA young person's biggest risk is being too conservative — not growing money enough over decades. An older person's biggest risk is being too aggressive — not having enough stability when they need to spend. A person with no emergency fund's biggest risk is ANY unexpected expense, regardless of their investments.\n\nUnderstanding which risks apply to YOU, at YOUR stage of life, with YOUR goals — that's what financial risk management is really about. And it starts with one deeply personal question: \"What could go wrong that would actually derail my life, and have I protected against it?\"\n\n\n#### Common Misconception\n\n**\"I'm young, so I can afford to be reckless.\"** Having a long time horizon means you can tolerate more INVESTMENT volatility — it doesn't mean you can skip an emergency fund, carry unnecessary credit card debt, or invest in speculative assets without understanding them. Young investors have time on their side for compound growth, but they still need a financial foundation: emergency fund, no high-interest debt, and basic insurance. Being \"aggressive\" with investments is smart when you're young. Being reckless with your overall finances is dangerous at any age. We'll build the complete financial foundation in Chapters 14–15.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 542,
+      "out_sha": "99bd750778a9",
       "note": ""
     },
     {
@@ -539,11 +539,11 @@
       "en_title": "Chapter 4: Risk — What It Actually Means",
       "order": 37,
       "src_chars": 1739,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f8acf44dadf0",
       "src": "### 4.6 The Relationship Between Risk and Return\n\nThere's one more principle that ties everything together: risk and return are inseparable.\n\nOver long periods, higher-risk investments tend to produce higher returns:\n\nAsset Class | Average Annual Return (Historical) | Typical Volatility  \n---|---|---  \nSavings account | 0.5–2% | None  \nGovernment bonds | 3–5% | Low  \nCorporate bonds | 4–6% | Low-Moderate  \nStock market (US, diversified) | 7–10% | High  \nIndividual stocks | Varies wildly | Very High  \nSpeculative assets (crypto, etc.) | Unknown | Extreme  \n  \nThis is not a coincidence. It's a fundamental economic principle: if a risky investment didn't offer higher EXPECTED returns, nobody would accept the risk. You get paid for taking risk.\n\nBut — and this is crucial — the relationship only holds for SYSTEMATIC, DIVERSIFIED risk. You get paid for accepting stock market risk (the risk that the entire economy might struggle). You do NOT get paid for accepting individual stock risk (the risk that one company might fail) — because you can diversify that away for free. Buying one stock is risky without extra reward. Buying 500 stocks (through an index fund) is risky WITH extra reward.\n\nThis is the core argument for index funds, which we'll develop fully in Chapter 10: they let you collect the risk premium (higher expected returns) while eliminating the unnecessary risk of individual company failure.\n\n**Anyone who promises high returns with no risk is either confused or lying.** This single sentence will protect you from most investment fraud. If an investment claims to offer stock-market-like returns with savings-account-like safety, walk away. We'll cover specific fraud patterns in Chapter 15.\n\n\n### 4.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 599,
+      "out_sha": "459ce1f781bd",
       "note": ""
     },
     {
@@ -551,11 +551,11 @@
       "en_title": "Chapter 4: Risk — What It Actually Means",
       "order": 38,
       "src_chars": 3117,
-      "status": "pending",
+      "status": "done",
       "src_sha": "855efa693e76",
       "src": "#### Concept Check\n\n**Q1.** Your friend says: \"I keep all my retirement savings in a savings account because I don't want to take any risks.\" Explain, using this chapter's definition of risk, why this strategy is actually risky.\n\n**Answer:** Using our definition — risk is the chance of not having money when you need it — a savings account earning 0.5% while inflation runs at 3% means your money loses about 2.5% of its purchasing power each year. Over 30 years, 100,000 USD in a savings account will have the purchasing power of only about 47,000 USD in today's dollars. For retirement, this \"safe\" strategy virtually guarantees that your savings won't keep pace with your rising cost of living — which is exactly the risk you should be most concerned about. The stock market's volatility (prices bouncing around) is uncomfortable but temporary. Inflation's erosion of cash savings is invisible but permanent. As the table in Section 4.2 showed, for money you won't need for 30 years, stock market volatility is essentially irrelevant noise.\n\n**Q2.** Using the framework from Section 4.2, explain why a 28-year-old saving for retirement should react differently to a market crash than a 63-year-old who is two years from retirement.\n\n**Answer:** The 28-year-old has 35+ years until retirement. A market crash is in the \"10+ years\" category — volatility is essentially irrelevant. They should either do nothing (let investments recover) or invest more (buying \"on sale\"). Panic-selling would convert temporary volatility into permanent loss. The 63-year-old is in the \"1-5 years\" category for a significant portion of their savings. A crash genuinely threatens their retirement timeline. Ideally, they would have already shifted toward more conservative investments (more bonds, less stocks) anticipating this need — this is what asset allocation (Chapter 11) is designed to prevent. If they haven't, they face a difficult choice between selling at a loss or hoping for recovery before they need the money.\n\n**Q3.** Distinguish between volatility and permanent loss with a concrete example.\n\n**Answer:** In 2020, the US stock market dropped about 34% in one month (February-March) due to COVID-19 pandemic fears. An investor with 100,000 USD saw their balance drop to 66,000 USD. That's volatility. By August 2020 — just 5 months later — the market had fully recovered. The investor who held steady saw their 100,000 USD restored and eventually grow. No permanent loss occurred. In contrast, an investor who held all their savings in Enron stock in 2001 saw it go from 90 USD/share to effectively 0 USD when the company's fraud was discovered. That's permanent loss — the company ceased to exist, and the money never came back. The key difference: a diversified portfolio (like a stock index fund) experiences volatility but has historically always recovered. A single stock can go to zero permanently. This is why diversification (Chapter 9) is non-negotiable.\n\n**Q4.** Name the four types of financial risk covered in this chapter and give one example of each from your own financial life (or a hypothetical one).",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 945,
+      "out_sha": "a7913ab7e3dc",
       "note": ""
     },
     {
@@ -563,11 +563,11 @@
       "en_title": "Chapter 4: Risk — What It Actually Means",
       "order": 39,
       "src_chars": 702,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b415ebefaedc",
       "src": "**Answer:** (1) Market risk: Your retirement fund drops 20% during a recession. (2) Inflation risk: Your emergency fund sitting in a 0.3% savings account loses purchasing power as prices rise 3% per year — over 10 years, 10,000 USD can only buy what 7,400 USD used to. (3) Concentration risk: You work at a tech startup and 80% of your net worth is in company stock — if the company fails, you lose your job AND your savings simultaneously. (4) Liquidity risk: You invested your savings in a rental property, and when your car breaks down, you can't quickly access 5,000 USD because it's all tied up in the property. All four risks can be managed through the strategies we'll develop in Chapters 9–15.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 232,
+      "out_sha": "fbdad1d6b219",
       "note": ""
     },
     {
@@ -575,11 +575,11 @@
       "en_title": "Chapter 4: Risk — What It Actually Means",
       "order": 40,
       "src_chars": 3180,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a98ae2b6dfd3",
       "src": "#### Application Problems\n\n**Q1.** Jamie is 30 years old with 20,000 USD to invest for retirement (35 years away). She's considering three strategies. Calculate the expected outcome of each using the Rule of 72 from Chapter 2, and explain which risks each strategy accepts and which it avoids.\n\nStrategy A: All in savings account at 1% Strategy B: All in stock index fund at 7% expected return Strategy C: 70% stocks (7%), 30% bonds (4%)\n\nHint\n\nUse the Rule of 72 to estimate doublings for each strategy over 35 years. Then discuss which risks (market, inflation, concentration, liquidity) apply to each.\n\n**Answer:** Strategy A (1%): Doubling time = 72/1 = 72 years. In 35 years, less than one doubling. 20,000 USD → ~28,300 USD. After 3% inflation, real value ≈ 10,100 USD. Risks accepted: inflation (primary), liquidity risk (low — easy to access). Risks avoided: market volatility. Verdict: the \"safe\" strategy virtually guarantees failure for retirement.\n\nStrategy B (7%): Doubling time = 72/7 ≈ 10.3 years. In 35 years, about 3.4 doublings. 20,000 USD → ~213,000 USD. After inflation, real value ≈ ~76,000 USD. Risks accepted: market volatility (significant — could drop 30-50% in any given year). Risks avoided: inflation risk (stocks historically outpace inflation). Verdict: highest expected return, but Jamie must tolerate seeing significant drops along the way.\n\nStrategy C (blended ~6.1%): Weighted return: 0.7 × 7% + 0.3 × 4% = 6.1%. Doubling time ≈ 72/6.1 ≈ 11.8 years. In 35 years, about 3 doublings. 20,000 USD → ~159,000 USD. After inflation, real value ≈ ~57,000 USD. Risks: moderate volatility (bonds cushion stock drops), moderate inflation risk (4% bond return barely outpaces inflation). Verdict: a reasonable compromise, but for a 30-year-old with 35 years, Strategy B likely better because the extra volatility is irrelevant over that time horizon.\n\nThis exercise connects the risk framework to the compound interest calculations from Chapter 2 and previews the asset allocation decisions we'll formalize in Chapter 11.\n\n**Q2.** Two coworkers are debating. Alex says: \"Bitcoin returned 200% last year, so it's a better investment than index funds.\" Priya says: \"Past returns don't predict future returns, and crypto is too volatile.\" Using this chapter's risk framework, evaluate both arguments. Who is closer to being right, and what's the nuance both are missing?\n\nHint\n\nConsider: Is a single year's return meaningful? What type of risk does high volatility represent? What's the difference between speculation and investing? And does the risk-return relationship from Section 4.6 apply?\n\n**Answer:** Priya is closer to being right, but both miss important nuance.\n\nAlex's error: A single year's return tells you almost nothing. Bitcoin has also had years of -65% and -73%. Cherry-picking the best year is survivorship bias (looking only at winners). More fundamentally, extreme returns in both directions signal extreme volatility — and from Section 4.6, high returns should only come with high risk. If Bitcoin offers higher EXPECTED returns, it should come with proportionally higher risk — including the risk of losing most or all of your investment.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1516,
+      "out_sha": "02807817cc3a",
       "note": ""
     },
     {
@@ -587,11 +587,11 @@
       "en_title": "Chapter 4: Risk — What It Actually Means",
       "order": 41,
       "src_chars": 3014,
-      "status": "pending",
+      "status": "done",
       "src_sha": "76ebb06f834b",
       "src": "Priya's point about past returns is correct but incomplete. She's right that past performance doesn't predict future performance — this applies to ALL investments, including index funds. The difference is that index funds represent ownership of hundreds or thousands of productive businesses that generate revenue and profits. Their long-term returns are driven by economic growth, which has fundamental reasons to continue. Bitcoin's returns are driven primarily by supply-demand speculation — the price goes up because people think it will go up, not because it generates income.\n\nThe nuance both miss: the question isn't \"which returned more?\" but \"which risk are you accepting, and are you being compensated for it?\" Stock market risk (through index funds) pays a risk premium backed by economic productivity. Cryptocurrency risk may or may not pay a premium — the asset class is too new and too speculative to know. A small allocation to crypto as a speculative bet (money you can afford to lose) is different from treating it as an investment strategy. We'll distinguish speculation from investing more carefully in Chapter 19.\n\n**Q3.** You're 40 years old and just received an inheritance of 100,000 USD. You have no debt, a 3-month emergency fund, and are contributing 10% to your 401(k). Apply the risk framework from this chapter to decide how to allocate this windfall, considering all four types of risk. Your goals: retirement at 65 (25 years away), a child's college in 10 years, and maintaining an adequate emergency fund.\n\n**Answer:** Let's allocate based on time horizon and risk matching:\n\nEmergency fund top-up (10,000 USD): Your 3-month fund should ideally be 6 months (Chapter 15). Add enough to reach 6 months. Keep in savings account — liquidity is the priority, not returns. Accept inflation risk on this portion because the purpose is immediate access.\n\nCollege fund (30,000 USD — needed in 10 years): A moderate allocation — perhaps 50% stocks, 50% bonds. Ten years gives time for some volatility recovery, but a major crash in year 9 could hurt. The bond portion provides stability; the stock portion provides growth to outpace college cost inflation (which runs higher than general inflation at ~5-6%/year). Concentration risk note: consider a 529 plan for tax advantages (Chapter 12 parallel for education).\n\nRetirement (60,000 USD — needed in 25 years): Aggressive allocation — 80% stocks, 20% bonds. With 25 years, market volatility is your friend, not your enemy. This portion should go into broad index funds (diversifying away concentration risk) in tax-advantaged accounts if possible (reducing tax drag — Chapter 12). Inflation risk is the primary threat here — being too conservative would cost you decades of compound growth.\n\nThis allocation addresses all four risks: market risk (matched to time horizons), inflation risk (stock-heavy for long-term goals), concentration risk (broad index funds, not individual stocks), and liquidity risk (adequate emergency fund in cash).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 653,
+      "out_sha": "22e2be5b4883",
       "note": ""
     },
     {
@@ -599,11 +599,11 @@
       "en_title": "Chapter 4: Risk — What It Actually Means",
       "order": 42,
       "src_chars": 2721,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6a218e9ebad1",
       "src": "#### Think Deeper\n\n**Q1.** We said \"anyone who promises high returns with no risk is either confused or lying.\" But what about US Treasury bonds, which are considered \"risk-free\"? Are they truly risk-free? What does \"risk-free\" actually mean in finance?\n\n**Discussion:** In finance, \"risk-free\" refers specifically to default risk — the chance the borrower won't pay you back. US Treasury bonds are considered default-risk-free because the US government can always print more dollars (whether that's wise economically is another question). But Treasury bonds are NOT free from other risks. They carry inflation risk: a 3% Treasury bond during 4% inflation means you're losing purchasing power. They carry interest rate risk: if rates rise, the market value of existing bonds falls (though you still get your full principal back at maturity). They carry opportunity cost risk: money in Treasuries isn't growing as fast as it could in stocks. So \"risk-free\" in finance is a narrow technical term, not a guarantee that your money is \"safe\" in the colloquial sense. This is why we defined risk broadly in Section 4.1 — the narrow definitions can be misleading.\n\n**Q2.** Behavioral economists have found that people feel the pain of losing 100 USD about twice as strongly as they feel the pleasure of gaining 100 USD (this is called \"loss aversion\"). How does loss aversion affect investment behavior, and what strategies might help people make better risk decisions despite this bias?\n\n**Discussion:** Loss aversion causes several harmful behaviors: (1) Selling winning investments too early (\"lock in the gain before it disappears\") while holding losing investments too long (\"I can't sell at a loss — it'll come back\"). (2) Checking portfolio balances too frequently — each daily check shows roughly equal chances of being up or down, but the down days hurt twice as much, creating a net negative emotional experience even during an upward trend. (3) Avoiding stocks entirely because the fear of loss outweighs the hope of gain. Strategies to counteract: check your portfolio less often (quarterly, not daily — the less you look, the less volatility affects your emotions). Automate investments so you never have to \"decide\" to buy during scary times. Frame decisions in terms of long-term outcomes, not short-term fluctuations (\"Will this matter in 20 years?\"). We'll explore these psychological strategies in depth in Chapter 8.\n\n**Q3.** The chapter argues that young people should invest more aggressively because they have time to recover from crashes. But what about a young person with unstable income (a freelancer, a gig worker, someone in a volatile industry)? How should income risk interact with investment risk?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 817,
+      "out_sha": "79b3957186e7",
       "note": ""
     },
     {
@@ -611,11 +611,11 @@
       "en_title": "Chapter 4: Risk — What It Actually Means",
       "order": 43,
       "src_chars": 2450,
-      "status": "pending",
+      "status": "done",
       "src_sha": "99ccc53408d6",
       "src": "**Discussion:** This reveals an important limitation of age-based risk advice. A 25-year-old software engineer at a stable company has both a long time horizon AND stable income — they can afford aggressive investing. A 25-year-old freelancer with variable monthly income has a long time horizon but unstable income — a market crash combined with a dry spell of client work could force them to sell investments at the worst possible time (liquidity risk meeting market risk). For people with unstable income: (1) A larger emergency fund is essential — 6-12 months instead of 3-6 months, since income interruptions are more likely. (2) The first dollars above that emergency fund can be invested aggressively, but only money they truly won't need for years. (3) They might benefit from a slightly more conservative portfolio (more bonds) to reduce the chance of being forced to sell during a crash. The general principle: your total risk exposure (career risk + investment risk + debt risk) should be manageable, even if individual components are aggressive. A stable career allows aggressive investing. An unstable career calls for more conservative investments — the total risk stays balanced. This is a form of diversification applied to your entire financial life, not just your portfolio. We'll revisit income stability in Chapter 5.\n\n\n### Chapter Summary\n\nRisk is not what most people think it is. It's not just \"losing money\" — it's not having money when you need it. We distinguished between volatility (temporary price swings, uncomfortable but often harmless) and genuine risk (permanent loss or inadequate growth). We identified four types of financial risk — market, inflation, concentration, and liquidity — and learned that every financial choice carries some form of risk. The question is never \"how do I avoid risk?\" but \"which risks match MY situation?\"\n\nWe also established the risk-return relationship: higher expected returns always come with higher risk, and anyone promising otherwise is either confused or selling something (connecting to Chapter 1's \"who profits?\" filter).\n\nThese four chapters — the wealth equation, compound interest, opportunity cost, and risk — form Part I: Financial Thinking. They're the mental models that everything else in the book builds on. In Chapter 5, we begin Part II by examining the INCOME side of the wealth equation: your career — the biggest financial asset most people will ever have.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 732,
+      "out_sha": "11f0fcd8ea7b",
       "note": ""
     },
     {
