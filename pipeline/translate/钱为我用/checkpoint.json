@@ -1487,11 +1487,11 @@
       "en_title": "Chapter 12: Taxes and Tax-Advantaged Accounts",
       "order": 116,
       "src_chars": 2064,
-      "status": "pending",
+      "status": "done",
       "src_sha": "51d1d42ad1ff",
       "src": "Here's a fact that might make you uncomfortable: the difference between investing wisely from a TAX perspective and investing without thinking about taxes can be worth 100,000 USD to 500,000 USD or more over a career. Taxes are the single largest expense most people will ever pay — larger than housing, larger than food, often larger than everything else combined. And yet most people spend more time choosing a restaurant than choosing the right tax-advantaged account.\n\nThis chapter will change that. We're not doing detailed tax preparation (hire an accountant for that). We're covering the strategic decisions that determine how much of your investment growth you keep versus how much goes to the government.\n\nNote: The specific account names (401(k), IRA, Roth IRA, HSA) are American. **The principles are universal: every developed country has some form of tax-advantaged retirement savings.** If you're not in the US, look for your country's equivalent — the strategy is the same: use tax-advantaged accounts before taxable ones.\n\n\n### 12.1 The Investment Priority Order\n\nBefore we explain each account type, here's the decision framework that pulls everything together. When you have money to invest, follow this order:\n\n  1. **Employer 401(k) match** — Contribute at least enough to get the full employer match. This is a guaranteed 50-100% instant return. Nothing else comes close.\n  2. **High-interest debt** — Pay off any debt above ~6% interest (Chapter 7). Guaranteed return equal to the interest rate.\n  3. **Emergency fund** — Build to 3-6 months of expenses in a savings account (Chapter 15).\n  4. **Roth IRA** (or Traditional IRA) — Max out annual contributions. Tax-free growth is enormously valuable.\n  5. **401(k) beyond the match** — Increase 401(k) contributions toward the annual maximum.\n  6. **HSA** (if eligible) — The only \"triple tax-advantaged\" account in existence.\n  7. **Taxable brokerage account** — For investing above all tax-advantaged limits.\n\nThis order maximizes the \"return per dollar\" at each step. Let's understand why.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 701,
+      "out_sha": "80460d8e4a1c",
       "note": ""
     },
     {
@@ -1499,11 +1499,11 @@
       "en_title": "Chapter 12: Taxes and Tax-Advantaged Accounts",
       "order": 117,
       "src_chars": 2510,
-      "status": "pending",
+      "status": "done",
       "src_sha": "17327bee9edf",
       "src": "### 12.2 The 401(k) — Your Employer's Gift\n\nA 401(k) is an employer-sponsored retirement account. You contribute pre-tax dollars (reducing your current tax bill), and the money grows tax-deferred until withdrawal in retirement.\n\n**How it works:**\n\n* You elect to contribute a percentage of your salary (e.g., 6%)\n* The money is deducted from your paycheck BEFORE income tax is calculated\n* Many employers MATCH your contribution up to a certain percentage (e.g., 50% match on the first 6%)\n\n**The employer match is free money.** If your employer matches 50% of your contributions up to 6% of salary, and you earn 70,000 USD:\n\n* You contribute 6%: 4,200 USD/year\n* Employer adds 50% match: 2,100 USD/year\n* Total going into your 401(k): 6,300 USD/year\n* Your actual cost: 4,200 USD pre-tax (about 3,150 USD after-tax impact)\n* Immediate return on your contribution: 50%\n\nNo investment in the world offers a guaranteed, instant 50-100% return. Not capturing the full employer match is leaving free money on the table — quite literally.\n\n**Decision Exercise: The Match or the Debt?**\n\nYou have 3,000 USD in credit card debt at 18% and your employer offers a 100% match on 401(k) contributions up to 3% of your 60,000 USD salary. You can't afford to do both: should you pay off the debt or capture the match?\n\nBefore reading on, decide.\n\n**Analysis:** The match is a 100% instant return on 1,800 USD/year (3% of 60,000 USD). The debt payoff is a guaranteed 18% return. Even though 18% is excellent, 100% beats it — capture the match first. The exception: if the credit card debt is growing faster than you can manage (spiraling toward unmanageable levels), stabilizing the debt takes priority because it threatens your financial survival. But in most cases, match first, then attack debt with everything else. This modifies the standard advice \"pay off high-interest debt first\" — the employer match is the ONE exception because its return is so extraordinary.\n\n\n#### Common Misconception\n\n**\"I can't afford to contribute to my 401(k).\"** Because contributions are pre-tax, a 100 USD contribution doesn't reduce your paycheck by 100 USD. In a 22% tax bracket, a 100 USD contribution reduces your paycheck by about 78 USD. And if your employer matches at 50%, that 78 USD paycheck reduction generates 150 USD in your retirement account. You \"lose\" 78 USD in spending money to gain 150 USD in retirement savings. There is no scenario where this math doesn't favor contributing at least enough to get the full match.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 888,
+      "out_sha": "a0050ef5a145",
       "note": ""
     },
     {
@@ -1511,11 +1511,11 @@
       "en_title": "Chapter 12: Taxes and Tax-Advantaged Accounts",
       "order": 118,
       "src_chars": 2918,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3639dc25d855",
       "src": "### 12.3 Traditional IRA vs. Roth IRA — The Tax Timing Decision\n\nBoth IRAs (Individual Retirement Accounts) offer tax advantages. The difference is WHEN you get the tax benefit:\n\n**Traditional IRA:**\n\n* Contributions are tax-deductible (you pay less tax this year)\n* Investments grow tax-deferred\n* Withdrawals in retirement are taxed as ordinary income\n* Translation: \"Pay taxes later\"\n\n**Roth IRA:**\n\n* Contributions are made with after-tax dollars (no tax break this year)\n* Investments grow TAX-FREE\n* Withdrawals in retirement are COMPLETELY TAX-FREE\n* Translation: \"Pay taxes now, never pay again\"\n\nWhich is better depends on a simple question: **will your tax rate be higher now or in retirement?**\n\n* If your tax rate is **higher now** (you're in peak earning years): Traditional IRA wins. You get the deduction at a high rate now, pay taxes at a lower rate in retirement.\n* If your tax rate is **lower now** (early career, lower income): Roth IRA wins. You pay taxes at a low rate now, and NEVER pay taxes on decades of growth.\n\nFor most young people, the Roth IRA is the better choice — they're in a lower tax bracket early in their careers, and the value of tax-free growth over 30-40 years is enormous.\n\nHere's a concrete comparison on a 6,000 USD annual contribution over 30 years at 7%:\n\nAccount | Tax Now | Tax Later | Final After-Tax Value  \n---|---|---|---  \nRoth IRA (25% bracket now) | 1,500 USD/year in tax | 0 USD in retirement | ~567,000 USD (all tax-free)  \nTraditional IRA (25% bracket now, 15% in retirement) | 0 USD now | 15% on withdrawals | ~567,000 USD gross, ~482,000 USD after-tax  \n  \nIn this example, the Roth wins because the tax rate dropped from 25% to 15% — but the money was taxed at 25% going in either way. The Roth advantage: if your withdrawals end up in a HIGHER bracket than expected (tax rates increase, your retirement income is higher than planned), you're protected. Roth growth is tax-free forever, regardless of future tax policy.\n\nThread A: 6,000 USD/year in a Roth IRA from age 25 to 65 at 7% = approximately 1,200,000 USD in completely tax-free retirement money. Starting at 35 instead? Approximately 567,000 USD. The 10-year difference: 633,000 USD in tax-free wealth.\n\n\n#### Definition: Tax-Deferred vs. Tax-Free Growth\n\nTax-deferred growth (Traditional 401(k)/IRA) means you don't pay taxes on gains each year, but you pay income tax when you withdraw the money. Tax-free growth (Roth 401(k)/IRA) means you pay taxes on contributions upfront, but never pay taxes on growth or withdrawals.\n\nIn plain language, this means: both types let your investments grow without annual tax drag (which is much better than a taxable account). The difference is whether you pay the tax bill now (Roth) or later (Traditional). Tax-free (Roth) is generally better when you're young and in a low tax bracket, because you lock in a low tax rate on money that will grow enormously.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1148,
+      "out_sha": "4f203a9daf6c",
       "note": ""
     },
     {
@@ -1523,11 +1523,11 @@
       "en_title": "Chapter 12: Taxes and Tax-Advantaged Accounts",
       "order": 119,
       "src_chars": 2918,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f3416c5755f6",
       "src": "### 12.4 The HSA — The Secret Superstar\n\nIf you have a high-deductible health plan (HDHP), you may be eligible for a Health Savings Account (HSA). The HSA is the only account in the US tax code that offers a TRIPLE tax advantage:\n\n  1. Contributions are tax-deductible (like a Traditional IRA)\n  2. Growth is tax-free (like a Roth IRA)\n  3. Withdrawals for qualified medical expenses are tax-free\n\nNo other account offers all three benefits. If you're eligible, maxing out your HSA is one of the most powerful tax strategies available.\n\nThe advanced strategy: don't use your HSA for current medical expenses. Pay medical bills from your regular checking account, invest the HSA in index funds, and let it grow tax-free for decades. After age 65, you can withdraw HSA funds for ANY purpose (not just medical) — it just becomes a Traditional IRA at that point (taxed on non-medical withdrawals). But medical expenses in retirement tend to be large, and using accumulated HSA funds for those expenses is completely tax-free.\n\n\n### 12.5 The Tax-Advantaged Account Map\n\nHere's the complete picture:\n\nAccount | Tax on Contributions | Tax on Growth | Tax on Withdrawals | Annual Limit (2024 approx)  \n---|---|---|---|---  \nTraditional 401(k) | Deductible | Deferred | Taxed as income | ~23,000 USD  \nRoth 401(k) | After-tax | Tax-free | Tax-free | ~23,000 USD  \nTraditional IRA | Deductible* | Deferred | Taxed as income | ~7,000 USD  \nRoth IRA | After-tax | Tax-free | Tax-free | ~7,000 USD  \nHSA | Deductible | Tax-free | Tax-free (medical) | ~4,150 USD individual  \nTaxable brokerage | After-tax | Taxed annually | Taxed on gains | No limit  \n  \n*Traditional IRA deductibility has income limits if you also have a 401(k).\n\nThe strategy: fill accounts from top to bottom of the priority list (Section 12.1), starting with tax-advantaged accounts before using taxable accounts. Every dollar in a tax-advantaged account grows faster than the same dollar in a taxable account, because it's not losing a piece to taxes each year.\n\nThread C: the boring portfolio goes INSIDE these accounts. The investments (index funds) are the same — but the tax wrapper they sit in dramatically affects how much you keep. Think of it like this: the boring portfolio is the engine; the tax-advantaged account is the fuel-efficient vehicle it rides in.\n\n\n#### Common Misconception\n\n**\"I'll figure out retirement accounts later — I need the money now.\"** This is present bias from Chapter 8 at its most expensive. A 25-year-old who delays starting their Roth IRA by just 5 years (from 25 to 30) gives up approximately 200,000-400,000 USD in tax-free retirement wealth (depending on contribution level and returns). The money you \"need now\" almost certainly isn't providing 200,000 USD+ in lifetime value. The pay-yourself-first system from Chapter 6 solves this: automate retirement contributions before the money reaches your spending account.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1102,
+      "out_sha": "0ee18c0b2b5d",
       "note": ""
     },
     {
@@ -1535,11 +1535,11 @@
       "en_title": "Chapter 12: Taxes and Tax-Advantaged Accounts",
       "order": 120,
       "src_chars": 1129,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a26003c5ff3f",
       "src": "### 12.6 Tax-Loss Harvesting — An Advanced Strategy\n\nTax-loss harvesting is selling investments that have declined in value to realize a loss, then using that loss to offset taxable gains elsewhere. This reduces your current tax bill without changing your investment strategy (you immediately reinvest in a similar — but not identical — fund).\n\nExample: Your international index fund is down 3,000 USD for the year. You sell it (realizing the 3,000 USD loss for tax purposes) and immediately buy a different international index fund that tracks a slightly different index. Your portfolio exposure is essentially unchanged, but you've created a 3,000 USD tax deduction — potentially saving 660-1,110 USD in taxes (depending on your bracket).\n\nThis is an advanced strategy with specific rules (like the \"wash sale\" rule that prohibits buying a \"substantially identical\" security within 30 days). Many robo-advisors perform tax-loss harvesting automatically. For most investors, the basics covered in this chapter are sufficient — consider tax-loss harvesting as you accumulate larger taxable account balances.\n\n\n### 12.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 368,
+      "out_sha": "b5ef42637695",
       "note": ""
     },
     {
@@ -1547,11 +1547,11 @@
       "en_title": "Chapter 12: Taxes and Tax-Advantaged Accounts",
       "order": 121,
       "src_chars": 3440,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7168b0144816",
       "src": "#### Concept Check\n\n**Q1.** Your employer matches 100% of 401(k) contributions up to 4% of your 55,000 USD salary. You're currently contributing 0%. Calculate the annual cost of NOT contributing, and the annual \"return\" of starting.\n\n**Answer:** 4% of 55,000 USD = 2,200 USD. If you contribute 2,200 USD, your employer adds 2,200 USD = total 4,400 USD in your 401(k). The \"return\" on your 2,200 USD contribution: 100% — instantly. The cost of NOT contributing: 2,200 USD/year in forfeited employer match. Over 30 years at 7%, that unclaimed match costs approximately 2,200 USD × 94.46 = 207,800 USD in retirement wealth. This connects directly to Chapter 3's opportunity cost concept — the cost of inaction is invisible but enormous.\n\n**Q2.** Explain the difference between tax-deferred and tax-free growth in two sentences. Give one account type for each.\n\n**Answer:** Tax-deferred growth (Traditional 401(k)/IRA) postpones taxes — you don't pay tax on gains each year, but you pay income tax when you withdraw in retirement. Tax-free growth (Roth 401(k)/IRA) eliminates future taxes — you pay tax on contributions upfront, but all growth and withdrawals are permanently tax-free. For a young person in a low tax bracket, tax-free growth is generally more valuable because the tax rate paid now is lower than the rate likely paid in retirement.\n\n**Q3.** Recite the investment priority order from Section 12.1 and explain why each step comes before the next.\n\nHint\n\nEach step offers a higher \"return per dollar\" than the one that follows it.\n\n**Answer:** (1) Employer match — 50-100% guaranteed instant return; nothing else comes close. (2) High-interest debt payoff — guaranteed return equal to interest rate (18-24% for credit cards). (3) Emergency fund — not a \"return\" per se, but prevents future high-interest debt during emergencies, which effectively protects the returns from steps 1-2. (4) Roth IRA — tax-free growth over decades is enormously valuable; contribution limits are low, so max out. (5) 401(k) beyond match — additional tax-deferred growth with higher contribution limits. (6) HSA — triple tax advantage, but only available with high-deductible plans. (7) Taxable brokerage — no tax advantage, but unlimited contributions; use after exhausting all tax-advantaged space. Each step captures the highest available \"return\" before moving to the next, maximizing the efficiency of every dollar invested.\n\n**Q4.** A friend says: \"Roth IRAs aren't worth it because you don't get a tax deduction.\" Explain why this view is incomplete.\n\n**Answer:** The friend is focusing only on the SHORT-TERM benefit (no deduction this year) and ignoring the LONG-TERM benefit (tax-free growth forever). On a 7,000 USD annual Roth contribution over 30 years at 7%, the total value is approximately 661,000 USD — and every dollar is tax-free on withdrawal. In a Traditional IRA, the same amount would be approximately 661,000 USD but taxable on withdrawal — at a 22% tax rate, the after-tax value is approximately 516,000 USD. The Roth \"costs\" you roughly 1,540 USD/year in foregone tax deductions (22% × 7,000 USD) but \"saves\" you approximately 145,000 USD in retirement taxes. This is especially true for young workers in low tax brackets: the tax you pay now on Roth contributions (at, say, 12-22%) is likely much lower than the tax you'd pay on withdrawals in retirement (at potentially 22-32%+ if income is higher or tax rates increase).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1220,
+      "out_sha": "ea7a1b50739a",
       "note": ""
     },
     {
@@ -1559,11 +1559,11 @@
       "en_title": "Chapter 12: Taxes and Tax-Advantaged Accounts",
       "order": 122,
       "src_chars": 3335,
-      "status": "pending",
+      "status": "done",
       "src_sha": "168905463556",
       "src": "#### Application Problems\n\n**Q1.** Design a complete retirement account strategy for a 29-year-old earning 65,000 USD/year with an employer 401(k) (50% match up to 6%) and eligibility for a Roth IRA. They currently contribute 0% to everything and have no high-interest debt. Assume they can allocate 800 USD/month toward retirement savings. Show exactly where each dollar goes, following the investment priority order.\n\nHint\n\nCalculate the monthly cost of the 401(k) match contribution. Then allocate remaining dollars to the next priority.\n\n**Answer:** Step 1 — 401(k) match: Contribute 6% of 65,000 USD = 3,900 USD/year = 325 USD/month (pre-tax). Since it's pre-tax, the actual take-home impact is about 254 USD/month (at 22% bracket). Employer adds 50% = 1,950 USD/year. From the 800 USD/month budget, this \"costs\" ~254 USD of take-home pay.\n\nStep 2 — High-interest debt: None. Skip.\n\nStep 3 — Emergency fund: Assuming they have one already. If not, split the remaining budget until 3 months saved.\n\nStep 4 — Roth IRA: Max contribution ~7,000 USD/year = ~583 USD/month. From the remaining ~546 USD/month (800 USD - 254 USD), contribute 546 USD/month to Roth IRA. This falls just short of the max. Consider increasing contribution slightly when possible.\n\nTotal monthly allocation: 325 USD/month pre-tax to 401(k) (254 USD take-home impact) + 546 USD/month to Roth IRA = 800 USD/month total take-home impact.\n\nTotal annual retirement savings: 3,900 USD (employee 401(k)) + 1,950 USD (employer match) + 6,552 USD (Roth IRA) = 12,402 USD/year.\n\nAt 7% for 36 years (to age 65): approximately 12,402 USD × 150.3 ≈ 1,864,000 USD in retirement savings — with the Roth portion (~1,000,000 USD) being completely tax-free.\n\nThread A: if they wait until 39 to start (10 years later), the same 800 USD/month yields approximately 900,000 USD — less than half. Ten years of delay costs nearly 1 million USD.\n\n**Q2.** Compare two strategies over 30 years for a person in the 22% tax bracket now, expected 22% in retirement, investing 6,000 USD/year at 7%: (A) Traditional IRA (deductible contributions, taxed withdrawals), (B) Roth IRA (after-tax contributions, tax-free withdrawals). Show the after-tax outcome of each. Then recalculate if the retirement tax rate increases to 32%.\n\n**Answer:** Both strategies: 6,000 USD/year for 30 years at 7% = approximately 567,000 USD pre-tax.\n\nStrategy A (Traditional IRA) at 22% retirement rate: 6,000 USD/year tax deduction saves 1,320 USD/year in current taxes. But 567,000 USD in withdrawals is taxed at 22% = 124,700 USD in taxes. After-tax value: 442,300 USD. Plus the 1,320 USD/year saved in current taxes reinvested at 7% for 30 years: 1,320 USD × 94.46 = 124,700 USD. Total after-tax benefit: 442,300 USD + 124,700 USD = 567,000 USD.\n\nStrategy B (Roth IRA) at 22% retirement rate: 6,000 USD/year contributions taxed now — no deduction. 567,000 USD in withdrawals completely tax-free. Total after-tax value: 567,000 USD.\n\nAt the same tax rate, they're equivalent — the math works out the same. This is the fundamental insight of Traditional vs Roth at equal rates.\n\nNow with 32% retirement rate: Strategy A: 567,000 USD taxed at 32% = 181,400 USD in taxes. After-tax: 385,600 USD + 124,700 USD (reinvested tax savings) = 510,300 USD. Strategy B: 567,000 USD completely tax-free. Total: 567,000 USD.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1509,
+      "out_sha": "ddb5d45e466b",
       "note": ""
     },
     {
@@ -1571,11 +1571,11 @@
       "en_title": "Chapter 12: Taxes and Tax-Advantaged Accounts",
       "order": 123,
       "src_chars": 1886,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b2e221624897",
       "src": "The Roth wins by 56,700 USD when the retirement tax rate is higher. The Roth \"locked in\" the 22% rate; the Traditional got hit with 32%. This is why Roths are especially valuable for young people — you pay taxes at today's (likely lower) rate and protect yourself against future tax rate increases.\n\n**Q3.** A colleague says: \"I invest in a taxable brokerage account because I want access to my money — 401(k)s lock it up until I'm old.\" Evaluate this reasoning, including what they're right about and what they're missing.\n\n**Answer:** What they're right about: 401(k)s do have withdrawal restrictions — taking money before age 59½ generally triggers a 10% penalty plus income taxes. For money needed before retirement (house down payment, emergency beyond the emergency fund, career transition), a taxable account provides more flexibility.\n\nWhat they're missing: (1) The tax advantage is enormous. A dollar in a 401(k) grows 22-37% faster than the same dollar in a taxable account (because there's no annual tax drag on dividends and capital gains). Over 30 years, this compounds into hundreds of thousands of dollars. (2) There ARE early access provisions: Roth IRA contributions (not gains) can be withdrawn anytime, penalty-free. Some 401(k)s allow hardship withdrawals or loans. The \"locked up\" concern is overstated. (3) The 401(k) match is free money — it's an instant 50-100% return that no taxable account can replicate. (4) By using the priority order (Section 12.1), you can BOTH max tax-advantaged accounts AND invest in a taxable account if you have surplus. It's not either/or.\n\nThe balanced approach: use tax-advantaged accounts for retirement money (which you genuinely don't need until later), and use taxable accounts for medium-term goals (5-15 years). Don't sacrifice the enormous tax advantage of retirement accounts just for the flexibility of taxable accounts.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 616,
+      "out_sha": "2dfbc6928271",
       "note": ""
     },
     {
@@ -1583,11 +1583,11 @@
       "en_title": "Chapter 12: Taxes and Tax-Advantaged Accounts",
       "order": 124,
       "src_chars": 2676,
-      "status": "pending",
+      "status": "done",
       "src_sha": "152073bccfc9",
       "src": "#### Think Deeper\n\n**Q1.** Tax laws change — rates go up, rules change, new account types are created. The Roth IRA didn't exist before 1997. Given this uncertainty, how should the possibility of future tax law changes affect your retirement account strategy?\n\n**Discussion:** Tax law uncertainty is a real risk, and it argues for DIVERSIFICATION of tax treatment — just as we diversify investments. The strategy: contribute to BOTH Traditional (tax-deferred) and Roth (tax-free) accounts. This way, regardless of future tax rate changes, you have money in both \"buckets\" and can withdraw from whichever is more tax-efficient in retirement. If future tax rates increase dramatically, your Roth money is protected. If rates decrease, your Traditional money benefits. This tax diversification is often overlooked because people focus on optimizing for today's rates — but since retirement could be 30+ years away, today's rates are unlikely to be tomorrow's rates. A split approach (e.g., max Roth IRA + contribute to Traditional 401(k)) provides natural tax diversification.\n\n**Q2.** The HSA is described as the \"secret superstar\" of tax-advantaged accounts. But it requires a high-deductible health plan, which means higher out-of-pocket costs when you get sick. When does the HSA strategy make sense, and when might a lower-deductible plan be better even without the HSA benefit?\n\n**Discussion:** The HSA strategy works best for: (1) Young, healthy individuals who rarely use healthcare — the high deductible is unlikely to be reached, and HSA contributions build a tax-advantaged nest egg. (2) People with sufficient emergency funds to cover the higher deductible without financial stress. (3) People who can max out the HSA AND still afford medical expenses from regular income.\n\nA lower-deductible plan is better when: (1) You have chronic conditions requiring frequent medical care — the lower cost-sharing saves more than the HSA tax benefit. (2) You don't have savings to cover a large deductible — a 3,000 USD emergency room bill could force credit card debt, which is far more expensive than any tax savings. (3) You have a family with predictable medical expenses (kids mean frequent doctor visits).\n\nThe math: if the high-deductible plan saves 200 USD/month in premiums versus the traditional plan, and you contribute that 200 USD/month to an HSA, you gain 2,400 USD/year × ~30% combined tax benefit = ~720 USD/year in tax savings, plus tax-free investment growth. But if you actually USE 3,000 USD in medical care (hitting the deductible), you've spent more than the traditional plan would have cost. It's individual-specific — run the numbers for your situation.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 860,
+      "out_sha": "7b5b8a1ff4ee",
       "note": ""
     },
     {
@@ -1595,11 +1595,11 @@
       "en_title": "Chapter 12: Taxes and Tax-Advantaged Accounts",
       "order": 125,
       "src_chars": 1050,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8bc895bd8bf9",
       "src": "### Chapter Summary\n\nTax-advantaged accounts — 401(k), IRA, Roth IRA, HSA — are among the most powerful wealth-building tools available. The investment priority order (employer match → high-interest debt → emergency fund → Roth IRA → additional 401(k) → HSA → taxable) maximizes the return on every dollar you invest.\n\nThread A: starting Roth IRA contributions at 25 versus 35 creates a gap of approximately 633,000 USD in tax-free retirement wealth. The time advantage compounds even more aggressively inside tax-advantaged accounts because there's no annual tax drag.\n\nThread B: the financial industry sometimes steers people toward taxable accounts with higher fees rather than self-directed, low-cost tax-advantaged accounts — because that's where the advisory fees flow. Use the \"who profits?\" filter.\n\nThread C: the boring portfolio now has its components (Chapter 10), its allocation (Chapter 11), and its optimal tax wrapper (this chapter). In Chapter 13, we tackle the biggest non-portfolio investment most people consider: real estate.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 356,
+      "out_sha": "e229ff201d20",
       "note": ""
     },
     {
