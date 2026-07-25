@@ -1247,11 +1247,11 @@
       "en_title": "Chapter 10: The Case for Index Funds — Why Boring Wins",
       "order": 96,
       "src_chars": 3402,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9394156c0d5d",
       "src": "Here's one of the most uncomfortable facts in finance: the vast majority of professional fund managers — people with MBAs from top schools, armies of analysts, billions in technology, and decades of experience — fail to beat a simple, automated index fund over the long term.\n\nThis isn't a controversial opinion. It's one of the most extensively documented findings in financial research. And it has a profoundly liberating implication: you don't need to be smart, connected, or lucky to invest well. You just need to be boring.\n\n\n### 10.1 The Scoreboard — Active vs. Passive\n\nEvery year, S&P Global publishes the SPIVA (S&P Indices Versus Active) Scorecard, tracking how actively managed funds perform against their benchmark indices. The results are remarkably consistent:\n\nTime Period | % of US Stock Funds that FAILED to Beat the S&P 500  \n---|---  \n1 year | ~60%  \n5 years | ~75%  \n10 years | ~85%  \n15 years | ~90%  \n20 years | ~93%  \n  \nRead that last row again: over 20 years, **93% of professional fund managers failed to beat the index.** These aren't amateurs picking stocks in their spare time. These are full-time professionals with every conceivable advantage. And nine out of ten of them lost to an automated index fund that requires zero human judgment.\n\nThis data is from the US market, but the pattern holds globally. In Europe, emerging markets, bonds — the results are similar. Active management underperforms passive indexing in virtually every asset class, in virtually every country, over virtually every long-term period.\n\nThe question isn't \"can anyone beat the market?\" (some can, temporarily). The question is: \"can I identify in advance who will beat the market?\" The answer, overwhelmingly, is no. Past performance of fund managers does NOT predict future performance. A manager who beat the market for 5 years is statistically no more likely to beat it in year 6 than a random pick.\n\n\n### 10.2 Why Professionals Lose — The Math of Fees\n\nThe primary reason active managers fail isn't lack of skill — it's fees. Active management is expensive:\n\n* **Management fees** : typically 0.5-1.5% of your investment, annually\n* **Trading costs** : frequent buying and selling generates transaction fees\n* **Tax inefficiency** : frequent trading creates taxable events\n\nAn index fund, by contrast, charges approximately 0.03-0.10% in annual fees and trades infrequently.\n\nThe difference seems tiny — what's 1% between friends? Let's do the math.\n\nOn a 100,000 USD portfolio growing at 7% annually over 30 years:\n\nFee Level | Annual Fee | Portfolio After 30 Years | Amount Lost to Fees  \n---|---|---|---  \n0.05% (index fund) | 50 USD/year initially | ~745,000 USD | ~16,000 USD  \n1.00% (active fund) | 1,000 USD/year initially | ~574,000 USD | ~187,000 USD  \n  \n**The 1% fee consumed 171,000 USD** — nearly one-quarter of your total returns. And the active fund would need to BEAT the index by more than 1% annually just to match the index fund's returns after fees. As we saw in Section 10.1, fewer than 10% of managers achieve this over 20 years.\n\nThread B alert: this is the financial industry \"wanting your money\" in its purest form. The fee is small enough to seem insignificant, but compound interest makes it enormous. Using the Rule of 72 from Chapter 2: at 1%, fees double in 72 years — but on an annually growing portfolio, the dollar impact compounds much faster than that.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1257,
+      "out_sha": "c5db50f3978d",
       "note": ""
     },
     {
@@ -1259,11 +1259,11 @@
       "en_title": "Chapter 10: The Case for Index Funds — Why Boring Wins",
       "order": 97,
       "src_chars": 2305,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ca080d4cdde2",
       "src": "#### Definition: Index Fund\n\nAn index fund is a fund that automatically buys and holds all (or a representative sample of) the stocks in a specific market index, such as the S&P 500. It doesn't try to pick winners — it owns everything. Its goal is to match the market's return, not beat it.\n\nIn plain language, this means: instead of paying someone to guess which stocks will do well (and being wrong 90% of the time), you buy a tiny piece of EVERYTHING and guarantee yourself the market's average return. Since the average is better than what 90% of professionals achieve after fees, \"being average\" is actually outstanding.\n\n\n### 10.3 Why Being Average Is Outstanding\n\nThis feels counterintuitive. In most areas of life, \"average\" is mediocre. In investing, \"average\" (matching the market) puts you in the top 10% of all investors over the long term.\n\nHere's why: the market return is the average of ALL investors' returns BEFORE fees. After fees, the average actively managed dollar underperforms the market by exactly the amount of the fees. Since index funds have the lowest fees, they capture more of the market return than any other approach.\n\nJohn Bogle, the founder of Vanguard and inventor of the index fund, put it simply: \"Don't try to find the needle in the haystack. Just buy the haystack.\"\n\nWarren Buffett, arguably the greatest active investor of all time, has repeatedly said that for the vast majority of people, a low-cost index fund is the best investment. In his will, he directed that 90% of his wife's inheritance be invested in a simple S&P 500 index fund.\n\nWhen the world's best stock picker tells everyone else to buy index funds, it's worth listening.\n\n\n#### Common Misconception\n\n**\"Index funds are just for beginners — serious investors pick stocks.\"** This reverses reality. Stock-picking is what beginners do because it feels like \"real investing\" — active, exciting, engaged. Index fund investing is what experienced investors graduate TO after years of watching their stock picks underperform. The sophistication isn't in the strategy — it's in the self-awareness to recognize that simplicity beats complexity. Professional endowments, pension funds, and sovereign wealth funds increasingly use index funds for the same reason individual investors should: they're better.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 796,
+      "out_sha": "aa78953605e7",
       "note": ""
     },
     {
@@ -1271,11 +1271,11 @@
       "en_title": "Chapter 10: The Case for Index Funds — Why Boring Wins",
       "order": 98,
       "src_chars": 2921,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c1cb655610d4",
       "src": "### 10.4 Building the Boring Portfolio\n\nLet's construct the portfolio that will be your reference point for the rest of this book.\n\nThe Boring Portfolio consists of just three funds:\n\n  1. **US Total Stock Market Index Fund** — Owns virtually every US public company. Captures the growth of the American economy. (~60% of portfolio for a young investor)\n\n  2. **International Stock Index Fund** — Owns companies from developed and emerging markets outside the US. Provides geographic diversification (Chapter 9's Think Deeper question about Japan illustrates why). (~30% of portfolio)\n\n  3. **US Bond Index Fund** — Owns a broad mix of US government and corporate bonds. Provides stability and reduces overall portfolio volatility. (~10% of portfolio for a young investor, increasing with age)\n\nThat's it. Three funds. No stock-picking, no market timing, no exotic strategies. This portfolio gives you:\n\n* **Diversification** across thousands of companies in dozens of countries\n* **Low fees** (total expense ratio under 0.10%)\n* **Automatic rebalancing** (within each fund)\n* **Tax efficiency** (minimal trading)\n\nA common objection: \"Isn't three funds too simple? Shouldn't I have more?\" No. Adding more funds adds complexity without adding diversification — a US total market fund already owns 3,000+ stocks. Every additional fund you add creates more decisions, more fees, and more opportunities for behavioral mistakes.\n\nThread A check: a 25-year-old who starts putting 500 USD/month into this boring portfolio earns approximately 1,200,000 USD by age 65 at 7% average return. Starting at 35 yields approximately 567,000 USD. The boring portfolio, plus time, is a wealth machine.\n\n**Decision Exercise: The Active Fund Pitch**\n\nA financial advisor recommends an actively managed fund with \"superior research\" that charges 1.2% annually. They show you the fund's impressive 12% return over the past 3 years (the market returned 10% over the same period). Should you invest in this fund or stick with a 0.05% index fund?\n\nBefore reading on, decide.\n\n**Analysis:** The 3-year track record tells you almost nothing. (1) Three years is too short — even random stock-picking can beat the market for 3 years. The SPIVA data shows that 3-year outperformers frequently become 10-year underperformers. (2) Survivorship bias: you're only seeing funds that happened to do well. Thousands of funds that underperformed were quietly closed or merged — you never hear about them. (3) Even if this fund continues to outperform by 2% annually (unlikely given the data), the 1.15% fee difference erodes much of that advantage. Net outperformance: 0.85%. Not worth the risk that the outperformance stops (as it does for 90% of funds). (4) Thread B: the advisor has a financial incentive to recommend the active fund — they receive commissions or higher fees. The index fund pays them nothing. Ask: \"Who profits if I follow this advice?\"\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1041,
+      "out_sha": "324b25b2c8c2",
       "note": ""
     },
     {
@@ -1283,11 +1283,11 @@
       "en_title": "Chapter 10: The Case for Index Funds — Why Boring Wins",
       "order": 99,
       "src_chars": 2431,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9be07ce553b3",
       "src": "### 10.5 Why This Simple Truth Is So Hard to Accept\n\nIf index funds are so clearly superior, why doesn't everyone use them? Several psychological and structural reasons:\n\n**It feels lazy.** Picking stocks feels like real investing — engaged, active, intelligent. Buying an index fund feels like giving up. But as we've established, the \"lazy\" approach beats the \"active\" approach 90% of the time.\n\n**The financial industry doesn't profit from simplicity.** A financial advisor who says \"buy three index funds and never talk to me again\" earns almost nothing. An advisor who recommends actively managed funds, periodic rebalancing consultations, and \"premium strategies\" earns fees forever. The complexity of financial products is often designed to justify fees, not to improve returns. Thread B in full force.\n\n**Media glorifies stock-picking.** Financial media covers individual stocks endlessly — \"Is Tesla a buy?\" \"Should you invest in AI?\" — because stock-picking stories are interesting. \"Keep buying your index fund\" is accurate but makes for boring television. The media's incentive is viewership, not your returns.\n\n**Overconfidence bias.** From Chapter 8: most people believe they're above average. \"Sure, 90% of professionals fail to beat the index, but I'M smarter / more careful / better informed.\" This is the Lake Wobegon effect applied to investing — and it costs real money.\n\n**FOMO from Chapter 8.** When your friend doubles their money on a hot stock, your boring index fund returning 10% feels inadequate. But you're seeing the highlight reel — you don't see the other ten trades where your friend lost money.\n\n\n#### Common Misconception\n\n**\"The market is overvalued / about to crash / in a bubble — I should wait to invest.\"** Market timing — trying to buy low and sell high — sounds logical but fails in practice. Studies show that missing just the 10 best trading days over a 20-year period cuts your total return nearly in half. And the best days often occur right after the worst days — during exactly the moments when fear makes you want to sell. The boring portfolio approach eliminates timing entirely: invest the same amount every month regardless of market conditions (this is called \"dollar-cost averaging\"). Sometimes you buy high, sometimes you buy low, and it all averages out. The only people who successfully time the market consistently are the ones who are lying about it.\n\n\n### 10.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 797,
+      "out_sha": "fadde1115b31",
       "note": ""
     },
     {
@@ -1295,11 +1295,11 @@
       "en_title": "Chapter 10: The Case for Index Funds — Why Boring Wins",
       "order": 100,
       "src_chars": 2889,
-      "status": "pending",
+      "status": "done",
       "src_sha": "457f3567b4c4",
       "src": "#### Concept Check\n\n**Q1.** What percentage of actively managed US stock funds failed to beat the S&P 500 over 20 years? Why is this surprising given the resources these fund managers have?\n\n**Answer:** Approximately 93% failed to beat the index over 20 years. This is surprising because these managers have enormous advantages: professional training, research teams, sophisticated technology, insider access to company management, and millions in resources. The reason they still lose: fees. The market return is the average of all investors BEFORE costs. After subtracting management fees (1%+), trading costs, and tax inefficiency, the average active fund falls behind by approximately the amount of its fees. Even genuine investment skill must overcome the fee hurdle — and for 93% of managers, it doesn't. This connects to Chapter 9's market efficiency concept: if prices already reflect available information, no amount of analysis can consistently find undervalued stocks.\n\n**Q2.** Calculate the 30-year cost difference between a 200,000 USD portfolio in a 0.05% index fund versus a 1.0% actively managed fund, assuming both earn 7% gross returns.\n\nHint\n\nNet return for index fund: 6.95%. Net return for active fund: 6.0%. Compound each over 30 years.\n\n**Answer:** Index fund (6.95% net): 200,000 USD × (1.0695)30(1.0695)^{30}(1.0695)30 = 200,000 USD × 7.50 ≈ 1,500,000 USD. Active fund (6.0% net): 200,000 USD × (1.06)30(1.06)^{30}(1.06)30 = 200,000 USD × 5.74 ≈ 1,148,000 USD. Difference: approximately 352,000 USD. The 0.95% fee difference consumed 352,000 USD — more than the entire original investment — over 30 years. Thread B: that 352,000 USD went to the fund management company, not to you. Using the \"who profits?\" lens: the fund company profited from your choice of an active fund. Your wealth is 352,000 USD lower for having made it.\n\n**Q3.** Explain the phrase \"Don't try to find the needle in the haystack. Just buy the haystack\" in terms of investing strategy.\n\n**Answer:** The \"needle\" is the winning stock — the next Amazon or Apple that will generate enormous returns. The \"haystack\" is the entire stock market. Trying to find the needle (stock-picking) requires predicting which companies will outperform — something that 93% of professionals fail at over 20 years. Buying the haystack (an index fund) means owning ALL the stocks, including the next Amazon and Apple, without having to identify them in advance. You also own the losers, but diversification means any single loser barely affects your portfolio. The haystack approach guarantees you'll capture every winner — you just won't capture ONLY the winners. And since the winners more than compensate for the losers (that's why the market goes up), the haystack grows steadily over time.\n\n**Q4.** Why does Warren Buffett — the world's most successful stock-picker — recommend index funds for everyone else?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1034,
+      "out_sha": "90dea3d4ade3",
       "note": ""
     },
     {
@@ -1307,11 +1307,11 @@
       "en_title": "Chapter 10: The Case for Index Funds — Why Boring Wins",
       "order": 101,
       "src_chars": 797,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8acacf1e4ee1",
       "src": "**Answer:** Buffett recognizes that his success comes from extraordinary skill, decades of experience, and structural advantages (like the ability to buy entire companies and influence their management) that ordinary investors don't have. He also recognizes, from decades of evidence, that even professional fund managers with significant advantages can't match index fund returns consistently. His recommendation of index funds is essentially: \"I'm an anomaly. Don't try to be me. The evidence says you'll do better with index funds.\" His 1 million USD bet against hedge funds — which he won decisively — demonstrated this conviction with real money. It's a rare case of an expert honestly saying \"don't try to replicate my success; use a simpler approach that works better for almost everyone.\"\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 232,
+      "out_sha": "df87cc2c1bbd",
       "note": ""
     },
     {
@@ -1319,11 +1319,11 @@
       "en_title": "Chapter 10: The Case for Index Funds — Why Boring Wins",
       "order": 102,
       "src_chars": 3463,
-      "status": "pending",
+      "status": "done",
       "src_sha": "22c04d6a93b5",
       "src": "#### Application Problems\n\n**Q1.** A friend shows you their investment portfolio: 15 individual stocks, 3 actively managed funds, 2 sector-specific ETFs, and a crypto allocation. They spent considerable time researching each position. Using this chapter's evidence, make the case that they'd likely do better with the three-fund boring portfolio — without being dismissive of the effort they've invested.\n\nHint\n\nAcknowledge the effort, then focus on the evidence. Compare fees, diversification, and the SPIVA data. Be respectful but honest.\n\n**Answer:** \"I can see you've done a lot of research, and I respect the effort. But let me share some data that changed how I think about investing. Over 20 years, 93% of professional fund managers — people who do this full-time with teams of analysts — fail to beat a simple index fund. Your three actively managed funds are statistically likely to be in that 93%. Your 15 individual stocks give you less diversification than a single index fund that holds 3,000+ stocks, with more concentration risk (Chapter 4). And you're probably paying 0.5-1.5% in combined fees, which over 30 years could cost you hundreds of thousands of dollars (we just calculated this in Q2).\n\nThe boring three-fund portfolio gives you more diversification (thousands of stocks across the globe), lower fees (under 0.10%), better tax efficiency, and — most importantly — it frees your time. Those hours you spend researching stocks? The SPIVA data says they're unlikely to produce better returns than doing nothing. You could spend those hours on career development (Chapter 5) or simply enjoying life, and your portfolio would likely perform the same or better.\n\nThe hardest part isn't the portfolio change — it's the emotional shift. Giving up stock-picking feels like giving up control. But the data shows that the 'control' was mostly an illusion. The boring portfolio's returns come from the market's growth, not from your ability to predict it.\"\n\n**Q2.** You're 30 years old starting to invest. You plan to invest 600 USD/month. Calculate the expected value at age 65 for three scenarios: (a) All in the boring portfolio at 7% average return, (b) An actively managed portfolio that beats the market by 1% annually (net of fees) — top 10% performance, (c) An actively managed portfolio that underperforms by 1% (net of fees) — more typical. Which scenario is most likely, and what does this tell you?\n\n**Answer:** All scenarios: 600 USD/month = 7,200 USD/year for 35 years.\n\n(a) Boring portfolio (7%): 7,200 USD × 138.2 (annuity factor) ≈ 995,000 USD.\n\n(b) Market-beating active (8%): 7,200 USD × 186.1 ≈ 1,340,000 USD. This requires being in the top ~10% of all fund managers for 35 consecutive years — something almost no one achieves.\n\n(c) Typical active (6%): 7,200 USD × 111.4 ≈ 802,000 USD.\n\nMost likely scenario: (c), since ~93% of active funds underperform over long periods. The cost of likely underperformance: 995,000 USD - 802,000 USD = 193,000 USD. The potential gain from unlikely outperformance: 1,340,000 USD - 995,000 USD = 345,000 USD. But you'd need to be in the top 10% for 35 years to achieve it. The expected value calculation favors the boring portfolio.\n\nThread A: notice that at 7%, starting at 30 yields 995,000 USD vs starting at 40 (25 years, annuity factor 63.25) = 455,000 USD. Starting 10 years earlier with the boring portfolio adds 540,000 USD — far more than any active management advantage could provide.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1232,
+      "out_sha": "21285f23e326",
       "note": ""
     },
     {
@@ -1331,11 +1331,11 @@
       "en_title": "Chapter 10: The Case for Index Funds — Why Boring Wins",
       "order": 103,
       "src_chars": 3495,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1b5226677010",
       "src": "**Q3.** Research the actual expense ratios for one index fund and one actively managed fund in a similar category (use any fund comparison tool or the numbers discussed in this chapter). Calculate the 25-year fee difference on a 150,000 USD portfolio.\n\n**Answer:** Example comparison: Vanguard S&P 500 Index Fund (expense ratio ~0.03%) vs a typical actively managed large-cap fund (expense ratio ~0.80%).\n\nIndex fund (6.97% net return): 150,000 USD × (1.0697)25(1.0697)^{25}(1.0697)25 ≈ 150,000 USD × 5.39 ≈ 808,500 USD. Active fund (6.20% net return): 150,000 USD × (1.0620)25(1.0620)^{25}(1.0620)25 ≈ 150,000 USD × 4.50 ≈ 675,000 USD.\n\nFee difference over 25 years: approximately 133,500 USD. That's the cost of 0.77% in annual fees compounded over 25 years. And this assumes the active fund MATCHES the index before fees — if it underperforms (as most do), the gap is even wider. The \"who profits?\" answer: the fund company collects 133,500 USD from your returns. They profit whether you do or not.\n\n\n#### Think Deeper\n\n**Q1.** Index funds now represent a very large share of total stock market investment. Some critics worry that if EVERYONE indexes, markets become less efficient (because no one is doing the research that makes prices accurate). Could index funds become \"too popular\" for their own good?\n\n**Discussion:** This is a legitimate theoretical concern called the \"index fund paradox.\" If 100% of investors used index funds, no one would research individual companies, prices would become arbitrary, and the market would lose its efficiency. But this is a self-correcting problem. As index investing grows and prices become less efficient, the reward for active research INCREASES — attracting enough active investors back to maintain price discovery. The equilibrium is probably something like 70-80% passive, 20-30% active — enough active investors to keep prices roughly efficient, while most investors benefit from indexing. Currently, index funds represent roughly 50% of US fund assets — likely well below the problematic threshold. The practical implication for you: index funds work because ENOUGH other people are still actively trading to keep prices reasonable. You're free-riding on their research — and that's perfectly fine, because they're not doing you a favor; they're mostly losing money.\n\n**Q2.** This chapter argues that stock-picking is a losing game. But some of the wealthiest people in the world made their fortunes through concentrated stock positions (Jeff Bezos holding Amazon, Elon Musk holding Tesla). Doesn't this prove stock-picking works?\n\n**Discussion:** This is survivorship bias in its purest form. You see Bezos and Musk because they succeeded spectacularly. You don't see the thousands of entrepreneurs and early employees whose concentrated stock positions went to zero. For every Bezos, there are hundreds of founders whose companies failed, taking their concentrated position with them. Moreover, Bezos and Musk didn't \"pick\" Amazon and Tesla as investments — they FOUNDED and BUILT these companies. Their returns came from entrepreneurship, not stock-picking. An outside investor who \"picked\" Amazon in 1997 had no way of knowing it would become a trillion-dollar company versus joining the dot-com graveyard. The appropriate lesson from Bezos isn't \"concentrate your investments\" — it's \"if you want extraordinary returns, build a great company.\" For investing money you've already earned, the boring portfolio remains the right answer.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1209,
+      "out_sha": "a7e41267db67",
       "note": ""
     },
     {
@@ -1343,11 +1343,11 @@
       "en_title": "Chapter 10: The Case for Index Funds — Why Boring Wins",
       "order": 104,
       "src_chars": 825,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e11df4ef01f0",
       "src": "### Chapter Summary\n\nThe evidence is overwhelming and unambiguous: low-cost index funds outperform the vast majority of active fund managers over the long term. The boring portfolio — three index funds (US stocks, international stocks, bonds) — provides maximum diversification at minimal cost with zero required expertise.\n\nThe financial industry pushes complexity because complexity generates fees (Thread B). Your defense is simplicity: buy the haystack, keep costs low, and let compound interest (Chapter 2) do the work over time (Thread A).\n\nThread C update: the boring portfolio is now formally defined. In Chapter 11, we'll determine the most important decision about this portfolio: what percentage to allocate to stocks vs. bonds — the asset allocation that determines virtually all of your investment outcomes.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 266,
+      "out_sha": "ce60c219f689",
       "note": ""
     },
     {
