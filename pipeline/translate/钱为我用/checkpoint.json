@@ -1355,11 +1355,11 @@
       "en_title": "Chapter 11: Asset Allocation — The Only Decision That Really Matters",
       "order": 105,
       "src_chars": 1944,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3ce1ea53de3b",
       "src": "In Chapter 10, we built the boring portfolio: three index funds covering US stocks, international stocks, and bonds. But we glossed over the most important question: how much goes in each?\n\nThis question — asset allocation — is the single most important investment decision you'll make. Research by financial economists Gary Brinson, Randolph Hood, and Gilbert Beebower found that asset allocation explains over 90% of the variation in portfolio returns. Not which stocks you pick. Not when you buy. How much you put in stocks versus bonds.\n\nEverything else is a footnote.\n\n\n### 11.1 Why the Stock/Bond Split Matters So Much\n\nConsider two investors with identical incomes, identical savings rates, and identical time horizons. Both invest 500 USD/month for 30 years. The only difference is their stock/bond split:\n\nAllocation | Average Annual Return | Value After 30 Years | Worst Single-Year Loss  \n---|---|---|---  \n90% stocks / 10% bonds | ~8.5% | ~750,000 USD | ~-40%  \n60% stocks / 40% bonds | ~7.0% | ~567,000 USD | ~-25%  \n30% stocks / 70% bonds | ~5.5% | ~430,000 USD | ~-12%  \n100% bonds | ~4.0% | ~340,000 USD | ~-5%  \n  \nThe difference between 90/10 and 100% bonds is 410,000 USD — from the SAME monthly investment over the SAME period. That gap is entirely explained by asset allocation.\n\nBut look at the worst-year column: the 90/10 investor watches their portfolio drop 40% in a crash year. On a 600,000 USD portfolio, that's a 240,000 USD paper loss. Can you stomach that? If not — if you'd panic-sell during that crash — the 90/10 allocation is wrong for you, regardless of the math.\n\nThis is the fundamental tension of asset allocation: stocks provide higher returns but require tolerating higher volatility. Bonds provide stability but limit growth. The right mix depends on two factors: your risk capacity (how much volatility your FINANCES can handle) and your risk tolerance (how much volatility your EMOTIONS can handle).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 886,
+      "out_sha": "d65f610bbb57",
       "note": ""
     },
     {
@@ -1367,11 +1367,11 @@
       "en_title": "Chapter 11: Asset Allocation — The Only Decision That Really Matters",
       "order": 106,
       "src_chars": 2097,
-      "status": "pending",
+      "status": "done",
       "src_sha": "08837a7d4516",
       "src": "### 11.2 The Age-Based Starting Point\n\nA widely used rule of thumb: **hold your age in bonds, the rest in stocks.** A 30-year-old would hold 30% bonds, 70% stocks. A 60-year-old would hold 60% bonds, 40% stocks.\n\nWhy does this make sense? It's Chapter 4's risk framework applied mechanically:\n\n* **Young investors** have decades for volatility to smooth out. A 30% crash at age 30 is irrelevant if you don't need the money for 35 years. Higher stock allocation captures more long-term growth.\n* **Older investors** have less time to recover from crashes. A 30% crash at age 60, five years before retirement, could be devastating. Higher bond allocation reduces this risk.\n\nMany financial advisors have updated this to **\"your age minus 10\" or \"your age minus 20\" in bonds** — reflecting longer life expectancies and the need for more growth. So a 30-year-old might hold only 10-20% bonds.\n\nThe key insight: this is a STARTING POINT, not a prescription. Adjust based on:\n\n* **Income stability.** Stable government job? You can afford more stocks (your career already provides bond-like stability — as discussed in Chapter 5). Freelancer with variable income? More bonds to reduce total life-risk.\n* **Other assets.** If you have a pension (bond-like income guaranteed), you can tilt more toward stocks. If your only assets are in your portfolio, you might want more bonds.\n* **Behavioral temperament.** If a 20% drop would make you sell in panic (undoing years of growth), a more conservative allocation that you MAINTAIN is better than an aggressive one you abandon.\n\n\n#### Definition: Asset Allocation\n\nAsset allocation is the strategy of dividing your investment portfolio among different asset categories — primarily stocks, bonds, and cash — to balance expected return with acceptable risk.\n\nIn plain language, this means: choosing what percentage of your money goes to growth (stocks) versus stability (bonds). It's the master dial of investing — turn it toward stocks for more growth with more volatility, or toward bonds for more stability with less growth. Everything else is fine-tuning.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 763,
+      "out_sha": "3e6faf81e64c",
       "note": ""
     },
     {
@@ -1379,11 +1379,11 @@
       "en_title": "Chapter 11: Asset Allocation — The Only Decision That Really Matters",
       "order": 107,
       "src_chars": 2417,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8cfb3f37b594",
       "src": "### 11.3 The Fee Illusion — How \"Just 1%\" Destroys Wealth\n\nWe calculated fee impact in Chapter 10, but let's look at it through the lens of asset allocation, because this is where Thread B hits hardest.\n\nMany financial advisors charge 1% of assets under management (AUM) as their annual fee. This is ON TOP of the fund fees. So your total cost structure might be:\n\n* Index fund route: 0.05% fund fee = 0.05% total\n* Advisor + active fund: 1.0% advisor fee + 0.80% fund fees = 1.80% total\n\nOn a 500,000 USD portfolio, the annual cost difference: 0 USD advisor + 250 USD index fund fees = 250 USD vs. 5,000 USD advisor + 4,000 USD active fund fees = 9,000 USD. That's 8,750 USD/year leaving your portfolio and entering someone else's pocket.\n\nOver 25 years at 7% gross returns, the impact is devastating:\n\n* Index fund (6.95% net): 500,000 USD → 2,694,000 USD\n* Advisor + active funds (5.20% net): 500,000 USD → 1,782,000 USD\n\n**The fee difference: 912,000 USD.** Nearly a million dollars transferred from your retirement to financial industry profits.\n\nThread B: the financial industry has every incentive to make this seem complicated — because complexity justifies fees. \"You need my expertise to navigate the markets\" sounds reassuring. But the data from Chapter 10 says expertise doesn't help. The boring portfolio — which needs no advisor — outperforms 90%+ of professionally advised portfolios over the long term.\n\nWhen is an advisor worth the fee? When they provide services beyond investment management: tax planning, estate planning, behavioral coaching (preventing you from panic-selling). A fee-only fiduciary advisor (Chapter 20) who charges for planning — not a percentage of your assets — can provide genuine value. An advisor who charges 1% to put you in active funds is almost certainly costing you money.\n\n\n#### Common Misconception\n\n**\"1% is a small fee.\"** As a percentage, yes. As a dollar amount over time, absolutely not. The financial industry presents fees as percentages specifically because percentages SOUND small. 9,000 USD/year sounds large; 1.8% sounds trivial. They're the same thing. Always convert percentages to dollar amounts when evaluating fees. And remember: that's 9,000 USD EVERY year, compounding against you for decades. The Rule of 72 from Chapter 2 applies to fees too — a 1.8% annual drag cuts your effective doubling time and can cost hundreds of thousands over a career.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 958,
+      "out_sha": "cd17c3410b88",
       "note": ""
     },
     {
@@ -1391,11 +1391,11 @@
       "en_title": "Chapter 11: Asset Allocation — The Only Decision That Really Matters",
       "order": 108,
       "src_chars": 3085,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2167cd8ebc2d",
       "src": "### 11.4 Rebalancing — Maintaining Your Target\n\nOver time, stocks and bonds grow at different rates, causing your allocation to drift. If you start with 70% stocks / 30% bonds and stocks have a great year, you might end up at 80% stocks / 20% bonds. This means more risk than you intended.\n\nRebalancing means periodically selling some of the winners and buying more of the underperformers to return to your target allocation. This sounds counterintuitive — selling what's doing well? — but it's systematically doing what every investor should do: buying low and selling high.\n\nHow often to rebalance? Research shows that annual rebalancing is sufficient. More frequent rebalancing increases trading costs without improving returns. Many target-date funds rebalance automatically (see Section 11.5).\n\n**Decision Exercise: The Rebalancing Decision**\n\nYour target allocation is 70% stocks / 30% bonds. After a strong year for stocks, your portfolio is now 82% stocks / 18% bonds. What do you do?\n\nA) Leave it — stocks are doing well, why sell winners? B) Rebalance back to 70/30 by selling stocks and buying bonds C) Split the difference — go to 75/25 as a compromise\n\nBefore reading on, choose.\n\n**Analysis:** Option B is correct. Leaving the allocation at 82/18 means you're carrying significantly more risk than your original plan intended. If a crash hits, you'll lose more than you planned for. The purpose of the 70/30 target was to match your risk capacity and tolerance — drift above 70% stocks means you've unintentionally increased your risk. Option A is tempting because of recency bias (recent stock performance makes us expect more) and the endowment effect (we don't want to part with winning positions). Option C has no logical basis — your target is 70/30 because that's what matches your risk profile, not 75/25. Rebalancing is discipline over impulse — exactly the system-based approach we've been building since Chapter 6.\n\n\n### 11.5 Target-Date Funds — The Ultimate Simplification\n\nIf even the three-fund boring portfolio feels like too many decisions, there's an even simpler option: target-date funds (also called lifecycle funds).\n\nA target-date fund automatically:\n\n  1. Sets an asset allocation based on your expected retirement year\n  2. Invests in a mix of stocks and bonds\n  3. Gradually shifts toward more bonds as you approach retirement (this is called a \"glide path\")\n  4. Rebalances automatically\n\nYou choose ONE fund — say, \"Target 2055\" if you plan to retire around 2055 — and it does everything else. You contribute monthly and literally never think about it again.\n\nThe downsides: slightly higher fees than buying individual index funds (typically 0.10-0.15% instead of 0.03-0.05%), and you lose control over the exact allocation. But for many people, the simplicity and behavioral protection (no opportunity to tinker or panic-sell) more than compensate for the slightly higher cost.\n\nTarget-date funds are the financial equivalent of a good autopilot — not the absolute optimal strategy in every moment, but better than most humans do on their own.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1059,
+      "out_sha": "fdd9c0da65a5",
       "note": ""
     },
     {
@@ -1403,11 +1403,11 @@
       "en_title": "Chapter 11: Asset Allocation — The Only Decision That Really Matters",
       "order": 109,
       "src_chars": 712,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9dd3373cc6ad",
       "src": "#### Common Misconception\n\n**\"Target-date funds are too simple for serious investors.\"** They're used by some of the largest and most sophisticated retirement plans in the world. Simplicity is not a weakness — it's a feature. Every additional complexity you add to your investment strategy is an additional opportunity for behavioral error. Target-date funds eliminate decision fatigue, prevent market timing, enforce rebalancing, and execute the glide path automatically. For the vast majority of investors, the \"cost\" of simplicity (a few basis points in extra fees) is dramatically less than the \"cost\" of complexity (behavioral mistakes, market timing attempts, fee-laden active funds).\n\n\n### 11.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 206,
+      "out_sha": "d03c29564b67",
       "note": ""
     },
     {
@@ -1415,11 +1415,11 @@
       "en_title": "Chapter 11: Asset Allocation — The Only Decision That Really Matters",
       "order": 110,
       "src_chars": 2903,
-      "status": "pending",
+      "status": "done",
       "src_sha": "43c66ad9ad34",
       "src": "#### Concept Check\n\n**Q1.** Research found that asset allocation explains over 90% of variation in portfolio returns. What does the remaining 10% consist of? Why is the 90% figure so important for personal investors?\n\n**Answer:** The remaining ~10% is attributed to security selection (which specific stocks or bonds you choose), market timing (when you buy and sell), and other factors. The 90% figure is important because it means the vast majority of your investment outcomes are determined by ONE decision: how much to put in stocks vs. bonds. This is liberating — you don't need to master stock-picking, market timing, or complex strategies. Getting the stock/bond split right (and keeping costs low) captures 90%+ of available returns. It connects to the simplicity theme from Chapter 10: the boring portfolio works because asset allocation does the heavy lifting.\n\n**Q2.** A 28-year-old uses the \"age in bonds\" rule and allocates 28% bonds / 72% stocks. A 58-year-old uses the same rule and allocates 58% bonds / 42% stocks. Explain why these different allocations make sense, using Chapter 4's risk framework.\n\n**Answer:** The 28-year-old has 37+ years until retirement. Using Chapter 4's time-horizon table, their money is in the \"10+ years\" category where volatility is essentially irrelevant. The 72% stock allocation captures long-term growth while the 28% bonds provide a small stability cushion. Even if stocks drop 40%, the 28-year-old has decades for recovery.\n\nThe 58-year-old has roughly 7 years until retirement. Their money is in the \"5-10 year\" category where volatility matters. A 40% stock crash would be devastating — cutting 400,000 USD from a 1 million USD portfolio at the worst possible time. The 42% stock allocation limits downside while the 58% bonds provide stability for near-term spending needs.\n\nBoth allocations are rational — they match different risk capacities arising from different time horizons. The same investment (stocks) can be \"safe\" for one person and \"risky\" for another based solely on when they need the money.\n\n**Q3.** Convert the following fee percentages to annual dollar amounts on a 300,000 USD portfolio: (a) 0.03% index fund, (b) 0.75% active fund, (c) 1.0% advisor + 0.75% active fund.\n\n**Answer:** (a) 0.03% × 300,000 USD = 90 USD/year. (b) 0.75% × 300,000 USD = 2,250 USD/year. (c) 1.75% × 300,000 USD = 5,250 USD/year. The difference between (a) and (c) is 5,160 USD/year — enough for a nice vacation annually, or over 20 years at 7%, approximately 212,000 USD in accumulated wealth. Thread B: when an advisor says \"my fee is just 1%,\" translate it: \"I charge 3,000 USD/year on your 300,000 USD portfolio, and combined with fund fees, you're paying 5,250 USD/year — which over 20 years will cost you roughly 212,000 USD in retirement wealth.\"\n\n**Q4.** Explain rebalancing in one paragraph: what it is, why it matters, and how often to do it.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1085,
+      "out_sha": "796c8021e5b5",
       "note": ""
     },
     {
@@ -1427,11 +1427,11 @@
       "en_title": "Chapter 11: Asset Allocation — The Only Decision That Really Matters",
       "order": 111,
       "src_chars": 730,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c894eb462d10",
       "src": "**Answer:** Rebalancing is the process of periodically adjusting your portfolio back to your target asset allocation by selling assets that have grown above their target weight and buying assets that have fallen below it. It matters because market movements cause your allocation to drift — a 70/30 portfolio might become 80/20 after a strong stock year, leaving you with more risk than intended. Rebalancing enforces the discipline of buying low (underperformers are cheaper) and selling high (outperformers are expensive) — the opposite of what emotional investors typically do. Annual rebalancing is sufficient; more frequent rebalancing increases costs without improving outcomes. Target-date funds handle this automatically.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 191,
+      "out_sha": "6471d5528335",
       "note": ""
     },
     {
@@ -1439,11 +1439,11 @@
       "en_title": "Chapter 11: Asset Allocation — The Only Decision That Really Matters",
       "order": 112,
       "src_chars": 3111,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b4ba10f818c2",
       "src": "#### Application Problems\n\n**Q1.** Design an asset allocation for each of the following people, using the age-based starting point and then adjusting for their specific circumstances. Justify each adjustment using concepts from this chapter and Chapter 4.\n\nPerson A: 25-year-old software engineer, stable income, high risk tolerance, 15,000 USD to invest. Person B: 45-year-old teacher with pension, moderate risk tolerance, 200,000 USD in savings. Person C: 55-year-old freelance consultant, variable income, low risk tolerance, 400,000 USD in savings.\n\nHint\n\nStart with \"age in bonds\" or \"age minus 10/20 in bonds,\" then adjust for income stability, other assets (pension), and risk tolerance.\n\n**Answer:** Person A: Starting point (age minus 20): 5% bonds / 95% stocks. Adjustments: stable income allows aggressive allocation. High risk tolerance supports it. Young age means decades for recovery. Final recommendation: 90% stocks / 10% bonds (or even 95/5). The 15,000 USD is small enough that even a 40% crash (6,000 USD loss) is recoverable through continued contributions. This person might even consider a target-date fund 2060 for maximum simplicity.\n\nPerson B: Starting point (age): 45% bonds / 55% stocks. Adjustments: the pension functions like a massive bond — it provides guaranteed retirement income. This means the PORTFOLIO can be more aggressive since the pension already provides stability. Moderate risk tolerance keeps things balanced. Final recommendation: 30% bonds / 70% stocks. The pension effectively \"contributes\" to the bond portion of their overall financial position, allowing the portfolio to tilt toward growth.\n\nPerson C: Starting point (age): 55% bonds / 45% stocks. Adjustments: variable income adds career risk (Chapter 5), so investment risk should compensate by being LOWER than the baseline. Low risk tolerance further supports conservative allocation. However, at 55 with only 400,000 USD, they need some growth to fund potentially 30+ years of retirement. Final recommendation: 50% bonds / 50% stocks — slightly less aggressive than the age baseline, reflecting income instability and low risk tolerance, but maintaining enough stock exposure to combat inflation risk over a long retirement.\n\n**Q2.** Your portfolio is worth 250,000 USD with a target of 70% stocks / 30% bonds. After a strong year, it's now 290,000 USD split as 246,500 USD stocks (85%) and 43,500 USD bonds (15%). Calculate the exact trades needed to rebalance, and explain why selling winning stocks and buying underperforming bonds is rational even though it feels wrong.\n\n**Answer:** Target allocation on 290,000 USD: 70% stocks = 203,000 USD; 30% bonds = 87,000 USD. Current: 246,500 USD stocks, 43,500 USD bonds. Needed trades: sell 43,500 USD in stocks (246,500 USD - 203,000 USD) and buy 43,500 USD in bonds (87,000 USD - 43,500 USD).\n\nWhy this feels wrong: We've just been trained by Chapter 8's biases. Recency bias says \"stocks did great, they'll keep doing great.\" Loss aversion makes selling winners feel like giving up gains. FOMO says \"if I move money to bonds, I'll miss the next rally.\"",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1159,
+      "out_sha": "77103e94294d",
       "note": ""
     },
     {
@@ -1451,11 +1451,11 @@
       "en_title": "Chapter 11: Asset Allocation — The Only Decision That Really Matters",
       "order": 113,
       "src_chars": 2194,
-      "status": "pending",
+      "status": "done",
       "src_sha": "aa085036840c",
       "src": "Why it's rational: (1) The 70/30 target was chosen when you were calm and analytical. Sticking with it means trusting your plan over your emotions. (2) You're systematically buying low (bonds, which underperformed) and selling high (stocks, which outperformed) — exactly what successful investing requires. (3) If stocks crash next year, your 85/15 portfolio would lose ~74,000 USD (30% × 246,500 USD), while your rebalanced 70/30 portfolio would lose ~61,000 USD (30% × 203,000 USD). Rebalancing saved 13,000 USD in potential losses. (4) Historically, asset classes mean-revert — strong years tend to be followed by weaker years, and vice versa. Rebalancing positions you to benefit from this pattern.\n\n**Q3.** A financial advisor proposes the following: \"I'll manage your 500,000 USD portfolio for a 1% annual fee. My fund selections typically beat the market by 0.5% before fees.\" Evaluate this proposal mathematically over 20 years, then evaluate it using the SPIVA data from Chapter 10.\n\n**Answer:** Mathematical evaluation: If the advisor's funds beat the market by 0.5% before fees, after the 1% advisor fee, you're underperforming by 0.5%. Add fund fees (~0.7% for typical active funds), and total underperformance is approximately 1.2% versus an index fund approach.\n\nOver 20 years on 500,000 USD:\n\n* Index fund (6.97% net): 500,000 USD × (1.0697)20(1.0697)^{20}(1.0697)20 ≈ 1,916,000 USD\n* Advisor's approach (5.80% net): 500,000 USD × (1.058)20(1.058)^{20}(1.058)20 ≈ 1,540,000 USD\n* Difference: approximately 376,000 USD\n\nSPIVA evaluation: The advisor claims 0.5% outperformance. Over 20 years, only ~7% of managers achieve even market-matching returns after fees. The advisor is claiming to be in the top ~5-7% of all managers. While possible, you're making a bet against overwhelming odds. And you're paying 376,000 USD for the privilege.\n\nA fee-only financial planner who charges a flat annual rate (2,000–5,000 USD/year) for comprehensive planning — while having you invest in index funds — would cost far less and likely deliver better investment returns. The planning advice might be worth 3,000 USD/year; the investment management is almost certainly not worth 1% of assets.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 827,
+      "out_sha": "da35284d7fc7",
       "note": ""
     },
     {
@@ -1463,11 +1463,11 @@
       "en_title": "Chapter 11: Asset Allocation — The Only Decision That Really Matters",
       "order": 114,
       "src_chars": 3157,
-      "status": "pending",
+      "status": "done",
       "src_sha": "006c32ed90c0",
       "src": "#### Think Deeper\n\n**Q1.** The \"age in bonds\" rule assumes a single retirement date. But modern retirements can last 30+ years. Should a 65-year-old really have 65% bonds? How should the length of retirement affect asset allocation?\n\n**Discussion:** A 65-year-old with 65% bonds faces a real problem: with 30+ years of retirement, inflation will roughly double prices. A portfolio that's 65% bonds and 35% stocks may not grow enough to maintain purchasing power. The solution is to think of retirement money in \"buckets\": Bucket 1 (years 1-5): Very conservative — cash and short-term bonds. This money needs to be accessible and stable for near-term living expenses. Bucket 2 (years 6-15): Moderate — 50/50 stocks and bonds. Time to recover from short-term volatility. Bucket 3 (years 15+): Aggressive — 70%+ stocks. This money won't be needed for over a decade, so it can tolerate volatility and needs growth to combat inflation. This \"bucket strategy\" recognizes that a 65-year-old doesn't need ALL their money immediately — much of it won't be touched for 10-20+ years, making stock market volatility irrelevant for that portion. The age-in-bonds rule is too blunt for retirement; bucket-based thinking is more sophisticated and more effective.\n\n**Q2.** Some financial advisors argue that their behavioral coaching (preventing clients from panic-selling during crashes) justifies their 1% fee. Is there evidence for this claim? Under what conditions might it be true?\n\n**Discussion:** The behavioral coaching argument has some merit. Studies by Vanguard (\"Advisor's Alpha\") and Morningstar estimate that good behavioral coaching can add 1-2% in annual returns by preventing the most destructive mistakes: panic-selling during crashes, chasing performance, failing to rebalance, and underestimating risk tolerance. The key word is \"can\" — this value only materializes if you would otherwise make those mistakes. If you've automated your investments, use a target-date fund, check your portfolio annually, and have an investment policy statement, the behavioral coaching adds nothing because you've already built the systems that prevent mistakes. The 1% fee is essentially insurance against your own worst impulses. For highly emotional investors with large portfolios, this insurance might be worth it. For disciplined investors with automated systems, it's an expensive redundancy. A middle ground: use a fee-only planner for an annual check-in (500–2,000 USD/year) rather than paying 1% of assets permanently.\n\n**Q3.** Some sophisticated investors argue for 100% stocks with no bonds, reasoning that for a young person with a 30+ year horizon, bonds only reduce long-term returns without meaningfully reducing risk. What are the arguments for and against this extreme position?\n\n**Discussion:** For 100% stocks: Over 30+ year periods, stocks have always produced positive returns. Bonds reduce long-term expected returns by 1-2% annually — on a 500 USD/month investment over 35 years, this could mean 200,000–400,000 USD less. For a truly long-term investor who won't touch the money, the marginal safety of bonds may not be worth the opportunity cost.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1087,
+      "out_sha": "e2da4dd54d11",
       "note": ""
     },
     {
@@ -1475,11 +1475,11 @@
       "en_title": "Chapter 11: Asset Allocation — The Only Decision That Really Matters",
       "order": 115,
       "src_chars": 1841,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fb37a71c3b26",
       "src": "Against 100% stocks: (1) Human behavior. A 45% crash on a 100% stock portfolio means watching 300,000 USD become 165,000 USD. Even \"rational\" investors sell in panic. A 70/30 portfolio drops to only 213,000 USD — still painful but less likely to trigger panic-selling. The 10% bond allocation is less about optimizing returns and more about keeping you invested during scary times. (2) Rebalancing bonus. Having bonds to sell during stock crashes (to buy cheap stocks) actually IMPROVES returns — you're systematically buying low. A portfolio with bonds to rebalance from often outperforms 100% stocks despite bonds' lower returns. (3) Life unpredictability. You might need money sooner than planned (job loss, medical emergency). The bond portion provides a less-volatile source of funds. The practical answer: 90/10 or 85/15 captures nearly all the growth of 100% stocks while providing a critical behavioral buffer and rebalancing opportunity. The last 10% of stock allocation isn't worth the behavioral risk.\n\n\n### Chapter Summary\n\nAsset allocation — the split between stocks and bonds — explains over 90% of investment return variation. The age-based starting point (hold your age, or age-minus-10, in bonds) provides a reasonable framework, adjusted for income stability, other assets, and personal risk tolerance.\n\nThread B update: the fee illusion — where \"just 1%\" sounds trivial but costs hundreds of thousands over a career — is one of the most important financial literacy concepts in this book. Always convert percentages to dollar amounts.\n\nThread C update: the boring portfolio now has both its components (Chapter 10) and its allocation strategy (this chapter). In Chapter 12, we'll determine WHERE to hold this portfolio — because the tax wrapper (401(k), IRA, Roth, taxable) matters almost as much as what's inside it.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 643,
+      "out_sha": "943c16f44f33",
       "note": ""
     },
     {
