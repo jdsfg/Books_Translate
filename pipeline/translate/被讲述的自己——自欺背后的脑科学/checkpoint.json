@@ -1751,11 +1751,11 @@
       "en_title": "Chapter 5: Confirmation Bias and the Algorithm Within",
       "order": 140,
       "src_chars": 3192,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3ae65e6274ee",
       "src": "A fifth element: _one trusted outsider_. One person — ideally not in your political tribe, not in your professional milieu, not in your social group — whose judgment you respect on the topic and who is willing to tell you when your views seem off. The relationship is rare; finding it is a project in itself. The structural element is the outsider's view; the trade-off is the relational cost of having such a person in your life and the discomfort of receiving their corrections.\n\nWhat would you have to give up? Some of the cognitive comfort of an unfiltered confirming diet. Some of the social comfort of agreeing with everyone in your group. Some of the time you currently spend on engagement-optimized feeds. Some of the certainty that comes from never engaging seriously with the strongest opposing arguments.\n\nWhat would you have to tolerate? Real and sometimes substantial discomfort. Periods of feeling less certain about views you previously held strongly. Occasional updates that damage your sense of having been a careful thinker. The continuous architectural push to abandon the practice in favor of the more comfortable default.\n\nWould the diet be sustainable? Probably not in its full form. The system pushes continuously toward reversion. Most readers, attempting such a diet, would maintain it for a few weeks or months and then drift back to less demanding patterns. The honest expectation is not that you will sustain the full diet but that you will sustain _some_ of its elements, on the topics where the stakes most warrant the effort. Sustaining one structural change on one topic, over time, is more useful than attempting many changes that all lapse. The practice is a long one and tolerates partial implementation. The point is not to escape confirmation bias; you cannot. The point is to occasionally see, on the questions that matter most, slightly more clearly than the unmodified mind would let you. Even this modest goal requires sustained structural support against the system's continuous push. The book is honest about how much effort this requires and how partial the results will be.\n\nThe deepest point: a personal information diet that reduced confirmation bias is itself an act of swimming against the cognitive defenses. It is sustainable only to the extent that it is supported by external structures — subscriptions, commitments, relationships, communities — that you cannot easily revoke in moments of fatigue or discomfort. The structures are the practice. The practice is not a state of mind; it is a configuration of external supports that compensates for the internal default. Designing the supports well is most of the work. The design is personal; the principles — externalize the selection, structurally engage with opposing views, track predictions, find an outsider — are general. Used selectively, on the topics that matter most, they can produce slow accumulation of clarity that introspection alone could not. This is the modest project the rest of the book continues to be about.\n\n* * *\n\n_Tonight, continue the inventory in its four-line form. As you write line 1, ask what evidence relevant to that judgment you did not search for._\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 882,
+      "out_sha": "8b4f5f29d9a5",
       "note": ""
     },
     {
@@ -1763,11 +1763,11 @@
       "en_title": "Chapter 6: Motivated Reasoning and the Smart-People Problem",
       "order": 141,
       "src_chars": 2055,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ef71a26f031b",
       "src": "This chapter is, by some measure, the most disturbing one in the book. It is the chapter where the comfortable position the reader has been able to occupy through the previous five — _the architecture is real, but I am paying attention, I am educated, I am thinking carefully, so I will be among the better-positioned readers_ — is taken away. The empirical finding at the heart of this chapter is that intelligence and education do not, on the questions that matter most, protect against motivated reasoning. On certain kinds of questions, they make it worse. Not slightly worse; substantially worse, in a way that has been replicated across many studies and many domains.\n\nThe finding belongs primarily to the Yale legal scholar Dan Kahan, whose research on cultural cognition over the past two decades has overturned what most educated people believe about the relationship between analytical capacity and accurate reasoning. Kahan's work is not the only line of evidence pointing this way; converging findings from political psychology, behavioral economics, and science communication research all support the same conclusion. But Kahan's experimental design has produced the cleanest demonstration, and it is worth taking seriously on its own terms.\n\nThe chapter proceeds in three steps. First, the experimental design that produces the finding. Second, the mechanism — why analytical capacity amplifies bias on identity-charged questions instead of correcting it. Third, the implications, which the chapter must handle carefully: it cannot leave the reader hopeless (then what is the point of any of this?), it cannot let the reader feel superior (_at least I admit it_ , which is itself motivated reasoning), and it cannot soften the finding (which would be its own form of motivated reasoning by the author). The honest landing is a precise one, and it is the bridge to Part IV's structural focus: individual reasoning on contentious topics is unreliable, which is why the tools that work must be collective and structural rather than individual.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 537,
+      "out_sha": "a6a4e8c3ec5e",
       "note": ""
     },
     {
@@ -1775,11 +1775,11 @@
       "en_title": "Chapter 6: Motivated Reasoning and the Smart-People Problem",
       "order": 142,
       "src_chars": 3414,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f0422412efcd",
       "src": "### 6.1 The Experimental Design\n\nKahan's central experimental paradigm is unusually clean. The basic setup gives subjects numerical data and asks them to perform basic statistical reasoning on it. The same numerical structure is then framed in two ways: a politically neutral framing (the data describes the effectiveness of a skin cream) and a politically charged framing (the same data describes the effect of a gun-control law, or the effects of marijuana legalization). Subjects' analytical ability is measured separately, using standard numeracy tests.\n\nWalk through the basic structure of the task. Subjects are shown a 2×2 table of outcomes. In the skin-cream framing, the table might look like this:\n\n|  | Skin condition got better | Skin condition got worse  \n---|---|---  \nPatients used the cream | 223 | 75  \nPatients did not use the cream | 107 | 21  \n  \nSubjects are asked: based on this data, did people who used the cream do better than people who did not?\n\nThis is a question about conditional probabilities. Among cream-users, the proportion who got better is 223/(223+75) = 75%. Among non-users, the proportion who got better is 107/(107+21) = 84%. Non-users actually did better. The cream is, on this data, associated with worse outcomes.\n\nThe intuitive answer most people give — looking only at the raw numbers and noticing that more cream-users got better than non-users got better — is wrong. It ignores the base rates. Many subjects fall into this error; subjects with higher numeracy scores avoid it more often, exactly as one would expect. On this politically neutral framing, math ability strongly predicts accuracy. Smart subjects do better. The data and the math are exactly what they appear to be.\n\nNow the second framing. The same numerical structure is presented, but the table is relabeled:\n\n|  | Crime decreased | Crime increased  \n---|---|---  \nCities that banned concealed handguns | 223 | 75  \nCities that did not ban concealed handguns | 107 | 21  \n  \nThe numerical structure is identical. The correct answer is identical: cities that did not ban handguns had a higher rate of crime decrease (84%) than cities that did (75%). Anyone who got the skin-cream version right should get this version right too. The math has not changed.\n\nWhat Kahan and colleagues found, across many runs of this study, is that the math ability that predicted accuracy on the skin-cream version _predicts more bias, not less_ , on the politically charged version — and the bias is not random. It runs in the direction of the subject's pre-existing political identity. Subjects who oppose gun control, faced with data that on this version shows handgun bans are _associated with_ worse outcomes (a result favorable to their position), get the answer right at high rates if they are highly numerate. Subjects who support gun control, faced with the same data showing the same result, _get it wrong more often if they are highly numerate_. The numeracy that helped them on skin cream is now actively producing the wrong answer.\n\nWhen the table is flipped — when the data, with the same political framing, shows the _opposite_ result (handgun bans associated with better outcomes, favorable to gun-control supporters) — the pattern flips. Now gun-control supporters use their numeracy correctly; gun-control opponents, faced with data unfavorable to their position, use their numeracy to defeat the data.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1109,
+      "out_sha": "68fa440b5c67",
       "note": ""
     },
     {
@@ -1787,11 +1787,11 @@
       "en_title": "Chapter 6: Motivated Reasoning and the Smart-People Problem",
       "order": 143,
       "src_chars": 2812,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7e5452af2983",
       "src": "The pattern is symmetric across political identity. It is not that one political tribe is uniquely susceptible. Both sides exhibit the same architecture, with intensity proportional to the analytical capacity available. The smart subjects, on both sides, use their analytical tools to defeat data that contradicts their tribe's position. Subjects with lower numeracy are less able to do this, because they have weaker tools. They produce more random-looking errors; they don't systematically produce the politically convenient errors. The high-numeracy subjects produce the politically convenient errors with much higher reliability than the low-numeracy subjects do — and they produce the politically convenient _correct_ answers when the data happens to favor their side.\n\nThis is the smart-people problem. Analytical capacity, on identity-charged questions, becomes an instrument of motivated reasoning rather than a corrective to it. The instrument is exactly the same instrument that produces accurate conclusions on questions where identity is not at stake. It is just being deployed for a different purpose, and on the questions where identity is at stake, the purpose dominates the deployment.\n\n\n#### Definition: Motivated Reasoning\n\nMotivated reasoning is the cognitive process by which the mind, in evaluating evidence or arguments related to questions where the holder has a stake (in identity, group belonging, past commitment, or self-image), produces conclusions that systematically favor the position the stake supports — typically through differential scrutiny, weighting, and interpretation that the holder does not experience as biased.\n\nIn plain language, this means: when you evaluate a claim that bears on something you care about identity-wise, your reasoning is not a neutral assessment of evidence. It is, by default, an advocacy process for the conclusion that fits your stake. The advocacy is automatic, fluent, and feels like ordinary careful thinking. The result is a conclusion that you experience as having reasoned to from the evidence, when in fact the evidence has been processed in service of the conclusion you were already disposed toward.\n\nMotivated reasoning is closely related to confirmation bias from Chapter 5; the two often co-occur and amplify each other. The distinction worth keeping is that confirmation bias is the broader pattern of search asymmetry that operates on any belief one already holds, while motivated reasoning specifically refers to the case where the bias is driven by stake — by identity, group belonging, or other architectural commitments — rather than by mere prior belief. Confirmation bias operates on neutral beliefs as well; motivated reasoning specifically intensifies on identity-relevant ones, which is why Kahan's finding focuses on it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 829,
+      "out_sha": "936767420b09",
       "note": ""
     },
     {
@@ -1799,11 +1799,11 @@
       "en_title": "Chapter 6: Motivated Reasoning and the Smart-People Problem",
       "order": 144,
       "src_chars": 2234,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7a09259a5197",
       "src": "#### Common Misconception\n\nThe most common reaction on first encountering Kahan's finding is _but that's about other people — the partisans, the tribalists, the people whose identities are obviously wrapped up in their politics. I, by contrast, hold my political views from a more reasoned place, so the finding doesn't apply to me as strongly._ This is the bias blind spot from Chapter 4 operating in real time on the smart-people finding. It is exactly the response Kahan's framework would predict from the highly analytical reader, because the response itself uses analytical capacity to produce a sincere story about why the finding doesn't apply to one's own case. The capacity is enlisted to defeat the application.\n\nThe empirical situation is stark. The smart-people problem has been replicated across many populations, including academic populations, including subjects who self-report holding their views from a reasoned place, including subjects who explicitly identify as careful thinkers. The pattern does not change in these populations. The high-numeracy subjects who self-identify as careful thinkers produce the politically convenient errors at high rates, in exactly the same shape as the high-numeracy subjects who do not self-identify that way. The self-identification does not predict reduced susceptibility. It predicts continued susceptibility plus a more elaborate self-story about why the susceptibility doesn't apply.\n\nThis is, again, not because you are unusually self-deceiving. It is the system operating by design. The honest position, on encountering Kahan's finding, is: _this almost certainly applies to me on the political and identity-relevant topics where I have strong views, with intensity proportional to my analytical capacity; my felt sense that I hold my views from a more reasoned place is itself the smart-people problem operating; the only useful response is to not rely on my own analytical reasoning where the stakes for identity are large._ The position is hard to hold; the cognitive system rapidly produces reasons why the case is different. The honest reader can construct the position intellectually; the felt reassurance that one is the exception is the standard output regardless.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 643,
+      "out_sha": "849d2797876a",
       "note": ""
     },
     {
@@ -1811,11 +1811,11 @@
       "en_title": "Chapter 6: Motivated Reasoning and the Smart-People Problem",
       "order": 145,
       "src_chars": 3295,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d470fd803d9b",
       "src": "### 6.2 The Mechanism\n\nWhy does analytical capacity amplify bias on identity-charged questions instead of correcting it? The mechanism is worth understanding precisely, because it explains why so many remediation strategies that sound sensible (educate people more, teach them critical thinking, give them better data) do not produce the effects they promise.\n\nThe mechanism runs through the architecture of Part I, with a specific intensification at one point.\n\nWhen a person evaluates evidence on a neutral topic, the cognitive system is doing its standard work — Interpreter generating reasons, dissonance engine maintaining consistency with prior belief, bias blind spot preventing inward inspection — but the work is mostly upstream of the conscious analytical process. The person sits down to do the math, the math is done, the answer comes out. The system has shaped some upstream considerations (which questions seem worth asking, which framings seem natural, which results seem worth checking carefully), but on a clean math problem on a neutral topic, these upstream effects are bounded. The answer largely tracks the math.\n\nWhen the same person evaluates evidence on an identity-charged topic, two things change. First, the dissonance engine has additional motivation to defend the politically convenient conclusion, because the convenient conclusion is consistent with the person's identity, group belonging, and past commitments. Second — and this is the crucial mechanism — the _analytical capacity itself_ is now available to the engine as a tool. The math the person can do can be used, on this topic, to produce a sincere account of why the politically convenient answer is the correct one. The math becomes a means, not an end. The conscious experience is of doing the math carefully and arriving at the answer; the upstream architecture has shaped which math gets done, how the results get integrated, and which outcome counts as having \"checked carefully.\"\n\nA subject with low analytical capacity, faced with the same task, has a weaker tool to enlist. They cannot construct as sophisticated an account of why the convenient answer is correct. They are more likely to either get the answer randomly (no analytical capacity to deploy in either direction) or to make the basic intuitive error that the data superficially suggests (their analytical capacity does not even reach the level of base-rate reasoning, so they don't have the capacity to either detect the base rates or to use them for motivated reasoning). They produce errors, but the errors are less systematically aligned with their political identity, because the alignment requires analytical work that their capacity cannot do.\n\nA subject with high analytical capacity has the tool. Their math is good enough to detect base rates, to compute conditional probabilities, to integrate evidence. On a neutral topic, this capacity produces accurate answers. On an identity-charged topic, the same capacity is enlisted by the dissonance engine to produce sincere accounts of why the politically convenient answer is correct. The smart subject's wrong answer is not random; it is systematically aligned with their political identity, because the alignment requires exactly the analytical work their capacity is good at.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 983,
+      "out_sha": "68b12c4141d6",
       "note": ""
     },
     {
@@ -1823,11 +1823,11 @@
       "en_title": "Chapter 6: Motivated Reasoning and the Smart-People Problem",
       "order": 146,
       "src_chars": 1463,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3be16bdc6e95",
       "src": "This is the asymmetry. Analytical capacity helps on neutral topics because there is no architectural pressure to produce a particular answer. Analytical capacity _hurts_ on identity-charged topics because there is architectural pressure to produce a particular answer, and the capacity provides the tool to produce it more sophisticatedly. The mechanism is not that smart people are uniquely biased; it is that the cognitive system, when it has stakes in the outcome, enlists whatever analytical capacity is available, and more capacity means better service to the stake.\n\nThe implication is uncomfortable. The more analytical you are, the more sophisticated your motivated reasoning is on the topics that matter most to you.\n\nA specific concrete consequence: if you put two subjects of equal political identity but different numeracy on the same identity-charged statistical question, and the data favors their position, the more numerate subject is more likely to get the right answer. If the data does _not_ favor their position, the more numerate subject is more likely to get the _wrong_ answer. The numeracy is doing different work in the two cases. In the first, it detects the result that fits the identity. In the second, it constructs the reasons the data must be misleading. From inside, the subject experiences both as _just doing the math_. From outside, the math has been instrumentalized in different directions depending on what served the stake.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 418,
+      "out_sha": "f37ac3e5551a",
       "note": ""
     },
     {
@@ -1835,11 +1835,11 @@
       "en_title": "Chapter 6: Motivated Reasoning and the Smart-People Problem",
       "order": 147,
       "src_chars": 2122,
-      "status": "pending",
+      "status": "done",
       "src_sha": "316c8efb4913",
       "src": "#### Common Misconception\n\nA reader might at this point think: _fine, but the solution is just to be aware of this and to deliberately resist using analytical capacity for motivated reasoning._ This is the Chapter 4 lesson again, and it is again uncomfortable. Awareness of motivated reasoning does not, on the empirical evidence, reduce one's susceptibility to it on identity-charged topics. Subjects who have been told about Kahan's finding, in detail, with explicit instruction to watch for it in themselves, continue to produce the same pattern of motivated answers on the same kinds of questions. The instruction does not provide a separate engine; it provides information that the existing engine processes through its existing channels, producing sincere accounts of why this particular case is the exception.\n\nThe mechanism that defeats the awareness-based remediation is the same mechanism that produces the bias in the first place. If the cognitive defenses can deploy analytical capacity to produce sophisticated accounts of why the convenient answer is correct, they can equally deploy that capacity to produce sophisticated accounts of why one's own analysis on this topic was not motivated reasoning despite the warning. The instruction _watch for motivated reasoning in yourself_ is processed by the same machinery that produces the motivated reasoning. Its response is to produce the introspective output _I have watched, and in this case I am not engaging in it_. The output is sincere. It is not, on average, accurate.\n\nThis is why the rest of the book has been insisting on structural tools. The tools that work do not depend on the analytical capacity catching its own deployment in service of identity. They depend on external structures — written predictions, outsider observers, adversarial collaboration, prediction markets, institutional designs — that operate on different principles. The structural tools are not better thinking; they are different mechanisms. They cannot be defeated by sophisticated rationalization in the same way, because they don't run through the rationalization channel.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 575,
+      "out_sha": "6b4c150f5a94",
       "note": ""
     },
     {
@@ -1847,11 +1847,11 @@
       "en_title": "Chapter 6: Motivated Reasoning and the Smart-People Problem",
       "order": 148,
       "src_chars": 2696,
-      "status": "pending",
+      "status": "done",
       "src_sha": "60b9a8a58277",
       "src": "### 6.3 The Disturbing Implication for the Reader\n\nNow the chapter has to handle, carefully, the question that the careful reader is already asking: _what does this mean for the very experience of reading this book?_\n\nThe honest answer is unflattering. The reader of this book is, almost by definition, a person who values analytical capacity and who has invested in developing it. The reader is, almost by definition, a person who wants to think more clearly, who has read enough on related topics to feel intellectually equipped, and who has formed views about what counts as careful thinking. All of this is consistent with high analytical capacity; the book is not written for readers without it.\n\nThe smart-people problem, applied to this reader, says: on the questions where this reader has identity stakes — political views, intellectual commitments, beliefs about themselves and their group — their analytical capacity is being deployed in service of the stake more than as a corrective to it. The very capacity that makes them a careful reader of this book is the capacity that, on identity-charged topics, produces sincere conclusions that fit their identity rather than that track the evidence.\n\nThere is a particular trap nearby that the chapter must name. The trap is to feel — having understood the smart-people problem — _but the very fact that I am willing to confront this disturbing finding shows that I am one of the better-calibrated readers, and the finding therefore applies less to me than to readers who would dismiss it_. This response is itself motivated reasoning. It uses analytical capacity to produce a sincere account of why the finding doesn't apply with full force to the present case. The account is exactly what would be produced in a reader whose identity stakes around being-a-careful-thinker have just been threatened by the finding. The willingness to confront the finding is real; it is also not strong evidence of reduced susceptibility, because the underlying machinery has been shaped to produce exactly this confrontation-followed-by-self-exemption sequence.\n\nThe harder, more uncomfortable, and more accurate position is: _the smart-people problem applies to me with full force on the topics where I have identity stakes; my analytical capacity, on those topics, is being deployed in service of my identity at least as much as in service of accuracy; my felt sense that I am carefully reasoning is itself a standard output and does not give me special insight into whether I am or am not engaging in motivated reasoning in the present case._ This position is not flattering; it is also empirically supported, and the more flattering positions are not.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 713,
+      "out_sha": "1f8b6ca76511",
       "note": ""
     },
     {
@@ -1859,11 +1859,11 @@
       "en_title": "Chapter 6: Motivated Reasoning and the Smart-People Problem",
       "order": 149,
       "src_chars": 832,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ebc3c5b86ec8",
       "src": "This is the chapter's hardest landing for the reader. There is no comfortable resolution. The reader cannot, by virtue of being a careful reader, be substantially exempt from the finding. The reader cannot, by virtue of being aware of the finding, substantially reduce their susceptibility to it. The reader can only do two things. First, they can hold the position intellectually, with the knowledge that the felt reassurance to abandon it will recur continuously. Second, they can take the position as evidence that — on the identity-charged topics where the stakes are largest — they should not rely on their own analytical reasoning as the final check. They should use structural tools. The structural tools are what Part IV is about, and the smart-people problem is the strongest possible motivation for taking them seriously.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 199,
+      "out_sha": "e51b4b9baa58",
       "note": ""
     },
     {
