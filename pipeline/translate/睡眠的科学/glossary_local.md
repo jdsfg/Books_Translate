@@ -17,7 +17,7 @@ NREM (non-rapid eye movement) | 非快速眼动睡眠 | 含 N1、N2、N3 三个�
 N1 / stage 1 | N1 期 | 浅睡过渡期
 N2 / stage 2 | N2 期 | 浅睡主体期
 N3 / slow-wave sleep (SWS) | N3 期 / 慢波睡眠 | 深睡眠，也称 delta sleep
-REM (rapid eye movement) | 快速眼动睡眠 | 多数梦境发生，肌张力抑制
+REM (rapid eye movement) | 快速眼动 | 多数梦境发生，肌张力抑制
 REM sleep | 快速眼动睡眠 | 同 REM
 sleep cycle | 睡眠周期 | 约 90 分钟，由 NREM 到 REM 的完整循环
 slow-wave sleep | 慢波睡眠 | 深睡期，高振幅慢脑电波

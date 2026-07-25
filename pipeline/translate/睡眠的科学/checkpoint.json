@@ -287,11 +287,11 @@
       "en_title": "Chapter 1: The Third of Your Life",
       "order": 18,
       "src_chars": 2535,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0287224c65fa",
       "src": "#### Think Deeper\n\n**Q1.** The book argues that sleep is \"the work\" rather than \"a break from the work.\" What kind of cultural change would follow if this claim were taken seriously at scale — by employers, schools, healthcare systems? Pick one institution and describe what would have to change.\n\n**Discussion:**\n\n**Takeaway:** Treating sleep as productive time (rather than \"saved\" or \"wasted\") would force the redesign of workplaces, schools, and healthcare around the body's actual biological accounting.\n\nThe implications of \"sleep is the work\" run deep. For employers: late-evening calls, expectation of 7 AM emails, \"always-on\" availability culture would have to be reconsidered as direct interference with the employee's biological work, not as bonus dedication. For schools: high-school start times would shift by 60–90 minutes (we will discuss the chronobiology in Chapter 4); homework loads that push bedtime past midnight would be acknowledged as a measurable cost, not a free variable. For healthcare: hospital night-shift schedules would be redesigned around the IARC carcinogenicity classification of shift work; sleep apnea would be screened with the seriousness currently given to hypertension. The deeper philosophical shift: time spent asleep would be recognized as productive time, not \"saved\" or \"wasted.\" The cultural pathology of \"I'll sleep when I'm dead\" would look the way \"I'll breathe when I'm dead\" would look — a category error that is also a slow form of self-harm. The reader can pick any one of these institutions and follow the implications further. This question has no single answer; the discussion is the point.\n\n**Q2.** This book takes an explicit anti-overclaim posture. What is the cost, if any, of being so careful about overclaiming when the underlying message — that sleep matters — is so clearly true? Are there situations where strong overclaim would do more good than honest hedging?\n\n**Discussion:**\n\n**Takeaway:** The cost of anti-overclaim is fewer viral one-fact stories; the benefit is that the message survives critical scrutiny and leaves the reader with calibration skills that transfer to other contested empirical domains.\n\nThe case for overclaim: sleep is in fact undervalued in modern industrial societies, and the public-health benefit of moving readers from indifference to attention may be worth some loss of nuance. Matthew Walker's _Why We Sleep_ certainly did move millions of readers — the question is whether it moved them in a direction the evidence actually supports.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 817,
+      "out_sha": "c98579414665",
       "note": ""
     },
     {
@@ -299,11 +299,11 @@
       "en_title": "Chapter 1: The Third of Your Life",
       "order": 19,
       "src_chars": 3196,
-      "status": "pending",
+      "status": "done",
       "src_sha": "97c090f91f21",
       "src": "The case against overclaim, which this book takes: when an overclaim is exposed (as Walker's were, in detail, by 2019), public trust in the underlying field collapses faster than it builds. Readers who had been told \"less than six hours doubles your risk of X\" feel betrayed when the actual evidence is much weaker; some of them throw out the baby with the bathwater and conclude that \"sleep science is overhyped\" — landing in a worse epistemic position than if they had been told the truth. Worse, the field itself spends years repairing the damage instead of building forward. The honest hedge — \"sleep matters; here are the parts we know firmly, here are the parts we suspect strongly, here are the parts we don't yet know\" — turns out to build trust _and_ room to revise. The anti-overclaim posture is itself a teaching: it shows the reader what calibrated evidence-talk looks like, a skill that transfers to climate, nutrition, and every other contested empirical domain. The cost is that this book will not produce the kind of viral _one-fact-changes-your-life_ claim that drives bestseller lists. The benefit is that what you take away will still be true in 2040.\n\n\n### Chapter Summary\n\nThis chapter introduced sleep as a distinct, active, non-negotiable biological state — not \"the absence of waking,\" not \"downtime.\" Three concrete cases anchored the introduction: the Italian family with Fatal Familial Insomnia, who die when sleep becomes biologically impossible (Thread A, returning in Chapters 3, 6, 12, 13, and 14); Eugene Aserinsky's 1953 discovery of REM sleep, which broke open the modern science; and the upside-down jellyfish, which shows that sleep is older than brains (Thread C, returning across the book).\n\nThe book's organizing question is not \"how do I sleep better?\" but \"what is happening when I sleep, and how do I work with that machine?\" The book's intellectual posture is anti-overclaim: it distinguishes three tiers of evidence and refuses to flatten them. It treats the reader as an intelligent adult operating a precision biological instrument they have never read the manual for.\n\nThe book's core practice — Thread B, the two-week sleep diary — starts tonight. Four morning numbers, four daily logs. From Chapter 2 onward, every chapter will end with a specific instruction for reading some feature of the diary through that chapter's framework. By Chapter 14 the reader will have a personalized diagnostic of their own sleep through five different lenses.\n\nChapter 2 will introduce the framework that explains _when_ sleep happens: Borbély's two-process model, with Process S (sleep pressure) and Process C (circadian rhythm). The post-lunch dip, the 11-PM second wind, the way coffee buys you alertness without paying off the underlying debt — all of these will become readable from your diary by the end of the next chapter.\n\n**Diary instruction for Chapter 1** : Tonight, before you turn off the light, set up your diary. Write the four headings (Bedtime, Sleep latency, Wake time, Alertness 1–10) and the daily logs (Caffeine + time, Alcohol, Exercise, Naps). Tomorrow morning, fill it in. Continue for fourteen mornings. The book will meet you there.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1059,
+      "out_sha": "7815fc2d7c58",
       "note": ""
     },
     {
@@ -311,11 +311,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 20,
       "src_chars": 1864,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f3e73115252e",
       "src": "You are reading this in the middle of the afternoon, and you have just yawned.\n\nDon't be embarrassed. Across the time zones in which this book is being read, there are millions of other people doing the same thing right now, somewhere between two and four o'clock local time. Their eyelids are heavy. Their concentration has drifted. The line they just read needs to be read again. They blame lunch. They blame the meeting. They blame their bad night.\n\nThe lunch is innocent. The meeting is a coincidence. The bad night may or may not be relevant.\n\nWhat is happening to you at this moment is something almost nobody knows the name of, and yet it is the simplest, most powerful tool in the entire science of sleep. It is called the **post-lunch dip** , and it is not caused by lunch. It is caused by your brain following an internal clock that was set roughly twenty-four hours ago and that is currently telling you, with great precision, \"this is one of two times in the day when alertness is supposed to drop.\"\n\nBy the end of this chapter you will be able to read this dip — and the matching evening dip, and the morning rise, and the late-night second wind — directly from the entries in your diary. You will know why coffee makes the dip easier without making it shorter. You will know why some nights your bed feels welcoming and other nights it feels electric. You will, in short, have one of the two great frameworks of sleep science in your head.\n\nThe framework is called the **two-process model** , and it was articulated in 1982 by the Swiss chronobiologist Alexander Borbély. It is one of the rare cases in modern biology where a single, deceptively simple model has held up for over forty years and underlies most of what we now teach about sleep regulation. We will use it in nearly every chapter of this book, so it is worth slowing down here.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 583,
+      "out_sha": "317babf4f123",
       "note": ""
     },
     {
@@ -323,11 +323,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 21,
       "src_chars": 3228,
-      "status": "pending",
+      "status": "done",
       "src_sha": "910fc6bfe291",
       "src": "### 2.1 Why You Get Sleepy\n\nYou wake at 7 in the morning. You feel, more or less, fine.\n\nYou read for an hour, eat breakfast, take a walk. You are, more or less, fine.\n\nYou work through the morning. By noon you are still functional but a small fatigue has crept in — not enough to notice, just a slight tax on attention.\n\nBy 3 in the afternoon, the dip arrives. By 7 in the evening, you are tired but not exhausted. By 11 PM, if you have a normal schedule, you are usually quite ready to sleep. By 3 AM, if for some reason you are awake — the long-haul flight, the colicky baby, the night shift — you are dragging in a way that makes 3 PM feel positively energetic by comparison.\n\nWhat happened across those twenty hours? Two completely different things, riding on top of each other.\n\nThe first thing is that your brain accumulated **adenosine** — a small molecule released as a metabolic byproduct of neuronal activity. Every neuron firing all day is, in a small way, depositing adenosine into the spaces around it. By bedtime, you have a large standing pool of adenosine across the brain. Adenosine binds to specific receptors that, in effect, tell the wakefulness-promoting circuits to slow down. The more adenosine, the harder it is to stay alert. **The technical name for this accumulation is sleep pressure, or Process S.**\n\nThe second thing is that your brain has a built-in twenty-four-hour clock that runs whether you are awake or asleep, whether the sun is up or not. This clock generates an alerting signal that is high during the biological day and low during the biological night. **The technical name for this clock is the circadian rhythm, or Process C.**\n\nThese two systems work in opposite directions, and the net effect — what you experience as \"how sleepy I am right now\" — is their combination.\n\n\n#### Definition: Process S (Sleep Pressure)\n\nProcess S is the homeostatic component of sleep regulation. It is the accumulated pressure to sleep that builds up monotonically during waking and dissipates monotonically during sleep. It is mediated, at least in large part, by adenosine accumulation in the brain.\n\nIn plain language, this means: the longer you are awake, the more sleep pressure you build up; the longer you sleep, the more it gets paid off. It is a debt. It accumulates. It gets repaid.\n\n\n#### Definition: Process C (Circadian Rhythm)\n\nProcess C is the circadian component of sleep regulation. It is an oscillating signal generated by an internal pacemaker, with a period close to but not exactly twenty-four hours. It produces a wakefulness-promoting drive that peaks during the biological day and falls during the biological night. It is largely independent of how long you have been awake.\n\nIn plain language, this means: your brain has a clock that runs on its own, regardless of what you have been doing. The clock pushes you toward alertness during the day and away from alertness at night. It is not a debt. It is a rhythm.\n\nWhen you put these two together — the steadily rising debt of Process S during the day, and the daily wave of Process C — you get a remarkably accurate prediction of when you will feel sleepy and when you will feel alert. This is the **two-process model**.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 997,
+      "out_sha": "63fd9c1f9fd5",
       "note": ""
     },
     {
@@ -335,11 +335,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 22,
       "src_chars": 3192,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a012a9c12c42",
       "src": "### 2.2 Reading the Two Curves\n\nLet's draw them.\n\nImagine a graph. The horizontal axis is time, running from 7 AM (when you wake) through to 7 AM the next morning. The vertical axis is \"drive to be awake.\"\n\n**Process C** rides as a smooth wave. It is high at 9 AM as your circadian wakefulness signal kicks in. It dips a little around 2-3 PM (the post-lunch dip). It climbs back up in the late afternoon and reaches a _second peak_ around 6-9 PM — this is what is sometimes called the \"wake-maintenance zone\" or, more colloquially, the second wind. Then it falls steeply through the evening, bottoms out around 4-5 AM, and starts climbing again.\n\n**Process S** rises as a fairly straight line all day. It started low when you woke up (after a full night's sleep paid off most of yesterday's pressure). It climbs, climbs, climbs through the morning, the afternoon, the evening. By 11 PM it is high. By 2 AM it is very high. By 5 AM, if you are still awake, it is the highest it has been all \"day.\"\n\nA simplified picture of how the two processes interact across a typical day:\n\nTime | Process C (alerting drive) | Process S (sleep pressure) | Felt alertness  \n---|---|---|---  \n7 AM | rising ↗ | low (just woke up) | low → rising  \n9–10 AM | **HIGH** (morning peak) | low–moderate | **HIGH** (best work window)  \n2–3 PM | post-lunch dip ↓ | moderate | low (afternoon slump)  \n4–5 PM | climbing back ↗ | moderate–high | moderate  \n6–9 PM | **HIGH** (wake-maintenance zone) | high | moderate–high (second wind)  \n11 PM | falling ↓ | very high | low (sleepy)  \n2–5 AM | trough (lowest) | highest if still awake | very low  \n  \nWhat you experience as alertness is approximately Process C _minus_ Process S. (More carefully: it is a function of both, but the subtractive intuition is good enough for the purposes of this book.)\n\nThink about what this means.\n\n**At 9 AM** : Process C is high, Process S is low. Their difference is large. You are alert. This is when you do your best work.\n\n**At 2 PM** : Process C dips. Process S is now moderately high. Their difference shrinks. You feel the post-lunch dip. Lunch is irrelevant — the dip would happen even if you ate nothing.\n\n**At 4 PM** : Process C climbs back up. Process S is higher than at 2 PM. They roughly cancel. You feel okay-not-great.\n\n**At 7 PM** : Process C reaches its evening peak. Process S is now high. Their difference is moderate. You feel the _second wind_ — the wake-maintenance zone. This is why you can't fall asleep at 7 PM even after a long day; your circadian system is at one of its highest alerting points.\n\n**At 11 PM** : Process C has fallen. Process S is very high. Their difference is small or negative. You feel sleepy.\n\n**At 3 AM** : Process C is at its lowest. Process S is at its highest (you've been awake almost twenty-four hours). The combination is dramatic. This is why sleep deprivation in the small hours feels so different from sleep deprivation at noon — at noon, Process C is helping you; at 3 AM, Process C is fighting you alongside Process S.\n\nThis single picture — two curves, their difference — is most of what you need to understand the _timing_ of sleep. We will use it for the rest of the book.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1248,
+      "out_sha": "b13ef816d3fb",
       "note": ""
     },
     {
@@ -347,11 +347,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 23,
       "src_chars": 919,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b16a712f09d7",
       "src": "#### Common Misconception\n\nA widespread folk belief is that the post-lunch dip is \"caused by digestion.\" The reasoning is intuitive: blood is being shunted to the gut, glucose is being processed, the body is in food-coma mode. This story is wrong. The post-lunch dip occurs in subjects who skip lunch entirely. It occurs in subjects fed only intravenous nutrition. It occurs at roughly the same time of day across many cultures regardless of when they eat their largest meal. It is a feature of Process C — a programmed dip in the circadian alerting signal — that simply happens to coincide with the cultural timing of lunch in industrial societies. Lunch can make the dip a little worse (a heavy meal, especially carbohydrate-heavy, can amplify the felt sleepiness slightly) but lunch is not the cause. The next time you feel the 2 PM dip on a day you skipped lunch, you have just observed Process C in action.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 301,
+      "out_sha": "3e5bffa7ee53",
       "note": ""
     },
     {
@@ -359,11 +359,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 24,
       "src_chars": 2632,
-      "status": "pending",
+      "status": "done",
       "src_sha": "97b5fb9a9f97",
       "src": "### 2.3 Adenosine, Caffeine, and What Coffee Actually Does\n\nAdenosine is the molecular face of Process S.\n\nIt is a small purine compound that appears at synapses — the junctions between neurons — as a byproduct of energy use. When neurons fire, they consume ATP (the cell's energy currency); ATP gets broken down through a chain of reactions that eventually leaves adenosine. So as the brain works through the day, adenosine accumulates in the spaces between neurons.\n\nThere are receptors specifically tuned to detect this adenosine — most importantly the A1 and A2A receptors. When adenosine binds these receptors, the receptors trigger a cascade that _inhibits_ wakefulness-promoting circuits in the brain. More adenosine, more inhibition. More inhibition, more felt sleepiness.\n\nWhen you sleep, the adenosine gets cleared. The cellular machinery that breaks it down catches up; the receptors empty; the inhibition lifts. By morning your sleep pressure is low again.\n\nThis is why a good night's sleep makes you feel, well, awake. The adenosine debt has been paid.\n\nNow consider caffeine.\n\nCaffeine has a molecular shape that resembles adenosine closely enough to fit into the same receptors. But unlike adenosine, when caffeine binds the receptor, _nothing happens_ — the cascade doesn't fire. Caffeine occupies the receptor without activating it. It is a competitive antagonist.\n\nThe consequence: when caffeine is present in the brain, adenosine cannot dock to its receptors, because the parking spaces are full. The inhibitory signal that adenosine would have produced is blocked. You feel alert.\n\nNotice what caffeine _did not do_. It did not remove the adenosine. The adenosine is still there, still building up, in fact still building up faster than usual because you used the apparent alertness to keep working. It just cannot bind. As caffeine wears off — its half-life is about 5 to 6 hours in most adults, meaning that half is still around five to six hours after you drank it — the receptors free up, and the now-very-large pool of adenosine docks all at once. The crash that you feel is not \"caffeine wearing off\"; it is the adenosine you spent the day accumulating finally being seen by your brain.\n\n**Caffeine masks sleep pressure. It does not erase it. The bill comes due.**\n\nA 3 PM coffee leaves about half a dose still in your system at 9 PM. A 5 PM coffee leaves a full residual dose at bedtime — exactly when you don't want one. A 1 PM coffee, by contrast, has decayed to roughly a quarter dose by 9 PM and an eighth by midnight — manageable for most people. We will return to this in Chapter 13 with the diary.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 846,
+      "out_sha": "b6898526bc66",
       "note": ""
     },
     {
@@ -371,11 +371,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 25,
       "src_chars": 927,
-      "status": "pending",
+      "status": "done",
       "src_sha": "270078800376",
       "src": "#### Common Misconception\n\n\"Caffeine doesn't affect me.\" This claim, which roughly half of all coffee drinkers make sincerely, is true in only one specific sense: people who consume caffeine regularly develop tolerance to its _subjective alerting effect_ , and may therefore not notice an obvious \"boost\" anymore. They drink coffee and feel unchanged. What is _not_ true is that the caffeine has stopped occupying the adenosine receptors. It hasn't. The receptors are still being blocked; the sleep-pressure signal is still being masked; sleep latency at the end of the day is still being prolonged. The conscious \"boost\" has habituated; the underlying biochemistry has not. Subjects who say \"I sleep fine with coffee at 8 PM\" almost always show measurable disruption in sleep architecture when polysomnography is run on them. \"Caffeine doesn't affect me\" usually means \"I no longer feel its effect, but my sleep does.\"\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 314,
+      "out_sha": "1c65240759d7",
       "note": ""
     },
     {
@@ -383,11 +383,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 26,
       "src_chars": 3064,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d3f985b45c2a",
       "src": "### 2.4 The Circadian Rhythm Is a Real Thing\n\nFor decades, the existence of an internal clock independent of external cues was treated as suspicious. Wasn't it more parsimonious to say that humans simply respond to the daily cycle of light and dark — wakefulness when bright, sleepiness when dim?\n\nThe matter was settled in the 1960s by experiments in deep caves and sealed bunkers, where volunteers spent weeks and months without any time cues — no clocks, no daylight, no schedule, no contact with anyone outside. The volunteers had to estimate when to sleep, when to eat, when to be active. The question was: what would their bodies do?\n\nThe answer was: they kept a remarkably regular cycle, but the cycle was not exactly twenty-four hours. It was, on average, slightly longer — closer to 24.2 hours, as we now know. Released from any external time cues, the human circadian system _runs free_ at its endogenous period. The clock is internal. The light cycle is what _resets_ it every day to keep it tied to the planet's rotation.\n\nThis is the work of a small structure deep in the hypothalamus called the **suprachiasmatic nucleus** , or SCN. We will study the SCN in detail in Chapter 4. For this chapter, what matters is the basic fact: there is an internal clock, it runs at slightly more than 24 hours, and it is reset by light.\n\nThe SCN sends an alerting signal to the rest of the brain that varies across the day. It is high during the biological day, drops in the late afternoon, rises again in the early evening (the wake-maintenance zone), then falls steeply through the night. The pattern is not learned — it is encoded in the rhythmic firing patterns of about twenty thousand neurons in the SCN, each one running its own internal molecular clock that has been studied in extraordinary detail over the past forty years.\n\nTwo implications are immediate and important.\n\n**First** : jet lag is real biology, not soft. When you fly from New York to Tokyo, your body's internal clock is still saying \"it is afternoon in New York\" while the outside world is saying \"it is morning in Tokyo.\" Your circadian alerting signal is at the wrong phase. Until your SCN resets — typically about one day per time zone crossed, when given proper light cues — you will feel sleepy when local custom says you should be alert and alert when local custom says you should sleep. There is no shortcut for this; we will discuss the limited interventions (timed light exposure, melatonin in specific phase windows) in Chapters 4 and 13.\n\n**Second** : night-shift work is _biologically_ difficult, not just inconvenient. The shift worker is being asked to maintain alertness during the trough of their circadian rhythm and sleep during its peak. Their internal clock fights them on both ends. This is why night-shift workers typically have poorer sleep quality, more sleep fragmentation, more drowsy-driving accidents, and (per the IARC's 2007 classification) elevated cancer risk. We will return to this evidence with the proper anti-overclaim discipline in Chapter 8.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 980,
+      "out_sha": "ad9f20767554",
       "note": ""
     },
     {
@@ -395,11 +395,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 27,
       "src_chars": 3425,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7ae078299c51",
       "src": "### 2.5 The Two Processes Together\n\nLet's run the model on a few common situations.\n\n**The all-nighter.** It is 2 AM and you are still working. Process S is very high — you have been awake for nineteen hours. Process C is low — it is the biological night. Their combination produces the heavy, foggy exhaustion of pulling an all-nighter. By 5 AM you are arguably at peak miserable: Process C is at its trough, Process S is enormous. Then something strange happens. By 7 AM, Process C starts climbing back into the biological day. You feel a _brief, false_ second wind. People who have done this report feeling more alert at 8 AM than they did at 5 AM. This is not because they got rest. They didn't. It is because their circadian alerting signal has come back online. By 11 AM the overwhelming pressure of Process S overwhelms Process C and they crash hard. The model predicts this whole sequence.\n\n**The Saturday morning sleep-in.** On Saturday morning, you wake up \"naturally\" at 9 AM rather than at the alarm-driven 6:30 AM of the workweek. You feel rested. By Saturday evening, however, you are surprisingly _not_ sleepy at 11 PM, your normal weekday bedtime. You stay up until 1 AM. This is because your Saturday morning sleep-in shifted the timing of when Process S started accumulating. With less wake time, less Process S has accumulated by 11 PM. Process C, meanwhile, has not shifted — it is still telling you 11 PM is bedtime. But Process S has not caught up. So you stay up. Sunday night you are _still_ shifted later, and Monday morning at 6:30 AM you feel like you are dying. Welcome to **social jetlag** , the topic we will return to in Chapters 4 and 14.\n\n**The afternoon nap.** You take a 30-minute nap at 2 PM. You feel refreshed afterward. Why? Because the nap dropped your accumulated Process S — perhaps not by much, but enough to feel the difference. The post-lunch dip is mostly Process C, but some of the felt sleepiness is residual Process S, and the nap relieved that. _But_ : if your nap is too long (90 minutes) you can wake up worse than you started, because you have entered deeper sleep stages and waking from those is unpleasant. We will study this in Chapter 3. _Also_ : if your nap is too late (5 PM) you have dropped your Process S so much that you can't fall asleep at 11 PM. The same person who napped at 2 PM and slept beautifully at 11 PM may, the next day, nap at 5 PM and then lie awake until 2 AM. The difference is purely the model.\n\n**The travel scenario.** You fly Boston to London — five time zones east. You arrive at 7 AM London time. Your circadian system says it is 2 AM Boston time, which means Process C is still at trough — it wants you to sleep. Your Process S, meanwhile, is high because you are coming off a half-night of poor airplane sleep. The combination: you should feel awful, and you do. Local advice is to stay up through the day so you can sleep at the local night. The model predicts this works because, by London 11 PM, Process S has accumulated even further (you've been semi-awake for a long stretch), Process C is starting to drift toward the new local night, and the combined drive to sleep is overwhelming. You crash. The next day your circadian system has begun to shift; by day three or four you are roughly aligned. The shift is slow because Process C resets at roughly one time zone per day given proper light cues. We will refine this in Chapter 4.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1170,
+      "out_sha": "cff988108229",
       "note": ""
     },
     {
@@ -407,11 +407,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 28,
       "src_chars": 2718,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fa21d54128b4",
       "src": "The point of running through these is to show how much the model carries. Once you have it in your head, the daily phenomenology of sleep stops being mysterious. Why does my dad fall asleep on the couch at 9 PM and then wake up at 3 AM unable to go back to sleep? Process C is shifted earlier with age (the famous \"advanced sleep phase\" of older adults), so his evening Process C drop comes earlier. Why does my teenager refuse to wake up at 7 AM but stay up easily until 1 AM? Teenage Process C is shifted _later_ by the biology of puberty — we will see this in Chapter 4. Why do I get my best work done at 6 AM in summer and 10 AM in winter? Light is hitting your retina at different times across the year; Process C is responding.\n\nYou now have the framework for almost every \"why am I sleepy when I am\" question.\n\n* * *\n\n\n### 2.6 The Limits of the Model\n\nHonesty requires acknowledging where the two-process model is incomplete.\n\nFirst, sleep is regulated by more than two processes. We know there are at least additional mechanisms involving sleep-stage-specific drives (the body homeostatically defends REM and slow-wave sleep separately, not just total sleep), specific neurotransmitter circuits beyond adenosine, and feedback from peripheral organs (the gut microbiome, the muscles, the immune system) that influence sleep timing. The two-process model gives you about 80 percent of the explanatory power for the price of two variables; the remaining 20 percent requires substantially more mechanism.\n\nSecond, individual variation is large. The exact phase of Process C, the rate of Process S accumulation, the sensitivity of A1/A2A receptors to adenosine — all of these vary genetically and developmentally across people. A short-sleeper genotype (the _DEC2_ variant studied since the late 2000s, though we don't need its name to make the point) is associated with apparent normal functioning on six hours of sleep. Most people who claim to be short sleepers are not — but a few percent of the population genuinely is. The model doesn't tell you which one you are; the diary plus a willingness to test (sleep without an alarm for a few days) does.\n\nThird, the model is descriptive, not normative. It tells you when you will be sleepy. It does not tell you when you should sleep. Those are different questions. A person who consistently feels sleepy at 2 AM because their Process C has been pushed late by chronic late-night light exposure is showing you the _wrong_ schedule; the model accurately predicts the resulting sleepiness without endorsing it.\n\nDespite these limits, the model has held up for forty years. It is a remarkable piece of biology to understand from the inside.\n\n* * *\n\n\n### 2.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 880,
+      "out_sha": "8a844613c485",
       "note": ""
     },
     {
@@ -419,11 +419,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 29,
       "src_chars": 3384,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c96568baf097",
       "src": "#### Concept Check\n\n**Q1.** State the two processes of Borbély's model in your own words. What is the biological basis of each? What variable does each depend on?\n\nHint\n\nProcess S depends on how long you've been awake; Process C depends on the time of day.\n\n**Answer:** Process S is sleep pressure: it accumulates monotonically with time spent awake, dissipates monotonically with time spent asleep, and is mediated largely by adenosine accumulation at A1/A2A receptors. Its biological basis is metabolic — adenosine is produced as a byproduct of neuronal energy use. It depends on duration of waking. Process C is circadian rhythm: an internally generated alerting signal that oscillates over a roughly 24-hour cycle, peaks during the biological day, dips in the post-lunch period, peaks again in the wake-maintenance zone (early evening), and falls through the night to its trough around 4–5 AM. Its biological basis is the rhythmic firing of approximately 20,000 neurons in the suprachiasmatic nucleus, each running an internal molecular clock. It depends on time of day, not on how long you have been awake.\n\n**Q2.** Why does the \"post-lunch dip\" occur? Argue from the two-process model. What evidence in the chapter shows that the dip is not actually about lunch?\n\nHint\n\nThe post-lunch dip is one of the periodic features of Process C. Did the chapter mention any case where the dip occurred without lunch?\n\n**Answer:** The post-lunch dip is a programmed dip in Process C: the circadian alerting signal drops in the early afternoon (around 2-3 PM in most chronotypes) before climbing back up in the evening. Because Process S has been accumulating since waking, its level at 2 PM is moderate, and the dip in Process C is therefore felt as overall reduced alertness. The evidence that lunch is not the cause: the dip occurs in subjects who skip lunch entirely, in subjects on intravenous nutrition, and at the same time of day across cultures with very different lunch timing. Lunch can amplify the felt dip slightly (especially heavy carbohydrate meals) but is not its cause. The dip is a feature of the circadian clock.\n\n**Q3.** Caffeine has a half-life of about 5–6 hours. If you drink one cup of coffee at 4 PM containing roughly 100 mg of caffeine, estimate how much remains in your system at 11 PM (bedtime). Reason through it step by step.\n\nHint\n\nHalf-life means: every 5–6 hours, the amount halves. From 4 PM to 11 PM is about 7 hours, which is between one and two half-lives.\n\n**Answer:** Half-life of 5–6 hours means: every 5–6 hours, the caffeine in your system halves. Time from 4 PM to 11 PM is 7 hours. Using a 5-hour half-life: in 5 hours (by 9 PM), you have 50 mg remaining; in another 2 hours (an additional 0.4 half-lives), the remaining 50 mg drops to roughly 38 mg. Using a 6-hour half-life: in 6 hours (by 10 PM), you have 50 mg; in another 1 hour (0.17 half-lives), still about 45 mg. So the answer is roughly 35-50 mg of caffeine still circulating at bedtime — about a third to a half of the original dose. This is enough to measurably increase sleep latency, suppress slow-wave sleep, and reduce subjective sleep quality. Coffee at 4 PM is a poor choice for most adults.\n\n**Q4.** Distinguish what caffeine does from what sleep does. Specifically: what does each of them do to adenosine?\n\nHint\n\nCaffeine occupies receptors. Sleep clears the molecule itself.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1168,
+      "out_sha": "99113b08ac71",
       "note": ""
     },
     {
@@ -431,11 +431,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 30,
       "src_chars": 843,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d7bf7bdffeed",
       "src": "**Answer:** Caffeine binds to adenosine receptors (A1 and A2A) without activating them, blocking adenosine from docking. The adenosine itself is not removed — it is still present in the synaptic spaces, possibly even at higher levels because masking sleep pressure encourages continued activity that produces more. Caffeine therefore blocks the _signal_ of sleep pressure without addressing the _substance_ of sleep pressure. Sleep, by contrast, allows the cellular machinery time to clear adenosine itself: the molecule is metabolized and removed, and the receptors empty naturally. Sleep addresses the substance; caffeine masks the signal. This is why the two are not interchangeable: a coffee-fueled day still ends with the underlying adenosine pool larger than it should be, and the crash arrives the moment caffeine clears its receptors.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 234,
+      "out_sha": "6b0497af3047",
       "note": ""
     },
     {
@@ -443,11 +443,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 31,
       "src_chars": 3409,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9b893b01e975",
       "src": "#### Application Problems\n\n**Q1.** Your colleague tells you they sleep poorly because their job is stressful. They drink coffee at 8 AM, 11 AM, 2 PM, and 4 PM each weekday. They report struggling to fall asleep at 11 PM and waking up exhausted. Use the two-process model and what you know about caffeine to suggest where to intervene first. What would you ask them to change for a week as a test?\n\nHint\n\nThe 4 PM coffee is the most damaging — but how would you confirm this rather than just stating it? What would you ask them to record?\n\n**Answer:**\n\n**Takeaway:** The single highest-leverage intervention is moving the latest caffeine intake earlier; with a 5–6 hour half-life, late-afternoon coffee leaves substantial residual at bedtime regardless of subjective tolerance.\n\nThe 4 PM coffee is the most likely contributor to their bedtime sleep latency. With a 5–6 hour half-life, a 4 PM coffee leaves substantial caffeine in their system at 11 PM (roughly 35-50% of the original dose, see Q3). This caffeine is occupying adenosine receptors, masking the sleep pressure their long day has built up, and so they cannot fall asleep when they want to.\n\nBefore assuming the cause, however, the chapter's diary discipline matters: ask them to record (a) exact time and amount of every caffeinated drink for one week, (b) bedtime, (c) estimated sleep latency, (d) wake time, (e) alertness on waking. Then the test: replace the 4 PM coffee with a non-caffeinated alternative (water, herbal tea) for a week, holding all other coffees constant. Compare bedtime, sleep latency, and alertness to the previous week. If sleep latency drops noticeably (by, say, 15–30 minutes) and alertness on waking improves, the 4 PM coffee was a major contributor. If not, there is another factor in play and the next intervention is the 2 PM coffee, then the 11 AM coffee. The principle: change one variable, measure, decide.\n\nThis is also a connection to Chapter 1's Thread B (the diary): the same instrument that gave you self-knowledge in Chapter 1 is now giving you intervention-testing in Chapter 2. The diary is doing real scientific work on a single subject (you).\n\n**Q2.** A friend says: \"I can sleep eight hours and still feel exhausted; I can sleep five hours and feel fine. So duration doesn't matter — it's just luck.\" Use the two-process model to give them a more useful framework. (Hint: consider what _time_ of night they slept the eight hours, and what their Process C was doing at wake time.)\n\nHint\n\nWhat did the chapter say about waking from a Process C trough vs. waking from a Process C rise? Could the eight hours of sleep have ended at the wrong phase of the circadian rhythm?\n\n**Answer:**\n\n**Takeaway:** Felt restfulness depends on what circadian phase you wake from, not just total duration; eight hours that ends at the wrong phase of Process C can feel worse than five hours that ends in the natural rise.\n\nDuration alone does not predict felt restfulness — the friend is correct about that, but wrong about why. Two factors from the two-process model help.\n\nFirst, sleep stage on waking matters: waking from deep slow-wave sleep produces \"sleep inertia,\" a foggy 30-minute period of poor cognition. Waking from light NREM 2 or REM is much smoother. The eight hours that ended in deep sleep would feel terrible; the five hours that ended in light sleep would feel fine. This will be developed in Chapter 3.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1171,
+      "out_sha": "4d6f64981fd9",
       "note": ""
     },
     {
@@ -455,11 +455,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 32,
       "src_chars": 3328,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6d985aa4b397",
       "src": "Second, the phase of Process C at wake time matters: waking when your circadian alerting signal is rising (your normal wake time) feels much better than waking when it is still falling or at its trough. Eight hours of sleep that ended at a phase your body considered \"still night\" feels worse than five hours that ended at a phase your body considered \"morning.\" The friend may have a chronotype mismatch — they may be a late chronotype waking up at an early-chronotype time on the eight-hour days, and at their natural time on the five-hour days. We will study chronotype in detail in Chapter 4.\n\nSo the more useful framework: it is not just duration. It is duration _and_ sleep stage on waking _and_ phase of Process C on waking. The diary can reveal which one is at play. If the friend records bedtime, wake time, and alertness on waking for two weeks, the alertness scores will correlate with the time of day they wake up far more than with the duration they slept.\n\n**Q3.** A new parent is up at 3 AM with a baby for the third night in a row. They report feeling more alert at 7 AM (after going back to sleep at 4 AM until 6:45 AM) than they did at 5 AM. They wonder if they have somehow \"gotten used to\" the schedule. Use Process C to explain the apparent improvement.\n\nHint\n\nWhat is happening to Process C between 5 AM and 7 AM?\n\n**Answer:**\n\n**Takeaway:** Subjective morning alertness reflects circadian drive (Process C) more than recovery from sleep deficit — the apparent \"adaptation\" is the clock's natural morning rise, not improved rest.\n\nThey have not gotten used to the schedule; their Process S is, if anything, worse than three days ago because they have been under-sleeping all week. The apparent improvement is purely Process C. Between 5 AM and 7 AM, the circadian alerting signal climbs from near-trough (around 4–5 AM) into the morning rise that defines the start of biological day. By 7 AM, Process C is providing substantial alerting drive that was not present at 5 AM. The parent is _not_ better-rested; they are simply at a phase of their circadian cycle where the clock is helping rather than hindering.\n\nThis is a lesson with practical implications. The parent should expect that the relief is temporary: as they continue through the day with high Process S and a normal Process C wave, they will hit a strong dip in the early afternoon — the post-lunch dip will be brutal that day. They will also feel a deceptive evening second wind (the wake-maintenance zone) that may convince them they are \"over it.\" They are not. A nap in the early afternoon, however, may help significantly — see Q1 of the next set.\n\nThis question also previews a teaching the book will make repeatedly: subjective alertness is a poor measure of underlying sleep debt. Process C can mask substantial Process S. Trust the diary, not the feeling.\n\n**Q4.** Chronic shift workers sometimes report they \"feel fine\" on the schedule and that the IARC carcinogenicity classification is overblown. Drawing on the two-process model and the limits of subjective alertness, give a calibrated response that takes their experience seriously without dismissing the evidence.\n\nHint\n\nThe chapter has just argued that subjective alertness can mask underlying sleep deficit. What kind of evidence should we trust over self-report?\n\n**Answer:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1109,
+      "out_sha": "e9965ac2fdf2",
       "note": ""
     },
     {
@@ -467,11 +467,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 33,
       "src_chars": 2041,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0a2f550941e9",
       "src": "**Takeaway:** Subjective \"feeling fine\" is unreliable evidence about long-term biological cost; chronic circadian misalignment produces measurable harm even when the worker reports no symptoms.\n\nA calibrated response acknowledges three things.\n\nFirst, the shift worker's subjective report of \"feeling fine\" is real and should be taken seriously — it is not a lie. People genuinely habituate to chronic conditions, and many shift workers function adequately on the schedule.\n\nSecond, however, the two-process model gives reason to be cautious about subjective reports. Process C is fighting the schedule continuously: when shift workers sleep during the biological day, the circadian alerting signal is high, and the resulting sleep is fragmented and shorter; when they work during the biological night, Process C is at trough and Process S is high, and they are operating with reduced cognitive capacity that habituation can mask but cannot fully restore. Polysomnography studies of shift workers consistently show poorer sleep architecture than their subjective reports suggest. As we saw with caffeine, the conscious experience can habituate while the underlying biology has not.\n\nThird, the IARC's Group 2A classification is not a claim about felt experience — it is a claim about long-term cancer risk in epidemiological data, with multiple independent cohort studies finding elevated risk for breast and other cancers in long-term night-shift workers. The evidence is suggestive but not airtight (we will discuss tier-(b) evidence in Chapter 8); IARC explicitly classifies it as \"probably carcinogenic,\" not \"definitely carcinogenic.\" So the response is: your felt experience is real and habituation is real, _and_ the long-term biological cost may be real and not fully visible to introspection. The scientific posture is to take both kinds of evidence into account, not to dismiss either.\n\nThis is an example of the book's anti-overclaim posture in action: the IARC classification is not a death sentence, but it is also not nothing.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 613,
+      "out_sha": "0a0d74ca42f2",
       "note": ""
     },
     {
@@ -479,11 +479,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 34,
       "src_chars": 2977,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d46e5f4a4968",
       "src": "#### Think Deeper\n\n**Q1.** The two-process model is descriptive: it tells you when you will be sleepy. It does not tell you when you should sleep. What separates these two questions, and how should we decide what is \"the right time\" to sleep, given that the model can equally well describe a healthy schedule and a chronically misaligned one?\n\n**Discussion:**\n\n**Takeaway:** The model tells you when sleep will arrive; deciding when sleep should arrive depends on individual chronotype balanced against social commitments — not on willpower or generic advice.\n\nThe descriptive question is: given my current Process C phase, my current Process S level, my current caffeine residual, when will I feel sleepy? The model handles this. The normative question is: when should I sleep to optimize over some other criterion — health, longevity, performance, mood, social functioning?\n\nTo answer the normative question we need at least two more inputs the two-process model alone does not provide. First, we need to know what _each stage_ of sleep is doing — because shifting our schedule preserves total sleep time but redistributes which stages we get more or less of (the topic of Chapter 3). Second, we need to know what the long-term costs are of misalignment between Process C and the schedule we keep — because the model predicts you will fall asleep eventually no matter what schedule you keep, but does not predict the cost of the schedule. The cost shows up in immune function (Chapter 8), in cancer epidemiology (Chapter 8), in metabolic and cardiovascular markers (Chapter 8), in mood (Chapter 7), in cognitive performance (Chapter 5).\n\nThe deeper point is that the right time to sleep is a function of (a) one's individual chronotype — Process C is partly heritable and varies across the population — and (b) the unavoidable social commitments that bound when sleep is possible. For most people, the right time is \"as close to the natural Process C dip as social structures permit.\" We will give a concrete framework for finding this in Chapters 4 and 14, where the diary will reveal a specific chronotype and a specific weekday-vs.-weekend gap that points to the misalignment. The model alone tells you when sleepiness will arrive; the diary tells you whether the model is describing a healthy life or a slowly accumulating debt.\n\n**Q2.** Imagine a future drug that perfectly antagonizes adenosine — full alertness with no crash, sustainable indefinitely. Would you take it? What does the two-process model suggest about what would actually happen if you did?\n\n**Discussion:**\n\n**Takeaway:** A perfect adenosine antagonist would mask sleep pressure indefinitely while doing nothing about sleep's downstream functions (consolidation, clearance, emotional reprocessing); the unconsciousness signal would be replaced, the maintenance functions would not.\n\nThe naive answer is: yes, of course, infinite productivity. The two-process model immediately complicates this picture.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 933,
+      "out_sha": "c7df1f46ad70",
       "note": ""
     },
     {
@@ -491,11 +491,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 35,
       "src_chars": 1944,
-      "status": "pending",
+      "status": "done",
       "src_sha": "227f684f2333",
       "src": "If adenosine were fully antagonized, Process S would still accumulate (the molecule is still being produced; it just has nothing to bind to). Sleep onset would become impossible because the homeostatic signal that triggers it could not reach its target. You would need an _additional_ off-switch — something that overrides Process C's nighttime trough is not enough, because Process C alone produces sleepiness much smaller than Process S does at high levels. Eventually you would crash, because all the _other_ functions of sleep (memory consolidation, glymphatic clearance, REM emotional reprocessing — Chapters 5 through 7) are not handled by adenosine. Adenosine is the sleepiness signal; it is not the sleep machinery. Knocking out the signal does not knock out the need.\n\nSo the more honest answer to \"would I take it?\" is: even granting the drug, you would still need to sleep. What you would gain is the ability to _push through_ periods of high Process S — useful occasionally, dangerous chronically — but you would not gain freedom from sleep. The drug already exists in primitive form: caffeine. Caffeine antagonizes adenosine receptors. It does not deliver freedom from sleep. The bill comes due. A better drug would just postpone the bill more efficiently.\n\nThe deeper question is what the _appeal_ of the drug reveals about how we think about sleep. We treat sleep as something we are forced to do. The two-process model lets us see that sleep is something we _get to_ do — that the daily descent into unconsciousness is the maintenance window for almost everything we care about. A drug that abolishes sleepiness is, on close inspection, a drug that abolishes maintenance. Most people who imagine wanting it have not yet considered what their bodies would look like after a year of skipped maintenance. We will see in Chapter 6 what one species-wide experiment of this kind looks like, in rats deprived of sleep until they died.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 564,
+      "out_sha": "bbd308111938",
       "note": ""
     },
     {
@@ -503,11 +503,11 @@
       "en_title": "Chapter 2: Two Processes — Pressure and Clock",
       "order": 36,
       "src_chars": 2715,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0673b0a18b3e",
       "src": "### Chapter Summary\n\nThis chapter introduced Borbély's two-process model of sleep regulation: Process S, the homeostatic sleep pressure that accumulates with time spent awake (mediated by adenosine), and Process C, the circadian rhythm that runs on a ~24-hour cycle whether you are awake or not (generated by the suprachiasmatic nucleus). What you experience as \"how sleepy I am right now\" is approximately the difference between the Process C alerting signal and the Process S sleep pressure.\n\nThe model explains the post-lunch dip (Process C, not lunch), the evening \"second wind\" (Process C wake-maintenance zone), the misery of 3 AM (Process S high, Process C low), and the false morning rebound during all-nighters (Process C climbs back into biological day). It explains why caffeine masks but does not erase sleep pressure: caffeine antagonizes adenosine receptors without removing the molecule itself, so the bill comes due when the drug clears. It explains why a 4 PM coffee can ruin an 11 PM bedtime even when \"I don't feel anything from coffee anymore.\"\n\nThe chapter built directly on Chapter 1's introduction of sleep as biologically active and non-negotiable. It set up Chapter 3, which will descend inside a single night and show what is happening minute by minute _during_ sleep — the four stages, the 90-minute cycle, the asymmetry between first half and second half of the night. The two-process model tells you when sleep happens; Chapter 3 will tell you what sleep is.\n\nFuture chapters will keep returning to this framework. Chapter 4 will explore the SCN — the engine that generates Process C — in much more depth, including the genetics of chronotype and the special biology of teenagers and shift workers. Chapter 13 will read every common sleep aid through the model: alcohol's distortion of architecture, melatonin's phase-shifting role, zolpidem's masquerade. By the time you reach Chapter 14, you will be reading your own diary through Process S and Process C the way a navigator reads a chart.\n\n**Diary instruction for Chapter 2** : Look back over the last few days of your diary entries (or, if you are just starting, do this exercise after your first three or four days). For each day, mark when you felt your post-lunch dip — was it around 2 PM, 3 PM, later? Mark when you felt your evening \"second wind\" — when did you feel surprisingly alert despite a long day? Mark when you wanted to sleep. Now look at the relationship between when you wanted to sleep and what time you actually went to bed. The gap between those two times — how often you stayed up past your sleep desire — is one of the most informative numbers in your diary, and we will use it again in Chapters 4 and 11.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 829,
+      "out_sha": "3d2ad4ee5173",
       "note": ""
     },
     {
