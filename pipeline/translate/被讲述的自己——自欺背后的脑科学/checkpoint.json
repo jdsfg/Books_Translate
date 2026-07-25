@@ -3431,11 +3431,11 @@
       "en_title": "Chapter 10: Structural Honesty — Predictions, Pre-mortems, Pre-commitments",
       "order": 280,
       "src_chars": 2844,
-      "status": "pending",
+      "status": "done",
       "src_sha": "49b452243c05",
       "src": "Part III ended by closing off the standard individual responses to the architecture: awareness fails, effortful identity-investment fails, the cognitive system was not even built for individual truth-tracking on stake-relevant questions. The case for structural and collective tools is overdetermined. Part IV opens with the first set of these tools — the structural practices the practitioner can apply at the individual scale, taking advantage of the asymmetric capacities the previous chapter identified, to produce modest but real improvements in calibration on the questions that matter most.\n\nThe chapter introduces three specific tools: prediction tracking, pre-mortems, and pre-commitments. These are not the only structural tools available; they are three of the cleanest demonstrations of how structural intervention works. Each operates by externalizing some piece of judgment that the architecture would otherwise silently revise, with the externalization providing an external reference point that the architecture's continuous editing cannot reach. The three tools share a common logic — separate the moment of decision from the moment of emotional activation — implemented in different ways for different applications.\n\nThe chapter must do this concretely. Part III's diagnosis has been abstract enough that readers who have not done the structural practices have nothing to compare the diagnosis to; Part IV's prescription needs to be specific enough that readers can actually do the practices in the next month. Each tool will be described with the mechanism that makes it work, the specific implementation steps, the failure modes that can prevent it from working, and the realistic expectation of what it produces. By the end of the chapter, the reader should have at least one specific tool they can apply to a specific stake-relevant question, with concrete guidance on how to apply it. The application is the work the rest of the book has been pointing toward; the work is what produces the modest reductions the framework supports.\n\nThe chapter is also the place where the book's tone shifts from diagnostic to constructive without losing the empirical honesty that the previous chapters have built. The tools work — that is the empirical pattern the chapter will describe. They do not work in dramatic ways; they do not transform their practitioners into clearer-sighted thinkers; they do not produce the kind of personal transformation that self-help books promise. They produce specific calibration improvements on specific questions where they have been applied, accumulated over years, with continued architectural operation everywhere they have not been applied. This is the realistic shape of what structural practice produces. The chapter will be honest about both the genuine effectiveness and the modest scope.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 705,
+      "out_sha": "22cb07498c84",
       "note": ""
     },
     {
@@ -3443,11 +3443,11 @@
       "en_title": "Chapter 10: Structural Honesty — Predictions, Pre-mortems, Pre-commitments",
       "order": 281,
       "src_chars": 2330,
-      "status": "pending",
+      "status": "done",
       "src_sha": "332f09119121",
       "src": "### 10.1 Prediction Tracking\n\nA reader who has accepted Chapter 9's argument might reasonably ask: if individual reasoning is structurally unreliable as a self-evaluator on stake-relevant questions, how can a tool deployed by an individual reasoner — a tool the individual writes, scores, and reviews alone — possibly produce real calibration? The Mercier-Sperber argument seems to rule out exactly this kind of solitary practice.\n\nThe answer is the structural insight that makes Part IV's tools work at all. Prediction tracking does not ask the practitioner's reasoning to evaluate itself. The practitioner's reasoning produces the prediction; _future reality_ — the world's actual outcome on the predicted question — does the evaluation. The reasoning that wrote the prediction is one input; the reality that resolves the prediction is a fully external second input; the comparison between them is what produces calibration. The practitioner's job is not to evaluate their own reasoning; it is to externalize the prediction in a form that future reality can evaluate without the practitioner's continued cognitive intermediation. The same logic applies, in adapted form, to pre-mortems (the practitioner's reasoning produces failure modes; the structural inversion of position is what does the evaluation work the practitioner's reasoning could not do unaided) and pre-commitments (the practitioner's reasoning at one moment binds the practitioner's reasoning at a later moment when the cognitive defenses will be more active). Each tool routes around the limit Chapter 9 identified by relocating the evaluation step to something other than the practitioner's solitary cognition.\n\nPrediction tracking is the structural tool with the cleanest empirical support and the broadest applicability. The practice is simple in principle: write down what you predict will happen, with specific outcomes and dates; check the predictions against actual outcomes when the time comes; use the comparison to calibrate your future predictions. The simplicity belies the structural sophistication of what is happening. The practice produces, over time, calibration data that individual introspection cannot produce, and it does so by routing around the bias blind spot and hindsight bias that would otherwise prevent calibration from improving.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 600,
+      "out_sha": "8ebbf6055692",
       "note": ""
     },
     {
@@ -3455,11 +3455,11 @@
       "en_title": "Chapter 10: Structural Honesty — Predictions, Pre-mortems, Pre-commitments",
       "order": 282,
       "src_chars": 3498,
-      "status": "pending",
+      "status": "done",
       "src_sha": "72141a7b94fc",
       "src": "#### The Tetlock Discovery\n\nThe empirical basis for prediction tracking comes from the work of the political scientist Philip Tetlock, conducted over decades of research on forecasting accuracy. Tetlock's central project was to take seriously the question of whether expert forecasters on geopolitical and economic questions were actually well-calibrated in their predictions, and if not, what could be done about it.\n\nThe first round of findings was discouraging for the standard view of expertise. Tetlock collected predictions from credentialed experts on a wide range of geopolitical questions and tracked them over years. The aggregate finding: the experts were poorly calibrated. Confidence levels did not track accuracy; experts who claimed 70% confidence were correct at rates closer to 50%; the most confident experts often performed worst. Furthermore, expertise in a domain did not, on average, correlate with better forecasting accuracy in that domain — the experts' specialized knowledge did not translate into the kind of calibrated probabilistic judgment that good forecasting requires. The popular framing that expert opinion provides reliable forecasts on contested geopolitical questions was, on the empirical evidence, not supported.\n\nThe second round of findings was more interesting. Tetlock and colleagues designed structured forecasting tournaments in which ordinary participants — not credentialed experts, but motivated individuals willing to follow specific structural practices — produced predictions on the same kinds of questions. The participants made specific probabilistic forecasts (not \"this will happen\" but \"70% chance this will happen by date X\"); their forecasts were tracked against outcomes; calibration scores were computed; the participants received feedback on their accuracy over time.\n\nThe structured-tournament participants, on average, outperformed the credentialed experts. The best-performing 2% — whom Tetlock named _superforecasters_ — achieved calibration scores that exceeded the calibration of intelligence analysts whose access to classified information should have given them a substantial advantage. Two caveats are important. First, superforecasters were a selected top tail, not the typical participant; the average reader practicing prediction tracking should not expect superforecaster-level calibration. Second, the comparison shows that structured practice can outperform unstructured expertise on certain question types — not that ordinary people generally match the best forecasters. The lesson the framework draws is narrower: structural compensation produces real, measurable calibration gains over the unmodified architecture, even though most practitioners will land somewhere between baseline and the top tail.\n\nWhat made the difference? Several specific features of the structured-tournament practice:\n\n_Predictions were stated in specific probabilistic form._ Not \"I think this will probably happen\" but \"65% chance this will happen by March 15.\" The specificity made the predictions checkable; the probabilistic form bounded the dichotomous thinking that introspection produces.\n\n_Predictions were written down before outcomes were known._ The writing fixed the prediction in a form that hindsight bias could not silently revise. When the outcome came, the comparison was between the actual outcome and the documented prediction, not between the actual outcome and the system's revised memory of what the prediction had been.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 921,
+      "out_sha": "b57d7f34ca0b",
       "note": ""
     },
     {
@@ -3467,11 +3467,11 @@
       "en_title": "Chapter 10: Structural Honesty — Predictions, Pre-mortems, Pre-commitments",
       "order": 283,
       "src_chars": 1122,
-      "status": "pending",
+      "status": "done",
       "src_sha": "be775924f5f5",
       "src": "_Calibration was tracked and reviewed._ Across many predictions, the participant could see whether their 70% predictions came true 70% of the time, or whether they were systematically over- or under-confident. The tracking provided external feedback that standard self-evaluation could not produce.\n\n_Feedback loops produced improvement over time._ Participants who reviewed their calibration data and noticed specific patterns of over- or under-confidence could adjust their future predictions; the adjustment was based on data, not on the felt sense of being well-calibrated; the data-based adjustment produced real improvement that introspection alone could not produce.\n\nThese features together explain why the structured-tournament participants outperformed the credentialed experts. The experts were operating in unstructured contexts where standard biases operated freely; the tournament participants were operating in structured contexts where those biases were bounded by the practice. The difference was not in the underlying cognitive capacity; it was in the structural compensation that the practice provided.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 278,
+      "out_sha": "24ba8f88b971",
       "note": ""
     },
     {
@@ -3479,11 +3479,11 @@
       "en_title": "Chapter 10: Structural Honesty — Predictions, Pre-mortems, Pre-commitments",
       "order": 284,
       "src_chars": 2524,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2fbcd9f65bd6",
       "src": "#### Why Prediction Tracking Works\n\nThe mechanism that makes prediction tracking work, on the framework of the previous chapters, is the externalization of judgment. The architecture cannot silently revise what is written down; the writing creates an external reference point that continuous memory editing cannot reach.\n\nWalk through what happens without prediction tracking. The practitioner forms a view about how some question will resolve — a political event, a business decision, a relationship trajectory, a market movement. The view is held; time passes; the outcome eventually arrives. The architecture, throughout this period, has been doing its standard work. Hindsight bias has been continuously available to revise the practitioner's memory of what they predicted; when the outcome arrives, the revised memory aligns with the outcome more closely than the original prediction would have. The practitioner experiences themselves as having anticipated the outcome reasonably well; that felt sense is what the architecture supplies; without external evidence, the practitioner has no way to check whether the felt sense corresponds to actual prior calibration.\n\nNow walk through what happens with prediction tracking. The practitioner writes down the prediction at the time of forming it: \"I expect outcome X by date Y, with 65% confidence.\" The writing is dated, specific, and unambiguous. Time passes; the outcome eventually arrives. The practitioner returns to the written prediction and compares it to the actual outcome. The comparison is between the documented prediction and reality, not between revised memory and reality. If the prediction was off — if outcome X did not occur, or occurred much later than predicted — the gap is visible in a way that hindsight bias cannot make invisible. If the prediction was on target, the calibration is visible in a way that no inflation can exaggerate beyond what it actually was. Over many predictions, the cumulative pattern reveals the practitioner's actual calibration on the topics they have predicted on.\n\nThis is the structural mechanism. The tool does not require the practitioner to introspect more carefully; it does not require the practitioner to overcome hindsight bias through effort; it does not require the practitioner to evaluate their own past reasoning accurately (which the previous chapter argued is structurally impossible). The tool externalizes the judgment, and the comparison with reality does the calibration that introspection cannot do.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 607,
+      "out_sha": "07595a85b196",
       "note": ""
     },
     {
