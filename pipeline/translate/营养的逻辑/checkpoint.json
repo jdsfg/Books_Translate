@@ -251,11 +251,11 @@
       "en_title": "Chapter 1: The Digestive Journey — From Mouth to Absorption",
       "order": 13,
       "src_chars": 1298,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f4f63c2d82a5",
       "src": "**Answer:** The claim has a kernel of truth but is overall misleading. It is true that some heat-sensitive vitamins (particularly Vitamin C and certain B vitamins) are reduced by cooking. However, cooking also dramatically increases the bioavailability of many other nutrients: (1) Cooking breaks down plant cell walls, releasing carotenoids (beta-carotene, lycopene) and increasing their absorption several-fold. (2) Heat deactivates some anti-nutritional factors (lectins in legumes, some oxalates in vegetables) that inhibit absorption. (3) Cooking increases the digestibility of proteins and starches — meaning cooked food provides more accessible calories and amino acids. Research by Professor Richard Wrangham (Harvard) suggests that cooking so dramatically increases caloric availability from food that it may have been a key evolutionary development allowing human brains to grow. (4) Legumes, in particular, must be cooked — raw they contain lectins that cause significant digestive harm. The verdict: cooking both destroys some nutrients (mostly heat-sensitive vitamins) and creates others (by increasing bioavailability of fat-soluble vitamins, carotenoids, and protein). Neither \"raw\" nor \"cooked\" is categorically superior — it depends on the specific food and the specific nutrient.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 428,
+      "out_sha": "bd645be6d2ee",
       "note": ""
     },
     {
@@ -263,11 +263,11 @@
       "en_title": "Chapter 1: The Digestive Journey — From Mouth to Absorption",
       "order": 14,
       "src_chars": 3283,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7630ae5238b8",
       "src": "#### Think Deeper\n\n**1.8** The chapter mentions that \"38 trillion bacteria\" live in your large intestine, approximately equal to the number of human cells in your body. These bacteria produce compounds that affect your metabolism, immune function, and brain chemistry. Does this challenge the idea of \"your body\" as a single organism with clear boundaries? What does it mean for nutrition science if part of what you \"are\" nutritionally depends on organisms that are not \"you\"?\n\n**Discussion:** This is genuinely one of the most philosophically provocative frontiers in biology. Human beings are superorganisms — we are ecosystems as much as individuals. The implications for nutrition are significant: (1) Two people eating identical diets can have different metabolic outcomes because their gut microbiomes differ. This is one reason why population-average dietary recommendations may not apply perfectly to any individual. (2) Early life microbiome colonization (influenced by birth method, breast vs. formula feeding, early antibiotic use) may have long-term metabolic consequences. (3) The fiber that the textbook world once called \"indigestible\" is not indigestible — it is just indigestible by human enzymes. Your microbiome digests it and converts it to SCFAs that you absorb and use. \"Calories\" from fiber may be more than zero, but variable depending on your microbiome. (4) Some researchers argue that the microbiome is so influential that we should think of dietary recommendations not as \"what should humans eat?\" but \"what should the human-microbiome ecosystem eat?\" This is not fringe science — it is an active area of mainstream nutrition research. Chapter 16 will explore this more deeply.\n\n**1.9** The chapter describes how bioavailability varies enormously between foods. The nutrition label only reports the amount of a nutrient present, not the amount bioavailable. If you were advising a government body on how to improve nutrition labeling, what would you recommend? What are the practical obstacles to implementing a bioavailability-adjusted label?\n\n**Discussion:** This is a legitimate policy challenge. An ideal label would report bioavailable nutrient content, but several obstacles make this difficult: (1) Bioavailability is context-dependent — iron bioavailability changes depending on what else you eat in the same meal (vitamin C enhances it, tannins reduce it). You can't put a single number on a label that captures this. (2) Individual variation — people vary in their digestive efficiency, microbiome composition, and genetic factors affecting absorption. (3) Food matrix effects — cooking method, processing, and storage all affect bioavailability. A raw spinach label and a cooked spinach label should have different calcium numbers, but we don't currently do this. Potential partial solutions: (a) Separate columns for \"total\" and \"estimated bioavailable\" content; (b) Context notes (e.g., \"enhanced by vitamin C, reduced by tea/coffee\") for key nutrients like iron; (c) Red flags for antinutrient-rich foods. The deeper issue is that our entire nutritional labeling system was designed around a reductive model of food as a set of independent nutrients, ignoring food matrix effects. This is both a measurement challenge and a regulatory one.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1038,
+      "out_sha": "b4961099e6bf",
       "note": ""
     },
     {
