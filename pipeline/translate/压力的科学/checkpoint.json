@@ -3155,11 +3155,11 @@
       "en_title": "Chapter 12: Exercise — The Closest Thing to a Stress Vaccine",
       "order": 257,
       "src_chars": 3210,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0c237f85c2d4",
       "src": "### Chapter Summary\n\nThis chapter introduced **exercise** as the foundation intervention for chronic-stress regulation — the highest-leverage single change available, by mechanism breadth and effect size. The placement in Part IV (rather than alongside other practices) reflects the evidence on exercise's leverage relative to other interventions.\n\n**The acute effects** of a single aerobic exercise session include the \"runner's high\" (primarily endocannabinoid-mediated, not endorphin-mediated as popularly believed), hours of measurable mood improvement, improved cortisol response, better same-night sleep, improved cognitive performance, and decreased pain perception.\n\n**The chronic effects** of regular exercise are substantial and structural: reduced baseline cortisol with sharpened diurnal curve, normalized HPA axis sensitivity, hippocampal neurogenesis (one of the cleanest findings in modern neuroscience), reduced amygdala reactivity, increased BDNF, decreased inflammatory markers, increased heart rate variability, improved sleep architecture, improved baseline mood, and substantial cardiovascular and metabolic adaptations.\n\n**Effect sizes for specific conditions** are striking: for moderate depression, exercise effect sizes match SSRIs; for anxiety disorders, exercise matches CBT plus medication in some studies; for sleep, cardiovascular outcomes, metabolic outcomes, cognitive decline, chronic pain, and many other conditions, exercise has effect sizes among the largest documented for any intervention.\n\n**The dose** that produces most benefits is 150-300 minutes per week of moderate-intensity aerobic activity, distributed across 3-5 sessions, sustained consistently. Lower doses produce smaller but real benefits; doses above 300 minutes/week produce diminishing returns. Moderate intensity is generally as effective as high-intensity interval training for chronic-stress regulation specifically. The dose that matters is the dose you can sustain.\n\n**Why exercise is in Part IV** rather than alongside other practices: the breadth of effect (most chronic-stress-related variables), the effect sizes (comparable to medication for many conditions), the structural changes (actual hippocampal neurogenesis, BDNF increase), the compound effects with other interventions, the accessibility (available to most adults in some form), and the mechanism alignment with chronic-stress damage (exercise directly improves the systems chronic stress damages).\n\n**Sapolsky's baboons** (Thread A) close their cycle here: baboons don't have exercise programs but spend most of the day in physical movement and social grooming. **Movement plus touch — together — are the natural stress regulator.** The pattern is biologically primary; modern human sedentary life is the deviation; restoring both is restoration of what bodies were built for.\n\nThe chapter applied the framework to specific situations: severely depressed friends struggling to start exercise (graded approach with floor-level starts), readers wondering whether to change established programs (continue what's working, add modestly), readers skeptical that exercise will help (the structural mechanism differs from what they've tried).",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 932,
+      "out_sha": "c3676980cd02",
       "note": ""
     },
     {
@@ -3167,11 +3167,11 @@
       "en_title": "Chapter 12: Exercise — The Closest Thing to a Stress Vaccine",
       "order": 258,
       "src_chars": 1037,
-      "status": "pending",
+      "status": "done",
       "src_sha": "38c68de0baf5",
       "src": "The chapter addressed deeper questions: capacity-limited situations (adapt protocols to reality), combinations with other interventions (exercise plus sleep plus connection as foundation, with conditional additions), and the evolutionary perspective on movement (informative but not a direct prescription, with implications for integrating movement throughout life).\n\nExercise is one tool. The wellness market sells dozens. Which actually work, which are partially supported, and which are mostly marketing? Chapter 13 walks through the rest of the toolkit — CBT, mindfulness, breath work, nature exposure, cold exposure, adaptogens, alcohol, benzodiazepines — applying the same evidence-tier discipline that has run throughout the book. The unifying principle: every practice that works does so by activating parasympathetic tone or strengthening prefrontal-amygdala regulation. Once you see this pattern, you can evaluate any new wellness claim by asking which mechanism it putatively engages and what evidence supports the claim.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 293,
+      "out_sha": "e4cab19fd658",
       "note": ""
     },
     {
@@ -3179,11 +3179,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 259,
       "src_chars": 1851,
-      "status": "pending",
+      "status": "done",
       "src_sha": "24bfd095acd3",
       "src": "The chronic-stress wellness market is enormous. Walk into any pharmacy, scroll through any wellness website, search for \"stress relief\" online — you will encounter hundreds of products and practices, each claiming to reduce stress, lower cortisol, improve resilience, or otherwise help with chronic-stress conditions. The market is sophisticated, sometimes professionally evidence-cited, and generally well-marketed.\n\nMost of it doesn't work very well, or works much less than it claims, or works through different mechanisms than claimed.\n\nThis chapter applies the evidence-tier discipline that has run throughout this book to the major chronic-stress practices and products. Some have substantial evidence and produce real benefit. Some have moderate evidence with overclaimed effect sizes. Some have minimal evidence despite popular marketing. A few are actively counterproductive despite popular use.\n\nThe unifying principle that emerges: **every practice that works does so by activating parasympathetic tone or strengthening prefrontal-amygdala regulation.** Once you see this pattern, you can evaluate any new wellness claim by asking which mechanism it putatively engages and what evidence supports the claim. This framework lets you read the wellness market with appropriate skepticism rather than getting pulled into chasing each new claim.\n\nThis chapter will be more critical than some readers might expect. The chronic-stress wellness market has been substantially overclaimed for decades, and the popular framing has often diverged from the evidence. Honest evaluation sometimes produces uncomfortable conclusions about products and practices that have substantial cultural currency. The framework's posture is to take the evidence seriously rather than to validate popular framings, even when this produces friction with current trends.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 471,
+      "out_sha": "ecba512b9e75",
       "note": ""
     },
     {
@@ -3191,11 +3191,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 260,
       "src_chars": 3366,
-      "status": "pending",
+      "status": "done",
       "src_sha": "abee7bc6805a",
       "src": "### 13.1 CBT — The Gold Standard for Clinical Anxiety and Depression\n\n**Cognitive Behavioral Therapy (CBT)** has the strongest evidence base of any psychotherapy for chronic-stress-related conditions. Multiple meta-analyses have established that CBT produces substantial effect sizes for clinical anxiety, depression, panic disorder, social anxiety, OCD, PTSD, and several other conditions. For mild-to-moderate depression and anxiety, CBT effect sizes are comparable to medication; for severe conditions, combination treatment (CBT + medication) typically outperforms either alone.\n\n_The mechanism._ CBT works through repeated structured engagement with the prefrontal-amygdala correction loop. The cognitive component teaches patients to identify amygdala-driven catastrophic interpretations and replace them with more accurate prefrontal evaluations. The behavioral component creates structured opportunities for the loop to operate — exposure to feared stimuli, behavioral experiments, action plans testing catastrophic predictions against reality. Across 12-16 weeks of structured therapy plus home practice, the loop strengthens. The amygdala recalibrates. Reactivity decreases.\n\nThis is _physical brain training_ of a specific neural circuit. The changes are measurable in fMRI, in cortisol response patterns, in heart rate variability, and in subjective symptom scales.\n\n_Effect sizes._ CBT produces effect sizes of approximately 0.5-0.8 standard deviations for most chronic-stress conditions, comparable to or exceeding most medications. Response rates of 50-70% in well-designed trials. Effects often persist after treatment ends because the circuit changes persist.\n\n_Limitations._\n\nCBT requires substantial commitment — typically 12-16 sessions over 3-4 months, with substantial homework between sessions. The patient has to engage actively with structured practice; passive participation produces smaller effects. Not all patients can sustain this commitment.\n\nCBT availability varies. In areas with limited mental health resources, accessible CBT may be hard to find. Quality varies among providers; some \"CBT\" delivered by general practitioners or counselors not specifically trained may not be the structured evidence-based approach.\n\nCBT works less well for some specific issues. Severe trauma may benefit more from trauma-focused therapies (CPT, EMDR, prolonged exposure) that incorporate CBT elements but go beyond. Personality-disorder-related conditions often need different approaches (DBT, schema therapy).\n\n_The recommendation._\n\nFor clinical-level anxiety, depression, panic, social anxiety, or OCD, CBT is one of the most evidence-supported interventions available. For chronic-stress conditions that aren't reaching clinical levels, CBT principles can still be useful but the structured therapy isn't necessarily required.\n\nSelf-directed CBT through books or apps has weaker effects than therapist-delivered CBT but is better than nothing for accessible introduction. Some apps (like those built on rigorous CBT protocols) have evidence; many \"wellness apps\" claiming CBT-like content don't deliver the actual structure.\n\nFor readers with clinical-level conditions: CBT with a properly trained provider is one of the highest-leverage interventions available. The investment of 12-16 weeks is real but the durable benefits often justify it.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 999,
+      "out_sha": "3e67b1eabf7c",
       "note": ""
     },
     {
@@ -3203,11 +3203,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 261,
       "src_chars": 195,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d3d03cebbb63",
       "src": "> **CBT is the gold standard for clinical anxiety and depression. Evidence is strong; mechanism is clear; effect sizes match medication. The investment is substantial but the leverage is high.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 50,
+      "out_sha": "48f1eeac8801",
       "note": ""
     },
     {
@@ -3215,11 +3215,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 262,
       "src_chars": 3249,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3de2d8ef302d",
       "src": "### 13.2 Mindfulness and Meditation — Real but Overclaimed\n\nThe cultural status of meditation and mindfulness has changed dramatically since the 1990s. Once a niche practice associated with religious traditions, meditation is now a major wellness market with apps, books, retreats, corporate programs, and substantial cultural currency. The popular framing often treats meditation as transformatively effective for chronic stress.\n\nThe evidence is more nuanced.\n\n_Where meditation has strong evidence._\n\n_1\\. Structured 8-week MBSR programs for chronic anxiety and chronic pain._ Mindfulness-Based Stress Reduction (MBSR), a structured 8-week program developed by Jon Kabat-Zinn, has substantial replicated evidence for chronic anxiety, chronic pain conditions, and some other specific applications. Effect sizes are moderate (smaller than CBT but real). The structured 8-week format with trained instructors, group sessions, and home practice is what produces the documented effects.\n\n_2\\. Mindfulness-Based Cognitive Therapy (MBCT) for depression relapse prevention._ MBCT, an adaptation combining mindfulness with CBT principles, has good evidence specifically for preventing depression relapse in people who have had multiple prior episodes. Effect sizes for relapse prevention are substantial.\n\n_3\\. Acute parasympathetic activation._ Brief mindfulness practice does activate the parasympathetic system in the moment. This is real and useful for acute stress moments.\n\n_Where the evidence is weaker than popular framing suggests._\n\n_1\\. General-population \"stress reduction\" through meditation apps._ Most popular meditation apps deliver brief, unstructured practice without the depth and instructor support of MBSR programs. Effects on chronic-stress markers in general populations are smaller than the marketing suggests — typically small effect sizes in well-designed trials. The 10-minutes-per-day approach to meditation doesn't produce the substantial benefits that 8-week MBSR programs do.\n\n_2\\. Long-term effects of casual practice._ The chronic-stress regulation effects of casual meditation (a few minutes most days) are smaller than the effects of structured intensive practice. The popular framing often treats brief casual practice as if it produced the effects documented in MBSR studies; it doesn't.\n\n_3\\. \"Mindfulness\" beyond the structured programs._ Many things called \"mindfulness\" in popular usage are not well-defined or evidence-based. Brief mindful breathing exercises have some acute effects; \"mindful eating\" or \"mindful walking\" as casual practices have less evidence.\n\n_Where there are real concerns about meditation._\n\n_1\\. Adverse effects in intensive practice._ This is under-reported in popular discussions. A meaningful minority of people engaged in intensive meditation practice (particularly extended retreats) develop adverse effects: depersonalization, derealization, acute anxiety, panic, and in rare cases more serious psychiatric symptoms. These adverse effects appear to be more common in people with prior mental health conditions, but they occur in healthy people too. Estimates suggest 5-10% of intensive practitioners experience some adverse effects, with smaller percentages experiencing severe ones.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 938,
+      "out_sha": "5bcac3760864",
       "note": ""
     },
     {
@@ -3227,11 +3227,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 263,
       "src_chars": 2502,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f764bad9682b",
       "src": "The marketing of meditation as universally beneficial misses these risks. Intensive practice without proper screening, support, and recognition of when to stop can produce harm. People with significant trauma history, dissociation tendencies, or prior psychiatric conditions should engage with intensive practice carefully and ideally with trauma-informed practitioners.\n\n_2\\. Spiritual bypass._ \"Spiritual bypass\" is the term for using meditation or other spiritual practices to avoid engagement with substantive psychological or life issues. Some practitioners use meditation as a way to feel calm without engaging with the conditions producing their distress. This pattern is real and limits the actual benefit of practice.\n\n_3\\. Misalignment with severe conditions._ Severe depression, severe anxiety, active PTSD — these often require treatment beyond meditation. Recommending meditation as the primary intervention for these conditions is sometimes harmful when more effective treatments exist.\n\n_The honest framing._\n\nMeditation is real and useful. Structured 8-week MBSR programs produce moderate-but-real benefits for chronic anxiety and chronic pain. MBCT prevents depression relapse. Brief practice activates parasympathetic tone. These are genuine benefits.\n\nBut meditation is overclaimed in popular framing. The casual practice that most people do doesn't produce the documented benefits of structured intensive programs. Meditation alone is rarely sufficient for clinical-level conditions. The risks of intensive practice are under-reported.\n\nFor most readers, meditation is appropriate as a complement to other interventions, not as a primary chronic-stress regulator. Brief daily practice has some value; structured 8-week programs have more value if accessible. Substituting meditation for evidence-based treatment of clinical conditions is generally a mistake.\n\nEffect sizes for meditation are roughly comparable to moderate exercise on chronic-stress markers, smaller for clinical conditions. For most readers wanting to invest in chronic-stress regulation, exercise is more leveraged than meditation; meditation is appropriate as a secondary practice rather than primary intervention.\n\n> **Meditation is real but routinely overclaimed. Structured 8-week MBSR for chronic anxiety/pain has good evidence; casual practice has smaller effects; intensive practice has under-reported risks. Useful as complement to other interventions, not as primary treatment for clinical conditions.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 669,
+      "out_sha": "e26dc458f47d",
       "note": ""
     },
     {
@@ -3239,11 +3239,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 264,
       "src_chars": 3304,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1684cb190206",
       "src": "### 13.3 Breath Work — The Best 60-Second Tool\n\nSlow-paced breathing practices — breathing at approximately 6 breaths per minute (one breath in, one breath out, taking ~10 seconds total per breath) — directly activate vagal tone, lowering heart rate and blood pressure within seconds. This is the cleanest acute intervention for fast-axis activation.\n\n_The mechanism._ Slow breathing engages the vagus nerve through several pathways. The diaphragmatic movement during deep breathing stimulates the vagus directly. The breathing pattern matches the natural respiratory sinus arrhythmia (RSA), which strengthens parasympathetic activation. The slow rhythm overrides faster sympathetic-driven breathing patterns. Within 60-90 seconds of slow breathing, heart rate decreases, blood pressure decreases, and acute stress response is measurably damped.\n\n_Specific protocols._\n\n_1\\. Box breathing._ 4-second inhale, 4-second hold, 4-second exhale, 4-second hold. Used by military and high-stress professionals for acute stress moments.\n\n_2\\. 4-7-8 breathing._ 4-second inhale, 7-second hold, 8-second exhale. Slightly more demanding but produces strong vagal activation.\n\n_3\\. Coherent breathing._ Approximately 6 breaths per minute (5 seconds in, 5 seconds out). Often considered optimal for HRV improvement.\n\n_4\\. Resonance breathing._ Individual-specific frequency (typically 4-7 breaths per minute) at which HRV is maximized for that person. Used in biofeedback applications.\n\nAll of these work. Specific protocol matters less than the general pattern of slow, even breathing.\n\n_Acute effects._\n\n_1\\. Heart rate decreases_ within 30-60 seconds. _2\\. Blood pressure decreases_ within 1-2 minutes. _3\\. Cortisol response to acute stressors_ is partially blunted. _4\\. Subjective stress reduces_ substantially. _5\\. Cognitive function_ (executive function, working memory) often improves immediately after.\n\nThese are reliable, replicable effects measurable in laboratory and clinical settings. Slow breathing is one of the few interventions that produces immediate measurable physiological change.\n\n_Chronic effects._\n\nDaily slow breathing practice produces some chronic effects:\n\n* Improved baseline HRV\n* Better cardiovascular function over weeks to months\n* Better stress reactivity (smaller responses to subsequent stressors)\n* Some sleep improvements\n\nThe chronic effects are smaller than the acute effects but real. Daily 10-minute practice over 8-12 weeks produces measurable chronic improvements in autonomic function.\n\n_Practical applications._\n\n_1\\. Acute stress moments._ Before a difficult meeting, after receiving stressful news, in the middle of a panic attack, when you notice fast-axis activation. 60-90 seconds of slow breathing damps the response.\n\n_2\\. Sleep onset._ Slow breathing for 5-10 minutes before sleep activates parasympathetic tone and supports sleep onset.\n\n_3\\. Recovery from exercise._ Slow breathing post-exercise speeds parasympathetic recovery.\n\n_4\\. Daily practice._ 10-minute daily practice produces some chronic benefits.\n\n_The honest framing._\n\nSlow breathing is the best 60-second tool for acute stress moments. The mechanism is clean, the acute effects are reliable, and the practice is universally accessible (no equipment, no special training, can be done anywhere).",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1027,
+      "out_sha": "e7fa6af3b950",
       "note": ""
     },
     {
@@ -3251,11 +3251,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 265,
       "src_chars": 1037,
-      "status": "pending",
+      "status": "done",
       "src_sha": "85aace7ddbb7",
       "src": "For chronic-stress regulation, breath work is a useful complement to other interventions but isn't a primary intervention by itself. The chronic effects are smaller than exercise's effects. Don't expect breath work alone to substantially modify chronic-stress patterns; do expect it to be valuable for acute stress management.\n\nTwo specific recommendations:\n\n_1\\. Learn one slow breathing protocol._ 4-7-8, box breathing, or simple slow breathing — pick one and practice it enough that you can do it without instruction. Then deploy it in acute stress moments.\n\n_2\\. Use it as needed, not daily by obligation._ Some readers benefit from daily practice; others find that reactive use (when needed) is sufficient. The framework supports flexible use rather than rigid daily practice.\n\n> **Slow breathing is the best 60-second tool for acute fast-axis activation. Mechanism is clean, acute effects are reliable, accessibility is universal. Useful complement to other interventions; not primary intervention for chronic-stress regulation.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 297,
+      "out_sha": "108bcd90c1f4",
       "note": ""
     },
     {
@@ -3263,11 +3263,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 266,
       "src_chars": 3281,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2d853c805039",
       "src": "### 13.4 Nature Exposure — Real but Modest\n\nTime in natural environments — particularly forests, parks, and other green or blue spaces — produces measurable chronic-stress regulation effects. This is sometimes called \"ecotherapy,\" \"forest bathing,\" or \"nature exposure.\"\n\n_The evidence._\n\n_1\\. Acute effects of nature exposure._ Even brief exposure to natural environments (20-30 minutes) produces measurable reductions in cortisol, blood pressure, and heart rate. Studies in Japan, Korea, and elsewhere have documented these acute effects across multiple populations.\n\n_2\\. Specific effects of green spaces._ Time in parks, forests, and similar environments produces somewhat larger effects than time in built environments, even when controlling for activity level. The natural environment itself appears to contribute beyond what generic outdoor time provides.\n\n_3\\. Chronic effects of regular nature exposure._ Populations with greater access to green spaces show better chronic-stress markers, lower depression and anxiety rates, and some other health benefits. Regular nature exposure (1-2 hours per week or more) produces measurable benefits over months.\n\n_4\\. Specific effects of \"forest bathing\" (shinrin-yoku)._ The Japanese practice of slow, attentive time in forests has been studied extensively. Effect sizes are modest but real. Some specific elements (phytoncides — volatile compounds released by trees) may contribute to immune effects beyond general nature benefits.\n\n_The mechanism._\n\nSeveral mechanisms contribute to nature's effects:\n\n_1\\. Reduced sensory overload._ Urban environments often produce constant low-grade sensory activation (noise, visual complexity, social density). Natural environments reduce this load, allowing parasympathetic activation.\n\n_2\\. Specific visual patterns._ Natural environments contain fractal patterns and visual complexity at specific scales that the visual system processes with less effort than artificial environments. This may contribute to the calming effects.\n\n_3\\. Awe and meaning._ Larger natural environments (mountains, oceans, forests) can produce experiences of awe that engage prefrontal regions associated with meaning and perspective. These experiences can shift mood and stress reactivity.\n\n_4\\. Air quality._ Natural environments often have better air quality, which has indirect health effects.\n\n_5\\. Light exposure._ Outdoor time, including in natural environments, provides bright light exposure that supports circadian regulation.\n\n_6\\. Phytoncides and other volatile compounds._ Forests contain volatile compounds released by trees that may have specific physiological effects, including some immune effects.\n\n_7\\. Movement._ Most nature exposure involves walking or other movement, which has its own effects (Chapter 12).\n\n_The limitations._\n\n_1\\. Effect sizes are modest._ Nature exposure produces real benefits, but smaller than exercise, CBT, or medication for clinical conditions. It's a useful complement, not a primary intervention.\n\n_2\\. Studies vary in quality._ Some forest bathing research is methodologically weak — small samples, unblinded designs, possible confounding with movement and other variables. The general direction of findings is supported, but specific effect sizes vary widely.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1016,
+      "out_sha": "9d3ddc0d5f98",
       "note": ""
     },
     {
@@ -3275,11 +3275,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 267,
       "src_chars": 2147,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b7a4386b0879",
       "src": "_3\\. Accessibility is variable._ Urban populations, populations in environments without easy access to natural settings, and populations with mobility limitations may have limited ability to engage with nature exposure.\n\n_4\\. The benefits are partial substitutes for other interventions._ Nature exposure isn't a replacement for exercise or therapy when those are needed.\n\n_Practical recommendations._\n\n_1\\. Time in green/blue spaces is worthwhile._ If you have access to parks, forests, water environments, or similar settings, regular time in them produces measurable benefits. Aim for at least 2 hours per week if accessible.\n\n_2\\. Combine nature with movement._ Walking in natural environments combines exercise and nature benefits. This is one of the simplest high-value chronic-stress interventions available.\n\n_3\\. Even brief exposure helps._ 20-30 minutes in a park has measurable effects. Don't wait for ideal conditions; use what's accessible.\n\n_4\\. Outdoor time during work._ Walking meetings outside, lunch outdoors, brief breaks in green spaces — these accumulate.\n\n_5\\. The specific environment matters less than the time._ Forests, parks, beaches, mountains, lakes — varying environments work. Pick what's accessible.\n\n_The honest framing._\n\nNature exposure is a real but modest chronic-stress intervention. The benefits are particularly accessible to populations with green space access. The combination of nature plus movement is particularly leveraged. Don't expect dramatic effects from nature exposure alone, but do expect meaningful contribution as part of a broader chronic-stress regulation approach.\n\nFor most readers, regular outdoor walking in green spaces is one of the simpler high-value practices available. It combines exercise, nature exposure, and often connection (walking with others). The compound effects make it more leveraged than its individual components would suggest.\n\n> **Nature exposure is real but modest. Best when combined with movement. Useful complement to other interventions; particularly valuable as accessible practice. Don't expect dramatic effects alone; do expect meaningful contribution.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 631,
+      "out_sha": "0ddf2ad4d437",
       "note": ""
     },
     {
@@ -3287,11 +3287,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 268,
       "src_chars": 3179,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fa1f4ef53b7a",
       "src": "### 13.5 Cold Exposure — Real but Modest, Often Oversold\n\nCold exposure (ice baths, cold showers, cryotherapy chambers, cold-water swimming) has become a major wellness trend in recent years, with substantial cultural currency. Wim Hof methods, ice bath protocols, and cold therapy products have become widely promoted.\n\nThe evidence base is narrower than the marketing suggests, and the risk profile is wider. Most rigorous cold-exposure trials run for weeks rather than months, on small samples, with modest acute effects on autonomic markers and mood. Long-term chronic-stress regulation effects (sustained cortisol normalization, durable mood improvement, lower disease incidence) are not well-established. On the risk side, sudden cold immersion is a documented trigger of cardiac arrhythmia and acute coronary events in susceptible individuals; cold-water swimming carries non-trivial drowning risk through cold-shock and hypothermia onset faster than most people anticipate. Neither the benefits nor the risks are zero; both are smaller than enthusiast accounts and larger than skeptical accounts respectively.\n\n_What's documented._ Acute autonomic activation is real and reliable — sympathetic response, catecholamines, heart-rate increase, the subjective \"high.\" Brief cold exposure produces modest anti-inflammatory effects via cytokine modulation. Repeated cold exposure activates brown fat with small metabolic effects. Cold immersion after intense exercise may reduce muscle-damage markers, though some studies suggest it may also blunt training adaptations. Subjective benefits — improved mood, energy, sense of having done something hard — are commonly reported, mixing genuine acute mechanisms with placebo and ritual effect.\n\n_What is not well supported by current evidence._ Sustained chronic-stress regulation, substantial depression or anxiety treatment, generic \"immunity boosting,\" and any framing that puts cold exposure in the same category as exercise or therapy — these are marketing claims, not evidence-supported claims. The chronic effects on cortisol regulation, HPA function, or disease prevention have not been established in well-designed studies.\n\n_Practical recommendation._ For readers who want to engage, brief cold showers (30 seconds at the end of regular showers) capture most of the documented acute benefits with minimal risk. Ice baths and longer immersions add limited additional benefit while raising cardiac and hypothermia risk substantially, particularly for older adults or those with cardiovascular conditions. The dramatic protocols popular on social media do not produce dramatically more benefit than brief mild exposure. For most readers, time spent on regular cold protocols would produce more chronic-stress regulation if redirected to exercise, sleep regularity, or addressing chronic stressors directly.\n\n> **Cold exposure: real but modest acute effects, limited chronic-stress evidence, real cardiac and hypothermia risks. Brief mild exposure is fine if desired; aggressive protocols add limited benefit while raising risk substantially. Most readers should not prioritize this over the higher-leverage interventions.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 870,
+      "out_sha": "4484c8ab0fb0",
       "note": ""
     },
     {
@@ -3299,11 +3299,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 269,
       "src_chars": 3373,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b1dc697f5a97",
       "src": "### 13.6 Adaptogens and Supplements — Real for Specific Deficiencies, Oversold as Stress Regulators\n\nThe supplement industry produces a substantial percentage of the chronic-stress wellness market. Adaptogens (rhodiola, ashwagandha, holy basil, schisandra), nootropics (L-theanine, lion's mane, Bacopa), other supplements (magnesium, fish oil, B-vitamins), and various blended products all make chronic-stress reduction claims.\n\nThe honest reading separates two questions. _Does the supplement correct a specific deficiency?_ Sometimes yes, with clear and well-documented effects. _Does the supplement act as a meaningful chronic-stress regulator in non-deficient adults?_ Generally no — effect sizes are small, and the marketing implies leverage that the evidence does not support. The category is real where deficiencies are real and oversold as a chronic-stress intervention more broadly.\n\n_Where there's some evidence._\n\n_1\\. Ashwagandha (Withania somnifera)._ Has the most evidence among adaptogens. Multiple small randomized trials suggest modest reductions in cortisol and subjective stress measures. Effect sizes are small (typically 10-20% reduction in cortisol, smaller subjective effects). Most studies are short-term and have methodological limitations. The evidence is positive but modest.\n\n_2\\. Rhodiola rosea._ Has some evidence for fatigue reduction and possibly modest stress benefits. Effect sizes are small. Quality of products varies enormously.\n\n_3\\. L-theanine._ Some evidence for acute relaxation effects, particularly when combined with caffeine. Effect sizes are modest. Generally well-tolerated.\n\n_4\\. Magnesium._ For people with deficiency (which is common), magnesium supplementation has clear benefits. For people with adequate magnesium (most adults eating reasonable diets), additional supplementation produces minimal effects.\n\n_5\\. Fish oil/omega-3._ Some evidence for mood benefits, particularly in clinical depression. Effect sizes are modest. Quality of products varies.\n\n_Where the evidence is weak or absent._\n\n_1\\. Most adaptogens._ Holy basil, schisandra, eleuthero, ginseng — most have weak or inconsistent evidence. Effect sizes when documented are small.\n\n_2\\. \"Nootropic\" supplements._ Lion's mane, Bacopa, modafinil-likes, various blended products — most have weak evidence for stress reduction or cognitive enhancement specifically. Some have minor effects in specific populations; broad claims aren't supported.\n\n_3\\. Most B-vitamins._ For people with deficiency, supplementation helps. For most adults, additional supplementation produces minimal benefit. The \"B-complex for stress\" framing is largely marketing.\n\n_4\\. Most blended products._ Products combining multiple adaptogens or supplements rarely have evidence as combinations. The individual ingredients may have weak evidence; the combinations often have none.\n\n_5\\. CBD (cannabidiol)._ Interest is high; evidence is mixed. Some specific applications have evidence (specific seizure conditions); broad chronic-stress claims are overstated.\n\n_The general issues._\n\nSeveral issues affect the supplement market generally:\n\n_1\\. Quality varies enormously._ Supplements aren't regulated like pharmaceuticals. The actual content can vary substantially from labeling. Effect sizes documented in research using high-quality preparations may not apply to commercial products.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1032,
+      "out_sha": "9ee7b6d02a8f",
       "note": ""
     },
     {
@@ -3311,11 +3311,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 270,
       "src_chars": 2566,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7bbdb7826e7b",
       "src": "_2\\. Effect sizes are generally small._ Even where supplements have evidence, the effect sizes are typically much smaller than well-supported interventions like exercise or therapy.\n\n_3\\. Marketing dramatically overstates evidence._ The supplement industry markets aggressively and often misrepresents the evidence base. \"Clinical studies show...\" often refers to weak or cherry-picked studies.\n\n_4\\. Cost._ Regular supplement use can be expensive. The cost-benefit calculation often doesn't favor supplements compared to other interventions.\n\n_5\\. Distraction effect._ Some readers spend time and energy on supplements that could be better spent on exercise, sleep, connection, or other higher-leverage interventions. The supplement focus distracts from what would actually help.\n\n_The honest framing._\n\nSupplements are real where they correct specific deficiencies and oversold as chronic-stress regulators in non-deficient adults. A few have modest standalone evidence (ashwagandha for stress markers, fish oil for mood, L-theanine for acute relaxation); most have weak evidence as chronic-stress interventions despite popular marketing.\n\nFor most readers wanting to act on this, the practical reading is short. Test for the deficiencies that are common in adult populations — vitamin D and magnesium are the leading candidates — and correct them if found; this is the case where supplements do clear and well-documented work. If you don't eat fatty fish regularly, modest fish-oil supplementation has some evidence for general health benefits including modest mood effects. Ashwagandha is a reasonable bounded trial for readers who want to try it: eight weeks, a single quality-controlled product, tracking the specific thing you are trying to change rather than maintaining indefinitely on faith. Beyond that, most supplements have limited chronic-stress leverage in non-deficient adults, and the cost-benefit favors directing the money and attention toward exercise, sleep, and connection, where the effect sizes are larger by an order of magnitude. Calibrated skepticism toward each new \"miraculous\" wellness product is appropriate; most do not survive better-designed studies.\n\n> **Adaptogens and supplements are real for specific deficiencies and modest where standalone evidence exists (ashwagandha, fish oil, L-theanine), but oversold as chronic-stress regulators. Test and correct deficiencies (magnesium, vitamin D); calibrate expectations for the rest; direct most of your resources toward the foundation interventions where the leverage is largest.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 721,
+      "out_sha": "cc3bdc25a302",
       "note": ""
     },
     {
@@ -3323,11 +3323,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 271,
       "src_chars": 3392,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c73eda1888d3",
       "src": "### 13.7 Alcohol — The Antagonist\n\nThis section is likely the most uncomfortable for many readers. Alcohol is deeply embedded in social and cultural life; many adults use alcohol regularly; the cultural framing often treats moderate alcohol as health-neutral or even beneficial.\n\nThe framework requires honest evaluation regardless of cultural framing. Alcohol is the most common substance that actively works against chronic-stress regulation, even at the levels often called moderate.\n\n_The acute effects._\n\nThe popular framing treats alcohol as anxiolytic. The reality is more complex:\n\n_1\\. Acute relaxation is real but limited._ Alcohol does activate GABA receptors (which calm neural activity), producing genuine acute relaxation effects. This is why alcohol \"works\" as immediate stress relief in the moment.\n\n_2\\. The acute effect is followed by rebound._ As alcohol clears (typically within several hours), the GABA system rebounds, producing increased anxiety, sleep disruption, and irritability. This rebound is what produces \"morning anxiety\" after drinking and why people often feel worse the day after drinking than they would have without alcohol.\n\n_3\\. Sleep is significantly disrupted._ Even modest alcohol disrupts sleep architecture substantially. REM sleep is reduced; sleep is more fragmented; deep sleep quality decreases. The subjective feeling of \"sleeping well\" with alcohol is misleading; objective sleep measures show dysregulation.\n\n_4\\. The acute effect is short-acting._ Alcohol's anxiolytic effects last 1-3 hours; the disruption lasts much longer. The cost-benefit ratio favors disruption over relief.\n\n_The chronic effects._\n\nRegular alcohol use, even at moderate levels, produces chronic-stress effects:\n\n_1\\. Increased baseline anxiety._ Long-term alcohol use produces measurable increases in baseline anxiety. Counterintuitively, the substance most commonly used to relieve anxiety produces more of it over time.\n\n_2\\. HPA axis dysregulation._ Regular drinkers show dysregulated cortisol curves — flatter rhythms, elevated evening levels. The chronic-stress signature applied through alcohol use.\n\n_3\\. Impaired sleep architecture._ Chronic alcohol use damages sleep architecture in ways that don't fully recover during periods of abstinence (though abstinence does help). Sleep dysregulation feeds chronic-stress effects.\n\n_4\\. Hippocampal damage._ Regular heavy alcohol use produces measurable hippocampal damage. Even moderate use may have some effects, though smaller. The hippocampus that exercise rebuilds is partly damaged by alcohol.\n\n_5\\. Inflammatory effects._ Alcohol increases inflammatory markers, contributing to the chronic inflammation pattern we've discussed throughout.\n\n_6\\. Cardiovascular effects._ The \"moderate alcohol is heart-healthy\" claim has been substantially revised. Recent meta-analyses suggest that any alcohol consumption may increase cardiovascular risk, with no protective threshold for most people.\n\n_7\\. Cancer risk._ Alcohol is a Group 1 carcinogen (highest evidence category) for several cancers, including breast cancer, colon cancer, oral cancer, and others. The risk increases linearly from very low levels of consumption.\n\n_8\\. Mood effects beyond anxiety._ Regular alcohol use is associated with depression, both as cause and consequence. The \"drinking to manage mood\" pattern often produces worse mood over time.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 959,
+      "out_sha": "c8559c44bc42",
       "note": ""
     },
     {
@@ -3335,11 +3335,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 272,
       "src_chars": 2861,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7bd6bc96c63e",
       "src": "_9\\. Cognitive effects._ Cognitive decline is accelerated by regular alcohol use, even at moderate levels in some studies.\n\n_The \"moderate drinking is healthy\" myth._\n\nFor decades, the \"moderate alcohol is health-promoting\" framing was widely promoted, often with reference to studies showing that moderate drinkers had better health outcomes than non-drinkers. Recent re-analysis has substantially undermined this claim:\n\n_1\\. Comparison group bias._ Many studies compared moderate drinkers to \"non-drinkers\" who included sick former drinkers, producing an artificial advantage for the moderate-drinking group.\n\n_2\\. Confounding by health behaviors._ Moderate drinkers in many populations have other healthy behaviors (better diet, more exercise, better socioeconomic status). The apparent benefit of moderate drinking may reflect these other variables.\n\n_3\\. Better-designed studies show different results._ Recent large meta-analyses with better methodology suggest that any alcohol consumption increases all-cause mortality risk in dose-response patterns. There's no clear protective threshold.\n\n_4\\. Cardiovascular benefits have been overstated._ The supposed cardiovascular benefit of moderate red wine (resveratrol, antioxidants) has been substantially walked back. Effect sizes were always small; methodological reanalysis has reduced them further.\n\nThe current consensus in cardiovascular and oncology research is that there is no level of alcohol consumption that is clearly beneficial for most adults. This contradicts decades of popular framing but reflects current evidence.\n\n_Why this is unusual among the practices in this chapter._\n\nAlcohol uniquely combines multiple chronic-stress disruptions:\n\n_1\\. It directly disrupts sleep._ Sleep is one of the most leveraged chronic-stress interventions; alcohol systematically damages it.\n\n_2\\. It produces rebound anxiety._ The substance used to manage anxiety produces more of it over time.\n\n_3\\. It dysregulates the HPA axis._ The system most central to chronic-stress regulation is directly disrupted.\n\n_4\\. It damages the hippocampus._ The brain structure that exercise rebuilds is damaged by alcohol.\n\n_5\\. It increases inflammation._ The inflammatory tone we've discussed throughout is elevated.\n\n_6\\. It impairs prefrontal-amygdala correction._ The very circuit that CBT trains is impaired by alcohol use.\n\nThe combined effect: alcohol systematically undermines the chronic-stress regulation that this book is about. It's not merely neutral; it actively works against the goals of every chapter we've covered.\n\n_The honest recommendation._\n\nFor chronic-stress regulation specifically, alcohol use should be reduced or eliminated. The evidence supports:\n\n_1\\. Less is better._ Whatever your current consumption, reducing it produces measurable improvements in chronic-stress markers within weeks.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 815,
+      "out_sha": "c2774f5e0153",
       "note": ""
     },
     {
@@ -3347,11 +3347,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 273,
       "src_chars": 3073,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c39be9ab2f45",
       "src": "_2\\. The \"moderate is heart-healthy\" claim is no longer supported._ Recent large meta-analyses suggest that the protective threshold seen in older studies was largely an artifact of comparison-group bias and behavioral confounding. The current best reading of the data is that there is no clearly protective level of alcohol consumption for most adults. Some methodological debate continues — this is not a fully settled literature — but the direction of revision is clear, and \"moderate drinking is good for you\" is no longer a defensible reading. Some people choose to drink for non-health reasons (social, cultural, enjoyment); those are legitimate choices, but they should not be confused with health-neutral ones.\n\n_3\\. The acute relief is misleading._ If you find yourself drinking to manage anxiety, the pattern is making your chronic anxiety worse over time. The relief is local; the cost is chronic.\n\n_4\\. Sleep particularly improves with reduced drinking._ Many adults discover that sleep quality improves substantially when they stop drinking. The improved sleep often produces broader chronic-stress regulation benefits.\n\n_5\\. The cultural framing is changing._ \"Sober curious,\" reduced-alcohol movements, and changing cultural norms around drinking are increasingly common. Engaging with these doesn't mean adopting any specific identity; it means evaluating your drinking honestly.\n\n_6\\. Replace alcohol's social functions._ If alcohol is part of your social life, the change is partly logistical — finding social activities that don't center on drinking, finding alternative beverages, navigating social pressure to drink. These are real challenges but navigable.\n\n_The honest framing for readers who drink._\n\nAlcohol is deeply embedded in adult life. Many readers drink regularly. The framework's evaluation is uncomfortable but accurate.\n\nIf you're using alcohol to manage chronic stress, you're using a substance that is making your chronic stress worse over time. The acute relief comes at substantial chronic cost. The evidence supports reducing or eliminating consumption.\n\nIf you drink for social or enjoyment reasons rather than stress management, the framework still suggests honest evaluation. Even moderate drinking has costs that the cultural framing has obscured. Reducing consumption produces measurable benefits.\n\nFor readers with concerns about alcohol use beyond moderate: this is the territory of substance use disorders. Treatment exists and is effective. AA, professional treatment, medication-assisted treatment for severe cases — multiple paths exist. Recognition that alcohol use is producing problems is the first step.\n\n> **Alcohol is the antagonist of chronic-stress regulation. Acute relief is real but short; chronic effects systematically undermine sleep, anxiety, HPA regulation, and the prefrontal-amygdala circuit the rest of this book builds. The \"moderate is healthy\" framing is no longer supported by current evidence. Reducing or eliminating alcohol is one of the higher-leverage chronic-stress interventions available.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 836,
+      "out_sha": "aacb97caa74f",
       "note": ""
     },
     {
@@ -3359,11 +3359,11 @@
       "en_title": "Chapter 13: Practices — Honest Evaluation of What Helps",
       "order": 274,
       "src_chars": 1482,
-      "status": "pending",
+      "status": "done",
       "src_sha": "777809030bec",
       "src": "### 13.8 Benzodiazepines — A Brief Note\n\n**Benzodiazepines** (Xanax, Ativan, Klonopin, Valium, and related drugs) deserve a brief note rather than a full section, because the population of readers actively considering or already on chronic benzodiazepines is narrow, and the relevant guidance is largely the same one any responsible clinician would give.\n\nBenzodiazepines work — fast — for acute panic, specific procedural anxiety, or as a short bridge during severe acute episodes. The trouble is chronic use. Tolerance develops; physical dependence follows; withdrawal anxiety is often worse than the original anxiety the medication was treating; cognitive effects accumulate; fall risk in older adults rises; combinations with alcohol or opioids carry substantial overdose risk; and chronic benzodiazepine use does not build the prefrontal-amygdala regulation that CBT, exercise, or sustained behavior change does. If you are on chronic benzodiazepines and want to change that, the work is slow tapering under medical supervision, with evidence-based alternatives (CBT, exercise, sometimes SSRIs) developed alongside the taper. Abrupt stopping is dangerous. Continuing indefinitely is the slower harm. Both have to be respected; neither is treatment.\n\n> **Benzodiazepines: legitimate acute-rescue medication, almost always the wrong answer for chronic anxiety. The acute-to-chronic transition is the trap; supervised tapering plus evidence-based alternatives is the path back.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 440,
+      "out_sha": "53b98974c9ae",
       "note": ""
     },
     {
