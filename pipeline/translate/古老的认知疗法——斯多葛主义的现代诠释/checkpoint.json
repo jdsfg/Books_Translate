@@ -5043,11 +5043,11 @@
       "en_title": "Appendices",
       "order": 414,
       "src_chars": 424,
-      "status": "pending",
+      "status": "done",
       "src_sha": "08a62d492491",
       "src": "The appendices are reference material designed for use during practice rather than for cover-to-cover reading on first pass. Appendix A places the major Stoic figures on a single timeline. Appendix B charts the lineage from Stoicism through CBT, REBT, and ACT. Appendix C is a glossary of the Greek and Latin terms the book has used. Appendix D contains seven quick-reference cards, one per technique, for daily use.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 145,
+      "out_sha": "f71620b2cc15",
       "note": ""
     },
     {
@@ -5055,11 +5055,11 @@
       "en_title": "Appendices",
       "order": 415,
       "src_chars": 3061,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a0db272f400f",
       "src": "### A Note on Texts and Citations\n\nBefore the timeline itself, a brief orientation to the primary sources and the citation conventions the book has used.\n\n**The four Roman Stoics' surviving texts.** The book has worked from the following standard scholarly editions, available in most good translations:\n\n* **Epictetus.** _Discourses_ (cited as _Discourses_ 1.1.7 — that is, Book 1, Chapter 1, section 7) and _Enchiridion_ (cited as _Enchiridion_ 5 — by section number, since the work is brief). The Robin Hard translation (Oxford World's Classics, 2014) is the most accessible recent English version; the older W. A. Oldfather Loeb translation (1925) is more literal but less readable.\n* **Seneca.** _Letters to Lucilius_ / _Epistulae Morales_ (cited as _Letter_ 18, _Letter_ 18.5 where a section is given). The Margaret Graver and A. A. Long _Letters on Ethics_ translation (Chicago, 2015) is the current scholarly standard. Seneca's other works cited include _De Ira_ (_On Anger_), _De Tranquillitate Animi_ (_On Tranquillity of Mind_), _De Brevitate Vitae_ (_On the Shortness of Life_), and the _Consolations_ (_Ad Marciam_ , _Ad Helviam_ , _Ad Polybium_); citations to these use book and section number where given.\n* **Marcus Aurelius.** _Meditations_ / _Ta eis heauton_ (cited as _Meditations_ 7.48 — that is, Book 7, section 48). The Gregory Hays translation (Modern Library, 2002) is the most popular modern English version; the Robin Hard translation (Oxford World's Classics, 2011) is closer to the Greek's syntactic structure. Where the book has quoted _Meditations_ directly, the substance is consistent across responsible English translations; specific phrasing varies.\n* **Musonius Rufus.** _Lectures_ (cited as _Lecture_ 3, by lecture number; the surviving fragments are short). The Cynthia King translation (_Musonius Rufus: Lectures and Sayings_ , 2010) is the standard accessible English edition.\n\n**The early Greek and middle Stoic material** that the book has referenced (Zeno, Chrysippus, Panaetius, Posidonius) survives almost entirely in fragments quoted by later authors. The standard scholarly collection for the early Stoa is Hans von Arnim's _Stoicorum Veterum Fragmenta_ (1903–1924, four volumes), in Greek and Latin. The most accessible English collection of fragments is in A. A. Long and D. N. Sedley's _The Hellenistic Philosophers_ (Cambridge, 1987, two volumes), which gives Greek/Latin text with English translation and substantial commentary.\n\n**Cross-cultural sources** referenced briefly in Chapter 13 (Buddhism, Confucianism, yoga, Sufism) are pointed at in their standard forms — the Pali Canon and Mahayana sutras for Buddhism, the _Analects_ and _Mencius_ for Confucianism, the _Yoga Sūtras_ of Patañjali for yoga, and the standard Sufi treatises for the Islamic mystical tradition. The book's coverage of these traditions is at the level of orientation, not detailed engagement; readers wishing to study any of these traditions seriously should go to scholarly translations and not rely on the brief notes given here.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1433,
+      "out_sha": "85f5f5cd26d1",
       "note": ""
     },
     {
@@ -5067,11 +5067,11 @@
       "en_title": "Appendices",
       "order": 416,
       "src_chars": 2389,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0c153de65406",
       "src": "**A note on the limits of citation.** Where this book has quoted a primary source directly, the citation is given as precisely as the textual record allows. Where the book has paraphrased, summarized, or thematically discussed a source's general teaching (rather than a specific passage), citations are not given inline, because no single passage stands behind the discussion. A reader who wants to verify a specific claim and cannot find a citation in the text should consult the relevant primary text via its standard scholarly index — the _Discourses_ and _Meditations_ in particular have detailed analytical indices in their better translations.\n\n* * *\n\n\n### Appendix A — A Stoic Timeline\n\nThe Stoa as a school ran for roughly five hundred years. Most of the surviving texts come from a much narrower window — the first and second centuries CE, the period of the four Roman Stoics this book has centered on. The timeline below places the major figures in their actual historical sequence.\n\n\n#### Greek Period (c. 300 BCE – c. 100 BCE)\n\nDate (approx.) | Figure | Note  \n---|---|---  \nc. 334–262 BCE | **Zeno of Citium** | Founder of the Stoa; merchant who turned to philosophy after a shipwreck; lectured in the _Stoa Poikilē_ in Athens. Almost no continuous writing survives.  \nc. 330–230 BCE | Cleanthes of Assos | Second head of the Stoa after Zeno; preserved the school through a difficult succession; the _Hymn to Zeus_ survives.  \nc. 279–206 BCE | **Chrysippus of Soli** | Third head of the Stoa; the most important systematic builder of Stoic philosophy; \"if there had been no Chrysippus, there would have been no Stoa.\" Worked out propositional logic, the cognitive theory of emotion, and most of the structural framework later Stoics would inherit. Almost no continuous writing survives.  \n  \n\n#### Middle Stoa (c. 200 BCE – c. 50 BCE)\n\nDate (approx.) | Figure | Note  \n---|---|---  \nc. 185–110 BCE | **Panaetius of Rhodes** | Carried Stoicism from Athens to Rome; friend of Scipio Aemilianus; adapted Stoic ethics to Roman elite practice.  \nc. 135–51 BCE | **Posidonius of Apamea** | Cicero's teacher; broadened Stoic philosophy to include extensive empirical investigation of the natural world.  \n106–43 BCE | Cicero | Not a Stoic himself but preserved much Stoic material in _De Officiis_ and _De Finibus_ ; primary surviving source for several lost middle-Stoic works.  \n  ",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1110,
+      "out_sha": "3ce5371e1a94",
       "note": ""
     },
     {
@@ -5079,11 +5079,11 @@
       "en_title": "Appendices",
       "order": 417,
       "src_chars": 3144,
-      "status": "pending",
+      "status": "done",
       "src_sha": "de92aeb7715e",
       "src": "#### Roman Stoicism (c. 50 BCE – c. 200 CE) — The Period This Book Centers On\n\nDate (approx.) | Figure | Note  \n---|---|---  \n95–46 BCE | **Cato the Younger** | Roman senator and Stoic practitioner; opposed Caesar's rise; took his own life at Utica rather than live under Caesar's victory. The most famous Stoic political martyr of the late Republic.  \n70–43 BCE | Porcia Catonis | Cato's daughter; Stoic practitioner; wife of Brutus; ended her own life after Brutus's defeat. (Plutarch, _Life of Brutus_ 13.)  \nc. 4 BCE – 65 CE | **Seneca the Younger** | Roman senator, tutor and advisor to Nero, one of the wealthiest men in the empire; ordered to die by Nero in 65 CE. Author of _Letters to Lucilius_ , _On the Shortness of Life_ , _On Anger_ , _On Tranquillity of Mind_ , the _Consolations_ , and the tragedies.  \nc. 25–95 CE | **Musonius Rufus** | Teacher of Epictetus; argued for women's equal philosophical education; insisted on bodily practice; exiled multiple times. _Lectures_ survive in fragmentary form.  \nc. 50–135 CE | **Epictetus** | Born a slave; lamed; freed; became one of the most influential teachers of philosophy in the ancient world. Wrote nothing himself; the _Discourses_ and the _Enchiridion_ were transcribed by his student Arrian.  \n121–180 CE | **Marcus Aurelius** | Roman emperor 161–180 CE; spent much of his reign on the empire's frontiers; wrote the _Meditations_ as a private journal.  \n  \n\n#### Late Antique and Medieval Reception\n\nDate | Figure | Note  \n---|---|---  \n354–430 CE | Augustine of Hippo | Christian theologian; engaged with and partly absorbed Stoic ethics.  \nc. 1225–1274 CE | Thomas Aquinas | Christian theologian; the four cardinal virtues entered Christian moral theology through this lineage.  \n  \n\n#### Modern Revival\n\nDate | Figure | Note  \n---|---|---  \n1892–1971 CE | Reinhold Niebuhr | American theologian; author of the Serenity Prayer (mid-twentieth century), which structurally restates the dichotomy of control.  \nTwentieth century | Pierre Hadot, Lawrence Becker | Scholars who argued for Stoicism as a way of life and as a viable modern philosophical framework.  \nTwentieth century | Albert Ellis, Aaron T. Beck | Founders of REBT and CBT respectively; both cited Epictetus's discipline of assent as a direct philosophical predecessor.  \nLate twentieth century | Steven C. Hayes | Founder of ACT; cited Stoic acceptance and the dichotomy of control as foundations.  \nPost-2014 | Ryan Holiday, Tim Ferriss, Massimo Pigliucci, Donald Robertson, William B. Irvine, Jocko Willink | Contemporary popularizers; the post-2014 Stoic revival; engaged in detail in Chapter 11.  \n  \nA note on the gap. Between the late Roman Stoics (Marcus's death in 180 CE) and the modern revival (twentieth century), Stoicism continued to be read, but as a school it was largely absorbed by Christianity, which preserved its ethical framework while replacing its physics and metaphysics. The roughly seventeen centuries between Marcus and the modern revival are not a void — Stoic material circulated, was cited, was partially absorbed — but the school as a self-conscious tradition was dormant.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1701,
+      "out_sha": "b4f0432d5a0b",
       "note": ""
     },
     {
