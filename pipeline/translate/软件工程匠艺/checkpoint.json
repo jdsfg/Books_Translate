@@ -2679,11 +2679,11 @@
       "en_title": "Chapter 16: PR Conventions, Async Engineering, and Pair / Mob with AI in the Room",
       "order": 214,
       "src_chars": 1712,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a026eed1c1df",
       "src": "### 16.7 The team's communication conventions\n\nA team that has internalized async-first and pair/mob discipline benefits from explicit communication conventions. Currents' conventions:\n\n* **PRs over chat for code feedback** : if you have feedback on code, put it in a PR comment, not in a DM. The PR comment is durable and visible to others.\n* **ADRs over meetings for architectural decisions** : if a decision affects the team's code, write the ADR; review async; merge when consensus emerges.\n* **Issues over emails for bugs and features** : if you find a bug or want a feature, file the issue; the tracker is the durable record.\n* **Status in writing for daily updates** : standups are async via a daily channel update. The format is: yesterday, today, blockers.\n* **Synchronous time for synchronous needs** : meetings are explicitly scheduled with a stated outcome; ad-hoc voice calls are for incidents and acute pair-programming.\n\nThe conventions reduce the question \"where should this conversation happen?\" to a quick lookup. New engineers learn the conventions in onboarding; the team uses them reflexively. Without the conventions, the team's communication scatters across many channels and no one knows where to find what.\n\nCarmen's own additional convention, which she keeps mostly to herself but which the team has come to recognize: any written comment of hers that bears on a decision someone else has to make starts with a bolded label first. `**Decision needed:**`, `**Heads-up:**`, `**FYI:**`, in addition to the four review labels (`**Blocking:**`, `**Suggestion:**`, `**Nit:**`, `**Praise:**`) she uses in PR review. The reader knows what is required of them before they finish the first line.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 644,
+      "out_sha": "9965556f8f71",
       "note": ""
     },
     {
@@ -2691,11 +2691,11 @@
       "en_title": "Chapter 16: PR Conventions, Async Engineering, and Pair / Mob with AI in the Room",
       "order": 215,
       "src_chars": 1916,
-      "status": "pending",
+      "status": "done",
       "src_sha": "216c168832b3",
       "src": "### 16.8 A worked example: a Currents migration spanning multiple teams\n\nA Currents migration in 2025 spanned three teams: Platform (Carmen's), Billing, and Data. The migration was the kind of work where async coordination across teams matters: each team has its own priorities, time zones, and pace.\n\nThe workflow:\n\n  1. **ADR** : the Platform team drafted an ADR (Chapter 17) describing the migration's motivation, scope, and approach. Distributed via the team's documentation tool. Comments and questions came in async over a week.\n  2. **Cross-team review** : the Billing and Data leads reviewed the ADR; raised concerns about specific subsystems; proposed adjustments. The discussion was async, threaded under the ADR.\n  3. **One synchronous meeting** : a 90-minute video call with the three team leads to resolve the remaining open questions. The meeting produced specific commitments; the meeting notes were posted in writing.\n  4. **Implementation** : each team owned its piece. PRs went into the relevant repositories; cross-team PRs (which touched multiple teams' code) had reviewers from each affected team.\n  5. **Weekly written sync** : every Friday, Carmen posted a written update on the migration's status. The other teams responded async with their pieces.\n  6. **One synchronous retrospective** : at the end of the migration, a 90-minute call to capture lessons. The retrospective notes were posted in writing.\n\nTotal synchronous time: about four hours across three months. Total written communication: dozens of PRs, comments, ADR threads, and updates. The migration completed on schedule despite the three teams' three time zones and three priorities.\n\nThe lesson: async-first scales to multi-team work in a way that synchronous-first does not. The synchronous time was used for the cases where it earned its keep (the kickoff meeting, the retrospective); the rest was async.\n\n\n### 16.9 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 674,
+      "out_sha": "45f67fb64fe6",
       "note": ""
     },
     {
@@ -2703,11 +2703,11 @@
       "en_title": "Chapter 16: PR Conventions, Async Engineering, and Pair / Mob with AI in the Room",
       "order": 216,
       "src_chars": 3227,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7a008b190f80",
       "src": "#### Concept Check\n\n**Q1.** A new engineering manager joins your team and proposes daily standup meetings (15 minutes, 9am sharp). The team spans three timezones: San Francisco, Berlin, Bangalore. 9am SF is 6pm Berlin and 9:30pm Bangalore. The manager argues: \"Daily standups have been industry standard for 25 years; the team needs synchronous time for alignment.\" Construct your async-first counter-proposal, including the specific replacement for standup and the _measurable_ benefit you would claim within one quarter.\n\nHint\n\nThroughput, time-zone reach, durability are the async-first arguments. What is the actual _outcome_ of a standup, and is there a cheaper way to achieve it async?\n\n**Answer:**\n\n**The async counter-proposal:** replace the synchronous daily standup with an async daily-update thread in the team's primary channel. Each engineer posts (in their own timezone, end of their working day) a short message: \"Yesterday I X. Today I plan Y. Blocker: Z or none.\" Other engineers read at the start of their day. Total time per engineer: 2–3 minutes to write, 3–5 minutes to read everyone else's. Total team time per day: ~30 minutes spread across timezones, _not requiring overlap_.\n\n**What the standup was for (and what we are not losing):**\n\n* Status sharing; preserved, with a search-friendly written trail.\n* Blocker surfacing; preserved; in fact often _better_ , because someone reading at 10am their time can immediately reach out to help, rather than waiting until the next morning's standup.\n* \"Did we see this?\" alignment; preserved through the written record.\n\n**What we are gaining:**\n\n* Bangalore engineers stop logging in at 9:30pm or skipping standup; the implicit time-zone penalty is gone.\n* The 15-minute synchronous slot × 3 timezones × 6 engineers = 18 engineer-minutes per day is freed for deep work.\n* The written record is searchable; someone joining the team in week 3 can see what the team has been doing.\n\n**Measurable claim within one quarter:** \"Mean focused-work hours per engineer per week\" goes up by some percentage (the standup-replacement frees the most-protected hours of the day for half the team). Alternatively: \"Mean time to unblock\" goes down (blockers surface in writing where anyone can act on them, not just the person physically in the standup room).\n\n**The general framing for the manager:** async-first is not \"we don't talk.\" It is \"we default to writing first; we meet synchronously when synchronous earns its keep.\" Most standups do not earn their keep against the async alternative on distributed teams. Run the experiment for one sprint; compare. If the team feels disconnected, address the connection problem directly (a weekly synchronous 1:1 cadence, or a monthly all-hands video call), not by restoring a daily standup.\n\n**Q2.** Below are two PR descriptions for the same actual change (a refactor of the auth module's session-handling). Critique each: which sections are present, weak, or missing, and which description prepares the reviewer to do their work efficiently? Identify the _single most-improving_ edit for the weaker one.\n\n**Description A** :\n    \n    \n    ## Summary\n    Refactored session handling.\n    \n    ## Test plan\n    Tests pass.\n    ",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1024,
+      "out_sha": "d4877cff5116",
       "note": ""
     },
     {
@@ -2715,11 +2715,11 @@
       "en_title": "Chapter 16: PR Conventions, Async Engineering, and Pair / Mob with AI in the Room",
       "order": 217,
       "src_chars": 3423,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0f7d8ab6e05a",
       "src": "**Description B** :\n    \n    \n    ## What\n    Extract session storage from `AuthService` into `SessionRepository`, behind an interface.\n    \n    ## Why\n    The team needs to support Redis-backed sessions for the multi-tenant migration (TRELLIS-2419).\n    Inlining the storage layer into AuthService was blocking that work because tests would need\n    real Redis to verify auth flows. With the Repository in place, tests use the in-memory fake.\n    \n    ## How\n    SessionRepository protocol + SqlSessionRepository (existing behavior) + InMemorySessionRepository (tests).\n    AuthService takes the repo via constructor injection. No production behavior change.\n    \n    ## Testing\n    40 existing auth tests pass unchanged. 8 new tests use InMemorySessionRepository directly.\n    Manually verified login/logout flow on staging.\n    \n    ## Risk\n    Behavior should be identical. The injection wiring changes how AuthService is constructed in\n    the application; verified all 3 call sites updated.\n    \n    ## Reviewer note\n    The Protocol design in src/auth/session_repo.py; first time we are using Protocol over ABC\n    in this codebase. Sanity-check that pattern.\n    \n\nHint\n\nThe six components from §16.2: What / Why / How / Testing / Risk / Reviewer note. Reviewers prepare differently when each section is filled in.\n\n**Answer:**\n\n**Description A** has only What (one weak line) and Testing (one useless line). Missing: Why, How, Risk, Reviewer note. The reviewer arriving at this PR has to _reconstruct_ all the context themselves; read the diff, infer the motivation, guess the risks, decide where to focus. This consumes the reviewer's most expensive minutes on work the author could have done in five.\n\n**Description B** has all six components and they are substantive. The Why section is the strongest part: it links to the underlying motivation (multi-tenant migration), names the ticket, and explains the upstream problem the refactor unblocks. The reviewer arrives knowing _why_ this refactor exists and _why now_ ; the rest of the review is structural.\n\n**The single most-improving edit for A** : add the _Why_. If A could only add one section, the Why is the highest leverage. A reviewer who knows the underlying motivation can evaluate the rest of the PR efficiently; they know what trade-offs to weigh, what risks to look for, what alternatives to consider. A reviewer without the Why is debugging the PR's existence first, the PR's correctness second; that is twice the work.\n\nWhy \"Why\" matters more than the others in practice: most PR descriptions in the wild have some What (\"Refactored X\"), often a thin Testing (\"tests pass\"), and rarely Why. The Why is the most-skipped section _and_ the highest-value one. The book's PR-description discipline (§16.2) is mostly a discipline of taking the Why seriously.\n\n**Q3.** When does pair programming earn its keep, and when is it overhead?\n\nHint\n\n§16.4's categorization.\n\n**Answer:**\n\nEarns its keep:\n\n* Complex problems benefiting from two minds (subtle bugs, deep refactors, performance, security).\n* Knowledge sharing where one engineer has expertise the other lacks.\n* AI collaboration where the human and AI are working together.\n\nIs overhead:\n\n* Routine work that one engineer could do faster alone.\n* Cases where both engineers have the same knowledge and the work is straightforward.\n* Heads-down deep work where flow matters more than collaboration.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 2270,
+      "out_sha": "ab6b66a477ab",
       "note": ""
     },
     {
@@ -2727,11 +2727,11 @@
       "en_title": "Chapter 16: PR Conventions, Async Engineering, and Pair / Mob with AI in the Room",
       "order": 218,
       "src_chars": 1201,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cc1d6decfac4",
       "src": "The discipline is to choose when to pair, not to mandate it universally. A team that pairs everything wastes engineering capacity; a team that never pairs misses the cases where pairing would have been faster.\n\n**Q4.** What is different about AI pair-programming compared to human pair-programming?\n\nHint\n\n§16.5 lists several differences.\n\n**Answer:**\n\n* **No ego** : feedback to the AI can be direct; the AI does not take it personally.\n* **Limited context** : the AI's context window is finite; the human must hold the broader architectural picture.\n* **No fatigue** : the AI does not tire; the cadence can be faster.\n* **Characteristic failure modes** : the AI's bugs cluster in specific patterns (Thread C lies); a human partner's bugs are more varied.\n* **Speed asymmetry** : the AI types fast; the human reads and evaluates. The bottleneck moves to the human's reading speed.\n* **Drift over long sessions** : the AI may forget what was discussed earlier in the session; the human must reanchor.\n\nRecognizing these differences is the discipline. Engineers who treat AI pair-programming as identical to human pair-programming miss the specific techniques that make AI pair-programming productive.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 411,
+      "out_sha": "3c29a73e3dbc",
       "note": ""
     },
     {
