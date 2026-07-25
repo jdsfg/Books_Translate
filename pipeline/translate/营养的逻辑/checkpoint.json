@@ -1115,11 +1115,11 @@
       "en_title": "Chapter 7: The Carbohydrate Controversy — What the Trials Actually Show",
       "order": 85,
       "src_chars": 2915,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6f6ad7207007",
       "src": "Here is the question that launched a thousand diet books, hundreds of clinical trials, and more heated dinner table arguments than any other in nutrition science:\n\n_Low-fat or low-carb?_\n\nAfter a decade of research and multiple large clinical trials, the answer is cleaner than you might expect — and considerably more nuanced than either side acknowledges.\n\nThe short version: for weight loss, low-fat, low-carb, and Mediterranean diets all produce similar results in most randomized trials. Adherence matters more than macronutrient ratio. For people who sustain any reasonable dietary change, weight loss is achievable. For people who don't sustain it, no macronutrient composition helps.\n\nThe long version — the one that actually lets you understand why and what this means for real people — requires examining the specific trial evidence, understanding what \"similar results\" conceals in terms of metabolic effects, and evaluating where ketogenic diets (the most extreme version of low-carb) have legitimate clinical applications vs. overhyped popular appeal.\n\n**Thread 2 (How to Read Research):** This chapter focuses on meta-analyses and why dietary trials seem to contradict each other.\n\n**Thread 3 (Energy Balance):** Different macronutrient compositions affect satiety, food intake behavior, and potentially metabolic rate — same calories don't always produce the same results.\n\n\n### 7.1 The DIETFITS Trial: The Gold Standard Comparison\n\nThe DIETFITS trial (Dietary Intervention Examining Factors Interacting with Treatment Success), published in JAMA in 2018, was one of the best-designed head-to-head comparisons of low-fat vs. low-carb diets ever conducted.\n\n600 participants, 1 year, randomly assigned to a healthy low-fat or healthy low-carb diet. Both groups received substantial behavioral support and were instructed to maximize food quality.\n\n**Results:** Both groups lost weight — approximately 11–12 pounds on average after one year. There was essentially no difference in weight loss between the groups. Neither a low-carb nor a low-fat diet was systematically superior.\n\n**The variation within each group was striking.** Within each dietary assignment, there was enormous individual variation — some people lost 50+ pounds; some gained weight. The average hides a wide range.\n\n**The genetic and microbiome hypotheses tested:** The researchers hypothesized that people with certain gene variants or insulin response patterns would do better on one diet vs. the other. This hypothesis was not supported — the predicted gene-diet interactions did not predict differential weight loss.\n\n**The conclusion:** In the context of a high-quality dietary intervention with behavioral support, low-fat and low-carb produce similar average weight loss at one year. Food quality — emphasizing whole foods, vegetables, and avoiding processed food — was more important than macronutrient composition.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 866,
+      "out_sha": "9f1e1a2fae49",
       "note": ""
     },
     {
@@ -1127,11 +1127,11 @@
       "en_title": "Chapter 7: The Carbohydrate Controversy — What the Trials Actually Show",
       "order": 86,
       "src_chars": 3499,
-      "status": "pending",
+      "status": "done",
       "src_sha": "701b9ea5a0f8",
       "src": "### 7.2 But Adherence Is the Whole Story\n\nThe DIETFITS result — \"both work equally\" — is technically correct but somewhat misleading in a practical sense.\n\nThe \"both work equally\" finding implicitly holds adherence constant: both groups received equal behavioral support and were equally monitored. In real-world dieting, adherence is not equal — it varies based on the person's food preferences, social environment, and the specific demands of each diet pattern.\n\nA person who loves pasta and bread will not adhere well to a low-carb diet. A person who finds fat-free food bland and unsatisfying will not adhere to a low-fat diet. The best diet for any individual is the one they can actually sustain.\n\nMultiple systematic reviews confirm this: the advantage of any particular diet over another shrinks dramatically at 12 months and approaches zero by 24 months, primarily because adherence declines in both groups toward standard eating patterns.\n\n**The practical implication:** Don't optimize for the \"best diet\" according to meta-analyses. Optimize for the dietary pattern you can sustain. This is why behavioral and social factors — cooking skills, family eating patterns, cultural food traditions, financial access to healthy food — are at least as important as macronutrient recommendations.\n\n* * *\n\n\n### 7.3 What Low-Carb Does That Low-Fat Doesn't (and Vice Versa)\n\nDespite similar average weight loss outcomes, different macronutrient compositions have genuinely different metabolic effects. These matter for specific populations:\n\n**Low-carbohydrate diet advantages:**\n\n* **Triglycerides decrease significantly** — often more than with low-fat diets. For people with hypertriglyceridemia (a cardiovascular risk factor), this is clinically meaningful.\n* **HDL cholesterol increases** — often more than with low-fat diets.\n* **Blood glucose and insulin** are more directly reduced — making low-carb particularly useful for type 2 diabetes and prediabetes management.\n* **Appetite suppression:** Some studies show lower hunger on low-carb diets, possibly related to higher protein and fat content and ketone-induced appetite suppression.\n* **Initial weight loss is faster** — due largely to water weight (glycogen depletion causes water release: each gram of glycogen stores approximately 3g of water). This rapid early loss motivates adherence but is not fat.\n\n**Low-fat diet advantages:**\n\n* **LDL cholesterol decreases** (though low-carb doesn't consistently increase LDL, some individuals on very high-fat diets see LDL increases — discussed more in Chapter 10).\n* **Reduces exposure to saturated fat** in the subgroup for whom saturated fat intake clearly affects cardiovascular risk.\n* **More culturally familiar** in many Western contexts — lower barrier to entry.\n* **Lower caloric density** when emphasizing whole, high-fiber carbohydrates — making unintentional caloric restriction easier for some individuals.\n\n**Mediterranean diet advantages:**\n\n* **Most consistent evidence** for cardiovascular outcomes (PREDIMED trial).\n* **Sustainable:** The Mediterranean dietary pattern has been adhered to for centuries across multiple cultures, suggesting it is compatible with long-term human eating patterns.\n* **Nutrient density:** High in fiber, polyphenols, omega-3 fatty acids, vitamins, and minerals from diverse plant and animal sources.\n* **Neither extremely low in fat nor carbohydrate** — moderate in both, with emphasis on food quality rather than macronutrient ratios.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1138,
+      "out_sha": "39705b913338",
       "note": ""
     },
     {
@@ -1139,11 +1139,11 @@
       "en_title": "Chapter 7: The Carbohydrate Controversy — What the Trials Actually Show",
       "order": 87,
       "src_chars": 626,
-      "status": "pending",
+      "status": "done",
       "src_sha": "428dee6c4beb",
       "src": "### 7.4 The Ketogenic Diet: Science, Hype, and Honest Assessment\n\nNo dietary approach in the past decade has attracted more simultaneous enthusiasm and controversy than the ketogenic diet.\n\nThe ketogenic diet is a very-low-carbohydrate, high-fat diet that restricts carbohydrates to approximately 20–50g/day (typically less than 5–10% of total calories). At this restriction level, glycogen stores are depleted, and the liver produces **ketone bodies** (acetoacetate, beta-hydroxybutyrate, acetone) from fatty acid breakdown. The brain and other tissues shift to using ketones as their primary fuel — **nutritional ketosis**.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 237,
+      "out_sha": "389d5ec4fbe1",
       "note": ""
     },
     {
@@ -1151,11 +1151,11 @@
       "en_title": "Chapter 7: The Carbohydrate Controversy — What the Trials Actually Show",
       "order": 88,
       "src_chars": 2883,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1f083dead325",
       "src": "#### Definition: Ketosis (Nutritional)\n\nNutritional ketosis is the metabolic state in which the liver produces ketone bodies at a rate sufficient to measurably elevate blood ketone levels (typically above 0.5 mmol/L), due to depletion of carbohydrate stores and reduced insulin signaling.\n\nThis is distinct from **diabetic ketoacidosis (DKA)** , a dangerous medical emergency in which insulin absence allows ketones to accumulate to extremely high levels (>15 mmol/L) in Type 1 diabetics. Nutritional ketosis from diet typically produces blood ketones of 0.5–3 mmol/L — a dramatically lower level that is physiologically managed without risk of acidosis in people with functional insulin.\n\n**Legitimate clinical applications of ketogenic diets:**\n\n* **Epilepsy:** The strongest evidence. The ketogenic diet was developed in the 1920s for drug-resistant epilepsy and remains standard of care for certain pediatric epilepsy syndromes (GLUT1 deficiency, Dravet syndrome). The mechanism is not fully understood but is consistently effective.\n* **Type 2 diabetes and metabolic syndrome:** Strong evidence that very-low-carbohydrate diets significantly reduce blood glucose, HbA1c, and insulin requirements — in some cases achieving remission in early Type 2 diabetes. The Virta Health trials (2018, 2020) showed remarkable HbA1c reduction and medication reduction compared to standard care.\n* **Short-term weight loss:** Effective for initial rapid weight loss (partly water, partly fat). Not clearly superior to other approaches at 12–24 months when adherence is comparable.\n\n**The honest assessment of popular keto claims:**\n\n_\"Keto puts your body in fat-burning mode\"_ — In ketosis, you are burning more fat for fuel. But this does not automatically mean you are burning more body fat. If you eat enough fat to maintain caloric balance, you simply oxidize dietary fat rather than body fat. Body fat is oxidized when there is a caloric deficit — regardless of macronutrient composition.\n\n_\"Carbs spike insulin and keto prevents insulin-driven fat storage\"_ — As discussed in Chapter 2, this is the incomplete insulin hypothesis. Protein also stimulates insulin. Caloric balance determines fat storage, not insulin per se.\n\n_\"The brain prefers ketones to glucose\"_ — The brain adapts to using ketones during ketosis, but \"prefers\" overstates it. The brain's cells express specific glucose transporters for a reason. Ketones are an effective alternative fuel, not a superior one, for a healthy brain.\n\n_\"Keto reduces inflammation\"_ — Beta-hydroxybutyrate does have signaling properties that reduce activation of the NLRP3 inflammasome (an inflammatory pathway). This is a genuine mechanism. Whether it translates to clinically meaningful anti-inflammatory effects in healthy people (beyond weight loss effects) is not well established.\n\n**Common problems with long-term ketogenic diets:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 975,
+      "out_sha": "36d0edd0eeda",
       "note": ""
     },
     {
@@ -1163,11 +1163,11 @@
       "en_title": "Chapter 7: The Carbohydrate Controversy — What the Trials Actually Show",
       "order": 89,
       "src_chars": 3214,
-      "status": "pending",
+      "status": "done",
       "src_sha": "048faf9b8dc1",
       "src": "* Constipation (from low fiber intake, if high-fiber vegetables are not emphasized)\n* \"Keto flu\" during adaptation (headache, fatigue, irritability — resolves within 1–2 weeks as the body adapts to ketone use and electrolyte loss is corrected)\n* Long-term sustainability — the most significant challenge. The carbohydrate restriction required is strict; most people cannot maintain it indefinitely\n* LDL cholesterol increases in some individuals — particularly with high saturated fat intake\n* Potential for nutrient deficiencies if not carefully planned (fiber, certain micronutrients from restricted fruits and legumes)\n\n\n#### Common Misconception\n\n**\"Eating carbs makes you fat, therefore eliminating carbs is the optimal diet for everyone.\"**\n\nThis is the popular keto-enthusiast conclusion, and it overextends the evidence. Carbohydrates are not inherently fattening — caloric excess is. Billions of people in East and South Asia eat rice-centric, high-carbohydrate diets and have historically had lower obesity rates than Western populations. Traditional Okinawans (one of the longest-lived populations on Earth) ate a diet that was approximately 80% carbohydrates — predominantly sweet potatoes. The relevant variables are carbohydrate quality (whole foods vs. refined), total caloric balance, physical activity, and overall dietary pattern.\n\n* * *\n\n\n### 7.5 What This Means for Your Plate\n\n**1\\. There is no universally superior macronutrient ratio.** Choose a dietary pattern you can sustain that emphasizes whole, unprocessed foods. The macronutrient ratio within that pattern matters less than its food quality.\n\n**2\\. For weight loss: adherence is everything.** If you will reliably follow a low-carb approach, it works. If you will reliably follow a Mediterranean approach, it works. If you will follow neither, neither works. Behavioral strategies (planning meals, understanding your food environment, social support) predict success better than the specific diet.\n\n**3\\. Low-carb diets have specific advantages for Type 2 diabetes and metabolic syndrome.** If you or someone you care about has these conditions, a carbohydrate-restricted approach has stronger specific evidence than it does for general weight management.\n\n**4\\. The Mediterranean dietary pattern has the best overall evidence base.** If choosing among evidence-based options without specific metabolic conditions, Mediterranean-style eating (vegetables, legumes, whole grains, olive oil, fish, moderate poultry/dairy, limited red meat and ultra-processed food) has the most consistent positive evidence from the most rigorous trials.\n\n**5\\. \"Keto\" as a long-term lifestyle requires significant planning and medical supervision in some cases.** For people with diabetes on insulin or sulfonylureas, a dramatic reduction in carbohydrate intake requires medication adjustment to avoid hypoglycemia — physician oversight is necessary.\n\n> **Reflection prompt:** If you were to shift your diet in any direction based on this chapter, what specific changes would be most achievable for you? What is the biggest adherence challenge you would face with a more carbohydrate-restricted or more carbohydrate-inclusive diet?\n\n\n### 7.6 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 947,
+      "out_sha": "ac074dbcff25",
       "note": ""
     },
     {
@@ -1175,11 +1175,11 @@
       "en_title": "Chapter 7: The Carbohydrate Controversy — What the Trials Actually Show",
       "order": 90,
       "src_chars": 3394,
-      "status": "pending",
+      "status": "done",
       "src_sha": "307b5999e881",
       "src": "#### Concept Check\n\n**7.1** Explain why the initial rapid weight loss on a ketogenic diet (often 3–5 lbs in the first week) does not represent fat loss to the same degree as later weight loss.\n\n**Answer:** The rapid initial weight loss on a ketogenic diet is primarily due to glycogen depletion combined with water loss, not fat loss. When carbohydrate intake is severely restricted (≤20–50g/day), glycogen stores are rapidly depleted. Each gram of stored glycogen is associated with approximately 3 grams of water (glycogen is a highly hydrated molecule stored in an aqueous environment). A 70kg person typically stores 400–500g of muscle glycogen and 100g of liver glycogen — approximately 500–600g total. Depleting this releases approximately 1.5–2 liters of water (roughly 3–4 lbs). Additional water is lost because lower insulin levels (from carbohydrate restriction) increase kidney sodium and water excretion (insulin promotes sodium retention). The combination can produce 3–7 lbs of weight loss in the first week that is entirely water and glycogen, not body fat. Body fat loss requires a caloric deficit — approximately 3,500 kcal deficit per pound of fat. A 500 kcal/day deficit would produce about 1 lb of fat per week, which occurs on both keto and non-keto diets with equal caloric restriction. The early rapid loss is psychologically motivating and creates strong initial adherence — which is a practical benefit — but should not be interpreted as fat loss.\n\n**7.2** A meta-analysis of 23 randomized trials comparing low-fat and low-carbohydrate diets for weight loss finds that low-carb produces 2.5 kg greater weight loss at 6 months, but the difference is not statistically significant at 12 months. Describe why the 6-month and 12-month results might differ, and what the appropriate conclusion is.\n\n**Answer:** The difference between 6-month and 12-month results reflects two important phenomena: (1) Differential adherence over time: Low-carb diets typically restrict a wide range of commonly eaten foods (bread, pasta, rice, fruit, legumes, many condiments). This restriction is manageable for many people in the short term but becomes increasingly difficult to maintain long-term, particularly in social eating contexts. Adherence on both diets deteriorates over time, but low-carb adherence often falls more steeply as participants find the restrictions socially isolating or monotonous. By 12 months, many \"low-carb\" participants have drifted toward a moderately reduced carbohydrate diet, reducing the effective difference from the low-fat group. (2) Metabolic adaptation: The initial metabolic advantages of low-carb (glycogen/water loss, possibly ketone-mediated appetite suppression) are front-loaded — they produce faster early results that may not persist as the body adapts. Appropriate conclusion: The 2.5 kg advantage at 6 months is real but modest (below the threshold of clinical significance for most purposes) and appears to be primarily driven by differential early adherence and glycogen-related water loss rather than a superior metabolic effect of carbohydrate restriction per se. The loss of statistical significance at 12 months suggests that long-term outcomes are more similar than the short-term difference implies. The practical conclusion is that both approaches can work; long-term success depends on finding the approach a person can maintain.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1001,
+      "out_sha": "8716f9899c9e",
       "note": ""
     },
     {
@@ -1187,11 +1187,11 @@
       "en_title": "Chapter 7: The Carbohydrate Controversy — What the Trials Actually Show",
       "order": 91,
       "src_chars": 1487,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3310c367c859",
       "src": "**7.3** Define nutritional ketosis and explain why it is physiologically different from diabetic ketoacidosis.\n\n**Answer:** Nutritional ketosis is a metabolic state induced by carbohydrate restriction and/or prolonged fasting in which the liver produces ketone bodies (acetoacetate, beta-hydroxybutyrate, acetone) at elevated rates due to increased fatty acid oxidation. Blood ketone levels in nutritional ketosis typically range from 0.5 to 3 mmol/L, and insulin is present (at low but functional levels), providing sufficient feedback to prevent runaway ketone production. Diabetic ketoacidosis (DKA) is a medical emergency that occurs almost exclusively in Type 1 diabetes (or severe Type 2) when insulin is completely absent or severely deficient. Without insulin: (1) Glucose cannot enter cells, driving severe hyperglycemia (blood glucose may exceed 600 mg/dL). (2) Insulin's normal suppression of fatty acid release is absent — fatty acids flood the liver and drive extreme ketone production (blood ketones >15 mmol/L, vs. <3 in nutritional ketosis). (3) The combination of high glucose (osmotic effect) and high ketones (acidic) causes severe metabolic acidosis and dehydration. The pH of blood can fall to life-threatening levels. The critical difference: in nutritional ketosis, insulin is present and maintaining control of the process; ketone production is elevated but bounded. In DKA, the absence of insulin removes the regulatory brake — the process becomes uncontrolled.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 489,
+      "out_sha": "1317854e4cf3",
       "note": ""
     },
     {
@@ -1199,11 +1199,11 @@
       "en_title": "Chapter 7: The Carbohydrate Controversy — What the Trials Actually Show",
       "order": 92,
       "src_chars": 2312,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f83464dd1c0e",
       "src": "#### Application Problems\n\n**7.4** A patient with Type 2 diabetes (currently controlled on metformin and a sulfonylurea) asks her doctor about trying a ketogenic diet. What factors should the doctor consider, and what would a responsible response look like?\n\n**Answer:** A responsible medical response would address several factors: (1) Evidence: The evidence for low-carbohydrate diets in Type 2 diabetes is strong. Studies (including Virta Health trials and multiple meta-analyses) show that very-low-carbohydrate diets significantly reduce HbA1c, fasting glucose, and in many cases allow medication reduction or discontinuation. This is not fringe medicine — major diabetes organizations (ADA, Diabetes UK) now acknowledge low-carbohydrate approaches as a valid option. (2) Medication risk — most important consideration: Sulfonylureas (e.g., glipizide, glyburide) stimulate insulin secretion regardless of blood glucose level. On a standard diet, they're calibrated to the expected carbohydrate load. If carbohydrates are dramatically reduced and the sulfonylurea dose is unchanged, the patient risks severe hypoglycemia (blood sugar dropping dangerously). The dose will almost certainly need to be reduced preemptively. Metformin risk with ketogenic diet is lower but still warrants monitoring. (3) Monitoring requirements: If proceeding, the doctor should: reduce sulfonylurea dose by 50% prophylactically on day 1 of the diet, have the patient check blood glucose multiple times daily during adaptation, and schedule follow-up within 2–4 weeks to further adjust medications as glucose normalizes. (4) Responsible response structure: \"Low-carb diets have good evidence for Type 2 diabetes management. Before starting, we need to reduce your sulfonylurea dose to prevent dangerous hypoglycemia. I'll monitor your glucose closely and adjust medications as needed. This should be done with medical supervision, not as a self-experiment.\"\n\n**7.5** A nutrition researcher presents a study: \"People who ate a Mediterranean diet for 3 years had a 25% lower risk of cardiovascular disease compared to those on a standard diet.\" Your friend says: \"This proves the Mediterranean diet prevents heart disease.\" Is your friend's conclusion justified? What would need to be true for this to be a valid causal conclusion?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 687,
+      "out_sha": "605a626cefb3",
       "note": ""
     },
     {
@@ -1211,11 +1211,11 @@
       "en_title": "Chapter 7: The Carbohydrate Controversy — What the Trials Actually Show",
       "order": 93,
       "src_chars": 1588,
-      "status": "pending",
+      "status": "done",
       "src_sha": "aac8b999eefe",
       "src": "**Answer:** The conclusion's validity depends entirely on the study design: (1) If this was an observational study (most common): People who eat Mediterranean diets self-select into that pattern — they also tend to be more health-conscious, exercise more, have higher socioeconomic status, see doctors more regularly, drink less alcohol, smoke less. Any of these \"healthy user\" behaviors could explain the 25% risk reduction. This is the healthy user bias — a pervasive confounder in diet observational research. Without randomization, we cannot attribute the lower risk to the diet specifically. (2) If this was a properly conducted randomized controlled trial (like PREDIMED): Participants were randomly assigned, and if randomization worked, the confounders should be balanced between groups. A 25% reduction would then be strong evidence for causation — with appropriate caveats about blinding (people can't be blinded to diet), contamination (control group may modify their diet), and generalizability (applies to populations similar to the study population). (3) For a valid causal conclusion from this result, we would need: RCT design with adequate randomization, pre-registration of outcomes, adequate sample size and follow-up, no significant crossover between groups, and consistency with mechanistic evidence. The friend's conclusion is premature for an observational study but reasonable for a well-conducted RCT. The chapter's PREDIMED discussion shows that this level of evidence does exist for Mediterranean diet — but the specific study described could be either design.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 476,
+      "out_sha": "fbb485a1db8a",
       "note": ""
     },
     {
@@ -1223,11 +1223,11 @@
       "en_title": "Chapter 7: The Carbohydrate Controversy — What the Trials Actually Show",
       "order": 94,
       "src_chars": 2451,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7338f396dcac",
       "src": "#### Think Deeper\n\n**7.6** The DIETFITS trial found no significant difference in weight loss between low-fat and low-carb diets. It also found that the predicted gene-diet interactions (people with certain insulin responses doing better on one diet) did not hold up. What does this suggest about the potential and limits of \"personalized nutrition\" approaches that promise to match dietary recommendations to individual genetics or metabolic profiles?\n\n**Discussion:** This is at the frontier of nutrition science and the honest answer is nuanced. The DIETFITS result suggests that simple genetic or insulin-response matching does not predict which dietary macronutrient composition produces better weight loss. This is a cautionary result for companies selling genetic-based dietary recommendations based on small numbers of gene variants. However, the personalized nutrition concept is not entirely undermined: (1) The Israeli microbiome study (Zeevi 2015) showed that glycemic responses to identical foods vary dramatically between individuals, and microbiome composition predicted individual responses better than a clinical model. This suggests that microbiome-based personalization may have more promise than genetic variants. (2) People do have genuine individual responses that matter: insulin sensitivity, baseline carbohydrate tolerance, exercise type, food preferences, and social context all genuinely affect which dietary approach will work for a given individual. The failure was in predicting these from simple genetic markers. (3) The most important form of \"personalization\" may not be genetic at all — it may be behavioral: identifying which foods a person can actually sustain, what their social eating environment permits, and what makes them feel satisfied. The honest conclusion: broad personalized nutrition promises (mail-in DNA test → tailored meal plan) exceed the current evidence base significantly. But the principle that individuals vary in their dietary responses is correct — we just don't yet have reliable biomarkers to act on it at the macronutrient level.\n\n**7.7** A person with well-controlled Type 2 diabetes (A1c 6.9%, on metformin only) has been following a low-carbohydrate diet for 8 months and achieved significant glycemic improvement. She asks whether she can eat whole grain bread, lentils, and fruit again without harming her control. Design a safe, evidence-based approach for reintroducing these foods.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 693,
+      "out_sha": "7a0492e26d9e",
       "note": ""
     },
     {
@@ -1235,11 +1235,11 @@
       "en_title": "Chapter 7: The Carbohydrate Controversy — What the Trials Actually Show",
       "order": 95,
       "src_chars": 2807,
-      "status": "pending",
+      "status": "done",
       "src_sha": "69c3e81c287e",
       "src": "**Answer:** The goal is to test whether the improved glycemic control is robust enough to tolerate moderate carbohydrate reintroduction. Evidence-based approach: (1) Reintroduce one food at a time, in small portions, to test individual glycemic response — not all carbohydrates affect blood glucose equally; lentils (low GI, high fiber) are likely to be better tolerated than white bread. (2) Pair carbohydrate-containing foods with protein, fat, or vinegar, which slow gastric emptying and blunt glycemic response. Lentil soup + olive oil + a small serving of whole grain bread is metabolically different from bread alone. (3) Use blood glucose monitoring (fasting and 2-hour postprandial) to empirically test each food's effect — this is individualized information unavailable from population studies. (4) Consider timing: postprandial glucose responses are typically better in the morning and worsen through the day (a phenomenon called \"dawn phenomenon reversal\" and diurnal glucose variation). (5) The evidence for low-carb diets in T2DM comes primarily from short-to-medium-term studies; there is no evidence that permanent carbohydrate restriction is required for glycemic management — adequate metabolic flexibility with moderate whole-food carbohydrates is the goal, not the lowest possible carbohydrate intake.\n\n**7.8** The concept of \"carbohydrate quality\" is used throughout this chapter, but the chapter also notes that GI and GL are imperfect tools. What would a better measure of carbohydrate quality look like, and what obstacles prevent its widespread adoption?\n\n**Discussion:** Current tools capture part of the picture: GI captures glycemic response but is measured in isolation; GL accounts for portion but not food matrix or individual variation; fiber content is proxied on labels but total fiber does not distinguish type or prebiotic quality. A better measure might integrate: (1) postprandial glycemic and insulin response in realistic eating contexts (with other foods); (2) individual metabolic response data (using continuous glucose monitoring); (3) fiber quality and composition (soluble vs. insoluble, fermentability, prebiotic effect); (4) food processing level (NOVA classification); (5) micronutrient and phytochemical density. Obstacles to widespread adoption: (a) CGM data is expensive, invasive for routine labeling, and would require large diverse populations to generate; (b) Context-dependent measurements can't be reduced to a single number per food; (c) Regulatory bodies require simple, reproducible, single-number systems for labeling; (d) Food industry resistance — a more honest carbohydrate quality measure would likely disadvantage many processed products. This is a case where scientific complexity genuinely resists the simplification that policy requires.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 824,
+      "out_sha": "7e251385e2d0",
       "note": ""
     },
     {
@@ -1247,11 +1247,11 @@
       "en_title": "Chapter 7: The Carbohydrate Controversy — What the Trials Actually Show",
       "order": 96,
       "src_chars": 1751,
-      "status": "pending",
+      "status": "done",
       "src_sha": "23b3407e0c6f",
       "src": "### Chapter Summary\n\nThe carbohydrate controversy, examined through randomized trial evidence, reveals that the debate has been overstated.\n\n**Key ideas:**\n\n* **Most RCTs comparing low-fat, low-carb, and Mediterranean diets show similar average weight loss at 12 months.** Adherence matters more than macronutrient ratio — the best diet is the one you can maintain.\n* Different macronutrient compositions have genuinely different metabolic effects — low-carb is superior for triglycerides and blood glucose management; Mediterranean has the strongest cardiovascular evidence from large RCTs.\n* **Ketogenic diets have strong evidence for epilepsy and significant evidence for Type 2 diabetes** — these are legitimate clinical applications. The popular \"keto cures everything\" narrative oversells the evidence.\n* The initial rapid weight loss on keto is primarily water and glycogen, not fat.\n* **\"Carbs are bad\" is as scientifically weak as \"fat is bad\"** — both are oversimplifications that ignore food quality, portion context, and the decisive role of adherence.\n\n**Thread 2 (Meta-analyses):** This chapter illustrates why dietary meta-analyses appear to contradict each other — heterogeneous interventions, variable adherence, different follow-up durations, and the conflation of short-term and long-term effects.\n\n**Thread 3 (Energy balance):** Different macronutrient compositions affect satiety (protein and fat) and initial water balance (low-carb), but caloric balance remains the primary determinant of weight change.\n\n**Looking ahead:** Chapter 8 examines protein in the debate context — specifically, how much is enough for different populations, and whether the \"more protein is always better\" bodybuilding logic holds up to evidence.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 548,
+      "out_sha": "420e03a299e2",
       "note": ""
     },
     {
@@ -1259,11 +1259,11 @@
       "en_title": "Chapter 8: The Protein Debate — How Much Is Enough?",
       "order": 97,
       "src_chars": 2857,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1aa2bd93b0ec",
       "src": "Chapter 3 introduced protein's biochemistry and established that the RDA (0.8g/kg) is a minimum, not an optimal. But the protein debate is more complex than just \"how much?\" — it involves questions about quality, timing, source, and the specific claims that have become fixtures of gym culture.\n\nThis chapter examines three specific debates: the evidence on protein quantity for different populations, the kidney-damage concern revisited in more detail, and the question of whether the protein \"anabolic window\" and other timing strategies actually matter.\n\n**Thread 2 (How to Read Research):** This chapter introduces the concept of study population generalization — how recommendations derived from bodybuilders may not apply to the general population, and vice versa.\n\n**Thread 3 (Energy Balance):** Protein's satiety effects and its role in preventing muscle loss during caloric restriction are central to understanding its metabolic importance.\n\n\n### 8.1 The RDA Reconsidered: Nitrogen Balance and Its Critics\n\nThe 0.8g/kg protein RDA was derived primarily from nitrogen balance studies: measuring how much nitrogen (a proxy for amino acids/protein) people excrete when eating different protein levels. When nitrogen intake equals nitrogen output, the body is in \"nitrogen balance\" — consuming enough protein to replace losses. The RDA was set at a level to achieve nitrogen balance in 97.5% of the population.\n\nCritics of this approach raise several valid points:\n\n**Nitrogen balance studies may systematically underestimate needs.** When people suddenly increase protein intake after a period of low intake, the body uses the extra protein for synthesis rather than excreting it — inflating the apparent \"requirement\" at higher intakes. This adaptation effect may cause nitrogen balance studies to overestimate the body's ability to maintain balance at low intakes.\n\n**Nitrogen balance doesn't measure optimal health outcomes.** You can maintain nitrogen balance at 0.8g/kg while still losing muscle mass over decades (if protein synthesis is prioritized for more critical metabolic functions) or while having suboptimal immune function or wound healing.\n\n**The reference population matters enormously.** The studies from which the RDA was derived used mostly young healthy adults. Protein needs are higher in older adults (due to reduced anabolic sensitivity to protein — they need more protein to stimulate the same amount of muscle synthesis as younger adults), during pregnancy and lactation, during illness and recovery, and during intentional weight loss.\n\n**The PROT-AGE consensus (2013):** A working group of geriatric nutrition researchers concluded that adults over 65 should consume 1.0–1.2g/kg/day as a minimum, and 1.2–1.5g/kg/day for older adults with acute or chronic illness, specifically to preserve muscle mass and function.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 897,
+      "out_sha": "edf5f02ac494",
       "note": ""
     },
     {
@@ -1271,11 +1271,11 @@
       "en_title": "Chapter 8: The Protein Debate — How Much Is Enough?",
       "order": 98,
       "src_chars": 3279,
-      "status": "pending",
+      "status": "done",
       "src_sha": "466b3a5e5e1c",
       "src": "### 8.2 Protein Timing: How Much Does It Matter?\n\nThe bodybuilding concept of the \"anabolic window\" claims that consuming protein within 30–60 minutes after resistance exercise is critical — the window during which muscle protein synthesis is maximally elevated and nutrient partitioning favors muscle building.\n\n**What the evidence shows:**\n\nThe anabolic window is real but much wider than initially claimed. The original studies showing a 30–60 minute window were typically conducted in fasted participants doing fasted exercise — a state that exaggerates the importance of timing. When people train with adequate pre-workout protein intake, the \"window\" extends substantially — perhaps several hours.\n\nA 2013 meta-analysis by Schoenfeld et al. examined the effect of protein timing and found that when total daily protein is matched, the timing advantage is small and largely driven by total daily intake, not timing per se.\n\n**Practical implications:**\n\n* Total daily protein matters more than timing for most people\n* Post-workout protein within a few hours is still beneficial — it doesn't have to be immediate\n* Pre-workout protein may be as important as post-workout protein\n* For older adults, distributing protein more evenly across meals (rather than having one large protein meal and smaller others) appears to optimize muscle protein synthesis throughout the day\n\n\n#### Definition: Muscle Protein Synthesis (MPS)\n\nMuscle protein synthesis is the process by which amino acids are incorporated into new muscle protein. MPS is stimulated by: (1) resistance exercise, which creates mechanical tension and muscle damage; (2) dietary protein, particularly leucine, which activates the mTOR pathway (a cellular growth signaling pathway); and (3) adequate caloric intake (net protein synthesis requires energy). MPS is suppressed by energy restriction, cortisol (stress hormone), and aging.\n\nIn plain language: MPS is the process of building muscle. Exercise creates the signal; protein provides the building blocks; calories provide the energy.\n\n* * *\n\n\n### 8.3 The Leucine Threshold and Protein Quality\n\nNot all amino acids equally stimulate MPS. **Leucine** — one of the branched-chain amino acids (BCAAs) — is the primary trigger of the mTOR signaling pathway that initiates muscle protein synthesis.\n\nThe **leucine threshold hypothesis** states that approximately 2–3g of leucine per meal is required to maximally stimulate MPS. Below this threshold, the mTOR signal is sub-maximal; above it, the response plateaus.\n\nAnimal proteins (meat, fish, eggs, dairy) generally provide more leucine per gram of total protein than plant proteins. For example:\n\n* Whey protein: ~10% leucine by weight (25g serving = ~2.5g leucine)\n* Eggs: ~8.5% leucine\n* Beef: ~7% leucine\n* Soy protein: ~7.8% leucine\n* Wheat gluten: ~5.5% leucine\n* Pea protein: ~8% leucine\n\nThis means that plant protein sources may require higher total protein intake to reach the same leucine threshold, particularly for older adults whose MPS response is more leucine-dependent.\n\n**Practical implication:** Vegans and vegetarians engaging in resistance training may benefit from somewhat higher total protein intake (1.6–2.0g/kg) compared to omnivores to achieve comparable leucine delivery per meal.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1056,
+      "out_sha": "bc9d94a7e85b",
       "note": ""
     },
     {
@@ -1283,11 +1283,11 @@
       "en_title": "Chapter 8: The Protein Debate — How Much Is Enough?",
       "order": 99,
       "src_chars": 2620,
-      "status": "pending",
+      "status": "done",
       "src_sha": "30451f49fe90",
       "src": "### 8.4 Plant vs. Animal Protein: Real Differences and Exaggerated Ones\n\nThe protein quality comparison between plant and animal sources has two distinct dimensions:\n\n**Amino acid profile (covered in Chapter 3):** Animal proteins are generally complete; most plant proteins are incomplete but can be combined.\n\n**Digestibility:** DIAAS scores account for digestibility — but practical cooking and food preparation significantly affect these scores. Raw legumes have lower digestibility than cooked, soaked, or fermented legumes. Processing soy (tofu, tempeh, edamame) substantially improves its digestibility.\n\n**The real-world verdict:**\n\nLarge observational studies comparing plant-protein-predominant and animal-protein-predominant populations show that adequate protein can be achieved on either pattern, with appropriate dietary planning. The Blue Zones (regions with exceptional longevity) include both significant animal product consumers (Sardinia — dairy and occasional meat) and predominantly plant-based populations (Loma Linda Adventist community — predominantly vegetarian).\n\nThe evidence that _specific_ animal protein sources are intrinsically superior for muscle building, beyond what can be explained by DIAAS and leucine content, is limited. When protein quantity, leucine content, and total caloric intake are matched, plant-protein diets can support similar muscle mass gains to animal-protein diets in resistance training studies (though the number of high-quality studies is limited).\n\n**The more important real-world difference:** Animal protein typically comes packaged with saturated fat (red meat), cholesterol (eggs), or negligible fiber — whereas plant protein sources deliver fiber, polyphenols, and phytochemicals alongside protein. These packaging differences may matter more for overall health than the amino acid profile per se.\n\n\n#### Common Misconception\n\n**\"You need to eat meat to build muscle.\"**\n\nThis is not supported by evidence. Vegan athletes (plant-based strength athletes, MMA fighters, bodybuilders) achieve muscular development comparable to omnivore athletes when total protein, leucine intake, caloric intake, and training stimulus are adequate. The specific examples are not proof of population-level conclusions — but the controlled trials, while limited in number, support the principle. The practical keys for muscle building on plant-based protein: (1) Eat more total protein than omnivores (to compensate for lower DIAAS); (2) Prioritize leucine-rich plant proteins (soy, pea, pumpkin seed); (3) Distribute protein across meals; (4) Ensure caloric adequacy.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 802,
+      "out_sha": "fc7e6747a002",
       "note": ""
     },
     {
@@ -1295,11 +1295,11 @@
       "en_title": "Chapter 8: The Protein Debate — How Much Is Enough?",
       "order": 100,
       "src_chars": 3418,
-      "status": "pending",
+      "status": "done",
       "src_sha": "abcfa1c7e0f0",
       "src": "### 8.5 The High-Protein-Kidney-Damage Question: Full Analysis\n\nChapter 3 briefly addressed this; here is the complete picture.\n\n**The mechanism that generated concern:** Protein metabolism produces urea, which kidneys filter and excrete. Higher protein intake → more urea → higher filtration demand. In people with existing kidney disease (reduced filtration capacity), this extra demand accelerates decline. This mechanism is well-established for CKD.\n\n**The evidence in healthy people:**\n\nIn healthy individuals with normal kidney function, the kidneys respond to higher protein intake by increasing GFR (glomerular filtration rate) — a process called \"hyperfiltration.\" Initially, this was interpreted as the kidneys working harder and wearing out faster.\n\nSubsequent long-term studies have not supported this interpretation:\n\n* A 2018 systematic review by Antonio et al. of athletes consuming 2–4+g/kg/day protein for extended periods found no adverse kidney function markers\n* The Nurses' Health Study found that high protein intake was associated with kidney function decline only in women who _already had mild kidney insufficiency_ , not in women with normal baseline function\n* The 2019 PREDIMED-Plus trial included a high-protein component and found no kidney function decline over follow-up\n\nThe current evidence: high protein intake (up to approximately 3g/kg/day) does not cause kidney disease in healthy individuals. The hyperfiltration that occurs is a normal functional adaptation, not a pathological process.\n\n**Important caveats:**\n\n* Kidney stone formation risk may increase with very high protein intakes in susceptible individuals (particularly calcium oxalate stones)\n* Adequate hydration becomes more important with high protein diets (to handle the increased urea load)\n* Anyone with diagnosed kidney disease or reduced GFR should follow specific protein recommendations from their nephrologist — protein restriction may be indicated\n\n* * *\n\n\n### 8.6 What This Means for Your Plate\n\n**1\\. Most healthy adults in developed countries already meet the RDA.** If you eat varied meals including legumes, dairy, eggs, or meat, you are very likely consuming 80–120g protein/day — well above the 56g RDA for a 70kg adult.\n\n**2\\. If you're over 65, aim higher.** The evidence supports 1.0–1.5g/kg as more appropriate for older adults, specifically to protect muscle mass (sarcopenia prevention). Muscle mass in older adults is one of the strongest predictors of functional independence and survival.\n\n**3\\. Total daily protein matters more than precise timing.** If you eat protein at each meal and get adequate total intake, you don't need to obsess about post-workout windows.\n\n**4\\. Plant protein absolutely works.** With variety, adequate total intake, and attention to leucine-rich sources, a vegan or vegetarian diet fully supports protein needs — including for active individuals.\n\n**5\\. High protein diets are safe for healthy kidneys.** If you have no kidney disease and your doctor has not indicated otherwise, concerns about kidney damage from higher protein intake are not well-supported by evidence.\n\n> **Reflection prompt:** If you exercise regularly, have you ever tracked your protein intake? How does it compare to the 1.2–1.6g/kg range recommended for active individuals? What is your primary protein source, and what's one plant-based protein you've never tried?\n\n\n### 8.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1101,
+      "out_sha": "bad3f850f8bc",
       "note": ""
     },
     {
@@ -1307,11 +1307,11 @@
       "en_title": "Chapter 8: The Protein Debate — How Much Is Enough?",
       "order": 101,
       "src_chars": 2913,
-      "status": "pending",
+      "status": "done",
       "src_sha": "173cc678aa8a",
       "src": "#### Concept Check\n\n**8.1** A 75-year-old woman asks whether she should worry about protein intake. Her doctor told her the RDA is 0.8g/kg. What would you tell her about the evidence specific to her age group?\n\n**Answer:** The 0.8g/kg RDA is appropriate for young healthy adults, but evidence specifically for older adults suggests higher intakes are beneficial. Key points: (1) Anabolic resistance: Older adults have reduced sensitivity to the muscle-building stimulus of protein — the same amount of protein triggers less muscle protein synthesis than in younger adults. To achieve the same MPS stimulus, they need more protein per meal (particularly leucine). (2) The PROT-AGE consensus (a working group of geriatric nutrition experts) recommends 1.0–1.2g/kg/day as a minimum for healthy older adults and 1.2–1.5g/kg for those with acute or chronic illness, injury, or physical function goals. This is 25–88% higher than the RDA. (3) Practically, if she weighs 60kg: 0.8g/kg = 48g/day (RDA), 1.2g/kg = 72g/day (PROT-AGE lower bound). The difference is roughly one additional serving of high-protein food per day. (4) Important caveat: if she has kidney disease (reduced GFR), this changes the picture — protein restriction may be more appropriate, and she should follow her nephrologist's specific guidance. If her kidneys are normal, the PROT-AGE recommendation is supported by evidence.\n\n**8.2** What is the leucine threshold, and why does it matter for vegan athletes eating plant-based protein sources?\n\n**Answer:** The leucine threshold refers to the minimum amount of leucine in a single meal (~2–3g) required to maximally stimulate muscle protein synthesis (MPS) via the mTOR signaling pathway. Below this threshold, the MPS response is submaximal; the additional leucine above it does not further increase MPS (the response plateaus). Why it matters for vegan athletes: Plant protein sources generally contain less leucine per gram of total protein than animal sources (wheat gluten ~5.5%, vs. whey ~10%). This means a vegan athlete eating 20g of plant protein may only get ~1.2–1.6g of leucine — below the threshold — while 20g of whey protein delivers ~2g of leucine, closer to or at threshold. To reliably reach the leucine threshold from plant protein, vegans may need: (1) Higher total protein per meal (30–35g of plant protein vs. 20–25g of whey to achieve the same leucine delivery), or (2) Leucine-rich plant proteins preferentially (soy protein isolate, pea protein, pumpkin seeds — these have relatively higher leucine content than grain proteins). This is one reason plant-based athletes are sometimes advised to consume slightly higher total daily protein than the recommendations for omnivores.\n\n**8.3** Why might the results of protein research conducted on bodybuilders (high-intensity daily resistance training, body composition optimization focus) not apply to sedentary elderly women?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 960,
+      "out_sha": "c3b7f0761da0",
       "note": ""
     },
     {
@@ -1319,11 +1319,11 @@
       "en_title": "Chapter 8: The Protein Debate — How Much Is Enough?",
       "order": 102,
       "src_chars": 1644,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0b599581d2ba",
       "src": "**Answer:** Study population generalization is a critical issue in nutrition research. Several dimensions of this mismatch: (1) Training stimulus: Bodybuilders have a consistent, high-intensity mechanical stimulus for muscle protein synthesis. In their context, protein availability is often the limiting factor — eating more protein genuinely produces more muscle. In sedentary elderly women without a resistance training stimulus, extra protein cannot be incorporated into new muscle tissue regardless of intake level (there's no signal to trigger synthesis). (2) Hormonal environment: Young male bodybuilders have high testosterone levels that amplify the anabolic response to both training and protein. Older women have low estrogen and minimal testosterone — the hormonal amplification is absent. Anabolic resistance is the rule in this population. (3) Relevant outcome: Bodybuilder studies typically measure muscle hypertrophy and strength gains. The relevant outcome in elderly women is sarcopenia prevention (maintaining existing muscle) and functional mobility — different endpoints that respond differently to protein interventions. (4) Baseline protein adequacy: Many bodybuilder studies start from baseline intakes already above the RDA; adding more protein produces marginal gains. Elderly women may be below the PROT-AGE recommendation — a different starting point where increases have more impact. Conclusion: Protein research in young athletes provides valuable mechanistic insight but requires appropriate translation when applying to different populations with different hormonal profiles, training stimuli, and health goals.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 442,
+      "out_sha": "46da3f7ffc70",
       "note": ""
     },
     {
@@ -1331,11 +1331,11 @@
       "en_title": "Chapter 8: The Protein Debate — How Much Is Enough?",
       "order": 103,
       "src_chars": 3341,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c40d05b6d735",
       "src": "#### Application Problems\n\n**8.4** A male endurance runner (75kg, training 60 miles/week) asks about protein needs. He has heard conflicting advice ranging from 0.8g/kg (the RDA) to 3g/kg (bodybuilding forums). What is the evidence-based recommendation for his specific situation?\n\n**Answer:** For a male endurance runner at high training volume, the evidence-based protein recommendation falls between the extremes he's heard: (1) Endurance athletes need more protein than the RDA (0.8g/kg), but less than strength athletes. Endurance exercise does cause muscle protein breakdown (from glycogen depletion forcing use of amino acids as fuel when glycogen runs low, and from mechanical stress) and requires protein for mitochondrial adaptation and connective tissue maintenance. (2) The current evidence-based range for endurance athletes is approximately 1.2–1.6g/kg/day (for this runner: 90–120g/day). This is consistent with recommendations from both the International Society of Sports Nutrition (ISSN) and the American College of Sports Medicine (ACSM). (3) The 3g/kg from bodybuilding forums is appropriate for heavy resistance trainers focused on muscle hypertrophy — not for an endurance runner. Consuming 225g protein/day while running 60 miles/week would provide no additional benefit and would displace carbohydrates, which are his primary performance fuel. (4) Carbohydrates are actually the priority macronutrient for his specific purpose: at 60 miles/week, glycogen availability during long runs is the primary performance limiter. His carbohydrate intake (typically 5–7g/kg/day for moderate training, up to 8–10g/kg during peak weeks) is more important than protein intake for endurance performance. Recommendation: 1.2–1.6g/kg protein (90–120g/day), with carbohydrates as the dominant macronutrient.\n\n**8.5** Design a high-protein vegan meal (targeting 35g protein) using only plant protein sources, and verify that the leucine content is likely to meet the ~2.5g threshold. Show your calculation.\n\n**Answer:** Target: 35g protein with ~7-10% leucine = ~2.5-3.5g leucine. Meal: Tofu scramble with edamame and pumpkin seeds.\n\nFood | Serving | Protein | Leucine % | Leucine  \n---|---|---|---|---  \nFirm tofu | 200g | 18g | ~7.5% | ~1.35g  \nEdamame (shelled) | 100g | 11g | ~7.8% | ~0.86g  \nPumpkin seeds | 30g | 7g | ~6.5% | ~0.46g  \n**Total** |  | **36g** |  | **~2.67g**  \n  \nVerification: 2.67g leucine meets the ~2.5g threshold for maximal MPS stimulation. This meal could be prepared as: stir-fry tofu and edamame with vegetables (onion, spinach, turmeric for color), top with pumpkin seeds. The combination also provides complementary amino acid profiles — soy (tofu, edamame) is a complete protein, and pumpkin seeds add methionine and tryptophan. From a practical standpoint, this requires a relatively large volume of food (200g tofu + 100g edamame), confirming why vegan athletes need to plan meals with higher protein volume than omnivore athletes.\n\n**8.6** Two studies examine high-protein diets: Study A found that rats fed 3g protein/kg developed increased urinary albumin (a marker of kidney stress) compared to rats fed 1g/kg. Study B found no change in GFR or kidney function markers in competitive bodybuilders consuming 2.8g/kg for 1 year. How should these two apparently contradictory findings be reconciled?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1260,
+      "out_sha": "6bd843d90e63",
       "note": ""
     },
     {
@@ -1343,11 +1343,11 @@
       "en_title": "Chapter 8: The Protein Debate — How Much Is Enough?",
       "order": 104,
       "src_chars": 1626,
-      "status": "pending",
+      "status": "done",
       "src_sha": "098af655fb9b",
       "src": "**Answer:** These findings illustrate the importance of study design and species translation: (1) Animal model limitations: Rat kidney physiology differs from human kidney physiology in important ways. Rats have a higher baseline protein requirement relative to body weight than humans (rats' natural diet is relatively high in protein), and rat kidney stress markers may not translate to human outcomes. Animal models are valuable for generating hypotheses about mechanisms but require human confirmation before being applied clinically. (2) Artificial conditions in animal studies: Rats in Study A were likely fed specific protein sources (often casein in high amounts) in controlled conditions that may not reflect normal eating patterns. The sudden imposition of very high protein levels without the adaptation period that humans experience may exaggerate stress responses. (3) Study B is specifically examining the question of interest (human athletes with sustained high protein intake), using directly relevant outcomes (GFR, kidney function markers), and is of sufficient duration to detect meaningful chronic effects. Its null finding (no kidney damage at 2.8g/kg for 1 year) directly answers the human clinical question. (4) Reconciliation: The rat data suggests a potential mechanism for protein-induced kidney stress; the human data suggests this mechanism does not produce clinically significant kidney damage in healthy humans at these protein levels. This is not contradiction — it is species-specific biology. Human data in healthy individuals should take precedence for clinical decision-making about humans.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 457,
+      "out_sha": "7b9c4e11cb23",
       "note": ""
     },
     {
@@ -1355,11 +1355,11 @@
       "en_title": "Chapter 8: The Protein Debate — How Much Is Enough?",
       "order": 105,
       "src_chars": 2725,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1be87299a0c3",
       "src": "#### Think Deeper\n\n**8.7** The chapter discusses how high-quality protein (by DIAAS score) from animal sources comes packaged with saturated fat, cholesterol, and no fiber, while plant protein comes packaged with fiber, polyphenols, and other compounds. A researcher argues: \"It's a package deal — you can't compare protein quality in isolation from the full food matrix.\" How would you evaluate this argument, and what research design could test whether protein quality or food matrix effects drive the health differences between high-animal-protein and high-plant-protein diets?\n\n**Discussion:** The argument is well-grounded and represents an important methodological point. The food matrix problem is real: when epidemiological studies show that red meat consumption is associated with colorectal cancer or cardiovascular risk, they cannot isolate whether the risk comes from the protein, the saturated fat, the heme iron, the processing methods, the cooking by-products (heterocyclic amines from high-heat cooking), or the displacement of vegetables and fiber. This is confounding by food matrix. Research designs that could address this: (1) Isocaloric controlled trials isolating specific components: Compare groups eating equal protein from lean meat (high DIAAS, low saturated fat, no fiber) vs. lean plant protein (lower DIAAS, no saturated fat, high fiber), controlling all other diet variables. This would isolate protein source from fat and fiber effects. (2) Mechanistic studies with specific protein extracts: Feed isolated animal protein (whey protein, casein) vs. plant protein (soy isolate, pea isolate) matched for amino acid composition — these remove the food matrix entirely. Existing studies suggest that isolated protein sources don't show the same disease associations as whole food sources, supporting the food matrix hypothesis. (3) Long-term cohort studies with granular food composition data: Use detailed food records to separately analyze effects of protein source, saturated fat intake, fiber intake, and heme iron intake on disease outcomes. The current evidence strongly suggests that the food matrix is a major driver — processed red meat is more strongly associated with disease than unprocessed; isolated protein sources don't show the same effects as whole food consumption. This suggests that \"protein quality\" in isolation from the food matrix is an incomplete concept for health purposes.\n\n**8.8** The anabolic window — the idea that consuming protein within 30 minutes post-workout is critical for muscle protein synthesis — is widely promoted in gym culture. Evaluate the current evidence for and against this concept, and explain what practical recommendation, if any, it supports.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 778,
+      "out_sha": "251a8164b2aa",
       "note": ""
     },
     {
@@ -1367,11 +1367,11 @@
       "en_title": "Chapter 8: The Protein Debate — How Much Is Enough?",
       "order": 106,
       "src_chars": 2520,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fd08f508778b",
       "src": "**Answer:** The strict 30-minute anabolic window is largely not supported by current evidence. (1) Studies showing large MPS differences between immediate and delayed protein consumption typically compared fasted training with immediate post-workout consumption — when protein is consumed pre-workout, elevated plasma amino acids persist into the recovery period, making post-workout timing less critical. (2) A 2013 meta-analysis by Schoenfeld and Aragon found that the timing effect largely disappears when total daily protein intake is controlled. People consuming sufficient daily protein achieved similar MPS outcomes regardless of whether post-workout protein was immediate or delayed by 1-2 hours. (3) Muscle protein synthesis remains elevated for 24-48 hours post-resistance training, not just 30 minutes — the window is far wider than gym mythology suggests. Practical recommendation: Total daily protein intake (1.4-2.0 g/kg for athletes) and even distribution across meals (targeting ~0.4 g/kg per meal across 4 meals) matter more than precise timing. For individuals training fasted, consuming protein within 1-2 hours post-workout is reasonable. The anabolic window concept is not wrong in principle — protein availability does matter for recovery — but the urgency framing is exaggerated.\n\n\n### Chapter Summary\n\nThe protein debate resolves clearly when the evidence is examined carefully.\n\n**Key ideas:**\n\n* The RDA (0.8g/kg) is a floor, not an optimal. Active individuals benefit from 1.2–1.6g/kg; older adults from 1.0–1.5g/kg.\n* **Leucine is the primary trigger for muscle protein synthesis.** Animal proteins deliver higher leucine per gram; plant-based athletes may need modestly higher total protein to reach the same leucine threshold per meal.\n* **Protein timing matters, but much less than total daily intake.** The \"anabolic window\" is wider than claimed; distributing protein across meals is more important than strict post-workout timing.\n* **High protein diets (up to ~3g/kg) do not damage healthy kidneys.** The concern applies specifically to people with existing chronic kidney disease.\n* **Plant proteins fully support muscle building** when total intake, leucine delivery, and caloric adequacy are sufficient. The \"you need meat to build muscle\" claim is not evidence-based.\n\n**Looking ahead:** Chapter 9 examines sugar — the substance that took the spotlight as fat's reputation was rehabilitated, and where the evidence for harm is considerably more consistent than it was for fat.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 814,
+      "out_sha": "5da2744be095",
       "note": ""
     },
     {
@@ -1379,11 +1379,11 @@
       "en_title": "Chapter 9: Sugar — Separating Evidence from Alarm",
       "order": 107,
       "src_chars": 3212,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7a6b254e8657",
       "src": "In 1980, the US government published its first Dietary Guidelines and recommended Americans eat less fat. Within a year, food manufacturers began flooding the market with low-fat products. The fat was replaced by something that, it turns out, was already being studied as a potential health hazard: sugar.\n\nAs Chapter 6 established, the sugar industry had actively funded research in the 1960s to deflect scientific scrutiny from sugar toward fat. This strategy worked for decades. By the time the fat hypothesis was being revised, sugar consumption in developed countries had increased dramatically — and the metabolic consequences were becoming difficult to ignore.\n\nThis chapter examines what the evidence actually shows about sugar: where it comes from in our diets, how it's metabolized differently from other carbohydrates, what the research linking it to disease actually looks like, and why the \"sugar is the new fat\" narrative — while closer to truth than the fat phobia was — still requires critical examination.\n\n**Thread 1 (The Fat Question):** Sugar is the chapter where the fat thread becomes clear — as fat was demonized, sugar filled the void. The era of low-fat processed food was essentially an era of high-sugar processed food.\n\n**Thread 2 (How to Read Research):** Industry funding makes another appearance. The sugar industry's manipulation of research is documented history.\n\n\n### 9.1 What Is Added Sugar, and Why Does It Differ from Natural Sugar?\n\nAll dietary sugar ultimately consists of the same monosaccharides: glucose, fructose, and galactose. But the context in which sugar arrives in your body matters enormously.\n\n**Naturally occurring sugars** arrive in a food matrix: the lactose in milk comes with protein, fat, calcium, and B12; the fructose in an apple comes with fiber, water, vitamins, and hundreds of phytochemicals.\n\n**Added sugars** are sucrose or corn-derived syrups added to foods and beverages during manufacturing or preparation. They deliver calories with no accompanying fiber, vitamins, minerals, or phytochemicals.\n\nThe distinction matters for several reasons:\n\n  1. Fiber in whole fruits slows sugar absorption, reducing glycemic and insulin response\n  2. Satiety: whole fruits trigger fullness signals through volume, water content, and fiber; sugar-sweetened beverages do not\n  3. Dose: a medium apple contains ~19g of sugar; a 12-oz can of Coca-Cola contains ~39g — more than twice as much, delivered with nothing else\n\n\n#### Definition: Added Sugar\n\nAdded sugars are sugars and syrups added to foods and beverages during production, processing, or preparation. They do not include naturally occurring sugars in fruit (fructose and glucose), milk (lactose), or vegetables. Major sources of added sugar in the US diet: sugar-sweetened beverages (37% of added sugar intake), snacks and sweets (~19%), grain-based desserts (~18%).\n\nThe WHO recommends that added sugars contribute less than **10% of total energy intake** (about 50g or 12 teaspoons for a 2,000-calorie diet), with additional benefit from staying below 5% (~25g). For comparison, a single 12-oz can of regular soda contains approximately 39g of added sugar — already 78% of the 5% target.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 991,
+      "out_sha": "dedaf38c0006",
       "note": ""
     },
     {
@@ -1391,11 +1391,11 @@
       "en_title": "Chapter 9: Sugar — Separating Evidence from Alarm",
       "order": 108,
       "src_chars": 1946,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1de97ac81777",
       "src": "### 9.2 How Sugar Is Hidden: The Labeling Problem\n\nOne of the more surprising revelations for most readers: there are at least 56 different names for sugar used on food ingredient lists. Manufacturers use this diversity strategically — by splitting sugar into multiple named forms, each individual form appears lower on the ingredient list (ingredients are listed in descending order by weight).\n\nA product that is 30% sugar by weight but uses sucrose, corn syrup, honey, dextrose, and maltodextrin might list none of these as the first ingredient — distributing the total sugar across five different names.\n\n**Names for added sugar to recognize on ingredient labels:**\n\nCategory | Examples  \n---|---  \nSyrups | High-fructose corn syrup, corn syrup, rice syrup, golden syrup, malt syrup, agave nectar  \n\"-ose\" sugars | Sucrose, fructose, dextrose, maltose, galactose, lactose, trehalose  \n\"Natural\" sugars | Honey, maple syrup, coconut sugar, date sugar, cane juice  \nProcessed forms | Molasses, caramel, fruit juice concentrate, evaporated cane juice  \n  \n**Critical point:** \"Natural\" sugar is still sugar. Honey, maple syrup, agave nectar, and coconut sugar are marketed as healthier alternatives to refined white sugar, but their metabolic effects are essentially identical when caloric amounts are matched. Honey is approximately 38% fructose, 31% glucose, and trace other compounds. White table sugar is approximately 50% fructose, 50% glucose. The \"natural\" framing creates a health halo without a meaningful metabolic difference.\n\n**Fruit juice concentrate** deserves special mention: it is a concentrated form of fruit-derived sugar (mostly fructose) with most of the original fiber, vitamins, and phytochemicals removed. It is nutritionally closer to added sugar than to whole fruit. Products prominently labeled \"made with real fruit juice concentrate\" are using marketing language to disguise what is functionally added sugar.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 609,
+      "out_sha": "64e748817607",
       "note": ""
     },
     {
