@@ -1083,11 +1083,11 @@
       "en_title": "Chapter 8: Intertemporal Choice — Time, Patience, and Present Bias",
       "order": 82,
       "src_chars": 1440,
-      "status": "pending",
+      "status": "done",
       "src_sha": "10430ae0bd6c",
       "src": "### 8.6 Self-Control Problems and Policy\n\nPresent bias is not just a personal failure — it is a systematic market phenomenon that creates gaps between observed behavior and welfare-maximizing behavior. This has direct policy implications.\n\n**Addictive goods.** Cigarettes, alcohol, and other addictive substances impose present costs (health risks, future dependency) for present pleasures. Present-biased consumers may systematically underprovide self-control — buying more cigarettes than they would if their future-self's preferences were given equal weight. This provides a behavioral economics rationale for sin taxes beyond the standard externality argument.\n\n**Credit and debt.** Present-biased borrowers underestimate how much debt they will accumulate relative to their planned repayment. Lenders with deep understanding of present bias can design products (revolving credit, teaser rates) that exploit procrastination on repayment. This motivates behavioral analysis of consumer credit markets and regulation.\n\n**Education and skill investment.** Present-biased students underinvest in education relative to their own long-run preferences. The costs of studying are immediate; the benefits arrive years later. Institutions that make long-run planning easier — financial aid that removes present cost barriers, graduation requirements that commit students to coursework — can partially counteract present bias.\n\n\n### 8.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 438,
+      "out_sha": "4a8402ae0b07",
       "note": ""
     },
     {
@@ -1095,11 +1095,11 @@
       "en_title": "Chapter 8: Intertemporal Choice — Time, Patience, and Present Bias",
       "order": 83,
       "src_chars": 3191,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3e74e9506976",
       "src": "#### Concept Check\n\n**Q1.** What is the exponential discount factor \\delta, and what does \"time consistency\" mean in terms of \\delta?\n\n**Answer:** The discount factor \\delta \\in (0,1) represents how much an agent weights an outcome one period in the future relative to an outcome today. Under exponential discounting, an outcome t periods from now is weighted by \\delta^t.\n\nTime consistency means that the relative valuation of two future time periods does not change as time passes. Formally: the ratio of weights for periods t and t+1 is \\delta^{t+1}/\\delta^t = \\delta, which is the same for all t. Whether you compare \"tomorrow vs. the day after\" or \"in 100 days vs. 101 days,\" the same \\delta governs the comparison. This means that plans made today about the future are not revised simply because time passes — what an agent plans to do, they actually do.\n\n**Q2.** Explain the preference reversal that hyperbolic discounting predicts. Why does it not appear in exponential discounting?\n\n**Answer:** Hyperbolic discounting predicts a specific preference reversal: an agent prefers Option B (slightly larger reward, slightly later) over Option A (smaller reward, slightly sooner) when both are in the future, but reverses to prefer A when both options shift forward in time so that A arrives in the immediate present.\n\nExample: prefer 110 USD in 31 days over 100 USD in 30 days; but prefer 100 USD today over 110 USD tomorrow.\n\nWhy it happens: in hyperbolic discounting, the discount rate is highest for delays close to the present. The one-day delay between \"today\" and \"tomorrow\" is discounted at a very high rate. The one-day delay between \"30 days\" and \"31 days\" is discounted at a much lower rate. The same one-day delay has different costs depending on when it occurs.\n\nWhy exponential discounting doesn't predict this: under exponential discounting, \\delta is constant. The cost of a one-day delay is \\delta regardless of when it occurs. If you prefer 110 USD in 31 days to 100 USD in 30 days (because \\delta \\times 110 > 100), you will also prefer 110 USD tomorrow to 100 USD today — the same comparison governs both. No reversal is possible.\n\n**Q3.** In the β-δ model, what are the roles of \\beta and \\delta? What does it mean for an agent to be \"naive\" versus \"sophisticated\"?\n\n**Answer:** In the β-δ model:\n\n\\delta \\in (0,1): the standard patience parameter. It governs how much the agent discounts one future period relative to the next in the abstract — when thinking about trade-offs purely between future periods (none involving \"now\").\n\n\\beta \\in (0,1): the present bias parameter. An additional multiplicative discount applied to all future outcomes. It captures the spike in impatience when something transitions from \"future\" to \"now\" — the extra cost of delay at the margin between present and future.\n\n**Naive agents** do not know they are present-biased. They plan as if their future selves will also apply \\beta = 1 (as if they will be patient). They make plans today expecting their future selves to follow through, but when the future arrives, their future selves are equally present-biased and procrastinate. Naive agents chronically over-plan and under-execute.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1205,
+      "out_sha": "cdf9ac53e2cb",
       "note": ""
     },
     {
@@ -1107,11 +1107,11 @@
       "en_title": "Chapter 8: Intertemporal Choice — Time, Patience, and Present Bias",
       "order": 84,
       "src_chars": 3067,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e512aa87ba52",
       "src": "**Sophisticated agents** correctly forecast their own present bias. They know their future selves will procrastinate and plan accordingly — either by seeking commitment devices that restrict future options, or by accounting for anticipated procrastination in their planning. Sophistication does not mean the agent avoids all consequences of present bias; it means they can sometimes mitigate those consequences by designing their environment appropriately.\n\n**Q4.** What is a commitment device? Give three examples and explain how each exploits the logic of the β-δ model.\n\n**Answer:** A commitment device restricts an agent's future options in order to prevent their future (present-biased) self from deviating from the current plan. It works because a sophisticated agent values reducing their future self's temptations more than the value of the foregone flexibility.\n\nExamples:\n\n  1. _Automatic payroll deduction for retirement_ : Savings are deducted before the paycheck appears in the bank account. The money is never \"available\" for present consumption, so the present-biased future self never gets the chance to choose current consumption over saving. By removing the choice, the commitment device prevents the \\beta discount from operating on the saving decision.\n\n  2. _Gym membership with monthly fees_ : Many gyms allow annual pre-paid memberships at a discount per visit versus pay-per-visit. A sophisticated present-biased agent may prefer the annual membership even at a higher expected total cost — because the sunk cost of the membership increases the motivation to actually attend (avoiding a felt waste) and because it removes the per-visit \"should I go today?\" decision that present bias might otherwise win each morning.\n\n  3. _Ulysses contract / medical advance directive_ : A person who expects to make poor decisions under certain future conditions (pain, fear, addiction) can make binding commitments in advance — instructing doctors not to give pain medications beyond a specified dose, or specifying that they want to be compelled to continue treatment even if they later request to stop. The commitment removes the future self's decision authority at the moment when present bias (immediate relief) would override long-term preference (recovery).\n\n**Q5.** What is the difference between procrastination from present bias and procrastination from rational cost-benefit calculation? Give an example of each.\n\n**Answer:**\n\n_Present-bias procrastination_ : The agent genuinely intends to act and would act if they could commit their future selves. But when the moment of action arrives, the present cost spikes in subjective value (the \\beta discount applies), making the immediate cost feel larger than the discounted future benefit. Next period, the same situation repeats. The agent wishes they had acted and regrets the procrastination. Example: someone who intends to file their taxes in January but keeps putting it off until April. They don't dispute that filing is worth doing — they just keep finding that \"now\" is not the right time.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 886,
+      "out_sha": "e89403622eb1",
       "note": ""
     },
     {
@@ -1119,11 +1119,11 @@
       "en_title": "Chapter 8: Intertemporal Choice — Time, Patience, and Present Bias",
       "order": 85,
       "src_chars": 827,
-      "status": "pending",
+      "status": "done",
       "src_sha": "da2da91f2941",
       "src": "_Rational waiting_ : An agent deliberately delays an action because the optimal timing genuinely is later — new information may arrive, the cost may decrease, or the benefit may increase. There is no self-control problem; the delay is deliberately chosen and endorsed. Example: a company delays purchasing new equipment because it is waiting for the next generation of technology that will be released in three months. The delay is a considered choice, not a procrastination failure.\n\nThe empirical distinction: present-bias procrastination is accompanied by regret (the agent wishes they had acted sooner), repeated \"fresh start\" commitments that also fail, and behaviors consistent with seeking commitment devices. Rational waiting involves no regret, no repeated failed commitments, and no demand for commitment mechanisms.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 208,
+      "out_sha": "1ca4d8a38450",
       "note": ""
     },
     {
@@ -1131,11 +1131,11 @@
       "en_title": "Chapter 8: Intertemporal Choice — Time, Patience, and Present Bias",
       "order": 86,
       "src_chars": 3429,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4c58f307d011",
       "src": "#### Application Problems\n\n**Q1.** An employee is deciding whether to enroll in their employer's 401(k) plan. The cost is an immediate reduction in take-home pay (the contribution). The benefit is retirement income decades later. With \\beta = 0.5 and \\delta = 0.98 (annual), compute the employee's present value of 1 USD of retirement savings received in 30 years, from the perspective of today. Then compute the perspective of \"next year's self\" choosing whether to enroll next year. Does this agent have a time-inconsistency problem?\n\nHint\n\nUse the β-δ formula. From today's perspective, benefits arriving in 30 years are discounted by β × δ^30. From next year's perspective (now 29 years away), the same benefits are discounted by β × δ^29 from the vantage of next year's \"today.\" Consider how the relative discount changes.\n\n**Answer:** From today's perspective, 1 USD in 30 years:\n\nV = \\beta \\cdot \\delta^{30} = 0.5 \\times (0.98)^{30} = 0.5 \\times 0.545 = 0.273\n\nSo the 1 USD in 30 years is worth about 27.3 cents today.\n\nThe immediate cost of contributing X USD reduces take-home pay by X USD now. If the employer matches 100% (doubling the retirement benefit), a 100 USD contribution produces 200 USD in retirement. The present value of the 200 USD retirement benefit is approximately 0.273 \\times 200 = 54.6 USD. Since 54.60 USD < 100 USD, the present-biased employee would not enroll if forced to evaluate the pure cost-benefit in the present-biased framework. (The employer match would need to be substantial to overcome the steep discounting.)\n\nFrom next year's perspective, the same 1 USD in 29 years:\n\nV′=β⋅δ29=0.5×(0.98)29=0.5×0.556=0.278V' = \\beta \\cdot \\delta^{29} = 0.5 \\times (0.98)^{29} = 0.5 \\times 0.556 = 0.278V′=β⋅δ29=0.5×(0.98)29=0.5×0.556=0.278\n\nThe discount has shifted only slightly (from 0.273 to 0.278). From the vantage of next year, the decision looks almost identical — and next year's self will face the same procrastination problem with the same logic. The time-inconsistency problem is clear: this employee will perpetually intend to enroll next year and perpetually find that \"next year\" brings the same present-biased calculation. Without automatic enrollment, this employee will likely never enroll despite genuinely wanting retirement income.\n\n**Q2.** A sophisticated agent with \\beta = 0.6 and \\delta = 0.95 must choose between:\n\n* Plan A: Start exercising on Monday (3 days from now). Cost = 10 units. Benefit = 20 units, starting Tuesday.\n* Plan B: Start exercising today. Cost = 10 units today. Benefit = 20 units, starting tomorrow.\n\nOn Sunday (today), the agent evaluates both plans. Which does the agent prefer on Sunday? When Monday arrives, does the agent follow through with Plan A?\n\nHint\n\nOn Sunday, Plan B has present cost (discounted by 1) and near-future benefit (discounted by β·δ). Plan A has both cost and benefit in the future (discounted by β·δ^3 and β·δ^4). Compare these. Then redo the evaluation from Monday's perspective.\n\n**Answer:** Assume simple linear utility for clarity.\n\n**Sunday evaluation:** Plan B (start today): Cost today = -10. Benefit tomorrow = \\beta \\delta \\times 20 = 0.6 \\times 0.95 \\times 20 = 11.4. Net: -10 + 11.4 = +1.4.\n\nPlan A (start Monday = 3 days out): Cost Monday = \\beta\\delta^3 \\times (-10) = 0.6 \\times 0.857 \\times (-10) = -5.14. Benefit Tuesday = \\beta\\delta^4 \\times 20 = 0.6 \\times 0.815 \\times 20 = 9.78. Net: -5.14 + 9.78 = +4.64.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1440,
+      "out_sha": "38b181609b37",
       "note": ""
     },
     {
@@ -1143,11 +1143,11 @@
       "en_title": "Chapter 8: Intertemporal Choice — Time, Patience, and Present Bias",
       "order": 87,
       "src_chars": 2990,
-      "status": "pending",
+      "status": "done",
       "src_sha": "55139bca7fa6",
       "src": "On Sunday: Plan A (+4.64) is preferred to Plan B (+1.4). The agent plans to start on Monday.\n\n**Monday evaluation** (Monday is now \"today\"): Cost today = -10. Benefit tomorrow = \\beta\\delta \\times 20 = 0.6 \\times 0.95 \\times 20 = 11.4. Net: -10 + 11.4 = +1.4 > 0.\n\nOn Monday, Plan A actually delivers net positive utility (+1.4), so the agent should follow through! But notice: on Monday, the agent could also evaluate \"what if I postpone to Wednesday?\" (now 2 days away). Cost Wednesday: \\beta\\delta^2 \\times (-10) = 0.6 \\times 0.9025 \\times (-10) = -5.42. Benefit Thursday: \\beta\\delta^3 \\times 20 = 0.6 \\times 0.857 \\times 20 = 10.28. Net: +4.86.\n\nSince postponing to Wednesday (+4.86) > starting today (+1.4), the sophisticated Monday-agent will want to postpone again! This is the procrastination trap: each day, starting \"now\" is less attractive than starting in a few days. The agent always finds it optimal to start later — and perpetually never starts.\n\n**Q3.** (Cross-reference to Chapter 7) Status quo bias (Chapter 7) and present bias (Chapter 8) both predict that people fail to take beneficial actions. Are these the same phenomenon or distinct ones? Could they be disentangled in a real-world experiment?\n\n**Answer:** They are related but distinct mechanisms.\n\n_Status quo bias_ (Chapter 7): arises from loss aversion and regret aversion. Even a one-time action (choosing a new health insurance plan) requires changing from the current state, and the change imposes psychological costs (disadvantages feel like losses, action carries regret risk). Status quo bias predicts that people won't switch even in situations where there is no time delay — if you can switch right now versus staying, status quo bias still predicts inertia.\n\n_Present bias_ (Chapter 8): arises from the \\beta discount on all future outcomes. The action itself can be immediately available and switching is costless, but if the cost of action is immediate and the benefit arrives in the future, present bias will cause delay. Present bias predicts that people will intend to take the action \"later\" even when switching is immediate.\n\nDisentangling them experimentally: compare two conditions. (A) \"You can switch plans today or stay with your current plan\" (tests status quo bias for immediate one-time decisions). (B) \"You can start saving for retirement today or delay\" (tests present bias for costs-now-benefits-later decisions). Status quo bias predicts inertia in condition A even when no future delay is involved. Present bias predicts procrastination in condition B due to the intertemporal cost-benefit structure. A person who does not switch in condition A but would switch if the new plan were made the default (removing the status quo framing) is exhibiting status quo bias. A person who actively intends to switch in condition A but keeps postponing is exhibiting present bias. In practice, both mechanisms likely operate simultaneously, compounding the failure to take beneficial actions.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1066,
+      "out_sha": "6c0525347579",
       "note": ""
     },
     {
@@ -1155,11 +1155,11 @@
       "en_title": "Chapter 8: Intertemporal Choice — Time, Patience, and Present Bias",
       "order": 88,
       "src_chars": 3202,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4674779d8f50",
       "src": "#### Think Deeper\n\n**Q1.** The β-δ model assumes that present bias is uniform across all future periods — the agent discounts the future by \\beta relative to the present, but all future periods relative to each other are discounted by \\delta. Is this realistic? Can you think of situations where the discount rate changes in non-uniform ways other than the present-future spike?\n\n**Discussion:** The β-δ model is a simplification. Several real-world patterns suggest the discount structure is more complex. (1) _Event-based time_ : people often think in terms of events (after my vacation, after the New Year) rather than calendar dates, and the discount rate can spike around anticipated events. \"I'll start the diet in the New Year\" suggests a near-zero discount rate for delay within the holiday period and a spike back to present-bias at the New Year. (2) _Uncertainty about future selves_ : people in different future situations — a different income, health status, or social environment — may be effectively different agents whose preferences are uncertain. This can produce non-uniform discounting that mimics but is not the same as hyperbolic discounting. (3) _Visceral factor sensitivity_ : discounting is dramatically more extreme in the presence of immediately salient temptations (food, nicotine, attractive partners) — the present vs. future spike may be much sharper when temptation is physically present than in abstract planning. These complications suggest the β-δ model captures the qualitative pattern but may underestimate the heterogeneity and context-dependence of temporal discounting.\n\n**Q2.** Is procrastination always bad? Some theorists argue that procrastination is an optimal response to uncertainty — you wait for more information before acting. How would you distinguish \"rational waiting\" from present-bias procrastination in real behavior?\n\n**Discussion:** Rational waiting (also called \"real options\" in finance) is a genuine behavioral strategy: if acting now forecloses future options and more information will arrive shortly, waiting has option value. This is optimal, not irrational. The empirical markers of rational waiting versus present-bias procrastination include:\n\n_Rational waiting_ : (1) The agent can articulate what information they are waiting for and when they expect it. (2) The agent does not express regret about waiting — they endorse the delay. (3) The agent acts promptly when the relevant information arrives. (4) The agent would not pay for commitment to a future action date (since rational waiting requires flexibility).\n\n_Present-bias procrastination_ : (1) The agent cannot identify what they are waiting for — they just say \"I'll do it soon.\" (2) The agent expresses frustration and regret about the delay. (3) The agent does not act even when conditions are favorable. (4) The agent would pay for commitment devices to force future action.\n\nA useful diagnostic: ask the agent what they are waiting for. If they have a concrete answer tied to expected information, rational waiting is plausible. If they cannot identify the waiting-trigger — they just know they will \"definitely do it soon\" — present bias is the more likely explanation.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 939,
+      "out_sha": "1b4fd84a4a6f",
       "note": ""
     },
     {
@@ -1167,11 +1167,11 @@
       "en_title": "Chapter 8: Intertemporal Choice — Time, Patience, and Present Bias",
       "order": 89,
       "src_chars": 1785,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e7572f9a402e",
       "src": "### Chapter Summary\n\nIntertemporal choice — how people value outcomes across time — reveals one of the most consequential departures from the rational agent model. Standard expected utility theory uses exponential discounting, which implies time-consistent preferences: what you plan to do in the future, you actually do.\n\nReal human discounting is better described by hyperbolic discounting: the discount rate is highest for near-future delays and decreases for more distant delays. This produces time-inconsistent preferences — plans made for the future are revised when the future arrives, because the present cost now spikes in subjective magnitude.\n\nThe β-δ model formalizes this as two-parameter discounting: \\delta for general patience and \\beta < 1 for present bias. Naive agents fail to forecast their own present bias and perpetually over-plan and under-execute. Sophisticated agents correctly anticipate their procrastinating future selves and may seek commitment devices — mechanisms that restrict future choice to enforce the current plan.\n\nThread A: present bias is the core mechanism behind chronic undersaving for retirement. Each period, the immediate cost of foregone consumption defeats the abstract plan to save \"next month.\" The policy response — automatic enrollment, explored in Chapter 16 — removes the per-period decision from the present-biased agent's control, effectively committing the agent to saving without requiring the willpower that pure self-control fails to provide.\n\nChapter 9 continues the exploration of how people organize and evaluate money, turning from time preferences to mental accounting — the psychological categorization of financial resources into separate \"accounts\" that violates the standard economic assumption of fungibility.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 511,
+      "out_sha": "482cd5683c6c",
       "note": ""
     },
     {
@@ -1179,11 +1179,11 @@
       "en_title": "Chapter 9: Mental Accounting — How We Organize Our Money",
       "order": 90,
       "src_chars": 2740,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5572918eac4d",
       "src": "Imagine you have saved 200 USD specifically for concert tickets. You arrive at the venue to discover you've lost the envelope with the tickets (you bought in advance). Do you buy replacement tickets for 200 USD?\n\nNow a different scenario: you arrive at the venue planning to buy tickets at the door for 200 USD. Before you can buy them, you discover you lost a 200 USD bill from your wallet. Do you still buy the tickets?\n\nMost people say yes to the second scenario but no to the first. Economically, both scenarios leave you 200 USD poorer than you expected to be, with an opportunity to attend the concert for another 200 USD. The rational agent model says these situations are identical. Yet they feel completely different — and the difference is explained by mental accounting.\n\n\n### 9.1 The Psychology of Financial Accounts\n\nThe rational agent model assumes that money is fungible: a dollar is a dollar regardless of its source, its history, or what \"account\" it came from. Total wealth is what matters, and the labels attached to specific pots of money are economically irrelevant.\n\nPeople do not behave this way. Instead, they mentally segregate money into categories — entertainment funds, rent money, emergency funds, vacation savings — and treat money from different categories as non-interchangeable, even when moving money between categories would benefit them.\n\n\n#### Definition: Mental Accounting\n\n**Mental accounting** is the cognitive process of categorizing, evaluating, and tracking economic transactions into separate psychological \"accounts.\" Money in different mental accounts is treated as non-fungible — spending from an \"entertainment\" account feels different from spending from a \"savings\" account, even when the amounts and outcomes are identical.\n\nIn plain language: people keep psychological ledgers that organize their finances into categories, and they follow informal bookkeeping rules within each category that often violate the economic principle that money is interchangeable.\n\n**Why the concert scenarios differ:** In the lost-ticket scenario, the 200 USD was coded to the \"concert account\" — you had mentally already spent the concert budget. Buying replacement tickets would debit the concert account a second time, making the total concert expenditure 400 USD. The concert is not worth 400 USD to you, so you don't buy. In the lost-cash scenario, the 200 USD was general money, not pre-coded to any account. The 200 USD loss debits your general wealth account, not the concert account. You can still spend from the concert account without doubling the concert's cost. The decision to buy depends on which account gets debited, not on the actual change in wealth — which is identical in both scenarios.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 876,
+      "out_sha": "0fec2011921d",
       "note": ""
     },
     {
@@ -1191,11 +1191,11 @@
       "en_title": "Chapter 9: Mental Accounting — How We Organize Our Money",
       "order": 91,
       "src_chars": 2473,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6292066af72e",
       "src": "### 9.2 The Principle of Hedonic Editing\n\nPeople don't just categorize outcomes — they also code whether to combine or separate outcomes to maximize the subjective experience. Prospect theory's value function (recall Chapter 3) tells us what the psychological rules should be.\n\n**Segregate gains** : Two small gains feel better than one equivalent large gain, because the concave gain domain means the first 50 USD of gain feels larger than the second 50 USD. Two separate 50 USD bonuses produce more total pleasure than one 100 USD bonus.\n\n**Integrate losses** : One large loss feels better than two separate smaller losses adding to the same amount, because the convex loss domain means combining them makes each individual loss feel smaller. A single 100 USD charge hurts less than a 60 USD charge plus a 40 USD charge.\n\n**Integrate small losses with large gains** : A small loss offset against a large gain produces the least pain — the loss is coded as a reduction in the large gain rather than as a separate negative experience.\n\n**Segregate small gains from large losses** : A small gain alongside a large loss is best separated, because the small gain provides a distinct positive experience (the \"silver lining\") that is lost if integrated into the large loss.\n\n\n#### Definition: Hedonic Editing\n\n**Hedonic editing** is the process of combining or separating gains and losses to maximize the total subjective value, using the shape of the prospect theory value function to predict which combination is psychologically optimal.\n\nIn plain language: people organize their experiences to make themselves feel as good as possible — not through wishful thinking, but through the cognitive framing of which outcomes are combined versus separated.\n\n\n### 9.3 The House Money Effect\n\nOne of the most vivid demonstrations of mental accounting in financial settings is the house money effect: people take more financial risks with money they perceive as \"house money\" (recent winnings) than with money they perceive as their \"real\" wealth.\n\nThe name comes from casino gambling. A gambler who started with 500 USD, won 300 USD, and now has 800 USD may place larger bets with the 300 USD in winnings — it feels like the house's money, not their own. They have \"mentally separated\" the winnings from their pre-existing wealth endowment. If the winnings are lost, they are back to 500 USD (their reference point), so the loss domain is the gain domain of the house money account.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 835,
+      "out_sha": "011f57695b26",
       "note": ""
     },
     {
