@@ -3911,11 +3911,11 @@
       "en_title": "Chapter 11: Epistemic Friends",
       "order": 320,
       "src_chars": 2391,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f8d3eb5af7f8",
       "src": "#### How Adversarial Collaboration Works\n\nThe practice has several specific features that are essential to its structural function:\n\n_Pre-agreement on the specific question._ The parties identify the specific empirical question on which they disagree, in a form that admits of resolution by data. The question is not \"who is right in general about theory X\" but \"does specific intervention Y produce specific outcome Z under specific conditions W.\" The specificity is what makes the question resolvable.\n\n_Pre-agreement on the methodology._ The parties agree, before any data are collected, on how the question will be tested. What design will be used, what measurements will be taken, what statistical analysis will be applied, what would constitute support for each position. The pre-agreement prevents either party from later disputing the methodology when the data are unfavorable.\n\n_Pre-commitment to accept what the data show._ Both parties commit, before the data are collected, to accepting the data as decisive on the specific question, even if it favors the other party. The commitment is the structural compensation against the dissonance engine's standard ex-post revision; it bounds the temptation to dispute the methodology after the fact.\n\n_Joint design and execution._ The parties work together on the design and execution rather than each operating independently. The collaborative process surfaces disagreements about methodology while they can still be resolved; the joint execution prevents either party from later questioning whether the protocol was implemented correctly.\n\n_Joint analysis and writing._ The parties analyze the data together and write the resulting paper together, including the parts where the data favor one position over the other. The joint authorship is part of the structural commitment; the parties cannot easily disown the conclusions later because they have publicly committed to them.\n\nThe practice is demanding. It requires substantial time investment from both parties; it requires that both parties trust each other enough to enter the joint commitment; it requires the willingness to accept results that may damage the position one is associated with. These requirements limit how often the practice is actually conducted; in scientific contexts, adversarial collaborations are relatively rare even though their structural value is high.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 597,
+      "out_sha": "9736b8b52b98",
       "note": ""
     },
     {
@@ -3923,11 +3923,11 @@
       "en_title": "Chapter 11: Epistemic Friends",
       "order": 321,
       "src_chars": 2008,
-      "status": "pending",
+      "status": "done",
       "src_sha": "12339ebdad7e",
       "src": "#### Application Beyond Science\n\nThe basic structure of adversarial collaboration can be applied beyond scientific research, in any context where two parties hold different positions on a specific question that admits of resolution.\n\n_Two team members disagreeing about a project decision._ They can structure their disagreement as an adversarial collaboration: agree on the specific question, agree on what evidence would resolve it, agree on what they will both do if the evidence favors one position over the other. The structure prevents the disagreement from persisting indefinitely as an unresolvable difference of opinion; it forces the question into a form where the team can move forward based on what the evidence shows.\n\n_Two organizations or individuals with different policy positions._ They can structure their disagreement as an adversarial collaboration on specific subclaims: agree that subclaim X is testable, agree on what would constitute evidence for or against, commit to updating their broader position based on what the evidence shows on subclaim X. The structure does not require agreement on the broader policy; it produces specific calibration on specific subclaims that informs the broader discussion.\n\n_Practitioners on opposite sides of contested questions in their fields._ They can structure their disagreement as an adversarial collaboration on specific empirical questions within the larger contested area. The collaboration produces specific results that both can accept; the broader disagreement may persist but with better-defined terms.\n\nThe applications outside science share the same structural requirements as the original scientific version: pre-agreement, pre-commitment, joint execution, joint authorship of conclusions. Without these features, the practice is just structured discussion that can be absorbed by the architecture's standard operation; with them, the practice produces calibration on the specific question that ordinary discourse would not produce.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 543,
+      "out_sha": "62ea3dfbc87f",
       "note": ""
     },
     {
@@ -3935,11 +3935,11 @@
       "en_title": "Chapter 11: Epistemic Friends",
       "order": 322,
       "src_chars": 3287,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0f8582c7df80",
       "src": "#### Why Adversarial Collaboration Works When Ordinary Argument Does Not\n\nThe framework explains the difference. Ordinary argument operates on the conscious-evaluation layer; the disputants exchange arguments and counter-arguments; the architectural defenses on both sides process the exchange through standard motivated-reasoning channels; the disputants experience themselves as engaging carefully while their underlying positions remain unchanged. The exchange may be cogent, sophisticated, even prolonged; it does not, on average, produce update in either party because the underlying mechanism that maintains the positions is not addressed by the conscious exchange.\n\nAdversarial collaboration adds structural compensation at exactly the point where ordinary argument fails. The pre-commitment to accept what the data show binds the dissonance engine in advance; when the data come in, the engine cannot operate freely to revise the methodology or dismiss the results. The joint design and execution prevent the most common failure mode of ordinary research disputes (each side conducting their own studies, with methodological choices that favor their position). The joint authorship of conclusions creates social commitment that motivated reasoning cannot easily undo; both parties have publicly endorsed the conclusions, including the parts unfavorable to their original position.\n\nThe structural compensation is what makes the practice produce update where ordinary argument does not. The practice does not depend on the parties being individually unbiased; both can be subject to their full architectural defenses, with the collaboration's structure producing the cross-checking that the unmodified architectures could not produce alone. The parties' asymmetric capacities — each good at finding flaws in the other's reasoning, each bad at finding flaws in their own — operate in the collaboration in service of the joint design, with the result that the design is better than either could produce alone, the data are more credible than either could produce alone, and the conclusions are more reliable than either's individual analysis would have been.\n\n\n### 11.3 Forecasting Communities\n\nThe third tool is participation in forecasting communities — anonymized aggregation platforms where many participants make probabilistic predictions on the same questions, with calibration tracked over time and feedback provided to participants. Examples include Metaculus, Manifold Markets, Good Judgment Open, and others; the platforms differ in specific design but share the structural features that make them work.\n\nThe structural insight is that aggregation across many participants with different stakes can produce more reliable forecasts than any individual participant could produce alone. The aggregation does not require each individual to be well-calibrated; it requires that the participants' biases, on average, cancel rather than reinforce. When the participant pool is sufficiently diverse, the aggregation produces forecasts that exceed the calibration of credentialed experts working alone. The Tetlock superforecasting research that Chapter 10 cited demonstrated this empirically; subsequent forecasting platforms have extended the demonstration to many more domains.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 808,
+      "out_sha": "3217ce9f17e9",
       "note": ""
     },
     {
@@ -3947,11 +3947,11 @@
       "en_title": "Chapter 11: Epistemic Friends",
       "order": 323,
       "src_chars": 2254,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7b06c3e9d13c",
       "src": "#### How Forecasting Communities Work\n\nThe platforms have several specific features:\n\n_Specific testable questions with clear resolution criteria._ The questions are structured to have unambiguous answers when the resolution date arrives. _Will the World Bank's poverty estimate show fewer than X people living in poverty in 2030?_ is a forecastable question; _Is poverty improving in the world?_ is not, because it requires interpretation that introduces ambiguity.\n\n_Probabilistic predictions with quantified confidence._ Participants do not predict that something _will_ or _will not_ happen; they predict the probability that it will, on a continuous scale from 0% to 100%. The probabilistic form forces the specificity that the system's standard dichotomous thinking would not produce.\n\n_Calibration tracking across many predictions._ Each participant's predictions are tracked across many questions; their calibration scores are computed and visible. The tracking is the feedback loop that produces improvement; participants see, over time, where they are over-confident and where they are under-confident, and can adjust accordingly.\n\n_Aggregation that combines individual predictions into community forecasts._ The platforms compute community-level forecasts by combining individual predictions, often weighted by past calibration. The community forecasts are typically more accurate than the average individual forecast and often more accurate than the best individual forecasts.\n\n_Anonymization that reduces social-positioning concerns._ Most platforms allow pseudonymous participation; participants are evaluated by their forecasting track record rather than by their credentials or social position. The anonymization reduces the persuasion-evolved biases that would otherwise distort individual predictions.\n\n_Active community discussion of reasoning behind predictions._ Many platforms allow participants to share the reasoning behind their predictions, with other participants engaging substantively. The discussion is a form of collective reasoning that produces refined predictions over time; participants who change their minds based on others' arguments can update their predictions and have the update tracked in the calibration data.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 563,
+      "out_sha": "b89292b0abb1",
       "note": ""
     },
     {
@@ -3959,11 +3959,11 @@
       "en_title": "Chapter 11: Epistemic Friends",
       "order": 324,
       "src_chars": 1896,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e390bc9f75a9",
       "src": "#### Why Forecasting Communities Work\n\nThe framework explains the success of forecasting communities through the same logic as adversarial collaboration but at larger scale. Each participant brings their production capacity (sincere prediction based on their analysis); each participant brings their evaluation-of-others capacity (engagement with others' reasoning, which they can evaluate more accurately than they can evaluate their own). The aggregation across many participants with different stakes produces output that exceeds what any individual could produce alone, because the cross-checking compensates for individual biases.\n\nThe platforms also produce calibration improvement at the individual level over time. Participants who maintain sustained participation, with feedback on their calibration, develop better forecasting accuracy through the same mechanism that prediction tracking produces — externalized predictions, comparison with outcomes, data-driven refinement. The community structure adds value beyond what individual prediction tracking provides because the aggregation provides external benchmark forecasts that the individual can compare to their own, which surfaces specific patterns of disagreement that may indicate where the individual is miscalibrated.\n\nThe structural value compounds for the practitioner who participates seriously. Over years, they develop a documented track record of their own forecasting accuracy across many domains; they have access to community forecasts that aggregate across many participants on the same questions; they have engaged with many other participants' reasoning in ways that have refined their own. The practitioner's relationship to forecasting becomes structurally different from the relationship of someone who has not participated; the difference accumulates and informs many decisions outside the platforms themselves.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 425,
+      "out_sha": "8e5365efda4d",
       "note": ""
     },
     {
