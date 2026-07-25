@@ -3063,11 +3063,11 @@
       "en_title": "Chapter 20: Behavioral Development Economics",
       "order": 247,
       "src_chars": 3398,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c6e4a3fc0bc2",
       "src": "#### Application Problems\n\n**Q1.** A development NGO offers smallholder farmers in West Africa access to a savings account with a competitive interest rate, hoping to increase savings for agricultural inputs. Uptake is very low. Apply the behavioral development economics framework to diagnose potential barriers and propose a redesign.\n\n_Answer:_ Possible barriers and redesign elements: **Trust:** In contexts with histories of exploitative financial institutions, low trust in formal savings accounts is rational. Redesign: partner with existing trusted social institutions (cooperatives, farmer groups) rather than introducing a new financial product from an unknown NGO. **Timing mismatch:** If the account is offered during the lean season when cash is scarce, there is nothing to save. Redesign: offer account opening and initial deposits at harvest when cash is available. **Fungibility problem:** A standard savings account does not prevent mental accounting reallocation — money saved for fertilizer can be withdrawn for food in January. Redesign: add a light commitment feature — a target date and amount with a small withdrawal barrier or a required conversation with a group member before withdrawal. **Social structure:** Savings in many West African communities is managed through rotating savings clubs (susu, tontine). A competing individual product may be seen as anti-social. Redesign: create a group-based product that integrates with or enhances existing social savings norms. **Complexity:** A multi-step enrollment process with documentation requirements may exceed the friction tolerance of busy farmers. Redesign: simplify to a single-page enrollment at a time and place farmers already gather (market day, cooperative meeting).\n\n**Q2.** Compare the SEED commitment savings account and the SMarT retirement savings program (Chapter 16) in terms of their behavioral design. What mechanisms do they share? Where do their contexts differ in ways that affect design?\n\n_Answer:_ **Shared mechanisms:** Both address present bias through commitment — making the savings decision before present-biased temptation can divert funds. Both use pre-commitment at a moment of motivation (SEED: when the household has cash and savings intention; SMarT: when the worker receives a raise and is in a positive mindset about finances). Both allow the person to define their own goal and retain opt-out rights. Both produce substantially larger savings outcomes than unstructured access to savings vehicles. **Contextual differences:** SMarT operates through employer payroll — savings happen automatically before cash reaches the worker, making the commitment nearly frictionless. SEED requires the household to actively deposit at harvest, meaning the commitment is softer and vulnerable to the journey-of-cash from field to institution. SMarT operates in a high-income, high-financial-literacy environment with stable employment; SEED operates with irregular cash flows, variable harvests, and uncertain employment. SMarT has institutional infrastructure (employer HR systems, tax-advantaged accounts, financial services firms) that enforces the commitment; SEED must build this infrastructure where little exists. The behavioral mechanism is identical; the delivery infrastructure differs enormously, and the SEED design must compensate for institutional gaps that SMarT takes for granted.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 992,
+      "out_sha": "1d913cd64f8a",
       "note": ""
     },
     {
@@ -3075,11 +3075,11 @@
       "en_title": "Chapter 20: Behavioral Development Economics",
       "order": 248,
       "src_chars": 1783,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4f72e311d505",
       "src": "**Q3.** Evaluate the following claim: \"Behavioral development economics shows that poor people make worse decisions, which justifies stronger government intervention in their economic choices.\"\n\n_Answer:_ The claim misreads the evidence and draws an invalid conclusion. **The evidence does not support \"worse decisions\" as a trait:** Scarcity research shows within-person variation — the same individuals make better decisions with adequate resources. Behavioral biases (present bias, loss aversion) are equally present in wealthy populations; the difference is institutional support. The appropriate description is: poverty imposes a cognitive tax on everyone subject to it, and low-income populations often lack the institutional compensation mechanisms that wealthy populations take for granted. **The policy conclusion does not follow:** Even if decision quality were systematically impaired in low-income contexts (the claim overstates the evidence), this would not justify \"stronger government intervention in their economic choices.\" It would justify: improving material conditions (which improves cognition), providing institutional tools (commitment savings, simplified enrollment, accessible services), and reducing friction. These are enabling interventions, not substitutions of government judgment for individual choice. The legitimate policy conclusion is: provide the institutional infrastructure that enables better decisions — the same infrastructure wealthy populations already have — not remove decision-making authority. The claim's logic, followed consistently, would justify paternalistic interventions for all populations wherever behavioral biases are documented, which would be an enormous expansion of government control that the evidence does not support.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 452,
+      "out_sha": "f44fc1d74046",
       "note": ""
     },
     {
@@ -3087,11 +3087,11 @@
       "en_title": "Chapter 20: Behavioral Development Economics",
       "order": 249,
       "src_chars": 2115,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6a7455f4cca9",
       "src": "#### Think Deeper\n\n**Q1.** The scarcity research argues that cognitive performance is endogenous to material conditions — poverty impairs cognition, and adequate resources improve it. If this is true, does it undermine the justification for commitment devices? If people would make better decisions with more resources, should development policy focus on income transfers rather than behavioral tools?\n\n_Answer:_ The argument does not undermine commitment devices; it reframes their relationship to structural policy. The scarcity finding implies: (1) income transfers that adequately address material scarcity will improve decision-making directly, by freeing cognitive bandwidth; (2) behavioral tools designed to address cognitive limitations may be less necessary for households with adequate resources. This suggests income transfers and behavioral tools are complements at different income levels. At very low incomes, where cognitive load from scarcity is severe, income support may produce better outcomes than behavioral nudges that require deliberate attention to implement. At middle incomes, where basic needs are met but retirement savings or productive investment remain suboptimal, behavioral tools (commitment devices, defaults) may be more cost-effective than further income transfers. The practical policy implication is sequencing: (1) ensure basic resource adequacy (income transfers, food security, healthcare access) as a foundation; (2) add behavioral institutional infrastructure once resource adequacy creates the cognitive bandwidth to benefit from it. The evidence from SEED accounts is consistent with this — SEED adoption was highest among households with moderate savings capacity, not those in the most severe scarcity. Extremely resource-constrained households may be too focused on immediate survival to engage with savings tools, however well designed.\n\n**Q2.** How should the WEIRD problem affect the way behavioral economics research is conducted and applied globally? What institutional changes would you propose to make behavioral economics research more cross-culturally valid?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 563,
+      "out_sha": "f063960d35b6",
       "note": ""
     },
     {
@@ -3099,11 +3099,11 @@
       "en_title": "Chapter 20: Behavioral Development Economics",
       "order": 250,
       "src_chars": 1660,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5c38efa92ede",
       "src": "_Answer:_ **For research conduct:** (1) Require pre-registration of cultural context as a moderator variable — hypotheses about whether effects should generalize or vary by culture should be stated before data collection. (2) Fund replication studies in non-WEIRD contexts as a condition of publishing high-impact original findings. (3) Invest in researcher training and capacity in non-WEIRD contexts, so that local researchers design and interpret studies with cultural knowledge that outside researchers lack. (4) Adopt multi-site pre-registered studies (like the Many Labs model) as the standard for claims about universal human behavior. **For policy application:** (1) Require local pilots before scaling behavioral interventions based on WEIRD-context evidence. (2) Treat effect sizes from WEIRD studies as upper bounds, not predictions, for non-WEIRD applications. (3) Report cross-cultural heterogeneity in systematic reviews rather than presenting pooled averages that obscure variation. **For the field's epistemology:** (1) Distinguish mechanisms (present bias as a phenomenon) from specific findings (the magnitude of present bias in a 2% interest rate manipulation) and acknowledge that the former generalizes more readily than the latter. (2) Challenge the implicit assumption that WEIRD behavior is \"normal\" and deviations are interesting — in a world where WEIRD populations are a small minority, this framing inverts what should be the reference class. The goal is a genuinely global behavioral economics that produces findings applicable to the full range of human populations, not a WEIRD behavioral economics exported as if universal.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 510,
+      "out_sha": "8e4361767fcb",
       "note": ""
     },
     {
@@ -3111,11 +3111,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 251,
       "src_chars": 2313,
-      "status": "pending",
+      "status": "done",
       "src_sha": "427201a985cf",
       "src": "### Opening Scenario\n\nIn the mid-1990s, a psychologist named Gerd Gigerenzer grew increasingly frustrated with the mainstream interpretation of heuristics research. The dominant view, developed over two decades of influential work, portrayed heuristics as cognitive shortcuts that produce systematic errors — a catalogue of human failure compared to the rational agent benchmark.\n\nGigerenzer's objection was fundamental: this entire research program was using the wrong benchmark. The question is not whether heuristics produce errors compared to a theoretical rational agent with unlimited time, information, and computing power. The question is whether heuristics produce good decisions in the actual environments where humans operate — environments characterized by limited time, incomplete information, and irreducible uncertainty about the future.\n\nHis response was the ecological rationality framework: the claim that many heuristics are well-adapted to the statistical structure of real-world environments, and that a simple rule applied consistently in the right environment may outperform a complex optimization algorithm applied to an environment where the required information is unavailable or unreliable.\n\nThis chapter examines the Gigerenzer-Kahneman debate — the most fundamental theoretical controversy within the study of human judgment — and asks what it implies for the behavioral economics project this book has been exploring.\n\n\n### 21.1 Fast and Frugal Heuristics\n\n\n#### The Adaptive Toolbox\n\nGigerenzer's research group developed what they call the \"adaptive toolbox\": a collection of simple, fast heuristics that humans deploy flexibly depending on the task environment. The key word is \"adaptive\": these heuristics are proposed to be well-matched to the environments in which they evolved and are typically deployed.\n\n**Key properties of fast and frugal heuristics:**\n\n  1. **Fast** : They operate quickly, without extensive deliberate calculation\n  2. **Frugal** : They use little information — often only one or two cues rather than integrating all available information\n  3. **Domain-specific** : Different heuristics are suited to different task environments\n  4. **Robust** : They generalize well to new cases because they do not overfit to the specific sample used to estimate them\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 670,
+      "out_sha": "2f71fbcb6d10",
       "note": ""
     },
     {
@@ -3123,11 +3123,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 252,
       "src_chars": 2374,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2ee8679f6c3d",
       "src": "#### Take-the-Best: A Case Study\n\nThe canonical example of a fast and frugal heuristic is \"Take-the-Best\" (TTB):\n\n**The TTB algorithm for comparing two options:**\n\n  1. Search for cues to discriminate between the options, starting with the most valid cue (the one that predicts the correct answer most often)\n  2. If the best cue discriminates (one option is higher on this cue), stop and choose the option the cue favors\n  3. If the best cue does not discriminate, move to the second-best cue and repeat\n\nTTB uses only one cue if that cue discriminates — it ignores all other information. This is radically simpler than the rational benchmark of weighting all available cues by their validity and summing.\n\n**The surprising finding:** In tests across multiple real-world domains (predicting city populations, business bankruptcy, medical diagnoses), TTB achieves accuracy comparable to or exceeding multiple regression — the optimal statistical procedure for combining all available information. This is the \"less is more\" effect: using less information sometimes produces better predictions.\n\n**Why does this happen?** Multiple regression overfits to the sample used to estimate it. When applied to new cases (generalization), its complex weighting scheme may perform worse than a simple rule that focuses on the single most valid cue. TTB's frugality is also its protection against overfitting.\n\n\n#### The Recognition Heuristic\n\nA simpler fast and frugal heuristic is the recognition heuristic:\n\n**Rule:** If you recognize one of two options and not the other, infer that the recognized option scores higher on the target criterion.\n\nThis seems like a trivial cognitive shortcut. But research shows that it often produces accurate judgments in environments where recognition is correlated with the target criterion (as it often is — things that are larger, more successful, or more important tend to be more widely known).\n\n**The paradox:** American students asked about relative city populations of German cities outperform German students on some comparisons — because American students recognize only the largest German cities (Berlin, Munich, Hamburg) and confidently apply the recognition heuristic, while German students recognize more cities and must integrate more complex information, some of which is misleading.\n\n\n### 21.2 The Ecological Rationality Framework\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 735,
+      "out_sha": "89fe484a2807",
       "note": ""
     },
     {
@@ -3135,11 +3135,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 253,
       "src_chars": 3497,
-      "status": "pending",
+      "status": "done",
       "src_sha": "322acabe9c0f",
       "src": "#### The Core Claim\n\nEcological rationality is the property of a decision process that is well-matched to the statistical structure of its environment. A heuristic is ecologically rational if it performs well in the environments in which it is typically used — regardless of how it performs in other environments or against a theoretical unconstrained optimizer.\n\n**The key argument structure:**\n\n  1. Behavioral economics documents that heuristics produce errors relative to the rational agent benchmark\n  2. But the rational agent benchmark assumes unlimited information, time, and computation\n  3. In real environments, this benchmark is unavailable — it is not a feasible alternative\n  4. The relevant question is how heuristics perform relative to feasible alternatives, in the actual environments people face\n  5. In many real environments, fast and frugal heuristics perform as well as or better than complex optimization procedures\n\nThis argument does not deny that heuristics produce errors in some environments. It argues that the systematic characterization of heuristics as \"biases\" uses the wrong reference class.\n\n\n#### Matching Heuristics to Environments\n\nThe ecological rationality framework predicts when simple heuristics will outperform complex procedures:\n\nEnvironmental Condition | Favors Simple Heuristic | Favors Complex Optimization  \n---|---|---  \n**Small sample size** (few past cases) | Yes — less overfitting risk | No — complex models overfit  \n**High uncertainty** (noisy, unpredictable future) | Yes — robustness to noise | No — false precision  \n**Time pressure** | Yes — speed advantage | No — too slow  \n**Few valid cues** | Yes — no information lost | No — complexity without benefit  \n**Many valid cues, large sample** | No — misses useful information | Yes — can integrate fully  \n  \nThe implication is that a sophisticated decision-maker would know which environment they face and deploy the appropriate tool — simple heuristic or complex optimization. This is itself a form of higher-order rationality: meta-level selection of the right decision procedure.\n\n\n#### Robustness vs. Optimality\n\nA central concept in the ecological rationality framework is the distinction between optimality and robustness:\n\n* **Optimality** : Achieving the best possible outcome given all available information, in the specific sample observed\n* **Robustness** : Performing consistently well across many samples from the same environment, including new cases not seen during estimation\n\nStandard statistical procedures optimize for the observed sample; they may overfit and generalize poorly. Simple heuristics sacrifice within-sample optimality for cross-sample robustness.\n\nIn domains with high uncertainty and frequent novel cases (new medical patients, new business situations, new social encounters), robustness may be more valuable than optimality.\n\n\n### 21.3 The Kahneman-Gigerenzer Debate\n\n\n#### Kahneman's View\n\nIn the heuristics-and-biases tradition (Chapters 5 and 6), heuristics are described as processes that \"are quite useful but sometimes lead to severe and systematic errors.\" The focus is on documenting the systematic errors — the conditions under which heuristics fail — and the research program is largely about characterizing those conditions.\n\nThe policy implication: people need better information, training, or choice architecture to overcome these systematic errors. The institutional message is one of cognitive limitation requiring external support.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1067,
+      "out_sha": "058f3a7360a9",
       "note": ""
     },
     {
@@ -3147,11 +3147,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 254,
       "src_chars": 2805,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2591d48657d3",
       "src": "#### Gigerenzer's View\n\nThe ecological rationality framework reframes the research: heuristics should be evaluated against feasible alternatives in real-world environments, not against an impossible benchmark. Many systematic errors documented in laboratory studies reflect:\n\n  1. **Mismatched environments** : Laboratory tasks are designed to violate the statistical regularities that make heuristics adaptive in the real world\n  2. **Wrong reference class** : Comparing to an unconstrained optimizer that is not available to real decision-makers\n  3. **Neglect of ecological fit** : Heuristics that fail in laboratory tasks may excel in the real-world environments they evolved to handle\n\n**A specific example of the disagreement — the conjunction fallacy (Linda problem, Chapter 5):**\n\n* **Kahneman's interpretation** : The judgment that \"Linda is a bank teller and feminist\" is more probable than \"Linda is a bank teller\" violates probability theory and reflects the representativeness heuristic producing systematic error\n* **Gigerenzer's counter-interpretation** : When the problem is presented in terms of frequency (\"How many out of 100 people like Linda are bank tellers? How many are bank tellers and feminists?\"), the conjunction fallacy largely disappears. The \"error\" may reflect the use of a natural frequency format versus a probability format, not a stable cognitive bias. Humans are adapted to process natural frequencies, not formal probabilities — which are recent cultural inventions.\n\n\n#### What They Agree On\n\nDespite the debate, Kahneman and Gigerenzer agree on more than their polemical writings suggest:\n\n  1. People do not optimize in the way the rational agent model specifies — both accept this\n  2. Heuristics are the primary tools of human cognition — both accept this\n  3. The performance of heuristics depends on the environment — both accept this (Kahneman increasingly, with the System 1/System 2 framework acknowledging that intuitive processing is often appropriate)\n  4. Domain-specific expertise can improve judgment substantially — both accept this\n\n**The genuine disagreement** is about the normative benchmark: Kahneman treats the rational agent model (or Bayesian statistics) as the appropriate reference, which makes heuristics \"biases.\" Gigerenzer treats ecological fit as the appropriate reference, which makes heuristics \"adaptive.\"\n\n**Thread B:** This is the deepest version of the Rational vs. Human debate. The rational agent model serves as the benchmark in the heuristics-and-biases tradition; ecology and environment serve as the benchmark in the ecological rationality tradition. The two frameworks ask different questions, so they produce different answers about whether human decision-making is fundamentally flawed.\n\n\n### 21.4 Evaluating the Debate\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 799,
+      "out_sha": "857e4a44d1ec",
       "note": ""
     },
     {
@@ -3159,11 +3159,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 255,
       "src_chars": 1541,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c9aa9d39b659",
       "src": "#### What the Evidence Shows\n\n**Gigerenzer's positive contributions:**\n\n  1. Frequency format presentations substantially reduce many classic biases (conjunction fallacy, base-rate neglect) — this is a real finding with important implications for how information should be presented in medicine, law, and policy\n  2. Take-the-Best and similar heuristics do show competitive performance against multiple regression in specific domains — particularly small-sample, high-uncertainty environments\n  3. The focus on environmental structure is a genuine advance — understanding when heuristics succeed and fail is more useful than simply cataloguing failures\n\n**Where Gigerenzer's critique is too strong:**\n\n  1. Many behavioral economics findings are not about static judgment tasks; they are about dynamic choice patterns (loss aversion in sequential decisions, present bias in time series of choices) that the ecological rationality framework does not address straightforwardly\n  2. Some biases are robustly documented in frequency formats and in ecologically valid contexts — loss aversion, status quo bias, and endowment effects are present in real markets, not just laboratory tasks\n  3. The \"less is more\" effect requires specific conditions (small samples, high noise) that are not universal — in information-rich, low-uncertainty environments, complex integration outperforms simple rules\n  4. The ecological rationality argument can become circular if the \"environment\" is defined post-hoc to make whatever humans do appear well-adapted\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 445,
+      "out_sha": "781affb40037",
       "note": ""
     },
     {
@@ -3171,11 +3171,11 @@
       "en_title": "Chapter 21: The Ecological Rationality Critique",
       "order": 256,
       "src_chars": 3165,
-      "status": "pending",
+      "status": "done",
       "src_sha": "beaf9df11b99",
       "src": "#### The Synthesis Position\n\nThe most defensible position integrates both perspectives:\n\n* **When is the ecological rationality view more accurate?** In environments that are statistically stable, where the heuristic evolved or was trained, with time pressure and limited information. Expert judgment in familiar domains (medical diagnosis by experienced clinicians, intuitive judgments by seasoned market traders) often approaches ecological optimality.\n\n* **When is the heuristics-and-biases view more accurate?** In environments that violate the statistical regularities heuristics assume — which includes novel situations, markets with strategic uncertainty, financial products designed to exploit cognitive limitations, and complex policy choices. Also in motivationally charged situations (ego threat, loss framing) where emotional responses compromise judgment.\n\n* **The unified picture:** Heuristics are often well-adapted; they are not always well-adapted; the adaptation depends on the match between the heuristic and the environment; and some environments are systematically designed to exploit heuristic failures. All three parts of this picture are true, and a complete behavioral economics must integrate them.\n\n**A practical guide to applying the synthesis.** When trying to determine which framework offers more insight for a given decision context, two environmental dimensions are particularly useful. First, ask whether the environment is _stable and familiar_ : if decision-makers have extensive experience with the domain, receive clear feedback from past decisions, and can recognize patterns that have repeated over many trials, ecologically calibrated heuristics are likely to be well-adapted. An experienced clinician diagnosing common conditions, a seasoned trader reading a familiar market, or an expert chess player reading a position are operating in domains where heuristic judgment has been refined by feedback. In these settings, the ecological rationality view offers more accurate predictions, and interventions that override intuition with forced calculation may actually worsen performance. Second, ask whether the environment is _novel and designed_ : if the decision-maker lacks domain experience, faces options that did not exist in the evolutionary or cultural environment that shaped their heuristics, or is choosing among products deliberately engineered to exploit cognitive limitations, the heuristics-and-biases view is more accurate. Choosing between health insurance plans, navigating retirement account options, or evaluating financial products with complex fee structures are decisions where no well-adapted heuristic exists — and where choice architecture, decision support, and simplified information can genuinely improve outcomes. The unified principle: match your diagnostic lens to the decision environment, and design interventions that help decision-makers rather than either abandoning them to unaided heuristics in environments that exploit those heuristics, or overriding all intuitive judgment with algorithmic force in environments where experience-honed intuition is the most reliable guide available.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 829,
+      "out_sha": "e662eed7b9d7",
       "note": ""
     },
     {
