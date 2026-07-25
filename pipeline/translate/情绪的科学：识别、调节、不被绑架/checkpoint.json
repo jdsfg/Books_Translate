@@ -2231,11 +2231,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 177,
       "src_chars": 2176,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5071e8aac131",
       "src": "You are walking home alone, late, on a street you have walked a thousand times. Halfway down the block you become aware, without having decided to track it, of footsteps behind you. The footsteps have been there for at least thirty seconds before you noticed them. They are matching your pace. By the time you have noticed, your heart rate has already risen, your breathing has shifted, and your peripheral attention has tightened around the sound behind you. You have not yet thought consciously about what to do; your body is already deciding.\n\nThis is fear in its acute form. Not anxiety, which we covered in Chapter 4. Specifically fear: a body state of sympathetic activation, paired with a concept of a specific, present threat, oriented toward immediate action. The footsteps may or may not be a threat. The body is acting as if they might be, before the conscious mind has finished its analysis. By the time you have decided to cross the street, your body has already prepared you to do so.\n\nThis chapter takes fear seriously as the emotion most closely tied to physical survival, while also being honest about how the popular accounts of fear (the amygdala as fear center, the hardwired fight-or-flight response) have oversimplified the underlying neuroscience. We will look at the body of fear, distinguish it from anxiety more carefully than Chapter 4 did, examine the fast and slow pathways of threat processing, place the action urge framework on the four common responses (flee, freeze, fight, fawn), apply the moves to the footsteps case, and introduce Antonio Damasio as the Thread C scientist for fear specifically — Damasio's somatic-marker hypothesis is the cleanest framing in modern neuroscience for why the body decides before the conscious mind catches up.\n\nWe will also address one of the most useful distinctions in the chapter: the difference between rational fear (information about a real threat) and conditioned fear (a response to a stimulus the body has learned to flag, whether or not it is currently dangerous). The two require different responses, and conflating them is a common cause of fear that does not serve the reader's actual safety.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 679,
+      "out_sha": "ca02c1964e01",
       "note": ""
     },
     {
@@ -2243,11 +2243,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 178,
       "src_chars": 2177,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8673fe9281cb",
       "src": "### 10.1 Fear Versus Anxiety, Revisited\n\nChapter 4 introduced the distinction. This chapter sharpens it.\n\nFear and anxiety share the body state of sympathetic activation. They differ in the concept that completes the construction and in the temporal orientation. _Fear_ is paired with a specific, present, identifiable threat: this thing, here, now. _Anxiety_ is paired with a diffuse, future, often unspecified threat: something might happen, somewhere, sometime.\n\nThe action implications differ. Fear has a clear action available: flee, fight, freeze, fawn, or, in less acute cases, take specific protective steps. The threat is identified and the response fits. Anxiety has no clear action because the threat is not present; the action urges have nowhere to discharge, which is why anxiety produces looping, rehearsal, and avoidance patterns that fear does not.\n\nSome practical implications. Fear that is well-calibrated to real threats is generally functional and should be respected: cross the street, leave the situation, call for help, take the protective action. Anxiety masquerading as fear (the diffuse worry that has crystallized into a specific object whose actual threat level is low) should be examined before acting on. Many readers' chronic patterns turn out to be anxiety in fear's clothing, and the responses that work for anxiety (acceptance, exposure, reduction of suppression) work better than the responses that would suit actual fear.\n\nA useful test: am I responding to something specific, present, and identifiable, or am I responding to a future possibility that has been concretized into a present concern? The first is fear; the second is anxiety. The body sensations may be similar; the appropriate responses are different.\n\n\n#### Definition: Fear\n\nA constructed emotional state characterized by sympathetic activation paired with a concept of a specific, present, identifiable threat, oriented toward immediate protective action, with action urges clustered around flee, freeze, fight, and fawn.\n\nIn plain language, this means: fear is the body's \"this thing, now\" response, with a story about a specific danger and a pull toward immediate action.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 637,
+      "out_sha": "9b5a593cb662",
       "note": ""
     },
     {
@@ -2255,11 +2255,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 179,
       "src_chars": 1649,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f935a543d129",
       "src": "### 10.2 The Body of Fear\n\nThe body of fear is among the most studied of any emotion, particularly in the acute form.\n\n**Cardiovascular** : rapid increase in heart rate (within seconds), often substantial increase in blood pressure, redistribution of blood toward large muscles, vasoconstriction in fingers and toes (the \"cold hands\" of fear).\n\n**Respiratory** : rapid, shallow breathing in acute fear; sometimes a held breath in initial freeze response.\n\n**Muscular** : tension in large muscles, particularly legs, with the body preparing for action; jaw clench; sometimes trembling as adrenaline surges.\n\n**Visual** : pupil dilation; narrowed visual focus on the threat; sometimes tunnel vision in acute fear.\n\n**Auditory** : heightened sensitivity to relevant sounds; sometimes a peculiar dampening of irrelevant sounds.\n\n**Cognitive** : extreme attentional narrowing onto the threat; suppression of non-relevant cognition; sometimes a peculiar clarity in the moment alongside difficulty with longer-range planning. Memory of fearful events is often vivid for the central features and poor for peripheral details.\n\n**Subjective** : a felt sense of urgency, sometimes a peculiar slowing of perceived time, often a clarity that \"this is happening.\" Strong fear can produce dissociation, in which the experience feels distant or as if it were happening to someone else.\n\nA particular feature that distinguishes fear from anxiety: fear's body state typically resolves within minutes if the threat passes, while anxiety's body state can persist for hours. The acute fear response is metabolically expensive, and bodies do not sustain it indefinitely.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 476,
+      "out_sha": "90573b8ac5f0",
       "note": ""
     },
     {
@@ -2267,11 +2267,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 180,
       "src_chars": 3351,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b8f7e5bc4059",
       "src": "### 10.3 The Fast and Slow Pathways\n\nChapter 4 referenced LeDoux's distinction between fast and slow pathways. This chapter takes it more carefully, with the caveats the underlying neuroscience requires.\n\nThe basic framework, established in LeDoux's research program from the 1980s onward, is that the brain processes potential threats through at least two pathways. A _fast_ pathway runs from sensory input through the thalamus to subcortical structures (including the amygdala), producing rapid defensive responses without the input first reaching cortex. A _slow_ pathway runs through cortical processing, allowing more elaborate analysis of the input before the defensive response is triggered or modified. The two pathways operate in parallel, with the fast one capable of initiating a response before the slow one has finished analyzing.\n\nThis framework explains some of the phenomenology of acute fear: the body is acting before the conscious mind has caught up, because the fast pathway has reached the action systems while the slow pathway is still working. In situations where a fast response is genuinely needed (a snake on the trail, a car swerving toward you), the fast pathway is doing exactly the work it is for. In situations where the fast response is over-calibrated (a stick that looked like a snake; a car that turns out to be turning normally), the slow pathway updates the response and the fear settles.\n\nThe caveats are important. First, LeDoux himself, in later work, has been careful to distinguish the _fear circuit_ (the subcortical defensive system) from the _fear feeling_ (the conscious experience of being afraid). The two are not the same. The circuit operates in mice and humans alike; the feeling involves cortical processes that are separate. The popular framing of \"the amygdala is your fear center\" conflates the two, treating the circuit's operation as equivalent to the feeling, which oversimplifies the underlying picture. We met this caveat in Chapter 4; it remains important here.\n\nSecond, the pathways are not strictly two; the underlying neuroanatomy involves many parallel processes, with the simple two-pathway story serving as a useful introduction rather than a complete picture. More recent neuroscience has elaborated the picture considerably, including the role of the periaqueductal gray, the hypothalamus, the prefrontal cortex, and various interconnections among them.\n\nThird, the fast / slow framing should not be misread as \"fast / instinctive / unconscious versus slow / rational / conscious.\" The fast pathway can be modified by learning; the slow pathway is not always rational; the relationship between the two is more dynamic than the simple framing suggests.\n\nFor the chapter's purposes, the framework is useful because it gives the reader a way to understand why their body sometimes responds to threats before they have decided to. The fast pathway is not a mistake; it is the system being designed for situations in which speed matters more than accuracy. The slow pathway updates the response when the cortex has finished its analysis. Most readers experience this update as the moment when their body settles after an acute scare: \"oh, it was just a [stick / shadow / car turning normally].\" The settling is the slow pathway's work catching up to the fast pathway's initial response.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 896,
+      "out_sha": "82c2b377a91f",
       "note": ""
     },
     {
@@ -2279,11 +2279,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 181,
       "src_chars": 2388,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8491a37741ca",
       "src": "### 10.4 The Four Action Urges: Flee, Freeze, Fight, Fawn\n\nPopular accounts of fear often mention \"fight or flight.\" The fuller picture, as understood in modern stress and trauma research, includes at least four typical patterns.\n\n**Flee** : the most common response in many situations. Move away from the threat. The action urge is to physically leave or to escape the situation by other means.\n\n**Freeze** : temporary immobility, often with heightened sensory attention. The freeze response is not paralysis; it is active assessment under cover of stillness, often used by prey animals to avoid detection. In humans, freeze can also serve when neither flight nor fight is available; it buys time.\n\n**Fight** : confront the threat. Useful when the threat is one the reader can plausibly defeat, or when escape is not available. The action urge is to attack or to defend with force.\n\n**Fawn** : appease the threat to deflect it. The fawn response, named more recently in trauma literature (Pete Walker's work, with substantial individual contributions from clinicians working with complex trauma), describes the pattern of placating an aggressor by becoming compliant, helpful, or self-effacing. Common in interpersonal threat situations, particularly for individuals who learned the response in childhood. The action urge is to make oneself small, to mirror the aggressor, to defuse rather than fight or flee.\n\nThe four are not a fixed sequence or hierarchy. Different situations elicit different responses; different individuals tend toward different patterns; the same individual may use different responses in different contexts. Trauma history can shape which response is most readily available, sometimes in ways that no longer fit the reader's current life.\n\nTwo notes. First, _freeze_ is sometimes confused with _paralysis_ and treated as a failure to respond; this is usually a misreading. Freeze is an active response with its own logic and is appropriate in some situations. Second, _fawn_ has particularly attracted attention in trauma work because it can persist in adult interpersonal patterns long after the original threat has passed; readers who notice a pattern of placating people who do not actually threaten them may be running a fawn response that no longer fits the situation. This is one of the more useful distinctions in the chapter for non-acute fear patterns.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 708,
+      "out_sha": "c3872877f26b",
       "note": ""
     },
     {
@@ -2291,11 +2291,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 182,
       "src_chars": 2729,
-      "status": "pending",
+      "status": "done",
       "src_sha": "02a49b37fab6",
       "src": "### 10.5 Conditioned Fear and Calibration\n\nA useful distinction beyond the present-threat framework: _rational fear_ tracks present, identified threats; _conditioned fear_ tracks stimuli the body has learned to flag, whether or not they are currently dangerous.\n\nConditioned fear is the result of learning. A person who was bitten by a dog in childhood may develop conditioned fear of dogs that persists into adulthood, even when the present dogs are not threatening. A person who was in a car accident may have conditioned fear of driving, even when the present driving is safe. A person who experienced trauma in a particular setting may have conditioned fear of that setting or of cues associated with it.\n\nConditioned fear is not pathological in itself; it is the same learning system that allows readers to avoid genuine repeated dangers. It becomes a problem when the conditioned response no longer fits the present situation, and when avoidance of the conditioned cue prevents the reader from updating the learning.\n\nThe treatment for over-calibrated conditioned fear is, broadly, _exposure_ : repeated, controlled encounters with the conditioned cue in safe conditions, allowing the body to learn that the cue does not predict the original danger. This is the core of evidence-based treatment for specific phobias, post-traumatic stress disorder (in some treatment approaches), and panic disorder. The exposure must be in safe conditions for the learning to update; exposure to genuine danger is not therapeutic.\n\nThe reader's task in non-clinical contexts is to distinguish rational fear (worth respecting) from conditioned fear that is no longer well-calibrated (worth gradually addressing). The distinction is not always easy. Some heuristics: rational fear typically tracks variation in actual threat (it goes up when the threat is more present, down when less), while conditioned fear may persist regardless of present circumstances; rational fear typically responds appropriately to additional information (knowing the dog is friendly, the road is clear, the room is safe), while conditioned fear often persists despite the information; rational fear motivates appropriate protective action, while conditioned fear often motivates avoidance that exceeds what the situation warrants.\n\nFor conditioned fear that is interfering with life, the response is usually graded exposure, ideally with a trained clinician for clinical-level patterns. For everyday over-calibration, the reader can often address it through deliberate, safe exposure (going to the conditioned-feared place, doing the conditioned-feared activity) with attention to the body's gradual re-learning that the cue does not predict the original danger.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 764,
+      "out_sha": "1baac396ba4a",
       "note": ""
     },
     {
@@ -2303,11 +2303,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 183,
       "src_chars": 2892,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a920704ed939",
       "src": "### 10.6 The 6 Moves Applied: Maya in the Late Walk\n\nMaya, eight months into the year, is walking home late and has become aware of footsteps behind them. The body has already begun the response.\n\nThis case is unusual in the book because the moves apply differently when there is a possibly real, present threat. The right response is not to suppress the body's response; the body's response may be needed.\n\n**Move 1, Pause** : not a pause that suppresses action, but a pause that allows the slow pathway to catch up. Maya does not act on the immediate impulse to run. They take one breath. They notice what they are seeing and hearing more carefully. The footsteps: are they actually following them, or are they on a parallel path? The pause is short, perhaps two or three seconds, and the goal is integrated assessment rather than slowing the body down.\n\n**Move 2, Granular Labeling** : not \"afraid.\" Maya tries the words. Wary? Yes. Alert? Yes. Frightened? A specific level of frightened, on a 1–5 scale, perhaps a 3. The granular label here is less about reframing and more about precise self-knowledge: how alarmed am I, exactly, and is the level proportionate to what I'm observing?\n\n**Move 3, Reappraise Context** : the context here is the reappraisal. Are the footsteps actually a threat, or are they just another walker on the same street? Maya checks: distance, pace, direction, the time of day, the visibility of the area, the proximity of populated places. The reappraisal is not \"convince yourself it's fine\"; it is \"actually look at the available information.\"\n\n**Move 4, Distinguish Emotion from Action Urge** : the urges are several. Run. Cross the street. Speed up. Pull out the phone and call someone. Slow down to let them pass. Each urge has a different effect. Maya names them and chooses based on the integrated assessment.\n\n**Move 5, Notice Meta-Emotion** : there is sometimes a meta-layer for fear: shame about being afraid, frustration with feeling fearful when \"nothing has happened.\" Maya notes any flicker of this and lets it be present. The shame about fear sometimes leads readers to override appropriate fear in the name of not being \"paranoid\"; this can be dangerous. The meta-layer should be observed, not used to override the underlying signal in either direction.\n\n**Move 6, Build Emotion Architecture** : applies later, not in the moment of acute fear. The acute response is doing what it should; architectural work happens after the situation has resolved. Once the walk is done, Maya can reflect: are there choices about routes, timing, who they walk with, what time of night they are out, that would reduce the situations in which this kind of acute fear occurs? The architecture for fears like this is at the situation-selection level (Gross's first regulation strategy), and the work happens calmly the next morning rather than during the walk itself.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 876,
+      "out_sha": "5524718140d7",
       "note": ""
     },
     {
@@ -2315,11 +2315,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 184,
       "src_chars": 1226,
-      "status": "pending",
+      "status": "done",
       "src_sha": "54adb12310ea",
       "src": "The action Maya takes is small and specific. They cross the street, casually, at a corner, in a way that lets them check whether the footsteps follow. The footsteps continue on the original side. Maya's body settles within thirty seconds. They walk the rest of the way home with the slightly elevated awareness that fear has produced and call a friend on the way home, partly to share the walk and partly because the connection helps the body settle. By the time they get home, the body is back to baseline. They are not frightened of leaving the house tomorrow; the response was situational, the situation passed, and the learning that updated the response was that the footsteps were not a threat. This is the right kind of fear closure: the body responded to a possible threat, the slow pathway updated when the threat turned out not to be present, and the conditioned learning is appropriate (be alert in similar situations; do not avoid all night walks).\n\nFor fears that turn out to involve actual threats, the moves still apply, but the specific actions differ. The point of the moves in fear is not to override the response but to make sure it is calibrated to the actual situation rather than to a generic body state.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 326,
+      "out_sha": "14f27a907f23",
       "note": ""
     },
     {
@@ -2327,11 +2327,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 185,
       "src_chars": 3328,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a11aeb46d95b",
       "src": "### 10.7 What Actually Works: Regulation Strategies for Fear\n\nSeveral practices have specific support, with the caveat that fear-regulation has an asymmetric structure: the goal is sometimes to reduce the response (over-calibrated fear) and sometimes to listen to it (under-calibrated fear).\n\n**Distinguishing rational from conditioned fear**. The most important conceptual move. Rational fear about real present threats should generally be respected and acted on. Conditioned fear that is over-calibrated to current circumstances can be addressed through exposure. Conflating the two leads to either inappropriate suppression or inappropriate avoidance.\n\n**Graded exposure for over-calibrated conditioned fear**. The most reliable treatment for unwarranted fears, particularly phobias and conditioned avoidance patterns. Begin with mildly fear-provoking versions of the stimulus and proceed gradually to more intense versions, at a pace that allows the body to learn that the stimulus does not predict the original danger. For clinical-level patterns (panic disorder, post-traumatic stress, specific phobias that interfere with life), professional support produces better results than self-directed exposure.\n\n**Safety planning for genuine threats**. When fear points at a real threat, the response is concrete: protective action, situation avoidance where appropriate, support systems, sometimes legal or institutional involvement. The fear is doing useful work; the work is to convert it into appropriate action.\n\n**Slow exhale breathing**. The same technique that helps with anger and anxiety. Longer exhales than inhales engage parasympathetic recovery and reduce sympathetic activation. Particularly useful in the immediate aftermath of an acute fear episode.\n\n**Connection**. After fear episodes, social connection helps the body settle. The mechanism is partly co-regulation (the body responds to safe others' calm), partly the reduction of post-event rumination through shared processing.\n\n**Architecture**. Sleep, exercise, regular meals, time outdoors all reduce baseline reactivity. A reader running a sleep deficit will have stronger fear responses to the same stimuli than a well-rested reader will.\n\n**Updating the model**. When fear has been activated and the threat has not materialized, take the moment to register the update. The body learns from these moments; the slow pathway can update the fast pathway's calibration over time. Many readers run conditioned fear patterns that never get updated because the reader does not notice when the feared outcome did not occur.\n\nFor fears that involve trauma, professional support is generally appropriate. Evidence-based treatments include trauma-focused cognitive-behavioral therapy, eye-movement desensitization and reprocessing (with caveats about its mechanism), prolonged exposure therapy, and somatic experiencing. Different approaches suit different readers; the field has moved past the era when one approach was claimed to work for all trauma.\n\nWhat does not work well:\n\n**Forcing yourself through over-calibrated fear**. White-knuckling does not produce the learning that exposure does. The exposure has to be done in a way that allows the body to settle, not just to endure. Forcing through often produces re-traumatization or reinforcement of the fear.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 889,
+      "out_sha": "6d444e866f37",
       "note": ""
     },
     {
@@ -2339,11 +2339,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 186,
       "src_chars": 2621,
-      "status": "pending",
+      "status": "done",
       "src_sha": "edfbb2bf80ae",
       "src": "**Avoiding all situations that produce fear**. The avoidance spiral, as we saw with anxiety. The conditioned cues generalize; the world shrinks; the underlying fear deepens.\n\n**Reasoning the fear away without addressing it experientially**. Rational arguments often do not reach where the conditioned fear lives. The body needs the experiential update, not just the cognitive correction.\n\n\n#### Common Misconception\n\n> \"If I am afraid, something must be actually wrong.\"\n\nOften true; sometimes not. Fear responses are calibrated to past learning as well as to present circumstances. A reader who has experienced trauma may have conditioned fear that activates in situations the present circumstances do not warrant. A reader who has been raised in a culture of high-anxiety risk-perception may have generalized fear that exceeds what the actual environment justifies. The careful response is to take the fear seriously enough to investigate (not to dismiss it) and to investigate accurately enough to distinguish present from conditioned. Both errors damage: dismissing real fear leaves the reader exposed; treating conditioned fear as present reality keeps the reader trapped. The skill is in the investigation.\n\n\n### 10.8 Common Ways to Mishandle Fear\n\nA short catalog.\n\n**The override** : forcing yourself past the fear without listening to it, often as identity work (\"I am not the kind of person who is afraid\"). Sometimes the fear is right and the override produces actual harm.\n\n**The avoidance** : never engaging with situations that produce fear, leading to the avoidance spiral. The world shrinks; the underlying conditioned response deepens.\n\n**The constant scanning** : chronic threat-detection, often in environments that do not actually warrant it. Produces a baseline anxiety state and exhausts the reader.\n\n**The fear-as-virtue performance** : treating one's fear as evidence of moral seriousness or sensitivity, particularly online. The performance amplifies the underlying pattern.\n\n**The fear-shame loop** : ashamed of being afraid, which produces meta-fear, which makes the original fear larger.\n\n**The trauma override that misses real signal** : a reader who learned in trauma not to trust their fear may dismiss appropriate fear, putting themselves in danger they could have avoided.\n\n**The substance shortcut** : alcohol, cannabis, or other substances to manage acute fear. Reliable short-term; reliably costly long-term.\n\n**The catastrophic prediction** : from one fear-activating event, generalizing to a pervasive sense that the world is dangerous. Can become its own anxious pattern over time.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 764,
+      "out_sha": "9c5c0b1f3144",
       "note": ""
     },
     {
@@ -2351,11 +2351,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 187,
       "src_chars": 2716,
-      "status": "pending",
+      "status": "done",
       "src_sha": "55669c0449a8",
       "src": "### 10.9 A Scientist's Take: Antonio Damasio\n\nAntonio Damasio is the Portuguese-American neurologist whose career-spanning work on the relationship between body, emotion, and consciousness has produced one of the more influential frameworks in modern affective neuroscience. His work, beginning in the 1990s and continuing across several books for general readers (_Descartes' Error_ , 1994; _The Feeling of What Happens_ , 1999; _Looking for Spinoza_ , 2003; _The Strange Order of Things_ , 2018), proposed and developed the _somatic-marker hypothesis_ : that the body's signals (heart rate, skin conductance, gut state, muscular tension) provide essential input to decision-making and that decisions made without these signals — for instance, in patients with damage to the ventromedial prefrontal cortex who lack normal emotional response — are impaired even when reasoning ability is preserved.\n\nThe somatic-marker hypothesis is directly relevant to fear. The chapter has described the body's response to a possible threat (the footsteps) preceding the conscious decision to cross the street. Damasio's framework gives the cleanest account of why this is functional rather than primitive: the body is providing information that the conscious mind needs and uses, often before the conscious mind has caught up. The \"low road\" of LeDoux's framework that Chapter 4 introduced is consistent with Damasio's: subcortical circuits flag the body, the body sends signals back, the conscious mind integrates the signals into its decision. Fear, in this picture, is not the rational mind being overridden by primitive feeling; it is the body and the brain working together at speed when speed matters.\n\nThe empirical evidence for the somatic-marker hypothesis is mixed but substantial. The classic patient cases (notably \"Elliot,\" whose ventromedial prefrontal damage left intelligence and language intact but disrupted decision-making) supported the framework strongly. Subsequent experimental work (the Iowa Gambling Task being the most famous, with Damasio's collaborator Antoine Bechara) showed that healthy participants developed anticipatory skin conductance responses to risky choices before they could verbalize which choices were risky; patients with the relevant brain damage did not. Critics have pointed out that some specific claims about gambling-task performance have not replicated cleanly, and that the strong version of the hypothesis (somatic markers are necessary for all decision-making) overreaches. The careful version (body signals are an important input to many decisions, and certain forms of brain damage that disrupt these signals impair decision-making in characteristic ways) has held up well.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 941,
+      "out_sha": "36141a1282a1",
       "note": ""
     },
     {
@@ -2363,11 +2363,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 188,
       "src_chars": 2965,
-      "status": "pending",
+      "status": "done",
       "src_sha": "319a164dc7df",
       "src": "The surprising fact, fitting Thread C: Damasio's framework was a significant departure from a long tradition in cognitive science that treated emotion as either irrelevant to or interfering with rational thought. The classical Cartesian framing — reason and emotion as separate, with reason superior — is the framing Damasio's first popular book (_Descartes' Error_) was named for and against. He argued, with neurological evidence, that the Cartesian split was anatomically and functionally wrong. The book reached general readers in 1994, well before the constructed-emotion view became prominent, and helped prepare the cultural ground for the framework Lisa Barrett would develop more fully two decades later. Damasio's career is one of the cleaner cases in the book where careful neuroscience and careful popular writing converged on a position the broader culture has been slowly catching up to.\n\nFor fear specifically, the lesson is that the body's response is not a bug to be overridden but a feature of how organisms equipped with bodies make decisions in real time. The work the chapter has been describing — pause to let the slow pathway catch up, integrated assessment rather than suppression — fits Damasio's framework cleanly. The body is providing data; the conscious mind is integrating data; the action is the result of the integration, not the override of the body by the mind.\n\n\n### 10.10 Reader's Experiment (Thread B, Entry 10)\n\nFor the next 72 hours, do the following.\n\n  1. Whenever you notice fear (specifically fear, not anxiety; the distinction is from earlier), pause and write down five things in your log: \n     * The body sensation (where, what kind, intensity 1–5)\n     * The specific identified threat (one phrase)\n     * Whether the threat was present and identifiable, or whether the fear seemed to be about something more diffuse (in which case it is anxiety; note this)\n     * Whether the response felt like flee, freeze, fight, or fawn\n     * What you actually did and how the body settled afterward\n  2. Aim for at least three entries.\n  3. For at least one fear instance, ask: was the fear rational (tracking a present, identifiable threat) or conditioned (responding to a stimulus that the body has learned to flag, whether or not currently dangerous)? Note the answer.\n  4. At the end, look at your entries and answer: did any conditioned fears show up that no longer fit your present circumstances? What might it look like to address them through gradual exposure?\n\nThe point of this exercise is to begin distinguishing fear from anxiety more sharply, to begin distinguishing rational from conditioned fear, and to begin noticing the four action-urge patterns in your own responses.\n\nA note: if you notice that this exercise is bringing up trauma material (intense, intrusive memories; flashbacks; severe avoidance), pause the exercise and consider professional support. Trauma work is best done with appropriate guidance.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 943,
+      "out_sha": "914c40bfc498",
       "note": ""
     },
     {
@@ -2375,11 +2375,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 189,
       "src_chars": 1761,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ac863fd608a5",
       "src": "### Chapter Summary\n\nThis chapter named fear as a specific construction: a body state of sympathetic activation paired with a concept of a specific, present, identifiable threat, oriented toward immediate protective action. We sharpened the distinction from anxiety: fear has a present target; anxiety has a future or diffuse one. We named the body of fear, the fast and slow pathways with appropriate caveats, and the four action urges (flee, freeze, fight, fawn). We distinguished rational fear (tracking real present threats) from conditioned fear (tracking learned cues regardless of present danger).\n\nWe applied the moves to Maya's late walk, with the work emphasizing integrated assessment rather than suppression of the body's response. Fear is unusual among the emotions in the book because the goal is sometimes to reduce the response (over-calibration) and sometimes to act on it (real present threat); the moves help distinguish.\n\nAntonio Damasio's somatic-marker hypothesis provided the clearest framing for why the body's response to threat precedes the conscious decision and why this is functional rather than primitive. The body provides essential input to decisions; fear is the body and brain working together at speed, not the rational mind being overridden.\n\nChapter 11 turns to loneliness, an emotion many readers have but few have learned to name precisely. The Cacioppo line of research will be the load-bearing science. The chapter will distinguish loneliness from solitude, from isolation, and from sadness, and will address why some loneliness disguises itself as preference for being alone.\n\n> Fear is the body warning. Listen carefully. The information is sometimes about the present, sometimes about the past.\n\n\n### 10.11 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 516,
+      "out_sha": "b55bc583b0c6",
       "note": ""
     },
     {
@@ -2387,11 +2387,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 190,
       "src_chars": 2966,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ca8cdb1983b5",
       "src": "#### Concept Check\n\n**Q1.** Distinguish fear from anxiety along three dimensions and explain why the distinction matters for response.\n\nHint\n\nConcept, time orientation, action availability.\n\n**Answer:** _Concept_ : fear is paired with a specific, identifiable threat; anxiety is paired with a diffuse, unspecified threat. _Time orientation_ : fear is present; anxiety is future. _Action availability_ : fear has a clear protective action available (flee, fight, freeze, fawn, take specific protective steps); anxiety has no clear action because the threat is not present, leaving the activation undischarged and producing looping cognitive activity. The distinction matters because the appropriate responses differ. Fear that is well-calibrated to real present threats should generally be respected and acted on; the body is doing useful work. Anxiety should be examined before action; the diffuse activation often produces predictions that do not warrant the avoidance, rumination, or reassurance-seeking the body urges. Conflating the two leads to either suppressing genuine fear (which can be dangerous) or treating anxiety as if it pointed at a real present threat (which produces avoidance spirals and chronic patterns). The body sensations are similar; the appropriate cognitive frame and response differ.\n\n**Q2.** Describe the fast and slow pathways of threat processing and the appropriate caveats on the framework.\n\nHint\n\nUseful introduction; not the full picture.\n\n**Answer:** _Framework_ : the brain processes potential threats through at least two pathways. A fast pathway runs from sensory input through the thalamus to subcortical structures, producing rapid defensive responses without first reaching cortex. A slow pathway runs through cortical processing, allowing more elaborate analysis. The two operate in parallel; the fast pathway can initiate response before the slow has finished. _Caveats_. First, fear circuits (the subcortical defensive system) are distinct from fear feelings (the conscious experience), per LeDoux's later work. The popular framing of \"the amygdala is your fear center\" conflates them. Second, the underlying neuroanatomy involves many parallel processes; the simple two-pathway story is a useful introduction rather than a complete picture. More recent neuroscience elaborates considerably, including the periaqueductal gray, the hypothalamus, the prefrontal cortex, and various interconnections. Third, the framing should not be misread as \"fast / instinctive / unconscious versus slow / rational / conscious.\" The fast pathway can be modified by learning; the slow pathway is not always rational; the relationship is more dynamic. The framework is useful for the phenomenology (the body acting before the conscious mind catches up) but should not be taken as a strict anatomical claim.\n\n**Q3.** Name the four action urges of fear and give an example of when each might be appropriate.\n\nHint\n\nFlee, freeze, fight, fawn.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 830,
+      "out_sha": "88089ec28d3b",
       "note": ""
     },
     {
@@ -2399,11 +2399,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 191,
       "src_chars": 3315,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4b3d7cea6982",
       "src": "**Answer:** _Flee_ : move away from the threat. Appropriate when escape is available and likely to succeed (the alley with footsteps; the room with the bear; the situation that is becoming aggressive). _Freeze_ : temporary immobility with heightened sensory attention. Appropriate when both flight and fight are unavailable, when stillness may avoid detection, or when the situation is unclear and assessment is more useful than immediate action. _Fight_ : confront the threat. Appropriate when escape is not available, when the threat is one the reader can plausibly defeat, or when defending another is necessary. _Fawn_ : appease the threat to deflect it. Appropriate in some interpersonal threat situations where compliance defuses immediate danger, particularly when the other options are not available; can also serve in tightly hierarchical situations where direct confrontation would escalate. None of the four is inherently better than the others; all are functional responses in the right contexts. Patterns can become problems when one is over-deployed; for instance, the fawn response that persists in adult relationships long after the original threat has passed, or the fight response in workplace situations that do not warrant it. Recognizing one's default pattern, particularly one shaped by trauma history, is useful in adapting the response to the actual situation rather than running the learned pattern automatically.\n\n**Q4.** Distinguish rational fear from conditioned fear. Why is the distinction important?\n\nHint\n\nTracking present threats versus tracking learned cues.\n\n**Answer:** _Rational fear_ tracks present, identified threats: the fear is proportionate to the actual current danger and updates appropriately with new information about the situation. _Conditioned fear_ tracks stimuli the body has learned to flag, whether or not those stimuli currently predict actual danger. A person bitten by a dog in childhood may have conditioned fear of dogs that persists into adulthood; a person in a car accident may have conditioned fear of driving; a person who experienced trauma in a setting may have conditioned fear of that setting. Conditioned fear is not pathological in itself; it is the same learning system that allows readers to avoid genuinely repeated dangers. It becomes a problem when over-calibrated to current circumstances. The distinction matters because the appropriate responses differ. Rational fear should generally be respected and converted into appropriate protective action. Over-calibrated conditioned fear is best addressed through graded exposure under safe conditions, allowing the body to learn that the cue does not predict the original danger. Conflating the two leads to two errors. Treating conditioned fear as rational fear keeps the reader avoiding situations that are no longer dangerous, with the avoidance pattern often deepening over time. Treating rational fear as conditioned fear (overriding it because the reader thinks they \"shouldn't be afraid\") can put the reader in situations where the present danger is real and the override produces harm. The skill is in honest investigation: is the fear tracking variation in actual current threat, or is it activating regardless of current circumstances? The answer points to the appropriate response.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 854,
+      "out_sha": "664497747afd",
       "note": ""
     },
     {
@@ -2411,11 +2411,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 192,
       "src_chars": 2944,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5b844c3b565b",
       "src": "#### Application Problems\n\n**Q1.** A reader has developed a strong fear of flying after a turbulent experience two years ago. They have begun avoiding work trips that require flights. Apply the chapter to design an approach.\n\nHint\n\nThis is conditioned fear; exposure is the relevant treatment.\n\n**Answer:** _Frame_. The fear is conditioned: a turbulent flight created a body-level association between flying and danger; the association persists even though the present statistical danger of flying is very low. Avoidance reinforces the fear: each avoided flight produces immediate relief and confirms to the body that the avoidance was necessary, deepening the underlying conditioning. Over time, the avoidance generalizes (other transit, other situations involving lack of control) and the world shrinks. _Approach_. Distinguish this from rational fear: the reader is not facing increased actual danger; the fear is over-calibrated. The treatment is graded exposure, ideally with supportive context. _Steps_. Begin with imaginal exposure: vividly imagine flying scenarios, including takeoff, turbulence, landing, while in a safe setting; allow the body to experience the activation without acting on the urge to avoid. Practice for ten to fifteen minutes per session, several sessions over a week or two. Move to in-vivo exposure with smaller doses: visit an airport without flying; sit in a car at the airport observing planes taking off and landing; use a flight simulator if available. Take a short flight with low stakes (a friend or family member, a destination that is not high-pressure, a flight with a manageable duration). Continue with progressively longer or more challenging flights, with the body gradually learning that the cue (being on a plane) does not predict the original danger. Throughout, allow the body to experience the activation rather than suppressing it; the learning requires the body to encounter the cue, settle, and update. _Supportive practices_. Slow exhale breathing during exposure. Pre-flight architecture: good sleep, regular meals, reduced caffeine. Post-flight reflection on what happened versus what the fear predicted. Connection: a friend on the phone before the flight, a friend to call after, can help the body settle. _Professional support_. For fear of flying that is interfering substantially with life, dedicated treatment from a clinician trained in exposure therapy produces faster and more reliable results than self-directed exposure. Many readers do well with self-directed exposure for moderate cases; those who do not should not interpret slow progress as failure but as a signal that more support would help.\n\n**Q2.** A reader notices that they have been chronically scanning for threats in their workplace, even though no specific threat has materialized. Apply the chapter to address the pattern.\n\nHint\n\nChronic scanning is closer to anxiety than to fear; consider both possibilities.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 788,
+      "out_sha": "585a3e2038bd",
       "note": ""
     },
     {
@@ -2423,11 +2423,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 193,
       "src_chars": 2584,
-      "status": "pending",
+      "status": "done",
       "src_sha": "085a3e5e3817",
       "src": "**Answer:** _Frame_. Chronic scanning without an identified threat is closer to anxiety than to fear. The body is in a high-vigilance state without a present, specific target; the cognitive activity is looking for what might warrant the activation rather than responding to what is. The pattern is exhausting and self-reinforcing. Several possible underlying patterns. _Possibility 1: actual workplace dynamics that warrant attention_. The body may be picking up real but subtle patterns (a colleague's hostility, an unstable manager, a precarious job) that the reader has not consciously named. The work is to make the implicit explicit: what specifically might the body be tracking? Naming the underlying concern often allows it to be addressed directly (a conversation, a decision, an action) rather than producing chronic scanning. _Possibility 2: conditioned hyper-vigilance from previous experiences_. A reader who has been in past workplaces with real threats (toxic dynamics, unstable management, layoffs) may run the same scanning pattern in present workplaces that do not warrant it. The work here is exposure to safer environments with attention to the body's gradual update. _Possibility 3: trait-level anxiety amplified by current architecture_. If the reader has a higher baseline anxiety, current sleep, caffeine, exercise, and stress levels may be amplifying it. The work is at the architecture level. _Approach_. Examine the possibilities honestly. If the workplace has actual concerning dynamics, address them with the appropriate steps (conversations, advocacy, decisions about staying or leaving). If the pattern is conditioned from previous experience, allow the present environment to update the body's expectations through deliberate attention to what is different. If the architecture is contributing, address it: sleep, caffeine, exercise, time outdoors, social contact, rest periods during the workday. _Practical step_. Once a day, take a deliberate \"this is the present, this is what is happening\" review: what is the actual current state of the workplace, what is actually happening, what is actually a real concern versus what is pattern. Over weeks, the reviews can begin to update the underlying scanning.\n\n**Q3.** A reader notices that they tend to respond to interpersonal conflict with the fawn pattern (becoming compliant, helpful, self-effacing). They have begun to feel that this is interfering with their relationships and self-respect. Apply the chapter.\n\nHint\n\nFawn that no longer fits the situation; gradual practice of alternative responses.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 674,
+      "out_sha": "17a750cc3fa2",
       "note": ""
     },
     {
@@ -2435,11 +2435,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 194,
       "src_chars": 2719,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5c134c2b7365",
       "src": "**Answer:** _Frame_. The fawn pattern, when learned in childhood or in earlier relationships, can persist into adult contexts where the original threat has passed. The pattern provides immediate relief (the conflict de-escalates; the other person settles) and reinforces itself: each successful fawn confirms that fawning works. Over time, the pattern produces relational asymmetry (the reader's needs go unmet; the other's needs dominate) and erodes self-respect. _Approach_. The work is not to override the fawn response (which is automatic and tied to genuine learning), but to install alternative responses that the body can also access. _Steps_. _Notice the pattern_. When in interpersonal conflict, observe the body's pull toward compliance, mirroring, or self-effacement. Naming the pattern as it arises is the first move. _Practice the pause_. Before responding, take a breath. The pause buys the bandwidth for an alternative response. _Identify the underlying need_. The fawn often masks a need (to be heard, to disagree without being abandoned, to assert a value). Naming the need shifts the response options. _Practice small disagreements_. In low-stakes situations, deliberately disagree, decline, or assert a preference. The body learns that the alternative responses are safe. The first instances will feel uncomfortable; this is expected. _Use scripts when needed_. \"I need to think about that before I commit.\" \"I appreciate the offer, but I'm not going to be able to do that.\" \"I see it differently; let me explain.\" Pre-prepared phrases reduce the in-the-moment cognitive load. _Build the architecture_. Sleep, regular meals, regular exercise, social contact with people who do not require fawning. The architecture supports the body's capacity to access alternative responses. _Professional support_. The fawn response, particularly when it traces to early caregiver dynamics or to past abusive relationships, often benefits from work with a trauma-informed therapist. Internal Family Systems, somatic experiencing, and similar approaches address the layer where the response was originally learned. _Timeline_. The pattern is unlikely to shift quickly. Expect months of practice. Over time, the body learns that alternative responses are safe and that the fawn is not the only available move. The reader does not become the kind of person who never fawns; they become the kind of person who has more responses available and can choose among them.\n\n**Q4.** A reader is preparing to confront a family member about a long-standing issue. They are afraid. Apply the chapter to think about whether the fear should be respected or addressed.\n\nHint\n\nBoth possibilities are real; the work is to investigate.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 618,
+      "out_sha": "2814dd121981",
       "note": ""
     },
     {
@@ -2447,11 +2447,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 195,
       "src_chars": 2885,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3df35d3e4506",
       "src": "**Answer:** _Investigation_. The fear could be tracking several different things, and the appropriate response differs. _Possibility 1: the fear is rational, tracking a real risk in the conversation_. Confronting family members about long-standing issues sometimes produces serious negative consequences: relationship rupture, retaliation, family system reorganization, painful conversations that go badly. If the fear is tracking these real possibilities, it is doing useful work; the response is to take the conversation seriously, prepare carefully, choose timing and setting wisely, and decide whether the conversation is the right move at all. _Possibility 2: the fear is conditioned, tracking past patterns of confrontation that no longer apply_. A reader who learned in childhood that confrontation produced punishment, withdrawal, or contempt may have conditioned fear of confrontation that activates regardless of current circumstances. If the fear is conditioned, it may be over-calibrated to the present situation; addressing it through gradual exposure to lower-stakes confrontations, while still doing the family conversation, may be appropriate. _Possibility 3: the fear is a mix_. Most family confrontations involve both: the conversation has real risks (the family system is real), and the fear's intensity is amplified by conditioned patterns from earlier in the relationship. _Approach_. Examine the fear honestly. What specifically is the fear about? Are the feared outcomes plausible (the family member might react badly; the relationship might be strained), or are they conditioned echoes (a generalized sense of threat that exceeds the specific situation)? For the plausible part, the work is to prepare: the conversation's content, the chosen setting, the desired outcome, the willingness to absorb a hard response. For the conditioned part, the work is to allow the body to encounter a confrontation that goes differently than the conditioned expectation. _Practical steps_. Write out what you want to say, several times, until the language is clean. Choose a setting that supports the conversation (private, low-pressure, with time available). Prepare for various responses, including ones that go badly. Have a support person available afterward. Allow the fear to be present without letting it dictate avoidance; respect what is real about it without being run by what is conditioned. _Outcome_. The conversation may go well or badly; the fear's accuracy will become clearer in the post-conversation reflection. Over time, the reader can update both the conditioned fear (this confrontation went better than the body expected) and the actual model of the family system (this person responds in this way to this kind of conversation). Both updates are useful, and both require having the conversation, even imperfectly, rather than indefinitely deferring it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 662,
+      "out_sha": "0c8b9392f19a",
       "note": ""
     },
     {
@@ -2459,11 +2459,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 196,
       "src_chars": 2272,
-      "status": "pending",
+      "status": "done",
       "src_sha": "98aa753ddcfa",
       "src": "#### Think Deeper\n\n**Q1.** The chapter argues that some fear should be respected and some should be addressed, depending on whether it is rational or conditioned. Some readers will note that this framing puts a heavy burden on self-knowledge: the reader has to correctly classify their own fear, often in difficult moments. How should this burden be held?\n\n**Discussion:** The burden is real, and the framing acknowledges it. Several considerations help. First, the classification does not need to be perfect; it needs to be honest and revisable. Most fears get easier to classify with reflection over hours or days; the in-the-moment response can be made conservatively (act protectively in the moment, classify carefully later) without committing the reader to the wrong long-term pattern. Second, the alternative to attempting classification is worse: treating all fear as rational leaves the reader trapped in conditioned patterns that no longer fit; treating all fear as conditioned leaves the reader exposed to real present dangers. The classification is necessary even if imperfect. Third, the work is collaborative: trusted others, including therapists, can help the reader see patterns that are hard to see alone. Trauma-informed work in particular often surfaces conditioned patterns that the reader had treated as rational, and surfaces present dangers that the reader had been minimizing as conditioned. Fourth, the burden eases with practice. Readers who do this work for years develop better self-knowledge about their own fear patterns and become more accurate at the classification. The skill is real and trainable. Fifth, the burden is not just on the individual; cultures and communities that support honest examination of fear are easier environments for this work than cultures that valorize either fearlessness or perpetual vigilance. The reader's task is to do the honest work in the conditions they are in, knowing that the work is hard and that perfection is not the standard.\n\n**Q2.** Trauma research has expanded what we know about fear and the body in the past several decades. Some readers will encounter ideas like \"the body keeps the score\" and wonder how to evaluate them. What is a balanced view of the trauma literature for the lay reader?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 658,
+      "out_sha": "461b17bdb940",
       "note": ""
     },
     {
@@ -2471,11 +2471,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 197,
       "src_chars": 2162,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ed6413d98d1a",
       "src": "**Discussion:** The trauma literature has produced real and important findings. The recognition that traumatic experiences shape later fear responses, sometimes for years, often through body-level patterns rather than only through cognitive memories, has changed clinical practice substantially in the past several decades. The recognition that some traumas (particularly developmental and complex traumas) require treatment approaches that engage the body, not only the mind, has also been important. Specific evidence-based treatments (trauma-focused cognitive-behavioral therapy, prolonged exposure, eye-movement desensitization and reprocessing, somatic experiencing approaches) have meaningful research support, though with varying effect sizes and varying mechanism evidence. The complications. First, popular books on trauma sometimes outpace the underlying empirical literature, making strong claims about specific mechanisms (e.g., specific brain regions, specific bodily storage of memory) that are more contested than the popular accounts suggest. Second, some popular framings risk over-extending the \"trauma\" category to encompass ordinary distress, which both pathologizes normal emotion and dilutes the seriousness of clinical trauma. Third, popular accounts of trauma sometimes recommend specific practices (certain bodywork modalities, certain energy interventions) whose empirical support is much weaker than the recommendations imply. _A balanced view for the lay reader_. Take seriously the evidence that traumatic experiences can shape present-day fear responses; consider professional support if patterns of fear and avoidance suggest unprocessed trauma; choose treatments with empirical support; remain skeptical of strong specific claims about mechanism, particularly when made by individual clinicians with proprietary methods. The careful version of the field's findings is widely useful; the strong popular versions of specific claims are less reliable.\n\n**Q3.** Some traditions hold that fear is part of human life and should be embraced rather than managed. Reconcile this view with the chapter's emphasis on regulation and exposure.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 610,
+      "out_sha": "53fea8160db1",
       "note": ""
     },
     {
@@ -2483,11 +2483,11 @@
       "en_title": "Chapter 10: Fear",
       "order": 198,
       "src_chars": 1751,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c048af175531",
       "src": "**Discussion:** The traditions in question (Stoic, Buddhist, certain religious approaches) generally do not advocate for never feeling fear; they advocate for a particular relationship with fear in which it is felt fully but does not control the reader's actions. The position is closer to \"fear is welcome as information, not as ruler\" than to \"do not feel fear.\" Reconciliation: the chapter's framework is compatible with this position. The moves do not aim to eliminate fear; they aim to ensure that the response to fear is calibrated to the actual situation rather than to a generic body state. Acceptance and exposure both involve feeling the fear; what changes is the relationship with it. The Stoic does not pretend not to be afraid; they feel the fear and act according to their values. The Buddhist meditator does not eliminate fear; they observe it as it arises and lets it move through. Both are forms of fluency that the chapter has been arguing for throughout. The disagreement, where it exists, is mostly about specific practical strategies. The traditions tend to emphasize sustained contemplative practice and identity-level reorientation; the chapter emphasizes specific moves and graded exposure. The two are not mutually exclusive; readers committed to a contemplative tradition can use the chapter's specific moves as part of the practice, and readers using the chapter's framework can deepen the work with contemplative practice. The deepest version of the chapter's argument is consistent with the traditions: fear is not the problem; the reader's relationship with fear is what they have leverage over.\n\n> Fear is the body warning. Listen carefully. The information is sometimes about the present, sometimes about the past.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1005,
+      "out_sha": "96ac20f4bce0",
       "note": ""
     },
     {
