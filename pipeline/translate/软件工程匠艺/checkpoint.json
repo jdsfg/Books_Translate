@@ -111,11 +111,11 @@
       "en_title": "导读",
       "order": 0,
       "src_chars": 3447,
-      "status": "pending",
+      "status": "done",
       "src_sha": "05e77607f958",
       "src": "> 本导读整理自 Socratopia 网站本书介绍页：https://www.socratopia.app/library/software-engineering-craft-en\n\nThe case for engineering craft used to rest on the cost of typing code. In 2026 that case collapses: an AI assistant can produce a 500-line working module in fifteen minutes. So the loud voices say craft now matters less. They are wrong, and this book is the careful argument for why. The bottleneck did not disappear — it rotated. A 2016 engineer's day was 60% writing / 20% reviewing / 20% maintaining; a 2026 engineer's day is 20% / 40% / 40%. The disciplines that pay rent in the new split — tests as spec, refactoring under test, naming as design, ADRs, code review, version-control narrative, and AI as collaborator — are what this book actually teaches.\n\nThree working engineers carry the chapters. Asher Goldman at Trellis is the staff engineer at an eight-year CRM codebase, the one who runs every surprising line through what was the author worried about? before changing it. Aki Tanaka at Helix is the senior engineer at an AI-native startup who refuses to open Claude Code until her failing tests are red on screen — a habit that formed the autumn an agent produced six hundred plausible-looking lines that corrupted webhook state in staging and ate two days plus a Sunday. Carmen Ortiz manages engineering at Currents and writes every review comment label-first ( Blocking: , Suggestion: , Decision needed: ) so the reader knows what is required of them before reading any prose. They appear and reappear, anchored to distinct stacks (TypeScript/Postgres, Rust/Cloudflare Workers, Python/FastAPI) and distinct organizational realities, so the disciplines land on real working code rather than thought experiments.\n\nThe book is structured around discipline-over-dogma: every rule comes with its reasoning and its when-to-break-it clause. The chapter on TDD is honest about when test-after is the rational choice. The chapter on patterns names which ones aged badly (Singleton, Visitor) and why. The chapter on big rewrites surveys both Joel Spolsky's classic warning and the cases where rewrites shipped. A failure case study sits next to every win — Northwind's ledger migration that stalled at 25% traffic and was abandoned, alongside the parallel-paths refactor that worked. Thread C runs through Parts III-VIII as a recurring callback: the seven code lies LLMs tell in 2026 (happy-path bias, over-abstraction, inconsistent style, missing error handling, off-by-one boundary errors, hallucinated APIs, plausible-looking insecure code), each chapter naming which lie its discipline catches, and Appendix D consolidating all seven into a two-minute printable AI-code review checklist. By the last chapter, when Asher, Aki, and Carmen converge on a five-month cross-organization customer-consent migration, the disciplines stop being abstractions: you have watched them practiced for 23 chapters across three real engineering contexts.\n\n**Target audience**：Working software engineers (2–10 years experience); engineering managers seeking vocabulary for what they sense in code reviews; senior engineers on promotion track; juniors aiming to skip five years of pattern-discovery; tech leads onboarding new teams; consultants advising on code health.\n\n**Prerequisites**：One year shipping production code in any language. Comfort with the command line, a basic understanding of version control, and willingness to read code rather than skim it.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1899,
+      "out_sha": "d373f6e96fef",
       "note": ""
     },
     {
@@ -123,11 +123,11 @@
       "en_title": "导读",
       "order": 1,
       "src_chars": 110,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c53164a61bf2",
       "src": "**Study hours**：100–120 hours across 23 chapters (4–5 hours per chapter, 4–5 Socratopia sessions per chapter).",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 80,
+      "out_sha": "4f724b118b2c",
       "note": ""
     },
     {
@@ -135,11 +135,11 @@
       "en_title": "Introduction",
       "order": 2,
       "src_chars": 2826,
-      "status": "pending",
+      "status": "done",
       "src_sha": "30a58f0e7221",
       "src": "This is a book about software engineering craft in 2026, when AI assistants generate a large share of working code. Its central observation: AI changed the equation. The cost of producing a working first draft of code has collapsed; the cost of reviewing, integrating, and maintaining that code has not. The bottleneck moved from typing to reviewing, integrating, and maintaining. Craft, in 2026, is the set of disciplines that minimize the cost of the work that did not collapse.\n\nThe book is organized around the disciplines that _compound_ over a five-to-ten-year career: tests as spec, refactoring under test, naming as design, ADRs, code review, version-control craft, and AI as collaborator. Each is taught with reasoning, mechanics, and a 2026-specific angle. Each chapter ends with the three-year question: _in three years, when someone debugs this code at 2am, will they thank you or curse you?_ The disciplines that produce the \"thank you\" answer are the ones the book is about.\n\nThree protagonists recur through the chapters as case studies. Asher Goldman is a Staff Engineer at Trellis, a CRM SaaS with an 8-year codebase and 200 engineers; his daily reality is legacy refactoring, technical debt management, and the archaeology of decisions made before he arrived. Aki Tanaka is a Senior Engineer at Helix, an AI-native devtools startup with 25 engineers and a 2-year-old Rust-and-TypeScript codebase; her daily reality is the AI-collaborative workflow as production discipline. Carmen Ortiz is an Engineering Manager at Currents, a 50-person data platform organization; her daily reality is code review culture, async engineering across three time zones, and the team-level disciplines that scale beyond any individual. They appear across the chapters where their contexts are most illustrative; in the final chapter, they converge on a joint multi-team migration project.\n\nThe book also tracks two recurring threads. Thread B follows a single function (`calculate_refund`) across five maturity stages — first draft (Chapter 2), after first review (Chapter 15), after first bug (Chapter 19), after first refactor (Chapter 10), and five years later (Chapter 23) — as a sidebar example of how the disciplines compound on the same lump of code. Thread C catalogs the seven characteristic patterns of bugs that LLMs introduce in 2026-generated code: plausible-but-untested edge cases, over-abstraction (the pattern tax), inconsistent style with surrounding code, missing or wrong-granularity error handling, subtle off-by-one and boundary errors, hallucinated library APIs, and plausible-looking insecure code. Every chapter in Parts III through VIII names which of these lies the chapter's discipline catches and shows the catch in concrete code; Appendix D consolidates all seven into a printable review checklist.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1173,
+      "out_sha": "cb6bc5f68a7b",
       "note": ""
     },
     {
@@ -147,11 +147,11 @@
       "en_title": "Introduction",
       "order": 3,
       "src_chars": 3259,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d8a2e8ae88ed",
       "src": "The book's structure follows the dependency order of the disciplines. Part I (Chapters 1-2) establishes the 2026 frame and the foundation skill of reading old code. Part II (Chapters 3-4) covers Git craft, local and team. Part III (Chapters 5-8) builds the testing foundation: pyramid, property-based and mutation testing, test doubles, TDD versus test-after. Part IV (Chapters 9-11) builds refactoring on top of the test foundation: the twelve refactorings that pay for themselves, refactoring under test, the multi-month parallel-paths refactor. Part V (Chapters 12-14) builds the design vocabulary: patterns that stayed useful, patterns that aged badly, hexagonal architecture and functional core / imperative shell. Part VI (Chapters 15-16) covers code review and team practices. Part VII (Chapters 17-18) covers documentation and naming. Part VIII (Chapters 19-21) covers technical debt and codebase sustainability: the four-quadrants model, the Boy Scout Rule and Strangler Fig pattern, and the rare cases when a big rewrite is justified. Part IX (Chapters 22-23) closes with the AI-collaborative workflow itself and the synthesis across all prior chapters.\n\nThis is not a TDD evangelism book. It is not a GoF design-patterns catalog. It is not a \"clean code\" prescriptive book. It is not an architecture book; architecture belongs to a different volume in this series. It is not an interview prep book and not an observability or SRE book; those have their own volumes. Every chapter follows the discipline-over-dogma principle: every rule comes with its reasoning and its when-to-break-it clause. The engineer who knows when to apply each discipline and when to skip it is the engineer this book aims to produce.\n\nThe intended reader is the working software engineer with two to ten years of experience, the engineering manager who wants vocabulary for what they sense in code reviews, the senior engineer on the promotion track, the junior engineer trying to skip five years of pattern discovery, and the tech lead onboarding a new team. The prerequisite is one year of shipping production code in any language. Comfort with the command line, basic version-control familiarity, and willingness to read code rather than skim it are assumed.\n\nTo get the most out of the book: read sequentially. Each chapter builds on the previous; skipping ahead means missing the foundation that makes the later chapters land. After the first read-through, return to the disciplines you found most compelling and apply them deliberately for a month each. The book is the map; the practice is the journey. Over a year of deliberate practice on five or six disciplines, the engineer's craft compounds visibly; over a five-year career, the difference between the engineer who practiced and the engineer who did not is enormous.\n\nThe reader who finishes the book should think: _craft in 2026 is not what it was in 2016; the bottleneck shifted from typing to reviewing and integrating; the disciplines that compound are tests as spec, naming, ADRs, refactoring under test, version-control craft, code review as discipline, and AI as collaborator; I can ship code that lasts five years._ That feeling, the long-term-thinking engineer, is what this volume exists to produce.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1188,
+      "out_sha": "84864ca16c56",
       "note": ""
     },
     {
@@ -159,11 +159,11 @@
       "en_title": "Introduction",
       "order": 4,
       "src_chars": 388,
-      "status": "pending",
+      "status": "done",
       "src_sha": "da1cbf3b4cda",
       "src": "Software Engineering Craft is Volume 1 of Series III in the Modern Practitioner's Software Library. The library covers foundational craft (Series III), system architecture (Series IV), and production operations (Series IV continued). This volume is the foundation; the later volumes build on it.\n\nGood luck with the practice. The craft is the work; the work is the craft.\n\n— SocraLab\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 223,
+      "out_sha": "d229d07039d6",
       "note": ""
     },
     {
