@@ -1875,11 +1875,11 @@
       "en_title": "Chapter 11: Big Refactors with Feature Flags",
       "order": 147,
       "src_chars": 3379,
-      "status": "pending",
+      "status": "done",
       "src_sha": "09d5f015d1a5",
       "src": "#### Application Problems\n\n**Q5.** Propose a six-month refactor plan for a subsystem in your codebase that has accumulated debt. Include: the target architecture, the parallel-paths design, the canary phases, the success metrics, and the deletion milestone.\n\nHint\n\nUse §11.7 as the template.\n\n**Answer:** This is an open exercise. A reasonable plan for a hypothetical \"OrderProcessing\" subsystem:\n\n* **Target architecture** : split OrderProcessing into separate Validator, Calculator, and Persister classes; replace the legacy database query layer with the current ORM idioms; remove three deprecated payment-method handlers.\n* **Parallel paths design** : abstract OrderProcessing behind an `IOrderProcessor` interface; old implementation in `LegacyOrderProcessor`, new in `OrderProcessorV2`. Flag `order_processing_v2_enabled` routes; flag `order_processing_v2_shadow` enables comparison.\n* **Canary phases** : shadow staging 100%, then production canary 1% / 10% / 50% / 100%. Each phase one week; each transition gated on metrics.\n* **Success metrics** : error rate identical to baseline (within 0.1%); latency identical (within 5%); shadow mismatch rate < 0.01% by end of phase 3.\n* **Deletion milestone** : at 100% on new path for two consecutive weeks with no incidents, file deletion PR for old path; flag removal in the same PR.\n\nAdjust to the specific subsystem; the structure transfers.\n\n**Q6.** Implement a small parallel-paths abstraction for one function in your codebase. Use a feature flag to route. Write tests that exercise both paths. Demonstrate that flipping the flag changes the implementation.\n\nHint\n\nThe flag service can be a simple `os.environ` lookup for the prototype.\n\n**Answer:** This is an open exercise. A minimal prototype:\n    \n    \n    class FeatureFlag:\n        @staticmethod\n        def is_on(name):\n            return os.environ.get(f'FLAG_{name.upper()}', '0') == '1'\n    \n    class Calculator:\n        def __init__(self, legacy, modern):\n            self._legacy = legacy\n            self._modern = modern\n        def compute(self, x):\n            if FeatureFlag.is_on('modern_calculator'):\n                return self._modern.compute(x)\n            return self._legacy.compute(x)\n    \n\nTests:\n    \n    \n    def test_default_uses_legacy():\n        os.environ.pop('FLAG_MODERN_CALCULATOR', None)\n        calc = Calculator(LegacyCalc(), ModernCalc())\n        assert calc.compute(5) == LegacyCalc().compute(5)\n    \n    def test_flag_routes_to_modern():\n        os.environ['FLAG_MODERN_CALCULATOR'] = '1'\n        calc = Calculator(LegacyCalc(), ModernCalc())\n        assert calc.compute(5) == ModernCalc().compute(5)\n    \n\nThe prototype demonstrates the pattern. A production version would use a real flag service (LaunchDarkly, etc.) and would include the shadow-read comparison; the abstraction is the same shape.\n\n**Q7.** Identify a subsystem in your codebase that has both (a) accumulated debt and (b) low change frequency. Defend the choice _not_ to refactor it. What discipline would you apply instead?\n\nHint\n\nThe math of payback depends on change frequency.\n\n**Answer:** This is an open exercise. A defensible non-refactor decision for a low-frequency subsystem:\n\nThe subsystem (e.g. a legacy admin tool) is changed twice a year. Refactoring it would take a quarter; the payback per change is small; the refactor never pays back. Instead:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1887,
+      "out_sha": "3080e5c39645",
       "note": ""
     },
     {
@@ -1887,11 +1887,11 @@
       "en_title": "Chapter 11: Big Refactors with Feature Flags",
       "order": 148,
       "src_chars": 638,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3fe6ee9d0a37",
       "src": "* **Document the quirks** in the subsystem's README so that the twice-a-year visitor does not start from scratch.\n* **Add tests for the few critical behaviors** so that the rare changes are safer.\n* **Mark the subsystem as deprecation candidate** in the team's documentation; if it is later replaced wholesale (e.g. by a new admin tool), the refactor becomes unnecessary.\n* **Apply the Boy Scout Rule** when touched: small improvements at the moment of change, no scheduled big refactor.\n\nThe discipline is to _not refactor_ with intent, rather than to default to refactoring as the answer to debt. Some debt is appropriate to live with.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 195,
+      "out_sha": "30c0f31418e9",
       "note": ""
     },
     {
@@ -1899,11 +1899,11 @@
       "en_title": "Chapter 11: Big Refactors with Feature Flags",
       "order": 149,
       "src_chars": 3112,
-      "status": "pending",
+      "status": "done",
       "src_sha": "913a989482b6",
       "src": "#### Think Deeper\n\n**Q8.** Defend or refute: \"In 2026, AI agents make big refactors so cheap that they should be done more frequently.\" What changes about the cost-benefit?\n\n**Discussion:** Pro-frequency: the agent multiplies the engineer's implementation productivity by 3-4× on the mechanical work. A six-month refactor becomes a three-month refactor; a three-month refactor becomes a six-week refactor. The economics of refactoring shift toward more frequent application.\n\nPro-caution: the verification phase (shadow comparison, canary monitoring, mismatch investigation) is not as accelerated. The judgment calls remain the human's. So the total elapsed time of a big refactor is less reduced than the implementation time alone. Additionally, the codebase undergoing constant refactoring is a codebase where engineers cannot maintain a stable mental model; some stability is itself valuable.\n\nThe synthesis: AI lowers the _implementation_ cost of big refactors; the _verification, judgment, and team-attention_ costs are roughly unchanged. The new equilibrium is more big refactors than 2024 but not \"constantly refactoring.\" Teams that have a clear migration target, sufficient bandwidth, and demonstrated migration competence should do them more often; teams that lack those should not, regardless of AI speed.\n\n**Q9.** Consider the Strangler Fig pattern (preview of Chapter 20) versus the big-rewrite alternative (Chapter 21). Why is the Strangler Fig the safer choice, and when is the rewrite ever the right answer?\n\n**Discussion:** The Strangler Fig is safer because each step is small, verifiable, and reversible. The old system stays as the safety net throughout; if the new system has bugs, the old system catches them. The migration completes incrementally; the team learns as they go; the architecture can be revised mid-migration without restarting.\n\nThe big rewrite is the opposite: a long period of no shipping, no verifiable progress, no fallback. Joel Spolsky's \"Things You Should Never Do, Part I\" essay (Chapter 21) names this as the canonical failure mode. Most rewrites take much longer than estimated and end in either abandonment or a hybrid system that has the worst features of both.\n\nWhen is the rewrite right? Rarely, but the cases exist:\n\n* **Architectural impossibility** : the old system's design fundamentally cannot accommodate a required new behavior, and there is no incremental path. Example: migrating from a single-tenant to a multi-tenant database with completely different schema.\n* **Domain change** : the underlying business or technical assumptions have changed so much that the old system is solving a different problem. Example: a system designed for batch processing being repurposed for real-time.\n* **Strong team commitment with full leadership backing** : the team is willing and resourced for a multi-quarter rewrite, with no expectation of feature work during it. This is rare and usually preceded by an explicit business decision.\n\nIn most cases, the Strangler Fig wins. The big rewrite is the last resort, not the default. Chapter 21 develops this in depth.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 951,
+      "out_sha": "960e282882f6",
       "note": ""
     },
     {
@@ -1911,11 +1911,11 @@
       "en_title": "Chapter 11: Big Refactors with Feature Flags",
       "order": 150,
       "src_chars": 2993,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ee83d816d20d",
       "src": "### Chapter Summary\n\nBig refactors (§11.1) are justified when the subsystem is changed frequently, the debt drags velocity measurably, the structure prevents an upcoming change, and the team has bandwidth and a clear target. All four matter; missing any one weakens the case.\n\nThe parallel-paths strategy (§11.2) is the core technique: build the new path alongside the old, route via feature flags, compare in shadow mode, migrate gradually via canary phases. The strategy bounds the blast radius of any bug to the percentage of traffic on the new path.\n\nFeature flags (§11.3) are the safety mechanism. They make each phase change a configuration change rather than a deployment; rollbacks are seconds, not hours. The flag design for big refactors is more elaborate than typical product flags: per-percentage granularity, primary-path and shadow-read independence, planned removal lifecycle.\n\nThe Strangler Fig pattern (§11.4) is the broader strategy that contains parallel paths. Chapter 20 develops it; here, the point is that parallel paths is the technique for each function, while Strangler Fig is the strategy for the whole migration.\n\nThe AI-Layer (§11.5) is that agents are excellent at the implementation phase (writing the new path from the old as a spec) but cannot do the judgment phases (migration decision, infrastructure design, mismatch investigation, phase-advance decisions). The agent multiplies productivity on implementation by 3-4×; the human's work is concentrated in design and verification.\n\nThe risks (§11.6) are named: drift between paths, mid-migration attention loss, naive comparison, low-frequency bugs masked by short canary, hidden coupling at deletion. Each has a mitigation; the discipline is to plan for them upfront, not to discover them mid-migration.\n\nChapter 12 opens Part V (Patterns Sensibly Applied) with the patterns that stayed useful: Strategy, Adapter, Decorator, Observer, Iterator, Command. The transition from refactoring to patterns is natural: refactoring often produces patterns; patterns are the vocabulary of repeated refactoring moves; knowing both gives you the tools to recognize and apply structural improvements at scale.\n\n\n#### Three Takeaways\n\n  1. **Before approving a six-month rewrite proposal, demand the parallel-paths alternative on paper.** Most \"we have to rewrite\" arguments collapse when forced to articulate the Strangler Fig version of the same migration. Make the choice explicit, not default.\n  2. **Treat the shadow-comparison logic as production code.** Tests for the comparison itself; periodic audits of \"matched\" traffic by hand to verify the comparison is actually matching. Naive equality misses the bugs that justify shadow comparison in the first place.\n  3. **Set a calendar deadline for the migration's deletion phase before the first commit lands.** Six months from now, the old code is deleted; no exceptions without an explicit team decision. Open-ended migrations become permanent dual-system tax.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 982,
+      "out_sha": "25b22b0189fb",
       "note": ""
     },
     {
