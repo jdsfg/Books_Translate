@@ -935,11 +935,11 @@
       "en_title": "Chapter 5: Energy Balance and Micronutrients — The Complete Fuel Picture",
       "order": 70,
       "src_chars": 2633,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8239bcb3a13d",
       "src": "#### Think Deeper\n\n**5.7** The chapter describes how leptin resistance in obesity means that chronically elevated leptin fails to produce its expected appetite-suppressing effect. This is analogous to insulin resistance in Type 2 diabetes. What does this parallel suggest about the relationship between processed food consumption, adiposity, and hormonal signaling — and what does it imply for treating obesity through dietary change alone?\n\n**Discussion:** The parallel between insulin resistance and leptin resistance suggests a common underlying mechanism: chronic overstimulation causing receptor downregulation or post-receptor signaling defects. In the case of insulin resistance, chronic hyperinsulinemia (from high-GI diets and caloric excess) causes cells to reduce insulin receptor sensitivity. Similarly, chronic hyperleptinemia (from excess adipose tissue) may cause hypothalamic leptin receptors to downregulate. Both can be worsened by inflammatory signals from excess adipose tissue and by certain dietary patterns (particularly ultra-processed food, which Chapter 17 addresses). The implication for dietary change: reducing processed food consumption (which reduces both insulin spikes and inflammatory signaling) may improve both insulin and leptin sensitivity, restoring normal appetite regulation. This is one reason why dietary change shows variable responses — a person with severe leptin resistance may need to restore hormonal sensitivity before food choices alone produce the expected appetite reduction. The mechanistic complexity also suggests that obesity is not primarily a \"willpower problem\" but a hormonal dysregulation problem. Environmental factors (ultra-processed food, sleep disruption, stress, toxic chemicals that affect adipose signaling) drive this dysregulation, and addressing them systemically may be more effective than individual dietary advice. This is why GLP-1 receptor agonists (Ozempic/Wegovy), which bypass the broken satiety signaling system entirely by directly activating the brain's fullness pathway, have shown dramatic weight loss results where willpower-based approaches fail — but we will explore this in Chapter 13.\n\n**5.8** The chapter states that \"the best vitamin supplement is dietary diversity.\" But nutritional epidemiology is plagued by the healthy user effect — people who take supplements also tend to eat better, exercise more, and engage in other healthy behaviors, making it hard to isolate supplement effects. Given this methodological problem, how confident should we be in the claim that whole food micronutrients are superior to equivalent supplement doses?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 748,
+      "out_sha": "e620c8c7aad9",
       "note": ""
     },
     {
@@ -947,11 +947,11 @@
       "en_title": "Chapter 5: Energy Balance and Micronutrients — The Complete Fuel Picture",
       "order": 71,
       "src_chars": 1741,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6dd5fd5ad17b",
       "src": "**Discussion:** This is a genuinely difficult methodological question. The mechanisms for why whole food nutrients might outperform isolated supplements include: (1) Nutrient synergies — vitamins and minerals in food exist alongside cofactors, secondary compounds, and other nutrients that enhance absorption and utilization. For example, the iron in meat (heme iron) is in a form optimized for absorption; synthetic ferrous sulfate in supplements has lower bioavailability for the same dose. (2) The food matrix — fiber, polyphenols, and other compounds in food modify the rate of nutrient absorption (the soluble fiber in oats, for example, slows glucose absorption and may enhance mineral bioavailability for some minerals). (3) Dose calibration — food provides nutrients in doses calibrated by evolution and traditional diets; supplements provide doses in ranges that were never present in foods (400mg Vitamin E, 500mg Vitamin C per day are not doses achievable from food). However, the honest answer to the methodological question is: we don't fully know. The randomized trials testing supplements (Vitamin E, beta-carotene, selenium in the SELECT trial, Vitamin C in many trials) have generally been negative or harmful — but these trials tested doses far above food levels. The trials testing food-based or food-level dose supplements have been more mixed. The \"whole food is better\" claim is biologically plausible and consistent with the observational data, but it is difficult to prove in controlled experiments because we can't put random people on whole-food diets for decades. The pragmatic conclusion remains: eat diverse whole foods, supplement for documented deficiencies, and be very skeptical of megadose supplementation.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 525,
+      "out_sha": "0e9e23534e64",
       "note": ""
     },
     {
@@ -959,11 +959,11 @@
       "en_title": "Chapter 5: Energy Balance and Micronutrients — The Complete Fuel Picture",
       "order": 72,
       "src_chars": 1916,
-      "status": "pending",
+      "status": "done",
       "src_sha": "544eacf07b58",
       "src": "### Chapter Summary\n\nEnergy balance is real — governed by the laws of thermodynamics — but far more complex in practice than the simple \"calories in, calories out\" framework suggests.\n\n**Key ideas:**\n\n* **BMR accounts for 60–75% of TDEE** — far more than exercise. It is primarily determined by lean body mass, age, and thyroid function.\n* **Adaptive thermogenesis** causes the body to reduce metabolic rate during caloric restriction — beyond what weight loss alone would predict. This is the primary biological reason diets fail long-term.\n* **Leptin and ghrelin** regulate appetite and energy balance through hormonal signals that are disrupted by caloric restriction, obesity, and sleep deprivation. Weight management works best when it works with these systems, not against them.\n* Micronutrients are not optional extras but essential coenzymes, enzyme activators, and structural components. **Without micronutrients, macronutrient metabolism fails.**\n* **Vitamin D** is the most common micronutrient deficiency in developed countries and the supplement with the strongest evidence for widespread use. **B12** is non-negotiable for vegans.\n* The distinction between **deficiency correction** (clearly evidence-based) and **optimization supplementation** (mostly not) is the key to navigating the supplement industry.\n\n**Thread 3 (Energy Balance) — First Complete Model:** Simple calories → full model including adaptive thermogenesis, hormonal appetite regulation, bioavailability variation, and macronutrient-specific effects. The model will gain further layers in Chapters 12, 13, 16, and 17.\n\n**Looking ahead:** Part II begins with Chapter 6 — the detective story of how fat science went wrong. With the biochemistry of Chapters 1–5 as your foundation, you're ready to understand not just what happened but why it happened, and what it tells us about how nutrition science works (and sometimes doesn't).\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 622,
+      "out_sha": "facf5a4928a3",
       "note": ""
     },
     {
@@ -971,11 +971,11 @@
       "en_title": "Chapter 6: The Fat Phobia Story — How Science Goes Wrong (and Gets Right)",
       "order": 73,
       "src_chars": 1477,
-      "status": "pending",
+      "status": "done",
       "src_sha": "25e7ad513ec1",
       "src": "In 1953, a physiologist named Ancel Keys published a graph that would shape dietary policy for the next half-century. The graph showed a striking correlation between the percentage of calories from fat in the diets of six countries and their rates of heart disease. The points fell almost perfectly on an upward line: more fat, more heart disease.\n\nBut here was the problem nobody noticed at first: Keys had data from 22 countries. He had selectively chosen 6 that supported his hypothesis and omitted the 16 that didn't.\n\nWhat followed is one of the most instructive stories in the history of science — and one of the most consequential. A partially correct idea, championed by a charismatic scientist, amplified by government policy, and weaponized by food industry interests, became a 40-year dietary dogma that may have made the obesity and metabolic disease epidemics considerably worse than they needed to be.\n\nUnderstanding this story is not just interesting history. It is essential preparation for evaluating every nutrition headline you will read for the rest of your life.\n\n**Thread 1 (The Fat Question) — Deep Dive:** Chapter 4 established what fat IS biochemically. This chapter tells the story of how a partially correct idea about fat became a policy catastrophe.\n\n**Thread 2 (How to Read Research) — Confounders and Bias:** This chapter is a masterclass in understanding how confounders, selection bias, and industry funding can corrupt scientific conclusions.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 470,
+      "out_sha": "1e0351546049",
       "note": ""
     },
     {
@@ -983,11 +983,11 @@
       "en_title": "Chapter 6: The Fat Phobia Story — How Science Goes Wrong (and Gets Right)",
       "order": 74,
       "src_chars": 2905,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a6fe7713d28f",
       "src": "### 6.1 The Seven Countries Study: A Brilliant Idea, Executed Selectively\n\nAncel Keys was a remarkable scientist. He developed the K-ration (the military field ration that kept soldiers fed during WWII), pioneered research on starvation physiology, and brought a serious scientific mind to the question of why rates of heart disease varied so dramatically across countries.\n\nHis \"Seven Countries Study,\" launched in the 1950s, was genuinely innovative: a prospective cohort study following over 12,000 men in Finland, Greece, Italy, Japan, Netherlands, United States, and Yugoslavia over decades, recording their diets and tracking their health outcomes.\n\nThe finding that emerged: countries with high saturated fat intake (Finland, United States) had high rates of coronary heart disease. Countries with low saturated fat intake (Japan, Crete) had low rates. The correlation looked compelling.\n\nBut several problems emerged:\n\n**Selection bias.** As mentioned, Keys had data from far more countries. When statistician John Yerushalmy and physician Herman Hilleboe published an analysis including all 22 available countries in 1957, the correlation between fat and heart disease largely disappeared. Keys reportedly dismissed this criticism with hostility.\n\n**Confounders everywhere.** Japan and Crete differed from Finland and the United States in hundreds of ways beyond fat intake: they ate more fish, more vegetables, more fiber, less sugar, smoked less, had different healthcare systems, different activity levels, different historical contexts (the Cretan men in the study were measured shortly after WWII, when food scarcity may have temporarily suppressed chronic disease). How could anyone isolate fat as the causal variable?\n\n**Correlation vs. causation.** Even if the correlation had been perfectly clean (it wasn't), correlation between dietary fat at the country level and heart disease tells us nothing definitive about causation in individuals. Ice cream sales correlate with drowning rates; the obvious confounder is summer temperature.\n\n\n#### Definition: Confounders\n\nA confounder is a third variable that is associated with both the exposure (here: fat intake) and the outcome (heart disease), creating a spurious or misleading apparent relationship between them. In nutrition research, confounders are ubiquitous — people who eat high-fat diets also tend to eat more calories, smoke more, exercise less, eat less fiber, and have lower socioeconomic status than people who eat low-fat diets in most Western populations. Separating the effect of fat alone from these accompanying behaviors is extremely difficult.\n\nIn plain language: if you observe that people who eat more butter have more heart disease, you cannot conclude that butter causes heart disease — because the butter-eaters also smoke more, exercise less, and eat less fiber. Any of those factors could be responsible.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 935,
+      "out_sha": "968ecd92f665",
       "note": ""
     },
     {
