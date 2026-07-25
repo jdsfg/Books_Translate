@@ -467,11 +467,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 32,
       "src_chars": 2864,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b724a7475e10",
       "src": "#### Application Problems\n\n**Q1. Diagnose with the 6 Moves.**\n\nBelow is the opening of a college essay. Run all 6 Moves on it. Write one to two sentences per move stating which part is done well and which is failed.\n\n> Throughout my life, I have always been deeply passionate about the field of medicine. Ever since I volunteered at my local hospital during my sophomore year of high school, I have been driven by a desire to help others through scientific innovation. This passion has led me to pursue rigorous coursework in biology, chemistry, and physics, as well as numerous extracurricular activities that have prepared me for a career in healthcare.\n\nHint\n\nThis opening commits multiple violations from the _do not_ list. Each move's diagnosis should be specific.\n\n**Answer:**\n\n* **Move 1:** Failed. The opening is written for the abstract robed body, not for Janet. There is no Reader Visualization; the writer has not pictured a fatigued reader at 11 PM. The register is solemn and bureaucratic, exactly the wrong register for a tired reader scanning for something to keep them awake.\n* **Move 2:** Failed. There is no Specific Story. _Volunteering at my local hospital_ is a category, not a scene. The reader does not know what the writer did, or saw, or thought.\n* **Move 3:** Catastrophically failed. The opening commits the always-having claim (\"I have always been deeply passionate\") and the sentimentalized origin story (\"Ever since I volunteered...\"), both on the explicit _do not_ list. The opening has not earned the next 30 seconds.\n* **Move 4:** Failed. The opening contains zero Specific Objects. _Medicine,_ _hospital,_ _biology,_ _chemistry,_ and _physics_ are all categories. The Specific Object Test does not pass.\n* **Move 5:** Cannot be performed. There is no scene; there is nothing to connect to a claim. The whole opening is telling without showing.\n* **Move 6:** Failed. This opening is exactly what an AI would generate given the prompt \"write a college essay about wanting to be a doctor.\" It would not survive a single iteration of the AI test.\n\nThe verdict: this opening fails all six moves. The candidate does not need to _edit_ this paragraph; they need to throw it out and start with Move 2 — find a Specific Story.\n\n**Q2. Rewrite the opening.**\n\nThe candidate from Q1 has volunteered at a local hospital, takes biology and chemistry, and wants to study medicine. From those facts, write three different opening sentences (or short two-sentence openings) that pass Moves 2, 3, 4, and 6. You may invent specific scenes consistent with the candidate's profile.\n\nHint\n\nA Specific Object placed in motion (the first kind of opening that earns reading from §2.4) is a good starting point. Find an object the candidate would plausibly remember.\n\n**Answer:** Three possibilities, each different in approach but each passing the moves:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 931,
+      "out_sha": "e67f154be76e",
       "note": ""
     },
     {
@@ -479,11 +479,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 33,
       "src_chars": 3090,
-      "status": "pending",
+      "status": "done",
       "src_sha": "eb00d5c30e17",
       "src": "  1. _The first time I saw a heparin lock, I did not know what it was, and the patient I was assigned to wheel down to imaging, Mr. Akwesi, sixty-eight, three weeks after a stroke, caught me staring at his arm and said, in his careful English, \"It's so they don't have to stick me twice.\" I wheeled him in silence the rest of the way down._ — A Specific Object (the heparin lock), a Specific Person (Mr. Akwesi), and a Specific Action (wheeling in silence) put the opening through Moves 2, 3, 4, and 6.\n  2. _In the volunteer office at Mercy Hospital, the second-shift coordinator kept a list on her desk of patients without family — column one was room number, column two was first name only, column three was the time she had last seen them awake. I copied the list every Saturday for two years._ — A Specific Object (the list with three columns), a specific habitual action (copying it every Saturday for two years), and an implication left for the reader to draw out.\n  3. _My biology teacher told me the right way to look at a slide is the way she taught us in tenth grade: focus first with the lowest-power objective, then increase magnification, never the other way. I have thought about that order more than once, and not only when looking at slides._ — A Specific Object (the slide and the lowest-power objective), a specific person (the biology teacher), and a Restrained Connection at the end.\n\nEach opening earns the next 30 seconds. Each places at least two Specific Objects in motion. None could be plausibly generated by an AI given the bare prompt.\n\n**Q3. The Restrained Connection.**\n\nBelow is a vignette without Move 5 — that is, a vignette that has not yet connected to a claim. Write three different one-sentence Restrained Connections that could end this vignette, each connecting to a slightly different implied claim.\n\n> The night the dryer broke, my mother and I hung the laundry on a line strung from the back fence to the apricot tree. She did the shirts; I did the towels. She did not speak for the first ten minutes, and then she said, We've done worse. I held a pillowcase in front of me and looked at it for a long time before I clipped it.\n\nHint\n\nA Restrained Connection lifts the gravity without pinning it down. It often refers obliquely to the scene's specifics.\n\n**Answer:**\n\n  1. _I have thought about the phrase We've done worse more often since._\n  2. _The pillowcase has hung on every clothesline in our house since._\n  3. _That was the first time I understood that some things my mother said were also instructions._\n\nEach Restrained Connection connects to a different implied claim:\n\n  1. The phrase becomes a touchstone for the writer about resilience, without using the word.\n  2. The pillowcase becomes a recurring object — a Specific Object that travels through the writer's life.\n  3. The mother's speech becomes coded instruction, and the writer learned to listen for it.\n\nEach could lead the essay in a different direction. None of them say _I learned about resilience._ The reader does the inferring, which is exactly what Move 5 calls for.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 998,
+      "out_sha": "44d70ab6048a",
       "note": ""
     },
     {
@@ -491,11 +491,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 34,
       "src_chars": 3113,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8fe3ec633eac",
       "src": "#### Think Deeper\n\n**Q1.** Move 6 — survive the AI test — is the newest move in this book, and the one most likely to change as AI models change. Speculate on what Move 6 will look like in 2030, when AI models may be able to generate plausibly idiosyncratic memories on demand. Will the move survive in its current form? If not, what should it become?\n\n**Discussion:** Three positions are defensible. One: even when AI generates plausibly idiosyncratic memories, the reader's response will diverge from their response to genuine specificity once they know AI is the source. The move survives, possibly renamed (a _Verifiable Specificity_ test, where readers probe the writer about details). Two: AI-generated specificity becomes indistinguishable at the level of prose, and readers shift weight to interview performance, recommender corroboration, real-time tasks. The move dies and is replaced. Three: the genre shifts away from long-form essays toward forms AI cannot easily fake, and Move 6 evolves to track the new specificity. The book's best guess: Move 6 survives in some form for the next five to ten years, then evolves or is replaced. The other five Moves are more durable.\n\n**Q2.** The 6 Moves are presented as universal across the twelve forms. Is there a thirteenth form, a kind of personal persuasive writing not covered in this book, for which one of the moves does not apply? Sketch the form and the move.\n\n**Discussion:** Two candidates are useful. Consider _the obituary the writer pre-writes for a public figure they admire_ — a kind of indirect personal persuasion. Move 1 (identify the reader and stakes) gets harder because the reader is diffuse; Move 6 (survive the AI test) matters more than ever, since AI generates generic eulogies easily. Or consider _the donation appeal letter from a nonprofit's founder._ Move 2 (find the specific story) is form-defining; Move 5 (connect specifics to claims) becomes the entire letter; Move 1 has a specific reader profile (donors, often older, often skimming). The deeper observation: the 6 Moves are universal across most personal persuasive writing, though calibrations vary. Mastering them on the twelve forms in Part II equips the reader to adapt to any thirteenth form they meet.\n\n**Q3.** Pick a piece of advice you have received about writing personal essays, from a parent, a teacher, a counselor, a book, and run it through the 6 Moves. Does the advice align with one of the moves? Is it actionable? Where does the advice come up short?\n\n**Discussion:** Answers will vary widely. Some common cases: _Tell your story_ aligns with Move 2 but is too vague to be actionable without further specification. _Hook the reader_ aligns with Move 3 but does not say how to hook. _Be authentic_ maps awkwardly onto Move 6 but uses a word (\"authentic\") that is so saturated with generic use that it has lost meaning. The exercise is meant to show that the 6 Moves are a more operational language than most popular advice — and that a reader who has internalized the Moves can translate any new advice into actionable terms by mapping it onto the Moves.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 972,
+      "out_sha": "265513a7c374",
       "note": ""
     },
     {
@@ -503,11 +503,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 35,
       "src_chars": 1067,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b529d6ef017c",
       "src": "### Chapter Summary\n\nThe 6 Moves of personal persuasion are the operational vocabulary for the rest of this book. Identify the reader and the stakes; find the specific story; open with a hook that earns reading; show with specifics; connect specifics to claims; survive the AI test.\n\nEach of the form chapters in Part II (Chapters 3 through 14) returns to these six. Chapter 3 calibrates them for the college personal essay (where Janet on her sofa at 11:23 is the reader). Chapter 8 calibrates them for the cover letter (where Marcus the hiring manager between meetings is the reader). Chapter 14 returns most directly to Move 6 — survive the AI test — and lays out the brainstorm-edit-only AI workflow that makes Move 6 reliably passable.\n\nThe reader who has done the Reader Draft Prompt, running the 6 Moves on the opening line saved in Chapter 1, has the diagnostic in hand. The next chapter begins the calibration. Whether the diagnostic produces a better essay depends on what the reader does with it. The book teaches the discipline; the writing is yours.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 358,
+      "out_sha": "2d42050e4921",
       "note": ""
     },
     {
