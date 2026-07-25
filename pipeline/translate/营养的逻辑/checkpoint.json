@@ -419,11 +419,11 @@
       "en_title": "Chapter 2: Carbohydrates — The Body's Most Misunderstood Fuel",
       "order": 27,
       "src_chars": 1555,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6d22a8952f74",
       "src": "**Answer:** This is an excellent example of the confounders problem in nutrition research. Several factors reconcile the contradiction: (1) Total caloric intake: traditional South Asian and Japanese rice portions are much smaller than Western estimates of what a \"serving\" looks like. A traditional Japanese bowl of rice is roughly 100–150g cooked (vs. the 200–300g served at many Western-style Asian restaurants). (2) Dietary context: white rice in Japan and South Asia is typically eaten with large amounts of vegetables, fermented foods (kimchi, pickled vegetables, miso), legumes (dal, tofu), fish, and seaweed — all of which contribute fiber and protein that modify the glycemic response significantly. The rice is never eaten in isolation. (3) Activity levels: historically, these were more physically active agricultural societies. Physical activity increases muscle glycogen capacity, meaning incoming glucose can be quickly stored as muscle glycogen rather than converted to fat. (4) Overall processing: while white rice is processed, it is less processed than many Western staples. It lacks the added sugars, trans fats, and ultra-processed additives that characterize much of the Western diet. (5) Total fiber from other sources: traditional Japanese and South Asian diets include high fiber from legumes, vegetables, and fermented foods, even if the rice itself is low-fiber. The lesson: a single food does not determine health outcomes. The overall dietary pattern, physical activity, and caloric balance matter more than any one ingredient.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 449,
+      "out_sha": "1b9282a1dead",
       "note": ""
     },
     {
@@ -431,11 +431,11 @@
       "en_title": "Chapter 2: Carbohydrates — The Body's Most Misunderstood Fuel",
       "order": 28,
       "src_chars": 2342,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6c6a39a10f80",
       "src": "#### Think Deeper\n\n**2.8** The chapter describes how blood glucose regulation involves insulin and glucagon working in opposition. Type 1 diabetes is characterized by total absence of insulin; Type 2 diabetes by insulin resistance (cells don't respond normally to insulin). A condition called MODY (Maturity Onset Diabetes of the Young) involves genetic mutations in glucose-sensing or insulin-secreting mechanisms. What does the existence of these three very different diseases — all called \"diabetes\" and all involving elevated blood glucose — tell us about the complexity of the insulin-glucose system, and what does it imply for \"one-size-fits-all\" dietary advice for people with diabetes?\n\n**Discussion:** These three conditions illustrate that \"elevated blood glucose\" is a symptom that can arise from many different underlying failures in the insulin-glucose system. Type 1 involves total insulin absence (autoimmune destruction of beta cells) — treatment requires insulin replacement regardless of diet. Type 2 involves insulin resistance and often progressive beta cell dysfunction — lifestyle interventions (including dietary carbohydrate reduction) can be highly effective in early stages but may eventually require medication. MODY (at least 14 genetic subtypes) involves specific enzyme or transcription factor mutations — some respond well to specific medications (sulfonylureas for MODY2, specific diets for MODY1) while others do not. The implication for dietary advice is significant: \"people with diabetes should limit carbohydrates\" is a generalization that may be appropriate for Type 2 (especially early stage), inappropriate for some MODY variants, and irrelevant to Type 1 (where carbohydrate counting is important for insulin dosing but restriction per se isn't necessarily therapeutic). Even within Type 2 diabetes, individuals vary enormously in their response to carbohydrate restriction. This is why personalized nutrition — dietary advice tailored to individual metabolic profile, genetics, and microbiome — is an active research frontier.\n\n**2.9** The chapter mentions that the fiber-disease association holds even \"after controlling for many confounders.\" What does \"controlling for confounders\" mean in observational nutrition research, and why is there always some residual uncertainty even after controlling?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 792,
+      "out_sha": "bd25020f8269",
       "note": ""
     },
     {
@@ -443,11 +443,11 @@
       "en_title": "Chapter 2: Carbohydrates — The Body's Most Misunderstood Fuel",
       "order": 29,
       "src_chars": 3371,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ea6e3da16249",
       "src": "**Discussion:** Controlling for confounders means statistically adjusting for other variables that might explain the relationship. If people who eat more fiber also happen to exercise more, smoke less, and have higher incomes, a naive analysis would incorrectly attribute the health benefit to fiber. Researchers use multivariable regression to \"hold these variables constant\" — essentially asking: \"Among people with the same exercise level, smoking status, and income, do those who eat more fiber still have better outcomes?\" Even after such adjustments, several sources of uncertainty remain: (1) Residual confounding: not all confounders are measured. If high-fiber eaters also have lower stress levels (not measured in the study), the fiber benefit might partly reflect lower stress. (2) Measurement error: dietary intake is typically assessed by food frequency questionnaires, which are notoriously imprecise. Error in measuring fiber intake attenuates the estimated association toward null — meaning the true relationship might be even stronger than observed. (3) Reverse causation: people who are already healthy might choose higher-fiber diets, reversing the causal arrow. (4) Interaction effects: fiber might only benefit health in the presence of other dietary factors (like adequate micronutrients) or lifestyle factors. The reason nutrition scientists still have high confidence in the fiber-health association despite these issues is that (a) multiple independent studies in different populations reach consistent conclusions, (b) mechanistic evidence from controlled trials supports the observed association, and (c) the association persists at very different levels of confounder adjustment.\n\n\n### Chapter Summary\n\nCarbohydrates are not a monolithic food group but a chemical family ranging from simple sugars to complex fibers. Key ideas:\n\n* **Structure matters, but \"simple vs. complex\" is an oversimplification.** Glycemic index and glycemic load are better tools, though they too have important limitations — particularly their failure to account for meal context and individual variation.\n\n* **Glucose is the body's primary fuel** , managed by the precisely regulated insulin-glucagon system. Post-meal insulin rises are normal and necessary. Chronic elevated insulin (from a caloric surplus and resistance) is the problem, not meal-related insulin responses.\n\n* **Fiber is the most underappreciated carbohydrate.** Strong evidence links adequate fiber intake to lower cardiovascular disease, diabetes, colorectal cancer, and all-cause mortality. Most people in industrialized countries eat roughly half the recommended amount.\n\n* **Thread 2 (How to Read Research) begins here.** The glycemic index story illustrates the gap between mechanistic plausibility and clinical outcome — and between observational associations and causal claims. Traditional diets worldwide achieve excellent health without worrying about GI scores, which suggests that overall dietary pattern matters far more than individual food rankings.\n\n**Looking ahead:** Chapter 3 examines the other major macronutrient at the center of ongoing debate — protein. We will find a similar story: genuine science obscured by oversimplification, and cultural myths (the \"protein is always more\" myth among gym culture) that diverge from evidence just as much as \"carbs are bad\" does.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1016,
+      "out_sha": "b63f2bb74fab",
       "note": ""
     },
     {
