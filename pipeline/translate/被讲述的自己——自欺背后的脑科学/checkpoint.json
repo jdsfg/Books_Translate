@@ -671,11 +671,11 @@
       "en_title": "Chapter 3: The Dissonance Engine and the Self-Serving Stories",
       "order": 50,
       "src_chars": 990,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ace527723d1a",
       "src": "The subjects who had been paid 1 USD reported the task as **substantially more interesting** than the 20 USD group did. Not just somewhat more interesting; meaningfully more. Their assessment of the task itself had shifted.\n\nThis result, when first reported, looked like a glitch. It looked like noise. It looked like something that should not happen. And then it was replicated, and then it was extended, and then it became one of the most foundational findings in the history of social psychology — a finding so robust, so reliable, and so counterintuitive that the rest of this chapter is about taking it seriously.\n\nThe finding is this: **behavior shapes belief, more often than belief shapes behavior.** Once you have done something, your mind works to make your beliefs consistent with what you have done. The mechanism Festinger identified is called _cognitive dissonance reduction_ , and it is the daily engine that powers the Interpreter from Chapter 1 in much of its actual work.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 343,
+      "out_sha": "2c14d187ced8",
       "note": ""
     },
     {
@@ -683,11 +683,11 @@
       "en_title": "Chapter 3: The Dissonance Engine and the Self-Serving Stories",
       "order": 51,
       "src_chars": 2877,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8d7538fd1b53",
       "src": "### 3.1 Why the 1 USD Group Believed\n\nTo see why the result is not noise but a window into how the mind actually works, follow the cognitive accounting from each subject's side.\n\nThe 20 USD subject leaves the lobby having said something he does not believe. _I told her the task was interesting; it wasn't._ This creates a gap between his action (lying) and his self-image (he is, generally, an honest person). The gap could create discomfort. But there is an obvious resolution available to him: _I lied because they paid me 20 USD. That's why I did it. People say things for 20 USD that they wouldn't say for nothing._ The external reward is large enough to fully account for the action. No internal adjustment is required. He goes on with his life. A week later, when asked about the task, he reports it as tedious, because his memory of the task is intact and there has been no reason to revise it.\n\nThe 1 USD subject leaves the lobby having said the same thing. He has lied to the next subject. The gap between action and self-image is the same. But now the external resolution is missing. _Why did I say that? For a dollar? People don't lie for a dollar. I'm not the kind of person who lies for a dollar._ The external reward is too small to account for the action. The action is real — he did say it — but the external reason is insufficient. The discomfort of the gap between action and self-image is left unresolved.\n\nThe mind, presented with this kind of unresolved gap, does something specific. It looks for a way to close the gap. It cannot undo the action — the action has already happened, the words have been said. It can only revise the other side of the gap: the belief about the task. _Maybe the task wasn't actually so bad. Maybe there were aspects of it I underrated at the time. The pegs were satisfyingly tactile. There was something almost meditative about the repetition. I'm interested in psychology, and there must have been something purposeful about the design — perhaps I was just impatient in the moment._\n\nThese thoughts arrive not as deliberate rationalizations but as fresh perceptions of the task. From inside, the 1 USD subject does not experience himself as constructing comforting fictions to close a dissonance gap. He experiences himself as having simply remembered the task more accurately, in the calm reflection of a week later, than his irritated in-the-moment perception had allowed for. The Interpreter has done its work: the action is preserved, the self-image (honest person) is preserved, and the belief about the task has been quietly revised to make the whole package consistent.\n\nThis is the engine. Festinger discovered it. Subsequent research has shown it operating in dozens of domains. And once you can see it, you can see it everywhere — including in places where the stakes are far higher than wooden pegs and a dollar.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 864,
+      "out_sha": "229f10bf0962",
       "note": ""
     },
     {
@@ -695,11 +695,11 @@
       "en_title": "Chapter 3: The Dissonance Engine and the Self-Serving Stories",
       "order": 52,
       "src_chars": 3256,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9147be7bb44f",
       "src": "#### Definition: Cognitive Dissonance\n\nCognitive dissonance is the discomfort produced by holding two cognitions that are inconsistent — most often, by the discrepancy between an action one has taken and a belief, value, or self-image one holds.\n\nIn plain language, this means dissonance is the unpleasant feeling that arises when something you did and something you believe about yourself do not fit together. The discomfort is real. It is also a problem the mind is wired to solve, automatically and quickly. The solution it most often reaches for is not changing the action (the action has happened; it is behind you) but changing the belief, the memory of the action, or the meaning placed on it — until the action and the self-image again fit comfortably.\n\nNotice the asymmetry. The mind could in principle resolve dissonance in either direction. Faced with _I did X but I don't believe in X_ , the mind could update _I did X_ (this is rare; the action is fixed in the past) or update _I don't believe in X_ (this is common). The asymmetry is what makes Festinger's finding so consequential. **Behavior is rigid; belief is malleable. The fix-it engine reaches for whichever is more flexible. Belief gives way.**\n\nThis is the precise mechanism behind one of the most important inversions in social psychology: the popular intuition that \"what we believe drives what we do\" gets the causal arrow approximately backward in many cases. What we have done shapes what we now believe, because the alternative — sitting with permanent dissonance about an action we have already taken — is intolerable to the system.\n\n\n#### Common Misconception\n\nMany readers, encountering dissonance reduction for the first time, think of it as something _other_ people do — a kind of post-hoc rationalization that weaker or less self-aware minds engage in. This is wrong in the same way the Chapter 1 misreading of the Interpreter was wrong: dissonance reduction is not a defect that some minds have more than others; it is what minds do.\n\nThe strength of dissonance reduction does not vary much with intelligence, education, or self-reported honesty. It varies with the size of the gap (larger gaps generate more reduction) and with the availability of external reasons (when external reasons are missing, internal beliefs do more of the work). The most analytical mind in the room does not get to opt out of dissonance reduction. It just produces more sophisticated versions of the same operation — better reasons for why the action was actually consistent with belief, more elaborate accounts of what the situation really required.\n\nYou do not need to be self-deceptive in some special way to engage in dissonance reduction. You need only to be a person who acts and who has beliefs about themselves. The engine runs in the background, in everyone, all the time. The question of this chapter is not whether your beliefs have been shaped by your behavior — they have — but where, in your life, the shaping has been most consequential.\n\n\n### 3.2 The Engine in Daily Life\n\nOnce you can see the dissonance engine, you can see it operating in patterns that, on closer inspection, become embarrassingly visible. Five examples, drawn from domains where the engine reliably runs.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 973,
+      "out_sha": "d24cf2d56420",
       "note": ""
     },
     {
@@ -707,11 +707,11 @@
       "en_title": "Chapter 3: The Dissonance Engine and the Self-Serving Stories",
       "order": 53,
       "src_chars": 1821,
-      "status": "pending",
+      "status": "done",
       "src_sha": "27b017aaff21",
       "src": "#### Voting\n\nA person votes for a candidate or party. The decision was made under uncertainty, with imperfect information, in a particular emotional and social context. The vote is now in. The candidate or party will, over the following months and years, do various things — some good by the voter's standards, some bad, some hard to evaluate.\n\nWhat dissonance theory predicts: over time, the voter's assessment of the candidate or party will become _more_ favorable than it was at the moment of voting, especially when the candidate or party does things the voter would otherwise have disapproved of. The vote, an action already taken, anchors the belief. Disconfirming evidence about the candidate's quality does not flow cleanly through to belief revision; it gets reframed, contextualized, dismissed, or absorbed into a larger story that preserves the rightness of the original vote.\n\nEmpirically, this is what happens. Voters who have invested in a political identity grow more attached to it over time, not because the candidate or party has earned the attachment but because the attachment has been doing its dissonance-reduction work. Voters who have switched parties typically describe the previous party in increasingly negative terms — not because new evidence has appeared but because the switch itself has reorganized the cognitive accounting around it.\n\nThis is why political conversations between people who have voted differently are so often unproductive. Each side has, partly through dissonance reduction, arrived at a configuration of beliefs in which their own past vote was clearly correct and the other side's was clearly wrong. The beliefs are not (mostly) the cause of the votes; the votes are partly the cause of the beliefs. Arguing about the beliefs without recognizing this inverts the work.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 507,
+      "out_sha": "d650e0b6f8d3",
       "note": ""
     },
     {
@@ -719,11 +719,11 @@
       "en_title": "Chapter 3: The Dissonance Engine and the Self-Serving Stories",
       "order": 54,
       "src_chars": 1838,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8446e2a6d138",
       "src": "#### Paid Courses\n\nSomeone enrolls in an expensive course — a continuing-education program, a coaching package, a personal-development workshop, an advanced degree. The price is real. The investment of time is real. The course begins.\n\nWhat dissonance theory predicts: the participant's assessment of the course's quality will, on average, run higher than a neutral observer's assessment of the same content. Negative aspects will be discounted; positive aspects will be amplified; ambiguous aspects will be interpreted favorably. By the end, the participant will report substantial value received — sometimes including specific transformations they attribute to the course — even when, by external measures (skills acquired, behaviors changed, outcomes produced), the actual change is modest or null.\n\nThis is one of the most reliable findings in the literature on educational program evaluation. Self-reported satisfaction is largely uncorrelated with measurable learning gains. Participants who paid more report higher satisfaction than participants who paid less for the same content. The dissonance engine has been doing the work: _I paid this much; I did not pay this much for nothing; therefore the course was valuable._ The conclusion does not derive from evidence of value; it derives from the discomfort of believing the payment was wasted.\n\nThis is also why the most expensive personal-development programs often have the most enthusiastic alumni. The size of the financial commitment is itself a structural amplifier of the dissonance engine. Paying 50,000 USD for a coaching program that produced little measurable effect generates substantial dissonance; the resolution is sincere belief in the program's transformative power, defended with the conviction that comes from the cognitive system this book has been describing.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 479,
+      "out_sha": "6cb03abe6788",
       "note": ""
     },
     {
@@ -731,11 +731,11 @@
       "en_title": "Chapter 3: The Dissonance Engine and the Self-Serving Stories",
       "order": 55,
       "src_chars": 2498,
-      "status": "pending",
+      "status": "done",
       "src_sha": "65e94a5c8d2b",
       "src": "#### Harm Done to Others\n\nThis is the darker case. A person, in some specific situation, has done something that harms another person. The harm might be moderate (a betrayal of trust in a friendship, a professional act that damaged a colleague) or severe (something that would, on outside view, be plainly wrong).\n\nWhat dissonance theory predicts: the perpetrator's account of the situation will, over time, drift in a specific direction. The harmed party's prior actions will loom larger in the account, justifying the perpetrator's response. Ambiguous facts will be reinterpreted in directions favorable to the perpetrator's choice. The structural pressures that constrained the perpetrator's options will be emphasized; the alternatives that were available will be forgotten or downgraded. The perpetrator does not, in most cases, come to think of themselves as someone who did wrong; they come to think of themselves as someone who, in difficult circumstances, did the only thing they could.\n\nThis is, again, not an indictment of the perpetrator's character. It is a description of what the dissonance engine does when the action is harm and the self-image is decency. The action cannot be undone. The self-image of decency is more important to maintain than almost anything else. The available variable is the account of what happened — the meaning placed on the harm, the responsibility distributed across the parties, the constraints that justified the choice. The engine works on that variable, automatically, until the package fits.\n\nCarol Tavris and Elliot Aronson, in _Mistakes Were Made (But Not by Me)_ , document this pattern across an extraordinary range of cases — politicians defending policy decisions, prosecutors defending convictions later overturned by DNA evidence, doctors defending mistakes that caused patient harm, partners defending behavior in failed marriages. The pattern is the same in each case. The action persists; the self-image is preserved; the account of what happened is bent until they fit. The actors are not unusually evil or unusually self-deceiving. They are ordinary people with the ordinary cognitive architecture, applied to circumstances where the action and the self-image are both unmovable and the account is the only thing that can give.\n\nThe relevant uncomfortable question for the reader is not \"would I do this in extreme cases?\" but \"where am I doing this, in modest cases, right now, in places I would not see without a structural prompt?\"\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 730,
+      "out_sha": "34b805790c51",
       "note": ""
     },
     {
@@ -743,11 +743,11 @@
       "en_title": "Chapter 3: The Dissonance Engine and the Self-Serving Stories",
       "order": 56,
       "src_chars": 2424,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b2e43a89ba66",
       "src": "#### Sustained Bad Relationships\n\nA person has been in a relationship — romantic, professional, friendship — for years. Outside observers can see, sometimes clearly, that the relationship is not serving the person well. Friends notice. Family notices. The person does not, or notices and continues anyway.\n\nWhat dissonance theory predicts: the person's account of the relationship will be increasingly favorable as the duration of investment increases, especially if the alternative would be acknowledging that years of investment were misplaced. The partner's good qualities will be salient; their failings will be reframed as understandable, situational, in flux. The story the person tells about _why_ they remain will become more elaborate and more polished. _We have something deep that's hard to see from outside. He's working on himself. Things have been better lately. The good times outweigh the bad. Most relationships have these challenges._ These accounts are sincere. They are also, in many cases, the dissonance engine maintaining the consistency between the action (years of staying) and the self-image (someone who makes good decisions about who to be close to).\n\nThis is why advice from outside is often so unwelcome and so ineffective. The friend or family member who says _you should leave_ is not just challenging the relationship; they are challenging the cognitive architecture that has been holding the relationship together internally. The challenge tends to be met with reasons — sincere reasons, fluently produced — for why the friend doesn't understand, why the relationship is more complicated than it looks, why the assessment from outside is missing critical information. These reasons, again, are the engine running. They are the Interpreter producing what the system needs to maintain the package.\n\nThis pattern does not mean every long relationship is a bad one preserved by dissonance. Many long relationships are genuinely good. The pattern means that _the duration of a relationship is, by itself, weak evidence that it is good_ , because long relationships generate more dissonance reduction in defense of themselves than short ones do. A relationship of three months that one is sceptical of, and a relationship of fifteen years that one defends warmly, are not on the same epistemic footing. The fifteen-year relationship has had more time for the engine to work on the account of it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 651,
+      "out_sha": "ba08792a602e",
       "note": ""
     },
     {
@@ -755,11 +755,11 @@
       "en_title": "Chapter 3: The Dissonance Engine and the Self-Serving Stories",
       "order": 57,
       "src_chars": 1765,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ac74c1c2db24",
       "src": "#### Career Switches\n\nA person leaves one career for another. The switch involved real cost — money, status, network, identity. The switch happens. Time passes.\n\nWhat dissonance theory predicts: the person's account of the previous career will, on average, become more negative over time than it was at the moment of switching. The reasons for leaving will be more clearly remembered, more often recounted, and more central to the person's narrative. The good things about the previous career — the relationships, the competence accumulated, the successes — will fade in salience. _I was so unhappy there. The culture was toxic. I was wasting my potential. The new path is so much more aligned with who I really am._\n\nThese accounts may be perfectly accurate. They may also be the dissonance engine doing its work. The action (the switch, with all its costs) is fixed. The self-image (someone who makes good decisions about their life) needs preserving. The variable is the account of the previous career. The account adjusts.\n\nThe diagnostic question is not whether the new career is better than the old (often it is). It is whether the account of the old has bent in a direction that goes beyond what the evidence supports. If you find yourself describing the previous career in increasingly stark terms over time — terms that would surprise the colleagues you worked with, the version of yourself who made the original decisions, the documentary record of what happened — the engine may be active. The bending serves a real purpose: it preserves the consistency of the new identity. It also distorts the historical record in ways that can affect later decisions, especially decisions about whether to make further changes when the current path also disappoints.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 467,
+      "out_sha": "1701ada5ff0f",
       "note": ""
     },
     {
@@ -767,11 +767,11 @@
       "en_title": "Chapter 3: The Dissonance Engine and the Self-Serving Stories",
       "order": 58,
       "src_chars": 3313,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c1ee4880ded4",
       "src": "### 3.3 The Engine and the Interpreter\n\nDissonance reduction is not separate from the Interpreter of Chapter 1. It is the Interpreter's daily fuel. Or, more precisely, it is one of the major occasions on which the Interpreter is called to produce its coherent stories.\n\nThe relationship works like this. An action happens. (You say the task was interesting; you vote for the candidate; you stay in the relationship; you switch the career.) The action creates a potential gap with some belief or self-image. The dissonance engine registers the gap and demands resolution. The Interpreter is called to produce a story that closes the gap — a story in which the action is consistent with the self-image, the belief, the values. The story arrives quickly and feels true. The gap closes. From the inside, you have not noticed any of this happening. You have simply _come to see_ the situation more clearly than your in-the-moment perception had allowed for.\n\nSome neuroscientific work has imaged what happens in the brain during dissonance reduction. The activation patterns are not what one would expect from \"rational deliberation\" — the kind of activity that lights up when you are carefully weighing evidence. They are closer to the activation patterns of _story construction_ — the kind of activity that lights up when you are producing or retrieving a narrative. This is mechanism, not philosophy. The dissonance engine is not, in neural terms, a careful reasoner that arrives at a more accurate view; it is a story generator that produces a coherent narrative which happens to resolve the discomfort. Gazzaniga's framework — the Interpreter as a coherence-generator rather than a truth-tracker — is the right framework for understanding what is happening.\n\nThis is also why dissonance reduction is so resistant to simple correction by argument. If a friend points out that your post-vote assessment of the candidate has drifted favorably in ways the candidate's actions don't justify, the dissonance engine does not pause and update. It runs again. New stories appear, accounting for why the friend's analysis is mistaken, why the candidate's recent actions are actually understandable in context, why your favorable assessment was always justified by considerations the friend hasn't appreciated. The friend's intervention is itself a piece of dissonance — _someone is telling me my belief is the product of a process I don't fully control_ — and the engine resolves it by producing reasons why the friend is wrong rather than by considering that they might be right.\n\nThis is not a defect to be apologized for. It is what the system does. And the relevant practical observation, again, is that the tools that work for catching dissonance reduction are mostly external. You write down your prediction at the time of voting (Chapter 10). You check it against actual outcomes a year later. You notice the gap between what you said you expected and what actually happened. The writing is what helps; the introspection without the writing typically does not, because the engine has already revised your sense of what you originally expected to make the current outcome look like what you predicted all along (this is the _hindsight bias_ , one of the four self-serving distortions we will examine in section 3.5).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 946,
+      "out_sha": "1f3927bfa6db",
       "note": ""
     },
     {
@@ -779,11 +779,11 @@
       "en_title": "Chapter 3: The Dissonance Engine and the Self-Serving Stories",
       "order": 59,
       "src_chars": 1941,
-      "status": "pending",
+      "status": "done",
       "src_sha": "170dc6edfef2",
       "src": "#### Common Misconception\n\nSome readers, on first encountering the dissonance engine, conclude that it is fundamentally bad — a distortion of reality that should be eliminated wherever possible. This is too strong a conclusion.\n\nThe dissonance engine, like the Interpreter, has functions. Without it, you would walk through life with permanent unresolved discomfort about every action whose consequences you couldn't have fully foreseen. Every decision under uncertainty would generate a residue of regret that never settled. Every commitment to a partner, a career, a community would be undermined by ongoing comparison to all the alternatives you didn't choose. The engine, by smoothing the dissonance after each action, allows you to live with your choices and continue functioning. This is not a small thing.\n\nThe engine becomes a problem when it produces sincerely held beliefs that are far from accurate, in domains where the inaccuracy matters. The voter whose dissonance engine has built a sincere belief in their candidate's wisdom may still vote effectively in the next election; the harm is mostly to the quality of their reasoning. The relationship-stayer whose engine has built a sincere belief in their partner's slowly-improving qualities may continue investing years in something that is not improving; the harm here is larger. The career-switcher whose engine has built a sincere belief in the badness of their previous career may make further switches in the future based on the same architecture; here the harm compounds.\n\nThe right response is not to try to disable the engine. You cannot, and even if you could, the costs would be substantial. The right response is to recognize where, in your specific life, the engine's operation is most likely to be costly, and to apply structural tools (Part IV) selectively in those areas. The engine runs everywhere; the tools are deployed strategically where the stakes warrant.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 552,
+      "out_sha": "60a960939824",
       "note": ""
     },
     {
