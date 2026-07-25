@@ -2603,11 +2603,11 @@
       "en_title": "Chapter 17: Ultra-Processed Food — The Real Problem",
       "order": 209,
       "src_chars": 2905,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d1c9cec9c3b9",
       "src": "### 17.6 The Ultra-Processed Problem Is Not Just Nutrients\n\nThe nutrient-centric view would predict that a diet with the same total calories, macronutrients, fiber, and micronutrients would produce the same outcomes whether those nutrients came from ultra-processed or whole foods. The Hall RCT and subsequent research suggest this prediction is wrong. The food matrix matters:\n\n* **Physical structure** : An apple and apple juice provide similar macronutrients, but the intact fiber matrix of the whole apple slows sugar absorption, increases satiety, and provides prebiotic fiber. Processing disrupts this structure.\n* **Glycemic response** : Whole grain bread and white bread with similar total carbohydrate content produce substantially different glycemic responses due to intact starch structure.\n* **Protein digestibility** : Intact protein in whole foods may produce different satiety hormone responses than the same amount of protein from hydrolyzed protein isolates.\n\nThe food matrix concept fundamentally challenges the reductionist approach to nutritional advice that dominated late 20th-century dietary guidelines — the approach that produced \"fat-free\" cookies and \"reduced-calorie\" ultra-processed alternatives that failed to improve population health outcomes.\n\n* * *\n\n\n### 17.7 What This Means for Your Plate\n\nThe ultra-processed food evidence consolidates the most practically actionable message in this book: **prioritize whole and minimally processed foods, regardless of their macronutrient composition**. A diet high in vegetables, fruits, legumes, whole grains, nuts, seeds, eggs, and unprocessed meat or fish will have better health outcomes than a diet of equivalent macronutrients assembled from ultra-processed sources.\n\nThis does not require perfection or the elimination of all processed foods:\n\n* Most people cannot or will not eat entirely unprocessed diets\n* Group 3 processed foods (canned beans, frozen vegetables, plain yogurt, cheese, whole-grain bread) are broadly nutritious and convenient\n* The goal is to shift the proportion: if ultra-processed foods currently represent 50-60% of daily calories (the average in US and UK populations), reducing this to 20-30% while increasing Group 1 and 3 foods represents a clinically meaningful change\n\n**Practical identification tips:**\n\n* Short ingredient lists are generally a better sign than long ones\n* Ingredients you recognize and could use in home cooking indicate lower processing level\n* The presence of emulsifiers (lecithin is an exception — it's generally from soy and relatively benign), artificial colors, modified starches, artificial flavors, and chemical preservatives signals ultra-processing\n* A \"healthy\" nutrient label does not guarantee low processing level — many UPFs are specifically engineered to have favorable nutrient profiles while retaining ultra-processed character\n\n* * *\n\n\n### 17.8 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 864,
+      "out_sha": "3693a94812af",
       "note": ""
     },
     {
@@ -2615,11 +2615,11 @@
       "en_title": "Chapter 17: Ultra-Processed Food — The Real Problem",
       "order": 210,
       "src_chars": 3009,
-      "status": "pending",
+      "status": "done",
       "src_sha": "87b1d941d788",
       "src": "#### Concept Check\n\n**17.1** Using the NOVA framework, classify the following foods: (a) plain oat groats, (b) rolled oats, (c) flavored instant oatmeal packets, (d) granola bars with a 15-ingredient list including \"natural flavors,\" glucose syrup, and mixed tocopherols.\n\n**Answer:** (a) Plain oat groats: NOVA Group 1 (minimally processed — just the grain). (b) Rolled oats: NOVA Group 1-2 borderline, most classifications put lightly processed whole grains in Group 1 (physical processing only). (c) Flavored instant oatmeal packets: NOVA Group 3-4 depending on additives; if they contain artificial flavors, significant added sugars, and processing aids, Group 4; if just oats with dried fruit and some sugar, Group 3. (d) Granola bars with emulsifiers, glucose syrup, \"natural flavors\": NOVA Group 4 (ultra-processed) — the combination of added sugars, glucose syrup, emulsifiers, and flavor additives qualifies as industrial formulation not reproducible in home cooking.\n\n**17.2** What was the key methodological innovation of the Hall et al. 2019 RCT, and what is its primary limitation?\n\n**Answer:** The key innovation: the ultra-processed and unprocessed diets were matched for total calories, macronutrients, sugar, fat, fiber, and sodium. This controlled for the confounders that plague observational studies of ultra-processed food — that UPF consumers may eat more calories, more fat, or more sugar, making it impossible to isolate the effect of processing per se. By matching nutrient composition, Hall et al. isolated the effect of food processing itself on ad libitum energy intake and body weight. Primary limitation: only 20 participants in a highly controlled inpatient clinical setting over 4 weeks. Cannot establish long-term outcomes, does not represent free-living conditions, and the small sample limits statistical power to detect subgroup effects. The short duration also cannot assess microbiome or inflammation changes that may be relevant mechanisms.\n\n**17.3** Describe two mechanisms by which ultra-processed food texture and eating rate may contribute to overconsumption.\n\n**Answer:** (1) Reduced oral processing time: The soft texture of most ultra-processed foods requires less chewing than whole foods. Chewing stimulates cephalic phase responses (saliva, gastric acid, and digestive enzyme secretion that prime digestion) and may slow eating naturally. Less chewing shortens meal duration and reduces sensory satiation signals. (2) Eating rate outpaces satiety signaling: Satiety hormones (GLP-1, PYY, CCK) are released in response to food reaching the small intestine and take approximately 15-20 minutes to register in the brain. Rapid eating allows larger volumes to be consumed before satiety registers. The Hall RCT directly observed that participants ate faster on the ultra-processed diet, consistent with increased eating rate as a contributing mechanism.\n\n**17.4** Why does the concept of \"food matrix\" challenge the nutrient-centric approach to dietary guidelines?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 959,
+      "out_sha": "aacb7fed2586",
       "note": ""
     },
     {
@@ -2627,11 +2627,11 @@
       "en_title": "Chapter 17: Ultra-Processed Food — The Real Problem",
       "order": 211,
       "src_chars": 990,
-      "status": "pending",
+      "status": "done",
       "src_sha": "96042b8de2de",
       "src": "**Answer:** The nutrient-centric approach assumes that health outcomes are determined by the nutrient composition of the diet — the totality of calories, macronutrients, vitamins, and minerals — regardless of the food form they come in. If this were true, ultra-processed foods with added fiber and protein, vitamin fortification, and matched macronutrient content would produce identical outcomes to whole foods. The food matrix concept shows this is wrong: the physical structure of food, the form of its fiber, the way its protein is presented, and the speed at which it is digested all independently affect satiety hormones, glycemic response, eating behavior, and gut microbiome responses. The apple vs. apple juice comparison, the Hall RCT results, the glycemic response differences between whole grain and refined grain breads with similar macronutrient content — all illustrate that what has been done to the food changes its biological effects independent of nutrient composition.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 258,
+      "out_sha": "11fb25fbb78d",
       "note": ""
     },
     {
@@ -2639,11 +2639,11 @@
       "en_title": "Chapter 17: Ultra-Processed Food — The Real Problem",
       "order": 212,
       "src_chars": 3044,
-      "status": "pending",
+      "status": "done",
       "src_sha": "38c83fe546ed",
       "src": "#### Application Problems\n\n**17.5** A nutrition label comparison shows two \"high-fiber\" breakfast options: (A) a breakfast cereal with 8g fiber per serving, sugar, natural flavors, BHA, and 15+ ingredients; (B) plain rolled oats with 4g fiber per serving. Which is likely the better choice from a food quality standpoint, and why might the label be misleading?\n\n**Answer:** Option B (plain rolled oats) is likely the better choice despite lower fiber content. Reasoning: Option A is likely ultra-processed (NOVA Group 4) based on artificial preservative (BHA), \"natural flavors\" additive, and large ingredient list. The fiber in ultra-processed foods may be added (often inulin, isolated fibers) rather than intact fiber naturally embedded in the food matrix. Intact whole-grain fiber from oats (beta-glucan) has strong evidence for cholesterol-lowering and microbiome benefits that isolated added fiber may not replicate equivalently. The food matrix around the fiber matters for its fermentation and bioavailability. The label is misleading because it presents the nutrient (fiber quantity) as equivalent between radically different food matrices, implying comparable health effects that the evidence does not support. The BHA in Option A also carries a contested safety profile.\n\n**17.6** Design a practical strategy for a family whose diet is currently 60% ultra-processed foods by calorie to reduce UPF consumption without completely eliminating convenience foods.\n\n**Answer:** A realistic strategy must account for time, cost, and palatability:\n\n**Swap strategy (replace, don't just remove)** :\n\n* Replace packaged breakfast cereal with rolled oats + fruit + nuts (still quick, substantially less processed)\n* Replace packaged snacks with fruit, nuts, or plain yogurt with fruit\n* Replace flavored instant noodles or mac-and-cheese with quick-cooking whole grain pasta + olive oil + canned tomatoes + parmesan (similar time, Group 1-3)\n* Replace soft drinks with water, sparkling water, or diluted juice\n\n**Batch cooking for convenience** : Prepare legumes, whole grains, and roasted vegetables in batches on weekends; reheat during the week. This provides Group 1 convenience comparable to ultra-processed convenience.\n\n**Strategic tolerance** : Not every food needs to be unprocessed. Plain Greek yogurt, canned beans, frozen vegetables, and whole-grain bread are Group 1-3 and nutritious. Focus swaps on the items consumed most frequently and in largest quantities.\n\n**Realistic target** : Moving from 60% UPF to 35-40% UPF by calorie is clinically meaningful and more achievable than 0% UPF. Perfection is neither necessary nor realistic for most families.\n\n**17.7** A 2023 observational study of 100,000 participants reports that every 10% increase in ultra-processed food consumption is associated with a 15% higher risk of depression. A supplement company uses this finding to market a \"gut health formula\" claiming to \"protect against the harms of ultra-processed food.\" Critically evaluate both the study and the marketing claim.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 978,
+      "out_sha": "c2efc91d896d",
       "note": ""
     },
     {
@@ -2651,11 +2651,11 @@
       "en_title": "Chapter 17: Ultra-Processed Food — The Real Problem",
       "order": 213,
       "src_chars": 1451,
-      "status": "pending",
+      "status": "done",
       "src_sha": "78ad3b4dae28",
       "src": "**Answer:** Study evaluation: This is an observational study — it establishes association, not causation. Confounders: people who eat more UPF may differ from low-UPF consumers in ways that independently predict depression (lower socioeconomic status, more stress, more sedentary behavior, less sleep, more social isolation). Reverse causation: people who are already depressed may eat more ultra-processed food (depression reduces motivation for food preparation and drives comfort eating). Despite these limitations, the signal is consistent with multiple prior studies and with plausible mechanisms (microbiome disruption → inflammation → depression; nutrient deficiencies from UPF-heavy diets; glycemic instability). The association should be taken seriously as a research finding that warrants further investigation, not dismissed.\n\nMarketing claim evaluation: The claim that the supplement \"protects against the harms of ultra-processed food\" is not supported by any evidence in the study or elsewhere. The study did not test the supplement; the mechanism attributed to UPF harm (if gut-mediated) is not established; and supplements have no demonstrated ability to offset the effects of a UPF-heavy diet in any RCT. This is a classic example of leveraging a correlational study to market a product — using the association between UPF and disease to sell a supposed antidote, without any causal evidence connecting the supplement to the outcome.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 396,
+      "out_sha": "2ef054457ba6",
       "note": ""
     },
     {
@@ -2663,11 +2663,11 @@
       "en_title": "Chapter 17: Ultra-Processed Food — The Real Problem",
       "order": 214,
       "src_chars": 1835,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5e367033a140",
       "src": "#### Think Deeper\n\n**17.8** The NOVA framework classifies by processing level rather than nutrient content, which means a nutritionally poor minimally processed food (plain white rice) scores better than a nutritionally superior ultra-processed food (a vitamin-fortified whole-grain breakfast bar). Does this limitation undermine the framework's utility, or can both dimensions coexist in nutritional assessment?\n\n**Answer:** The tension is real but the frameworks can coexist as complementary tools rather than competing alternatives. NOVA's utility is in population-level epidemiology and identifying patterns that nutrient-centric analysis misses — the Hall RCT and consistent cohort associations demonstrate that processing level captures something real about food that nutrient composition alone does not. Nutrient profiling systems (like the Nutri-Score) capture complementary information about nutrient density. An ideal food classification might use both dimensions: nutrient quality and processing level are both relevant, and using either alone sacrifices information. The apparent paradox (white rice scores better than fortified UPF) is a feature of any single-dimension classification. In practice, a dietary pattern that is both low in ultra-processed foods AND nutrient-dense is the goal — not a system that ranks white rice as optimal simply because it is minimally processed. The NOVA framework is a useful epidemiological tool for capturing one real dimension of food quality, not a complete nutritional assessment system.\n\n**17.9** Some public health researchers argue that ultra-processed food should be regulated similarly to tobacco — with mandatory warning labels, advertising restrictions, and excise taxes. Evaluate the parallels and disanalogies between UPF and tobacco as targets for regulatory intervention.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 513,
+      "out_sha": "af588f53fb19",
       "note": ""
     },
     {
@@ -2675,11 +2675,11 @@
       "en_title": "Chapter 17: Ultra-Processed Food — The Real Problem",
       "order": 215,
       "src_chars": 3317,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3cb5d1a2bd27",
       "src": "**Discussion:** The tobacco regulatory model has been one of the most effective public health interventions in history. The question is whether it transfers to food. Parallels: (1) Both have strong epidemiological evidence linking consumption to multiple chronic diseases. (2) Both are heavily marketed to children and low-income populations. (3) Both industries have used research manipulation and lobbying to delay regulation. (4) Both involve products where industry profit depends on maximizing consumption that conflicts with public health. Tax interventions for both show price-elasticity effects. Disanalogies: (1) Food is a biological necessity; tobacco is not. Any regulatory approach must distinguish degrees of processing, not food consumption generally. (2) The dose-response for UPF is less clearly defined — there may be no \"safe\" level of tobacco; moderate UPF consumption likely carries lower relative risk. (3) Defining \"ultra-processed\" for regulatory purposes requires operational precision that would face legal challenge. (4) The food supply transition away from UPF requires cooking knowledge, time, and financial resources that tobacco cessation does not. Evidence from existing interventions: Sugar-sweetened beverage taxes (Mexico, UK, Chile) have shown 5-25% consumption reductions. Chile's front-of-pack warning label system produced measurable behavior changes. These partial applications of regulatory logic provide encouraging evidence — but a comprehensive UPF regulatory framework comparable to tobacco control would require resolving the definitional challenges and building political will against a food industry with far larger economic and cultural reach than tobacco.\n\n* * *\n\n\n### Chapter Summary\n\n* The NOVA framework classifies foods by degree of industrial processing into four groups; ultra-processed foods (Group 4) are industrial formulations containing additives and ingredients not used in home cooking.\n* Large prospective cohort studies consistently associate UPF consumption with obesity, type 2 diabetes, cardiovascular disease, cancer, and depression, independent of nutrient composition.\n* The Hall et al. 2019 NIH RCT — with macronutrient-matched ultra-processed and unprocessed diets — found participants ate 508 more calories per day on the UPF diet, providing causal evidence that processing itself, not just nutrient content, drives overconsumption.\n* Mechanisms include hyper-palatability through sensory engineering, faster eating rate outpacing satiety signaling, disrupted appetite hormone responses, reduced satiety per calorie, and possible emulsifier effects on gut barrier and microbiome.\n* Food matrix — the physical structure of food — affects satiety, glycemic response, and gut microbiome interactions independently of nutrient composition, challenging the reductionist nutrient-centric approach to dietary guidelines.\n* Most food additives are approved at typical consumption levels; uncertainty exists for specific additives (emulsifiers, titanium dioxide) and their combinations, especially for vulnerable populations.\n* The most actionable strategy: increase the proportion of Group 1-3 foods (whole, minimally processed, and traditionally processed foods) while reducing Group 4 ultra-processed foods, without requiring dietary perfection.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 966,
+      "out_sha": "8b27f71809ce",
       "note": ""
     },
     {
@@ -2687,11 +2687,11 @@
       "en_title": "Chapter 18: Reading Labels and Navigating the Grocery Store",
       "order": 216,
       "src_chars": 2448,
-      "status": "pending",
+      "status": "done",
       "src_sha": "586bc1f51b73",
       "src": "The food environment is not neutral. Grocery stores are designed by teams of behavioral scientists and marketing professionals whose goal is to maximize purchase value per customer. Packaging is crafted to trigger specific psychological responses. Label claims are regulated — but the regulations contain significant gaps that manufacturers know how to use.\n\nThis chapter is a practical toolkit: how to read a nutrition facts panel accurately, how to decode marketing language on front-of-pack labels, how to make evidence-based choices in an environment specifically engineered to override evidence-based thinking, and how to shop with nutritional goals in mind.\n\n* * *\n\n\n### 18.1 The Nutrition Facts Panel: What It Actually Tells You\n\nThe Nutrition Facts panel (required in the US and similar formats required globally) is a regulated, standardized disclosure of nutritional content. Understanding it requires knowing both what it measures and what it misses.\n\n\n#### Serving Size: The First Number to Check\n\nThe serving size is the foundational number from which all other values are calculated. It is not a recommendation — it is the amount used for labeling purposes, which manufacturers can set within regulatory guidelines. A serving size that seems improbably small (15 chips as a serving for a chip bag most people eat in one sitting) does not indicate the product is low-calorie — it indicates the calorie count per actual consumption will be higher than the label suggests.\n\nSince 2016 (updated FDA rules), serving sizes must now \"reflect amounts of food that people actually eat, not what they should eat.\" This has led to some serving size realignments — a can of soup previously labeled as \"2 servings\" may now be labeled as \"1 serving\" — but manufacturers retain substantial flexibility.\n\n**Always check** : Is the serving size realistic for how you will actually consume this food?\n\n\n#### Calories: The Total Energy Picture\n\nCalories per serving are derived from 4 kcal/g for carbohydrates and protein, and 9 kcal/g for fat (fiber is credited at 2 kcal/g in the US system; slightly different in other regulatory systems). Total calories track these three sources.\n\nCalorie counts on labels have a regulatory tolerance of ±20%, meaning a food labeled at 200 kcal per serving may legally contain 160-240 kcal. Most products are accurate within a smaller range, but the tolerance is a reminder that labels are not precise measurements.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 685,
+      "out_sha": "89fded33e17e",
       "note": ""
     },
     {
@@ -2699,11 +2699,11 @@
       "en_title": "Chapter 18: Reading Labels and Navigating the Grocery Store",
       "order": 217,
       "src_chars": 3301,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2f431830b84d",
       "src": "#### Macronutrients: What to Focus On\n\n**Total fat and fat subcategories** : The label reports total fat, saturated fat, trans fat (mandatory), and optionally monounsaturated and polyunsaturated fat. Given the evidence from Chapters 4, 6, and 10, **saturated fat and trans fat deserve attention** while total fat in isolation is less meaningful. For trans fat: the FDA mandated the removal of partially hydrogenated oils (the primary source of artificial trans fats) from the food supply, which was completed by 2021. Labels may still show \"0g trans fat\" when the product contains up to 0.5g per serving — a technical loophole that becomes meaningful if multiple servings are consumed.\n\n**Sodium** : High sodium is associated with blood pressure elevation in sodium-sensitive individuals (Chapter 11). The Percent Daily Value (%DV) for sodium is based on a 2,300 mg/day target. Most Americans consume ~3,400 mg/day. The %DV can be used as a quick guide: <5% DV is low; >20% DV is high.\n\n**Total carbohydrate, fiber, and total sugars** : Total carbohydrate includes all sugar, starch, and fiber. The breakdown matters: **dietary fiber** is subtracted from the biological impact (fiber is not digested as sugar); **total sugars** includes both naturally occurring and added sugars. Since 2020, \"Added Sugars\" is a separately required line item in the US, which represents a significant regulatory improvement for transparency. Added sugars contribute to caloric intake without micronutrient value; natural sugars in whole fruit come packaged with fiber, vitamins, and phytochemicals (Chapter 9).\n\n**Protein** : The label shows grams of protein per serving. Note that it does not show protein quality (amino acid completeness or DIAAS) — context from the overall diet matters.\n\n\n#### Micronutrients: What's Required vs. Optional\n\nSince 2020 FDA updates, the mandatory micronutrients on US Nutrition Facts panels are: vitamin D, calcium, iron, and potassium. Vitamins A and C were removed from mandatory disclosure (they are rarely deficient in US populations now) and are optional. The %DV shown is based on a 2,000-calorie diet for average adults.\n\n\n#### Ingredients List: The More Useful Tool\n\nFor most purposes, the **ingredients list** provides more useful dietary information than the Nutrition Facts panel. The ingredients list:\n\n* Is ordered by weight (most to least): the first ingredient is the dominant one\n* Reveals the actual composition of the food\n* Shows what processing has occurred (presence of emulsifiers, artificial flavors, multiple forms of sugar, etc.)\n* Enables NOVA classification (Chapter 17)\n\nA product may have a favorable Nutrition Facts panel (low calorie, low fat, some fiber) while having an ingredients list revealing it is ultra-processed. The ingredients list catches what the panel doesn't.\n\n**Multiple sugar aliases** : The food industry uses numerous names for added sugar, as noted in Chapter 9. When sugar appears in multiple forms partway down the ingredient list, the combined effect may make sugar the dominant ingredient despite appearing to rank lower than any single entry.\n\n* * *\n\n\n### 18.2 Front-of-Pack Claims: The Regulatory Minefield\n\nFront-of-pack marketing claims are categorized by regulatory agencies, but the categories have significant loopholes:\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1005,
+      "out_sha": "91a29986a434",
       "note": ""
     },
     {
@@ -2711,11 +2711,11 @@
       "en_title": "Chapter 18: Reading Labels and Navigating the Grocery Store",
       "order": 218,
       "src_chars": 3428,
-      "status": "pending",
+      "status": "done",
       "src_sha": "800a5718ffe4",
       "src": "#### Health Claims (Regulated)\n\n**Authorized health claims** (FDA, EU, etc.) must meet a specific evidentiary standard. Example: \"Diets low in sodium may reduce the risk of high blood pressure.\" These are most reliable.\n\n**Qualified health claims** have weaker evidence but are permitted with a qualifier. Example: \"Scientific evidence suggests but does not prove that eating 1.5 oz per day of most nuts may reduce the risk of heart disease.\"\n\nThe regulatory language is precise; the marketing presentation often obscures which type of claim is being made.\n\n\n#### Structure/Function Claims: The Gray Zone\n\nStructure/function claims describe the effect of a nutrient on the structure or function of the body without claiming to prevent or treat disease. They do not require FDA approval — only notification. Examples:\n\n* \"Supports immune health\"\n* \"Promotes digestive wellness\"\n* \"Helps maintain healthy cholesterol levels already within normal range\"\n\nThese claims are legally permitted regardless of whether robust evidence supports the specific food or supplement making them. The range of quality of evidence behind structure/function claims varies from well-established to nonexistent. The required disclaimer (\"This statement has not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.\") appears in fine print on supplements but not typically on food products using structure/function language.\n\n\n#### \"Natural,\" \"Wholesome,\" \"Clean\"\n\nThese terms have no regulatory definitions in the US (as of this writing). \"Natural\" can legally appear on a product containing high-fructose corn syrup, artificial color-adjacent \"natural flavors,\" and numerous additives. The FDA's position is that \"natural\" means \"nothing artificial or synthetic has been included in, or has been added to, a food that would not normally be expected to be in the food\" — but enforcement is limited and the definition is contested.\n\n\"Clean label\" is a marketing concept, not a regulatory category. It typically means an ingredient list with fewer, more recognizable ingredients — which aligns roughly with lower processing level, but the term is not standardized.\n\n\n#### Organic, Non-GMO: What They Do and Don't Mean\n\n**USDA Organic** : A regulated certification meaning the product was produced without synthetic pesticides, synthetic fertilizers, or (for livestock) without antibiotics or growth hormones. Does not mean pesticide-free (organic-approved pesticides may be used) and does not mean nutritionally superior. The evidence that organic food provides health benefits beyond conventional food is limited and inconsistent — the primary documented benefit is reduced pesticide residue exposure, and the health consequences of typical pesticide exposure levels are disputed. The environmental rationale for organic farming is more robust than the individual health rationale.\n\n**Non-GMO Project Verified** : A third-party certification that the product was not genetically modified. GMOs (genetically modified organisms) have been extensively evaluated by regulatory agencies (FDA, EFSA, WHO) and have no demonstrated harm in the existing evidence base. \"Non-GMO\" does not mean organic, pesticide-free, minimally processed, or nutritionally superior. A non-GMO breakfast cereal may still be ultra-processed, high in added sugar, and fortified with synthetic vitamins.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 981,
+      "out_sha": "a6ca1552b8c9",
       "note": ""
     },
     {
