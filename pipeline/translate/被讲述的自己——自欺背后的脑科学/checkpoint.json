@@ -3071,11 +3071,11 @@
       "en_title": "Chapter 9: The Limits of Reason — Mercier & Sperber",
       "order": 250,
       "src_chars": 2742,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c6743e06c777",
       "src": "#### The Wildly Different Performance of the Same Person on the Same Question\n\nA third line of evidence is, in some ways, the most directly demonstrative. The same subject, on the same question, performs at very different levels depending on whether they are arguing for a position they hold, evaluating an opposing argument, or evaluating their own past reasoning on the question.\n\nWhen arguing for a position they hold: highly cogent, multi-step reasoning that makes the position look strong.\n\nWhen evaluating an opposing argument: detailed flaw-finding, identification of premises that are unsupported, careful attention to logical gaps, often sophisticated criticism that exposes weaknesses the opponent themselves had not noticed.\n\nWhen evaluating their own past reasoning on the question: shallow, often missing the same kind of flaws they would have caught in an opponent's argument, prone to defensive reframing of weaknesses as strengths, poor at noticing where their own argument actually depended on assumptions they had not justified.\n\nThis three-way pattern in the same individual on the same question is the framework's prediction in maximally direct form. The system is good at production-for-self, good at evaluation-of-others, bad at evaluation-of-self. The same cognitive system, applied to three different tasks that look superficially similar, performs at three very different levels because the system was built for different things. Production for self is what selection optimized for; evaluation of others' arguments is what selection optimized for; evaluation of self is what selection did not optimize for, because efficient self-evaluation would undermine the sincere commitment the production task requires.\n\nThe pattern is also where the framework's practical implications begin to crystallize. If individual reasoning is structurally bad at self-evaluation, then the only way for any individual reasoner to get good evaluation of their own reasoning is to get it from someone else — and to actually engage with it rather than dismissing it through the standard cognitive defenses. The structural tools of Part IV are designed around exactly this asymmetry. Adversarial collaboration uses one party's evaluation-of-others capacity on another party's production-for-self output, and vice versa; the pair gets benefits from cross-checking that neither could produce alone. Epistemic friend relationships work the same way at smaller scale. Institutional structures (peer review, court systems, scientific replication) work the same way at larger scale. All of them depend on the asymmetry the framework has identified and would not work, on the framework, if individuals could reliably evaluate their own reasoning.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 717,
+      "out_sha": "b4384cbdffd8",
       "note": ""
     },
     {
@@ -3083,11 +3083,11 @@
       "en_title": "Chapter 9: The Limits of Reason — Mercier & Sperber",
       "order": 251,
       "src_chars": 3419,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6ad10d4d293d",
       "src": "### 9.3 The Implications for Individual Reasoning\n\nThe framework's central implication is the chapter's most important claim: **individual reasoning, on questions the reasoner has stakes in, is not a reliable tool for finding truth**. This is not a moral or philosophical claim; it is a structural prediction of the framework. Individual reasoning was not built for the task of finding truth in cases where the reasoner has stakes; it was built for producing sincere arguments that convince others of positions the reasoner has taken. Asking individual reasoning to function as a reliable truth-finder in stake-relevant domains is asking the wrong tool to do the wrong job.\n\nThis has several specific consequences worth being precise about.\n\nFirst, _the felt sense that one is reasoning carefully on a stake-relevant question is not strong evidence that one is finding truth on that question_. That felt sense is the standard output of the production capacity; it is what the system produces when functioning normally; it does not, on the framework, distinguish accurate reasoning from sincere argument-construction in service of a position one has taken. The reader cannot, by introspection, tell which is happening; the felt sense is identical in both cases.\n\nSecond, _the conviction that one has considered the strongest opposing arguments and found them wanting is not strong evidence that one has actually engaged with the strongest opposing arguments_. The architecture's evaluation-of-others capacity, applied to the reader's own past consideration of opposing arguments, will produce sincere reports of having engaged carefully — but the engagement was, on the framework, conducted by a system that was built to find flaws in opponents' arguments, not to find merits in them. The flaws were probably found, and the merits were probably underappreciated, regardless of how careful the engagement felt.\n\nThird, _the experience of having reasoned to a conclusion is, in the high-stakes domain, often the experience of having sincerely produced an argument for a position one had already taken_. The reasoning sequence felt forward-running; from inside, premises led to conclusions; the conclusions seemed to follow. The framework's prediction is that the sequence was, in many cases, partly running in the other direction — the conclusion had been pre-flagged by the cognitive system, and the reasoning sequence was constructed to support it. The reader experiences themselves as reasoning to the conclusion; the system experiences the conclusion as the starting point and the reasoning as the sincere defense.\n\nFourth, _the only way for individual reasoners to reliably approach truth on stake-relevant questions is to subject their reasoning to others' evaluation in structures that take advantage of the asymmetric capacities_. This is the framework's positive prescription. Individual reasoning is not the mechanism that finds truth; collective and adversarial reasoning, structured appropriately, is the mechanism. The individual reasoner contributes by producing sincere arguments that others can evaluate; the others contribute by evaluating those arguments with the flaw-finding capacity their architectures supply for others' arguments; the collective output is better than either reasoner could produce alone, because the cross-checking compensates for the structural limitations of individual reasoning.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 847,
+      "out_sha": "1d82be853ec6",
       "note": ""
     },
     {
@@ -3095,11 +3095,11 @@
       "en_title": "Chapter 9: The Limits of Reason — Mercier & Sperber",
       "order": 252,
       "src_chars": 700,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ce3a9c43bbfc",
       "src": "This is what makes the structural and collective tools of Part IV not optional add-ons but the primary mechanism by which reasoning ever tracks truth on contested questions. The prediction-tracking, pre-mortem, epistemic-friend, and adversarial-collaboration tools all operate by structuring reasoning so that the asymmetric capacities can do the work each is built to do — production by the practitioner, evaluation by others — with the cross-checking producing accuracy that individual reasoning cannot. Without these structures, the practitioner has only the production capacity engaged on their own stake-relevant questions, and the production capacity is not what tracks truth in those domains.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 171,
+      "out_sha": "afb61d2cd65f",
       "note": ""
     },
     {
@@ -3107,11 +3107,11 @@
       "en_title": "Chapter 9: The Limits of Reason — Mercier & Sperber",
       "order": 253,
       "src_chars": 2841,
-      "status": "pending",
+      "status": "done",
       "src_sha": "501bbe1820da",
       "src": "#### Common Misconception\n\nA common reaction, on first encountering this implication, is _but if individual reasoning is unreliable on stake-relevant questions, how can I trust any of my own conclusions on the questions that matter most to me?_ The reaction is reasonable and worth addressing carefully.\n\nThe framework does not say you cannot trust any of your conclusions; it says you should hold them with calibration appropriate to the framework's predictions. On stake-relevant questions, your conclusions may be accurate, may be partly accurate, or may be substantially mistaken; you cannot, by your own reasoning, reliably distinguish among these cases; the calibrated response is to hold the conclusions with substantially more humility than your felt sense supplies, to seek collective and structural feedback on conclusions where the stakes warrant, and to update specific conclusions when the feedback provides specific evidence against them.\n\nThis is not a counsel of paralysis. You can continue to act on your conclusions in the absence of better evidence; you can continue to argue for them in appropriate contexts; you can continue to make decisions based on them. What the framework asks is a particular internal calibration: do not treat the felt confidence as strong evidence of the conclusion's accuracy; do not commit so strongly to the conclusion that updates become identity-threats; do not refuse to seek collective feedback on the basis that your individual reasoning is sufficient. The calibration permits action while bounding the dogmatism that the unmodified architecture produces.\n\nA related concern: _if I cannot trust my reasoning, how can I trust the framework, which I am evaluating with my reasoning?_ This is a serious question that the chapter must address directly. The framework is not validated by any individual reasoner's evaluation; it is validated by the collective scientific process that produced and tested it. The reader is not being asked to trust the framework on the basis of their own reasoning alone; they are being asked to trust it on the basis of the converging evidence from many investigators across many studies, with the framework surviving the kinds of cross-checking the framework itself recommends as the truth-finding mechanism. The reader's individual reasoning can either accept this collective process as a basis for trust or not; if not, the framework is not internally inconsistent (it does not claim individual evaluation is sufficient), and the reader's skepticism is itself an instance of individual reasoning that the framework predicts is unreliable on stake-relevant questions. The framework asks to be evaluated on the same basis it recommends for any claim — through collective and structural cross-checking, not through any individual reasoner's solitary judgment.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 703,
+      "out_sha": "9f3778002d49",
       "note": ""
     },
     {
@@ -3119,11 +3119,11 @@
       "en_title": "Chapter 9: The Limits of Reason — Mercier & Sperber",
       "order": 254,
       "src_chars": 3143,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d6082f09440a",
       "src": "#### A Note on Galef's _Scout Mindset_\n\nJulia Galef's 2021 book _The Scout Mindset_ developed a closely related framework, and readers familiar with it deserve a direct accounting of the relationship.\n\nGalef's central distinction is between the _soldier mindset_ (the cognitive posture that defends a position one is committed to, treating arguments as weapons and concessions as losses) and the _scout mindset_ (the cognitive posture that gathers accurate information regardless of where it points, treating updating as the goal rather than as defeat). The bulk of her book is concerned with what scout-mindset reasoning looks like in practice and how a practitioner can cultivate it: noticing when one is in soldier mode (Galef calls these \"feeling like you're losing\"), running thought experiments that test what one would think in different conditions (\"if a study showed the opposite result, would I find it convincing?\"), and treating evidence of one's own being-wrong as informative rather than threatening.\n\nThe production-vs-evaluation asymmetry developed here maps closely onto Galef's distinction. Soldier mode aligns with the cognitive system's production-for-self capacity in defensive deployment; scout mode aligns with the same system's evaluation-of-others capacity turned, with effort, on one's own positions. The two frameworks are picking out the same underlying pattern.\n\nWhere they emphasize differently: Galef's account is primarily _psychological and dispositional_ — the practitioner cultivates a mindset, with structural tools (calibration training, prediction-tracking on Good Judgment Open, status-blind decision processes) presented as supports for the disposition. This book's account is primarily _structural_ — the structural tools are presented as compensations for what disposition alone cannot reliably do, with disposition treated as a precondition rather than as the load-bearing intervention. The two emphases reach largely overlapping practical recommendations from different theoretical starting points.\n\nThe honest reading is that Galef's book and this one are addressing the same problem from complementary angles. Galef's framework is more developed on the question of how a practitioner cultivates the underlying disposition; this book's framework is more developed on the question of why disposition alone, however cultivated, will be insufficient on stake-relevant questions and what specific structural compensations the empirical evidence supports. A reader who has internalized scout-mindset reasoning and then adds the structural practices this book recommends has more than either single approach supplies. A reader who relies on disposition alone will, on the framework here, encounter the patterns Chapter 8 documented — particularly the rationalist trap, where the very identity around being-a-scout becomes a stake the cognitive defenses sustain. A reader who relies on the structural tools alone, without the disposition Galef describes, may execute the practices mechanically without the openness that makes them produce update.\n\nThe two books read together is the recommended approach.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 897,
+      "out_sha": "10c925c7b663",
       "note": ""
     },
     {
