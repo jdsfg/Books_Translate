@@ -107,11 +107,11 @@
       "en_title": "导读",
       "order": 0,
       "src_chars": 2941,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f1558b918655",
       "src": "> 本导读整理自 Socratopia 网站本书介绍页：https://www.socratopia.app/library/science-of-emotions-en\n\nMost books on emotion still teach a model that careful neuroscience abandoned a decade ago: that anger lives in the amygdala, that six \"basic\" emotions are universally wired into your face, that you must \"let your anger out\" or it will come back worse. The largest meta-analyses on each of these claims have found, respectively: no consistent brain region for any specific emotion, no cross-cultural universality once forced-choice prompts are removed, and that venting increases later aggression by rehearsing the response. This book is built on what survived the replications.\n\nThe central thesis is that emotions are not reactions; they are predictions your brain constructs in the moment from body sensations, learned concepts, and context. That sounds abstract until the consequences arrive: emotions become interpretable, revisable, and partly cultivatable. You can change the concept, change the context, change the body state through architecture. The book teaches a six-move toolkit (pause; granular labeling; reappraisal; distinguish urge from action; meta-emotion; architecture) and then walks it through twelve emotions in turn — anger, anxiety, sadness, joy, shame, jealousy, disgust, fear, loneliness, contempt, gratitude, awe — with one researcher's career humanized in each chapter.\n\nThree threads run in parallel. Thread A follows Maya, a fictional reader spending a year with the book. Thread B asks you to log your own emotional life; readers who do the entries get substantially more from it than readers who do not. Thread C introduces twelve scientists — Tavris, LeDoux, Bonanno, Fredrickson, Brown, Buss, Rozin, Damasio, Cacioppo, Gottman, Emmons, Keltner — with one surprising fact about each. The book is honest throughout about which findings are well-replicated, which are mixed, and which are practical heuristics that have not been strictly proven.\n\nWhat you finish with is not enlightenment but equipment. The closing image is weather: you cannot control your weather; you can learn to dress for it. A reader who has done the work can pause before reacting, distinguish emotion from action urge, notice meta-emotion, and take responsibility for the architecture — sleep, food, vocabulary, relationships, attention — that produces tomorrow's emotional weather.\n\n**Target audience**：Intelligent general adult readers; therapists in training; managers, parents, teachers; high-functioning teens. Especially readers who have tried other emotion or psychology books and felt them too simplistic, or who have read Barrett, Brown, or Goleman and want a more rigorous synthesis.\n\n**Prerequisites**：High-school level reading; no psychology background needed.\n\n**Study hours**：35–45 hours of careful reading plus dialogue with a Socratopia companion; 60+ hours if the 30-day emotion architecture experiment in Appendix B is completed.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1031,
+      "out_sha": "b112e89aa1a3",
       "note": ""
     },
     {
@@ -119,11 +119,11 @@
       "en_title": "Chapter 1: Emotions Are Not What You Think They Are",
       "order": 1,
       "src_chars": 1580,
-      "status": "pending",
+      "status": "done",
       "src_sha": "beb4ea40bf7e",
       "src": "Pick the last time you got really angry. Not annoyed; angry. Now, slowly, answer four questions in order. What was your body doing? What were you about to do? What story were you telling yourself about the other person? And, finally, what did you call the feeling at the time?\n\nMost readers can answer the first three questions easily. Pulse up. Heat in the face. The urge to say something cutting, or to leave, or to end the relationship. A story that begins, \"They always,\" or, \"How dare,\" or, \"After everything I have done.\" It is the fourth question that is interesting. Almost everyone, asked in the moment, would have said: \"I am angry.\" A few might have said \"furious\" or \"livid.\" Almost no one would have said: \"My brain has constructed an emotion called anger from a particular pattern of body sensations, a particular concept I learned by age four, and a story I am telling about a person whose behavior matched my prediction of betrayal.\"\n\nThat last sentence is closer to what was actually happening. The shorter sentence is easier. The shorter sentence is also what most pop psychology, most childhood vocabulary, and most of the last hundred years of self-help books have trained you to believe. The shorter sentence is mostly wrong.\n\nThis is the first of eighteen chapters that will, slowly, replace the shorter sentence with something more useful. By the end you will not stop having emotions; you will not even feel them less. You will, however, have a different relationship with them. They will become information you can read, rather than orders you must obey.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 485,
+      "out_sha": "74a9f4bccaaa",
       "note": ""
     },
     {
@@ -131,11 +131,11 @@
       "en_title": "Chapter 1: Emotions Are Not What You Think They Are",
       "order": 2,
       "src_chars": 2336,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d790975f50ef",
       "src": "### How to Read This Book\n\nThree notes before we begin, because they will change how much value you get.\n\n**Pace.** The book is built for slow reading, not for completion. Each chapter contains roughly 24 to 72 hours of work — reading, sitting with it, trying the practices in your own life, returning to the chapter when something happens that connects. Reading the book in a week is possible and gets you the framework. Reading the book in a year, with practice between chapters, gets you the change in relationship to your emotions. The second is what the book is actually for.\n\n**The three threads.** Across all eighteen chapters, three storylines run in parallel. _Thread A_ follows Maya, a fictional reader in their thirties whose year of practice gives the book a continuous human case. _Thread B_ is yours: at intervals the book asks you to log specific moments from your own emotional life. The log entries are where the framework meets your actual life; readers who do them get substantially more from the book than readers who do not. _Thread C_ introduces, one per chapter, the researchers whose work shaped the field — what they found, what the popular reception got right, and where it went past the evidence. Each thread can be followed alone; the value compounds when all three are read together.\n\n**Calibration of confidence.** Emotion science is uneven. Some claims in this book are well-replicated and worth treating as solid (the construction view in broad outline; affect labeling as a small but real intervention; loneliness as a population-level health concern; sleep loss degrading emotion regulation). Some are mixed, with the picture genuinely contested (the specific 2.9013 ratio claim; the 90%+ predictive accuracy claim; the strongest evolutionary-sex-difference claims about jealousy). Some are practical heuristics, useful in many lives but not strictly proven (the six moves as a sequence; the architectural inputs as the highest-leverage interventions). The book flags which is which as it goes, with phrasing chosen to mark the difference. A reader who tracks the calibration leaves the book with sturdier knowledge than a reader who treats every claim as equally settled.\n\nYou can begin now, or skip directly to §1.1 and return to this section once the framework feels familiar. Either order is fine.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 744,
+      "out_sha": "f05293e27b5c",
       "note": ""
     },
     {
@@ -143,11 +143,11 @@
       "en_title": "Chapter 1: Emotions Are Not What You Think They Are",
       "order": 3,
       "src_chars": 2347,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ac3b5ebf12ba",
       "src": "### 1.1 The Question That Started It All\n\nBegin with a small experiment. Imagine the following body state: heart pounding at maybe 110 beats per minute, hands slightly clammy, a hot prickling at the back of the neck, breath shallow, jaw set. A surge of energy that wants out somewhere.\n\nWhat emotion is that?\n\nYou probably said anger, or fear, or anxiety, or excitement, or arousal. The honest answer is: it depends. It depends on where you are, what just happened, what concept your brain reached for in the previous half-second, and which emotion word you have ready. The same body state can be anger if a colleague just spoke over you, anxiety if you are about to give a talk, excitement if a person you find attractive just said yes, fear if you hear footsteps behind you on a dark street, and a kind of secular awe if you are watching a great pianist begin a difficult piece.\n\nNotice what that means. The body state did not tell you what you were feeling. The label did. And the label came from your brain reaching into a stored library of concepts and selecting the one that best matched the situation.\n\nThis is the central claim of the book, and it is worth stating once in stark form before we soften it.\n\n> **Emotions are not reactions to what is happening. They are predictions your brain makes about what is likely happening, based on past experience and current bodily state.**\n\nIf that sentence sounds suspicious, it should. It contradicts the model of emotions you almost certainly grew up with, the model that says emotions are wired-in reactions, that a frightening event triggers fear, that an insult triggers anger, that a loss triggers sadness, and so on, in a clean stimulus-and-response chain. That model is intuitive and very nearly universal in popular writing. It is also, at the level of neuroscience and careful behavioral research, mostly wrong.\n\nThe work of replacing the older view is associated most strongly with Lisa Feldman Barrett and a wider community of affective scientists who refer to their position as the _theory of constructed emotion_. The idea is older than Barrett — James Russell, Sylvan Tomkins's critics, Magda Arnold, and others all moved in this direction across the late twentieth century — but the modern synthesis is hers, and the experimental evidence has piled up over the last thirty years.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 850,
+      "out_sha": "463d42115deb",
       "note": ""
     },
     {
@@ -155,11 +155,11 @@
       "en_title": "Chapter 1: Emotions Are Not What You Think They Are",
       "order": 4,
       "src_chars": 1395,
-      "status": "pending",
+      "status": "done",
       "src_sha": "93762ff2660e",
       "src": "#### Definition: The Theory of Constructed Emotion\n\nA specific emotion in a specific moment is a brain's best guess about what a particular pattern of body sensations means in a particular context, given the concepts that brain has learned for that situation.\n\nIn plain language, this means: when your heart races, your brain does not automatically know whether this is anger or fear or thrill. It guesses, drawing on what you have stored from a thousand previous moments. If the guess fits a category your culture has taught you, you feel that emotion. If your culture has no word for the category, you may feel something with no name.\n\nThere are three ingredients in the recipe.\n\n  1. **Body sensations** , technically called _interoception_ : the constant background sense your brain has of your heart, lungs, gut, hormones, temperature, and so on.\n  2. **Concepts** : the categories of emotion you have learned. English speakers learn anger, fear, sadness, joy early; some cultures teach concepts that English does not have a single word for, like the German _Schadenfreude_ , the Japanese _amae_ , the Filipino _gigil_ , the Portuguese _saudade_.\n  3. **Context** : what just happened, who is around you, where you are, what you remember, what your brain expects to happen next.\n\nThe emotion is the result of stitching these three together fast enough that you do not notice the stitching.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 520,
+      "out_sha": "81b230717d9a",
       "note": ""
     },
     {
