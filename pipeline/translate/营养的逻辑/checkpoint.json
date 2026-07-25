@@ -575,11 +575,11 @@
       "en_title": "Chapter 3: Protein — Beyond Muscle, the Full Story",
       "order": 40,
       "src_chars": 1425,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b634a7bec17f",
       "src": "**3.6** A popular diet book claims: \"The key to optimal health is maximizing protein intake — aim for 3-4g/kg body weight per day.\" Evaluate this claim using the evidence reviewed in this chapter.\n\n**Answer:** This recommendation significantly exceeds the evidence-based upper range. Assessment: (1) The evidence for muscle protein synthesis plateaus at approximately 1.62g/kg/day for most people (Morton et al., 2018 meta-analysis). Beyond this level, additional protein does not produce measurable increases in muscle mass or strength. (2) There is no evidence of health benefits from 3–4g/kg/day beyond what 1.6–2.0g/kg/day achieves. (3) Very high protein intakes may increase kidney stone risk in susceptible individuals and acidify urine. (4) At 3–4g/kg for a 75kg person = 225–300g protein daily = 900–1200 calories just from protein, which significantly constrains dietary variety and the ability to meet other nutritional needs (fiber, healthy fats, micronutrients). (5) The claim \"maximize protein\" misrepresents the evidence — the dose-response curve for protein is not linear. There are clearly diminishing returns and no established benefit at the proposed levels. The book may be motivated by supplement sales (protein powders are highly profitable). Red flags: the claim is specific and extreme, lacks mention of the plateau in evidence, and would require significant supplement use to achieve for most people.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 515,
+      "out_sha": "d672be60123f",
       "note": ""
     },
     {
@@ -587,11 +587,11 @@
       "en_title": "Chapter 3: Protein — Beyond Muscle, the Full Story",
       "order": 41,
       "src_chars": 2161,
-      "status": "pending",
+      "status": "done",
       "src_sha": "daf462ba961e",
       "src": "#### Think Deeper\n\n**3.7** The chapter mentions that tryptophan is a precursor to serotonin, and phenylalanine and tyrosine are precursors to dopamine and norepinephrine. Does this mean that eating high-tryptophan foods (turkey, eggs, cheese) could boost mood? The \"turkey makes you sleepy\" Thanksgiving myth implies something like this. What does the actual evidence say?\n\n**Discussion:** The turkey-sleep connection is a myth based on a real mechanism operating through the wrong pathway. Turkey does contain tryptophan, and tryptophan is a precursor to serotonin (and then melatonin). But the mechanism breaks down in reality: (1) Tryptophan competes with other large neutral amino acids (LNAA) for the same transporter to cross the blood-brain barrier. Protein-rich foods like turkey actually increase blood levels of all large amino acids simultaneously, so tryptophan faces more competition for brain entry, not less. (2) The real reason people feel sleepy after Thanksgiving dinner is caloric overload — eating a very large, high-calorie meal diverts blood flow to digestion and releases several satiety hormones that promote drowsiness. Wine also helps. (3) Manipulating brain serotonin through diet is genuinely difficult. The most effective way to increase brain tryptophan entry is actually to eat carbohydrates (which trigger insulin, which clears the competing amino acids from blood, giving tryptophan relatively easier access). This is why some people crave carbohydrates when stressed or depressed — there may be a subconscious self-medication effect. The evidence for dietary tryptophan supplementation affecting mood is weak in healthy people but slightly more promising in individuals prone to depression. The honest answer: diet affects neurotransmitter precursor availability, but the relationship is indirect, highly variable, and not nearly as simple as \"eat X, feel Y.\"\n\n**3.8** If the kidneys safely adapt to high protein intake in healthy individuals, and if protein is important for muscle maintenance and immune function, why is the official RDA so conservative at 0.8g/kg? Should public health recommendations target higher intakes?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 660,
+      "out_sha": "2fc77d645b42",
       "note": ""
     },
     {
@@ -599,11 +599,11 @@
       "en_title": "Chapter 3: Protein — Beyond Muscle, the Full Story",
       "order": 42,
       "src_chars": 1506,
-      "status": "pending",
+      "status": "done",
       "src_sha": "aed305e8c51b",
       "src": "**Discussion:** This tension between minimum requirement and optimal intake is a genuine ongoing debate among nutrition scientists. Several perspectives: (1) The RDA was designed as a population-wide minimum to prevent deficiency. A conservative number makes sense for a population-level recommendation because individual variation is high and the cost of protein deficiency is real. (2) Raising official recommendations to 1.2–1.6g/kg (which many researchers argue is more appropriate for adults) would significantly increase food costs and potentially worsen environmental impact (animal protein production is resource-intensive). (3) Higher protein recommendations could exacerbate inequalities — protein-rich foods (meat, fish, quality plant proteins) are often more expensive. (4) There is an ongoing research debate between whether the nitrogen balance method used to derive the RDA underestimates true needs (some evidence suggests it does) vs. whether metabolic evidence of muscle mass preservation requires even higher intakes. The current scientific consensus among exercise physiologists and geriatricians is that optimal intakes for active individuals and older adults are likely 1.2–2.0g/kg, which would argue for revised recommendations. Some countries (e.g., Canada) have already raised protein recommendations for older adults. This is a case where the official number and the optimal number are meaningfully different — useful knowledge for anyone who wants to go beyond minimum adequacy.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 435,
+      "out_sha": "daa591377292",
       "note": ""
     },
     {
@@ -611,11 +611,11 @@
       "en_title": "Chapter 3: Protein — Beyond Muscle, the Full Story",
       "order": 43,
       "src_chars": 2076,
-      "status": "pending",
+      "status": "done",
       "src_sha": "052e69c55c20",
       "src": "### Chapter Summary\n\nProtein is the body's molecular workhorse — building muscle is only one of its dozens of critical functions, including enzyme catalysis, hormone production, immune defense, and structural support.\n\n**Key ideas from this chapter:**\n\n* All proteins are built from 20 amino acids, 9 of which are essential (must come from diet). The body maintains constant protein turnover — continuous synthesis and breakdown — even in people not trying to build muscle.\n\n* **Complete proteins** contain all 9 essential amino acids; animal proteins and soy are complete. Most plant proteins are incomplete but can be combined through dietary variety to meet all amino acid needs, without needing complementation at each meal.\n\n* **DIAAS** is the current standard for protein quality, measuring amino acid profile and digestibility. Plant proteins generally score lower than animal proteins, but diverse plant protein combinations close this gap.\n\n* **The RDA (0.8g/kg)** is a minimum to prevent deficiency, not an optimal for health and performance. Active individuals, older adults, and people losing weight benefit from 1.2–2.0g/kg per day. The evidence plateaus around 1.62g/kg for muscle building purposes.\n\n* **High protein intake does not damage healthy kidneys.** The concern is medically valid for people with existing chronic kidney disease but not supported by evidence in healthy individuals.\n\n* **Thread 3 (Energy Balance):** Protein has the highest thermic effect of food (20–30%), meaning it costs the most energy to digest, and it is the most satiating macronutrient — both factors that help explain why higher-protein diets often produce greater weight loss than macronutrient-equivalent alternatives.\n\n**Looking ahead:** Chapter 4 examines fat — the most politically charged macronutrient of the past half-century. Before we can understand the fat controversies in Part II, we need to understand what fat actually is chemically, what it does in the body, and why treating all fats as equivalent is as wrong as treating all carbohydrates as equivalent.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 689,
+      "out_sha": "f39d6f680925",
       "note": ""
     },
     {
@@ -623,11 +623,11 @@
       "en_title": "Chapter 4: Fat — The Most Misunderstood Macronutrient",
       "order": 44,
       "src_chars": 3346,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cb89c08a573c",
       "src": "There is a thought experiment worth trying before you read this chapter. Write down the first five words that come to mind when you hear the word \"fat.\"\n\nMost people, if they're honest, produce a list that looks something like: unhealthy, heavy, slow, clogged, avoid. Some people have updated their priors: they might include \"keto,\" \"essential,\" or \"brain food.\" But few people would instinctively produce what a biochemist would say: _flexible, structural, essential, versatile, insulating._\n\nFat has the worst public relations of any macronutrient, and most of it is undeserved. The story of how fat got its reputation — a story of science distorted by funding, media, and policy — is the subject of Chapter 6. Before we can understand that story, we need to understand what fat actually is.\n\nThis chapter is about the biochemistry and biology of fat: what the molecules look like, what they do in your body, and why some fats genuinely matter more than others. Without this foundation, the nutrition debates of Part II are just competing opinions. With it, you will be able to evaluate those debates on their actual scientific merits.\n\n**Thread 1 (The Fat Question) — First Appearance:** This chapter introduces fat as it actually is, chemically and biologically. In Chapter 6, we will see how a politically and commercially distorted version of this science shaped four decades of dietary policy.\n\n\n### 4.1 What Fat Is: A Chemical Introduction\n\nAll dietary fats belong to the chemical family called **lipids** — molecules characterized by being largely insoluble in water and soluble in organic solvents. The main dietary lipids are **triglycerides** (also called triacylglycerols), which make up about 95% of dietary fat.\n\nA triglyceride consists of a **glycerol backbone** attached to three **fatty acid chains**. Glycerol is a simple three-carbon alcohol. The fatty acid chains are what give different fats their distinct properties.\n\nA fatty acid chain is simply a long chain of carbon atoms with hydrogen atoms attached, ending in a carboxyl group (–COOH). The length of the chain (number of carbons) and the number and arrangement of double bonds between carbons determine the fat's physical properties and metabolic behavior.\n\n\n#### Definition: Saturation in Fats\n\n**Saturated fatty acids** have no double bonds between carbon atoms. Every carbon is \"saturated\" with hydrogen. The chain is straight and rigid, allowing molecules to pack closely together. At room temperature, saturated fats are typically solid (butter, coconut oil, the white fat on meat).\n\n**Monounsaturated fatty acids (MUFA)** have one double bond. The double bond creates a kink in the chain, preventing tight packing. MUFAs are typically liquid at room temperature but solidify when chilled (olive oil thickens in the refrigerator).\n\n**Polyunsaturated fatty acids (PUFA)** have two or more double bonds. Multiple kinks create even looser packing — these fats remain liquid even when chilled (fish oil, flaxseed oil).\n\nIn plain language: think of saturated fats as straight sticks that stack neatly (solid). Unsaturated fats are kinked sticks that can't stack (liquid). The degree of unsaturation determines fluidity.\n\nThis structural difference explains why butter (primarily saturated fat) is solid while olive oil (primarily monounsaturated) is liquid.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1114,
+      "out_sha": "19c90c1a3377",
       "note": ""
     },
     {
@@ -635,11 +635,11 @@
       "en_title": "Chapter 4: Fat — The Most Misunderstood Macronutrient",
       "order": 45,
       "src_chars": 2681,
-      "status": "pending",
+      "status": "done",
       "src_sha": "02c0b3a38319",
       "src": "### 4.2 The Fat Family: Saturated, Monounsaturated, Polyunsaturated, and Trans\n\n**Saturated fats** are found primarily in:\n\n* Animal products: butter, cheese, cream, fatty meat, lard\n* Tropical oils: coconut oil, palm kernel oil\n\nCommon saturated fatty acids include lauric acid (C12, in coconut oil), palmitic acid (C16, most common saturated fat in human adipose tissue), and stearic acid (C18, in beef and chocolate).\n\nNot all saturated fats behave identically in the body. Stearic acid (C18) appears to have a neutral effect on LDL cholesterol — the body rapidly converts it to oleic acid (a monounsaturated fat). Lauric acid (C12, in coconut oil) raises both LDL and HDL. Palmitic acid (C16) raises LDL more substantially. These distinctions matter for understanding the saturated fat–heart disease debate, which we revisit in Chapter 10.\n\n**Monounsaturated fats (MUFA)** are found primarily in:\n\n* Olive oil (oleic acid is approximately 73% of olive oil fatty acids)\n* Avocados, almonds, hazelnuts, cashews, peanuts\n* High-oleic sunflower and safflower oils\n\n**Polyunsaturated fats (PUFA)** are found in:\n\n* Omega-6 rich: sunflower oil, corn oil, soybean oil, most nuts and seeds\n* Omega-3 rich: fatty fish (salmon, sardines, mackerel), flaxseeds, walnuts, chia seeds\n\n\n#### Definition: Trans Fats\n\nTrans fats are unsaturated fatty acids with a specific arrangement of hydrogen atoms across the double bond — a **trans** arrangement rather than the natural **cis** arrangement. Trans fats occur in two forms:\n\n**Industrial trans fats** are created by partial hydrogenation of vegetable oils (pumping hydrogen into liquid oil to make it solid and shelf-stable). This process was widely used in the food industry from the 1950s through the 2010s to make margarine, shortening, and extend the shelf life of packaged foods. Industrial trans fats raise LDL cholesterol and lower HDL cholesterol — a doubly unfavorable combination. They have now been largely phased out of the food supply in many countries (FDA banned them in the US in 2018).\n\n**Natural trans fats** (conjugated linoleic acid, CLA, and vaccenic acid) occur naturally in small amounts in the milk fat and meat of ruminant animals. These appear to have different (and possibly health-neutral or beneficial) effects compared to industrial trans fats — another case where chemical similarity does not mean identical biological effects.\n\nIn plain language: industrial trans fats are the closest thing to a genuinely \"bad\" fat in nutrition science — strong, consistent evidence of cardiovascular harm with no redeeming qualities. Natural trans fats are a different story. But both are called \"trans\" on a label.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 976,
+      "out_sha": "72dff6ce6b7f",
       "note": ""
     },
     {
