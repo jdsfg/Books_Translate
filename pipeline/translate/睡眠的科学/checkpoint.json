@@ -2891,11 +2891,11 @@
       "en_title": "Chapter 12: Sleep Apnea — The Silent Killer",
       "order": 235,
       "src_chars": 3296,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d6a158c88052",
       "src": "### Chapter Summary\n\nThis chapter introduced obstructive sleep apnea — one of the most common and most underdiagnosed medical conditions of adulthood. We saw the mechanism: upper airway collapse during sleep, brief partial arousals that the patient does not consciously remember, sleep architecture shattered into fragmentation. We saw the cascade of consequences: cardiovascular (hypertension, atrial fibrillation, heart failure, stroke), metabolic (insulin resistance, weight gain), cognitive (daytime drowsiness, impaired performance, elevated dementia risk), and social (drowsy driving, relationship strain).\n\nWe saw the cruelest feature: most OSA patients believe they sleep well. The disorder is \"silent\" in the sense that its progression doesn't produce strong symptoms recognizable to the patient, even as substantial damage accumulates. This makes screening essential — bed partner reports, daytime drowsiness despite \"adequate\" sleep duration, morning headaches, anatomical risk factors all warrant evaluation.\n\nWe covered diagnosis (in-laboratory polysomnography or home sleep apnea testing) and treatment. CPAP is the gold standard, highly effective when used consistently. Adherence is the rate-limiting step, with mask comfort, pressure adjustment, and patient education all important. Alternative treatments exist for patients who cannot tolerate CPAP.\n\nThe Italian family with FFI returned for the fourth time. We saw the contrast: FFI destroys sleep architecture (untreatable, fatal); OSA suppresses architecture that is structurally intact (highly treatable). Two failure modes of sleep architecture, with very different prognoses, teach the same fundamental lesson: when the architecture cannot do its job, the body suffers in predictable ways.\n\nWe closed with a brief tour of three other sleep disorders that the informed reader should know to recognize: narcolepsy (orexin neuron loss producing excessive daytime sleepiness, sometimes with cataplexy and other REM-intrusion phenomena), restless legs syndrome and PLMD (sensorimotor disorders that fragment sleep, often associated with iron deficiency and pregnancy), and idiopathic hypersomnia (long unrefreshing nocturnal sleep without narcolepsy features). Each has a distinct mechanism and a distinct treatment; each is meaningfully misdiagnosed for years when not on the differential.\n\nThis chapter, like Chapter 11, is positioned to be directly life-changing for some readers. OSA is common enough that some readers — or their family members — almost certainly have undiagnosed disease. Recognizing the pattern, pursuing evaluation, and adhering to treatment can substantially reduce long-term morbidity and add productive years.\n\nChapter 13 turns to the broader landscape of substances that affect sleep — caffeine, alcohol, melatonin, cannabis, prescription sleep aids, exercise — with the same anti-overclaim discipline that has run through this book. We will see why \"alcohol helps me sleep\" is one of the most wrong folk beliefs about sleep, why melatonin is often misused, and why prescription hypnotics produce a state that resembles sleep without delivering its functions. The Italian family will return for one final visit, with the chapter's most piercing observation: no current drug actually initiates sleep.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 946,
+      "out_sha": "c3d63e55585e",
       "note": ""
     },
     {
@@ -2903,11 +2903,11 @@
       "en_title": "Chapter 12: Sleep Apnea — The Silent Killer",
       "order": 236,
       "src_chars": 850,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0ca5d2b34282",
       "src": "**Diary instruction for Chapter 12** : If you have a bed partner, ask them tonight: \"Have you ever noticed me snoring? Have you ever noticed me stop breathing? Have you ever noticed me gasping or snorting in my sleep?\" Document what they say. If they have noticed any of these, the chapter you just read may apply directly to you. If you don't have a bed partner, look for the indirect signals: persistent daytime drowsiness despite adequate sleep duration, morning headaches, recent hypertension or weight gain, ability to fall asleep in non-bedroom situations (during meetings, while reading, watching TV). Add a line to your diary recording these signals. Track the pattern over a week. If multiple signals are present consistently, evaluation is warranted. The diagnosis costs little; the consequences of missed diagnosis can be substantial.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 234,
+      "out_sha": "b8c410e999d0",
       "note": ""
     },
     {
@@ -2915,11 +2915,11 @@
       "en_title": "Chapter 13: What Helps and What Doesn't",
       "order": 237,
       "src_chars": 1989,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e74a9068b33f",
       "src": "A reader who has reached this chapter knows a great deal about sleep. They understand the architecture of the night, the two-process model that determines when sleep arrives, the functions sleep performs for memory and emotion and metabolism, the disorders that disrupt it, and the gold-standard behavioral treatments that address the most common of those disorders. They have, by this point in the book, developed the mental framework with which any specific sleep claim can be evaluated.\n\nThis chapter applies that framework to the substances and behaviors that people commonly use to manage their sleep. The scope is broad — caffeine, alcohol, melatonin, cannabis, prescription hypnotics, exercise, room temperature — and the treatment will be honest. Some of these things help. Some of them do nothing. Some of them actively harm sleep while feeling like they help. Some of the most familiar folk beliefs about sleep aids are wrong. The reader who finishes this chapter will be able to read any new sleep aid that comes on the market and form a calibrated judgment about its likely value.\n\nThe Italian family returns one final time in this chapter, with what may be the most piercing observation of the book: **no current drug actually initiates sleep**. They all merely mimic some surface features of it. This is why no medication saves the patients with FFI, and it is why pharmacological approaches to sleep are fundamentally limited in a way that most readers haven't appreciated.\n\nWe will also meet bears, who appear to sleep all winter but are not actually sleeping. The thread of \"evolution has not found a way to skip sleep\" closes here, with a confusion that this chapter clears up.\n\nThe chapter is organized around what people actually do for sleep, rather than as a list with pros and cons. Each substance is treated as a brief inquiry: what is it doing biologically, what does the evidence say about its effects, and what is the calibrated take-home for the reader.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 545,
+      "out_sha": "44d1f417951c",
       "note": ""
     },
     {
@@ -2927,11 +2927,11 @@
       "en_title": "Chapter 13: What Helps and What Doesn't",
       "order": 238,
       "src_chars": 2464,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d313c03d396f",
       "src": "### 13.1 Caffeine: The Most Common, The Most Misunderstood\n\nCaffeine is, by a wide margin, the most-consumed psychoactive drug in the world. Roughly 80-90% of adults in many populations consume it daily. Its effects on sleep have been the subject of perhaps more research than any other substance, and the picture is now well-established.\n\nWe met caffeine in Chapter 2: it antagonizes adenosine receptors, masking the sleep pressure (Process S) that adenosine accumulation produces. Caffeine doesn't remove adenosine; it occupies the parking spaces where adenosine would otherwise dock. The conscious experience of \"alertness\" produced by caffeine is, in essence, the absence of the sleep-pressure signal that the brain would otherwise be receiving.\n\nThe half-life of caffeine in most adults is about 5 to 6 hours. This is a critical number. A 100-mg cup of coffee at 4 PM still has roughly 50 mg of caffeine in your system at 9 or 10 PM, and roughly 25 mg at midnight. The \"I don't feel anything from coffee anymore\" subjective experience does not mean the caffeine has cleared; it means receptor adaptation has reduced the conscious effect. Polysomnography of habitual coffee drinkers consistently shows that evening caffeine — even in subjects who insist it doesn't affect them — disrupts sleep architecture: increased sleep latency, reduced N3, reduced spindle density.\n\nThe actionable implication is straightforward. Most adults are well-served by treating caffeine as a morning-and-early-afternoon drug, with their last cup ideally before noon and certainly before 2 PM. Patients with insomnia or fragmented sleep should consider eliminating caffeine entirely for several weeks to see if their sleep improves; many find that it does, dramatically. Patients with high tolerance who report \"needing\" coffee through the day are often in a self-perpetuating loop where their poor sleep produces fatigue, which they treat with more caffeine, which produces poorer sleep, and so on. Breaking the loop typically requires a temporary period of low caffeine intake to allow receptor sensitivity to recalibrate.\n\nThe deeper point is that caffeine doesn't pay off the underlying sleep debt; it borrows alertness against the future. Every cup is a loan from the cleared-receptor afternoon and evening. The bill comes due, and unlike financial debt, you can't refinance — the body's adenosine accounting catches up at the receptors regardless of how the day went.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 701,
+      "out_sha": "a66449086bd0",
       "note": ""
     },
     {
@@ -2939,11 +2939,11 @@
       "en_title": "Chapter 13: What Helps and What Doesn't",
       "order": 239,
       "src_chars": 2642,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8bbae7360f8f",
       "src": "### 13.2 Alcohol: The Most Wrong Folk Belief\n\nThe cultural belief that \"a drink helps me sleep\" is one of the most common and most wrong folk beliefs about sleep. The belief contains a kernel of truth — alcohol is a sedative, and a few drinks reduce sleep latency in many people. But the consequences after sleep onset are uniformly bad, and the felt benefit is a deception.\n\nAlcohol's effects on sleep architecture are striking and well-replicated. In the first half of the night, while alcohol is being metabolized, sleep is suppressed in a sedative-like way: faster onset, somewhat deeper appearance of N3 in the early cycles. So far so good — this is the part the drinker notices. But as alcohol clears, in the second half of the night, several things happen. REM sleep is substantially suppressed, sometimes by 30-40%. Sleep becomes fragmented, with many brief awakenings, often with the dreamer just below the conscious threshold of awareness. Sleep spindles are reduced, impairing memory consolidation. The autonomic nervous system shows rebound activation, with increased heart rate and reduced heart rate variability.\n\nThe drinker wakes the next morning with a sense of having slept poorly. They often attribute this to \"alcohol metabolism\" or \"dehydration\" — both contribute, but the larger issue is that the architecture of the night was systematically degraded. Memory of yesterday is impaired (Chapter 5's spindle mechanism). Emotional reprocessing did not happen normally (Chapter 7's REM suppression). The body's overnight maintenance was disrupted at multiple stages.\n\nThe implication for moderate evening drinking is significant. Two glasses of wine with dinner, finishing at 8 PM, may seem innocuous, but the effect on sleep architecture is measurable and meaningful. Habitual evening drinkers who \"always sleep through the night\" are experiencing what they think is normal sleep but is in fact substantially degraded sleep. Many readers who eliminate evening alcohol for two weeks discover, often to their surprise, that their sleep had been worse than they realized.\n\nFor acute sleep restoration after a poor night, alcohol is exactly the wrong tool. For chronic management of insomnia, alcohol is the most predictable way to make it worse over time. For anyone trying to address sleep concerns, eliminating evening alcohol — at least for a trial period — is one of the highest-leverage interventions available. The folk wisdom that \"a drink helps me relax and sleep\" is conflating two separable things: the relaxation (which is real but brief) and the sleep quality (which is not improved and is actively harmed).\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 723,
+      "out_sha": "8d7e47fa46b1",
       "note": ""
     },
     {
@@ -2951,11 +2951,11 @@
       "en_title": "Chapter 13: What Helps and What Doesn't",
       "order": 240,
       "src_chars": 3003,
-      "status": "pending",
+      "status": "done",
       "src_sha": "41d0a90f32b9",
       "src": "### 13.3 Melatonin: Useful for the Wrong Things\n\nMelatonin is the body's own circadian signaling hormone, secreted by the pineal gland in response to evening darkness, with levels rising through the night and falling toward morning. Its biological function is to inform the rest of the body that biological night has begun. As we saw in Chapter 4, light exposure suppresses melatonin secretion, which is why screens at bedtime delay sleep onset.\n\nSynthetic melatonin became widely available as an over-the-counter supplement in the 1990s and has become one of the most-purchased sleep aids in many countries. The marketing implies it is a generally useful sleep aid; the evidence shows something more specific.\n\nMelatonin is genuinely effective for _circadian phase shifting_ — adjusting the timing of the body's circadian rhythm. For jet lag, particularly eastward travel where the body must shift earlier than its current rhythm, a small dose of melatonin (0.3 to 0.5 mg) taken at the appropriate phase-shifting time can substantially accelerate adaptation. For shift workers transitioning between schedules, similar protocols can help. For circadian rhythm disorders (delayed sleep phase syndrome, where the patient's natural sleep timing is shifted very late), low-dose melatonin at the right time can shift the rhythm earlier over weeks.\n\nFor ordinary insomnia — difficulty falling asleep at one's usual bedtime, with no circadian phase issue — melatonin is much less effective. The evidence shows small effects at best: a few minutes' reduction in sleep latency, modest improvement in subjective sleep quality, no clear effect on sleep architecture. Most studies show that melatonin's effect for ordinary insomnia is comparable to placebo or modestly better, with the size of the effect depending heavily on dose, timing, and patient population.\n\nTwo specific issues are worth flagging. First, the doses commonly sold over the counter (3-10 mg) are wildly higher than the physiological dose of about 0.3 mg. Higher doses are not more effective and may be counterproductive: they produce supraphysiological melatonin levels that persist longer than natural melatonin's overnight curve, and there is some evidence that chronic high-dose use can downregulate the body's own melatonin production. Second, the over-the-counter supplement market in many countries is poorly regulated, with substantial variation in actual content versus labeled content. Patients using melatonin should generally choose lower doses (0.5 to 1 mg) and reputable brands, and reserve its use for the conditions where it works (phase shifting) rather than treating it as a general sleep aid.\n\nThe honest take-home: melatonin is a useful tool for a specific job (circadian phase shifting). It is much less useful as a general insomnia treatment, despite the marketing. For most patients with chronic insomnia, CBT-I (Chapter 11) is dramatically more effective than melatonin and works on the actual mechanism of the disorder.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 808,
+      "out_sha": "a01d99b5155b",
       "note": ""
     },
     {
@@ -2963,11 +2963,11 @@
       "en_title": "Chapter 13: What Helps and What Doesn't",
       "order": 241,
       "src_chars": 1938,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4f5151502e59",
       "src": "#### Common Misconception\n\nA widespread instinct is that \"if 5 mg melatonin isn't working, try 10 mg.\" This rests on a dose-response model that does not match how melatonin actually behaves. Melatonin's effect plateaus at low doses; the difference between 0.3 mg and 1 mg is real, the difference between 3 mg and 10 mg is essentially flat for the receptor effect, and higher doses produce supraphysiological blood levels that may actually disturb the natural overnight melatonin curve and downregulate the body's own production over time. The intuition borrowed from other medications — more drug, more effect — gives the wrong answer here. If a low dose at the right time isn't working, the problem is usually that melatonin is the wrong tool for the problem (most likely a non-circadian insomnia), not that the dose is too low. Escalating produces no clinical benefit and adds risk.\n\n\n#### Common Misconception\n\nThe \"natural equals safe\" framing is heavily marketed for OTC sleep products — melatonin, valerian, magnesium, various herbal blends. The framing is misleading on two counts. First, \"natural\" molecules can have potent and sometimes harmful effects; melatonin is a real hormone with real downstream effects, and its OTC availability reflects historical regulatory accident in some countries (it is prescription-only in many). Second, the OTC supplement market is poorly regulated in many jurisdictions; multiple independent analyses have found substantial discrepancies between labeled and actual melatonin content (sometimes by factors of two or three), with some products containing serotonin or other unlabeled compounds. \"Natural\" is a marketing category, not a safety guarantee. Patients using OTC sleep aids should choose brands with third-party verification and reputable certifications; should use the lowest effective dose; and should not assume an OTC product is automatically safer than a prescription one.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 561,
+      "out_sha": "af37a27d257e",
       "note": ""
     },
     {
@@ -2975,11 +2975,11 @@
       "en_title": "Chapter 13: What Helps and What Doesn't",
       "order": 242,
       "src_chars": 1988,
-      "status": "pending",
+      "status": "done",
       "src_sha": "52e31deeff43",
       "src": "### 13.4 Cannabis and CBD: Where the Market Outpaces the Science\n\nThe market for cannabis-based sleep products has expanded enormously in the past decade, with cannabidiol (CBD), tetrahydrocannabinol (THC), and various combinations widely available and aggressively marketed for sleep. The science has not kept pace.\n\nTHC has been studied somewhat more than CBD, and the picture for THC is mixed. Like alcohol, THC tends to reduce sleep latency in many users in the short term, with subjective reports of \"better sleep\" the next day. Like alcohol, the architectural effects are concerning: REM is substantially suppressed at typical doses, slow-wave sleep may be increased in some users but reduced in others, and discontinuation after chronic use produces rebound REM with vivid, often unpleasant dreams. Habitual THC users who quit often experience substantially disrupted sleep for days to weeks before normal patterns return.\n\nCBD's evidence base for sleep is weaker. Some patients report benefits; controlled studies have produced mixed results, with the strongest signal being for anxiety-related sleep difficulties (where CBD's anxiolytic effects may help indirectly) rather than for direct sleep promotion. The product variability is substantial; many over-the-counter CBD products contain significantly different doses than labeled, and some contain THC at levels that produce psychoactive or sleep-architecture effects.\n\nFor both, the population-level pattern is that the market dramatically outpaces the science. People are spending substantial money on cannabis-based sleep products with limited or weak evidence of benefit, and with the additional concern that habitual use can produce dependence and withdrawal-related sleep disruption. Patients seeking to address sleep concerns are often better served by addressing the underlying issues (anxiety with appropriate treatment, insomnia with CBT-I, sleep apnea with CPAP) than by experimenting with cannabis products.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 566,
+      "out_sha": "c71770ddb75e",
       "note": ""
     },
     {
@@ -2987,11 +2987,11 @@
       "en_title": "Chapter 13: What Helps and What Doesn't",
       "order": 243,
       "src_chars": 2794,
-      "status": "pending",
+      "status": "done",
       "src_sha": "17a8927fd027",
       "src": "### 13.5 Prescription Hypnotics: Sleep Without Sleep\n\nPrescription sleep medications — primarily zolpidem (Ambien) and similar drugs in the same class, with benzodiazepines as an older alternative — are among the most-prescribed psychiatric medications. They induce a state that resembles sleep on the outside while delivering substantially less of sleep's biological functions on the inside.\n\nZolpidem and related drugs (eszopiclone, zaleplon — the \"Z-drugs\") act on GABA-A receptors, particularly the alpha-1 subunit, producing sedation and rapid sleep onset. The user falls asleep quickly, sleeps through the night by clock time, and wakes the next morning. To the patient and partner, the night looks normal.\n\nThe architecture is not normal. Z-drugs produce sleep with reduced N3, reduced REM, and substantially reduced sleep spindles. The patient is \"asleep\" in the sense of being unresponsive to the environment, but the consolidation, glymphatic clearance, and emotional reprocessing functions are running at substantially reduced rates. Next-day cognitive performance is measurably worse than after natural sleep of equivalent duration, even when the patient reports feeling rested. Memory consolidation is impaired; the previous day's learning is partly lost.\n\nSeveral other concerns deserve mention. Zolpidem in particular has been associated with parasomnia behaviors — sleep-eating, sleep-driving, sleep-walking — at higher rates than baseline, sometimes producing dramatic incidents the patient does not remember. Tolerance develops with chronic use; many patients escalate doses, with diminishing returns. Discontinuation after chronic use produces rebound insomnia, often worse than the original problem, which is one of the primary reasons patients feel \"stuck\" on these medications. Older patients, who are often prescribed these drugs, are at particular risk of falls and confusion.\n\nThe benzodiazepine class (temazepam, triazolam, others) shares many of these issues and adds the additional concern of dependence. Benzodiazepines have well-established withdrawal syndromes and chronic use is generally discouraged in modern guidelines.\n\nThe honest picture is that prescription hypnotics produce a state that masks the absence of normal sleep without restoring it. For acute, short-term insomnia (a few nights of disrupted sleep due to a specific stressor), occasional use can be reasonable. For chronic insomnia, they are dramatically inferior to CBT-I, produce architecture disruption that matters, and create dependence patterns that are themselves clinical problems. The widespread chronic prescription of these medications is, on current evidence, poor practice — though, as we discussed in Chapter 11, the gap between best-evidence practice and actual practice is wide.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 821,
+      "out_sha": "bcc89cb61e4c",
       "note": ""
     },
     {
@@ -2999,11 +2999,11 @@
       "en_title": "Chapter 13: What Helps and What Doesn't",
       "order": 244,
       "src_chars": 2658,
-      "status": "pending",
+      "status": "done",
       "src_sha": "62039c021a93",
       "src": "#### A Newer Class: Dual Orexin Receptor Antagonists (DORAs)\n\nThe newest class of prescription sleep medications takes a meaningfully different approach. Rather than activating GABA receptors — the \"press the off-switch\" strategy of benzodiazepines and Z-drugs — DORAs block the orexin/hypocretin system, the wakefulness-maintaining circuit Chapter 12 covered in the context of narcolepsy. By suppressing the wake-promoting signal rather than forcibly inducing unconsciousness, DORAs allow the natural sleep machinery to engage more readily.\n\nThree DORAs are currently FDA-approved: **suvorexant** (Belsomra, approved 2014), **lemborexant** (Dayvigo, 2019), and **daridorexant** (Quviviq, 2022). Their effects on sleep architecture appear meaningfully closer to natural sleep than the older Z-drugs: REM and N3 are substantially preserved (in some studies, REM is even slightly increased compared to placebo), and sleep spindles are less suppressed than with zolpidem. Next-morning residual sedation is lower in many users, though it is real for some.\n\nThis is genuinely encouraging, and it modifies — but does not overturn — the broader claim of this chapter. DORAs _do_ allow more natural sleep architecture than the older hypnotics. They still do not, in any strong sense, \"initiate sleep\" the way the body initiates sleep naturally; they suppress the wake-maintenance system and let sleep pressure (Process S, Chapter 2) take over. Whether that distinction matters clinically over decades is partly empirical: long-term outcome data on DORAs are still accumulating, so we cannot yet say with confidence whether twenty years on suvorexant produces the cognitive and metabolic costs that decades on zolpidem appear to produce. Early signs are favorable; longer-term studies are pending.\n\nThe practical implication for a patient considering pharmacological treatment of insomnia: if a hypnotic is judged necessary — typically after CBT-I has been tried, or in specific clinical situations where CBT-I is impractical — a DORA is a reasonable first choice over a Z-drug or benzodiazepine in many cases. For patients currently on chronic zolpidem who are considering transition, some clinicians switch to a DORA before tapering off entirely, though direct evidence on this approach is limited. As always, the _primary_ treatment for chronic insomnia remains CBT-I; the medication question is secondary, and is now somewhat better answered than it was a decade ago.\n\nFor the patient currently on chronic zolpidem or similar, the path forward is the careful taper plus CBT-I we covered in Chapter 11. The transition is uncomfortable but well worth doing.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 949,
+      "out_sha": "ec9a03f74984",
       "note": ""
     },
     {
