@@ -1,0 +1,37 @@
+**答案：** prompt 注册表是 prompt（LLM 被条件化的指令字符串）的版本化存储。工具目录是工具（LLM 可调用的函数）的版本化存储。它们是不同制品但相关：prompt 的指令通常关于如何使用工具（何时调用哪个、期望什么、何时升级）；工具和 prompt 一起演化。
+
+协调模式：
+
+1. **一起版本化**。当工具目录变更（新工具添加；工具废弃），prompt 更新以提及变更。两个版本都被跟踪；清单指定生产 agent 使用的（prompt_version, tool_catalog_version）对。
+2. **一起 eval**。eval 用（prompt, tools）对运行 agent。对任一的变更作为单元评估；不能有引用目录不包含工具的 prompt。
+3. **工具文档的单一真相源**。目录中的工具描述也是 LLM 在 prompt 中看到的（API 自动包含）。不要在系统 prompt 中重复文档；目录是源。
+
+生产 agent 的部署清单携带三者：prompt_version + tool_catalog_version + model_version + eval_baseline。三元组定义 agent；改变任一触发 eval。纪律保持 agent 可复现和团队变更可追溯。
+
+**Q4.** 初级工程师提议添加 `run_sql(query)` 工具接受任意 SQL。批评设计并提出更安全替代。
+
+**答案：** 任意 SQL 工具是重大风险：
+
+1. **LLM 可被诱导构造恶意 SQL**（DROP TABLE、无 WHERE 的 DELETE、从敏感表 SELECT）。即使无 prompt 注入，LLM 也可能意外生成破坏性查询。
+2. **LLM 层的 SQL 注入**。LLM 可能将用户输入直接插入 SQL 字符串。
+3. **表级无审计轨迹**。知道 LLM 运行了 _某些_ SQL 不告诉你它访问了什么数据；可观测性变难。
+4. **无权限范围化**。工具在应用的数据库凭证下运行，可能有广泛访问。LLM 实际上有相同访问。
+
+更安全替代：
+
+**按查询类型的参数化工具**：
+
+
+    tools = [
+        {"name": "get_customer", "input_schema": {...仅 customer_id...}},
+        {"name": "list_orders", "input_schema": {...customer_id + status + 日期范围...}},
+        {"name": "get_order_details", "input_schema": {...order_id...}},
+        # ... 每个支持的查询模式一个工具
+    ]
+
+
+每个工具映射到代码中的参数化 SQL 查询；LLM 仅提供参数；SQL 本身固定。添加新查询模式需要添加新工具，可审查。
+
+**只读凭证范围**：即使有参数化工具，工具执行使用的数据库连接对读工具应有只读凭证，仅对需要写工具有限写凭证。
+
+**如确实需要：约束 SQL 构建器**。对于模式宽且 LLM 受益于灵活性的探索性分析，约束操作的 SQL 构建器（仅 SELECT；仅特定表；无禁止表连接；无 UNION；行限制上限）可给 LLM 表达能力而无原始 SQL。即使如此：广泛日志、监控和审查。

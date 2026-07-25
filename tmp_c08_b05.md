@@ -1,0 +1,62 @@
+### 7.5 `outlines` 和 logit 级约束
+
+`outlines` 是一个比 `instructor` 深一层的库。与其要求 provider 强制 schema，`outlines` 修改 token 生成步骤本身——在每步掩码 logit 以强制正则表达式、上下文无关文法或 JSON schema。
+
+    import outlines
+
+    # outlines 做 logit 级掩码，需要访问模型的
+    # 原始 logit。这意味着它对本地/自托管模型工作（通过
+    # `transformers`、`vllm`、`llama.cpp`），不对仅暴露
+    # 补全文本的 provider API 工作。API provider 用 `instructor`；
+    # 自己服务模型时用 `outlines`。
+    model = outlines.models.transformers("microsoft/Phi-4-mini-instruct")
+    generator = outlines.generate.json(model, CodeReview)
+    result = generator(diff_text)
+
+
+`outlines` 闪光时：
+
+* **Provider 侧 schema 模式不可用。** 通过 vLLM、llama.cpp 或你自己的基础设施服务的开源模型可能没有原生 JSON schema 模式；`outlines` 提供它。
+* **你需要超越 JSON schema 的约束。** 正则约束生成（输出必须匹配 `\d{3}-\d{3}-\d{4}` 的电话号码；输出必须以 `.json` 结尾）；上下文无关文法约束（输出是有效 SQL）。
+* **你需要完全控制约束逻辑。** `outlines` 让你写 provider API 不支持的自定义约束。
+
+`outlines` 过度时：
+
+* **前沿 provider 的原生 JSON schema 模式已满足你的需求。** 大多数生产案例。原生模式更简单、受良好支持且受益于 provider 侧优化。
+* **约束是关于内容而非语法。** `outlines` 强制语法有效性；它不使模型产生 _语义正确_ 的输出。不要用它解决它不能解决的问题。
+
+2026 年分割：约 85% 的生产案例用原生 JSON schema 模式；`outlines` 用于自托管/开源/不寻常约束用例。
+
+### 7.6 工具调用作为结构化输出
+
+工具调用（第 13 章）在机制上是结构化输出的特殊情况。模型输出是函数调用的 _参数_；schema 是函数签名。当你定义 Anthropic 或 OpenAI 工具时，你为其参数提供 JSON schema；模型的工具使用输出符合该 schema。
+
+    tools = [{
+        "name": "search_patient_records",
+        "description": "按条件搜索 Beacon 的患者记录",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "patient_id": {"type": "string", "pattern": "^MRN-\\d{8}$"},
+                "date_from": {"type": "string", "format": "date"},
+                "date_to": {"type": "string", "format": "date"},
+            },
+            "required": ["patient_id"],
+        },
+    }]
+
+
+模型的工具调用输出：
+
+
+    {
+        "name": "search_patient_records",
+        "input": {"patient_id": "MRN-12345678", "date_from": "2025-01-01"}
+    }
+
+
+相同的约束解码机制适用。相同的 Pydantic 类型包装（`instructor` 的工具调用模式）适用。第 13 章构建 agent 循环；本章确立工具和结构化输出是同一工程表面的两个面。
+
+### 7.7 结构化输出中的故障模式
+
+特定于此层的三个故障模式。

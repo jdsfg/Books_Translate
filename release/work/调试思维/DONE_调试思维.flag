@@ -1,0 +1,55 @@
+# DONE · 调试思维
+
+- book: 调试思维
+- branch: cursor/debugging-thinking-sample-dc05
+- PR: #16（同分支返修，未新建 PR）
+- done/total: 183/183
+- verify: ERROR=0 WARN=11（`--force-arabic --glossary pipeline/translate/glossary_cs.md`）
+- 全书终审 BLOCK 返修后 head：见本提交
+
+## 本轮终审返修（相对 BLOCK 评论）
+
+| 问题 | 处理 |
+|---|---|
+| `c06_b05/b07` 大量英文正文未译 | 全文重译，散文中文化 |
+| `c12_b03` lock file 未译 | 改为「锁文件」 |
+| `c02_b06–b09` Answer/Discussion 残留 | 统一为「答案/讨论」 |
+| `c11_b01–b04` 代码注释英文 | 注释中文化，标识符保留 |
+| `c16_b03/b04` 伪代码/图英文 | 步骤与图注中文化 |
+| `c08_b03` undefined→0 技术错误 | 改为算术得 **NaN**（与 c08_b02 一致） |
+| `c05_b01/b03/b07/b08/b10` 公式粘连 | 三重渲染收敛为单一 `⌈log₂ N⌉` 形式 |
+| premature closure / confirmation bias / version comparison | 全书统一为过早闭合 / 确认偏差 / 版本对比 |
+| `c14_b01` 金额与英文专名 | NYSE→纽约证券交易所；feature flag→功能开关；金额保留 440 并附 4.4 亿 |
+| 额外英文残留 | 重译 c05_b02、c06_b02–b04、c07_b04、c08_b06 |
+
+## 术语锁定
+
+- debugging = 调试
+- minimal reproducible example / MRE = 最小可复现示例
+- observability = 可观测性
+- race condition = 竞态（服从共享 glossary_cs）
+- version comparison = 版本对比
+- confirmation bias = 确认偏差
+- premature closure = 过早闭合
+
+## 剩余 WARN=11 逐条说明
+
+| 块 | WARN | 裁决 |
+|---|---|---|
+| c04_b02 | 术语: 索引 | 源为 `index.html:42` 文件名，保留英文 |
+| c04_b03 | latex_inline 奇数 | 源/译均含 `${id}` 模板 `$`，与源一致 |
+| c05_b01 | 数字缺失 2/21000 | 源三重公式粘连伪串 `log⁡21000`；译文已收敛为 `⌈log₂ 1000⌉ = 10`，真数字 1000/10 保留 |
+| c05_b03 | 数字缺失 2100 | 同上，源伪串；译文 `⌈log₂ 100⌉ = 7` |
+| c05_b07 | 数字缺失 2500 | 同上；译文 `⌈log₂ 500⌉ = ⌈8.97⌉ = 9` |
+| c05_b08 | 数字缺失 240 | 同上；译文 `⌈log₂ 40⌉ = 6` |
+| c05_b10 | 数字缺失 2 | 源 `log⁡2N` 粘连伪数字；译文 `log₂ N` |
+| c09_b02 | 术语: 锁 | `package-lock.json` 文件名 |
+| c09_b07 | 术语: 锁 | 同上 |
+| c11_b04 | latex_inline 奇数 | 示例金额 `$100` 等货币符，与源一致 |
+| c11_b09 | latex_inline 奇数 | SQL `$amount/$id`，与源一致 |
+
+## 交付
+
+- 183/183；assemble 成功；ERROR=0
+- 未改共享脚本 / glossary_cs / style / lock-titles
+- 请编排者复验后合并

@@ -1,0 +1,198 @@
+MAIN checkpoints: 12
+MAIN DONE flags: 6
+ DONE pipeline/translate/AI时代六大超能力-卷五-APIs与自动化/DONE_AI时代六大超能力-卷五-APIs与自动化.flag
+ DONE pipeline/translate/AI时代六大超能力-卷六-你的第二大脑/DONE_AI时代六大超能力-卷六-你的第二大脑.flag
+ DONE pipeline/translate/AI时代的统计思维/DONE_AI时代的统计思维.flag
+ DONE pipeline/translate/学术写作：从论文到研究计划/DONE_学术写作：从论文到研究计划.flag
+ DONE pipeline/translate/社会心理学/DONE_社会心理学.flag
+ DONE pipeline/translate/调试思维/DONE_调试思维.flag
+
+=== MAIN book status ===
+ 138/138  DONE_flag=False  AI时代六大超能力-卷一-Git与GitHub
+  83/83   DONE_flag=True  AI时代六大超能力-卷五-APIs与自动化
+  76/76   DONE_flag=True  AI时代六大超能力-卷六-你的第二大脑
+ 380/380  DONE_flag=True  AI时代的统计思维
+ 134/282  DONE_flag=False  信息论：从香农到 AI
+ 350/350  DONE_flag=False  复杂性科学入门
+ 278/278  DONE_flag=True  学术写作：从论文到研究计划
+  30/285  DONE_flag=False  明智决策：不确定世界中的理性思考
+ 222/222  DONE_flag=True  社会心理学
+ 183/183  DONE_flag=True  调试思维
+   8/151  DONE_flag=False  身体这台机器：随身硬件巡礼
+  29/184  DONE_flag=False  进化心理学
+
+=== ALL remote branches tips (book checkpoints) ===
+PARTIAL  180/380  origin/cursor/academic-writing-sample-bd4b  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/academic-writing-sample-bd4b  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/academic-writing-sample-bd4b  复杂性科学入门
+COMPLETE 278/278  origin/cursor/academic-writing-sample-bd4b  学术写作：从论文到研究计划
+PARTIAL  30/285  origin/cursor/academic-writing-sample-bd4b  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/academic-writing-sample-bd4b  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/academic-writing-sample-bd4b  进化心理学
+COMPLETE 380/380  origin/cursor/ai-statistics-translate-27cd  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/ai-statistics-translate-27cd  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/ai-statistics-translate-27cd  复杂性科学入门
+PARTIAL  30/285  origin/cursor/ai-statistics-translate-27cd  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/ai-statistics-translate-27cd  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/ai-statistics-translate-27cd  进化心理学
+COMPLETE 83/83  origin/cursor/ai-superpowers-apis-sample-7816  AI时代六大超能力-卷五-APIs与自动化
+PARTIAL  180/380  origin/cursor/ai-superpowers-apis-sample-7816  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/ai-superpowers-apis-sample-7816  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/ai-superpowers-apis-sample-7816  复杂性科学入门
+PARTIAL  30/285  origin/cursor/ai-superpowers-apis-sample-7816  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/ai-superpowers-apis-sample-7816  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/ai-superpowers-apis-sample-7816  进化心理学
+COMPLETE 138/138  origin/cursor/ai-superpowers-git-sample-906d  AI时代六大超能力-卷一-Git与GitHub
+PARTIAL  180/380  origin/cursor/ai-superpowers-git-sample-906d  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/ai-superpowers-git-sample-906d  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/ai-superpowers-git-sample-906d  复杂性科学入门
+PARTIAL  30/285  origin/cursor/ai-superpowers-git-sample-906d  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/ai-superpowers-git-sample-906d  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/ai-superpowers-git-sample-906d  进化心理学
+PARTIAL  180/380  origin/cursor/automated-translation-review-f882  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/automated-translation-review-f882  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/automated-translation-review-f882  复杂性科学入门
+PARTIAL  30/285  origin/cursor/automated-translation-review-f882  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/automated-translation-review-f882  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/automated-translation-review-f882  进化心理学
+PARTIAL  180/380  origin/cursor/body-machine-translate-7f64  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/body-machine-translate-7f64  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/body-machine-translate-7f64  复杂性科学入门
+PARTIAL  30/285  origin/cursor/body-machine-translate-7f64  明智决策：不确定世界中的理性思考
+COMPLETE 151/151  origin/cursor/body-machine-translate-7f64  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/body-machine-translate-7f64  进化心理学
+PARTIAL  180/380  origin/cursor/cleaning-pending-part-a-103b  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/cleaning-pending-part-a-103b  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/cleaning-pending-part-a-103b  复杂性科学入门
+PARTIAL  30/285  origin/cursor/cleaning-pending-part-a-103b  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/cleaning-pending-part-a-103b  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/cleaning-pending-part-a-103b  进化心理学
+PARTIAL  180/380  origin/cursor/cleaning-pending-part-b-42c1  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/cleaning-pending-part-b-42c1  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/cleaning-pending-part-b-42c1  复杂性科学入门
+PARTIAL  30/285  origin/cursor/cleaning-pending-part-b-42c1  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/cleaning-pending-part-b-42c1  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/cleaning-pending-part-b-42c1  进化心理学
+PARTIAL  180/380  origin/cursor/complexity-science-qa-6f36  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/complexity-science-qa-6f36  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/complexity-science-qa-6f36  复杂性科学入门
+PARTIAL  30/285  origin/cursor/complexity-science-qa-6f36  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/complexity-science-qa-6f36  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/complexity-science-qa-6f36  进化心理学
+PARTIAL  180/380  origin/cursor/debugging-thinking-sample-dc05  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/debugging-thinking-sample-dc05  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/debugging-thinking-sample-dc05  复杂性科学入门
+PARTIAL  30/285  origin/cursor/debugging-thinking-sample-dc05  明智决策：不确定世界中的理性思考
+COMPLETE 183/183  origin/cursor/debugging-thinking-sample-dc05  调试思维
+PARTIAL  8/151  origin/cursor/debugging-thinking-sample-dc05  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/debugging-thinking-sample-dc05  进化心理学
+PARTIAL  180/380  origin/cursor/decision-making-translate-a63c  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/decision-making-translate-a63c  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/decision-making-translate-a63c  复杂性科学入门
+COMPLETE 285/285  origin/cursor/decision-making-translate-a63c  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/decision-making-translate-a63c  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/decision-making-translate-a63c  进化心理学
+PARTIAL  180/380  origin/cursor/evolutionary-psychology-translate-4bb8  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/evolutionary-psychology-translate-4bb8  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/evolutionary-psychology-translate-4bb8  复杂性科学入门
+PARTIAL  30/285  origin/cursor/evolutionary-psychology-translate-4bb8  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/evolutionary-psychology-translate-4bb8  身体这台机器：随身硬件巡礼
+COMPLETE 184/184  origin/cursor/evolutionary-psychology-translate-4bb8  进化心理学
+PARTIAL  180/380  origin/cursor/fix-work-root-path-7d45  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/fix-work-root-path-7d45  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/fix-work-root-path-7d45  复杂性科学入门
+PARTIAL  30/285  origin/cursor/fix-work-root-path-7d45  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/fix-work-root-path-7d45  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/fix-work-root-path-7d45  进化心理学
+PARTIAL  180/380  origin/cursor/info-theory-repair-d121  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/info-theory-repair-d121  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/info-theory-repair-d121  复杂性科学入门
+PARTIAL  30/285  origin/cursor/info-theory-repair-d121  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/info-theory-repair-d121  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/info-theory-repair-d121  进化心理学
+PARTIAL  180/380  origin/cursor/preflight-pending-part-1-42c1  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/preflight-pending-part-1-42c1  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/preflight-pending-part-1-42c1  复杂性科学入门
+PARTIAL  30/285  origin/cursor/preflight-pending-part-1-42c1  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/preflight-pending-part-1-42c1  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/preflight-pending-part-1-42c1  进化心理学
+PARTIAL  180/380  origin/cursor/preflight-pending-part-2-103b  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/preflight-pending-part-2-103b  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/preflight-pending-part-2-103b  复杂性科学入门
+PARTIAL  30/285  origin/cursor/preflight-pending-part-2-103b  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/preflight-pending-part-2-103b  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/preflight-pending-part-2-103b  进化心理学
+PARTIAL  180/380  origin/cursor/promote-priority-batch-f882  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/promote-priority-batch-f882  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/promote-priority-batch-f882  复杂性科学入门
+PARTIAL  30/285  origin/cursor/promote-priority-batch-f882  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/promote-priority-batch-f882  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/promote-priority-batch-f882  进化心理学
+COMPLETE 76/76  origin/cursor/second-brain-sample-6eaa  AI时代六大超能力-卷六-你的第二大脑
+PARTIAL  180/380  origin/cursor/second-brain-sample-6eaa  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/second-brain-sample-6eaa  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/second-brain-sample-6eaa  复杂性科学入门
+PARTIAL  30/285  origin/cursor/second-brain-sample-6eaa  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/second-brain-sample-6eaa  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/second-brain-sample-6eaa  进化心理学
+PARTIAL  180/380  origin/cursor/setup-dev-environment-7cbf  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/setup-dev-environment-7cbf  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/setup-dev-environment-7cbf  复杂性科学入门
+PARTIAL  30/285  origin/cursor/setup-dev-environment-7cbf  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/cursor/setup-dev-environment-7cbf  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/setup-dev-environment-7cbf  进化心理学
+PARTIAL  180/380  origin/cursor/social-psychology-sample-2783  AI时代的统计思维
+PARTIAL  134/282  origin/cursor/social-psychology-sample-2783  信息论：从香农到 AI
+COMPLETE 350/350  origin/cursor/social-psychology-sample-2783  复杂性科学入门
+PARTIAL  30/285  origin/cursor/social-psychology-sample-2783  明智决策：不确定世界中的理性思考
+COMPLETE 222/222  origin/cursor/social-psychology-sample-2783  社会心理学
+PARTIAL  8/151  origin/cursor/social-psychology-sample-2783  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/cursor/social-psychology-sample-2783  进化心理学
+COMPLETE 138/138  origin/main  AI时代六大超能力-卷一-Git与GitHub
+COMPLETE 83/83  origin/main  AI时代六大超能力-卷五-APIs与自动化
+COMPLETE 76/76  origin/main  AI时代六大超能力-卷六-你的第二大脑
+COMPLETE 380/380  origin/main  AI时代的统计思维
+PARTIAL  134/282  origin/main  信息论：从香农到 AI
+COMPLETE 350/350  origin/main  复杂性科学入门
+COMPLETE 278/278  origin/main  学术写作：从论文到研究计划
+PARTIAL  30/285  origin/main  明智决策：不确定世界中的理性思考
+COMPLETE 222/222  origin/main  社会心理学
+COMPLETE 183/183  origin/main  调试思维
+PARTIAL  8/151  origin/main  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/main  进化心理学
+COMPLETE 380/380  origin/translate/ai-statistics  AI时代的统计思维
+PARTIAL  134/282  origin/translate/ai-statistics  信息论：从香农到 AI
+COMPLETE 350/350  origin/translate/ai-statistics  复杂性科学入门
+PARTIAL  30/285  origin/translate/ai-statistics  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/translate/ai-statistics  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/translate/ai-statistics  进化心理学
+PARTIAL  180/380  origin/translate/body-machine  AI时代的统计思维
+PARTIAL  134/282  origin/translate/body-machine  信息论：从香农到 AI
+COMPLETE 350/350  origin/translate/body-machine  复杂性科学入门
+PARTIAL  30/285  origin/translate/body-machine  明智决策：不确定世界中的理性思考
+COMPLETE 151/151  origin/translate/body-machine  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/translate/body-machine  进化心理学
+PARTIAL  180/380  origin/translate/complexity-science  AI时代的统计思维
+PARTIAL  134/282  origin/translate/complexity-science  信息论：从香农到 AI
+COMPLETE 350/350  origin/translate/complexity-science  复杂性科学入门
+PARTIAL  30/285  origin/translate/complexity-science  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/translate/complexity-science  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/translate/complexity-science  进化心理学
+PARTIAL  180/380  origin/translate/decision-making  AI时代的统计思维
+PARTIAL  134/282  origin/translate/decision-making  信息论：从香农到 AI
+COMPLETE 350/350  origin/translate/decision-making  复杂性科学入门
+COMPLETE 285/285  origin/translate/decision-making  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/translate/decision-making  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/translate/decision-making  进化心理学
+PARTIAL  180/380  origin/translate/evolutionary-psychology  AI时代的统计思维
+PARTIAL  134/282  origin/translate/evolutionary-psychology  信息论：从香农到 AI
+COMPLETE 350/350  origin/translate/evolutionary-psychology  复杂性科学入门
+PARTIAL  30/285  origin/translate/evolutionary-psychology  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/translate/evolutionary-psychology  身体这台机器：随身硬件巡礼
+COMPLETE 184/184  origin/translate/evolutionary-psychology  进化心理学
+PARTIAL  180/380  origin/translate/info-theory  AI时代的统计思维
+PARTIAL  134/282  origin/translate/info-theory  信息论：从香农到 AI
+COMPLETE 350/350  origin/translate/info-theory  复杂性科学入门
+PARTIAL  30/285  origin/translate/info-theory  明智决策：不确定世界中的理性思考
+PARTIAL  8/151  origin/translate/info-theory  身体这台机器：随身硬件巡礼
+PARTIAL  29/184  origin/translate/info-theory  进化心理学

@@ -1,0 +1,81 @@
+#### 应用题
+
+**Q1.** _设计判别联合 schema_。Beacon 临床笔记摘要器接受口述笔记作为输入。设计一个 Pydantic schema 覆盖：(a) 成功摘要；(b) 无法解析口述；(c) 检测模型不确定并希望人工审查的内容。使用判别联合。包含至少两个带非显而易见约束的字段级验证器。
+
+提示
+
+§7.9 有结构；扩展它。
+
+**答案：**
+
+
+    from pydantic import BaseModel, Field, field_validator
+    from typing import Literal, Annotated, Union
+    from datetime import date
+
+    class Medication(BaseModel):
+        name: str = Field(min_length=1)
+        dosage: str | None = None
+        frequency: str | None = None
+        unclear: bool = False
+
+    class SuccessSummary(BaseModel):
+        kind: Literal["success"]
+        chief_complaint: str = Field(min_length=3, max_length=500)
+        history_of_present_illness: str = Field(min_length=10)
+        examination_findings: list[str] = Field(default_factory=list)
+        medications: list[Medication] = Field(default_factory=list)
+        medications_unclear: bool = False  # 如果口述提到无法解析的药物则设为 true
+        plan: str = Field(min_length=5)
+        confidence: float = Field(ge=0.0, le=1.0)
+        visit_date: date | None = None
+
+        @field_validator("chief_complaint", "history_of_present_illness", "plan")
+        @classmethod
+        def no_fabrication_markers(cls, v: str) -> str:
+            forbidden = ["[fabricated]", "[made up]", "[guess]", "i.e., i don't know"]
+            for tag in forbidden:
+                if tag.lower() in v.lower():
+                    raise ValueError(f"contains fabrication marker: {tag}")
+            return v
+
+        @field_validator("confidence")
+        @classmethod
+        def confidence_aligned_with_unclear(cls, v: float, info) -> float:
+            # 如果置信度低且未标记 unclear_elements，那是不连贯的
+            if v < 0.5:
+                data = info.data
+                unclear = data.get("medications_unclear", False)
+                if not unclear:
+                    raise ValueError("low confidence requires medications_unclear or other "
+uncertainty flag")
+            return v
+
+    class HumanReviewSummary(BaseModel):
+        kind: Literal["human_review_required"]
+        reason: Literal[
+            "ambiguous_clinical_content",
+            "potential_safety_concern",
+            "patient_id_uncertainty",
+            "low_confidence_overall",
+        ]
+        partial_summary: SuccessSummary | None = None  # 可包含已提取的内容
+        detail: str = Field(min_length=10)
+
+    class UnparseableSummary(BaseModel):
+        kind: Literal["unparseable"]
+        detail: str = Field(min_length=10)
+        audio_quality_concern: bool = False
+
+    Summary = Annotated[
+        Union[SuccessSummary, HumanReviewSummary, UnparseableSummary],
+        Field(discriminator="kind")
+    ]
+
+    class SummaryEnvelope(BaseModel):
+        result: Summary
+
+
+两个非显而易见验证器：
+
+1. **`no_fabrication_markers`** 应用于多个字段：捕获模型偶尔用 `[fabricated]` 占位符标记不确定内容的习惯，这些通过 schema 验证但显式标记幻觉。验证器拒绝这些使团队用更严格的 prompt 重试。

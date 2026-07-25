@@ -1,0 +1,87 @@
+### 13.1 基本模式：LLM + 工具 = 函数调用引擎
+
+工具调用的形状：
+
+1. 应用定义一组工具，每个带 **schema**：名称、描述、带类型和约束的参数。
+2. 应用在 API 调用中包含工具 schema 发给 LLM。
+3. LLM 的响应可能包含 **工具使用块** 而非（或 alongside）文本。工具使用块指定工具名称和 LLM 想传递的参数。
+4. 应用用 LLM 的参数执行工具。
+5. 应用发送后续 API 调用，将工具输出追加到消息中，角色为 `tool` 或 `tool_result`。
+6. LLM 继续，使用工具输出组合最终答案（或调用另一个工具）。
+
+
+    tools = [{
+        "name": "lookup_order",
+        "description": "按订单 ID 查询订单。返回订单详情：状态、商品、"
+        "总额、配送。",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "order_id": {"type": "string", "pattern": "^ORD-\\d{10}$"},
+            },
+            "required": ["order_id"],
+        },
+    }, {
+        "name": "process_refund",
+        "description": "为订单处理退款。仅在确认客户后使用。",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "order_id": {"type": "string"},
+                "amount_cents": {"type": "integer", "minimum": 1},
+                "reason": {"type": "string"},
+            },
+            "required": ["order_id", "amount_cents", "reason"],
+        },
+    }]
+
+    response = client.messages.create(
+        model="claude-sonnet-4-20260315",
+        max_tokens=1024,
+        tools=tools,
+        messages=conversation_history,
+    )
+
+
+模型的响应可能是：
+
+
+    {
+        "role": "assistant",
+        "content": [
+            {"type": "text", "text": "让我为您查询一下。"},
+            {"type": "tool_use", "id": "toolu_abc", "name": "lookup_order",
+             "input": {"order_id": "ORD-1234567890"}},
+        ],
+        "stop_reason": "tool_use",
+    }
+
+
+应用执行 `lookup_order("ORD-1234567890")`，获取结果，并发回：
+
+    follow_up = client.messages.create(
+        model="claude-sonnet-4-20260315",
+        max_tokens=1024,
+        tools=tools,
+        messages=[
+            *conversation_history,
+            response,  # 助手的工具使用轮次
+            {
+                "role": "user",
+                "content": [{
+                    "type": "tool_result",
+                    "tool_use_id": "toolu_abc",
+                    "content": json.dumps(order_data),
+                }],
+            },
+        ],
+    )
+
+
+模型继续，使用工具结果，可能调用更多工具或组合最终答案。
+
+#### 定义：工具
+
+通过 schema（名称、描述、参数类型和约束）暴露给 LLM 的函数，LLM 可作为其响应的一部分调用。LLM 的工具使用输出指定参数；应用执行工具；结果反馈到 LLM 的下一次推理。LLM 不执行函数；应用执行。
+
+用通俗语言：工具是你写的 LLM 可以调用的函数。LLM 从不运行你的代码；它只决定调用它。你保持对执行的控制。

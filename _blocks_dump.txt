@@ -1,0 +1,1871 @@
+
+================================================================================
+BLOCK c02_b03
+================================================================================
+--- SOURCE ---
+#### A first guess at the right measure
+
+If you knew nothing about the field and were asked to invent a measure of information, what might you try?
+
+A first guess: count the number of possible messages. If there are MMM equally likely messages and you receive one, you have learned the answer to a question with MMM possibilities. The natural measure of "how big a question" is just MMM. This is the kind of move a beginner makes, and it is wrong, but instructively wrong.
+
+To see why it is wrong, consider two independent events. A friend sends you the outcome of two independent coin flips. The first flip has 222 possible outcomes; the second also has 222. Together, they have 2脳2=42 \times 2 = 42脳2=4 possible joint outcomes. If your measure of information were just MMM, then the two-flip message would carry "four units" while one flip carries "two units." But intuitively, two independent flips carry exactly twice as much information as one flip, since they are independent. The right measure should _add_ under independence, not multiply.
+
+The fix: take the logarithm. log鈦?M1鈰匨2)=log鈦1+log鈦2\log(M_1 \cdot M_2) = \log M_1 + \log M_2log(M1鈥嬧媴M2鈥?=logM1鈥?logM2鈥? Independence in joint distributions becomes addition in log space. Define the information in a message that picks one of MMM equally likely options to be log鈦\log MlogM, and additivity is automatic.
+
+This was the proposal Ralph Hartley made in 1928, two decades before Shannon. Hartley's measure works for the easy case (equally likely outcomes) but fails for the typical case, in which different outcomes have different probabilities. If a friend tells you "it rained today" in Seattle, you learn very little; rain in Seattle is common. If a friend tells you "it rained today" in the Atacama desert, you learn a great deal; rain in the Atacama is exceedingly rare. Both messages are the same string, "it rained today," but they resolve different amounts of uncertainty.
+
+Hartley's measure cannot distinguish them. We need one that can. Shannon's was the next move.
+
+
+### 1.2 Self-Information
+
+The right generalization is to attach an information value not to a _message_ but to an _outcome_. If outcome xxx has probability p(x)p(x)p(x), then receiving the news that xxx occurred resolves an amount of uncertainty that depends on p(x)p(x)p(x), specifically on how small p(x)p(x)p(x) is. The smaller p(x)p(x)p(x), the more surprising the message, and the more information it carries.
+
+--- TRANSLATION ---
+#### 瀵规纭害閲忕殑棣栨鐚滄祴
+
+濡傛灉浣犲杩欎釜棰嗗煙涓€鏃犳墍鐭ワ紝鍗磋瑕佹眰鍙戞槑涓€绉嶄俊鎭殑搴﹂噺锛屼綘浼氬皾璇曚粈涔堬紵
+
+绗竴涓寽娴嬶細璁＄畻鍙兘娑堟伅鐨勬暟閲忋€傚鏋滄湁 M 鏉＄瓑姒傜巼娑堟伅鑰屼綘鏀跺埌浜嗗叾涓竴鏉★紝浣犲氨鐭ラ亾浜嗕竴涓湁 M 绉嶅彲鑳界殑闂鐨勭瓟妗堛€傗€滈棶棰樻湁澶氬ぇ鈥濈殑鑷劧搴﹂噺灏辨槸 M銆傝繖鏄垵瀛﹁€呬細鍋氬嚭鐨勪妇鍔紝瀹冩槸閿欑殑锛屼絾閿欏緱鏈夋暀鐩娿€?
+
+瑕佺悊瑙ｄ负浠€涔堝畠鏄敊鐨勶紝鑰冭檻涓や釜鐙珛浜嬩欢銆備竴浣嶆湅鍙嬬粰浣犲彂閫佷袱娆＄嫭绔嬫幏纭竵鐨勭粨鏋溿€傜涓€娆℃幏鏈?2 绉嶅彲鑳界殑缁撴灉锛涚浜屾涔熸湁 2 绉嶃€傚悎鍦ㄤ竴璧凤紝瀹冧滑鏈?
+
+2 \times 2 = 4
+
+绉嶅彲鑳界殑鑱斿悎缁撴灉銆傚鏋滀綘鐨勪俊鎭害閲忓彧鏄?M锛岄偅涔堜袱娆℃幏纭竵鐨勬秷鎭皢鎼哄甫鈥滃洓涓崟浣嶁€濓紝鑰屼竴娆℃惡甯︹€滀袱涓崟浣嶁€濄€備絾鐩磋涓婏紝涓ゆ鐙珛鎺风‖甯佹惡甯︾殑淇℃伅鎭板ソ鏄竴娆＄殑涓ゅ€嶏紝鍥犱负瀹冧滑鏄嫭绔嬬殑銆傛纭殑搴﹂噺鍦ㄧ嫭绔嬫儏鍐典笅搴旇_鐩稿姞_锛岃€屼笉鏄浉涔樸€?
+
+淇鏂规锛氬彇瀵规暟銆?
+
+\log(M_1 \cdot M_2) = \log M_1 + \log M_2
+
+鑱斿悎鍒嗗竷涓殑鐙珛鎬у湪瀵规暟绌洪棿涓彉涓哄姞娉曘€傚皢涓€鏉′粠 M 涓瓑姒傜巼閫夐」涓€夊彇涓€涓殑娑堟伅鐨勪俊鎭噺瀹氫箟涓?
+
+\log M
+
+锛屽彲鍔犳€у氨鑷姩鎴愮珛銆?
+
+杩欐槸 Ralph Hartley 鍦?1928 骞存彁鍑虹殑鏂规锛屾瘮 Shannon 鏃╀簡 20 骞淬€侶artley 鐨勫害閲忓湪绠€鍗曟儏鍐典笅锛堢瓑姒傜巼缁撴灉锛夋湁鏁堬紝浣嗗湪鍏稿瀷鎯呭喌涓嬧€斺€斿嵆涓嶅悓缁撴灉鍏锋湁涓嶅悓姒傜巼鏃垛€斺€斿氨澶辨晥浜嗐€傚鏋滀竴浣嶆湅鍙嬪憡璇変綘瑗块泤鍥锯€滀粖澶╀笅闆ㄤ簡鈥濓紝浣犱簡瑙ｅ埌鐨勪俊鎭緢灏戯紱瑗块泤鍥句笅闆ㄥ緢甯歌銆傚鏋滀竴浣嶆湅鍙嬪憡璇変綘闃垮鍗￠┈娌欐紶鈥滀粖澶╀笅闆ㄤ簡鈥濓紝浣犱簡瑙ｅ埌鐨勪俊鎭緢澶氾紱闃垮鍗￠┈娌欐紶鐨勯洦鏋佸叾缃曡銆備袱鏉℃秷鎭槸鐩稿悓鐨勫瓧绗︿覆鈥斺€斺€滀粖澶╀笅闆ㄤ簡鈥濃€斺€斾絾瀹冧滑娑堥櫎浜嗕笉鍚屾暟閲忕殑涓嶇‘瀹氭€с€?
+
+Hartley 鐨勫害閲忔棤娉曞尯鍒嗗畠浠€傛垜浠渶瑕佷竴绉嶈兘澶熷尯鍒嗙殑搴﹂噺銆係hannon 鐨勬柟妗堟槸涓嬩竴姝ャ€?
+
+
+### 1.2 鑷俊鎭?
+
+姝ｇ‘鐨勬帹骞挎槸灏嗕俊鎭€间笉闄勫姞鍒?娑堟伅*涓婏紝鑰屾槸闄勫姞鍒?缁撴灉*涓娿€傚鏋滅粨鏋?$x$ 鐨勬鐜囦负 $p(x)$锛岄偅涔堟敹鍒?$x$ 鍙戠敓鐨勬秷鎭墍娑堥櫎鐨勪笉纭畾鎬у彇鍐充簬 $p(x)$锛屽叿浣撴潵璇村彇鍐充簬 $p(x)$ 鏈夊灏忋€?p(x)$ 瓒婂皬锛屾秷鎭氨瓒婁护浜烘剰澶栵紝鎼哄甫鐨勪俊鎭氨瓒婂銆?
+
+================================================================================
+BLOCK c02_b07
+================================================================================
+--- SOURCE ---
+### 1.4 Why This Definition? Four Axioms
+
+The definition H(X)=鈭掆垜pilog鈦iH(X) = -\sum p_i \log p_iH(X)=鈭掆垜pi鈥媗ogpi鈥?is not arbitrary. It is essentially forced by a small set of natural requirements. Shannon and, more rigorously, Khinchin showed that any function HHH satisfying four axioms must equal 鈭掆垜pilog鈦i-\sum p_i \log p_i鈭掆垜pi鈥媗ogpi鈥?up to a positive multiplicative constant (which corresponds to choice of log base).
+
+Let H(p1,鈥?pn)H(p_1, \ldots, p_n)H(p1鈥?鈥?pn鈥? be a real-valued function defined on probability distributions. The axioms are:
+
+**Axiom 1 (Continuity)** : HHH is a continuous function of (p1,鈥?pn)(p_1, \ldots, p_n)(p1鈥?鈥?pn鈥?.
+
+A small perturbation of the probabilities should produce a small perturbation of the entropy. This is clearly desirable for any reasonable measure of uncertainty.
+
+**Axiom 2 (Monotonicity in nnn for the uniform distribution)**: For the uniform distribution p1=鈰?pn=1/np_1 = \cdots = p_n = 1/np1鈥?鈰?pn鈥?1/n, the entropy H(1/n,鈥?1/n)H(1/n, \ldots, 1/n)H(1/n,鈥?1/n) is a monotonically increasing function of nnn.
+
+The more equally likely outcomes there are, the more uncertain the source. A uniform distribution over four outcomes is more uncertain than a uniform distribution over two.
+
+**Axiom 3 (Recursivity / Grouping)** : If we group some outcomes together (say, outcomes nnn and n鈭?n - 1n鈭?), the entropy decomposes according to the rule
+
+H(p1,鈥?pn鈭?,pn鈭?,pn)=H(p1,鈥?pn鈭?,pn鈭?+pn)+(pn鈭?+pn)鈰匟(pn鈭?pn鈭?+pn,pnpn鈭?+pn).H(p_1, \ldots, p_{n-2}, p_{n-1}, p_n) = H(p_1, \ldots, p_{n-2}, p_{n-1} + p_n) + (p_{n-1} + p_n) \cdot H\left(\frac{p_{n-1}}{p_{n-1} + p_n}, \frac{p_n}{p_{n-1} + p_n}\right).H(p1鈥?鈥?pn鈭?鈥?pn鈭?鈥?pn鈥?=H(p1鈥?鈥?pn鈭?鈥?pn鈭?鈥?pn鈥?+(pn鈭?鈥?pn鈥?鈰匟(pn鈭?鈥?pn鈥媝n鈭?鈥嬧€?pn鈭?鈥?pn鈥媝n鈥嬧€?.
+
+This says: the uncertainty of a coarse-grained question plus the conditional uncertainty given the coarse answer equals the uncertainty of the fine-grained question. This is the property of a sensible entropy: it should not matter whether we resolve the question all at once or in two stages.
+
+**Why does Axiom 3 do most of the work?** Axioms 1 and 2 are essentially regularity conditions 鈥?continuity rules out pathological functions, monotonicity fixes the sign 鈥?and Axiom 4 is just a choice of unit. The entire functional form of HHH comes from Axiom 3. Here is the intuition. Recursivity says that the answer to "how uncertain is the source?" cannot depend on how you choose to interrogate it. You may ask a single question with nnn possible answers, or first ask a binary question and then a follow-up; the _expected_ number of bits to resolve the source must be the same either way. That requirement is enormously restrictive. Concretely, the recursion forces H(1/n,鈥?1/n)H(1/n, \ldots, 1/n)H(1/n,鈥?1/n) to be a function f(n)f(n)f(n) satisfying f(mn)=f(m)+f(n)f(mn) = f(m) + f(n)f(mn)=f(m)+f(n) for all positive integers m,nm, nm,n 鈥?every uniform distribution can be decomposed into a uniform choice over mmm groups followed by a uniform choice within a group. Combined with the monotonicity of Axiom 2, the only continuous solution to this Cauchy-type functional equation is f(n)=clog鈦f(n) = c \log nf(n)=clogn. From there, applying recursivity to non-uniform distributions extends the formula to 鈭抍鈭憄ilog鈦i-c \sum p_i \log p_i鈭抍鈭憄i鈥媗ogpi鈥? and Axiom 4 fixes c=1c = 1c=1 (with log base 2). So Axiom 3 is doing almost all the work; the others just make the answer well-posed and dimensioned.
+--- TRANSLATION ---
+### 1.4 涓轰粈涔堟槸杩欎釜瀹氫箟锛熷洓鏉″叕鐞?
+
+瀹氫箟
+
+$H(X) = -\sum_i p_i \log p_i$
+
+骞堕潪浠绘剰鐨勩€傚畠鏈川涓婃槸鐢变竴灏忕粍鑷劧瑕佹眰鎵€鍞竴纭畾鐨勩€係hannon 浠ュ強鏇翠弗鏍煎湴璇?Khinchin 璇佹槑浜嗭紝浠讳綍婊¤冻鍥涙潯鍏悊鐨勫嚱鏁?$H$ 蹇呭畾绛変簬涓婅堪琛ㄨ揪寮忥紝鑷冲宸竴涓鐨勪箻鎬у父鏁帮紙瀵瑰簲浜庡鏁板簳鐨勯€夋嫨锛夈€?
+
+璁?$H(p_1,\ldots,p_n)$ 涓哄畾涔夊湪姒傜巼鍒嗗竷涓婄殑瀹炲€煎嚱鏁般€傚叕鐞嗗涓嬶細
+
+**鍏悊 1锛堣繛缁€э級**锛?H$ 鏄?$(p_1,\ldots,p_n)$ 鐨勮繛缁嚱鏁般€?
+
+姒傜巼鐨勫井灏忔壈鍔ㄥ簲浜х敓鐔电殑寰皬鎵板姩銆傚浜庝换浣曞悎鐞嗙殑涓嶇‘瀹氭€у害閲忥紝杩欐樉鐒舵槸浠や汉婊℃剰鐨勩€?
+
+**鍏悊 2锛堝潎鍖€鍒嗗竷鍏充簬 $n$ 鐨勫崟璋冩€э級**锛氬浜庡潎鍖€鍒嗗竷 $p_1=\cdots=p_n=1/n$锛岀喌 $H(1/n,\ldots,1/n)$ 鏄?$n$ 鐨勫崟璋冮€掑鍑芥暟銆?
+
+绛夋鐜囩粨鏋滆秺澶氾紝淇℃簮灏辫秺涓嶇‘瀹氥€傚洓涓粨鏋滅殑鍧囧寑鍒嗗竷姣斾袱涓粨鏋滅殑鍧囧寑鍒嗗竷鏇翠笉纭畾銆?
+
+**鍏悊 3锛堥€掑綊鎬э紡鍒嗙粍鎬э級**锛氬鏋滄垜浠皢鏌愪簺缁撴灉褰掍负涓€缁勶紙姣斿灏嗙粨鏋?$n$ 鍜?$n-1$ 褰掍负涓€缁勶級锛岀喌鎸変互涓嬭鍒欏垎瑙ｏ細
+
+$\begin{aligned} H(p_1,\ldots,p_{n-2},p_{n-1},p_n) ={}&H(p_1,\ldots,p_{n-2},p_{n-1}+p_n)\\ &+(p_{n-1}+p_n) H\left( \frac{p_{n-1}}{p_{n-1}+p_n}, \frac{p_n}{p_{n-1}+p_n} \right). \end{aligned}$
+
+杩欒〃绀猴細涓€涓矖绮掑害闂鐨勪笉纭畾鎬э紝鍔犱笂缁欏畾绮楃矑搴︾瓟妗堝悗鐨勬潯浠朵笉纭畾鎬э紝绛変簬缁嗙矑搴﹂棶棰樼殑涓嶇‘瀹氭€с€傝繖鏄竴涓悎鐞嗙喌搴旀湁鐨勬€ц川锛氭棤璁烘垜浠竴娆℃€цВ鍐虫暣涓棶棰樿繕鏄垎涓や釜闃舵瑙ｅ喅锛岀粨鏋滀笉搴旀湁鎵€涓嶅悓銆?
+
+**涓轰粈涔堝叕鐞?3 鍋氫簡澶ч儴鍒嗗伐浣滐紵** 鍏悊 1 鍜屽叕鐞?2 鏈川涓婃槸姝ｅ垯鎬ф潯浠垛€斺€旇繛缁€ф帓闄や簡鐥呮€佸嚱鏁帮紝鍗曡皟鎬х‘瀹氫簡绗﹀彿鈥斺€旇€屽叕鐞?4 鍙槸鍗曚綅鐨勯€夋嫨銆?H$ 鐨勬暣涓嚱鏁板舰寮忔潵鑷叕鐞?3銆傜洿瑙夊涓嬨€傞€掑綊鎬ц鐨勬槸锛屸€滀俊婧愭湁澶氫笉纭畾锛熲€濊繖涓棶棰樼殑绛旀涓嶈兘鍙栧喅浜庝綘閫夋嫨濡備綍璇㈤棶瀹冦€備綘鍙互闂竴涓湁 $n$ 绉嶅彲鑳界瓟妗堢殑闂锛屼篃鍙互鍏堥棶涓€涓簩鍏冮棶棰樺啀杩介棶涓€涓悗缁棶棰橈紱鏃犺鍝鏂瑰紡锛岃В鍐充俊婧愭墍闇€鐨?鏈熸湜*姣旂壒鏁板繀椤荤浉鍚屻€傝繖涓€瑕佹眰鍏锋湁鏋佸己鐨勭害鏉熷姏銆傚叿浣撹€岃█锛岄€掑綊鎬ц揩浣?$H(1/n,\ldots,1/n)$ 鎴愪负涓€涓嚱鏁?$f(n)$锛屼笖瀵规墍鏈夋鏁存暟 $m,n$ 婊¤冻
+
+$f(mn)=f(m)+f(n).$
+
+姣忎釜鍧囧寑鍒嗗竷閮藉彲浠ュ垎瑙ｄ负鍏堝湪 $m$ 涓粍涓潎鍖€閫夋嫨锛屽啀鍦ㄧ粍鍐呭潎鍖€閫夋嫨銆傜粨鍚堝叕鐞?2 鐨勫崟璋冩€э紝杩欎釜 Cauchy 鍨嬪嚱鏁版柟绋嬬殑鍞竴杩炵画瑙ｄ负
+
+$f(n)=c\log n.$
+
+鐢辨鍑哄彂锛屽皢閫掑綊鎬у簲鐢ㄤ簬闈炲潎鍖€鍒嗗竷鍙皢鍏紡鎺ㄥ箍鑷?$-c\sum_i p_i\log p_i$锛岃€屽叕鐞?4 纭畾 $c=1$锛堜互 2 涓哄鏁板簳锛夈€傚洜姝ゅ叕鐞?3 鍋氫簡鍑犱箮鎵€鏈夌殑宸ヤ綔锛涘叾浣欏叕鐞嗗彧鏄娇绛旀閫傚畾骞惰祴浜堝叾閲忕翰銆?
+
+================================================================================
+BLOCK c02_b19
+================================================================================
+--- SOURCE ---
+**Q3.** Consider a variant on the entropy axioms: drop Axiom 4 (normalization). What functions then satisfy the remaining three axioms? What does this tell you about the role of "choice of unit" in physics and information theory?
+
+**Discussion:** Without normalization, the function H=鈭抍鈭憄ilog鈦iH = -c \sum p_i \log p_iH=鈭抍鈭憄i鈥媗ogpi鈥?for any c>0c > 0c>0 satisfies the remaining axioms. In other words, removing normalization is exactly removing the choice of unit (bits versus nats versus dits). Choice of unit is universal in physics: temperature can be measured in Kelvin, Celsius, Fahrenheit, Rankine; energy in joules, ergs, calories. Each unit corresponds to a multiplicative constant. The axiomatic uniqueness of entropy _up to a multiplicative constant_ is exactly the statement that information is a real physical quantity with a natural definition, and the only choice is what we measure it in.
+
+This connects information theory to thermodynamics in an unexpected way. The thermodynamic entropy S=鈭択B鈭憄iln鈦iS = -k_B \sum p_i \ln p_iS=鈭択B鈥嬧垜pi鈥媗npi鈥?is the same formula with kBk_BkB鈥?(Boltzmann's constant) playing the role of unit. Many physicists and information theorists have argued, most famously E. T. Jaynes in 1957, that thermodynamic entropy is a special case of Shannon entropy, applied to the distribution over microstates. We will encounter this perspective again in Chapter 9 when we discuss the maximum-entropy principle in statistical mechanics.
+
+
+### Connections to Subsequent Chapters
+
+This chapter laid the foundations: self-information, entropy, the axioms, the basic properties. Almost every subsequent chapter builds on these definitions.
+
+* **Chapter 2** generalizes from one variable to a pair (joint, conditional, and mutual information) and proves the chain rule that all of subsequent theory rests on.
+* **Chapter 3** proves the Asymptotic Equipartition Property, which gives entropy its operational interpretation as the asymptotic per-symbol description length.
+* **Chapter 4** proves the Source Coding Theorem, which says H(X)H(X)H(X) is the fundamental limit of lossless compression.
+* **Chapter 8** introduces KL divergence, of which cross-entropy and likelihood-based machine learning are direct applications.
+* **Chapter 15** returns to the entropy of natural language and connects modern language model perplexity to Shannon's 1951 estimate.
+
+A reader who has internalized this chapter can read any of those chapters with the necessary background. The thread that will stay with us is: every quantity in information theory is, at root, the entropy of a carefully chosen distribution.
+
+* * *
+
+---
+--- TRANSLATION ---
+**Q3.** 鑰冭檻鐔靛叕鐞嗙殑涓€涓彉浣擄細鍘绘帀鍏悊 4锛堝綊涓€鍖栵級銆傛鏃朵粈涔堝嚱鏁版弧瓒冲墿浣欎笁鏉″叕鐞嗭紵杩欏憡璇変綘鍏充簬鐗╃悊瀛﹀拰淇℃伅璁轰腑鈥滃崟浣嶉€夋嫨鈥濈殑浠€涔堬紵
+
+**璁ㄨ锛?* 娌℃湁褰掍竴鍖栨椂锛屽浠绘剰 $c>0$锛屽嚱鏁?
+
+$H=-c\sum_i p_i\log p_i$
+
+閮芥弧瓒冲墿浣欏叕鐞嗐€傛崲瑷€涔嬶紝鍘绘帀褰掍竴鍖栨伆濂藉氨鏄幓鎺夊崟浣嶇殑閫夋嫨锛堟瘮鐗广€佸鐗规垨杩壒锛夈€傚崟浣嶇殑閫夋嫨鍦ㄧ墿鐞嗗涓槸鏅亶鐨勶細娓╁害鍙互鐢ㄥ紑灏旀枃銆佹憚姘忓害銆佸崕姘忓害銆佸叞姘忓害鏉ュ害閲忥紱鑳介噺鍙互鐢ㄧ劍鑰炽€佸皵鏍笺€佸崱璺噷鏉ュ害閲忋€傛瘡涓崟浣嶅搴斾竴涓箻鎬у父鏁般€傜喌鍦ㄥ叕鐞嗗寲鎰忎箟涓娾€滆嚦澶氬樊涓€涓箻鎬у父鏁扳€濈殑鍞竴鎬э紝鎭板ソ璇存槑淇℃伅鏄竴涓叿鏈夎嚜鐒跺畾涔夌殑鐪熷疄鐗╃悊閲忥紝鍞竴鐨勯€夋嫨鏄垜浠敤浠€涔堝崟浣嶆潵搴﹂噺瀹冦€?
+
+杩欎互涓€绉嶆剰鎯充笉鍒扮殑鏂瑰紡灏嗕俊鎭涓庣儹鍔涘鑱旂郴璧锋潵銆傜儹鍔涘鐔?
+
+$S=-k_B\sum_i p_i\ln p_i$
+
+鏄悓涓€涓叕寮忥紝鍏朵腑 $k_B$锛堢幓灏斿吂鏇煎父鏁帮級鎵紨鍗曚綅鐨勮鑹层€傝澶氱墿鐞嗗瀹跺拰淇℃伅璁哄瀹舵浘璁鸿瘉鈥斺€旀渶钁楀悕鐨勬槸 E. T. Jaynes 鍦?1957 骞粹€斺€旂儹鍔涘鐔垫槸棣欏啘鐔电殑涓€涓壒渚嬶紝搴旂敤浜庡井鎬佷笂鐨勫垎甯冦€傛垜浠皢鍦ㄧ 9 绔犺璁虹粺璁″姏瀛︿腑鐨勬渶澶х喌鍘熺悊鏃跺啀娆￠亣鍒拌繖涓€瑙嗚銆?
+
+
+### 涓庡悗缁珷鑺傜殑鑱旂郴
+
+鏈珷濂犲畾浜嗗熀纭€锛氳嚜淇℃伅銆佺喌銆佸叕鐞嗐€佸熀鏈€ц川銆傚悗缁嚑涔庢瘡涓€绔犻兘寤虹珛鍦ㄨ繖浜涘畾涔変箣涓娿€?
+
+* **绗?2 绔?*灏嗕粠涓€涓彉閲忔帹骞垮埌涓€瀵瑰彉閲忥紙鑱斿悎鐔点€佹潯浠剁喌鍜屼簰淇℃伅锛夛紝骞惰瘉鏄庡悗缁墍鏈夌悊璁烘墍渚濊禆鐨勯摼寮忔硶鍒欍€?
+* **绗?3 绔?*璇佹槑娓愯繎鍧囧垎鎬э紝璧嬩簣鐔典互娓愯繎姣忕鍙锋弿杩伴暱搴︾殑鎿嶄綔瑙ｉ噴銆?
+* **绗?4 绔?*璇佹槑淇℃簮缂栫爜瀹氱悊锛屽嵆 $H(X)$ 鏄棤鎹熷帇缂╃殑鍩烘湰鏋侀檺銆?
+* **绗?8 绔?*寮曞叆 KL 鏁ｅ害锛屼氦鍙夌喌鍜屽熀浜庝技鐒剁殑鏈哄櫒瀛︿範鏄叾鐩存帴搴旂敤銆?
+* **绗?15 绔?*鍥炲埌鑷劧璇█鐨勭喌锛屽皢鐜颁唬璇█妯″瀷鐨勫洶鎯戝害涓?Shannon 1951 骞寸殑浼拌鑱旂郴璧锋潵銆?
+
+鍐呭寲浜嗘湰绔犵殑璇昏€呭彲浠ュ甫鐫€蹇呰鑳屾櫙闃呰涓婅堪浠讳綍涓€绔犮€傚皢濮嬬粓浼撮殢鎴戜滑鐨勪富绾挎槸锛氫俊鎭涓殑姣忎竴涓噺锛屽綊鏍圭粨搴曢兘鏄煇涓簿蹇冮€夋嫨鐨勫垎甯冪殑鐔点€?
+
+* * *
+
+---
+
+================================================================================
+BLOCK c03_b13
+================================================================================
+--- SOURCE ---
+#### Application Problems
+
+**Q1.** Two communications experts each independently estimate the entropy of an English letter from the same corpus. Expert A uses unigram statistics and gets H(Xt)=4.07H(X_t) = 4.07H(Xt鈥?=4.07 bits per letter. Expert B uses bigram statistics and computes the joint entropy of consecutive letters, getting H(Xt,Xt鈭?)=7.18H(X_t, X_{t-1}) = 7.18H(Xt鈥?Xt鈭?鈥?=7.18 bits per pair. Use the chain rule to derive Expert B's estimate of the per-letter entropy _given_ the previous letter, and explain why it is lower than Expert A's.
+
+Hint
+
+By the chain rule, H(Xt鈭t鈭?)=H(Xt,Xt鈭?)鈭扝(Xt鈭?)H(X_t \mid X_{t-1}) = H(X_t, X_{t-1}) - H(X_{t-1})H(Xt鈥嬧垼Xt鈭?鈥?=H(Xt鈥?Xt鈭?鈥?鈭扝(Xt鈭?鈥?. Treat the source as stationary so that H(Xt鈭?)=H(Xt)=4.07H(X_{t-1}) = H(X_t) = 4.07H(Xt鈭?鈥?=H(Xt鈥?=4.07 bits.
+
+**Answer:** By the chain rule and stationarity:
+
+H(Xt鈭t鈭?)=H(Xt,Xt鈭?)鈭扝(Xt鈭?)=7.18鈭?.07=3.11 bits per letter.H(X_t \mid X_{t-1}) = H(X_t, X_{t-1}) - H(X_{t-1}) = 7.18 - 4.07 = 3.11 \text{ bits per letter}.H(Xt鈥嬧垼Xt鈭?鈥?=H(Xt鈥?Xt鈭?鈥?鈭扝(Xt鈭?鈥?=7.18鈭?.07=3.11 bits per letter.
+
+Expert B's per-letter conditional entropy is lower than Expert A's marginal entropy because letters in English are not independent: after qqq, the next letter is almost always uuu; after ttt, often hhh. The mutual information per letter pair is
+
+I(Xt;Xt鈭?)=H(Xt)鈭扝(Xt鈭t鈭?)=4.07鈭?.11=0.96 bits per pair.I(X_t; X_{t-1}) = H(X_t) - H(X_t \mid X_{t-1}) = 4.07 - 3.11 = 0.96 \text{ bits per pair}.I(Xt鈥?Xt鈭?鈥?=H(Xt鈥?鈭扝(Xt鈥嬧垼Xt鈭?鈥?=4.07鈭?.11=0.96 bits per pair.
+
+Each letter shares about a bit of information with its predecessor. As we go to trigrams, four-grams, and longer contexts, the per-letter conditional entropy continues to drop, all the way down to roughly 1.01.01.0 bit per letter for very long contexts. We will return to this in Chapter 15 when we discuss language model perplexity.
+
+This problem also illustrates Chapter 1's English-text computation in a more rigorous way: it is not that the unigram entropy was wrong; it is that the unigram entropy is the _upper bound_ on per-letter entropy, and conditioning on context drives it down toward the true entropy of English.
+
+**Q2.** A stationary Markov chain on three states {a,b,c}\\{a, b, c\\}{a,b,c} has transition matrix
+
+P=(0.50.5000.50.50.500.5),P = \begin{pmatrix} 0.5 & 0.5 & 0 \\\ 0 & 0.5 & 0.5 \\\ 0.5 & 0 & 0.5 \end{pmatrix},P=鈥?.500.5鈥?.50.50鈥?0.50.5鈥嬧€?
+
+with stationary distribution 蟺=(1/3,1/3,1/3)\pi = (1/3, 1/3, 1/3)蟺=(1/3,1/3,1/3). What is the entropy rate H(Xt鈭t鈭?)H(X_t \mid X_{t-1})H(Xt鈥嬧垼Xt鈭?鈥??
+
+Hint
+
+For a Markov chain, H(Xt鈭t鈭?)=鈭憍蟺(x)H(row x of P)H(X_t \mid X_{t-1}) = \sum_x \pi(x) H(\text{row } x \text{ of } P)H(Xt鈥嬧垼Xt鈭?鈥?=鈭憍鈥嬒€(x)H(row x of P).
+
+**Answer:** Each row of PPP has entropy Hb(0.5)=1H_b(0.5) = 1Hb鈥?0.5)=1 bit (each row is "0.5, 0.5, 0", whose entropy is 鈭?.5log鈦?.5鈭?.5log鈦?.5=1-0.5 \log 0.5 - 0.5 \log 0.5 = 1鈭?.5log0.5鈭?.5log0.5=1 bit; the zero entry contributes nothing). Averaging over the stationary distribution,
+
+H(Xt鈭t鈭?)=鈭憍蟺(x)H(P(鈰呪垼x))=13鈰?+13鈰?+13鈰?=1 bit.H(X_t \mid X_{t-1}) = \sum_x \pi(x) H(P(\cdot \mid x)) = \frac{1}{3} \cdot 1 + \frac{1}{3} \cdot 1 + \frac{1}{3} \cdot 1 = 1 \text{ bit}.H(Xt鈥嬧垼Xt鈭?鈥?=x鈭戔€嬒€(x)H(P(鈰呪垼x))=31鈥嬧媴1+31鈥嬧媴1+31鈥嬧媴1=1 bit.
+
+But H(Xt)=H(蟺)=log鈦?鈮?.585H(X_t) = H(\pi) = \log 3 \approx 1.585H(Xt鈥?=H(蟺)=log3鈮?.585 bits. So I(Xt;Xt鈭?)=0.585I(X_t; X_{t-1}) = 0.585I(Xt鈥?Xt鈭?鈥?=0.585 bits per pair.
+--- TRANSLATION ---
+#### 搴旂敤棰?
+
+**Q1.** 涓や綅閫氫俊涓撳鍚勮嚜鐙珛鍦颁粠鍚屼竴璇枡搴撲及璁¤嫳鏂囧瓧姣嶇殑鐔点€備笓瀹?A 浣跨敤涓€鍏冪粺璁￠噺锛屽緱鍒?H(X_t) = 4.07 姣旂壒/瀛楁瘝銆備笓瀹?B 浣跨敤浜屽厓缁熻閲忥紝璁＄畻杩炵画瀛楁瘝鐨勮仈鍚堢喌锛屽緱鍒?H(X_t, X_{t-1}) = 7.18 姣旂壒/瀛楁瘝瀵广€傜敤閾惧紡娉曞垯鎺ㄥ涓撳 B 瀵筥缁欏畾_鍓嶄竴涓瓧姣嶆椂姣忓瓧姣嶇喌鐨勪及璁★紝骞惰В閲婁负浠€涔堝畠浣庝簬涓撳 A 鐨勪及璁°€?
+
+鎻愮ず
+
+鐢遍摼寮忔硶鍒欙紝
+
+H(X_t \mid X_{t-1}) = H(X_t, X_{t-1}) - H(X_{t-1})
+
+灏嗕俊婧愯涓哄钩绋崇殑锛屽洜姝?H(X_{t-1}) = H(X_t) = 4.07 姣旂壒銆?
+
+**绛旀锛?* 鐢遍摼寮忔硶鍒欏拰骞崇ǔ鎬э細
+
+H(X_t \mid X_{t-1}) = H(X_t, X_{t-1}) - H(X_{t-1}) = 7.18 - 4.07 = 3.11 \text{ 姣旂壒/瀛楁瘝}銆?
+
+涓撳 B 鐨勬瘡瀛楁瘝鏉′欢鐔典綆浜庝笓瀹?A 鐨勮竟缂樼喌锛屽洜涓鸿嫳璇腑鐨勫瓧姣嶄笉鏄嫭绔嬬殑锛氬湪 $q$ 涔嬪悗锛屼笅涓€涓瓧姣嶅嚑涔庢€绘槸 $u$锛涘湪 $t$ 涔嬪悗锛岄€氬父鏄?$h$銆傛瘡涓瓧姣嶅鐨勪簰淇℃伅涓?
+
+I(X_t; X_{t-1}) = H(X_t) - H(X_t \mid X_{t-1}) = 4.07 - 3.11 = 0.96 \text{ 姣旂壒/瀛楁瘝瀵箎銆?
+
+姣忎釜瀛楁瘝涓庡叾鍓嶉┍鍏变韩绾?1 姣旂壒鐨勪俊鎭€傚綋鎴戜滑杞悜涓夊厓缁勩€佸洓鍏冪粍鍜屾洿闀跨殑涓婁笅鏂囨椂锛屾瘡瀛楁瘝鏉′欢鐔电户缁笅闄嶏紝涓€鐩村埌闈炲父闀跨殑涓婁笅鏂囦笅澶х害 1.0 姣旂壒/瀛楁瘝銆傛垜浠皢鍦ㄧ 15 绔犺璁鸿瑷€妯″瀷鍥版儜搴︽椂鍥炲埌杩欎竴鐐广€?
+
+杩欎釜闂涔熶互鏇翠弗鏍肩殑鏂瑰紡璇存槑浜嗙 1 绔犵殑鑻辨枃鏂囨湰璁＄畻锛氬苟闈炰竴鍏冪喌鏄敊璇殑锛涜€屾槸涓€鍏冪喌鏄瘡瀛楁瘝鐔电殑*涓婄晫*锛屼互涓婁笅鏂囦负鏉′欢灏嗗叾鍚戜笅鎺ㄥ悜鑻辫鐨勭湡瀹炵喌銆?
+
+**Q2.** 涓変釜鐘舵€?\{a,b,c\} 涓婄殑骞崇ǔ椹皵鍙か閾剧殑杞Щ鐭╅樀涓?
+
+P = \begin{pmatrix} 0.5 & 0.5 & 0 \\ 0 & 0.5 & 0.5 \\ 0.5 & 0 & 0.5 \end{pmatrix},
+
+骞崇ǔ鍒嗗竷涓?\pi = (1/3, 1/3, 1/3)銆傜喌鐜?H(X_t \mid X_{t-1}) 鏄灏戯紵
+
+鎻愮ず
+
+瀵逛簬椹皵鍙か閾撅紝
+
+H(X_t \mid X_{t-1}) = \sum_x \pi(x) H(\text{P 鐨勭 } x \text{ 琛寎)銆?
+
+**绛旀锛?* P 鐨勬瘡涓€琛岀殑鐔典负 H_b(0.5) = 1 姣旂壒锛堟瘡琛屼负鈥?.5, 0.5, 0鈥濓紝鍏剁喌涓?-0.5 \log 0.5 - 0.5 \log 0.5 = 1 姣旂壒锛涢浂椤逛笉璐＄尞锛夈€傚骞崇ǔ鍒嗗竷鍙栧钩鍧囷紝
+
+H(X_t \mid X_{t-1}) = \sum_x \pi(x) H(P(\cdot \mid x)) = \frac{1}{3} \cdot 1 + \frac{1}{3} \cdot 1 + \frac{1}{3} \cdot 1 = 1 \text{ 姣旂壒}銆?
+
+浣?H(X_t) = H(\pi) = \log 3 \approx 1.585 姣旂壒銆傛墍浠?I(X_t; X_{t-1}) = 0.585 姣旂壒/瀛楁瘝瀵广€?
+
+================================================================================
+BLOCK c04_b06
+================================================================================
+--- SOURCE ---
+### 3.6 The AEP Beyond i.i.d.: Stationary Ergodic Sources
+
+The AEP as we have stated it requires the i.i.d. assumption. Real sources (English text, audio signals, video) are not i.i.d. They have temporal correlations that violate the assumption directly.
+
+It turns out, however, that the AEP extends beyond i.i.d. The right generalization is to **stationary ergodic** processes. A stochastic process {Xt}t鈭圸\\{X_t\\}_{t \in \mathbb{Z}}{Xt鈥媫t鈭圸鈥?is stationary if its joint distributions are invariant under time shift. It is ergodic if, roughly, time averages equal ensemble averages 鈥?there is no "decomposition" of the process into substantially different sub-processes.
+
+For a stationary ergodic source, the **entropy rate** is
+
+H=lim鈦鈫掆垶1nH(X1,X2,鈥?Xn)=lim鈦鈫掆垶H(Xn鈭n鈭?,Xn鈭?,鈥?X1).H = \lim_{n \to \infty} \frac{1}{n} H(X_1, X_2, \ldots, X_n) = \lim_{n \to \infty} H(X_n \mid X_{n-1}, X_{n-2}, \ldots, X_1).H=n鈫掆垶lim鈥媙1鈥婬(X1鈥?X2鈥?鈥?Xn鈥?=n鈫掆垶lim鈥婬(Xn鈥嬧垼Xn鈭?鈥?Xn鈭?鈥?鈥?X1鈥?.
+
+(Both limits exist and are equal for stationary ergodic processes; the equality is non-trivial.)
+
+The **Shannon-McMillan-Breiman theorem** says that for a stationary ergodic source with entropy rate HHH,
+
+鈭?nlog鈦(X1,鈥?Xn)鈫扝almost surely.-\frac{1}{n} \log p(X_1, \ldots, X_n) \to H \quad \text{almost surely}.鈭抧1鈥媗ogp(X1鈥?鈥?Xn鈥?鈫扝almost surely.
+
+This is the AEP for general sources. The proof is harder than the i.i.d. case (it uses ergodic theory rather than the law of large numbers), but the conclusion is the same: typical sequences have probability about 2鈭抧H2^{-n H}2鈭抧H, and there are about 2nH2^{n H}2nH of them.
+
+So the operational interpretation of the entropy rate is the same: the asymptotic per-symbol description cost. For English text with entropy rate around 1 bit per character, an asymptotically optimal compressor uses about 1 bit per character. Modern transformer language models, as we will see in Chapter 15, achieve close to this on diverse English.
+
+
+### 3.7 Joint Typicality
+
+For coding theorems involving channels (Chapter 6), we need a joint version of the AEP. Let (X1,Y1),(X2,Y2),鈥?(Xn,Yn)(X_1, Y_1), (X_2, Y_2), \ldots, (X_n, Y_n)(X1鈥?Y1鈥?,(X2鈥?Y2鈥?,鈥?(Xn鈥?Yn鈥? be i.i.d. samples from a joint distribution p(x,y)p(x, y)p(x,y).
+
+--- TRANSLATION ---
+### 3.6 瓒呰秺鐙珛鍚屽垎甯冪殑 AEP锛氬钩绋抽亶鍘嗕俊婧?
+
+鎴戜滑姝ゅ墠闄堣堪鐨?AEP 瑕佹眰鐙珛鍚屽垎甯冨亣璁俱€傜湡瀹炰俊婧愶紙鑻辨枃鏂囨湰銆侀煶棰戜俊鍙枫€佽棰戯級骞堕潪鐙珛鍚屽垎甯冿紱瀹冧滑鍏锋湁鐩存帴杩濊儗璇ュ亣璁剧殑鏃堕棿鐩稿叧鎬с€?
+
+涓嶈繃锛孉EP 鍙互鎺ㄥ箍鍒扮嫭绔嬪悓鍒嗗竷鎯呭舰涔嬪銆傛纭殑鎺ㄥ箍瀵硅薄鏄?*骞崇ǔ閬嶅巻**杩囩▼銆傞殢鏈鸿繃绋?$\{X_t\}_{t\in\mathbb{Z}}$ 鑻ュ叾鑱斿悎鍒嗗竷鍦ㄦ椂闂村钩绉讳笅淇濇寔涓嶅彉锛屼究绉颁负骞崇ǔ锛涜嫢绮楃暐鍦拌鍏舵椂闂村钩鍧囩瓑浜庣郴缁煎钩鍧囷紝浜﹀嵆璇ヨ繃绋嬩笉鑳借鈥滃垎瑙ｂ€濅负鏈川涓嶅悓鐨勫瓙杩囩▼锛屼究绉颁负閬嶅巻銆?
+
+瀵瑰钩绋抽亶鍘嗕俊婧愶紝**鐔电巼**瀹氫箟涓?
+
+$H =\lim_{n\to\infty}\frac{1}{n}H(X_1,X_2,\ldots,X_n) =\lim_{n\to\infty}H(X_n\mid X_{n-1},X_{n-2},\ldots,X_1).$
+
+锛堝骞崇ǔ閬嶅巻杩囩▼锛屼袱涓瀬闄愰兘瀛樺湪涓旂浉绛夛紱杩欎竴绛夊紡骞朵笉骞冲嚒銆傦級
+
+**Shannon鈥揗cMillan鈥揃reiman 瀹氱悊**鎸囧嚭锛氬鐔电巼涓?$H$ 鐨勫钩绋抽亶鍘嗕俊婧愶紝
+
+$-\frac{1}{n}\log p(X_1,\ldots,X_n) \to H \quad \text{鍑犱箮蹇呯劧}.$
+
+杩欏氨鏄竴鑸俊婧愮殑 AEP銆傚畠鐨勮瘉鏄庢瘮鐙珛鍚屽垎甯冩儏褰㈡洿闅锯€斺€斾娇鐢ㄧ殑鏄亶鍘嗙悊璁鸿€岄潪澶ф暟瀹氬緥鈥斺€斾絾缁撹鐩稿悓锛氬吀鍨嬪簭鍒楃殑姒傜巼绾︿负 $2^{-nH}$锛岃€岃繖鏍风殑搴忓垪绾︽湁 $2^{nH}$ 鏉°€?
+
+鍥犳锛岀喌鐜囩殑鎿嶄綔鎬цВ閲婁笉鍙橈細瀹冩槸娓愯繎鐨勬瘡绗﹀彿鎻忚堪浠ｄ环銆傚鐔电巼绾︿负姣忓瓧绗?$1$ 姣旂壒鐨勮嫳鏂囨枃鏈紝娓愯繎鏈€浼樼殑鍘嬬缉鍣ㄦ瘡瀛楃绾︿娇鐢?$1$ 姣旂壒銆傛濡傛垜浠皢鍦ㄧ 15 绔犵湅鍒扮殑锛岀幇浠?Transformer 璇█妯″瀷鍦ㄥ鏍峰寲鑻辨枃鏂囨湰涓婂凡鎺ヨ繎杩欎竴姘村钩銆?
+
+### 3.7 鑱斿悎鍏稿瀷鎬?
+
+瀵逛簬娑夊強淇￠亾鐨勭紪鐮佸畾鐞嗭紙绗?6 绔狅級锛屾垜浠渶瑕?AEP 鐨勮仈鍚堢増鏈€傝 $(X_1,Y_1),(X_2,Y_2),\ldots,(X_n,Y_n)$ 鏄粠鑱斿悎鍒嗗竷 $p(x,y)$ 涓嫭绔嬪悓鍒嗗竷鎶藉彇鐨勬牱鏈€?
+
+================================================================================
+BLOCK c04_b09
+================================================================================
+--- SOURCE ---
+### 3.9 Historical Note: McMillan, Breiman, and the Bell Labs Years
+
+Shannon's 1948 proof of the AEP was the i.i.d. case, the easy half. Real sources are not i.i.d., and Shannon knew it: his 1951 paper on the entropy of English explicitly used n-gram statistics for n up to 8. But proving the AEP for general stationary ergodic sources required machinery he did not have on hand.
+
+Brockway McMillan, a younger Bell Labs colleague, supplied the first half of the generalization in 1953, extending the AEP to stationary ergodic processes via direct calculation. Leo Breiman, then a Berkeley statistician, sharpened McMillan's result in 1957 from convergence in probability to almost-sure convergence using the Birkhoff ergodic theorem. The combined result is what we now call the _Shannon鈥揗cMillan鈥揃reiman theorem_.
+
+Bell Labs in the 1950s was an unusual place. Shannon worked alongside John Tukey (who would later coin "bit" and "software"), Richard Hamming (Chapter 7), David Slepian (Chapter 12), and Claude Berrou's intellectual ancestors. The labs paid for fundamental research with no immediate application, and the AEP, useless for any product the company was making in 1953, was nevertheless taken seriously enough that McMillan got six months of free time to work on it. The institutional patience that produced these foundational results is largely gone from corporate research; almost all subsequent extensions of the AEP have come from academic settings.
+
+
+### Common Misconception
+
+Two stumbles are common in interpreting the AEP.
+
+* **Misconception** : "Typical sequences are the most probable sequences."
+
+No. The single most probable sequence of nnn i.i.d. flips of a coin with p(heads)=0.7p(\text{heads}) = 0.7p(heads)=0.7 is "all heads," with probability 0.7n0.7^n0.7n. This sequence is _atypical_ : it has empirical log-probability 鈭抧log鈦?.7鈮?.515n-n \log 0.7 \approx 0.515 n鈭抧log0.7鈮?.515n bits, while the entropy is Hb(0.7)鈮?.881H_b(0.7) \approx 0.881Hb鈥?0.7)鈮?.881 bits. The atypicality arises because "all heads" has too few tails to match the expected fraction.
+
+Typical sequences are not maximally probable; they are _close to the average log-probability_. The most probable single sequence may be far from typical.
+
+* **Misconception** : "All typical sequences are equally likely."
+
+Approximately, yes, within a factor of 2n鈰?系2^{n \cdot 2 \epsilon}2n鈰?系. But not exactly. The typical set contains sequences with slightly different probabilities, all clustered near 2鈭抧H(X)2^{-n H(X)}2鈭抧H(X). The "equipartition" in AEP is asymptotic and approximate, not literal.
+
+These misconceptions are not catastrophic, but they trip up readers who skim the theorem statements. The slogan to remember is: **typical = average log-probability 鈮?H(X)H(X)H(X), not maximum probability**.
+
+--- TRANSLATION ---
+### 3.9 鍘嗗彶娉ㄨ锛歁cMillan銆丅reiman 涓庤礉灏斿疄楠屽宀佹湀
+
+棣欏啘鍦?1948 骞村 AEP 鐨勮瘉鏄庡鐞嗙殑鏄嫭绔嬪悓鍒嗗竷鎯呭舰锛屽嵆鐩稿瀹规槗鐨勪竴鍗娿€傜湡瀹炰俊婧愬苟闈炵嫭绔嬪悓鍒嗗竷锛岄鍐滃姝ゅ績鐭ヨ倸鏄庯細浠?1951 骞村叧浜庤嫳鏂囩喌鐨勮鏂囨槑纭娇鐢ㄤ簡鏈€楂樿嚦 $8$ 闃剁殑 n-gram 缁熻閲忋€備絾瑕佷负涓€鑸钩绋抽亶鍘嗕俊婧愯瘉鏄?AEP锛岄渶瑕佷粬褰撴椂灏氭湭鎺屾彙鐨勫伐鍏枫€?
+
+璐濆皵瀹為獙瀹よ緝骞磋交鐨勫悓浜?Brockway McMillan 鍦?1953 骞村畬鎴愪簡杩欎竴鎺ㄥ箍鐨勫墠鍗婇儴鍒嗭細閫氳繃鐩存帴璁＄畻锛屽皢 AEP 鎵╁睍鍒板钩绋抽亶鍘嗚繃绋嬨€傛椂涓轰集鍏嬪埄缁熻瀛﹀鐨?Leo Breiman 鍒欏湪 1957 骞村€熷姪 Birkhoff 閬嶅巻瀹氱悊锛屽皢 McMillan 鐨勭粨鏋滀粠渚濇鐜囨敹鏁涘姞寮轰负鍑犱箮蹇呯劧鏀舵暃銆傚悎骞跺悗鐨勭粨鏋滐紝灏辨槸浠婂ぉ鎵€璋撶殑 *Shannon鈥揗cMillan鈥揃reiman 瀹氱悊*銆?
+
+1950 骞翠唬鐨勮礉灏斿疄楠屽鏄竴涓潪鍑＄殑鍦版柟銆係hannon 涓?John Tukey锛堝悗鏉ュ垱閫犱簡鈥滄瘮鐗光€濆拰鈥滆蒋浠垛€濊繖涓や釜璇嶏級銆丷ichard Hamming锛堢 7 绔狅級銆丏avid Slepian锛堢 12 绔狅級浠ュ強 Claude Berrou 鐨勭煡璇嗗厛杈堜滑鍏变簨銆傚疄楠屽璧勫姪娌℃湁鍗虫椂搴旂敤鐨勫熀纭€鐮旂┒锛岃€?AEP鈥斺€斿 1953 骞村叕鍙哥敓浜х殑浠讳綍浜у搧閮芥棤鐢ㄢ€斺€斿嵈鍙楀埌瓒冲閲嶈锛孧cMillan 鑾峰緱浜嗗叚涓湀鐨勮嚜鐢辨椂闂存潵鐮旂┒瀹冦€備骇鐢熻繖浜涘鍩烘€ф垚鏋滅殑鍒跺害鑰愬績鍦ㄤ紒涓氱爺绌朵腑宸插熀鏈秷澶憋紱姝ゅ悗 AEP 鐨勫嚑涔庢墍鏈夋墿灞曢兘鏉ヨ嚜瀛︽湳鐣屻€?
+
+### 甯歌璇В
+
+瑙ｉ噴 AEP 鏃舵湁涓や釜甯歌鐨勮鍖恒€?
+
+* **璇В**锛氣€滃吀鍨嬪簭鍒楁槸鏈€鍙兘鐨勫簭鍒椼€傗€?
+
+涓嶆槸銆傚綋 \(p(\text{heads})=0.7\) 鏃讹紝\(n\) 娆?i.i.d. 鎶涚‖甯佷腑鏈€鍙兘鐨勫崟涓€搴忓垪鏄€滃叏姝ｉ潰鈥濓紝姒傜巼涓?\(0.7^n\)銆傝繖鏉″簭鍒楁槸_闈炲吀鍨嬬殑_锛氬畠鐨勭粡楠屽鏁版鐜囦负
+
+\[
+-n\log_2 0.7\approx0.515n\text{ 姣旂壒},
+\]
+
+鑰岀喌涓?\(H_b(0.7)\approx0.881\) 姣旂壒銆傞潪鍏稿瀷鎬т箣鎵€浠ヤ骇鐢燂紝鏄洜涓衡€滃叏姝ｉ潰鈥濈殑鍙嶉潰澶皯锛屾棤娉曞尮閰嶆湡鏈涙瘮渚嬨€?
+
+$-n\log 0.7\approx 0.515n\ \text{姣旂壒},$
+
+* **璇В**锛氣€滄墍鏈夊吀鍨嬪簭鍒楃瓑姒傜巼銆傗€?
+
+杩戜技鍦版槸锛屽湪 \(2^{2n\epsilon}\) 鍥犲瓙鑼冨洿鍐呫€備絾骞堕潪绮剧‘濡傛銆傚吀鍨嬮泦鍖呭惈姒傜巼鐣ユ湁涓嶅悓鐨勫簭鍒楋紝閮借仛闆嗗湪 \(2^{-nH(X)}\) 闄勮繎銆侫EP 涓殑鈥滃潎鍒嗏€濇槸娓愯繎涓旇繎浼肩殑锛屼笉鏄瓧闈㈢殑銆?
+
+杩欎簺璇В涓嶆槸鐏鹃毦鎬х殑锛屼絾浼氱粖浣忕矖鐣ラ槄璇诲畾鐞嗛檲杩扮殑璇昏€呫€傞渶瑕佽浣忕殑鍙ｅ彿鏄細**鍏稿瀷 = 骞冲潎瀵规暟姒傜巼 \(\approx H(X)\)锛岃€岄潪鏈€澶ф鐜?*銆?
+
+================================================================================
+BLOCK c04_b13
+================================================================================
+--- SOURCE ---
+#### Application Problems
+
+**Q1.** A biased coin has p(heads)=0.9p(\text{heads}) = 0.9p(heads)=0.9. Compute, for n=1000n = 1000n=1000 flips: (a) the entropy of one flip, (b) the entropy of nnn flips, (c) the size of the typical set, (d) the total number of possible sequences, (e) the fraction of the space the typical set occupies.
+
+Hint
+
+Use Hb(0.9)鈮?.469H_b(0.9) \approx 0.469Hb鈥?0.9)鈮?.469 bits.
+
+**Answer:** (a) Hb(0.9)=鈭?.9log鈦?.9鈭?.1log鈦?.1鈮?.137+0.332鈮?.469H_b(0.9) = -0.9 \log 0.9 - 0.1 \log 0.1 \approx 0.137 + 0.332 \approx 0.469Hb鈥?0.9)=鈭?.9log0.9鈭?.1log0.1鈮?.137+0.332鈮?.469 bits.
+
+(b) H(Xn)=nH(X)鈮?69H(X^n) = n H(X) \approx 469H(Xn)=nH(X)鈮?69 bits.
+
+(c) 鈭系(n)鈭ｂ増2469|A_\epsilon^{(n)}| \approx 2^{469}鈭系(n)鈥嬧垼鈮?469, about 1.5脳101411.5 \times 10^{141}1.5脳10141.
+
+(d) Total: 21000鈮?.07脳103012^{1000} \approx 1.07 \times 10^{301}21000鈮?.07脳10301.
+
+(e) Fraction: 2469/21000=2鈭?31鈮?0鈭?602^{469} / 2^{1000} = 2^{-531} \approx 10^{-160}2469/21000=2鈭?31鈮?0鈭?60.
+
+The typical set is 10鈭?6010^{-160}10鈭?60 of the total, yet contains essentially all the probability. The strong law of large numbers concentrates the source on this almost-vanishingly-small slice of the cube.
+
+**Q2.** Verify Property 3 of the typical set numerically for a small example. Take p(0)=0.7p(0) = 0.7p(0)=0.7, p(1)=0.3p(1) = 0.3p(1)=0.3, n=10n = 10n=10, and 系=0.2\epsilon = 0.2系=0.2. How many length-10 sequences are typical (have empirical log-probability per symbol within 系\epsilon系 of H(X)H(X)H(X))?
+
+Hint
+
+A sequence with kkk ones has empirical log-probability per symbol 鈭?k/n)log鈦(1)鈭?(n鈭択)/n)log鈦(0)-(k/n) \log p(1) - ((n-k)/n) \log p(0)鈭?k/n)logp(1)鈭?(n鈭択)/n)logp(0). Find which kkk satisfy the typicality criterion.
+
+**Answer:** H(X)=Hb(0.3)鈮?.881H(X) = H_b(0.3) \approx 0.881H(X)=Hb鈥?0.3)鈮?.881 bits. The typicality range is [0.681,1.081][0.681, 1.081][0.681,1.081].
+
+The empirical per-symbol log-probability of a sequence with kkk ones is
+
+L(k)=鈭択10log鈦?0.3鈭?0鈭択10log鈦?0.7.L(k) = -\frac{k}{10} \log_2 0.3 - \frac{10 - k}{10} \log_2 0.7.L(k)=鈭?0k鈥媗og2鈥?.3鈭?010鈭択鈥媗og2鈥?.7.
+
+Computing:
+
+* k=0k = 0k=0: L=鈭抣og鈦?0.7鈮?.515L = -\log_2 0.7 \approx 0.515L=鈭抣og2鈥?.7鈮?.515. Not typical.
+* k=1k = 1k=1: 鈭抣og鈦?0.3鈮?.737-\log_2 0.3 \approx 1.737鈭抣og2鈥?.3鈮?.737 and 鈭抣og鈦?0.7鈮?.515-\log_2 0.7 \approx 0.515鈭抣og2鈥?.7鈮?.515. So L(1)=0.1鈰?.737+0.9鈰?.515=0.174+0.464=0.638L(1) = 0.1 \cdot 1.737 + 0.9 \cdot 0.515 = 0.174 + 0.464 = 0.638L(1)=0.1鈰?.737+0.9鈰?.515=0.174+0.464=0.638. Not typical.
+* k=2k = 2k=2: L=0.2鈰?.737+0.8鈰?.515=0.347+0.412=0.759L = 0.2 \cdot 1.737 + 0.8 \cdot 0.515 = 0.347 + 0.412 = 0.759L=0.2鈰?.737+0.8鈰?.515=0.347+0.412=0.759. Typical.
+* k=3k = 3k=3: L=0.3鈰?.737+0.7鈰?.515=0.521+0.360=0.881L = 0.3 \cdot 1.737 + 0.7 \cdot 0.515 = 0.521 + 0.360 = 0.881L=0.3鈰?.737+0.7鈰?.515=0.521+0.360=0.881. Typical (exactly entropy).
+* k=4k = 4k=4: L=0.4鈰?.737+0.6鈰?.515=0.695+0.309=1.004L = 0.4 \cdot 1.737 + 0.6 \cdot 0.515 = 0.695 + 0.309 = 1.004L=0.4鈰?.737+0.6鈰?.515=0.695+0.309=1.004. Typical.
+* k=5k = 5k=5: L=0.5鈰?.737+0.5鈰?.515=0.868+0.257=1.126L = 0.5 \cdot 1.737 + 0.5 \cdot 0.515 = 0.868 + 0.257 = 1.126L=0.5鈰?.737+0.5鈰?.515=0.868+0.257=1.126. Not typical (just over 1.081).
+
+So typical sequences are those with k鈭坽2,3,4}k \in \\{2, 3, 4\\}k鈭坽2,3,4} ones.
+
+Number of typical sequences: (102)+(103)+(104)=45+120+210=375\binom{10}{2} + \binom{10}{3} + \binom{10}{4} = 45 + 120 + 210 = 375(210鈥?+(310鈥?+(410鈥?=45+120+210=375.
+
+Total sequences: 210=10242^{10} = 1024210=1024.
+--- TRANSLATION ---
+#### 搴旂敤棰?
+
+**Q1.** 涓€鏋氬亸缃‖甯佹弧瓒?$p(\text{heads})=0.9$銆傚 $n=1000$ 娆℃姏鎺凤紝璁＄畻锛?a) 鍗曟鎶涙幏鐨勭喌锛?b) $n$ 娆℃姏鎺风殑鐔碉紱(c) 鍏稿瀷闆嗙殑澶у皬锛?d) 鍙兘搴忓垪鐨勬€绘暟锛?e) 鍏稿瀷闆嗗崰鏁翠釜绌洪棿鐨勬瘮渚嬨€?
+
+鎻愮ず
+
+浣跨敤 $H_b(0.9)\approx0.469$ 姣旂壒銆?
+
+**绛旀锛?* (a) $H_b(0.9)=-0.9\log0.9-0.1\log0.1\approx0.137+0.332\approx0.469$ 姣旂壒銆?
+
+(b) $H(X^n)=nH(X)\approx469$ 姣旂壒銆?
+
+(c) $|A_\epsilon^{(n)}|\approx2^{469}$锛岀害涓?$1.5\times10^{141}$銆?
+
+(d) 鍙兘搴忓垪鎬绘暟涓?$2^{1000}\approx1.07\times10^{301}$銆?
+
+(e) 鍏稿瀷闆嗘墍鍗犳瘮渚嬩负 $\frac{2^{469}}{2^{1000}}=2^{-531}\approx10^{-160}$銆?
+
+鍏稿瀷闆嗗彧鍗犳€绘暟鐨?$10^{-160}$锛屽嵈鍖呭惈鍑犱箮鍏ㄩ儴鐨勬鐜囥€傚己澶ф暟瀹氬緥灏嗕俊婧愰泦涓埌杩欎釜鍑犱箮娑堝け涓嶈鐨勮秴绔嬫柟浣撳垏鐗囦笂銆?
+
+**Q2.** 瀵逛竴涓皬渚嬪瓙鏁板€奸獙璇佸吀鍨嬮泦鐨勬€ц川 3銆傚彇 $p(0)=0.7$銆?p(1)=0.3$銆?n=10$ 鍜?$\epsilon=0.2$銆傛湁澶氬皯鏉￠暱搴︿负 $10$ 鐨勫簭鍒楁槸鍏稿瀷鐨勶紝鍗虫瘡绗﹀彿缁忛獙瀵规暟姒傜巼澶勪簬 $H(X)$ 鐨?$\epsilon$ 閭诲煙鍐咃紵
+
+鎻愮ず
+
+鑻ヤ竴鏉″簭鍒椾腑鏈?$k$ 涓?$1$锛屽叾姣忕鍙风粡楠屽鏁版鐜囦负 $-\frac{k}{n}\log p(1)-\frac{n-k}{n}\log p(0)$銆傛壘鍑哄摢浜?$k$ 婊¤冻鍏稿瀷鎬у噯鍒欍€?
+
+**绛旀锛?* $H(X)=H_b(0.3)\approx0.881$ 姣旂壒锛屽洜姝ゅ吀鍨嬫€у尯闂翠负 $[0.681,1.081]$銆備竴鏉℃湁 $k$ 涓?$1$ 鐨勫簭鍒楋紝鍏舵瘡绗﹀彿缁忛獙瀵规暟姒傜巼涓?$L(k)=-\frac{k}{10}\log_2 0.3-\frac{10-k}{10}\log_2 0.7$銆?
+
+* $k=0$锛?L=-\log_2 0.7\approx0.515$锛岄潪鍏稿瀷銆?
+* $k=1$锛?L=0.1\cdot1.737+0.9\cdot0.515=0.174+0.464=0.638$锛岄潪鍏稿瀷銆?
+* $k=2$锛?L=0.2\cdot1.737+0.8\cdot0.515=0.347+0.412=0.759$锛屽吀鍨嬨€?
+* $k=3$锛?L=0.3\cdot1.737+0.7\cdot0.515=0.521+0.360=0.881$锛屽吀鍨嬶紝涓旀伆濂界瓑浜庣喌銆?
+* $k=4$锛?L=0.4\cdot1.737+0.6\cdot0.515=0.695+0.309=1.004$锛屽吀鍨嬨€?
+* $k=5$锛?L=0.5\cdot1.737+0.5\cdot0.515=0.868+0.257=1.126$锛岄潪鍏稿瀷锛屽垰濂借秴杩?$1.081$銆?
+
+鍥犳锛屽吀鍨嬪簭鍒楁伆涓哄惈鏈?$k\in\{2,3,4\}$ 涓?$1$ 鐨勫簭鍒椼€傚吀鍨嬪簭鍒楁暟閲忎负 $\binom{10}{2}+\binom{10}{3}+\binom{10}{4}=45+120+210=375$锛岃€屾€诲簭鍒楁暟涓?$2^{10}=1024$銆?
+
+================================================================================
+BLOCK c05_b01
+================================================================================
+--- SOURCE ---
+In Chapter 3 we saw that long sequences from an i.i.d. source are concentrated on a typical set of about 2nH(X)2^{n H(X)}2nH(X) sequences. From this counting fact we can already imagine an asymptotically efficient encoding: index the typical set with 鈱坣H(X)鈱塡lceil n H(X) \rceil鈱坣H(X)鈱?bits and use a longer fallback for the (rare) atypical sequences. This chapter makes that intuition into a constructive theory of compression.
+
+The central result is **Shannon's Source Coding Theorem** , which states that the entropy H(X)H(X)H(X) is the fundamental limit of lossless compression: no scheme can use fewer than H(X)H(X)H(X) bits per symbol on average, and one can come arbitrarily close. We will state and prove the theorem in two flavors (variable-length coding and block coding), and we will see two algorithms (Huffman and arithmetic coding) that approach this bound in practice.
+
+The chapter ends with the most important AI connection in the book: language model perplexity is a compression rate, and modern large language models are world-class compressors of text. When GPT predicts your next sentence, it is, mathematically, performing source coding on the universe of plausible sentences.
+
+
+### 4.1 Codes and Code Trees
+
+We begin with the building blocks. A **source code** CCC for a random variable XXX on alphabet X\mathcal{X}X is a mapping from X\mathcal{X}X to a set of finite-length binary strings {0,1}鈭梊\{0, 1\\}^*{0,1}鈭? The code assigns to each symbol xxx a **codeword** C(x)C(x)C(x) of length 鈩?x)\ell(x)鈩?x).
+
+The **expected codeword length** is
+
+L(C)=E[鈩?X)]=鈭憍p(x)鈩?x).L(C) = \mathbb{E}[\ell(X)] = \sum_x p(x) \ell(x).L(C)=E[鈩?X)]=x鈭戔€媝(x)鈩?x).
+
+We want L(C)L(C)L(C) as small as possible.
+
+For a code to be useful for transmission, we need to be able to _decode_ it. The simplest sufficient condition is that the code be **prefix-free** (also called instantaneous): no codeword is a prefix of another. With this property, a stream of concatenated codewords can be decoded by reading bits one at a time and stopping at the first complete codeword.
+
+Prefix-free codes correspond to leaves of binary trees: assign 0 to "go left" and 1 to "go right"; each codeword is the path from root to leaf. The prefix-free property says that no leaf is on the path to another leaf; leaves are the terminal nodes.
+
+
+#### Worked Example: A Prefix-Free Code
+
+Let X={a,b,c,d}\mathcal{X} = \\{a, b, c, d\\}X={a,b,c,d} with codewords C(a)=0C(a) = 0C(a)=0, C(b)=10C(b) = 10C(b)=10, C(c)=110C(c) = 110C(c)=110, C(d)=111C(d) = 111C(d)=111. Visualizing as a tree: root has left child aaa (leaf at depth 1) and right child to internal node, which has left child bbb (leaf at depth 2) and right child to internal node with left child ccc and right child ddd (both leaves at depth 3). No codeword is a prefix of another.
+
+The string 010110111010110111010110111 decodes uniquely as 0鈰?0鈰?10鈰?110 \cdot 10 \cdot 110 \cdot 1110鈰?0鈰?10鈰?11, or a,b,c,da, b, c, da,b,c,d.
+
+
+### 4.2 The Kraft Inequality
+
+How short can the codeword lengths be? The **Kraft inequality** answers exactly.
+
+--- TRANSLATION ---
+鍦ㄧ 3 绔犱腑鎴戜滑鐪嬪埌锛屾潵鑷嫭绔嬪悓鍒嗗竷锛坕.i.d.锛変俊婧愮殑闀垮簭鍒楅泦涓湪涓€涓害鍚?2^{n H(X)} 鏉″簭鍒楃殑鍏稿瀷闆嗕笂銆備粠杩欎釜璁℃暟浜嬪疄鍑哄彂锛屾垜浠凡缁忓彲浠ユ兂璞′竴绉嶆笎杩戦珮鏁堢殑缂栫爜锛氱敤 \lceil n H(X) \rceil 姣旂壒绱㈠紩鍏稿瀷闆嗭紝瀵癸紙缃曡鐨勶級闈炲吀鍨嬪簭鍒椾娇鐢ㄦ洿闀跨殑鍥為€€缂栫爜銆傛湰绔犲皢杩欎竴鐩磋鍙戝睍涓轰竴濂楁瀯閫犳€х殑鍘嬬缉鐞嗚銆?
+
+鏍稿績缁撴灉鏄?**Shannon 淇℃簮缂栫爜瀹氱悊**锛屽畠鎸囧嚭鐔?H(X) 鏄棤鎹熷帇缂╃殑鍩烘湰鏋侀檺锛氭病鏈変换浣曟柟妗堣兘鍦ㄥ钩鍧囨剰涔変笂浣跨敤灏戜簬 H(X) 姣旂壒姣忕鍙凤紝鑰屾垜浠彲浠ヤ换鎰忔帴杩戣繖涓€鏋侀檺銆傛垜浠皢浠ヤ袱绉嶅舰寮忥紙鍙橀暱缂栫爜鍜屽垎缁勭紪鐮侊級闄堣堪骞惰瘉鏄庤瀹氱悊锛屽苟浠嬬粛涓ょ鍦ㄥ疄璺典腑閫艰繎杩欎竴鐣岀殑绠楁硶锛圚uffman 缂栫爜鍜岀畻鏈紪鐮侊級銆?
+
+鏈珷鏈熬缁欏嚭浜嗘湰涔︿腑鏈€閲嶈鐨?AI 鑱旂郴锛氳瑷€妯″瀷鐨勫洶鎯戝害灏辨槸涓€绉嶅帇缂╃巼锛岃€岀幇浠ｅぇ璇█妯″瀷鏄笘鐣岀骇鐨勬枃鏈帇缂╁櫒銆傚綋 GPT 棰勬祴浣犵殑涓嬩竴鍙ヨ瘽鏃讹紝瀹冨湪鏁板涓婃鏄鈥滃彲淇″彞瀛愮殑瀹囧畽鈥濆仛淇℃簮缂栫爜銆?
+
+
+### 4.1 鐮佷笌鐮佹爲
+
+鎴戜滑浠庡熀鏈瀯浠跺紑濮嬨€傚瓧姣嶈〃 \mathcal{X} 涓婇殢鏈哄彉閲?X 鐨勪竴涓?*淇℃簮鐮?* C 鏄粠 \mathcal{X} 鍒版湁闄愰暱浜岃繘鍒朵覆闆嗗悎 \{0, 1\}^* 鐨勬槧灏勩€傜爜涓烘瘡涓鍙?x 鍒嗛厤涓€涓暱搴︿负 \ell(x) 鐨?*鐮佸瓧** C(x)銆?
+
+**鏈熸湜鐮佸瓧闀垮害**涓?
+
+L(C) = \mathbb{E}[\ell(X)] = \sum_x p(x) \ell(x).
+
+鎴戜滑甯屾湜 L(C) 灏藉彲鑳藉皬銆?
+
+瑕佽鐮佸彲鐢ㄤ簬浼犺緭锛屾垜浠渶瑕佽兘澶焈瑙ｇ爜_瀹冦€傛渶绠€鍗曠殑鍏呭垎鏉′欢鏄爜涓?*鏃犲墠缂€鐮?*锛坧refix-free锛屼篃绉颁负鍗虫椂鐮侊級锛氭病鏈変换浣曠爜瀛楁槸鍙︿竴涓爜瀛楃殑鍓嶇紑銆傛湁浜嗚繖涓€ц川锛屼竴娈垫嫾鎺ョ殑鐮佸瓧娴佸彲浠ラ€氳繃閫愭瘮鐗硅鍙栧苟鍦ㄧ涓€涓畬鏁寸爜瀛楀鍋滄鏉ヨВ鐮併€?
+
+鏃犲墠缂€鐮佸搴斾簬浜屽弶鏍戠殑鍙跺瓙锛? 琛ㄧず鈥滃悜宸︹€濓紝1 琛ㄧず鈥滃悜鍙斥€濓紱姣忎釜鐮佸瓧鏄粠鏍瑰埌鍙跺瓙鐨勮矾寰勩€傛棤鍓嶇紑鎬ц川鎰忓懗鐫€娌℃湁鍙跺瓙浣嶄簬閫氬線鍙︿竴涓彾瀛愮殑璺緞涓婏紱鍙跺瓙鏄粓姝㈣妭鐐广€?
+
+
+#### 绀轰緥锛氭棤鍓嶇紑鐮?
+
+璁?\mathcal{X} = \{a, b, c, d\}锛岀爜瀛椾负 C(a) = 0锛孋(b) = 10锛孋(c) = 110锛孋(d) = 111銆傚彲瑙嗗寲涓烘爲锛氭牴鐨勫乏瀛愯妭鐐规槸 a锛堟繁搴?1 鐨勫彾瀛愶級锛屽彸瀛愯妭鐐规槸鍐呴儴鑺傜偣锛屽叾宸﹀瓙鑺傜偣鏄?b锛堟繁搴?2 鐨勫彾瀛愶級锛屽彸瀛愯妭鐐规槸鍐呴儴鑺傜偣锛屽叾宸﹀瓙鑺傜偣鏄?c銆佸彸瀛愯妭鐐规槸 d锛堝潎涓烘繁搴?3 鐨勫彾瀛愶級銆傛病鏈夌爜瀛楁槸鍙︿竴涓爜瀛楃殑鍓嶇紑銆?
+
+瀛楃涓?010110111 鍞竴瑙ｇ爜涓?0 \cdot 10 \cdot 110 \cdot 111锛屽嵆 a, b, c, d銆?
+
+
+### 4.2 Kraft 涓嶇瓑寮?
+
+鐮佸瓧闀垮害鑳芥湁澶氱煭锛?*Kraft 涓嶇瓑寮?*缁欏嚭浜嗙簿纭洖绛斻€?
+
+================================================================================
+BLOCK c05_b04
+================================================================================
+--- SOURCE ---
+### 4.4 Block Coding and the Asymptotic Bound
+
+If we treat nnn source symbols as a single "super-symbol" XnX^nXn and apply Shannon's variable-length theorem to XnX^nXn, we get
+
+H(Xn)鈮n<H(Xn)+1,H(X^n) \leq L_n < H(X^n) + 1,H(Xn)鈮n鈥?H(Xn)+1,
+
+where LnL_nLn鈥?is the expected codeword length for the block. For an i.i.d. source, H(Xn)=nH(X)H(X^n) = n H(X)H(Xn)=nH(X), so the expected length per symbol is
+
+H(Xn)n鈮nn<H(Xn)+1n=H(X)+1n.\frac{H(X^n)}{n} \leq \frac{L_n}{n} < \frac{H(X^n) + 1}{n} = H(X) + \frac{1}{n}.nH(Xn)鈥嬧墹nLn鈥嬧€?nH(Xn)+1鈥?H(X)+n1鈥?
+
+As n鈫掆垶n \to \inftyn鈫掆垶, the per-symbol rate approaches H(X)H(X)H(X). This is the **asymptotic source coding theorem** : by encoding long enough blocks, we can compress to within 系\epsilon系 bits per symbol for any 系>0\epsilon > 0系>0.
+
+The combinatorial picture from Chapter 3 is the same: there are about 2nH(X)2^{n H(X)}2nH(X) typical sequences, and indexing them costs about nH(X)n H(X)nH(X) bits. Block coding makes this constructive.
+
+
+### 4.5 Huffman Coding
+
+Shannon's variable-length theorem says we can achieve L<H(X)+1L < H(X) + 1L<H(X)+1 by a particular construction. It does not say this construction is optimal. The optimal symbol-at-a-time prefix-free code is **Huffman's code** , devised by David Huffman as a class assignment in 1951.
+
+
+#### The Huffman Algorithm
+
+Given a probability distribution p(x1),鈥?p(xn)p(x_1), \ldots, p(x_n)p(x1鈥?,鈥?p(xn鈥?:
+
+  1. Treat each xix_ixi鈥?as a leaf with weight p(xi)p(x_i)p(xi鈥?.
+  2. Find the two leaves with smallest weight; combine them into an internal node with weight equal to their sum.
+  3. Repeat until only one node (the root) remains.
+  4. Assign 0 and 1 arbitrarily to the two children of each internal node. The codeword of xix_ixi鈥?is the bitstring on the root-to-leaf path.
+
+--- TRANSLATION ---
+### 4.4 鍒嗙粍缂栫爜涓庢笎杩戠晫
+
+鑻ュ皢 $n$ 涓俊婧愮鍙风湅浣滀竴涓€滆秴绗﹀彿鈥?$X^n$锛屽苟瀵?$X^n$ 搴旂敤 Shannon 鐨勫彉闀跨紪鐮佸畾鐞嗭紝渚垮緱鍒?
+
+H(X^n) \leq L_n < H(X^n) + 1锛?
+
+鍏朵腑 $L_n$ 鏄鍒嗙粍鐨勬湡鏈涚爜瀛楅暱搴︺€傚鐙珛鍚屽垎甯冧俊婧愶紝
+
+\frac{H(X^n)}{n} \leq \frac{L_n}{n} < \frac{H(X^n) + 1}{n} = H(X) + \frac{1}{n}銆?
+
+褰?n \to \infty 鏃讹紝姣忕鍙烽€熺巼瓒嬭繎 H(X)銆傝繖灏辨槸**娓愯繎淇℃簮缂栫爜瀹氱悊**锛氶€氳繃缂栫爜瓒冲闀跨殑鍒嗙粍锛屽彲浠ヤ娇姣忎釜绗﹀彿鐨勫钩鍧囩爜鐜囪窛 H(X) 涓嶈秴杩囦换鎰忕粰瀹氱殑 \epsilon 姣旂壒锛堝嵆 H(X) \leq R < H(X) + \epsilon锛夈€?
+
+$\frac{H(X^n)}{n} \leq \frac{L_n}{n} < \frac{H(X^n)+1}{n} =H(X)+\frac{1}{n}.$
+
+褰?$n\to\infty$ 鏃讹紝姣忕鍙烽€熺巼瓒嬩簬 $H(X)$銆傝繖灏辨槸**娓愯繎淇℃簮缂栫爜瀹氱悊**锛氬彧瑕佺紪鐮佺殑鍒嗙粍瓒冲闀匡紝缂栫爜閫熺巼灏卞彲浠ヨ揪鍒颁笌 $H(X)$ 鐩稿樊涓嶈秴杩囦换鎰?$\epsilon>0$ 姣旂壒姣忕鍙凤紝鑰屼笉鏄秼杩戜簬 $0$銆?
+
+绗?3 绔犵殑缁勫悎鍥炬櫙涓庢鐩稿悓锛氬吀鍨嬪簭鍒楃害鏈?$2^{nH(X)}$ 鏉★紝瀵瑰畠浠繘琛岀储寮曞ぇ绾﹂渶瑕?$nH(X)$ 姣旂壒銆傚垎缁勭紪鐮佷娇杩欎竴鍥炬櫙鎴愪负鍙瀯閫犵殑鏂规銆?
+
+### 4.5 闇嶅か鏇肩紪鐮?
+
+Shannon 鍙橀暱瀹氱悊璇达紝鎴戜滑鍙互閫氳繃涓€绉嶇壒瀹氭瀯閫犺揪鍒?L < H(X) + 1銆備絾瀹冨苟娌℃湁璇磋繖绉嶆瀯閫犳槸鏈€浼樼殑銆傞€愮鍙锋渶浼樼殑鏃犲墠缂€鐮佹槸 **闇嶅か鏇肩爜**锛岀敱 David Huffman 鍦?1951 骞翠綔涓鸿鍫備綔涓氱粰鍑恒€?
+
+#### 闇嶅か鏇肩畻娉?
+
+缁欏畾姒傜巼鍒嗗竷 $p(x_1),\ldots,p(x_n)$锛?
+
+1. 灏嗘瘡涓?$x_i$ 瑙嗕负鏉冮噸涓?$p(x_i)$ 鐨勫彾鑺傜偣銆?
+2. 鎵惧埌鏉冮噸鏈€灏忕殑涓や釜鍙惰妭鐐癸紱灏嗗叾鍚堝苟涓烘潈閲嶇瓑浜庝簩鑰呬箣鍜岀殑鍐呴儴鑺傜偣銆?
+3. 閲嶅姝ゆ搷浣滐紝鐩村埌鍙墿涓€涓妭鐐癸紝鍗虫牴鑺傜偣銆?
+4. 瀵规瘡涓唴閮ㄨ妭鐐圭殑涓や釜瀛愯妭鐐逛换鎰忓垎閰?$0$ 鍜?$1$銆?x_i$ 鐨勭爜瀛楀氨鏄粠鏍瑰埌璇ュ彾鑺傜偣璺緞涓婄殑姣旂壒涓层€?
+
+================================================================================
+BLOCK c05_b06
+================================================================================
+--- SOURCE ---
+#### Limitations of Huffman
+
+* **Integer-length problem** : codeword lengths are integers, but 鈭抣og鈦(x)-\log p(x)鈭抣ogp(x) is not. The rounding loss can be significant when one symbol has probability close to 1.
+* **Two-pass requirement** : Huffman needs the distribution; in practice this means either training the encoder on representative data or making two passes over the source (one to estimate p(x)p(x)p(x), one to encode).
+* **Adaptive Huffman** : a variant that updates the tree as it encodes, eliminating the two-pass requirement, used in some classical compression schemes.
+* **Block-coded Huffman** : encode nnn-symbol blocks. The rate gap shrinks to 1/n1/n1/n per symbol, but the alphabet size grows to 鈭鈭|\mathcal{X}|^n鈭鈭, making the algorithm expensive.
+
+
+### 4.6 Arithmetic Coding
+
+Arithmetic coding solves Huffman's integer-length problem. Instead of assigning codewords to symbols, it represents an entire message as a single number in the unit interval [0,1)[0, 1)[0,1).
+
+
+#### The Idea
+
+Start with the interval [0,1)[0, 1)[0,1). For each symbol in the message, partition the current interval into subintervals proportional to the symbol probabilities, and select the subinterval corresponding to the actual symbol. After encoding the entire message, the final interval is some range [a,b)[a, b)[a,b). The encoded output is any number in this interval, transmitted as a binary fraction with as few bits as possible.
+
+The number of bits needed to specify a number in an interval of width www is 鈱堚垝log鈦?w鈱塡lceil -\log_2 w \rceil鈱堚垝log2鈥媤鈱? After encoding nnn i.i.d. symbols, the interval width is 鈭廼p(xi)=p(message)\prod_i p(x_i) = p(\text{message})鈭廼鈥媝(xi鈥?=p(message), so the encoding uses about 鈭抣og鈦(message)=鈭慽鈭抣og鈦(xi)-\log p(\text{message}) = \sum_i -\log p(x_i)鈭抣ogp(message)=鈭慽鈥嬧垝logp(xi鈥? bits 鈥?exactly the self-information of the message.
+
+The expected encoding length per symbol is
+
+1nE[鈭抣og鈦(Xn)]+O(1/n)=H(X)+O(1/n),\frac{1}{n} \mathbb{E}[-\log p(X^n)] + O(1/n) = H(X) + O(1/n),n1鈥婨[鈭抣ogp(Xn)]+O(1/n)=H(X)+O(1/n),
+
+so arithmetic coding achieves a rate within O(1/n)O(1/n)O(1/n) of entropy with an arbitrarily long message. The integer-length problem is gone: the gap is amortized over the entire message rather than rounded per symbol.
+
+
+#### Worked Example: Encoding "ba"
+
+Suppose p(a)=0.6,p(b)=0.4p(a) = 0.6, p(b) = 0.4p(a)=0.6,p(b)=0.4. Order: aaa gets [0,0.6)[0, 0.6)[0,0.6), bbb gets [0.6,1)[0.6, 1)[0.6,1).
+
+Encode "b": current interval is [0.6,1)[0.6, 1)[0.6,1), of width 0.4. Subdivide: aaa gets [0.6,0.84)[0.6, 0.84)[0.6,0.84) (width 0.24), bbb gets [0.84,1)[0.84, 1)[0.84,1) (width 0.16).
+
+Encode "a": current interval is [0.6,0.84)[0.6, 0.84)[0.6,0.84), of width 0.24. Subdivide: aaa gets [0.6,0.744)[0.6, 0.744)[0.6,0.744), bbb gets [0.744,0.84)[0.744, 0.84)[0.744,0.84).
+
+Final interval after "ba": [0.6,0.744)[0.6, 0.744)[0.6,0.744), width 0.1440.1440.144.
+
+Specify any number in this interval, e.g., 0.7=0.101100鈥?.7 = 0.10\overline{1100}0.7=0.101100 in binary (truncate to enough bits). The number of bits required is 鈱堚垝log鈦?.144鈱?鈱?.80鈱?3\lceil -\log 0.144 \rceil = \lceil 2.80 \rceil = 3鈱堚垝log0.144鈱?鈱?.80鈱?3 bits.
+
+For the message "ba": entropy of XXX is Hb(0.4)鈮?.971H_b(0.4) \approx 0.971Hb鈥?0.4)鈮?.971 bits, so two symbols cost 1.941.941.94 bits in expectation. Three bits is close to that.
+
+--- TRANSLATION ---
+#### Huffman 鐨勫眬闄?
+
+* **鏁存暟闀垮害闂**锛氱爜瀛楅暱搴︽槸鏁存暟锛屼絾 -\log p(x) 涓€鑸笉鏄€傚綋鏌愪釜绗﹀彿姒傜巼鎺ヨ繎 1 鏃讹紝鍙栨暣鎹熷け鍙兘寰堝ぇ銆?
+* **涓ら亶闇€姹?*锛欻uffman 闇€瑕佺煡閬撳垎甯冿紱瀹炶返涓繖鎰忓懗鐫€鎴栬€呭湪浠ｈ〃鏁版嵁涓婅缁冪紪鐮佸櫒锛屾垨鑰呭淇℃簮鍋氫袱閬嶏紙涓€閬嶄及璁?p(x)锛屼竴閬嶇紪鐮侊級銆?
+* **鑷€傚簲 Huffman**锛氫竴绉嶅湪缂栫爜鏃舵洿鏂版爲鐨勫彉浣擄紝娑堥櫎浜嗕袱閬嶉渶姹傦紝鐢ㄤ簬鏌愪簺缁忓吀鍘嬬缉鏂规銆?
+* **鍒嗙粍 Huffman**锛氱紪鐮?n 绗﹀彿鍧椼€傞€熺巼宸窛缂╁皬鍒版瘡绗﹀彿 1/n锛屼絾瀛楁瘝琛ㄥぇ灏忓闀垮埌 |\mathcal{X}|^n锛屼娇绠楁硶浠ｄ环楂樻槀銆?
+
+
+### 4.6 绠楁湳缂栫爜
+
+绠楁湳缂栫爜瑙ｅ喅浜?Huffman 鐨勬暣鏁伴暱搴﹂棶棰樸€傚畠涓嶆妸鐮佸瓧鍒嗛厤缁欏悇涓鍙凤紝鑰屾槸鎶婃暣鏉℃秷鎭〃绀轰负鍗曚綅鍖洪棿 [0, 1) 涓殑鍗曚釜鏁般€?
+
+
+#### 鍩烘湰鎬濇兂
+
+浠庡尯闂?[0, 1) 寮€濮嬨€傚娑堟伅涓殑姣忎釜绗﹀彿锛屽皢褰撳墠鍖洪棿鎸夌鍙锋鐜囨瘮渚嬪垝鍒嗕负瀛愬尯闂达紝骞堕€夋嫨瀵瑰簲浜庡疄闄呯鍙风殑瀛愬尯闂淬€傜紪鐮佹暣鏉℃秷鎭悗锛屾渶缁堝尯闂存槸鏌愪釜鑼冨洿 [a, b)銆傜紪鐮佽緭鍑烘槸璇ュ尯闂翠腑鐨勪换鎰忎竴涓暟锛屼互浜岃繘鍒跺皬鏁颁紶杈擄紝浣跨敤灏藉彲鑳藉皯鐨勬瘮鐗广€?
+
+鎸囧畾瀹藉害涓?w 鐨勫尯闂翠腑鐨勪竴涓暟鎵€闇€鐨勬瘮鐗规暟涓?\lceil -\log_2 w \rceil銆傜紪鐮?n 涓嫭绔嬪悓鍒嗗竷锛坕.i.d.锛夌鍙峰悗锛屽尯闂村搴︿负 \prod_i p(x_i) = p(\text{message})锛屽洜姝ょ紪鐮佷娇鐢ㄧ害 -\log p(\text{message}) = \sum_i -\log p(x_i) 姣旂壒鈥斺€旀伆濂芥槸娑堟伅鐨勮嚜淇℃伅銆?
+
+姣忕鍙锋湡鏈涚紪鐮侀暱搴︿负
+
+\frac{1}{n} \mathbb{E}[-\log p(X^n)] + O(1/n) = H(X) + O(1/n),
+
+鍥犳绠楁湳缂栫爜浠?O(1/n) 鐨勫樊璺濊揪鍒扮喌閫熺巼锛屾秷鎭彲浠ヤ换鎰忛暱銆傛暣鏁伴暱搴﹂棶棰樻秷澶变簡锛氬樊璺濆湪鏁翠釜娑堟伅涓婃憡閿€锛岃€岄潪閫愮鍙峰彇鏁淬€?
+
+
+#### 绀轰緥锛氱紪鐮?"ba"
+
+璁?p(a) = 0.6锛宲(b) = 0.4銆傛帓搴忥細a 寰楀埌 [0, 0.6)锛宐 寰楀埌 [0.6, 1)銆?
+
+缂栫爜 "b"锛氬綋鍓嶅尯闂翠负 [0.6, 1)锛屽搴?0.4銆傜粏鍒嗭細a 寰楀埌 [0.6, 0.84)锛堝搴?0.24锛夛紝b 寰楀埌 [0.84, 1)锛堝搴?0.16锛夈€?
+
+缂栫爜 "a"锛氬綋鍓嶅尯闂翠负 [0.6, 0.84)锛屽搴?0.24銆傜粏鍒嗭細a 寰楀埌 [0.6, 0.744)锛宐 寰楀埌 [0.744, 0.84)銆?
+
+"ba" 鍚庣殑鏈€缁堝尯闂达細[0.6, 0.744)锛屽搴?0.144銆?
+
+鎸囧畾璇ュ尯闂翠腑鐨勪换鎰忔暟锛屼緥濡?0.7 = 0.10\overline{1100} 鐨勪簩杩涘埗琛ㄧず锛堟埅鏂埌瓒冲姣旂壒锛夈€傛墍闇€姣旂壒鏁颁负 \lceil -\log 0.144 \rceil = \lceil 2.80 \rceil = 3 姣旂壒銆?
+
+瀵逛簬娑堟伅 "ba"锛歑 鐨勭喌涓?H_b(0.4) \approx 0.971 姣旂壒锛屽洜姝や袱涓鍙锋湡鏈涜姳璐?1.94 姣旂壒銆? 姣旂壒涓庝箣鎺ヨ繎銆?
+
+================================================================================
+BLOCK c06_b04
+================================================================================
+--- SOURCE ---
+#### Properties
+
+  1. **Non-negativity** : C鈮?C \geq 0C鈮? (since I(X;Y)鈮?I(X; Y) \geq 0I(X;Y)鈮? always).
+  2. **Bounding** : C鈮in鈦?log鈦♀垼X鈭?log鈦♀垼Y鈭?C \leq \min(\log |\mathcal{X}|, \log |\mathcal{Y}|)C鈮in(log鈭鈭?log鈭鈭?. The channel cannot transmit more bits per use than its alphabets allow.
+  3. **Concavity** : I(X;Y)I(X; Y)I(X;Y) is a concave function of p(x)p(x)p(x) for fixed p(y鈭)p(y \mid x)p(y鈭). The maximum over a convex set is attained, and the optimization is convex.
+
+The concavity property is what makes capacity computation tractable: any local maximum is a global maximum, and standard convex-optimization techniques (Lagrange multipliers, KKT conditions, the Blahut-Arimoto algorithm) compute capacity exactly.
+
+
+#### Computing capacity: BSC
+
+For the BSC, by symmetry (the channel is invariant under 0鈫?0 \leftrightarrow 10鈫?), the capacity-achieving input distribution is uniform: p(0)=p(1)=1/2p(0) = p(1) = 1/2p(0)=p(1)=1/2. Then
+
+CBSC=1鈭扝b(系).C_{\text{BSC}} = 1 - H_b(\epsilon).CBSC鈥?1鈭扝b鈥?系).
+
+Sanity checks:
+
+* 系=0\epsilon = 0系=0: C=1C = 1C=1 bit per use (noiseless).
+* 系=1/2\epsilon = 1/2系=1/2: C=0C = 0C=0 (random output).
+* 系=1\epsilon = 1系=1: C=1C = 1C=1 (deterministic flip).
+
+
+#### Computing capacity: BEC
+
+For the BEC, again by symmetry, uniform input is optimal:
+
+CBEC=1鈭捪?C_{\text{BEC}} = 1 - \epsilon.CBEC鈥?1鈭捪?
+
+Sanity check: each non-erased bit transmits one bit of information. The fraction of non-erased bits is 1鈭捪? - \epsilon1鈭捪? So the long-run transmission rate is exactly 1鈭捪? - \epsilon1鈭捪?
+
+The BEC is "easier" than the BSC for the same 系\epsilon系: 1鈭捪碘墺1鈭扝b(系)1 - \epsilon \geq 1 - H_b(\epsilon)1鈭捪碘墺1鈭扝b鈥?系) for 0鈮は碘墹1/20 \leq \epsilon \leq 1/20鈮は碘墹1/2, with strict inequality except at the endpoints. This makes intuitive sense: the receiver knows when an erasure happens; for the BSC it does not know when a flip happens.
+
+
+#### Computing capacity: AWGN
+
+For the bandlimited AWGN channel with input power constraint E[X2]鈮\mathbb{E}[X^2] \leq PE[X2]鈮 and noise variance 蟽2\sigma^2蟽2, the capacity-achieving input is Gaussian: X鈭糔(0,P)X \sim \mathcal{N}(0, P)X鈭糔(0,P). The output is then Y鈭糔(0,P+蟽2)Y \sim \mathcal{N}(0, P + \sigma^2)Y鈭糔(0,P+蟽2), and
+
+CAWGN=h(Y)鈭抙(Y鈭)=12log鈦2蟺e(P+蟽2)]鈭?2log鈦2蟺e蟽2]=12log鈦?1+P蟽2).C_{\text{AWGN}} = h(Y) - h(Y \mid X) = \frac{1}{2} \log[2\pi e (P + \sigma^2)] - \frac{1}{2} \log[2\pi e \sigma^2] = \frac{1}{2} \log \left(1 + \frac{P}{\sigma^2}\right).CAWGN鈥?h(Y)鈭抙(Y鈭)=21鈥媗og[2蟺e(P+蟽2)]鈭?1鈥媗og[2蟺e蟽2]=21鈥媗og(1+蟽2P鈥?.
+
+The quantity P/蟽2P / \sigma^2P/蟽2 is the **signal-to-noise ratio (SNR)**. Shannon's capacity formula says that capacity grows logarithmically with SNR 鈥?doubling SNR adds about half a bit per use.
+
+For a continuous bandlimited channel with bandwidth BBB Hz, the capacity in bits per second is
+
+Cbps=Blog鈦?1+PN0B),C_{\text{bps}} = B \log \left(1 + \frac{P}{N_0 B}\right),Cbps鈥?Blog(1+N0鈥婤P鈥?,
+
+where N0N_0N0鈥?is the noise power spectral density. This is the celebrated **Shannon-Hartley theorem** , the most-displayed equation on EE department walls.
+
+
+### 5.5 Symmetric Channels
+
+Many channels of practical interest have a symmetry structure that simplifies capacity computation.
+
+--- TRANSLATION ---
+#### 鎬ц川
+
+1. **闈炶礋鎬?*锛欳 \geq 0锛堝洜涓?I(X; Y) \geq 0 鎭掓垚绔嬶級銆?
+2. **涓婄晫**锛欳 \leq \min(\log |\mathcal{X}|, \log |\mathcal{Y}|)銆備俊閬撴瘡娆′娇鐢ㄤ紶杈撶殑姣旂壒鏁颁笉鑳借秴杩囧叾瀛楁瘝琛ㄦ墍鍏佽鐨勮寖鍥淬€?
+3. **鍑规€?*锛氬鍥哄畾鐨?p(y \mid x)锛孖(X; Y) 鏄?p(x) 鐨勫嚬鍑芥暟銆傚湪鍑搁泦涓婄殑鏈€澶у€间竴瀹氬彲杈撅紝涓旇浼樺寲鏄嚫鐨勩€?
+
+鍑规€т娇寰楀閲忚绠楀彉寰楀彲琛岋細浠讳綍灞€閮ㄦ渶澶у€奸兘鏄叏灞€鏈€澶у€硷紝鏍囧噯鍑镐紭鍖栨妧鏈紙鎷夋牸鏈楁棩涔樺瓙銆並KT 鏉′欢銆丅lahut-Arimoto 绠楁硶锛夊彲浠ョ簿纭绠楀閲忋€?
+
+
+#### 璁＄畻瀹归噺锛欱SC
+
+瀵逛簬 BSC锛岀敱瀵圭О鎬э紙淇￠亾鍦?0 \leftrightarrow 1 涓嬩笉鍙橈級锛屽閲忚揪鍒拌緭鍏ュ垎甯冩槸鍧囧寑鐨勶細p(0) = p(1) = 1/2銆傚垯
+
+C_{\text{BSC}} = 1 - H_b(\epsilon).
+
+鍚堢悊鎬ф鏌ワ細
+
+* \epsilon = 0锛欳 = 1 姣旂壒姣忔浣跨敤锛堟棤鍣級銆?
+* \epsilon = 1/2锛欳 = 0锛堥殢鏈鸿緭鍑猴級銆?
+* \epsilon = 1锛欳 = 1锛堢‘瀹氭€х炕杞級銆?
+
+
+#### 璁＄畻瀹归噺锛欱EC
+
+瀵逛簬 BEC锛屽悓鏍风敱瀵圭О鎬э紝鍧囧寑杈撳叆鏄渶浼樼殑锛?
+
+C_{\text{BEC}} = 1 - \epsilon.
+
+鍚堢悊鎬ф鏌ワ細姣忎釜鏈鎿﹂櫎鐨勬瘮鐗逛紶杈撲竴姣旂壒淇℃伅銆傛湭琚摝闄ゆ瘮鐗圭殑姣斾緥涓?1 - \epsilon銆傛墍浠ラ暱鏈熶紶杈撻€熺巼鎭板ソ涓?1 - \epsilon銆?
+
+瀵逛簬鐩稿悓鐨?\epsilon锛孊EC 姣?BSC鈥滄洿瀹规槗鈥濓細鍦?0 \leq \epsilon \leq 1/2 鏃讹紝1 - \epsilon \geq 1 - H_b(\epsilon)锛岄櫎绔偣澶栦弗鏍间笉绛夈€傝繖绗﹀悎鐩磋锛氭帴鏀剁鐭ラ亾鎿﹂櫎浣曟椂鍙戠敓锛涜€?BSC 涓嶇煡閬撶炕杞綍鏃跺彂鐢熴€?
+
+
+#### 璁＄畻瀹归噺锛欰WGN
+
+瀵逛簬甯﹂檺 AWGN 淇￠亾锛岃緭鍏ュ姛鐜囩害鏉?\mathbb{E}[X^2] \leq P锛屽櫔澹版柟宸?\sigma^2锛屽閲忚揪鍒拌緭鍏ユ槸楂樻柉鐨勶細X \sim \mathcal{N}(0, P)銆傝緭鍑哄垯涓?Y \sim \mathcal{N}(0, P + \sigma^2)锛屼笖
+
+C_{\text{AWGN}} = h(Y) - h(Y \mid X) = \frac{1}{2} \log[2\pi e (P + \sigma^2)] - \frac{1}{2} \log[2\pi e \sigma^2] = \frac{1}{2} \log \left(1 + \frac{P}{\sigma^2}\right).
+
+閲?P / \sigma^2 鏄?*淇″櫔姣旓紙SNR锛?*銆係hannon 瀹归噺鍏紡璇村閲忛殢 SNR 瀵规暟澧為暱鈥斺€擲NR 缈诲€嶇害澧炲姞鍗婃瘮鐗规瘡娆′娇鐢ㄣ€?
+
+瀵逛簬甯﹀涓?B Hz 鐨勮繛缁甫闄愪俊閬擄紝浠ユ瘮鐗规瘡绉掍负鍗曚綅鐨勫閲忎负
+
+C_{\text{bps}} = B \log \left(1 + \frac{P}{N_0 B}\right),
+
+鍏朵腑 N_0 鏄櫔澹板姛鐜囪氨瀵嗗害銆傝繖灏辨槸钁楀悕鐨?**Shannon-Hartley 瀹氱悊**锛岀數瀛愬伐绋嬬郴澧欎笂灞曠ず鏈€澶氱殑鏂圭▼銆?
+
+
+### 5.5 瀵圭О淇￠亾
+
+璁稿瀹為檯鎰熷叴瓒ｇ殑淇￠亾鍏锋湁瀵圭О缁撴瀯锛屽彲浠ョ畝鍖栧閲忚绠椼€?
+
+================================================================================
+BLOCK c06_b08
+================================================================================
+--- SOURCE ---
+### Common Misconception
+
+* **Misconception** : "Channel capacity is the maximum _transmission rate_ of any specific scheme."
+
+Capacity is the maximum _achievable rate_ , where "achievable" means there exists a scheme (perhaps very complex) that uses the channel nnn times to transmit 2nR2^{nR}2nR messages with vanishing error probability as n鈫掆垶n \to \inftyn鈫掆垶. For any fixed nnn and any specific code, the achievable rate is generally less than CCC. Capacity is the asymptotic limit.
+
+* **Misconception** : "The capacity of a noisy channel is zero: you can't reliably transmit through noise."
+
+This is exactly the claim Shannon refuted. A noisy channel has positive capacity for any noise level less than maximal. By using long enough block codes, you can drive the error rate to zero while transmitting at any rate below capacity. This was the surprising and revolutionary content of Shannon's 1948 paper.
+
+* **Misconception** : "Capacity tells you how to build a code."
+
+Capacity is an existence statement. It says a good code exists; it does not say what the code is. Constructing capacity-approaching codes (Hamming, Reed-Solomon, LDPC, Turbo, Polar) is the subject of Chapter 7 and is, historically, an active engineering research program that took fifty years after Shannon's theorem to come close to capacity in practice.
+
+
+### Chapter Summary
+
+A discrete memoryless channel is specified by an input alphabet, output alphabet, and a transition distribution p(y鈭)p(y \mid x)p(y鈭). The **capacity** is the maximum mutual information over input distributions: C=max鈦(x)I(X;Y)C = \max_{p(x)} I(X; Y)C=maxp(x)鈥婭(X;Y).
+
+We computed capacity for the canonical channels:
+
+* BSC with crossover 系\epsilon系: C=1鈭扝b(系)C = 1 - H_b(\epsilon)C=1鈭扝b鈥?系).
+* BEC with erasure 系\epsilon系: C=1鈭捪礐 = 1 - \epsilonC=1鈭捪?
+* AWGN with SNR P/蟽2P/\sigma^2P/蟽2: C=12log鈦?1+P/蟽2)C = \frac{1}{2} \log(1 + P/\sigma^2)C=21鈥媗og(1+P/蟽2).
+
+For symmetric channels, the capacity-achieving input is uniform; for general channels, KKT conditions or the Blahut-Arimoto algorithm find the optimum.
+
+The noisy-channel model is the operational framework for modern AI systems: speech recognition, machine translation, denoising diffusion, and LLM-based generation can all be understood as channel-decoding problems.
+
+The next chapter proves Shannon's channel coding theorem: capacity is achievable. Below CCC, arbitrarily reliable communication is possible; above CCC, no scheme can avoid a fixed error rate.
+
+
+### 5.X Exercises
+
+--- TRANSLATION ---
+### 甯歌璇В
+
+* **璇В锛?*鈥滀俊閬撳閲忔槸浠讳綍鐗瑰畾鏂规鎵€鑳借揪鍒扮殑鏈€楂?浼犺緭閫熺巼*銆傗€?
+
+瀹归噺鏄渶澶?鍙揪閫熺巼*锛涒€滃彲杈锯€濇剰鍛崇潃瀛樺湪鏌愪釜鏂规鈥斺€斾篃璁搁潪甯稿鏉傗€斺€斾娇鐢ㄤ俊閬?$n$ 娆′紶杈?$2^{nR}$ 鏉℃秷鎭紝骞朵娇閿欒姒傜巼鍦?$n\to\infty$ 鏃惰秼浜?$0$銆傚浠讳綍鍥哄畾鐨?$n$ 鍜屼换浣曠壒瀹氱爜锛屽彲杈鹃€熺巼閫氬父灏忎簬 $C$銆傚閲忔槸娓愯繎鏋侀檺銆?
+
+* **璇В锛?*鈥滄湁鍣俊閬撶殑瀹归噺涓?$0$锛屽洜涓烘棤娉曞彲闈犲湴绌胯繃鍣０浼犺緭銆傗€?
+
+杩欐鏄?Shannon 鍙嶉┏鐨勪富寮犮€傚浜庝换浣曚綆浜庢渶澶у€肩殑鍣０姘村钩锛屾湁鍣俊閬撳叿鏈夋瀹归噺銆傞€氳繃浣跨敤瓒冲闀跨殑鍒嗙粍鐮侊紝浣犲彲浠ュ湪浣庝簬瀹归噺鐨勪换浣曢€熺巼涓嬪皢閿欒鐜囬┍鍔ㄥ埌闆躲€傝繖姝ｆ槸 Shannon 鍦?1948 骞磋鏂囦腑鎻愬嚭鐨勩€佷护浜烘儕璁朵笖鍏锋湁闈╁懡鎬х殑鍐呭銆?
+
+* **璇В锛?*鈥滃閲忓憡璇変綘搴斿綋濡備綍鏋勯€犵爜銆傗€?
+
+瀹归噺鏄竴涓瓨鍦ㄦ€у０鏄庛€傚畠璇村ソ鐮佸瓨鍦紱瀹冩病鏈夎鐮佹槸浠€涔堛€傛瀯閫犳帴杩戝閲忕殑鐮侊紙Hamming銆丷eed-Solomon銆丩DPC銆乀urbo銆丳olar锛夋槸绗?7 绔犵殑涓婚锛屽湪鍘嗗彶涓婃槸涓€涓椿璺冪殑宸ョ▼鐮旂┒椤圭洰锛屽巻缁?50 骞存墠鍦ㄥ疄璺典腑鎺ヨ繎 Shannon 瀹氱悊鎵€棰勮█鐨勬瀬闄愩€?
+
+### 鏈珷灏忕粨
+
+绂绘暎鏃犺蹇嗕俊閬撶敱杈撳叆瀛楁瘝琛ㄣ€佽緭鍑哄瓧姣嶈〃浠ュ強杞Щ鍒嗗竷 $p(y\mid x)$ 鎸囧畾銆?*瀹归噺**鏄湪杈撳叆鍒嗗竷涓婁簰淇℃伅鐨勬渶澶у€硷細
+
+$C=\max_{p(x)}I(X;Y).$
+
+鎴戜滑璁＄畻浜嗗吀鍨嬩俊閬撶殑瀹归噺锛?
+
+* 浜ゅ弶姒傜巼涓?$\epsilon$ 鐨?BSC锛?
+
+  $C=1-H_b(\epsilon).$
+
+* 鎿﹂櫎姒傜巼涓?$\epsilon$ 鐨?BEC锛?
+
+  $C=1-\epsilon.$
+
+* 淇″櫔姣斾负 $P/\sigma^2$ 鐨?AWGN锛?
+
+  $C=\frac{1}{2}\log\left(1+\frac{P}{\sigma^2}\right).$
+
+瀵圭О淇￠亾鍦ㄥ潎鍖€杈撳叆涓嬭揪鍒板閲忥紱瀵逛竴鑸俊閬擄紝KKT 鏉′欢鎴?Blahut鈥揂rimoto 绠楁硶鍙壘鍒版渶浼樼偣銆?
+
+鏈夊櫔淇￠亾妯″瀷鏄幇浠?AI 绯荤粺鐨勬搷浣滄€ф鏋讹細璇煶璇嗗埆銆佹満鍣ㄧ炕璇戙€佸幓鍣墿鏁ｄ互鍙婂熀浜?LLM 鐨勭敓鎴愶紝閮藉彲浠ョ悊瑙ｄ负淇￠亾瑙ｇ爜闂銆?
+
+涓嬩竴绔犲皢璇佹槑棣欏啘淇￠亾缂栫爜瀹氱悊锛氬閲忔槸鍙揪鐨勩€備綆浜?$C$ 鏃讹紝浠绘剰鍙潬鐨勯€氫俊閮藉彲鑳藉疄鐜帮紱楂樹簬 $C$ 鏃讹紝娌℃湁浠讳綍鏂规鑳介伩鍏嶅浐瀹氱殑閿欒鐜囥€?
+
+### 5.X 涔犻
+
+================================================================================
+BLOCK c06_b09
+================================================================================
+--- SOURCE ---
+#### Concept Check
+
+**Q1.** State the definition of channel capacity. Why is it the right definition?
+
+Hint
+
+Capacity is the maximum mutual information; the maximum is over input distributions because the channel is fixed but the input is at our disposal.
+
+**Answer:** The capacity of a discrete memoryless channel with transition distribution p(y鈭)p(y \mid x)p(y鈭) is
+
+C=max鈦(x)I(X;Y)=max鈦(x)[H(Y)鈭扝(Y鈭)].C = \max_{p(x)} I(X; Y) = \max_{p(x)} [H(Y) - H(Y \mid X)].C=p(x)max鈥婭(X;Y)=p(x)max鈥媅H(Y)鈭扝(Y鈭)].
+
+This is the right definition for two reasons. (1) Operationally, Chapter 6 will prove that any rate below CCC is achievable with vanishing error; rates above CCC are not. (2) Mathematically, it is the natural maximization: the channel is fixed (given by physics), but the input distribution is at our disposal (chosen by the encoder).
+
+**Q2.** Compute CBSCC_{\text{BSC}}CBSC鈥?for 系=0.1\epsilon = 0.1系=0.1 and 系=0.5\epsilon = 0.5系=0.5.
+
+Hint
+
+C=1鈭扝b(系)C = 1 - H_b(\epsilon)C=1鈭扝b鈥?系).
+
+**Answer:** 系=0.1\epsilon = 0.1系=0.1: Hb(0.1)鈮?.469H_b(0.1) \approx 0.469Hb鈥?0.1)鈮?.469 bits, C鈮?.531C \approx 0.531C鈮?.531 bits per use.
+
+系=0.5\epsilon = 0.5系=0.5: Hb(0.5)=1H_b(0.5) = 1Hb鈥?0.5)=1 bit, C=0C = 0C=0 bits per use.
+
+The first channel transmits about half a bit per use; the second is useless (output independent of input).
+
+**Q3.** Compute CAWGNC_{\text{AWGN}}CAWGN鈥?for SNR = 10, 100, 1000.
+
+Hint
+
+C=12log鈦?(1+SNR)C = \frac{1}{2} \log_2(1 + \text{SNR})C=21鈥媗og2鈥?1+SNR).
+
+**Answer:** SNR = 10: C=0.5log鈦?11鈮?.73C = 0.5 \log_2 11 \approx 1.73C=0.5log2鈥?1鈮?.73 bits per use. SNR = 100: C=0.5log鈦?101鈮?.33C = 0.5 \log_2 101 \approx 3.33C=0.5log2鈥?01鈮?.33 bits per use. SNR = 1000: C=0.5log鈦?1001鈮?.98C = 0.5 \log_2 1001 \approx 4.98C=0.5log2鈥?001鈮?.98 bits per use.
+
+Each tenfold increase in SNR adds 0.5log鈦?10鈮?.660.5 \log_2 10 \approx 1.660.5log2鈥?0鈮?.66 bits per use. This is why doubling transmitter power adds about half a bit per use, and increasing it by an order of magnitude adds about 1.66 bits.
+
+**Q4.** Why is the BEC capacity 1鈭捪? - \epsilon1鈭捪? not 1鈭扝b(系)1 - H_b(\epsilon)1鈭扝b鈥?系) like the BSC?
+
+Hint
+
+The receiver knows when an erasure occurs.
+
+**Answer:** In the BEC, the receiver always knows when an erasure has occurred 鈥?the symbol "?" is unambiguously different from "0" or "1." So the receiver's uncertainty about the input given a non-erased output is zero (it perfectly knows what was sent), and the only loss is the fraction 系\epsilon系 of erased bits, which carry no information.
+
+In the BSC, the receiver does not know when a flip has occurred. Each received bit carries some uncertainty about whether it was the original or a flipped version. The uncertainty per bit is Hb(系)H_b(\epsilon)Hb鈥?系), which is greater than 系\epsilon系 for 系<1/2\epsilon < 1/2系<1/2. This is why the BSC is "harder" than the BEC for the same 系\epsilon系.
+
+--- TRANSLATION ---
+#### 姒傚康妫€鏌?
+
+**Q1.** 闄堣堪淇￠亾瀹归噺鐨勫畾涔夈€備负浠€涔堣繖鏄纭殑瀹氫箟锛?
+
+鎻愮ず
+
+瀹归噺鏄渶澶т簰淇℃伅锛涙渶澶у€煎湪杈撳叆鍒嗗竷涓婂彇锛屽洜涓轰俊閬撴槸鍥哄畾鐨勶紝浣嗚緭鍏ョ敱鎴戜滑鏀厤銆?
+
+**绛旀锛?* 杞Щ鍒嗗竷涓?p(y \mid x) 鐨勭鏁ｆ棤璁板繂淇￠亾鐨勫閲忎负
+
+C = \max_{p(x)} I(X; Y) = \max_{p(x)} [H(Y) - H(Y \mid X)].
+
+杩欐槸姝ｇ‘鐨勫畾涔夛紝鍘熷洜鏈変簩銆?1) 鎿嶄綔涓婏紝绗?6 绔犲皢璇佹槑浣庝簬 C 鐨勪换浣曢€熺巼閮藉彲杈句笖閿欒瓒嬩簬闆讹紱楂樹簬 C 鐨勯€熺巼涓嶅彲杈俱€?2) 鏁板涓婏紝杩欐槸鑷劧鐨勬渶澶у寲锛氫俊閬撴槸鍥哄畾鐨勶紙鐢辩墿鐞嗙粰瀹氾級锛屼絾杈撳叆鍒嗗竷鐢辨垜浠€夋嫨锛堢敱缂栫爜鍣ㄩ€夋嫨锛夈€?
+
+**Q2.** 璁＄畻 \epsilon = 0.1 鍜?\epsilon = 0.5 鏃剁殑 C_{\text{BSC}}銆?
+
+鎻愮ず
+
+C = 1 - H_b(\epsilon)銆?
+
+**绛旀锛?* \epsilon = 0.1锛欻_b(0.1) \approx 0.469 姣旂壒锛孋 \approx 0.531 姣旂壒姣忔浣跨敤銆?
+
+\epsilon = 0.5锛欻_b(0.5) = 1 姣旂壒锛孋 = 0 姣旂壒姣忔浣跨敤銆?
+
+绗竴涓俊閬撴瘡娆′娇鐢ㄤ紶杈撶害鍗婃瘮鐗癸紱绗簩涓棤鐢紙杈撳嚭涓庤緭鍏ョ嫭绔嬶級銆?
+
+**Q3.** 璁＄畻 SNR = 10, 100, 1000 鏃剁殑 C_{\text{AWGN}}銆?
+
+鎻愮ず
+
+C = \frac{1}{2} \log_2(1 + \text{SNR})銆?
+
+**绛旀锛?* SNR = 10锛欳 = 0.5 \log_2 11 \approx 1.73 姣旂壒姣忔浣跨敤銆係NR = 100锛欳 = 0.5 \log_2 101 \approx 3.33 姣旂壒姣忔浣跨敤銆係NR = 1000锛欳 = 0.5 \log_2 1001 \approx 4.98 姣旂壒姣忔浣跨敤銆?
+
+SNR 姣忓鍔犲崄鍊嶅鍔?0.5 \log_2 10 \approx 1.66 姣旂壒姣忔浣跨敤銆傝繖灏辨槸涓轰粈涔堝彂灏勫姛鐜囩炕鍊嶇害澧炲姞鍗婃瘮鐗规瘡娆′娇鐢紝鑰屽鍔犱竴涓暟閲忕骇绾﹀鍔?1.66 姣旂壒銆?
+
+**Q4.** 涓轰粈涔?BEC 瀹归噺鏄?1 - \epsilon锛岃€屼笉鏄儚 BSC 閭ｆ牱鏄?1 - H_b(\epsilon)锛?
+
+鎻愮ず
+
+鎺ユ敹绔煡閬撴摝闄や綍鏃跺彂鐢熴€?
+
+**绛旀锛?* 鍦?BEC 涓紝鎺ユ敹绔€绘槸鐭ラ亾鎿﹂櫎浣曟椂鍙戠敓鈥斺€旂鍙?"?" 涓?"0" 鎴?"1" 鏄庣‘涓嶅悓銆傛墍浠ュ湪缁欏畾闈炴摝闄よ緭鍑烘椂锛屾帴鏀剁瀵硅緭鍏ョ殑涓嶇‘瀹氭€т负闆讹紙瀹冨畬鍏ㄧ煡閬撳彂閫佷簡浠€涔堬級锛屽敮涓€鐨勬崯澶辨槸琚摝闄ゆ瘮鐗圭殑姣斾緥 \epsilon锛岃繖浜涙瘮鐗逛笉鎼哄甫淇℃伅銆?
+
+鍦?BSC 涓紝鎺ユ敹绔笉鐭ラ亾缈昏浆浣曟椂鍙戠敓銆傛瘡涓帴鏀舵瘮鐗归兘甯︽湁涓€浜涘叧浜庡畠鏄師濮嬪€艰繕鏄炕杞€肩殑涓嶇‘瀹氭€с€傛瘡姣旂壒鐨勪笉纭畾鎬т负 H_b(\epsilon)锛屽湪 \epsilon < 1/2 鏃跺ぇ浜?\epsilon銆傝繖灏辨槸涓轰粈涔堝浜庣浉鍚岀殑 \epsilon锛孊SC 姣?BEC鈥滄洿闅锯€濄€?
+
+================================================================================
+BLOCK c06_b10
+================================================================================
+--- SOURCE ---
+#### Application Problems
+
+**Q1.** A binary channel has the following transition matrix:
+
+P=(0.90.10.10.9).P = \begin{pmatrix} 0.9 & 0.1 \\\ 0.1 & 0.9 \end{pmatrix}.P=(0.90.1鈥?.10.9鈥?.
+
+Is it symmetric? Compute its capacity.
+
+Hint
+
+Check whether rows and columns are permutations of each other; this is a BSC with 系=0.1\epsilon = 0.1系=0.1.
+
+**Answer:** Rows: (0.9, 0.1) and (0.1, 0.9) 鈥?permutations of each other; columns are also permutations. So the channel is symmetric.
+
+It is in fact the BSC with crossover 系=0.1\epsilon = 0.1系=0.1, so C=1鈭扝b(0.1)鈮?鈭?.469=0.531C = 1 - H_b(0.1) \approx 1 - 0.469 = 0.531C=1鈭扝b鈥?0.1)鈮?鈭?.469=0.531 bits per use.
+
+The symmetry argument tells us the capacity-achieving input is uniform without needing to optimize.
+
+**Q2.** A telephone line has bandwidth 3 kHz and SNR 30 dB (i.e., SNR = 1000). What is its Shannon capacity in bits per second?
+
+Hint
+
+C=Blog鈦?(1+SNR)C = B \log_2(1 + \text{SNR})C=Blog2鈥?1+SNR).
+
+**Answer:** C=3000鈰卨og鈦?(1001)鈮?000鈰?.97鈮?9,900C = 3000 \cdot \log_2(1001) \approx 3000 \cdot 9.97 \approx 29,900C=3000鈰卨og2鈥?1001)鈮?000鈰?.97鈮?9,900 bits per second.
+
+This is the celebrated "30 kbps modem limit" of the dial-up era. Modems by 1999 could push to about 56 kbps using clever tricks (asymmetric upstream/downstream and exploiting the fact that the local loop was actually closer to 4 kHz of usable bandwidth), but the Shannon bound was the practical asymptote that ended the modem-speed arms race. Higher bit rates required moving to digital subscriber lines (DSL), which used a much wider portion of the copper bandwidth.
+
+**Q3.** A noisy ternary channel has input {a,b,c}\\{a, b, c\\}{a,b,c} and output {a,b,c}\\{a, b, c\\}{a,b,c} with transition matrix
+
+P=(0.80.10.10.10.80.10.10.10.8).P = \begin{pmatrix} 0.8 & 0.1 & 0.1 \\\ 0.1 & 0.8 & 0.1 \\\ 0.1 & 0.1 & 0.8 \end{pmatrix}.P=鈥?.80.10.1鈥?.10.80.1鈥?.10.10.8鈥嬧€?
+
+What is its capacity?
+
+Hint
+
+The channel is symmetric; C=log鈦♀垼Y鈭ｂ垝H(row of P)C = \log |\mathcal{Y}| - H(\text{row of } P)C=log鈭鈭ｂ垝H(row of P).
+
+**Answer:** The channel is symmetric (every row is a permutation; every column is a permutation). Capacity-achieving input is uniform.
+
+H(row)=鈭?.8log鈦?.8鈭?鈰?.1log鈦?.1鈮?.258+0.664=0.922H(\text{row}) = -0.8 \log 0.8 - 2 \cdot 0.1 \log 0.1 \approx 0.258 + 0.664 = 0.922H(row)=鈭?.8log0.8鈭?鈰?.1log0.1鈮?.258+0.664=0.922 bits. log鈦?鈭鈭?log鈦?3鈮?.585\log_2 |\mathcal{Y}| = \log_2 3 \approx 1.585log2鈥嬧垼Y鈭?log2鈥?鈮?.585 bits.
+
+C=1.585鈭?.922鈮?.663C = 1.585 - 0.922 \approx 0.663C=1.585鈭?.922鈮?.663 bits per use.
+
+Compare to the noiseless ternary channel: Cnoiseless=log鈦?3鈮?.585C_{\text{noiseless}} = \log_2 3 \approx 1.585Cnoiseless鈥?log2鈥?鈮?.585 bits per use. The 80%/10%/10% noise costs about 0.920.920.92 bits per use of capacity.
+
+**Q4.** A neural synapse can be modeled as a discrete-time channel where the input is the firing rate of a presynaptic neuron and the output is the firing rate of a postsynaptic neuron. Sketch how you would compute its capacity from data, and what kinds of data you would need.
+
+Hint
+
+You need an estimate of the conditional distribution p(post鈭re)p(\text{post} \mid \text{pre})p(post鈭re). With samples, the empirical distribution gives a maximum-likelihood estimate.
+
+**Answer:** To compute capacity, you need:
+
+  1. The transition distribution p(y鈭)p(y \mid x)p(y鈭), where xxx is the presynaptic state and yyy is the postsynaptic state.
+  2. From this, optimize I(X;Y)I(X; Y)I(X;Y) over input distributions p(x)p(x)p(x).
+--- TRANSLATION ---
+#### 搴旂敤棰?
+
+**Q1.** 涓€涓簩鍏冧俊閬撶殑杞Щ鐭╅樀涓猴細
+
+P = \begin{pmatrix} 0.9 & 0.1 \\ 0.1 & 0.9 \end{pmatrix}.
+
+瀹冩槸瀵圭О鐨勫悧锛熻绠楀叾瀹归噺銆?
+
+鎻愮ず
+
+妫€鏌ヨ涓庡垪鏄惁浜掍负鎺掑垪锛涜繖鏄?\epsilon = 0.1 鐨?BSC銆?
+
+**绛旀锛?* 琛岋細(0.9, 0.1) 鍜?(0.1, 0.9)鈥斺€斾簰涓烘帓鍒楋紱鍒椾篃鏄帓鍒椼€傛墍浠ヨ淇￠亾鏄绉扮殑銆?
+
+瀹冨疄闄呬笂鏄氦鍙夋鐜?\epsilon = 0.1 鐨?BSC锛屾墍浠?C = 1 - H_b(0.1) \approx 1 - 0.469 = 0.531 姣旂壒姣忔浣跨敤銆?
+
+瀵圭О鎬ц璇佸憡璇夋垜浠閲忚揪鍒拌緭鍏ユ槸鍧囧寑鐨勶紝鏃犻渶浼樺寲銆?
+
+**Q2.** 涓€鏉＄數璇濈嚎甯﹀ 3 kHz锛孲NR 30 dB锛堝嵆 SNR = 1000锛夈€傚叾 Shannon 瀹归噺鏄灏戞瘮鐗规瘡绉掞紵
+
+鎻愮ず
+
+C = B \log_2(1 + \text{SNR})銆?
+
+**绛旀锛?* C = 3000 \cdot \log_2(1001) \approx 3000 \cdot 9.97 \approx 29,900 姣旂壒姣忕銆?
+
+杩欏氨鏄嫧鍙锋椂浠ｈ憲鍚嶇殑鈥?0 kbps 璋冨埗瑙ｈ皟鍣ㄦ瀬闄愨€濄€?999 骞寸殑璋冨埗瑙ｈ皟鍣ㄩ€氳繃宸у鎶€宸э紙闈炲绉颁笂琛?涓嬭锛屼互鍙婂埄鐢ㄦ湰鍦扮幆璺疄闄呬笂鏈夋帴杩?4 kHz 鍙敤甯﹀鐨勪簨瀹烇級鍙互鎺ㄥ埌绾?56 kbps锛屼絾 Shannon 鐣屾槸缁撴潫璋冨埗瑙ｈ皟鍣ㄩ€熷害绔炶禌鐨勫疄闄呮笎杩戠嚎銆傛洿楂樼殑姣旂壒鐜囬渶瑕佽浆鍚戞暟瀛楃敤鎴风嚎锛圖SL锛夛紝瀹冧娇鐢ㄤ簡閾滅嚎甯﹀鐨勬洿瀹介儴鍒嗐€?
+
+**Q3.** 涓€涓湁鍣笁鍏冧俊閬撶殑杈撳叆涓?\{a, b, c\}锛岃緭鍑轰负 \{a, b, c\}锛岃浆绉荤煩闃典负
+
+P = \begin{pmatrix} 0.8 & 0.1 & 0.1 \\ 0.1 & 0.8 & 0.1 \\ 0.1 & 0.1 & 0.8 \end{pmatrix}.
+
+鍏跺閲忔槸澶氬皯锛?
+
+鎻愮ず
+
+淇￠亾鏄绉扮殑锛汣 = \log |\mathcal{Y}| - H(\text{P 鐨勮})銆?
+
+**绛旀锛?* 淇￠亾鏄绉扮殑锛堟瘡琛屾槸鎺掑垪锛涙瘡鍒楁槸鎺掑垪锛夈€傚閲忚揪鍒拌緭鍏ユ槸鍧囧寑鐨勩€?
+
+H(\text{琛寎) = -0.8 \log 0.8 - 2 \cdot 0.1 \log 0.1 \approx 0.258 + 0.664 = 0.922 姣旂壒銆俓log_2 |\mathcal{Y}| = \log_2 3 \approx 1.585 姣旂壒銆?
+
+C = 1.585 - 0.922 \approx 0.663 姣旂壒姣忔浣跨敤銆?
+
+涓庢棤鍣笁鍏冧俊閬撴瘮杈冿細C_{\text{鏃犲櫔}} = \log_2 3 \approx 1.585 姣旂壒姣忔浣跨敤銆?0%/10%/10% 鐨勫櫔澹版秷鑰椾簡绾?0.92 姣旂壒姣忔浣跨敤鐨勫閲忋€?
+
+**Q4.** 绁炵粡绐佽Е鍙互寤烘ā涓虹鏁ｆ椂闂翠俊閬擄紝鍏朵腑杈撳叆鏄獊瑙﹀墠绁炵粡鍏冪殑鍙戞斁鐜囷紝杈撳嚭鏄獊瑙﹀悗绁炵粡鍏冪殑鍙戞斁鐜囥€傛弿杩颁綘濡備綍浠庢暟鎹绠楀叾瀹归噺锛屼互鍙婇渶瑕佷粈涔堟牱鐨勬暟鎹€?
+
+鎻愮ず
+
+浣犻渶瑕佹潯浠跺垎甯?p(\text{post} \mid \text{pre}) 鐨勪及璁°€傛湁浜嗘牱鏈紝缁忛獙鍒嗗竷缁欏嚭鏈€澶т技鐒朵及璁°€?
+
+**绛旀锛?* 璁＄畻瀹归噺闇€瑕侊細
+
+1. 杞Щ鍒嗗竷 p(y \mid x)锛屽叾涓?x 鏄獊瑙﹀墠鐘舵€侊紝y 鏄獊瑙﹀悗鐘舵€併€?
+2. 鐢辨鍦ㄨ緭鍏ュ垎甯?p(x) 涓婁紭鍖?I(X; Y)銆?
+
+================================================================================
+BLOCK c07_b03
+================================================================================
+--- SOURCE ---
+#### A roadmap before the machinery
+
+The proof in 搂6.2鈥?.4 weaves three ingredients together, and a first-time reader who tries to track all three at once will struggle. Here is the map, so you know which step is doing the real work and which is bookkeeping.
+
+Step | What happens | Conceptual weight  
+---|---|---  
+1\. Random codebook (搂6.2) | Draw each codeword's symbols i.i.d. from p(x)p(x)p(x) | **Core trick.** Bypasses construction by averaging.  
+2\. Joint-typicality decoder (搂6.3) | Decode to the unique codeword jointly typical with yny^nyn | Suboptimal but _analyzable_. ML decoding would be tighter but messier.  
+3\. Two error events: E0E_0E0鈥?and EmE_mEm鈥?(搂6.3) | Either the true codeword is not jointly typical, or some other one is | Standard accounting.  
+4\. Bound Pr鈦?E0)\Pr(E_0)Pr(E0鈥? via joint AEP | 鈫?\to 0鈫? by Property 1 of joint typicality | Mechanical (Ch. 3 result).  
+5\. Bound Pr鈦?Em)\Pr(E_m)Pr(Em鈥? via Property 3 | 鈮?鈭抧(I(X;Y)鈭?系)\leq 2^{-n(I(X;Y) - 3\epsilon)}鈮?鈭抧(I(X;Y)鈭?系) for each wrong codeword | **Core inequality.** This is where capacity I(X;Y)I(X;Y)I(X;Y) enters.  
+6\. Union-bound + count: 2nR2^{nR}2nR wrong codewords | Total error 鈮?nR鈰?鈭抧(I鈭?系)鈫?\leq 2^{nR} \cdot 2^{-n(I-3\epsilon)} \to 0鈮?nR鈰?鈭抧(I鈭?系)鈫? iff R<IR < IR<I | Mechanical, but reveals the threshold.  
+7\. Average 鈫?exists (搂6.4) | If average over codebooks 鈫?\to 0鈫?, some codebook achieves it | "Probabilistic method" 鈥?non-constructive but ironclad.  
+  
+The two steps doing real work are **1** (the random-coding device) and **5** (the joint-typicality count). Everything else is bookkeeping. If you internalize one thing, internalize that **the rate RRR gets multiplied by 2nR2^{nR}2nR, the wrong-codeword probability shrinks like 2鈭抧I2^{-nI}2鈭抧I, and these balance exactly at R=IR = IR=I**. That balance, exponential growth in codebook size against exponential shrinkage in collision probability, is the entire content of the channel coding theorem.
+
+Now the formal argument.
+
+Shannon's stroke of genius: instead of constructing a specific good code, average over all codes drawn at random.
+
+Fix an input distribution p(x)p(x)p(x) (which we will eventually choose to be the capacity-achieving distribution). Generate a random codebook C\mathcal{C}C by drawing each codeword xn(m)x^n(m)xn(m) independently from 鈭廼=1np(xi)\prod_{i=1}^n p(x_i)鈭廼=1n鈥媝(xi鈥?, that is, each symbol of each codeword is independently sampled from p(x)p(x)p(x).
+
+The codebook is now a random object. We will compute the _expected_ probability of error, averaged over both the random codebook and the channel noise. If this expected error tends to zero, then at least one specific codebook (in fact, almost all of them) must have small error.
+
+This is a "probabilistic existence" proof. It is non-constructive: it tells us a good code exists without telling us what it is.
+
+
+### 6.3 Joint Typicality Decoding
+
+We need to specify how the decoder operates. The decoder receives yny^nyn and must guess which codeword was sent. Shannon's choice: **joint typicality decoding**.
+
+--- TRANSLATION ---
+#### 杩涘叆鎶€鏈粏鑺備箣鍓嶇殑璺嚎鍥?
+
+搂6.2鈥?.4 涓殑璇佹槑灏嗕笁涓绱犵紪缁囧湪涓€璧凤紝鍒濇闃呰鏃惰瘯鍥惧悓鏃惰拷韪笁鑰呬細鎰熷埌鍥伴毦銆備互涓嬫槸璺嚎鍥撅紝璁╀綘鐭ラ亾姣忎竴姝ョ殑鏉冮噸锛?
+
+| 姝ラ | 鍙戠敓浠€涔?| 姒傚康鏉冮噸 |
+|---|---|---|
+| 1. 闅忔満鐮佹湰锛埪?.2锛?| 浠?p(x) 涓?i.i.d. 鎶藉彇姣忎釜鐮佸瓧鐨勭鍙?| **鏍稿績鎶€宸с€?* 閫氳繃骞冲潎缁曡繃鏋勯€犮€?|
+| 2. 鑱斿悎鍏稿瀷鎬цВ鐮侊紙搂6.3锛?| 瑙ｇ爜鍒颁笌 y^n 鑱斿悎鍏稿瀷鐨勫敮涓€鐮佸瓧 | 娆′紭浣哶鍙垎鏋恄銆侻L 瑙ｇ爜鏇寸揣浣嗘洿澶嶆潅銆?|
+| 3. 涓や釜閿欒浜嬩欢锛欵_0 鍜?E_m锛埪?.3锛?| 鐪熷疄鐮佸瓧涓嶈仈鍚堝吀鍨嬶紝鎴栨煇涓叾浠栫爜瀛楄仈鍚堝吀鍨?| 鏍囧噯璁拌处銆?|
+| 4. 鐢ㄨ仈鍚?AEP 鐣?\Pr(E_0) | 鐢辫仈鍚堝吀鍨嬫€ф€ц川 1锛孿to 0 | 鏈烘鐨勶紙绗?3 绔犵粨鏋滐級銆?|
+| 5. 鐢ㄦ€ц川 3 鐣?\Pr(E_m) | 姣忎釜閿欒鐮佸瓧 \leq 2^{-n(I(X;Y) - 3\epsilon)} | **鏍稿績涓嶇瓑寮忋€?* 瀹归噺 I(X;Y) 鍦ㄦ杩涘叆銆?|
+| 6. 鑱斿悎鐣?+ 璁℃暟锛?^{nR} 涓敊璇爜瀛?| 鎬婚敊璇?\leq 2^{nR} \cdot 2^{-n(I-3\epsilon)} \to 0 褰撲笖浠呭綋 R < I | 鏈烘鐨勶紝浣嗘彮绀轰簡闃堝€笺€?|
+| 7. 骞冲潎 鈫?瀛樺湪锛埪?.4锛?| 濡傛灉鐮佹湰涓婄殑骞冲潎 \to 0锛屾煇涓爜鏈揪鍒板畠 | "姒傜巼鏂规硶"鈥斺€旈潪鏋勯€犳€т絾閾佽瘉濡傚北銆?|
+
+鐪熸鍋氬疄璐ㄥ伐浣滅殑涓ゆ鏄?**1**锛堥殢鏈虹紪鐮佽缃級鍜?**5**锛堣仈鍚堝吀鍨嬫€ц鏁帮級銆傚叾浣欓兘鏄璐︺€傚鏋滀綘鍙唴鍖栦竴浠朵簨锛岃鍐呭寲锛?*閫熺巼 R 閫氳繃 2^{nR} 杩涘叆锛岄敊璇爜瀛楁鐜囦互 2^{-nI} 缂╁噺锛屼袱鑰呮伆濂藉湪 R = I 澶勫钩琛?*銆傝繖绉嶅钩琛♀€斺€旂爜鏈ぇ灏忕殑鎸囨暟澧為暱瀵规姉纰版挒姒傜巼鐨勬寚鏁扮缉鍑忊€斺€斿氨鏄俊閬撶紪鐮佸畾鐞嗙殑鍏ㄩ儴鍐呭銆?
+
+鐜板湪缁欏嚭姝ｅ紡璁鸿瘉銆?
+
+Shannon 鐨勫ぉ鎵嶄箣涓撅細涓嶆瀯閫犱竴涓壒瀹氱殑濂界爜锛岃€屾槸瀵规墍鏈夐殢鏈烘娊鍙栫殑鐮佸彇骞冲潎銆?
+
+鍥哄畾涓€涓緭鍏ュ垎甯?p(x)锛堟垜浠渶缁堝皢閫夋嫨瀹归噺杈惧埌鍒嗗竷锛夈€傞€氳繃浠?\prod_{i=1}^n p(x_i) 鐙珛鎶藉彇姣忎釜鐮佸瓧 x^n(m) 鏉ョ敓鎴愰殢鏈虹爜鏈?\mathcal{C}锛屽嵆姣忎釜鐮佸瓧鐨勬瘡涓鍙风嫭绔嬪湴浠?p(x) 閲囨牱銆?
+
+鐮佹湰鐜板湪鏄竴涓殢鏈哄璞°€傛垜浠皢璁＄畻_鏈熸湜_閿欒姒傜巼锛屽湪闅忔満鐮佹湰鍜屼俊閬撳櫔澹颁笂鍙栧钩鍧囥€傚鏋滆繖涓湡鏈涢敊璇秼浜庨浂锛岄偅涔堣嚦灏戜竴涓壒瀹氱爜鏈紙浜嬪疄涓婏紝鍑犱箮鎵€鏈夌爜鏈級蹇呭畾鏈夊皬閿欒銆?
+
+杩欐槸涓€绉?姒傜巼瀛樺湪鎬?璇佹槑銆傚畠鏄潪鏋勯€犳€х殑锛氬畠鍛婅瘔鎴戜滑濂界爜瀛樺湪锛屼絾涓嶅憡璇夋垜浠畠鏄粈涔堛€?
+
+
+### 6.3 鑱斿悎鍏稿瀷鎬цВ鐮?
+
+鎴戜滑闇€瑕佹寚瀹氳В鐮佸櫒濡備綍鎿嶄綔銆傝В鐮佸櫒鎺ユ敹 y^n 骞跺繀椤荤寽娴嬪彂閫佷簡鍝釜鐮佸瓧銆係hannon 鐨勯€夋嫨锛?*鑱斿悎鍏稿瀷鎬цВ鐮?*銆?
+
+================================================================================
+BLOCK c07_b06
+================================================================================
+--- SOURCE ---
+### 6.4 Improving from Average to Maximum Error
+
+The proof above gives a code with small _average_ error. But we wanted a code with small _maximum_ error. There is a small gap to close.
+
+**Lemma (Expurgation)** : If a code has P藟e鈮の碶bar{P}_e \leq \deltaP藟e鈥嬧墹未, then by deleting the worst half of codewords (those with the largest individual Pr鈦?m^鈮爉鈭)\Pr(\hat{m} \neq m \mid m)Pr(m^顎?m鈭)), the remaining code has Pemax鈦♀墹2未P_e^{\max} \leq 2\deltaPemax鈥嬧墹2未 and rate at most log鈦?=1\log 2 = 1log2=1 bit less per block.
+
+**Proof** : At most half the codewords can have individual error exceeding 2P藟e2\bar{P}_e2P藟e鈥?(else the average would exceed P藟e\bar{P}_eP藟e鈥?. Deleting these gives a code of half the size with maximum error at most 2P藟e2\bar{P}_e2P藟e鈥? 鈻square鈻?
+
+Halving the code reduces the rate by 1/n1/n1/n per block (deleting 2nR鈭?2^{nR-1}2nR鈭? codewords). For large nnn, this is negligible. So if average error tends to zero, we can expurgate to get maximum error tending to zero with essentially no rate loss.
+
+This completes the achievability proof: any rate R<CR < CR<C is achievable with maximum error tending to zero.
+
+
+### 6.5 The Converse: Fano's Inequality
+
+The converse claims that no scheme can avoid a fixed positive error rate above capacity. The proof uses **Fano's inequality** , a beautiful result that bounds the conditional entropy of an estimate.
+
+
+#### Theorem (Fano's Inequality)
+
+Let XXX and X^\hat{X}X^ be random variables on alphabet X\mathcal{X}X (where X^\hat{X}X^ is an estimate of XXX). Let pe=Pr鈦?X^鈮燲)p_e = \Pr(\hat{X} \neq X)pe鈥?Pr(X^顎?X). Then
+
+H(X鈭^)鈮b(pe)+pelog鈦?鈭鈭ｂ垝1).H(X \mid \hat{X}) \leq H_b(p_e) + p_e \log(|\mathcal{X}| - 1).H(X鈭^)鈮b鈥?pe鈥?+pe鈥媗og(鈭鈭ｂ垝1).
+
+In plain language, this means: the entropy of XXX given an estimate X^\hat{X}X^ is bounded by the binary entropy of the error probability plus a term proportional to the error probability times the log alphabet size. If pep_epe鈥?is small, H(X鈭^)H(X \mid \hat{X})H(X鈭^) is small.
+
+**Proof** : Define the indicator E=1[X^鈮燲]E = \mathbb{1}[\hat{X} \neq X]E=1[X^顎?X]. By the chain rule,
+
+H(X,E鈭^)=H(E鈭^)+H(X鈭,X^)=H(X鈭^)+H(E鈭,X^).H(X, E \mid \hat{X}) = H(E \mid \hat{X}) + H(X \mid E, \hat{X}) = H(X \mid \hat{X}) + H(E \mid X, \hat{X}).H(X,E鈭^)=H(E鈭^)+H(X鈭,X^)=H(X鈭^)+H(E鈭,X^).
+
+The last term is zero (EEE is determined by XXX and X^\hat{X}X^). And H(E鈭^)鈮(E)=Hb(pe)H(E \mid \hat{X}) \leq H(E) = H_b(p_e)H(E鈭^)鈮(E)=Hb鈥?pe鈥?. So
+
+H(X鈭^)鈮b(pe)+H(X鈭,X^).H(X \mid \hat{X}) \leq H_b(p_e) + H(X \mid E, \hat{X}).H(X鈭^)鈮b鈥?pe鈥?+H(X鈭,X^).
+
+The conditional entropy H(X鈭,X^)H(X \mid E, \hat{X})H(X鈭,X^) is decomposed: when E=0E = 0E=0 (no error), X=X^X = \hat{X}X=X^, so the entropy is 0. When E=1E = 1E=1 (error), XXX takes one of 鈭鈭ｂ垝1|\mathcal{X}| - 1鈭鈭ｂ垝1 values different from X^\hat{X}X^, so the entropy is at most log鈦?鈭鈭ｂ垝1)\log(|\mathcal{X}| - 1)log(鈭鈭ｂ垝1). Averaging:
+
+H(X鈭,X^)鈮elog鈦?鈭鈭ｂ垝1).H(X \mid E, \hat{X}) \leq p_e \log(|\mathcal{X}| - 1).H(X鈭,X^)鈮e鈥媗og(鈭鈭ｂ垝1).
+
+Substituting gives Fano's inequality. 鈻square鈻?
+
+--- TRANSLATION ---
+### 6.4 浠庡钩鍧囬敊璇敼杩涘埌鏈€澶ч敊璇?
+
+涓婇潰鐨勮瘉鏄庣粰鍑轰簡涓€涓猒骞冲潎_閿欒灏忕殑鐮併€備絾鎴戜滑瑕佺殑鏄痏鏈€澶閿欒灏忕殑鐮併€傛湁涓€涓皬宸窛闇€瑕佸讥琛ャ€?
+
+**寮曠悊锛堟竻闄わ級**锛氬鏋滀竴涓爜鐨?\bar{P}_e \leq \delta锛屽垯閫氳繃鍒犻櫎鏈€宸殑涓€鍗婄爜瀛楋紙閭ｄ簺涓綋 \Pr(\hat{m} \neq m \mid m) 鏈€澶х殑锛夛紝鍓╀綑鐮佹弧瓒?P_e^{\max} \leq 2\delta锛屼笖姣忓潡閫熺巼鑷冲鎹熷け \log 2 = 1 姣旂壒銆?
+
+**璇佹槑**锛氭渶澶氫竴鍗婄殑鐮佸瓧鍏朵釜浣撻敊璇秴杩?2\bar{P}_e锛堝惁鍒欏钩鍧囧皢瓒呰繃 \bar{P}_e锛夈€傚垹闄よ繖浜涘緱鍒颁竴涓ぇ灏忓噺鍗娿€佹渶澶ч敊璇嚦澶?2\bar{P}_e 鐨勭爜銆傗枴
+
+鐮佸噺鍗婁娇姣忓潡閫熺巼鍑忓皯 1/n锛堝垹闄?2^{nR-1} 涓爜瀛楋級銆傚浜庡ぇ鐨?n锛岃繖鍙拷鐣ャ€傛墍浠ュ鏋滃钩鍧囬敊璇秼浜庨浂锛屾垜浠彲浠ユ竻闄や互寰楀埌鏈€澶ч敊璇秼浜庨浂锛屼笖閫熺巼鍑犱箮鏃犳崯澶便€?
+
+杩欏氨瀹屾垚浜嗗彲杈炬€ц瘉鏄庯細浠讳綍閫熺巼 R < C 閮藉彲浠ヨ揪鍒帮紝涓旀渶澶ч敊璇秼浜庨浂銆?
+
+
+### 6.5 閫嗗畾鐞嗭細Fano 涓嶇瓑寮?
+
+閫嗗畾鐞嗗０绉帮細楂樹簬瀹归噺鏃讹紝娌℃湁浠讳綍鏂规鑳介伩鍏嶄竴涓浐瀹氱殑姝ｉ敊璇巼銆傝瘉鏄庝娇鐢?**Fano 涓嶇瓑寮?*鈥斺€斾竴涓紓浜殑缁撴灉锛屽畠缁欏嚭浜嗕及璁￠噺鏉′欢鐔电殑涓婄晫銆?
+
+
+#### 瀹氱悊锛團ano 涓嶇瓑寮忥級
+
+璁?X 鍜?\hat{X} 鏄瓧姣嶈〃 \mathcal{X} 涓婄殑闅忔満鍙橀噺锛堝叾涓?\hat{X} 鏄?X 鐨勪及璁★級銆傝 p_e = \Pr(\hat{X} \neq X)銆傚垯
+
+H(X \mid \hat{X}) \leq H_b(p_e) + p_e \log(|\mathcal{X}| - 1).
+
+鐢ㄩ€氫織鐨勮瘽璇达細缁欏畾浼拌 \hat{X} 鏃?X 鐨勭喌锛屼笂鐣屼负閿欒姒傜巼鐨勪簩鍏冪喌锛屽啀鍔犱笂涓€椤逛笌閿欒姒傜巼鍜?log 瀛楁瘝琛ㄥぇ灏忔垚姝ｆ瘮鐨勯噺銆傚鏋?p_e 灏忥紝鍒?H(X \mid \hat{X}) 灏忋€?
+
+**璇佹槑**锛氬畾涔夋寚绀哄彉閲?E = \mathbb{1}[\hat{X} \neq X]銆傜敱閾惧紡娉曞垯锛?
+
+H(X, E \mid \hat{X}) = H(E \mid \hat{X}) + H(X \mid E, \hat{X}) = H(X \mid \hat{X}) + H(E \mid X, \hat{X}).
+
+鏈€鍚庝竴椤逛负闆讹紙E 鐢?X 涓?\hat{X} 瀹屽叏纭畾锛夈€備笖 H(E \mid \hat{X}) \leq H(E) = H_b(p_e)銆傛墍浠?
+
+H(X \mid \hat{X}) \leq H_b(p_e) + H(X \mid E, \hat{X}).
+
+鏉′欢鐔?H(X \mid E, \hat{X}) 鍙互鍒嗚В锛氬綋 E = 0锛堟棤閿欒锛夋椂锛孹 = \hat{X}锛岀喌涓?0锛涘綋 E = 1锛堥敊璇級鏃讹紝X 鍙栦笉鍚屼簬 \hat{X} 鐨?|\mathcal{X}| - 1 涓€间箣涓€锛岀喌鑷冲涓?\log(|\mathcal{X}| - 1)銆傚彇骞冲潎锛?
+
+H(X \mid E, \hat{X}) \leq p_e \log(|\mathcal{X}| - 1).
+
+浠ｅ叆鍗冲緱 Fano 涓嶇瓑寮忋€傗枴
+
+================================================================================
+BLOCK c07_b07
+================================================================================
+--- SOURCE ---
+#### The converse
+
+For a code of rate RRR used over a channel with capacity CCC, the message WWW is uniform on {1,鈥?2nR}\\{1, \ldots, 2^{nR}\\}{1,鈥?2nR}, so H(W)=nRH(W) = nRH(W)=nR. The encoder produces XnX^nXn (a deterministic function of WWW), the channel produces YnY^nYn, and the decoder produces W^\hat{W}W^.
+
+By the data-processing inequality and the fact that W鈫扻n鈫扽nW \to X^n \to Y^nW鈫扻n鈫扽n is Markov:
+
+I(W;W^)鈮(Xn;Yn)鈮も垜i=1nI(Xi;Yi)鈮C.I(W; \hat{W}) \leq I(X^n; Y^n) \leq \sum_{i=1}^n I(X_i; Y_i) \leq nC.I(W;W^)鈮(Xn;Yn)鈮=1鈭憂鈥婭(Xi鈥?Yi鈥?鈮C.
+
+(The middle inequality uses chain rule + memoryless channel; the last uses I(Xi;Yi)鈮I(X_i; Y_i) \leq CI(Xi鈥?Yi鈥?鈮 for each use.)
+
+Now, I(W;W^)=H(W)鈭扝(W鈭^)=nR鈭扝(W鈭^)I(W; \hat{W}) = H(W) - H(W \mid \hat{W}) = nR - H(W \mid \hat{W})I(W;W^)=H(W)鈭扝(W鈭^)=nR鈭扝(W鈭^). By Fano's inequality applied to WWW (which has alphabet of size 2nR2^{nR}2nR):
+
+H(W鈭^)鈮b(Pe)+Pelog鈦?2nR鈭?)鈮?+nRPe.H(W \mid \hat{W}) \leq H_b(P_e) + P_e \log(2^{nR} - 1) \leq 1 + n R P_e.H(W鈭^)鈮b鈥?Pe鈥?+Pe鈥媗og(2nR鈭?)鈮?+nRPe鈥?
+
+Putting together: since nR鈮C+H(W鈭^)鈮C+1+nRPenR \leq nC + H(W \mid \hat{W}) \leq nC + 1 + nRP_enR鈮C+H(W鈭^)鈮C+1+nRPe鈥? we get nR(1鈭扨e)鈮C+1nR(1 - P_e) \leq nC + 1nR(1鈭扨e鈥?鈮C+1, which gives
+
+R鈮1鈭扨e+1n(1鈭扨e).R \leq \frac{C}{1 - P_e} + \frac{1}{n(1 - P_e)}.R鈮?鈭扨e鈥婥鈥?n(1鈭扨e鈥?1鈥?
+
+For Pe鈫?P_e \to 0Pe鈥嬧啋0 and n鈫掆垶n \to \inftyn鈫掆垶, this gives R鈮R \leq CR鈮. Equivalently, if R>CR > CR>C, PeP_ePe鈥?cannot tend to zero.
+
+In fact, for R>CR > CR>C, one can show something much stronger: Pe鈫?P_e \to 1Pe鈥嬧啋1 (not just bounded away from zero) as n鈫掆垶n \to \inftyn鈫掆垶. This is the **strong converse** to the channel coding theorem, established by Wolfowitz in 1957 and sharpened by Arimoto in 1973.
+
+The intuition is geometric. Below capacity, codewords can be packed into the output space with non-overlapping noise clouds; above capacity, the clouds must overlap, and a typical received yny^nyn is consistent with exponentially many candidate codewords. Concretely, Arimoto showed that for R>CR > CR>C,
+
+Pe鈮?鈭抏xp鈦?鈦?鈭抧Esp(R))P_e \geq 1 - \exp\\!\left(-n E_{sp}(R)\right)Pe鈥嬧墺1鈭抏xp(鈭抧Esp鈥?R))
+
+for some positive **sphere-packing exponent** Esp(R)>0E_{sp}(R) > 0Esp鈥?R)>0 when R>CR > CR>C. The exponent grows away from zero as RRR moves above CCC, so the probability of _correct_ decoding decays exponentially in nnn. Thus rates above capacity are not merely unreliable 鈥?they are catastrophic: with overwhelming probability, the receiver picks the wrong codeword.
+
+This sharpens the picture of capacity as a **phase boundary**. For any 系>0\epsilon > 0系>0, reliable communication is possible at rate C鈭捪礐 - \epsilonC鈭捪?and essentially impossible at rate C+系C + \epsilonC+系; the transition is not gradual. We will not derive Esp(R)E_{sp}(R)Esp鈥?R) here; Cover and Thomas Chapter 7.9, and Gallager (1968) Chapter 5, give the full argument. 鈻square鈻?
+
+We have now proved both halves: rates below CCC are achievable with vanishing error; rates above CCC cannot achieve vanishing error. This is Shannon's coding theorem. 鈻square鈻?
+
+--- TRANSLATION ---
+#### 閫嗗畾鐞?
+
+鑰冭檻涓€涓€熺巼涓?$R$銆佸湪瀹归噺涓?$C$ 鐨勪俊閬撲笂浣跨敤鐨勭爜銆傛秷鎭?$W$ 鍦ㄩ泦鍚?$\{1,\ldots,2^{nR}\}$ 涓婂潎鍖€鍒嗗竷锛屽洜姝?
+
+鐢辨暟鎹鐞嗕笉绛夊紡锛屼互鍙?W \to X^n \to Y^n \to \hat{W} 鏋勬垚椹皵鍙か閾剧殑浜嬪疄锛?
+
+I(W; \hat{W}) \leq I(W; Y^n) \leq I(X^n; Y^n) \leq \sum_{i=1}^n I(X_i; Y_i) \leq nC.
+
+鐢辨暟鎹鐞嗕笉绛夊紡锛屼互鍙?$W\to X^n\to Y^n$ 鏋勬垚椹皵鍙か閾撅紝
+
+$I(W;\hat{W}) \leq I(X^n;Y^n) \leq \sum_{i=1}^{n}I(X_i;Y_i) \leq nC.$
+
+鐢辨硶璇轰笉绛夊紡锛?
+
+鍙︿竴鏂归潰锛?
+
+$I(W;\hat{W}) =H(W)-H(W\mid\hat{W}) =nR-H(W\mid\hat{W}).$
+
+瀵?$W$ 搴旂敤娉曡涓嶇瓑寮忋€傜敱浜?$W$ 鐨勫瓧姣嶈〃澶у皬涓?$2^{nR}$锛?
+
+浜嬪疄涓婏紝瀵逛簬 R > C锛屽彲浠ヨ瘉鏄庢洿寮虹殑缁撹锛歅_e \to 1锛堜笉浠呬粎鏄繙绂婚浂锛夊綋 n \to \infty銆傝繖鏄俊閬撶紪鐮佸畾鐞嗙殑**寮洪€嗗畾鐞?*锛岀敱 Wolfowitz 浜?1957 骞村缓绔嬶紝骞剁敱 Arimoto 浜?1973 骞磋繘涓€姝ュ己鍖栥€?
+
+鍚堝苟杩欎簺涓嶇瓑寮忥細
+
+P_e \geq 1 - \exp\!\left(-n E_{\mathrm{sc}}(R)\right)
+
+瀵逛簬 R > C锛屽瓨鍦ㄦ鐨?*寮洪€嗘寚鏁?* E_{\mathrm{sc}}(R) > 0銆傛寚鏁伴殢 R 杩滅 C 鑰屽澶э紝鎵€浠姝ｇ‘_瑙ｇ爜鐨勬鐜囬殢 n 鎸囨暟琛板噺銆傚洜姝ら珮浜庡閲忕殑閫熺巼涓嶄粎浠呮槸涓嶅彲闈犵殑鈥斺€斿畠浠槸鐏鹃毦鎬х殑锛氫互鍘嬪€掓€ф鐜囷紝鎺ユ敹绔€夐敊鐮佸瓧銆?
+
+杩欏皢瀹归噺鍥炬櫙閿愬寲涓轰竴涓?*鐩稿彉杈圭晫**銆傚浜庝换浣?\epsilon > 0锛岄€熺巼 C - \epsilon 涓嬪彲闈犻€氫俊鏄彲鑳界殑锛岃€岄€熺巼 C + \epsilon 涓嬫湰璐ㄤ笂涓嶅彲鑳斤紱杩囨浮涓嶆槸娓愯繘鐨勩€傛垜浠湪姝や笉鎺ㄥ E_{\mathrm{sc}}(R)锛汣over 鍜?Thomas 绗?7.9 鑺備互鍙?Gallager锛?968锛夌 5 绔犵粰鍑轰簡瀹屾暣璁鸿瘉銆傗枴
+
+浠庤€?
+
+$R \leq \frac{C}{1-P_e} +\frac{1}{n(1-P_e)}.$
+
+褰?$P_e\to 0$ 涓?$n\to\infty$ 鏃讹紝寰楀埌
+
+$R\leq C.$
+
+绛変环鍦帮紝鑻?$R>C$锛屽垯 $P_e$ 涓嶅彲鑳借秼浜?$0$銆?
+
+浜嬪疄涓婏紝褰?$R>C$ 鏃讹紝鍙互璇佹槑鏇村己鐨勭粨璁猴細褰?$n\to\infty$ 鏃讹紝
+
+$P_e\to 1,$
+
+鑰屼笉浠呮槸杩滅 $0$銆傝繖灏辨槸淇￠亾缂栫爜瀹氱悊鐨?*寮洪€嗗畾鐞?*锛岀敱 Wolfowitz 鍦?1957 骞村缓绔嬶紝骞剁敱 Arimoto 鍦?1973 骞村姞浠ュ己鍖栥€?
+
+鐩磋鏄嚑浣曟€х殑銆備綆浜庡閲忔椂锛岀爜瀛楀彲浠ユ墦鍖呰繘杈撳嚭绌洪棿锛屼娇鍏跺櫔澹颁簯褰兼涓嶉噸鍙狅紱楂樹簬瀹归噺鏃讹紝杩欎簺浜戝繀鐒堕噸鍙狅紝鍏稿瀷鐨勬帴鏀?$y^n$ 浼氫笌鎸囨暟绾у涓€欓€夌爜瀛楃浉涓€鑷淬€傚叿浣撹€岃█锛孉rimoto 璇佹槑锛氬 $R>C$锛?
+
+$P_e\geq 1-\exp\!\left(-nE_{sp}(R)\right),$
+
+鍏朵腑锛屽綋 $R>C$ 鏃讹紝瀛樺湪姝ｇ殑**鐞冨～鍏呮寚鏁?*
+
+$E_{sp}(R)>0.$
+
+闅忕潃 $R$ 杩滅 $C$锛岃鎸囨暟澧炲ぇ锛屽洜姝?姝ｇ‘*瑙ｇ爜鐨勬鐜囬殢 $n$ 鎸囨暟琛板噺銆傛晠鑰岋紝楂樹簬瀹归噺鐨勯€熺巼骞堕潪鍙槸鈥滀笉鍙潬鈥濃€斺€斿畠浠槸鐏鹃毦鎬х殑锛氭帴鏀剁浠ュ帇鍊掓€ф鐜囬€夐敊鐮佸瓧銆?
+
+杩欎娇瀹归噺鐨勫浘鏅洿娓呮櫚锛氬畠鏄竴鏉?*鐩稿彉杈圭晫**銆傚浠绘剰 $\epsilon>0$锛岄€熺巼 $C-\epsilon$ 鍙互瀹炵幇鍙潬閫氫俊锛岃€岄€熺巼 $C+\epsilon$ 鍒欐湰璐ㄤ笂涓嶅彲鑳斤紱杩欑杞彉骞朵笉娓愯繘銆傝繖閲屼笉鎺ㄥ $E_{sp}(R)$锛涘畬鏁磋璇佽 Cover 鍜?Thomas 绗?7.9 鑺傦紝浠ュ強 Gallager锛?968锛夌 5 绔犮€?\square$
+
+鑷虫锛屾垜浠凡缁忚瘉鏄庝簡涓や釜閮ㄥ垎锛氫綆浜?$C$ 鐨勯€熺巼鍙揪锛屼笖閿欒瓒嬩簬 $0$锛涢珮浜?$C$ 鐨勯€熺巼鏃犳硶瀹炵幇瓒嬩簬 $0$ 鐨勯敊璇€傝繖灏辨槸棣欏啘缂栫爜瀹氱悊銆?\square$
+
+================================================================================
+BLOCK c07_b10
+================================================================================
+--- SOURCE ---
+#### Random initializations in deep learning
+
+Less directly: deep learning relies on random initializations of network weights. The success of training depends on the initialization landing in a "good" region of weight space. While this is not literally Shannon's argument, the spirit 鈥?that random samples from a high-dimensional distribution tend to have desirable properties 鈥?is the same.
+
+These are all instances of the same general principle: **in high-dimensional spaces, random objects tend to have surprisingly good properties**. Shannon's coding theorem was the first dramatic instance, but the phenomenon recurs throughout modern computer science.
+
+
+### Common Misconception
+
+* **Misconception** : "The channel coding theorem says you can transmit error-free at rate CCC."
+
+No. The theorem says you can transmit at rates _below_ CCC with error tending to zero. At exactly CCC, the situation is more subtle: error may or may not tend to zero, depending on the channel. Above CCC, error is bounded away from zero.
+
+* **Misconception** : "Shannon told us how to build good codes."
+
+No. Shannon's proof is non-constructive: it shows good codes exist but does not specify them. The 50-year engineering effort to find capacity-approaching codes is precisely because Shannon's theorem was an existence result.
+
+* **Misconception** : "The random-coding argument says random codes are optimal."
+
+No. Random codes are merely _good enough_ : the average random code achieves capacity, so at least one specific code does. Specific structured codes (Reed-Solomon, LDPC, Polar) often perform better than a typical random code, while being decodable with practical algorithms.
+
+
+### Chapter Summary
+
+Shannon's Channel Coding Theorem is the deepest result in classical information theory:
+
+  1. **Achievability** : Any rate R<CR < CR<C is achievable with vanishing error. Proof: random coding + joint typicality decoding.
+  2. **Converse** : Any rate R>CR > CR>C cannot achieve vanishing error. Proof: Fano's inequality + data-processing inequality.
+
+The capacity C=max鈦(x)I(X;Y)C = \max_{p(x)} I(X; Y)C=maxp(x)鈥婭(X;Y) is the _sharp_ boundary between achievable and unachievable rates. There is no continuous trade-off between rate and error; below capacity, you can have both.
+
+The proof technique of random coding was Shannon's most influential methodological contribution. It shows that the average over all codes is good enough; therefore at least one specific code is good. Engineers spent fifty years catching up to construct codes that approach capacity in practice.
+
+The next chapter treats those practical codes: Hamming, Reed-Solomon, LDPC, Turbo, Polar. The chapter after that turns to KL divergence, the central divergence of information theory and modern machine learning.
+
+
+### 6.X Exercises
+
+--- TRANSLATION ---
+#### 娣卞害瀛︿範涓殑闅忔満鍒濆鍖?
+
+涓嶅お鐩存帴鍦帮細娣卞害瀛︿範渚濊禆缃戠粶鏉冮噸鐨勯殢鏈哄垵濮嬪寲銆傝缁冪殑鎴愬姛鍙栧喅浜庡垵濮嬪寲钀藉湪鏉冮噸绌洪棿鐨?濂?鍖哄煙銆傝櫧鐒惰繖涓嶆槸瀛楅潰涓婄殑 Shannon 璁鸿瘉锛屼絾绮剧鏄浉鍚岀殑鈥斺€旈珮缁村垎甯冪殑闅忔満鏍锋湰鍊惧悜浜庡叿鏈?鑹ソ鎬ц川銆?
+
+杩欎簺閮芥槸鍚屼竴鏅亶鍘熺悊鐨勫疄渚嬶細**鍦ㄩ珮缁寸┖闂翠腑锛岄殢鏈哄璞″線寰€鍏锋湁鍑轰汉鎰忔枡鐨勮壇濂芥€ц川銆?* 棣欏啘鐨勭紪鐮佸畾鐞嗘槸绗竴涓垙鍓ф€х殑渚嬪瓙锛屼絾杩欎竴鐜拌薄鍦ㄧ幇浠ｈ绠楁満绉戝涓弽澶嶅嚭鐜般€?
+
+### 甯歌璇В
+
+* **璇В锛?*鈥滀俊閬撶紪鐮佸畾鐞嗚鍙互浠ラ€熺巼 $C$ 鏃犻敊浼犺緭銆傗€?
+
+涓嶅銆傚畾鐞嗚锛屽彲浠ヤ互*浣庝簬* $C$ 鐨勯€熺巼浼犺緭锛屽苟浣块敊璇秼浜?$0$銆傛伆濂藉浜?$C$ 鏃讹紝鎯呭喌鏇村井濡欙細閿欒鏄惁瓒嬩簬 $0$ 鍙栧喅浜庝俊閬撱€傞珮浜?$C$ 鏃讹紝閿欒鏈夋涓嬬晫銆?
+
+* **璇В锛?*鈥滈鍐滃憡璇変簡鎴戜滑濡備綍鏋勯€犲ソ鐮併€傗€?
+
+涓嶅銆係hannon 鐨勮瘉鏄庢槸闈炴瀯閫犳€х殑锛氬畠灞曠ず濂界爜瀛樺湪浣嗕笉鎸囧畾瀹冧滑銆備负瀵绘壘鎺ヨ繎瀹归噺鐮佽€岃繘琛岀殑闀胯揪 50 骞寸殑宸ョ▼鍔姏鎭版伆鍥犱负 Shannon 瀹氱悊鏄竴涓瓨鍦ㄦ€х粨鏋溿€?
+
+* **璇В锛?*鈥滈殢鏈虹紪鐮佽璇佽〃鏄庨殢鏈虹爜鏄渶浼樼殑銆傗€?
+
+涓嶅銆傞殢鏈虹爜鍙槸*瓒冲濂?锛氶殢鏈虹爜鐨勫钩鍧囪〃鐜拌揪鍒板閲忥紝鍥犳鑷冲皯鏈変竴涓壒瀹氱爜杈惧埌瀹归噺銆傜壒瀹氱殑缁撴瀯鍖栫爜锛屽 Reed鈥揝olomon銆丩DPC銆丳olar锛屽線寰€姣斿吀鍨嬮殢鏈虹爜琛ㄧ幇鏇村ソ锛屽悓鏃跺張鑳界敤瀹炵敤绠楁硶瑙ｇ爜銆?
+
+### 鏈珷灏忕粨
+
+棣欏啘淇￠亾缂栫爜瀹氱悊鏄粡鍏镐俊鎭涓渶娣卞埢鐨勭粨鏋滐細
+
+1. **鍙揪鎬?*锛氫换浣曢€熺巼 R < C 鍙揪涓旈敊璇秼浜庨浂銆傝瘉鏄庯細闅忔満缂栫爜 + 鑱斿悎鍏稿瀷鎬цВ鐮併€?
+2. **閫嗗畾鐞?*锛氫换浣曢€熺巼 R > C 鏃犳硶杈惧埌瓒嬩簬闆剁殑閿欒銆傝瘉鏄庯細娉曡涓嶇瓑寮?+ 鏁版嵁澶勭悊涓嶇瓑寮忋€?
+
+瀹归噺
+
+闅忔満缂栫爜鐨勮瘉鏄庢妧鏈槸 Shannon 鏈€鏈夊奖鍝嶅姏鐨勬柟娉曡璐＄尞銆傚畠灞曠ず鎵€鏈夌爜鐨勫钩鍧囪冻澶熷ソ锛涘洜姝よ嚦灏戜竴涓壒瀹氱爜鏄ソ鐨勩€傚伐绋嬪笀鑺变簡 50 骞磋拷璧讹紝鎵嶆瀯閫犲嚭鍦ㄥ疄璺典腑鎺ヨ繎瀹归噺鐨勭爜銆?
+
+鏄彲杈鹃€熺巼涓庝笉鍙揪閫熺巼涔嬮棿鐨?灏栭攼*杈圭晫銆傞€熺巼涓庨敊璇箣闂存病鏈夎繛缁殑鏉冭　锛涗綆浜庡閲忔椂锛屼袱鑰呭彲浠ュ吋寰椼€?
+
+闅忔満缂栫爜杩欎竴璇佹槑鎶€鏈槸棣欏啘鏈€鏈夊奖鍝嶅姏鐨勬柟娉曡璐＄尞銆傚畠琛ㄦ槑鎵€鏈夌爜鐨勫钩鍧囪〃鐜板凡瓒冲濂斤紱鍥犳鑷冲皯鏈変竴涓壒瀹氱爜鏄ソ鐨勩€傚伐绋嬪笀鑺变簡 $50$ 骞存墠杩借刀涓婃潵锛屾瀯閫犲嚭瀹炶返涓€艰繎瀹归噺鐨勭爜銆?
+
+涓嬩竴绔犺璁鸿繖浜涘疄鐢ㄧ爜锛欻amming銆丷eed鈥揝olomon銆丩DPC銆乀urbo銆丳olar銆傚啀涓嬩竴绔犺浆鍚?KL 鏁ｅ害锛屽嵆淇℃伅璁哄拰鐜颁唬鏈哄櫒瀛︿範涓殑鏍稿績鏁ｅ害銆?
+
+### 6.X 涔犻
+
+================================================================================
+BLOCK c07_b11
+================================================================================
+--- SOURCE ---
+#### Concept Check
+
+**Q1.** State Shannon's Channel Coding Theorem.
+
+**Answer:** For any discrete memoryless channel with capacity C=max鈦(x)I(X;Y)C = \max_{p(x)} I(X; Y)C=maxp(x)鈥婭(X;Y):
+
+(Achievability) For any R<CR < CR<C, there is a sequence of codes (one per block length nnn) of rate RRR and error probability tending to zero.
+
+(Converse) For any R>CR > CR>C, the error probability of any code of rate RRR is bounded away from zero.
+
+In short: rates below capacity are achievable; rates above are not.
+
+**Q2.** What is the role of joint typicality in the achievability proof?
+
+**Answer:** Joint typicality is the decoder's rule for matching outputs to inputs. The decoder declares the unique codeword that is jointly typical with the received output. Two facts about joint typicality drive the proof:
+
+  1. The correct codeword and the channel output are jointly typical with probability tending to 1 (joint AEP).
+  2. An "independent" codeword and the channel output are jointly typical with probability 2鈭抧I(X;Y)2^{-n I(X;Y)}2鈭抧I(X;Y), an exponentially small probability.
+
+So with 2nR2^{nR}2nR codewords, the union bound gives error probability 鈮?鈰?nR鈰?鈭抧I(X;Y)=2n(R鈭扞(X;Y))\leq 1 \cdot 2^{nR} \cdot 2^{-n I(X;Y)} = 2^{n(R - I(X;Y))}鈮?鈰?nR鈰?鈭抧I(X;Y)=2n(R鈭扞(X;Y)), which tends to zero for R<I(X;Y)R < I(X;Y)R<I(X;Y).
+
+**Q3.** State Fano's inequality and explain its role in the converse.
+
+**Answer:** Fano's inequality: for an estimate X^\hat{X}X^ of XXX on alphabet X\mathcal{X}X with error probability pep_epe鈥? H(X鈭^)鈮b(pe)+pelog鈦?鈭鈭ｂ垝1)H(X \mid \hat{X}) \leq H_b(p_e) + p_e \log(|\mathcal{X}| - 1)H(X鈭^)鈮b鈥?pe鈥?+pe鈥媗og(鈭鈭ｂ垝1).
+
+Role in the converse: in a code of rate RRR, the message WWW is uniform on 2nR2^{nR}2nR values, so H(W)=nRH(W) = nRH(W)=nR. The data-processing inequality bounds I(W;W^)鈮CI(W; \hat{W}) \leq nCI(W;W^)鈮C. So H(W鈭^)鈮R鈭抧CH(W \mid \hat{W}) \geq nR - nCH(W鈭^)鈮R鈭抧C. Fano's inequality bounds H(W鈭^)鈮?+nRPeH(W \mid \hat{W}) \leq 1 + nR P_eH(W鈭^)鈮?+nRPe鈥? Combining: nR鈭抧C鈮?+nRPenR - nC \leq 1 + nRP_enR鈭抧C鈮?+nRPe鈥? which gives R鈮/(1鈭扨e)+1/(n(1鈭扨e))R \leq C/(1-P_e) + 1/(n(1-P_e))R鈮/(1鈭扨e鈥?+1/(n(1鈭扨e鈥?). For Pe鈫?P_e \to 0Pe鈥嬧啋0 and n鈫掆垶n \to \inftyn鈫掆垶, R鈮R \leq CR鈮.
+
+**Q4.** What does "expurgation" mean in the achievability proof, and why is it needed?
+
+**Answer:** Expurgation is the trick of deleting the half of codewords with the worst individual error probabilities. After this trim, no surviving codeword has error worse than twice the average error of the original code.
+
+The achievability proof initially gives a code with small _average_ error. But we want small _maximum_ error. By the expurgation lemma, deleting the worst half gives a code with maximum error at most twice the original average. The rate cost of halving the codebook is 1/n1/n1/n per block, negligible for large nnn.
+
+--- TRANSLATION ---
+#### 姒傚康妫€鏌?
+
+**Q1.** 闄堣堪 Shannon 淇￠亾缂栫爜瀹氱悊銆?
+
+**绛旀锛?* 瀵逛换鎰忓閲忎负 C = \max_{p(x)} I(X; Y) 鐨勭鏁ｆ棤璁板繂淇￠亾锛?
+
+锛堝彲杈炬€э級瀵逛换鎰?R < C锛屽瓨鍦ㄤ竴鍒楃爜锛堟瘡涓潡闀?n 涓€涓級閫熺巼涓?R锛屼笖閿欒姒傜巼瓒嬩簬闆躲€?
+
+锛堥€嗗畾鐞嗭級瀵逛换鎰?R > C锛屼换浣曢€熺巼涓?R 鐨勭爜锛屽叾閿欒姒傜巼涓庨浂涔嬮棿鏈夋鐨勪笅鐣屻€?
+
+绠€瑷€涔嬶細浣庝簬瀹归噺鐨勯€熺巼鍙揪锛涢珮浜庡閲忕殑閫熺巼涓嶅彲杈俱€?
+
+**Q2.** 鑱斿悎鍏稿瀷鎬у湪鍙揪鎬ц瘉鏄庝腑璧蜂粈涔堜綔鐢紵
+
+**绛旀锛?* 鑱斿悎鍏稿瀷鎬ф槸瑙ｇ爜鍣ㄥ皢杈撳嚭鍖归厤鍒拌緭鍏ョ殑瑙勫垯銆傝В鐮佸櫒澹版槑涓庢帴鏀惰緭鍑鸿仈鍚堝吀鍨嬬殑鍞竴鐮佸瓧銆傞┍鍔ㄨ瘉鏄庣殑涓や釜浜嬪疄鏄細
+
+1. 姝ｇ‘鐮佸瓧涓庝俊閬撹緭鍑鸿仈鍚堝吀鍨嬬殑姒傜巼瓒嬩簬 1锛堣仈鍚?AEP锛夈€?
+2. 涓€涓€滅嫭绔嬧€濈爜瀛椾笌淇￠亾杈撳嚭鑱斿悎鍏稿瀷鐨勬鐜囦负 2^{-n I(X;Y)}锛屾寚鏁扮骇灏忋€?
+
+鎵€浠ユ湁 2^{nR} 涓爜瀛楁椂锛岃仈鍚堢晫缁欏嚭閿欒姒傜巼 \leq 1 \cdot 2^{nR} \cdot 2^{-n I(X;Y)} = 2^{n(R - I(X;Y))}锛屽綋 R < I(X;Y) 鏃惰秼浜庨浂銆?
+
+**Q3.** 闄堣堪 Fano 涓嶇瓑寮忓苟瑙ｉ噴鍏跺湪閫嗗畾鐞嗕腑鐨勪綔鐢ㄣ€?
+
+**绛旀锛?* Fano 涓嶇瓑寮忥細瀵逛簬瀛楁瘝琛?\mathcal{X} 涓?X 鐨勪及璁?\hat{X}锛岄敊璇鐜囦负 p_e锛屾湁 H(X \mid \hat{X}) \leq H_b(p_e) + p_e \log(|\mathcal{X}| - 1)銆?
+
+鍦ㄩ€嗗畾鐞嗕腑鐨勪綔鐢細鍦ㄩ€熺巼涓?R 鐨勭爜涓紝娑堟伅 W 鍦?2^{nR} 涓€间笂鍧囧寑鍒嗗竷锛屾墍浠?H(W) = nR銆傛暟鎹鐞嗕笉绛夊紡缁欏嚭 I(W; \hat{W}) \leq nC銆傛墍浠?H(W \mid \hat{W}) \geq nR - nC銆侳ano 涓嶇瓑寮忕粰鍑?H(W \mid \hat{W}) \leq 1 + nR P_e銆傜患鍚堬細nR - nC \leq 1 + nR P_e锛屽嵆 R \leq C/(1-P_e) + 1/(n(1-P_e))銆傚綋 P_e \to 0 涓?n \to \infty 鏃讹紝R \leq C銆?
+
+**Q4.** 鍙揪鎬ц瘉鏄庝腑鐨勨€滄竻闄も€濇槸浠€涔堟剰鎬濓紝涓轰粈涔堥渶瑕佸畠锛?
+
+**绛旀锛?* 娓呴櫎鏄垹闄や釜浣撻敊璇鐜囨渶宸殑涓€鍗婄爜瀛楃殑鎶€宸с€備慨鍓悗锛屾病鏈夊瓨鐣欑爜瀛楃殑閿欒瓒呰繃鍘熺爜骞冲潎閿欒鐨勪袱鍊嶃€?
+
+鍙揪鎬ц瘉鏄庢渶鍒濈粰鍑轰竴涓猒骞冲潎_閿欒灏忕殑鐮併€備絾鎴戜滑瑕乢鏈€澶閿欒灏忋€傜敱娓呴櫎寮曠悊锛屽垹闄ゆ渶宸殑涓€鍗婄粰鍑烘渶澶ч敊璇嚦澶氬師骞冲潎涓ゅ€嶇殑鐮併€傚噺鍗婄爜鏈殑閫熺巼浠ｄ环鏄瘡鍧?1/n锛屽浜庡ぇ鐨?n 鍙拷鐣ャ€?
+
+================================================================================
+BLOCK c08_b02
+================================================================================
+--- SOURCE ---
+#### Place in History
+
+Hamming codes were the first error-correcting codes. They are used in modern computer memory (single-bit ECC RAM uses extended Hamming codes; double-bit ECC uses BCH codes). Hamming's insight 鈥?that redundancy could be used not just to detect but to _locate and correct_ errors 鈥?was the conceptual foundation for everything that followed.
+
+
+### 7.2 Linear Block Codes
+
+Hamming's construction generalizes. A **linear (n, k) block code** is a kkk-dimensional subspace of Fqn\mathbb{F}_q^nFqn鈥?(typically q=2q = 2q=2). It is specified by:
+
+* A **generator matrix** GGG of size k脳nk \times nk脳n: codeword c=dG\mathbf{c} = \mathbf{d} Gc=dG.
+* A **parity-check matrix** HHH of size (n鈭択)脳n(n-k) \times n(n鈭択)脳n: HcT=0H \mathbf{c}^T = \mathbf{0}HcT=0 for all codewords.
+
+
+#### Key parameters
+
+* **Rate** : R=k/nR = k/nR=k/n.
+* **Minimum distance** : dmin鈦?min鈦鈮燾鈥瞕(c,c鈥?d_{\min} = \min_{\mathbf{c} \neq \mathbf{c}'} d(\mathbf{c}, \mathbf{c}')dmin鈥?minc顎?c鈥测€媎(c,c鈥?. Equivalently, the minimum weight of a nonzero codeword (for linear codes).
+* **Error-correction capability** : t=鈱?dmin鈦♀垝1)/2鈱媡 = \lfloor (d_{\min} - 1)/2 \rfloort=鈱?dmin鈥嬧垝1)/2鈱? Guaranteed correction of ttt errors per block.
+* **Erasure-correction capability** : up to dmin鈦♀垝1d_{\min} - 1dmin鈥嬧垝1 erasures.
+
+
+#### Singleton Bound
+
+For any (n,k)(n, k)(n,k) code with minimum distance ddd,
+
+d鈮鈭択+1.d \leq n - k + 1.d鈮鈭択+1.
+
+Codes meeting this bound with equality are called **maximum-distance-separable (MDS)**. Reed-Solomon codes are MDS; most binary codes are not.
+
+
+#### Standard examples
+
+* **Repetition code** : (n,1,n)(n, 1, n)(n,1,n) 鈥?each bit repeated nnn times. Rate 1/n1/n1/n, corrects (n鈭?)/2(n-1)/2(n鈭?)/2 errors. Inefficient but simple.
+* **Single parity check** : (n,n鈭?,2)(n, n-1, 2)(n,n鈭?,2) 鈥?append a parity bit. Detects 1 error, corrects 0. Used in serial communication.
+* **Hamming** : (2m鈭?,2m鈭?鈭抦,3)(2^m - 1, 2^m - 1 - m, 3)(2m鈭?,2m鈭?鈭抦,3). Rate approaches 1 with mmm; single-error correcting.
+* **Extended Hamming** : (2m,2m鈭?鈭抦,4)(2^m, 2^m - 1 - m, 4)(2m,2m鈭?鈭抦,4) 鈥?Hamming + overall parity bit. Single-error correcting + double-error detecting.
+* **Reed-Muller** : family with various parameters. Used in Mariner deep-space probes (1969).
+* **BCH** : powerful binary cyclic codes. Multi-error correcting.
+* **Reed-Solomon** : powerful non-binary codes 鈥?see 搂7.3.
+* **Goppa** : generalize BCH; used in McEliece cryptosystem (post-quantum cryptography candidate).
+
+
+### 7.3 Reed-Solomon Codes
+
+Reed-Solomon (RS) codes, introduced in 1960, are the most widely deployed coding family in history. They are used in CDs, DVDs, Blu-ray, deep-space communication (Voyager, Cassini), QR codes, RAID-6 storage, and many more.
+
+
+#### Construction
+
+Choose a finite field Fq\mathbb{F}_qFq鈥?(typically q=28=256q = 2^8 = 256q=28=256 for byte-aligned applications). A length-nnn RS code over Fq\mathbb{F}_qFq鈥?(with n鈮鈭?n \leq q - 1n鈮鈭?) encodes a length-kkk message as follows:
+
+* Treat the message as coefficients of a polynomial p(x)p(x)p(x) of degree <k< k<k.
+* Evaluate ppp at nnn distinct points 伪1,鈥?伪n鈭團q\alpha_1, \ldots, \alpha_n \in \mathbb{F}_q伪1鈥?鈥?伪n鈥嬧垐Fq鈥?
+* The codeword is (p(伪1),p(伪2),鈥?p(伪n))(p(\alpha_1), p(\alpha_2), \ldots, p(\alpha_n))(p(伪1鈥?,p(伪2鈥?,鈥?p(伪n鈥?).
+
+Recovery: given any kkk of the nnn evaluations (no errors), polynomial interpolation reconstructs ppp uniquely.
+
+--- TRANSLATION ---
+#### 鍘嗗彶鍦颁綅
+
+Hamming 鐮佹槸鏈€鏃╃殑绾犻敊鐮併€傚畠浠敤浜庣幇浠ｈ绠楁満鍐呭瓨锛堝崟姣旂壒 ECC RAM 浣跨敤鎵╁睍 Hamming 鐮侊紱鍙屾瘮鐗?ECC 浣跨敤 BCH 鐮侊級銆侶amming 鐨勬礊瑙佲€斺€斿啑浣欎笉浠呭彲浠ョ敤浜庢娴嬶紝杩樺彲浠ョ敤浜巁瀹氫綅鍜岀籂姝閿欒鈥斺€旀槸鍚庣画涓€鍒囩殑姒傚康鍩虹銆?
+
+
+### 7.2 绾挎€у垎缁勭爜
+
+Hamming 鐨勬瀯閫犲彲浠ユ帹骞裤€備竴涓?*绾挎€?(n, k) 鍒嗙粍鐮?*鏄?\mathbb{F}_q^n 鐨勪竴涓?k 缁村瓙绌洪棿锛堥€氬父 q = 2锛夈€傚畠鐢变互涓嬪璞℃寚瀹氾細
+
+* **鐢熸垚鐭╅樀** G锛屽ぇ灏?k \times n锛氱爜瀛?\mathbf{c} = \mathbf{d} G銆?
+* **濂囧伓鏍￠獙鐭╅樀** H锛屽ぇ灏?(n-k) \times n锛氬鎵€鏈夌爜瀛楁湁 H \mathbf{c}^T = \mathbf{0}銆?
+
+
+#### 鍏抽敭鍙傛暟
+
+* **閫熺巼**锛歊 = k/n銆?
+* **鏈€灏忚窛绂?*锛歞_{\min} = \min_{\mathbf{c} \neq \mathbf{c}'} d(\mathbf{c}, \mathbf{c}')銆傜瓑浠峰湴锛岄潪闆剁爜瀛楃殑鏈€灏忛噸閲忥紙瀵圭嚎鎬х爜锛夈€?
+* **绾犻敊鑳藉姏**锛歵 = \lfloor (d_{\min} - 1)/2 \rfloor銆備繚璇佹瘡鍧楃籂姝?t 涓敊璇€?
+* **鎿﹂櫎绾犳鑳藉姏**锛氭渶澶氱籂姝?d_{\min} - 1 涓摝闄ゃ€?
+
+
+#### Singleton 鐣?
+
+瀵逛换鎰忔渶灏忚窛绂讳负 d 鐨?(n, k) 鐮侊紝
+
+d \leq n - k + 1.
+
+浠ョ瓑鍙疯揪鍒版鐣岀殑鐮佺О涓?*鏈€澶ц窛绂诲彲鍒嗭紙MDS锛?*鐮併€俁eed-Solomon 鐮佹槸 MDS锛涘ぇ澶氭暟浜屽厓鐮佷笉鏄€?
+
+
+#### 鏍囧噯渚嬪瓙
+
+* **閲嶅鐮?*锛氬弬鏁?(n, 1, n)鈥斺€旀瘡涓瘮鐗归噸澶?n 娆°€傞€熺巼 1/n锛岀籂姝?(n-1)/2 涓敊璇€備綆鏁堜絾绠€鍗曘€?
+* **鍗曞鍋舵牎楠?*锛氬弬鏁?(n, n-1, 2)鈥斺€旈檮鍔犱竴涓鍋舵瘮鐗广€傛娴?1 涓敊璇紝绾犳 0 涓€傜敤浜庝覆琛岄€氫俊銆?
+* **Hamming**锛氬弬鏁?(2^m - 1, 2^m - 1 - m, 3)銆傞€熺巼闅?m 瓒嬭繎 1锛涘崟绾犻敊銆?
+* **鎵╁睍 Hamming**锛氬弬鏁?(2^m, 2^m - 1 - m, 4)鈥斺€擧amming + 鎬诲鍋舵瘮鐗广€傚崟绾犻敊 + 鍙屾閿欍€?
+* **Reed-Muller**锛氬叿鏈夊悇绉嶅弬鏁扮殑鐮佹棌銆傜敤浜?Mariner 娣辩┖鎺㈡祴鍣紙1969锛夈€?
+* **BCH**锛氬己澶х殑浜屽厓寰幆鐮併€傚绾犻敊銆?
+* **Reed-Solomon**锛氬己澶х殑闈炰簩鍏冪爜鈥斺€旇 搂7.3銆?
+* **Goppa**锛氭帹骞?BCH锛涚敤浜?McEliece 瀵嗙爜绯荤粺锛堝悗閲忓瓙瀵嗙爜鍊欓€夛級銆?
+
+
+### 7.3 Reed-Solomon 鐮?
+
+Reed-Solomon锛圧S锛夌爜浜?1960 骞村紩鍏ワ紝鏄巻鍙蹭笂閮ㄧ讲鏈€骞挎硾鐨勭紪鐮佹棌銆傚畠浠敤浜?CD銆丏VD銆佽摑鍏夈€佹繁绌洪€氫俊锛堟梾琛岃€呭彿銆佸崱瑗垮凹鍙凤級銆丵R 鐮併€丷AID-6 瀛樺偍绛変紬澶氶鍩熴€?
+
+
+#### 鏋勯€?
+
+閫夋嫨鏈夐檺鍩?\mathbb{F}_q锛堝瓧鑺傚榻愬簲鐢ㄩ€氬父鍙?q = 2^8 = 256锛夈€俓mathbb{F}_q 涓婇暱搴︿负 n 鐨?RS 鐮侊紙瑕佹眰 n \leq q - 1锛夊皢闀垮害涓?k 鐨勬秷鎭紪鐮佸涓嬶細
+
+* 灏嗘秷鎭涓烘鏁?< k 鐨勫椤瑰紡 p(x) 鐨勭郴鏁般€?
+* 鍦?n 涓笉鍚岀偣 \alpha_1, \ldots, \alpha_n \in \mathbb{F}_q 涓婂 p 姹傚€笺€?
+* 鐮佸瓧涓?(p(\alpha_1), p(\alpha_2), \ldots, p(\alpha_n))銆?
+
+鎭㈠锛氱粰瀹?n 涓眰鍊间腑鐨勪换鎰?k 涓紙鏃犻敊璇級锛屽椤瑰紡鎻掑€煎敮涓€閲嶅缓 p銆?
+
+================================================================================
+BLOCK c09_b05
+================================================================================
+--- SOURCE ---
+#### Theorem (Chain Rule for KL)
+
+For joint distributions p(x,y)p(x, y)p(x,y) and q(x,y)q(x, y)q(x,y),
+
+D(p(x,y)鈭(x,y))=D(p(x)鈭(x))+D(p(y鈭)鈭(y鈭)),D(p(x, y) \| q(x, y)) = D(p(x) \| q(x)) + D(p(y \mid x) \| q(y \mid x)),D(p(x,y)鈭(x,y))=D(p(x)鈭(x))+D(p(y鈭)鈭(y鈭)),
+
+where D(p(y鈭)鈭(y鈭))=鈭憍p(x)D(p(鈰呪垼x)鈭(鈰呪垼x))D(p(y \mid x) \| q(y \mid x)) = \sum_x p(x) D(p(\cdot \mid x) \| q(\cdot \mid x))D(p(y鈭)鈭(y鈭))=鈭憍鈥媝(x)D(p(鈰呪垼x)鈭(鈰呪垼x)) is the conditional KL.
+
+**Proof** : Direct computation:
+
+D(p(x,y)鈭(x,y))=鈭憍,yp(x,y)log鈦(x,y)q(x,y)=鈭憍,yp(x,y)log鈦(x)p(y鈭)q(x)q(y鈭)D(p(x, y) \| q(x, y)) = \sum_{x, y} p(x, y) \log \frac{p(x, y)}{q(x, y)} = \sum_{x, y} p(x, y) \log \frac{p(x) p(y \mid x)}{q(x) q(y \mid x)}D(p(x,y)鈭(x,y))=x,y鈭戔€媝(x,y)logq(x,y)p(x,y)鈥?x,y鈭戔€媝(x,y)logq(x)q(y鈭)p(x)p(y鈭)鈥?=鈭憍,yp(x,y)log鈦(x)q(x)+鈭憍,yp(x,y)log鈦(y鈭)q(y鈭)=D(p(x)鈭(x))+D(p(y鈭)鈭(y鈭)).鈻? \sum_{x, y} p(x, y) \log \frac{p(x)}{q(x)} + \sum_{x, y} p(x, y) \log \frac{p(y \mid x)}{q(y \mid x)} = D(p(x) \| q(x)) + D(p(y \mid x) \| q(y \mid x)). \square=x,y鈭戔€媝(x,y)logq(x)p(x)鈥?x,y鈭戔€媝(x,y)logq(y鈭)p(y鈭)鈥?D(p(x)鈭(x))+D(p(y鈭)鈭(y鈭)).鈻?
+
+The chain rule extends to multiple variables by induction. It is the workhorse for KL computations in graphical models and sequential probabilistic models (HMMs, language models).
+
+
+### 8.8 An AI Connection: Cross-Entropy in Modern ML
+
+The connection between cross-entropy minimization and modern machine learning is so deep that we cannot do justice in one chapter, but we make a sketch.
+
+
+#### Classification
+
+Every neural network classifier minimizes cross-entropy. The output of the network is a probability distribution q胃(y鈭)q_\theta(y \mid x)q胃鈥?y鈭) (typically via softmax over logits). The training loss for a labeled example (x,y)(x, y)(x,y) is 鈭抣og鈦胃(y鈭)-\log q_\theta(y \mid x)鈭抣ogq胃鈥?y鈭). Averaging over the training set gives the empirical cross-entropy.
+
+Minimizing this with stochastic gradient descent is the standard recipe for everything from MNIST classifiers to ImageNet ResNets to BERT.
+
+
+#### Language modeling
+
+A language model is a probability distribution q胃(xt鈭1,鈥?xt鈭?)q_\theta(x_t \mid x_1, \ldots, x_{t-1})q胃鈥?xt鈥嬧垼x1鈥?鈥?xt鈭?鈥?. The training loss is the average negative log-likelihood per token over a corpus. By the chain rule for KL, this is the cross-entropy between the data distribution and the model distribution at the sequence level.
+
+Modern frontier models (GPT-4, Gemini, Claude) are all trained by cross-entropy minimization on web-scale text, with various forms of post-training (RLHF, constitutional AI) on top.
+
+
+#### Variational inference
+
+The Evidence Lower Bound (ELBO) used in variational inference is
+
+ELBO(胃,蠒)=Eq蠒(z鈭)[log鈦胃(x,z)鈭抣og鈦蠒(z鈭)]=log鈦胃(x)鈭扗(q蠒(z鈭)鈭胃(z鈭)).\text{ELBO}(\theta, \phi) = \mathbb{E}_{q_\phi(z \mid x)}[\log p_\theta(x, z) - \log q_\phi(z \mid x)] = \log p_\theta(x) - D(q_\phi(z \mid x) \| p_\theta(z \mid x)).ELBO(胃,蠒)=Eq蠒鈥?z鈭)鈥媅logp胃鈥?x,z)鈭抣ogq蠒鈥?z鈭)]=logp胃鈥?x)鈭扗(q蠒鈥?z鈭)鈭胃鈥?z鈭)).
+
+Maximizing the ELBO is equivalent to minimizing the KL between the variational posterior q蠒q_\phiq蠒鈥?and the true posterior p胃(z鈭)p_\theta(z \mid x)p胃鈥?z鈭). We will treat this in detail in Chapter 10.
+
+--- TRANSLATION ---
+#### 瀹氱悊锛圞L 鐨勯摼寮忔硶鍒欙級
+
+瀵逛簬鑱斿悎鍒嗗竷 p(x, y) 鍜?q(x, y)锛?
+
+D(p(x, y) \| q(x, y)) = D(p(x) \| q(x)) + D(p(y \mid x) \| q(y \mid x)),
+
+鍏朵腑 D(p(y \mid x) \| q(y \mid x)) = \sum_x p(x) D(p(\cdot \mid x) \| q(\cdot \mid x)) 鏄潯浠?KL銆?
+
+**璇佹槑**锛氱洿鎺ヨ绠楋細
+
+D(p(x, y) \| q(x, y)) = \sum_{x, y} p(x, y) \log \frac{p(x, y)}{q(x, y)} = \sum_{x, y} p(x, y) \log \frac{p(x) p(y \mid x)}{q(x) q(y \mid x)}
+
+= \sum_{x, y} p(x, y) \log \frac{p(x)}{q(x)} + \sum_{x, y} p(x, y) \log \frac{p(y \mid x)}{q(y \mid x)} = D(p(x) \| q(x)) + D(p(y \mid x) \| q(y \mid x))銆傗枴
+
+閾惧紡娉曞垯閫氳繃褰掔撼娉曟帹骞垮埌澶氫釜鍙橀噺銆傚畠鏄浘妯″瀷鍜屽簭鍒楁鐜囨ā鍨嬶紙HMM銆佽瑷€妯″瀷锛変腑 KL 璁＄畻鐨勪富鍔涖€?
+
+
+### 8.8 AI 鑱旂郴锛氱幇浠?ML 涓殑浜ゅ弶鐔?
+
+浜ゅ弶鐔垫渶灏忓寲涓庣幇浠ｆ満鍣ㄥ涔犵殑鑱旂郴濡傛娣卞埢锛屼竴绔犻毦浠ュ敖杩帮紝浣嗘垜浠彲浠ュ嬀鍕掑叾杞粨銆?
+
+
+#### 鍒嗙被
+
+姣忎釜绁炵粡缃戠粶鍒嗙被鍣ㄩ兘鏈€灏忓寲浜ゅ弶鐔点€傜綉缁滆緭鍑烘槸姒傜巼鍒嗗竷 q_\theta(y \mid x)锛堥€氬父閫氳繃瀵?logits 鍋?softmax锛夈€傛爣璁版牱鏈?(x, y) 鐨勮缁冩崯澶变负 -\log q_\theta(y \mid x)銆傚湪璁粌闆嗕笂鍙栧钩鍧囧緱鍒扮粡楠屼氦鍙夌喌銆?
+
+鐢ㄩ殢鏈烘搴︿笅闄嶆渶灏忓寲瀹冿紝鏄粠 MNIST 鍒嗙被鍣ㄥ埌 ImageNet ResNet 鍐嶅埌 BERT 鐨勬爣鍑嗛厤鏂广€?
+
+
+#### 璇█寤烘ā
+
+璇█妯″瀷鏄鐜囧垎甯?q_\theta(x_t \mid x_1, \ldots, x_{t-1})銆傝缁冩崯澶辨槸璇枡涓婃瘡 token 鐨勫钩鍧囪礋瀵规暟浼肩劧銆傜敱 KL 鐨勯摼寮忔硶鍒欙紝杩欐鏄簭鍒楃骇鍒笂鏁版嵁鍒嗗竷涓庢ā鍨嬪垎甯冧箣闂寸殑浜ゅ弶鐔点€?
+
+鐜颁唬鍓嶆部妯″瀷锛圙PT-4銆丟emini銆丆laude锛夐兘閫氳繃鍦ㄧ綉椤电骇鏂囨湰涓婄殑浜ゅ弶鐔垫渶灏忓寲璁粌锛屽苟鍦ㄥ叾涓婂彔鍔犲悇绉嶅悗璁粌锛圧LHF銆佸娉?AI锛夈€?
+
+
+#### 鍙樺垎鎺ㄦ柇
+
+鍙樺垎鎺ㄦ柇涓娇鐢ㄧ殑璇佹嵁涓嬬晫锛圗LBO锛孍vidence Lower Bound锛変负
+
+\text{ELBO}(\theta, \phi) = \mathbb{E}_{q_\phi(z \mid x)}[\log p_\theta(x, z) - \log q_\phi(z \mid x)] = \log p_\theta(x) - D(q_\phi(z \mid x) \| p_\theta(z \mid x)).
+
+鏈€澶у寲 ELBO 绛変环浜庢渶灏忓寲鍙樺垎鍚庨獙 q_\phi 涓庣湡瀹炲悗楠?p_\theta(z \mid x) 涔嬮棿鐨?KL銆傛垜浠皢鍦ㄧ 10 绔犺缁嗚璁恒€?
+
+================================================================================
+BLOCK c10_b01
+================================================================================
+--- SOURCE ---
+KL divergence is the most important divergence in information theory, but it is not the only one. Different applications call for different notions of "distance" between probability distributions. Total variation is natural for hypothesis testing. Wasserstein distance underlies optimal transport and modern generative models. Hellinger distance arises in statistics. 蠂2\chi^2蠂2 divergence appears in goodness-of-fit tests. Each of these has its own strengths, and choosing the right one for an application is a non-trivial modeling decision.
+
+This chapter surveys the main divergences, develops the **f-divergence** framework that unifies many of them, sketches the **Wasserstein distance** and its connection to optimal transport, and outlines **information geometry** 鈥?the view that distributions form a Riemannian manifold whose local distance is given by the Fisher information metric.
+
+The AI angle is the rise of Wasserstein distances in modern generative modeling: Wasserstein GANs by Arjovsky and collaborators in 2017 showed that distance choice has profound consequences for training stability and gradient quality, and the broader field of optimal transport has emerged as a major tool in modern ML.
+
+
+### 9.1 Total Variation Distance
+
+We met total variation in Chapter 8 in the context of Pinsker's inequality. Recall:
+
+未(p,q)=12鈭憍鈭(x)鈭抭(x)鈭?max鈦鈯哫鈭(A)鈭抭(A)鈭?\delta(p, q) = \frac{1}{2} \sum_x |p(x) - q(x)| = \max_{A \subseteq \mathcal{X}} |p(A) - q(A)|.未(p,q)=21鈥媥鈭戔€嬧垼p(x)鈭抭(x)鈭?A鈯哫max鈥嬧垼p(A)鈭抭(A)鈭?
+
+Total variation is a true metric: symmetric, definite, satisfies the triangle inequality. It is bounded between 0 (identical distributions) and 1 (disjoint supports).
+
+
+#### Operational meaning
+
+The total variation between ppp and qqq is the maximum probability difference that any event can have. Equivalently, it is the optimal probability of correctly distinguishing ppp from qqq given a single sample, minus 1/2:
+
+未(p,q)=2鈰?optimal accuracy of distinguisher)鈭?.\delta(p, q) = 2 \cdot (\text{optimal accuracy of distinguisher}) - 1.未(p,q)=2鈰?optimal accuracy of distinguisher)鈭?.
+
+So small TV means the two distributions are statistically indistinguishable from a single sample.
+
+
+#### Use cases
+
+* **Hypothesis testing** : TV bounds the error of any test that distinguishes ppp from qqq.
+* **Convergence to stationary distribution** : in Markov chain theory, TV measures how close the time-ttt distribution is to the stationary distribution. Mixing times are typically defined in terms of TV.
+* **Differential privacy** : the privacy guarantee (系,未)(\epsilon, \delta)(系,未)-DP includes a TV-like term.
+* **Statistical distance between datasets** : when comparing the distributions of two datasets, TV is the most directly interpretable.
+
+
+### 9.2 The f-Divergence Framework
+
+Many divergences fit into a unified framework discovered by Csisz谩r and Ali-Silvey in the 1960s.
+
+--- TRANSLATION ---
+KL 鏁ｅ害鏄俊鎭涓渶閲嶈鐨勬暎搴︼紝浣嗕笉鏄敮涓€鐨勩€備笉鍚屽簲鐢ㄩ渶瑕佷笉鍚岀殑鍒嗗竷闂粹€滆窛绂烩€濇蹇点€傛€诲彉宸鍋囪妫€楠屾槸鑷劧鐨勩€俉asserstein 璺濈鏄渶浼樹紶杈撳拰鐜颁唬鐢熸垚妯″瀷鐨勫熀纭€銆侶ellinger 璺濈鍑虹幇鍦ㄧ粺璁″涓€俓chi^2 鏁ｅ害鍑虹幇鍦ㄦ嫙鍚堜紭搴︽楠屼腑銆傚畠浠悇鏈夋墍闀匡紝涓哄叿浣撳簲鐢ㄩ€夋嫨鍚堥€傜殑鏁ｅ害鏄竴椤归潪骞冲嚒鐨勫缓妯″喅绛栥€?
+
+鏈珷姒傝堪涓昏鏁ｅ害锛屽彂灞曠粺涓€鍏朵腑璁稿瀵硅薄鐨?**f-鏁ｅ害**妗嗘灦锛岀畝杩?**Wasserstein 璺濈**鍙婂叾涓庢渶浼樹紶杈撶殑鑱旂郴锛屽苟姒傝堪**淇℃伅鍑犱綍**鈥斺€斿皢鍒嗗竷瑙嗕负榛庢浖娴佸舰銆佸叾灞€閮ㄨ窛绂荤敱 Fisher 淇℃伅搴﹂噺缁欏嚭鐨勮瑙掋€?
+
+AI 瑙嗚鏄?Wasserstein 璺濈鍦ㄧ幇浠ｇ敓鎴愬缓妯′腑鐨勫叴璧凤細Arjovsky 绛変汉 2017 骞寸殑 Wasserstein GAN 琛ㄦ槑锛岃窛绂婚€夋嫨瀵硅缁冪ǔ瀹氭€у拰姊害璐ㄩ噺鏈夋繁杩滃奖鍝嶏紝鑰屾洿骞块様鐨勬渶浼樹紶杈撻鍩熷凡鎴愪负鐜颁唬 ML 鐨勯噸瑕佸伐鍏枫€?
+
+
+### 9.1 鎬诲彉宸窛绂?
+
+鎴戜滑鍦ㄧ 8 绔?Pinsker 涓嶇瓑寮忕殑璇涓杩囨€诲彉宸€傚洖椤撅細
+
+\delta(p, q) = \frac{1}{2} \sum_x |p(x) - q(x)| = \max_{A \subseteq \mathcal{X}} |p(A) - q(A)|.
+
+鎬诲彉宸槸鐪熸鐨勫害閲忥細瀵圭О銆佹瀹氥€佹弧瓒充笁瑙掍笉绛夊紡銆傚畠鍦?0锛堢浉鍚屽垎甯冿級鍜?1锛堜笉鐩镐氦鏀拺锛変箣闂存湁鐣屻€?
+
+
+#### 鎿嶄綔鍚箟
+
+p 鍜?q 涔嬮棿鐨勬€诲彉宸槸浠讳綍浜嬩欢鍙叿鏈夌殑鏈€澶ф鐜囧樊寮傘€傜瓑浠峰湴锛屽畠鏄粰瀹氬崟涓牱鏈纭尯鍒?p 涓?q 鐨勬渶浼樻鐜囧噺鍘?1/2锛?
+
+\delta(p, q) = 2 \cdot (\text{鍖哄垎鍣ㄧ殑鏈€浼樺噯纭巼}) - 1.
+
+鎵€浠ュ皬鐨?TV 鎰忓懗鐫€涓や釜鍒嗗竷鍦ㄥ崟涓牱鏈笅缁熻涓婁笉鍙尯鍒嗐€?
+
+
+#### 浣跨敤鍦烘櫙
+
+* **鍋囪妫€楠?*锛歍V 缁欏嚭浠讳綍鍖哄垎 p 涓?q 鐨勬楠岃宸殑涓婄晫銆?
+* **鏀舵暃鍒板钩绋冲垎甯?*锛氬湪椹皵鍙か閾剧悊璁轰腑锛孴V 搴﹂噺鏃跺埢 t 鐨勫垎甯冧笌骞崇ǔ鍒嗗竷鏈夊杩戙€傛贩鍚堟椂闂撮€氬父浠?TV 瀹氫箟銆?
+* **宸垎闅愮**锛氶殣绉佷繚璇?(\epsilon, \delta)-DP 鍖呭惈涓€涓被浼?TV 鐨勯」銆?
+* **鏁版嵁闆嗛棿鐨勭粺璁¤窛绂?*锛氭瘮杈冧袱涓暟鎹泦鐨勫垎甯冩椂锛孴V 鏄渶鐩存帴鍙В閲婄殑銆?
+
+
+### 9.2 f-鏁ｅ害妗嗘灦
+
+璁稿鏁ｅ害鍙互绾冲叆 Csisz谩r 鍜?Ali-Silvey 鍦?1960 骞翠唬鍙戠幇鐨勭粺涓€妗嗘灦銆?
+
+================================================================================
+BLOCK c10_b02
+================================================================================
+--- SOURCE ---
+#### Definition: f-Divergence
+
+For a convex function f:(0,鈭?鈫扲f: (0, \infty) \to \mathbb{R}f:(0,鈭?鈫扲 with f(1)=0f(1) = 0f(1)=0, the **f-divergence** of qqq from ppp is
+
+Df(p鈭)=鈭憍q(x)f(p(x)q(x)).D_f(p \| q) = \sum_x q(x) f\left(\frac{p(x)}{q(x)}\right).Df鈥?p鈭)=x鈭戔€媞(x)f(q(x)p(x)鈥?.
+
+Choices of fff recover many familiar divergences:
+
+Divergence | f(t)f(t)f(t)  
+---|---  
+KL: D(p鈭)D(p \| q)D(p鈭) | tlog鈦t \log ttlogt  
+Reverse KL: D(q鈭)D(q \| p)D(q鈭) | 鈭抣og鈦-\log t鈭抣ogt  
+Total variation 2未2 \delta2未 | 12鈭鈭?鈭frac{1}{2}\|t - 1\|21鈥嬧垾t鈭?鈭? 
+Jensen-Shannon | 12(tlog鈦鈭?t+1)log鈦+12)\frac{1}{2}(t \log t - (t+1) \log \frac{t+1}{2})21鈥?tlogt鈭?t+1)log2t+1鈥?  
+蠂2\chi^2蠂2 divergence | (t鈭?)2(t - 1)^2(t鈭?)2  
+Hellinger squared | (t鈭?)2/2(\sqrt{t} - 1)^2 / 2(t鈥嬧垝1)2/2  
+  
+All f-divergences share several key properties:
+
+  1. **Non-negativity** : Df(p鈭)鈮?D_f(p \| q) \geq 0Df鈥?p鈭)鈮?, with equality iff p=qp = qp=q (if fff is strictly convex at 1).
+  2. **Joint convexity** : Df(p鈭)D_f(p \| q)Df鈥?p鈭) is jointly convex in (p,q)(p, q)(p,q).
+  3. **Data-processing inequality** : Df(Ph(p)鈭h(q))鈮f(p鈭)D_f(P_h(p) \| P_h(q)) \leq D_f(p \| q)Df鈥?Ph鈥?p)鈭h鈥?q))鈮f鈥?p鈭) for any (deterministic or stochastic) post-processing hhh.
+  4. **Scaling invariance** : Dcf(p鈭)=cDf(p鈭)D_{cf}(p \| q) = c D_f(p \| q)Dcf鈥?p鈭)=cDf鈥?p鈭) for c>0c > 0c>0.
+
+These properties hold for _any_ choice of convex fff 鈥?they are structural facts about the framework, not specific to KL.
+
+
+#### Hellinger distance
+
+Hellinger distance is
+
+dH(p,q)=12鈭憍(p(x)鈭抭(x))2.d_H(p, q) = \sqrt{\frac{1}{2} \sum_x (\sqrt{p(x)} - \sqrt{q(x)})^2}.dH鈥?p,q)=21鈥媥鈭戔€?p(x)鈥嬧垝q(x)鈥?2鈥?
+
+It is a true metric (unlike KL). It is bounded between 0 and 1. It enters statistics through likelihood theory: the Hellinger affinity 鈭憍p(x)q(x)\sum_x \sqrt{p(x) q(x)}鈭憍鈥媝(x)q(x)鈥?is the inner product of likelihood roots and underlies hypothesis testing bounds.
+
+
+#### 蠂2\chi^2蠂2 divergence
+
+蠂2\chi^2蠂2-divergence is 鈭憍(p(x)鈭抭(x))2/q(x)\sum_x (p(x) - q(x))^2 / q(x)鈭憍鈥?p(x)鈭抭(x))2/q(x). It is widely used in goodness-of-fit testing (Pearson's 蠂2\chi^2蠂2 test) and in concentration inequalities. It is generally larger than KL.
+
+The 蠂2\chi^2蠂2 and KL divergences satisfy
+
+D(p鈭)鈮og鈦?1+蠂2(p鈭))鈮は?(p鈭).D(p \| q) \leq \log(1 + \chi^2(p \| q)) \leq \chi^2(p \| q).D(p鈭)鈮og(1+蠂2(p鈭))鈮は?(p鈭).
+
+So 蠂2\chi^2蠂2 bounds KL from above, and small 蠂2\chi^2蠂2 implies small KL.
+
+--- TRANSLATION ---
+#### 瀹氫箟锛歠-鏁ｅ害
+
+瀵逛簬鍑稿嚱鏁?f: (0, \infty) \to \mathbb{R} 涓?f(1) = 0锛宷 鐩稿浜?p 鐨?**f-鏁ｅ害**涓?
+
+D_f(p \| q) = \sum_x q(x) f\left(\frac{p(x)}{q(x)}\right).
+
+涓嶅悓鐨?f 閫夋嫨鍙互鎭㈠璁稿鐔熸倝鐨勬暎搴︼細
+
+鏁ｅ害 | f(t)
+---|---
+KL: D(p \| q) | t \log t
+鍙嶅悜 KL: D(q \| p) | -\log t
+鎬诲彉宸?2\delta | \frac{1}{2}\|t - 1\|
+Jensen-Shannon | \frac{1}{2}(t \log t - (t+1) \log \frac{t+1}{2})
+\chi^2 鏁ｅ害 | (t - 1)^2
+Hellinger 骞虫柟 | (\sqrt{t} - 1)^2 / 2
+
+鎵€鏈?f-鏁ｅ害鍏变韩鑻ュ共鍏抽敭鎬ц川锛?
+
+1. **闈炶礋鎬?*锛欴_f(p \| q) \geq 0锛屽綋涓斾粎褰?p = q锛堝鏋?f 鍦?1 澶勪弗鏍煎嚫锛夋椂鍙栫瓑銆?
+2. **鑱斿悎鍑告€?*锛欴_f(p \| q) 鍦?(p, q) 涓婅仈鍚堝嚫銆?
+3. **鏁版嵁澶勭悊涓嶇瓑寮?*锛氬浠讳綍锛堢‘瀹氭€ф垨闅忔満锛夊悗澶勭悊 h锛屾湁 D_f(P_h(p) \| P_h(q)) \leq D_f(p \| q)銆?
+4. **缂╂斁涓嶅彉鎬?*锛氬 c > 0锛屾湁 D_{cf}(p \| q) = c D_f(p \| q)銆?
+
+杩欎簺鎬ц川瀵筥浠绘剰_鍑?f 閫夋嫨鎴愮珛鈥斺€斿畠浠槸妗嗘灦鐨勭粨鏋勪簨瀹烇紝涓嶆槸 KL 鐗规湁鐨勩€?
+
+
+#### Hellinger 璺濈
+
+Hellinger 璺濈涓?
+
+d_H(p, q) = \sqrt{\frac{1}{2} \sum_x (\sqrt{p(x)} - \sqrt{q(x)})^2}.
+
+瀹冩槸鐪熸鐨勫害閲忥紙涓嶅儚 KL锛夈€傚湪 0 鍜?1 涔嬮棿鏈夌晫銆傚畠閫氳繃浼肩劧鐞嗚杩涘叆缁熻瀛︼細Hellinger 浜插拰搴?\sum_x \sqrt{p(x) q(x)} 鏄技鐒舵牴鐨勫唴绉紝鏄亣璁炬楠岀晫鐨勫熀纭€銆?
+
+
+#### \chi^2 鏁ｅ害
+
+\chi^2 鏁ｅ害涓?\sum_x (p(x) - q(x))^2 / q(x)銆傚畠骞挎硾鐢ㄤ簬鎷熷悎浼樺害妫€楠岋紙Pearson \chi^2 妫€楠岋級鍜岄泦涓笉绛夊紡銆傚畠閫氬父澶т簬 KL銆?
+
+\chi^2 涓?KL 鏁ｅ害婊¤冻
+
+D(p \| q) \leq \log(1 + \chi^2(p \| q)) \leq \chi^2(p \| q).
+
+鎵€浠?\chi^2 浠庝笂鏂圭晫浣?KL锛屽皬鐨?\chi^2 钑村惈灏忕殑 KL銆?

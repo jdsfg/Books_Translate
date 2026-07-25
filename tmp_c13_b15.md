@@ -1,0 +1,51 @@
+**Q2.** _决定何时使用 ColPali vs 标准文本 RAG_。对每个场景，推荐 ColPali、标准文本 RAG 或混合：(a) Strata 的 50 万页合同语料库，布局敏感 (b) 某开源库的小型文档站点 (c) Beacon Health AI 的临床笔记摘要器（纯文本口述）(d) 某产品目录含 5 万产品页包括图像和描述
+
+**答案：**
+
+(a) **混合**。合同语料库有布局敏感查询（特定节中的条款）和标准文本查询（此节说什么？）。混合：ColPali 用于布局查询；标准文本 RAG 用于内容查询。Strata 的实际方法。
+
+(b) **标准文本 RAG**。开源库文档通常文本密集无布局关键内容。ColPali 的复杂性不必要；标准文本 RAG 足够且更便宜。
+
+(c) **标准文本 RAG**。临床口述是纯文本（音频 → 转录 → 文本）。无视觉内容。ColPali 不适用。
+
+(d) **混合或多模态**。产品目录有可检索的图像（找看起来像 X 的产品）和文本描述。多模态嵌入（Voyage multimodal-3 或 CLIP 家族）处理两种模态；ColPali 专门用于文档页面检索，对产品目录不太自然。混合：描述上文本嵌入 + 照片上图像嵌入。
+
+通用决策：ColPali 适合有布局敏感性的文档页面检索；多模态嵌入适合跨模态检索；标准文本 RAG 适合纯文本内容。诊断你的内容；相应选择。
+
+**AI 协作子问题**：你会如何请 LLM 帮助完成这个练习，你会在它的回答中验证什么？
+
+**答案：** 有用的 prompt：_对每个场景，推荐 ColPali、标准文本 RAG 或混合。论证。_ 你验证 (a) 推荐匹配每个场景的实际内容类型（布局敏感 vs 纯文本 vs 跨模态），以及 (b) LLM 不默认 _到处用最花哨工具_（常见 LLM 偏向复杂性；坚持可能时简单）。
+
+**Q3.** _工程化失败页面处理_。§12.8 故障模式（静默跳页）在多模态管道中常见。设计工程响应。指定：(a) 故障跟踪；(b) 恢复；(c) 查询时暴露；(d) 文档隔离策略。
+
+**答案：**
+
+(a) **故障跟踪**：
+
+
+    CREATE TABLE page_processing_status (
+        document_id TEXT,
+        page_number INT,
+        status TEXT CHECK (status IN ('success', 'pending', 'failed', 'recovered')),
+        failure_reason TEXT,
+        last_attempt_at TIMESTAMP,
+        attempt_count INT,
+        extraction_confidence TEXT CHECK (extraction_confidence IN ('high', 'medium', 'low'
+)),
+        PRIMARY KEY (document_id, page_number)
+    );
+
+
+每次页面处理尝试更新此表。仪表板按原因、文档类型、所用模型聚合失败率。
+
+(b) **恢复**：
+
+后台工作器定期选取 `status = 'failed'` 的页面并重试，用：
+
+* 不同 prompt 措辞（有时 prompt 是原因）
+* 更强模型（前沿 vs 工作马）
+* 不同分辨率（一些失败是分辨率敏感的）
+
+恢复率典型约 50%；永久失败页面无限保持 `status = 'failed'`。
+
+(c) **查询时暴露**：

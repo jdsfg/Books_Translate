@@ -1,0 +1,25 @@
+### 5.5 每 prompt 版本的 golden set
+
+一个微妙但重要的模式。随着 prompt 演变，_适当的_ golden set 有时也演变。新 prompt 可能更好地处理一类输入，而原始 golden set 可能没有足够案例来练习该类。反之，prompt 变更可能使一些原始 golden 案例不相关（例如，feature flag 现在将它们路由到别处）。
+
+模式是将 golden set 与 prompt 一起版本化。每个 prompt 版本有关联的 golden set 版本。eval 运行器选择匹配被测 prompt 版本的 golden set。
+
+
+    goldens/
+    ├── clinical_summary/
+    │   ├── v1/
+    │   │   ├── manifest.json
+    │   │   └── cases/
+    │   │       ├── case_001.json
+    │   │       └── ...
+    │   ├── v2/
+    │   │   └── ...
+    │   └── v3/  # 当前
+    │       └── ...
+
+
+每个版本的清单携带元数据：案例数量、按类别分层、标注的校准 kappa、最后审查时间戳。
+
+当团队添加新案例（因为生产事件暴露了故障模式），案例进入 golden set 的当前版本，而非追溯进入旧版本。当团队更改标签（因为标注说明被精炼），变更以版本升级记录。
+
+这强制的纪律：**回归比较是同类对同类**，因为候选和基线都针对相同 golden set 版本运行。一个在同一提交中更改 prompt 和 golden set 的 PR 获得对 _新_ golden set 的比较，并带明确注释说明比较是 eval 演变后的。

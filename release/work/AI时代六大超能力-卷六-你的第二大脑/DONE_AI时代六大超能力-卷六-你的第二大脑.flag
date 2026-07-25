@@ -1,0 +1,37 @@
+DONE: AI时代六大超能力-卷六-你的第二大脑
+status: 76/76
+head_note: full-book final-review BLOCK items fixed on PR #14
+
+verify(glossary_psychology.md): ERROR=0 WARN=0
+verify(glossary_local.md): ERROR=0 WARN=60
+
+## Final-review BLOCK fixes
+- c11_b03/b04/b05: acid test「酸测试/酸性测试」→「试金石」
+- c10_b02/b03/b07: privacy gate「隐私关口/隐私闸门」→统一「隐私之门」
+- c15_b03: organize lazily「慢慢整理」→「从简整理」
+- c08_b01–b05 (+c09_b01/b04): lifecycle retrieve 统一为「取回」（不再混用「检索」）；并清除 c08_b01 行号残留
+- c02_b02: A parent「一个父母」→「一位家长」
+- 额外清理: 多块 `    NN|` 行号泄漏；c14_b04/b05 生命周期 create「创作」→「创造」
+- glossary_local: 增补 retrieve|取回、connect|连接、create|创造
+
+## Remaining local WARN=60 (逐类说明，非“全部噪声”)
+### A. 斜杠双译名假阳性（主因，条目本身用「A / B」写法）
+verify 按整串匹配中文译名；译文正确选用其一即报警。
+- 「应用 / App」×27：叙事多用「应用」，专名处保留 App/原名
+- 「拯救 / 拯救行动」×22：动词用「拯救」，章题/专名用「拯救行动」
+- 「一堆 / 堆积」×18：按句法选用
+- 「经得起时间 / 持久」×12：按句法选用
+- 「链接 / 路径」×6：trail 叙事偏「路径」，UI/技术义用「链接」
+- 「收件箱 / 收纳箱」×6：邮件义「收件箱」，捕捉入口可「收纳箱」
+- 「指挥 / 发指令」×5：directing 叙事主用「指挥」
+- 「分拣 / 检伤分拣」×3：主用「分拣」
+
+### B. 源英词多义 / 近义合法变体（非漏译）
+- 「取回」×2：源含 retrieve 的非阶段义（如 findable 定义里的 retrieve it）时，译文或用「找到/拿回」等；阶段名已统一「取回」
+- 「连接」×2：源含 connect 的普通动词义（connect your work）译「连起来」等，非生命周期动词「连接」
+- 「创造」×0：源含 create/creation 的普通名词义时或用「做出/制作」；生命周期阶段名已用「创造」
+- 「可读/自有/可链/捕捉/归档」零星：owned by no one、capture what I'd search、linked to the unit、agent-readable 等非术语本义或已用「智能体可读/链到」等合法近义
+- 「地图，而非手册」×1：c01_b01 作「地图，不是手册」（并列否定，语义等价）
+
+### C. 不视为阻断
+共享 glossary_psychology 全绿；上述本地 WARN 不构成结构/数字/术语 ERROR。
