@@ -107,11 +107,11 @@
       "en_title": "Introduction",
       "order": 1,
       "src_chars": 3145,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d51ad916f043",
       "src": "Most personal finance books fall into one of two traps. They're either so simplified that they offer little beyond \"spend less, save more\" — advice that's true but unhelpful — or so dense with jargon and formulas that they overwhelm anyone who isn't already fluent in finance.\n\nThis book takes a different path. It teaches financial THINKING — the mental models that let you evaluate any financial decision you'll ever face, from your first paycheck to your last.\n\nYou won't find get-rich-quick schemes here. The core message of this book is profoundly unsexy: **the boring strategy wins.** Index funds beat stock-picking. Your savings rate matters more than your investment returns. Avoiding catastrophic mistakes matters more than finding optimal strategies. The greatest financial superpower is patience.\n\n\n### What This Book Covers\n\n**Part I: Financial Thinking (Chapters 1–4)** builds the mental toolkit: the wealth equation, compound interest, opportunity cost, and a proper understanding of risk. These four concepts explain over 90% of personal finance.\n\n**Part II: Earning and Spending (Chapters 5–8)** covers the income and spending sides of the equation — treating your career as your biggest asset, building a budget that doesn't feel like a diet, eliminating debt strategically, and understanding why your brain sabotages your financial decisions.\n\n**Part III: Growing Your Money (Chapters 9–13)** demystifies investing — what stocks and bonds actually are, why index funds beat almost everything, the one investment decision that really matters (asset allocation), how to use tax-advantaged accounts, and the honest math on real estate.\n\n**Part IV: Protecting Your Money (Chapters 14–15)** covers insurance, emergency funds, estate planning, and fraud protection — the safety net that keeps everything else intact.\n\n**Part V: Financial Decisions in Context (Chapters 16–20)** applies all the principles to real-world decisions — major purchases, career transitions, family finance, investment pitfalls, and building your complete financial plan.\n\n\n### How to Get the Most Out of This Book\n\nThis book is designed for Socratic learning — not passive reading. Throughout each chapter, you'll encounter:\n\n* **Decision Exercises** that ask you to make a financial decision before reading the analysis. Try to actually decide before looking at the answer — the learning happens in the gap between your instinct and the analysis.\n* **Exercises** at three levels: Concept Check (verify understanding), Application Problems (apply to real scenarios), and Think Deeper (explore nuance and edge cases). Do the exercises — they're where the concepts become skills.\n* **Three threading storylines** that weave through the entire book: \n    * **Thread A — The Power of Starting Early** : recurring calculations showing why time is the most valuable financial resource\n    * **Thread B — The Financial Industry Wants Your Money** : a running examination of conflicts of interest and how to protect yourself\n    * **Thread C — The Boring Portfolio** : a simple three-fund portfolio introduced in Part III and benchmarked against every alternative\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1015,
+      "out_sha": "41c205b3b9ab",
       "note": ""
     },
     {
@@ -119,11 +119,11 @@
       "en_title": "Introduction",
       "order": 2,
       "src_chars": 1172,
-      "status": "pending",
+      "status": "done",
       "src_sha": "2320190749b6",
       "src": "#### Who This Book Is For\n\nAnyone who earns money and wants to be smarter about it. You don't need math beyond basic arithmetic. You don't need any financial background. Whether you're a new graduate holding your first real paycheck, a mid-career professional who feels behind, or someone who's always found finance intimidating — this book meets you where you are and takes you where you need to go.\n\nThe only prerequisite is willingness to question what you think you know about money — because some of the most widely believed financial \"wisdom\" turns out to be wrong.\n\n\n#### A Note on Global Applicability\n\nThe core principles in this book — compound interest, diversification, savings rate, opportunity cost — are universal. They work in every country, every currency, and every economic system. The specific examples use American financial products (401(k), IRA, Roth IRA) because the book is written in English, but throughout the text, we note where principles translate across borders: \"The specific account names differ by country, but the principle is the same.\" Look for your country's equivalent of each concept — the strategy is identical.\n\nLet's begin.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 370,
+      "out_sha": "0030510e9170",
       "note": ""
     },
     {
@@ -131,11 +131,11 @@
       "en_title": "Chapter 1: The One Equation That Explains Everything",
       "order": 3,
       "src_chars": 2629,
-      "status": "pending",
+      "status": "done",
       "src_sha": "17f5b53bdb06",
       "src": "Imagine two people. Sarah earns 200,000 USD a year and spends 190,000 USD. Mike earns 50,000 USD a year and spends 30,000 USD. Who will be wealthier in 20 years?\n\nIf you said Sarah — because she earns four times as much — you just made the most common mistake in personal finance. Sarah saves 10,000 USD a year. Mike saves 20,000 USD a year. Over 20 years, even without any investment returns, Mike accumulates 400,000 USD while Sarah accumulates 200,000 USD. Add compound interest, and the gap widens further.\n\nThis isn't a trick question. It's the single most important insight in personal finance, and most people get it wrong because they confuse income with wealth.\n\nLet's start with the equation that makes this clear.\n\n\n### 1.1 The Wealth Equation\n\nHere's every personal finance book ever written, compressed into two lines:\n\nIncome−Spending=Savings\\text{Income} - \\text{Spending} = \\text{Savings}Income−Spending=Savings Savings×Time×Returns=Wealth\\text{Savings} \\times \\text{Time} \\times \\text{Returns} = \\text{Wealth}Savings×Time×Returns=Wealth\n\nThat's it. Everything else — budgeting tips, investment strategies, tax optimization, debt management — is just a footnote to these two lines.\n\nBut these two lines are not created equal. Let's look at each variable and ask: how much control do you actually have over it?\n\n**Income.** You have moderate control. You can invest in skills, negotiate raises, switch jobs, start side projects. But income has a ceiling that's hard to push past, and increasing it usually requires significant time and effort.\n\n**Spending.** You have high control. Not total control — you need food, shelter, and healthcare — but far more control than most people exercise. This is the variable where decisions you make TODAY have an immediate effect.\n\n**Savings.** This isn't a separate decision — it's what's left after the first two. But here's the key insight: a dollar saved is more powerful than a dollar earned, because a dollar earned gets taxed before you can save it. If you're in a 25% tax bracket, you need to earn 1.33 USD to save 1 USD. But a dollar you don't spend is a full dollar saved.\n\n**Time.** You can't speed up time, but you can start earlier. Every year you delay is a year of compounding you can never get back. We'll explore this deeply in Chapter 2.\n\n**Returns.** Here's the uncomfortable truth: you have the LEAST control over returns. The stock market does what the stock market does. Yet this is the variable most people obsess over — picking stocks, timing the market, chasing hot investments. It's like trying to control the weather instead of packing an umbrella.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1055,
+      "out_sha": "ded247e19926",
       "note": ""
     },
     {
@@ -143,11 +143,11 @@
       "en_title": "Chapter 1: The One Equation That Explains Everything",
       "order": 4,
       "src_chars": 2046,
-      "status": "pending",
+      "status": "done",
       "src_sha": "794b73cb1dad",
       "src": "#### Definition: Savings Rate\n\nYour savings rate is the percentage of your income that you save:\n\nSavings Rate=Income−SpendingIncome×100%\\text{Savings Rate} = \\frac{\\text{Income} - \\text{Spending}}{\\text{Income}} \\times 100\\%Savings Rate=IncomeIncome−Spending​×100%\n\nIn plain language, this means: of every dollar that comes in, how many cents do you keep? Someone earning 60,000 USD who spends 48,000 USD has a savings rate of 20%. Someone earning 150,000 USD who spends 142,500 USD has a savings rate of 5%.\n\nThe savings rate is the single most predictive number in personal finance. It matters more than your salary. It matters more than your investment returns. Here's why:\n\nConsider three scenarios over 30 years, all starting from zero savings:\n\nScenario | Income | Savings Rate | Annual Savings | Return | Wealth after 30 years  \n---|---|---|---|---|---  \nA: High income, low savings | 150,000 USD | 5% | 7,500 USD | 7% | ~708,000 USD  \nB: Medium income, medium savings | 75,000 USD | 20% | 15,000 USD | 7% | ~1,417,000 USD  \nC: Low income, high savings | 50,000 USD | 30% | 15,000 USD | 7% | ~1,417,000 USD  \n  \nPerson B and C end up in the same place — even though B earns 50% more. And both of them double what Person A accumulates, despite A earning two to three times more.\n\n\n#### Common Misconception\n\n**\"I don't earn enough to save.\"** This is the most dangerous belief in personal finance, because it gives you permission to never start. The truth: almost everyone — at every income level above poverty — can find SOMETHING to save, even if it's 50 USD a month. The amount matters less than the habit. A person who saves 50 USD a month for 30 years at 7% returns accumulates about 57,000 USD. That's not retirement money, but it's a meaningful emergency fund, and more importantly, the habit of saving 50 USD scales naturally as income grows. People who say \"I'll start saving when I earn more\" almost never do — because spending habits scale with income too. This is called lifestyle inflation, and we'll dissect it in Chapter 8.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 983,
+      "out_sha": "136f923323ac",
       "note": ""
     },
     {
@@ -179,11 +179,11 @@
       "en_title": "Chapter 1: The One Equation That Explains Everything",
       "order": 7,
       "src_chars": 2908,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6702d852844f",
       "src": "#### Concept Check\n\n**Q1.** Alex earns 80,000 USD per year and saves 10%. Jordan earns 55,000 USD per year and saves 25%. Assuming both invest their savings at the same 7% annual return, who accumulates more wealth after 25 years, and by how much (approximately)?\n\nHint\n\nFirst calculate the annual savings for each person, then use the future value of an annuity or simply note that both savings grow at the same rate — the one who saves more per year always ends up with more.\n\n**Answer:** Alex saves 8,000 USD/year. Jordan saves 13,750 USD/year. After 25 years at 7%, Alex accumulates approximately 8,000 USD × 63.25 = 506,000 USD. Jordan accumulates approximately 13,750 USD × 63.25 = 870,000 USD. Jordan ends up with roughly 364,000 USD more — despite earning 25,000 USD less per year. The savings rate, not the income, determined the outcome.\n\n**Q2.** Your friend says: \"I'm only 24, I'll start saving when I'm 30 — what's six years?\" Without doing detailed math, explain in one paragraph why this reasoning is flawed, using concepts from this chapter.\n\n**Answer:** This reasoning confuses income with wealth accumulation and ignores the time variable in the wealth equation. Those six years aren't just six years of missed savings — they're six years of missed compounding. Every dollar saved at 24 has six additional years to grow compared to a dollar saved at 30. At 7% returns, a dollar invested at 24 is worth about 1.50 USD by age 30 — so starting at 30 means needing to save 50% more just to be in the same position. Additionally, the habit of saving is harder to build later because lifestyle inflation (spending increasing with income) makes it psychologically harder to save as you get used to a higher-spending lifestyle. We'll quantify this precisely in Chapter 2.\n\n**Q3.** Calculate the savings rate for each scenario: (a) Income 45,000 USD, spending 38,000 USD. (b) Income 120,000 USD, spending 108,000 USD. (c) Income 65,000 USD, spending 45,500 USD.\n\n**Answer:** (a) Savings = 7,000 USD. Savings rate = 7,000 USD / 45,000 USD = 15.6%. (b) Savings = 12,000 USD. Savings rate = 12,000 USD / 120,000 USD = 10%. (c) Savings = 19,500 USD. Savings rate = 19,500 USD / 65,000 USD = 30%. Notice that person (b), despite earning the most and saving the most in absolute dollars, has the lowest savings rate. Person (c) will likely accumulate wealth faster than person (b) because each dollar of income is working harder.\n\n**Q4.** A dollar saved is worth more than a dollar earned. Explain why in two sentences, referencing taxes.\n\n**Answer:** A dollar you don't spend is a full dollar added to savings. A dollar you earn is reduced by taxes before it reaches your savings — in a 22% federal tax bracket (plus state taxes), you might need to earn 1.30 USD or more to net 1 USD in savings. Therefore, reducing spending by 1 USD has the same wealth impact as earning an additional 1.30 USD or more.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1207,
+      "out_sha": "9a1e977f1cdd",
       "note": ""
     },
     {
@@ -191,11 +191,11 @@
       "en_title": "Chapter 1: The One Equation That Explains Everything",
       "order": 8,
       "src_chars": 3337,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7f3c3760348d",
       "src": "#### Application Problems\n\n**Q1.** You earn 70,000 USD/year with a 12% savings rate. You're considering two strategies to build wealth faster. Strategy A: negotiate a 10,000 USD raise and maintain your current spending. Strategy B: keep your current income but cut spending by 5,000 USD/year. Calculate the new savings rate under each strategy and the 20-year wealth accumulation at 7% returns.\n\nHint\n\nCurrent savings = 12% of 70,000 USD = 8,400 USD. For Strategy A, the raise adds 10,000 USD to income but spending stays the same. For Strategy B, income stays the same but spending drops by 5,000 USD. Then use the annuity factor for 20 years at 7% (approximately 41.0) to estimate future wealth.\n\n**Answer:** Current savings: 8,400 USD/year. Strategy A: New income 80,000 USD, same spending (61,600 USD), new savings = 18,400 USD/year, savings rate = 23%. Strategy B: Same income 70,000 USD, spending drops by 5,000 USD to 56,600 USD, new savings = 13,400 USD/year, savings rate = 19.1%. At 7% for 20 years (annuity factor ≈ 41.0): Strategy A yields approximately 754,000 USD, Strategy B yields approximately 549,000 USD. Strategy A wins — but notice that Strategy B (which requires no employer cooperation, no negotiation, just personal decisions) still gets you over half a million dollars. In practice, many people can do BOTH — and the combination is extremely powerful. Also note: the 10,000 USD raise is before taxes. If you're in a 25% bracket, the after-tax raise is 7,500 USD — making the comparison closer. This connects back to our point that a dollar saved beats a dollar earned.\n\n**Q2.** Your neighbor says they earned a 15% return on their investments last year and implies you're doing something wrong with your \"boring\" savings strategy. Your savings rate is 25% and your investments returned 7%. Using the wealth equation, construct a scenario where your approach still beats theirs over the long run.\n\nHint\n\nAssume your neighbor has a lower savings rate. High returns on a small base can be beaten by moderate returns on a large base.\n\n**Answer:** Suppose your neighbor earns 80,000 USD with a 5% savings rate (4,000 USD/year) and gets 15% returns. You earn 80,000 USD with a 25% savings rate (20,000 USD/year) and get 7% returns. After 20 years: your neighbor accumulates approximately 4,000 USD × 117.8 (annuity factor at 15% for 20 years) = 471,000 USD. You accumulate approximately 20,000 USD × 41.0 = 820,000 USD. Even with returns more than double yours, their low savings rate means they accumulate barely half of what you do. Furthermore, sustaining 15% returns for 20 years is extraordinarily unlikely — most investors who chase high returns experience volatility and loss years that drag down their actual long-term average. Your consistent 7% from index funds, on the other hand, is close to the historical average of the stock market. This dynamic illustrates why the financial industry's focus on returns (Chapter 10 will explore this fully) is often misplaced.\n\n**Q3.** Look at your actual bank or credit card statements from the past month. Calculate your real savings rate. (If you prefer not to use real numbers, create a realistic hypothetical monthly budget for someone your age in your area.) Compare it to the scenarios in Section 1.1. Which person (A, B, or C) most closely matches your profile?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1246,
+      "out_sha": "83505f0b0e35",
       "note": ""
     },
     {
@@ -203,11 +203,11 @@
       "en_title": "Chapter 1: The One Equation That Explains Everything",
       "order": 9,
       "src_chars": 1817,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b23bd074f77c",
       "src": "**Answer:** This is a personal exercise, so answers will vary. The key steps are: (1) Total up all after-tax income for the month. (2) Total up all spending (don't forget recurring subscriptions, automatic payments, and cash spending). (3) Divide (Income − Spending) by Income. A typical American savings rate is 3–5%, which is dangerously close to Person A's profile. If your rate is below 10%, the single most impactful financial action you can take is increasing it — even by 5 percentage points — and automating that increase. If your rate is above 20%, you're in strong territory and can focus on optimizing where those savings go (Chapters 9–12).\n\n**Q4.** Revisit the Sarah/Mike example from the chapter opening. Now assume Sarah invests her savings at 10% annual return (she hires an expensive financial advisor who happens to do well) and Mike invests at 6% (he uses a simple savings account). After 20 years, who has more? What does this tell you about the relative importance of savings rate versus returns?\n\nHint\n\nSarah saves 10,000 USD/year at 10%. Mike saves 20,000 USD/year at 6%. Use the future value of annuity formula or approximate with annuity factors: 20 years at 10% ≈ 57.3, 20 years at 6% ≈ 36.8.\n\n**Answer:** Sarah: 10,000 USD × 57.3 = 573,000 USD. Mike: 20,000 USD × 36.8 = 736,000 USD. Mike STILL wins — even though Sarah's return rate is nearly double his. Mike's savings rate advantage (saving 20,000 USD/year vs 10,000 USD/year) overpowers Sarah's return advantage. In fact, for Sarah to match Mike's result, she would need a consistent annual return of about 13% — something almost no investor achieves over 20 years. This dramatically illustrates the chapter's central message: the variable you control most (spending/savings) matters more than the variable you control least (returns).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 752,
+      "out_sha": "0e6bfabc8f87",
       "note": ""
     },
     {
@@ -215,11 +215,11 @@
       "en_title": "Chapter 1: The One Equation That Explains Everything",
       "order": 10,
       "src_chars": 3455,
-      "status": "pending",
+      "status": "done",
       "src_sha": "09790fa9a02f",
       "src": "#### Think Deeper\n\n**Q1.** The wealth equation treats all variables as independent, but in reality they interact. Can you think of a situation where increasing your savings rate actually HURTS your long-term wealth? What does this edge case teach us about applying simple equations to complex life decisions?\n\n**Discussion:** One example: cutting spending on education or skill development to boost your savings rate might reduce your future earning potential. If you save an extra 5,000 USD by not taking a professional certification course, but that course would have increased your income by 15,000 USD/year, you've lost money in the long run. Another example: extreme frugality that damages your health (skipping medical care, eating poorly) can lead to massive future costs. A third: networking often costs money (conferences, meals, travel) but can dramatically increase income. The lesson is that the wealth equation is a framework for THINKING, not a formula for blind optimization. The best financial decisions balance the variables against each other. Savings rate is king, but not at the expense of the other variables. We'll explore the earning power variable deeply in Chapter 5.\n\n**Q2.** \"Who profits if I follow this advice?\" Apply this question to THIS BOOK. The author is SocraLab, which sells educational software. What incentives might shape the advice in these pages? How would you verify whether the advice here is trustworthy?\n\n**Discussion:** This is a deliberately self-referential question designed to build your critical thinking muscle. SocraLab profits when you find the educational experience valuable enough to continue using it. This creates an incentive to make the content genuinely useful (which aligns with your interests) but also an incentive to make you feel like you need more education (which might not). To verify: cross-reference major claims against independent sources (academic research, government financial data, fiduciary advisory organizations). Check whether the book recommends specific products that benefit SocraLab (it shouldn't — and if it does, be skeptical). Notice whether the book encourages you to think independently or to depend on it. The best financial education makes itself progressively less necessary.\n\n**Q3.** The chapter claims that \"a dollar saved is worth more than a dollar earned\" because of taxes. But this isn't always true. Under what conditions might earning an extra dollar be MORE valuable than saving a dollar? Consider tax deductions, employer matching, and other factors.\n\n**Discussion:** Several scenarios flip the equation: (1) If your employer offers 401(k) matching (Chapter 12), an extra dollar earned and contributed could become 2 USD — beating any spending cut. (2) If the spending cut eliminates a tax-deductible expense (like mortgage interest, in some cases), the after-tax cost of that spending was already reduced. (3) If the extra dollar earned pushes you above a threshold that unlocks benefits (like qualifying for a mortgage with better terms). (4) If the spending being cut generates income (e.g., cutting a professional membership that provides client leads). The deeper point: financial rules of thumb are starting points, not laws of physics. The wealth equation tells you WHERE to focus your attention — it doesn't tell you exactly what to do in every situation. Good financial thinking means knowing the rules AND knowing when they have exceptions.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1060,
+      "out_sha": "778c48b94b73",
       "note": ""
     },
     {
@@ -227,11 +227,11 @@
       "en_title": "Chapter 1: The One Equation That Explains Everything",
       "order": 11,
       "src_chars": 993,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c274b7f1fde6",
       "src": "### Chapter Summary\n\nThis chapter established the foundation everything else builds on: the wealth equation (Income − Spending = Savings; Savings × Time × Returns = Wealth) and the crucial insight that savings rate — not income, not investment returns — is the most powerful lever you control. We saw that a moderate earner with a high savings rate consistently outperforms a high earner with a low savings rate, even when the high earner gets better investment returns.\n\nWe also introduced a question you should carry through every remaining chapter: \"Who profits if I follow this advice?\" This filter will become increasingly important as we enter the world of investing (Chapters 9–13), where the financial industry has the strongest incentive to push complexity over simplicity.\n\nIn Chapter 2, we'll zoom into the TIME variable in the wealth equation and discover why compound interest — the most powerful force in finance — makes starting early matter more than almost anything else.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 286,
+      "out_sha": "afe362982c49",
       "note": ""
     },
     {
