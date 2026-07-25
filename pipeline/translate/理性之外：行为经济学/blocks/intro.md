@@ -1,6 +1,6 @@
 > 本导读整理自 Socratopia 网站本书介绍页：https://www.socratopia.app/library/behavioral-economics-en
 
-大多数行为经济学（behavioral economics）教材会带你逛一遍“认知动物园”：这里是锚定（anchoring），那里是损失厌恶（loss aversion），再往前是可得性启发式（availability heuristic）。但《当人类不再计算》（*When Humans Don't Compute*）给你的是另一套东西——底层机制。你会学到价值函数（value function）、β-δ 折现模型（β-δ discounting model）、Fehr-Schmidt 不公平厌恶效用函数（Fehr-Schmidt inequality-aversion utility function）——它们不是装饰性的形式主义，而是能够产生可检验预测的工具。当书中说损失厌恶（loss aversion）可以解释金融市场中的处置效应（disposition effect）、马克杯实验中的禀赋效应（endowment effect），以及退休储蓄不足时，你会明白为什么：同一机制在三种不同情境中运作，产生三种不同现象。
+大多数行为经济学（behavioral economics）教材会带你逛一遍“认知动物园”：这里是锚定（anchoring），那里是损失厌恶（loss aversion），再往前是可得性启发式（availability heuristic）。但《当人类不再计算》（*When Humans Don't Compute*）给你的是另一套东西——底层机制。你会学到价值函数（value function）、β-δ 折现模型（β-δ discounting model）、Fehr-Schmidt 不平等厌恶效用函数（Fehr-Schmidt inequality-aversion utility function）——它们不是装饰性的形式主义，而是能够产生可检验预测的工具。当书中说损失厌恶（loss aversion）可以解释金融市场中的处置效应（disposition effect）、马克杯实验中的禀赋效应（endowment effect），以及退休储蓄不足时，你会明白为什么：同一机制在三种不同情境中运作，产生三种不同现象。
 
 全书围绕三条交织的叙事线索展开。线索 A 追踪一个单一的政策问题——退休储蓄不足——贯穿全部 22 章，从理性主体（rational agent）对最优储蓄的预测，到最终解决它的一整套行为工具（自动加入 automatic enrollment、SMarT 递增计划 SMarT escalation、目标日期基金默认选项 target-date fund defaults）。线索 B 逐章对比标准经济学的预测与人类实际行为，最终在第22章得出一个审慎结论：理性主体模型是一个有用的极限情形，而不是对任何人的真实描述。线索 C 是大多数行为经济学教材回避的：它诚实地追踪可重复性危机（replication crisis），以自我损耗（ego depletion）——一项曾被引用数百次、却在预注册复制实验（pre-registered replication）中几乎消失的发现——作为核心案例，示范如何批判性地阅读行为经济学研究。
 
