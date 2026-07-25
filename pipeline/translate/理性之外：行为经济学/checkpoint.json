@@ -2823,11 +2823,11 @@
       "en_title": "Chapter 19: Behavioral Policy Beyond the Nudge",
       "order": 227,
       "src_chars": 2954,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4acb63455214",
       "src": "#### The Limits of Nudging Systemic Problems\n\nBehavioral interventions work by improving decision-making within an existing choice architecture. They do not change the options available, the resources available, or the systemic conditions that generate the problem in the first place.\n\n**Where nudges have little purchase:**\n\n  1. **When the problem is resource scarcity, not decision error** : A person who cannot save for retirement because their income covers only necessities will not be helped by a better-framed savings account. Automatic enrollment at 3% of a very low income may generate a few dollars per month. The structural problem — inadequate wages — is not behavioral.\n\n  2. **When the problem is access, not uptake** : If a healthcare service requires three bus transfers, a daytime appointment, and a week of waiting, simplifying the enrollment letter does not solve the access problem. Nudging people to enroll in a poorly designed system may even reduce pressure for structural improvement.\n\n  3. **When externalities require mandatory standards** : Carbon labels on food may marginally shift individual purchasing. But a regulation requiring manufacturers to reduce embedded carbon in production changes outcomes across all purchases without relying on individual attention and choice.\n\n  4. **When information asymmetries are severe** : In markets where one party has drastically more information than the other — financial products, pharmaceutical pricing, insurance — nudges to \"shop around\" may be ineffective. Structural regulation of information disclosure or price controls may be necessary.\n\n\n#### The Substitution Risk\n\nA recurring critique is that behavioral policy can be used strategically by governments to avoid harder political choices. If a nudge is available, a government may prefer it — because it is cheap, non-coercive, and politically palatable — even when the evidence calls for structural change.\n\n**Example of the substitution risk:**\n\n> A government facing a childhood obesity problem deploys school cafeteria salad bar placement nudges. The nudges produce a modest improvement. The government announces the problem is being addressed. Meanwhile, advertising of ultra-processed food to children, sugar content regulations, and income supports that affect food purchasing decisions go unaddressed.\n\nThe nudge has real effects — but its political function is to substitute for deeper intervention, not complement it.\n\n**The honest answer** is that nudges and structural interventions are complements, not substitutes:\n\n* Structural interventions change what options exist\n* Behavioral interventions improve how people choose among them\n* Both are usually needed for durable, equitable change\n\nA good behavioral insights unit should document which problems require structural change and say so clearly, even when that conclusion is politically inconvenient.\n\n\n### 19.5 The \"Nudge as Neoliberal Policy\" Critique\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 819,
+      "out_sha": "dfce7ff497e1",
       "note": ""
     },
     {
@@ -2835,11 +2835,11 @@
       "en_title": "Chapter 19: Behavioral Policy Beyond the Nudge",
       "order": 228,
       "src_chars": 1139,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3e340f92809c",
       "src": "#### The Critique Stated\n\nSeveral prominent critics — primarily from the political left — have argued that behavioral economics is ideologically aligned with neoliberal governance: it locates the cause of social problems in individual decision-making errors and offers individual-level behavioral fixes, leaving market structures, power distributions, and systemic inequalities unchallenged.\n\n**The core claims of the critique:**\n\n  1. **Individualization of structural problems** : Framing poverty, obesity, or undersaving as results of cognitive bias draws attention away from wages, food systems, and employer behavior\n  2. **Cheap substitute for redistribution** : Nudges are far less expensive than income transfers, healthcare expansion, or labor protections — and therefore politically attractive to governments seeking to minimize spending\n  3. **Market-compatible** : Nudges work within existing markets; they do not challenge property rights, corporate behavior, or market power\n  4. **Legitimization function** : Deploying behavioral interventions signals that \"something is being done,\" reducing pressure for structural reform\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 324,
+      "out_sha": "9d1eb85ce234",
       "note": ""
     },
     {
@@ -2847,11 +2847,11 @@
       "en_title": "Chapter 19: Behavioral Policy Beyond the Nudge",
       "order": 229,
       "src_chars": 2591,
-      "status": "pending",
+      "status": "done",
       "src_sha": "828df34064f5",
       "src": "#### Evaluating the Critique\n\nThe critique has genuine force in some applications — particularly where governments deploy behavioral interventions as a visible substitute for structural ones. But it overstates its case in several ways:\n\n**Where the critique is too strong:**\n\n  1. **Behavioral insights are politically neutral tools** : They can be applied to expand access to government benefits (simplifying enrollment), strengthen consumer protections (better financial disclosures), or increase tax compliance (social norm messaging that brings in revenue for public services). These are not obviously neoliberal outcomes.\n\n  2. **Structural and behavioral interventions coexist** : The evidence on automatic enrollment in retirement savings comes from a policy (mandatory employer offering of a qualified plan) that is itself structural. The behavioral tool (default enrollment) works inside a structural framework (regulated retirement savings systems). The two reinforce each other.\n\n  3. **Behavioral insights can reveal structural problems** : A BIT mapping the citizen journey through a benefits application may discover that the real barrier is a two-week wait for an appointment, not a confusing form. This finding argues for structural change, not a nudge. Good BITs follow the evidence.\n\n**Where the critique is compelling:**\n\n  1. **Political incentives are real** : Governments do face incentives to use cheap behavioral interventions rather than expensive structural ones. This is an institutional risk that behavioral policy practitioners should acknowledge and resist.\n\n  2. **Effect sizes are small** : A 2% reduction in energy consumption via social norms cannot substitute for the transformation of energy infrastructure. Communicating effect sizes honestly is essential.\n\n  3. **Equity concerns** : As discussed in Chapter 18, behavioral interventions are not uniformly effective across socioeconomic groups. Deploying nudges without understanding distributional effects may improve aggregate outcomes while widening inequality.\n\n**Thread B:** The rational agent model justifies intervention only for externalities; behavioral economics expands the justification to include internalities and decision errors. But this expanded justification carries a risk: if anything that a behavioral economist can label as a \"bias\" becomes a justification for paternalistic intervention, the scope of permissible government action expands without principled limits. The critique from the left and the critique from libertarians converge on this concern, from different directions.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 737,
+      "out_sha": "9705e20c7e95",
       "note": ""
     },
     {
@@ -2859,11 +2859,11 @@
       "en_title": "Chapter 19: Behavioral Policy Beyond the Nudge",
       "order": 230,
       "src_chars": 1433,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b9ae67fa993b",
       "src": "### 19.6 Principles for Responsible Behavioral Policy\n\nDrawing the preceding analysis together, several principles for responsible behavioral policy design emerge:\n\n**Principle 1 — Diagnose before prescribing:** Identify the actual behavioral barrier before choosing an intervention. Misdiagnosis wastes resources and may be counterproductive.\n\n**Principle 2 — Test before scaling:** Run well-powered RCTs (or rigorous quasi-experiments) before committing to large-scale deployment. Effect sizes from small pilots often do not generalize.\n\n**Principle 3 — Measure equity:** Report treatment effects by income, education, and demographic group. If an intervention improves aggregate outcomes while worsening inequality, that should be part of the policy evaluation.\n\n**Principle 4 — Complement, don't substitute:** Behavioral interventions should be explicitly positioned as complements to structural ones, not replacements. BITs should identify when their tools are insufficient and say so.\n\n**Principle 5 — Maintain transparency:** Following Chapter 18's criteria for legitimate nudges, behavioral policy should be publicly disclosed, subject to democratic oversight, and evaluated against clear outcome metrics.\n\n**Principle 6 — Be honest about effect sizes:** A 2% energy reduction and a 40-point retirement enrollment increase are both real effects. Neither should be described as more transformative than the evidence supports.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 419,
+      "out_sha": "fed33a87854b",
       "note": ""
     },
     {
@@ -2871,11 +2871,11 @@
       "en_title": "Chapter 19: Behavioral Policy Beyond the Nudge",
       "order": 231,
       "src_chars": 2207,
-      "status": "pending",
+      "status": "done",
       "src_sha": "47c1e344f92d",
       "src": "### Chapter Summary\n\nBehavioral insights units have operationalized behavioral economics in government at unprecedented scale, producing genuine improvements in tax compliance, public service uptake, and energy conservation. Their core method — diagnosing behavioral barriers, designing targeted interventions, testing with RCTs, and scaling what works — represents a significant advance over assumption-driven policy design.\n\nBehavioral policy has genuine strengths: it is cheap, non-coercive, and often effective at the margin. But it has real limits: it cannot substitute for adequate income, access to services, or structural market regulation. The \"nudge as neoliberal\" critique is overstated in some respects but contains a genuine warning — behavioral interventions can be used strategically to avoid harder political choices.\n\nThe most defensible position is that structural and behavioral tools are complements. A well-designed system needs both good options and good defaults. Behavioral economics helps with the second problem; it cannot solve the first.\n\nThread A continues in this chapter through the lens of tax policy: programs that allow taxpayers to direct refunds into savings accounts at the point of filing bring Thread A's retirement savings logic into a new institutional context. Thread B is active throughout — the rational agent model predicts only that taxes should correct externalities, while the behavioral model adds internality correction and salience effects that expand both the justification for policy intervention and the tools available to it. Thread C runs through the BIT methodology: field RCTs are more rigorous than most policy evaluation, but they face their own generalizability limits — average treatment effects obscure heterogeneity, short-run measurement may miss long-run behavior change, and publication pressures affect BITs as they affect academic research.\n\n**Chapter 20** moves to a different domain where behavioral economics meets structural constraints: behavioral development economics, which asks whether the biases documented in wealthy-country labs generalize to low-income contexts — and whether poverty itself shapes cognition.\n\n\n### Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 602,
+      "out_sha": "2c43a80fe555",
       "note": ""
     },
     {
@@ -2883,11 +2883,11 @@
       "en_title": "Chapter 19: Behavioral Policy Beyond the Nudge",
       "order": 232,
       "src_chars": 3140,
-      "status": "pending",
+      "status": "done",
       "src_sha": "96a3a5bfbddf",
       "src": "#### Concept Check\n\n**Q1.** What is a behavioral insights unit, and how does its approach to policy design differ from the traditional rational agent approach?\n\n_Answer:_ A behavioral insights unit applies behavioral science to identify and address behavioral barriers that prevent citizens from achieving desired outcomes or engaging effectively with government services. The traditional rational agent approach assumes people correctly process information and make optimal decisions, then wonders why implementation falls short. BITs instead begin by mapping where people actually drop out or make errors, diagnose the behavioral cause (attention failure, present bias, friction, social disconnection), design an intervention targeting that specific barrier, test it with RCTs before scaling, and document results. This is an empirically grounded, human-agent-centered approach rather than an assumption-driven one.\n\n**Q2.** What is the \"internality\" argument for sin taxes, and how does it extend the standard Pigouvian logic?\n\n_Answer:_ The standard Pigouvian argument for sin taxes is that smokers, drinkers, or over-eaters impose costs on others (secondhand smoke, healthcare costs borne by the public) that they do not internalize, leading to excessive consumption. The behavioral internality argument adds that these consumers also systematically underweight costs they impose on their own future selves due to present bias. A smoker who would prefer to quit but cannot overcome present bias is experiencing an internality — a failure of decision-making that imposes costs on one's future self. A tax that corrects both externalities and internalities could be welfare-improving from the smoker's own long-run perspective, even if resisted in the moment. This extends the justification for taxation but requires contested assumptions about which preferences (present or long-run) are \"authentic.\"\n\n**Q3.** Describe two findings from environmental behavioral policy research and explain their behavioral mechanism.\n\n_Answer:_ **Finding 1: Green energy defaults.** Opt-out green energy tariffs achieve 70-90% enrollment compared to 3-7% under opt-in systems. The behavioral mechanism is status quo bias and the asymmetric weighting of defaults: the default feels like the normal, expected state, and departing from it requires active effort and feels like a deviation. A rational agent would treat the default as irrelevant; a human agent experiences it as the reference point. **Finding 2: Energy bill social norms.** Opower-style reports showing a household's consumption relative to neighbors produce 1.5-2% average reductions. The mechanism is descriptive social norms: people adjust behavior toward what they perceive others do, because social conformity is intrinsically motivating and because others' behavior provides information about what is appropriate or optimal. Both findings reflect the same core principle — human behavior responds to framing, reference points, and social context in ways that rational agent models do not predict.\n\n**Q4.** What is the \"substitution risk\" in behavioral policy, and why does it matter?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 906,
+      "out_sha": "6e284053e755",
       "note": ""
     },
     {
@@ -2895,11 +2895,11 @@
       "en_title": "Chapter 19: Behavioral Policy Beyond the Nudge",
       "order": 233,
       "src_chars": 960,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b4f3d6bf1a2d",
       "src": "_Answer:_ The substitution risk is the danger that governments deploy behavioral interventions as a visible substitute for structural interventions, not as a complement. Because nudges are cheap, non-coercive, and politically palatable, a government facing a complex social problem may prefer a nudge that produces modest measurable improvement over a costly structural change that would be more effective but more politically difficult. The risk matters because it can: (a) leave the structural causes of a problem unaddressed while providing political cover for inaction; (b) lead to overconfidence in behavioral tools relative to their actual effect sizes; and (c) reduce public pressure for systemic reform by signaling that the problem is being managed. Responsible behavioral policy should explicitly position nudges as complements to structural change, not substitutes, and should document when structural interventions are what the evidence calls for.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 240,
+      "out_sha": "c26ac330d586",
       "note": ""
     },
     {
@@ -2907,11 +2907,11 @@
       "en_title": "Chapter 19: Behavioral Policy Beyond the Nudge",
       "order": 234,
       "src_chars": 3152,
-      "status": "pending",
+      "status": "done",
       "src_sha": "129d61598dcf",
       "src": "#### Application Problems\n\n**Q1.** A government wants to increase participation in a food assistance program for low-income families. A BIT proposes redesigning the enrollment form to be simpler and shorter. A structural reform team proposes opening 20 additional enrollment offices in underserved areas. How would a behavioral economist evaluate which intervention to prioritize?\n\n_Answer:_ A behavioral economist would begin by diagnosing the actual barrier to enrollment. If the barrier is form complexity — people start and give up, or make errors that cause rejections — then form simplification targets the real problem. If the barrier is access — the nearest enrollment office requires two hours of travel — then form simplification misidentifies the problem; opening offices addresses the real barrier. The two interventions are not mutually exclusive and may be complementary: simplifying the form helps people complete it once they reach an office, while more offices reduce the travel barrier. A BIT would ideally conduct user research (qualitative interviews, drop-off analysis in the enrollment journey) to diagnose the primary barrier before choosing the intervention. If both barriers are present, both interventions are warranted, and their effects may be tested separately to understand their individual contributions.\n\n**Q2.** A city council is debating whether to implement a carbon tax or a green default for electricity tariffs. Apply the behavioral framework from this chapter to compare the two policies.\n\n_Answer:_ **Carbon tax:** Corrects price signals by making carbon-intensive energy more expensive, following both Pigouvian externality logic and behavioral internality logic (if consumers underweight future climate costs). Behavioral considerations: the effect of a price change depends on its salience — a tax buried in a monthly bill may produce less behavioral change than the same tax visually highlighted at the point of purchase. The tax is structurally comprehensive (affects all carbon consumption) but requires political will and may face equity concerns (regressive impact on lower-income households). **Green default:** Exploits status quo bias to enroll consumers in renewable electricity. Requires no price change, is non-coercive, and produces high enrollment rates (70-90%). But it only affects the electricity tariff choice, not overall consumption levels, and does not change underlying energy infrastructure. **Comparison:** A rational agent model predicts the carbon tax dominates because it changes the price signal across all margins. The behavioral model notes that the green default may produce higher compliance at a given policy cost, especially if the carbon tax is not salient. The strongest policy combines both: a carbon price (structural, comprehensive) with green defaults and salient communication (behavioral, improves response to the price signal).\n\n**Q3.** Evaluate the following claim: \"Because behavioral economics identifies individual cognitive biases as the cause of social problems, it necessarily shifts responsibility away from governments and corporations and onto individuals.\"",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 846,
+      "out_sha": "8f6b6d5d51da",
       "note": ""
     },
     {
@@ -2919,11 +2919,11 @@
       "en_title": "Chapter 19: Behavioral Policy Beyond the Nudge",
       "order": 235,
       "src_chars": 1370,
-      "status": "pending",
+      "status": "done",
       "src_sha": "eead1a4ac337",
       "src": "_Answer:_ The claim contains truth but overstates its scope. It is true that some applications of behavioral economics have focused narrowly on individual decision-making while leaving systemic causes unaddressed — the substitution risk discussed in the chapter. If a government deploys a diet choice nudge without addressing food desert geography, corporate marketing practices, or income constraints, it is indeed individualizing a structural problem. However, the claim overstates its case in several ways. First, behavioral insights units frequently diagnose structural barriers (long waits, inaccessible offices, complex forms) and recommend structural changes. Second, behavioral tools can be applied to constrain corporate behavior — for example, requiring salient disclosure of sugar content, restricting advertising of ultra-processed food to children, or mandating automatic enrollment in employer pension schemes. Third, the behavioral framework does not preclude structural interventions; it identifies when structural interventions are necessary by revealing that nudges alone are insufficient. The problem is not behavioral economics as a discipline, but its selective application by governments seeking to avoid costly structural reform. The responsible response is to require BITs to report when structural interventions are what the evidence calls for.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 339,
+      "out_sha": "ecb57b22ffd6",
       "note": ""
     },
     {
@@ -2931,11 +2931,11 @@
       "en_title": "Chapter 19: Behavioral Policy Beyond the Nudge",
       "order": 236,
       "src_chars": 2196,
-      "status": "pending",
+      "status": "done",
       "src_sha": "69b7cc36712b",
       "src": "#### Think Deeper\n\n**Q1.** A rational agent model predicts that the form of taxation — whether income is taxed via withholding throughout the year or collected as a lump sum at year-end — should not affect behavior, since the after-tax income is identical. Yet research shows that large annual refunds are treated differently from equivalent monthly income. Does this finding argue for or against using the tax system as a savings mechanism? What are the tradeoffs?\n\n_Answer:_ The finding argues for using the tax system as a savings mechanism, at least for households with strong present bias and limited access to other commitment savings vehicles. The mental accounting effect means that refund income is more likely to be saved or spent on durables, and many households deliberately over-withhold precisely to create a forced annual savings event. For such households, the tax system provides a free commitment savings mechanism they value. The tradeoff is real: deliberate over-withholding means households forgo monthly cash flow and the interest it could earn, and may turn to expensive credit (payday loans, credit cards) during the year if they face unexpected expenses. The refund anticipation loan industry represents households paying a significant fee to access money weeks early — an inefficient equilibrium. A policy response that preserves the commitment savings benefit while addressing the liquidity cost might offer direct-deposit linkage to high-yield savings accounts at filing, reducing the need for anticipation loans. The deeper tension is that the same behavioral feature (treating the refund as a windfall) that makes it a useful savings mechanism also makes it attractive to financial intermediaries seeking to extract fees from low-income households. Behavioral policy must attend to both the benefit and the exploitation risk.\n\n**Q2.** The chapter argues that structural and behavioral interventions are complements, not substitutes. But in a world of limited government budgets and political capital, real tradeoffs exist. How should a policymaker decide when to invest in behavioral interventions versus pushing for structural change? What criteria would you apply?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 539,
+      "out_sha": "c253a43cb74c",
       "note": ""
     },
     {
