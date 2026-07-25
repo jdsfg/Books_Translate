@@ -1139,11 +1139,11 @@
       "en_title": "Chapter 9: Investing Fundamentals — What You're Actually Buying",
       "order": 87,
       "src_chars": 3128,
-      "status": "pending",
+      "status": "done",
       "src_sha": "80114b5d0db6",
       "src": "You've built the foundation: you understand the wealth equation, compound interest is on your side, you've automated your savings, and you're paying off debt. Now the savings you're accumulating need somewhere to grow. Welcome to investing.\n\nBut here's the thing about investing: most people start with the wrong question. They ask \"which stock should I buy?\" That's like asking \"which ingredient should I cook?\" before understanding what a kitchen is. Let's start with what you're actually buying when you invest.\n\n\n### 9.1 The Three Basic Asset Classes\n\nEvery investment in the world, no matter how complex or exotic, is ultimately built from three basic building blocks:\n\n**Stocks (Equities): You're Buying Ownership**\n\nWhen you buy a share of stock, you become a part-owner of a company. If you own 100 shares of a company with 10 million shares outstanding, you own 0.001% of that company — its buildings, its products, its profits, everything.\n\nHow you make money: Two ways. (1) The company grows and becomes more valuable, making your ownership share worth more (capital gains). (2) The company distributes some profits to owners (dividends). Over long periods, stocks have returned approximately 7-10% annually (including both gains and dividends).\n\nThe risk: Companies can lose value or go bankrupt. Your ownership stake can become worth less — or worthless. In any given year, the stock market can drop 20%, 30%, or even 50%.\n\nThe key insight: When you buy stock, you're betting that human enterprise will continue to create value. Over centuries, it has. That's not a guarantee — but it's a strong historical trend.\n\n**Bonds (Fixed Income): You're Making a Loan**\n\nWhen you buy a bond, you're lending money to a government or corporation. They promise to pay you regular interest and return your principal at a set date.\n\nHow you make money: The borrower pays you interest (called the \"coupon\"). When the bond matures, you get your principal back. Government bonds (especially US Treasury bonds) are among the safest investments in existence. Corporate bonds pay higher interest but carry more risk. Historical returns: approximately 3-5% annually.\n\nThe risk: The borrower could default (fail to pay). Interest rates could rise, making your lower-rate bond less valuable (though you still get full principal if you hold to maturity). Inflation could exceed your interest rate, eroding real value.\n\nThe key insight: Bonds are the \"stability\" component of a portfolio. They don't grow much, but they don't crash much either. They're the seatbelt to stocks' engine.\n\n**Real Estate: You're Buying Property**\n\nReal estate means owning physical property — land, buildings, or shares in property through Real Estate Investment Trusts (REITs). We'll cover this in depth in Chapter 13, but the basics: you make money through rental income and/or property appreciation. Historical returns: approximately 4-8% annually (varies enormously by location and type).\n\nThe risk: Property can lose value. Tenants can default. Maintenance costs can surprise you. Real estate is illiquid — you can't sell half a house when you need cash.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 949,
+      "out_sha": "e9b852766feb",
       "note": ""
     },
     {
@@ -1151,11 +1151,11 @@
       "en_title": "Chapter 9: Investing Fundamentals — What You're Actually Buying",
       "order": 88,
       "src_chars": 2347,
-      "status": "pending",
+      "status": "done",
       "src_sha": "114c28ece1f6",
       "src": "#### Definition: Diversification\n\nDiversification means spreading investments across many different assets, sectors, and types to reduce the impact of any single investment's failure on your overall portfolio.\n\nIn plain language, this means: don't put all your eggs in one basket. If you own stock in 500 different companies and one goes bankrupt, you lose 0.2% of your portfolio. If you own stock in only that one company, you lose everything. Diversification doesn't prevent losses — it prevents CATASTROPHIC losses. And it costs nothing. This is often called \"the only free lunch in investing.\"\n\n\n### 9.2 Risk and Return — The Inescapable Tradeoff\n\nIn Chapter 4, we established that risk and return are inseparable. Now let's see why this applies to specific investments:\n\nWhy do stocks return more than bonds? Because stocks are riskier. In any given year, stocks might drop 30% while bonds barely move. Investors demand higher EXPECTED returns to accept that risk. If stocks returned the same as bonds, nobody would accept the extra volatility.\n\nThis creates a spectrum:\n\nInvestment | Expected Annual Return | Volatility (Risk)  \n---|---|---  \nSavings Account | 0.5-2% | Essentially none  \nGovernment Bonds | 3-5% | Low  \nCorporate Bonds | 4-6% | Low-Moderate  \nDiversified Stock Index | 7-10% | High  \nIndividual Stocks | -100% to +1000% | Very High  \nSpeculative Assets | Unknown | Extreme  \n  \nNotice the pattern: as expected return increases, so does volatility. There is NO investment that offers high returns with low risk. If someone offers you one, recall Chapter 1's question: \"Who profits if I follow this advice?\"\n\n\n#### Common Misconception\n\n**\"Investing is gambling.\"** This is a dangerous oversimplification that keeps people in cash (losing to inflation) or pushes them toward actual gambling (speculative trading). Gambling is a zero-sum or negative-sum game — the house always wins in aggregate. Investing in a diversified stock market is a positive-sum game — companies create real value through innovation, production, and service. Over any 20-year period in US history, the stock market has ALWAYS produced positive returns. That's not gambling — that's participating in economic growth. Individual stock-picking IS closer to gambling for amateurs (Chapter 19). But diversified index investing is fundamentally different.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 791,
+      "out_sha": "eeb2732b583e",
       "note": ""
     },
     {
@@ -1163,11 +1163,11 @@
       "en_title": "Chapter 9: Investing Fundamentals — What You're Actually Buying",
       "order": 89,
       "src_chars": 2905,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e76ca5d10c2e",
       "src": "### 9.3 What Diversification Actually Does\n\nLet's make diversification concrete with an example.\n\nImagine two portfolios, both with 100,000 USD:\n\n**Portfolio A: Single Stock** All 100,000 USD in one company. If the company has a great year (+30%), your portfolio is 130,000 USD. If it has a terrible year (-40%), your portfolio is 60,000 USD. If it goes bankrupt, you have 0 USD.\n\n**Portfolio B: 500 Stocks (Index Fund)** 200 USD each in 500 different companies. If any single company goes bankrupt, you lose 200 USD (0.2%). If the overall market has a great year (+20%), your portfolio is 120,000 USD. If it has a terrible year (-20%), your portfolio is 80,000 USD.\n\nNotice what diversification does: it narrows the range of outcomes. Portfolio A could be anywhere from 0 USD to 130,000 USD+. Portfolio B will likely be between 80,000 USD and 120,000 USD. You give up the possibility of the single-stock home run, but you eliminate the possibility of the single-stock wipeout.\n\nAnd here's the crucial point: over long periods, the diversified portfolio produces returns COMPARABLE to the average individual stock — but with far less risk. You're not sacrificing return for safety; you're getting safety for free.\n\nThis is why diversification is called the only free lunch in investing. It reduces risk without proportionally reducing expected return. In the language of Chapter 4: it eliminates concentration risk (which you're not paid for) while preserving market risk (which you ARE paid for).\n\n**Decision Exercise: The Hot Tip**\n\nYour coworker tells you: \"Company XYZ is about to announce a breakthrough product. The stock will double. I'm putting 20,000 USD in.\" You have 20,000 USD to invest. What do you do?\n\nA) Follow the tip — put 20,000 USD in XYZ B) Put 20,000 USD in a diversified index fund C) Put 2,000 USD in XYZ and 18,000 USD in an index fund\n\nBefore reading on, choose.\n\n**Analysis:** Option A concentrates all your money in a single stock based on a tip from a non-expert. Problems: (1) If the \"tip\" is based on non-public information, trading on it is literally illegal (insider trading). (2) If it's based on public information or speculation, it's already priced into the stock. (3) Even if the product IS a breakthrough, the stock might not double (the market may have already anticipated it). (4) If your coworker is wrong, you could lose a significant portion of 20,000 USD.\n\nOption B is the simple, reliable choice. You give up the lottery ticket but gain certainty that you're participating in overall market growth.\n\nOption C is a reasonable compromise IF you treat the 2,000 USD as entertainment money you can afford to lose completely. It satisfies the \"action\" urge while keeping 90% of your money in a proven strategy. But be honest: if losing 2,000 USD would affect your finances or sleep, skip it.\n\nThe boring portfolio answer is always B. We'll build it in Chapter 10.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1072,
+      "out_sha": "4c1b74a4c855",
       "note": ""
     },
     {
@@ -1175,11 +1175,11 @@
       "en_title": "Chapter 9: Investing Fundamentals — What You're Actually Buying",
       "order": 90,
       "src_chars": 3067,
-      "status": "pending",
+      "status": "done",
       "src_sha": "31ffa6a534af",
       "src": "### 9.4 How Stock Prices Work\n\nUnderstanding why stock prices move helps you stay rational when they do.\n\nIn the short term, stock prices are driven by **sentiment** — fear, greed, news, rumors, tweets. This is why prices can move 5% in a day on no fundamental change. Short-term price movements are essentially unpredictable — no one consistently predicts them, despite what financial media implies.\n\nIn the long term, stock prices are driven by **fundamentals** — how much money the company actually earns. A company that consistently grows its profits will see its stock price grow over time. A company that consistently loses money will see its stock price decline.\n\nThis creates an important framework:\n\n* **Short-term fluctuations = noise.** Ignore them. They're driven by emotion, not value.\n* **Long-term trends = signal.** The overall stock market reflects overall economic growth, which has been positive for centuries.\n\nWhen financial news reports that \"the market dropped 2% today,\" that's noise. When someone says \"the stock market has returned an average of 7-10% annually over the past century,\" that's signal. The boring portfolio strategy is designed to capture the signal and ignore the noise.\n\n\n#### Definition: Market Efficiency (Simplified)\n\nThe Efficient Market Hypothesis suggests that stock prices reflect all available information at any given moment. If a company reports great earnings, the stock price adjusts almost instantly — by the time you hear the news, it's already priced in.\n\nIn plain language, this means: you can't consistently buy \"cheap\" stocks or sell \"expensive\" ones based on publicly available information, because the price already reflects that information. This is why actively trying to pick winning stocks is a losing game for amateurs — and, as we'll see in Chapter 10, for most professionals too.\n\n\n### 9.5 The Stock Market Always Goes Up (Over Long Enough Periods)\n\nThis statement requires nuance. In any given year, the stock market might go up or down. In any given 5-year period, it has occasionally produced negative returns. But in any 20-year period in recorded US market history, the stock market has ALWAYS produced positive returns.\n\nHere's the track record for the US stock market (S&P 500) over various periods:\n\nTime Period | Worst Return | Best Return | % of Periods Positive  \n---|---|---|---  \n1 year | -43% (2008) | +54% (1933) | ~73%  \n5 years (annualized) | -12% | +28% | ~88%  \n10 years (annualized) | -3% | +20% | ~95%  \n20 years (annualized) | +1% | +18% | 100%  \n  \nOver 20+ years, the market has never failed to produce a positive return. This is the foundation of long-term investing: time transforms the volatile stock market into a reliable wealth-building machine.\n\nBut \"always goes up over 20 years\" does NOT mean \"always goes up for the next 20 years.\" Past performance doesn't guarantee future results. However, for the stock market to produce negative returns over 20 years would require a fundamental collapse of the economy that would make stock returns the least of your worries.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1022,
+      "out_sha": "0322011dcb3a",
       "note": ""
     },
     {
@@ -1187,11 +1187,11 @@
       "en_title": "Chapter 9: Investing Fundamentals — What You're Actually Buying",
       "order": 91,
       "src_chars": 3195,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ac88a0a0e733",
       "src": "#### Common Misconception\n\n**\"You need to be smart to invest.\"** You need to be smart to TRADE (buy and sell individual stocks frequently). You need to be informed to SPECULATE (bet on specific companies or sectors). But to INVEST — to put money into a diversified portfolio and leave it there — you need almost nothing except patience. The entire strategy can be summarized: \"Buy a broad index fund every month. Don't sell. Wait.\" That's it. We'll formalize this in Chapters 10-11.\n\n\n### 9.6 Exercises\n\n\n#### Concept Check\n\n**Q1.** In one sentence each, explain the fundamental difference between buying a stock and buying a bond.\n\n**Answer:** Buying a stock makes you a partial OWNER of a company — you share in profits and losses, with no guaranteed return. Buying a bond makes you a LENDER to a company or government — you receive a promised interest rate and return of principal, with limited upside but also limited downside (unless the borrower defaults).\n\n**Q2.** Why do stocks historically return more than bonds? Use the risk-return framework from Chapter 4.\n\n**Answer:** Stocks are riskier than bonds — in any given year, they can lose 30-50% of their value, while high-quality bonds rarely lose more than 5-10%. Because investors demand compensation for accepting this higher risk, stocks must offer higher EXPECTED returns to attract buyers. If stocks and bonds offered the same return, rational investors would choose the safer bonds, driving stock prices down until the expected return rose enough to compensate for the risk. This is the risk premium — the extra return investors earn for accepting volatility. Over long periods, this premium has averaged 3-5% annually (stocks ~7-10% vs. bonds ~3-5%).\n\n**Q3.** A portfolio of 500 stocks has a company go bankrupt. What percentage of the portfolio is lost? How does this compare to holding only that one stock?\n\n**Answer:** In a portfolio of 500 equally-weighted stocks, one bankruptcy costs 1/500 = 0.2% of the portfolio. On a 100,000 USD portfolio, that's a 200 USD loss — noticeable but not damaging. If you held ONLY that stock, you'd lose 100% — 100,000 USD. Diversification reduced the impact by a factor of 500. This is concentration risk (Chapter 4) in action: the 500-stock portfolio has essentially zero concentration risk, while the single-stock portfolio has maximum concentration risk.\n\n**Q4.** Someone tells you: \"I found an investment that guarantees 15% annual returns with no risk.\" Using concepts from this chapter and Chapter 4, what's your response?\n\n**Answer:** This is almost certainly either fraud or a misunderstanding. From the risk-return framework: if an investment truly offered 15% guaranteed returns, every investor in the world would buy it, driving the price up until the return dropped to market levels. The fact that it's being offered to you (and not to Goldman Sachs) is a red flag. Guaranteed high returns with no risk violate the fundamental law of investing — they don't exist. This is the #1 warning sign of financial fraud, from Ponzi schemes to affinity fraud. The response from Chapter 1 applies: \"Who profits if I follow this advice?\" We'll cover specific fraud patterns in Chapter 15.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1069,
+      "out_sha": "3a39f1df699d",
       "note": ""
     },
     {
@@ -1199,11 +1199,11 @@
       "en_title": "Chapter 9: Investing Fundamentals — What You're Actually Buying",
       "order": 92,
       "src_chars": 3412,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d8ada319d93e",
       "src": "#### Application Problems\n\n**Q1.** You have 15,000 USD to invest for two different goals: 5,000 USD for a vacation in 18 months and 10,000 USD for retirement in 25 years. Using the risk-return framework and the time-horizon matching from Chapter 4, recommend an appropriate asset class for each goal and explain your reasoning.\n\nHint\n\nMatch the investment risk to the time horizon. Short-term money needs stability; long-term money needs growth.\n\n**Answer:** Vacation (5,000 USD, 18 months): High-yield savings account or short-term government bonds. Reasoning: 18 months is too short for stock market volatility — a 20% drop would reduce your vacation fund to 4,000 USD, potentially ruining the trip. The priority is capital preservation, not growth. You'll earn minimal interest (1-4%), but your 5,000 USD will be there when you need it. From Chapter 4's table: money needed within 1-5 years should have limited stock exposure.\n\nRetirement (10,000 USD, 25 years): Diversified stock index fund (80-90% stocks, 10-20% bonds). Reasoning: With 25 years, short-term volatility is irrelevant — every 20-year period in market history has been positive. The priority is growth to combat inflation. At 7% average return, 10,000 USD grows to approximately 54,000 USD in 25 years. In a savings account at 1%, it would be only 12,800 USD — barely keeping pace with inflation. From Chapter 4: for money needed in 10+ years, stock market volatility becomes irrelevant. Thread A check: this 10,000 USD invested at 30 vs 55 means the difference between 35 years and 10 years of compounding — illustrating why starting early matters.\n\n**Q2.** Your friend asks: \"Should I invest in real estate or the stock market?\" Using this chapter's framework, explain why the question itself is flawed, and what better question they should ask.\n\n**Answer:** The question is flawed because it treats real estate and stocks as mutually exclusive alternatives, when they serve different roles and can coexist. It also ignores the crucial variables: time horizon, liquidity needs, risk tolerance, amount of capital, and personal circumstances.\n\nBetter questions: \"What are my financial goals and when do I need the money?\" (This determines asset allocation.) \"How much liquidity do I need?\" (Real estate is illiquid; stocks can be sold in seconds.) \"How much capital do I have?\" (Real estate requires large down payments; stocks can be bought in 100 USD increments.) \"How much active management am I willing to do?\" (Rental property requires work; index funds are hands-off.)\n\nFor most people, especially those early in their investing journey, the stock market (through index funds) is the better starting point: lower barrier to entry, perfect liquidity, zero management, and instant diversification. Real estate can complement stocks later for those who have the capital and interest. We'll analyze this thoroughly in Chapter 13. Thread C preview: the boring portfolio (which is stock/bond based) will be our benchmark against which ALL other investments — including real estate — are compared.\n\n**Q3.** Explain, using a specific example, how diversification provides a \"free lunch\" — reducing risk without proportionally reducing expected returns. Connect your explanation to the concept of systematic vs. unsystematic risk.\n\nHint\n\nThink about what happens when you combine stocks from different industries. Some go up while others go down.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1114,
+      "out_sha": "58d13b121cc3",
       "note": ""
     },
     {
@@ -1211,11 +1211,11 @@
       "en_title": "Chapter 9: Investing Fundamentals — What You're Actually Buying",
       "order": 93,
       "src_chars": 1508,
-      "status": "pending",
+      "status": "done",
       "src_sha": "62034e5c0c00",
       "src": "**Answer:** Example: You invest 10,000 USD split between an airline stock and an oil company stock. When oil prices rise, the airline stock drops (higher fuel costs) but the oil stock rises (higher revenue). When oil prices fall, the reverse happens. Your portfolio stays relatively stable even as individual stocks swing.\n\nThis works because the two stocks have different (even opposite) risk profiles. By combining them, you've reduced the total portfolio volatility without reducing the expected return — because expected return is the average of both stocks, but the volatility partially cancels out.\n\nThe technical distinction: Unsystematic risk is specific to individual companies or industries (an airline's fuel cost, a tech company's product failure). This risk CAN be diversified away by holding many different stocks — and the market doesn't pay you for bearing it because it's avoidable. Systematic risk is market-wide (recessions, interest rate changes, geopolitics). This risk CANNOT be diversified away — it affects all stocks — and the market DOES pay you for bearing it (the equity risk premium).\n\nThe \"free lunch\": diversification eliminates unsystematic risk (which you weren't being paid for anyway) while preserving your exposure to systematic risk (which you ARE being paid for). You get the same expected return with less total risk. In practice, holding about 30-50 stocks captures most of the diversification benefit; holding 500+ (via an index fund) captures essentially all of it.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 490,
+      "out_sha": "c31b0589dd72",
       "note": ""
     },
     {
@@ -1223,11 +1223,11 @@
       "en_title": "Chapter 9: Investing Fundamentals — What You're Actually Buying",
       "order": 94,
       "src_chars": 2601,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f6aec1cb5612",
       "src": "#### Think Deeper\n\n**Q1.** The chapter states that over any 20-year period, the US stock market has always produced positive returns. But this is based on the US market specifically. Other countries' stock markets have sometimes failed to recover for longer periods (Japan's stock market peaked in 1989 and took over 30 years to return to that level). What does this mean for a US-centric investment strategy? Should you diversify internationally?\n\n**Discussion:** The Japan example is a powerful cautionary tale against home-country bias. An investor who put all their money in Japanese stocks in 1989 waited until 2024 to break even — 35 years of zero return. The US market has been the world's best performer in recent decades, but that wasn't always true (international markets outperformed in the 1970s and 2000s), and past outperformance doesn't guarantee future outperformance.\n\nThe case for international diversification is exactly the same as the case for diversification within a single market: you reduce concentration risk. Owning only US stocks concentrates your wealth in one country's economy, one country's currency, and one country's political/regulatory environment.\n\nThe boring portfolio (Thread C, Chapter 10) will include international stocks for exactly this reason: a three-fund portfolio of US stocks, international stocks, and bonds provides diversification across geographies, asset types, and risk profiles. You're not betting on America — you're betting on global economic growth.\n\n**Q2.** If the market is efficient (prices reflect all available information), how does anyone ever \"beat the market\"? And if some people DO beat it, doesn't that prove you should try?\n\n**Discussion:** Some people DO beat the market — but separating skill from luck is nearly impossible. With millions of investors, pure randomness guarantees that some will outperform for years, just as some coin-flippers will land 10 heads in a row. The question isn't \"do some people beat the market?\" (yes). It's \"can I identify IN ADVANCE who will beat the market?\" (almost certainly not). Studies consistently show that past performance doesn't predict future performance for fund managers. A manager who beat the market for 5 years is no more likely to beat it in year 6 than a random manager. Warren Buffett famously bet 1 million USD that a simple S&P 500 index fund would beat a collection of hedge funds over 10 years — and won decisively. The hedge funds had the best talent, best technology, and best information — and still lost to an index fund. This will be the core argument of Chapter 10.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 812,
+      "out_sha": "0e6e6ad8bf56",
       "note": ""
     },
     {
@@ -1235,11 +1235,11 @@
       "en_title": "Chapter 9: Investing Fundamentals — What You're Actually Buying",
       "order": 95,
       "src_chars": 924,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f1c810eb5afc",
       "src": "### Chapter Summary\n\nInvesting means buying ownership (stocks), making loans (bonds), or buying property (real estate). These three asset classes, and combinations of them, form the building blocks of all investment strategies. The risk-return tradeoff is inescapable: higher expected returns always come with higher risk, and no legitimate investment violates this principle.\n\nDiversification is the \"free lunch\" of investing — it reduces risk without proportionally reducing returns, by spreading money across many investments. The stock market, despite short-term volatility, has produced positive returns in every 20-year period in US history — making it a reliable wealth-building tool for patient investors.\n\nThread C status: we've introduced the concept of a simple, diversified portfolio. In Chapter 10, we'll formally construct it — and show why this \"boring\" approach outperforms most \"exciting\" alternatives.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 281,
+      "out_sha": "abfed9e7b472",
       "note": ""
     },
     {
