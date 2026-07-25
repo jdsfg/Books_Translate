@@ -147,7 +147,7 @@
       "src_sha": "032ffbf1532b",
       "src": "### 1.2 The Stomach: A Bag of Acid and Muscle\n\nAfter swallowing, food travels down the **esophagus** via rhythmic muscular contractions called **peristalsis** — think of squeezing toothpaste from the tube. These contractions are so powerful that you could swallow food standing on your head (though this is not recommended). Gravity is nice but not required.\n\nAt the bottom of the esophagus sits the **lower esophageal sphincter** — a ring of muscle that acts as a one-way valve. It opens to let food through, then closes to prevent stomach acid from splashing back up. When it doesn't close properly, you get acid reflux.\n\nInside the stomach, your meal encounters a surprisingly aggressive environment.\n\n**Stomach acid** — primarily hydrochloric acid (HCl) — has a pH of 1.5 to 3.5. For reference, battery acid has a pH of around 1, and lemon juice is about 2. Your stomach is nearly that acidic. The stomach wall protects itself from this acid with a thick layer of mucus; failure of this protection is one mechanism behind stomach ulcers.\n\nThis extreme acidity serves several purposes:\n\n  1. **Breaks chemical bonds** in food, particularly unfolding (denaturing) proteins so enzymes can access them.\n  2. **Kills pathogens** — most bacteria and viruses cannot survive stomach acid, which is why your stomach is your first line of defense against foodborne illness.\n  3. **Activates digestive enzymes** : The main stomach enzyme, **pepsin** , is secreted in an inactive form (pepsinogen) and only activates in the acidic environment.\n\nThe stomach also churns food through powerful muscular contractions, mixing it with acid and enzymes into a semi-liquid paste called **chyme**. This mechanical action completes the physical breakdown that teeth started.\n\nHow long does food spend in the stomach? It depends on what you ate:\n\n* A liquid meal: 30–60 minutes\n* A carbohydrate-rich meal: 1–2 hours\n* A mixed meal with fat and protein: 3–5 hours\n* A high-fat, high-protein meal: up to 5+ hours\n\nFat slows gastric emptying significantly — this is one reason fatty meals feel more satisfying and keep you fuller longer. (This physiological fact will become important in Chapter 4 when we examine why low-fat foods often failed to reduce caloric intake as expected.)\n\n\n#### Definition: Chyme\n\nChyme is the semi-liquid, partially digested food mass that leaves the stomach and enters the small intestine. It is acidic (pH ~2), thoroughly mixed, and reduced to small particles. The small intestine immediately begins neutralizing this acid with bicarbonate secreted by the pancreas.\n\n* * *\n",
       "out_chars": 961,
-      "out_sha": "e21f2a74aa8b",
+      "out_sha": "0c53d60339f9",
       "note": ""
     },
     {
@@ -155,11 +155,11 @@
       "en_title": "Chapter 1: The Digestive Journey — From Mouth to Absorption",
       "order": 5,
       "src_chars": 1429,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c2a46cd7d841",
       "src": "### 1.3 The Small Intestine: Where the Real Action Happens\n\nThe small intestine is misnamed. At roughly six to seven meters long in adults (about 20 feet), it is anything but small — it just has a smaller diameter than the large intestine. It is the most functionally sophisticated organ in your digestive tract, and nearly all nutrient absorption happens here.\n\nWhen chyme enters the small intestine, the body's digestive machinery kicks into high gear. Three organs contribute to this effort:\n\n**The pancreas** secretes both digestive enzymes (pancreatic amylase for carbohydrates, pancreatic lipase for fats, protease enzymes for proteins) and bicarbonate (to neutralize the acidic chyme). Without the pancreas, you cannot properly digest any of the three macronutrients.\n\n**The liver** produces **bile** — a greenish-yellow fluid stored in the gallbladder. Bile is released into the small intestine when fat is detected. Bile's job is **emulsification** : breaking fat into tiny droplets, vastly increasing the surface area available for lipase enzymes. Bile itself doesn't digest fat; it prepares fat for digestion. This distinction matters — people who have had their gallbladder removed can still digest fat, just more slowly and less efficiently.\n\n**The small intestine itself** produces its own enzymes embedded in the intestinal wall — including lactase (for lactose), sucrase (for sucrose), and maltase (for maltose).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 488,
+      "out_sha": "da7976027614",
       "note": ""
     },
     {
@@ -167,11 +167,11 @@
       "en_title": "Chapter 1: The Digestive Journey — From Mouth to Absorption",
       "order": 6,
       "src_chars": 3452,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9766197216be",
       "src": "#### Definition: Emulsification\n\nEmulsification is the process of dispersing fat droplets into a watery medium. Fat and water naturally separate (as in a salad dressing), but bile contains molecules that are attracted to both fat and water, acting as a bridge. This creates a stable suspension of tiny fat droplets that enzymes can access.\n\nIn plain language: bile is the biological equivalent of dish soap. It doesn't clean (break down) fat itself, but it disperses fat so the cleaning agents (lipase enzymes) can reach it.\n\nNow for the most remarkable feature of the small intestine: the **villi** and **microvilli**.\n\nThe inner lining of the small intestine is not flat. It is covered in finger-like projections called villi, and each villus is itself covered in even smaller projections called microvilli (collectively called the **brush border**). If you could unfold and flatten the small intestine's inner lining, its functional absorptive surface area would be approximately 30–40 square meters — roughly the size of a small studio apartment. (Older anatomy textbooks cited figures up to 250 m² based on projections of theoretical microvilli density; more recent direct measurement studies using MRI and mucosal surface analysis place the estimate substantially lower, though still remarkably large for an organ that fits inside the abdomen.)\n\nThis extraordinary surface area is the key to efficient absorption. Each villus contains:\n\n* **Blood capillaries** : absorb water-soluble nutrients (glucose, amino acids, water-soluble vitamins, minerals)\n* **Lacteals** : tiny lymph vessels that absorb fat-soluble nutrients (fatty acids, fat-soluble vitamins A, D, E, K)\n\nThis explains a crucial nutritional fact: **fat-soluble vitamins require dietary fat for absorption**. If you eat a fat-free salad with vitamin A–rich carrots, you absorb dramatically less vitamin A than if your salad had olive oil dressing. The fat triggers bile release, which creates the fatty micelle environment needed to absorb fat-soluble nutrients. This concept — that a nutrient's availability to your body depends on what you eat it with — is called **bioavailability**.\n\n\n#### Definition: Bioavailability\n\nBioavailability is the fraction of an ingested nutrient that is actually absorbed and available for use in the body. A food can contain a nutrient on a label while delivering much less than advertised to your cells, depending on the food matrix, what else you eat with it, and individual factors like gut health and enzyme production.\n\nIn plain language: the number on a nutrition label is what's in the food, not what gets into your body. Bioavailability is the gap between those two numbers.\n\nBioavailability varies enormously:\n\nNutrient | Food Source | Approximate Bioavailability  \n---|---|---  \nIron (heme) | Red meat | 15–35%  \nIron (non-heme) | Spinach | 1–7%  \nCalcium | Milk | ~30%  \nCalcium | Kale | ~40%  \nCalcium | Spinach | ~5% (oxalate binding)  \nVitamin C | Orange juice | >90%  \nBeta-carotene | Raw carrots | 10–28%  \nBeta-carotene | Cooked carrots with fat | 40–50%+  \n  \nNotice that spinach calcium is low because spinach contains **oxalates** — compounds that bind calcium in the gut, preventing absorption. Kale has higher bioavailable calcium despite appearing lower on a label, because kale has very low oxalate content. This is the kind of nuance that never appears on a nutrition label but matters enormously for real nutrition.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1327,
+      "out_sha": "8f8ec5d50e98",
       "note": ""
     },
     {
@@ -179,11 +179,11 @@
       "en_title": "Chapter 1: The Digestive Journey — From Mouth to Absorption",
       "order": 7,
       "src_chars": 2383,
-      "status": "pending",
+      "status": "done",
       "src_sha": "282b955a0ab0",
       "src": "### 1.4 The Large Intestine: Not Just a Waste Bin\n\nAfter six to seven meters of absorption, what remains of your meal enters the large intestine (colon). Most nutrients have already been absorbed. What's left is primarily water, electrolytes, and material the small intestine couldn't break down — primarily **dietary fiber**.\n\nThe large intestine has three main functions:\n\n**1\\. Water and electrolyte absorption:** By the time waste reaches the end of the colon, roughly 90–95% of the water has been reabsorbed. This is why diarrhea causes dehydration — when something speeds transit time, the colon doesn't have time to reclaim its water.\n\n**2\\. Fermentation by gut bacteria:** The large intestine houses roughly 38 trillion bacteria — approximately equal to the number of human cells in your entire body. These bacteria — your **gut microbiome** — feed on the fiber your digestive enzymes couldn't break down. Through fermentation, they produce **short-chain fatty acids (SCFAs)** : butyrate, propionate, and acetate. These are not waste products — they are fuel for the colon's own cells, and they have effects throughout the body, including on immune function and even brain chemistry. We will explore the microbiome in depth in Chapter 16.\n\n**3\\. Waste compaction and elimination:** What cannot be fermented is compacted into stool. Stool is approximately 75% water (when normal), with the remainder being bacterial cells (both dead and living), undigested fiber, shed intestinal cells, and small amounts of fat and protein.\n\n**Transit time** — the time from eating to elimination — varies enormously between individuals: anywhere from 12 to 72 hours. Fiber, hydration, and physical activity are the three biggest accelerators of transit time.\n\n\n#### Common Misconception\n\n**\"Toxins accumulate in the colon if bowel movements are infrequent.\"**\n\nThis is the scientific rationale behind \"detox\" diets and colon cleanses, and it is not supported by evidence. The colon does not absorb significant amounts of waste back into the bloodstream during normal transit times. Healthy people can have bowel movements ranging from three times per day to three times per week — all of these fall within the normal range. There is no scientific basis for the idea that a longer transit time poisons you. (We will examine the \"detox\" industry's claims in more detail in Chapter 19.)\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 798,
+      "out_sha": "b74386a7df8f",
       "note": ""
     },
     {
@@ -191,11 +191,11 @@
       "en_title": "Chapter 1: The Digestive Journey — From Mouth to Absorption",
       "order": 8,
       "src_chars": 2437,
-      "status": "pending",
+      "status": "done",
       "src_sha": "50d75df755dd",
       "src": "### 1.5 Putting the Journey Together: What This Means for How You Think About Food\n\nLet's return to your bowl of oatmeal. Here is what actually happened:\n\n**Mouth** : Your teeth broke the oats into smaller particles. Amylase began converting oat starch to shorter sugar chains. The almonds were crushed, releasing their cellular contents. Saliva began dissolving water-soluble flavor compounds.\n\n**Esophagus** : Peristalsis transported the chewed mass to the stomach in about 6–10 seconds.\n\n**Stomach** : Spent 2–4 hours mixing the food with acid and pepsin. Proteins in the almonds began unfolding. The honey's sugars were quickly passed through (simple sugars don't need much digestion). The fat in the almonds slowed gastric emptying, extending that satisfied feeling.\n\n**Small intestine (hours 2–5)** : Pancreatic enzymes finished breaking down starch into glucose, proteins into amino acids, fats into fatty acids and monoglycerides. Bile emulsified the almond fat. The villi absorbed glucose directly into blood capillaries (speeding toward your liver within minutes). Amino acids followed. Fatty acids entered the lymphatic system via lacteals, eventually joining the bloodstream. Blueberry antioxidants were absorbed. Fat-soluble vitamins from the almonds hitched a ride with the fat.\n\n**Large intestine (hours 4–24+)** : The oat fiber that escaped small intestine digestion fed your microbiome, which produced butyrate to nourish colon cells. Water was reclaimed. The remains, mostly fiber and bacteria, were compacted.\n\n**The result** : By early afternoon, the glucose from those oats was powering your neurons. The leucine from the almond protein was stimulating muscle protein synthesis. The oleic acid from almond fat was incorporated into cell membranes. The folate from the blueberries was helping copy DNA in your rapidly dividing gut cells.\n\nThis is what eating actually is — not a choice between \"good\" and \"bad\" foods, but a complex negotiation between what you put in your mouth and what your body can extract, absorb, and use.\n\n**Thread 3 note** : This is where the energy balance story begins. Calories are not a fixed property of food — they are an estimate of how much energy a food _could_ provide under ideal conditions. Bioavailability, food processing, cooking method, and gut microbiome composition all affect how many calories your body actually extracts. \"Calories in\" is not as simple as reading a label.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 771,
+      "out_sha": "7bf90bda7a1f",
       "note": ""
     },
     {
@@ -203,11 +203,11 @@
       "en_title": "Chapter 1: The Digestive Journey — From Mouth to Absorption",
       "order": 9,
       "src_chars": 1903,
-      "status": "pending",
+      "status": "done",
       "src_sha": "359a2070590c",
       "src": "### 1.6 What This Means for Your Plate\n\nThe digestive journey has several practical implications worth carrying into every food decision you make:\n\n**1\\. Eat slowly and chew thoroughly.** Mechanical digestion in the mouth genuinely matters. Poorly chewed food is less completely digested. Eating slowly also gives your brain time to register fullness signals — it takes about 20 minutes for satiety hormones to signal your brain.\n\n**2\\. Fat improves absorption of fat-soluble nutrients.** Adding olive oil to a salad with vegetables, or eating nuts alongside a meal, genuinely improves your absorption of vitamins A, D, E, and K. \"Fat-free\" dressings may be counterproductive if you're eating salad for its micronutrients.\n\n**3\\. Bioavailability matters, not just label numbers.** Plant-based iron (non-heme) is absorbed at a fraction of the rate of meat iron. Eating a vitamin C–rich food alongside plant iron dramatically improves absorption (vitamin C reduces iron, making it more absorbable). Oxalate-rich vegetables (spinach, beet greens) bind calcium — you're not getting as much calcium from those spinach smoothies as the label suggests.\n\n**4\\. Your gut bacteria are part of your nutrition.** The fiber in your oatmeal isn't \"empty calories\" — it feeds trillions of organisms producing compounds that influence your metabolism, immune system, and even mood. Treating fiber as merely \"filling\" misses its most important functions.\n\n**5\\. The colon cleanse industry has no scientific support.** Your digestive system is a remarkably efficient self-cleaning machine. \"Detox\" products do not accelerate or improve this process.\n\n> **Reflection prompt:** Think about a typical meal you eat regularly. Can you trace it through the five stages of digestion described in this chapter? Where does most of the absorption happen? Does knowing this change how you think about that meal?\n\n\n### 1.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 637,
+      "out_sha": "4c7af0f7d0d9",
       "note": ""
     },
     {
