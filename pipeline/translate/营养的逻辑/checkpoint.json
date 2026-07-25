@@ -803,11 +803,11 @@
       "en_title": "Chapter 5: Energy Balance and Micronutrients — The Complete Fuel Picture",
       "order": 59,
       "src_chars": 2611,
-      "status": "pending",
+      "status": "done",
       "src_sha": "5d0c22cb73ac",
       "src": "### 5.3 The Hormones of Hunger: Leptin and Ghrelin\n\nTwo hormones do much of the regulatory work for long-term energy balance:\n\n**Leptin** is a hormone produced by adipose (fat) cells. More body fat → more leptin secreted → brain reduces hunger and increases energy expenditure (through the hypothalamus). Less body fat → less leptin → brain increases hunger and reduces energy expenditure. Leptin is the body's \"how much fat do I have?\" signal.\n\nThe complication: **leptin resistance**. In obese individuals, leptin levels are often very high — but the brain has become desensitized to leptin's signal, similar to insulin resistance. High leptin, brain can't hear it, hunger persists. The cause of leptin resistance is an active area of research; chronic inflammation, sleep deprivation, and highly processed food consumption have all been implicated.\n\n**Ghrelin** is a hormone produced primarily by the stomach. It rises before meals (you feel hungry) and falls after eating. But ghrelin levels also rise in response to caloric restriction — meaning that when you diet, your stomach is literally secreting more of a hunger hormone, pushing you back toward eating.\n\nAfter weight loss, ghrelin remains chronically elevated above pre-diet levels in most studies. This is one biological explanation for why \"diets don't work\" — the biology of hunger is actively fighting back.\n\nThis is not a reason to despair. It is a reason to understand that successful long-term weight management requires working with these hormonal systems, not just through willpower. Foods that suppress ghrelin effectively (protein-rich, fiber-rich foods) and strategies that maintain leptin sensitivity (adequate sleep, stress management, avoiding extreme caloric restriction) address the underlying hormonal reality.\n\n**Thread 3 (Energy Balance) — First Full Model:**\n\nThe complete picture, as we now understand it: energy balance is real and thermodynamically constrained, but:\n\n  1. \"Calories in\" varies with food processing, cooking, and gut microbiome\n  2. \"Calories out\" varies with lean body mass, age, thyroid function, and actively adjusts downward during caloric restriction (adaptive thermogenesis)\n  3. Hunger hormones (ghrelin) rise during restriction and remain elevated, fighting the diet\n  4. Satiety hormones (leptin) can become resistant, losing their regulatory effect\n  5. NEAT can unconsciously decrease, reducing total expenditure without conscious awareness\n\nThis is why two people eating \"the same\" calories can have different outcomes. And why willpower alone is not a reliable weight management strategy.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 831,
+      "out_sha": "9062a24cfbf2",
       "note": ""
     },
     {
@@ -815,11 +815,11 @@
       "en_title": "Chapter 5: Energy Balance and Micronutrients — The Complete Fuel Picture",
       "order": 60,
       "src_chars": 1065,
-      "status": "pending",
+      "status": "done",
       "src_sha": "de03bbcce6f3",
       "src": "### 5.4 Micronutrients: The Hidden Infrastructure\n\nWe have been discussing macronutrients — carbohydrate, protein, and fat — in terms of energy and structure. Now we turn to a different category: **micronutrients** , which provide neither energy nor structural mass but are essential for virtually every metabolic process.\n\nA common misconception is that micronutrients are optional \"extras\" — the reason to eat vegetables. In reality, without micronutrients, macronutrient metabolism fails. Consider: Vitamin B1 (thiamine) is required for the enzyme pyruvate dehydrogenase, which sits at the critical gateway between glycolysis and the Krebs cycle. Without thiamine, you cannot effectively derive energy from carbohydrates — the biochemical machinery locks up. This is why severe thiamine deficiency (beriberi) causes neurological damage and cardiac failure even in people eating adequate calories.\n\nMicronutrients are divided into:\n\n* **Vitamins** : Organic compounds required in small amounts\n* **Minerals** : Inorganic elements required in small amounts\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 373,
+      "out_sha": "4701016c60a5",
       "note": ""
     },
     {
@@ -827,11 +827,11 @@
       "en_title": "Chapter 5: Energy Balance and Micronutrients — The Complete Fuel Picture",
       "order": 61,
       "src_chars": 3347,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f2ca1a6105a5",
       "src": "### 5.5 The Fat-Soluble Vitamins: A, D, E, K\n\nAs established in Chapter 4, fat-soluble vitamins require dietary fat for absorption and can accumulate in adipose tissue and the liver. This storage capacity means fat-soluble vitamins can both build to deficiency more slowly (reserves buffer short-term low intake) and accumulate to toxicity if supplemented excessively.\n\n**Vitamin A (Retinol and Carotenoids):**\n\nFunctions: Vision (component of rhodopsin, the retinal photoreceptor), immune function, cell differentiation and growth, reproduction.\n\nSources: Retinol (preformed, bioavailable) in liver, eggs, dairy, fatty fish. Carotenoids (beta-carotene, provitamin A, converted to retinol in the body) in orange-yellow vegetables (carrots, sweet potato, squash) and dark leafy greens.\n\nDeficiency: The leading cause of preventable blindness worldwide. Night blindness is the first sign; severe deficiency causes irreversible vision loss. Immune suppression is significant — Vitamin A deficiency greatly increases mortality from infections in children in developing countries.\n\nToxicity: Preformed retinol (from supplements or liver consumption) can accumulate to toxic levels: liver damage, bone fractures, birth defects (particularly dangerous in pregnancy). Carotenoids do not cause toxicity — the body regulates conversion to retinol. This distinction is important for supplementation decisions.\n\n* * *\n\n**Vitamin D (Calciferol):**\n\nVitamin D is exceptional: it is both a vitamin obtained from diet and a hormone synthesized in the skin via sunlight. When UV-B radiation strikes 7-dehydrocholesterol in the skin, it is converted to cholecalciferol (D3), then hydroxylated in the liver and kidney to the active form, calcitriol.\n\nFunctions: Calcium absorption (critical for bone density), immune function (D receptors on virtually every immune cell type), cell proliferation regulation, possibly cardiovascular health.\n\nSources: Dietary — fatty fish, egg yolks, fortified dairy, fortified cereals. Synthesis — sunlight (UV-B, highly variable with latitude, skin tone, season, sunscreen use, clothing).\n\nDeficiency: Rickets (children) and osteomalacia (adults) — soft, deformed bones from inadequate calcium absorption. Suboptimal levels associated with increased cancer risk, autoimmune disease risk, and all-cause mortality in many prospective studies (though causal direction is debated).\n\n**Vitamin D is the one supplement with particularly strong evidence for widespread use.** In northern latitudes (above approximately 35°N), winter sunlight cannot produce adequate D3 even with significant sun exposure. Dark-skinned individuals have lower synthesis rates for any given sun exposure. Older adults have reduced synthesis capacity. The prevalence of low serum 25-hydroxyvitamin D is very high — estimates of 40–70% of the US population having suboptimal levels (below 20ng/mL). Supplementation with 1000–2000 IU daily is generally considered safe and appropriate for most adults not in sun-rich environments. Specific dose should be guided by measured serum levels.\n\n* * *\n\n**Vitamin E (Tocopherols):**\n\nFunctions: Antioxidant in cell membranes (particularly protecting polyunsaturated fatty acids from oxidation), immune function, gene expression.\n\nSources: Nuts and seeds (almonds, sunflower seeds), vegetable oils, avocado, leafy greens.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1096,
+      "out_sha": "7798839680c5",
       "note": ""
     },
     {
@@ -839,11 +839,11 @@
       "en_title": "Chapter 5: Energy Balance and Micronutrients — The Complete Fuel Picture",
       "order": 62,
       "src_chars": 1093,
-      "status": "pending",
+      "status": "done",
       "src_sha": "6a1785f9c683",
       "src": "Deficiency: Rare in healthy individuals. Causes neurological damage (ataxia) and hemolytic anemia. Usually only seen in fat malabsorption syndromes or rare genetic defects.\n\n**The antioxidant supplement story:** Vitamin E supplements at high doses do not prevent cardiovascular disease or cancer and in some studies increase risk. This is an important lesson about supplementing a nutrient beyond what food provides (discussed further in Chapter 19).\n\n* * *\n\n**Vitamin K (Phylloquinone, K1; Menaquinones, K2):**\n\nFunctions: Blood clotting (required for synthesis of clotting factors II, VII, IX, X) and bone metabolism (required for osteocalcin activation). There is growing evidence that K2 specifically is important for directing calcium to bone rather than blood vessels.\n\nSources: K1 — dark leafy greens (kale, spinach, broccoli). K2 — fermented foods (natto is extremely high; some cheese), meat, egg yolk.\n\nDeficiency: Rare in adults; newborns are at risk (low transfer across placenta, low levels in breast milk) which is why vitamin K injections at birth are standard practice.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 366,
+      "out_sha": "c8410cef9f61",
       "note": ""
     },
     {
@@ -851,11 +851,11 @@
       "en_title": "Chapter 5: Energy Balance and Micronutrients — The Complete Fuel Picture",
       "order": 63,
       "src_chars": 3118,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d28cd266bb2a",
       "src": "### 5.6 The Water-Soluble Vitamins: B Complex and C\n\nWater-soluble vitamins are not stored in the body (with the important exception of B12, which is stored in the liver for several years). Excess is excreted in urine. This makes deficiency more responsive to short-term dietary change but also means toxicity from food is generally not a concern.\n\n**The B Vitamins:** There are 8 B vitamins, all serving as coenzymes (helper molecules that enable enzymes to function).\n\nVitamin | Key Function | Deficiency Disease / Effect  \n---|---|---  \nB1 (Thiamine) | Energy metabolism (carbohydrate) | Beriberi (neurological/cardiac)  \nB2 (Riboflavin) | Electron transport chain | Ariboflavinosis (mouth sores, dermatitis)  \nB3 (Niacin) | Electron transport chain (NAD/NADH) | Pellagra (dermatitis, diarrhea, dementia)  \nB5 (Pantothenic acid) | Coenzyme A (fatty acid metabolism) | Rare; fatigue, paresthesia  \nB6 (Pyridoxine) | Amino acid metabolism, neurotransmitters | Peripheral neuropathy, dermatitis  \nB7 (Biotin) | Fat and carbohydrate metabolism | Rare; hair loss, dermatitis  \nB9 (Folate) | DNA synthesis, cell division | Neural tube defects (fetus), megaloblastic anemia  \nB12 (Cobalamin) | DNA synthesis, myelin synthesis | Megaloblastic anemia, neurological damage  \n  \n**Folate (B9)** deserves special mention because of its critical role in pregnancy. Folate is required for the synthesis of purines and pyrimidines — the building blocks of DNA. During the first weeks of pregnancy (often before a woman knows she is pregnant), the neural tube forms. Insufficient folate impairs neural tube closure, causing severe birth defects (spina bifida, anencephaly). This is why folate supplementation (400–800 mcg/day) before and during early pregnancy is one of the most robustly evidence-based nutritional interventions in medicine.\n\n**Vitamin B12** also deserves attention: it is the only vitamin found almost exclusively in animal products. Strict vegans who do not supplement or eat fortified foods will develop B12 deficiency over time (typically 3–5 years, as liver stores are substantial). B12 deficiency causes megaloblastic anemia and, critically, irreversible neurological damage (subacute combined degeneration of the spinal cord) if untreated. B12 supplementation or regular consumption of B12-fortified foods is non-negotiable for vegans.\n\n**Vitamin C (Ascorbic acid):**\n\nFunctions: Antioxidant; collagen synthesis (required for the hydroxylation of proline in collagen — this is why vitamin C deficiency causes scurvy, characterized by collapsing connective tissue); immune function; iron absorption (reduces ferric iron to the more absorbable ferrous form).\n\nSources: Fresh fruits (citrus, berries, kiwi, papaya) and vegetables (peppers, broccoli, Brussels sprouts). Vitamin C is destroyed by heat and oxidation — stored vegetables lose C over time; cooking further reduces content.\n\nDeficiency: Scurvy — historically a disease of sailors and others deprived of fresh produce for extended periods. Bleeding gums, poor wound healing, joint pain, and eventually death. Now rare in developed countries.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1045,
+      "out_sha": "38be4cfccd0c",
       "note": ""
     },
     {
@@ -863,11 +863,11 @@
       "en_title": "Chapter 5: Energy Balance and Micronutrients — The Complete Fuel Picture",
       "order": 64,
       "src_chars": 2946,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e8829614a6d9",
       "src": "### 5.7 Key Minerals: Iron, Calcium, Zinc, Magnesium\n\n**Iron:**\n\nFunctions: Component of hemoglobin (oxygen transport) and myoglobin (oxygen storage in muscle); component of many enzymes in the electron transport chain.\n\nSources: Heme iron (highly bioavailable, ~15–35% absorbed) in red meat, fish, poultry. Non-heme iron (less bioavailable, ~1–15% absorbed) in legumes, dark leafy greens, fortified grains.\n\nAt-risk populations: Premenopausal women (menstruation causes significant iron loss), pregnant women, infants and young children (rapid growth), vegans and vegetarians (only non-heme sources), distance runners (foot-strike hemolysis).\n\nEnhancers of non-heme iron absorption: Vitamin C, meat/fish/poultry (the \"meat factor\"). Inhibitors: Phytates (in whole grains and legumes), tannins (in tea and coffee), calcium.\n\nIron overload (hemochromatosis) is also a real concern — iron is stored and can accumulate. This is why iron supplementation without confirmed deficiency is not recommended.\n\n**Calcium:**\n\nFunctions: Bone and tooth mineralization (99% of body calcium is in bones and teeth); also essential for muscle contraction (including heart muscle), nerve transmission, blood clotting, and enzyme activation.\n\nSources: Dairy products (milk, yogurt, cheese — highest bioavailability ~30%); certain plant sources (kale, bok choy — good bioavailability ~40%; fortified plant milks; sardines with bones); small amounts in many other foods.\n\nHigh-bioavailability plant sources vs. low: Kale > broccoli > bok choy >> spinach, Swiss chard (high oxalate).\n\nDeficiency: Long-term inadequate calcium intake causes osteoporosis (bone density loss) and increased fracture risk. Acute low blood calcium (hypocalcemia) causes muscle cramping and tetany.\n\n**Zinc:**\n\nFunctions: Catalytic role in over 300 enzymes; immune function (zinc deficiency impairs T cell and B cell function); protein synthesis; wound healing; taste and smell (zinc deficiency causes anosmia/hypogeusia); DNA synthesis.\n\nSources: Oysters (dramatically highest), red meat, poultry, legumes, nuts, seeds, whole grains.\n\nPlant zinc has lower bioavailability due to phytates. Soaking, sprouting, or fermenting legumes and grains reduces phytate content and improves zinc absorption.\n\nAt-risk: Vegans, people with GI malabsorption disorders, alcoholics (alcohol increases zinc excretion), older adults.\n\n**Magnesium:**\n\nFunctions: Cofactor for over 300 enzymatic reactions including ATP synthesis, DNA replication, protein synthesis, and muscle and nerve function. Also important for glucose metabolism (magnesium deficiency impairs insulin signaling).\n\nSources: Nuts and seeds (pumpkin seeds, almonds), whole grains, leafy greens, legumes, dark chocolate.\n\nDeficiency: Common but often subclinical. Associated with increased risk of type 2 diabetes, hypertension, migraine, and muscle cramps. Adequate magnesium intake is often neglected in discussions of diet quality.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 999,
+      "out_sha": "d95f5cfc38ee",
       "note": ""
     },
     {
