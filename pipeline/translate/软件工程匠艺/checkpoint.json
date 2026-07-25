@@ -2043,11 +2043,11 @@
       "en_title": "Chapter 12: Patterns That Stayed Useful",
       "order": 161,
       "src_chars": 711,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4f79133b87fb",
       "src": "* **Command + Queue** is the canonical async-jobs pattern. The command is the work-unit; the queue is the transport; together they make the action transportable.\n* **Command + Flag** is the conditional-execution pattern. The flag chooses _which_ command to execute; the command does the work.\n* **Flag + Queue** alone is the gradual-rollout pattern (Chapter 11); flags control which percentage of requests go through which path.\n\nThe three combined are the 2026 background-job-with-rollout pattern: commands represent units of work; queues transport them; flags choose which version of the work to run for a given unit. Background job frameworks like Sidekiq with its versioning support implement exactly this.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 251,
+      "out_sha": "575bc8e220e1",
       "note": ""
     },
     {
@@ -2055,11 +2055,11 @@
       "en_title": "Chapter 12: Patterns That Stayed Useful",
       "order": 162,
       "src_chars": 3173,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d6ae3159f7a9",
       "src": "#### Application Problems\n\n**Q5.** Identify a place in your codebase where a Strategy or Adapter would clarify the design. Implement it. Compare the before and after for readability and testability.\n\nHint\n\nLook for a 5+ branch conditional or a vendor SDK called directly from business logic.\n\n**Answer:** This is an open exercise. A common Strategy candidate: a discount calculation with a 5-case conditional on customer tier. Refactor to a strategy registry; each tier's discount logic is in its own class; the dispatch is a dictionary lookup. The before is one function with 30 lines of conditional; the after is one dispatch class plus five small strategy classes, each independently testable.\n\nA common Adapter candidate: a vendor SDK call (Stripe, Twilio, SendGrid) appearing inline in business logic. Wrap the SDK in an adapter exposing the application's interface; replace the inline call with the adapter call. The business logic is now testable without the SDK; switching vendors is a constructor change.\n\nIn both cases, the upfront cost is real (more files, more classes); the payoff is in the second usage and beyond.\n\n**Q6.** Add three Decorators to a function in your codebase: one for logging, one for retries, one for caching. Compose them in different orders and observe the behavior.\n\nHint\n\nOrder matters: outer decorators see fewer calls than inner ones.\n\n**Answer:** This is an open exercise. With three decorators on a function `f`:\n\n* **Cache outermost, retry middle, log inner** : cache hits never trigger retry or log; misses do retry and log. This is the usual production composition.\n* **Log outermost, retry middle, cache inner** : every call is logged once (good for visibility); retries cache on success; cache hits skip the next call.\n* **Retry outermost, log middle, cache inner** : retries see multiple log entries (one per attempt) and multiple cache lookups. Useful for diagnosing the retry behavior.\n\nThe exercise teaches the order-sensitivity: decorators are not commutative. The team should agree on a standard order for production usage and document it.\n\n**Q7.** Use an AI agent to refactor a piece of code into a pattern (Strategy, Adapter, or Observer). Review the result. Did the agent choose the right pattern? Did it apply it well? Did it over-apply?\n\nHint\n\nThe agent's pattern choices reflect its training data; LLMs in 2026 lean toward over-application.\n\n**Answer:** This is an open exercise. Common findings:\n\n* The agent applied the pattern but introduced extra layers (a factory, a registry, a builder) that the human would not have added. Strip the extras.\n* The agent applied the pattern correctly but named the classes generically (`ConcreteStrategyA`, `ConcreteStrategyB`). Rename in domain terms.\n* The agent applied a different pattern than requested (Observer instead of Strategy) because it interpreted the problem differently. Discuss the interpretation; choose the appropriate pattern; reapply.\n\nThe lesson: patterns are vocabulary. The agent knows the vocabulary but does not have the context that makes one pattern more appropriate than another for a specific codebase. The human's judgment is the differentiator.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1187,
+      "out_sha": "8258c96d1b11",
       "note": ""
     },
     {
@@ -2067,11 +2067,11 @@
       "en_title": "Chapter 12: Patterns That Stayed Useful",
       "order": 163,
       "src_chars": 2802,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e7ce6a52d4ce",
       "src": "#### Think Deeper\n\n**Q8.** Argue: \"Patterns are vocabulary for design conversation; they justify themselves through faster team communication, not through code.\" Counter-argue: \"Patterns introduce overhead in code and should be applied sparingly; their conversational value is overstated.\"\n\n**Discussion:** For: §12.8 argued that the conversational value is real and measurable. A team with shared pattern vocabulary discusses designs faster and more precisely. The code overhead of applying patterns is often small (a few extra classes), and the overhead is paid once per application while the conversational benefit accrues continuously.\n\nAgainst: in practice, many teams have _partial_ knowledge of patterns. Some engineers know them; others do not. The conversation that uses pattern names becomes alienating for the engineers who do not know them. The benefit is real but unevenly distributed, and the teams that _over_ -use pattern names create a dialect that excludes newer engineers.\n\nThe synthesis: patterns are valuable vocabulary _when shared by the whole team_. The investment should be in _team-wide_ pattern literacy (workshops, code reviews that name patterns, onboarding that covers the canonical set), not in a few engineers using pattern names to sound sophisticated. The vocabulary is a multiplier only when distributed; concentrated in a few mouths, it is a barrier.\n\n**Q9.** Trace the relationship between the six patterns of this chapter and the twelve refactorings of Chapter 9. Which refactorings tend to produce which patterns?\n\n**Discussion:**\n\n* **Replace Conditional with Polymorphism (Chapter 9, §9.5)** is the refactoring that often produces **Strategy (§12.1)** : the conditional is replaced by a family of classes implementing a common interface.\n* **Extract Class (Chapter 9, §9.7)** can produce **Adapter (§12.2)** when the extracted class wraps an external vendor SDK, or **Strategy** when the extracted class encapsulates one of a family of algorithms.\n* **Replace Inheritance with Composition (Chapter 9, §9.8)** can produce **Decorator (§12.3)** when the composition is wrapping for cross-cutting concerns.\n* **Combine Functions into Class (Chapter 9, §9.11)** can produce **Iterator (§12.5)** when the combined functions traverse a collection, or **Command (§12.6)** when they represent an action.\n* **Decompose Conditional (Chapter 9, §9.12)** can produce **Strategy** when the decomposition reveals a family of behaviors.\n\nThe pattern is: _refactorings are the moves; patterns are the destinations_. The twelve refactorings of Chapter 9 are the mechanical tools; the patterns of this chapter and the next are the shapes that the tools produce. An engineer who knows both has the mechanics (refactorings) and the vocabulary (patterns) to design with confidence.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 944,
+      "out_sha": "9dca556158b0",
       "note": ""
     },
     {
@@ -2079,11 +2079,11 @@
       "en_title": "Chapter 12: Patterns That Stayed Useful",
       "order": 164,
       "src_chars": 2540,
-      "status": "pending",
+      "status": "done",
       "src_sha": "10218bbc684d",
       "src": "### Chapter Summary\n\nSix patterns from the Gang of Four (Strategy §12.1, Adapter §12.2, Decorator §12.3, Observer §12.4, Iterator §12.5, Command §12.6) survived three decades of language evolution because each encodes a design move that recurs across languages and problem domains. The Java-1990s implementations are dated; the moves are not.\n\nEach pattern has signals that trigger it and counter-signals that warn against application. Strategy fits families of algorithms with runtime dispatch; Adapter fits external-system integration with vendor swapping; Decorator fits cross-cutting concerns that combine; Observer fits multi-reactor publish-subscribe; Iterator fits collection traversal independent of structure; Command fits actions-as-data for queueing, logging, and undoing. The patterns can over-apply; the discipline is to recognize the signals before applying.\n\nThe AI-Layer (§12.7) is that LLMs reach for patterns from their training data; they reach well for Strategy, Adapter, Iterator, and Command; they over-apply Strategy to small conditionals and Decorator to one-off concerns. The human's job is to recognize the signal before accepting the AI's pattern; without the vocabulary, the engineer accepts blindly.\n\nPatterns as vocabulary (§12.8) is the deepest argument: the patterns enable fast, precise design conversation among engineers who share the vocabulary. The investment in learning is recovered over every subsequent design discussion.\n\nChapter 13 covers the patterns that aged badly: Singleton replaced by dependency injection, Visitor replaced by sum types, Abstract Factory Factory replaced by nothing because it never worked. The chapter addresses Thread C lie #2 (over-abstraction) directly: LLMs sometimes propose these patterns; the engineer who knows why they aged badly can decline the proposal.\n\n\n#### Three Takeaways\n\n  1. **Refuse to apply a pattern until you have a second concrete case.** Strategy for one conditional is pattern-tax; Strategy for three is design. Wait for the second case; let the pattern emerge from demand, not anticipation.\n  2. **Use pattern names in design conversation, not in code comments.** \"Strategy on the tier\" in a Slack thread saves five minutes per stakeholder. `# This is the Strategy pattern` above a class adds noise; the code shape already says it.\n  3. **When the agent proposes a pattern, ask for the _signal_ that justifies it.** \"Why Strategy here? What is the second case?\" If the agent cannot answer, simplify the proposal back to the flat alternative.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1050,
+      "out_sha": "417cb01b43f4",
       "note": ""
     },
     {
