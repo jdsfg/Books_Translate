@@ -647,11 +647,11 @@
       "en_title": "Chapter 4: Fat — The Most Misunderstood Macronutrient",
       "order": 46,
       "src_chars": 1974,
-      "status": "pending",
+      "status": "done",
       "src_sha": "51648d14cdce",
       "src": "### 4.3 Essential Fatty Acids: What Your Body Cannot Make\n\nLike essential amino acids, two fatty acids cannot be synthesized by the human body and must be obtained from diet:\n\n**Linoleic acid** (omega-6, abbreviated LA): A polyunsaturated fat found in most vegetable oils, nuts, and seeds. The parent omega-6 fatty acid.\n\n**Alpha-linolenic acid** (omega-3, abbreviated ALA): A polyunsaturated fat found in flaxseeds, walnuts, chia seeds, hemp seeds, and in small amounts in leafy greens. The parent omega-3 fatty acid.\n\nFrom these essential fatty acids, the body can (inefficiently) synthesize longer-chain derivatives:\n\nFrom ALA (omega-3): → **EPA** (eicosapentaenoic acid) → **DHA** (docosahexaenoic acid) From LA (omega-6): → **Arachidonic acid (AA)**\n\nEPA and DHA are crucial for health and are found preformed in fatty fish and seafood. The conversion of ALA to EPA and DHA in the body is inefficient (approximately 5–15% for EPA and <1% for DHA), which is why people who do not eat fish may need to obtain EPA and DHA from algae-based supplements.\n\n**Why omega-3 to omega-6 ratio matters:**\n\nTraditional human diets contained omega-6 to omega-3 ratios of approximately 1:1 to 4:1. Modern Western diets, dominated by vegetable oils (corn, soybean, sunflower) and processed foods, have shifted this ratio to approximately 15:1 to 20:1.\n\nThis matters because omega-6 and omega-3 fatty acids compete for the same metabolic enzymes (delta-6 desaturase) and produce opposing signaling molecules — omega-6 fatty acids tend to produce pro-inflammatory eicosanoids, while omega-3 fatty acids produce anti-inflammatory compounds. This biochemical competition means that excessive omega-6 intake can actually impair the conversion of ALA to EPA and DHA.\n\nThe evidence that correcting this imbalance (by increasing omega-3 intake) reduces cardiovascular disease risk is moderate but reasonably consistent, particularly for EPA/DHA supplementation in high-risk individuals.\n\n* * *\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 905,
+      "out_sha": "27d53930d322",
       "note": ""
     },
     {
@@ -659,11 +659,11 @@
       "en_title": "Chapter 4: Fat — The Most Misunderstood Macronutrient",
       "order": 47,
       "src_chars": 2805,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1457795fded0",
       "src": "### 4.4 Fat's Roles in the Body: Why We Need It\n\nFat often gets reduced to \"stored energy,\" but its functions are diverse and essential:\n\n**Energy storage.** Fat (primarily in adipose tissue) is the body's primary long-term energy reserve. A 70kg person with 20% body fat stores approximately 112,000 calories as fat — enough to fuel weeks of metabolic activity. Compared to carbohydrates (approximately 2,000 calories in glycogen stores), fat is the dominant energy reserve.\n\n**Cell membrane structure.** Every one of your approximately 37 trillion cells is surrounded by a plasma membrane. This membrane is primarily made of phospholipids — fat-containing molecules. The fluidity and function of cell membranes depends critically on their fatty acid composition. Diets rich in unsaturated fats produce more fluid membranes; saturated fat-rich diets produce stiffer ones. This affects cell signaling, nutrient transport, and countless other membrane-dependent processes.\n\n**Brain structure and function.** The human brain is approximately 60% fat by dry weight. DHA (the long-chain omega-3) makes up roughly 15–20% of the fatty acids in the cerebral cortex and is critical for neuronal membrane function, synaptic transmission, and neurodevelopment. This is one reason DHA is particularly important during fetal development and infancy (the most rapid period of brain growth) — and why expectant mothers who eat fish, or take DHA supplements, are not being irrational. We return to this in Chapter 15.\n\n**Fat-soluble vitamin absorption.** As established in Chapter 1, vitamins A, D, E, and K require dietary fat and bile to be absorbed. A diet containing zero fat would quickly produce deficiencies in all four fat-soluble vitamins, regardless of how many vitamin-rich vegetables you ate.\n\n**Hormone production.** Cholesterol (technically a lipid, not a triglyceride) is the precursor for all steroid hormones: estrogen, testosterone, progesterone, cortisol, aldosterone, and the active form of Vitamin D. Severely fat-restricted diets can impair hormone production and reproductive function.\n\n**Insulation and organ protection.** Adipose tissue insulates against cold and forms a protective cushion around organs (visceral fat, though excessive visceral fat is metabolically problematic). Subcutaneous fat insulates the body and is metabolically less concerning than visceral fat.\n\n**Satiety and flavor.** Fat stimulates the release of CCK (cholecystokinin) and GLP-1, satiety hormones that signal fullness. This is why low-fat foods often don't satisfy hunger as effectively as their full-fat counterparts. Fat also carries fat-soluble flavor compounds — removing fat from food typically removes much of its taste, which is why low-fat versions of products often compensate with added sugar or sodium.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 855,
+      "out_sha": "7f43f4072777",
       "note": ""
     },
     {
@@ -671,11 +671,11 @@
       "en_title": "Chapter 4: Fat — The Most Misunderstood Macronutrient",
       "order": 48,
       "src_chars": 2081,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a354ef4f8166",
       "src": "#### Common Misconception\n\n**\"Eating fat makes you fat.\"**\n\nThe logic seems intuitive: fat has 9 calories per gram (vs. 4 for carbohydrate and protein), so eating fat must cause fat gain more easily. But the relationship between dietary fat and body fat is mediated by total caloric balance, not fat intake per se. Controlled studies comparing high-fat and low-fat diets matched for calories consistently show similar fat loss outcomes. The issue with many high-fat diets is that fat-dense foods (calorie-dense, easy to overeat) make it easier to be in a caloric surplus — but this is a behavioral/food-environment effect, not a metabolic one. Populations eating high-fat traditional diets (Mediterranean, Inuit) have not shown higher obesity rates than low-fat diet populations. Fat is calorie-dense and easy to overeat, but it does not, through any unique biological mechanism, \"become\" body fat more readily than excess calories from carbohydrates or protein.\n\n* * *\n\n\n### 4.5 Thread 1 Deepen — What This Chapter Sets Up\n\nYou now have the biochemical foundation to understand the nutrition debates in Part II. Here is what we've established:\n\n* There is no single \"fat\" — there are dozens of distinct fatty acids with different carbon chain lengths, saturation levels, and biological activities.\n* Saturated fat, monounsaturated fat, polyunsaturated fat (omega-3 vs. omega-6), and trans fat all behave differently in the body.\n* Essential fatty acids (omega-3 and omega-6) cannot be made by the body and must come from diet.\n* Fat is essential for cell membrane structure, brain function, hormone production, fat-soluble vitamin absorption, and satiety.\n\nNow consider this: in the 1950s through 1990s, dietary guidelines told Americans (and much of the Western world) to \"reduce fat\" — all fat, indiscriminately. Olive oil and lard were treated identically. Salmon and bacon were treated identically. Foods were classified \"good\" or \"bad\" based on fat content, with no distinction between types.\n\nWhat do you expect happened? Hold that question. Chapter 6 tells the full story.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 696,
+      "out_sha": "6fe1b41fafb7",
       "note": ""
     },
     {
@@ -683,11 +683,11 @@
       "en_title": "Chapter 4: Fat — The Most Misunderstood Macronutrient",
       "order": 49,
       "src_chars": 2373,
-      "status": "pending",
+      "status": "done",
       "src_sha": "32a5891cf145",
       "src": "### 4.6 What This Means for Your Plate\n\n**1\\. Quality of fat matters more than quantity of fat.** The health effects of a diet depend heavily on _which_ fats it contains. Replacing saturated fat with refined carbohydrates (as the low-fat era recommended) does not improve cardiovascular health and may worsen it. Replacing saturated fat with unsaturated fat (particularly omega-3 rich sources) shows cardiovascular benefit.\n\n**2\\. Include sources of long-chain omega-3 (EPA and DHA).** The most reliable sources are fatty fish (salmon, sardines, mackerel, herring, trout) eaten 2–3 times per week. For people who don't eat fish, algae-based DHA/EPA supplements are the evidence-based alternative (algae is where fish get their omega-3s — we can skip the middle-fish and go directly to the source).\n\n**3\\. The vegetable oil situation.** Highly refined industrial oils (corn, soybean, sunflower, safflower) are high in omega-6 and have displaced omega-3 from the modern diet. Replacing these with olive oil (high monounsaturated, modest omega-6) or specifically omega-3 rich oils (canola, which has a better omega-6:3 ratio than most vegetable oils) is a modest but directionally beneficial change.\n\n**4\\. Avoid industrial trans fats.** Check ingredient lists for \"partially hydrogenated\" oil. In countries where they haven't yet been banned, these remain the most clearly harmful fat in the food supply.\n\n**5\\. Don't fear avocado, nuts, or olive oil.** These are sources of monounsaturated fat with strong evidence of health benefit (cardiovascular risk reduction, satiety, micronutrient delivery). The fact that they are \"high fat\" tells you approximately nothing about their health impact.\n\n**6\\. Fat in the context of a meal.** As established in Chapter 1, dietary fat triggers bile release and enables fat-soluble vitamin absorption. As discussed here, fat also slows gastric emptying and promotes satiety. Eating a meal with appropriate fat is not just acceptable — it is necessary for proper nutrient absorption.\n\n> **Reflection prompt:** Look at the fats in your typical diet. Are you getting any omega-3 sources (fatty fish, walnuts, flaxseeds, chia seeds)? What is the main source of fat in your cooking? Is it primarily omega-6 rich vegetable oils, or olive oil, or animal fats? How might this change based on what you learned in this chapter?\n\n\n### 4.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 847,
+      "out_sha": "d8da52d0cfc6",
       "note": ""
     },
     {
@@ -695,11 +695,11 @@
       "en_title": "Chapter 4: Fat — The Most Misunderstood Macronutrient",
       "order": 50,
       "src_chars": 2931,
-      "status": "pending",
+      "status": "done",
       "src_sha": "1c2d0a6b8126",
       "src": "#### Concept Check\n\n**4.1** Explain why olive oil is liquid at room temperature but solidifies slightly in the refrigerator, while butter is solid at room temperature. Use the concept of fatty acid saturation in your answer.\n\n**Answer:** The physical state of a fat at a given temperature depends on the degree of saturation of its fatty acids. Butter is approximately 63% saturated fat — saturated fatty acids have straight, rigid chains with no double bonds, allowing them to pack together tightly. This tight packing raises the melting point, making butter solid at room temperature (~20°C). Olive oil is approximately 73% monounsaturated fat (oleic acid) and only about 14% saturated. Oleic acid has one double bond, which creates a kink in the carbon chain. Kinked chains cannot pack as efficiently, so they remain liquid at room temperature. However, when cooled to refrigerator temperature (~4°C), even the kinked monounsaturated chains slow their motion enough to begin packing, causing olive oil to become cloudy or thick. Fully polyunsaturated fats (like fish oil or flaxseed oil) have multiple kinks and remain liquid even below 0°C — which is why fish maintain flexibility in cold water (their fat stays fluid, preventing cell membranes from becoming rigid).\n\n**4.2** Explain the difference between ALA, EPA, and DHA. Why might a person who does not eat fish have low EPA and DHA levels even if they eat plenty of flaxseeds and walnuts?\n\n**Answer:** ALA (alpha-linolenic acid) is the parent omega-3 fatty acid found in plant foods (flaxseeds, walnuts, chia seeds, hemp). EPA (eicosapentaenoic acid, 20 carbons) and DHA (docosahexaenoic acid, 22 carbons) are longer-chain omega-3 fatty acids found preformed in fatty fish and seafood. They are physiologically the most active omega-3 fatty acids — EPA for inflammation modulation, DHA for brain and eye structure. The problem: the body can convert ALA to EPA and then to DHA through a series of elongation and desaturation reactions. But this conversion is highly inefficient: approximately 5–15% of ALA is converted to EPA, and less than 1% of ALA reaches DHA. This low conversion rate means that eating large amounts of flaxseeds (which provide ALA) will raise blood ALA levels substantially but will not reliably raise EPA and especially DHA to the levels seen in regular fish eaters. The conversion is further limited by high omega-6 intake (which competes for the same enzymes) — a common feature of Western diets. So a person eating only plant omega-3 sources may have adequate ALA but suboptimal EPA/DHA unless they consume algae-based EPA/DHA supplements. Algae is where marine omega-3 originates — fish accumulate DHA by eating algae or smaller fish that ate algae.\n\n**4.3** Why is the discovery of essential fatty acids (linoleic and alpha-linolenic acid) nutritionally significant? What diseases of deficiency were historically associated with fat-free diets?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 965,
+      "out_sha": "a8ffe65c7dfa",
       "note": ""
     },
     {
@@ -707,11 +707,11 @@
       "en_title": "Chapter 4: Fat — The Most Misunderstood Macronutrient",
       "order": 51,
       "src_chars": 2583,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ef889fd2b06d",
       "src": "**Answer:** Essential fatty acids are linoleic acid (LA, omega-6) and alpha-linolenic acid (ALA, omega-3). Their discovery was nutritionally significant because it established that fat is not merely an optional energy source but contains nutrients that the body requires for survival — analogous to essential vitamins. Historical fat-free diet deficiency syndromes: (1) EFA deficiency was first described in the 1920s in rats fed fat-free diets — they developed scaly skin, poor wound healing, reproductive failure, and increased susceptibility to infection. (2) In the 1970s-80s, patients receiving long-term parenteral nutrition (intravenous feeding) without fat developed clinical EFA deficiency: scaly dermatitis, hair loss, poor wound healing, thrombocytopenia, and susceptibility to infection. This resolved upon addition of lipid emulsions to parenteral nutrition formulas. (3) DHA deficiency (which cannot be manufactured without ALA) impairs fetal and infant brain development, with consequences for visual acuity and cognitive function. This finding drove the addition of DHA to infant formula. (4) Linoleic acid is required to synthesize arachidonic acid (omega-6), which is critical for platelet function and immune responses. In severe deficiency, clotting and immune function are impaired.\n\n**4.4** Why were industrial trans fats considered particularly harmful from a cardiovascular perspective, worse than saturated fat?\n\n**Answer:** Industrial trans fats (from partial hydrogenation of vegetable oils) are considered particularly harmful because they have a doubly unfavorable effect on blood lipid profiles: (1) They raise LDL (\"bad\") cholesterol — which increases cardiovascular risk. (2) They simultaneously lower HDL (\"good\") cholesterol — which removes the offsetting protective effect. Saturated fat also raises LDL cholesterol, but saturated fat also raises HDL cholesterol to varying degrees, which partially offsets the LDL effect. Trans fats offer no such offset. Additionally, trans fats increase blood triglyceride levels, promote systemic inflammation, and interfere with the conversion of essential fatty acids to their longer-chain derivatives. The 2003 WHO estimated that eliminating trans fats from the global food supply would prevent approximately 500,000 cardiovascular deaths per year. This is one area of nutrition science with very strong and consistent evidence — industrial trans fats are the closest thing to a clear \"bad fat\" in the scientific literature, which is why most developed countries have moved to ban or severely restrict them.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 798,
+      "out_sha": "b9752013f540",
       "note": ""
     },
     {
