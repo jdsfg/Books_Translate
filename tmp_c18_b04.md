@@ -1,0 +1,49 @@
+### 17.6 每租户预算强制
+
+多租户系统需要每租户预算强制以防止任何单一租户消耗公司全部推理预算。模式：
+
+**软上限**：当租户接近其月度预算时（例如 80%），告警触发；租户的客户成功团队被通知；调用继续但可能使用更低层模型（路由到工作马而非前沿）。
+
+**硬上限**：当租户达到其月度预算时，调用以 HTTP 402 和清晰错误消息拒绝。租户管理员可通过门户请求预算增加。
+
+**每租户每秒速率限制**：独立于预算，限制调用速率以防止租户在给定提供商上独占公司的速率限制预算。
+
+**实时追踪**：路由器追踪每租户每月的运行总计。追踪必须 (a) 准确（与实际提供商账单紧密匹配）、(b) 低延迟（不增加每调用延迟）、(c) 持久（在路由器重启后存活）。
+
+Helios 的实现（概要；`BudgetDecision`、`current_month`、`log_event` 和 `db.acquire()` 是其路由器平台模块的 Helios 内部辅助）：
+
+
+    class TenantBudgetMiddleware:
+        def __init__(self, db_pool):
+            self.db = db_pool
+
+        def check_budget(self, tenant_id: str, estimated_cost: float) -> BudgetDecision:
+            with self.db.acquire() as conn:
+                row = conn.execute(
+                    "SELECT spent_cents, cap_cents FROM tenant_budgets WHERE tenant_id=? AND month=?",
+                    (tenant_id, current_month()),
+                ).fetchone()
+                spent = row["spent_cents"]
+                cap = row["cap_cents"]
+                new_total = spent + int(estimated_cost * 100)
+                if new_total > cap:
+                    return BudgetDecision(action="reject", reason="budget_exceeded")
+                elif new_total > cap * 0.8:
+                    return BudgetDecision(action="downgrade", reason="approaching_budget")
+                else:
+                    return BudgetDecision(action="proceed")
+
+        def record_actual_cost(self, tenant_id: str, actual_cost: float):
+            with self.db.acquire() as conn:
+                conn.execute(
+                    "UPDATE tenant_budgets SET spent_cents = spent_cents + ? WHERE tenant_id=? AND month=?",
+                    (int(actual_cost * 100), tenant_id, current_month()),
+                )
+
+
+模式：调用前估算成本（基于 prompt 大小 + max_tokens + 模型费率）；检查预算；继续/降级/拒绝；调用后记录实际成本（可能与估算不同）。估算后对账模式启用快速路径决策同时保持准确核算。
+
+值得处理的故障模式（第 3 章 §3.7 练习回顾）：
+
+* 同一租户并发调用的竞态条件：使用原子更新。
+* 数据库不可用：失败关闭（全部拒绝）或失败开放（允许但告警）；文档化选择；很少应被隐式留下。

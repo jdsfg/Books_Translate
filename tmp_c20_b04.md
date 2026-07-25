@@ -1,0 +1,72 @@
+### 19.5 绑定工作流 #12：Langfuse 追踪范例
+
+一个 Helios 客户支持轨迹的真实生产追踪。轨迹：客户询问延迟订单；agent 查找订单；agent 搜索知识库找延迟政策；agent 编写响应。
+
+在 Langfuse 中显示的追踪（示意）：
+
+
+    轨迹: customer_support_ticket_789
+      开始: 2026-05-20T14:30:00Z
+      持续: 3.4s
+      成本: $0.018
+      结果: success
+      租户: enterprise_acme
+
+      Span 1: classify_ticket (llm_call)
+        模型: claude-haiku-4
+        持续: 240ms
+        成本: $0.0005
+        输入: "Customer message: 'Where is my order ORD-1234567890? It's been
+                10 days.'"
+        输出: {"tier": "standard", "confidence": 0.92, "category": "order_status"}
+
+      Span 2: agent_iteration_1 (llm_call)
+        模型: claude-sonnet-4
+        持续: 800ms
+        成本: $0.009
+        输入 token: 1620 (系统: 1200, 历史: 420)
+        输出 token: 280
+        可用工具: 5
+        工具使用:
+          Span 2.1: lookup_order (tool_call)
+            名称: lookup_order
+            参数: {"order_id": "ORD-1234567890"}
+            持续: 90ms
+            结果: {"status": "in_transit", "expected_delivery": "2026-05-22",
+                     "current_location": "Memphis, TN", "delay_reason": "weather"}
+
+      Span 3: agent_iteration_2 (llm_call)
+        模型: claude-sonnet-4
+        持续: 700ms
+        成本: $0.006
+        输入 token: 1900 (系统: 1200, 历史: 420, 工具结果: 280)
+        输出 token: 240
+        工具使用:
+          Span 3.1: search_knowledge_base (tool_call)
+            名称: search_knowledge_base
+            参数: {"query": "delivery delay weather policy"}
+            持续: 320ms
+            结果: [3 篇关于天气相关延迟和客户补偿政策的 KB 文章]
+
+      Span 4: agent_iteration_3 (llm_call) [最终响应]
+        模型: claude-sonnet-4
+        持续: 650ms
+        成本: $0.0025
+        输入 token: 2480
+        输出 token: 380
+        输出文本: "I see your order is in transit and currently in Memphis,
+                      delayed due to weather. Based on our weather-delay policy,
+                      expected delivery is May 22. We offer a 10% credit on
+                      your next order as compensation. Would you like me to
+                      apply that now?"
+
+      Eval 分数 (此轨迹被选入 5% 生产 eval 采样):
+        忠实度: 3/3 (答案完全基于检索到的政策)
+        答案相关性: 3/3 (回答了用户的问题)
+        语气: 2/3 (略正式；有小机会更温暖)
+        总体: 8/9 (通过阈值)
+
+      最终结果: 客户确认信用；工单关闭未升级
+
+
+此追踪使什么成为可能：

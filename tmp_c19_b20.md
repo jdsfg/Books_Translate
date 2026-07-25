@@ -1,0 +1,52 @@
+**Q6.** _调试每租户成本激增_。周一早上：成本仪表板告警触发。租户 Y 的日支出比其 7 天均值高 4.2 标准差。昨日支出 850 美元而典型日基线 180 美元。走查调试过程。指定：(a) 你运行的初始追踪查询；(b) 候选假设；(c) 每个的验证步骤；(d) 解决方案。
+
+**答案：**
+
+(a) **初始追踪查询**（告警后 10 分钟内运行）：
+
+
+    -- Q1: 哪个功能占了激增？
+    SELECT feature_name, COUNT(*) AS calls, SUM(cost_usd) AS cost
+    FROM call_costs
+    WHERE tenant_id = 'Y' AND DATE(created_at) = CURRENT_DATE - 1
+    GROUP BY feature_name
+    ORDER BY cost DESC;
+
+    -- Q2: 哪个模型被不成比例地使用？
+    SELECT model, COUNT(*) AS calls, SUM(cost_usd) AS cost
+    FROM call_costs
+    WHERE tenant_id = 'Y' AND DATE(created_at) = CURRENT_DATE - 1
+    GROUP BY model
+    ORDER BY cost DESC;
+
+    -- Q3: 是调用计数还是每调用成本驱动了激增？
+    SELECT
+      DATE(created_at) AS day,
+      COUNT(*) AS calls,
+      AVG(cost_usd) AS avg_cost_per_call,
+      SUM(cost_usd) AS total_cost
+    FROM call_costs
+    WHERE tenant_id = 'Y' AND created_at >= CURRENT_DATE - INTERVAL '14 days'
+    GROUP BY day
+    ORDER BY day;
+
+
+(b) **候选假设**（典型成本激增来源，大致按可能性排序）：
+
+1. **租户量激增**：租户改变了使用模式；调用计数上升。
+2. **功能回归**：最近部署的 prompt 或 agent 变更增加了每调用成本（更长输出、更多工具轮次、更多重试）。
+3. **路由回归**：路由器将该租户的流量从便宜层转移到昂贵层。
+4. **缓存回归**：该租户的缓存命中下降（prompt 变更破坏了前缀稳定性）。
+5. **滥用**：租户以非预期方式使用 API（循环调用、触发长响应的 prompt 注入尝试）。
+6. **Eval 或测试流量**：开发/QA 流量意外标记了 tenant_id。
+
+(c) **每假设验证**：
+
+1. 量激增：Q3 的 `calls` 列。如调用上升 4-5 倍但 avg_cost_per_call 稳定，这是原因。
+2. 功能回归：Q1 显示大部分在特定功能；与功能的部署历史关联（第 19 章追踪应显示部署时间戳）。
+3. 路由回归：Q2 显示流量在租户昨日未用的层；检查路由器配置历史。
+4. 缓存回归：该租户的 cache_hit_rate 查询，今日 vs 上周；如下降，调查 prompt diff。
+5. 滥用：检查追踪样本；寻找重复相同输入模式或升级的输出长度。
+6. 测试流量：按源 IP / user-agent / API key 过滤追踪；检查非生产 key 是否标记了租户 Y。
+
+(d) **按案例解决**（每个是不同行动）：

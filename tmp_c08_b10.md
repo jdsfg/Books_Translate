@@ -1,0 +1,23 @@
+下游代码：
+
+
+    envelope = summarize_clinical_note(dictation, request_id="req-abc-123")
+    if envelope.result.kind == "success":
+        insert_into_ehr(envelope.result)
+    elif envelope.result.kind == "error":
+        flag_for_human_review(envelope.result.reason, envelope.result.detail)
+
+
+下游代码是类型安全的，在判别器上干净分支，并将错误路径视为一等结果而非异常。这是生产级形态。
+
+### 7.10 Triangle Trade-off 侧栏：结构化输出选择（经典格式）
+
+方法 | 成本（vs 散文） | 延迟（vs 散文） | 可靠性 | 最适合
+---|---|---|---|---
+散文 + 事后正则 | 相同 | 相同 | 低（正则在措辞变化时断） | 快速原型
+原生 JSON schema 模式 | 略低（输出更紧凑） | 相同 | 高（provider 强制） | 大多数生产案例
+`instructor` + 原生 | 略低 | 相同 | 高 + 验证重试 | Pydantic 类型 Python 代码库
+`outlines`（logit 约束） | 略低 | 略高（约束开销） | 最高（数学保证） | 自托管/开放权重/不寻常约束
+工具调用（作为结构化输出） | 略低 | 相同 | 高 | Agent 上下文；编排
+
+结论：**对任何生产结构化输出需求，默认是 `instructor` + 原生 JSON schema 模式**。其他方法因特定原因存在；默认覆盖 80% 案例并有出色的人体工程学。

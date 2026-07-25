@@ -1,0 +1,51 @@
+**答案：** 实现：
+
+
+    import time
+    import random
+    from email.utils import parsedate_to_datetime
+    from datetime import datetime, timezone
+
+    MAX_BACKOFF_SECONDS = 60.0
+
+    def compute_retry_wait(retry_after_header: str | None, attempt: int) -> float:
+        """Return seconds to sleep before retrying. Always non-negative."""
+        base: float
+        if retry_after_header is not None:
+            try:
+                # Integer-seconds form ("17")
+                base = float(retry_after_header)
+            except ValueError:
+                # HTTP-date form ("Wed, 21 Oct 2026 07:28:00 GMT")
+                try:
+                    target = parsedate_to_datetime(retry_after_header)
+                    now = datetime.now(timezone.utc)
+                    base = max(0.0, (target - now).total_seconds())
+                except (TypeError, ValueError):
+                    # Header was malformed; fall back to exponential.
+                    base = min(2.0 ** attempt, MAX_BACKOFF_SECONDS)
+        else:
+            base = min(2.0 ** attempt, MAX_BACKOFF_SECONDS)
+
+        # Jitter: up to 25% of the base wait, or 0.5s minimum spread.
+        jitter = random.uniform(0.0, max(0.5, base * 0.25))
+        return base + jitter
+
+
+在重试循环中的使用：
+
+
+    except APIError as e:
+        if e.status_code == 429 or e.status_code >= 500:
+            wait = compute_retry_wait(e.response.headers.get("retry-after"), attempt)
+            logger.warning("llm.call.retry", extra={"wait_seconds": wait, "attempt": attemp
+t})                                                                                                    time.sleep(wait)
+            continue
+        raise
+
+
+没有抖动的 bug：**惊群**。如果 1000 个客户端在同一瞬间命中速率限制，provider 给每个发送相同的 `retry-after: 30`。没有抖动，所有 1000 个客户端恰好在 30 秒后醒来并同时冲击 provider，触发另一个速率限制事件，触发另一个同步重试，形成可能无限期保持 provider 窗口饱和的循环。有抖动（每个客户端在其等待上添加随机秒数分数），1000 次重试分散在一个窗口中，provider 的速率限制自然吸收它们。这与 DNS 缓存踩踏和数据库重连风暴是相同的 bug 模式；它比 LLM 更古老但在 LLM API 层继续存在。
+
+一个次要微妙之处：指数退避的上限（这里是 60 秒）很重要。没有上限，attempt=20 意味着等待 2^20 ≈ 12 天，这几乎肯定不是你想要的；请求早已被调用者放弃。在生产中限制在 30–120 秒。
+
+**AI 协作子问题**：你会如何请 LLM 帮助完成这个练习，你会在它的回答中验证什么？

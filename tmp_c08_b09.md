@@ -1,0 +1,64 @@
+客户端部分用 `instructor` 包装 Anthropic SDK 以自动强制 schema，并将系统 prompt 固定为模块常量使成功/错误契约紧邻 schema：
+
+    # --- Client ------------------------------------------------------------------
+
+    _raw_client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    _client = instructor.from_anthropic(_raw_client)
+
+    SYSTEM_PROMPT = """你是 Beacon Health AI 的临床笔记摘要器。
+    给定口述笔记，产生结构化摘要。
+
+    必需行为：
+    - 如果口述可解析且临床连贯，返回 {"kind": "success", ...}
+    - 如果口述不可解析、不完整或包含无法安全摘要的内容，
+      返回 {"kind": "error", "reason": ..., "detail": ...}
+    - 绝不编造药物、剂量或诊断。使用 unclear_elements 字段
+      标记不确定内容。
+    """
+
+
+最后是调用点。`tenacity` 以退避重试传输失败（速率限制、5xx），而 `instructor` 的 `max_retries=3` 将验证错误重放回模型。用户输入包装在 `<dictation>` 标签中用于 prompt 注入卫生，成功时触发一行结构化日志：
+
+    # --- Call --------------------------------------------------------------------
+
+    @retry(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=1, min=1, max=8),
+        retry=retry_if_exception_type((APIError,)),
+        before_sleep=before_sleep_log(logger, logging.WARNING),
+        reraise=True,
+    )
+    def summarize_clinical_note(dictation: str, request_id: str) -> SummaryEnvelope:
+        t0 = time.monotonic()
+        envelope = _client.messages.create(
+            model="claude-sonnet-4-20260315",
+            max_tokens=1500,
+            temperature=0,
+            system=SYSTEM_PROMPT,
+            messages=[{"role": "user", "content": f"<dictation>\n{dictation}\n</dictation>"
+}],
+            response_model=SummaryEnvelope,
+            max_retries=3,  # instructor 的 ValidationError 内部重试
+        )
+        duration_ms = int((time.monotonic() - t0) * 1000)
+        logger.info(
+            "summarize ok",
+            extra={
+                "request_id": request_id,
+                "kind": envelope.result.kind,
+                "duration_ms": duration_ms,
+            },
+        )
+        return envelope
+
+
+这段代码做什么：
+
+1. **Pydantic schema** 带判别联合（`SuccessSummary` vs `ErrorSummary` 通过 `kind`）。
+2. **字段级验证**（`min_length`、`ge`、`le`）和捕获主诉中编造标记的自定义验证器。
+3. **`instructor`** 包装 Anthropic 客户端；`response_model=SummaryEnvelope` 通过 Anthropic 的工具使用结构化输出机制强制 schema（按 §7.2——OpenAI 用 `response_format`，Anthropic 用工具使用；`instructor` 抽象差异）。
+4. **两层重试**：
+   * `instructor` 的内部重试（最多 3 次）在 `ValidationError` 上：将验证错误反馈给模型自我纠正。
+   * `tenacity` 的外部重试（最多 3 次）在 `APIError`（速率限制、5xx）上带指数退避。
+5. **不可信内容标记** 通过用户消息中的 `<dictation>` 标签：按第 6 章的基本 prompt 注入防御。
+6. **结构化日志** 记录请求 ID、响应种类和持续时间。

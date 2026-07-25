@@ -1,0 +1,102 @@
+**Q2.** _编写 3 层设置的 LiteLLM 配置_。编写带成本感知回退的 3 层路由设置的完整 LiteLLM YAML 配置。包含：每层 2 个提供商、跨层回退（失败时升级）、重试和冷却设置，以及可观测性回调。
+
+**答案：**
+
+
+    model_list:
+      # 简单层
+      - model_name: easy
+        litellm_params:
+          model: openai/gpt-4o-mini
+          api_key: os.environ/OPENAI_API_KEY
+          max_tokens: 1024
+          timeout: 15
+        model_info:
+          tier: easy
+          cost_per_input_1m: 0.15
+          cost_per_output_1m: 0.60
+
+      - model_name: easy
+        litellm_params:
+          model: gemini/gemini-2.5-flash
+          api_key: os.environ/GOOGLE_API_KEY
+          max_tokens: 1024
+          timeout: 20
+        model_info:
+          tier: easy
+          cost_per_input_1m: 0.10
+          cost_per_output_1m: 0.40
+
+      # 标准层
+      - model_name: standard
+        litellm_params:
+          model: anthropic/claude-haiku-4-20250630
+          api_key: os.environ/ANTHROPIC_API_KEY
+          max_tokens: 2048
+          timeout: 25
+        model_info:
+          tier: standard
+          cost_per_input_1m: 0.80
+          cost_per_output_1m: 4.00
+
+      - model_name: standard
+        litellm_params:
+          model: openai/gpt-4o
+          api_key: os.environ/OPENAI_API_KEY
+          max_tokens: 2048
+          timeout: 25
+        model_info:
+          tier: standard
+          cost_per_input_1m: 2.50
+          cost_per_output_1m: 10.00
+
+      # 困难层
+      - model_name: hard
+        litellm_params:
+          model: anthropic/claude-sonnet-4-20260315
+          api_key: os.environ/ANTHROPIC_API_KEY
+          max_tokens: 4096
+          timeout: 30
+        model_info:
+          tier: hard
+          cost_per_input_1m: 3.00
+          cost_per_output_1m: 15.00
+
+      - model_name: hard
+        litellm_params:
+          model: openai/gpt-4o
+          api_key: os.environ/OPENAI_API_KEY
+          max_tokens: 4096
+          timeout: 30
+        model_info:
+          tier: hard
+          cost_per_input_1m: 2.50
+          cost_per_output_1m: 10.00
+
+    router_settings:
+      routing_strategy: simple-shuffle
+      fallback_models:
+        easy:
+          - standard  # 失败时升级
+        standard:
+          - hard
+        hard: []
+      num_retries: 2
+      retry_after: 5
+      cooldown_time: 60
+      timeout: 35
+
+    callbacks:
+      success_callbacks: ["langfuse"]
+      failure_callbacks: ["langfuse", "datadog"]
+
+    general_settings:
+      master_key: os.environ/LITELLM_MASTER_KEY
+      database_url: os.environ/LITELLM_DB_URL
+
+
+配置可移植到你团队的实际提供商密钥和层级需求。调整模型名称和定价以匹配 2026 年（或当前）提供商目录。
+
+**AI 协作子问题**：你会如何请 LLM 帮助完成这个练习，你会在它的回答中验证什么？
+
+**答案：** 有用的 prompt：_编写带跨层回退、每层 2 个提供商、重试、冷却、可观测性回调的 3 层路由完整 LiteLLM 配置。_ 你验证 (a) 模型标识符匹配当前 LiteLLM 支持的格式（前缀命名如 `anthropic/...`；LLM 可能编造名称），以及 (b) 回调名称匹配实际 LiteLLM 钩子名称（LLM 可能幻觉钩子名称；对照当前文档检查）。

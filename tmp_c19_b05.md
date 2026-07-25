@@ -1,0 +1,67 @@
+### 18.4 绑定工作流 #10：语义缓存
+
+精确匹配缓存捕获相同查询。**语义缓存** 捕获释义等价查询：用户问"如何重置密码？"缓存返回先前"密码重置流程是什么？"调用的响应。
+
+模式：
+
+1. **嵌入传入查询**（第 10 章）。
+2. **搜索缓存** 查找与新查询嵌入余弦相似度高于阈值的先前查询。
+3. **如找到足够相似的先前查询**，返回其缓存响应。
+4. **否则**，继续 LLM 调用；成功后，将 (查询嵌入, 响应) 存入缓存供未来使用。
+
+
+
+    from dataclasses import dataclass
+    from datetime import datetime, timedelta
+
+    @dataclass
+    class CacheEntry:
+        query_embedding: list[float]
+        query_text: str
+        response: str
+        created_at: datetime
+        hit_count: int = 0
+
+    SIMILARITY_THRESHOLD = 0.92  # 按用例调优
+    TTL = timedelta(hours=24)
+
+    def semantic_cache_lookup(query: str, semantic_cache_db) -> str | None:
+        query_emb = embed(query)
+        candidates = semantic_cache_db.search_similar(
+            query_emb,
+            top_k=5,
+            min_similarity=SIMILARITY_THRESHOLD,
+        )
+        for candidate in candidates:
+            if datetime.now() - candidate.created_at > TTL:
+                continue
+            # 可选：LLM 验证缓存命中是否真正是释义
+            if verify_paraphrase(query, candidate.query_text):
+                candidate.hit_count += 1
+                return candidate.response
+        return None
+
+    def semantic_cache_store(query: str, response: str, semantic_cache_db):
+        semantic_cache_db.insert(CacheEntry(
+            query_embedding=embed(query),
+            query_text=query,
+            response=response,
+            created_at=datetime.now(),
+        ))
+
+
+关键参数：
+
+**相似度阈值**：余弦相似度上通常 0.90-0.95。低于 0.90 产生假阳性（不同查询被视为相似）；高于 0.95 产生很少缓存命中（仅近乎相同查询）。
+
+**TTL**：缓存响应存活多久。对稳定答案（FAQ 式），24 小时或更长。对依赖变化数据的答案（账户余额、当前订单），更短或不缓存。
+
+**验证步骤**：可选 LLM 调用验证缓存命中是否真正是释义。增加延迟和成本；减少假阳性。在错误缓存响应成本高时使用。
+
+**假阳性故障模式**：这是语义缓存的关键风险。查询与缓存查询语义相似但不等价；缓存返回错误响应；用户得到错误答案。缓解措施：
+1. **保守阈值**：错误答案成本高的案例用 0.95+。
+2. **LLM 验证**：花费便宜的工作马调用验证释义。
+3. **按领域阈值**：事实问答可容忍 0.92；账户特定查询需 0.98 或不缓存。
+4. **漂移检测**：采样缓存响应，对新鲜 LLM 响应 eval；如质量下降，提高阈值或使缓存失效。
+
+语义缓存的经济学：

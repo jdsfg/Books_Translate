@@ -1,0 +1,68 @@
+#### 绑定工作流 #9：Anthropic prompt 缓存带缓存命中率仪表板
+
+交付物：带监控的生产实现。
+
+首先是客户端和我们想要缓存的两个产物：1500 token 系统 prompt 和 800 token 工具块。模块级常量确保逐字节前缀跨调用保持相同，这是缓存键匹配的依据：
+
+    from anthropic import Anthropic
+
+    client = Anthropic()
+
+    SYSTEM_PROMPT = """You are a clinical-notes summarizer for Beacon Health AI.
+    [1500 tokens of stable instructions...]"""
+
+    TOOL_DEFINITIONS = [
+        {"name": "get_patient_history", "description": "...", "input_schema": {...}},
+        # ... 800 tokens of tool definitions
+    ]
+
+
+接下来是调用本身。`system` 字段变为类型化块列表使 `cache_control` 可附加到 prompt，且最后一个工具上的缓存标记一次性捕获整个前缀：
+
+    def summarize_with_caching(note: str, request_id: str) -> dict:
+        response = client.messages.create(
+            model="claude-sonnet-4-20260315",
+            max_tokens=2048,
+            system=[
+                {
+                    "type": "text",
+                    "text": SYSTEM_PROMPT,
+                    "cache_control": {"type": "ephemeral"},  # 标记缓存
+                }
+            ],
+            # 在最后一个工具上标记 cache_control 以缓存完整工具块。
+            # Anthropic 缓存到并包括 cache_control 标记的前缀，
+            # 所以仅标记最后一个工具使整个 tools 数组在首次调用时
+            # 作为一块缓存并在 TTL 窗口内的后续调用中从缓存读取。
+            tools=[
+                *TOOL_DEFINITIONS[:-1],
+                {**TOOL_DEFINITIONS[-1], "cache_control": {"type": "ephemeral"}},
+            ],
+            messages=[{"role": "user", "content": note}],
+            temperature=0,
+        )
+
+
+最后是可观测性钩子。每个响应暴露每调用缓存计数器；将它们作为结构化字段发出使仪表板聚合命中率、写入量和未缓存开销：
+
+        # 记录缓存命中/未命中用于仪表板
+        logger.info(
+            "summarize.cache_metrics",
+            extra={
+                "request_id": request_id,
+                "input_tokens": response.usage.input_tokens,
+                "cache_creation_input_tokens": response.usage.cache_creation_input_tokens,
+                "cache_read_input_tokens": response.usage.cache_read_input_tokens,
+                "output_tokens": response.usage.output_tokens,
+            },
+        )
+        return response
+
+
+Anthropic API 暴露每调用缓存指标：
+
+* `input_tokens`：按标准费率计费的 token（未缓存）。
+* `cache_creation_input_tokens`：按 1.25 倍写入费率计费的 token。
+* `cache_read_input_tokens`：按 0.1 倍读取费率计费的 token。
+
+仪表板跨所有调用聚合这些：

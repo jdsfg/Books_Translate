@@ -1,0 +1,84 @@
+一个生产级语音 agent 循环。Helios 的实际实现（简化）：
+
+
+    import asyncio
+    from openai import AsyncOpenAI
+    from anthropic import AsyncAnthropic
+    from telephony_sdk import VoiceCall, AudioStream
+
+    class VoiceAgent:
+        def __init__(self, call_id: str, customer_id: str):
+            self.call_id = call_id
+            self.customer_id = customer_id
+            self.realtime = AsyncOpenAI().beta.realtime
+            self.text_anthropic = AsyncAnthropic()
+            self.session = None
+            self.interrupted = False
+
+        async def start(self, call: VoiceCall) -> None:
+            # 连接到 OpenAI Realtime
+            self.session = await self.realtime.session.create(
+                model="gpt-4o-realtime-2026-03",  # GA 实时模型；替换为你阅读时当前的带日期 ID
+                modalities=["text", "audio"],
+                voice="alloy",
+                instructions=self._system_prompt(),
+                tools=self._tool_definitions(),
+                turn_detection={"type": "server_vad", "threshold": 0.5, "silence_duration_ms": 350},
+            )
+
+            # 双向音频流
+            async with self.session:
+                user_audio_task = asyncio.create_task(
+                    self._stream_user_audio(call.audio_input)
+                )
+                response_handler_task = asyncio.create_task(
+                    self._handle_responses(call.audio_output)
+                )
+                await asyncio.gather(user_audio_task, response_handler_task)
+
+        async def _stream_user_audio(self, audio_input: AudioStream) -> None:
+            async for chunk in audio_input:
+                await self.session.send_audio(chunk)
+
+        async def _handle_responses(self, audio_output: AudioStream) -> None:
+            async for event in self.session.events():
+                if event.type == "response.audio.delta":
+                    if self.interrupted:
+                        # 用户开始说话；停止发送音频
+                        continue
+                    await audio_output.send(event.audio_chunk)
+                elif event.type == "input_audio_buffer.speech_started":
+                    # 用户开始说话；取消任何进行中的响应
+                    self.interrupted = True
+                    await self.session.cancel_response()
+                elif event.type == "input_audio_buffer.speech_stopped":
+                    self.interrupted = False
+                elif event.type == "response.tool_call":
+                    # 模型想调用工具
+                    await self._handle_tool_call(event.tool_call)
+                elif event.type == "response.done":
+                    self.interrupted = False
+                elif event.type == "error":
+                    # 回退到文本模式
+                    await self._fallback_to_text(audio_output, event)
+
+        async def _handle_tool_call(self, tool_call) -> None:
+            if tool_call.name == "lookup_order":
+                result = await lookup_order(tool_call.input["order_id"])
+                await self.session.send_tool_result(tool_call.id, result)
+            elif tool_call.name == "process_refund":
+                # 高风险工具；验证策略并与用户确认
+                ...
+
+        async def _fallback_to_text(self, audio_output: AudioStream, error_event) -> None:
+            """如语音失败，回退到文本 LLM 调用 + TTS 合成。"""
+            last_user_message = self.session.last_user_transcript()
+            text_response = await self.text_anthropic.messages.create(
+                model="claude-sonnet-4-20260315",
+                max_tokens=512,
+                system=self._system_prompt(),
+                messages=[{"role": "user", "content": last_user_message}],
+            )
+            # 通过单独的 TTS 服务合成为音频
+            audio = await synthesize_tts(text_response.content[0].text)
+            await audio_output.send(audio)

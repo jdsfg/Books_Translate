@@ -1,0 +1,53 @@
+### 21.2 生产中的持续监控
+
+模式：
+
+1. **采样一部分生产轨迹**（通常 1-10%；按系统和风险概况可调）。
+2. **通过生产 eval 评分标准评分**采样（LLM 作为评判，按第 4 章与人工校准）。
+3. **在仪表板中聚合分数**：均值、中位数、p10/p90 分布、按功能分解、按租户分解。
+4. **对漂移告警**：分布偏移阈值；按功能回归；租户特定异常。
+5. **调查漂移信号**：来自受影响轨迹的追踪（第 19 章）；识别原因；缓解。
+
+
+
+    async def production_eval_sampler(trace: TrajectoryTrace) -> None:
+        # 按租户和功能采样
+        sample_rate = get_sample_rate(trace.feature, trace.tenant_id)
+        if random.random() > sample_rate:
+            return
+
+        eval_result = await score_with_judge(
+            trace=trace,
+            rubric=get_rubric(trace.feature),
+            judge_model="gpt-4o-2024-08-06",  # 与系统不同族以避免相关失败
+        )
+
+        await write_eval_result(
+            trace_id=trace.trace_id,
+            scores=eval_result.scores,
+            rubric_version=eval_result.rubric_version,
+            judge_model=eval_result.judge_model,
+        )
+
+        # 实时检查灾难性失败
+        if eval_result.overall_score < CATASTROPHIC_THRESHOLD:
+            await alert_engineering_oncall(trace, eval_result)
+
+
+采样成本：在 5% 采样和评判调用约 0.003 美元/次评估下，生产 eval 成本约 0.00015 美元/轨迹或 10M 轨迹时 1500 美元/月。成本相对于推理成本很小；价值很大。
+
+### 21.3 用户反馈信号
+
+除模型作为评判的 eval 外，真实用户提供基准真值信号：
+
+**点赞/点踩**：产品内的交互功能。用户显式评价响应。稀疏（大多数用户不评价）但进来的评价是信号。作为众多输入之一使用。
+
+**重试率**：用户多常重新问同一问题（或改述）？重新提问指示先前答案不满意。重试率是质量问题的先行指标。
+
+**升级率**：对话多常升级到人工？Helios 追踪偏转率（% 自主解决）作为升级的逆。升级率激增标记质量问题。
+
+**参与度指标**：用户是否点击通过？是否完成预期工作流？在 agent 上下文中，是否接受 agent 的建议？参与度是噪声信号但代表真实价值。
+
+**客户满意度调查**：对话后调查显式询问交互体验。慢（响应需数天）；低量（大多数用户不调查）；但最接近直接用户质量测量。
+
+生产团队将这些信号与生产 eval 分数一起加权。每个有自己的延迟和噪声；组合比任何单一信号更可靠。

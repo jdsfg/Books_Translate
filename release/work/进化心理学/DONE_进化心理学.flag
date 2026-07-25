@@ -1,0 +1,45 @@
+# DONE: 进化心理学
+
+- Status: all blocks committed (`done == total == 184`)
+- Branch: `cursor/evolutionary-psychology-translate-4bb8`
+- Base: `translate/evolutionary-psychology`
+- Date: 2026-07-21
+
+## Verify
+
+- Shared glossary (`glossary_psychology.md`): **ERROR=0 WARN=0**
+- Local glossary (`进化心理学/glossary_local.md`): **ERROR=0 WARN=140**
+
+## Remaining WARN explanation (local glossary only)
+
+All 140 local-glossary WARNs are **约定译法的字面匹配差异**，不是概念缺失。书中一贯采用较自然的正文形式；下列术语库条目包含括号说明或可替代表达，而校验器按完整字符串匹配：
+
+| Glossary entry (checker expects) | Book convention used | Reason |
+|---|---|---|
+| `演化而来的` | `进化而来的` | 全书既有译法；书名也使用“进化” |
+| `"天生如此"的故事` | `恰好如此故事` | 第 1–3 章正文约定；标题处保留“天生如此” |
+| `适应（物）` | `适应` | “（物）”是术语注记，正文不应照录括号 |
+| `实然—应然（问题）` | `实然—应然鸿沟` / `实然—应然防火墙` | “（问题）”是术语注记；正文按语境使用鸿沟或防火墙 |
+| `错误管理（理论）` | `错误管理` / `错误管理理论` | 第 8 章按语境使用简称或全称；括号不属于正文译法 |
+| `WEIRD（西方、受教育、工业化、富裕、民主）` | 首次全称，后续 `WEIRD` | 首次出现处已扩展；后续使用缩写以避免重复 |
+
+本轮将 `c18_b03/c18_b04/c18_b07/c18_b10` 中的 **heritability** 统一修正为“遗传率”；`c18_b03` 的对应 WARN 已消除，其余三个块的 WARN 仅来自上表中的其他字面匹配差异。上述问题均非 ERROR；共享术语库校验保持清零。按约束，未修改共享或本地术语库。
+
+## Sample source/translation review
+
+Spot-checked:
+
+1. `c13_b02` — 平均值与巨大重叠的限定，明确不得由性别预测个体偏好
+2. `c13_b06`/`c13_b10` — 进化与生物社会解释的双向证据、未决结论及不轻率站队
+3. `c18_b03/c18_b04/c18_b07/c18_b10` — 优生学史的事实限定、遗传率术语及实然—应然防火墙
+4. `c14_b04`/`c14_b05` — contested Cinderella effect with max dual firewall
+5. `c20_b11` — final reckoning closing
+
+Structure (headings, italics, separators) preserved; numbers/years intact; no moralization beyond author.
+
+## Notes
+
+- No `init` / `lock-titles` / rechunk
+- No shared scripts/styles/glossaries edited
+- No `.zh.md` or temp files committed
+- Assembled `sources/进化心理学.zh.md` is derived and git-ignored
