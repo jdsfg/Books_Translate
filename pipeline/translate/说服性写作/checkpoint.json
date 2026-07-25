@@ -431,11 +431,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 29,
       "src_chars": 3406,
-      "status": "pending",
+      "status": "done",
       "src_sha": "53851392ec65",
       "src": "### 2.10 The Master Pattern: What Readers Want Across All 12 Forms\n\nBefore Part II calibrates the 6 Moves to twelve specific forms, it is worth stating the pattern that recurs across all of them. This section is structurally a _preview_ of Part III's synthesis (Chapter 15 returns to these universals with the benefit of having walked through the twelve forms), placed here so the form chapters of Part II can refer back to a shared baseline rather than re-stating universals twelve times. Each form chapter in Part II will return to this pattern with form-specific deviations; the bones below are common to every form.\n\n**What readers want, across the 12 forms:**\n\n  1. **A specific person, not a category.** Whether the reader is Janet on her sofa, Marcus the hiring manager, Professor Lay the graduate-admissions chair, or a USCIS adjudicator, the reader is asking some version of _who is this in particular?_ — and crediting answers that contain enough specifics to pass the Specific Object Test.\n  2. **Action over claim.** Specific past actions described in scene support claims about the candidate; abstract claims without action behind them fail across forms.\n  3. **Calibrated voice.** The reader wants prose that sounds like a real person — slightly elevated from speech, consistent across the application, not the median register that AI produces by default.\n  4. **Genuine fit, not performed adoration.** Whether for a school, a job, a scholarship, or a graduate program, fit is signaled by specific evidence the candidate has done the work to know the institution; flattering generalities are read as performance.\n  5. **Honest acknowledgment of limits.** Across forms, the candidate who acknowledges what they have not yet done, what may evolve, and what is uncertain is calibrating their other claims and earning trust. Smoothly polished narratives are vulnerable to contradiction by the rest of the file.\n\n**What readers do not want, across the 12 forms:**\n\n  1. **Inflated language without specifics.** _Passion, dedication, transformative, profound, deep commitment_ — every reader has seen these phrases in a thousand essays. Without specific actions behind them they signal generic candidate.\n  2. **Restated information from elsewhere in the file.** The essay is a complement to the resume / transcript / recommendations, not a redundant summary of them.\n  3. **Performed humility or performed confidence.** Both register as performance. The reader wants the candidate's actual voice, with calibrated self-assessment.\n  4. **The fluent-organized-vague register that AI produces by default.** This is the median register, and the median register is below the bar for any selective context.\n  5. **Lessons-learned summaries.** _From this experience, I learned the importance of [virtue]_ in any form is over-explicit and reader-resistant; the Restrained Connection from §2.6 is the calibrated alternative.\n\n**The form-specific calibration is what each chapter in Part II teaches.** A college essay reader has 6–7 minutes; a hiring manager has 30 seconds. A graduate committee reads for research direction; a scholarship committee reads against criteria; an immigration adjudicator reads for verifiable facts. The reader's question changes; the underlying pattern — specifics over abstractions, action over claim, voice over polish, fit over flattery, honesty over performance — does not.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1139,
+      "out_sha": "5b7f2d4012ec",
       "note": ""
     },
     {
@@ -443,11 +443,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 30,
       "src_chars": 1829,
-      "status": "pending",
+      "status": "done",
       "src_sha": "24ab9505a5c9",
       "src": "When you read the form chapters, you can read the \"What [reader] looks for\" / \"What [reader] does not look for\" sections as the form-specific _deviation_ from this master pattern. The pattern below is your baseline; what the form chapter adds is _how this baseline calibrates to this specific reader, this specific stakes, this specific compression._\n\n\n### 2.11 Carrying the 6 Moves Into Part II\n\nEach chapter of Part II (Chapters 3 through 14) treats one of the twelve forms of personal persuasion. Each chapter shows the 6 Moves applied to that form's specific demands.\n\nA college essay's Move 1 is Janet on her sofa at 11:23. A cover letter's Move 1 is Marcus the hiring manager between meetings with twelve minutes until standup. A PhD SOP's Move 1 is Professor Lay reading the eighteenth statement of the morning. The reader is different for each form. The first move is to picture the reader concretely.\n\nA college essay's Move 4 might require five Specific Objects in 650 words. A cover letter's Move 4 might require two Specific Objects in 350 words, plus a third that maps onto the role's specific requirements. A PhD SOP's Move 4 might require Specific Objects of a particular kind, methods, papers, data sets, that signal future-colleague.\n\nThe 6 Moves are constant. Their calibration to the specific form is what each form chapter teaches.\n\n\n### 2.12 Reader Draft Prompt\n\nTake the opening line you saved at the end of Chapter 1. Run the 6 Moves on it, in writing.\n\nFor each of the six moves, write one to three sentences answering the diagnostic question and giving a specific verdict. Be honest. The point of the exercise is not to feel good about your draft; the point is to know what to fix.\n\nSave your six verdicts. We will return to them in Chapter 3 when the form-specific revision begins.\n\n\n### 2.13 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 648,
+      "out_sha": "995f6bae3b82",
       "note": ""
     },
     {
@@ -455,11 +455,11 @@
       "en_title": "Chapter 2: The 6 Moves",
       "order": 31,
       "src_chars": 2320,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8f697d341400",
       "src": "#### Concept Check\n\n**Q1.** State the 6 Moves and the diagnostic question associated with each.\n\n**Answer:**\n\n  1. Identify the reader and the stakes — _Who is reading this, and what are they actually deciding?_\n  2. Find the specific story — _What is the one thing only I can write about this prompt?_\n  3. Open with a hook that earns reading — _Why should the reader spend the next 30 seconds with this essay?_\n  4. Show with specifics — _Where in this essay are the Specific Objects?_\n  5. Connect specifics to claims — _What does this story show, without saying it too directly?_\n  6. Survive the AI test — _What in this essay could not have been generated by an AI given my prompt?_\n\n**Q2.** What is the difference between a vignette and an essay?\n\n**Answer:** A vignette is a scene with specifics but no claim about the writer. An essay uses one or more vignettes to support a claim about the writer that the reader, without being told too directly, comes to accept. Move 5 — connect specifics to claims — is the move that turns a vignette into an essay. A vignette without Move 5 is a journal entry; an essay without Moves 4 and 5 is a list.\n\n**Q3.** Why is \"I have always been passionate about...\" on the _do not_ list for opening lines?\n\n**Answer:** Three reasons. First, the always-having claim is unbelievable: _always_ is the word people use when they cannot remember when they started, which is not the same as always. Second, the construction is the most overused in the genre — every reader has seen it dozens of times this week. Third, the construction commits Move 4 violations: _passionate about_ is abstract, with no Specific Object behind it. The combination of unbelievable, overused, and abstract is fatal.\n\n**Q4.** Describe the Restrained Connection and why it matters.\n\n**Answer:** The Restrained Connection is the move of acknowledging at the end of a vignette that a scene means something without saying everything it means. It is one sentence that lifts the scene's gravity onto the page without pinning it down. It matters because over-connection (\"from this experience, I learned the importance of resilience\") makes the reader recoil, while under-connection (no claim at all) leaves the reader inventing claims the writer did not intend. The Restrained Connection is the calibrated middle.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 843,
+      "out_sha": "f306627b125b",
       "note": ""
     },
     {
