@@ -1235,11 +1235,11 @@
       "en_title": "Chapter 5: Allostatic Load — The Wear and Tear",
       "order": 97,
       "src_chars": 424,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c8649f2ca22a",
       "src": "> _Tonight, when you write your diary, look across the past week's entries. Are there days when sleep, social interaction, perceived control, and \"felt like myself\" all dropped together? Those are days when allostatic load was likely highest. Are there days when several of these were higher? Those are recovery-friendly days. The pattern across the week, more than any single day, tells the story your body is paying._\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 121,
+      "out_sha": "cd636338b9ef",
       "note": ""
     },
     {
@@ -1247,11 +1247,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 98,
       "src_chars": 1860,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e516535c019b",
       "src": "We have arrived at the chapter that, in most popular stress books, is dramatic. It is the chapter where the author tells you, in increasingly alarming language, that stress is killing you — that it causes heart attacks and cancer and autoimmune disease and obesity and just about every other modern affliction. The chapter often ends with statistics so dire that the reader puts down the book and immediately worries about how much stress they have.\n\nThis is not going to be that chapter.\n\nSeveral stress-disease pathways are real, well-mechanism-traced, and clinically important. Several others are partly supported but more complicated than popular framing suggests. A few are weak, contested, or actively misleading despite their popular currency. Telling the difference matters, both because intellectual honesty matters and because — as Chapter 1 noted — anxiety about stress is itself stress, and getting the picture wrong creates distress that the picture doesn't actually warrant.\n\nThis chapter walks through what the evidence actually says, organ system by organ system, with explicit attention to how strong each claim is. The framework is the **three evidence tiers** introduced in Chapter 1:\n\n* **(a)** _Directly demonstrated by controlled human or animal experiment._ Stated firmly.\n* **(b)** _Supported by mechanistic evidence + observational correlation._ Hedged appropriately (\"strongly suggests,\" \"consistent with,\" \"the data converge\").\n* **(c)** _Plausible but evidentially underdetermined._ Stated as \"the science is still developing,\" \"this is an active research area,\" or \"the popular claim is ahead of the evidence.\"\n\nThis evidence-tier discipline is one of the book's distinctive postures. Where popular framing wants you to feel certain, sometimes the truth is \"the certainty isn't there yet.\" Saying so is not waffling; it is honest.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 531,
+      "out_sha": "6038c40f4696",
       "note": ""
     },
     {
@@ -1259,11 +1259,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 99,
       "src_chars": 3240,
-      "status": "pending",
+      "status": "done",
       "src_sha": "332d4770fce2",
       "src": "### 6.1 The Cardiovascular System — The Strongest Case\n\nThe chronic-stress-cardiovascular link is, on the evidence, the cleanest story in this chapter. Multiple converging lines of evidence support a real causal contribution of chronic stress to cardiovascular disease (CVD), with specific mechanisms that are well-mapped.\n\n**The mechanism (tier a-b).** Chronic activation of the sympathetic nervous system — both directly and through HPA axis regulation — produces a particular pattern of cardiovascular wear:\n\n* _Endothelial dysfunction_. The endothelium is the single layer of cells lining blood vessels. It does enormous regulatory work — controlling vascular tone, modulating clotting, governing immune-cell trafficking. Chronic catecholamine and cortisol exposure damages endothelial function, reducing nitric oxide availability and producing a more pro-inflammatory, pro-thrombotic vascular environment.\n\n* _Accelerated atherosclerosis_. The damaged endothelium is more permissive to LDL-cholesterol entry into the arterial wall, where it is oxidized and triggers macrophage-mediated inflammation — the formation of atherosclerotic plaque. Chronic stress accelerates this process through both direct vascular effects and indirect ones (worsened cholesterol profile, elevated blood pressure, increased clotting tendency).\n\n* _Plaque rupture risk_. The most dangerous moments in cardiovascular disease are not when plaque exists but when it ruptures — the rupture causes a clot that can occlude a coronary artery (heart attack) or a cerebral artery (stroke). Acute stress, through catecholamine surges, increases the risk of plaque rupture in already-vulnerable vessels. This is the mechanism behind the \"broken heart\" phenomenon — heart attacks following major emotional events.\n\n* _Arrhythmia risk_. Sympathetic activation increases susceptibility to arrhythmias, particularly in vulnerable hearts. Stress-induced cardiomyopathy (\"Takotsubo\" or \"broken heart syndrome\") is a documented if relatively rare clinical entity in which severe acute emotional stress produces transient heart failure.\n\n**The epidemiological evidence (tier b).** Long-running cohort studies converge on a real cardiovascular cost of chronic stress. Whitehall, with its 3:1 cardiovascular mortality gradient between lowest and highest civil-service grades — persisting after extensive confounder adjustment — is the cleanest population-level demonstration. The Caerphilly cohort, Framingham subgroups, the INTERHEART study (a large international case-control study of myocardial infarction), and several other major cohorts all show that chronic psychosocial stress (variously measured) is associated with increased CVD risk after adjustment for traditional cardiovascular risk factors.\n\nThe effect sizes are non-trivial. Chronic high job strain — high demand combined with low control, the Karasek pattern — is associated with roughly 20-40% increased coronary risk in most well-designed studies. The effect is smaller than smoking (which roughly doubles cardiovascular risk) but comparable in magnitude to moderate hypertension or moderate dyslipidemia. It is not negligible, and it is not the dominant risk factor; it is one real risk factor among several.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 952,
+      "out_sha": "3ae3258002d3",
       "note": ""
     },
     {
@@ -1271,11 +1271,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 100,
       "src_chars": 3102,
-      "status": "pending",
+      "status": "done",
       "src_sha": "dabe055e1ab8",
       "src": "**Acute triggering of cardiovascular events (tier a).** Some of the cleanest evidence comes from acute-stressor studies. Following major emotional events — earthquakes, terrorist attacks, World Cup losses (yes, this has been studied), the death of a spouse — the rate of acute cardiac events spikes measurably in the local population. The data here are quasi-experimental (the stressor occurs as a \"natural experiment\") and the temporal patterns are clean: events cluster in the days following the stressor and return to baseline afterward. This is some of the strongest causal evidence for stress-cardiovascular pathology.\n\n**The Type A personality literature (tier c, with caveats).** A famous mid-20th-century literature claimed that \"Type A\" personality (hostile, competitive, time-urgent) was a major cardiovascular risk factor. The early studies showed dramatic effects. Subsequent re-analysis and replication have been substantially less impressive. The original measurements of Type A behavior were inconsistent, the effect sizes shrank in better-designed studies, and the original promoting researchers later acknowledged the construct was probably too broad. Modern understanding identifies _hostility specifically_ (not the broader Type A construct) as a more robust predictor of CVD risk, but even this is moderate. The popular continuing belief that \"Type A people have heart attacks\" overstates what the evidence actually supports. This is a case where popular framing has aged poorly relative to the data.\n\n**What the evidence supports stating firmly (tier a):**\n\n* Acute severe emotional stress can trigger cardiovascular events in susceptible individuals.\n* Sympathetic activation acutely affects cardiovascular function in measurable ways.\n* Chronic stress affects cardiovascular biomarkers (blood pressure, lipid profile, inflammatory markers) in directions that increase risk.\n\n**What the evidence supports stating hedged (tier b):**\n\n* Chronic psychosocial stress contributes substantially to long-term cardiovascular disease risk, with effect sizes comparable to other moderate-strength risk factors.\n* High-demand-low-control work environments produce real cardiovascular risk; the Whitehall gradient is one of several converging lines of evidence.\n* Hostility specifically (not broader Type A constructs) is associated with increased CVD risk.\n\n**What requires more caution (tier c):**\n\n* The \"Type A personality kills you\" claim as popularly stated is probably overstated. The hostility-specific finding is real but weaker than the original Type A literature suggested.\n* Specific quantitative claims about how much stress contributes to CVD vary substantially across studies and populations. Effect sizes in the 20–40% range are typical; specific population-level mortality fractions attributable to stress alone require strong assumptions.\n\n> **Cardiovascular: real and well-supported, but not the dramatic catastrophe popular framing sometimes implies. Chronic stress contributes to CVD through specific mechanisms, with effect sizes that warrant attention but not panic.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 887,
+      "out_sha": "db8f1b872370",
       "note": ""
     },
     {
@@ -1283,11 +1283,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 101,
       "src_chars": 3325,
-      "status": "pending",
+      "status": "done",
       "src_sha": "c329c0c0577c",
       "src": "### 6.2 Metabolic Disease — Strong Mechanism, Strong Correlation\n\nThe chronic-stress-metabolic link is also well-supported, with mechanisms that are cleanly traced and epidemiology that converges with the mechanism.\n\n**The mechanism (tier a-b).** Chronic cortisol exposure produces several metabolic effects that compound:\n\n* _Visceral fat accumulation_. Cortisol promotes deposition of fat specifically in the visceral (intra-abdominal) depot rather than the subcutaneous depot. Visceral fat is metabolically distinct from subcutaneous fat — it is more inflammatory, more resistant to insulin, and more directly tied to liver pathology. Chronic-stress patterns promote the visceral pattern preferentially.\n\n* _Insulin resistance_. Chronic cortisol promotes gluconeogenesis (liver glucose output), reduces glucose uptake by peripheral tissues, and contributes to skeletal muscle and hepatic insulin resistance. Over time, this can progress to frank type 2 diabetes.\n\n* _Dyslipidemia_. Chronic cortisol shifts the lipid profile in unfavorable directions — increased triglycerides, decreased HDL, often increased LDL particle number even when LDL cholesterol concentration is similar.\n\n* _Appetite and reward dysregulation_. Cortisol interacts with reward systems in ways that promote consumption of palatable, calorie-dense foods. The classic \"stress eating\" pattern — preference for sweet, fatty, energy-dense foods under stress — has measurable hormonal underpinnings.\n\nThese mechanisms compound. Visceral fat is itself a source of inflammatory and metabolic dysregulation; it produces more cortisol locally (through the enzyme 11β-HSD-1, which converts inactive cortisone to active cortisol in adipose tissue); it perpetuates insulin resistance; it increases appetite for energy-dense food. The chronic-stress-metabolic syndrome forms a self-reinforcing pattern.\n\n**The epidemiology (tier b).** Multiple cohort studies show that chronic stress (variously measured) is associated with increased risk of metabolic syndrome, type 2 diabetes, and obesity. The Whitehall data show metabolic syndrome gradients tracking the rank gradient. Chronic occupational stress predicts diabetes incidence after adjustment for other risk factors, with effect sizes in the 20-50% range across well-designed studies. The mechanism and the epidemiology converge.\n\n**Cushing's as the extreme case (tier a).** Cushing's syndrome (chronic high cortisol from a tumor) produces a dramatic metabolic syndrome phenotype: visceral fat accumulation, insulin resistance, frank diabetes, dyslipidemia, hypertension. This is the clinical extreme of what chronic-stress-metabolic dysregulation looks like — and it is exactly what the mechanism predicts. The fact that disease-causing levels of cortisol produce disease-causing metabolic effects is consistent with the mechanism-based prediction that chronic stress at non-disease levels produces lower-amplitude versions of the same effects.\n\n**What the evidence supports stating firmly:**\n\n* Chronic cortisol exposure produces specific metabolic effects through specific mechanisms.\n* Visceral fat accumulation is preferentially driven by chronic stress patterns.\n* Cushing's syndrome (extreme high cortisol) produces a dramatic metabolic disease phenotype.\n\n**What the evidence supports stating hedged:**",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 937,
+      "out_sha": "648d384b1d05",
       "note": ""
     },
     {
@@ -1295,11 +1295,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 102,
       "src_chars": 715,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ec1a2bef1a94",
       "src": "* Chronic psychosocial stress contributes meaningfully to metabolic syndrome and type 2 diabetes risk, in addition to other established risk factors.\n* The contribution is partly direct (cortisol effects) and partly behavioral (stress eating, sleep disruption, reduced exercise).\n\n**What requires more caution:**\n\n* The relative contribution of chronic-stress mechanisms vs. dietary and lifestyle factors varies across populations and individuals. Stress is one input among several to metabolic disease.\n\n> **Metabolic: real, mechanistically clear, and important. Probably underemphasized in popular framing, which tends to focus on diet alone. Chronic stress is a real metabolic risk factor independent of diet.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 208,
+      "out_sha": "c36c843dd0df",
       "note": ""
     },
     {
@@ -1307,11 +1307,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 103,
       "src_chars": 3385,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d4bee443415b",
       "src": "### 6.3 The Immune System — Bidirectional and Counterintuitive\n\nHere is where popular framing most often gets it wrong. The widely-repeated claim \"stress weakens immunity\" is misleading. The actual picture is _bidirectional dysregulation_ — some functions are reduced, others are increased — and getting this right matters for what interventions even make sense.\n\nThe mechanism. Acute cortisol elevation does not suppress immunity; it _redistributes_ it — lymphocytes are pulled out of circulation into specific tissues, broad inflammation is dampened, the response is reorganized for a sustained challenge. Acute stress at the time of an exposure is more likely to be neutral or even mildly protective. _Chronic_ stress is what produces specific dysregulation patterns over time. The popular framing collapses these timescales and misses the texture.\n\nChronic stress reliably produces (well-supported through both controlled and observational work):\n\n* _Reduced antibody response to vaccination_ — measurable in influenza, herpes zoster, and other vaccines. Vaccine response is a controlled in vivo challenge, so stress effects show up cleanly.\n* _Reduced viral clearance_ — Sheldon Cohen's classic experiments with intentional rhinovirus exposure showed clear dose-response: higher chronic stress, higher infection rate, longer-lasting symptoms.\n* _Slower wound healing_ — demonstrated in controlled punch-biopsy studies.\n* _Increased chronic inflammatory markers_ — CRP and IL-6 elevation. This is the _opposite_ of \"immune suppression\"; it is chronic low-grade activation, and it feeds the cardiovascular and metabolic pathways covered above.\n* _Increased autoimmune flare frequency_ in conditions like rheumatoid arthritis, MS, and inflammatory bowel disease.\n\nThe pattern is clear: not weakened, _dysregulated_. T-helper-1 (cellular, antiviral) responses tend down; T-helper-2 and inflammatory pathways tend up. Different immune cell populations have different glucocorticoid receptor distributions, so chronic cortisol produces different effects on different functions — exactly what the receptor biology predicts.\n\n**Cancer.** The popular claim \"stress causes cancer\" is partly supported, partly overstated, and worth being precise about. Plausible mechanisms exist (chronic inflammation, reduced immune surveillance, behavioral mediators like smoking and alcohol, sleep disruption). Three components need to be separated:\n\n* _Initiation (whether you get a cancer in the first place)._ Epidemiology is mixed. Some cancer types show stress-related risk associations after careful adjustment; others don't. The broad claim \"stress causes cancer\" is ahead of the evidence.\n* _Progression (in patients already diagnosed)._ The picture is clearer. Chronic stress affects immune surveillance, treatment recovery, and survival in some studies. Effect sizes are modest but real.\n* _Practical takeaway._ Chronic stress is a real but modest contributor — well behind smoking, family history, and specific cancer-relevant exposures. Worry about it the way you'd worry about a moderate, second-order risk factor, not as a primary driver.\n\n> **Immune: dysregulation, not suppression. The \"stress weakens immunity\" frame is wrong in instructive ways. Cancer is real-but-modest for progression, mixed-evidence for initiation; the broad \"stress causes cancer\" claim overstates what we know.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 992,
+      "out_sha": "28217af89dc6",
       "note": ""
     },
     {
@@ -1319,11 +1319,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 104,
       "src_chars": 1755,
-      "status": "pending",
+      "status": "done",
       "src_sha": "0a7c97616202",
       "src": "### 6.4 Reproductive Function — Mechanism Clear, Severity Variable\n\nThe chronic-stress-reproductive link has a clean conserved mechanism and modest but consistent epidemiology.\n\nChronic cortisol exposure suppresses the hypothalamic-pituitary-gonadal axis. It reduces the amplitude and frequency of gonadotropin-releasing hormone (GnRH) pulses from the hypothalamus, which reduces downstream LH and FSH. In men, this means reduced testosterone production. In women, menstrual irregularity, anovulation, and reduced fertility. The mechanism is conserved across mammals — Sapolsky's subordinate baboon males show lower testosterone; chronically stressed female baboons show menstrual irregularity — so it is well-mapped at the receptor and signaling level, not just inferred from human correlations.\n\nClinically: functional hypothalamic amenorrhea (menstrual cessation under sustained chronic stress, often combined with caloric restriction or heavy exercise) is a well-recognized condition. Reduced fertility in chronically stressed couples is supported by epidemiological data with moderate effect sizes. Reduced libido is reliably reported and hormonally measurable, though confounded by depressive symptoms.\n\nSeverity scales with chronic-stress severity. Mild chronic stress produces modest effects (slightly irregular cycles, modest testosterone dips, occasional libido changes); severe chronic stress produces severe effects (amenorrhea, infertility, marked testosterone decline). Recovery is generally good once chronic stress is addressed — unlike some cardiovascular and metabolic damage, reproductive suppression is largely reversible.\n\n> **Reproductive: mechanism clean, severity scales with chronic-stress severity, recovery is generally good.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 492,
+      "out_sha": "f96dd8479869",
       "note": ""
     },
     {
@@ -1331,11 +1331,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 105,
       "src_chars": 3354,
-      "status": "pending",
+      "status": "done",
       "src_sha": "36103476ecf0",
       "src": "### 6.5 Pain and \"Functional\" Disorders — Real Neurobiology\n\nA category of disorders historically dismissed as \"in the patient's head\" — fibromyalgia, irritable bowel syndrome (IBS), chronic fatigue syndrome (ME-CFS), chronic non-specific low back pain — turns out to have substantial chronic-stress neurobiology behind it. The phrase \"in your head\" was always partly true and entirely misleading: of course pain processing is in the head; the dismissive sense (that the suffering is unreal or self-inflicted) does not follow.\n\nThe mechanism is increasingly mapped. Four distinct components contribute, each with patient-relevant consequences.\n\n_Central sensitization_ is the most clinically consequential of the four. Chronic stress upregulates pain-processing pathways in the spinal cord and brain. Two specific changes follow. _Allodynia_ : stimuli that should not hurt at all begin to hurt — the touch of clothing, a bedsheet, a partner's hand on the shoulder, the pressure of sitting. _Hyperalgesia_ : stimuli that should hurt a little hurt a lot — a small bump produces disproportionate pain, a routine procedure becomes intolerable. For someone living with fibromyalgia or chronic low back pain, this is not metaphor. It is the daily texture of the condition. The pain system has been recalibrated; the threshold has dropped; the gain has gone up. The pain reported is not exaggerated; it is what the recalibrated system produces. Patients who are told \"the pain is out of proportion to the findings\" are being measured against a system that no longer exists in their body.\n\n_Reduced descending pain modulation_ compounds this. The brain normally sends inhibitory signals down the spinal cord that damp pain at its source — a built-in volume control on incoming pain signals. In chronic-stress states, these inhibitory pathways become less effective. Pain that would normally be filtered or attenuated reaches consciousness at full volume. The patient is not just experiencing more pain input; their brain has lost some of its normal capacity to turn pain down.\n\n_Autonomic dysregulation_ underlies the visceral and systemic symptoms that often travel with chronic pain — IBS-like cramping and bowel changes, palpitations without cardiac pathology, dizziness on standing, persistent fatigue, temperature dysregulation. Patients often describe these as \"everything seems off at once,\" which is exactly what autonomic dysregulation looks like.\n\n_Central inflammation_ through low-grade microglial activation contributes to \"brain fog,\" cognitive slowing, and the chronic fatigue component. This is part of why these conditions are not \"just\" pain — they involve cognitive and energetic dimensions that the peripheral pain framing misses.\n\nSpecific conditions map onto these mechanisms in characteristic ways. Fibromyalgia is now understood as central sensitization with strong chronic-stress and trauma associations. IBS is a gut-brain communication disorder, with the autonomic and central-sensitization components especially prominent. ME-CFS has multiple proposed mechanisms with chronic-stress and post-viral components both supported. Chronic non-specific low back pain is substantially influenced by central sensitization, which is part of why peripheral interventions (injections, surgery aimed at minor structural findings) often disappoint.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 945,
+      "out_sha": "c5bd9271f661",
       "note": ""
     },
     {
@@ -1343,11 +1343,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 106,
       "src_chars": 847,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e917052574b4",
       "src": "The clinical implication is consequential: integrated treatment (CBT for chronic pain, graded exercise carefully paced, medications targeting central pain processing such as SNRIs or certain neuropathic agents, sleep restoration, trauma-informed care where relevant, alongside whatever peripheral pathology exists) outperforms single-mode therapies. The decades of dismissal — telling patients there was \"nothing wrong\" — produced real clinical harm: years of inadequate treatment, plus the secondary burden of being told their suffering was unreal. The modern picture takes the underlying neurobiology seriously and treats accordingly.\n\n> **Pain and functional disorders: real neurobiology, partly chronic-stress-mediated. The historical dismissal has been clinically harmful; integrated treatment works better than peripheral-only approaches.**\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 244,
+      "out_sha": "8d7253e4a629",
       "note": ""
     },
     {
@@ -1355,11 +1355,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 107,
       "src_chars": 3077,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a8f072182643",
       "src": "### 6.6 What \"Stress Causes\" Doesn't Mean\n\nThe five sections above traced specific stress-disease pathways, organ system by organ system. Before pulling them together in §6.7's Whitehall return, a note on the verb itself. Throughout this chapter, the phrase \"stress contributes to\" has been used carefully. The looser phrase \"stress causes\" is common in popular discourse and is misleading in several specific ways.\n\n**Causation here is contributory, not exclusive.** When we say \"chronic stress contributes to cardiovascular disease,\" we mean that chronic stress is one of several contributors. Genetics contributes. Diet contributes. Smoking contributes. Exercise contributes. Air pollution contributes. Sleep contributes. The disease is multi-factorial; stress is one factor among several.\n\nThis means several things. (1) A person who experiences chronic stress will not necessarily develop the associated disease. (2) A person who develops the disease will have multiple contributing factors. (3) Reducing stress reduces _risk_ , not the disease itself directly. (4) Population-level effects exist even when individual-level outcomes are highly variable.\n\n**Causation here is statistical, not deterministic.** When we say \"chronic stress increases cardiovascular risk by X%,\" this is a population-level statistic. At the individual level, you may have a substantial chronic stress exposure and never develop CVD; another person with similar exposure may. The variation reflects genetic, behavioral, and other factors that determine how the same stress exposure plays out in different bodies.\n\n**Causation here is bidirectional in some cases.** Chronic illness is itself stressful, and the stress feeds back into the illness pattern. People with cardiovascular disease are often more chronically stressed; the stress makes the disease management harder; the disease makes the stress worse. Distinguishing cause from consequence in cross-sectional data is hard. The strongest evidence for stress→disease comes from longitudinal data showing that stress _precedes_ disease — Whitehall and several other cohort studies meet this bar; many cross-sectional studies do not.\n\n**Causation here is mechanism-graded.** Some stress-disease pathways have strong mechanistic support and converging epidemiology (cardiovascular, metabolic). Some have mechanistic support but more variable epidemiology (immune, reproductive). Some have weaker support overall (most cancer types, broad psychosomatic claims). Treating all \"stress causes X\" claims as equivalent obscures these important distinctions.\n\n**The right framing.** Chronic stress is a contributory risk factor for several specific diseases through specific mechanisms, with effect sizes that vary by condition and by individual. Reducing chronic stress reduces, on average, the risk of these conditions, but does not eliminate it and is not the only relevant lever. This is a more honest and more useful framing than either \"stress causes everything\" (overclaim) or \"stress doesn't really matter for physical health\" (dismissal).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 883,
+      "out_sha": "8f34ff74337c",
       "note": ""
     },
     {
@@ -1367,11 +1367,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 108,
       "src_chars": 1645,
-      "status": "pending",
+      "status": "done",
       "src_sha": "803a305c879c",
       "src": "#### Common Misconception: \"Stress causes ulcers\"\n\nA particularly informative example of how popular claims can outlive their evidence base. For decades it was widely believed that stress caused gastric ulcers. The folk wisdom, reinforced by mid-20th-century clinical writing, treated peptic ulcer disease as a quintessential psychosomatic illness.\n\nIt turned out to be wrong, or at least mostly wrong. **Helicobacter pylori** , a stomach bacterium identified by Barry Marshall and Robin Warren in the 1980s, is responsible for the substantial majority of gastric and duodenal ulcers. Marshall famously demonstrated this by ingesting H. pylori himself, developing gastritis, and curing it with antibiotics. The discovery, which initially met substantial skepticism, eventually won the Nobel Prize. Most peptic ulcers are now treated as bacterial infections.\n\nStress does play _some_ role — it can affect ulcer healing and recurrence in patients with H. pylori, and there is a small subset of stress-related \"Cushing ulcers\" associated with severe acute illness. But the popular claim \"stress causes ulcers\" was substantially wrong, and the correction has not fully reached popular discourse.\n\nThe case is informative because it shows that even widely-believed stress-disease causal claims can be substantially wrong, and that the field's most credible voices have spent decades correcting popular overclaims. The reader of stress literature should expect this pattern — claims that seemed clear in the 1970s have been substantially revised by 2020s evidence. The book's posture of evidence-tier discipline is in part a response to this history.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 545,
+      "out_sha": "705c7af4d941",
       "note": ""
     },
     {
@@ -1379,11 +1379,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 109,
       "src_chars": 3313,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b18b77e4f22e",
       "src": "### 6.7 Reading the Whitehall Cardiovascular Gradient Carefully\n\nThread C deepens in this chapter with the specific cardiovascular finding that has done so much intellectual work in the field.\n\nThe Whitehall I and II studies followed roughly 18,000 British civil servants. The cardiovascular mortality gradient — lowest grade civil servants having approximately 3× the CHD mortality rate of highest grade — is the foundational human-population evidence for chronic-stress-cardiovascular causation. Several features make this finding particularly informative.\n\n_The population was relatively homogeneous_. All employed; all paid (across a range, but everyone above destitution); all had NHS healthcare access; all worked in office environments; all lived in similar geographic regions. This homogeneity meant that many of the confounders that plague stress-disease epidemiology elsewhere were minimized.\n\n_The gradient persisted after extensive confounder adjustment_. Smoking was controlled. BMI was controlled. Lipid levels were controlled. Diet was partially controlled. Alcohol was controlled. The gradient diminished modestly with these adjustments but remained substantial.\n\n_The dominant remaining variable was occupational autonomy_. Marmot and colleagues identified perceived control over work — what Karasek called \"decision latitude\" — as the variable that most explained the residual gradient. Higher-grade civil servants had more control over their day; lower-grade civil servants had less.\n\n_The mechanism is mappable_. The autonomy gradient predicted the allostatic load gradient (Chapter 5). The allostatic load gradient predicted blood pressure, lipid profile, inflammatory markers. These are the established cardiovascular risk markers. The full chain — low autonomy → chronic activation → allostatic load → cardiovascular biomarker dysregulation → cardiovascular disease — is supported step by step.\n\n_The effect size is substantial_. A 3:1 mortality gradient in a relatively homogeneous population is large. By comparison, smoking roughly doubles cardiovascular mortality. The autonomy gradient effect is comparable to or larger than smoking.\n\nFor a working-age reader: if your job has substantial demands and limited autonomy, you are facing a real cardiovascular risk factor. This is not popular framing's catastrophizing; it is rigorous epidemiology. The intervention that follows is worth thinking about carefully — sometimes the right response is structural change in the work environment, sometimes it is exercise (which partially offsets cardiovascular wear), sometimes it is the buffer-variable interventions of Part III. Sometimes — and this is what the structural lens of the book keeps emphasizing — it is recognizing that _no individual intervention fully offsets a chronically dysregulating environment_ , and that the right response includes evaluating whether the environment itself can change.\n\n> _Use this chapter's framework to read your diary across the past two weeks. Look at the perceived-control column especially. If your most stressful days are also your lowest-control days, you are observing in your own life what Whitehall observed across 18,000 civil servants — control matters, and chronic low-control situations produce real cumulative cost._\n\n\n### 6.X Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 984,
+      "out_sha": "b3807214d08f",
       "note": ""
     },
     {
@@ -1391,11 +1391,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 110,
       "src_chars": 3042,
-      "status": "pending",
+      "status": "done",
       "src_sha": "d93e595972c1",
       "src": "#### Concept Check\n\n**Q1.** Name three mechanisms by which chronic stress contributes to cardiovascular disease. For each, identify whether the evidence is at tier (a) — directly demonstrated — or tier (b) — mechanistic plus correlational.\n\nHint\n\nThe mechanisms are well-mapped. Endothelium, atherosclerosis, plaque rupture, arrhythmia.\n\n**Answer:** Three mechanisms, ordered roughly by the strength of the evidence linking them to outcomes.\n\n_1\\. Acute plaque rupture and arrhythmia triggering (tier a)._ Catecholamine surges during severe acute stress can rupture already-vulnerable plaques and trigger arrhythmias. This is the strongest case because natural experiments — earthquakes, terrorist attacks, sudden deaths — show event-rate spikes that return to baseline afterward. The temporal pattern is clean.\n\n_2\\. Endothelial dysfunction (tier a–b for mechanism, tier b for chronic-disease link)._ Chronic catecholamine and cortisol exposure damages the endothelium, reducing nitric oxide and producing a pro-inflammatory, pro-thrombotic vascular state. The cellular mechanism is directly demonstrated; the link to long-term outcomes in humans is mechanistic plus correlational.\n\n_3\\. Accelerated atherosclerosis (tier b)._ Through the endothelial damage, blood pressure elevation, lipid worsening, and inflammation above, chronic stress accelerates plaque formation. Cellular mechanism well mapped (tier a in lab); the human-disease link rests on population data (Whitehall, Caerphilly, Framingham).\n\nThe acute mechanisms operate over hours; the chronic ones accumulate over years. Both contribute. Cardiovascular is the strongest stress-disease case in this chapter — mechanisms at high evidence tier, epidemiology converging. The popular claim \"stress is bad for your heart\" is, here, backed by the data.\n\n**Q2.** Why is \"stress weakens immunity\" misleading? What is the more accurate framing, and what evidence supports the more accurate version?\n\nHint\n\nThe immune system is not unidirectional, and chronic-stress effects vary across immune functions.\n\n**Answer:** It might seem that \"stress weakens immunity\" is the obvious summary — chronic stress catches up with you, you get more colds, your defenses are down. The framing maps neatly onto folk experience and onto the marketing of \"immune-boosting\" supplements. A natural reading is that chronic stress turns one dial down, and intervention should turn it back up.\n\nBut the data don't fit that picture. Chronic stress reliably _reduces_ some immune functions: vaccine antibody response (measurable in influenza, herpes zoster), viral clearance (Cohen's rhinovirus studies show clean dose-response), wound healing (controlled punch-biopsy studies), specific cellular antiviral responses. At the same time, chronic stress reliably _increases_ others: chronic low-grade inflammation (CRP, IL-6 elevation), autoimmune flare frequency in RA, MS, IBD, and allergic reactivity in some studies. Both patterns appear together. A single dial turning down cannot produce the second pattern.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 939,
+      "out_sha": "ca6bafb72be5",
       "note": ""
     },
     {
@@ -1403,11 +1403,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 111,
       "src_chars": 3474,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b7cd0c8dccd2",
       "src": "The accurate framing is _bidirectional dysregulation_. The mechanism explains both directions at once: chronic cortisol shifts T-helper balance — Th1 (cellular, antiviral) is downregulated, while Th2/Th17 and chronic inflammatory pathways are preserved or amplified. Different immune cell populations have different glucocorticoid receptor distributions, so chronic cortisol produces different effects on different functions. Acute cortisol does something different again — it _redistributes_ lymphocytes into tissues for sustained challenge, which is closer to strategic mobilization than to suppression.\n\nWhy this matters: \"boosting immunity\" is incoherent when the actual problem is partly _too much_ immune activation in the wrong directions. Generic immune boosters can amplify the inflammatory and autoimmune pathways that are already over-active under chronic stress. Targeted interventions — reducing chronic inflammation, restoring vaccine responsiveness, addressing the chronic stress driving the dysregulation — make sense in a way that \"boost immunity\" does not. The popular framing flattens the texture that actually informs treatment.\n\n**Q3.** What is the historical case of \"stress causes ulcers\" useful for understanding? What does it tell us about how to read stress-disease claims generally?\n\nHint\n\nA claim that was once widely believed turned out to be substantially wrong. Why did the belief persist, and what does its correction teach us?\n\n**Answer:** Mid-20th-century clinical writing treated peptic ulcer as the quintessential psychosomatic illness — there was even an \"ulcer personality.\" Marshall and Warren's _H. pylori_ discovery in the 1980s, confirmed when Marshall ingested the bacterium himself and developed gastritis, revealed that most ulcers are bacterial. Treatment shifted from antacids and stress management to antibiotics. Stress retains a smaller role (delayed healing, Cushing ulcers, NSAID interactions), but the popular framing was substantially wrong.\n\nFour lessons for reading stress-disease claims generally:\n\n* _Strength of popular belief is not evidence of truth._ The certainty about ulcers did not protect the field from correction.\n* _Mechanism plausibility is not evidence._ \"Stress affects the gut, ulcers are in the gut\" sounded mechanistic but the actual cause was different. Many current claims rest on similar plausibility intuitions.\n* _Popular discourse lags science by decades._ Many people still believe stress causes ulcers thirty years after H. pylori. Today's \"everyone knows\" may reflect 1980s framing.\n* _Hedging is appropriate, not evasive._ The chapter's caution on cancer, broad psychosomatic claims, and Type A personality reflects awareness that some current claims will be revised — as the ulcer claim was.\n\nReader's posture: distinguish well-supported claims (cardiovascular, metabolic, specific immune functions, central pain) from overclaimed ones. Popular literature is biased toward dramatic claims; calibrated honesty is less marketable but more useful.\n\n**Q4.** Why is the Whitehall cardiovascular gradient particularly informative compared to many other stress-disease epidemiological findings? What features of the study design make its conclusions more robust?\n\nHint\n\nMost stress-disease epidemiology faces serious confounding problems. Whitehall avoids many of them.\n\n**Answer:** Whitehall avoids most of the confounding problems that plague stress-disease epidemiology. Key design features:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1083,
+      "out_sha": "897dcbca13d3",
       "note": ""
     },
     {
@@ -1415,11 +1415,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 112,
       "src_chars": 1608,
-      "status": "pending",
+      "status": "done",
       "src_sha": "cbf298fc6a35",
       "src": "* _Population homogeneity._ All British civil servants — employed, above poverty, NHS-covered, similar geography. The big confounders (poverty, healthcare access, geography) are minimized within the cohort; what varies is occupational rank.\n* _Large sample, longitudinal._ ~17,000 (Whitehall I) and ~10,000 (Whitehall II) followed for decades. Exposure measured before outcome rules out reverse causation.\n* _Extensive confounder adjustment._ Smoking, BMI, cholesterol, blood pressure, diet, alcohol, exercise. The 3:1 mortality gradient persists after adjustment — the strongest evidence it reflects something beyond obvious confounders.\n* _Mechanism mapping._ Investigators measured biomarkers (BP, lipids, inflammation, cortisol) and showed the rank gradient at the biomarker level. The full chain rank → biomarkers → disease is mappable.\n* _Convergence and replication._ The pattern fits with Sapolsky's baboons, Karasek's demand-control model, lab stress reactivity work, and replicates across American, Scandinavian, and East Asian cohorts.\n\nMost stress-disease epidemiology is weaker on one or more of these dimensions: cross-sectional designs that cannot establish temporal order; heterogeneous populations where confounders cluster; self-report-only stress measures; small samples; absent mechanism markers. Whitehall's relative absence of these problems is what makes it authoritative.\n\nPractical implication: high demand + low autonomy is a real cardiovascular risk factor. The honest response is some combination of structural change, exercise, and the buffer-variable interventions of Part III.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 553,
+      "out_sha": "6a8649bba193",
       "note": ""
     },
     {
@@ -1427,11 +1427,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 113,
       "src_chars": 3314,
-      "status": "pending",
+      "status": "done",
       "src_sha": "e4d238da128f",
       "src": "#### Application Problems\n\n**Q1.** A friend, age 45, has been working in a high-demand, low-control corporate role for 12 years. They report feeling \"totally fine\" and have a clean annual physical (within normal ranges on every standard marker). They are skeptical that their work is \"actually\" affecting their health, since their bloodwork comes back normal. Using the chapter's framework, how would you respond?\n\nHint\n\nThe \"feeling fine\" and \"normal bloodwork\" don't necessarily mean what the friend thinks they mean.\n\n**Answer:** The friend's reasoning has two gaps that the chapter's framework exposes.\n\n_Gap 1 — subjective adaptation._ After 12 years of chronic demand, the demand feels normal. That is the subjective-objective gap from Chapter 5: the mind adapts the baseline; the body keeps paying. \"I feel fine\" is consistent with substantial accumulated load.\n\n_Gap 2 — single-marker normalcy is not aggregate health._ Multiple markers at the _high end_ of normal — BP 130/85, cholesterol 195, HbA1c 5.6, mildly elevated CRP, RHR in the high 70s — each look \"in range,\" but together they are the early-allostatic-load signature. Single-marker medicine misses this; aggregate logic catches it. Whitehall's 3× cardiovascular mortality gradient (after adjustment) reflects exactly this kind of multi-system upward drift over decades, not any single marker tripping an alarm.\n\nHow to talk to the friend (frame, not script):\n\n* Validate that the bloodwork looks reassuring on standard medicine's terms — and that standard medicine doesn't see allostatic load.\n* Reframe \"feeling fine\" as partly real adaptation, partly lost baseline. People often only notice how stressed they were after recovery makes the contrast visible.\n* Suggest watching trends, not just absolute values: a resting heart rate that's drifted up 5–10 BPM across years, BP creeping up, HbA1c trending upward — informative even when no value crosses a threshold.\n* Recommend the highest-leverage interventions for this picture: regular aerobic exercise, sleep regularity, and where possible structural change in the work itself, since no individual intervention fully offsets a continuously dysregulating environment.\n\n**Q2.** A coworker has been diagnosed with type 2 diabetes at age 42. They are determinedly focused on the dietary changes their doctor recommended but skeptical of the suggestion that their high-demand consulting job might be a contributing factor. They argue, \"Stress doesn't cause diabetes — diet causes diabetes.\" Using the chapter's framework on metabolic disease, how would you respond?\n\nHint\n\nThe coworker is right that diet is a primary driver, and partially wrong about the framing.\n\n**Answer:** The coworker is partially right: diet is a major T2D driver and the dietary changes are appropriate. But the binary framing \"diet, not stress\" misses that T2D is multifactorial, and chronic stress is a real contributor through well-mapped mechanisms:\n\n* Chronic cortisol promotes visceral fat (the metabolically dangerous depot).\n* Cortisol drives insulin resistance directly and via worsened lipids and chronic inflammation.\n* Cortisol shifts food preferences toward energy-dense palatable foods (stress eating is hormonally real, not just willpower).\n* Cortisol disrupts sleep, itself a substantial T2D risk factor.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1047,
+      "out_sha": "f4a2e7cc51dc",
       "note": ""
     },
     {
@@ -1439,11 +1439,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 114,
       "src_chars": 3109,
-      "status": "pending",
+      "status": "done",
       "src_sha": "09738e62c2f1",
       "src": "Population studies (Whitehall, Helsinki, several Japanese occupational cohorts) find chronic occupational stress contributes meaningfully to T2D incidence — effect sizes 20–50% — after adjusting for diet and other risk factors. This is not peripheral.\n\nThe honest framing is not stress vs. diet, but stress _and_ diet _and_ sleep _and_ exercise _and_ the structural conditions that affect all of them. The coworker's binary framing has a psychological function: it lets them focus on something they control (food) without engaging the harder question (whether the consulting job's pattern needs to change).\n\nHow to talk to them (frame, not script):\n\n* Affirm that the dietary work is real and important — don't undermine compliance.\n* Introduce the specific mechanisms above, briefly, so \"stress\" stops being a fuzzy concept.\n* Point out that diet alone may be insufficient if the work environment continues to drive cortisol exposure that promotes visceral fat and insulin resistance.\n* Recommend complements, not substitutes: aerobic exercise (powerful effects on glucose regulation and HPA function), sleep regularity, and if possible structural change in the work pattern.\n\n**Q3.** Apply this chapter's framework to interpret a specific finding: chronic stress has been associated with both reduced vaccine antibody response _and_ increased autoimmune flare frequency. These findings sound contradictory at first (\"immunity is reduced\" vs. \"immunity is increased\"). Explain why they are not contradictory, and what they reveal about how chronic stress affects the immune system.\n\nHint\n\nThe immune system is not unidirectional. Different functions can be affected differently.\n\n**Answer:** The findings are not contradictory; they are two facets of the same bidirectional dysregulation. The immune system is not a single dial.\n\n_Reduced vaccine response_ depends on Th1 cellular immunity and B-cell antibody production — functions that chronic cortisol downregulates. So vaccinated individuals under chronic stress show measurably lower antibody titers.\n\n_Increased autoimmune flares_ run through Th17 and the chronic inflammatory state (CRP, IL-6) that chronic stress amplifies. The pathways that drive autoimmune attack are upregulated.\n\nHow can both happen at once? Because Th1/Th2/Th17 balance shifts under chronic cortisol — some functions are downregulated, others upregulated. The popular \"stress weakens immunity\" framing treats the system as one dial; it works as a metaphor for the vaccine data and breaks on the autoimmune data.\n\nThe accurate framing — chronic stress dysregulates in specific patterns, both up and down — predicts exactly what's observed: worse Th1-dependent challenges (vaccines, viral clearance) and increased reactivity in Th2/Th17-dependent pathways (allergies, some autoimmune conditions).\n\nTwo implications. First, \"boosting immunity\" is incoherent under chronic stress; the goal is restoring regulation. Second, if you notice both more frequent minor infections _and_ more allergies/flares/inflammation symptoms, that combination is not paradoxical — it's the signature.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 951,
+      "out_sha": "49775fd1c0ba",
       "note": ""
     },
     {
@@ -1451,11 +1451,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 115,
       "src_chars": 3323,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8c42a4f207ee",
       "src": "#### Think Deeper\n\n**Q1.** This chapter has emphasized evidence-tier discipline — distinguishing well-supported claims (cardiovascular, metabolic) from partially-supported claims (some cancer findings, some autoimmune findings) from overclaimed ones (broad psychosomatic claims). But the discipline of \"I'm not certain\" is uncomfortable in clinical conversation. A patient asking \"is stress causing my [condition]?\" expects a clearer answer than \"the evidence is mixed.\" How should evidence-tier discipline interact with clinical communication, and is there a useful middle ground between \"yes, stress causes this\" and \"the evidence is inconclusive\"?\n\n**Discussion:** Pure evidence-tier honesty (\"the evidence is mixed\") feels evasive to patients seeking guidance and may itself induce anxiety. Pure clinical confidence (\"yes, stress causes this\") motivates action but produced an entire generation of patients getting wrong advice about ulcers, and contributes to the inflated anxiety patients carry about overclaimed connections.\n\nA useful middle ground:\n\n* _Separate the certainty of the connection from the certainty of the intervention._ Even when the causal link is uncertain, the recommended interventions (sleep, exercise, addressing chronic stressors) are usually the same and have independent benefits. \"I don't know whether stress is causing X, but the things that would help if it is are also helpful regardless\" is honest and actionable.\n* _Distinguish contributory from dominant._ Most stress-disease links are real but multifactorial. \"Stress is one factor; addressing it should help; it's not the only lever\" is more accurate than yes/no framings.\n* _Distinguish population statistics from individual prediction._ Whitehall says people in your environment have higher average risk. It does not say _you_ specifically will. Honest framing keeps both visible.\n* _Take the patient's own observations seriously._ \"My flares get worse when X\" is personal data. Dismissing it because population evidence is mixed wastes information.\n* _Be explicit about what would change with new evidence._ This models intellectual honesty better than false confidence.\n\nThe deeper question is what medical communication is for. Confident framings motivate action; calibrated framings give accurate models. Both matter; skilled clinicians balance them. For this book's purposes — readers integrating evidence into their own choices, not patients receiving a directive — calibrated honesty is the right register.\n\nThe popular stress literature's confident overclaiming is partly an artifact of communication norms that prefer dramatic certainty. Recognizing this helps you read both popular and academic stress literature with appropriate skepticism.\n\n**Q2.** The chapter has emphasized that chronic-stress effects on the body are _contributory_ rather than _exclusive_ — chronic stress is one cause among several for cardiovascular disease, one risk factor among several for diabetes, etc. This framing is honest, but it also raises a question: at what point does a contributory factor become important enough to act on? If chronic stress contributes 20-40% to cardiovascular risk, is that enough to warrant major life changes (different job, different relationship, etc.) when the alternatives have their own substantial costs?",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 977,
+      "out_sha": "a1b22ce15df7",
       "note": ""
     },
     {
@@ -1463,11 +1463,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 116,
       "src_chars": 3264,
-      "status": "pending",
+      "status": "done",
       "src_sha": "51e4a03af964",
       "src": "**Discussion:** A 20–40% increased CVD risk is real — comparable to other moderate-strength risk factors that would prompt clinical attention. (Smoking roughly doubles CVD risk; severe hypertension triples it; chronic stress sits in the moderate range.) But the question \"is this enough to warrant major life change?\" is the wrong frame. Several considerations push back:\n\n* _Major changes have their own costs._ Income, benefits, relationships, housing — leaving one demanding situation often produces another. The risk-reduction calculus must include these.\n* _The benefit of change isn't linear._ Prior chronic stress has produced some accumulated cost; the new life will have new stressors; recalibration takes time.\n* _Many effects are partially reversible without upheaval._ Restored sleep, regular exercise, better connection, strengthened buffers can substantially modulate cardiovascular wear within existing conditions.\n* _Individual variation is large._ The 20–40% population effect doesn't translate cleanly to your individual risk.\n* _Sometimes acceptance is right._ Some chronic-stress conditions are inseparable from things the person values. Conscious acceptance with mitigation is sometimes more honest than disruptive change.\n\nA more useful frame than \"is this enough to act on?\" — ask:\n\n* Are there low-cost structural changes I can make (boundaries, exercise, addressing a specific dysfunctional pattern)?\n* Are the conditions themselves negotiable through better systems or clearer asks?\n* Are my buffer variables (control, connection, meaning) strong enough to offset the exposure?\n* Is the load already producing visible accumulated cost (visceral fat, BP creep, sleep loss, mood, frequent illness)? That signals the load exceeds capacity.\n* Is the value gained from the situation worth the cost? (A values question, not just a risk question.)\n\nThe honest answer: 20–40% increased CVD risk is enough to take the situation seriously, not necessarily enough to mandate any particular upheaval. Most readers will find that smaller structural changes plus buffer-variable strengthening produce substantial benefit. Some will find the underlying conditions need more change. The framework supports both.\n\n**Q3.** This chapter has presented chronic stress as a contributor to multiple physiological diseases, with mechanisms that are increasingly well-mapped. But it has not addressed an interesting question: do the same mechanisms that produce these costs also produce _benefits_ in some contexts? Is there any sense in which moderate or short-term stress is genuinely good for the body, beyond just \"you need acute stress to handle emergencies\"?\n\n**Discussion:** Yes — the same machinery that produces costs in chronic activation produces benefits when the pattern is different. The key variable is duty cycle, not activation itself.\n\n_Hormesis._ Brief intense stressors produce adaptations: heat exposure → heat-shock proteins; cold exposure → brown adipose and autonomic adaptations; intermittent fasting → metabolic adaptations; high-intensity exercise → cardiovascular and metabolic adaptations. All activate the same fast-axis machinery that chronic stress dysregulates. Brief and recoverable: adaptation. Continuous and unrecovered: wear.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 987,
+      "out_sha": "d955fc9f1fa6",
       "note": ""
     },
     {
@@ -1475,11 +1475,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 117,
       "src_chars": 1511,
-      "status": "pending",
+      "status": "done",
       "src_sha": "30a8cfa4c3a6",
       "src": "_Eustress._ The acute response is similar in dangerous and in challenging-but-controllable situations; what differs is context and recoverability. The inverted-U arousal-performance curve and flow states reflect the productive end of activation. Acute cortisol enhances memory consolidation for emotionally salient events; acute inflammation is part of healthy immune surveillance. The chronic-stress problem is sustained activation without resolution, not activation per se.\n\n_Post-traumatic growth._ Some people emerge from severe stressors with clarified values, deeper relationships, and increased meaning, partly through prefrontal integration of the experience into a coherent narrative. This is not \"stress is good\"; it is the human capacity for meaning-making sometimes converting difficult experience into growth.\n\nImplications: the chapter's posture is not \"all stress is bad\" but \"chronic activation is bad, brief recoverable activation can be healthful.\" Popular framing conflates these. Healthful interventions involve _brief, intense, recoverable_ activation — aerobic exercise is the cleanest example. The goal is not to eliminate stress responses but to ensure activations are followed by adequate recovery, with chronic dysregulating loads addressed.\n\nVigorous exercise is healthy stress activation. An hour of doomscrolling sitting still is unhealthy stress activation. The activations look similar on the surface (heart rate up, cortisol up); the patterns and recoverability are what differ.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 416,
+      "out_sha": "caea14a7b74a",
       "note": ""
     },
     {
@@ -1487,11 +1487,11 @@
       "en_title": "Chapter 6: The Body Pays — Heart, Metabolism, Immunity",
       "order": 118,
       "src_chars": 3247,
-      "status": "pending",
+      "status": "done",
       "src_sha": "53c8e14ee614",
       "src": "### Chapter Summary\n\nThis chapter walked through the major chronic-stress-disease pathways with explicit evidence-tier discipline, refusing both popular overclaim and dismissive denial. The framework is straightforward: tier (a) for directly demonstrated claims, tier (b) for mechanism + correlation, tier (c) for plausible but evidentially underdetermined.\n\nThe **cardiovascular system** is the strongest case. Chronic stress contributes to cardiovascular disease through specific mechanisms (endothelial dysfunction, accelerated atherosclerosis, plaque rupture risk, arrhythmia) supported at the highest evidence tier. Whitehall's 3:1 mortality gradient between civil-service grades, surviving extensive confounder adjustment, is the cleanest population-level demonstration. Effect sizes (20-40% increased risk for high-stress occupational conditions) are non-trivial, comparable to other moderate-strength risk factors. The Type A personality literature is methodologically weaker than its popular currency suggests; the hostility-specific finding is more robust. The \"broken heart\" phenomenon (acute event triggering after major emotional stressors) is well-supported.\n\n**Metabolic disease** is also well-supported. Chronic cortisol promotes visceral fat accumulation, insulin resistance, dyslipidemia, and stress-eating patterns. The mechanism is clean and the epidemiology converges. Cushing's syndrome demonstrates the extreme version of what chronic-stress-metabolic dysregulation looks like.\n\n**Immunity** is _bidirectional dysregulation_ , not \"weakening.\" Chronic stress reduces some functions (vaccine antibody response, viral clearance, wound healing) while increasing others (chronic inflammation, autoimmune flares). The popular framing \"stress weakens immunity\" is misleading; the accurate framing is more complicated and more useful. Cancer relationships are mixed — chronic stress contributes to progression in patients already diagnosed, but effects on cancer initiation are more variable across cancer types.\n\n**Reproductive function** is suppressed under chronic stress through clear mechanisms. Functional hypothalamic amenorrhea, reduced fertility, and reduced libido are documented effects. Severity scales with chronic-stress severity.\n\n**Pain and \"functional\" disorders** (fibromyalgia, IBS, chronic fatigue) have real underlying neurobiology, partly chronic-stress-mediated. Central sensitization, reduced descending pain modulation, and autonomic dysregulation are documented mechanisms. Treatment integrating stress mechanisms outperforms treatment ignoring them.\n\nThe chapter introduced the **\"stress causes ulcers\"** correction as an instructive case — a widely-believed claim that turned out to be substantially wrong (most ulcers are H. pylori bacterial infections), and a reminder that even confident stress-disease claims can be revised by better evidence.\n\nWhitehall (Thread C) deepened with the cardiovascular gradient and its mechanism-mappable causal chain (autonomy → chronic activation → allostatic load → cardiovascular biomarker dysregulation → cardiovascular disease). The convergence with Sapolsky's baboons (Thread A) and laboratory stress reactivity work gives this finding unusual evidential weight.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 941,
+      "out_sha": "33fcbf4e3f27",
       "note": ""
     },
     {
