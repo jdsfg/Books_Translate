@@ -959,11 +959,11 @@
       "en_title": "Chapter 5: The Graduate School Personal Statement",
       "order": 73,
       "src_chars": 2654,
-      "status": "pending",
+      "status": "done",
       "src_sha": "b99a11431a37",
       "src": "### 5.5 Theo's Revised Statement\n\nTheo, after the advisor's red-pen comment, returns to the statement. Theo cuts everything before paragraph 3. The new opening:\n\n> The question I am applying to graduate school to pursue is whether the well-documented bilingual advantage in attentional control is robust across socioeconomic strata or partly a confound. The question reaches further back than the lab work I will describe: I grew up watching my grandmother keep an AM Spanish-language station on in the kitchen long after she had stopped speaking Spanish at home, and I spent a summer trying to learn enough Salvadoran Spanish to ask her why. The pivot from that summer to a behavioral paradigm took two years of coursework. Last summer, working in Professor Ramirez's lab, I helped collect Stroop-task data on 156 bilingual children aged 6–9, drawn from two community partners — 78 in a high-income school district, 78 in a low-income district. The bilingual advantage replicated in the high-income subsample (Cohen's d = 0.42) and disappeared in the low-income subsample (d = 0.04). I do not yet know what to make of this. I want to spend the next two years finding out.\n\nRun the 6 Moves on the new opening:\n\n* **Move 1** : Done. Professor Lay reads this and instantly registers a candidate with a research question and prior data.\n* **Move 2** : Done. The Specific Research Story (the summer project; the 156 children; the divergent results) is the spine.\n* **Move 3** : Done. The first sentence states the research question concretely. The reader continues for the resolution.\n* **Move 4** : Done. Specific Objects: the AM Spanish-language station in the grandmother's kitchen, Professor Ramirez's lab, the Stroop task, 156 children (78 high-income, 78 low-income), the two community partners, the effect sizes, _bilingual advantage_.\n* **Move 5** : Done with restraint. _I do not yet know what to make of this. I want to spend the next two years finding out_ is connection without over-claiming. The two-sentence personal anchor (the grandmother and the Spanish-language station) does the §5.7 personal-anchor convention well: brief, immediately tied to the research question, and followed by the research evidence within the same paragraph.\n* **Move 6** : Done. The specific data, 156 children, two community partners, effect sizes, could not have been produced by an AI given a generic prompt.\n\nThe new opening is 130 words. The remaining 870 words of the statement develop the evidence (two more research projects), the methodological orientation, the fit paragraph naming three faculty, and the closing. The full statement passes all six moves.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 913,
+      "out_sha": "11fe93fe5d3d",
       "note": ""
     },
     {
@@ -971,11 +971,11 @@
       "en_title": "Chapter 5: The Graduate School Personal Statement",
       "order": 74,
       "src_chars": 180,
-      "status": "pending",
+      "status": "done",
       "src_sha": "fa8679fcf4b7",
       "src": "### 5.6 A Complete Sample Graduate Statement\n\nBelow is a complete statement (~950 words) by a fictional applicant, Wen, applying to a master's program in computational linguistics.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 61,
+      "out_sha": "4168e9c5a172",
       "note": ""
     },
     {
@@ -983,11 +983,11 @@
       "en_title": "Chapter 5: The Graduate School Personal Statement",
       "order": 75,
       "src_chars": 5053,
-      "status": "pending",
+      "status": "done",
       "src_sha": "ba3101c75d69",
       "src": "> The question I am applying to study is whether large language models acquire syntactic knowledge that generalizes across typologically distinct languages, or whether they acquire surface-level patterns that masquerade as syntactic knowledge in high-resource languages and break down in low-resource ones. The question came into focus during my senior thesis with Professor Park, in which we evaluated GPT-2's performance on subject-verb agreement in Korean — a language with rich agglutinative morphology that is typologically distant from English. The model's accuracy on long-distance agreement dropped from 89% on simple matrix clauses to 31% on embedded clauses with intervening adjuncts. The 31% is roughly chance for our paradigm. The drop is not specific to GPT-2; we replicated it in two open-source multilingual models.\n> \n> I want to understand whether the drop reflects a fundamental limit in current architectures or an artifact of training-data imbalance. The two hypotheses make different predictions for low-resource Indo-European languages with similar typology to Korean (e.g., Hungarian, Finnish), and we currently have data only for Korean. The natural next step is a typologically broader paradigm, which is what I would propose to do in graduate school.\n> \n> My research preparation has three components. First, the senior thesis described above, which produced a paper currently in revision for the _International Conference on Computational Linguistics_ student session and which I will present at our department's research symposium in March. Second, two summers in Professor Park's lab, including a summer of paradigm development with five Korean-speaking participants in pilot work. Third, coursework in formal syntax (LING 401), computational linguistics (LING 480), and graduate-level statistics (STAT 540), the last of which I took because the lab's analysis pipeline relied on mixed-effects logistic regression I had not understood from textbook readings alone.\n> \n> The methodological orientation I bring is mixed: I am comfortable with behavioral evaluation paradigms (the senior thesis used both targeted minimal-pair tests and naturalistic context evaluation), I have working but not advanced facility with PyTorch and HuggingFace, and I am beginning to learn probing-based interpretability methods. I do not yet know how to do mechanistic interpretability, the recent work coming out of Anthropic and others, and I would like to learn it.\n> \n> The University of Washington's Computational Linguistics program is the program I am most excited to apply to for three specific reasons. First, Professor Bender's work on the Bender Rule and on responsible LLM evaluation has shaped how I framed the typological-generalization question; the Korean-to-English asymmetry I observed is exactly the kind of imbalance her work argues we should test for. Second, Professor Smith's work on syntactic probing methods would directly extend the behavioral paradigms I have used so far into more direct measurements of model internals. Third, the program's relationship with the Allen Institute for AI provides access to model evaluations at scale that would not be feasible at most universities, and the multilingual data resources held within the institute include several of the low-resource languages my proposed extension would require.\n> \n> I would also bring useful prior work to the program. The Korean evaluation paradigm developed in Professor Park's lab is generalizable to other agglutinative languages with morphologically marked agreement; I have written documentation that could serve as a starting point for collaborators interested in extending it. My data-cleaning code for handling Korean honorific agreement (a non-trivial preprocessing problem) is on GitHub and has been used by two other students in the lab.\n> \n> Two acknowledgments belong in this statement. First, my research interest may shift during the master's program; the typological-generalization question is the most specific version of a broader interest in the limits of current language models, and I expect to revise the specific question as I learn more. Second, I do not yet know whether I will pursue a PhD after the master's. I want the master's to help me find out — both by doing more research and by working closely enough with faculty that I can evaluate honestly whether I am suited for a longer research career.\n> \n> What I hope to do in the program: complete a master's thesis that extends the typological-generalization paradigm to Hungarian and Finnish (with possible expansion to a Slavic language depending on data availability), present at one major conference, and contribute to one collaborative project outside my thesis topic. I would also like to take the program's seminar in interpretability methods (the one Professor Smith teaches in the fall), even though it is outside my immediate thesis methodology, because I expect the question of _what models actually know_ to remain central to my work for the rest of my career.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1497,
+      "out_sha": "4e7a8612c89e",
       "note": ""
     },
     {
@@ -995,11 +995,11 @@
       "en_title": "Chapter 5: The Graduate School Personal Statement",
       "order": 76,
       "src_chars": 3183,
-      "status": "pending",
+      "status": "done",
       "src_sha": "15b250b168fe",
       "src": "This statement is approximately 950 words and does what the genre requires:\n\n* Opens with a research question (Move 3 done in research register).\n* Develops three pieces of evidence (the senior thesis with specific results; two summers in the lab; specific coursework with specific reasons).\n* Names methodological orientation honestly, including what the candidate does not yet know.\n* Names three faculty with specific reasons (Move 1 + Move 4 done in research register).\n* Closes with concrete plans and honest acknowledgments.\n* Survives the AI test: the 89% / 31% accuracy drop, the Korean-English asymmetry, the specific paradigm, the GitHub documentation are all specific to Wen.\n\nThe statement is dense. It does not have time for a childhood anchor, an emotional reflection, or an inflated phrase about the importance of language. It is a research document with a specific candidate behind it. That is the genre.\n\n\n#### A Note on Recommendation Letters for Graduate Applications\n\nGraduate applications typically require two or three letters of recommendation. The brag sheet from §13.5 — a one-to-three-page document of specific projects, specific moments, and what the application asks the recommender to address — applies here. For graduate applications specifically, the brag sheet should orient the recommender toward the research-direction question your statement opens with, not toward general accomplishments.\n\n\n### 5.7 Common Pitfalls\n\n**Pitfall 1: The college-essay register.** A candidate writes a graduate statement in the register of an undergraduate personal essay — long childhood anchor, emotional reflection, inflated language about the field. The statement is well-written but in the wrong genre. Professor Lay registers it as _not yet ready for the graduate-level conversation._\n\n**Pitfall 2: The unanchored research interest.** The candidate names a research interest without evidence of having done relevant prior work. _I am interested in cognitive neuroscience_ is not an interest; it is a topic. The remedy: anchor the interest to a specific project, paper read, or experience. If no anchor exists, the candidate may not yet be ready to claim the interest.\n\n**Pitfall 3: The course-list dump.** The candidate lists every advanced class taken without describing what was _done_ in the classes. The transcript already shows the courses. The statement should describe specific work, papers written, projects completed, problems engaged with, not the catalogue of courses.\n\n**Pitfall 4: The faculty-name-drop without engagement.** The candidate names three faculty members without saying anything specific about each. _I would like to work with Professor X, Professor Y, and Professor Z_ is name-dropping. _Professor X's 2020 paper on Y is the methodological framework I have been trying to apply_ is engagement.\n\n**Pitfall 5: The over-confident closing.** The candidate claims to know exactly what they will work on for the next two or six years. Graduate committees know two-year predictions are rarely accurate; six-year predictions almost never are. The remedy: state plans concretely while acknowledging that the specific question will likely evolve.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 993,
+      "out_sha": "5ba373cc8aa7",
       "note": ""
     },
     {
@@ -1007,11 +1007,11 @@
       "en_title": "Chapter 5: The Graduate School Personal Statement",
       "order": 77,
       "src_chars": 1868,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8bee6a060448",
       "src": "### 5.8 Cultural and ESL Calibration\n\nThe graduate statement's research-forward register is, in some ways, _easier_ for ESL applicants than the undergraduate essay's emotional register. The graduate genre rewards specificity, precision, and methodological clarity — qualities that many international educational systems train more rigorously than the U.S. system trains emotional vulnerability.\n\nThe challenge for ESL applicants is different: it is to ensure that the statement does not read as a translated CV. Some international academic traditions emphasize listing accomplishments more than narrating intellectual development. The U.S. graduate statement asks for the latter — what the candidate is _thinking,_ not only what the candidate has _done._ The remedy is to ensure that each piece of evidence in the statement is followed by a sentence about what the candidate _learned_ or _began to wonder_ as a result.\n\nFor non-native English writers specifically: the statement may benefit from a careful read by a native or near-native speaker for sentence-level clarity. The conventions of academic English in the U.S. tradition (active voice, concrete verbs, short sentences) are not universal. Local academic English in some countries uses longer sentences, more passive constructions, and more nominalizations than the U.S. graduate statement convention prefers.\n\n\n### 5.9 Reader Draft Prompt\n\nWrite the first paragraph of a graduate personal statement for the field you would most plausibly apply to in graduate school (or have applied to). The paragraph should: state a specific research question; name a specific prior project or experience that anchors the question; do not begin with a childhood anchor.\n\nSave the paragraph. Compare it (in Chapter 17) to the opening line you saved at the end of Chapter 1. Notice the genre difference.\n\n\n### 5.10 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 525,
+      "out_sha": "95541b0d1d6a",
       "note": ""
     },
     {
