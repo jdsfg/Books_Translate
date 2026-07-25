@@ -474,8 +474,8 @@
       "status": "done",
       "src_sha": "22a5b30b758e",
       "src": "**Q3.** (Cross-reference to Chapter 1) The Allais paradox was presented in Chapter 1 as a violation of the independence axiom. Now explain it using the probability weighting function. What cognitive mechanism — the certainty effect — does your explanation reveal?\n\n**Answer:** This uses Chapter 1's material (the Allais setup) and Chapter 3's framework (probability weighting).\n\nIn the Allais paradox Problem 1, the preference for A (certain 1M USD) over B (89% chance of 1M USD, 10% chance of 5M USD, 1% chance of 0 USD) is driven by the qualitative premium on certainty. The probability weighting function assigns \\pi(1.00) = 1 to A's outcome, but assigns less-than-proportional weight to B's 89% chance of 1M USD because \\pi(0.89) < 0.89. Moreover, the dramatic transition from \"certain\" to \"near-certain\" (100% to 89%) represents a large psychological jump in the probability weighting function — much larger than the objective difference of 11 percentage points would suggest.\n\nIn Problem 2, neither option offers anything close to certainty. The difference between 11% and 10% probabilities gets translated into \\pi(0.11) and \\pi(0.10), which are similar — the overweighting of small probabilities is roughly comparable for both. With the certainty premium no longer available to Option C, the larger prize (5M USD) in Option D wins.\n\nThe cognitive mechanism is the **certainty effect** : moving from a probability of 1.0 to any smaller probability triggers a qualitatively different (much more negative) response than moving between two sub-certain probabilities. This effect emerges naturally from the probability weighting function's curvature at p = 1.0.\n",
-      "out_chars": 672,
-      "out_sha": "6cf41711a3f6",
+      "out_chars": 661,
+      "out_sha": "172561bd6a5a",
       "note": ""
     },
     {
@@ -483,11 +483,11 @@
       "en_title": "Chapter 3: Prospect Theory — The Behavioral Alternative",
       "order": 32,
       "src_chars": 3202,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4ef540a9102c",
       "src": "#### Think Deeper\n\n**Q1.** Prospect theory is itself a formal model, just like expected utility theory. It has parameters (the loss aversion coefficient, the shape of the probability weighting function). Does having \"better\" parameters make prospect theory correct? What would it mean for prospect theory to be \"true\"?\n\n**Discussion:** A model's success is not the same as its truth. Prospect theory fits behavioral data better than expected utility theory in a large range of laboratory and field settings. But \"fitting the data better\" raises several questions. First, prospect theory has more free parameters than expected utility theory (loss aversion coefficient, probability weighting parameters), so it can always fit a wider range of data — this is not automatically a virtue (it could be overfitting). True tests of prospect theory require out-of-sample predictions: does the model predict new findings in new domains? Second, the model's core constructs — reference points, value functions — must ultimately map onto psychological mechanisms. If brain imaging, response times, and clinical data do not reveal processes consistent with these constructs, the model may be empirically successful without being cognitively accurate. Third, prospect theory is a \"as-if\" model: it does not claim people consciously compute probability weights — it claims they behave _as if_ they do. Whether this distinction matters depends on the use case. For predicting behavior, it may not matter. For designing interventions (which require understanding mechanism), it does. The field increasingly uses prospect theory as a starting approximation while recognizing it is not the final word.\n\n**Q2.** The reference point in prospect theory is treated as given — but in many real situations, people have some choice over their reference point. How might people strategically manipulate their own reference points to change their emotional experience, and is this rational?\n\n**Discussion:** This question opens a rich territory. People do appear to choose and manipulate reference points strategically. An investor may refuse to check their portfolio daily (avoiding frequent reference-point resets to current value). A dieter may track daily weight against a long-term goal rather than yesterday's weight. A runner may set a \"good enough\" pace as their reference and feel successful even when losing. The question of whether this is rational is subtle. On one view, adopting a reference point that produces better emotional regulation is instrumentally rational — if high daily portfolio checks cause irrational trading, a policy of not checking serves long-term interests. On another view, systematically distorting your reference point to feel better involves a form of motivated cognition that may prevent accurate learning and adjustment. The model of the \"sophisticated\" agent in prospect theory — one who knows they have present bias and prospect-theory preferences, and designs their environment to exploit them — is a bridge between descriptive behavioral findings and normative rational choice theory. We will see this in Chapter 8 (commitment devices) and Chapter 15 (nudges as environmental design).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1073,
+      "out_sha": "98b5098c484b",
       "note": ""
     },
     {
@@ -495,11 +495,11 @@
       "en_title": "Chapter 3: Prospect Theory — The Behavioral Alternative",
       "order": 33,
       "src_chars": 1811,
-      "status": "pending",
+      "status": "done",
       "src_sha": "9622e1451950",
       "src": "### Chapter Summary\n\nProspect theory is the behavioral alternative to expected utility theory. It replaces the standard utility function — defined over final wealth — with a value function defined over gains and losses relative to a reference point. This value function has three key features: reference dependence (outcomes coded as gains or losses), loss aversion (losses loom larger than equivalent gains), and diminishing sensitivity (concave in gains, convex in losses).\n\nProspect theory also replaces objective probabilities with decision weights from a probability weighting function that overweights small probabilities and underweights moderate-to-large probabilities, with certainty receiving a qualitative premium.\n\nTogether, these features explain the Allais paradox (the certainty effect), predict the fourfold pattern of risk attitudes (risk aversion for high-probability gains, risk seeking for high-probability losses, risk seeking for low-probability gains, risk aversion for low-probability losses), and explain a wide range of real-world anomalies that expected utility theory cannot account for.\n\nProspect theory is one of the most robustly replicated frameworks in behavioral economics — Thread C notes that the basic qualitative predictions have held up in cross-cultural studies, field data, and neuroscience experiments. The quantitative parameters vary, and important extensions (for multi-outcome lotteries, for lotteries with mixed gains and losses) require additional theoretical work, but the core architecture is well-established.\n\nChapter 4 explores one of prospect theory's most powerful applications: framing effects — the finding that logically equivalent descriptions of the same choice can produce systematically different decisions, exactly as prospect theory predicts.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 534,
+      "out_sha": "d48d24ca2e61",
       "note": ""
     },
     {
@@ -507,11 +507,11 @@
       "en_title": "Chapter 4: Framing Effects — Same Facts, Different Choices",
       "order": 34,
       "src_chars": 2854,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a8158a39e8e2",
       "src": "Imagine you are a hospital administrator choosing between two response plans for an outbreak of an unusual disease that is expected to kill 600 people.\n\n**Plan A:** 200 people will be saved.  \n**Plan B:** There is a one-third probability that 600 people will be saved, and a two-thirds probability that nobody will be saved.\n\nMost people pick Plan A — the certain rescue of 200 lives.\n\nNow imagine the same outbreak, with a different pair of plans described to a different group of administrators.\n\n**Plan C:** 400 people will die.  \n**Plan D:** There is a one-third probability that nobody will die, and a two-thirds probability that 600 people will die.\n\nMost people pick Plan D — the gamble.\n\nHere is the remarkable thing: Plans A and C are identical (saving 200 of 600 = 400 die). Plans B and D are identical (one-third chance of saving everyone = one-third chance nobody dies). The two problems describe the same reality. But the first pair is framed in terms of _lives saved_ (a gain frame) and the second in terms of _lives lost_ (a loss frame) — and the majority reverses its choice.\n\nThis is the Asian disease problem, one of the most famous experiments in behavioral economics. It demonstrates the framing effect: the way a choice is described can systematically change the decision, even when the underlying options are logically identical. This chapter explores why framing effects happen, when they are most powerful, and what they imply for communication, policy, and medicine.\n\n\n### 4.1 What Is a Framing Effect?\n\nA framing effect occurs when logically equivalent descriptions of a choice produce different decisions. Logically equivalent means the options have the same probability distributions over the same final outcomes — they differ only in the words used to describe them.\n\n\n#### Definition: Framing Effect\n\nA **framing effect** is any systematic influence on choice that results from the description or presentation of a problem rather than from any difference in the underlying options being presented. If changing only the wording of a choice problem — while keeping all probabilities and outcomes identical — changes majority preferences, a framing effect is observed.\n\nIn plain language: a framing effect means people's choices are sensitive to factors that, according to the rational agent model, should be completely irrelevant.\n\nThe rational agent model predicts zero framing effects. The independence axiom ensures that how you describe options does not change their underlying probability distributions, and preferences are over probability distributions. A description cannot change the world; only the world can change the world. Any model where descriptions change choices implies that people are responding to something beyond the final outcome probabilities — some psychological property of the presentation itself.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 937,
+      "out_sha": "fa75a739d6d5",
       "note": ""
     },
     {
@@ -519,11 +519,11 @@
       "en_title": "Chapter 4: Framing Effects — Same Facts, Different Choices",
       "order": 35,
       "src_chars": 2291,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a281b6135202",
       "src": "### 4.2 Types of Framing Effects\n\nResearchers have documented several distinct types of framing effects. The distinctions matter for predicting when framing will be most powerful.\n\n**Risky choice framing (the Asian disease type).** The same lottery is described in gain terms (lives saved) or loss terms (lives lost). The gain frame produces risk aversion (choose the certain option); the loss frame produces risk seeking (choose the gamble). This is the most studied type and is explained directly by prospect theory's reference-dependent value function.\n\n**Attribute framing.** A single characteristic of an object is described positively or negatively. \"90% fat-free yogurt\" and \"yogurt with 10% fat content\" describe identical yogurt, but people rate the former as healthier and taste it as better. The positive frame changes evaluation even though the information is identical.\n\n**Goal framing.** Messages about behavior are framed in terms of gains from compliance or losses from non-compliance. \"If you perform breast self-examination, you will be more likely to catch tumors in early stages when they are most treatable\" versus \"If you do not perform breast self-examination, you may miss catching tumors in early stages when they are most treatable.\" Loss-framed messages are often more persuasive — consistent with loss aversion — but the magnitude of the advantage depends heavily on context.\n\n\n#### Common Misconception\n\n**Misconception:** Framing effects only occur when people are confused or poorly informed — an educated expert who understands the statistics would not be susceptible.\n\n**Reality:** The Asian disease problem was administered to experienced physicians — people with extensive training in probability and outcome statistics — and the framing effect was just as large as in lay samples. Framing effects do not disappear with intelligence, education, or professional experience. They arise from the architecture of how the value function processes gains and losses relative to a reference point, not from ignorance of the underlying statistics. Understanding _that_ you are susceptible to framing is different from being immune to it: even people who know about framing effects still show them, though deliberate reflection can partially reduce their magnitude.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 673,
+      "out_sha": "0fa5724915c7",
       "note": ""
     },
     {
@@ -531,11 +531,11 @@
       "en_title": "Chapter 4: Framing Effects — Same Facts, Different Choices",
       "order": 36,
       "src_chars": 2851,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f781c2ad5a76",
       "src": "### 4.3 Prospect Theory Explains Framing\n\nRecall from Chapter 3 that prospect theory evaluates outcomes relative to a reference point and applies a value function that is concave in gains and convex in losses. This architecture directly predicts risky choice framing.\n\nWhen the problem is described in gain terms (lives saved), the reference point shifts to \"zero saved\" — the worst outcome. Both options are evaluated in the gain domain. The concave value function makes people risk averse: they prefer the certain smaller gain (Plan A: 200 saved for certain) to the risky prospect with higher expected gain but also a chance of zero.\n\nWhen the problem is described in loss terms (deaths), the reference point shifts to \"zero deaths\" — the best possible outcome. Both options are evaluated in the loss domain. The convex value function makes people risk seeking: they prefer the gamble (Plan D: one-third chance of no deaths) to the certain loss (Plan C: 400 deaths for certain).\n\nThe same mathematical lottery — one-third probability of the best outcome, two-thirds probability of the worst — is evaluated against different reference points, producing the preference reversal.\n\nThis is prospect theory's most elegant prediction: by specifying how reference points work and how the value function is shaped, it generates the framing effect without any additional assumptions.\n\n\n### 4.4 When Does Framing Work Best?\n\nFraming effects are not equally powerful across all settings. Understanding the moderators helps predict when framing will matter most.\n\n**Ambiguity amplifies framing.** When the choice is genuinely difficult (options are close in value), framing tips the balance. When one option is clearly dominant, framing rarely changes the outcome. Most real-world decisions of consequence are close calls — which is where framing matters most.\n\n**Emotional stakes amplify framing.** Medical decisions, mortality, financial ruin — when outcomes carry strong emotional valence, the gain/loss distinction is more pronounced. Routine purchases (choosing between two pens) are relatively immune to framing; life-altering decisions are highly susceptible.\n\n**Time pressure amplifies framing.** When people have time to reflect and reason through a problem, framing effects diminish. Under time pressure, the fast, intuitive System 1 processing (which we will formally introduce in Chapter 5) dominates, and framing influences are stronger. This connects to the broader dual-process story.\n\n**Expertise moderates but does not eliminate framing.** Experienced physicians, auditors, and investors all show reduced framing effects relative to novices — but they do not show zero framing effects. Expertise helps when the domain allows pattern recognition; it helps less when the framing involves novel emotional framing of well-understood probabilities.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 889,
+      "out_sha": "74d090b72d24",
       "note": ""
     },
     {
