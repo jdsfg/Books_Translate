@@ -927,11 +927,11 @@
       "en_title": "Chapter 5: The Test Pyramid Honestly + Coverage + Snapshot Testing",
       "order": 68,
       "src_chars": 3207,
-      "status": "pending",
+      "status": "done",
       "src_sha": "49dccc3c4639",
       "src": "#### Application Problems\n\n**Q5.** Take a function in your codebase and write three tests for it using the assertion-strength heuristic: the first deliberately weak (coverage filler), the second moderately strong, the third strong. Explain what bug each catches.\n\nHint\n\nThe progression is from \"executes the line\" to \"verifies specific output\" to \"verifies behavior across an input range.\"\n\n**Answer:** Suppose the function is `def round_to_cents(amount: Decimal) -> Decimal: return amount.quantize(Decimal('0.01'))`.\n\nWeak test (catches nothing): `round_to_cents(Decimal('1.234'))` with no assertion. Coverage rises; bugs are undetected.\n\nModerate test (catches algorithmic regression): `assert round_to_cents(Decimal('1.234')) == Decimal('1.23')`. Catches a change from rounding to truncation. Misses banker's-rounding subtleties.\n\nStrong test (catches realistic bug class): a parameterized test with cases `(1.234, 1.23), (1.235, 1.24), (1.245, 1.24), (1.255, 1.26), (-1.235, -1.24)`. Catches algorithmic regression, catches the banker's-rounding vs always-round-up distinction at boundaries, catches sign-handling bugs. The cases are chosen by knowing what realistic bugs look like in rounding code; this is craft.\n\nThe progression illustrates that the strong test is not necessarily longer; it is more _targeted_. The cases were chosen to discriminate among plausible implementations.\n\n**Q6.** Audit your team's last sprint of PRs. For each PR that added tests, count: (a) total new tests, (b) tests that are clear duplicates of existing tests, (c) tests with assertion strength below moderate. Report the ratios. If the ratios are concerning, what is the team's next action?\n\nHint\n\nThis is the §5.4 workflow applied retrospectively to a real sample.\n\n**Answer:** This is an open exercise; the answer depends on the codebase. A common finding pattern: 10-30% of AI-generated tests are duplicates or near-duplicates; 20-40% are weak in assertion strength. If the ratios are this high, the team's next actions: (a) introduce mutation testing in the next sprint to get a quantitative measure, (b) update CLAUDE.md / AGENTS.md to specify the team's test-writing conventions (no duplicates; strong assertions; arrange-act-assert structure), (c) in code review, explicitly call out duplicate and weak tests, (d) consider a soft cap on PR test count to discourage volume-over-quality.\n\nThe trend over time, not the snapshot, is the metric: are the ratios improving as the team adopts the disciplines? If yes, hold the course. If not, the next intervention is a team-wide pairing session where engineers review each other's recent AI-assisted test PRs and discuss what was kept and discarded; this builds shared judgment.\n\n**Q7.** Pick an existing test suite and assess its pyramid shape. Count tests at each layer (U/I/E2E). Compare to the 60/30/10 target. If your suite is shaped differently, hypothesize a path to the target over the next quarter.\n\nHint\n\nPath-finding involves identifying tests at the top of the pyramid that could be replaced by tests at the bottom.\n\n**Answer:** This is an open exercise. A typical SaaS team might find 40% U, 30% I, 30% E2E (top-heavy). A path to 60/30/10 over a quarter:",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1294,
+      "out_sha": "554c77deb981",
       "note": ""
     },
     {
@@ -939,11 +939,11 @@
       "en_title": "Chapter 5: The Test Pyramid Honestly + Coverage + Snapshot Testing",
       "order": 69,
       "src_chars": 854,
-      "status": "pending",
+      "status": "done",
       "src_sha": "8be5965bd5a6",
       "src": "* **Weeks 1-2** : Inventory. Classify every test. Identify the most expensive E2E tests by CI time. For each, ask whether the same bug could be caught by an integration or unit test.\n* **Weeks 3-6** : For each replaceable E2E test, write the lower-pyramid replacement, verify it catches the same bug class, then remove the E2E test. Aim for 10-15 such replacements.\n* **Weeks 7-10** : Invest in unit-test infrastructure: faster fixtures, better factories, an in-memory DB for the integration tests. New tests default to the bottom of the pyramid because the bottom is now ergonomic.\n* **Weeks 11-12** : Reassess shape; should be 50/35/15. Continue toward 60/30/10 in the next quarter.\n\nThe path is incremental; do not attempt to flip the whole suite in one PR. The CI time, the flaky-test rate, and the test count at each layer are the metrics to track.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 352,
+      "out_sha": "492a8eb3ec1b",
       "note": ""
     },
     {
@@ -951,11 +951,11 @@
       "en_title": "Chapter 5: The Test Pyramid Honestly + Coverage + Snapshot Testing",
       "order": 70,
       "src_chars": 3067,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7ddd96dd52d4",
       "src": "#### Think Deeper\n\n**Q8.** Argue both sides: (a) \"In 2026, the right response to AI-generated tests is to _delete_ most of them and rely on mutation-tested manually-written tests.\" (b) \"In 2026, the right response is to _accept_ the volume and develop the tooling to filter weak tests automatically.\"\n\n**Discussion:** Pro-delete: AI-generated tests are mostly noise; they pollute the suite, slow CI, and obscure the real test coverage; a small suite of strong tests is better than a large suite of weak ones; deleting is a one-time investment that pays off forever.\n\nPro-accept: deleting is a losing battle (the AI generates faster than humans can delete); the right investment is filtering tooling (mutation testing, duplication detection, assertion-strength heuristics implemented as linters); accept the volume and triage automatically.\n\nThe synthesis: both moves happen in tandem. In the short term, delete the obvious junk (duplicates, no-assertion tests) when you find them. In the longer term, invest in mutation testing as the filter; the mutation score becomes the test-of-tests, and the AI-generated tests that improve the mutation score earn their place while the ones that do not are deletion candidates. The 2026-honest position is that the _test suite itself_ needs a maintenance discipline analogous to the production code's maintenance discipline; without it, the suite rots in fast-forward.\n\n**Q9.** The chapter argues for the test pyramid as a default shape. Are there codebases for which the pyramid is the wrong default? Describe one such codebase and the shape that would be better for it.\n\n**Discussion:** A few examples of pyramid-exceptions:\n\n* **Thin wrappers over a database.** A system whose business logic is mostly \"store this, retrieve that\" has few independent units worth testing in isolation; the interesting behavior is at the integration layer. A diamond shape (few units, many integrations, few E2E) is appropriate.\n* **Pure-function libraries.** A library of mathematical functions has very few integrations and no E2E; an extreme pyramid (95% units, 5% integration if any) is appropriate.\n* **UI-heavy applications.** A product whose value is visual presentation may need a fatter top to verify that the visual output is correct; the top is not necessarily 30%, but it is larger than 10%. Modern visual regression tooling (Chromatic, Percy) blurs the line between snapshot tests and E2E tests; the team may choose to count visual regression separately rather than as E2E.\n* **Embedded systems.** A system whose behavior depends on hardware timing may have very few unit tests in the traditional sense and many integration tests on real or simulated hardware; the pyramid becomes lopsided in a direction the canonical shape does not predict.\n\nThe general rule: the pyramid is a heuristic, not a law. The principle behind the pyramid (fast feedback, local failures, low brittleness) is the law; the shape is what most codebases produce when the law is applied. When the law produces a different shape, the law wins, not the shape.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 913,
+      "out_sha": "78109ba2526f",
       "note": ""
     },
     {
@@ -963,11 +963,11 @@
       "en_title": "Chapter 5: The Test Pyramid Honestly + Coverage + Snapshot Testing",
       "order": 71,
       "src_chars": 2649,
-      "status": "pending",
+      "status": "done",
       "src_sha": "73e560253633",
       "src": "### Chapter Summary\n\nThe test pyramid (§5.1) is the default shape: many unit tests, fewer integration tests, very few end-to-end tests. The shape preserves CI feedback speed, localizes failures, and minimizes brittleness. Inversions are common and worth correcting; variant shapes (diamond, hourglass) are sometimes appropriate but should be deliberate.\n\nCoverage (§5.2) is a negative signal: it tells you where you are not tested. It does not tell you whether the tests are good. The 80% trap incentivizes coverage filler; the ratchet alternative (do not regress per module) is healthier. Branch coverage is more honest than line coverage.\n\nSnapshot testing (§5.3) is appropriate for large structured deterministic outputs where the team reads the diff. It is the wrong tool when the team approves changes without reading them; the snapshot then certifies whatever happens.\n\nAI-generated tests (§5.4) exhibit characteristic Thread C lies: happy-path bias, inconsistent style, weak error-path assertions, and duplicates. The reviewer's job is to apply the assertion-strength heuristic and to filter mercilessly; mutation testing (Chapter 6) provides the quantitative complement.\n\nThe unit (§5.5), integration (§5.6), and end-to-end (§5.7) layers each have their disciplines. Arrange-act-assert, descriptive names, sociable units, in-memory implementations, severity-based E2E selection, and a flaky-test policy together produce a suite that catches bugs without slowing the team.\n\nChapter 6 deepens the test discipline with property-based and mutation testing: the techniques that turn a test suite into a sharp instrument rather than a coverage-driven artifact. Together with this chapter, they form the test foundation that the rest of the book (refactoring under test, code review of test PRs, debt management around the test suite) builds on.\n\n\n#### Three Takeaways\n\n  1. **When you review a test (yours or the agent's), try to name a specific bug it would catch.** If you cannot name one, that test is probably coverage filler. Delete or strengthen. You will not apply this to every test mechanically, but using it as a default review prompt sharpens the suite over time.\n  2. **Replace your team's \"80% coverage target\" with per-module ratchet thresholds.** Whatever each module is at today is the new floor; PRs cannot regress it without explicit justification. The 80%-trap incentive disappears; monotonic improvement begins.\n  3. **Inventory your test pyramid this sprint.** Count unit / integration / E2E. If the shape is inverted or hourglass, the next quarter has a concrete project: push tests down into the pyramid layer by layer.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 875,
+      "out_sha": "5517b229efbd",
       "note": ""
     },
     {
