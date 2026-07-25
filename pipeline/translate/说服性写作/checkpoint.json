@@ -1439,11 +1439,11 @@
       "en_title": "Chapter 8: The Cover Letter",
       "order": 113,
       "src_chars": 3371,
-      "status": "pending",
+      "status": "done",
       "src_sha": "a09b0d88b036",
       "src": "#### A Note on Multi-Job Workflow\n\nA candidate applying to twelve roles in a job search faces the same workflow problem the supplement-writer faced in §4.1 — the prose erodes by application six. The recycling matrix from §4.8 applies in compressed form: the candidate's evidence paragraphs (Saturday tutoring, recommendation engine, the cement-plant project) are reusable across applications; the why-this-place sentence and the role-specific match in the opening must be written fresh per job. The brag sheet from §13.5, written for a recommender, is also a useful private document for the candidate writing many cover letters: the same specific moments that the recommender might mention are also the specifics the candidate's own cover letter wants to surface.\n\n\n### 8.9 Cultural and ESL Calibration\n\nESL candidates often default to a more formal register than U.S. cover-letter conventions reward. The remedy is the same as for graduate statements: aim for sentence-level clarity and conversational professional tone. The cover letter is shorter and tighter than the graduate statement, so calibration matters more.\n\nCandidates from cultures where direct self-promotion is socially difficult may struggle with the cover letter's demand to claim specific competencies. The remedy is to claim with _evidence_ rather than with adjectives — instead of _I have strong analytical skills,_ write _I built the analysis pipeline for the lab's pilot data._ The evidence claims the skill on the candidate's behalf.\n\n\n### 8.10 Reader Draft Prompt\n\nPick one job posting (real or hypothetical) for a role you are interested in. Write the opening two sentences of a cover letter for it. The two sentences must do all four jobs of the opening: state the role, signal the specific match, earn continued attention through concreteness, avoid the boilerplate opener.\n\nSave the two sentences. We will return to them in Chapter 17.\n\n\n### 8.11 Exercises\n\n\n#### Concept Check\n\n**Q1.** State the average reading time per cover letter and per resume.\n\n**Answer:** Resume: about 7 seconds (the initial filter). Cover letter, if the resume passes: about 30 seconds. The opening two sentences earn or lose the rest of those 30 seconds.\n\n**Q2.** What four jobs must the opening two sentences of a cover letter do simultaneously?\n\n**Answer:** (1) State the specific role (so the reader knows which posting). (2) Signal the specific match. (3) Earn continued attention through concreteness. (4) Avoid boilerplate phrases like _I am writing to express my interest in..._.\n\n**Q3.** What is the AI test for cover letters specifically?\n\n**Answer:** _Would the letter still read coherently if I swapped the employer name and the candidate's specific experience for a different employer and a different candidate?_ If yes, the letter has not survived the AI test. The remedy is concrete employer-specific and candidate-specific specifics that are structurally non-portable.\n\n**Q4.** Why is the honest pivot acknowledgment a strong move for career changers, rather than a weak one?\n\n**Answer:** Hiring managers read pivots from the resume regardless. A candidate who does not name the pivot reads as either dishonest or oblivious. A candidate who names the pivot, articulates the complementary skill they bring, acknowledges the gaps, and shows pivot-preparation evidence reads as self-aware and serious.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 459,
+      "out_sha": "d0d61388fc64",
       "note": ""
     },
     {
@@ -1451,11 +1451,11 @@
       "en_title": "Chapter 8: The Cover Letter",
       "order": 114,
       "src_chars": 2838,
-      "status": "pending",
+      "status": "done",
       "src_sha": "335d9aacb858",
       "src": "#### Application Problems\n\n**Q1. Diagnose this opening.**\n\n> Dear Hiring Manager,\n> \n> I am writing to express my interest in the Software Engineer position at Acme Corp, which I learned about through your posting on LinkedIn. As a recent graduate of State University with a degree in Computer Science and a strong passion for technology, I believe I would be an excellent candidate for this role.\n\nRun the 6 Moves and identify the pitfalls.\n\nHint\n\nThis opening commits the boilerplate-opener pitfall, the inflated-qualifications pitfall, and the generic-enthusiasm pitfall.\n\n**Answer:** Move 1 failed (no specific match signaled). Move 2 failed (no specific story or evidence). Move 3 failed (boilerplate opener). Move 4 failed (zero specifics). Move 5 cannot be performed. Move 6 failed (generic AI output).\n\nPitfalls: boilerplate-opener (_I am writing to express my interest_); inflated-qualifications (_I believe I would be an excellent candidate_); generic-enthusiasm (_strong passion for technology_); the candidate has reduced the cover letter to its empty form.\n\n**Q2. Rewrite the opening.**\n\nThe candidate (a recent CS graduate) has built a side project, a recommendation system for a public library, in Python, and is applying to Acme Corp specifically because Acme's technical-blog post about its content recommendation pipeline matched the candidate's side project. Rewrite the opening two sentences to pass all six moves.\n\nHint\n\nThe opening should land the side project and the specific Acme blog post.\n\n**Answer:**\n\n> I am applying for the Software Engineer position at Acme Corp because the architecture described in your June 2024 engineering blog post on incremental retraining for content recommendation matches the design questions I encountered building a similar system for my local public library last summer. I have a working open-source implementation (Python, Faiss, weekly retraining schedule) running against the library's anonymized borrowing logs and would bring that hands-on familiarity with the retraining-frequency tradeoff to your team's existing pipeline.\n\nThe rewrite: states the role; signals the specific match (the Acme blog post and the side project); earns attention through concrete tools (Python, Faiss); names a specific tradeoff (retraining-frequency); avoids boilerplate.\n\n**Q3. Rewrite a career-narrative opening into a specific-match opening.**\n\nBelow is a real-pattern cover-letter opening: a \"career narrative\" — the candidate tells the story of their professional path rather than matching the specific role. Rewrite the opening in 110 words so that the first two sentences pass the opening-two-sentences convention (state the role; signal a specific match; earn the read with one concrete fact). You may invent plausible specifics about the employer's work and the candidate's evidence.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 635,
+      "out_sha": "73c54e5b4ff0",
       "note": ""
     },
     {
@@ -1463,11 +1463,11 @@
       "en_title": "Chapter 8: The Cover Letter",
       "order": 115,
       "src_chars": 2180,
-      "status": "pending",
+      "status": "done",
       "src_sha": "53d5976f1989",
       "src": "> Dear Hiring Manager,\n> \n> Ever since I was a child, I have been fascinated by how organizations make decisions. After studying economics at Wisconsin, I spent four years in consulting, where I learned to break complex problems into smaller parts and to communicate findings to senior leadership. More recently, I have transitioned into product management at a mid-sized fintech, where I have grown my skills in user research and roadmap planning. I am now seeking a role that combines my analytical background with my product instincts, which is why I am excited to apply for the Senior Product Analyst position at your company. I believe my unique blend of experience makes me an excellent fit.\n\nHint\n\nThe original opening tells the candidate's story. The rewrite tells the company's story — and slots the candidate into it. Marcus knows what the candidate does; he does not yet know why she has read his job posting carefully. The first sentence should name something specific about the company's work that the candidate has actually seen. The second should name one piece of candidate evidence that matches it.\n\n**Answer (110 words):**\n\n> Dear Mr. Okafor,\n> \n> The Senior Product Analyst posting mentions that Vela Health is moving its claims-prediction model from a batch monthly run to a daily refresh — I read the November engineering-blog post on the rollout and the comments thread where your team debated drift monitoring. That is the problem I have been working on at Northwind for the last fourteen months, where our retraining cadence question turned on the same drift-monitoring vs. cost-of-retraining tradeoff. I would bring the retraining-cost model I built (and the unsolved part: how to attribute drift to data-pipeline changes versus genuine population shift) to your team's daily-refresh design.\n\nThe rewrite states the role (Senior Product Analyst), signals the specific match (the November blog post, the comments thread, the drift-monitoring debate), and earns the read with one concrete piece of candidate evidence (the retraining-cost model and its unsolved part). The career narrative has been deleted entirely — Marcus already has the resume for that.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 667,
+      "out_sha": "1c71f113b123",
       "note": ""
     },
     {
@@ -1475,11 +1475,11 @@
       "en_title": "Chapter 8: The Cover Letter",
       "order": 116,
       "src_chars": 2867,
-      "status": "pending",
+      "status": "done",
       "src_sha": "f1b382ec6621",
       "src": "#### Think Deeper\n\n**Q1.** The chapter argues that the cover letter's opening two sentences are _the entire essay._ This seems like an overstatement. Defend or refute it.\n\n**Discussion:** The claim is partly hyperbolic. The body and closing of the cover letter do work too — they provide the evidence that the opening promises and the operational closing the reader needs. But the _decision-relevant_ portion of the letter is concentrated in the opening. The hiring manager's decision to keep reading (and therefore to read the body's evidence carefully) is made in the opening two sentences. So the body's value is conditional on the opening's success. In that sense, the opening is the entire essay: not because the body has no value, but because the body has zero conditional value if the opening has not earned the read. The chapter's framing is a useful exaggeration that pushes candidates to allocate effort proportionally.\n\n**Q2.** Career changers face a specific problem: their resume signals one career, and their cover letter must articulate why they are pursuing a different one. Is the cover letter a stronger or weaker tool for career changers than for linear-career candidates?\n\n**Discussion:** Both. The cover letter is _stronger_ for career changers because it is the only place in the package where the pivot can be articulated in narrative form — the resume cannot. A well-written career-changer letter can substantially shift the hiring manager's reading of the resume. It is _weaker_ because the candidate must overcome pattern-matching that filters for linear careers, which means the opening must be sharper and the pivot acknowledgment more deliberate. The net effect: a career changer who writes a strong cover letter sees a larger marginal return than a linear-career candidate would. This is why career-changer applications often fail or succeed on the strength of the cover letter alone.\n\n**Q3.** Cover letters can be, and increasingly are, drafted by AI. Some candidates submit AI-drafted letters with light editing. What is the long-term equilibrium for cover letters as AI capability grows?\n\n**Discussion:** Three plausible equilibria. One: the form atrophies — most letters are AI-drafted, hiring managers stop reading them carefully. Two: bifurcation — most letters are AI-drafted and ignored, but candidates who submit specifically-human letters gain a _larger_ differential advantage than today. Three: hiring shifts to forms AI cannot fake (real-time written exercises; structured behavioral assessments). The book's best guess is bifurcation. The candidate who writes a specifically-human cover letter that survives the AI test will be more advantaged than today, because the AI-draft baseline is so low. The AI-drafted letter without specific candidate-and-employer details becomes indistinguishable from the rest of the AI pile.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 795,
+      "out_sha": "f93fcb9e723a",
       "note": ""
     },
     {
@@ -1487,11 +1487,11 @@
       "en_title": "Chapter 8: The Cover Letter",
       "order": 117,
       "src_chars": 760,
-      "status": "pending",
+      "status": "done",
       "src_sha": "16d6a105cfd1",
       "src": "### Chapter Summary\n\nThe cover letter is the tightest form in this book. Thirty seconds of reading attention; opening two sentences carry the load; specifics map onto job requirements; the AI test is harshest. The genre rewards compression and specificity. The career-changer's honest pivot acknowledgment, the why-this-place sentence, and the resume-complement principle (the cover letter adds what the resume cannot) are the moves that distinguish letters that earn interviews from those that do not.\n\nThe next chapter (Chapter 9) treats the scholarship essay, where the reader's question shifts again — toward theme alignment with the scholarship's specific stated values, and toward writing in a register that addresses values without performing them.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 211,
+      "out_sha": "71c5b076d493",
       "note": ""
     },
     {
