@@ -239,11 +239,11 @@
       "en_title": "Chapter 2: The Most Powerful Force in Finance",
       "order": 12,
       "src_chars": 2609,
-      "status": "pending",
+      "status": "done",
       "src_sha": "7b8abda2b7c8",
       "src": "In Chapter 1, we met Sarah and Mike — and discovered that savings rate matters more than income. But there was a variable in the wealth equation we barely touched: TIME. Specifically, what happens when savings grow not just by addition, but by multiplication?\n\nHere's a question that stumps most people: would you rather have 1 million USD right now, or a penny that doubles every day for 30 days?\n\nMost people take the million. The doubling penny reaches 5,368,709.12 USD on day 30.\n\nThat's compound interest. And your intuition about it is almost certainly wrong — in a way that costs you real money every year you wait to start saving.\n\n\n### 2.1 Why Your Brain Can't Do Exponential Math\n\nHumans are wired for linear thinking. If you walk one mile in 20 minutes, you intuitively know that two miles takes about 40 minutes. This linear extrapolation works beautifully in everyday life.\n\nBut compound interest isn't linear — it's exponential. And exponential growth defies intuition at every turn.\n\nConsider this: if you invest 10,000 USD at 7% annual return, here's what happens:\n\nYear | Balance | Growth That Year  \n---|---|---  \n0 | 10,000 USD | —  \n5 | 14,026 USD | 920 USD  \n10 | 19,672 USD | 1,290 USD  \n15 | 27,590 USD | 1,810 USD  \n20 | 38,697 USD | 2,538 USD  \n25 | 54,274 USD | 3,560 USD  \n30 | 76,123 USD | 4,993 USD  \n  \nLook at the \"Growth That Year\" column. In year 5, your money grows by 920 USD. In year 30, it grows by 4,993 USD — more than five times as much — even though you haven't added a single dollar. This is money earning money on money that previously earned money. That's the \"compound\" in compound interest.\n\nHere's the truly mind-bending part: **more than half of the total growth happens in the last 10 years.** Your investment gains 28,123 USD in the first 20 years, but then gains 37,426 USD in just the last 10. The longer you wait, the faster it accelerates.\n\nThis is why starting early isn't just \"nice to have.\" It fundamentally changes the math.\n\n\n#### Definition: Compound Interest\n\nCompound interest is interest earned on both the original principal AND on previously accumulated interest. The formula is:\n\nA=P(1+r)nA = P(1 + r)^nA=P(1+r)n\n\nwhere AAA is the final amount, PPP is the principal (starting amount), rrr is the annual interest rate (as a decimal), and nnn is the number of years.\n\nIn plain language, this means: your money doesn't just grow — it grows on top of previous growth. It's a snowball rolling downhill, getting bigger and faster as it goes. A small snowball at the top of a long hill ends up larger than a big snowball at the top of a short hill.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1082,
+      "out_sha": "c3f4ec3f43f1",
       "note": ""
     },
     {
@@ -251,11 +251,11 @@
       "en_title": "Chapter 2: The Most Powerful Force in Finance",
       "order": 13,
       "src_chars": 3138,
-      "status": "pending",
+      "status": "done",
       "src_sha": "555ba625b53c",
       "src": "### 2.2 The Start-at-25 vs Start-at-35 Comparison\n\nThis is the most important comparison in personal finance. Let's meet two people.\n\n**Early Emma** starts investing 5,000 USD per year at age 25 and stops at age 35. She invests for only 10 years, contributing a total of 50,000 USD. Then she never adds another dollar — she just lets it grow.\n\n**Late Larry** starts investing 5,000 USD per year at age 35 and continues every single year until age 65. He invests for 30 years, contributing a total of 150,000 USD.\n\nBoth earn 7% annual returns. Who has more at age 65?\n\nBefore you do any math — just your gut feeling. Larry invested three times as much money over three times as many years. Surely he wins?\n\n**The answer:** Emma has approximately 526,000 USD. Larry has approximately 472,000 USD.\n\nEmma wins. Despite investing 100,000 USD LESS. Despite investing for 20 FEWER years.\n\nHow is this possible? Because Emma's money had 40 years to compound (from age 25 to 65), while Larry's earliest contributions had only 30 years. Those extra 10 years of compounding on Emma's early contributions overpowered Larry's much larger total investment.\n\nThis isn't a trick. It's not an unusual market condition. It's the raw mathematical power of compound interest over time. And it leads to the most important lesson in this chapter:\n\n**The best time to start investing was 10 years ago. The second best time is today.**\n\n\n#### Common Misconception\n\n**\"It's too late for me to benefit from compound interest.\"** People who learn about the Emma/Larry comparison at age 40 sometimes think: \"Great, I already missed the boat.\" This is wrong in two ways. First, you might live to 90 — that's still 50 years of compounding ahead. The Emma/Larry comparison works at ANY two starting ages, not just 25 and 35. Second, compound interest is only one part of the wealth equation. Even if you can't maximize the time variable, you can still maximize the savings rate variable. Starting at 40 with a 30% savings rate still beats starting at 25 with a 5% savings rate. The point of the Emma/Larry comparison isn't \"you should have started earlier.\" It's: \"Start NOW, because every year you delay makes the math harder.\"\n\n\n### 2.3 The Rule of 72\n\nHere's a shortcut that will serve you for life. To estimate how long it takes for an investment to double, divide 72 by the annual return rate.\n\nDoubling time (years)≈72Annual return rate (%)\\text{Doubling time (years)} \\approx \\frac{72}{\\text{Annual return rate (\\%)}}Doubling time (years)≈Annual return rate (%)72​\n\nExamples:\n\nAnnual Return | Doubling Time  \n---|---  \n3% (savings account) | 24 years  \n6% (conservative portfolio) | 12 years  \n7% (historical stock market average) | ~10.3 years  \n10% (optimistic estimate) | 7.2 years  \n18% (credit card debt) | 4 years  \n24% (store credit card) | 3 years  \n  \nLook at those last two rows. At 18% interest, credit card debt doubles in 4 years. That 5,000 USD balance you're carrying becomes 10,000 USD if you make only minimum payments. In 8 years, it's 20,000 USD. Compound interest is a force — and it doesn't care whether it's working for you or against you.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1325,
+      "out_sha": "e4e2d8644b59",
       "note": ""
     },
     {
@@ -263,11 +263,11 @@
       "en_title": "Chapter 2: The Most Powerful Force in Finance",
       "order": 14,
       "src_chars": 3066,
-      "status": "pending",
+      "status": "done",
       "src_sha": "164971ffb7ad",
       "src": "#### Definition: The Rule of 72\n\nThe Rule of 72 is an approximation: dividing 72 by the annual interest rate gives the approximate number of years for a sum to double. It works because ln⁡(2)≈0.693\\ln(2) \\approx 0.693ln(2)≈0.693 and 727272 is close to 69.369.369.3 while being more easily divisible by common interest rates.\n\nIn plain language, this means: you can do compound interest math in your head. \"7% return? My money doubles roughly every 10 years.\" This one mental shortcut will help you evaluate financial decisions faster than any calculator app.\n\n**Decision Exercise: The Student Loan vs Investment Dilemma**\n\nYou have 5,000 USD in extra cash. You have a student loan at 5% interest and access to an investment account where you expect 7% returns. Should you pay down the loan or invest?\n\nBefore reading on, decide what you'd do.\n\n**Analysis:** The pure math says invest — 7% beats 5%. But this ignores several factors. First, the 5% loan cost is guaranteed, while the 7% return is an expectation, not a guarantee. In any given year, your investment might return -15% or +25%. Second, paying off debt provides psychological benefit and reduces risk. Third, if the loan interest isn't tax-deductible, the effective difference is even smaller. The Rule of 72 helps frame it: at 5%, the loan doubles in 14.4 years. At 7%, the investment doubles in 10.3 years. The gap is real but not enormous. For many people, the guaranteed \"return\" of paying off debt is the better choice — especially if the psychological relief frees them to save more aggressively afterward. We'll develop a complete framework for this decision in Chapter 7.\n\n\n### 2.4 Compound Interest and Debt — The Dark Side\n\nEverything we've said about compound interest working FOR you applies equally when it works AGAINST you. And for most people, the first encounter with compound interest is through debt — usually credit cards.\n\nConsider a 3,000 USD credit card balance at 20% APR. If you make only the minimum payment (typically 2% of the balance, or 25 USD, whichever is higher), here's what happens:\n\n* It takes approximately **19 years** to pay off the balance\n* You pay approximately **5,300 USD in interest** — nearly double the original purchase\n* Total paid: **8,300 USD** for a 3,000 USD purchase\n\nUsing the Rule of 72: at 20%, the debt doubles in 3.6 years. If you stop making payments entirely (which triggers penalties and more fees, making it even worse), that 3,000 USD becomes 6,000 USD in under 4 years, 12,000 USD in under 8 years, and 24,000 USD in under 12 years.\n\nThis is why credit card debt is a financial emergency. Not because the amounts seem large initially — but because compound interest turns small balances into large ones with terrifying speed.\n\nHere's the pattern: compound interest is patient. It doesn't feel dramatic in year one. A 20% APR on 3,000 USD is \"only\" 600 USD in the first year — about 50 USD/month. That feels manageable. But the math is accelerating silently in the background, and by the time it feels unmanageable, the hole is much deeper.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1112,
+      "out_sha": "ca49270dde2d",
       "note": ""
     },
     {
@@ -275,11 +275,11 @@
       "en_title": "Chapter 2: The Most Powerful Force in Finance",
       "order": 15,
       "src_chars": 3037,
-      "status": "pending",
+      "status": "done",
       "src_sha": "4f98b8ab0152",
       "src": "#### Common Misconception\n\n**\"I'm only paying the minimum, so I'm handling my debt.\"** Making the minimum payment on a credit card is not \"handling\" your debt — it's feeding compound interest while it grows. Minimum payments are designed by credit card companies to maximize the interest they collect from you. The minimum payment covers the interest and barely touches the principal. On a 3,000 USD balance at 20%, a 60 USD minimum payment means 50 USD goes to interest and only 10 USD reduces the actual debt. You're paying 60 USD to reduce what you owe by 10 USD. We'll cover debt elimination strategies in detail in Chapter 7.\n\n\n### 2.5 The Latte Fallacy (and the Truth Behind It)\n\nYou've probably heard this advice: \"Stop buying a 5 USD latte every day and invest that money instead — you'll be a millionaire!\" This is called the \"latte factor,\" and it gets criticized as both overly simplistic and condescending.\n\nThe critics have a point. Let's do the math: 5 USD/day × 365 = 1,825 USD/year. Invested at 7% for 30 years = approximately 172,000 USD. That's meaningful money, but it's not a million dollars. And it requires giving up something you enjoy every single day for three decades.\n\nSo is the latte factor nonsense?\n\nNot entirely — but the important part isn't the latte. It's the **habit.**\n\nThe real insight is this: people who track small spending tend to become more mindful of ALL spending. The person who questions a 5 USD latte is also more likely to negotiate their cable bill, comparison-shop for insurance, and pause before impulse purchases. It's the awareness that matters, not the specific latte.\n\nPut differently: saving 5 USD/day matters not because 5 USD is a lot, but because the person who saves 5 USD intentionally is building the neural pathways of financial mindfulness. And financial mindfulness naturally expands to bigger decisions — the 500 USD gadget, the 5,000 USD vacation, the 50,000 USD car.\n\nCompound interest amplifies whatever habits you build. Good habits compound into wealth. Bad habits compound into debt. The latte isn't the point. The habit is the point.\n\n**Decision Exercise: The Subscription Audit**\n\nLook at your bank statement. Count every recurring subscription (streaming services, apps, gym memberships, software, meal kits, etc.). Total them up.\n\nThe average American household spends 219 USD/month on subscriptions — many of which they've forgotten about or rarely use. That's 2,628 USD/year.\n\nIf you could eliminate half of those unused subscriptions (1,314 USD/year) and invest the savings at 7%, how much would that be worth in 20 years?\n\n**Analysis:** 1,314 USD/year at 7% for 20 years = approximately 53,900 USD. Not life-changing on its own — but combined with other savings optimizations from this book, these amounts add up. More importantly, the subscription audit builds the HABIT of regularly reviewing where your money goes. That habit is worth far more than any individual subscription cancellation. We'll build a complete spending awareness system in Chapter 6.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1052,
+      "out_sha": "3382a48ca1fd",
       "note": ""
     },
     {
@@ -287,11 +287,11 @@
       "en_title": "Chapter 2: The Most Powerful Force in Finance",
       "order": 16,
       "src_chars": 1447,
-      "status": "pending",
+      "status": "done",
       "src_sha": "492d3e776972",
       "src": "### 2.6 The Real Magic — Consistency Plus Time\n\nLet's bring this chapter together with one final comparison that shows why consistency matters more than amount.\n\nThree investors. Same total investment period (age 25 to 65). Same 7% return. Different strategies:\n\n**Consistent Carla:** Invests 3,000 USD every year for 40 years without fail. Total invested: 120,000 USD.\n\n**Burst Betty:** Invests 6,000 USD/year for the first 12 years (age 25–36), then stops. Total invested: 72,000 USD.\n\n**Late Laura:** Invests 6,000 USD/year for the last 20 years (age 45–65). Total invested: 120,000 USD.\n\nBetty invests only 60% of what Laura does. Results at age 65:\n\nInvestor | Strategy | Total Invested | Value at 65  \n---|---|---|---  \nCarla | 3,000 USD/year for 40 years | 120,000 USD | ~599,000 USD  \nBetty | 6,000 USD/year for 12 years, then stop | 72,000 USD | ~764,000 USD  \nLaura | 6,000 USD/year for last 20 years | 120,000 USD | ~246,000 USD  \n  \nBetty wins — despite investing 48,000 USD LESS than Carla and Laura. Her money had 29 extra years to compound after she stopped contributing. Laura, despite investing 67% more than Betty, ends up with less than a third of Betty's total. The only difference is WHEN the money was invested.\n\nThis is the compound interest message distilled: **when you invest matters more than how much you invest.** And since you can't go back in time, the implication is always the same: start now.\n\n\n### 2.7 Exercises\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 732,
+      "out_sha": "8c68ac33fe73",
       "note": ""
     },
     {
@@ -299,11 +299,11 @@
       "en_title": "Chapter 2: The Most Powerful Force in Finance",
       "order": 17,
       "src_chars": 2524,
-      "status": "pending",
+      "status": "done",
       "src_sha": "88d0811864f9",
       "src": "#### Concept Check\n\n**Q1.** Using the Rule of 72, estimate how long it takes for 10,000 USD to become 40,000 USD at 6% annual return.\n\n**Answer:** 10,000 USD to 40,000 USD requires two doublings (10,000 USD → 20,000 USD → 40,000 USD). At 6%, each doubling takes 72/6 = 12 years. So two doublings take approximately 24 years. (The exact answer using the compound interest formula is about 23.8 years — the Rule of 72 is remarkably accurate.)\n\n**Q2.** You invest 500 USD/month starting today. Your friend invests 500 USD/month starting 5 years from now. Assuming 7% annual returns, approximately how much more will you have than your friend at the end of 30 years (from today)?\n\nHint\n\nYou invest for 30 years. Your friend invests for 25 years. Calculate the future value of each annuity separately and subtract.\n\n**Answer:** Your total (30 years of 6,000 USD/year at 7%): approximately 6,000 USD × 94.46 = 566,800 USD. Friend's total (25 years of 6,000 USD/year at 7%): approximately 6,000 USD × 63.25 = 379,500 USD. Difference: approximately 187,300 USD. You invested only 30,000 USD more (6,000 USD × 5 years), but ended up with 187,300 USD more — those first five years of compounding generated over six times their nominal value. This connects directly to the wealth equation from Chapter 1: the TIME variable is a multiplier, not just an addition.\n\n**Q3.** A credit card charges 22% APR. Using the Rule of 72, how quickly does an unpaid balance double?\n\n**Answer:** 72 ÷ 22 ≈ 3.3 years. An unpaid balance at 22% doubles in about 3 years and 4 months. In 10 years, it would roughly triple-double: 1,000 USD becomes ~2,000 USD (year 3.3), ~4,000 USD (year 6.6), ~8,000 USD (year 9.9). This is why credit card debt is a financial emergency, as we discussed in Section 2.4.\n\n**Q4.** Explain in your own words why more than half of an investment's total growth happens in the final third of the investment period.\n\n**Answer:** Because compound interest earns returns on previous returns, the base that's generating growth gets larger every year. In early years, you're earning interest on a small base. In later years, you're earning the same percentage on a much larger base — so the dollar amount of growth is much bigger. It's like a snowball: rolling the first 100 meters adds a little snow, but rolling the last 100 meters (when the ball is already large) adds enormously more. Mathematically, in the formula A=P(1+r)nA = P(1+r)^nA=P(1+r)n, the function is convex — each additional year adds more than the previous year.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 998,
+      "out_sha": "91488ac56a19",
       "note": ""
     },
     {
@@ -311,11 +311,11 @@
       "en_title": "Chapter 2: The Most Powerful Force in Finance",
       "order": 18,
       "src_chars": 3135,
-      "status": "pending",
+      "status": "done",
       "src_sha": "13b1de714761",
       "src": "#### Application Problems\n\n**Q1.** You're 30 years old with 15,000 USD saved. You can invest in either: (A) a \"safe\" bond fund returning 3%, or (B) a stock index fund historically returning 7% but with higher yearly volatility. Using the Rule of 72, calculate how many times each investment doubles by age 65 and the approximate final values. Then connect this to the risk concept from Chapter 1 — why might the \"safe\" choice actually be riskier for a 30-year-old?\n\nHint\n\nAt 3%, doubling time is 24 years. At 7%, doubling time is about 10.3 years. You have 35 years. Count the doublings.\n\n**Answer:** Option A (3%): 72/3 = 24 years per doubling. In 35 years, that's about 1.46 doublings. 15,000 USD × 21.462^{1.46}21.46 ≈ 15,000 USD × 2.75 ≈ 41,300 USD. Option B (7%): 72/7 ≈ 10.3 years per doubling. In 35 years, that's about 3.4 doublings. 15,000 USD × 23.42^{3.4}23.4 ≈ 15,000 USD × 10.6 ≈ 158,500 USD. The \"safe\" bond fund produces 41,300 USD. The stock fund produces 158,500 USD — nearly four times as much. For a 30-year-old with 35 years until retirement, the \"safe\" choice is actually risky because it almost guarantees your money won't keep pace with your needs. As introduced in Chapter 1, risk isn't just about losing money — it's about not having money when you need it. Over 35 years, inflation alone (at ~3%) would require 42,000 USD just to have the same purchasing power as 15,000 USD today. The bond fund barely beats inflation. We'll develop this risk framework fully in Chapter 4.\n\n**Q2.** Recreate the Emma/Larry comparison from Section 2.2 with different numbers: Early Emma invests 300 USD/month from age 22 to age 32 (10 years), then stops. Late Larry invests 300 USD/month from age 32 to age 62 (30 years). Both earn 7%. Who has more at age 62? Calculate the approximate amounts.\n\nHint\n\nEmma invests 3,600 USD/year for 10 years, then lets it grow for 30 more years. Larry invests 3,600 USD/year for 30 years. Calculate Emma's value at age 32 first, then compound it for 30 more years.\n\n**Answer:** Emma's contributions: 3,600 USD/year for 10 years at 7% = 3,600 USD × 13.82 = 49,750 USD at age 32. Then this grows untouched for 30 more years at 7%: 49,750 USD × (1.07)30(1.07)^{30}(1.07)30 = 49,750 USD × 7.61 = 378,600 USD at age 62. Larry's contributions: 3,600 USD/year for 30 years at 7% = 3,600 USD × 94.46 = 340,100 USD at age 62. Emma wins again: 378,600 USD vs 340,100 USD — despite investing 108,000 USD less total (36,000 USD vs 108,000 USD). The 10-year head start generated more wealth than 30 years of consistent investing. This is Thread A in action: the power of starting early. But remember the Common Misconception from Section 2.2 — this doesn't mean Larry should give up. If Larry invests 500 USD/month instead of 300 USD, he reaches 567,000 USD and surpasses Emma. The message isn't \"it's too late\" — it's \"start now, and if you're starting late, save more aggressively.\"\n\n**Q3.** Design a scenario that demonstrates compound interest working AGAINST someone through debt. Use specific numbers to show how a seemingly small purchase on a credit card can cost multiples of its original price.",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1448,
+      "out_sha": "744060421fbe",
       "note": ""
     },
     {
@@ -323,11 +323,11 @@
       "en_title": "Chapter 2: The Most Powerful Force in Finance",
       "order": 19,
       "src_chars": 1059,
-      "status": "pending",
+      "status": "done",
       "src_sha": "96fd76795e58",
       "src": "**Answer:** Jamie buys a 2,500 USD laptop on a credit card at 21% APR because \"I'll pay it off soon.\" Life happens, and Jamie makes only the minimum payment (2% of balance or 25 USD, whichever is higher). In year 1: ~500 USD in interest, roughly 200 USD in principal paid. Balance: ~2,300 USD. After 3 years: ~1,300 USD in interest paid, balance still ~1,900 USD. Using the Rule of 72, at 21% the balance would double in 3.4 years if NO payments were made. With minimum payments, the payoff timeline stretches to approximately 16 years, with total interest paid of approximately 4,100 USD. Total cost for the 2,500 USD laptop: 6,600 USD. And by the time it's paid off, the laptop hasn't worked for 12 years. The same 2,500 USD, if invested at 7% for 16 years, would have grown to approximately 7,400 USD. The true cost of the credit card purchase isn't 2,500 USD — it's 6,600 USD in payments PLUS 7,400 USD in foregone investment growth = 14,000 USD in total impact. This connects to Chapter 1's opportunity cost concept (which Chapter 3 will develop fully).\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 433,
+      "out_sha": "1f099d0e9e38",
       "note": ""
     },
     {
@@ -335,11 +335,11 @@
       "en_title": "Chapter 2: The Most Powerful Force in Finance",
       "order": 20,
       "src_chars": 3408,
-      "status": "pending",
+      "status": "done",
       "src_sha": "3feea2c36867",
       "src": "#### Think Deeper\n\n**Q1.** Albert Einstein allegedly called compound interest \"the eighth wonder of the world\" (the attribution is disputed, but the sentiment is apt). Yet most people don't start investing early, even when they understand compound interest intellectually. Why? What does this tell us about the gap between financial knowledge and financial behavior?\n\n**Discussion:** Several psychological factors explain the gap. Present bias: humans heavily discount future rewards. 100 USD today feels more valuable than 300 USD in 20 years, even though compound interest makes the 100 USD worth more. Abstract numbers: \"you'll have 600,000 USD at 65\" doesn't feel real to a 25-year-old — it's too distant and abstract to motivate sacrifice today. Optimism bias: \"I'll earn more later, so I'll catch up\" — but lifestyle inflation usually absorbs those future earnings. Social pressure: spending money is visible and immediately rewarding; saving is invisible and delayed. This gap between knowing and doing is exactly why Chapter 8 (The Psychology of Money) exists — understanding compound interest intellectually is necessary but not sufficient. You also need systems (automation, as in Chapter 6) that bypass the need for daily willpower.\n\n**Q2.** The Rule of 72 works well for interest rates between 2% and 15%. Why does it become less accurate for very high rates (like 50% or 100%)? What mathematical concept underlies the approximation?\n\n**Discussion:** The Rule of 72 is derived from the formula n=ln⁡(2)/ln⁡(1+r)n = \\ln(2)/\\ln(1+r)n=ln(2)/ln(1+r). For small rrr, ln⁡(1+r)≈r\\ln(1+r) \\approx rln(1+r)≈r, so n≈ln⁡(2)/r≈0.693/rn \\approx \\ln(2)/r \\approx 0.693/rn≈ln(2)/r≈0.693/r. Using 72 instead of 69.3 provides better accuracy for common rates and is more divisible. But as rrr gets large, the approximation ln⁡(1+r)≈r\\ln(1+r) \\approx rln(1+r)≈r breaks down — ln⁡(1+r)\\ln(1+r)ln(1+r) grows much more slowly than rrr for large values. At 50%, the Rule of 72 predicts 1.44 years; the actual answer is 1.71 years. At 100%, it predicts 0.72 years; the actual answer is 1.00 year. For everyday personal finance (rates between 2-20%), the Rule of 72 is accurate within a few months — more than sufficient for quick decision-making.\n\n**Q3.** Compound interest requires reinvesting returns. But in practice, many people spend their investment returns (dividends, interest) instead of reinvesting them. How much does this behavior cost over a 30-year period? Is the impact larger or smaller than you'd expect?\n\n**Discussion:** If you invest 10,000 USD at 7% for 30 years and reinvest all returns: 76,123 USD (as shown in Section 2.1). If you spend the 7% each year instead of reinvesting: you receive 700 USD/year in income for 30 years (21,000 USD total), and still have your original 10,000 USD. Total: 31,000 USD. The difference is 76,123 USD − 31,000 USD = 45,123 USD — nearly 60% of the total outcome is destroyed by not reinvesting. This is a dramatic illustration of compounding's power: the \"interest on interest on interest\" component dominates over long periods. In practice, most modern index funds automatically reinvest dividends (you can opt into this), making reinvestment the default. But if you hold individual bonds or dividend stocks and spend the payments, you're missing the most powerful part of compound interest. This connects to the automation principle we'll develop in Chapter 6.\n",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 1171,
+      "out_sha": "b92fc72e3fd2",
       "note": ""
     },
     {
@@ -347,11 +347,11 @@
       "en_title": "Chapter 2: The Most Powerful Force in Finance",
       "order": 21,
       "src_chars": 902,
-      "status": "pending",
+      "status": "done",
       "src_sha": "72e096fac502",
       "src": "### Chapter Summary\n\nCompound interest is the engine that makes the wealth equation from Chapter 1 work. We saw that it's not linear — growth accelerates over time, with more than half of total returns occurring in the final third of the investment period. The Emma/Larry comparison demonstrated that starting 10 years earlier can matter more than investing three times as much money. The Rule of 72 gives you a mental tool to quickly evaluate any interest rate situation.\n\nBut compound interest is a neutral force — it amplifies both wealth (through investments) and debt (through credit cards and loans). This duality will drive our debt strategy in Chapter 7.\n\nIn Chapter 3, we'll explore the hidden companion to compound interest: opportunity cost — the invisible price tag on every financial decision you make. Every dollar you spend has a compound interest future that it will never realize.\n\n---",
-      "out_chars": 0,
-      "out_sha": "",
+      "out_chars": 279,
+      "out_sha": "4ed89229c930",
       "note": ""
     },
     {
